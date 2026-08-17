@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Public+Sans:ital,wght@0,400..700;1,400..600&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  .m-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+  .m-card:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(0,0,0,.55)}
+</style>
+<script src="./media-data.js"></script>
+</helmet>
+
+<section style="background:var(--bg,#fbf7ef);color:var(--text,#1f1710);font-family:'Public Sans',system-ui,sans-serif;padding:clamp(36px,5vw,72px) clamp(18px,5vw,64px) clamp(60px,7vw,96px)">
+  <div style="max-width:1240px;margin:0 auto">
+
+    <header style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;padding-bottom:26px;border-bottom:1px solid var(--border,rgba(31,23,16,.09))">
+      <div style="max-width:640px">
+        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#EAAE28;font-weight:700">DEHAT across the globe</span>
+        <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.02;letter-spacing:-.02em;margin:12px 0 0">Media archive</h1>
+        <p style="font-size:16px;line-height:1.6;color:var(--dim,#5a4f43);margin:14px 0 0;text-wrap:pretty">{{ blurb }}</p>
+      </div>
+      <div style="display:flex;gap:28px;flex:none">
+        <div>
+          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:34px;line-height:1;color:var(--ac-teal,#0E5565)">{{ total }}</div>
+          <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint,#8a7c6c);margin-top:6px;font-weight:600">Items</div>
+        </div>
+        <div>
+          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:34px;line-height:1;color:var(--ac-teal,#0E5565)">{{ pubCount }}</div>
+          <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint,#8a7c6c);margin-top:6px;font-weight:600">Publishers</div>
+        </div>
+        <div>
+          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:34px;line-height:1;color:var(--ac-teal,#0E5565)">{{ span }}</div>
+          <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint,#8a7c6c);margin-top:6px;font-weight:600">Years covered</div>
+        </div>
+      </div>
+    </header>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:22px 0 0">
+      <sc-for list="{{ scopes }}" as="s" hint-placeholder-count="3">
+        <button onClick="{{ s.pick }}" style="padding:9px 18px;border-radius:999px;border:1px solid {{ s.ring }};background:{{ s.bg }};color:{{ s.fg }};font-size:14px;font-weight:700;cursor:pointer">{{ s.label }}</button>
+      </sc-for>
+      <input value="{{ q }}" onChange="{{ onQ }}" placeholder="Search headlines, publishers…" style="flex:1;min-width:220px;padding:10px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit">
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 0 0">
+      <button onClick="{{ toggleFilters }}" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid {{ filtersRing }};background:{{ filtersBg }};color:{{ filtersFg }};font-size:13px;font-weight:700;font-family:inherit;cursor:pointer">Refine{{ activeLabel }}<span style="opacity:.6">{{ caret }}</span></button>
+      <sc-if value="{{ anyActive }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ reset }}" style="padding:9px 14px;border-radius:999px;border:none;background:none;color:var(--faint,#8a7c6c);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:underline">Clear all</button>
+      </sc-if>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;overflow:hidden;transition:max-height .38s cubic-bezier(.22,.61,.36,1),opacity .28s ease,padding .38s ease;max-height:{{ filtersH }};opacity:{{ filtersOp }};padding:{{ filtersPad }}">
+      <sc-for list="{{ selects }}" as="f" hint-placeholder-count="5">
+        <label style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--faint,#8a7c6c)">{{ f.label }}</span>
+          <select value="{{ f.value }}" onChange="{{ f.onChange }}" style="margin-top:auto;appearance:none;-webkit-appearance:none;padding:10px 14px;border-radius:12px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit;cursor:pointer">
+            <sc-for list="{{ f.options }}" as="o" hint-placeholder-count="4">
+              <option value="{{ o.v }}">{{ o.label }}</option>
+            </sc-for>
+          </select>
+        </label>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 22px;border-bottom:1px solid var(--border,rgba(31,23,16,.09))">
+      <span style="font-size:14px;color:var(--dim,#5a4f43)">{{ resultLine }}</span>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button onClick="{{ toggleSort }}" style="padding:8px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:none;color:var(--text,#1f1710);font-size:13px;font-weight:600;cursor:pointer">{{ sortLabel }}</button>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:18px;padding-top:26px">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="9">
+        <article class="m-card" style="display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:var(--surface,#fff);border:1px solid var(--border,rgba(31,23,16,.09))">
+          <a href="{{ it.primary }}" target="_blank" rel="noopener" onClick="{{ it.open }}" style="display:block;text-decoration:none;color:inherit">
+            <div style="position:relative;aspect-ratio:16/10;background:{{ it.tint }};display:flex;flex-direction:column;justify-content:space-between;padding:16px 18px">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+                <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;letter-spacing:-.01em;color:{{ it.ink }}">{{ it.pub }}</span>
+                <span style="flex:none;font-size:10px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:{{ it.ink }};opacity:.9;border:1px solid currentColor;border-radius:999px;padding:3px 8px">{{ it.type }}</span>
+              </div>
+              <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:10px">
+                <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:44px;line-height:.85;color:{{ it.ink }};opacity:.6">{{ it.y }}</span>
+                <span style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:{{ it.ink }};opacity:.9">{{ it.lang }}</span>
+              </div>
+            </div>
+            <div style="padding:16px 18px 12px">
+              <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;line-height:1.28;margin:0;color:var(--text,#1f1710);text-wrap:pretty">{{ it.t }}</h3>
+              <p style="font-size:13px;color:var(--faint,#8a7c6c);margin:10px 0 0">{{ it.meta }}</p>
+            </div>
+          </a>
+          <div style="padding:0 18px 14px;display:flex;flex-wrap:wrap;gap:6px">
+            <sc-for list="{{ it.tags }}" as="tg" hint-placeholder-count="2">
+              <span style="font-size:11px;font-weight:600;padding:4px 9px;border-radius:999px;background:var(--surface2,#f4efe4);color:var(--dim,#5a4f43)">{{ tg.v }}</span>
+            </sc-for>
+          </div>
+          <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px 11px 18px;border-top:1px solid var(--border,rgba(31,23,16,.09))">
+            <div style="display:flex;align-items:center;gap:14px;font-size:13px;color:var(--faint,#8a7c6c)">
+              <button onClick="{{ it.like }}" title="Like" style="display:flex;align-items:center;gap:6px;background:none;border:none;padding:0;cursor:pointer;font-size:13px;font-weight:700;color:{{ it.likeColor }}">
+                <span style="font-size:14px">{{ it.heart }}</span>{{ it.likes }}
+              </button>
+              <span style="display:flex;align-items:center;gap:6px;font-weight:600">&#9711; {{ it.views }}</span>
+            </div>
+            <span style="display:flex;align-items:center;gap:10px">
+              <a href="{{ it.altHref }}" target="_blank" rel="noopener" title="{{ it.altLabel }}" style="font-size:11px;font-weight:600;color:var(--faint,#8a7c6c);text-decoration:underline">{{ it.altLabel }}</a>
+              <a href="{{ it.primary }}" target="_blank" rel="noopener" onClick="{{ it.open }}" style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ac-teal,#0E5565);text-decoration:none">{{ it.linkLabel }}</a>
+            </span>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+      <p style="padding:50px 0;text-align:center;color:var(--faint,#8a7c6c);font-size:15px">No items match these filters.</p>
+    </sc-if>
+
+    <p style="margin:40px 0 0;padding-top:22px;border-top:1px solid var(--border,rgba(31,23,16,.09));font-size:13px;line-height:1.6;color:var(--faint,#8a7c6c);max-width:760px">{{ note }}</p>
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { fOpen: false, q: '', scope: 'All', mdg: 'All', year: 'All', pub: 'All', lang: 'All', dist: 'All', sdg: 'All', csr: 'All', cr: 'All', sort: 'new', stats: {} };
+
+  componentDidMount() {
+    try { this.setState({ stats: JSON.parse(localStorage.getItem('dehat_media_stats') || '{}') }); } catch (e) {}
+    if (!window.DEHAT_MEDIA) { this._t = setInterval(() => { if (window.DEHAT_MEDIA) { clearInterval(this._t); this.forceUpdate(); } }, 120); }
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+
+  _save(stats) {
+    this.setState({ stats });
+    try { localStorage.setItem('dehat_media_stats', JSON.stringify(stats)); } catch (e) {}
+  }
+  _bump(id, field) {
+    const s = this.state.stats, cur = s[id] || { v: 0, l: 0 };
+    const next = { ...s, [id]: { ...cur, [field]: (cur[field] || 0) + 1 } };
+    this._save(next);
+  }
+  _toggleLike(id) {
+    const s = this.state.stats, cur = s[id] || { v: 0, l: 0 };
+    const liked = !cur.liked;
+    this._save({ ...s, [id]: { ...cur, liked, l: Math.max(0, (cur.l || 0) + (liked ? 1 : -1)) } });
+  }
+
+  _tint(pub) {
+    // Accent tokens flip with the host theme, so ink stays legible in dark and light.
+    const pal = ['--ac-teal', '--ac-crimson', '--ac-olive', '--ac-gold', '--ac-purple', '--ac-red', '--ac-cyan'];
+    const fallback = { '--ac-teal': '#0E5565', '--ac-crimson': '#D2305C', '--ac-olive': '#556223', '--ac-gold': '#9a6f0a', '--ac-purple': '#4F0E73', '--ac-red': '#A92719', '--ac-cyan': '#0E9CB8' };
+    let h = 0;
+    for (let i = 0; i < pub.length; i++) h = (h * 31 + pub.charCodeAt(i)) >>> 0;
+    const v = pal[h % pal.length];
+    const ink = 'var(' + v + ',' + fallback[v] + ')';
+    return [ 'color-mix(in srgb, ' + ink + ' 15%, var(--surface,#fff))', ink ];
+  }
+
+  renderVals() {
+    const S = this.state;
+    const ALL = window.DEHAT_MEDIA || [];
+    const uniq = (arr) => Array.from(new Set(arr)).sort();
+    const years = uniq(ALL.map(i => i.y)).map(String).reverse();
+    const pubs = uniq(ALL.map(i => i.pub));
+    const langs = uniq(ALL.map(i => i.lang));
+    const csrs = uniq(ALL.flatMap(i => i.csr));
+    const crs = uniq(ALL.flatMap(i => i.cr));
+    const goals = uniq(ALL.flatMap(i => (i.sdg || []).concat(i.mdg || [])));
+
+    const q = S.q.trim().toLowerCase();
+    let list = ALL.filter(i =>
+      (S.scope === 'All' || i.scope === S.scope) &&
+      (S.year === 'All' || String(i.y) === S.year) &&
+      (S.pub === 'All' || i.pub === S.pub) &&
+      (S.lang === 'All' || i.lang === S.lang) &&
+      (S.sdg === 'All' || i.sdg.indexOf(S.sdg) > -1 || (i.mdg || []).indexOf(S.sdg) > -1) &&
+      (S.csr === 'All' || i.csr.indexOf(S.csr) > -1) &&
+      (S.cr === 'All' || i.cr.indexOf(S.cr) > -1) &&
+      (!q || (i.t + ' ' + i.pub + ' ' + i.dist).toLowerCase().indexOf(q) > -1)
+    );
+    const ord = (a, b) => (a.y - b.y) || (Date.parse(a.d) - Date.parse(b.d) || 0);
+    list = list.slice().sort((a, b) => S.sort === 'new' ? -ord(a, b) : ord(a, b));
+
+    const mkSel = (key, label, options, allLabel) => ({
+      k: key, label, value: S[key],
+      options: [{ v: 'All', label: allLabel }].concat(options.map(o => ({ v: String(o), label: String(o) }))),
+      onChange: (e) => this.setState({ [key]: e.target.value })
+    });
+
+    const scopeBtn = (v, label) => ({
+      k: v, label, pick: () => this.setState({ scope: v }),
+      bg: S.scope === v ? 'var(--ac-teal,#0E5565)' : 'transparent',
+      fg: S.scope === v ? 'var(--bg,#fff)' : 'var(--dim,#5a4f43)',
+      ring: S.scope === v ? 'var(--ac-teal,#0E5565)' : 'var(--border,rgba(31,23,16,.14))'
+    });
+
+    const items = list.map((i) => {
+      const id = i.u;
+      const st = S.stats[id] || { v: 0, l: 0 };
+      const [tint, ink] = this._tint(i.pub);
+      // Retired URL patterns: shorteners, old CMS paths, epaper images, screenshot hosts.
+      // Plain-http and pre-2018 CMS paths are dead or blocked in an https page:
+      // lead with the Wayback copy so every card opens something real.
+      const retired = i.u.indexOf('http://') === 0 ||
+        /goo\.gl|googleusercontent|epaperimages|postpage\.php|Details\.aspx|article\.php|dailyhunt|article1-\d|bhaskar\.com\/news|stoptrafficking|scoopwhoop|education4change/.test(i.u);
+      const archive = 'https://web.archive.org/web/' + i.y + '/' + i.u;
+      return {
+        k: id + i.d, u: i.u, t: i.t, y: i.y, pub: i.pub, lang: i.lang, type: i.type,
+        meta: i.d + '  ·  ' + i.scope + '  ·  ' + i.dist,
+        tint, ink,
+        tags: [{ k: 'a', v: i.sdg[0] }, { k: 'b', v: 'Corporate Social Responsibility ' + i.csr[0] }, { k: 'c', v: 'Child right: ' + i.cr[0] }],
+        likes: st.l || 0, views: st.v || 0,
+        archive, primary: retired ? archive : i.u,
+        linkLabel: retired ? 'Archived \u2192' : 'Read \u2192',
+        altLabel: retired ? 'Original (offline)' : 'Archived copy',
+        altHref: retired ? i.u : archive,
+        heart: st.liked ? '\u2665' : '\u2661',
+        likeColor: st.liked ? '#D2305C' : 'var(--faint,#8a7c6c)',
+        like: (e) => { e.preventDefault(); e.stopPropagation(); this._toggleLike(id); },
+        open: () => this._bump(id, 'v')
+      };
+    });
+
+    const nActive = ['year','pub','lang','dist','sdg','csr','cr'].filter(k => S[k] && S[k] !== 'All').length;
+
+    return {
+      blurb: 'Every headline, research report and blog recorded in DEHAT\u2019s press compendium, filterable by reach, publisher, year, development goal — Millennium before 2016, Sustainable after — Corporate Social Responsibility Schedule VII head and child rights.',
+      total: ALL.length, pubCount: pubs.length, span: ALL.length ? (Math.min.apply(null, ALL.map(i => i.y)) + '\u2013' + Math.max.apply(null, ALL.map(i => i.y))) : '',
+      scopes: [scopeBtn('All', 'All coverage'), scopeBtn('National', 'National'), scopeBtn('International', 'International')],
+      q: S.q, onQ: (e) => this.setState({ q: e.target.value }),
+      selects: [
+        mkSel('year', 'Year', years, 'All Years'),
+        mkSel('pub', 'Publisher', pubs, 'All Publishers'),
+        mkSel('lang', 'Language', langs, 'All Languages'),
+        mkSel('sdg', 'Development Goal', goals, 'All Development Goals'),
+        mkSel('csr', 'Corporate Social Responsibility \u00b7 Schedule VII', csrs, 'All Schedule VII heads'),
+        mkSel('cr', 'Child Rights', crs, 'All Child Rights')
+      ],
+      items, empty: items.length === 0,
+      resultLine: items.length + (items.length === 1 ? ' item' : ' items') + (items.length === ALL.length ? '' : ' of ' + ALL.length),
+      sortLabel: S.sort === 'new' ? 'Newest first' : 'Oldest first',
+      toggleSort: () => this.setState(s => ({ sort: s.sort === 'new' ? 'old' : 'new' })),
+      toggleFilters: () => this.setState(s => ({ fOpen: !s.fOpen })),
+      filtersH: S.fOpen ? '1200px' : '0px',
+      filtersOp: S.fOpen ? 1 : 0,
+      filtersPad: S.fOpen ? '14px 0 18px' : '0px',
+      caret: S.fOpen ? '▲' : '▼',
+      activeLabel: nActive ? ' · ' + nActive : '',
+      anyActive: nActive > 0 || S.q !== '' || S.scope !== 'All',
+      filtersBg: S.fOpen || nActive ? 'var(--surface2,rgba(31,23,16,.05))' : 'transparent',
+      filtersRing: S.fOpen || nActive ? 'var(--dim,#5a4f43)' : 'var(--border,rgba(31,23,16,.14))',
+      filtersFg: 'var(--text,#1f1710)',
+      reset: () => this.setState({ fOpen: false, mdg: 'All', q: '', scope: 'All', year: 'All', pub: 'All', lang: 'All', sdg: 'All', csr: 'All', cr: 'All' }),
+      note: 'Headlines, links, publishers, languages and dates are reproduced from the DEHAT press compendium, plus items found in a 2026 search pass. Development goal, Corporate Social Responsibility Schedule VII and child-rights tags are editorial classifications. Every item carries a Wayback Machine copy alongside the publisher link, so no entry is a dead end; where a URL uses a retired shortener, epaper image or old CMS path, the archived copy is offered first. Likes and views are counted in this browser only \u2014 shared totals across visitors need a server.'
+    };
+  }
+}
+
+</script>
+</body>
+</html>

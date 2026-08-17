@@ -1,0 +1,54 @@
+# ── Obsidian vault metadata ──────────────────────────────────────────────
+# This project folder doubles as an Obsidian vault. None of Obsidian's own
+# config/cache should ever be published.
+.obsidian/
+**/.obsidian/
+.obsidian.local/
+.trash/
+*.obsidian-workspace
+
+# Nested vault used for drafting — not site source.
+DEHAT Wesbite/
+
+# Obsidian auto-names pasted attachments "pasted-<timestamp>-0-<id>-<id>.<ext>".
+# These land loose in the vault root when someone pastes an image into a note;
+# they are not curated site assets (curated assets live under assets/).
+pasted-*.png
+pasted-*.jpg
+pasted-*.jpeg
+pasted-*.gif
+pasted-*.webp
+
+# Sensitive source imagery pasted into notes — must never reach a public repo.
+human_trafficking_*.png
+human_trafficking_*.jpg
+
+# ── Working files / pipeline artifacts (not site source) ────────────────
+.thumbnail
+.image-slots.state.json
+tmp-*.json
+
+# Generated offline/bundled snapshot exports — regenerable, duplicate assets
+# already tracked under assets/, and too large to carry as source.
+DEHAT Website (offline).html
+
+# Compliance/legal filings (FCRA, PAN, bank account, registration, MOA, etc.).
+# Contains a government ID and bank account details — kept local, handled
+# separately from the public repo rather than published here.
+/assets/docs/
+
+# ── Raw drafts, scans, and uploads ────────────────────────────────────────
+# Personal photos of beneficiaries/staff, scanned legal & financial documents,
+# and half-finished content drafts. These are working materials for building
+# the site, not the site itself, and must stay out of the public repo.
+/uploads/
+/scans/
+/scraps/
+/screenshots/
+/small/
+
+# ── OS / editor cruft ─────────────────────────────────────────────────────
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp

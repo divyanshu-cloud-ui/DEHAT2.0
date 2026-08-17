@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Public+Sans:ital,wght@0,400..700;1,400..600&family=Newsreader:ital,opsz,wght@1,6..72,400..600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  /* ---- Theme tokens (dark is default) ---- */
+  :root{
+    --bg:#151009; --bg2:#1d160d; --surface:#241b11; --surface2:#2e2417;
+    --text:#f5eede; --dim:#c6b8a3; --faint:#95856f;
+    --border:rgba(245,238,222,.13); --nav:rgba(18,13,8,.82); --shadow:rgba(0,0,0,.55);
+  }
+  :root{--logo-filter:brightness(0) invert(1)}
+  html[data-theme="light"]{--logo-filter:none;
+    --bg:#fbf7ef; --bg2:#f4efe4; --surface:#ffffff; --surface2:#f4efe4;
+    --text:#1f1710; --dim:#5a4f43; --faint:#8a7c6c;
+    --border:rgba(31,23,16,.09); --nav:rgba(251,247,239,.85); --shadow:rgba(31,23,16,.4);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:"Public Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .4s ease,color .4s ease}
+  a{color:#0E5565;text-decoration:none}
+  a:hover{color:#D2305C}
+  html[data-theme="dark"] a{color:#7fc4d4}
+  html[data-theme="dark"] a:hover{color:#f2789d}
+  button{font-family:inherit}
+  ::selection{background:#EAAE28;color:#1f1710}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(210,48,92,.5)}70%{box-shadow:0 0 0 14px rgba(210,48,92,0)}100%{box-shadow:0 0 0 0 rgba(210,48,92,0)}}
+  @keyframes spinSlow{to{transform:rotate(360deg)}}
+  @keyframes cycleImg{0%{opacity:0;transform:translateY(26px) scale(.86);filter:blur(8px)}100%{opacity:1;transform:none;filter:blur(0)}}
+  @keyframes glowPulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:.9;transform:scale(1.05)}}
+  .rise{animation:fadeUp .7s cubic-bezier(.2,.7,.2,1) both}
+  .cyc-img{animation:cycleImg .6s cubic-bezier(.2,.7,.2,1) both}
+</style>
+</helmet>
+
+<nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px clamp(16px,5vw,64px);background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)">
+  <button onClick="{{ goHome }}" style="display:flex;align-items:center;background:none;border:none;cursor:pointer;padding:0;flex:none">
+    <img src="./dehat-logo-horizontal.png" alt="DEHAT — Because every child matters" style="height:clamp(30px,3.4vw,38px);width:auto;display:block;filter:var(--logo-filter)" />
+  </button>
+  <div style="display:flex;align-items:center;gap:2px;flex-wrap:wrap;justify-content:flex-end">
+    <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+      <button onClick="{{ item.go }}" style="position:relative;background:none;border:none;cursor:pointer;padding:8px 12px;font-size:14px;font-weight:600;color:{{ item.color }};transition:color .2s;white-space:nowrap" style-hover="color:#D2305C">
+        {{ item.label }}
+        <span style="position:absolute;left:12px;right:12px;bottom:2px;height:2px;border-radius:2px;background:#D2305C;transform:scaleX({{ item.active }});transform-origin:left;transition:transform .25s"></span>
+      </button>
+    </sc-for>
+    <div style="display:flex;align-items:center;gap:8px;margin-left:8px">
+      <select value="{{ currentLang }}" onChange="{{ onLang }}" title="Language" style="appearance:none;-webkit-appearance:none;padding:8px 26px 8px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface) url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22><path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%239a8c78%22 stroke-width=%221.5%22/></svg>') no-repeat right 9px center;font-size:13px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer;max-width:130px">
+        <optgroup label="{{ T.lang_global }}">
+          <sc-for list="{{ langsGlobal }}" as="lg" hint-placeholder-count="6">
+            <option value="{{ lg.code }}">{{ lg.label }}</option>
+          </sc-for>
+        </optgroup>
+        <optgroup label="{{ T.lang_indian }}">
+          <sc-for list="{{ langsIndian }}" as="li" hint-placeholder-count="10">
+            <option value="{{ li.code }}">{{ li.label }}</option>
+          </sc-for>
+        </optgroup>
+      </select>
+      <button onClick="{{ toggleTheme }}" title="Toggle theme" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s" style-hover="transform:rotate(20deg)">{{ themeGlyph }}</button>
+      <button onClick="{{ goDonate }}" style="padding:10px 20px;background:#D2305C;color:#fff;border:none;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 18px -6px rgba(210,48,92,.6);transition:transform .15s;white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.donate }}</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- ============ HOME ============ -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div key="home">
+    <section style="position:relative;overflow:hidden;padding:clamp(60px,9vw,120px) clamp(20px,5vw,64px) clamp(70px,8vw,110px);min-height:82vh;display:flex;align-items:center">
+      <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#2a2018,#2a2018 22px,#241b14 22px,#241b14 44px)"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;padding:20px 24px;pointer-events:none">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.05em">{{ T.hero_photo }}</span>
+      </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,14,9,.92) 0%,rgba(20,14,9,.6) 55%,rgba(20,14,9,.25) 100%)"></div>
+      <div style="position:relative;max-width:960px">
+        <div class="rise" style="display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid rgba(234,174,40,.5);border-radius:999px;margin-bottom:28px">
+          <span style="width:8px;height:8px;border-radius:50%;background:#EAAE28;animation:pulseDot 2s infinite"></span>
+          <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ T.org_full }}</span>
+        </div>
+        <h1 class="rise" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(38px,6.4vw,84px);line-height:.98;letter-spacing:-.03em;color:#fbf7ef;margin:0 0 24px;text-wrap:balance">{{ T.hero_title_a }}<span style="color:#EAAE28">{{ T.hero_title_b }}</span>{{ T.hero_title_c }}</h1>
+        <p class="rise" style="font-size:clamp(17px,1.6vw,21px);line-height:1.55;color:rgba(251,247,239,.82);max-width:620px;margin:0 0 26px">{{ T.hero_sub }}</p>
+        <p class="rise" style="display:flex;align-items:flex-start;gap:12px;font-family:'Newsreader';font-style:italic;font-size:clamp(15px,1.5vw,19px);line-height:1.4;color:#EAAE28;max-width:560px;margin:0 0 34px;padding-left:14px;border-left:2px solid rgba(234,174,40,.5)">{{ T.hero_principle }}</p>
+        <div class="rise" style="display:flex;flex-wrap:wrap;gap:14px">
+          <button onClick="{{ goDonate }}" style="padding:15px 30px;background:#EAAE28;color:#1f1710;border:none;border-radius:999px;font-size:16px;font-weight:700;cursor:pointer;transition:transform .15s" style-hover="transform:translateY(-2px)">{{ T.hero_cta1 }} →</button>
+          <button onClick="{{ goWork }}" style="padding:15px 30px;background:rgba(251,247,239,.08);color:#fbf7ef;border:1px solid rgba(251,247,239,.4);border-radius:999px;font-size:16px;font-weight:600;cursor:pointer;transition:background .2s" style-hover="background:rgba(251,247,239,.16)">{{ T.hero_cta2 }}</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#0E5565;padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px)">
+      <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:32px">
+        <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="4">
+          <div>
+            <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(34px,4vw,52px);line-height:1;color:#EAAE28" data-count-id="{{ s.id }}" data-count-to="{{ s.to }}" data-count-dec="{{ s.dec }}" data-count-comma="{{ s.comma }}" data-count-prefix="{{ s.prefix }}" data-count-suffix="{{ s.suffix }}">{{ s.value }}</div>
+            <div style="margin-top:10px;font-size:14px;line-height:1.4;color:rgba(251,247,239,.85);text-transform:uppercase;letter-spacing:.04em;font-weight:600">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
+          <div style="padding:36px 32px;border-radius:20px;background:var(--surface);border:1px solid var(--border);box-shadow:0 20px 40px -30px var(--shadow)">
+            <div style="width:44px;height:44px;border-radius:12px;background:{{ p.color }};display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;color:#fff;font-size:20px">{{ p.glyph }}</div>
+            <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:22px;margin:20px 0 12px;color:var(--text)">{{ p.title }}</h3>
+            <p style="font-size:16px;line-height:1.6;color:var(--dim);margin:0">{{ p.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background:#1a130b;padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px)">
+      <div style="max-width:1200px;margin:0 auto">
+        <div style="max-width:640px;margin-bottom:44px">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ T.eyebrow_work }}</span>
+          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.02em;color:#fbf7ef;margin:14px 0 0">{{ T.work_head }}</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:0.9fr 1.4fr;gap:36px;align-items:start">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ programs }}" as="pg" hint-placeholder-count="4">
+              <button onClick="{{ pg.select }}" style="text-align:left;cursor:pointer;padding:20px 22px;border-radius:16px;border:1px solid {{ pg.border }};background:{{ pg.bg }};display:flex;align-items:center;gap:16px;transition:all .2s">
+                <span style="flex:none;width:40px;height:40px;border-radius:10px;background:{{ pg.color }};color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:18px">{{ pg.glyph }}</span>
+                <span style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:{{ pg.textColor }}">{{ pg.name }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <div key="{{ activeProgram.name }}" class="rise" style="border-radius:22px;overflow:hidden;background:var(--surface)">
+            <div style="height:10px;background:{{ activeProgram.color }}"></div>
+            <div style="padding:clamp(28px,3vw,42px)">
+              <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+                <span style="width:52px;height:52px;border-radius:14px;background:{{ activeProgram.color }};color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:24px">{{ activeProgram.glyph }}</span>
+                <div>
+                  <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:28px;margin:0;color:var(--text)">{{ activeProgram.name }}</h3>
+                  <span style="font-size:13px;color:{{ activeProgram.color }};font-weight:700;letter-spacing:.03em">{{ activeProgram.tag }}</span>
+                </div>
+              </div>
+              <p style="font-size:17px;line-height:1.65;color:var(--dim);margin:0 0 24px">{{ activeProgram.detail }}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:20px;padding-top:22px;border-top:1px solid var(--border)">
+                <sc-for list="{{ activeProgram.stats }}" as="st" hint-placeholder-count="3">
+                  <div>
+                    <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:28px;color:{{ activeProgram.color }};line-height:1">{{ st.num }}</div>
+                    <div style="font-size:13px;color:var(--faint);margin-top:4px;max-width:180px">{{ st.label }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(60px,8vw,110px) clamp(20px,4vw,56px);max-width:1480px;margin:0 auto">
+      <div style="max-width:640px;margin-bottom:44px">
+        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#0E9CB8;font-weight:700">{{ T.eyebrow_where }}</span>
+        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.02em;color:var(--text);margin:14px 0 12px">{{ T.where_head }}</h2>
+        <p style="font-size:16px;line-height:1.6;color:var(--dim);margin:0">{{ T.where_sub }}</p>
+      </div>
+      <div style="border-radius:22px;overflow:hidden;border:1px solid var(--border);background:var(--surface2);box-shadow:0 30px 60px -40px var(--shadow)">
+        <iframe ref="{{ mapFrame }}" src="./district-map.html?theme={{ theme }}" title="DEHAT district vulnerability atlas" loading="lazy" style="display:block;width:100%;height:min(86vh,880px);border:0"></iframe>
+      </div>
+      <p style="font-size:13px;line-height:1.6;color:var(--faint);margin:16px 0 0;max-width:860px">These are not sites of need alone but of leadership. Three districts — Bahraich, Shravasti and Balrampur — hold our deepest, most intersectional investment; the rest mark two decades of programme presence alongside their communities. Open the atlas for the numbers behind each, and their sources.</p>
+    </section>
+
+    <section style="background:#4F0E73;padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px)">
+      <div style="max-width:1200px;margin:0 auto">
+        <div style="max-width:680px;margin:0 auto 44px;text-align:center">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ T.eyebrow_cycle }}</span>
+          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.02em;color:#fff;margin:14px 0 12px">{{ T.cycle_head }}</h2>
+          <p style="font-size:16px;line-height:1.6;color:rgba(255,255,255,.75);margin:0">{{ T.cycle_sub }}</p>
+        </div>
+        <div style="max-width:1060px;margin:0 auto">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(24px,4vw,52px);align-items:center;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:clamp(24px,4vw,48px)">
+            <div style="position:relative;justify-self:center;width:clamp(220px,34vw,330px);aspect-ratio:1;display:flex;align-items:center;justify-content:center">
+              <div style="position:absolute;inset:-6% -6% 4%;border-radius:50%;background:radial-gradient(circle at 50% 42%,rgba(255,238,214,.24),rgba(255,238,214,.08) 46%,transparent 68%);animation:glowPulse 5s ease-in-out infinite;pointer-events:none"></div>
+              <img key="{{ activeNode.img }}" class="cyc-img" src="{{ activeNode.img }}" alt="" style="position:relative;width:92%;height:92%;object-fit:contain;filter:drop-shadow(0 26px 34px rgba(0,0,0,.5))" />
+              <div style="position:absolute;top:2%;left:0;background:#EAAE28;color:#1f1710;font-family:'Bricolage Grotesque';font-weight:800;font-size:12px;letter-spacing:.04em;padding:7px 13px;border-radius:999px;white-space:nowrap">STAGE {{ activeNode.num }} / {{ activeNode.total }}</div>
+            </div>
+            <div key="{{ activeNode.title }}" class="rise">
+              <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ activeNode.chapter }}</span>
+              <div style="display:flex;align-items:baseline;gap:12px;margin:10px 0 4px">
+                <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(38px,6vw,60px);color:#fff;line-height:.9">{{ activeNode.stat }}</span>
+              </div>
+              <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(20px,2.4vw,26px);color:#fff;margin:6px 0 12px;line-height:1.12;text-wrap:pretty">{{ activeNode.title }}</h3>
+              <p style="font-size:15.5px;line-height:1.62;color:rgba(255,255,255,.76);margin:0 0 10px;max-width:440px;text-wrap:pretty">{{ activeNode.story }}</p>
+              <div style="font-size:12px;color:rgba(255,255,255,.5);margin:0 0 20px;font-weight:600;letter-spacing:.02em">Source: {{ activeNode.src }}</div>
+              <button onClick="{{ nextNode }}" style="display:inline-flex;align-items:center;gap:8px;background:rgba(234,174,40,.14);border:1px solid rgba(234,174,40,.5);color:#EAAE28;font-weight:700;font-size:14px;padding:11px 18px;border-radius:999px;cursor:pointer;text-align:left" style-hover="background:rgba(234,174,40,.24)">{{ activeNode.leads }}</button>
+              <div style="display:flex;align-items:center;gap:10px;margin-top:22px">
+                <button onClick="{{ prevNode }}" aria-label="Previous stage" style="width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;font-size:18px;cursor:pointer" style-hover="background:rgba(255,255,255,.12)">‹</button>
+                <button onClick="{{ nextNode }}" aria-label="Next stage" style="width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;font-size:18px;cursor:pointer" style-hover="background:rgba(255,255,255,.12)">›</button>
+                <span style="font-size:12.5px;color:rgba(255,255,255,.5)">Follow the story, or pick any stage below</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:clamp(28px,4vw,42px)">
+            <div style="text-align:center;font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.62);font-weight:600;margin-bottom:14px">STAGE {{ activeNode.num }} / {{ activeNode.total }} · {{ activeNode.short }}</div>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px">
+              <sc-for list="{{ cycleNodes }}" as="n" hint-placeholder-count="16">
+                <button onClick="{{ n.select }}" onMouseEnter="{{ n.select }}" aria-label="{{ n.short }}" title="{{ n.short }}" style="width:{{ n.dot }};height:{{ n.dot }};border-radius:50%;padding:0;border:none;cursor:pointer;background:{{ n.dotBg }};box-shadow:{{ n.shadow }};transition:width .25s,height .25s,background .25s" style-hover="background:#EAAE28"></button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <p style="text-align:center;font-size:12px;color:rgba(255,255,255,.5);margin:40px auto 0;max-width:720px">{{ T.cycle_note }}</p>
+      </div>
+    </section>
+
+    <section style="padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
+      <div style="max-width:640px;margin-bottom:44px">
+        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#D2305C;font-weight:700">{{ T.eyebrow_process }}</span>
+        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.02em;color:var(--text);margin:14px 0 0">{{ T.process_head }}</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px">
+        <sc-for list="{{ process }}" as="pr" hint-placeholder-count="4">
+          <div style="position:relative;padding:32px 26px;border-radius:18px;background:var(--surface);border:1px solid var(--border);border-top:5px solid {{ pr.color }}">
+            <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:52px;color:{{ pr.faint }};line-height:.8">{{ pr.step }}</span>
+            <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;margin:14px 0 10px;color:var(--text)">{{ pr.name }}</h3>
+            <p style="font-size:15px;line-height:1.55;color:var(--dim);margin:0">{{ pr.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background:#D2305C;padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px)">
+      <div style="max-width:960px;margin:0 auto;text-align:center">
+        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8);font-weight:700">{{ T.eyebrow_stories }}</span>
+        <div key="{{ activeStory.name }}" class="rise" style="margin:28px 0 0">
+          <p style="font-family:'Newsreader';font-style:italic;font-weight:500;font-size:clamp(24px,3.4vw,40px);line-height:1.28;color:#fff;margin:0;text-wrap:balance">“{{ activeStory.quote }}”</p>
+          <div style="margin-top:28px;font-size:16px;color:rgba(255,255,255,.9)"><strong style="font-weight:700">{{ activeStory.name }}</strong>, {{ activeStory.age }} · <span style="color:#fff">{{ activeStory.program }}</span></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:40px">
+          <button onClick="{{ prevStory }}" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:20px;cursor:pointer;transition:background .2s" style-hover="background:rgba(255,255,255,.15)">‹</button>
+          <sc-for list="{{ storyDots }}" as="dot" hint-placeholder-count="2">
+            <button onClick="{{ dot.go }}" style="width:{{ dot.w }};height:10px;border-radius:999px;border:none;cursor:pointer;background:{{ dot.bg }};transition:all .3s"></button>
+          </sc-for>
+          <button onClick="{{ nextStory }}" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:20px;cursor:pointer;transition:background .2s" style-hover="background:rgba(255,255,255,.15)">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(60px,8vw,100px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+        <sc-for list="{{ ctas }}" as="c" hint-placeholder-count="3">
+          <button onClick="{{ c.go }}" style="text-align:left;cursor:pointer;padding:34px 30px;border-radius:20px;background:{{ c.bg }};color:{{ c.fg }};border:none;transition:transform .18s" style-hover="transform:translateY(-4px)">
+            <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:24px;margin-bottom:8px">{{ c.title }}</div>
+            <div style="font-size:15px;line-height:1.5;opacity:.85;margin-bottom:18px">{{ c.body }}</div>
+            <span style="font-weight:700;font-size:15px">{{ c.action }} →</span>
+          </button>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ OUR WORK ============ -->
+  <sc-if value="{{ isWork }}" hint-placeholder-val="{{ true }}">
+    <div key="work" class="rise">
+      <div style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px) clamp(24px,3vw,40px);max-width:1240px;margin:0 auto">
+        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#0E9CB8;font-weight:700">{{ T.nav_work }}</span>
+        <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(34px,5.5vw,68px);line-height:1;letter-spacing:-.03em;margin:14px 0 18px;color:var(--text)">{{ T.work_title }}</h1>
+        <p style="font-size:18px;line-height:1.6;color:var(--dim);max-width:720px;margin:0 0 22px">{{ T.work_sub }}</p>
+        <div style="display:inline-flex;align-items:center;gap:14px;padding:14px 22px;border-radius:14px;background:var(--surface);border:1px solid var(--border)">
+          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700">{{ T.portfolio_total }}</span>
+          <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(18px,2vw,24px);color:#556223">{{ portfolioTotal }}</span>
+        </div>
+      </div>
+      <section style="padding:0 clamp(20px,5vw,64px) clamp(40px,6vw,70px);max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,68px)">
+        <sc-for list="{{ programmeBlocks }}" as="blk" hint-placeholder-count="4">
+          <div>
+            <div style="display:flex;align-items:flex-start;gap:18px;padding-bottom:22px;border-bottom:2px solid {{ blk.color }}">
+              <span style="flex:none;width:56px;height:56px;border-radius:15px;background:{{ blk.color }};color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px">{{ blk.glyph }}</span>
+              <div style="flex:1;min-width:0">
+                <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px">
+                  <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(24px,3vw,34px);margin:0;color:var(--text)">{{ blk.name }}</h2>
+                  <span style="font-size:13px;color:{{ blk.color }};font-weight:700;letter-spacing:.03em">{{ blk.tag }}</span>
+                </div>
+                <p style="font-size:15px;line-height:1.55;color:var(--dim);margin:8px 0 0;max-width:720px">{{ blk.detail }}</p>
+              </div>
+              <span style="flex:none;font-family:'Bricolage Grotesque';font-weight:800;font-size:14px;color:var(--faint);white-space:nowrap;padding-top:6px">{{ blk.count }} / {{ blk.total }}</span>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;gap:10px 14px;margin:20px 0 22px">
+              <sc-for list="{{ blk.filters }}" as="f" hint-placeholder-count="7">
+                <label style="display:flex;flex-direction:column;gap:4px">
+                  <span style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700">{{ f.label }}</span>
+                  <select value="{{ f.value }}" onChange="{{ f.onChange }}" style="appearance:none;-webkit-appearance:none;padding:8px 30px 8px 12px;border-radius:9px;border:1px solid var(--border);background:var(--surface) url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22><path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%239a8c78%22 stroke-width=%221.5%22/></svg>') no-repeat right 10px center;font-size:13.5px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer;max-width:200px">
+                    <sc-for list="{{ f.options }}" as="o" hint-placeholder-count="4">
+                      <option value="{{ o.value }}">{{ o.label }}</option>
+                    </sc-for>
+                  </select>
+                </label>
+              </sc-for>
+            </div>
+
+            <div style="display:flex;gap:16px;overflow-x:auto;padding:4px 4px 18px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch">
+              <sc-for list="{{ blk.projects }}" as="pj" hint-placeholder-count="4">
+                <button onClick="{{ pj.toggle }}" style="scroll-snap-align:start;flex:none;width:290px;text-align:left;cursor:pointer;background:var(--surface);border:1.5px solid {{ pj.ring }};border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:0 16px 30px -26px var(--shadow);transition:transform .16s,border-color .2s" style-hover="transform:translateY(-4px)">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+                    <span style="font-size:12px;font-weight:700;color:{{ blk.color }};letter-spacing:.04em">{{ pj.yearLabel }}</span>
+                    <span style="font-size:11px;color:var(--faint);font-weight:600">{{ pj.funder }}</span>
+                  </div>
+                  <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:19px;line-height:1.15;margin:0;color:var(--text);text-wrap:balance">{{ pj.name }}</h3>
+                  <sc-if value="{{ pj.phaseBadge }}" hint-placeholder-val="{{ false }}">
+                    <span style="align-self:flex-start;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:6px;background:{{ blk.color }}22;color:{{ blk.color }}">{{ pj.phaseBadge }}</span>
+                  </sc-if>
+                  <p style="font-size:13.5px;line-height:1.5;color:var(--dim);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">{{ pj.what }}</p>
+                  <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+                    <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;color:var(--text)">{{ pj.money }}</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:6px">
+                      <sc-for list="{{ pj.chips }}" as="c" hint-placeholder-count="2">
+                        <span style="font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:6px;background:{{ c.bg }};color:{{ c.fg }}">{{ c.label }}</span>
+                      </sc-for>
+                    </div>
+                    <span style="font-size:12.5px;font-weight:700;color:{{ blk.color }}">{{ pj.actionLabel }}</span>
+                  </div>
+                </button>
+              </sc-for>
+            </div>
+
+            <sc-if value="{{ blk.open }}" hint-placeholder-val="{{ false }}">
+              <div key="{{ blk.open.name }}" class="rise" style="margin-top:8px;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:var(--surface)">
+                <div style="height:8px;background:{{ blk.open.color }}"></div>
+                <div style="padding:clamp(24px,3vw,38px)">
+                  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px">
+                    <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(22px,2.6vw,30px);margin:0;color:var(--text);flex:1;min-width:240px">{{ blk.open.name }}</h3>
+                    <div style="text-align:right">
+                      <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(20px,2.4vw,28px);color:{{ blk.open.color }};line-height:1.1">{{ blk.open.money }}</div>
+                      <div style="font-size:11px;color:var(--faint);margin-top:4px;max-width:260px">{{ blk.open.investNote }}</div>
+                    </div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px 28px;margin:22px 0 26px">
+                    <sc-for list="{{ blk.open.details }}" as="d" hint-placeholder-count="5">
+                      <div style="border-left:3px solid {{ blk.open.color }};padding-left:14px">
+                        <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:{{ blk.open.color }};font-weight:800;margin-bottom:5px">{{ d.k }}</div>
+                        <div style="font-size:14.5px;line-height:1.55;color:var(--text)">{{ d.v }}</div>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <sc-if value="{{ blk.open.hasPhases }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin-bottom:26px">
+                      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:800;margin-bottom:14px">{{ blk.open.phasesLabel }}</div>
+                      <div style="display:flex;flex-direction:column;gap:0">
+                        <sc-for list="{{ blk.open.phases }}" as="ph" hint-placeholder-count="3">
+                          <div style="display:grid;grid-template-columns:auto 1fr;gap:16px">
+                            <div style="display:flex;flex-direction:column;align-items:center">
+                              <span style="width:14px;height:14px;border-radius:50%;background:{{ blk.open.color }};border:3px solid var(--surface);box-shadow:0 0 0 1.5px {{ blk.open.color }}"></span>
+                              <span style="flex:1;width:2px;background:{{ blk.open.color }}44;min-height:24px"></span>
+                            </div>
+                            <div style="padding-bottom:20px">
+                              <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px">
+                                <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:16px;color:var(--text)">{{ ph.yearLabel }}</span>
+                                <span style="font-size:12.5px;color:var(--faint)">{{ ph.period }}</span>
+                                <span style="font-size:12.5px;font-weight:700;color:{{ blk.open.color }}">{{ ph.money }}</span>
+                              </div>
+                              <div style="font-size:13.5px;line-height:1.5;color:var(--dim);margin-top:3px">{{ ph.note }}</div>
+                            </div>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </div>
+                  </sc-if>
+                  <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:22px;border-top:1px solid var(--border)">
+                    <sc-for list="{{ blk.open.meta }}" as="mt" hint-placeholder-count="6">
+                      <div style="font-size:12px;padding:7px 12px;border-radius:8px;background:var(--surface2)">
+                        <span style="color:var(--faint);font-weight:700">{{ mt.k }}:</span> <span style="color:var(--text);font-weight:600">{{ mt.v }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </section>
+      <section style="background:#1a130b;padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
+        <div style="max-width:1100px;margin:0 auto">
+          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);color:#fbf7ef;margin:0 0 8px">{{ T.process_head }}</h2>
+          <p style="color:rgba(251,247,239,.55);margin:0 0 36px;font-size:16px">CBO-based · Rights-based · Convergent with public systems</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px">
+            <sc-for list="{{ process }}" as="pr" hint-placeholder-count="4">
+              <div style="padding:28px 24px;border-radius:16px;background:rgba(251,247,239,.05);border:1px solid rgba(251,247,239,.12);border-top:4px solid {{ pr.color }}">
+                <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;color:{{ pr.color }}">STEP {{ pr.step }}</span>
+                <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:19px;margin:8px 0 8px;color:#fbf7ef">{{ pr.name }}</h3>
+                <p style="font-size:14.5px;line-height:1.55;color:rgba(251,247,239,.7);margin:0">{{ pr.body }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </div>
+  </sc-if>
+
+  <!-- ============ IMPACT ============ -->
+  <sc-if value="{{ isImpact }}" hint-placeholder-val="{{ true }}">
+    <div key="impact" class="rise">
+      <div style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px) clamp(30px,4vw,50px);max-width:1100px;margin:0 auto">
+        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#D2305C;font-weight:700">{{ T.impact_eyebrow }}</span>
+        <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(34px,5.5vw,68px);line-height:1;letter-spacing:-.03em;margin:14px 0 18px;color:var(--text)">{{ T.impact_title }}</h1>
+        <p style="font-size:18px;line-height:1.6;color:var(--dim);max-width:680px;margin:0">{{ T.impact_sub }}</p>
+      </div>
+      <section style="padding:0 clamp(20px,5vw,64px) clamp(40px,5vw,60px);max-width:1200px;margin:0 auto">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+          <sc-for list="{{ impactGrid }}" as="s" hint-placeholder-count="12">
+            <div style="padding:30px 26px;border-radius:18px;background:var(--surface);border:1px solid var(--border);border-bottom:5px solid {{ s.color }}">
+              <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,3.4vw,44px);color:{{ s.color }};line-height:1" data-count-id="{{ s.id }}" data-count-to="{{ s.to }}" data-count-dec="{{ s.dec }}" data-count-comma="{{ s.comma }}" data-count-prefix="{{ s.prefix }}" data-count-suffix="{{ s.suffix }}">{{ s.value }}</div>
+              <div style="margin-top:12px;font-size:14.5px;line-height:1.45;color:var(--dim)">{{ s.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+      <section style="background:#0E5565;padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
+        <div style="max-width:1100px;margin:0 auto">
+          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);color:#fff;margin:0 0 36px">{{ T.reach_head }}</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px">
+            <sc-for list="{{ reach }}" as="r" hint-placeholder-count="6">
+              <div>
+                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,3.6vw,46px);color:#EAAE28;line-height:1" data-count-id="{{ r.id }}" data-count-to="{{ r.to }}" data-count-comma="{{ r.comma }}" data-count-suffix="{{ r.suffix }}">{{ r.value }}</div>
+                <div style="margin-top:8px;font-size:14px;color:rgba(251,247,239,.85);text-transform:uppercase;letter-spacing:.04em;font-weight:600">{{ r.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </div>
+  </sc-if>
+
+  <!-- ============ STORIES ============ -->
+  <sc-if value="{{ isStories }}" hint-placeholder-val="{{ true }}">
+    <div key="stories" class="rise">
+      <div style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px) clamp(30px,4vw,50px);max-width:1100px;margin:0 auto">
+        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#D2305C;font-weight:700">{{ T.stories_eyebrow }}</span>
+        <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(34px,5.5vw,68px);line-height:1;letter-spacing:-.03em;margin:14px 0 18px;color:var(--text)">{{ T.stories_title }}</h1>
+        <p style="font-size:18px;line-height:1.6;color:var(--dim);max-width:680px;margin:0">{{ T.stories_sub }}</p>
+      </div>
+      <section style="padding:0 clamp(20px,5vw,64px) clamp(50px,7vw,90px);max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px">
+        <sc-for list="{{ storyCards }}" as="sc" hint-placeholder-count="4">
+          <article style="border-radius:20px;overflow:hidden;background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column">
+            <div style="position:relative;aspect-ratio:16/10;background:{{ sc.color }}1a;display:flex;align-items:center;justify-content:center;padding:14px">
+              <sc-if value="{{ sc.img }}" hint-placeholder-val="{{ false }}"><img src="{{ sc.img }}" alt="" style="max-height:100%;max-width:82%;object-fit:contain" /></sc-if>
+              <span style="position:absolute;top:14px;left:14px;padding:5px 12px;border-radius:999px;background:{{ sc.color }};color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em">{{ sc.right }}</span>
+            </div>
+            <div style="padding:26px;flex:1;display:flex;flex-direction:column">
+              <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;margin:0 0 10px;color:var(--text)">{{ sc.title }}</h3>
+              <p style="font-size:15px;line-height:1.6;color:var(--dim);margin:0 0 16px;flex:1">{{ sc.body }}</p>
+              <p style="font-family:'Newsreader';font-style:italic;font-size:16px;line-height:1.4;color:{{ sc.color }};margin:0;padding-top:16px;border-top:1px solid var(--border)">“{{ sc.quote }}”</p>
+            </div>
+          </article>
+        </sc-for>
+      </section>
+    </div>
+  </sc-if>
+
+  <!-- ============ GET INVOLVED ============ -->
+  <sc-if value="{{ isInvolved }}" hint-placeholder-val="{{ true }}">
+    <div key="involved" class="rise">
+      <div style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px) clamp(30px,4vw,50px);max-width:1100px;margin:0 auto">
+        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#556223;font-weight:700">{{ T.involved_eyebrow }}</span>
+        <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(34px,5.5vw,68px);line-height:1;letter-spacing:-.03em;margin:14px 0 18px;color:var(--text)">{{ T.involved_title }}</h1>
+        <p style="font-size:18px;line-height:1.6;color:var(--dim);max-width:680px;margin:0">{{ T.involved_sub }}</p>
+      </div>
+      <section style="padding:0 clamp(20px,5vw,64px) clamp(40px,5vw,60px);max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+        <sc-for list="{{ involve }}" as="iv" hint-placeholder-count="6">
+          <div style="padding:30px 26px;border-radius:18px;background:var(--surface);border:1px solid var(--border);border-top:5px solid {{ iv.color }}">
+            <div style="width:42px;height:42px;border-radius:11px;background:{{ iv.color }};color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:18px">{{ iv.glyph }}</div>
+            <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:19px;margin:16px 0 8px;color:var(--text)">{{ iv.title }}</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:var(--dim);margin:0">{{ iv.body }}</p>
+          </div>
+        </sc-for>
+      </section>
+      <section style="padding:clamp(20px,3vw,40px) clamp(20px,5vw,64px) clamp(60px,8vw,100px);max-width:1100px;margin:0 auto">
+        <div style="border-radius:24px;background:#4F0E73;color:#fff;padding:clamp(32px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px;align-items:center">
+          <div>
+            <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.2vw,38px);margin:0 0 14px;line-height:1.05">{{ T.involved_cta_title }}</h2>
+            <p style="font-size:16px;line-height:1.6;color:rgba(255,255,255,.8);margin:0 0 24px">{{ T.involved_cta_sub }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:12px">
+              <button onClick="{{ goDonate }}" style="padding:14px 28px;background:#EAAE28;color:#1f1710;border:none;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer">{{ T.donate_now }}</button>
+              <a href="mailto:joinus@dehatindia.org" style="padding:14px 28px;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;font-weight:600;font-size:15px">{{ T.email_us }}</a>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;font-size:15px">
+            <div style="display:flex;gap:12px"><span style="color:#EAAE28;font-weight:700;min-width:70px">{{ T.f_email }}</span><a href="mailto:joinus@dehatindia.org" style="color:#fff">joinus@dehatindia.org</a></div>
+            <div style="display:flex;gap:12px"><span style="color:#EAAE28;font-weight:700;min-width:70px">{{ T.f_phone }}</span><a href="tel:+919415054079" style="color:#fff">+91 94150 54079</a></div>
+            <div style="display:flex;gap:12px"><span style="color:#EAAE28;font-weight:700;min-width:70px">{{ T.f_web }}</span><a href="https://www.dehatindia.org/" target="_blank" style="color:#fff">dehatindia.org</a></div>
+            <div style="display:flex;gap:12px"><span style="color:#EAAE28;font-weight:700;min-width:70px">{{ T.f_address }}</span><span style="color:rgba(255,255,255,.85)">Sewakunj, Maseehabad Rd via Kati Chauraha, Huzoorpur Marg, Bahraich, UP 271801</span></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </sc-if>
+</main>
+
+<footer style="background:#120d07;color:rgba(251,247,239,.75);padding:clamp(50px,6vw,80px) clamp(20px,5vw,64px) 40px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px">
+    <div>
+      <img src="./dehat-logo-horizontal.png" alt="DEHAT — Because every child matters" style="height:clamp(44px,5vw,54px);width:auto;max-width:100%;display:block;filter:brightness(0) invert(1)" />
+      <p style="font-size:15px;line-height:1.6;margin:14px 0 0;max-width:340px">{{ T.foot_desc }}</p>
+      <div style="display:flex;gap:8px;margin-top:20px;flex-wrap:wrap">
+        <span style="font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(251,247,239,.08);color:rgba(251,247,239,.6)">12AB(1)(b)</span>
+        <span style="font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(251,247,239,.08);color:rgba(251,247,239,.6)">80G(5)</span>
+        <span style="font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(251,247,239,.08);color:rgba(251,247,239,.6)">FCRA 136260010</span>
+        <span style="font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(251,247,239,.08);color:rgba(251,247,239,.6)">Reg. 370/2000-01</span>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#EAAE28;font-weight:700;margin-bottom:16px">{{ T.foot_explore }}</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+          <button onClick="{{ item.go }}" style="background:none;border:none;text-align:left;padding:0;color:rgba(251,247,239,.75);font-size:15px;cursor:pointer" style-hover="color:#EAAE28">{{ item.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#EAAE28;font-weight:700;margin-bottom:16px">{{ T.foot_reach }}</div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+        <a href="mailto:joinus@dehatindia.org" style="color:rgba(251,247,239,.75)">joinus@dehatindia.org</a>
+        <a href="tel:+919415054079" style="color:rgba(251,247,239,.75)">+91 94150 54079</a>
+        <a href="https://www.dehatindia.org/" target="_blank" style="color:rgba(251,247,239,.75)">dehatindia.org</a>
+        <span style="color:rgba(251,247,239,.55);line-height:1.5">Bahraich, Uttar Pradesh 271801, India</span>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(251,247,239,.1);font-size:13px;color:rgba(251,247,239,.5)">{{ T.foot_rights }}</div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { view: 'home', program: 0, node: 0, district: 0, story: 0, counts: {}, projects: [], filters: {}, expanded: null, theme: 'dark', lang: 'en' };
+
+  componentDidMount() {
+    this._applyTheme();
+    this._ensure();
+    this._loadProjects();
+    this._timer = setInterval(() => {
+      if (this.state.view === 'home') this.setState(s => ({ story: (s.story + 1) % this._stories().length }));
+    }, 7000);
+  }
+  componentWillUnmount() { clearInterval(this._timer); if (this._io) this._io.disconnect(); if (this._mo) this._mo.disconnect(); if (this._raf) cancelAnimationFrame(this._raf); }
+
+  // ---------- theme + language ----------
+  _applyTheme() {
+    try {
+      const root = document.documentElement;
+      root.setAttribute('data-theme', this.state.theme);
+      const L = this._langs().find(l => l.code === this.state.lang);
+      root.setAttribute('dir', (L && L.rtl) ? 'rtl' : 'ltr');
+    } catch (e) {}
+  }
+  _toggleTheme() { this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }), () => { this._applyTheme(); this._syncMapTheme(); }); }
+  _syncMapTheme() { try { if (this._mapFrame && this._mapFrame.contentWindow) this._mapFrame.contentWindow.postMessage({ theme: this.state.theme }, '*'); } catch (e) {} }
+  _setLang(code) { this.setState({ lang: code }, () => this._applyTheme()); }
+
+  _langs() {
+    return [
+      { code:'en', label:'English', group:'global' }, { code:'ar', label:'العربية', group:'global', rtl:true },
+      { code:'zh', label:'中文', group:'global' }, { code:'fr', label:'Français', group:'global' },
+      { code:'ru', label:'Русский', group:'global' }, { code:'es', label:'Español', group:'global' },
+      { code:'hi', label:'हिन्दी', group:'indian' }, { code:'bn', label:'বাংলা', group:'indian' },
+      { code:'mr', label:'मराठी', group:'indian' }, { code:'te', label:'తెలుగు', group:'indian' },
+      { code:'ta', label:'தமிழ்', group:'indian' }, { code:'gu', label:'ગુજરાતી', group:'indian' },
+      { code:'ur', label:'اردو', group:'indian', rtl:true }, { code:'kn', label:'ಕನ್ನಡ', group:'indian' },
+      { code:'or', label:'ଓଡ଼ିଆ', group:'indian' }, { code:'ml', label:'മലയാളം', group:'indian' },
+      { code:'pa', label:'ਪੰਜਾਬੀ', group:'indian' }, { code:'as', label:'অসমীয়া', group:'indian' },
+      { code:'mai', label:'मैथिली', group:'indian' }, { code:'sat', label:'ᱥᱟᱱᱛᱟᱲᱤ', group:'indian' },
+      { code:'ks', label:'کٲشُر', group:'indian', rtl:true }, { code:'ne', label:'नेपाली', group:'indian' },
+      { code:'kok', label:'कोंकणी', group:'indian' }, { code:'sd', label:'سنڌي', group:'indian', rtl:true },
+      { code:'doi', label:'डोगरी', group:'indian' }, { code:'mni', label:'ꯃꯤꯇꯩꯂꯣꯟ', group:'indian' },
+      { code:'brx', label:'बड़ो', group:'indian' }, { code:'sa', label:'संस्कृतम्', group:'indian' },
+    ];
+  }
+  _dict() {
+    const EN = {
+      nav_home:'Home', nav_work:'Our Work', nav_impact:'Impact', nav_stories:'Stories', nav_involved:'Get Involved',
+      donate:'Donate', since:'Since 1989', org_full:'Developmental Association for Human Advancement',
+      language:'Language', lang_indian:'Indian languages', lang_global:'Global (UN)',
+      hero_title_a:'A child-centred society where every child realises their ', hero_title_b:'rights', hero_title_c:' — safe, dignified, whole.',
+      hero_sub:'We work with communities and public systems along the Indo-Nepal Terai so that children\u2019s rights are not just written down, but recognised, accessed, and upheld in everyday life.',
+      hero_cta1:'Stand with communities', hero_cta2:'See how we work', hero_photo:'PHOTO — Child Parliament leaders, Lohra Village, Bahraich',
+      hero_principle:'Jinka mudda, unki agwai — those whose lives are shaped by an issue lead the response to it.',
+      stat_children:'Children & adolescents reached', stat_invested:'Invested in community systems since 2000', stat_resources:'Public resources accessed', stat_districts:'Districts across 2 states',
+      vision:'Vision', mission:'Mission', theory:'Theory of Change',
+      vision_body:'A child-centred society where every child realises their rights and lives a safe, dignified, and fulfilling life.',
+      mission_body:'To work with communities and systems to realise existing power, ensuring children\u2019s rights are recognised, accessed, and upheld in everyday life.',
+      theory_body:'When communities act and systems respond in convergence, children\u2019s survival, development, protection, and participation are realised and sustained.',
+      eyebrow_work:'What we do', work_head:'Four fronts, one converging response.',
+      eyebrow_where:'Where we work', where_head:'22 districts. 2 states. One border.',
+      where_sub:'We work across the eastern Indo-Nepal border in Uttar Pradesh and in Maharashtra — regions bound by a shared structural vulnerability. Tap a district to see the ground.',
+      eyebrow_cycle:'The structural vulnerability cycle', cycle_head:'Risks don\u2019t occur in isolation.',
+      cycle_sub:'They reinforce each other across generations — unless systems respond in time. Follow one girl’s path through the trap, stage by stage.',
+      cycle_note:'Each stage shows the worst recorded value across Uttar Pradesh’s Indo-Nepal Terai belt — Bahraich, Shravasti, Balrampur, Lakhimpur Kheri, Siddharthnagar, Maharajganj and Kushinagar — read from the NFHS-5 (2019–21) district fact-sheet dataset (MoHFW / IIPS) unless another source is named on the card, with its district and source named. Maternal mortality is reported at state level. Child labour, the poorest wealth bracket and infant and under-5 mortality rest on records still awaiting re-verification; India publishes no official district series for infant or under-5 mortality.',
+      eyebrow_process:'The process', process_head:'When communities act, systems respond.', eyebrow_stories:'Stories of change',
+      cta_donate:'Donate', cta_donate_b:'Contribute online or offline — funds or material — to community-led work.', cta_donate_a:'Give now',
+      cta_vol:'Volunteer', cta_vol_b:'Intern, work virtually, or become a DEHAT Fellow.', cta_vol_a:'Join us',
+      cta_partner:'Partner', cta_partner_b:'Corporate, academic, or institutional partnerships.', cta_partner_a:'Collaborate',
+      work_title:'Rights, realised in everyday life.',
+      work_sub:'Explore every DEHAT project under its programme. Filter by year, location, framework, CSR & FCRA category or UNCRC right — and open any project for the full What, Where, How, When, Why and Investment.',
+      portfolio_total:'Itemised grant portfolio',
+      filter_year:'Year', filter_location:'Location', filter_sdg:'SDG / MDG', filter_csr:'CSR · Schedule VII', filter_fcra:'FCRA category', filter_uncrc:'UNCRC right', filter_funder:'Funder', filter_all:'All',
+      open_details:'Open details', close_details:'Close details', phases_label:'Phases',
+      d_what:'What', d_where:'Where', d_how:'How', d_why:'Why', d_when:'When', d_invest:'How much (invested)',
+      m_location:'Location', m_sdg:'SDG / MDG', m_csr:'CSR · Schedule VII', m_fcra:'FCRA category', m_uncrc:'UNCRC right', m_funder:'Funder',
+      invest_note:'Shown in ₹ & USD, converted at the project\u2019s own-year rate.',
+      impact_eyebrow:'Impact', impact_title:'Since 2000, accompanying communities as they claim rights and hold systems to account.',
+      impact_sub:'Started as a youth collective in 1989, registered in 2000. These figures show scale; what they stand for is communities, field workers and public institutions acting together.',
+      reach_head:'Geographical reach so far', reach_states:'States', reach_districts:'Districts', reach_blocks:'Blocks', reach_villages:'Villages', reach_children:'Children & adolescents', reach_farmers:'Women farmers',
+      stories_eyebrow:'Stories of change', stories_title:'Reality, then transformation.',
+      stories_sub:'Every case story is organised around one of the four child rights — survival, development, protection, participation.',
+      involved_eyebrow:'Get involved', involved_title:'Realise existing power — with us.',
+      involved_sub:'Whether you give an hour, a skill, or a rupee, you become part of a system that responds.',
+      involved_cta_title:'Stand with communities today.',
+      involved_cta_sub:'Online or offline, funds or material — every contribution flows into a rights-based, community-supported response.',
+      donate_now:'Donate now', email_us:'Email us', f_email:'Email', f_phone:'Phone', f_web:'Web', f_address:'Address',
+      foot_explore:'Explore', foot_reach:'Reach us',
+      foot_desc:'Developmental Association for Human Advancement — working with communities and systems so children\u2019s rights are recognised, accessed, and upheld.',
+      foot_rights:'© 2026 DEHAT · Started as a youth collective 1989 · Registered 2000',
+    };
+    const HI = {
+      nav_home:'मुख पृष्ठ', nav_work:'हमारा कार्य', nav_impact:'प्रभाव', nav_stories:'कहानियाँ', nav_involved:'साथ जुड़ें',
+      donate:'दान करें', since:'1989 से', org_full:'मानव उन्नयन हेतु विकास संगठन',
+      language:'भाषा', lang_indian:'भारतीय भाषाएँ', lang_global:'वैश्विक (UN)',
+      hero_title_a:'एक बाल-केंद्रित समाज जहाँ हर बच्चा अपने ', hero_title_b:'अधिकारों', hero_title_c:' को पाए — सुरक्षित, सम्मानित और सम्पूर्ण।',
+      hero_sub:'हम भारत-नेपाल तराई क्षेत्र में समुदायों और सार्वजनिक तंत्रों के साथ कार्य करते हैं ताकि बच्चों के अधिकार केवल कागज़ पर न रहें, बल्कि रोज़मर्रा के जीवन में पहचाने, प्राप्त और सुनिश्चित किए जाएँ।',
+      hero_cta1:'समुदायों के साथ खड़े हों', hero_cta2:'हमारा कार्य देखें', hero_photo:'फ़ोटो — बाल संसद नेता, लोहरा गाँव, बहराइच',
+      hero_principle:'जिनका मुद्दा, उनकी अगुवाई — जिनके जीवन को कोई मुद्दा प्रभावित करता है, वही उसका नेतृत्व करता है।',
+      stat_children:'बच्चों व किशोरों तक पहुँच', stat_invested:'2000 से सामुदायिक तंत्रों में निवेश', stat_resources:'सार्वजनिक संसाधन प्राप्त', stat_districts:'2 राज्यों के ज़िले',
+      vision:'दृष्टि', mission:'लक्ष्य', theory:'परिवर्तन का सिद्धांत',
+      vision_body:'एक बाल-केंद्रित समाज जहाँ हर बच्चा अपने अधिकार पाए और सुरक्षित, सम्मानित तथा परिपूर्ण जीवन जिए।',
+      mission_body:'समुदायों और तंत्रों के साथ मिलकर मौजूदा शक्ति को साकार करना, ताकि बच्चों के अधिकार रोज़मर्रा के जीवन में पहचाने, प्राप्त और सुनिश्चित हों।',
+      theory_body:'जब समुदाय कार्य करते हैं और तंत्र मिलकर प्रतिक्रिया देते हैं, तब बच्चों का जीवन, विकास, संरक्षण और सहभागिता साकार और स्थायी होती है।',
+      eyebrow_work:'हम क्या करते हैं', work_head:'चार मोर्चे, एक साझा प्रतिक्रिया।',
+      eyebrow_where:'हम कहाँ कार्य करते हैं', where_head:'22 ज़िले। 2 राज्य। एक सीमा।',
+      where_sub:'हम उत्तर प्रदेश की पूर्वी भारत-नेपाल सीमा और महाराष्ट्र में कार्य करते हैं — साझा संरचनात्मक असुरक्षा से बंधे क्षेत्र। ज़मीनी हकीकत देखने हेतु किसी ज़िले पर टैप करें।',
+      eyebrow_cycle:'संरचनात्मक असुरक्षा का चक्र', cycle_head:'जोखिम अकेले नहीं आते।',
+      cycle_sub:'ये पीढ़ी-दर-पीढ़ी एक-दूसरे को मज़बूत करते हैं — जब तक तंत्र समय पर प्रतिक्रिया न दे। एक बच्ची के सफ़र को चरण-दर-चरण देखें।',
+      cycle_note:'प्रत्येक चरण उत्तर प्रदेश की भारत-नेपाल तराई पट्टी — बहराइच, श्रावस्ती, बलरामपुर, सिद्धार्थनगर, महराजगंज और कुशीनगर — में दर्ज सबसे गंभीर मान दर्शाता है (DEHAT असुरक्षा सूचकांक: NFHS-5, SRS, UDISE+, जनगणना एवं प्रशासनिक अभिलेख), ज़िले व स्रोत सहित। मातृ मृत्यु दर राज्य स्तर पर दर्ज है।',
+      eyebrow_process:'प्रक्रिया', process_head:'जब समुदाय कार्य करते हैं, तंत्र प्रतिक्रिया देते हैं।', eyebrow_stories:'परिवर्तन की कहानियाँ',
+      cta_donate:'दान करें', cta_donate_b:'समुदाय-नेतृत्व वाले कार्य में ऑनलाइन या ऑफ़लाइन — धन या सामग्री से — योगदान दें।', cta_donate_a:'अभी दें',
+      cta_vol:'स्वयंसेवा', cta_vol_b:'इंटर्नशिप करें, वर्चुअल कार्य करें या DEHAT फ़ेलो बनें।', cta_vol_a:'जुड़ें',
+      cta_partner:'साझेदारी', cta_partner_b:'कॉर्पोरेट, शैक्षणिक या संस्थागत साझेदारी।', cta_partner_a:'सहयोग करें',
+      work_title:'अधिकार, रोज़मर्रा के जीवन में साकार।',
+      work_sub:'प्रत्येक DEHAT परियोजना को उसके कार्यक्रम के अंतर्गत देखें। वर्ष, स्थान, ढाँचा, CSR व FCRA श्रेणी या UNCRC अधिकार से छाँटें — और किसी भी परियोजना को खोलकर पूरा क्या, कहाँ, कैसे, कब, क्यों और निवेश देखें।',
+      portfolio_total:'मदवार अनुदान पोर्टफ़ोलियो',
+      filter_year:'वर्ष', filter_location:'स्थान', filter_sdg:'SDG / MDG', filter_csr:'CSR · अनुसूची VII', filter_fcra:'FCRA श्रेणी', filter_uncrc:'UNCRC अधिकार', filter_funder:'वित्तपोषक', filter_all:'सभी',
+      open_details:'विवरण खोलें', close_details:'विवरण बंद करें', phases_label:'चरण',
+      d_what:'क्या', d_where:'कहाँ', d_how:'कैसे', d_why:'क्यों', d_when:'कब', d_invest:'कितना (निवेश)',
+      m_location:'स्थान', m_sdg:'SDG / MDG', m_csr:'CSR · अनुसूची VII', m_fcra:'FCRA श्रेणी', m_uncrc:'UNCRC अधिकार', m_funder:'वित्तपोषक',
+      invest_note:'₹ व USD में, परियोजना के अपने वर्ष की दर पर परिवर्तित।',
+      impact_eyebrow:'प्रभाव', impact_title:'2000 से, समुदायों के साथ — जब वे अपने अधिकार माँगते और व्यवस्थाओं को जवाबदेह बनाते हैं।',
+      impact_sub:'1989 में युवा समूह के रूप में शुरुआत, 2000 में पंजीकृत। ये आँकड़े पैमाना दिखाते हैं; इनके पीछे समुदाय, कार्यकर्ता और सार्वजनिक संस्थाएँ मिलकर काम करती हैं।',
+      reach_head:'अब तक का भौगोलिक विस्तार', reach_states:'राज्य', reach_districts:'ज़िले', reach_blocks:'ब्लॉक', reach_villages:'गाँव', reach_children:'बच्चे व किशोर', reach_farmers:'महिला किसान',
+      stories_eyebrow:'परिवर्तन की कहानियाँ', stories_title:'हकीकत, फिर बदलाव।',
+      stories_sub:'हर कहानी चार बाल अधिकारों में से एक के इर्द-गिर्द है — जीवन, विकास, संरक्षण, सहभागिता।',
+      involved_eyebrow:'साथ जुड़ें', involved_title:'मौजूदा शक्ति को साकार करें — हमारे साथ।',
+      involved_sub:'चाहे आप एक घंटा दें, एक कौशल या एक रुपया — आप उस तंत्र का हिस्सा बनते हैं जो प्रतिक्रिया देता है।',
+      involved_cta_title:'आज समुदायों के साथ खड़े हों।',
+      involved_cta_sub:'ऑनलाइन या ऑफ़लाइन, धन या सामग्री — हर योगदान एक अधिकार-आधारित, समुदाय-समर्थित प्रतिक्रिया में जुड़ता है।',
+      donate_now:'अभी दान करें', email_us:'ईमेल करें', f_email:'ईमेल', f_phone:'फ़ोन', f_web:'वेब', f_address:'पता',
+      foot_explore:'खोजें', foot_reach:'संपर्क करें',
+      foot_desc:'मानव उन्नयन हेतु विकास संगठन — समुदायों और तंत्रों के साथ कार्य ताकि बच्चों के अधिकार पहचाने, प्राप्त और सुनिश्चित हों।',
+      foot_rights:'© 2026 DEHAT · 1989 में युवा समूह के रूप में शुरुआत · 2000 में पंजीकृत',
+    };
+    return { en: EN, hi: HI };
+  }
+
+  _loadProjects() {
+    if (this._projLoading || (this.state.projects && this.state.projects.length)) return;
+    this._projLoading = true;
+    import('./projects-data.js')
+      .then(m => { this._pd = m; this.setState({ projects: m.PROJECTS || [] }); })
+      .catch(() => { this._projLoading = false; });
+  }
+  _progMeta(T) {
+    return {
+      sol: { name: 'School of Leadership', color: '#EAAE28', tag: 'Right to Participation', detail: 'Children evolve as leaders — from Child Parliaments to youth groups — claiming rights and driving public systems.' },
+      re:  { name: 'Rights & Entitlements', color: '#0E5565', tag: 'A social movement', detail: 'Bridging communities and public systems so rights are not just available, but accessed and realised.' },
+      hp:  { name: 'Human Protection', color: '#D2305C', tag: 'Prevent · Protect · Prosecute', detail: 'Addressing child marriage, trafficking, abuse and migration through a timely, coordinated system response.' },
+      cj:  { name: 'Climate Justice', color: '#556223', tag: 'Natural resource management', detail: 'Sustainable farming, nutrition and livelihoods that reduce distress migration and keep children safe.' },
+    };
+  }
+  _dims(T) {
+    return [
+      { key: 'year', label: T.filter_year, get: p => [p.yearLabel] },
+      { key: 'location', label: T.filter_location, get: p => p.districts },
+      { key: 'sdg', label: T.filter_sdg, get: p => p.sdgs },
+      { key: 'csr', label: T.filter_csr, get: p => [p.csr] },
+      { key: 'fcra', label: T.filter_fcra, get: p => [p.fcra] },
+      { key: 'uncrc', label: T.filter_uncrc, get: p => p.uncrc },
+      { key: 'funder', label: T.filter_funder, get: p => [p.funder] },
+    ];
+  }
+  _setFilter(prog, dim, val) { this.setState(s => ({ filters: { ...s.filters, [prog + '|' + dim]: val }, expanded: null })); }
+  _toggleProject(name) { this.setState(s => ({ expanded: s.expanded === name ? null : name })); }
+  _money(inr, year) {
+    if (!this._pd || inr == null) return null;
+    return this._pd.fmtINR(inr) + ' · ' + this._pd.fmtUSD(this._pd.usd(inr, year));
+  }
+
+  _ensure() {
+    if (this._ready) return;
+    this._ready = true;
+    this._loadProjects();
+    try { if (this._io) this._io.disconnect(); } catch (e) {}
+    try { if (this._mo) this._mo.disconnect(); } catch (e) {}
+    this._active = new Map(); this._obs = new Set(); this._started = new Set();
+    this._io = new IntersectionObserver((es) => {
+      es.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target, id = el.dataset.countId;
+        this._io.unobserve(el);
+        if (this._started.has(id) || this.state.counts[id] != null) return;
+        this._started.add(id);
+        this._active.set(id, {
+          to: parseFloat(el.dataset.countTo) || 0,
+          dec: parseInt(el.dataset.countDec || '0', 10),
+          comma: el.dataset.countComma === 'true',
+          prefix: el.dataset.countPrefix && el.dataset.countPrefix !== 'undefined' ? el.dataset.countPrefix : '',
+          suffix: el.dataset.countSuffix && el.dataset.countSuffix !== 'undefined' ? el.dataset.countSuffix : '',
+          t0: performance.now(),
+        });
+        this._loop();
+      });
+    }, { threshold: 0.25 });
+    const boot = () => { this._scan(); try { this._mo = new MutationObserver(() => this._scan()); this._mo.observe(document.body, { childList: true, subtree: true }); } catch (e) {} };
+    if (document.body) boot(); else setTimeout(boot, 0);
+  }
+  _scan() {
+    if (!this._io) return;
+    document.querySelectorAll('[data-count-id]').forEach(el => {
+      const id = el.dataset.countId;
+      if (!this._started.has(id) && this.state.counts[id] == null && !this._obs.has(id)) { this._obs.add(id); this._io.observe(el); }
+    });
+  }
+  _fmt(v, c) {
+    let n = v.toFixed(c.dec);
+    if (c.comma) { const p = n.split('.'); p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); n = p.join('.'); }
+    return c.prefix + n + c.suffix;
+  }
+  _loop() {
+    if (this._raf) return;
+    const step = () => {
+      const now = performance.now(); const upd = {}; let more = false;
+      this._active.forEach((c, id) => {
+        const p = Math.min(1, (now - c.t0) / 1500); const e = 1 - Math.pow(1 - p, 3);
+        upd[id] = this._fmt(c.to * e, c);
+        if (p < 1) more = true; else this._active.delete(id);
+      });
+      this.setState(s => ({ counts: { ...s.counts, ...upd } }));
+      this._raf = more ? requestAnimationFrame(step) : null;
+    };
+    this._raf = requestAnimationFrame(step);
+  }
+
+  _stories() {
+    return [
+      { quote: "I was beaten and broken, left with nothing. Now I stand tall, and I'm making sure no girl in my village stays in the dark.", name: 'Shakti', age: 31, program: 'Human Protection' },
+      { quote: "I claimed my right to choose, refused early marriage, and became the first girl from my village to study nursing in a city.", name: 'Ankita', age: 18, program: 'School of Leadership' },
+    ];
+  }
+  _programs() {
+    return [
+      { name: 'School of Leadership', tag: 'Right to Participation', color: '#EAAE28', glyph: '01',
+        detail: 'From Child Parliaments to adolescent and youth groups, children evolve as leaders — participating, claiming rights, and driving community and public systems as citizens of today.',
+        stats: [{ num: '112+', label: 'Village-level child protection systems strengthened' }, { num: '5878+', label: 'Children in need of care & protection supported' }] },
+      { name: 'Rights & Entitlements', tag: 'Social movement', color: '#0E5565', glyph: '02',
+        detail: 'Bridging communities and public systems to ensure access to entitlements — so that rights are not just available, but accessed, realised, and sustained in everyday life.',
+        stats: [{ num: '₹7.61 Cr+', label: 'Worth of resources accessed through public systems' }, { num: '7000+', label: 'Families accessed citizenship & land rights' }] },
+      { name: 'Human Protection', tag: 'Prevention · Protection · Prosecution', color: '#D2305C', glyph: '03',
+        detail: 'Addressing child marriage, trafficking, abuse, and migration through prevention, protection, prosecution, and partnership — ensuring a timely, coordinated system response.',
+        stats: [{ num: '2671+', label: 'Early marriages prevented' }, { num: '2493+', label: 'Trafficking risks responded to' }, { num: '70+', label: 'Child sexual abuse cases being pursued in courts' }] },
+      { name: 'Climate Justice', tag: 'Natural resource management', color: '#556223', glyph: '04',
+        detail: 'Strengthening sustainable farming, nutrition, and livelihoods to reduce distress migration and economic vulnerability — ensuring stability for families and safety for children.',
+        stats: [{ num: '1890+', label: 'Women-farmer families practising natural farming' }, { num: '10000+', label: 'Small & marginal women farmers' }] },
+    ];
+  }
+  _cycle() {
+    // Every stage of the Structural Vulnerability Cycle. Figures = worst recorded value
+    // across UP's Indo-Nepal Terai belt (Bahraich, Shravasti, Balrampur, Lakhimpur Kheri,
+    // Siddharthnagar, Maharajganj, Kushinagar), read from the NFHS-5 (2019-21) district
+    // fact-sheet dataset unless another source is named on the card.
+    return [
+      { img: './assets/cycle-anaemia.png', chapter: 'Before birth', short: 'Underage mother', stat: '56%', title: 'A malnourished, underage mother',
+        story: 'In Lakhimpur Kheri, 56% of pregnant women are anaemic — their bodies depleted before pregnancy even begins. Many are still girls themselves.',
+        src: 'NFHS-5 · Lakhimpur Kheri (56.1% of pregnant women) — highest in the belt', leads: 'Her own life is at risk' },
+      { img: './assets/cycle-anaemia.png', chapter: 'Before birth', short: 'Maternal deaths', stat: '167', title: 'Mothers lost to childbirth',
+        story: 'For every 100,000 live births in Uttar Pradesh, 167 mothers do not survive — among the highest rates in India. A depleted body meets a distant health system.',
+        src: 'SRS 2018–20 · Uttar Pradesh (state-level)', leads: 'And her baby starts life behind' },
+      { img: './assets/cycle-infant.png', chapter: 'Infancy', short: 'Undernourished at birth', stat: '87%', title: 'An undernourished infant at birth',
+        story: 'In Maharajganj, 87% of newborns are not breastfed within the first hour — denied the single most protective feed of their lives.',
+        src: 'NFHS-5 · Maharajganj (86.6%) — highest in the belt', leads: 'Some do not survive the first year' },
+      { img: './assets/cycle-infant.png', chapter: 'Infancy', short: 'Infant deaths', stat: '48', title: 'High infant mortality',
+        story: 'In Bahraich, 48 of every 1,000 babies die before their first birthday. Most of these deaths are preventable — with care that arrives in time.',
+        src: 'DEHAT Vulnerability Index workbook · Bahraich (48.2 per 1,000) — no official district series; unverified', leads: 'Because care rarely arrives' },
+      { img: './assets/cycle-anaemia.png', chapter: 'Infancy', short: 'No ante/post-natal care', stat: '66%', title: 'No ante- or post-natal care',
+        story: 'In Bahraich, 66% of mothers never receive the recommended four antenatal check-ups, and 48% get no post-natal check-up within two days of delivery. Mother and child pass through the most dangerous months unseen.',
+        src: 'NFHS-5 · Bahraich (65.7% no 4+ ANC; 47.6% no post-natal care within 2 days)', leads: 'So vaccines are missed too' },
+      { img: './assets/cycle-infant.png', chapter: 'Early childhood', short: 'Irregular immunisation', stat: '48%', title: 'Irregular immunisation of under-5s',
+        story: 'In Bahraich, 48% of children aged 12–23 months are not fully immunised — exposed to diseases the rest of the country has all but closed the door on.',
+        src: 'NFHS-5 · Bahraich (48.2% not fully vaccinated) — highest in the belt', leads: 'Preventable illness takes its toll' },
+      { img: './assets/cycle-infant.png', chapter: 'Early childhood', short: 'Under-5 deaths', stat: '59', title: 'High under-5 mortality',
+        story: 'In Bahraich, 59 of every 1,000 children die before turning five — to diarrhoea, pneumonia, measles. Illnesses with cures, in places without reach.',
+        src: 'DEHAT Vulnerability Index workbook · Bahraich (58.5 per 1,000) — no official district series; unverified', leads: 'The survivors carry the damage' },
+      { img: './assets/cycle-stunting.png', chapter: 'Early childhood', short: 'Malnourished child', stat: '1 in 2', title: 'A child who cannot catch up',
+        story: 'In Bahraich, 52% of children under five are stunted — the body\u2019s permanent record of hunger. What the first 1,000 days take, a lifetime rarely returns.',
+        src: 'NFHS-5 · Bahraich (52.1%)', leads: 'School becomes a harder climb' },
+      { img: './assets/cycle-menstrual.png', chapter: 'Adolescence', short: 'Menstrual dignity', stat: '53%', title: 'Adolescence without dignity',
+        story: 'In Shravasti, 53% of women aged 15–24 use no hygienic method of menstrual protection. No pads, no toilets, no one to ask — and school quietly becomes impossible.',
+        src: 'NFHS-5 · Shravasti (52.6%) — highest in the belt', leads: 'So girls start disappearing from class' },
+      { img: './assets/cycle-literacy.png', chapter: 'Adolescence', short: 'School dropout', stat: '1 in 4', title: 'Pushed out of school',
+        story: 'In Shravasti, close to one in four girls drops out of primary and upper-primary school. Each empty desk is a door closing — on literacy, on choices, on a different future.',
+        src: 'UDISE+ · Shravasti (23.5%)', leads: 'An out-of-school child is exposed' },
+      { img: './assets/cycle-migration.png', chapter: 'The exploitation loop', short: 'Child & bonded labour', stat: '1 in 9', title: 'A childhood traded for wages',
+        story: 'In Shravasti, one in eight children works instead of learning — in fields, kilns, hotels and homes. Out of school, a child becomes labour the market can price.',
+        src: 'Census / administrative records · Shravasti (11.2%)', leads: 'Or is married off instead' },
+      { img: './assets/cycle-marriage.png', chapter: 'The exploitation loop', short: 'Child marriage', stat: '37%', title: 'Married as a child',
+        story: 'In Balrampur, 37% of girls are married before eighteen. It is illegal, and it is ordinary — the fastest way a struggling family sheds a mouth to feed.',
+        src: 'NFHS-5 · Shravasti (51.9%) — highest in the belt', leads: 'Some marriages are a disguise' },
+      { img: './assets/cycle-migration.png', chapter: 'The exploitation loop', short: 'Trafficked through marriage', stat: '2,493+', title: 'Trafficking dressed as marriage',
+        story: 'Across the open Indo-Nepal border, "marriage" is a trafficker\u2019s oldest cover. DEHAT and its community networks have responded to 2,493+ trafficking risks on this border.',
+        src: 'DEHAT field data · Indo-Nepal border districts', leads: 'Meanwhile, boys leave school to earn' },
+      { img: './assets/cycle-literacy.png', chapter: 'The exploitation loop', short: 'Boys: bread-earners', stat: '43%', title: 'Boys pushed into earning',
+        story: 'In Shravasti, 43% of households live in India\u2019s poorest wealth bracket. Sons leave school for the "bread-earner position" — unsafe work in hotels, eateries and construction, far from home.',
+        src: 'NFHS wealth index · Shravasti (40.5%) — awaiting re-verification', leads: 'Daughters carry a different burden' },
+      { img: './assets/cycle-marriage.png', chapter: 'The exploitation loop', short: 'Discrimination & violence', stat: '37%', title: 'A girl facing discrimination and violence',
+        story: 'In Shravasti, 37% of ever-married women report spousal violence. For the girl married young, discrimination, abuse and domestic violence are the walls of her new home.',
+        src: 'NFHS-5 · Uttar Pradesh (33.1%) — collected in the state module only, not published by district', leads: 'And then she becomes a mother' },
+      { img: './assets/cycle-youngmother.png', chapter: 'Back to the start', short: 'The loop closes', stat: '1 in 12', title: 'A girl becomes the next mother',
+        story: 'In Bahraich, one in twelve girls aged 15–19 is already a mother — anaemic, out of school, unsupported. Her child will be born into the very trap she was. Unless the cycle is broken.',
+        src: 'NFHS-5 · Bahraich (8.4%)', leads: 'And the cycle begins again \u21ba' },
+    ];
+  }
+  _districts() {
+    return [
+      { name: 'Bahraich', state: 'Uttar Pradesh', x: '46%', y: '20%', note: 'Our home district on the Indo-Nepal border — an Aspirational District and the heart of our Child Parliament model.', stats: [{ num: '1200+', label: 'Villages reached across the footprint' }, { num: '68', label: 'Blocks worked in' }] },
+      { name: 'Shravasti', state: 'Uttar Pradesh', x: '56%', y: '15%', note: 'A high-vulnerability Terai district where anti-trafficking and early-marriage prevention converge.', stats: [{ num: '2671+', label: 'Early marriages prevented (footprint)' }] },
+      { name: 'Balrampur', state: 'Uttar Pradesh', x: '66%', y: '18%', note: 'Border district with acute distress migration; our system-strengthening work anchors here.', stats: [{ num: '2493+', label: 'Trafficking risks responded' }] },
+      { name: 'Siddharthnagar', state: 'Uttar Pradesh', x: '77%', y: '22%', note: 'Terai district with deep intergenerational nutrition gaps addressed through natural farming.', stats: [{ num: '1890+', label: 'Women-farmer families' }] },
+      { name: 'Maharajganj', state: 'Uttar Pradesh', x: '86%', y: '28%', note: 'Eastern-most UP border stretch; livelihoods and citizenship rights work.', stats: [{ num: '7000+', label: 'Families accessed land & citizenship rights' }] },
+      { name: 'Kushinagar', state: 'Uttar Pradesh', x: '84%', y: '38%', note: 'Migration-corridor district where bridge schools rehabilitate child labourers.', stats: [{ num: '2089+', label: 'Child labourers rehabilitated' }] },
+      { name: 'Sonbhadra', state: 'Uttar Pradesh', x: '72%', y: '52%', note: 'Southern UP; forest-rights and entitlement access for marginalised communities.', stats: [{ num: '₹7.61 Cr+', label: 'Public resources accessed' }] },
+      { name: 'Amethi', state: 'Uttar Pradesh', x: '52%', y: '40%', note: 'Central UP; rights & entitlements convergence work.', stats: [{ num: '5878+', label: 'Children supported' }] },
+      { name: 'Noida', state: 'Uttar Pradesh', x: '30%', y: '38%', note: 'Destination city for distress migration; survivor-centric coordination with law enforcement.', stats: [{ num: '500+', label: 'Officers trained in survivor-centric response' }] },
+      { name: 'Washim', state: 'Maharashtra', x: '26%', y: '74%', note: 'Maharashtra footprint; women-farmer collectives and nutrition security.', stats: [{ num: '10000+', label: 'Small & marginal women farmers' }] },
+      { name: 'Osmanabad', state: 'Maharashtra', x: '20%', y: '84%', note: 'Drought-prone district; climate-resilient livelihoods reduce distress migration.', stats: [{ num: '1890+', label: 'Families in natural farming' }] },
+      { name: 'Nandurbar', state: 'Maharashtra', x: '12%', y: '70%', note: 'Tribal-majority district; rights, nutrition, and child-protection systems.', stats: [{ num: '112+', label: 'Village protection systems' }] },
+      { name: 'Gadchiroli', state: 'Maharashtra', x: '40%', y: '88%', note: 'Remote forested district; forest rights and community-based protection.', stats: [{ num: '7000+', label: 'Families accessed rights' }] },
+    ];
+  }
+
+  renderVals() {
+    this._ensure();
+    const V = this.state.view;
+    const D = this._dict();
+    const T = { ...D.en, ...(D[this.state.lang] || {}) };
+    const dark = this.state.theme === 'dark';
+    const cnt = this.state.counts;
+    const cv = (id, p, sfx) => cnt[id] != null ? cnt[id] : ((p || '') + '0' + (sfx || ''));
+    const setView = (v) => () => this.setState({ view: v }, () => { window.scrollTo({ top: 0 }); });
+    const nav = [
+      { key: 'home', label: T.nav_home }, { key: 'work', label: T.nav_work },
+      { key: 'impact', label: T.nav_impact }, { key: 'stories', label: T.nav_stories },
+      { key: 'involved', label: T.nav_involved },
+    ];
+    const navItems = nav.map(n => ({
+      label: n.label, go: setView(n.key),
+      active: V === n.key ? 1 : 0,
+      color: V === n.key ? 'var(--text)' : 'var(--faint)',
+    }));
+
+    const programs = this._programs();
+    const activeProgram = programs[this.state.program];
+    const programsView = programs.map((p, i) => ({
+      ...p, select: () => this.setState({ program: i }),
+      bg: this.state.program === i ? 'var(--surface)' : 'rgba(251,247,239,.06)',
+      border: this.state.program === i ? 'transparent' : 'rgba(251,247,239,.14)',
+      textColor: this.state.program === i ? 'var(--text)' : '#fbf7ef',
+    }));
+
+    const cyc = this._cycle();
+    const N = cyc.length;
+    const cur = this.state.node;
+    const cycleNodes = cyc.map((n, i) => {
+      const active = cur === i;
+      return {
+        ...n, num: i + 1,
+        select: () => this.setState({ node: i }),
+        dot: active ? '15px' : '9px',
+        dotBg: active ? '#EAAE28' : 'rgba(255,255,255,.28)',
+        shadow: active ? '0 0 0 4px rgba(234,174,40,.28)' : 'none',
+      };
+    });
+    const activeNode = { ...cyc[cur], num: cur + 1, total: N };
+    const nextNode = () => this.setState(s => ({ node: (s.node + 1) % N }));
+    const prevNode = () => this.setState(s => ({ node: (s.node - 1 + N) % N }));
+
+    const dis = this._districts();
+    const districts = dis.map((d, i) => {
+      const active = this.state.district === i;
+      return {
+        ...d, select: () => this.setState({ district: i }),
+        dot: active ? '#EAAE28' : (d.state === 'Maharashtra' ? '#8ca03a' : '#f2789d'),
+        size: active ? '20px' : '13px',
+        anim: active ? 'pulseDot 1.6s infinite' : 'none',
+        z: active ? 5 : 1,
+      };
+    });
+    const activeDistrict = dis[this.state.district];
+
+    const stories = this._stories();
+    const activeStory = stories[this.state.story];
+    const storyDots = stories.map((s, i) => ({
+      go: () => this.setState({ story: i }),
+      w: this.state.story === i ? '30px' : '10px',
+      bg: this.state.story === i ? '#fff' : 'rgba(255,255,255,.4)',
+    }));
+
+    // ---- Projects explorer ----
+    const META = this._progMeta(T);
+    const DIMS = this._dims(T);
+    const allProjects = this.state.projects || [];
+    const uniq = (arr) => Array.from(new Set(arr));
+    let totInr = 0, totUsd = 0;
+    allProjects.forEach(p => { if (p.inr) { totInr += p.inr; if (this._pd) totUsd += this._pd.usd(p.inr, p.inrYear); } });
+    const portfolioTotal = this._pd ? (this._pd.fmtINR(totInr) + ' · ' + this._pd.fmtUSD(totUsd)) : '…';
+
+    const programmeBlocks = ['sol', 're', 'hp', 'cj'].map(prog => {
+      const m = META[prog];
+      const base = allProjects.filter(p => p.prog === prog).slice().sort((a, b) => b.year - a.year);
+      const fkey = (d) => this.state.filters[prog + '|' + d] || 'all';
+      const filtersUI = DIMS.map(d => {
+        const opts = uniq([].concat(...base.map(d.get))).filter(v => v != null);
+        return {
+          key: d.key, label: d.label, value: fkey(d.key),
+          onChange: (e) => this._setFilter(prog, d.key, e.target.value),
+          options: [{ value: 'all', label: T.filter_all }].concat(opts.map(v => ({ value: v, label: v }))),
+        };
+      });
+      const filtered = base.filter(p => DIMS.every(d => {
+        const v = fkey(d.key);
+        return v === 'all' || d.get(p).indexOf(v) !== -1;
+      }));
+      const tagChips = (p) => {
+        const chips = [];
+        p.sdgs.forEach(s => chips.push({ label: s, bg: m.color + '22', fg: dark ? '#f5eede' : m.color }));
+        p.uncrc.forEach(u => chips.push({ label: 'UNCRC · ' + u, bg: 'var(--surface2)', fg: 'var(--dim)' }));
+        return chips;
+      };
+      const openName = this.state.expanded;
+      const projects = filtered.map(p => ({
+        name: p.name, funder: p.funder, yearLabel: p.yearLabel, what: p.what,
+        money: this._money(p.inr, p.inrYear) || p.invested,
+        phaseBadge: (p.phases && p.phases.length) ? (p.phases.length + ' ' + T.phases_label) : '',
+        actionLabel: openName === p.name ? (T.close_details + ' ↑') : (T.open_details + ' ↓'),
+        toggle: () => this._toggleProject(p.name),
+        ring: openName === p.name ? m.color : 'var(--border)',
+        chips: tagChips(p),
+      }));
+      const op = filtered.find(p => p.name === openName) || null;
+      const open = op ? {
+        name: op.name, color: m.color,
+        money: this._money(op.inr, op.inrYear) || op.invested,
+        investNote: T.invest_note,
+        hasPhases: !!(op.phases && op.phases.length),
+        phasesLabel: T.phases_label,
+        phases: (op.phases || []).map(ph => ({
+          yearLabel: ph.yearLabel, period: ph.period, note: ph.note,
+          money: this._money(ph.inr, ph.year) || (ph.ref || ''),
+        })),
+        details: [
+          { k: T.d_what, v: op.what }, { k: T.d_where, v: op.where },
+          { k: T.d_how, v: op.how }, { k: T.d_why, v: op.why },
+          { k: T.d_when, v: op.period },
+        ],
+        meta: [
+          { k: T.m_location, v: op.districts.join(', ') + ' · ' + op.state },
+          { k: T.m_sdg, v: op.sdgs.join(' · ') },
+          { k: T.m_csr, v: op.csr },
+          { k: T.m_fcra, v: op.fcra },
+          { k: T.m_uncrc, v: op.uncrc.join(' · ') },
+          { k: T.m_funder, v: op.funder },
+        ],
+      } : null;
+      return {
+        key: prog, name: m.name, color: m.color, tag: m.tag, detail: m.detail,
+        glyph: prog === 'sol' ? '01' : prog === 're' ? '02' : prog === 'hp' ? '03' : '04',
+        count: filtered.length, total: base.length,
+        filters: filtersUI, projects, open,
+      };
+    });
+
+    const langs = this._langs();
+    return {
+      isHome: V === 'home', isWork: V === 'work', isImpact: V === 'impact',
+      isStories: V === 'stories', isInvolved: V === 'involved',
+      T, navItems, programmeBlocks, portfolioTotal,
+      theme: this.state.theme,
+      mapFrame: (el) => { this._mapFrame = el; },
+      goHome: setView('home'), goWork: setView('work'), goDonate: setView('involved'),
+      currentLang: this.state.lang,
+      langsGlobal: langs.filter(l => l.group === 'global'),
+      langsIndian: langs.filter(l => l.group === 'indian'),
+      onLang: (e) => this._setLang(e.target.value),
+      toggleTheme: () => this._toggleTheme(),
+      themeGlyph: dark ? '☀' : '☾',
+
+      heroStats: [
+        { to: 200000, dec: 0, comma: true, suffix: '+', prefix: '', label: T.stat_children },
+        { to: 30, dec: 0, comma: false, suffix: ' Cr+', prefix: '\u20b9', label: T.stat_invested },
+        { to: 7.61, dec: 2, comma: false, suffix: ' Cr+', prefix: '\u20b9', label: T.stat_resources },
+        { to: 13, dec: 0, comma: false, suffix: '', prefix: '', label: T.stat_districts },
+      ].map((s, i) => ({ ...s, id: 'h' + i, value: cv('h' + i, s.prefix, s.suffix) })),
+      pillars: [
+        { glyph: 'V', color: '#0E5565', title: T.vision, body: T.vision_body },
+        { glyph: 'M', color: '#D2305C', title: T.mission, body: T.mission_body },
+        { glyph: 'T', color: '#556223', title: T.theory, body: T.theory_body },
+      ],
+      programs: programsView, activeProgram,
+      districts, activeDistrict,
+      cycleNodes, activeNode, nextNode, prevNode,
+      process: [
+        { step: '01', name: 'Behaviour Change', color: '#EAAE28', faint: 'rgba(234,174,40,.18)', body: 'Action begins when individuals and peer groups \u2014 Child Parliaments, Youth Groups \u2014 recognise risks and their own rights. This shift in mindset is the catalyst for collective action.' },
+        { step: '02', name: 'Demand Generation', color: '#D2305C', faint: 'rgba(210,48,92,.15)', body: 'Informed communities articulate their needs and engage local governance and public systems, creating the bottom-up pressure necessary for systems to act.' },
+        { step: '03', name: 'System Strengthening', color: '#0E5565', faint: 'rgba(14,85,101,.15)', body: 'DEHAT works alongside public systems to make them accessible and coordinated, so the institutional response becomes proactive rather than reactive.' },
+        { step: '04', name: 'Service Delivery', color: '#556223', faint: 'rgba(85,98,35,.18)', body: 'DEHAT acts as a bridge, providing interim services until demands are met \u2014 ultimately public systems deliver the entitlements that break the cycle.' },
+      ],
+      activeStory, storyDots, nextStory: () => this.setState(s => ({ story: (s.story + 1) % stories.length })), prevStory: () => this.setState(s => ({ story: (s.story - 1 + stories.length) % stories.length })),
+      ctas: [
+        { title: T.cta_donate, body: T.cta_donate_b, action: T.cta_donate_a, bg: '#D2305C', fg: '#fff', go: setView('involved') },
+        { title: T.cta_vol, body: T.cta_vol_b, action: T.cta_vol_a, bg: '#EAAE28', fg: '#1f1710', go: setView('involved') },
+        { title: T.cta_partner, body: T.cta_partner_b, action: T.cta_partner_a, bg: '#0E5565', fg: '#fff', go: setView('involved') },
+      ],
+      impactGrid: [
+        { to: 200000, dec: 0, comma: true, suffix: '+', prefix: '', color: '#0E5565', label: 'Children & adolescents worked with' },
+        { to: 7.61, dec: 2, comma: false, suffix: ' Cr+', prefix: '\u20b9', color: '#556223', label: 'Public resources accessed for communities' },
+        { to: 2671, dec: 0, comma: false, suffix: '+', prefix: '', color: '#D2305C', label: 'Early marriages prevented' },
+        { to: 2493, dec: 0, comma: false, suffix: '+', prefix: '', color: '#A92719', label: 'Trafficking risks responded to' },
+        { to: 5878, dec: 0, comma: false, suffix: '+', prefix: '', color: '#0E5565', label: 'Children in need of care & protection supported' },
+        { to: 7000, dec: 0, comma: false, suffix: '+', prefix: '', color: '#556223', label: 'Families accessed citizenship & land rights' },
+        { to: 2089, dec: 0, comma: false, suffix: '+', prefix: '', color: '#EAAE28', label: 'Children returned to learning through bridge schools' },
+        { to: 1890, dec: 0, comma: false, suffix: '+', prefix: '', color: '#556223', label: 'Women-farmer families in natural farming' },
+        { to: 500, dec: 0, comma: false, suffix: '+', prefix: '', color: '#4F0E73', label: 'Law-enforcement officers equipped with survivor-centric lenses' },
+        { to: 500, dec: 0, comma: false, suffix: '+', prefix: '', color: '#D2305C', label: 'Girls accessed sexual & reproductive health rights' },
+        { to: 112, dec: 0, comma: false, suffix: '+', prefix: '', color: '#0E5565', label: 'Village-level child protection systems strengthened' },
+        { to: 70, dec: 0, comma: false, suffix: '+', prefix: '', color: '#A92719', label: 'Child sexual abuse cases pursued in courts' },
+      ].map((s, i) => ({ ...s, id: 'g' + i, value: cv('g' + i, s.prefix, s.suffix) })),
+      reach: [
+        { to: 2, comma: false, suffix: '', label: T.reach_states },
+        { to: 13, comma: false, suffix: '', label: T.reach_districts },
+        { to: 68, comma: false, suffix: '', label: T.reach_blocks },
+        { to: 1200, comma: true, suffix: '+', label: T.reach_villages },
+        { to: 200000, comma: true, suffix: '+', label: T.reach_children },
+        { to: 10000, comma: true, suffix: '+', label: T.reach_farmers },
+      ].map((r, i) => ({ ...r, id: 'r' + i, value: cv('r' + i, '', r.suffix) })),
+      storyCards: [
+        { right: 'Right to Participation', color: '#EAAE28', img: './assets/story-participation.png', title: 'The first to study in the city', body: 'Ankita refused an early marriage, claimed her right to choose, and became the first girl from her village to leave for nursing school.', quote: 'I claimed my right to choose.' },
+        { right: 'Right to Protection', color: '#D2305C', img: './assets/story-protection.png', title: 'Leading protection in her village', body: 'Shakti rebuilt her life after violence and now leads protection work with other women, so girls in her village can turn to someone when they need to.', quote: 'Now I stand tall.' },
+        { right: 'Right to Survival', color: '#556223', img: './assets/story-survival.png', title: 'Nutrition grown at home', body: 'Women-farmer families turned to natural farming — winning economic freedom and nutrition security for their children.', quote: 'We grow what our children need.' },
+        { right: 'Right to Development', color: '#0E5565', img: './assets/story-development.png', title: 'Back to the classroom', body: 'Rescued child labourers return to learning through bridge schools until they rejoin formal school by the 5th grade.', quote: 'I get to be a student again.' },
+      ],
+      involve: [
+        { glyph: 'V', color: '#EAAE28', title: 'Volunteer / Intern', body: 'Work on the ground or virtually. Become a General Body Member or a DEHAT Fellow.' },
+        { glyph: 'C', color: '#0E5565', title: 'Consult us', body: 'Adopt our rights-based models or engage our Community Resource Persons.' },
+        { glyph: 'P', color: '#D2305C', title: 'Corporate partner', body: 'Pledge to end child labour and abuse in your workplace and allied spaces.' },
+        { glyph: 'S', color: '#556223', title: 'Schools & academia', body: 'Engage students in support work, or become an academic research partner.' },
+        { glyph: 'F', color: '#4F0E73', title: 'Sondhi Maati FPO', body: 'Bulk-buy from our Farmer Producer Company and shop from Sondhi Maati.' },
+        { glyph: 'A', color: '#A92719', title: 'Advocate', body: 'Sign a petition, host an event, or celebrate your special day with us.' },
+      ],
+    };
+  }
+}
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "DEHAT";
+  // rAF raced with a short timeout: inside a cross-origin iframe (PrintMode),
+  // rAF can be throttled or paused even while the tab is focused, which would
+  // hang the scroll loop and never reach print(). Same pattern as
+  // buildExportSettleScript (export/shared.ts).
+  var raf = function () {
+    return Promise.race([
+      new Promise(function (r) { requestAnimationFrame(r); }),
+      new Promise(function (r) { setTimeout(r, 50); }),
+    ]);
+  };
+  var t0 = performance.now();
+  var mark = function (phase) {
+    var ms = Math.round(performance.now() - t0);
+    console.info('[autoprint]', phase, ms + 'ms');
+    try { parent.postMessage({ __omelette_autoprint: { phase: phase, ms: ms } }, '*'); } catch (e) {}
+  };
+  mark('start');
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    // A placeholder whose fetch failed (.sc-placeholder-error inside) keeps
+    // .sc-placeholder forever — don't wait on it. JS loop, not :has(), so an
+    // engine without :has() support can't throw out of the while and skip
+    // print() entirely.
+    var pendingPlaceholders = function () {
+      var all = settleRoot.querySelectorAll('.sc-placeholder'), n = 0;
+      for (var i = 0; i < all.length; i++)
+        if (!all[i].querySelector('.sc-placeholder-error')) n++;
+      return n;
+    };
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        pendingPlaceholders() === 0;
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  mark('settle-done' + (settleRoot ? ' (errs=' + settleRoot.querySelectorAll('.sc-placeholder-error').length + ' pending=' + pendingPlaceholders() + ')' : ''));
+  // Project support.js may predate runtime default-seeding; push via bridge.
+  if (isDc && window.__dcSetProps && window.__dcRootName) {
+    try {
+      const dpEl = document.querySelector('script[data-dc-script]');
+      const meta = JSON.parse((dpEl && dpEl.getAttribute('data-props')) || '{}');
+      const bag = {};
+      for (const k in meta)
+        if (k[0] !== '$' && meta[k] && meta[k].default !== undefined)
+          bag[k] = meta[k].default;
+      if (Object.keys(bag).length) {
+        window.__dcSetProps(window.__dcRootName(), bag);
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    } catch (e) {}
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    var scrollDeadline = Date.now() + 4000;
+    for (let y = 0; y <= full && Date.now() < scrollDeadline; y += step) {
+      window.scrollTo(0, y);
+      await raf();
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  mark('scroll-done');
+  try { await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 3000))]); } catch (e) {}
+  mark('fonts-done');
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await raf();
+    sweep();
+    await raf();
+  } catch (e) {}
+  // A document that owns its print CSS (the doc-page starter injects the
+  // meta at runtime; hand-rolled print designs author it) gets no automatic
+  // page geometry and keeps its forced breaks: strip the injected default
+  // @page — write time cannot see a runtime-injected meta — skip the frame
+  // override below, and skip the fakepage-flattening further down. What
+  // still applies: the print baseline and break-hygiene defaults (no @page
+  // in either; low specificity, so the document's own print CSS wins) and
+  // the break-inside relaxation on >page elements (avoid on those cannot
+  // be honored whoever authored it).
+  var ownsPrint = !!document.querySelector('meta[name="omelette-owns-print" i]');
+  if (ownsPrint) {
+    var dst = document.querySelector('style[data-omelette-print-defaults]');
+    if (dst && dst.textContent) {
+      dst.textContent = dst.textContent.replace(/@page\b[^{}]*\{[^}]*\}/, '');
+    }
+  }
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…} or declared print ownership
+  // via the meta above. Decks own their own @page.
+  // Wrappers (body, …) lose padding+margin so the frame sits at (0,0); the
+  // frame itself loses only margin — its padding is INSIDE the measured
+  // rect and must stay, or content shifts and leaves a gap at bottom/right.
+  var __m = null;
+  try { __m = (() => {
+  var STAMP = true;
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+  // Name-presence check, case-insensitive — the same contract as the
+  // instant-PDF path's runtime check in deck-stage-export.ts. The name is
+  // a string literal here because that file interpolates this script into
+  // its print script, so importing a shared constant from it would be a
+  // cycle; measure.test.ts pins the literal so the two cannot drift apart
+  // silently.
+  var ownsPrint = !!document.querySelector('meta[name="omelette-owns-print" i]');
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', source: 'declared', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false, ownsPrint: ownsPrint } };
+  }
+
+  // Declared kind: a doc-page tag names the kind outright, so no signal
+  // heuristics run (like the deck branch above, signals report false —
+  // they describe inferred classifications only). The tag alone is not
+  // trusted: the element must have upgraded (shadowRoot present), so a
+  // leftover tag whose script was deleted falls through to the heuristics
+  // that handle plain markup.
+  var stageSx = window.scrollX || 0, stageSy = window.scrollY || 0;
+  var dp = document.querySelector('doc-page');
+  if (dp && dp.shadowRoot) {
+    // Crop to the sheet, not the host — the desk around it is screen-only
+    // chrome that must not land in PNG exports.
+    var sheet = dp.shadowRoot.querySelector('.sheet');
+    var sr = (sheet || dp).getBoundingClientRect();
+    return { kind: 'paper-doc', source: 'declared', doc: doc,
+      frames: [{ left: sr.left + stageSx, top: sr.top + stageSy,
+        width: sr.width, height: sr.height }],
+      authored: [{ width: false, height: false }],
+      signals: { paperPage: false, pxPage: false, ownsPrint: ownsPrint } };
+  }
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage, ownsPrint: ownsPrint };
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body, rootPxW = false;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    if (STAMP) el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    rootPxW = authoredPx(el, 'width');
+    if (rootPxW) break;
+  }
+  if (!rootPxW) rootPxW = authoredPx(el, 'width');
+
+  // @page{size:letter} alone is a flowing doc; with a px-width root it's a
+  // fixed sheet pretending to be paper — fall through and size to render.
+  if (paperPage && !rootPxW) {
+    return { kind: 'paper-doc', source: 'inferred', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: off unless the page opts in via data-om-multi-frame on the
+  // stop element — the explicit opt-in is what guards against card grids
+  // and pricing tables that match the geometry but aren't separate
+  // canvases. Two ways to name the frames, explicit first:
+  // 1. Descendants marked data-om-frame-export (the social-frames starter
+  //    marks each asset frame; shells/panels around them are presentation,
+  //    so nesting is expected). Document order.
+  // 2. Fallback, no marked descendants: direct children with an authored px
+  //    width AND height (the original geometry heuristic).
+  // Frames may be different sizes (a gallery mixes 1080×1920 stories with
+  // 728×90 banners); data-om-frame-label rides along for export filenames.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var visOk = function (e) {
+      var cs; try { cs = getComputedStyle(e); } catch (err) { return false; }
+      return cs.display !== 'none' && cs.visibility !== 'hidden' && cs.position !== 'fixed';
+    };
+    // A frame's crop is its VISUAL box — never the scrollHeight-inflated
+    // rect that rectOf computes for page roots. Shadow-DOM hover controls
+    // (image-slot's Replace bar parks 29px below its host) and similar
+    // escaping UI contribute scrollable overflow to the frame, and the
+    // inflated height both squashes the nominal-size resize and drags
+    // content below the frame into the crop. Zoom-independent; bit every
+    // slot-bearing frame.
+    var frameRectOf = function (e) {
+      var r = e.getBoundingClientRect();
+      return { left: r.left + sx, top: r.top + sy, width: r.width, height: r.height };
+    };
+    var pushCand = function (list, e) {
+      if (!visOk(e)) return;
+      var rc = frameRectOf(e);
+      if (rc.width < 2 || rc.height < 2) return;
+      var lbl = e.getAttribute('data-om-frame-label');
+      if (lbl) rc.label = lbl;
+      list.push(rc);
+    };
+    var cands = [];
+    var marked = el.querySelectorAll('[data-om-frame-export]');
+    if (marked.length) {
+      for (var mk = 0; mk < marked.length; mk++) pushCand(cands, marked[mk]);
+    } else {
+      for (var k = 0; k < el.children.length; k++) {
+        var ch = el.children[k];
+        if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+        pushCand(cands, ch);
+      }
+    }
+    if (cands.length >= 2) {
+      return { kind: 'multi-frame', source: 'inferred', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  if (STAMP) el.setAttribute('data-om-frame', '');
+  return { kind: 'single-canvas', source: 'inferred', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: rootPxW, height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (!ownsPrint && __m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + Math.ceil(f.width) + 'px ' +
+        Math.ceil(f.height) + 'px;margin:0}' +
+        'html,body,[data-om-frame-wrap]{padding:0!important;margin:0!important;background:none!important}' +
+        '[data-om-frame]{margin:0!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          // An owns-print doc's forced breaks are intentional sheet
+          // boundaries, never fake-paged simulation — don't strip them.
+          // The break-inside relaxation above still applies: avoid on a
+          // >page element is impossible to honor whoever authored it.
+          if (
+            !ownsPrint &&
+            (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always')
+          ) {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  mark('print-calling');
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEHAT — storytelling plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#1a130b;color:#fbf7ef;font-family:'Bricolage Grotesque',system-ui,sans-serif}
+  a{color:#EAAE28;text-decoration:none;border-bottom:1px solid rgba(234,174,40,.35)}
+  a:hover{color:#F6C965;border-bottom-color:#F6C965}
+  ::selection{background:#EAAE28;color:#1a130b}
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  [data-reveal].shown{opacity:1;transform:none}
+  @keyframes sway{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .sway{animation:sway 7s ease-in-out infinite}
+  @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}.sway{animation:none}}
+</style>
+</helmet>
+
+<div style="position:fixed;top:0;left:0;right:0;height:26px;z-index:60;pointer-events:none">
+  <div style="position:absolute;inset:0;background-image:url(./assets/story/path-peopled.png);background-size:auto 260%;background-position:left center;background-repeat:repeat-x;clip-path:inset(0 {{ pathRemain }} 0 0);transition:clip-path .12s linear;opacity:.95"></div>
+</div>
+
+<div style="max-width:1180px;margin:0 auto;padding:64px clamp(20px,5vw,56px) 120px">
+
+  <header style="border-bottom:2px solid #EAAE28;padding-bottom:34px;margin-bottom:52px">
+    <span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:#EAAE28">Proposal · for approval before build</span>
+    <h1 style="font-weight:800;font-size:clamp(34px,6vw,72px);line-height:.98;letter-spacing:-.03em;margin:16px 0 20px;text-wrap:balance">Turning the site into one continuous story, told in illustration.</h1>
+    <p style="font-family:Newsreader,Georgia,serif;font-size:clamp(18px,2.2vw,25px);line-height:1.45;color:rgba(251,247,239,.82);margin:0;max-width:820px;text-wrap:pretty">Twenty-two new illustrations arrived. They are not decoration for the pages we have — they are a cast, a set of symbols, and a line that can run through the whole site. This is the plan for using them, section by section, with the motion each section needs and the reason a visitor will stop rather than scroll.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:26px">
+      <a href="#registers" style="border:none;padding:10px 18px;border-radius:999px;background:rgba(251,247,239,.1);font-size:13.5px;font-weight:700">1 · The cast</a>
+      <a href="#late" style="border:none;padding:10px 18px;border-radius:999px;background:#D2305C;color:#fff;font-size:13.5px;font-weight:800">Late additions</a>
+      <a href="#spine" style="border:none;padding:10px 18px;border-radius:999px;background:rgba(251,247,239,.1);font-size:13.5px;font-weight:700">2 · The spine</a>
+      <a href="#mechanics" style="border:none;padding:10px 18px;border-radius:999px;background:rgba(251,247,239,.1);font-size:13.5px;font-weight:700">3 · Binding mechanics</a>
+      <a href="#map" style="border:none;padding:10px 18px;border-radius:999px;background:rgba(251,247,239,.1);font-size:13.5px;font-weight:700">4 · Section map</a>
+      <a href="#copy" style="border:none;padding:10px 18px;border-radius:999px;background:rgba(251,247,239,.1);font-size:13.5px;font-weight:700">5 · Copy audit</a>
+      <a href="#restraint" style="border:none;padding:10px 18px;border-radius:999px;background:rgba(251,247,239,.1);font-size:13.5px;font-weight:700">6 · Restraint</a>
+      <a href="#decide" style="border:none;padding:10px 18px;border-radius:999px;background:#EAAE28;color:#1f1710;font-size:13.5px;font-weight:800">7 · Your decisions</a>
+    </div>
+  </header>
+
+  <section id="registers" style="margin-bottom:96px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:10px">
+      <span style="font-weight:800;font-size:13px;letter-spacing:.1em;color:#EAAE28">01</span>
+      <h2 style="font-weight:800;font-size:clamp(26px,3.6vw,44px);line-height:1.04;letter-spacing:-.025em;margin:0">Four registers, four jobs</h2>
+    </div>
+    <p style="font-size:16.5px;line-height:1.7;color:rgba(251,247,239,.72);margin:0 0 34px;max-width:800px;text-wrap:pretty">The library divides cleanly. Keeping the registers separate is what stops the site looking like a sticker sheet: each register carries a different kind of claim, so a visitor learns to read them.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px">
+      <sc-for list="{{ registers }}" as="r" hint-placeholder-count="4">
+        <div data-reveal style="transition-delay:{{ r.delay }};border-radius:20px;background:#241b14;border:1px solid rgba(251,247,239,.12);border-top:4px solid {{ r.color }};padding:22px;display:flex;flex-direction:column;gap:14px">
+          <div>
+            <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:{{ r.color }}">{{ r.kind }}</div>
+            <h3 style="font-weight:800;font-size:19px;line-height:1.2;margin:6px 0 0">{{ r.name }}</h3>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-end;height:104px;padding:10px;border-radius:14px;background:{{ r.plate }}">
+            <sc-for list="{{ r.imgs }}" as="im" hint-placeholder-count="3">
+              <div role="img" aria-hidden="true" style="flex:1;height:100%;background-image:{{ im.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:center bottom"></div>
+            </sc-for>
+          </div>
+          <p style="font-size:14px;line-height:1.6;color:rgba(251,247,239,.72);margin:0;text-wrap:pretty">{{ r.job }}</p>
+          <p style="font-size:13px;line-height:1.55;color:{{ r.color }};margin:0;font-weight:700">{{ r.rule }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <p style="font-size:14.5px;line-height:1.65;color:rgba(251,247,239,.55);margin:26px 0 0;max-width:840px">The existing library still does its work: the sixteen <em>svc</em> figures stay on the vulnerability cycle, the <em>issue</em> thumbnails stay in programme problem lists, the nine SDG icons stay in the goal bands. Nothing is replaced. The new set adds the two registers the site never had — a human cast, and connective marks.</p>
+  </section>
+
+  <section id="late" style="margin-bottom:96px;border-radius:24px;background:#2b1219;border:1px solid rgba(210,48,92,.4);padding:clamp(24px,3.4vw,44px)">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:10px">
+      <span style="font-weight:800;font-size:13px;letter-spacing:.1em;color:#D2305C">Added after the first draft</span>
+    </div>
+    <h2 style="font-weight:800;font-size:clamp(24px,3.4vw,40px);line-height:1.04;letter-spacing:-.025em;margin:0 0 14px;max-width:900px;text-wrap:balance">Eight more illustrations, and four of them change the plan.</h2>
+    <p style="font-size:16.5px;line-height:1.7;color:rgba(251,247,239,.78);margin:0 0 30px;max-width:840px;text-wrap:pretty">These were mixed into the wider uploads folder and I missed them on the first pass. Three of the eight are better than what I had chosen, and one replaces the central mechanic in section 02.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
+      <sc-for list="{{ late }}" as="lt" hint-placeholder-count="5">
+        <div data-reveal style="transition-delay:{{ lt.delay }};border-radius:20px;background:#241b14;border:1px solid rgba(251,247,239,.14);padding:20px;display:flex;flex-direction:column;gap:14px">
+          <div style="height:130px;border-radius:14px;background:{{ lt.plate }};padding:10px">
+            <div role="img" aria-hidden="true" style="width:100%;height:100%;background-image:{{ lt.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:{{ lt.tagColor }}">{{ lt.tag }}</div>
+            <h3 style="font-weight:800;font-size:18px;line-height:1.2;margin:6px 0 0">{{ lt.name }}</h3>
+          </div>
+          <p style="font-size:14px;line-height:1.6;color:rgba(251,247,239,.76);margin:0;text-wrap:pretty">{{ lt.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="spine" style="margin-bottom:96px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:10px">
+      <span style="font-weight:800;font-size:13px;letter-spacing:.1em;color:#EAAE28">02</span>
+      <h2 style="font-weight:800;font-size:clamp(26px,3.6vw,44px);line-height:1.04;letter-spacing:-.025em;margin:0">The yellow path is the site’s spine</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(22px,3vw,44px);align-items:start;margin-top:20px">
+      <div>
+        <p style="font-size:16.5px;line-height:1.7;color:rgba(251,247,239,.8);margin:0 0 16px;text-wrap:pretty">Two of the new files are not pictures of anything. They are hand-drawn ochre paths, and they are the most useful things in the set. Used once, a path is an ornament. Used as one continuous line that starts in the hero, runs behind every section, and ends at the invest form, it becomes the thing a visitor is following.</p>
+        <p style="font-size:16.5px;line-height:1.7;color:rgba(251,247,239,.8);margin:0 0 16px;text-wrap:pretty">The bar at the top of this page is the mechanic, drawn with the actual asset: it fills as you read and it is visibly unfinished. That is the whole trick. An incomplete line is an open loop, and open loops are uncomfortable to abandon.</p>
+        <div style="border-left:3px solid #EAAE28;padding-left:18px;margin:24px 0 0">
+          <p style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:20px;line-height:1.45;margin:0;color:#fbf7ef">The path also solves the navigation complaint: because it is continuous, arriving mid-page from a button feels like a jump along a line you already know, not a teleport into a wall of text.</p>
+        </div>
+      </div>
+      <div style="border-radius:20px;background:#241b14;border:1px solid rgba(251,247,239,.12);padding:24px">
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#EAAE28;margin-bottom:16px">How the spine behaves</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ spine }}" as="s" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start">
+              <span style="font-weight:800;font-size:12px;color:#EAAE28;padding-top:3px">{{ s.n }}</span>
+              <div>
+                <div style="font-weight:700;font-size:15px;line-height:1.3">{{ s.t }}</div>
+                <div style="font-size:13.5px;line-height:1.55;color:rgba(251,247,239,.68);margin-top:3px">{{ s.b }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mechanics" style="margin-bottom:96px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:10px">
+      <span style="font-weight:800;font-size:13px;letter-spacing:.1em;color:#EAAE28">03</span>
+      <h2 style="font-weight:800;font-size:clamp(26px,3.6vw,44px);line-height:1.04;letter-spacing:-.025em;margin:0">Six mechanics that make a section cost something to skip</h2>
+    </div>
+    <p style="font-size:16.5px;line-height:1.7;color:rgba(251,247,239,.72);margin:0 0 30px;max-width:820px;text-wrap:pretty">Animation on entry is wallpaper — it plays whether you look or not. What holds attention is an unresolved state that only the visitor can resolve. Six patterns, each tied to a register of illustration, each skippable so nobody is trapped.</p>
+
+    <div style="border-radius:22px;background:#241b14;border:1px solid rgba(251,247,239,.14);padding:clamp(22px,3vw,36px);margin-bottom:26px">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:20px">
+        <div>
+          <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#D2305C">Live demo · mechanic 01</div>
+          <h3 style="font-weight:800;font-size:22px;margin:8px 0 0">The figure is earned, not served</h3>
+        </div>
+        <span style="font-size:13px;color:rgba(251,247,239,.55)">Press the card</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+        <sc-for list="{{ demo }}" as="d" hint-placeholder-count="3">
+          <button onClick="{{ d.toggle }}" style="text-align:left;font-family:inherit;cursor:pointer;border-radius:18px;border:1.5px solid {{ d.ring }};background:{{ d.bg }};padding:20px;display:flex;flex-direction:column;gap:14px;transition:background .35s,border-color .35s,transform .25s" style-hover="transform:translateY(-4px)">
+            <div style="height:118px;display:flex;align-items:flex-end;justify-content:center">
+              <div role="img" aria-hidden="true" style="width:100%;height:100%;background-image:{{ d.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:center bottom;filter:{{ d.filt }};transition:filter .55s cubic-bezier(.2,.7,.2,1)"></div>
+            </div>
+            <div style="min-height:74px">
+              <div style="font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1;color:{{ d.numColor }};transition:color .35s">{{ d.num }}</div>
+              <div style="font-size:14px;line-height:1.5;color:rgba(251,247,239,.78);margin-top:8px">{{ d.line }}</div>
+            </div>
+            <span style="font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:{{ d.cueColor }}">{{ d.cue }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:rgba(251,247,239,.6);margin:20px 0 0;max-width:760px">Greyscale to colour, a withheld number, and one line of consequence. The visitor performs the act of finding out, so the figure is theirs. On the live site this replaces the passive count-up in the hero stats and the impact grid.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px">
+      <sc-for list="{{ mechanics }}" as="m" hint-placeholder-count="5">
+        <div data-reveal style="transition-delay:{{ m.delay }};border-radius:20px;background:#241b14;border:1px solid rgba(251,247,239,.12);padding:22px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:baseline;gap:10px">
+            <span style="font-weight:800;font-size:12px;color:{{ m.color }}">{{ m.n }}</span>
+            <h3 style="font-weight:800;font-size:18px;line-height:1.2;margin:0">{{ m.name }}</h3>
+          </div>
+          <p style="font-size:14.5px;line-height:1.6;color:rgba(251,247,239,.76);margin:0;text-wrap:pretty">{{ m.body }}</p>
+          <div style="display:flex;flex-direction:column;gap:6px;padding-top:10px;border-top:1px solid rgba(251,247,239,.1)">
+            <div style="font-size:13px;color:rgba(251,247,239,.6)"><strong style="color:{{ m.color }};font-weight:800">Where</strong> {{ m.where }}</div>
+            <div style="font-size:13px;color:rgba(251,247,239,.6)"><strong style="color:{{ m.color }};font-weight:800">Why it holds</strong> {{ m.why }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="map" style="margin-bottom:96px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:10px">
+      <span style="font-weight:800;font-size:13px;letter-spacing:.1em;color:#EAAE28">04</span>
+      <h2 style="font-weight:800;font-size:clamp(26px,3.6vw,44px);line-height:1.04;letter-spacing:-.025em;margin:0">Every section, in order</h2>
+    </div>
+    <p style="font-size:16.5px;line-height:1.7;color:rgba(251,247,239,.72);margin:0 0 30px;max-width:820px;text-wrap:pretty">Illustration, motion, and the one thing the visitor does. Where a section already works, it says so — the aim is not to touch everything.</p>
+    <div style="display:flex;flex-direction:column;gap:34px">
+      <sc-for list="{{ pages }}" as="pg" hint-placeholder-count="7">
+        <div>
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;padding-bottom:12px;margin-bottom:14px;border-bottom:2px solid {{ pg.color }}">
+            <h3 style="font-weight:800;font-size:clamp(21px,2.6vw,30px);letter-spacing:-.02em;margin:0">{{ pg.name }}</h3>
+            <span style="font-size:13px;color:rgba(251,247,239,.55)">{{ pg.note }}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ pg.rows }}" as="rw" hint-placeholder-count="5">
+              <div data-reveal style="display:grid;grid-template-columns:minmax(150px,1.05fr) minmax(160px,1.2fr) minmax(180px,1.5fr) minmax(150px,1.1fr);gap:16px;padding:16px 18px;border-radius:14px;background:{{ rw.bg }};border:1px solid rgba(251,247,239,.1)">
+                <div>
+                  <div style="font-weight:800;font-size:15px;line-height:1.25">{{ rw.sec }}</div>
+                  <div style="font-size:12px;color:rgba(251,247,239,.5);margin-top:4px">{{ rw.state }}</div>
+                </div>
+                <div style="font-size:13.5px;line-height:1.55;color:rgba(251,247,239,.82)"><span style="display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:{{ pg.color }};margin-bottom:4px">Illustration</span>{{ rw.art }}</div>
+                <div style="font-size:13.5px;line-height:1.55;color:rgba(251,247,239,.82)"><span style="display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:{{ pg.color }};margin-bottom:4px">Motion</span>{{ rw.motion }}</div>
+                <div style="font-size:13.5px;line-height:1.55;color:rgba(251,247,239,.82)"><span style="display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:{{ pg.color }};margin-bottom:4px">The visitor does</span>{{ rw.act }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="copy" style="margin-bottom:96px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:10px">
+      <span style="font-weight:800;font-size:13px;letter-spacing:.1em;color:#EAAE28">05</span>
+      <h2 style="font-weight:800;font-size:clamp(26px,3.6vw,44px);line-height:1.04;letter-spacing:-.025em;margin:0">Copy audit</h2>
+    </div>
+    <p style="font-size:16.5px;line-height:1.7;color:rgba(251,247,239,.72);margin:0 0 12px;max-width:820px;text-wrap:pretty">The writing on the site is unusually good for this sector — specific, sourced, unsentimental. I am not proposing a rewrite. Three rules, then the handful of lines an illustration changes the job of.</p>
+    <p style="font-size:14px;line-height:1.6;color:#EAAE28;margin:0 0 28px;font-weight:700">Nothing here is applied without your approval, line by line.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:30px">
+      <sc-for list="{{ copyRules }}" as="cr" hint-placeholder-count="3">
+        <div style="border-radius:18px;background:#241b14;border:1px solid rgba(251,247,239,.12);padding:22px">
+          <div style="font-weight:800;font-size:12px;letter-spacing:.1em;color:#EAAE28;margin-bottom:8px">RULE {{ cr.n }}</div>
+          <h3 style="font-weight:800;font-size:18px;line-height:1.25;margin:0 0 10px">{{ cr.t }}</h3>
+          <p style="font-size:14px;line-height:1.6;color:rgba(251,247,239,.74);margin:0;text-wrap:pretty">{{ cr.b }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ copyLines }}" as="cl" hint-placeholder-count="6">
+        <div data-reveal style="display:grid;grid-template-columns:minmax(130px,.7fr) minmax(220px,1.4fr) minmax(220px,1.4fr);gap:18px;padding:18px;border-radius:14px;background:#241b14;border:1px solid rgba(251,247,239,.1)">
+          <div style="font-size:12.5px;color:rgba(251,247,239,.55);line-height:1.4">{{ cl.where }}</div>
+          <div>
+            <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:rgba(251,247,239,.4);margin-bottom:5px">On the site now</div>
+            <div style="font-size:14.5px;line-height:1.5;color:rgba(251,247,239,.78)">{{ cl.now }}</div>
+          </div>
+          <div>
+            <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#EAAE28;margin-bottom:5px">{{ cl.verdictLabel }}</div>
+            <div style="font-size:14.5px;line-height:1.5;color:#fbf7ef">{{ cl.verdict }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="restraint" style="margin-bottom:96px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:10px">
+      <span style="font-weight:800;font-size:13px;letter-spacing:.1em;color:#EAAE28">06</span>
+      <h2 style="font-weight:800;font-size:clamp(26px,3.6vw,44px);line-height:1.04;letter-spacing:-.025em;margin:0">Where I would hold back</h2>
+    </div>
+    <p style="font-size:16.5px;line-height:1.7;color:rgba(251,247,239,.72);margin:0 0 28px;max-width:820px;text-wrap:pretty">This site is read by CSR committees, foundation staff and government partners. Motion that reads as a campaign microsite would cost more credibility than it wins attention. Four limits I would build in from the start.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+      <sc-for list="{{ limits }}" as="l" hint-placeholder-count="4">
+        <div style="border-radius:18px;background:#241b14;border:1px solid rgba(210,48,92,.35);padding:22px">
+          <h3 style="font-weight:800;font-size:17px;line-height:1.25;margin:0 0 10px;color:#F58EA6">{{ l.t }}</h3>
+          <p style="font-size:14px;line-height:1.6;color:rgba(251,247,239,.76);margin:0;text-wrap:pretty">{{ l.b }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="decide">
+    <div style="border-radius:24px;background:#4F0E73;padding:clamp(26px,4vw,52px)">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:10px">
+        <span style="font-weight:800;font-size:13px;letter-spacing:.1em;color:#EAAE28">07</span>
+        <h2 style="font-weight:800;font-size:clamp(26px,3.6vw,44px);line-height:1.04;letter-spacing:-.025em;margin:0">What I need from you before building</h2>
+      </div>
+      <p style="font-size:16.5px;line-height:1.7;color:rgba(255,255,255,.84);margin:0 0 28px;max-width:800px;text-wrap:pretty">Answer as briefly as you like — a number and a word per line is enough. I will build in the order below, one page at a time, so you can stop me at any point.</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ decisions }}" as="dc" hint-placeholder-count="6">
+          <div style="display:grid;grid-template-columns:30px 1fr;gap:16px;padding:18px 20px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)">
+            <span style="font-weight:800;font-size:15px;color:#EAAE28">{{ dc.n }}</span>
+            <div>
+              <div style="font-weight:800;font-size:16.5px;line-height:1.3;margin-bottom:6px">{{ dc.q }}</div>
+              <div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,.75)">{{ dc.detail }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;align-items:center;gap:18px;margin-top:32px;padding-top:26px;border-top:1px solid rgba(255,255,255,.2);flex-wrap:wrap">
+        <div class="sway" role="img" aria-hidden="true" style="width:120px;height:120px;flex:none;background-image:url(./assets/story/hands-daisies.png);background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+        <p style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:clamp(18px,2.2vw,24px);line-height:1.45;margin:0;max-width:620px;color:#fff;text-wrap:pretty">The illustrations are strong enough to carry the argument on their own. My worry is not that we use too few — it is that we use all of them at once.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:900}}">
+const A = './assets/story/';
+
+class Component extends DCLogic {
+  state = { scroll: 0, opened: {} };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => {
+        this._raf = 0;
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        this.setState({ scroll: h > 0 ? Math.min(1, window.scrollY / h) : 0 });
+        this._reveal();
+      });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll, { passive: true });
+    this._t = setInterval(() => this._reveal(), 320);
+    this._reveal();
+  }
+  componentDidUpdate() { this._reveal(); }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    clearInterval(this._t);
+    if (this._raf) cancelAnimationFrame(this._raf);
+  }
+  _reveal() {
+    try {
+      const h = window.innerHeight - 30;
+      document.querySelectorAll('[data-reveal]:not(.shown)').forEach(el => {
+        if (el.getBoundingClientRect().top < h) el.classList.add('shown');
+      });
+    } catch (e) {}
+  }
+
+  renderVals() {
+    const S = this.state;
+    const open = S.opened || {};
+    const toggle = (k) => () => this.setState(s => ({ opened: Object.assign({}, s.opened, { [k]: !(s.opened || {})[k] }) }));
+
+    const demoRaw = [
+      { k: 'd1', img: A + 'school-steps-sign.png', num: '1 in 4', line: 'girls in Shravasti leave school before upper primary. Each departure closes a door on literacy and choice.', cue: 'Tap to see what the number is' },
+      { k: 'd2', img: A + 'aadhaar-mother.png', num: '66%', line: 'of mothers in Bahraich receive no full antenatal care — eligible, unreached.', cue: 'Tap to see what the number is' },
+      { k: 'd3', img: A + 'market-stall.png', num: '₹50 → hiring', line: 'a day. Dwarika Prasad went from earning ₹50 a day to employing labour on his own land.', cue: 'Tap to see what the number is' },
+    ];
+    const demo = demoRaw.map(d => {
+      const on = !!open[d.k];
+      return {
+        k: d.k, img: d.img,
+        num: on ? d.num : '—',
+        line: on ? d.line : 'Held back until the visitor asks.',
+        cue: on ? 'Tap to close' : d.cue,
+        cueColor: on ? '#EAAE28' : 'rgba(251,247,239,.45)',
+        numColor: on ? '#EAAE28' : 'rgba(251,247,239,.28)',
+        filt: on ? 'none' : 'grayscale(1) opacity(.42)',
+        bg: on ? 'rgba(234,174,40,.1)' : 'rgba(251,247,239,.04)',
+        ring: on ? '#EAAE28' : 'rgba(251,247,239,.16)',
+        toggle: toggle(d.k),
+      };
+    });
+
+    const registers = [
+      { kind: 'Register A', name: 'Ink silhouettes', color: '#fbf7ef', plate: 'rgba(251,247,239,.9)',
+        imgs: [{ img: A + 'ink-pair.png' }, { img: A + 'ink-family.png' }, { img: A + 'ink-crowd.png' }],
+        job: 'Anonymous, structural, countable. A pair, a family, four walking, a crowd of twelve carrying ledgers and bundles. Nobody is identifiable, so they can stand for a statistic without turning a real person into one.',
+        rule: 'Use for scale, data and systems. Never for a named story.', delay: '0ms' },
+      { kind: 'Register B', name: 'The colour cast', color: '#EAAE28', plate: 'rgba(251,247,239,.06)',
+        imgs: [{ img: A + 'school-steps-sign.png' }, { img: A + 'aadhaar-mother.png' }, { img: A + 'market-stall.png' }],
+        job: 'Specific people doing specific things: a girl climbing steps to a school sign, a mother holding up an Aadhaar card, a woman pricing oil and grain at her own stall, a worker handing over an entitlement kit, a village group mid-argument.',
+        rule: 'One per section, at a size that reads as a portrait. These carry the story.', delay: '80ms' },
+      { kind: 'Register C', name: 'Hands and symbols', color: '#D2305C', plate: 'rgba(251,247,239,.06)',
+        imgs: [{ img: A + 'hands-shelter.png' }, { img: A + 'hand-earth.png' }, { img: A + 'eye-earth-birds.png' }],
+        job: 'Hands sheltering a seated child, hands raising daisies, four arms interlocked, a hand holding the earth, an eye with birds leaving it. Values rather than events.',
+        rule: 'Thresholds only — the opening of a programme, the top of the invest case, the mission line.', delay: '160ms' },
+      { kind: 'Register D', name: 'Marks', color: '#556223', plate: 'rgba(251,247,239,.06)',
+        imgs: [{ img: A + 'path-a.png' }, { img: A + 'ink-sprig.png' }, { img: A + 'path-b.png' }],
+        job: 'Two ochre paths and an ink sprig. No subject, no scene. These are punctuation and structure — the only assets that may repeat on every page.',
+        rule: 'The paths are the spine. The sprig ends a section, never starts one.', delay: '240ms' },
+    ];
+
+    const late = [
+      { k: 'l0a', img: A + 'approach-charity.png', plate: 'rgba(251,247,239,.06)', tag: 'The gap is closed', tagColor: '#EAAE28',
+        name: 'Charity Approach / This is not our Approach',
+        body: 'The pair I said did not exist. A child under a glass dome, held in one hand, with money in the other — captioned by DEHAT as the charity approach, and a second drawing marked as what the approach is not. These carry the Invest argument exactly as written and replace the improvised contrast I built from the vulnerability illustrations. One per side, the visitor chooses before the headline appears.', delay: '0ms' },
+      { k: 'l0b', img: A + 'journey-roadmap-timeline.png', plate: 'rgba(251,247,239,.9)', tag: 'The awards journey', tagColor: '#D2305C',
+        name: 'DEHAT Journey / roadmap / Impact timeline',
+        body: 'The peopled ochre road, named by DEHAT as the journey and impact timeline. This is the awards rail and the milestone spine in one asset, and its own name says how to use it: a road that gains people as it runs.', delay: '60ms' },
+      { k: 'l0c', img: A + 'prog-social-movement.png', plate: 'rgba(251,247,239,.06)', tag: 'One per programme', tagColor: '#0E5565',
+        name: 'Social Movement · Rights and Entitlements · Human Protection · Climate Justice',
+        body: 'A named illustration for each of the four programmes — Social Movement is School of Leadership. These become the programme hero images and the four cards on Our Work, so a visitor recognises a programme by its picture before reading its name. Alongside them: Right to Survival, Development, Protection and Participation, one per rights pillar.', delay: '120ms' },
+      { k: 'l1', img: A + 'path-peopled.png', plate: 'rgba(251,247,239,.9)', tag: 'Replaces the plain path', tagColor: '#D2305C',
+        name: 'The peopled path',
+        body: 'A winding ochre road with figures standing on it — sparse at the start, a crowd by the end. This is the spine, and it is far better than the two empty paths: it grows more populated as it runs, so the line itself carries the reach argument. Section 02 should be built on this asset.', delay: '0ms' },
+      { k: 'l2', img: A + 'weary-mother-child.png', plate: 'rgba(251,247,239,.06)', tag: 'The strongest image in the set', tagColor: '#EAAE28',
+        name: 'Mother holding a child',
+        body: 'A weary mother, seated, holding a sleeping child. Painted, not line-drawn, and the only illustration with real emotional weight. Use it exactly once on the site — my recommendation is the entry to the vulnerability cycle, where the fork question is asked. Used twice it becomes a mood; used once it is a reason.', delay: '70ms' },
+      { k: 'l3', img: A + 'map-india-two-states.png', plate: 'rgba(251,247,239,.9)', tag: 'Fixes a real gap', tagColor: '#556223',
+        name: 'India, with the two states filled',
+        body: 'Hand-drawn India with Uttar Pradesh and Maharashtra in red, plus separate state-only and blank-outline variants. The atlas has an accurate live map but no way to say “here, in the country” at a glance. This belongs above the district map and on the transparency page.', delay: '140ms' },
+      { k: 'l4', img: A + 'entitlement-wheel-services.png', plate: 'rgba(251,247,239,.06)', tag: 'A section that does not exist yet', tagColor: '#0E5565',
+        name: 'The entitlement wheel',
+        body: 'A family ringed by what they are owed: nutrition, health, schooling, an ID card, land, trees, a house. This is the Rights and Entitlements argument in one image. It should open that programme page, with each service revealed as the visitor moves round the ring.', delay: '210ms' },
+      { k: 'l5', img: A + 'entitlement-girl-handover.png', plate: 'rgba(251,247,239,.06)', tag: 'Adds to the cast', tagColor: '#EAAE28',
+        name: 'A girl receiving her file',
+        body: 'A worker handing a document to a girl who is reaching for it. Quieter than the adult handover I had picked, and it puts the child on the receiving side of a right rather than of charity. Better fit for the Rights and Entitlements card.', delay: '280ms' },
+    ];
+
+    const spine = [
+      { n: '01', t: 'It draws with the scroll, once', b: 'The peopled path is revealed left to right as the visitor descends, and the figures on it appear as it draws. Not a progress bar with a percentage — a road filling with people.' },
+      { n: '02', t: 'It hands off between pages', b: 'The line ends where the next page picks it up, so Home → Our Work → a programme → Invest reads as one route rather than four destinations.' },
+      { n: '03', t: 'Section markers sit on it', b: 'Each major section is a node on the line. Nodes already visited stay filled; the one ahead pulses faintly once, then stops.' },
+      { n: '04', t: 'Deep links land on a node', b: 'When a button jumps to a section, the line animates to that node instead of cutting. The jump becomes legible motion.' },
+      { n: '05', t: 'It ends at the ask', b: 'The final node is the invest form. The line completing is the only moment on the site where an animation finishes and stays finished.' },
+    ];
+
+    const mechanics = [
+      { n: '02', name: 'The fork', color: '#D2305C',
+        body: 'Two illustrations side by side, one question, no default. On the cycle: “Where do you think this starts?” On the invest case: charity or investment. The visitor picks, then sees what the ground says.',
+        where: 'Vulnerability cycle entry, invest case, programme cycle arc.',
+        why: 'A committed choice is defended. Having guessed, a visitor stays to see whether they were right.', delay: '0ms' },
+      { n: '03', name: 'The withheld figure', color: '#EAAE28',
+        body: 'Demonstrated above. The number is dashes and the illustration is grey until the visitor acts.',
+        where: 'Hero stats, impact grid, district cards, cycle stages.',
+        why: 'A curiosity gap plus a tiny act of effort. Effort spent on a fact makes it feel owned.', delay: '70ms' },
+      { n: '04', name: 'Baseline to after, by hand', color: '#556223',
+        body: 'The before-and-after table becomes a draggable divider over one illustration: pull it across and the ink crowd gains ledgers, cards, a school bag. The data stays exactly as published.',
+        where: 'Impact baseline table, programme horizons.',
+        why: 'Physical effort produces the change on screen, which is a rehearsal of the argument itself.', delay: '140ms' },
+      { n: '05', name: 'The unfinished procession', color: '#4F0E73',
+        body: 'The awards rail and the timeline are drawn as the banner procession: figures enter from the right as you scroll, and the last one is always half in frame.',
+        where: 'Awards journey, milestones, project chronology.',
+        why: 'An incomplete sequence is remembered and returned to. The gap does the pulling, not a button.', delay: '210ms' },
+      { n: '06', name: 'One thing that follows you', color: '#0E5565',
+        body: 'A single small mark — the sprig, or one ink figure — pinned in the margin, changing only at section boundaries. It is the only element allowed to persist while scrolling.',
+        where: 'Long reads: transparency, programme pages, media archive.',
+        why: 'A companion object gives orientation on a long page and quietly signals how much is left.', delay: '280ms' },
+    ];
+
+    const bg = 'rgba(251,247,239,.045)';
+    const bgKeep = 'rgba(85,98,35,.14)';
+    const pages = [
+      { name: 'Home', color: '#EAAE28', note: 'the arc: a life, a system, a choice',
+        rows: [
+          { sec: 'Hero', state: 'rebuild', bg: bg, art: 'The girl on the steps to the school sign, large, right of the headline; the ochre path begins under her feet.', motion: 'She holds still. The path draws itself past her as the page settles, then stops at the fold.', act: 'Nothing yet. The hero earns attention; it does not ask for it.' },
+          { sec: 'Hero stats', state: 'rebuild', bg: bg, art: 'Four ink silhouettes, one per figure — pair, family, four walking, crowd.', motion: 'Grey until pressed, then the silhouette fills and the number lands.', act: 'Presses at least one. The rest stay grey, visibly unread.' },
+          { sec: 'Three pillars', state: 'light touch', bg: bg, art: 'Hands shelter, hands raise daisies, hand holds earth — one per pillar.', motion: 'Reveal on entry, staggered. No looping drift.', act: 'Reads. This section is a promise, not a puzzle.' },
+          { sec: 'Where we work', state: 'keep', bg: bgKeep, art: 'None. The map is the illustration.', motion: 'Unchanged.', act: 'Already interactive and working.' },
+          { sec: 'Vulnerability cycle', state: 'add a fork', bg: bg, art: 'Existing sixteen svc figures stay. Add the fork question above the wheel.', motion: 'The wheel stops rotating once a stage is chosen — the visitor takes control of it.', act: 'Guesses where the trap begins, then follows one life.' },
+          { sec: 'The process', state: 'rebuild', bg: bg, art: 'Community dialogue → procession with banner → four arms interlocked → entitlement handover, one per step.', motion: 'Steps advance on scroll along the path; only the active step is in colour.', act: 'Scrubs the four steps, or lets the path carry them.' },
+          { sec: 'Stories of change', state: 'light touch', bg: bg, art: 'The mother-and-daughter portrait, and the two-women portrait, at story scale.', motion: 'Crossfade between stories, slower. Manual arrows kept.', act: 'Chooses a story rather than watching a rotation.' },
+          { sec: 'In the news', state: 'keep', bg: bgKeep, art: 'None.', motion: 'Unchanged.', act: 'Already working.' },
+          { sec: 'Closing CTAs', state: 'rebuild', bg: bg, art: 'The eye with birds leaving it, once, large.', motion: 'The path completes here and stops. Nothing else moves.', act: 'Chooses one of three routes.' },
+        ] },
+      { name: 'Our Work', color: '#0E5565', note: 'four doors, one line',
+        rows: [
+          { sec: 'Programme index', state: 'rebuild', bg: bg, art: 'One colour-cast illustration per programme card: school steps, Aadhaar mother, market stall, hands shelter.', motion: 'Card lifts; illustration shifts a few pixels behind the title on hover.', act: 'Compares four images before reading four names.' },
+          { sec: 'Process band', state: 'light touch', bg: bg, art: 'The ink crowd, wide, behind the four steps.', motion: 'Reveal only.', act: 'Reads.' },
+        ] },
+      { name: 'Programme pages', color: '#D2305C', note: 'the deepest reads on the site',
+        rows: [
+          { sec: 'Hero', state: 'rebuild', bg: bg, art: 'The programme’s hands-and-symbols illustration at threshold scale, in the programme colour.', motion: 'Enters once, from the side the path arrives from.', act: 'Reads the promise.' },
+          { sec: 'Why this matters', state: 'light touch', bg: bg, art: 'Existing issue thumbnails stay.', motion: 'Staggered reveal, already built.', act: 'Reads.' },
+          { sec: 'SDG band', state: 'built', bg: bgKeep, art: 'Nine SDG illustrations, number tiles for goals 3 and 13.', motion: 'Live now.', act: 'Reads. Could hide the “how” line until hover.' },
+          { sec: 'Cycle arc', state: 'built, add fork', bg: bg, art: 'Live now, direct in colour and indirect in grey.', motion: 'Live now.', act: 'Add: pick the stage you think this programme starts at.' },
+          { sec: 'Journey sections', state: 'light touch', bg: bg, art: 'Cascade steps already carry thumbnails; add the procession behind the horizons rows.', motion: 'Steps advance with the path.', act: 'Steps through the cascade.' },
+          { sec: 'Project register', state: 'keep', bg: bgKeep, art: 'None. This is a document.', motion: 'Reveal only.', act: 'Filters and opens records.' },
+        ] },
+      { name: 'Impact', color: '#556223', note: 'where the withheld figure matters most',
+        rows: [
+          { sec: 'Impact grid', state: 'rebuild', bg: bg, art: 'Ink silhouettes behind each figure, sized by magnitude.', motion: 'Withheld figure, mechanic 03.', act: 'Uncovers the numbers they care about.' },
+          { sec: 'Reach', state: 'light touch', bg: bg, art: 'The ink crowd, repeated to scale.', motion: 'Reveal.', act: 'Reads.' },
+          { sec: 'Baseline and after', state: 'rebuild', bg: bg, art: 'One ink crowd, two states: without ledgers, with ledgers and cards.', motion: 'Draggable divider, mechanic 04. Table remains below, unchanged.', act: 'Drags. The caveat note stays visible throughout.' },
+          { sec: 'Awards', state: 'rebuild', bg: bg, art: 'The banner procession as the rail itself.', motion: 'Unfinished procession, mechanic 05.', act: 'Scrolls the procession; last award always partly out of frame.' },
+          { sec: 'Method story', state: 'light touch', bg: bg, art: 'Community dialogue illustration beside the account of the first stopped marriage.', motion: 'Reveal.', act: 'Reads a long, honest passage.' },
+        ] },
+      { name: 'Stories', color: '#4F0E73', note: 'the cast belongs here',
+        rows: [
+          { sec: 'Story cards', state: 'rebuild', bg: bg, art: 'Replace the four right-based images with portraits from the cast: mother and daughter, two women, three faces, the girl reading.', motion: 'Card fills the frame on open; illustration stays put while text moves.', act: 'Opens one story fully.' },
+          { sec: 'Incident log', state: 'light touch', bg: bg, art: 'One ink figure per entry, no colour.', motion: 'Reveal on scroll.', act: 'Reads dated accounts.' },
+        ] },
+      { name: 'Get Involved', color: '#EAAE28', note: 'the ask, and the argument for it',
+        rows: [
+          { sec: 'Route chooser', state: 'light touch', bg: bg, art: 'Four arms interlocked at the top.', motion: 'Reveal.', act: 'Picks a route. Already built.' },
+          { sec: 'The case for investing', state: 'rebuild', bg: bg, art: 'The fork: a grey structural-vulnerability figure against the market stall in full colour.', motion: 'Mechanic 02 — the visitor picks charity or investment before the argument appears.', act: 'Commits to a position, then reads against it.' },
+          { sec: 'Give form', state: 'keep', bg: bgKeep, art: 'None. Forms do not need illustration.', motion: 'None. The path ends here and stops.', act: 'Gives.' },
+          { sec: 'Partners', state: 'keep', bg: bgKeep, art: 'Logos are the illustration.', motion: 'Reveal only.', act: 'Scans for names they know.' },
+        ] },
+      { name: 'Transparency', color: '#0E5565', note: 'credibility page — least motion of all',
+        rows: [
+          { sec: 'Accounts', state: 'keep', bg: bgKeep, art: 'None.', motion: 'Reveal only. No illustration near a number.', act: 'Interrogates figures.' },
+          { sec: 'Compliance and documents', state: 'keep', bg: bgKeep, art: 'None.', motion: 'None.', act: 'Opens scans.' },
+          { sec: 'Margin companion', state: 'add', bg: bg, art: 'The ink sprig, small, in the margin.', motion: 'Mechanic 06 — the only moving thing on the page.', act: 'Keeps their place on a very long page.' },
+        ] },
+      { name: 'Media', color: '#D2305C', note: 'archive, not narrative',
+        rows: [
+          { sec: 'Filters and grid', state: 'keep', bg: bgKeep, art: 'None.', motion: 'Reveal on grid change.', act: 'Filters.' },
+          { sec: 'Empty state', state: 'add', bg: bg, art: 'The ink sprig alone.', motion: 'None.', act: 'Understands there is nothing, and clears a filter.' },
+        ] },
+    ];
+
+    const copyRules = [
+      { n: '1', t: 'The illustration takes the noun; the sentence keeps the verb', b: 'Where a picture shows a girl on school steps, the line beside it should not also say “a girl returns to school”. It should say what happened next, and who made it happen.' },
+      { n: '2', t: 'A figure is a person before it is a percentage', b: 'The cycle already does this well — “this girl has no safe, private way to manage her period” before the 53%. Extend the pattern to the hero stats and the impact grid, which currently lead with the number alone.' },
+      { n: '3', t: 'Never caption a symbol', b: 'Hands, the eye, the earth carry meaning without a label. A caption under a symbol reads as an apology for it.' },
+    ];
+
+    const copyLines = [
+      { where: 'Home · hero stats', now: 'Four numbers with short labels, counted up automatically on load.', verdictLabel: 'Change', verdict: 'Same numbers, one clause of consequence each, revealed on press. The count-up is the weakest motion on the site: it plays to an empty room.' },
+      { where: 'Home · cycle heading', now: '“Risks don’t occur in isolation.” · “They reinforce each other across generations — unless systems respond in time.”', verdictLabel: 'Keep, verbatim', verdict: 'This is the best writing on the site. Add the fork question above it; do not touch the words.' },
+      { where: 'Home · “Tap any moment to follow how one life is shaped.”', now: 'Instruction line above the wheel.', verdictLabel: 'Keep, move', verdict: 'Correct instruction, wrong place — it sits above a wheel that is already spinning. Put it on the fork, where the choice actually is.' },
+      { where: 'Invest · “This Isn’t Charity. It’s an Investment in a Society We All Share.”', now: 'Headline, then “Every society eventually pays the price of exclusion.”', verdictLabel: 'Keep, stage it', verdict: 'Strong. But it currently answers a question nobody was asked. Put the fork first, then this headline as the reply.' },
+      { where: 'Invest · “Not charity. Not rescue. Not dependency.”', now: 'Three short negations in a list.', verdictLabel: 'Keep, pair', verdict: 'These are the captions the grey figure needs. Three negations against three colour illustrations, revealed one at a time.' },
+      { where: 'Impact · baseline note', now: '“What this table is and is not… no control group…”', verdictLabel: 'Keep, promote', verdict: 'This paragraph is the most trust-building thing on the page and it sits at the bottom in small grey type. It should stay visible while the divider is dragged.' },
+      { where: 'Programme pages · promise lines', now: 'e.g. “Children and young people learn, lead and shape the conditions of their own development.”', verdictLabel: 'Keep', verdict: 'Already doing the job of a threshold. Set them beside the hands-and-symbols illustration and give them air.' },
+      { where: 'Awards · “Four of these went to community leaders rather than to the organisation.”', now: 'Inside the intro paragraph.', verdictLabel: 'Change placement', verdict: 'This is the point of the whole section. It should be the line on the procession, not a clause in an intro.' },
+    ];
+
+    const limits = [
+      { t: 'Nothing loops near a number', b: 'No drift, pulse or rotation within sight of a statistic or a rupee figure. Movement beside data reads as salesmanship. The transparency page gets one moving element in the margin and nothing else.' },
+      { t: 'One illustration per viewport', b: 'The registers make it tempting to layer three at once. A section gets one image at story scale; anything else is a thumbnail or a mark.' },
+      { t: 'Every gate is skippable', b: 'A withheld figure has a visible way to reveal all; a fork can be passed. No content is reachable only through an interaction, which also keeps it usable on a screen reader.' },
+      { t: 'The weight has to be paid for', b: 'Twenty-two new PNGs at full size would double the page weight. Each needs a small variant, lazy loading below the fold, and the paths need to be a single reused asset rather than one per section.' },
+    ];
+
+    const decisions = [
+      { n: '1', q: 'Is the yellow path as a site-wide spine the right idea?', detail: 'It is the biggest structural change and everything else hangs off it. If yes, it also fixes how deep links land. If no, the plan still works as section-by-section illustration.' },
+      { n: '2', q: 'How far can I go with withheld figures?', detail: 'All statistics on the site, only the hero and impact grid, or none — some funders want the number on sight. My recommendation: hero and impact grid only.' },
+      { n: '3', q: 'Are you comfortable with the fork on the invest case?', detail: 'It asks a visitor to admit they thought of this as charity before the page argues otherwise. Effective, and slightly confrontational.' },
+      { n: '4', q: 'Which portraits may appear as portraits?', detail: 'The mother-and-daughter, two-women and three-faces illustrations read as specific people. Confirm they are not recognisable individuals from your work before I use them at story scale.' },
+      { n: '4b', q: 'Where does the mother-and-child painting go, and does it go only once?', detail: 'My recommendation: the entry to the vulnerability cycle, and nowhere else. It is the one image on the site with real emotional force and it will lose that if it recurs. Say the word if you want it in the hero instead — but then it cannot also be on the cycle.' },
+      { n: '4c', q: 'Only SDG 3 is still without artwork.', detail: 'Climate Action arrived, so goal 13 is solved. Good Health and Well-being on the Rights and Entitlements band is the last typographic tile. Send one and every SDG on the site is illustrated.' },
+      { n: '5', q: 'Build order.', detail: 'My proposal: Home first (spine, hero, stats, process, closing), then Impact, then Invest, then Programme pages, then the long documents. One page per turn, reviewable.' },
+      { n: '6', q: 'Anything in section 5 you object to?', detail: 'Every copy change there is a proposal only. Name the ones to drop and I will leave those lines exactly as written.' },
+    ];
+
+    const out = {
+      pathRemain: Math.round((1 - S.scroll) * 100) + '%',
+      registers, spine, demo, mechanics, pages, copyRules, copyLines, limits, decisions, late,
+    };
+    const walk = (v, d) => {
+      if (!v || d > 5) return;
+      if (Array.isArray(v)) { v.forEach(x => walk(x, d + 1)); return; }
+      if (typeof v !== 'object') return;
+      if (typeof v.img === 'string' && !v.imgCss) v.imgCss = 'url(' + v.img + ')';
+      Object.keys(v).forEach(k => { if (v[k] && typeof v[k] === 'object') walk(v[k], d + 1); });
+    };
+    walk(out, 0);
+    return out;
+  }
+}
+</script>
+</body>
+</html>
