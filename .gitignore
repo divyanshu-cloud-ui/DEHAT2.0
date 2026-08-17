@@ -7,21 +7,8 @@
 .trash/
 *.obsidian-workspace
 
-# Nested vault used for drafting — not site source.
-DEHAT Wesbite/
-
-# Obsidian auto-names pasted attachments "pasted-<timestamp>-0-<id>-<id>.<ext>".
-# These land loose in the vault root when someone pastes an image into a note;
-# they are not curated site assets (curated assets live under assets/).
-pasted-*.png
-pasted-*.jpg
-pasted-*.jpeg
-pasted-*.gif
-pasted-*.webp
-
-# Sensitive source imagery pasted into notes — must never reach a public repo.
-human_trafficking_*.png
-human_trafficking_*.jpg
+# Obsidian attachments (pasted images from notes) — not curated site assets.
+/attachments/
 
 # ── Working files / pipeline artifacts (not site source) ────────────────
 .thumbnail
@@ -41,11 +28,7 @@ DEHAT Website (offline).html
 # Personal photos of beneficiaries/staff, scanned legal & financial documents,
 # and half-finished content drafts. These are working materials for building
 # the site, not the site itself, and must stay out of the public repo.
-/uploads/
-/scans/
-/scraps/
-/screenshots/
-/small/
+/content-pipeline/
 
 # ── OS / editor cruft ─────────────────────────────────────────────────────
 Thumbs.db
