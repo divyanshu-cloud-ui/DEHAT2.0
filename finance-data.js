@@ -646,12 +646,12 @@ FIN.YEARS = [
     // genuine unresolved residual.
     receivedTotal:11618925.21, utilisedTotal:11583464.53, surplus:35460.68,
     received:[
-      { funder:'iimpact',         regime:'INR',  flex:'restricted', grant:4147057.98, interest:0, note:'RGCEP learning centres — appropriation on grant, utilised basis' },
+      { funder:'iimpact',         regime:'INR',  flex:'restricted', grant:4146876,    interest:19201, note:'RGCEP learning centres — audited appropriation on grant ₹41,46,876 + bank interest ₹19,201' },
       { funder:'acc',             regime:'INR',  flex:'restricted', grant:3539343,    interest:0, note:'SCDP/ACC Tikriya' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:1161567.83, interest:0, note:'Childline 1098' },
-      { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:1050328.13, interest:0, note:'Sujalam Sufalam (SSP/TCL/Sir Dorabji Tata Trust)' },
+      { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:1050328.13, interest:9342, note:'Sujalam Sufalam (SSP/TCL/Sir Dorabji Tata Trust) — appropriation on grant + bank interest' },
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:736603.35,  interest:28033, note:'Society Home Account — donations, insurance claim, SIT/World Learning + bank interest' },
-      { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:231795.85,  interest:0, note:'FASAL programme, pre-2022 phase — Sir Dorabji Tata Trust' },
+      { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:231773,     interest:0.90, note:'FASAL programme, pre-2022 phase — audited appropriation on grant + bank interest' },
       { funder:'rilm',          regime:'INR',  flex:'restricted', grant:207384,     interest:0, note:'Rotary India Literacy Mission, received through Rotary' },
       { funder:'action_aid',      regime:'FCRA', flex:'restricted', grant:165688,     interest:0, note:'Swabhiman Project — appropriation on grant' },
       { funder:'__fcra_general',  regime:'FCRA', flex:'flexible',   grant:0,          interest:14850, note:'FCRA-Others: bank interest' },
@@ -659,14 +659,17 @@ FIN.YEARS = [
       // The existing `individuals` line above (736,603.35 + 28,033 interest = 764,636.35) already
       // reproduces this page's own "Others" total (Donation 1,33,001.35 + Insurance Claim 14,085 + SIT
       // 60,000 + Old Grant Received 54,517 + Receivable from Centum 4,75,000 = 7,36,603.35) plus its
-      // "Bank Interest" line (28,033) exactly — so a second bank-interest figure here would double-count
-      // it. The three lines below are the schedule's remaining named grants; a ₹28,339.07 residual is
-      // still not identified — it does not match any other unclaimed line on this page and is kept
-      // separate rather than folded into the real bank-interest figure it happens to sit close to.
+      // "Bank Interest" line (28,033) exactly. RESOLVED: the four Society Home Account lines together
+      // (764,636.35 + 145,500 Pooling Account + 106,235 Centum + 56,200 Sahyog) sum to exactly
+      // ₹10,72,571.35, matching the signed schedule's own stated total income for this account to the
+      // rupee, with nothing left over. The former `__unallocated` ₹28,339.07 line was therefore not a
+      // genuine unidentified receipt. It was the balancing effect of using expenditure totals as receipt
+      // figures for RGCEP and FASAL while omitting the separately printed RGCEP, Sujalam Sufalam and FASAL
+      // interest lines. Those three projects are now recorded from the audited I&E income column above;
+      // all receipt lines sum exactly to ₹1,16,18,925.21 and the printed surplus is ₹35,460.68.
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:145500,     interest:0, note:'Grant-in-Aid from Pooling Account' },
       { funder:'centum',          regime:'INR',  flex:'restricted', grant:106235,     interest:0, note:'Grant from Centum — received ₹11,080 + receivable ₹95,155' },
       { funder:'sahyog',          regime:'INR',  flex:'restricted', grant:56200,      interest:0, note:'Grant from Sahyog Society (Tarang Project)' },
-      { funder:'__unallocated',   regime:'INR',  flex:'flexible',   grant:28339.07,   interest:0, note:'Society Home Account residual, not yet identified against a specific line' },
     ],
     spend:[
       { project:'RGCEP (IIMPACT)',                         funder:'iimpact',         regime:'INR', total:4147057.98, admin:399092 },
@@ -959,13 +962,19 @@ FIN.YEARS = [
     note:'Full audited I&E expenditure (₹27,59,020.13), independently itemised from the signed statement. The prior utilisedTotal (₹15,82,428.88) was an incomplete placeholder ahead of full digitisation.',
     receivedTotal:2893539.00, surplus:134518.88, utilisedTotal:2759020.13,
     fundersActive:['sdtt','cry','baif','kabir','iimpact','jica','nabard','individuals'],
+    // Receipt-side basis is the signed I&E appropriation schedule, matching receivedTotal and the
+    // expenditure/surplus presentation. The FC-3 cash return is retained as a separate statutory
+    // cross-check: it reports current-year foreign cash receipts ₹18,79,565 and interest ₹8,688.
     received:[
-      { funder:'baif',        regime:'FCRA', flex:'restricted', grant:929195,  interest:6618.50, note:'Sure Start Project — Payagpur ₹3,97,695 + Chittaura ₹5,31,500 (via BAIF, Pune)' },
-      { funder:'kabir',       regime:'FCRA', flex:'restricted', grant:500000,  interest:9184.75, note:'United Nations Development Programme, routed via Kabir (New Delhi)' },
-      { funder:'sdtt',        regime:'INR',  flex:'restricted', grant:474000,  interest:0, note:'Sir Dorabji Tata Trust — Empowering Rural Women' },
-      { funder:'cry',         regime:'FCRA', flex:'restricted', grant:450370,  interest:0, note:'Child Rights and You (foreign-funds project)' },
-      { funder:'nabard',      regime:'INR',  flex:'restricted', grant:95929,   interest:0, note:'NABARD SHG-promotion programme' },
-      { funder:'individuals', regime:'INR',  flex:'flexible',   grant:0,       interest:0, note:'Local contribution — General Account' },
+      { funder:'baif',        regime:'FCRA', flex:'restricted', grant:1036085, interest:6618.50, note:'Sure Start Payagpur + Chittaura — audited grant appropriation ₹10,36,085 + interest ₹6,618.50' },
+      { funder:'cry',         regime:'FCRA', flex:'restricted', grant:431322,  interest:1034.75, note:'CRY foreign-contribution project — appropriation + allocated interest' },
+      { funder:'kabir',       regime:'FCRA', flex:'restricted', grant:235000,  interest:1034.75, note:'Kabir/UNDP action research — appropriation + allocated interest' },
+      { funder:'sdtt',        regime:'INR',  flex:'restricted', grant:132416,  interest:0, note:'Sir Dorabji Tata Trust — Empowering Rural Women appropriation' },
+      { funder:'cry',         regime:'INR',  flex:'restricted', grant:123965,  interest:0, note:'CRY local-funds project appropriation' },
+      { funder:'iimpact',     regime:'INR',  flex:'restricted', grant:178180,  interest:0, note:'IIMPACT Rural Girl Child Education — receivable recognised' },
+      { funder:'jica',        regime:'INR',  flex:'restricted', grant:71965,   interest:0, note:'UPPFMPAP/JICA — receivable recognised' },
+      { funder:'nabard',      regime:'INR',  flex:'restricted', grant:220490,  interest:0, note:'NABARD ₹28,075 project income + ₹1,92,415 SHG-formation grant' },
+      { funder:'individuals', regime:'INR',  flex:'flexible',   grant:455428,  interest:0, note:'AFC ₹43,500 + PRIMENET ₹90,300 + UPVAN ₹17,000 + General Account ₹3,04,628 after separately classifying NABARD SHG grant' },
     ],
     // Source: YEAR 2009 - 2010.pdf, re-read directly page by page (Pages 5-7). The 14 lines sum to
     // ₹27,59,020.13; + surplus ₹1,34,518.88 = the printed grand total ₹28,93,539.00. PRIMENET/AFC/UPVAN
@@ -1214,8 +1223,8 @@ FIN.FUNDER_TAGS = {
   // cost — bank interest, audit fees, bank charges, general operations (verified line by line: never a
   // large unidentified grant, always a small institutional running cost). That classification is genuinely
   // settled, even though no single external funder is attached to it, so it is marked confirmed rather than
-  // "Mapping Under Confirmation." This does NOT apply to __inr_grants_mixed, __balance or __unallocated,
-  // which represent real amounts whose funder AND theme are still genuinely unknown — those stay unmapped.
+  // "Mapping Under Confirmation." This does NOT apply to __inr_grants_mixed or __balance, which
+  // represent real amounts whose funder AND theme are still genuinely unknown — those stay unmapped.
   __fcra_general:   { prog:'cross',      uncrc:'Participation', csr:'none', source:'institutional', confirm:true },
   caritas_germany:  { prog:'protection', uncrc:'Protection',   csr:'iii',  source:'institutional', confirm:true },
   caritas_india_fcra:{ prog:'protection', uncrc:'Protection',  csr:'iii',  source:'institutional', confirm:true },
@@ -1310,7 +1319,6 @@ FIN.PLACEHOLDER_NAMES = {
   __inr_grants_mixed: 'Domestic Grants \u2014 Funder Not Itemised',
   __mixed:            'Several Grants \u2014 Combined in the Statement',
   __sujlam_suflam:    'Sujalam Sufalam Water and Livelihoods Programme',
-  __unallocated:      'Not Attributed to a Funder',
   __balance:          'Other Income Not Itemised by Funder',
   __unitemised_spend: 'Spend Not Itemised by Funder',
   __fcra_other_funds: 'Foreign Contribution — Other Funds (Residual Account)',
