@@ -174,7 +174,7 @@ FIN.FUNDERS = {
   pani:             { name:'PANI, Faizabad (Grant Intermediary)',             type:'indian_inst',  regime:'INR',  aliases:['PANI','PANI Faizabad','From PANI'] },
   jagdeep_lohani:   { name:'Jagdeep Singh Lohani (Individual)',      type:'individual',   regime:'INR',  aliases:['Jagdeep Singh Lohani','Mr. Jagdeep Singh Lohani'] },
   ssa:              { name:'Sarva Shiksha Abhiyan (Govt.)',          type:'govt',         regime:'INR',  aliases:['SSA','Sarva Siksha Abhiyaan'] },
-  jica:             { name:'JICA / Japan Bank (UPPFMPAP Forest Project)', type:'govt', regime:'INR', aliases:['JICA','Japan Bank for International Cooperation','UPPFMPAP','DMU Renukoot','DMU Sonbhadra'], note:'UP Participatory Forest Mgmt & Poverty Alleviation Project, routed through the state Divisional Management Unit' },
+  jica:             { name:'JICA / Japan Bank (UPFMPAP Forest Project)', type:'govt', regime:'INR', aliases:['JICA','Japan Bank for International Cooperation','UPFMPAP','DMU Renukoot','DMU Sonbhadra'], note:'UP Participatory Forest Mgmt & Poverty Alleviation Project, routed through the state Divisional Management Unit' },
   // These three were previously folded into the 'individuals' bucket as "one-off domestic consultancy
   // grants." They are not individuals — each is a distinct institution with its own agreement.
   afc:              { name:'Agricultural Finance Corporation Ltd',   type:'indian_inst',  regime:'INR', aliases:['AFC','AFC, Lucknow'], note:'Signed letter dated 26.03.2009 (AFC:LKO:PP Basti:2009), on AFC letterhead (21 Vidhan Sabha Marg, Lucknow; Regd. Office Mumbai) — DEHAT was the paid service provider for a Gram Panchayat–level survey of Basti District under the NREGA Perspective Plan, not a grant recipient in the usual sense; a fee-for-service consultancy contract.' },
@@ -801,8 +801,8 @@ FIN.YEARS = [
       { funder:'unicef',         regime:'INR',  flex:'restricted', grant:2048588, interest:27391.20, note:'UNICEF-CHNI (child health & nutrition) — appropriation on grant; interest incl. ₹24,042 bank interest + ₹3,349.20 contribution from the Society Home Account', project:'UNICEF-CHNI' },
       { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:879174,  interest:12940, note:'FASAL programme, pre-2022 phase, routed through PANI — appropriation on grant' },
       { funder:'childline_india',regime:'INR',  flex:'restricted', grant:739194,  interest:0,     note:'Childline India Foundation — ₹5,19,225 grant received + ₹2,19,969 receivable' },
-      { funder:'jica',           regime:'INR',  flex:'restricted', grant:550392,  interest:0,     note:'UPPFMPAP, via DMU Sonbhadra — appropriation on grant' },
-      // Note deliberately doesn't name the recouping projects (UNICEF-CHNI/CPP, JICA/UPPFMPAP) — each of
+      { funder:'jica',           regime:'INR',  flex:'restricted', grant:550392,  interest:0,     note:'UPFMPAP, via DMU Sonbhadra — appropriation on grant' },
+      // Note deliberately doesn't name the recouping projects (UNICEF-CHNI/CPP, JICA/UPFMPAP) — each of
       // their own grant lines is already itemised, separately and correctly tagged, elsewhere in this same
       // year's accounts. Naming them here caused a real classification bug: this line's first-match
       // keyword tagger read "JICA" in the note text and mistagged this general, mixed Society Home receipt
@@ -848,7 +848,7 @@ FIN.YEARS = [
       { project:'RGCEP Project (IIMPACT Girls Education)', funder:'iimpact', regime:'INR', total:2777982, admin:233353 },
       { project:'ACC Tikariya SCDP Project', funder:'acc', regime:'INR', total:20400, admin:17400 },
       { project:'Childline Project (Childline India Foundation)', funder:'childline_india', regime:'INR', total:739194, admin:166478 },
-      { project:'UPPFMPAP Project (Forestry / JICA Support)', funder:'jica', regime:'INR', total:550392, admin:73472 },
+      { project:'UPFMPAP Project (Forestry / JICA Support)', funder:'jica', regime:'INR', total:550392, admin:73472 },
       { project:'Depreciation on Fixed Assets (Local & FCRA)', funder:'individuals', regime:'INR', total:194984.57, admin:194984.57 },
     ],
   },
@@ -866,7 +866,7 @@ FIN.YEARS = [
       { funder:'unicef',         regime:'INR',  flex:'restricted', grant:1404288, interest:0, note:'UNICEF-CPP (child protection); ₹8,32,450 further receivable', project:'UNICEF-CPP' },
       { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:813000,  interest:2986, note:'Sir Dorabji Tata Trust — Empowering Rural Women; ₹65,655 refunded' },
       { funder:'cry',            regime:'FCRA', flex:'restricted', grant:573284,  interest:6776, note:'Child Rights and You project; ₹29,435 unutilised at year end' },
-      { funder:'jica',           regime:'INR',  flex:'restricted', grant:527121,  interest:2985, note:'UPPFMPAP (JICA / Japan Bank, via DMU Renukoot); activities 2011-12' },
+      { funder:'jica',           regime:'INR',  flex:'restricted', grant:527121,  interest:2985, note:'UPFMPAP (JICA / Japan Bank, via DMU Renukoot); activities 2011-12' },
       { funder:'childline_india',regime:'INR',  flex:'restricted', grant:415250,  interest:0, note:'Childline India Foundation; ₹3,85,550 further receivable (grant fund ₹8,00,800)' },
       { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:191800,  interest:0, note:'FASAL programme, pre-2022 phase — Sir Dorabji Tata Trust, routed through PANI, Faizabad' },
       { funder:'baif',           regime:'FCRA', flex:'restricted', grant:88069,   interest:0, note:'Sure Start (BAIF, Pune) — Payagpur ₹45,548 + Chitaura ₹42,521 (winding down)' },
@@ -884,7 +884,7 @@ FIN.YEARS = [
       { project:'IIMPACT Project', funder:'iimpact', regime:'INR', total:2477241, admin:167610 },
       { project:'UNICEF-CHNI Project', funder:'unicef', regime:'INR', total:2635220, admin:172398 },
       { project:'UNICEF-CPP Project', funder:'unicef', regime:'INR', total:2236738, admin:96835 },
-      { project:'UPPFMPAP Project (JICA)', funder:'jica', regime:'INR', total:684911, admin:91714 },
+      { project:'UPFMPAP Project (JICA)', funder:'jica', regime:'INR', total:684911, admin:91714 },
       { project:'SDTT-ERW Project', funder:'sdtt', regime:'INR', total:750331, admin:107367 },
       { project:'Sure Start Programme — Chaitura (BAIF)', funder:'baif', regime:'FCRA', total:57839, admin:4285 },
       { project:'Sure Start Programme — Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:61758, admin:4575 },
@@ -907,7 +907,7 @@ FIN.YEARS = [
     // row and every subtotal reconciles exactly against the audited totals:
     //   FCRA: Sure Start-Payagpur (util. ₹3,98,825) + Sure Start-Chittaura (₹4,05,744) + CRY (₹5,54,208) +
     //   Kabir (₹50,000) = ₹14,08,777.00, matching the audited Foreign Activities Expenses exactly.
-    //   Indian: ERW/SDTT (₹3,25,736) + IIMPACT (₹18,40,996) + UPPFMPAP/JICA (₹8,61,797.75) + UNICEF
+    //   Indian: ERW/SDTT (₹3,25,736) + IIMPACT (₹18,40,996) + UPFMPAP/JICA (₹8,61,797.75) + UNICEF
     //   (₹15,49,146) + SSK Training (₹1,10,020) + NABARD Training (₹12,455) = ₹47,00,150.75, matching the
     //   audited Indian Activities Expenses exactly. Grand total ₹61,08,927.75, + Depreciation ₹1,27,554.30
     //   + Other Expenses ₹1,64,177.00 = ₹64,00,659.05 = utilisedTotal, to the rupee.
@@ -946,7 +946,7 @@ FIN.YEARS = [
       { funder:'individuals',    regime:'INR',  flex:'flexible',   grant:0,       interest:796679.75, note:'Local contribution + interest (Indian funds)' },
     ],
     spend:[
-      { project:'UPPFMPAP Project (JICA, through DMU Renukoot)', funder:'jica', regime:'INR', total:861797.75, admin:118336.75 },
+      { project:'UPFMPAP Project (JICA, through DMU Renukoot)', funder:'jica', regime:'INR', total:861797.75, admin:118336.75 },
       { project:'Comprehensive Health & Nutrition Intervention (UNICEF, Lucknow)', funder:'unicef', regime:'INR', total:1549146.00, admin:101346.00 },
       { project:'Sure Start Project (BAIF, Pune)', funder:'baif', regime:'FCRA', total:804569.00, admin:59598.00 },
       { project:'Depreciation on Fixed Assets (Indian Funds Related)', funder:'individuals', regime:'INR', total:127554.30, admin:127554.30 },
@@ -977,7 +977,7 @@ FIN.YEARS = [
       { funder:'sdtt',        regime:'INR',  flex:'restricted', grant:132416,  interest:0, note:'Sir Dorabji Tata Trust — Empowering Rural Women appropriation' },
       { funder:'cry',         regime:'INR',  flex:'restricted', grant:123965,  interest:0, note:'CRY local-funds project appropriation' },
       { funder:'iimpact',     regime:'INR',  flex:'restricted', grant:178180,  interest:0, note:'IIMPACT Rural Girl Child Education — receivable recognised' },
-      { funder:'jica',        regime:'INR',  flex:'restricted', grant:71965,   interest:0, note:'UPPFMPAP/JICA — receivable recognised' },
+      { funder:'jica',        regime:'INR',  flex:'restricted', grant:71965,   interest:0, note:'UPFMPAP/JICA — receivable recognised' },
       { funder:'nabard',      regime:'INR',  flex:'restricted', grant:220490,  interest:0, note:'NABARD ₹28,075 project income + ₹1,92,415 SHG-formation grant' },
       { funder:'afc',         regime:'INR',  flex:'restricted', grant:43500,   interest:0, note:'Agricultural Finance Corporation Ltd — Gram Panchayat survey, Basti District (NREGA Perspective Plan)' },
       { funder:'primenet',    regime:'INR',  flex:'restricted', grant:90300,   interest:0, note:'Primenet, Lucknow — Gram Panchayat survey, Bahraich District (NREGA Perspective Plan)' },
@@ -1014,7 +1014,7 @@ FIN.YEARS = [
       { project:'SDTT — Empowering Rural Women (ERW)', funder:'sdtt', regime:'INR', total:132416, admin:43539 },
       { project:'CRY Project (Local Indian Funds)', funder:'cry', regime:'INR', total:123965, admin:54835 },
       { project:'Primenet — NREGA Perspective Plan, Bahraich', funder:'primenet', regime:'INR', total:90300, admin:0, adminChecked:true },
-      { project:'UPPFMPAP Project (JICA)', funder:'jica', regime:'INR', total:71965, admin:0, adminChecked:true },
+      { project:'UPFMPAP Project (JICA)', funder:'jica', regime:'INR', total:71965, admin:0, adminChecked:true },
       { project:'AFC — NREGA Perspective Plan, Basti', funder:'afc', regime:'INR', total:43500, admin:0, adminChecked:true },
       { project:'NABARD Programme', funder:'nabard', regime:'INR', total:28159, admin:0, adminChecked:true },
       { project:'UPVAN — Right to Information Campaign', funder:'upvan', regime:'INR', total:17000, admin:0, adminChecked:true },
