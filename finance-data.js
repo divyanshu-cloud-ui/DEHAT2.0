@@ -150,6 +150,8 @@ FIN.FUNDERS = {
   // Historical / one-off funders (FY2015-16 → FY2019-20)
   birlasoft:        { name:'Birlasoft India Ltd (CSR)',           type:'csr',          regime:'INR',  aliases:['Birlasoft','Grant From- Birlasoft India Ltd','e-vidya','E-Vidhya','E Vidhya','Evidhya'], note:'"e-vidya" — computer-skills CSR programme for girl students, Government Girls Inter College, Sector 51, Noida (CSR Enabler Agreement, 12 April 2018). Not affiliated with IIMPACT despite the similar-sounding name.' },
   centum:           { name:'Centum WorkSkills India (WSI)',        type:'csr',          regime:'INR',  aliases:['Centum','WSI','Centum (WSI)','WSI Learning Centre'] },
+  tmn:              { name:'TMN (Seed Treatment Programme)',        type:'indian_inst',  regime:'INR',  aliases:['TMN'], note:'FY2012-13 Society Home Account component, per the audited workbook (sheet "DEHAT -GENERAL").' },
+  vidhya:           { name:'Vidhya (Scholarship Programme)',        type:'indian_inst',  regime:'INR',  aliases:['Vidhya','Vidhya Grants'], note:'FY2012-13 Society Home Account component, per the audited workbook (sheet "DEHAT -GENERAL").' },
   nabard:           { name:'NABARD',                               type:'govt',         regime:'INR',  aliases:['NABARD SHG Formation'] },
   ssk:              { name:'Sahbhagi Shikshan Kendra',               type:'institutional', regime:'INR', aliases:['SSK', 'SSK, Lucknow', 'SSK Training Project', 'Sahbhagi Shiksha Kendra'] },
   cry:              { name:'Child Rights and You (CRY)',           type:'philanthropy', regime:'INR',  aliases:['CRY','Cry Project'] },
@@ -386,7 +388,26 @@ FIN.YEARS = [
       // they sum to its Total Utilised, ₹12,58,465.80, exactly.
       { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:994752, admin:0, adminChecked:true },
       { project:'DEHAT Core FCRA Activities & Inverter Asset', funder:'__fcra_general', regime:'FCRA', total:263713.80, admin:24913.80, note:'Admin ₹24,913.80 is the statutory Rule 5 figure printed on the return; the remaining ₹2,38,800 covers the ₹21,520 inverter asset purchase and direct operations.' },
-      { project:'Grant-funded programmes (all — INR)',    funder:'__inr_grants_mixed', regime:'INR',  total:9292625.33, admin:0, adminChecked:true },
+      // Source: signed "Schedule - Indian Grants" (Madhuresh Agrahari & Associates, FRN 026205N),
+      // recovered from a Gmail attachment, cross-checked against the audited consolidated I&E account.
+      // RESOLVED — the audited "Expenditure met from Grant" total of ₹92,92,625.33 is exactly:
+      // Indian restricted-project utilisation ₹82,97,873.33 (the 8 lines below) + FCRA Swaraksha
+      // utilisation ₹9,94,752.00 (the caritas_india_fcra line above, already counted there). The
+      // ₹7,78,849.88 previously disclosed as an unidentified residual was a population-mismatch
+      // artefact from comparing this line against the fuller schedule total including General Fund
+      // spend — not a real gap. No admin sub-split is shown on this schedule for any line, so admin
+      // stays null (not separately disclosed) rather than assumed.
+      { project:'Azim Premji Philanthropic Initiatives — COVID Relief', funder:'appi', regime:'INR', total:1498000.00, admin:null },
+      { project:'Azim Premji Philanthropic Initiatives FASAL',          funder:'appi', regime:'INR', total:775418.23,  admin:null },
+      { project:'GROW (EdelGive)',                                     funder:'edele_give', regime:'INR', total:1451.00, admin:null },
+      { project:'Alliance for Immunization & Health — Maharashtra',     funder:'aih', regime:'INR', total:1309208.00, admin:null },
+      { project:'Alliance for Immunization & Health — Uttar Pradesh',   funder:'aih', regime:'INR', total:1071522.00, admin:null },
+      { project:'Scope of Work for Malnutrition (ACC)',                 funder:'acc', regime:'INR', total:978616.00,  admin:null },
+      { project:'Childline India Foundation',                          funder:'childline_india', regime:'INR', total:1391162.00, admin:null },
+      { project:'Childline Shravasti',                                 funder:'childline_india', regime:'INR', total:1272496.10, admin:null },
+      // Same schedule's item 8, disclosed separately — it is NOT part of the ₹92,92,625.33
+      // reconciliation above (that figure excludes it), but it is real, cited spend in its own right.
+      { project:'General Fund',                                        funder:'individuals', regime:'INR', total:215902.12, admin:null },
       { project:'DEHAT general expenditure',              funder:'individuals',         regime:'INR',  total:465511.92, admin:465511.92 },
     ],
     depreciation:76851,
@@ -833,7 +854,19 @@ FIN.YEARS = [
       { project:'CRY Project (Foreign Contribution)', funder:'cry', regime:'FCRA', total:155293, admin:60655 },
       { project:'Action on Research on Direct Democracy (Jagdeep Lohani)', funder:'jagdeep_lohani', regime:'FCRA', total:20000, admin:0, adminChecked:true },
       { project:'FCRA General Operational Bank Charges', funder:'__fcra_general', regime:'FCRA', total:5, admin:5 },
-      { project:'Society Home Account / Local Development Programmes (ACC Amethi, TMN, Centum, Vidhya)', funder:'individuals', regime:'INR', total:658671.20, admin:null },
+      // Source: Financial year 2012-13.pdf, Society Home Account schedule, cross-checked against the
+      // fuller audited workbook Balance_Sheet_2012-2013-2.xlsx (sheet "DEHAT -GENERAL"). The former
+      // single ₹6,58,671.20 line is decomposed into its four named activities plus the remaining
+      // Society/General Home Account, which is NOT distributed across those four merely to force a
+      // split: 78510+4845+120377+3759+451180.20 = 658671.20 exactly, no residual.
+      { project:'ACC Amethi (Providing Career Counsellor Program)', funder:'acc', regime:'INR', total:78510.00, admin:0, adminChecked:true },
+      { project:'TMN (Seed Treatment)', funder:'tmn', regime:'INR', total:4845.00, admin:0, adminChecked:true },
+      // Centum's own workbook does not use the word "administration" — it gives a natural-account split
+      // only: Office Expenses ₹36,715 + Salary ₹83,662 = ₹1,20,377. Left as admin:null rather than
+      // assuming office=admin/salary=programme without an auditor-labelled functional schedule.
+      { project:'Centum (WSI Learning Centre Program): Office ₹36,715 + Salary ₹83,662', funder:'centum', regime:'INR', total:120377.00, admin:null },
+      { project:'Vidhya (Scholarship Program)', funder:'vidhya', regime:'INR', total:3759.00, admin:0, adminChecked:true },
+      { project:'Society / General Home Account', funder:'individuals', regime:'INR', total:451180.20, admin:null },
       // UNICEF-CHNI's schedule prints two overhead-shaped figures: a 7% institutional overhead
       // credited to the Society Home Account (₹1,34,020, counted in that line's received[] entry
       // above) and this project's own "Direct Program Support Cost" (₹3,29,854). UNICEF-CPP's
@@ -953,9 +986,16 @@ FIN.YEARS = [
       { project:'Other Expenses (Foreign ₹4,950 + Indian ₹1,59,227)', funder:'individuals', regime:'INR', total:164177.00, admin:164177.00 },
       { project:'Child Right Project (CRY, New Delhi)', funder:'cry', regime:'FCRA', total:554208.00, admin:null },
       { project:'Action Research on Right to Information (Kabir Project, New Delhi)', funder:'kabir', regime:'FCRA', total:50000.00, admin:null },
-      { project:'Empowering Rural Women (SDTT), ERW Project', funder:'sdtt', regime:'INR', total:325736.00, admin:null },
+      // Source: Balance Sheet 2010-11.pdf, SDTT-ERW Income & Expenditure schedule — an actual account,
+      // not a proposal budget. Programme ₹50,316 activities + ₹1,95,000 programme salary = ₹2,45,316.
+      // Administration: Accountant ₹38,500 + Travel/fuel ₹14,411 + Printing ₹6,037 + Phone/postage
+      // ₹9,472 + Office rent ₹12,000 = ₹80,420. This supersedes the earlier admin:null.
+      { project:'Empowering Rural Women (SDTT), ERW Project', funder:'sdtt', regime:'INR', total:325736.00, admin:80420 },
       { project:'Rural Girl Child Education (IIMPACT, Gurgaon)', funder:'iimpact', regime:'INR', total:1840996.00, admin:null },
-      { project:'Community Based Disaster Management Committees (Sahbhagi Shikshan Kendra, Mihinpurwa block)', funder:'ssk', regime:'INR', total:110020.00, admin:null },
+      // Source: Balance Sheet 2010-11.pdf, Society Home Account — the actual payment line reads
+      // "Expenses on Programme – Formation & Training of CBDMC (SSK) ₹1,10,020," a direct account
+      // entry, not a proposal budget. 100% programme, no administration shown.
+      { project:'Community Based Disaster Management Committees (Sahbhagi Shikshan Kendra, Mihinpurwa block)', funder:'ssk', regime:'INR', total:110020.00, admin:0, adminChecked:true },
       { project:'NABARD Training Project (Lucknow)', funder:'nabard', regime:'INR', total:12455.00, admin:null },
     ],
   },
@@ -1235,8 +1275,8 @@ FIN.FUNDER_TAGS = {
   // cost — bank interest, audit fees, bank charges, general operations (verified line by line: never a
   // large unidentified grant, always a small institutional running cost). That classification is genuinely
   // settled, even though no single external funder is attached to it, so it is marked confirmed rather than
-  // "Mapping Under Confirmation." This does NOT apply to __inr_grants_mixed or __balance, which
-  // represent real amounts whose funder AND theme are still genuinely unknown — those stay unmapped.
+  // "Mapping Under Confirmation." This does NOT apply to __balance, which represents a real amount
+  // whose funder AND theme are still genuinely unknown — that stays unmapped.
   __fcra_general:   { prog:'cross',      uncrc:'Participation', csr:'none', source:'institutional', confirm:true },
   caritas_germany:  { prog:'protection', uncrc:'Protection',   csr:'iii',  source:'institutional', confirm:true },
   caritas_india_fcra:{ prog:'protection', uncrc:'Protection',  csr:'iii',  source:'institutional', confirm:true },
@@ -1251,6 +1291,8 @@ FIN.FUNDER_TAGS = {
   shes_the_first:   { prog:'leadership', uncrc:'Development',  csr:'ii',   source:'institutional', confirm:true },
   iimpact:          { prog:'leadership', uncrc:'Development',  csr:'ii',   source:'philanthropy',  confirm:true },
   centum:           { prog:'leadership', uncrc:'Development',  csr:'ii',   source:'csr',           confirm:true },
+  tmn:              { prog:'climate',    uncrc:'Development',  csr:'iv',   source:'institutional', confirm:true },
+  vidhya:           { prog:'leadership', uncrc:'Development',  csr:'ii',   source:'institutional', confirm:true },
   charity_science:  { prog:'leadership', uncrc:'Development',  csr:'ii',   source:'institutional', confirm:true },
   geeta_karnal:     { prog:'leadership', uncrc:'Development',  csr:'ii',   source:'csr',           confirm:true },
   birlasoft:        { prog:'leadership', uncrc:'Development',  csr:'ii',   source:'csr',           confirm:true },
@@ -1331,7 +1373,6 @@ FIN.PLACEHOLDER_NAMES = {
   __fcra_general:     'Foreign Contribution Account \u2014 General Fund',
   __fcra_grants:      'Foreign Contribution Grants \u2014 Funder Not Itemised',
   __inr_grants:       'Domestic Grants \u2014 Funder Not Itemised',
-  __inr_grants_mixed: 'Domestic Grants \u2014 Funder Not Itemised',
   __mixed:            'Several Grants \u2014 Combined in the Statement',
   __sujlam_suflam:    'Sujalam Sufalam Water and Livelihoods Programme',
   __balance:          'Other Income Not Itemised by Funder',
