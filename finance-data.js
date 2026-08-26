@@ -176,12 +176,10 @@ FIN.FUNDERS = {
   ssa:              { name:'Sarva Shiksha Abhiyan (Govt.)',          type:'govt',         regime:'INR',  aliases:['SSA','Sarva Siksha Abhiyaan'] },
   jica:             { name:'JICA / Japan Bank (UPPFMPAP Forest Project)', type:'govt', regime:'INR', aliases:['JICA','Japan Bank for International Cooperation','UPPFMPAP','DMU Renukoot','DMU Sonbhadra'], note:'UP Participatory Forest Mgmt & Poverty Alleviation Project, routed through the state Divisional Management Unit' },
   // These three were previously folded into the 'individuals' bucket as "one-off domestic consultancy
-  // grants." They are not individuals — each is a distinct institution with its own agreement, matching
-  // this site's own existing partner-logo roster (agricultural-finance-corporation-limited,
-  // government-of-uttar-pradesh-forest-department already appear there).
+  // grants." They are not individuals — each is a distinct institution with its own agreement.
   afc:              { name:'Agricultural Finance Corporation Ltd',   type:'indian_inst',  regime:'INR', aliases:['AFC','AFC, Lucknow'], note:'Signed letter dated 26.03.2009 (AFC:LKO:PP Basti:2009), on AFC letterhead (21 Vidhan Sabha Marg, Lucknow; Regd. Office Mumbai) — DEHAT was the paid service provider for a Gram Panchayat–level survey of Basti District under the NREGA Perspective Plan, not a grant recipient in the usual sense; a fee-for-service consultancy contract.' },
   primenet:         { name:'Primenet, Lucknow',                     type:'indian_inst',  regime:'INR', aliases:['PRIMENET','Primenet'], note:'Same NREGA Perspective Plan survey structure as the AFC contract above (Bahraich District rather than Basti), per the signed FY2009-10 statement\'s own parallel "PRIMENET-Perspective Plan of Bahraich Dist. under NREGA" heading. No separate signed agreement letter has been located on file for this one — treated as an institutional consultancy on the strength of the audited statement\'s own structure, not an individual.' },
-  upvan:            { name:'Government of Uttar Pradesh Forest Department', type:'govt', regime:'INR', aliases:['UPVAN','UPVAN, Lucknow'], note:'Matches this site\'s existing partner-logo entry "government-of-uttar-pradesh-forest-department." Funded a Right to Information campaign in FY2009-10 per the signed statement\'s "UPVAN -RTI Compaign Expenses" heading.' },
+  upvan:            { name:'Uttar Pradesh Voluntary Action Network', type:'indian_inst', regime:'INR', aliases:['UPVAN','UPVAN, Lucknow'], note:'Name corrected per direct confirmation — not the Forest Department, which was an earlier, unsupported guess drawn only from a coincidentally-similar partner-logo filename elsewhere on this site, not a citation. UPVAN funded a Right to Information campaign in FY2009-10 per the signed statement\'s "UPVAN -RTI Compaign Expenses" heading, which fits a civil-society voluntary-action network far better than a state forestry department.' },
   erase_poverty:    { name:'Erase Poverty (Swabhiman)',                type:'foreign_org', regime:'FCRA', aliases:['ERASE POVERTY','Erase Poverty'] },
   light_a_lamp:     { name:'Light A Lamp Foundation',                  type:'foreign_org', regime:'FCRA', aliases:['LIGHT A LAMP','Light A Lamp Foundation'] },
   sit_world:        { name:'SIT / World Learning India',               type:'foreign_org', regime:'INR',  aliases:['SIT-World Learning India','SIT','World Learning'] },
@@ -983,17 +981,18 @@ FIN.YEARS = [
       { funder:'nabard',      regime:'INR',  flex:'restricted', grant:220490,  interest:0, note:'NABARD ₹28,075 project income + ₹1,92,415 SHG-formation grant' },
       { funder:'afc',         regime:'INR',  flex:'restricted', grant:43500,   interest:0, note:'Agricultural Finance Corporation Ltd — Gram Panchayat survey, Basti District (NREGA Perspective Plan)' },
       { funder:'primenet',    regime:'INR',  flex:'restricted', grant:90300,   interest:0, note:'Primenet, Lucknow — Gram Panchayat survey, Bahraich District (NREGA Perspective Plan)' },
-      { funder:'upvan',       regime:'INR',  flex:'restricted', grant:17000,   interest:0, note:'Government of Uttar Pradesh Forest Department — Right to Information campaign' },
+      { funder:'upvan',       regime:'INR',  flex:'restricted', grant:17000,   interest:0, note:'Uttar Pradesh Voluntary Action Network — Right to Information campaign' },
       { funder:'individuals', regime:'INR',  flex:'flexible',   grant:304628,  interest:0, note:'General Account, after separately classifying the NABARD SHG grant and the AFC/Primenet/UPVAN institutional lines above' },
     ],
     // Source: YEAR 2009 - 2010.pdf, re-read directly page by page (Pages 5-7). The 14 lines sum to
     // ₹27,59,020.13; + surplus ₹1,34,518.88 = the printed grand total ₹28,93,539.00. AFC and Primenet
     // are institutional NREGA-perspective-plan survey consultancies (Basti and Bahraich Districts
     // respectively) — AFC's own signed 26.03.2009 letter confirms DEHAT was the paid service provider
-    // for a Gram Panchayat–level survey, not a grant recipient. UPVAN is the Government of Uttar Pradesh
-    // Forest Department, matching this site's existing partner-logo roster. None of the three are
-    // individuals; each now has its own funder-registry entry rather than being folded into the
-    // domestic 'individuals' bucket.
+    // for a Gram Panchayat–level survey, not a grant recipient. UPVAN is the Uttar Pradesh Voluntary
+    // Action Network — a civil-society RTI-campaign network, per direct confirmation, not the state
+    // Forest Department this dataset previously and wrongly guessed from a coincidental logo filename.
+    // None of the three are individuals; each now has its own funder-registry entry rather than being
+    // folded into the domestic 'individuals' bucket.
     // Admin = any printed "Administration"/"Overhead"/"Management"/"Support Cost" sub-line. Re-verified
     // directly against YEAR 2009 - 2010.pdf pages 5-7 (the full 11-page consolidated statement, not
     // just the 8-page excerpt used earlier): BAIF Chittaura/Payagpur admin = their own printed "Project
@@ -1267,7 +1266,7 @@ FIN.FUNDER_TAGS = {
   nabard:           { prog:'rights',     uncrc:'Development',  csr:'x',    source:'government',    confirm:true },
   afc:              { prog:'rights',     uncrc:'Development',  csr:'x',    source:'institutional', confirm:true },
   primenet:         { prog:'rights',     uncrc:'Development',  csr:'x',    source:'institutional', confirm:true },
-  upvan:            { prog:'rights',     uncrc:'Participation',csr:'x',    source:'government',    confirm:true },
+  upvan:            { prog:'rights',     uncrc:'Participation',csr:'x',    source:'institutional', confirm:true },
   // Confirmed via the signed assignment form "Sahbhagi Shikshan Kendra May 2010.pdf" (Ref.
   // SSK/Finance/DMRC/04/10-11, 15.05.2010): "Formation of Community Based Disaster Management Committees
   // (CBDMC) in 2 selected flood prone Gram Panchayat of Mihinpurwa block, Bahraich" — five task forces
