@@ -992,6 +992,12 @@ FIN.YEARS = [
       { project:'Depreciation on Fixed Assets (Indian Funds Related)', funder:'individuals', regime:'INR', total:127554.30, admin:127554.30 },
       { project:'Other Expenses (Foreign ₹4,950 + Indian ₹1,59,227)', funder:'individuals', regime:'INR', total:164177.00, admin:164177.00 },
       { project:'Child Right Project (CRY, New Delhi)', funder:'cry', regime:'FCRA', total:554208.00, admin:null },
+      // Statutory cross-check: the signed FC-3 for FY2010-11 (submitted 29.06.2011) shows a Kabir
+      // Project line on a cash basis — opening balance ₹2,65,000 fully utilised during the year, i.e.
+      // ₹2,65,000 cash utilisation — differing from the ₹50,000 audited I&E "utilised on transfer from
+      // balance sheet" figure used here. Same accrual-vs-cash distinction already documented for other
+      // years (FY2009-10, FY2020-21); the I&E figure remains the live basis per this dataset's
+      // established convention. No admin schedule accompanies either figure for this project.
       { project:'Action Research on Right to Information (Kabir Project, New Delhi)', funder:'kabir', regime:'FCRA', total:50000.00, admin:null },
       // Source: Balance Sheet 2010-11.pdf, SDTT-ERW Income & Expenditure schedule — an actual account,
       // not a proposal budget. Programme ₹50,316 activities + ₹1,95,000 programme salary = ₹2,45,316.
