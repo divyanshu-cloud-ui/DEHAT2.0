@@ -524,7 +524,12 @@ FIN.YEARS = [
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:1292090, interest:0, note:'Childline BRH', project:'Childline BRH' },
       { funder:'birlasoft',       regime:'INR',  flex:'restricted', grant:1115216, interest:0, note:'"e-vidya" computer-skills programme (CSR Enabler Agreement, 12 Apr 2018) — Government Girls Inter College, Sector 51, Noida; not an IIMPACT project despite the similar name' },
       { funder:'acc',             regime:'INR',  flex:'restricted', grant:1226490, interest:0, note:'Sustainable Community Development Project / ACC school & garment skilling' },
-      { funder:'nabard',          regime:'INR',  flex:'restricted', grant:87280,   interest:0, note:'Sujlam Suflam (water) project' },
+      // Funder correction: Sujlam Suflam's own signed project I&E ("Developmental Association for
+      // Human Advancement — Sujlam Suflam Project, Income and Expenditure Account, 1 Apr 2018 – 31 Mar
+      // 2019", CA Akash Garg) states its income line as "Grant Utilised-SDTT ₹87,280.00" plus its own
+      // "Bank Interest ₹1,026.40" — this is a Sir Dorabji Tata Trust project (consistent with SDTT's
+      // recurring Sujalam/Sujlam Suflam NRM/livelihoods project in other years), not NABARD.
+      { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:87280,   interest:1026.40, note:'Sujlam Suflam (water/NRM) project' },
       { funder:'charity_science',regime:'INR',  flex:'restricted', grant:509810,  interest:0, note:'Charity Science project' },
       { funder:'geeta_karnal',    regime:'INR',  flex:'restricted', grant:157616,  interest:0, note:'GEETA Karnal (library / SPICE)' },
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:220452,  interest:22439.15, note:'Individual contributions + bank interest; student fees ₹46,400; Google income ₹10,068' },
@@ -538,7 +543,7 @@ FIN.YEARS = [
       // Sujlam Suflam admin: signed I&E schedule splits ₹87,280 into Personal (Program ₹48,400 +
       // Admin ₹14,520), Program Cost ₹14,680 (Capacity Building + Travel), and Overhead Cost ₹9,680
       // (Rent + Stationery + Staff Welfare) — sums exactly. Admin = Personal-Admin + Overhead = ₹24,200.
-      { project:'Sujlam Suflam',          funder:'nabard',          regime:'INR',  total:87280,   admin:24200 },
+      { project:'Sujlam Suflam',          funder:'sdtt',            regime:'INR',  total:87280,   admin:24200 },
       { project:'Charity Science',        funder:'charity_science',regime:'INR',  total:505440,  admin:44220 },
       { project:'GEETA Karnal',           funder:'geeta_karnal',    regime:'INR',  total:155000,  admin:0, adminChecked:true },
       { project:'Audit fees (foreign contribution)',      funder:'__fcra_general',  regime:'FCRA', total:7500,    admin:7500 },
