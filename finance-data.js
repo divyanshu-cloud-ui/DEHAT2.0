@@ -535,7 +535,10 @@ FIN.YEARS = [
       { project:'Childline BRH',          funder:'childline_india', regime:'INR',  total:1292090, admin:172106 },
       { project:'e-vidya (Birlasoft CSR)', funder:'birlasoft',       regime:'INR',  total:1035216, admin:0, adminChecked:true },
       { project:'Sustainable Community Development Project / ACC',             funder:'acc',             regime:'INR',  total:1226490, admin:188826 },
-      { project:'Sujlam Suflam',          funder:'nabard',          regime:'INR',  total:87280,   admin:9680 },
+      // Sujlam Suflam admin: signed I&E schedule splits ₹87,280 into Personal (Program ₹48,400 +
+      // Admin ₹14,520), Program Cost ₹14,680 (Capacity Building + Travel), and Overhead Cost ₹9,680
+      // (Rent + Stationery + Staff Welfare) — sums exactly. Admin = Personal-Admin + Overhead = ₹24,200.
+      { project:'Sujlam Suflam',          funder:'nabard',          regime:'INR',  total:87280,   admin:24200 },
       { project:'Charity Science',        funder:'charity_science',regime:'INR',  total:505440,  admin:44220 },
       { project:'GEETA Karnal',           funder:'geeta_karnal',    regime:'INR',  total:155000,  admin:0, adminChecked:true },
       { project:'Audit fees (foreign contribution)',      funder:'__fcra_general',  regime:'FCRA', total:7500,    admin:7500 },
