@@ -245,9 +245,13 @@ FIN.YEARS = [
   {
     fy:'2023-24', doc:'assets/docs/balance-sheet-2023-24.pdf', period:'1 Apr 2023 – 31 Mar 2024',
     signed:true, softcopy:false, auditor:'Madhuresh Agrahari & Associates', udin:'24528519BKEGVJ6534',
-    fcReturnStatus:'Draft FC-4 copy located; final MHA submission was not verified as of 26 August 2026.',
-    // Every located FY2023-24 FC-4 copy is watermarked "DRAFT COPY FINAL SUBMISSION IS NEEDED".
-    // Its figures are useful as a cross-check but the document is not presented as proof of filing.
+    fcReturnStatus:'Filed FC-4 confirmed 27 August 2026 — no draft watermark, signed by DEVYANI CHATURVEDI, organisational seal present, footer reads "FCRA Annual Returns for the financial year has been Submitted on 26/12/2024" on every page. Supersedes the earlier draft-only copies.',
+    // Source: "FC-4 FY 2023-24.pdf" — a genuinely filed, signed, sealed return, distinct from every
+    // earlier-located copy that carried the "DRAFT COPY FINAL SUBMISSION IS NEEDED" watermark. Its
+    // donor-level figures (KSCF 46,00,231; Caritas Germany 34,09,467; She's the First 16,10,970;
+    // Dasra 10,18,932; interest 87,982; utilisation 92,81,306.48) match exactly what was already
+    // independently verified from the draft copy and the audited consolidated workbook — this document
+    // only changes the filing-status finding, not any figure.
     // Source: "Balance sheet 2023-24 - DEHAT Consolidate.xlsx", sheet " INR Grant Sheet" (Schedule -
     // Indian Grants) and sheet "Cons Inc & Exp" (signed I&E account). The I&E account itself prints
     // "GRANTS INR (INCL. INTEREST) — Received During the Year: 10,414,166" as its own line, with
@@ -508,9 +512,12 @@ FIN.YEARS = [
     // bank interest ₹22,439.15 and the filed FC-4 records ₹42,372.94. The 24-page PNB statement for
     // FCRA account 0072000100151405 shows four explicit quarterly interest credits: ₹12,708,
     // ₹9,878, ₹10,771 and ₹8,948, totalling ₹42,305. Thus neither signed figure exactly matches the
-    // bank statement (FC-4 is ₹67.94 higher; consolidated is ₹19,865.85 lower). The live figure below
-    // continues to follow the consolidated-statement convention used across this page, with the
-    // primary-bank difference disclosed rather than silently absorbed.
+    // bank statement (FC-4 is ₹67.94 higher; consolidated is ₹19,865.85 lower). DEHAT's own internal
+    // "FCRA Calculation 2019.xlsx" working paper — the source computation behind that year's FC-4 —
+    // independently uses ₹42,372.94 as "Interest Received in Bank," confirming the FC-4 figure was a
+    // deliberate calculation, not a filing error. The live figure below continues to follow the
+    // consolidated-statement convention used across this page, with the conflict disclosed rather
+    // than silently absorbed.
     received:[
       { funder:'caritas_india_fcra', regime:'FCRA', flex:'restricted', grant:2317925, interest:0, note:'Swaraksha; SCIAF allocation facilitated through Caritas India' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:303602,  interest:0, note:'Childline Shravasti' },
