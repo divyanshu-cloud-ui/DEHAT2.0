@@ -425,7 +425,30 @@ FIN.YEARS = [
       { project:'GROW (EdelGive)',                                     funder:'edele_give', regime:'INR', total:1451.00, admin:1451.00, adminChecked:true, note:'Confirmed fully administrative — this small residual amount carries no programme component' },
       { project:'Alliance for Immunization & Health — Maharashtra',     funder:'aih', regime:'INR', total:1309208.00, admin:null },
       { project:'Alliance for Immunization & Health — Uttar Pradesh',   funder:'aih', regime:'INR', total:1071522.00, admin:null },
-      { project:'Scope of Work for Malnutrition (ACC)',                 funder:'acc', regime:'INR', total:978616.00,  admin:null },
+      // ACC Malnutrition admin, resolved from real monthly actuals and bank-confirmed invoice numbers
+      // spanning the full fiscal year (Apr 2021 - Mar 2022), cross-checked against the "Cons. Grant
+      // sheet.pdf" Schedule - Indian Grants (which confirms the ₹9,78,616 total to the rupee) and a
+      // sequence of ACC NEFT payment advices confirming each monthly bill:
+      //   Apr-Jul 2021 (old PO's Year-1 tail, invoices 8-11 per the grant-receive ledger: 53,410 +
+      //   67,256 + 68,372 + 1,41,332 = 3,30,370): admin = Reporting/Comm 9,882 + NGO overhead 40,000
+      //   (10,000 x 4) + Office rent 8,000 + Audit fees 7,500 = 65,382.
+      //   Aug-Dec 2021 (old PO invoices 01-05: 48,660+1,82,609+1,17,407+68,424+82,819 = 4,99,919):
+      //   admin = Reporting/Comm 6,891 + NGO overhead 50,000 (10,000 x 5) + Office furniture 14,999 =
+      //   71,890.
+      //   Jan 2022 (old PO invoice 06, ₹92,331 — bank-confirmed via NEFT payment advice dated
+      //   15.02.2022): admin = NGO overhead 10,000 (matching the unbroken monthly pattern) + IT/
+      //   stationery/antivirus 15,454 (dated invoices: Ankit Computers, Bhumi Enterprises Gauriganj) =
+      //   25,454.
+      //   Feb-Mar 2022 (new PO's first invoice, ₹95,996, four dated vouchers): admin = Reporting/Comm
+      //   1,996 + NGO overhead 20,000 (10,000 x 2) = 21,996.
+      // Total admin = 65,382 + 71,890 + 25,454 + 21,996 = 1,84,722.
+      // Basis note: summing every individually-dated monthly bill above gives ₹10,18,616 — ₹40,000
+      // above the audited ₹9,78,616. The old PO's 6-month cycle (Aug 2021-Jan 2022) reconciles exactly
+      // to its own ₹6,20,050 budget (₹5,92,250 utilised, ₹27,800 underspent), so the ₹40,000 gap sits in
+      // the new PO's Feb-Mar 2022 invoice — most likely an accrual-basis split between FY2021-22 and
+      // FY2022-23 that no located document resolves precisely. Not knowing which specific rupees of
+      // that invoice fall outside FY2021-22, the shortfall is left in programme rather than admin.
+      { project:'Scope of Work for Malnutrition (ACC)',                 funder:'acc', regime:'INR', total:978616.00,  admin:184722.00 },
       // Childline India Foundation admin, resolved: "Budget of CHILDLINE Bahraich Collab 21-22.xlsx",
       // sheet "2021-22" — a complete Apr 2021-Mar 2022 monthly utilisation sheet for the "Childline-1098
       // Project, Non-Metro Collab-Bahraich." Grand Total ₹13,91,162 matches this line exactly. Its own
