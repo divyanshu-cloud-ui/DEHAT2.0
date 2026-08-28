@@ -959,12 +959,20 @@ FIN.YEARS = [
     //   (₹15,49,146) + SSK Training (₹1,10,020) + NABARD Training (₹12,455) = ₹47,00,150.75, matching the
     //   audited Indian Activities Expenses exactly. Grand total ₹61,08,927.75, + Depreciation ₹1,27,554.30
     //   + Other Expenses ₹1,64,177.00 = ₹64,00,659.05 = utilisedTotal, to the rupee.
-    // JICA/UNICEF/BAIF's admin splits are separately confirmed by Form 10B (Disclosure §17-18: JICA
-    // ₹7,43,461+₹1,18,336.75; UNICEF ₹14,47,800+₹1,01,346; BAIF ₹7,44,971+₹59,598) and their Annexure II
-    // utilisation totals tie to those disclosures exactly (BAIF's two lines sum to ₹8,04,569.00). No
-    // document discloses an admin/programme split for CRY, Kabir, SDTT-ERW, IIMPACT, SSK or NABARD's
-    // utilisation — those six stay admin:null, but every one is now a real,
-    // audited, funder-attributed figure rather than an estimate or a residual.
+    // JICA, BAIF, SDTT-ERW, IIMPACT, and SSK admin splits are confirmed directly from each project's own
+    // Receipts & Payments / Income & Expenditure schedule within the 47-page compendium: JICA's "Overheads
+    // Expenses" line (page 7, ₹1,18,336.75), BAIF's Chittaura+Payagpur "Overheads Expenses (Admin)" lines
+    // (pages 27-34, ₹30,054+₹29,544=₹59,598), SDTT-ERW's "Administration Expenses" subtotal (₹80,420),
+    // IIMPACT's "IIMPACT Management Cost" heading (₹1,09,623, with ₹9,000 reconciliation variance against
+    // Annexure II ₹18,40,996), and SSK's schedule (100% programme, admin: 0).
+    // UNICEF admin was previously carried as ₹1,01,346, attributed to "Form 10B (Disclosure §17-18), page
+    // 7" per an earlier dossier (handoff_57). A full page-by-page transcript of this same 47-page compendium
+    // (all sections mapped to exact page ranges) shows page 7 is the JICA Receipts & Payments account, not
+    // a Form 10B disclosure — no Form 10B section exists anywhere in the compendium, and ₹1,01,346 does not
+    // appear on any page. It is almost exactly 6.542% of UNICEF's ₹15,49,146 utilisation, consistent with a
+    // computed ratio rather than a transcribed figure. Reverted to admin: null pending an actual citation.
+    // CRY (₹5,54,208), Kabir (₹50,000), and NABARD (₹12,455) remain genuine documentary dead ends without
+    // admin schedules (admin: null) — Annexure II shows only their opening/refund/utilisation movement.
     //
     // This corrects two lines this project got wrong before finding Annexure II: Kabir was previously
     // recorded as ₹2,66,034.75 (Annexure I's opening-to-closing account movement, read as if the whole
@@ -981,7 +989,7 @@ FIN.YEARS = [
     // Indian project rows already sum to the full audited Indian Activities Expenses, so no Society Home
     // programme residual remains to be allocated.
     receivedTotal:6588804.75, utilisedTotal:6400659.05, balanceSheetTotal:1591631.32, surplus:520184.45,
-    note:'Every FY2010-11 grant receipt and utilisation is now itemised by project, from the audited Annexure II schedule (Form 10B additionally confirms JICA/UNICEF/BAIF’s admin split). No document discloses an admin/programme split for CRY, Kabir, SDTT-ERW, IIMPACT, SSK or NABARD’s utilisation, so those stay unitemised by function while being fully itemised by funder.',
+    note:'Every FY2010-11 grant receipt and utilisation is itemised by project from audited Annexure II, with project-level R&P/I&E schedules confirming admin splits for JICA, BAIF, SDTT-ERW, IIMPACT, and SSK. IIMPACT schedule documents ₹17,22,373 programme + ₹1,09,623 admin = ₹18,31,996 vs published Annexure II total ₹18,40,996 (₹9,000 variance). UNICEF has no admin split: a prior dossier attributed ₹1,01,346 to a "Form 10B" disclosure on page 7, but a full page-by-page transcript of the same compendium shows page 7 is the JICA R&P account, and no such figure appears anywhere in the document — reverted to admin: null. Admin splits remain unavailable in primary records for CRY (₹5,54,208), Kabir (₹50,000), and NABARD (₹12,455).',
     fundersActive:['cry','baif','kabir','sdtt','iimpact','unicef','nabard','jica','ssk'],
     received:[
       { funder:'baif',           regime:'FCRA', flex:'restricted', grant:805567,  interest:0, note:'Audited Annexure II cash receipts: Sure Start Payagpur ₹3,89,708 + Chittaura ₹4,15,859' },
@@ -995,7 +1003,12 @@ FIN.YEARS = [
     ],
     spend:[
       { project:'UPFMPAP Project (JICA, through DMU Renukoot)', funder:'jica', regime:'INR', total:861797.75, admin:118336.75 },
-      { project:'Comprehensive Health & Nutrition Intervention (UNICEF, Lucknow)', funder:'unicef', regime:'INR', total:1549146.00, admin:101346.00 },
+      // UNICEF: no admin schedule. The project's own R&P account (pages 1-4) labels only "Reimbursement
+      // of 7% Overheads" (₹40,430) as overhead; "Direct Programme Support Cost" (₹1,36,538 — office rent,
+      // accountant, stationery, phone) is its own separate I&E category, not labelled administrative.
+      // A prior dossier's ₹1,01,346 figure, attributed to "Form 10B, page 7," does not appear anywhere in
+      // the full 47-page transcript (page 7 is the JICA R&P account) — treated as unverified, admin: null.
+      { project:'Comprehensive Health & Nutrition Intervention (UNICEF, Lucknow)', funder:'unicef', regime:'INR', total:1549146.00, admin:null },
       { project:'Sure Start Project (BAIF, Pune)', funder:'baif', regime:'FCRA', total:804569.00, admin:59598.00 },
       { project:'Depreciation on Fixed Assets (Indian Funds Related)', funder:'individuals', regime:'INR', total:127554.30, admin:127554.30 },
       { project:'Other Expenses (Foreign ₹4,950 + Indian ₹1,59,227)', funder:'individuals', regime:'INR', total:164177.00, admin:164177.00 },
@@ -1012,7 +1025,11 @@ FIN.YEARS = [
       // Administration: Accountant ₹38,500 + Travel/fuel ₹14,411 + Printing ₹6,037 + Phone/postage
       // ₹9,472 + Office rent ₹12,000 = ₹80,420. This supersedes the earlier admin:null.
       { project:'Empowering Rural Women (SDTT), ERW Project', funder:'sdtt', regime:'INR', total:325736.00, admin:80420 },
-      { project:'Rural Girl Child Education (IIMPACT, Gurgaon)', funder:'iimpact', regime:'INR', total:1840996.00, admin:null },
+      // Source: Balance Sheet 2010-11.pdf (Pages 10-12 & Annexure II). Documented Programme = ₹17,22,373
+      // (Salary ₹12,52,492 + TLM ₹2,62,514 + Other Programme ₹2,07,367); Documented Admin = ₹1,09,623
+      // (Auditors ₹3,930 + Office rent ₹36,000 + Phone/postage ₹30,283 + Travel/transport ₹39,410). Subtotal
+      // documented spend = ₹18,31,996.00 vs published Annexure II total = ₹18,40,996.00 (reconciliation variance = ₹9,000.00).
+      { project:'Rural Girl Child Education (IIMPACT, Gurgaon)', funder:'iimpact', regime:'INR', total:1840996.00, admin:109623 },
       // Source: Balance Sheet 2010-11.pdf, Society Home Account — the actual payment line reads
       // "Expenses on Programme – Formation & Training of CBDMC (SSK) ₹1,10,020," a direct account
       // entry, not a proposal budget. 100% programme, no administration shown.
