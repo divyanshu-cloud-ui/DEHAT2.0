@@ -859,12 +859,24 @@ FIN.YEARS = [
     // lines plus depreciation sum to ₹1,09,04,308.77; + surplus ₹4,35,407.43 = the printed grand
     // balancing total ₹1,13,39,716.20 exactly. Admin = any printed "Administration"/"Overhead"/
     // "Management"/"Support Cost"/"Bank Charges" sub-line (ACC's admin combines its "Administration"
-    // ₹9,000 + "Overhead" ₹8,400 lines). Society Home Account's own 12-line schedule (Audit Fees,
-    // Fuel & Maintenance, Miscellaneous, Nukad Natak, Office Rent, Printing/Postage/Telephone, Salary &
-    // Honorarium, Staff Meeting, Travel, Insurance, and two inter-project contributions), read directly
-    // off the page and re-verified to sum to its own printed sub-total (₹4,51,180.20) to the rupee,
-    // carries no "Administration"/"Overhead" sub-header of its own — a prior ₹2,77,446 admin figure
-    // here did not correspond to any printed subset of these lines and did not survive re-verification.
+    // ₹9,000 + "Overhead" ₹8,400 lines).
+    //
+    // Society Home Account's own 13-line schedule (page 8), verified directly against the source scan:
+    // Audit Fees ₹6,554 (admin) + Fuel & Maintenance ₹94,595 (admin) + Miscellaneous ₹68,660 (admin) +
+    // Nukad Natak ₹21,600 (programme — street theatre) + Office Rent ₹22,800 (admin) + Printing/
+    // Stationery/Postage/Telephone ₹13,223 (admin) + Salary & Honorarium ₹1,20,555 (admin) + Staff
+    // Meeting ₹1,377 (admin) + Travel ₹45,654 (admin) + Xylo Insurance ₹19,336 (admin) + Interest on
+    // Loan ₹14,689 (admin) + Contribution to Unicef-CPP ₹18,788 (programme — real transfer, counted on
+    // the receiving side) + Contribution to Unicef-CHNI ₹3,349.20 (programme) = ₹4,51,180.20 exactly.
+    // Salary & Honorarium carries no role/project specification on the page — classified admin per the
+    // same-year, same-auditor (CA Subhash Misra) precedent on page 7: the CRY project's own schedule
+    // explicitly puts generic "Salary to Accountant" and "Salary to Project Coordinator" under
+    // Administration, while only role-specific field titles (Child Right Activist, Community Organizer)
+    // count as programme. This is the general/head-office account, not a named field project, so an
+    // unspecified salary line here follows the coordination/accounting precedent, not the field-role one.
+    // Admin total = 6554+94595+68660+22800+13223+120555+1377+45654+19336+14689 = ₹4,07,443.
+    // A prior ₹2,77,446 admin figure here did not correspond to any printed subset of these lines and
+    // did not survive re-verification.
     spend:[
       { project:'CRY Project (Foreign Contribution)', funder:'cry', regime:'FCRA', total:155293, admin:60655 },
       { project:'Action on Research on Direct Democracy (Jagdeep Lohani)', funder:'jagdeep_lohani', regime:'FCRA', total:20000, admin:0, adminChecked:true },
@@ -881,7 +893,7 @@ FIN.YEARS = [
       // costs → admin, direct-delivery salary → programme. Admin = Office Expenses ₹36,715.
       { project:'Centum (WSI Learning Centre Program): Office ₹36,715 + Salary ₹83,662', funder:'centum', regime:'INR', total:120377.00, admin:36715.00, adminChecked:true },
       { project:'Vidhya (Scholarship Program)', funder:'vidhya', regime:'INR', total:3759.00, admin:0, adminChecked:true },
-      { project:'Society / General Home Account', funder:'individuals', regime:'INR', total:451180.20, admin:null },
+      { project:'Society / General Home Account', funder:'individuals', regime:'INR', total:451180.20, admin:407443.00 },
       // UNICEF-CHNI's schedule prints two overhead-shaped figures: a 7% institutional overhead
       // credited to the Society Home Account (₹1,34,020, counted in that line's received[] entry
       // above) and this project's own "Direct Program Support Cost" (₹3,29,854). UNICEF-CPP's
