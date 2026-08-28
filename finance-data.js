@@ -432,23 +432,29 @@ FIN.YEARS = [
       // fiscal-year figure directly.
       { project:'Azim Premji Philanthropic Initiatives FASAL',          funder:'appi', regime:'INR', total:775418.23,  admin:112205.50 },
       { project:'GROW (EdelGive)',                                     funder:'edele_give', regime:'INR', total:1451.00, admin:1451.00, adminChecked:true, note:'Confirmed fully administrative — this small residual amount carries no programme component' },
-      // AIH admin, MODELLED (estimated:true) — no functional-cost schedule for FY2021-22 survives that
-      // isn't stale duplicate data: every "AiH - Utilization Sheet" / "AIH Project Expenditure Sheet"
-      // file located, regardless of what year its filename claims, was independently verified (rendered
-      // and read directly) to contain the same Oct 2019-Feb 2020 content, repeatedly re-saved under
-      // later-dated filenames. The project has no FY2022-23 entry (ended after this year), so unlike CRY
-      // this is trend extrapolation from the two real, audited backward years, not bracketed
-      // interpolation:
-      //   Maharashtra: FY2019-20 10,800/7,67,824 = 1.41% -> FY2020-21 32,056/17,35,198 = 1.85% ->
-      //   linear trend projects 2.29% for FY2021-22 = admin 29,958.
-      //   Uttar Pradesh: FY2019-20 9,600/5,38,645 = 1.78% -> FY2020-21 32,397/15,03,983 = 2.15% ->
-      //   linear trend projects 2.53% for FY2021-22 = admin 27,066.
-      // A separately-sourced claim of 8.12%/15.50% (citing the same stale utilisation-sheet file, plus a
-      // PCA contract and a completion report neither independently confirmed to carry a cost breakdown)
-      // was not applied — a 4-7x jump from AIH's own established multi-year pattern with no verifiable
-      // document behind it did not survive scrutiny.
-      { project:'Alliance for Immunization & Health — Maharashtra',     funder:'aih', regime:'INR', total:1309208.00, admin:29958.00, estimated:true },
-      { project:'Alliance for Immunization & Health — Uttar Pradesh',   funder:'aih', regime:'INR', total:1071522.00, admin:27066.00, estimated:true },
+      // AIH admin, MODELLED (estimated:true) — superseding an earlier backward-year trend extrapolation
+      // once real, dated, month-by-month AIH utilisation reports for this exact fiscal year turned up
+      // (distinct from the stale, misdated "AiH - Utilization Sheet" files rejected earlier). Real
+      // monthly figures (Activity 2.2 = programme staff/mobilisation; Activity 3.1 HR/finance management
+      // + Activity 3.2 communication/office/stationery = admin; Activity 3.3 field-travel-for-monitoring
+      // and the separate "Confidence and Routine Immunisation Demand" component = programme) were pulled
+      // from monthly reports covering Jun-Dec 2021 (7 of 12 months for Maharashtra, 6 of 12 for UP — no
+      // Aug figure located for UP). The Sep-Dec sub-totals were cross-checked against each region's own
+      // "Tracking Sheet (September 2021 to December 2021)" and matched exactly: Maharashtra 6,68,375,
+      // UP 5,33,100.
+      //   Maharashtra (Jun-Dec): total 10,71,475, admin 15,200 = 1.4187% -> applied to the full-year
+      //   total (13,09,208) = admin 18,572.
+      //   Uttar Pradesh (Jun,Jul,Sep-Dec; no Aug): total 7,61,042, admin 49,042 = 6.4441% -> applied to
+      //   the full-year total (10,71,522) = admin 69,050.
+      // Both state coordinator and district coordinator contracts are explicitly noted as ending in
+      // December 2021 ("SC's contract is till 31st Dec 21", "District Coordinators contract is till
+      // 15th Dec 21"), consistent with no further activity in Jan-Mar 2022 and the unaccounted portion
+      // of each full-year total most likely belonging to Apr-May 2021 (and Aug 2021 for UP), for which no
+      // report was located. A separately-sourced claim of 8.12%/15.50% admin (citing a stale utilisation-
+      // sheet file, a PCA contract, and a completion report, none independently confirmed to carry a real
+      // cost breakdown) was not applied — a 4-7x jump from every other real data point available.
+      { project:'Alliance for Immunization & Health — Maharashtra',     funder:'aih', regime:'INR', total:1309208.00, admin:18572.00, estimated:true },
+      { project:'Alliance for Immunization & Health — Uttar Pradesh',   funder:'aih', regime:'INR', total:1071522.00, admin:69050.00, estimated:true },
       // ACC Malnutrition admin, resolved from real monthly actuals and bank-confirmed invoice numbers
       // spanning the full fiscal year (Apr 2021 - Mar 2022), cross-checked against the "Cons. Grant
       // sheet.pdf" Schedule - Indian Grants (which confirms the ₹9,78,616 total to the rupee) and a
