@@ -436,9 +436,22 @@ FIN.YEARS = [
       // honoraria (9,12,000), B.2 Client Related Contingency (Medical+Nutrition+Shelter+Restoration =
       // 1,67,343), B.4 Travel(outreach) (1,36,826 — its own note: "No conveyance incurred for admin
       // purpose can be booked under this head"), and B.5 Open House (4,640) are programme.
-      // Admin 1,70,353 + Programme 12,20,809 = 13,91,162 exactly.
+      // Admin 1,70,353 + Programme 12,20,809 = 13,91,162 exactly. Independently re-confirmed by a
+      // signed CA utilisation certificate (Garg Akash & Co., UDIN 22435464AMOJPZ7117, period
+      // 1 Apr 2021 - 31 Mar 2022) with the identical admin line items and total, to the rupee.
       { project:'Childline India Foundation',                          funder:'childline_india', regime:'INR', total:1391162.00, admin:170353.00 },
-      { project:'Childline Shravasti',                                 funder:'childline_india', regime:'INR', total:1272496.10, admin:null },
+      // Childline Shravasti admin, resolved: signed CA utilisation certificate (Garg Akash & Co.,
+      // UDIN 22435464AMOJOZ8331, period 1 Apr 2021 - 31 Mar 2022). Its "(iii) Administrative Expenses"
+      // category (Rent/office maintenance 30,000 + Communication 15,497 + Computer Maintenance 300 +
+      // Stationery 6,689 + Accountant Honorarium 30,000 + Auditors fees 5,000 + Awareness Material
+      // 14,966 + Postage 252 + Travel/conveyance 6,841 + Staff welfare 17,950 + Miscellaneous 3,204 +
+      // Training and Orientation 35,567 = 1,66,266) is admin; Staff Salary (9,12,000), Client Related
+      // Expenses (Medical+Restoration+Nutrition = 45,407), Travel(outreach) (1,43,533), and Open House
+      // (4,875) are programme. Admin 1,66,266 + Programme 11,05,815 = 12,72,081 — the certificate's own
+      // total, which is ₹415.10 below the live total (12,72,496.10, sourced from the audited consolidated
+      // balance sheet); an immaterial basis variance, not a citation problem — the admin figure is applied
+      // against the live total as the best available real split.
+      { project:'Childline Shravasti',                                 funder:'childline_india', regime:'INR', total:1272496.10, admin:166266.00 },
       // Same schedule's item 8, disclosed separately — it is NOT part of the ₹92,92,625.33
       // reconciliation above (that figure excludes it), but it is real, cited spend in its own right.
       { project:'General Fund',                                        funder:'individuals', regime:'INR', total:215902.12, admin:null },
