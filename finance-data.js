@@ -989,7 +989,7 @@ FIN.YEARS = [
     // Indian project rows already sum to the full audited Indian Activities Expenses, so no Society Home
     // programme residual remains to be allocated.
     receivedTotal:6588804.75, utilisedTotal:6400659.05, balanceSheetTotal:1591631.32, surplus:520184.45,
-    note:'Every FY2010-11 grant receipt and utilisation is itemised by project from audited Annexure II, with project-level R&P/I&E schedules confirming admin splits for JICA, BAIF, SDTT-ERW, IIMPACT, and SSK. IIMPACT schedule documents ₹17,22,373 programme + ₹1,09,623 admin = ₹18,31,996 vs published Annexure II total ₹18,40,996 (₹9,000 variance). UNICEF has no admin split: a prior dossier attributed ₹1,01,346 to a "Form 10B" disclosure on page 7, but a full page-by-page transcript of the same compendium shows page 7 is the JICA R&P account, and no such figure appears anywhere in the document — reverted to admin: null. Admin splits remain unavailable in primary records for CRY (₹5,54,208), Kabir (₹50,000), and NABARD (₹12,455).',
+    note:'Every FY2010-11 grant receipt and utilisation is itemised by project from audited Annexure II, with project-level R&P/I&E schedules confirming admin splits for JICA, BAIF, SDTT-ERW, IIMPACT, SSK, and UNICEF. IIMPACT schedule documents ₹17,22,373 programme + ₹1,09,623 admin = ₹18,31,996 vs published Annexure II total ₹18,40,996 (₹9,000 variance). UNICEF admin (₹1,76,968, resolved from the R&P account\'s "Direct Programme Support Cost" + indirect-cost reimbursement, same-auditor classification precedent as SDTT-ERW) is drawn from the R&P cash total (₹14,88,230), while the live total (₹15,49,146) is the Annexure II statutory figure; the ₹60,916 difference is fully reconciled as an additional accrual receivable, not an unexplained gap. A prior dossier\'s claim that this figure came from "Form 10B, page 7" was checked and rejected — no such section exists in the 47-page compendium. Admin splits remain unavailable in primary records for CRY (₹5,54,208), Kabir (₹50,000), and NABARD (₹12,455) — no expenditure schedule of any kind exists for these three, confirmed against two independently-sourced copies of the compendium.',
     fundersActive:['cry','baif','kabir','sdtt','iimpact','unicef','nabard','jica','ssk'],
     received:[
       { funder:'baif',           regime:'FCRA', flex:'restricted', grant:805567,  interest:0, note:'Audited Annexure II cash receipts: Sure Start Payagpur ₹3,89,708 + Chittaura ₹4,15,859' },
@@ -1003,12 +1003,21 @@ FIN.YEARS = [
     ],
     spend:[
       { project:'UPFMPAP Project (JICA, through DMU Renukoot)', funder:'jica', regime:'INR', total:861797.75, admin:118336.75 },
-      // UNICEF: no admin schedule. The project's own R&P account (pages 1-4) labels only "Reimbursement
-      // of 7% Overheads" (₹40,430) as overhead; "Direct Programme Support Cost" (₹1,36,538 — office rent,
-      // accountant, stationery, phone) is its own separate I&E category, not labelled administrative.
-      // A prior dossier's ₹1,01,346 figure, attributed to "Form 10B, page 7," does not appear anywhere in
-      // the full 47-page transcript (page 7 is the JICA R&P account) — treated as unverified, admin: null.
-      { project:'Comprehensive Health & Nutrition Intervention (UNICEF, Lucknow)', funder:'unicef', regime:'INR', total:1549146.00, admin:null },
+      // UNICEF admin, resolved: the project's own R&P account (pages 1-4) has a "Direct Programme Support
+      // Cost" bucket — Office Rent ₹36,000 + Accountant (part-time) ₹30,000 + Office Assistant ₹18,000 +
+      // Stationery ₹13,368 + Telephone ₹39,170 = ₹1,36,538 — category-for-category identical to what this
+      // same auditor (RJCP Subhash Misra & Co) explicitly labelled "Administration Expenses" in SDTT-ERW's
+      // report, same audit engagement. Plus "Reimbursement of 7% Indirect Cost (NGO Share)" ₹40,430,
+      // explicitly labelled an indirect/overhead cost. Admin = 136,538 + 40,430 = ₹1,76,968.
+      // Basis note: this admin figure is drawn from the R&P's cash total (₹14,88,230), while the live
+      // `total` (₹15,49,146) is the audited statutory Annexure II figure. The ₹60,916 difference is fully
+      // reconciled: Annexure II's closing receivable (₹1,78,954) less the project balance sheet's own
+      // receivable (₹1,18,038) = ₹60,916 additional accrual recognised on the statutory basis, with no
+      // itemised cost of its own — corroborated independently by FY2011-12's own received[] note, already
+      // live before this reconciliation, recording "+₹1,78,954 receivable from 2010-11" received in cash.
+      // (A prior dossier's ₹1,01,346 "Form 10B, page 7" figure was checked and does not exist in the
+      // 47-page compendium — page 7 is the JICA R&P account, not Form 10B.)
+      { project:'Comprehensive Health & Nutrition Intervention (UNICEF, Lucknow)', funder:'unicef', regime:'INR', total:1549146.00, admin:176968.00 },
       { project:'Sure Start Project (BAIF, Pune)', funder:'baif', regime:'FCRA', total:804569.00, admin:59598.00 },
       { project:'Depreciation on Fixed Assets (Indian Funds Related)', funder:'individuals', regime:'INR', total:127554.30, admin:127554.30 },
       { project:'Other Expenses (Foreign ₹4,950 + Indian ₹1,59,227)', funder:'individuals', regime:'INR', total:164177.00, admin:164177.00 },
