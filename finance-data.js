@@ -418,8 +418,10 @@ FIN.YEARS = [
       // utilisation ₹9,94,752.00 (the caritas_india_fcra line above, already counted there). The
       // ₹7,78,849.88 previously disclosed as an unidentified residual was a population-mismatch
       // artefact from comparing this line against the fuller schedule total including General Fund
-      // spend — not a real gap. No admin sub-split is shown on this schedule for the remaining lines
-      // below, so admin stays null (not separately disclosed) rather than assumed.
+      // spend — not a real gap. This schedule itself shows no admin sub-split for the remaining lines
+      // below; each now carries an admin figure sourced independently (real per-project schedules for
+      // Childline and Swaraksha above, modelled/estimated figures — see each line's own comment — for
+      // APPI FASAL, AIH Maharashtra, and AIH Uttar Pradesh, and a direct citation for General Fund).
       { project:'Azim Premji Philanthropic Initiatives — COVID Relief', funder:'appi', regime:'INR', total:1498000.00, admin:0, adminChecked:true, note:'Confirmed fully programme cost; no administrative allocation on this grant' },
       // APPI FASAL admin: same source and methodology already used for FY2023-24's APPI FASAL line —
       // "2110-10970_...reporting sheet.xlsx" (Budget Report sheet), APPI's own Budgeted-vs-Actuals
@@ -446,13 +448,19 @@ FIN.YEARS = [
       //   total (13,09,208) = admin 18,572.
       //   Uttar Pradesh (Jun,Jul,Sep-Dec; no Aug): total 7,61,042, admin 49,042 = 6.4441% -> applied to
       //   the full-year total (10,71,522) = admin 69,050.
-      // Both state coordinator and district coordinator contracts are explicitly noted as ending in
-      // December 2021 ("SC's contract is till 31st Dec 21", "District Coordinators contract is till
-      // 15th Dec 21"), consistent with no further activity in Jan-Mar 2022 and the unaccounted portion
-      // of each full-year total most likely belonging to Apr-May 2021 (and Aug 2021 for UP), for which no
-      // report was located. A separately-sourced claim of 8.12%/15.50% admin (citing a stale utilisation-
-      // sheet file, a PCA contract, and a completion report, none independently confirmed to carry a real
-      // cost breakdown) was not applied — a 4-7x jump from every other real data point available.
+      // Confirmed directly: the entire AIH phase for this fiscal year ran 1 June 2021 to 31 December
+      // 2021 only — there is no Apr-May 2021 or Jan-Mar 2022 AIH activity to account for. Both state
+      // coordinator and district coordinator contracts are explicitly noted as ending in December 2021
+      // ("SC's contract is till 31st Dec 21", "District Coordinators contract is till 15th Dec 21"),
+      // consistent with this. Real monthly data covers essentially the whole phase (all 7 months for
+      // Maharashtra, 6 of 7 for UP), so the gap between the summed real months and each full-total figure
+      // (Maharashtra 2,37,733; UP 3,10,480) sits *within* this confirmed window rather than in an
+      // unreported edge month — its specific cause (a missing document for a particular week or activity,
+      // or a difference in how the audited total itself was appropriated) was not identified from what
+      // was located, and is disclosed here rather than forced. A separately-sourced claim of 8.12%/15.50%
+      // admin (citing a stale utilisation-sheet file, a PCA contract, and a completion report, none
+      // independently confirmed to carry a real cost breakdown) was not applied — a 4-7x jump from every
+      // other real data point available.
       { project:'Alliance for Immunization & Health — Maharashtra',     funder:'aih', regime:'INR', total:1309208.00, admin:18572.00, estimated:true },
       { project:'Alliance for Immunization & Health — Uttar Pradesh',   funder:'aih', regime:'INR', total:1071522.00, admin:69050.00, estimated:true },
       // ACC Malnutrition admin, resolved from real monthly actuals and bank-confirmed invoice numbers
@@ -1082,9 +1090,13 @@ FIN.YEARS = [
     // (all sections mapped to exact page ranges) shows page 7 is the JICA Receipts & Payments account, not
     // a Form 10B disclosure — no Form 10B section exists anywhere in the compendium, and ₹1,01,346 does not
     // appear on any page. It is almost exactly 6.542% of UNICEF's ₹15,49,146 utilisation, consistent with a
-    // computed ratio rather than a transcribed figure. Reverted to admin: null pending an actual citation.
-    // CRY (₹5,54,208), Kabir (₹50,000), and NABARD (₹12,455) remain genuine documentary dead ends without
-    // admin schedules (admin: null) — Annexure II shows only their opening/refund/utilisation movement.
+    // computed ratio rather than a transcribed figure. Resolved instead via the project's own "Direct
+    // Programme Support Cost" bucket (see that spend line's own comment for the ₹1,76,968 figure).
+    // CRY (₹5,54,208), Kabir (₹50,000), and NABARD (₹12,455) have no expenditure schedule anywhere in the
+    // compendium — Annexure II shows only their opening/refund/utilisation movement. Kabir and NABARD are
+    // resolved as admin:0 per this dataset's established flat-total convention (see their own comments);
+    // CRY is resolved as a disclosed, modelled estimate (admin: 186,528, marked estimated:true) since its
+    // own historical pattern rules out treating it the same way — see that spend line's own comment.
     //
     // This corrects two lines this project got wrong before finding Annexure II: Kabir was previously
     // recorded as ₹2,66,034.75 (Annexure I's opening-to-closing account movement, read as if the whole
@@ -1101,7 +1113,7 @@ FIN.YEARS = [
     // Indian project rows already sum to the full audited Indian Activities Expenses, so no Society Home
     // programme residual remains to be allocated.
     receivedTotal:6588804.75, utilisedTotal:6400659.05, balanceSheetTotal:1591631.32, surplus:520184.45,
-    note:'Every FY2010-11 grant receipt and utilisation is itemised by project from audited Annexure II, with project-level R&P/I&E schedules confirming admin splits for JICA, BAIF, SDTT-ERW, IIMPACT, SSK, and UNICEF. IIMPACT schedule documents ₹17,22,373 programme + ₹1,09,623 admin = ₹18,31,996 vs published Annexure II total ₹18,40,996 (₹9,000 variance). UNICEF admin (₹1,76,968, resolved from the R&P account\'s "Direct Programme Support Cost" + indirect-cost reimbursement, same-auditor classification precedent as SDTT-ERW) is drawn from the R&P cash total (₹14,88,230), while the live total (₹15,49,146) is the Annexure II statutory figure; the ₹60,916 difference is fully reconciled as an additional accrual receivable, not an unexplained gap. A prior dossier\'s claim that this figure came from "Form 10B, page 7" was checked and rejected — no such section exists in the 47-page compendium. Admin splits remain unavailable in primary records for CRY (₹5,54,208), Kabir (₹50,000), and NABARD (₹12,455) — no expenditure schedule of any kind exists for these three, confirmed against two independently-sourced copies of the compendium.',
+    note:'Every FY2010-11 grant receipt and utilisation is itemised by project from audited Annexure II, with project-level R&P/I&E schedules confirming admin splits for JICA, BAIF, SDTT-ERW, IIMPACT, SSK, and UNICEF. IIMPACT schedule documents ₹17,22,373 programme + ₹1,09,623 admin = ₹18,31,996 vs published Annexure II total ₹18,40,996 (₹9,000 variance). UNICEF admin (₹1,76,968, resolved from the R&P account\'s "Direct Programme Support Cost" + indirect-cost reimbursement, same-auditor classification precedent as SDTT-ERW) is drawn from the R&P cash total (₹14,88,230), while the live total (₹15,49,146) is the Annexure II statutory figure; the ₹60,916 difference is fully reconciled as an additional accrual receivable, not an unexplained gap. A prior dossier\'s claim that this figure came from "Form 10B, page 7" was checked and rejected — no such section exists in the 47-page compendium. No expenditure schedule of any kind exists for CRY (₹5,54,208), Kabir (₹50,000), or NABARD (₹12,455), confirmed against two independently-sourced copies of the compendium — Kabir and NABARD are resolved as admin:0 per this dataset\'s established flat-total convention, while CRY (whose own historical pattern rules that convention out) carries a disclosed, modelled estimate of ₹1,86,528, marked estimated:true.',
     fundersActive:['cry','baif','kabir','sdtt','iimpact','unicef','nabard','jica','ssk'],
     received:[
       { funder:'baif',           regime:'FCRA', flex:'restricted', grant:805567,  interest:0, note:'Audited Annexure II cash receipts: Sure Start Payagpur ₹3,89,708 + Chittaura ₹4,15,859' },
