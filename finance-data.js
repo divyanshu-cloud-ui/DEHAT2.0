@@ -421,7 +421,16 @@ FIN.YEARS = [
       // spend — not a real gap. No admin sub-split is shown on this schedule for the remaining lines
       // below, so admin stays null (not separately disclosed) rather than assumed.
       { project:'Azim Premji Philanthropic Initiatives — COVID Relief', funder:'appi', regime:'INR', total:1498000.00, admin:0, adminChecked:true, note:'Confirmed fully programme cost; no administrative allocation on this grant' },
-      { project:'Azim Premji Philanthropic Initiatives FASAL',          funder:'appi', regime:'INR', total:775418.23,  admin:null },
+      // APPI FASAL admin: same source and methodology already used for FY2023-24's APPI FASAL line —
+      // "2110-10970_...reporting sheet.xlsx" (Budget Report sheet), APPI's own Budgeted-vs-Actuals
+      // half-year utilisation report for this grant. Per that same established mapping (HY3 = Jan-Jun
+      // 2023), HY1 = Jan-Jun 2022, so FY2021-22 (Apr 2021-Mar 2022) spans only the first quarter (Jan-Mar
+      // 2022) of HY1 — half of HY1 by month-count. "Office Administration Cost" HY1 actual = ₹2,24,411;
+      // half = ₹1,12,205.50. Cross-checked against FY2022-23's total (half-HY1 + full HY2 + half-HY3 =
+      // ₹30,42,824, vs the live ₹30,00,456.92 — within 1.4%), supporting this same HY-start assumption.
+      // Same disclosure as FY2023-24: a close estimate from real actuals, not a document stating the
+      // fiscal-year figure directly.
+      { project:'Azim Premji Philanthropic Initiatives FASAL',          funder:'appi', regime:'INR', total:775418.23,  admin:112205.50 },
       { project:'GROW (EdelGive)',                                     funder:'edele_give', regime:'INR', total:1451.00, admin:1451.00, adminChecked:true, note:'Confirmed fully administrative — this small residual amount carries no programme component' },
       { project:'Alliance for Immunization & Health — Maharashtra',     funder:'aih', regime:'INR', total:1309208.00, admin:null },
       { project:'Alliance for Immunization & Health — Uttar Pradesh',   funder:'aih', regime:'INR', total:1071522.00, admin:null },
