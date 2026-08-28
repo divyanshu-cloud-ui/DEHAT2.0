@@ -426,7 +426,18 @@ FIN.YEARS = [
       { project:'Alliance for Immunization & Health — Maharashtra',     funder:'aih', regime:'INR', total:1309208.00, admin:null },
       { project:'Alliance for Immunization & Health — Uttar Pradesh',   funder:'aih', regime:'INR', total:1071522.00, admin:null },
       { project:'Scope of Work for Malnutrition (ACC)',                 funder:'acc', regime:'INR', total:978616.00,  admin:null },
-      { project:'Childline India Foundation',                          funder:'childline_india', regime:'INR', total:1391162.00, admin:null },
+      // Childline India Foundation admin, resolved: "Budget of CHILDLINE Bahraich Collab 21-22.xlsx",
+      // sheet "2021-22" — a complete Apr 2021-Mar 2022 monthly utilisation sheet for the "Childline-1098
+      // Project, Non-Metro Collab-Bahraich." Grand Total ₹13,91,162 matches this line exactly. Its own
+      // "B.3 Administative costs" category (Rent/office maintenance 30,000 + Communication 14,080 +
+      // Computer Maintenance 3,600 + Stationery 6,992 + Accountant Honorarium 30,000 + Auditors fees
+      // 5,000 + Awareness Material 14,930 + Postage 295 + Travel/conveyance 4,805 + Staff welfare 18,000
+      // + Miscellaneous 6,665 + Training and Orientation 35,986 = 1,70,353) is admin; B.1 Staff
+      // honoraria (9,12,000), B.2 Client Related Contingency (Medical+Nutrition+Shelter+Restoration =
+      // 1,67,343), B.4 Travel(outreach) (1,36,826 — its own note: "No conveyance incurred for admin
+      // purpose can be booked under this head"), and B.5 Open House (4,640) are programme.
+      // Admin 1,70,353 + Programme 12,20,809 = 13,91,162 exactly.
+      { project:'Childline India Foundation',                          funder:'childline_india', regime:'INR', total:1391162.00, admin:170353.00 },
       { project:'Childline Shravasti',                                 funder:'childline_india', regime:'INR', total:1272496.10, admin:null },
       // Same schedule's item 8, disclosed separately — it is NOT part of the ₹92,92,625.33
       // reconciliation above (that figure excludes it), but it is real, cited spend in its own right.
