@@ -507,7 +507,11 @@ FIN.YEARS = [
       { project:'Childline Shravasti',                                 funder:'childline_india', regime:'INR', total:1272496.10, admin:166266.00 },
       // Same schedule's item 8, disclosed separately — it is NOT part of the ₹92,92,625.33
       // reconciliation above (that figure excludes it), but it is real, cited spend in its own right.
-      { project:'General Fund',                                        funder:'individuals', regime:'INR', total:215902.12, admin:null },
+      // Admin: the signed INR Income & Expenditure account for this exact period (1 Apr 2021-31 Mar
+      // 2022) prints this precise figure as its own line item, "DEHAT General Exp. 2,15,902.12" —
+      // matching the same real, audited label already classified 100% admin for this organisation's
+      // general/head-office expenditure in every other year it appears (FY2018-19 to FY2024-25).
+      { project:'General Fund',                                        funder:'individuals', regime:'INR', total:215902.12, admin:215902.12, adminChecked:true },
       { project:'DEHAT general expenditure',              funder:'individuals',         regime:'INR',  total:465511.92, admin:465511.92 },
     ],
     depreciation:76851,
