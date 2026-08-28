@@ -1099,7 +1099,21 @@ FIN.YEARS = [
       { project:'Sure Start Project (BAIF, Pune)', funder:'baif', regime:'FCRA', total:804569.00, admin:59598.00 },
       { project:'Depreciation on Fixed Assets (Indian Funds Related)', funder:'individuals', regime:'INR', total:127554.30, admin:127554.30 },
       { project:'Other Expenses (Foreign ₹4,950 + Indian ₹1,59,227)', funder:'individuals', regime:'INR', total:164177.00, admin:164177.00 },
-      { project:'Child Right Project (CRY, New Delhi)', funder:'cry', regime:'FCRA', total:554208.00, admin:null },
+      // Admin MODELLED, not audited -- the only estimated (rather than cited) admin figure in this
+      // 20-year dataset. Confirmed via two independently-sourced copies of the 47-page compendium: CRY's
+      // FY2010-11 utilisation (₹5,54,208) is printed only as a flat total in Annexure II, with no
+      // functional-cost schedule anywhere in either copy -- unlike Kabir/NABARD above, this is not a
+      // "flat total = admin:0" situation, because CRY's own FCRA-regime admin ratio in every year it IS
+      // measured is real and substantial, never near zero:
+      //   FY2009-10 (backward): ₹1,35,389 / ₹4,31,322 = 31.39%
+      //   FY2011-12 (forward):  ₹2,11,749 / ₹5,89,437 = 35.92%
+      //   FY2012-13 (forward):  ₹60,655 / ₹1,55,293 = 39.06%
+      // FY2010-11 sits directly between the two years bracketing it. Admin = the midpoint of the
+      // immediately-adjacent FY2009-10 and FY2011-12 ratios (31.39% + 35.92%) / 2 = 33.66%, applied to
+      // ₹5,54,208 = ₹1,86,528. Cross-checked by linear regression across all three known FCRA years
+      // (2009-10, 2011-12, 2012-13), which independently interpolates to ₹1,87,214 at FY2010-11 -- within
+      // 0.4% of the simple midpoint, giving good convergence between two different methods.
+      { project:'Child Right Project (CRY, New Delhi)', funder:'cry', regime:'FCRA', total:554208.00, admin:186528.00, estimated:true },
       // Statutory cross-check: the signed FC-3 for FY2010-11 (submitted 29.06.2011) shows a Kabir
       // Project line on a cash basis — opening balance ₹2,65,000 fully utilised during the year, i.e.
       // ₹2,65,000 cash utilisation — differing from the ₹50,000 audited I&E "utilised on transfer from
