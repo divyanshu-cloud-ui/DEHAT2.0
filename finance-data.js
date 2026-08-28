@@ -402,7 +402,14 @@ FIN.YEARS = [
       // 02/08/2022), Section 3(a) — replaces an earlier placeholder figure (₹21,12,893) that
       // didn't match this filing. The two rows below are the return's own two named activities;
       // they sum to its Total Utilised, ₹12,58,465.80, exactly.
-      { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:994752, admin:0, adminChecked:true },
+      // Swaraksha admin, corrected: "Draft Balance sheet 2021-22 - DEHAT.xlsx" (Foreign Contribution
+      // Accounts R&P/I&E, 1 Apr 2021 - 31 Mar 2022, signed by CA Madhuresh Agrahari & Associates — the
+      // same auditor and year already cited above) itemises Swaraksha's ₹9,94,752 as: Administration
+      // Costs ₹1,20,526 + Capacity Building ₹6,416 + Partnership ₹3,000 + Sensitization and Awareness
+      // Raising ₹53,860 + Staffing Costs ₹7,63,472 + Youth/Children/Women Group ₹28,549 + Rescue
+      // ₹18,929 = ₹9,94,752 exactly. The previous admin:0 had no citation and did not survive
+      // re-verification against this signed schedule.
+      { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:994752, admin:120526.00 },
       { project:'DEHAT Core FCRA Activities & Inverter Asset', funder:'__fcra_general', regime:'FCRA', total:263713.80, admin:24913.80, note:'Admin ₹24,913.80 is the statutory Rule 5 figure printed on the return; the remaining ₹2,38,800 covers the ₹21,520 inverter asset purchase and direct operations.' },
       // Source: signed "Schedule - Indian Grants" (Madhuresh Agrahari & Associates, FRN 026205N),
       // recovered from a Gmail attachment, cross-checked against the audited consolidated I&E account.
