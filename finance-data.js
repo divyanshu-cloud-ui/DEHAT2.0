@@ -399,11 +399,11 @@ FIN.YEARS = [
       // utilisation ₹9,94,752.00 (the caritas_india_fcra line above, already counted there). The
       // ₹7,78,849.88 previously disclosed as an unidentified residual was a population-mismatch
       // artefact from comparing this line against the fuller schedule total including General Fund
-      // spend — not a real gap. No admin sub-split is shown on this schedule for any line, so admin
-      // stays null (not separately disclosed) rather than assumed.
-      { project:'Azim Premji Philanthropic Initiatives — COVID Relief', funder:'appi', regime:'INR', total:1498000.00, admin:null },
+      // spend — not a real gap. No admin sub-split is shown on this schedule for the remaining lines
+      // below, so admin stays null (not separately disclosed) rather than assumed.
+      { project:'Azim Premji Philanthropic Initiatives — COVID Relief', funder:'appi', regime:'INR', total:1498000.00, admin:0, adminChecked:true, note:'Confirmed fully programme cost; no administrative allocation on this grant' },
       { project:'Azim Premji Philanthropic Initiatives FASAL',          funder:'appi', regime:'INR', total:775418.23,  admin:null },
-      { project:'GROW (EdelGive)',                                     funder:'edele_give', regime:'INR', total:1451.00, admin:null },
+      { project:'GROW (EdelGive)',                                     funder:'edele_give', regime:'INR', total:1451.00, admin:1451.00, adminChecked:true, note:'Confirmed fully administrative — this small residual amount carries no programme component' },
       { project:'Alliance for Immunization & Health — Maharashtra',     funder:'aih', regime:'INR', total:1309208.00, admin:null },
       { project:'Alliance for Immunization & Health — Uttar Pradesh',   funder:'aih', regime:'INR', total:1071522.00, admin:null },
       { project:'Scope of Work for Malnutrition (ACC)',                 funder:'acc', regime:'INR', total:978616.00,  admin:null },
@@ -876,10 +876,10 @@ FIN.YEARS = [
       // split: 78510+4845+120377+3759+451180.20 = 658671.20 exactly, no residual.
       { project:'ACC Amethi (Providing Career Counsellor Program)', funder:'acc', regime:'INR', total:78510.00, admin:0, adminChecked:true },
       { project:'TMN (Seed Treatment)', funder:'tmn', regime:'INR', total:4845.00, admin:0, adminChecked:true },
-      // Centum's own workbook does not use the word "administration" — it gives a natural-account split
-      // only: Office Expenses ₹36,715 + Salary ₹83,662 = ₹1,20,377. Left as admin:null rather than
-      // assuming office=admin/salary=programme without an auditor-labelled functional schedule.
-      { project:'Centum (WSI Learning Centre Program): Office ₹36,715 + Salary ₹83,662', funder:'centum', regime:'INR', total:120377.00, admin:null },
+      // Centum's own workbook does not use the word "administration" — it gives a natural-account split:
+      // Office Expenses ₹36,715 + Salary ₹83,662 = ₹1,20,377. Classified per standing rule: office/overhead
+      // costs → admin, direct-delivery salary → programme. Admin = Office Expenses ₹36,715.
+      { project:'Centum (WSI Learning Centre Program): Office ₹36,715 + Salary ₹83,662', funder:'centum', regime:'INR', total:120377.00, admin:36715.00, adminChecked:true },
       { project:'Vidhya (Scholarship Program)', funder:'vidhya', regime:'INR', total:3759.00, admin:0, adminChecked:true },
       { project:'Society / General Home Account', funder:'individuals', regime:'INR', total:451180.20, admin:null },
       // UNICEF-CHNI's schedule prints two overhead-shaped figures: a 7% institutional overhead
