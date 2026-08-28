@@ -252,6 +252,18 @@ FIN.YEARS = [
     // Dasra 10,18,932; interest 87,982; utilisation 92,81,306.48) match exactly what was already
     // independently verified from the draft copy and the audited consolidated workbook — this document
     // only changes the filing-status finding, not any figure.
+    //
+    // FCRA admin source-basis conflict (disclosed, not forced to one figure): the audited workbook
+    // ("Balance sheet 2023-24 - DEHAT Consolidate.xlsx", sheet "FCRA Income & Exp.") gives per-project
+    // admin figures — Caritas Germany 1,74,996.36 + KSC Foundation 7,85,905 + Dasra 93,700 + She's the
+    // First 1,43,757 + DEHAT direct fund 18,288.12 — summing to 12,16,646.48 (13.11% of total spend).
+    // The filed FC-4 (page 3, Section 3(a)(ii), verified directly against the primary document) states
+    // "Total administrative expenses as provided in rule 5... : 909784.48" (9.80% of total spend) as one
+    // aggregate statutory figure, not broken down per project. Both bases are compliant with the 20%
+    // statutory cap regardless of which is used. The live per-project admin figures below follow the
+    // audited workbook basis (consistent with how every other project in this dataset sources its admin
+    // split); the FC-4's own aggregate total is disclosed here as the alternate statutory-basis figure,
+    // not silently reconciled against it.
     // Source: "Balance sheet 2023-24 - DEHAT Consolidate.xlsx", sheet " INR Grant Sheet" (Schedule -
     // Indian Grants) and sheet "Cons Inc & Exp" (signed I&E account). The I&E account itself prints
     // "GRANTS INR (INCL. INTEREST) — Received During the Year: 10,414,166" as its own line, with
