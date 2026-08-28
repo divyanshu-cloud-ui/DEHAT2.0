@@ -1105,8 +1105,11 @@ FIN.YEARS = [
       // ₹2,65,000 cash utilisation — differing from the ₹50,000 audited I&E "utilised on transfer from
       // balance sheet" figure used here. Same accrual-vs-cash distinction already documented for other
       // years (FY2009-10, FY2020-21); the I&E figure remains the live basis per this dataset's
-      // established convention. No admin schedule accompanies either figure for this project.
-      { project:'Action Research on Right to Information (Kabir Project, New Delhi)', funder:'kabir', regime:'FCRA', total:50000.00, admin:null },
+      // established convention. No admin schedule accompanies either figure for this project — printed
+      // as one flat total with no sub-header, the same situation as Kabir/NABARD/Primenet/AFC/UPVAN in
+      // FY2009-10, where the established convention (already live, adminChecked:true) is admin:0 rather
+      // than guessed. Applying the same treatment here for consistency, not as a new estimate.
+      { project:'Action Research on Right to Information (Kabir Project, New Delhi)', funder:'kabir', regime:'FCRA', total:50000.00, admin:0, adminChecked:true },
       // Source: Balance Sheet 2010-11.pdf, SDTT-ERW Income & Expenditure schedule — an actual account,
       // not a proposal budget. Programme ₹50,316 activities + ₹1,95,000 programme salary = ₹2,45,316.
       // Administration: Accountant ₹38,500 + Travel/fuel ₹14,411 + Printing ₹6,037 + Phone/postage
@@ -1121,7 +1124,10 @@ FIN.YEARS = [
       // "Expenses on Programme – Formation & Training of CBDMC (SSK) ₹1,10,020," a direct account
       // entry, not a proposal budget. 100% programme, no administration shown.
       { project:'Community Based Disaster Management Committees (Sahbhagi Shikshan Kendra, Mihinpurwa block)', funder:'ssk', regime:'INR', total:110020.00, admin:0, adminChecked:true },
-      { project:'NABARD Training Project (Lucknow)', funder:'nabard', regime:'INR', total:12455.00, admin:null },
+      // Same situation as Kabir above: printed as one flat total with no sub-header anywhere in either
+      // copy of the compendium. Applying the same established FY2009-10 convention (admin:0 rather than
+      // guessed) for consistency, not as a new estimate.
+      { project:'NABARD Training Project (Lucknow)', funder:'nabard', regime:'INR', total:12455.00, admin:0, adminChecked:true },
     ],
   },
   {
