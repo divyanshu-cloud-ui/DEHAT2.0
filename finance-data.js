@@ -142,7 +142,7 @@ FIN.FUNDERS = {
   acc:              { name:'ACC Limited (Corporate Social Responsibility)',                      type:'csr',          regime:'INR', pan:'AAACT1507C', aliases:['ACC Ltd','Scope of Work for Malnutrition (ACC)'], note:'Corporate CSR (cement); Sch VII' },
   individuals:      { name:'Individual Partners',                 type:'individual',   regime:'INR',  aliases:['General Donations','Donation Received'] },
   sciaf:            { name:'Scottish Catholic International Aid Fund', type:'foreign_org', regime:'FCRA', aliases:['SCIAF','Scottish Catholic International Aid Fund'] },
-  caritas_india_fcra:{ name:'Caritas India (SCIAF-funded Swaraksha channel)', type:'indian_inst', regime:'FCRA', aliases:['Caritas India','Caritas - Swaraksha','Caritass India'], note:'Historical Swaraksha agreement identifies Caritas India as facilitator/reviewer and states “Agency Allocation: SCIAF”. Kept distinct from Caritas Germany.' },
+  caritas_india_fcra:{ name:'Caritas India (SCIAF-Funded Swaraksha Channel)', type:'indian_inst', regime:'FCRA', aliases:['Caritas India','Caritas - Swaraksha','Caritass India'], note:'Historical Swaraksha agreement identifies Caritas India as facilitator/reviewer and states “Agency Allocation: SCIAF”. Kept distinct from Caritas Germany.' },
   sanlaap:          { name:'Sanlaap',                                         type:'indian_inst',  regime:'FCRA', aliases:['SANLAAP','Sanlaap - Kolkata'] },
   igsss:            { name:'Indo-Global Social Service Society',  type:'indian_inst',  regime:'FCRA', aliases:['IGSSS','Indo Global Social Service Society'] },
   laher:            { name:'Laher Project (Intermediary)',         type:'indian_inst',  regime:'INR',  aliases:['Laher','Lahar','Lahar project','Laher project'] },
@@ -158,7 +158,7 @@ FIN.FUNDERS = {
   sdtt:             { name:'Sir Dorabji Tata Trust',        type:'philanthropy', regime:'INR',  aliases:['SDTT','SDTT Fund'] },
   unicef:           { name:'UNICEF',                               type:'un',           regime:'INR',  aliases:['UNICEF-CPP','UNICEF- CPP Project'] },
   action_aid:       { name:'ActionAid (Action on Research/Direct Democracy)', type:'foreign_org', regime:'FCRA', aliases:['Action Aid','ACTION AID Project','Action on Research on Direct Democracy'] },
-  milaan_swabhiman: { name:'Milaan Be The Change (Swabhiman programme)', type:'indian_inst', regime:'FCRA', aliases:['Milaan','Milaan Foundation','Swabhiman Programme'], note:'The executed amendment dated 6 September 2014 identifies Milaan and DEHAT as the parties to the Swabhiman programme MoU dated 7 July 2014. The audited schedule separately labels the fund “Swabhiman (Erase Poverty)”.' },
+  milaan_swabhiman: { name:'Milaan Be The Change (Swabhiman Programme)', type:'indian_inst', regime:'FCRA', aliases:['Milaan','Milaan Foundation','Swabhiman Programme'], note:'The executed amendment dated 6 September 2014 identifies Milaan and DEHAT as the parties to the Swabhiman programme MoU dated 7 July 2014. The audited schedule separately labels the fund “Swabhiman (Erase Poverty)”.' },
   sahyog:           { name:'Sahyog Society',                        type:'indian_inst',  regime:'FCRA', aliases:['Sahyog','Sahyog Society FC A/c'] },
   iimpact:          { name:'IIMPACT (Rural Girl Child Education)', type:'philanthropy', regime:'INR',  aliases:[] },
   // Renamed from a shared 'milaan' key: every use in this dataset actually describes Charity Science
@@ -233,9 +233,9 @@ FIN.YEARS = [
       { project:'Access to Justice',             funder:'ksc_foundation',  regime:'FCRA', total:6286034, admin:632571 },
       { project:'Skill Soldiers for a Better Future', funder:'dasra',      regime:'FCRA', total:1484973, admin:172550 },
       { project:'Panchi',                        funder:'shes_the_first',  regime:'FCRA', total:1257835, admin:324993 },
-      { project:'DEHAT direct (own foreign contribution fund)',  funder:'__fcra_general',  regime:'FCRA', total:31113,   admin:31113 },
-      { project:'Indian grant programmes (Azim Premji Philanthropic Initiatives FASAL etc.)', funder:'appi', regime:'INR', total:5078407, admin:0, adminChecked:true },
-      { project:'DEHAT general expenditure',     funder:'individuals',     regime:'INR', total:1622834, admin:1622834 },
+      { project:'DEHAT Direct (Own Foreign Contribution Fund)',  funder:'__fcra_general',  regime:'FCRA', total:31113,   admin:31113 },
+      { project:'Indian Grant Programmes (Azim Premji Philanthropic Initiatives FASAL etc.)', funder:'appi', regime:'INR', total:5078407, admin:0, adminChecked:true },
+      { project:'DEHAT General Expenditure',     funder:'individuals',     regime:'INR', total:1622834, admin:1622834 },
     ],
     depreciation:105405,
     reserves:{ closingBankFCRA:1129346, closingBankINR:691267 },
@@ -293,7 +293,7 @@ FIN.YEARS = [
       { project:'Access to Justice',             funder:'ksc_foundation',  regime:'FCRA', total:4326562, admin:785905 },
       { project:'Skill Soldiers for a Better Future', funder:'dasra',      regime:'FCRA', total:732166, admin:93700 },
       { project:'Panchi',                        funder:'shes_the_first',  regime:'FCRA', total:926087, admin:143757 },
-      { project:'DEHAT direct (own foreign contribution fund)',  funder:'__fcra_general',  regime:'FCRA', total:18288,   admin:18288 },
+      { project:'DEHAT Direct (Own Foreign Contribution Fund)',  funder:'__fcra_general',  regime:'FCRA', total:18288,   admin:18288 },
       // Indian grant programmes, itemised per the same "INR Grant Sheet" utilised (F) column used for
       // the received side above: APPI 41,26,802.70 + EdelGive 38,43,033.58 + Childline India Foundation
       // 5,62,892.00 + Childline Shravasti 5,05,987.02 = 90,38,715.30, to the rupee.
@@ -317,7 +317,7 @@ FIN.YEARS = [
       // (staff trainings, website, fundraising event) — with no beneficiary-facing programme line anywhere
       // in the budget. None of it supports a DEHAT programme; all of it supports DEHAT's own office and
       // organisational capacity, so the full amount is Administration & Governance.
-      { project:'Azim Premji Philanthropic Initiatives FASAL programme', funder:'appi',            regime:'INR', total:4126802.70, admin:240387.00 },
+      { project:'Azim Premji Philanthropic Initiatives FASAL Programme', funder:'appi',            regime:'INR', total:4126802.70, admin:240387.00 },
       { project:'GROW (EdelGive)',                                       funder:'edele_give',      regime:'INR', total:3843033.58, admin:3843033.58 },
       // Childline admin: signed Childline India Foundation utilisation/audit reports (File Nos.
       // BG/N/DCL/C/23-24/80/FI for Bahraich and .../214/FI for Shravasti, "Head Services" Sandeep Kumar
@@ -329,7 +329,7 @@ FIN.YEARS = [
       // Expenses sub-total is ₹49,782, applied directly as this line's admin figure.
       { project:'Childline India Foundation',                            funder:'childline_india', regime:'INR', total:562892,     admin:55418.00 },
       { project:'Childline Shravasti',                                   funder:'childline_india', regime:'INR', total:505987.02,  admin:49782.00 },
-      { project:'DEHAT general expenditure',     funder:'individuals',     regime:'INR',  total:190163, admin:190163 },
+      { project:'DEHAT General Expenditure',     funder:'individuals',     regime:'INR',  total:190163, admin:190163 },
     ],
     depreciation:150558,
     surplus:623513.53,
@@ -357,15 +357,15 @@ FIN.YEARS = [
     ],
     spend:[
       { project:'Surokhit Shaishav — Promoting Safe Childhood', funder:'caritas_germany', regime:'FCRA', total:465174, admin:1674 },
-      { project:'DEHAT direct (own foreign contribution fund)',   funder:'__fcra_general',   regime:'FCRA', total:17448,    admin:17448 },
-      { project:'Azim Premji Philanthropic Initiatives FASAL programme',           funder:'appi',             regime:'INR',  total:3000456.92, admin:0, adminChecked:true },
+      { project:'DEHAT Direct (Own Foreign Contribution Fund)',   funder:'__fcra_general',   regime:'FCRA', total:17448,    admin:17448 },
+      { project:'Azim Premji Philanthropic Initiatives FASAL Programme',           funder:'appi',             regime:'INR',  total:3000456.92, admin:0, adminChecked:true },
       { project:'GROW (EdelGive)',                 funder:'edele_give',       regime:'INR',  total:3979558.95, admin:0, adminChecked:true },
       { project:'ACC Malnutrition',               funder:'acc',              regime:'INR',  total:874613,   admin:0, adminChecked:true },
       { project:'Childline India Foundation',     funder:'childline_india',  regime:'INR',  total:1404861,  admin:0, adminChecked:true },
       { project:'Childline Shravasti',            funder:'childline_india',  regime:'INR',  total:1399247,  admin:0, adminChecked:true },
       { project:'Caritas Swaraksha (INR)',        funder:'caritas_india_inr',regime:'INR',  total:635053,   admin:0, adminChecked:true },
-      { project:'Laher project',                  funder:'laher',            regime:'INR',  total:161874.5, admin:0, adminChecked:true },
-      { project:'DEHAT general expenditure',      funder:'individuals',      regime:'INR',  total:121177, admin:121177 },
+      { project:'Laher Project',                  funder:'laher',            regime:'INR',  total:161874.5, admin:0, adminChecked:true },
+      { project:'DEHAT General Expenditure',      funder:'individuals',      regime:'INR',  total:121177, admin:121177 },
     ],
     depreciation:200713,
     surplus:-137990.43,
@@ -520,7 +520,7 @@ FIN.YEARS = [
       // matching the same real, audited label already classified 100% admin for this organisation's
       // general/head-office expenditure in every other year it appears (FY2018-19 to FY2024-25).
       { project:'General Fund',                                        funder:'individuals', regime:'INR', total:215902.12, admin:215902.12, adminChecked:true },
-      { project:'DEHAT general expenditure',              funder:'individuals',         regime:'INR',  total:465511.92, admin:465511.92 },
+      { project:'DEHAT General Expenditure',              funder:'individuals',         regime:'INR',  total:465511.92, admin:465511.92 },
     ],
     depreciation:76851,
     surplus:-335011.14,
@@ -563,12 +563,12 @@ FIN.YEARS = [
       { project:'Alliance for Immunization & Health Immunization — Maharashtra', funder:'aih',         regime:'INR',  total:1735198, admin:32056 },
       { project:'Alliance for Immunization & Health Immunization — UP',      funder:'aih',             regime:'INR',  total:1503983, admin:32397 },
       { project:'Su-Poshan (Indo-Global Social Service Society)',     funder:'igsss',           regime:'FCRA', total:517172,  admin:29514 },
-      { project:'IGSSS local contribution',   funder:'igsss',           regime:'INR',  total:43710, admin:0, adminChecked:true },
-      { project:'Azim Premji Philanthropic Initiatives COVID ration',          funder:'appi',            regime:'INR',  total:1000000, admin:0, adminChecked:true },
+      { project:'IGSSS Local Contribution',   funder:'igsss',           regime:'INR',  total:43710, admin:0, adminChecked:true },
+      { project:'Azim Premji Philanthropic Initiatives COVID Ration',          funder:'appi',            regime:'INR',  total:1000000, admin:0, adminChecked:true },
       { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:1518981, admin:185436, note:'SCIAF-funded programme facilitated through Caritas India; direct SCIAF and Caritas India receipt lines remain separately disclosed.' },
       { project:'ACC Malnutrition',           funder:'acc',             regime:'INR',  total:627765, admin:0, adminChecked:true },
-      { project:'Audit fees (foreign contribution)',          funder:'__fcra_general',  regime:'FCRA', total:15000,   admin:15000 },
-      { project:'DEHAT direct own fund',      funder:'individuals',     regime:'INR',  total:2512614.08, admin:2512614.08 },
+      { project:'Audit Fees (Foreign Contribution)',          funder:'__fcra_general',  regime:'FCRA', total:15000,   admin:15000 },
+      { project:'DEHAT Direct Own Fund',      funder:'individuals',     regime:'INR',  total:2512614.08, admin:2512614.08 },
     ],
     surplus:60267.03,
     balanceSheetTotal:2396674.49,
@@ -597,15 +597,15 @@ FIN.YEARS = [
     spend:[
       { project:'Childline Shravasti',        funder:'childline_india', regime:'INR',  total:1310995, admin:166244 },
       { project:'Childline BRH',              funder:'childline_india', regime:'INR',  total:1388772, admin:167411 },
-      { project:'e-vidya (Birlasoft CSR)',    funder:'birlasoft',       regime:'INR',  total:108326, admin:47833 },
+      { project:'E-Vidya (Birlasoft CSR)',    funder:'birlasoft',       regime:'INR',  total:108326, admin:47833 },
       { project:'Alliance for Immunization & Health Immunization — Maharashtra', funder:'aih',         regime:'INR',  total:767824, admin:10800 },
       { project:'Alliance for Immunization & Health Immunization — UP',      funder:'aih',             regime:'INR',  total:538645, admin:9600 },
-      { project:'Su-Poshan (IGSSS local)',    funder:'igsss',           regime:'INR',  total:209050, admin:0, adminChecked:true },
-      { project:'Stakeholder meeting (Sanlaap)', funder:'sanlaap',      regime:'FCRA', total:108910,  admin:0, adminChecked:true },
-      { project:'Suposhan / nutrition (Indo-Global Social Service Society)', funder:'igsss',    regime:'FCRA', total:1048799, admin:56390 },
+      { project:'Su-Poshan (IGSSS Local)',    funder:'igsss',           regime:'INR',  total:209050, admin:0, adminChecked:true },
+      { project:'Stakeholder Meeting (Sanlaap)', funder:'sanlaap',      regime:'FCRA', total:108910,  admin:0, adminChecked:true },
+      { project:'Suposhan / Nutrition (Indo-Global Social Service Society)', funder:'igsss',    regime:'FCRA', total:1048799, admin:56390 },
       { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:1840442, admin:185541 },
-      { project:'Audit fees (foreign contribution)',          funder:'__fcra_general',  regime:'FCRA', total:15000,   admin:15000 },
-      { project:'DEHAT direct own fund',      funder:'individuals',     regime:'INR',  total:369104.34, admin:369104.34 },
+      { project:'Audit Fees (Foreign Contribution)',          funder:'__fcra_general',  regime:'FCRA', total:15000,   admin:15000 },
+      { project:'DEHAT Direct Own Fund',      funder:'individuals',     regime:'INR',  total:369104.34, admin:369104.34 },
     ],
     surplus:27075.46,
     balanceSheetTotal:2303089.37,
@@ -646,7 +646,7 @@ FIN.YEARS = [
       { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:2317925, admin:186295 },
       { project:'Childline Shravasti',    funder:'childline_india', regime:'INR',  total:303602,  admin:41083 },
       { project:'Childline BRH',          funder:'childline_india', regime:'INR',  total:1292090, admin:172106 },
-      { project:'e-vidya (Birlasoft CSR)', funder:'birlasoft',       regime:'INR',  total:1035216, admin:0, adminChecked:true },
+      { project:'E-Vidya (Birlasoft CSR)', funder:'birlasoft',       regime:'INR',  total:1035216, admin:0, adminChecked:true },
       { project:'Sustainable Community Development Project / ACC',             funder:'acc',             regime:'INR',  total:1226490, admin:188826 },
       // Sujlam Suflam admin: signed I&E schedule splits ₹87,280 into Personal (Program ₹48,400 +
       // Admin ₹14,520), Program Cost ₹14,680 (Capacity Building + Travel), and Overhead Cost ₹9,680
@@ -654,9 +654,9 @@ FIN.YEARS = [
       { project:'Sujlam Suflam',          funder:'sdtt',            regime:'INR',  total:87280,   admin:24200 },
       { project:'Charity Science',        funder:'charity_science',regime:'INR',  total:505440,  admin:44220 },
       { project:'GEETA Karnal',           funder:'geeta_karnal',    regime:'INR',  total:155000,  admin:0, adminChecked:true },
-      { project:'Audit fees (foreign contribution)',      funder:'__fcra_general',  regime:'FCRA', total:7500,    admin:7500 },
-      { project:'DEHAT direct own fund',  funder:'individuals',     regime:'INR',  total:319289.08, admin:319289.08 },
-      { project:'Google Click exp',       funder:'individuals',     regime:'INR',  total:10068, admin:0, adminChecked:true },
+      { project:'Audit Fees (Foreign Contribution)',      funder:'__fcra_general',  regime:'FCRA', total:7500,    admin:7500 },
+      { project:'DEHAT Direct Own Fund',  funder:'individuals',     regime:'INR',  total:319289.08, admin:319289.08 },
+      { project:'Google Click Exp',       funder:'individuals',     regime:'INR',  total:10068, admin:0, adminChecked:true },
     ],
     surplus:49488.07,
     balanceSheetTotal:2030614.81,
@@ -693,13 +693,13 @@ FIN.YEARS = [
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:448695,  interest:101174, note:'Individual contributions + bank interest' },
     ],
     spend:[
-      { project:'ActionAid project',                    funder:'action_aid',      regime:'FCRA', total:707205,  admin:112000 },
-      { project:'Childline project (Bahraich + HS)',    funder:'childline_india', regime:'INR',  total:1261051, admin:131744 },
-      { project:'GEETA Karnal / NSE project',           funder:'geeta_karnal',    regime:'INR',  total:2226297, admin:404632 },
+      { project:'ActionAid Project',                    funder:'action_aid',      regime:'FCRA', total:707205,  admin:112000 },
+      { project:'Childline Project (Bahraich + HS)',    funder:'childline_india', regime:'INR',  total:1261051, admin:131744 },
+      { project:'GEETA Karnal / NSE Project',           funder:'geeta_karnal',    regime:'INR',  total:2226297, admin:404632 },
       { project:'Sustainable Community Development Project (ACC)', funder:'acc', regime:'INR',  total:2034461, admin:598921 },
-      { project:'UNICEF project (GPDP)',                funder:'unicef',          regime:'INR',  total:270000,  admin:78000 },
-      { project:'Google Ad Grants (in-kind advertising)', funder:'google',        regime:'INR',  total:6002387, admin:0, adminChecked:true, inKind:true },
-      { project:'Sujalam Sufalam project',              funder:'sdtt',            regime:'INR',  total:1527759, admin:360881 },
+      { project:'UNICEF Project (GPDP)',                funder:'unicef',          regime:'INR',  total:270000,  admin:78000 },
+      { project:'Google Ad Grants (In-Kind Advertising)', funder:'google',        regime:'INR',  total:6002387, admin:0, adminChecked:true, inKind:true },
+      { project:'Sujalam Sufalam Project',              funder:'sdtt',            regime:'INR',  total:1527759, admin:360881 },
       // Source: YEAR 2017 - 2018.pdf, re-read directly page by page. This ₹19,89,935 block (Education
       // Material ₹98,985 + Training for Teachers ₹1,37,614 + Evaluation ₹13,180 + Project Staff Salary
       // ₹15,19,465 + Travel ₹4,035 = ₹17,73,279 programme, + its own printed "Administrative Expenses"
@@ -716,8 +716,8 @@ FIN.YEARS = [
       { project:'Bal Prahari (iPartner India)',         funder:'ipartner',        regime:'INR',  total:937520,  admin:62896 },
       { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:1372498, admin:87424 },
       { project:'Charity Science Foundation',           funder:'charity_science',regime:'INR',  total:95760,   admin:4060 },
-      { project:'RGCEP project (staff cost)',           funder:'iimpact',         regime:'INR',  total:176721,  admin:0, adminChecked:true },
-      { project:'DEHAT general administrative expenses', funder:'individuals',   regime:'INR',  total:432747,  admin:432747 },
+      { project:'RGCEP Project (Staff Cost)',           funder:'iimpact',         regime:'INR',  total:176721,  admin:0, adminChecked:true },
+      { project:'DEHAT General Administrative Expenses', funder:'individuals',   regime:'INR',  total:432747,  admin:432747 },
     ],
     balanceSheetTotal:4829613, receivedTotal:20202819, utilisedTotal:19034341, surplus:1168478,
     note:'Grant-Fund income and full project-level expenditure directly transcribed from the signed statutory audit (Vipin Priyank Gopal & Co, dated 29/10/2018 on the I&E). Google ₹60.02L is in-kind Ad Grants, not cash.',
@@ -768,15 +768,15 @@ FIN.YEARS = [
       { funder:'baif',            regime:'INR',  flex:'restricted', grant:150000,     interest:0, note:'BAIF fund (received by cheque)' },
     ],
     spend:[
-      { project:'Google Ad Grants (in-kind advertising)', funder:'google',          regime:'INR',  total:7759813.85, admin:0, adminChecked:true, inKind:true },
-      { project:'Rotary India Literacy Mission education / literacy',              funder:'rilm',           regime:'INR',  total:3136064,    admin:41055 },
+      { project:'Google Ad Grants (In-Kind Advertising)', funder:'google',          regime:'INR',  total:7759813.85, admin:0, adminChecked:true, inKind:true },
+      { project:'Rotary India Literacy Mission Education / Literacy',              funder:'rilm',           regime:'INR',  total:3136064,    admin:41055 },
       { project:'School and Community Development Education Programme',  funder:'iimpact',          regime:'INR',  total:2880319.27, admin:96500 },
-      { project:'Rural Girl Child Education Project education programme',               funder:'iimpact',          regime:'INR',  total:2823887.93, admin:14217.93, project:'Rural Girl Child Education Project' },
-      { project:'ActionAid — School Management Committee federation / governance', funder:'action_aid',       regime:'FCRA', total:1288900,    admin:10000 },
-      { project:'Sujalam Sufalam (livelihoods / NRM)',     funder:'sdtt',  regime:'INR',  total:1222121.93, admin:11000 },
-      { project:'Childline (child protection)',            funder:'childline_india',  regime:'INR',  total:1171810.56, admin:10000 },
-      { project:'Head office / general administration',    funder:'individuals',      regime:'INR',  total:911508.93, admin:911508.93 },
-      { project:'Bal Prahaari anti-trafficking (foreign contribution)',    funder:'ipartner',   regime:'FCRA', total:552152.93,  admin:14537.93 },
+      { project:'Rural Girl Child Education Project',               funder:'iimpact',          regime:'INR',  total:2823887.93, admin:14217.93 },
+      { project:'ActionAid — School Management Committee Federation / Governance', funder:'action_aid',       regime:'FCRA', total:1288900,    admin:10000 },
+      { project:'Sujalam Sufalam (Livelihoods / NRM)',     funder:'sdtt',  regime:'INR',  total:1222121.93, admin:11000 },
+      { project:'Childline (Child Protection)',            funder:'childline_india',  regime:'INR',  total:1171810.56, admin:10000 },
+      { project:'Head Office / General Administration',    funder:'individuals',      regime:'INR',  total:911508.93, admin:911508.93 },
+      { project:'Bal Prahaari Anti-Trafficking (Foreign Contribution)',    funder:'ipartner',   regime:'FCRA', total:552152.93,  admin:14537.93 },
     ],
   },
   {
@@ -825,11 +825,11 @@ FIN.YEARS = [
       { project:'SCDP/ACC Tikriya',                        funder:'acc',             regime:'INR', total:3539343,    admin:0, adminChecked:true },
       { project:'Childline 1098',                          funder:'childline_india', regime:'INR', total:1161567.83, admin:179866.83 },
       { project:'Sujalam Sufalam (SDTT/Tata Trusts)',      funder:'sdtt',            regime:'INR', total:1050328.13, admin:255614.13 },
-      { project:'Society Home Account (general administration)', funder:'individuals', regime:'INR', total:864092.78, admin:864092.78 },
-      { project:'FASAL (SDTT, pre-2022 phase)',            funder:'sdtt',            regime:'INR', total:231795.85,  admin:12361 },
+      { project:'Society Home Account (General Administration)', funder:'individuals', regime:'INR', total:864092.78, admin:864092.78 },
+      { project:'FASAL (SDTT, Pre-2022 Phase)',            funder:'sdtt',            regime:'INR', total:231795.85,  admin:12361 },
       { project:'RILM (Rotary India Literacy Mission)',    funder:'rilm',          regime:'INR', total:207384,     admin:7240 },
       { project:'Swabhiman',                                funder:'action_aid',      regime:'FCRA', total:165688,    admin:13495 },
-      { project:'FCRA-Others (bank charges & renewal)',    funder:'__fcra_general',  regime:'FCRA', total:875.98,     admin:875.98 },
+      { project:'FCRA-Others (Bank Charges & Renewal)',    funder:'__fcra_general',  regime:'FCRA', total:875.98,     admin:875.98 },
       { project:'Depreciation on Fixed Assets (Local & FCRA)', funder:'individuals', regime:'INR', total:215330.98, admin:215330.98 },
     ],
   },
@@ -874,7 +874,7 @@ FIN.YEARS = [
       { project:'SCDP Community Development Project (ACC Cement CSR)', funder:'acc', regime:'INR', total:5491245, admin:483988 },
       { project:'RGCEP Project (IIMPACT Girls Education, Local)', funder:'iimpact', regime:'INR', total:3889704.40, admin:270174 },
       { project:'Child Line Project (Childline India Foundation)', funder:'childline_india', regime:'INR', total:1090299, admin:172602 },
-      { project:'FASAL Project (SDTT, pre-2022 phase, routed through PANI)', funder:'sdtt', regime:'INR', total:966522.40, admin:73810 },
+      { project:'FASAL Project (SDTT, Pre-2022 Phase, Routed Through PANI)', funder:'sdtt', regime:'INR', total:966522.40, admin:73810 },
       { project:'IIMPACT Learning Centres (Foreign Contribution Account)', funder:'iimpact', regime:'FCRA', total:585398, admin:24425 },
       { project:'Society Home Account / Local Development Programmes', funder:'individuals', regime:'INR', total:499113.40, admin:15566 },
       { project:'Swabhiman Child Rights Project (Milaan)', funder:'milaan_swabhiman', regime:'FCRA', total:148157, admin:12854 },
@@ -918,7 +918,7 @@ FIN.YEARS = [
       { project:'Action on Research on Direct Democracy (Jagdeep Lohani)', funder:'jagdeep_lohani', regime:'FCRA', total:490000, admin:0, adminChecked:true },
       { project:'FCRA General Operational Bank Charges', funder:'__fcra_general', regime:'FCRA', total:97.85, admin:97.85 },
       { project:'Society Home Account / Local Development Programmes (Centum, GNK, Sahyog)', funder:'individuals', regime:'INR', total:1251988.70, admin:322710 },
-      { project:'FASAL Project (SDTT, pre-2022 phase, routed through PANI)', funder:'sdtt', regime:'INR', total:1072508.70, admin:119310.70 },
+      { project:'FASAL Project (SDTT, Pre-2022 Phase, Routed Through PANI)', funder:'sdtt', regime:'INR', total:1072508.70, admin:119310.70 },
       { project:'RGCEP Project (IIMPACT Girls Education)', funder:'iimpact', regime:'INR', total:3569742.70, admin:277739 },
       { project:'SCDP Project (ACC Cement, Tikariya)', funder:'acc', regime:'INR', total:2444446, admin:113913 },
       { project:'Child Line Project (Childline India Foundation)', funder:'childline_india', regime:'INR', total:568298, admin:121378 },
@@ -1010,7 +1010,7 @@ FIN.YEARS = [
       // too, for the same treatment across both UNICEF projects. The previously-used ₹3,15,486 was
       // this project's separate "Travel Cost" line, not an admin/overhead sub-header.
       { project:'UNICEF-CHNI Project (Child Health & Nutrition)', funder:'unicef', regime:'INR', total:2048588, admin:329854 },
-      { project:'FASAL Project (SDTT, pre-2022 phase, routed through PANI)', funder:'sdtt', regime:'INR', total:879629, admin:61000 },
+      { project:'FASAL Project (SDTT, Pre-2022 Phase, Routed Through PANI)', funder:'sdtt', regime:'INR', total:879629, admin:61000 },
       { project:'Azadi Project (CRY Local Funds)', funder:'cry', regime:'INR', total:140951, admin:36715 },
       { project:'UNICEF-CPP Project (Child Protection)', funder:'unicef', regime:'INR', total:2718219, admin:436144 },
       { project:'RGCEP Project (IIMPACT Girls Education)', funder:'iimpact', regime:'INR', total:2777982, admin:233353 },
@@ -1048,7 +1048,7 @@ FIN.YEARS = [
     // utilisedTotal to the cent.
     spend:[
       { project:'Child Line Project (Childline India Foundation)', funder:'childline_india', regime:'INR', total:800800, admin:64900 },
-      { project:'FASAL (SDTT, pre-2022 phase, routed through PANI)', funder:'sdtt', regime:'INR', total:58910, admin:42000 },
+      { project:'FASAL (SDTT, Pre-2022 Phase, Routed Through PANI)', funder:'sdtt', regime:'INR', total:58910, admin:42000 },
       { project:'IIMPACT Project', funder:'iimpact', regime:'INR', total:2477241, admin:167610 },
       { project:'UNICEF-CHNI Project', funder:'unicef', regime:'INR', total:2635220, admin:172398 },
       { project:'UNICEF-CPP Project', funder:'unicef', regime:'INR', total:2236738, admin:96835 },
@@ -1057,9 +1057,9 @@ FIN.YEARS = [
       { project:'Sure Start Programme — Chaitura (BAIF)', funder:'baif', regime:'FCRA', total:57839, admin:4285 },
       { project:'Sure Start Programme — Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:61758, admin:4575 },
       { project:'CRY Project Cost', funder:'cry', regime:'FCRA', total:589437, admin:211749 },
-      { project:'FCRA Other Funds (bank charges, Mahila Shakti Sammelan)', funder:'__fcra_general', regime:'FCRA', total:9285, admin:25 },
+      { project:'FCRA Other Funds (Bank Charges, Mahila Shakti Sammelan)', funder:'__fcra_general', regime:'FCRA', total:9285, admin:25 },
       { project:'General Account (Local Fund)', funder:'individuals', regime:'INR', total:241480, admin:241480 },
-      { project:'Depreciation on fixed assets (Society Home + Foreign Contribution accounts)', funder:'individuals', regime:'INR', total:197760.34, admin:197760.34 },
+      { project:'Depreciation on Fixed Assets (Society Home + Foreign Contribution Accounts)', funder:'individuals', regime:'INR', total:197760.34, admin:197760.34 },
     ],
   },
   {
@@ -1126,7 +1126,7 @@ FIN.YEARS = [
       { funder:'individuals',    regime:'INR',  flex:'flexible',   grant:0,       interest:796679.75, note:'Local contribution + interest (Indian funds)' },
     ],
     spend:[
-      { project:'UPFMPAP Project (JICA, through DMU Renukoot)', funder:'jica', regime:'INR', total:861797.75, admin:118336.75 },
+      { project:'UPFMPAP Project (JICA, Through DMU Renukoot)', funder:'jica', regime:'INR', total:861797.75, admin:118336.75 },
       // UNICEF admin, resolved: the project's own R&P account (pages 1-4) has a "Direct Programme Support
       // Cost" bucket — Office Rent ₹36,000 + Accountant (part-time) ₹30,000 + Office Assistant ₹18,000 +
       // Stationery ₹13,368 + Telephone ₹39,170 = ₹1,36,538 — category-for-category identical to what this
@@ -1183,7 +1183,7 @@ FIN.YEARS = [
       // Source: Balance Sheet 2010-11.pdf, Society Home Account — the actual payment line reads
       // "Expenses on Programme – Formation & Training of CBDMC (SSK) ₹1,10,020," a direct account
       // entry, not a proposal budget. 100% programme, no administration shown.
-      { project:'Community Based Disaster Management Committees (Sahbhagi Shikshan Kendra, Mihinpurwa block)', funder:'ssk', regime:'INR', total:110020.00, admin:0, adminChecked:true },
+      { project:'Community Based Disaster Management Committees (Sahbhagi Shikshan Kendra, Mihinpurwa Block)', funder:'ssk', regime:'INR', total:110020.00, admin:0, adminChecked:true },
       // Same situation as Kabir above: printed as one flat total with no sub-header anywhere in either
       // copy of the compendium. Applying the same established FY2009-10 convention (admin:0 rather than
       // guessed) for consistency, not as a new estimate.
@@ -1240,7 +1240,7 @@ FIN.YEARS = [
       { project:'Sure Start Project — Chittaura (BAIF)', funder:'baif', regime:'FCRA', total:592883, admin:129796 },
       { project:'Sure Start Project — Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:447683, admin:111525 },
       { project:'CRY Project (Foreign Contribution)', funder:'cry', regime:'FCRA', total:431322, admin:135389 },
-      { project:'Kabir Project (United Nations Development Programme channel)', funder:'kabir', regime:'FCRA', total:235000, admin:0, adminChecked:true },
+      { project:'Kabir Project (United Nations Development Programme Channel)', funder:'kabir', regime:'FCRA', total:235000, admin:0, adminChecked:true },
       { project:'IIMPACT Rural Girl Child Education Programme', funder:'iimpact', regime:'INR', total:178180, admin:0, adminChecked:true },
       { project:'SDTT — Empowering Rural Women (ERW)', funder:'sdtt', regime:'INR', total:132416, admin:43539 },
       { project:'CRY Project (Local Indian Funds)', funder:'cry', regime:'INR', total:123965, admin:54835 },
@@ -1280,8 +1280,8 @@ FIN.YEARS = [
       { project:'Sure Start Project — Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:374268, admin:0, adminChecked:true },
       { project:'Sarva Siksha Abhiyaan (SSA)', funder:'ssa', regime:'INR', total:210818, admin:0, adminChecked:true },
       { project:'Expence on Village Development Programme', funder:'individuals', regime:'INR', total:45739, admin:0, adminChecked:true },
-      { project:'General community programmes (flood relief, RTI, sanitation, workshops)', funder:'individuals', regime:'INR', total:416360, admin:0, adminChecked:true },
-      { project:'Head office administrative expenses', funder:'individuals', regime:'INR', total:118099, admin:118099 },
+      { project:'General Community Programmes (Flood Relief, RTI, Sanitation, Workshops)', funder:'individuals', regime:'INR', total:416360, admin:0, adminChecked:true },
+      { project:'Head Office Administrative Expenses', funder:'individuals', regime:'INR', total:118099, admin:118099 },
     ],
   },
   {
@@ -1326,8 +1326,8 @@ FIN.YEARS = [
       { project:'Sure Start Project — Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:324393, admin:0, adminChecked:true },
       { project:'NABARD (SHG Promotion Programme)', funder:'nabard', regime:'INR', total:194522, admin:0, adminChecked:true },
       { project:'Tara Akshar (Women\'s Literacy Programme)', funder:'tara_akshar', regime:'INR', total:43016, admin:0, adminChecked:true },
-      { project:'General community programmes', funder:'individuals', regime:'INR', total:177606, admin:0, adminChecked:true },
-      { project:'Head office administrative expenses', funder:'individuals', regime:'INR', total:116668, admin:116668 },
+      { project:'General Community Programmes', funder:'individuals', regime:'INR', total:177606, admin:0, adminChecked:true },
+      { project:'Head Office Administrative Expenses', funder:'individuals', regime:'INR', total:116668, admin:116668 },
     ],
   },
   {
@@ -1355,11 +1355,11 @@ FIN.YEARS = [
     spend:[
       { project:'Making School Functional (ActionAid)', funder:'action_aid', regime:'FCRA', total:150697, admin:0, adminChecked:true },
       { project:'PACS Programme (DFID)', funder:'dfid_pacs', regime:'FCRA', total:349431, admin:0, adminChecked:true, note:'Expenditure-side figure as printed; the income-side DFID grant this year reads ₹3,49,419 — a ₹12 difference present on the signed statement itself' },
-      { project:'Child Rights Project (CRY) — revenue expenses', funder:'cry', regime:'INR', total:361607, admin:0, adminChecked:true },
+      { project:'Child Rights Project (CRY) — Revenue Expenses', funder:'cry', regime:'INR', total:361607, admin:0, adminChecked:true },
       { project:'SHG Promotion Programme (NABARD)', funder:'nabard', regime:'INR', total:56040, admin:0, adminChecked:true },
       { project:'REDP Project (NABARD)', funder:'nabard', regime:'INR', total:50214, admin:0, adminChecked:true },
-      { project:'General community programmes (RTI, health, sanitation, workshops)', funder:'individuals', regime:'INR', total:144107, admin:0, adminChecked:true },
-      { project:'Head office administrative expenses', funder:'individuals', regime:'INR', total:119745, admin:119745 },
+      { project:'General Community Programmes (RTI, Health, Sanitation, Workshops)', funder:'individuals', regime:'INR', total:144107, admin:0, adminChecked:true },
+      { project:'Head Office Administrative Expenses', funder:'individuals', regime:'INR', total:119745, admin:119745 },
     ],
   },
   {
@@ -1382,9 +1382,9 @@ FIN.YEARS = [
       { project:'PACS Programme (DFID / Lokshakti)', funder:'dfid_pacs', regime:'FCRA', total:351590, admin:0, adminChecked:true },
       { project:'ActionAid Project', funder:'action_aid', regime:'FCRA', total:337840, admin:0, adminChecked:true },
       { project:'CRY Azadi Project', funder:'cry', regime:'INR', total:130896, admin:0, adminChecked:true },
-      { project:'NABARD (SHG promotion)', funder:'nabard', regime:'INR', total:60281, admin:0, adminChecked:true },
-      { project:'General community programmes (health, sanitation, training, agri/horticulture)', funder:'individuals', regime:'INR', total:139998, admin:0, adminChecked:true },
-      { project:'Head office administrative expenses', funder:'individuals', regime:'INR', total:100412, admin:100412 },
+      { project:'NABARD (SHG Promotion)', funder:'nabard', regime:'INR', total:60281, admin:0, adminChecked:true },
+      { project:'General Community Programmes (Health, Sanitation, Training, Agri/Horticulture)', funder:'individuals', regime:'INR', total:139998, admin:0, adminChecked:true },
+      { project:'Head Office Administrative Expenses', funder:'individuals', regime:'INR', total:100412, admin:100412 },
     ],
   },
 
