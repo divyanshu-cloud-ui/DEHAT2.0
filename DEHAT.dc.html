@@ -30219,7 +30219,7 @@ class Component extends DCLogic {
       // so this needed no new dictionary keys). Payment ('give') is deliberately NOT a dropdown
       // child: every sitewide "Invest" CTA already jumps straight to it, and listing "Invest"
       // again here, right under a "Why Invest" pill, would recreate the same collision.
-      { key: 'involved', kids: ['route', 'people', 'answer'] },
+      { key: 'involved', kids: ['route', 'people', 'answer', 'answers'] },
     ];
     const labelOf = (k) => (nav.find(n => n.key === k) || {}).label || k;
     const groupOwns = (g) => [g.key].concat(g.kids).concat(g.progs ? ['prog'] : []);
