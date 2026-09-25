@@ -505,10 +505,10 @@
 </nav>
 
 <sc-if value="{{ subNavOn }}" hint-placeholder-val="{{ false }}">
-<div key="subnav" data-subnav="" style="position:sticky;top:69px;z-index:46;background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch">
+<div key="subnav" data-subnav="" style="position:sticky;top:var(--nav-h,69px);z-index:46;background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch">
   <div style="display:flex;align-items:stretch;gap:2px;padding:0 clamp(16px,5vw,64px);max-width:1480px;margin:0 auto;white-space:nowrap">
     <sc-for list="{{ subNav }}" as="sn" hint-placeholder-count="5">
-      <button onClick="{{ sn.go }}" style="flex:none;background:none;border:none;border-bottom:2px solid {{ sn.line }};cursor:pointer;padding:11px 12px;font-family:inherit;font-size:12.5px;font-weight:{{ sn.weight }};color:{{ sn.color }};white-space:nowrap;transition:color .2s cubic-bezier(.22,.61,.36,1)" style-hover="color:var(--ac-crimson)">{{ sn.label }}</button>
+      <button onClick="{{ sn.go }}" aria-current="{{ sn.current }}" style="flex:none;background:none;border:none;border-bottom:2px solid {{ sn.line }};cursor:pointer;padding:11px 12px;font-family:inherit;font-size:12.5px;font-weight:{{ sn.weight }};color:{{ sn.color }};white-space:nowrap;transition:color .2s cubic-bezier(.22,.61,.36,1)" style-hover="color:var(--ac-crimson)">{{ sn.label }}</button>
     </sc-for>
   </div>
 </div>
@@ -898,7 +898,7 @@
           </div>
         </div>
       </div>
-      <section style="padding:0 clamp(20px,5vw,64px) clamp(40px,6vw,70px);max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,68px)">
+      <section data-spine="The Four Programmes" style="padding:0 clamp(20px,5vw,64px) clamp(40px,6vw,70px);max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,68px)">
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(max(330px,46%),1fr));gap:clamp(16px,2.2vw,26px)">
           <sc-for list="{{ programmeIndex }}" as="pg" hint-placeholder-count="4">
             <button onClick="{{ pg.go }}" class="pg-card" style="text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--border);border-top:5px solid {{ pg.color }};border-radius:20px;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:13px;box-shadow:0 18px 34px -30px var(--shadow);transition:transform .18s cubic-bezier(.22,.61,.36,1),box-shadow .18s cubic-bezier(.22,.61,.36,1);font-family:inherit" style-hover="transform:translateY(-5px);box-shadow:0 26px 44px -30px var(--shadow)">
@@ -920,7 +920,7 @@
           </sc-for>
         </div>
       </section>
-      <section style="background:var(--surface2);padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
+      <section data-spine="Four Questions" style="background:var(--surface2);padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
         <div style="max-width:1100px;margin:0 auto">
           <span style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--ac-cyan)">{{ T.wk_q_eyebrow }}</span>
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.04;letter-spacing:-.02em;color:var(--text);margin:14px 0 12px;max-width:760px;text-wrap:balance">{{ T.wk_q_head }}</h2>
@@ -947,7 +947,7 @@
         </div>
       </section>
 
-      <section style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px);max-width:1100px;margin:0 auto">
+      <section data-spine="How They Intersect" style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px);max-width:1100px;margin:0 auto">
         <span style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--ac-crimson)">{{ T.wk_x_eyebrow }}</span>
         <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.04;letter-spacing:-.02em;color:var(--text);margin:14px 0 12px;max-width:760px;text-wrap:balance">{{ T.wk_x_head }}</h2>
         <p style="font-size:15.5px;line-height:1.7;color:var(--dim);margin:0 0 26px;max-width:780px;text-wrap:pretty">{{ T.wk_x_sub }}</p>
@@ -989,7 +989,7 @@
         </div>
       </section>
 
-      <section style="background:var(--surface2);padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
+      <section data-spine="Projects and Programmes" style="background:var(--surface2);padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
         <div style="max-width:1100px;margin:0 auto">
           <span style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--ac-olive)">{{ T.wk_pp_eyebrow }}</span>
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.04;letter-spacing:-.02em;color:var(--text);margin:14px 0 18px;max-width:880px;text-wrap:balance">{{ T.wk_pp_head }}</h2>
@@ -1037,7 +1037,7 @@
         </div>
       </section>
 
-      <section style="background:#1a130b;padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
+      <section data-spine="The Method" style="background:#1a130b;padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
         <div style="max-width:1100px;margin:0 auto">
           <span style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:#EAAE28">{{ T.wk_method_eyebrow }}</span>
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);color:#fbf7ef;margin:14px 0 8px;letter-spacing:-.02em">{{ T.process_head }}</h2>
@@ -1056,7 +1056,7 @@
         </div>
       </section>
 
-      <section style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px);max-width:1100px;margin:0 auto">
+      <section data-spine="The Frameworks" style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px);max-width:1100px;margin:0 auto">
         <span style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--ac-purple)">{{ T.wk_anchor_eyebrow }}</span>
         <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.04;letter-spacing:-.02em;color:var(--text);margin:14px 0 12px;max-width:780px;text-wrap:balance">{{ T.wk_anchor_head }}</h2>
         <p style="font-size:15.5px;line-height:1.7;color:var(--dim);margin:0 0 26px;max-width:800px;text-wrap:pretty">{{ T.wk_anchor_sub }}</p>
@@ -1170,7 +1170,7 @@
         </div>
       </section>
 
-      <section style="padding:0 clamp(20px,5vw,64px) clamp(60px,8vw,100px);max-width:1100px;margin:0 auto">
+      <section data-spine="What We Are Building" style="padding:0 clamp(20px,5vw,64px) clamp(60px,8vw,100px);max-width:1100px;margin:0 auto">
         <div style="margin-top:clamp(60px,8vw,100px);border-radius:26px;background:#4F0E73;color:#fff;padding:clamp(28px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,48px);align-items:stretch">
           <div>
             <span style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:#EAAE28">{{ T.wk_build_eyebrow }}</span>
@@ -3401,7 +3401,7 @@
   <!-- ============ TRANSPARENCY ============ -->
   <sc-if value="{{ isFinance }}" hint-placeholder-val="{{ false }}">
     <div key="finance" class="rise">
-      <div style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px) clamp(30px,4vw,50px);max-width:1100px;margin:0 auto">
+      <div data-spine="The Record" style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px) clamp(30px,4vw,50px);max-width:1100px;margin:0 auto">
         <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-cyan);font-weight:700">{{ T.fin_eyebrow }}</span>
         <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(34px,5.5vw,68px);line-height:1;letter-spacing:-.03em;margin:14px 0 18px;color:var(--text)">{{ T.fin_title }}</h1>
         <p style="font-size:18px;line-height:1.6;color:var(--dim);max-width:720px;margin:0">{{ T.fin_sub }}</p>
@@ -3419,7 +3419,7 @@
            then the page's one active accountability mechanism, Raise a Concern -- identity, then
            proof, then paperwork, then who is accountable, then how to challenge it. -->
 
-      <section style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px) 0;max-width:1200px;margin:0 auto">
+      <section data-spine="On Paper" style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px) 0;max-width:1200px;margin:0 auto">
         <div style="max-width:760px;margin-bottom:34px">
           <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-olive);font-weight:700">{{ T.fin_legal_identity }}</span>
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.05;color:var(--text);margin:12px 0 10px">{{ T.fin_who_paper }}</h2>
@@ -3463,7 +3463,7 @@
         </div>
       </section>
 
-      <section data-anchor="allocation" style="padding:0 clamp(20px,5vw,64px) clamp(50px,6vw,70px);max-width:1200px;margin:0 auto">
+      <section data-spine="Explore the Money" data-anchor="allocation" style="padding:0 clamp(20px,5vw,64px) clamp(50px,6vw,70px);max-width:1200px;margin:0 auto">
         <div style="max-width:720px;margin-bottom:26px">
           <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-crimson);font-weight:700">{{ T.fin_explore_eyebrow }}</span>
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.05;color:var(--text);margin:12px 0 10px">{{ T.fin_explore_title }}</h2>
@@ -3621,7 +3621,7 @@
         <p style="font-size:12px;line-height:1.6;color:var(--faint);margin:16px 0 0;max-width:860px">{{ T.fin_rupee_classify }}</p>
       </section>
 
-      <section style="background:var(--surface2);padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
+      <section data-spine="Year by Year" style="background:var(--surface2);padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
         <div style="max-width:1200px;margin:0 auto">
           <div style="max-width:780px;margin-bottom:34px">
             <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-olive);font-weight:700">{{ T.fin_audited_record }}</span>
@@ -3808,7 +3808,7 @@
         </div>
       </section>
 
-      <section style="background:#0E5565;padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px)">
+      <section data-spine="Who Invests" style="background:#0E5565;padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px)">
         <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
           <div style="max-width:680px">
             <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(23px,2.8vw,34px);line-height:1.05;color:#fff;margin:0 0 10px">{{ T.fin_funders_head }}</h2>
@@ -3818,7 +3818,7 @@
         </div>
       </section>
 
-      <section data-anchor="compliance" style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
+      <section data-spine="Compliance" data-anchor="compliance" style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
         <div style="max-width:720px;margin-bottom:40px">
           <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-crimson);font-weight:700">{{ T.fin_compliance_head }}</span>
           <p style="font-size:16px;line-height:1.6;color:var(--dim);margin:14px 0 0">{{ T.fin_compliance_sub }}</p>
@@ -3870,7 +3870,7 @@
         <p style="display:flex;align-items:flex-start;gap:12px;font-family:'Newsreader';font-style:italic;font-size:clamp(15px,1.5vw,18px);line-height:1.5;color:var(--dim);max-width:820px;margin:40px 0 0;padding-left:16px;border-left:3px solid #EAAE28">{{ T.fin_auditor_trail }}</p>
       </section>
 
-      <section style="background:var(--surface2);padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
+      <section data-spine="Documents" style="background:var(--surface2);padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
         <div style="max-width:1200px;margin:0 auto">
           <div style="max-width:720px;margin-bottom:40px">
             <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-cyan);font-weight:700">{{ T.fin_eyebrow }}</span>
@@ -3906,7 +3906,7 @@
         </div>
       </section>
 
-      <section style="background:#1a130b;padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
+      <section data-spine="Who Decides" style="background:#1a130b;padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
         <div style="max-width:1200px;margin:0 auto">
           <div style="max-width:760px;margin-bottom:40px">
             <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ T.nav_governance }}</span>
@@ -4090,7 +4090,7 @@
         </div>
       </section>
       
-      <section data-anchor="governance" style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
+      <section data-spine="Who We Answer To" data-anchor="governance" style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
         <div style="max-width:760px;margin-bottom:38px">
           <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-cyan);font-weight:700">{{ T.gov_acc_eyebrow }}</span>
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.05;color:var(--text);margin:12px 0 10px">{{ T.gov_acc_title }}</h2>
@@ -4107,7 +4107,7 @@
         </div>
       </section>
 
-      <section data-anchor="raise" style="background:#4F0E73;color:#fff;padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
+      <section data-spine="Raise a Concern" data-anchor="raise" style="background:#4F0E73;color:#fff;padding:clamp(50px,7vw,90px) clamp(20px,5vw,64px)">
         <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,56px)">
           <div style="min-width:0">
             <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#EAAE28;font-weight:800">{{ T.raise_eyebrow }}</span>
@@ -4589,6 +4589,7 @@ class Component extends DCLogic {
       if (!ps || ps.view !== this.state.view || ps.progKey !== this.state.progKey || ps.pTab !== this.state.pTab) {
         this._syncHash();
       }
+      this._subnavFollow();
     } catch (e) {}
   }
   // Serialises the view a visitor is on into the URL hash, so browser back/forward moves
@@ -4903,13 +4904,69 @@ class Component extends DCLogic {
       root.style.setProperty('--spine-pos', (p * 100).toFixed(2) + '%');
       root.style.setProperty('--spine-rem', (100 - p * 100).toFixed(2) + '%');
       root.setAttribute('data-spine-on', '1');
+      // Active section = the last one whose top has reached the bottom of the sticky header
+      // stack (nav + sub-nav), measured live. The same edge is what _spineGo scrolls to, so a
+      // click always lands on the section it highlights. At the very bottom of the page the
+      // last section wins even if it is too short to reach the header.
+      const edge = this._headerEdge() + 24;
       let active = 0;
-      nodes.forEach((n, i) => { if (p >= n.at - 0.006) active = i; });
+      els.forEach((el, i) => { if (el.getBoundingClientRect().top <= edge) active = i; });
+      if (y + window.innerHeight >= root.scrollHeight - 2) active = els.length - 1;
       const sig = nodes.map(n => n.label + ':' + n.at.toFixed(3)).join('|') + '#' + active;
       if (sig === this._spineSig) return;
       this._spineSig = sig;
       this._spine = { nodes: nodes, active: active };
       this.forceUpdate();
+    } catch (e) {}
+  }
+  // Bottom edge of the sticky header stack as it is right now: the sub-nav strip when one is
+  // showing, otherwise the nav bar.
+  _headerEdge() {
+    try {
+      const sub = document.querySelector('[data-subnav]');
+      const nav = document.querySelector('nav');
+      return Math.round((sub || nav).getBoundingClientRect().bottom);
+    } catch (e) { return 110; }
+  }
+  // Scroll section i of the current page to just below the header stack. The position is read
+  // at click time, not from the last scan, because images and reveal animations above the
+  // target keep shifting it; a second pass after the smooth scroll corrects any drift.
+  _spineGo(i) {
+    const target = () => {
+      const el = document.querySelectorAll('main [data-spine]')[i];
+      return el ? Math.max(0, Math.round(el.getBoundingClientRect().top + window.pageYOffset - this._headerEdge() - 12)) : null;
+    };
+    try {
+      const t = target();
+      if (t == null) return;
+      window.scrollTo({ top: t, behavior: 'smooth' });
+      clearTimeout(this._spineGoT);
+      this._spineGoT = setTimeout(() => {
+        const t2 = target();
+        if (t2 != null && Math.abs(t2 - window.pageYOffset) > 6) window.scrollTo({ top: t2 });
+      }, 900);
+    } catch (e) {}
+  }
+  // On narrow screens the sub-nav scrolls sideways; keep the current item in view so the strip
+  // always shows where the reader is, not the first few labels. Runs after each render (from
+  // componentDidUpdate, so the DOM already carries the new aria-current), but only acts when
+  // the current item actually changes - a reader swiping the strip to look ahead isn't
+  // snapped back by unrelated re-renders.
+  _subnavFollow() {
+    if (typeof window === 'undefined') return;
+    try {
+      requestAnimationFrame(() => {
+        const sub = document.querySelector('[data-subnav]');
+        const on = sub && sub.querySelector('button[aria-current="true"]');
+        const key = on ? this.state.view + '|' + on.textContent : '';
+        if (key === this._subnavKey) return;
+        this._subnavKey = key;
+        if (!on || sub.scrollWidth <= sub.clientWidth) return;
+        const l = on.offsetLeft, r = l + on.offsetWidth;
+        if (l < sub.scrollLeft + 16 || r > sub.scrollLeft + sub.clientWidth - 16) {
+          sub.scrollTo({ left: Math.max(0, l - 24), behavior: 'smooth' });
+        }
+      });
     } catch (e) {}
   }
   _spineVals() {
@@ -4930,7 +4987,7 @@ class Component extends DCLogic {
         size: i === idx ? '13px' : '8px',
         bg: i <= idx ? '#EAAE28' : 'var(--faint)',
         ring: i === idx ? '0 0 0 5px rgba(234,174,40,.22)' : 'none',
-        go: () => { try { window.scrollTo({ top: Math.max(0, n.top - 76), behavior: 'smooth' }); } catch (e) {} },
+        go: () => this._spineGo(i),
       })),
     });
   }
@@ -4970,7 +5027,9 @@ class Component extends DCLogic {
         const el = document.querySelector('[data-anchor="' + anchor + '"]');
         const late = Date.now() - started > 2500;
         if (!el) { if (!late) requestAnimationFrame(seek); return; }
-        const delta = el.getBoundingClientRect().top - 74;
+        // Clear the whole sticky header stack as it is at this moment (the destination page's
+        // sub-nav may appear partway through the seek), not a fixed nav height.
+        const delta = el.getBoundingClientRect().top - (this._headerEdge() + 12);
         if (Math.abs(delta) > 2 && !late) {
           window.scrollTo({ top: Math.max(0, window.pageYOffset + delta) });
           requestAnimationFrame(seek);
@@ -29295,7 +29354,7 @@ class Component extends DCLogic {
       setTimeout(() => {
         try {
           const el = document.querySelector('[data-anchor="projects"]');
-          if (el) window.scrollTo({ top: window.pageYOffset + el.getBoundingClientRect().top - 76, behavior: 'smooth' });
+          if (el) window.scrollTo({ top: window.pageYOffset + el.getBoundingClientRect().top - (this._headerEdge() + 12), behavior: 'smooth' });
         } catch (e) {}
       }, 60);
     });
@@ -30274,26 +30333,32 @@ class Component extends DCLogic {
     });
     // Sub-navigation: the sections of the page the reader is on, scrolling straight to each one.
     const SP = this._spine;
-    let subNav = (SP && SP.nodes && SP.nodes.length > 1) ? SP.nodes.map((n, i) => ({
-      label: this._tagMap('spine', n.label, n.label),
-      go: () => { try { window.scrollTo({ top: Math.max(0, n.top - 116), behavior: 'smooth' }); } catch (e) {} },
-      color: i === SP.active ? 'var(--text)' : 'var(--faint)',
-      weight: i === SP.active ? '800' : '600',
-      line: i === SP.active ? 'var(--ac-crimson)' : 'transparent',
-    })) : [];
-    // Get Involved is a routed page, not a scrolling one: only the chosen route is on screen,
-    // so there are no sections to anchor to. Its sub-navigation is the routes themselves, so a
-    // reader who already knows they want to invest goes straight there instead of stepping
-    // through the fork to find it.
-    if (V === 'involved') {
+    const subItem = (label, go, on) => ({
+      label, go, current: on ? 'true' : 'false',
+      color: on ? 'var(--text)' : 'var(--faint)',
+      weight: on ? '800' : '600',
+      line: on ? 'var(--ac-crimson)' : 'transparent',
+    });
+    let subNav = (SP && SP.nodes && SP.nodes.length > 1)
+      ? SP.nodes.map((n, i) => subItem(this._tagMap('spine', n.label, n.label), () => this._spineGo(i), i === SP.active))
+      : [];
+    // The Why Invest family (the case page, its routed children, and the FAQ) are separate
+    // short pages rather than one scrolling page, so their sub-navigation is the family itself.
+    // It lists exactly what the Why Invest dropdown lists, in the same order and to the same
+    // destinations, with the parent page first and the payment page last, so the bar and the
+    // dropdown never disagree about what belongs here or where a link goes.
+    if (V === 'involved' || V === 'answers') {
       const PT = (this._pt || {})[this.state.lang] || (this._pt || {}).en || {};
-      subNav = (PT.tabs || []).map(t => ({
-        label: t.label,
-        go: this._goInvolved(t.k),
-        color: this.state.pTab === t.k ? 'var(--text)' : 'var(--faint)',
-        weight: this.state.pTab === t.k ? '800' : '600',
-        line: this.state.pTab === t.k ? 'var(--ac-crimson)' : 'transparent',
-      }));
+      const tab = (k) => ((PT.tabs || []).find(t => t.k === k) || {}).label || k;
+      const pt = V === 'involved' ? this.state.pTab : '';
+      subNav = [
+        subItem(labelOf('involved'), this._goInvolved('case'), pt === 'case'),
+        subItem(tab('route'), this._goInvolved('route'), pt === 'route'),
+        subItem(tab('people'), this._goInvolved('people'), pt === 'people'),
+        subItem(tab('answer'), goAnswer, pt === 'answer'),
+        subItem(labelOf('answers'), setView('answers'), V === 'answers'),
+        subItem(tab('give'), this._goInvolved('give'), pt === 'give'),
+      ];
     }
     const primaryKeys = ['who', 'work', 'impact', 'stories'];
     const moreKeys = ['finance', 'media', 'answers', 'involved'];
