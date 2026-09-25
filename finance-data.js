@@ -54,17 +54,17 @@ FIN.COMPLIANCE = {
   registrations: [
     { code:'Society Reg. 370/2000-01', what:'Registered under the Societies Registration Act, 1860; renewal valid 2025–2030' },
     { code:'12AB(1)(b)',               what:'Income-tax registration of the institution. Unique Registration Number AAAAD3793Q25LK01, Form 10AD order of 17 February 2026, valid for assessment years 2027-28 to 2036-37' },
-    { code:'80G(5)',                   what:'Approval under clause (ii) of the second proviso, so Indian donors may claim a deduction. Unique Registration Number AAAAD3793Q25LK02, order of 17 February 2026, valid for assessment years 2027-28 to 2031-32' },
+    { code:'80G(5)',                   what:'Approval under clause (ii) of the second proviso, so Indian investors may claim a deduction. Unique Registration Number AAAAD3793Q25LK02, order of 17 February 2026, valid for assessment years 2027-28 to 2031-32' },
     { code:'Foreign Contribution (Regulation) Act 136260010',           what:'Registered under the Foreign Contribution (Regulation) Act, 2010, nature \u201cSocial\u201d. Renewal valid for five years with effect from 1 October 2023; foreign contribution is received only in the designated account and booked separately' },
     { code:'CSR-1 \u00b7 CSR00001181',    what:'Registered with the Registrar of Companies on 8 April 2021 to undertake corporate social responsibility activity' },
     { code:'PAN AAAAD3793Q',           what:'Permanent Account Number of the Society' },
     { code:'TAN LKND07117F',           what:'Tax Deduction Account Number, allotted 28 March 2012, used for all tax deducted at source' },
   ],
   calendar: [
-    { by:'31 May', form:'Form 10BD + 10BE', body:'Income Tax', what:'Donor-wise statement of donations; donor certificates issued' },
+    { by:'31 May', form:'Form 10BD + 10BE', body:'Income Tax', what:'Investor-wise statement of contributions; certificates issued to investors' },
     { by:'30 Sep', form:'Form 10B (audit)', body:'Income Tax', what:'Statutory audit — Form 10B applies because DEHAT receives foreign contribution' },
     { by:'31 Oct', form:'ITR-7',            body:'Income Tax', what:'Return of income for the trust/institution' },
-    { by:'31 Dec', form:'Form FC-4',        body:'Ministry of Home Affairs', what:'Foreign contributions received & utilised, donor-wise, with 20% admin-cap check; NIL return mandatory' },
+    { by:'31 Dec', form:'Form FC-4',        body:'Ministry of Home Affairs', what:'Foreign contributions received & utilised, investor-wise, with 20% admin-cap check; NIL return mandatory' },
     { by:'annual', form:'Annual return',    body:'Registrar of Societies', what:'Society governance & accounts filing' },
   ],
   rules: [
@@ -90,7 +90,7 @@ FIN.DOCUMENTS = [
   { title:'Form 10AB Approval — 12A Registration', issuer:'Income Tax Department', period:'Order 17 Feb 2026', group:'statutory',
     desc:'Renewal of the institution’s income-tax registration under section 12A (tax exemption on income applied to charity).', file:'assets/docs/form-10ab-approval-1.pdf' },
   { title:'Form 10AB Approval — 80G', issuer:'Income Tax Department', period:'Order 17 Feb 2026', group:'statutory',
-    desc:'Renewal of 80G approval — Indian donors can claim a tax deduction on their gifts.', file:'assets/docs/form-10ab-approval-2.pdf' },
+    desc:'Renewal of 80G approval — Indian investors can claim a tax deduction on their contributions.', file:'assets/docs/form-10ab-approval-2.pdf' },
   { title:'CSR-1 Approval Letter', issuer:'Ministry of Corporate Affairs', period:'Registered', group:'statutory',
     desc:'Form CSR-1 registration on the Ministry of Corporate Affairs portal — allows DEHAT to receive corporate social responsibility funds.', file:'assets/docs/csr1-approval-letter.pdf' },
   // Foreign contribution (FCRA)
@@ -117,7 +117,7 @@ FIN.REG_TIMELINE = [
   { fy:'2011-12',  event:'Foreign Contribution (Regulation) Act 2010 replaces the 1976 Act; administrative-expense cap 50% of foreign contribution',         when:'2011',    domain:'fcra' },
   { fy:'2016-17',  event:'Foreign contribution online returns (Form FC-4) & annual online filing regime matures',  when:'2015-16', domain:'fcra' },
   { fy:'2020-21',  event:'Foreign Contribution (Regulation) Act 2020 amendment: administrative cap cut 50%→20%, single State Bank of India, Delhi foreign contribution account, sub-granting between organisations banned', when:'Sep 2020', domain:'fcra' },
-  { fy:'2021-22',  event:'12A → 12AB re-registration (5-yr renewable); Form 10BD/10BE donor reporting introduced', when:'2021', domain:'incometax' },
+  { fy:'2021-22',  event:'12A → 12AB re-registration (5-yr renewable); Form 10BD/10BE investor reporting introduced', when:'2021', domain:'incometax' },
   { fy:'2023-24',  event:'Audit report split into Form 10B (foreign contribution / >₹5cr / income applied abroad) vs 10BB', when:'AY 2023-24', domain:'incometax' },
 ];
 // Admin cap applicable to a given financial year (start year int or 'YYYY-YY').
@@ -131,11 +131,11 @@ FIN.fcraAdminCapFor = function(fy){
 
 // Funder registry — canonical entities across all years (aliases map OCR variants).
 FIN.FUNDERS = {
-  caritas_germany:  { name:'Caritas Germany (Deutscher Caritasverband e.V.)', type:'foreign_org', regime:'FCRA', aliases:['Deutscher Caritasverband e.V.','DCV'], note:'Legal donor for Surokhit Shaishav. Caritas India provides programme support but is not the same legal entity.' },
+  caritas_germany:  { name:'Caritas Germany (Deutscher Caritasverband e.V.)', type:'foreign_org', regime:'FCRA', aliases:['Deutscher Caritasverband e.V.','DCV'], note:'Legal funding partner for Surokhit Shaishav. Caritas India provides programme support but is not the same legal entity.' },
   dasra:            { name:'Dasra',                               type:'foreign_org',  regime:'FCRA', aliases:['DASRA','Darsa'] },
   ksc_foundation:   { name:'Kailash Satyarthi Children’s Foundation', type:'foreign_org', regime:'FCRA', aliases:['Kailash Satyarthi','KSCF'] },
   shes_the_first:   { name:"She's The First",                     type:'foreign_org',  regime:'FCRA', aliases:["She's The First Cry",'She is the First -US','Panchi'] },
-  world_neighbors:  { name:'World Neighbors',                     type:'foreign_org',  regime:'FCRA', aliases:['World Neighbours','Swaraj'], note:'Legal donor for the Swaraj project; first foreign-contribution receipt recorded in FY2025-26.' },
+  world_neighbors:  { name:'World Neighbors',                     type:'foreign_org',  regime:'FCRA', aliases:['World Neighbours','Swaraj'], note:'Legal funding partner for the Swaraj project; first foreign-contribution receipt recorded in FY2025-26.' },
   edele_give:       { name:'EdelGive Foundation',                 type:'philanthropy', regime:'INR',  aliases:['Edele Give Foundation','Edele Give','EdeleGive'] },
   appi:             { name:'Azim Premji Philanthropic Initiatives', type:'philanthropy', regime:'INR', pan:'AADCA2473P', aliases:['Azim Premji (APPI)','APPI FASAL','APPI COVID RELIEF','Azim Premji Philanthropic Initiatives'] },
   childline_india:  { name:'Childline India Foundation',          type:'indian_inst',  regime:'INR', pan:'AAATC2486J', aliases:['Childline','Childline Shravasti','Child Line Foundation'] },
@@ -1905,7 +1905,7 @@ FIN.ACCOUNTABILITY = {
 FIN.STANDARDS = {
   intro: 'These are the rules the programme pages on this website are written under. They exist because the easiest way for a non-profit to mislead is not to lie, but to let a proposal read like a result.',
   rules: [
-    { k:'A proposal is not a result', v:'A target, an output, a budget line or an implementer-reported figure is never presented as a verified outcome. Where a number is donor-reported or programme-reported, the entry says so.' },
+    { k:'A proposal is not a result', v:'A target, an output, a budget line or an implementer-reported figure is never presented as a verified outcome. Where a number is partner-reported or programme-reported, the entry says so.' },
     { k:'Money is never quietly added up', v:'Currency values are not summed across currencies or converted without a dated exchange-rate method, and a grant shared across themes is counted once only.' },
     { k:'One project, one place', v:'Each project is published under a single primary programme. A cross-tag shows a relationship; it never creates a second investment.' },
     { k:'No child is identifiable', v:'No names, telephone numbers, case details or traceable combinations of child or family identity and village are published without documented informed consent and safeguarding review.' },

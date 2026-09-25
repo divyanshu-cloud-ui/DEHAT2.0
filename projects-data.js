@@ -1164,7 +1164,7 @@ export const PROJECTS = [
     laws: [LAW.rte, LAW.labour],
     what: 'A nine-month residential bridge course for 60 boys from forest villages who had never been to school or had left it, preparing them to enter formal schooling.',
     why: 'Forest-village boys were working rather than studying, and day centres could not hold children whose households needed their labour. A residential course removes the daily choice between school and work.',
-    how: 'Residential teaching over nine months, then placement in formal school. This is one of the few instances of DEHAT delivering directly under a state Directorate rather than a donor.',
+    how: 'Residential teaching over nine months, then placement in formal school. This is one of the few instances of DEHAT delivering directly under a state Directorate rather than a funding partner.',
     impact: [
       { n: '60', l: 'Forest-Village Boys Taught in the Residential Bridge Course' },
     ],

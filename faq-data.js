@@ -27,14 +27,14 @@ FAQ.CATS = [
 
 FAQ.ITEMS = [
   // ---- Giving and receipts ----
-  { cat: 'give', q: 'Is my donation tax deductible?',
+  { cat: 'give', q: 'Is my investment tax deductible?',
     keys: ['80g', 'tax', 'deduction', 'exemption', 'save tax', 'rebate'],
-    a: 'For Indian taxpayers, yes. DEHAT holds 80G registration AAAAD3793QF20241, valid to assessment year 2027–28, so a donation from an Indian source carries the 80G deduction. Foreign contributions do not carry 80G; Indian tax deductions do not apply to money received under the Foreign Contribution (Regulation) Act.',
+    a: 'For Indian taxpayers, yes. DEHAT holds 80G approval AAAAD3793Q25LK02, valid for assessment years 2027–28 to 2031–32, so an investment from an Indian source carries the 80G deduction. Foreign contributions do not carry 80G; Indian tax deductions do not apply to money received under the Foreign Contribution (Regulation) Act.',
     go: { label: 'See the registrations', view: 'finance' } },
 
   { cat: 'give', q: 'How do I get my receipt and 80G certificate?',
     keys: ['receipt', '10be', '10bd', 'certificate', 'proof of donation', 'acknowledgement'],
-    a: 'Indian donations are reported in DEHAT\u2019s Form 10BD statement and the 80G certificate is issued to you as Form 10BE. You need to give a name, address and PAN for that statement to be filed correctly. If you transferred money by bank and have not heard from us, report the transfer on the Invest page and we will match it against the bank statement.',
+    a: 'Indian investments are reported in DEHAT\u2019s Form 10BD statement and the 80G certificate is issued to you as Form 10BE. You need to give a name, address and PAN for that statement to be filed correctly. If you transferred money by bank and have not heard from us, report the transfer on the Invest page and we will match it against the bank statement.',
     go: { label: 'Report a transfer', view: 'involved' } },
 
   { cat: 'give', q: 'What is the smallest amount worth giving?',
@@ -50,7 +50,7 @@ FAQ.ITEMS = [
     keys: ['kind', 'goods', 'material', 'equipment', 'books', 'donate items', 'in-kind'],
     a: 'Yes, but write to us first. In-kind contributions have to be valued, recorded and matched to a real need, and material that nobody in Bahraich asked for costs more to store than it is worth. Tell us what you have and we will say honestly whether it is useful.' },
 
-  { cat: 'give', q: 'Can I set up a monthly donation?',
+  { cat: 'give', q: 'Can I set up a monthly investment?',
     keys: ['recurring', 'monthly', 'regular', 'standing instruction', 'subscription', 'sip'],
     a: 'Yes. The Invest page lets you choose a regular contribution rather than a single one. Regular giving is what lets DEHAT keep a case worker on a case after the project that funded the case has closed.',
     go: { label: 'Set one up', view: 'involved' } },
@@ -61,7 +61,7 @@ FAQ.ITEMS = [
 
   { cat: 'give', q: 'Can I get a refund?',
     keys: ['refund', 'money back', 'cancel', 'reverse', 'mistake', 'wrong amount', 'duplicate'],
-    a: 'For domestic donations, yes, in the circumstances set out in the refund policy \u2014 a duplicate charge, a wrong amount, a payment you did not authorise. Foreign contributions are different and cannot simply be returned on request; that is a legal restriction, not a policy choice. Read the refund policy in full before assuming either way.',
+    a: 'For domestic investments, yes, in the circumstances set out in the refund policy \u2014 a duplicate charge, a wrong amount, a payment you did not authorise. Foreign contributions are different and cannot simply be returned on request; that is a legal restriction, not a policy choice. Read the refund policy in full before assuming either way.',
     go: { label: 'Read the refund policy', view: 'policies' } },
 
   { cat: 'give', q: 'What does a legacy gift involve?',
@@ -70,7 +70,7 @@ FAQ.ITEMS = [
     go: { label: 'Read about legacy giving', view: 'involved' } },
 
   // ---- Foreign contributions ----
-  { cat: 'foreign', q: 'Can I donate from outside India?',
+  { cat: 'foreign', q: 'Can I invest from outside India?',
     keys: ['foreign', 'abroad', 'overseas', 'fcra', 'international', 'usd', 'gbp', 'euro', 'nri'],
     a: 'Yes. DEHAT holds Foreign Contribution (Regulation) Act registration 136260010 and receives foreign contributions only into its designated State Bank of India account at 11 Sansad Marg, New Delhi. Money from a foreign source must enter that account and no other \u2014 sending it to a domestic account would put both of us in breach.',
     go: { label: 'See the account details', view: 'involved' } },
@@ -81,11 +81,11 @@ FAQ.ITEMS = [
 
   { cat: 'foreign', q: 'Am I a foreign source if I hold an Indian passport?',
     keys: ['nri', 'passport', 'foreign source', 'oci', 'pio', 'citizen', 'am i foreign'],
-    a: 'Broadly, a non-resident Indian who remains an Indian citizen is not a foreign source, so an NRI donation from an Indian-citizen donor is normally treated as domestic. A person of Indian origin holding foreign citizenship generally is a foreign source. The distinction turns on citizenship rather than residence, and it decides which account you must use \u2014 so tell us your citizenship and we will route it correctly rather than guess.' },
+    a: 'Broadly, a non-resident Indian who remains an Indian citizen is not a foreign source, so an NRI investment from an Indian citizen is normally treated as domestic. A person of Indian origin holding foreign citizenship generally is a foreign source. The distinction turns on citizenship rather than residence, and it decides which account you must use \u2014 so tell us your citizenship and we will route it correctly rather than guess.' },
 
-  { cat: 'foreign', q: 'What identification do you need from a foreign donor?',
+  { cat: 'foreign', q: 'What identification do you need from a foreign investor?',
     keys: ['kyc', 'passport', 'documents', 'identity', 'upload', 'verification'],
-    a: 'A passport number and a scan of both sides of the passport, in addition to the contact and address details every donor gives. Indian donors instead provide a masked Aadhaar and PAN, also uploaded. These are statutory identification requirements, not marketing data.' },
+    a: 'A passport number and a scan of both sides of the passport, in addition to the contact and address details every investor gives. Indian investors instead provide a masked Aadhaar and PAN, also uploaded. These are statutory identification requirements, not marketing data.' },
 
   { cat: 'foreign', q: 'Where do I find the FC-4 returns?',
     keys: ['fc-4', 'fc4', 'fc-6', 'annual return', 'mha', 'ministry of home affairs', 'filing'],
