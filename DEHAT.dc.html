@@ -179,6 +179,9 @@
     pre{font-size:11.5px !important}
   }
 
+  /* Mouse targets (WCAG 2.5.8, 24x24 minimum): the Journey ticks are 2x17px lines, so they
+     carry an invisible 24px hit area for fine pointers; touch gets 44px below. */
+  .j-tick::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:24px;height:24px}
   /* Touch targets: a 36px dot is not tappable. Inline text links keep their size. */
   @media (pointer:coarse){
     button{min-height:44px;min-width:44px}
@@ -501,7 +504,7 @@
           </sc-for>
         </optgroup>
       </select>
-      <button onClick="{{ toggleTheme }}" title="{{ T.title_theme_toggle }}" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s cubic-bezier(.22,.61,.36,1)" style-hover="transform:rotate(20deg)">{{ themeGlyph }}</button>
+      <button onClick="{{ toggleTheme }}" title="{{ T.title_theme_toggle }}" aria-label="{{ T.title_theme_toggle }}" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s cubic-bezier(.22,.61,.36,1)" style-hover="transform:rotate(20deg)">{{ themeGlyph }}</button>
       <button onClick="{{ goDonate }}" style="padding:10px 20px;background:#D2305C;color:#fff;border:none;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 18px -6px rgba(210,48,92,.6);transition:transform .15s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.donate }}</button>
     </div>
   </div>
@@ -519,7 +522,7 @@
           </sc-for>
         </optgroup>
       </select>
-      <button onClick="{{ toggleTheme }}" title="{{ T.title_theme_toggle }}" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none">{{ themeGlyph }}</button>
+      <button onClick="{{ toggleTheme }}" title="{{ T.title_theme_toggle }}" aria-label="{{ T.title_theme_toggle }}" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none">{{ themeGlyph }}</button>
     </div>
     <button class="invest-btn" onClick="{{ goDonate }}" style="padding:9px 16px;background:#D2305C;color:#fff;border:none;border-radius:999px;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ T.donate }}</button>
     <button onClick="{{ toggleNav }}" aria-label="{{ T.aria_menu }}" aria-expanded="{{ navOpen }}" style="width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center">{{ navBurgerLabel }}</button>
