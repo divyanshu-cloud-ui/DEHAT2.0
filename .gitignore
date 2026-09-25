@@ -38,3 +38,19 @@ Desktop.ini
 .env
 .env.*
 !.env.example
+
+# ── Internal working material (organised 2026-09-25) ─────────────────────
+# Handoffs, research notes, raw documents, translation pipeline scripts,
+# scratch output and old backups. Kept locally, never published.
+/_internal/
+# Source evidence and statutory filings (Form 10BE etc. carry donor details).
+/EVIDENCE_VAULT/
+/PUBLIC_DOCUMENTS/
+# Loose documents dropped at the project root.
+/*.pdf
+/*.docx
+/*.xlsx
+# Local tool state.
+/.claude/
+/.impeccable/
+.DS_Store
