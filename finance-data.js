@@ -1713,28 +1713,32 @@ FIN.flows = function(basis){
 // Every field below is taken from a primary document held in assets/docs/.
 FIN.IDENTITY = {
   intro: 'DEHAT publishes its full legal identity so that any investment partner, auditor, journalist or community member can verify the organisation independently, without asking us first.',
-  // Grouped so a reader finds a number by what it is for. Each row is one identifier with one
-  // short fact (validity, issuer or scope) - the longer explanations live in the documents
-  // themselves, listed further down this page. `id` is the stable translation key.
-  groups: [
-    { id: 'g_registration', label: 'Registration', rows: [
-      { id: 'legal_name', k: 'Legal name', v: 'Developmental Association for Human Advancement', meta: 'Known publicly as DEHAT' },
-      { id: 'legal_form', k: 'Legal form', v: 'Registered society', meta: 'Societies Registration Act, 1860' },
-      { id: 'registration', k: 'Registration number', v: '370/2000-2001', meta: 'Registered 21 August 2000 · renewed to 2030' },
-      { id: 'office', k: 'Registered office', v: '“Sewakunj”, Maseehabad Road via Kati Chauraha, Huzoorpur Marg, Bahraich, Uttar Pradesh 271801', meta: 'Also the head office' },
-    ] },
-    { id: 'g_tax', label: 'Income tax', rows: [
-      { id: 'pan', k: 'PAN', v: 'AAAAD3793Q', meta: 'Permanent Account Number' },
-      { id: 'tan', k: 'TAN', v: 'LKND07117F', meta: 'Tax Deduction Account Number' },
-      { id: '12ab', k: '12AB registration', v: 'AAAAD3793Q25LK01', meta: 'Valid AY 2027-28 to 2036-37' },
-      { id: '80g', k: '80G approval', v: 'AAAAD3793Q25LK02', meta: 'Valid AY 2027-28 to 2031-32 · donors can claim deduction' },
-    ] },
-    { id: 'g_permissions', label: 'Foreign contribution, CSR and audit', rows: [
-      { id: 'fcra', k: 'FCRA registration', v: '136260010', meta: 'Renewed from 1 October 2023 for five years' },
-      { id: 'csr', k: 'CSR registration', v: 'CSR00001181', meta: 'Form CSR-1 approved 8 April 2021' },
-      { id: 'auditor', k: 'Statutory auditor', v: 'Madhuresh Agrahari & Associates', meta: 'Auditor since FY2021-22 · appointed for FY2025-26' },
-    ] },
+  // Laid out as a credential sheet rather than a list: who DEHAT is (name, form, registration),
+  // where it is (two addresses, which are different things), the numbers a partner quotes on
+  // paperwork (one tile each, copyable), and who is answerable. Labels in Title Case; facts in
+  // sentence case. `id` is the stable translation key for content-i18n fin_identity.
+  name: { id: 'legal_name', k: 'Legal Name', v: 'Developmental Association for Human Advancement', meta: 'Known publicly as DEHAT' },
+  facts: [
+    { id: 'legal_form', k: 'Legal Form', v: 'Registered Society', meta: 'Societies Registration Act, 1860' },
+    { id: 'registration', k: 'Registration Number', v: '370/2000-2001', meta: 'Registered 21 August 2000 · renewed to 2030' },
   ],
+  addresses: [
+    { id: 'office', k: 'Registered Office', v: 'Amritpur Puraina, Madhvapur Koliahar, Nanpara, Bahraich, Uttar Pradesh, PIN 271855', meta: 'The address on the Society’s registration' },
+    { id: 'comm', k: 'Communication Address', v: '“Sewakunj”, Maseehabad Road via Kati Chauraha, Huzoorpur Marg, Bahraich, Uttar Pradesh, PIN 271801', meta: 'Head office · send letters and documents here' },
+  ],
+  numbers: [
+    { id: 'pan', k: 'PAN', full: 'Permanent Account Number', v: 'AAAAD3793Q', meta: 'Income Tax Department' },
+    { id: 'tan', k: 'TAN', full: 'Tax Deduction Account Number', v: 'LKND07117F', meta: 'Allotted 28 March 2012' },
+    { id: '12ab', k: '12AB Registration', full: 'Income Tax Act, Section 12AB', v: 'AAAAD3793Q25LK01', meta: 'Valid AY 2027-28 to 2036-37' },
+    { id: '80g', k: '80G Approval', full: 'Income Tax Act, Section 80G', v: 'AAAAD3793Q25LK02', meta: 'Valid AY 2027-28 to 2031-32 · investors can claim deduction' },
+    { id: 'fcra', k: 'FCRA Registration', full: 'Foreign Contribution (Regulation) Act', v: '136260010', meta: 'Renewed from 1 October 2023 for five years' },
+    { id: 'csr', k: 'CSR Registration', full: 'Ministry of Corporate Affairs', v: 'CSR00001181', meta: 'Form CSR-1 approved 8 April 2021' },
+  ],
+  people: [
+    { id: 'chief', k: 'Chief Functionary', v: 'Ms. Devyani Chaturvedi', meta: 'Secretary and Executive Director' },
+    { id: 'auditor', k: 'Statutory Auditor', v: 'Madhuresh Agrahari & Associates', meta: 'Auditor since FY2021-22 · appointed for FY2025-26' },
+  ],
+  groups: { where: 'Addresses', numbers: 'Registrations and Approvals', people: 'Accountability' },
 };
 
 FIN.ACCOUNTS = {

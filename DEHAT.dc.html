@@ -206,22 +206,28 @@
   /* Group menus open on hover or keyboard focus, so the target is the whole
      label rather than a small glyph beside it. Square edges, single hairline
      border, no drop shadow: the same flat treatment as the rest of the chrome. */
-  /* Legal identity table on Transparency: three groups of label / identifier / one fact.
-     Desktop reads as a three-column record; below 720px each row stacks. */
-  .id-table{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface)}
-  .id-group + .id-group{border-top:1px solid var(--border)}
-  .id-group-label{padding:18px clamp(16px,2.4vw,28px) 6px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--ac-olive)}
-  .id-row{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) minmax(0,.9fr);gap:4px clamp(16px,2.6vw,36px);align-items:baseline;padding:12px clamp(16px,2.4vw,28px)}
-  .id-row + .id-row{border-top:1px solid var(--border)}
-  .id-group-label + .id-row{padding-top:8px}
-  .id-row:last-child{padding-bottom:18px}
-  .id-k{font-size:13px;font-weight:600;color:var(--faint)}
-  .id-v{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(15px,1.5vw,17px);line-height:1.35;color:var(--text);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
-  .id-meta{font-size:13px;line-height:1.45;color:var(--dim);text-align:right;text-wrap:pretty}
-  @media (max-width:720px){
-    .id-row{grid-template-columns:1fr;gap:2px}
-    .id-meta{text-align:left}
-  }
+  /* Legal identity sheet on Transparency: a masthead (name, form, registration), two
+     address cards, six copyable number tiles, and an accountability pair. Labels are shown
+     in their own Title Case (not forced uppercase) so the casing reads as written. */
+  .id-sheet{display:flex;flex-direction:column;gap:clamp(24px,3vw,36px)}
+  .id-mast{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(18px,3vw,44px);align-items:end;padding:clamp(22px,3vw,34px) clamp(20px,3vw,36px);border:1px solid var(--border);border-left:4px solid var(--ac-olive);border-radius:22px;background:var(--surface)}
+  .id-mast-facts{display:grid;grid-template-columns:1fr 1fr;gap:18px clamp(16px,2vw,28px)}
+  .id-name{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(22px,2.7vw,33px);line-height:1.1;letter-spacing:-.015em;color:var(--text);margin:6px 0 6px;text-wrap:balance}
+  .id-k{font-size:12.5px;font-weight:700;color:var(--faint);line-height:1.3}
+  .id-full{font-size:11.5px;color:var(--faint);opacity:.8;margin-top:2px;line-height:1.3}
+  .id-v{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(16px,1.6vw,18px);line-height:1.3;color:var(--text);margin-top:4px}
+  .id-meta{font-size:13px;line-height:1.45;color:var(--dim);margin-top:3px;text-wrap:pretty}
+  .id-sec-label{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--ac-olive);margin:0 0 12px}
+  .id-addr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+  .id-num-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:14px}
+  .id-card{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:18px;background:var(--surface);padding:18px clamp(16px,1.8vw,22px)}
+  .id-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .id-addr{font-size:15.5px;line-height:1.5;font-weight:600;color:var(--text);margin-top:6px;text-wrap:pretty}
+  .id-num{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,1.9vw,22px);letter-spacing:.02em;font-variant-numeric:tabular-nums;color:var(--text);margin-top:12px;white-space:nowrap;overflow-x:auto}
+  .id-copy{flex:none;min-height:32px;padding:4px 12px;border:1px solid var(--border);border-radius:999px;background:var(--surface2);font:700 12px/1 inherit;font-family:inherit;cursor:pointer;transition:color .2s,border-color .2s}
+  .id-copy:hover{border-color:var(--faint)}
+  @media (pointer:coarse){ .id-copy{min-height:44px;padding:4px 14px} }
+  @media (max-width:720px){ .id-mast{grid-template-columns:1fr} }
   .nav-drop{display:none}
   .nav-group:hover > .nav-drop,
   .nav-group:focus-within > .nav-drop{display:flex}
@@ -3441,20 +3447,71 @@
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.05;color:var(--text);margin:12px 0 10px">{{ T.fin_who_paper }}</h2>
           <p style="font-size:15.5px;line-height:1.6;color:var(--dim);margin:0;text-wrap:pretty">{{ idIntro }}</p>
         </div>
-        <div class="id-table">
-          <sc-for list="{{ idGroups }}" as="g" hint-placeholder-count="3">
-            <div key="{{ g.id }}" class="id-group">
-              <div class="id-group-label">{{ g.label }}</div>
-              <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="4">
-                <div key="{{ r.id }}" class="id-row">
-                  <div class="id-k">{{ r.k }}</div>
-                  <div class="id-v">{{ r.v }}</div>
-                  <div class="id-meta">{{ r.meta }}</div>
+        <sc-if value="{{ idSheetOn }}" hint-placeholder-val="{{ true }}">
+        <div class="id-sheet">
+          <div class="id-mast">
+            <div>
+              <div class="id-k">{{ idSheet.name.k }}</div>
+              <div class="id-name">{{ idSheet.name.v }}</div>
+              <div class="id-meta">{{ idSheet.name.meta }}</div>
+            </div>
+            <div class="id-mast-facts">
+              <sc-for list="{{ idSheet.facts }}" as="f" hint-placeholder-count="2">
+                <div key="{{ f.id }}">
+                  <div class="id-k">{{ f.k }}</div>
+                  <div class="id-v">{{ f.v }}</div>
+                  <div class="id-meta">{{ f.meta }}</div>
                 </div>
               </sc-for>
             </div>
-          </sc-for>
+          </div>
+
+          <div>
+            <div class="id-sec-label">{{ idSheet.gWhere }}</div>
+            <div class="id-addr-grid">
+              <sc-for list="{{ idSheet.addresses }}" as="a" hint-placeholder-count="2">
+                <div key="{{ a.id }}" class="id-card">
+                  <div class="id-k">{{ a.k }}</div>
+                  <div class="id-addr">{{ a.v }}</div>
+                  <div class="id-meta">{{ a.meta }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div>
+            <div class="id-sec-label">{{ idSheet.gNumbers }}</div>
+            <div class="id-num-grid">
+              <sc-for list="{{ idSheet.numbers }}" as="n" hint-placeholder-count="6">
+                <div key="{{ n.id }}" class="id-card">
+                  <div class="id-card-head">
+                    <div>
+                      <div class="id-k">{{ n.k }}</div>
+                      <div class="id-full">{{ n.full }}</div>
+                    </div>
+                    <button onClick="{{ n.copy }}" class="id-copy" style="color:{{ n.copyColor }}" aria-label="{{ n.copyLabel }} {{ n.k }}">{{ n.copyLabel }}</button>
+                  </div>
+                  <div class="id-num">{{ n.v }}</div>
+                  <div class="id-meta">{{ n.meta }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div>
+            <div class="id-sec-label">{{ idSheet.gPeople }}</div>
+            <div class="id-addr-grid">
+              <sc-for list="{{ idSheet.people }}" as="pp" hint-placeholder-count="2">
+                <div key="{{ pp.id }}" class="id-card">
+                  <div class="id-k">{{ pp.k }}</div>
+                  <div class="id-v">{{ pp.v }}</div>
+                  <div class="id-meta">{{ pp.meta }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
         </div>
+        </sc-if>
 
         <div style="margin-top:clamp(34px,4vw,52px)">
           <div style="max-width:800px;margin-bottom:22px">
@@ -5810,6 +5867,8 @@ class Component extends DCLogic {
       raise_open_email:'Open the drafted email',
       raise_copy:'Copy the draft',
       raise_copied:'Draft copied',
+      id_copy:'Copy',
+      id_copied:'Copied',
       raise_docs_requested_label:'Documents requested:',
       raise_grateful_line:'I would be grateful for an acknowledgement and a named person handling this.',
       raise_doc_request_prefix:'Document request — ',
@@ -6641,6 +6700,8 @@ class Component extends DCLogic {
       raise_open_email:'तैयार ईमेल खोलें',
       raise_copy:'ड्राफ़्ट कॉपी करें',
       raise_copied:'ड्राफ़्ट कॉपी हो गया',
+      id_copy:'कॉपी करें',
+      id_copied:'कॉपी हो गया',
       raise_docs_requested_label:'अनुरोधित दस्तावेज़:',
       raise_grateful_line:'मैं इसकी पावती (एकनॉलेजमेंट) पाकर और यह जानकर आभारी रहूँगा/रहूँगी कि इसे कौन व्यक्ति संभाल रहा है।',
       raise_doc_request_prefix:'दस्तावेज़ अनुरोध — ',
@@ -29190,6 +29251,21 @@ class Component extends DCLogic {
       faqCount: listed.length + ' ' + T.faq_count_suffix,
     };
   }
+  // Copy one identifier from the legal identity sheet; the tile shows "Copied" briefly.
+  _copyId(id, text) {
+    const done = () => {
+      this.setState({ idCopied: id });
+      clearTimeout(this._idCopiedT);
+      this._idCopiedT = setTimeout(() => { if (this.state.idCopied === id) this.setState({ idCopied: '' }); }, 1800);
+    };
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, () => this._copyFallback(text, done));
+        return;
+      }
+    } catch (e) {}
+    this._copyFallback(text, done);
+  }
   _copyFallback(text, done) {
     try {
       const ta = document.createElement('textarea');
@@ -31291,18 +31367,35 @@ class Component extends DCLogic {
         })).filter(g => g.docs.length);
       })() : [],
       idIntro: FIN && FIN.IDENTITY ? this._tc('fin_identity', 'main', 'intro', FIN.IDENTITY.intro) : '',
-      // Label, value and fact are all looked up per row id, so the left-hand labels translate
-      // too (they used to stay in English in every language); identifiers pass through as-is.
-      idGroups: FIN && FIN.IDENTITY && FIN.IDENTITY.groups ? FIN.IDENTITY.groups.map(g => ({
-        id: g.id,
-        label: this._tc('fin_identity', g.id, 'label', g.label),
-        rows: g.rows.map(r => ({
+      // Legal identity sheet (Transparency). Every visible string is looked up per item id in
+      // content-i18n fin_identity, so labels, values and facts all translate; identifiers pass
+      // through unchanged. Each number tile carries its own copy action.
+      idSheetOn: !!(FIN && FIN.IDENTITY && FIN.IDENTITY.numbers),
+      idSheet: FIN && FIN.IDENTITY && FIN.IDENTITY.numbers ? (() => {
+        const I = FIN.IDENTITY;
+        const tr = (r) => ({
           id: r.id,
           k: this._tc('fin_identity', r.id, 'k', r.k),
           v: this._tc('fin_identity', r.id, 'v', r.v),
           meta: this._tc('fin_identity', r.id, 'meta', r.meta),
-        })),
-      })) : [],
+          full: r.full ? this._tc('fin_identity', r.id, 'full', r.full) : '',
+        });
+        const copyable = (r) => Object.assign(tr(r), {
+          copy: () => this._copyId(r.id, r.v),
+          copyLabel: this.state.idCopied === r.id ? T.id_copied : T.id_copy,
+          copyColor: this.state.idCopied === r.id ? 'var(--ac-olive)' : 'var(--faint)',
+        });
+        return {
+          name: tr(I.name),
+          facts: I.facts.map(tr),
+          addresses: I.addresses.map(tr),
+          numbers: I.numbers.map(copyable),
+          people: I.people.map(tr),
+          gWhere: this._tc('fin_identity', 'g_where', 'label', I.groups.where),
+          gNumbers: this._tc('fin_identity', 'g_numbers', 'label', I.groups.numbers),
+          gPeople: this._tc('fin_identity', 'g_people', 'label', I.groups.people),
+        };
+      })() : null,
       acIntro: FIN && FIN.ACCOUNTS ? this._tc('fin_accounts', 'main', 'intro', FIN.ACCOUNTS.intro) : '',
       accounts: FIN && FIN.ACCOUNTS ? FIN.ACCOUNTS.list.map(ac => ({
         key: ac.key, kind: ac.kind, bank: ac.bank, note: this._tc('fin_accounts', ac.key, 'note', ac.note),
