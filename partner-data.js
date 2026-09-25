@@ -1121,6 +1121,9 @@ const EN = {
         },
         {
           "k": "Other Sub-District Convergence Mechanisms"
+        },
+        {
+          "k": "Child Welfare Police Officers (CWPO) at Police Stations"
         }
       ]
     },
@@ -1192,6 +1195,12 @@ const EN = {
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "Juvenile Justice Board (JJB)"
+        },
+        {
+          "k": "One Stop Centre (Sakhi)"
         }
       ]
     },
@@ -1230,6 +1239,27 @@ const EN = {
         {
           "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "State Legal Services Authority (SLSA)"
+        },
+        {
+          "k": "State Commission for Protection of Child Rights (SCPCR)"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "National Level",
+      "items": [
+        {
+          "k": "National Legal Services Authority (NALSA)"
+        },
+        {
+          "k": "National Commission for Protection of Child Rights (NCPCR)"
+        },
+        {
+          "k": "Ministry of Women and Child Development (Mission Vatsalya)"
         }
       ]
     }
@@ -2376,6 +2406,9 @@ const HI = {
         },
         {
           "k": "अन्य उप-ज़िला अभिसरण तंत्र"
+        },
+        {
+          "k": "थानों में बाल कल्याण पुलिस अधिकारी (CWPO)"
         }
       ]
     },
@@ -2447,6 +2480,12 @@ const HI = {
         {
           "k": "सशस्त्र सीमा बल (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "किशोर न्याय बोर्ड (JJB)"
+        },
+        {
+          "k": "वन स्टॉप सेंटर (सखी)"
         }
       ]
     },
@@ -2485,6 +2524,27 @@ const HI = {
         {
           "k": "उद्यान एवं खाद्य प्रसंस्करण विभाग, उत्तर प्रदेश सरकार",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "राज्य विधिक सेवा प्राधिकरण (SLSA)"
+        },
+        {
+          "k": "राज्य बाल अधिकार संरक्षण आयोग (SCPCR)"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "राष्ट्रीय स्तर",
+      "items": [
+        {
+          "k": "राष्ट्रीय विधिक सेवा प्राधिकरण (NALSA)"
+        },
+        {
+          "k": "राष्ट्रीय बाल अधिकार संरक्षण आयोग (NCPCR)"
+        },
+        {
+          "k": "महिला एवं बाल विकास मंत्रालय (मिशन वात्सल्य)"
         }
       ]
     }

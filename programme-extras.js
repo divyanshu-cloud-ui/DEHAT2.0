@@ -55,7 +55,7 @@ export const PROG_SDG = {
     label: 'Goals this programme reports against',
     goals: [
       { n: '16', name: 'Peace, Justice and Strong Institutions', img: S + 'peace.png',
-        how: 'Case accompaniment, legal aid and follow-through with Child Welfare Committees, Anti-Human Trafficking Units, police and the courts.' },
+        how: 'Case accompaniment, legal aid and follow-through with Child Welfare Committees, Juvenile Justice Boards, Anti-Human Trafficking Units, police, the courts, Legal Services Authorities (DLSA, SLSA, NALSA) and the child rights commissions (SCPCR, NCPCR).' },
       { n: '5', name: 'Gender Equality', img: S + 'gender-equality.png',
         how: 'Prevention of child marriage, response to violence and abuse, and support for girls after rescue.' },
       { n: '8', name: 'Decent Work and Economic Growth', img: S + 'decent-work.png',
