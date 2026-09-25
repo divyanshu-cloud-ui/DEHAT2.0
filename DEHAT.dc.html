@@ -3210,16 +3210,26 @@
           <div style="position:relative">
             <div ref="{{ pv.ecoRail.ref }}" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px 2px 12px;scrollbar-width:thin">
               <sc-for list="{{ pv.ecoItems }}" as="ei" hint-placeholder-count="10">
-                <div style="flex:0 0 216px;height:220px;scroll-snap-align:start;position:relative;display:flex;flex-direction:column;gap:8px;padding:13px;border-radius:13px;background:var(--surface);border:1px solid var(--border);transition:border-color .18s cubic-bezier(.22,.61,.36,1)" style-hover="border-color:var(--ac-gold)">
+                <div style="flex:0 0 216px;height:224px;scroll-snap-align:start;position:relative;display:flex;flex-direction:column;gap:11px;padding:16px;border-radius:16px;background:var(--surface);border:1px solid var(--border);transition:border-color .18s cubic-bezier(.22,.61,.36,1)" style-hover="border-color:var(--ac-gold)">
                   <sc-for list="{{ ei.logoList }}" as="lg" hint-placeholder-count="0">
                     <span style="flex:none;height:96px;padding:10px 12px;border-radius:12px;background:var(--logo-chip);border:1px solid var(--logo-ring);display:grid;place-items:center;overflow:hidden">
                       <img ref="{{ lg.setSrc }}" alt="{{ lg.alt }}" width="720" height="300" decoding="async" style="width:100%;height:76px;object-fit:contain;object-position:center;display:block">
                     </span>
                   </sc-for>
                   <sc-if value="{{ ei.noLogo }}" hint-placeholder-val="{{ false }}">
-                    <span style="flex:none;height:96px" aria-hidden="true"></span>
+                    <span aria-hidden="true" style="flex:none;height:96px;border-radius:12px;background:var(--surface2);border:1px solid var(--border);display:grid;place-items:center;overflow:hidden;padding:0 10px;color:var(--faint-strong)">
+                      <sc-if value="{{ ei.hasMono }}" hint-placeholder-val="{{ false }}">
+                        <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:{{ ei.monoSize }};letter-spacing:.06em;line-height:1.15;text-align:center">{{ ei.mono }}</span>
+                      </sc-if>
+                      <sc-if value="{{ ei.glyphPeople }}" hint-placeholder-val="{{ false }}">
+                        <svg viewBox="0 0 48 48" width="42" height="42" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="16" r="5.5"></circle><circle cx="32" cy="18" r="4.5"></circle><path d="M6 38c0-6.6 4.9-11 11-11s11 4.4 11 11"></path><path d="M27 29.5c1.4-.9 3.1-1.5 5-1.5 5 0 9 3.8 9 10"></path></svg>
+                      </sc-if>
+                      <sc-if value="{{ ei.glyphBuilding }}" hint-placeholder-val="{{ false }}">
+                        <svg viewBox="0 0 48 48" width="42" height="42" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18L24 8l18 10"></path><path d="M9 18h30"></path><path d="M12 22v13M20 22v13M28 22v13M36 22v13"></path><path d="M7 39h34"></path></svg>
+                      </sc-if>
+                    </span>
                   </sc-if>
-                  <span style="flex:1;min-height:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;font-size:12.5px;font-weight:600;line-height:1.35;color:var(--text)">{{ ei.kk }}</span>
+                  <span style="flex:1;min-height:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden;font-size:14px;font-weight:700;line-height:1.35;color:var(--text);text-wrap:pretty">{{ ei.kk }}</span>
                 </div>
               </sc-for>
             </div>
@@ -28430,6 +28440,19 @@ class Component extends DCLogic {
   // _pCard, a missing logo never falls back to a monogram: some of these names
   // are eight-word institutional descriptions, and an acronym of the first few
   // words would just be noise. No logo simply means more room for the name.
+  // Plate for an ecosystem entry that has no logo, so every card has the same shape: a
+  // plate on top, the name as the caption below. The plate carries the body's own acronym
+  // when its name states one (VHSNC, CWC, JJB); otherwise a quiet mark - people for
+  // community-level entries, a building for institutions - rather than invented initials.
+  _ecoPlate(src, level) {
+    const par = String((src && src.k) || '').match(/\(([A-Za-z][A-Za-z.&-]{1,9})\)/);
+    const mono = par ? par[1].replace(/\./g, '') : '';
+    return {
+      hasMono: !!mono, mono, monoSize: mono.length > 6 ? '17px' : '22px',
+      glyphPeople: !mono && level === 'village',
+      glyphBuilding: !mono && level !== 'village',
+    };
+  }
   _tagCard(prefix, i, item, en) {
     const src = en || item;
     const file = src.logo || this._partnerAssets()[this._pSlug(src.k)] || '';
@@ -28840,7 +28863,7 @@ class Component extends DCLogic {
           const enItems = ((enLevels[li] || {}).items) || [];
           (lv.items || []).forEach((it, i) => {
             const card = this._tagCard('ei' + li + '-', i, it, enItems[i]);
-            items.push(card);
+            items.push(Object.assign(card, this._ecoPlate(enItems[i] || it, lv.k)));
           });
         });
         return {
