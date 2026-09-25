@@ -206,6 +206,22 @@
   /* Group menus open on hover or keyboard focus, so the target is the whole
      label rather than a small glyph beside it. Square edges, single hairline
      border, no drop shadow: the same flat treatment as the rest of the chrome. */
+  /* Legal identity table on Transparency: three groups of label / identifier / one fact.
+     Desktop reads as a three-column record; below 720px each row stacks. */
+  .id-table{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface)}
+  .id-group + .id-group{border-top:1px solid var(--border)}
+  .id-group-label{padding:18px clamp(16px,2.4vw,28px) 6px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--ac-olive)}
+  .id-row{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) minmax(0,.9fr);gap:4px clamp(16px,2.6vw,36px);align-items:baseline;padding:12px clamp(16px,2.4vw,28px)}
+  .id-row + .id-row{border-top:1px solid var(--border)}
+  .id-group-label + .id-row{padding-top:8px}
+  .id-row:last-child{padding-bottom:18px}
+  .id-k{font-size:13px;font-weight:600;color:var(--faint)}
+  .id-v{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(15px,1.5vw,17px);line-height:1.35;color:var(--text);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+  .id-meta{font-size:13px;line-height:1.45;color:var(--dim);text-align:right;text-wrap:pretty}
+  @media (max-width:720px){
+    .id-row{grid-template-columns:1fr;gap:2px}
+    .id-meta{text-align:left}
+  }
   .nav-drop{display:none}
   .nav-group:hover > .nav-drop,
   .nav-group:focus-within > .nav-drop{display:flex}
@@ -3425,14 +3441,17 @@
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.05;color:var(--text);margin:12px 0 10px">{{ T.fin_who_paper }}</h2>
           <p style="font-size:15.5px;line-height:1.6;color:var(--dim);margin:0;text-wrap:pretty">{{ idIntro }}</p>
         </div>
-        <div style="border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface)">
-          <sc-for list="{{ idRows }}" as="r" hint-placeholder-count="11">
-            <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px clamp(16px,3vw,40px);padding:16px clamp(16px,2.4vw,28px);border-top:1px solid var(--border)">
-              <div style="flex:0 1 180px;min-width:0;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:800;padding-top:3px">{{ r.k }}</div>
-              <div style="flex:3 1 280px;min-width:0">
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(15px,1.6vw,18px);line-height:1.3;color:var(--text)">{{ r.v }}</div>
-                <div style="font-size:13px;line-height:1.55;color:var(--dim);margin-top:4px;text-wrap:pretty">{{ r.note }}</div>
-              </div>
+        <div class="id-table">
+          <sc-for list="{{ idGroups }}" as="g" hint-placeholder-count="3">
+            <div key="{{ g.id }}" class="id-group">
+              <div class="id-group-label">{{ g.label }}</div>
+              <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="4">
+                <div key="{{ r.id }}" class="id-row">
+                  <div class="id-k">{{ r.k }}</div>
+                  <div class="id-v">{{ r.v }}</div>
+                  <div class="id-meta">{{ r.meta }}</div>
+                </div>
+              </sc-for>
             </div>
           </sc-for>
         </div>
@@ -31272,7 +31291,18 @@ class Component extends DCLogic {
         })).filter(g => g.docs.length);
       })() : [],
       idIntro: FIN && FIN.IDENTITY ? this._tc('fin_identity', 'main', 'intro', FIN.IDENTITY.intro) : '',
-      idRows: FIN && FIN.IDENTITY ? FIN.IDENTITY.rows.map(r => ({ k: r.k, v: r.v, note: this._tc('fin_identity', r.k, 'note', r.note) })) : [],
+      // Label, value and fact are all looked up per row id, so the left-hand labels translate
+      // too (they used to stay in English in every language); identifiers pass through as-is.
+      idGroups: FIN && FIN.IDENTITY && FIN.IDENTITY.groups ? FIN.IDENTITY.groups.map(g => ({
+        id: g.id,
+        label: this._tc('fin_identity', g.id, 'label', g.label),
+        rows: g.rows.map(r => ({
+          id: r.id,
+          k: this._tc('fin_identity', r.id, 'k', r.k),
+          v: this._tc('fin_identity', r.id, 'v', r.v),
+          meta: this._tc('fin_identity', r.id, 'meta', r.meta),
+        })),
+      })) : [],
       acIntro: FIN && FIN.ACCOUNTS ? this._tc('fin_accounts', 'main', 'intro', FIN.ACCOUNTS.intro) : '',
       accounts: FIN && FIN.ACCOUNTS ? FIN.ACCOUNTS.list.map(ac => ({
         key: ac.key, kind: ac.kind, bank: ac.bank, note: this._tc('fin_accounts', ac.key, 'note', ac.note),
