@@ -126,7 +126,7 @@ FAQ.ITEMS = [
   // ---- Governance ----
   { cat: 'govern', q: 'Is DEHAT a registered organisation?',
     keys: ['registered', 'registration', 'society', 'legal', 'number', 'csr', 'niti'],
-    a: 'Yes. Developmental Association for Human Advancement was registered as a society in 2000, eleven years after the work began. It holds 80G registration AAAAD3793QF20241, Foreign Contribution (Regulation) Act registration 136260010, and Corporate Social Responsibility registration CSR00001181. Every registration number on the site can be checked against the issuing authority.',
+    a: 'Yes. Developmental Association for Human Advancement was registered as a society in 2000, eleven years after the work began. It holds 80G approval AAAAD3793Q25LK02, Foreign Contribution (Regulation) Act registration 136260010, and Corporate Social Responsibility registration CSR00001181. Every registration number on the site can be checked against the issuing authority.',
     go: { label: 'See the Registrations', view: 'finance' } },
 
   { cat: 'govern', q: 'Who runs DEHAT and who holds them accountable?',

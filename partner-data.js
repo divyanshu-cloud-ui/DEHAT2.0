@@ -592,7 +592,7 @@ const EN = {
       "k": "inr",
       "label": "I Am Investing From India",
       "note": "80G deduction available",
-      "detail": "Received into the domestic account. An 80G receipt is issued against your PAN under registration AAAAD3793QF20241, valid to assessment year 2027–28. DEHAT also reports the donation in its Form 10BD statement, which is what lets you claim the deduction.",
+      "detail": "Received into the domestic account. An 80G receipt is issued against your PAN under approval AAAAD3793Q25LK02, valid for assessment years 2027–28 to 2031–32. DEHAT also reports the investment in its Form 10BD statement, which is what lets you claim the deduction.",
       "col": "#EAAE28"
     },
     {
@@ -1877,7 +1877,7 @@ const HI = {
       "k": "inr",
       "label": "मैं भारत से दे रहा/रही हूँ",
       "note": "80G छूट उपलब्ध",
-      "detail": "घरेलू खाते में प्राप्त। आपके PAN पर पंजीकरण AAAAD3793QF20241 के अंतर्गत 80G रसीद जारी होती है, जो निर्धारण वर्ष 2027–28 तक वैध है। DEHAT इसे फ़ॉर्म 10BD विवरण में भी दर्ज करता है, जिससे आप छूट का दावा कर पाते हैं।",
+      "detail": "घरेलू खाते में प्राप्त। आपके PAN पर स्वीकृति AAAAD3793Q25LK02 के अंतर्गत 80G रसीद जारी होती है, जो निर्धारण वर्ष 2027–28 से 2031–32 तक वैध है। DEHAT इस निवेश को फ़ॉर्म 10BD विवरण में भी दर्ज करता है, जिससे आप छूट का दावा कर पाते हैं।",
       "col": "#EAAE28"
     },
     {

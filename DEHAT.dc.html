@@ -3100,6 +3100,14 @@
 
           <sc-if value="{{ rt.hasMsg }}" hint-placeholder-val="{{ false }}">
             <p style="font-size:14px;line-height:1.6;color:{{ rt.msgCol }};margin:16px 0 0;max-width:66ch;text-wrap:pretty">{{ rt.msg }}</p>
+            <sc-if value="{{ rt.hasDraft }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:10px">
+                <span style="font-size:13px;color:var(--dim)">{{ rt.draftNote }}</span>
+                <a href="{{ rt.draftGmail }}" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:700;color:var(--text)">Gmail</a>
+                <a href="{{ rt.draftOutlook }}" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:700;color:var(--text)">Outlook</a>
+                <button onClick="{{ rt.draftCopy }}" style="cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text)">{{ rt.draftCopyLabel }}</button>
+              </div>
+            </sc-if>
           </sc-if>
           <p style="font-size:12.5px;line-height:1.6;color:var(--faint);margin:14px 0 0;max-width:66ch;text-wrap:pretty">{{ rt.note }}</p>
         </div>
@@ -4237,6 +4245,8 @@
               <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
                 <a href="{{ rzMailto }}" style="font-family:inherit;font-size:14.5px;font-weight:800;padding:14px 26px;border-radius:999px;background:#EAAE28;color:#2a1206;text-decoration:none">{{ raiseOpenEmail }}</a>
                 <button onClick="{{ rzCopy }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;padding:13px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff">{{ rzCopyLabel }}</button>
+                <a href="{{ rzGmail }}" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:3px">Gmail</a>
+                <a href="{{ rzOutlook }}" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:3px">Outlook</a>
               </div>
               <div style="font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.55)">{{ rzRouteNote }}</div>
             </div>
@@ -5876,9 +5886,10 @@ class Component extends DCLogic {
       raise_subject_label:'Draft Subject:',
       raise_open_email:'Open the Drafted Email',
       raise_copy:'Copy the Draft',
-      raise_copied:'Draft copied',
+      raise_copied:'Draft Copied',
       id_copy:'Copy',
       id_copied:'Copied',
+      rt_fallback_note:'If your email app did not open, send it from:',
       raise_docs_requested_label:'Documents Requested:',
       raise_grateful_line:'I would be grateful for an acknowledgement and a named person handling this.',
       raise_doc_request_prefix:'Document request — ',
@@ -6712,6 +6723,7 @@ class Component extends DCLogic {
       raise_copied:'ड्राफ़्ट कॉपी हो गया',
       id_copy:'कॉपी करें',
       id_copied:'कॉपी हो गया',
+      rt_fallback_note:'अगर आपका ईमेल ऐप नहीं खुला, तो यहाँ से भेजें:',
       raise_docs_requested_label:'अनुरोधित दस्तावेज़:',
       raise_grateful_line:'मैं इसकी पावती (एकनॉलेजमेंट) पाकर और यह जानकर आभारी रहूँगा/रहूँगी कि इसे कौन व्यक्ति संभाल रहा है।',
       raise_doc_request_prefix:'दस्तावेज़ अनुरोध — ',
@@ -29139,6 +29151,19 @@ class Component extends DCLogic {
       submitLabel: L ? L.submit : 'Submit Transfer Details',
       btnBg: 'var(--ac-teal)', btnFg: 'var(--bg)',
       hasMsg: !!S.rtMsg, msg: S.rtMsg || '',
+      // After submitting: if no mail app opened, the same draft can go out through webmail or
+      // be copied - the status line alone must not claim an email exists when none opened.
+      hasDraft: !!(S.rtOk && S.rtDraft),
+      draftGmail: S.rtDraft ? this._webmail('joinus@dehatindia.org', S.rtDraft.subject, S.rtDraft.body).gmail : '',
+      draftOutlook: S.rtDraft ? this._webmail('joinus@dehatindia.org', S.rtDraft.subject, S.rtDraft.body).outlook : '',
+      draftNote: this._dt('rt_fallback_note'),
+      draftCopyLabel: S.rtCopied ? this._dt('raise_copied') : this._dt('raise_copy'),
+      draftCopy: () => {
+        const body = (S.rtDraft || {}).body || '';
+        const done = () => this.setState({ rtCopied: true });
+        try { if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(body).then(done, () => this._copyFallback(body, done)); return; } } catch (e) {}
+        this._copyFallback(body, done);
+      },
       msgCol: S.rtOk ? 'var(--ac-olive)' : 'var(--ac-red)',
       note: L ? L.note : 'DEHAT reconciles every reported transfer against the bank statement before a receipt is issued. Nothing here is stored in your browser.',
       submit: () => {
@@ -29159,7 +29184,8 @@ class Component extends DCLogic {
           + encodeURIComponent(rtT.rt_mail_subject + ' — ' + (v('rtFirst') || rtT.rt_mail_investor_fallback))
           + '&body=' + encodeURIComponent(body);
         try { window.location.href = href; } catch (e) {}
-        this.setState({ rtOk: true, rtMsg: L ? L.ok : 'Your details are drafted into an email. Press send in your email app and we will reconcile it against the statement.' });
+        this.setState({ rtOk: true, rtCopied: false, rtMsg: L ? L.ok : 'Your details are drafted into an email. Press send in your email app and we will reconcile it against the statement.',
+          rtDraft: { subject: decodeURIComponent(href.split('subject=')[1].split('&body=')[0]), body } });
       },
     };
   }
@@ -29298,6 +29324,22 @@ class Component extends DCLogic {
     } catch (e) {}
     this._copyFallback(text, done);
   }
+  // Webmail versions of a drafted email, for visitors whose device has no mail app registered
+  // for mailto: links (the link then silently does nothing). Same recipient, subject and body.
+  // One dictionary string in the current language (English fallback), for code paths that
+  // build their values outside renderVals' own T.
+  _dt(key) {
+    const d = this._dict();
+    const l = d[this.state.lang] || {};
+    return l[key] != null ? l[key] : (d.en || {})[key];
+  }
+  _webmail(to, subject, body) {
+    const s = encodeURIComponent(subject || ''), b = encodeURIComponent(body || '');
+    return {
+      gmail: 'https://mail.google.com/mail/?view=cm&fs=1&to=' + to + '&su=' + s + '&body=' + b,
+      outlook: 'https://outlook.office.com/mail/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b,
+    };
+  }
   _copyFallback(text, done) {
     try {
       const ta = document.createElement('textarea');
@@ -29346,8 +29388,8 @@ class Component extends DCLogic {
     const m = (s, b) => 'mailto:' + to + '?subject=' + encodeURIComponent(s + ' \u2014 ' + name)
       + '&body=' + encodeURIComponent('Hello DEHAT team,\n\n' + b + '\n\nI came to this from the ' + name + ' programme page on your website.\n\nMy name is:\nThe best way to reach me is:\n\nThank you,\n');
     return [
-      { k: 'Give in rupees', v: 'Indian donations carry 80G deduction. Registration AAAAD3793QF20241, valid to AY 2027\u201328.', a: 'Write to us', href: m('Donation (INR)', 'I would like to make a donation in Indian rupees towards this programme, and I would like an 80G receipt. Please send me the account details and tell me what you need from me for the receipt.'), col: '#EAAE28' },
-      { k: 'Give from outside India', v: 'DEHAT holds Foreign Contribution (Regulation) Act registration 136260010 and receives foreign contributions only into its designated State Bank of India account.', a: 'Write to us', href: m('Donation (foreign / FCRA)', 'I would like to make a contribution from outside India towards this programme. Please send me the FCRA account details and tell me what you need from me for your FC-4 return.'), col: '#0E5565' },
+      { k: 'Invest in Rupees', v: 'Indian investments carry the 80G deduction. Approval AAAAD3793Q25LK02, valid AY 2027\u201328 to 2031\u201332.', a: 'Write to Us', href: m('Investment (INR)', 'I would like to invest in Indian rupees towards this programme, and I would like an 80G receipt. Please send me the account details and tell me what you need from me for the receipt.'), col: '#EAAE28' },
+      { k: 'Invest From Outside India', v: 'DEHAT holds Foreign Contribution (Regulation) Act registration 136260010 and receives foreign contributions only into its designated State Bank of India account.', a: 'Write to us', href: m('Investment (foreign / FCRA)', 'I would like to make a contribution from outside India towards this programme. Please send me the FCRA account details and tell me what you need from me for your FC-4 return.'), col: '#0E5565' },
       { k: 'Partner as a company', v: 'Corporate Social Responsibility registration CSR00001181. Schedule VII alignment is stated on every project in the register above.', a: 'Start a conversation', href: m('CSR / institutional partnership', 'We are considering a CSR or institutional partnership on this programme. Please tell us which geographies currently have room, what a first year would look like, and what due diligence material you can share.'), col: '#D2305C' },
       { k: 'Work with us', v: 'Fellowships, internships and field roles, in Bahraich and remotely.', a: 'Send your interest', href: m('Fellowship / volunteering', 'I would like to work with DEHAT on this programme, as a fellow, an intern or in a field role. Please tell me what is currently open and what you would want from me.'), col: '#556223' },
       { k: 'Ask for the evidence', v: 'Audited accounts, evaluations and programme reports are available on request, including the documents cited in the register.', a: 'Request a report', href: m('Request for reports or data', 'Please send me the audited accounts, evaluations and programme reports for this programme. I am specifically interested in:'), col: '#4F0E73' },
@@ -30187,6 +30229,8 @@ class Component extends DCLogic {
       rzRouteNote: cur.route,
       rzSubject: subject,
       rzMailto: mailto,
+      rzGmail: this._webmail(EMAIL, subject, body).gmail,
+      rzOutlook: this._webmail(EMAIL, subject, body).outlook,
       rzSetDetail: (e) => this.setState({ rzDetail: e.target.value, rzCopied: false }),
       rzSetWho: (e) => this.setState({ rzWho: e.target.value, rzCopied: false }),
       rzCopyLabel: this.state.rzCopied ? T.raise_copied : T.raise_copy,
@@ -30919,7 +30963,8 @@ class Component extends DCLogic {
             num: J.horizons.num, title: J.horizons.title, body: J.horizons.body,
             objLabel: J.horizons.objLabel, itemsLabel: J.horizons.itemsLabel,
             hasCta: !!J.horizons.ctaLabel, ctaLabel: J.horizons.ctaLabel || '', ctaNote: J.horizons.ctaNote || '',
-            ctaGo: 'mailto:joinus@dehatindia.org?subject=' + encodeURIComponent('Funding plan request — ' + (nar.name || '')),
+            ctaGo: 'mailto:joinus@dehatindia.org?subject=' + encodeURIComponent('Funding plan request — ' + (nar.name || ''))
+              + '&body=' + encodeURIComponent('Hello DEHAT team,\n\nPlease send me the full funding plan for the ' + (nar.name || '') + ' programme, with the phases and indicative budgets.\n\nMy name is:\nMy organisation is:\nThe best way to reach me is:\n\nThank you,\n'),
             railPct: ((hi + 1) / J.horizons.rows.length * 100) + '%',
             tabs: J.horizons.rows.map((r, i) => ({
               k: 'h' + i, label: r.label, n: String(i + 1).padStart(2, '0'),
