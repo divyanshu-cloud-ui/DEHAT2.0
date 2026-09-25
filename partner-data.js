@@ -1210,7 +1210,7 @@ const EN = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -2495,7 +2495,7 @@ const HI = {
       "items": [
         {
           "k": "महिला एवं बाल सुरक्षा संगठन (WCSO), उत्तर प्रदेश पुलिस",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "महिला एवं बाल विकास विभाग",
@@ -3772,7 +3772,7 @@ const ES = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -5028,7 +5028,7 @@ const FR = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -6284,7 +6284,7 @@ const RU = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -7540,7 +7540,7 @@ const AR = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -8796,7 +8796,7 @@ const ZH = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -10052,7 +10052,7 @@ const UR = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -11308,7 +11308,7 @@ const BN = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -12564,7 +12564,7 @@ const MR = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -13820,7 +13820,7 @@ const TE = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -15076,7 +15076,7 @@ const TA = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -16332,7 +16332,7 @@ const GU = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -17588,7 +17588,7 @@ const KN = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -18844,7 +18844,7 @@ const MAI = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -20100,7 +20100,7 @@ const AS = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -21356,7 +21356,7 @@ const NE = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -22612,7 +22612,7 @@ const KOK = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -23868,7 +23868,7 @@ const SA = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -25124,7 +25124,7 @@ const SD = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -26380,7 +26380,7 @@ const OR = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -27636,7 +27636,7 @@ const ML = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -28892,7 +28892,7 @@ const PA = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -30148,7 +30148,7 @@ const DOI = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -31404,7 +31404,7 @@ const BRX = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -32660,7 +32660,7 @@ const SAT = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -33916,7 +33916,7 @@ const MNI = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
@@ -35172,7 +35172,7 @@ const KS = {
       "items": [
         {
           "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
-          "logo": "uttar-pradesh-police.png"
+          "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
           "k": "Women and Child Development Department",
