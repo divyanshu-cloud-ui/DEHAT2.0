@@ -22,7 +22,9 @@ DEHAT Website (offline).html
 # Compliance/legal filings (FCRA, PAN, bank account, registration, MOA, etc.).
 # Contains a government ID and bank account details — kept local, handled
 # separately from the public repo rather than published here.
-/assets/docs/
+# Only the organisation structure chart is public — the site links to it.
+/assets/docs/*
+!/assets/docs/dehat-organisation-structure.pdf
 
 # ── Raw drafts, scans, and uploads ────────────────────────────────────────
 # Personal photos of beneficiaries/staff, scanned legal & financial documents,
