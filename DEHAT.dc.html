@@ -5743,20 +5743,20 @@ class Component extends DCLogic {
       railWalkArt: 'url(' + INK + 't-pair-a.png)',
 
       stems: stems.map(s => ({
-        k: s.k, en: s.en, pick: () => this.setState({ whoStem: s.k, whoReveal: false }),
+        k: s.k, en: S.lang === 'hi' ? s.text : this._dt('who_stem_' + s.k), pick: () => this.setState({ whoStem: s.k, whoReveal: false }),
         bg: s.k === key ? 'var(--surface)' : 'transparent',
         fg: s.k === key ? 'var(--text)' : 'var(--dim)',
         ring: s.k === key ? teal : 'var(--border)',
         weight: s.k === key ? '700' : '600',
       })),
-      stemHi: (S.lang === 'hi') ? active.text : active.en,
-      stemEn: (S.lang === 'hi') ? active.en : ('Asked in Hindi as: ' + active.text),
-      placeholder: 'Your answer, in a line or two',
+      stemHi: (S.lang === 'hi') ? active.text : this._dt('who_stem_' + active.k),
+      stemEn: (S.lang === 'hi') ? active.en : (this._dt('who_asked_hindi') + ' ' + active.text),
+      placeholder: this._dt('who_mine_placeholder'),
       mine: S.whoMine || '',
       onMine: (e) => this.setState({ whoMine: e.target.value }),
       reveal: () => this.setState({ whoReveal: !S.whoReveal }),
-      revealLabel: S.whoReveal ? 'Hide Their Answers' : 'Show What ' + answers.length + ' of Them Wrote',
-      revealHint: S.whoReveal ? '' : (typed ? 'Now compare.' : 'You can skip ahead, but it reads differently if you answer first.'),
+      revealLabel: S.whoReveal ? this._dt('who_reveal_hide') : this._dt('who_reveal_show').replace('{n}', answers.length),
+      revealHint: S.whoReveal ? '' : (typed ? this._dt('who_reveal_compare') : this._dt('who_reveal_hint')),
       revealed: !!S.whoReveal,
       answers: answers.map(t => ({ k: t.id, finish: t.finish, name: t.name, role: t.role, place: t.place })),
       beliefGroups: this._beliefs().map((cat, ci) => ({
@@ -5890,6 +5890,68 @@ class Component extends DCLogic {
       id_copy:'Copy',
       id_copied:'Copied',
       rt_fallback_note:'If your email app did not open, send it from:',
+      fin_led_stat_years:'Financial Years on the Record, Unbroken From {from} to {to}',
+      fin_led_stat_committed:'Committed by Investment Partners Across Those Years',
+      fin_led_stat_deployed:'Deployed Into Programmes Over the Same Period, Reserves Included',
+      fin_led_stat_firms:'Independent Audit Firms Have Examined These Books',
+      fin_led_f_signed:'Signed by the Auditor',
+      fin_led_f_foreign:'Carried Foreign Contribution',
+      fin_led_f_reserves:'Drew on Reserves',
+      fin_led_f_itemised:'Itemised Partner by Partner',
+      fin_led_s_recent:'Most Recent First',
+      fin_led_s_oldest:'Earliest First',
+      fin_led_s_inv:'Largest Commitment',
+      fin_led_s_dep:'Largest Deployment',
+      fin_led_count_all:'{n} financial years, oldest signed 18 November 2006.',
+      fin_led_count_some:'Showing {shown} of {total} financial years.',
+      who_asked_hindi:'Asked in Hindi as:',
+      who_mine_placeholder:'Your answer, in a line or two',
+      who_reveal_hide:'Hide Their Answers',
+      who_reveal_show:'Show What {n} of Them Wrote',
+      who_reveal_compare:'Now compare.',
+      who_reveal_hint:'You can skip ahead, but it reads differently if you answer first.',
+      who_stem_vikas:'For me, development means…',
+      who_stem_vajah:'My biggest reason for staying with this work is…',
+      who_stem_nyay:'Justice becomes possible when…',
+      who_stem_netritva:'Community leadership begins when…',
+      who_stem_asha:'My hope at DEHAT is that…',
+      rt_eyebrow:'Already Transferred',
+      rt_title:'Tell Us About a Transfer You Have Already Made.',
+      rt_sub:'If you have sent money by National Electronic Funds Transfer (NEFT), Real Time Gross Settlement (RTGS), Immediate Payment Service (IMPS), cheque or a direct deposit, record it here so we can match the credit in our account to your receipt. This does not move any money.',
+      rt_cause:'Cause the Transfer Was For',
+      rt_human:'Prove You Are Not a Robot',
+      rt_human_hint:'What is three plus four?',
+      rt_submit:'Submit Transfer Details',
+      rt_missing:'Add the reference number, amount, date, first name and email before submitting.',
+      rt_robot:'Answer the arithmetic question so we know you are not a robot.',
+      rt_ok:'Your details are drafted into an email. Press send in your email app and we will reconcile it against the statement.',
+      rt_note:'DEHAT reconciles every reported transfer against the bank statement before a receipt is issued. Nothing here is stored in your browser.',
+      rt_label_0:'Bank or Transaction Reference Number',
+      rt_hint_0:'Any number that identifies the transfer',
+      rt_label_1:'Amount Transferred',
+      rt_hint_1:'e.g. 5,000',
+      rt_label_2:'Date of Transfer',
+      rt_hint_2:'',
+      rt_label_3:'First Name',
+      rt_hint_3:'',
+      rt_label_4:'Last Name',
+      rt_hint_4:'',
+      rt_label_5:'Phone',
+      rt_hint_5:'',
+      rt_label_6:'Email',
+      rt_hint_6:'The receipt is sent here',
+      rt_label_7:'Street Address',
+      rt_hint_7:'',
+      rt_label_8:'City',
+      rt_hint_8:'',
+      rt_label_9:'State or Province',
+      rt_hint_9:'',
+      rt_label_10:'Postal Code',
+      rt_hint_10:'',
+      rt_label_11:'Country',
+      rt_hint_11:'India',
+      rt_label_12:'Company Name',
+      rt_hint_12:'If the transfer came from a business',
       raise_docs_requested_label:'Documents Requested:',
       raise_grateful_line:'I would be grateful for an acknowledgement and a named person handling this.',
       raise_doc_request_prefix:'Document request — ',
@@ -6724,6 +6786,68 @@ class Component extends DCLogic {
       id_copy:'कॉपी करें',
       id_copied:'कॉपी हो गया',
       rt_fallback_note:'अगर आपका ईमेल ऐप नहीं खुला, तो यहाँ से भेजें:',
+      fin_led_stat_years:'रिकॉर्ड पर वित्तीय वर्ष, {from} से {to} तक बिना किसी अंतराल के',
+      fin_led_stat_committed:'इन वर्षों में निवेश-साझेदारों द्वारा प्रतिबद्ध राशि',
+      fin_led_stat_deployed:'इसी अवधि में कार्यक्रमों में लगाई गई राशि, भंडार सहित',
+      fin_led_stat_firms:'स्वतंत्र लेखा-परीक्षा फ़र्में जिन्होंने इन खातों की जाँच की है',
+      fin_led_f_signed:'लेखा-परीक्षक द्वारा हस्ताक्षरित',
+      fin_led_f_foreign:'विदेशी अंशदान वाले वर्ष',
+      fin_led_f_reserves:'भंडार से ख़र्च वाले वर्ष',
+      fin_led_f_itemised:'साझेदार-वार ब्योरे वाले वर्ष',
+      fin_led_s_recent:'नवीनतम पहले',
+      fin_led_s_oldest:'सबसे पुराने पहले',
+      fin_led_s_inv:'सबसे बड़ी प्रतिबद्धता',
+      fin_led_s_dep:'सबसे बड़ा उपयोग',
+      fin_led_count_all:'{n} वित्तीय वर्ष, सबसे पुराना 18 नवंबर 2006 को हस्ताक्षरित।',
+      fin_led_count_some:'{total} में से {shown} वित्तीय वर्ष दिखाए जा रहे हैं।',
+      who_asked_hindi:'हिंदी में पूछा गया प्रश्न:',
+      who_mine_placeholder:'आपका उत्तर, एक-दो पंक्तियों में',
+      who_reveal_hide:'उनके उत्तर छिपाएँ',
+      who_reveal_show:'देखें उनमें से {n} ने क्या लिखा',
+      who_reveal_compare:'अब तुलना कीजिए।',
+      who_reveal_hint:'आप आगे बढ़ सकते हैं, पर पहले ख़ुद उत्तर देंगे तो इसे पढ़ना अलग लगेगा।',
+      who_stem_vikas:'मेरे लिए विकास का अर्थ है…',
+      who_stem_vajah:'इस काम से जुड़े रहने की मेरी सबसे बड़ी वजह है…',
+      who_stem_nyay:'न्याय तब संभव होता है जब…',
+      who_stem_netritva:'समुदाय का नेतृत्व तब शुरू होता है जब…',
+      who_stem_asha:'देहात में मेरी आशा है कि…',
+      rt_eyebrow:'पहले ही भेज चुके हैं',
+      rt_title:'पहले किए गए हस्तांतरण की जानकारी दीजिए।',
+      rt_sub:'यदि आपने NEFT, RTGS, IMPS, चेक या सीधे जमा से राशि भेजी है, तो उसे यहाँ दर्ज कीजिए ताकि हम अपने खाते में आई राशि को आपकी रसीद से मिला सकें। इससे कोई राशि स्थानांतरित नहीं होती।',
+      rt_cause:'हस्तांतरण किस उद्देश्य के लिए था',
+      rt_human:'सिद्ध कीजिए कि आप रोबोट नहीं हैं',
+      rt_human_hint:'तीन और चार कितने होते हैं?',
+      rt_submit:'विवरण भेजिए',
+      rt_missing:'भेजने से पहले संदर्भ संख्या, राशि, तिथि, नाम और ईमेल भरिए।',
+      rt_robot:'अंकगणित का उत्तर दीजिए ताकि हम जान सकें कि आप रोबोट नहीं हैं।',
+      rt_ok:'आपका विवरण ईमेल में तैयार है। अपने ईमेल ऐप में भेजिए; हम उसे बैंक विवरण से मिलाएँगे।',
+      rt_note:'रसीद जारी करने से पहले DEHAT हर दर्ज हस्तांतरण को बैंक विवरण से मिलाता है। यहाँ कुछ भी आपके ब्राउज़र में संग्रहीत नहीं होता।',
+      rt_label_0:'बैंक या लेनदेन संदर्भ संख्या',
+      rt_hint_0:'लेनदेन पहचानने वाली कोई भी संख्या',
+      rt_label_1:'भेजी गई राशि',
+      rt_hint_1:'जैसे 5,000',
+      rt_label_2:'हस्तांतरण की तिथि',
+      rt_hint_2:'',
+      rt_label_3:'पहला नाम',
+      rt_hint_3:'',
+      rt_label_4:'उपनाम',
+      rt_hint_4:'',
+      rt_label_5:'फ़ोन',
+      rt_hint_5:'',
+      rt_label_6:'ईमेल',
+      rt_hint_6:'रसीद यहीं भेजी जाएगी',
+      rt_label_7:'पता',
+      rt_hint_7:'',
+      rt_label_8:'शहर',
+      rt_hint_8:'',
+      rt_label_9:'राज्य',
+      rt_hint_9:'',
+      rt_label_10:'पिन कोड',
+      rt_hint_10:'',
+      rt_label_11:'देश',
+      rt_hint_11:'भारत',
+      rt_label_12:'कंपनी का नाम',
+      rt_hint_12:'यदि राशि किसी संस्था से भेजी गई है',
       raise_docs_requested_label:'अनुरोधित दस्तावेज़:',
       raise_grateful_line:'मैं इसकी पावती (एकनॉलेजमेंट) पाकर और यह जानकर आभारी रहूँगा/रहूँगी कि इसे कौन व्यक्ति संभाल रहा है।',
       raise_doc_request_prefix:'दस्तावेज़ अनुरोध — ',
@@ -29098,18 +29222,16 @@ class Component extends DCLogic {
   _reportTransfer(P) {
     const S = this.state;
     const hi = this.state.lang === 'hi';
-    const L = hi ? {
-      eyebrow: 'पहले ही भेज चुके हैं', title: 'पहले किए गए हस्तांतरण की जानकारी दीजिए।',
-      sub: 'यदि आपने NEFT, RTGS, IMPS, चेक या सीधे जमा से राशि भेजी है, तो उसे यहाँ दर्ज कीजिए ताकि हम अपने खाते में आई राशि को आपकी रसीद से मिला सकें। इससे कोई राशि स्थानांतरित नहीं होती।',
-      cause: 'हस्तांतरण किस उद्देश्य के लिए था', human: 'सिद्ध कीजिए कि आप रोबोट नहीं हैं',
-      humanHint: 'तीन और चार कितने होते हैं?', submit: 'विवरण भेजिए',
-      missing: 'भेजने से पहले संदर्भ संख्या, राशि, तिथि, नाम और ईमेल भरिए।',
-      robot: 'अंकगणित का उत्तर दीजिए ताकि हम जान सकें कि आप रोबोट नहीं हैं।',
-      ok: 'आपका विवरण ईमेल में तैयार है। अपने ईमेल ऐप में भेजिए; हम उसे बैंक विवरण से मिलाएँगे।',
-      note: 'रसीद जारी करने से पहले DEHAT हर दर्ज हस्तांतरण को बैंक विवरण से मिलाता है। यहाँ कुछ भी आपके ब्राउज़र में संग्रहीत नहीं होता।',
-      labels: ['बैंक या लेनदेन संदर्भ संख्या', 'भेजी गई राशि', 'हस्तांतरण की तिथि', 'पहला नाम', 'उपनाम', 'फ़ोन', 'ईमेल', 'पता', 'शहर', 'राज्य', 'पिन कोड', 'देश', 'कंपनी का नाम'],
-      hints: ['लेनदेन पहचानने वाली कोई भी संख्या', 'जैसे 5,000', '', '', '', '', 'रसीद यहीं भेजी जाएगी', '', '', '', '', 'भारत', 'यदि राशि किसी संस्था से भेजी गई है'],
-    } : null;
+    // All strings come from the dictionary (rt_*), so the form reads in every language, not
+    // only English and Hindi; untranslated keys fall back to English.
+    const d = (k) => this._dt(k);
+    const L = {
+      eyebrow: d('rt_eyebrow'), title: d('rt_title'), sub: d('rt_sub'), cause: d('rt_cause'),
+      human: d('rt_human'), humanHint: d('rt_human_hint'), submit: d('rt_submit'),
+      missing: d('rt_missing'), robot: d('rt_robot'), ok: d('rt_ok'), note: d('rt_note'),
+      labels: Array.from({ length: 13 }, (_, i) => d('rt_label_' + i)),
+      hints: Array.from({ length: 13 }, (_, i) => d('rt_hint_' + i) || ''),
+    };
     const set = (k) => (e) => this.setState({ [k]: e.target.value });
     const v = (k) => S[k] || '';
     const F = [
@@ -29998,24 +30120,24 @@ class Component extends DCLogic {
     const ledSpanTo = recs.reduce((a, r) => Math.max(a, r.start), -Infinity);
     const fyLabel = (startYr) => startYr + '\u2013' + String((startYr + 1) % 100).padStart(2, '0');
     base.ledSummary = [
-      { k: 'a', value: String(recs.length), label: 'Financial years on the record, unbroken from ' + fyLabel(ledSpanFrom) + ' to ' + fyLabel(ledSpanTo), color: this._tok('#EAAE28') },
-      { k: 'b', value: rs(totInv), label: 'Committed by investment partners across those years', color: this._tok('#0E5565') },
-      { k: 'c', value: rs(totDep), label: 'Deployed into programmes over the same period, reserves included', color: this._tok('#556223') },
-      { k: 'd', value: String(firms.size), label: 'Independent audit firms have examined these books', color: this._tok('#D2305C') },
+      { k: 'a', value: String(recs.length), label: this._dt('fin_led_stat_years').replace('{from}', fyLabel(ledSpanFrom)).replace('{to}', fyLabel(ledSpanTo)), color: this._tok('#EAAE28') },
+      { k: 'b', value: rs(totInv), label: this._dt('fin_led_stat_committed'), color: this._tok('#0E5565') },
+      { k: 'c', value: rs(totDep), label: this._dt('fin_led_stat_deployed'), color: this._tok('#556223') },
+      { k: 'd', value: String(firms.size), label: this._dt('fin_led_stat_firms'), color: this._tok('#D2305C') },
     ];
     const ledTotal = recs.length;
     const FILTERS = [
       { k: 'all', label: T.fin_all_twenty_years, test: () => true },
-      { k: 'signed', label: 'Signed by the Auditor', test: r => r.attested },
-      { k: 'foreign', label: 'Carried Foreign Contribution', test: r => r.fcra > 0 },
-      { k: 'reserves', label: 'Drew on Reserves', test: r => r.surplus != null && r.surplus < 0 },
-      { k: 'itemised', label: 'Itemised Partner by Partner', test: r => !r.summaryOnly },
+      { k: 'signed', label: this._dt('fin_led_f_signed'), test: r => r.attested },
+      { k: 'foreign', label: this._dt('fin_led_f_foreign'), test: r => r.fcra > 0 },
+      { k: 'reserves', label: this._dt('fin_led_f_reserves'), test: r => r.surplus != null && r.surplus < 0 },
+      { k: 'itemised', label: this._dt('fin_led_f_itemised'), test: r => !r.summaryOnly },
     ];
     const SORTS = [
-      { k: 'recent', label: 'Most Recent First', cmp: (a, b) => b.start - a.start },
-      { k: 'oldest', label: 'Earliest First', cmp: (a, b) => a.start - b.start },
-      { k: 'inv', label: 'Largest Commitment', cmp: (a, b) => b.inv - a.inv },
-      { k: 'dep', label: 'Largest Deployment', cmp: (a, b) => b.dep - a.dep },
+      { k: 'recent', label: this._dt('fin_led_s_recent'), cmp: (a, b) => b.start - a.start },
+      { k: 'oldest', label: this._dt('fin_led_s_oldest'), cmp: (a, b) => a.start - b.start },
+      { k: 'inv', label: this._dt('fin_led_s_inv'), cmp: (a, b) => b.inv - a.inv },
+      { k: 'dep', label: this._dt('fin_led_s_dep'), cmp: (a, b) => b.dep - a.dep },
     ];
     base.ledCurrTabs = [
       { key: 'INR', label: '₹ INR' }, { key: 'USD', label: '$ USD' },
@@ -30036,7 +30158,7 @@ class Component extends DCLogic {
       select: () => this.setState({ ledFilter: f.k }),
     }));
     const shown = recs.filter(active.test).slice().sort((SORTS.find(s => s.k === sortKey) || SORTS[0]).cmp);
-    base.ledCount = shown.length === ledTotal ? (ledTotal + ' financial years, oldest signed 18 November 2006.') : ('Showing ' + shown.length + ' of ' + ledTotal + ' financial years.');
+    base.ledCount = shown.length === ledTotal ? this._dt('fin_led_count_all').replace('{n}', ledTotal) : this._dt('fin_led_count_some').replace('{shown}', shown.length).replace('{total}', ledTotal);
     base.ledEmpty = shown.length === 0;
     const detail = (r) => {
       const pinned = pins.indexOf(r.fy) >= 0;
@@ -30244,7 +30366,18 @@ class Component extends DCLogic {
   }
 
   _govView() {
-    const G = (typeof FIN !== 'undefined' && FIN && FIN.GOVERNANCE) ? FIN.GOVERNANCE : null;
+    // Governance chart: every visible node field is translated here, once, per node id, so
+    // the tree, wings and detail panel below all read the current language (content-i18n
+    // fin_governance[node.id][field]); ids, colours and structure pass through unchanged.
+    const G0 = (typeof FIN !== 'undefined' && FIN && FIN.GOVERNANCE) ? FIN.GOVERNANCE : null;
+    const G = G0 ? Object.assign({}, G0, { nodes: G0.nodes.map(n => {
+      const o = Object.assign({}, n);
+      ['title', 'count', 'role', 'down', 'up', 'gives', 'owes'].forEach(f => {
+        if (typeof n[f] === 'string') o[f] = this._tc('fin_governance', n.id, f, n[f]);
+      });
+      if (Array.isArray(n.members)) o.members = n.members.map((m, i) => typeof m === 'string' ? this._tc('fin_governance', n.id, 'members.' + i, m) : m);
+      return o;
+    }) }) : null;
     const mode = this.state.govMode === 'up' ? 'up' : 'down';
     const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
     const base = {
@@ -31487,7 +31620,7 @@ class Component extends DCLogic {
       })) : [],
       govIntro: FIN && FIN.GOVERNANCE ? this._tc('fin_governance', 'main', 'intro', FIN.GOVERNANCE.intro) : '',
       govNote: FIN && FIN.GOVERNANCE ? this._tc('fin_governance', 'main', 'note', FIN.GOVERNANCE.note) : '',
-      govSource: FIN && FIN.GOVERNANCE ? FIN.GOVERNANCE.source : '',
+      govSource: FIN && FIN.GOVERNANCE ? this._tc('fin_governance', 'main', 'source', FIN.GOVERNANCE.source) : '',
       ...this._govView(),
       accIntro: FIN && FIN.ACCOUNTABILITY ? this._tc('accountability', 'main', 'intro', FIN.ACCOUNTABILITY.intro) : '',
       accParties: FIN && FIN.ACCOUNTABILITY ? FIN.ACCOUNTABILITY.parties.map((p, i) => ({
