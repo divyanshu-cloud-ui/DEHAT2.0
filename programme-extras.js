@@ -102,53 +102,69 @@ export const PROG_CYCLE = {
   hp: {
     lede: 'Human Protection works where accumulated vulnerability turns into exploitation, and on the systems that should have noticed earlier.',
     direct: {
-      'Human Trafficking': 'Interception, rescue and repatriation with the Sashastra Seema Bal, Anti-Human Trafficking Units, police and Child Welfare Committees.',
+      'Human Trafficking': 'Interception, rescue and repatriation with the Sashastra Seema Bal, Anti-Human Trafficking Units, police and Child Welfare Committees. A large share of the trafficking caseload is labour trafficking — children moved across the border or between districts into brick kilns, dhabas, domestic service and workshops — so trafficking and child-labour response run as one intersecting caseload, not two separate systems.',
       'Child Marriage': 'Village and block child protection committees, Child Marriage Prohibition Officers, and prevention before the date is fixed.',
-      'Child & Bonded Labour': 'Identification, withdrawal, labour-department action and school re-enrolment.',
+      'Child & Bonded Labour': 'Identification, withdrawal, labour-department action and school re-enrolment. Withdrawals from brick kilns, dhabas, workshops and domestic labour are cross-checked against the trafficking register, since many working children were moved into that labour by a trafficker in the first place.',
       'Discrimination and Violence': 'Case accompaniment, legal aid, compensation claims and psychosocial support.',
-      'Boys as Bread-Earners': 'Migration tracking that records who is moving, where, and with whom.',
+      'Boys as Bread-Earners': 'Migration tracking that records who is moving, where, and with whom — the same tracking that flags a labour-trafficking risk before a child leaves the village.',
     },
     indirect: ['School Dropout', 'Menstrual Dignity', 'Underage Mother', 'The Next Mother'],
   },
 };
 
-// Programme results drawn from the project register, 2000-2026. Indicator-specific by design:
-// these are not added together, and there is no single total.
+// Programme-level results, 2000-2026: the macro, cross-project footprint of each
+// programme as a whole. Project-specific detail lives on each project's own record
+// under "Impact numbers" — these figures are deliberately not a re-listing of that.
+// Indicator-specific by design: these are not added together, and there is no single total.
 export const PROG_FIGURES = {
   hp: {
     label: 'What this programme has done',
-    note: 'Counted from project reports and case files. Service events are not the same as children: one child may appear in several. We do not add these together.',
+    note: 'Cumulative across every case this programme has responded to. One child may appear in more than one figure, so these are not added together. Trafficking and child labour are treated as one intersecting caseload, since children are often moved into labour by the same trafficker.',
     items: [
-      { n: '1,038', l: 'lost and runaway children restored to their families', src: '2010–2023' },
-      { n: '640', l: 'children repatriated to Nepal through legal process', src: '2023–2025' },
-      { n: '261', l: 'child marriages stopped in Shravasti', src: '2024–2025' },
+      { n: '3,271', l: 'Children\u2019s Cases Logged and Carried through the Emergency Helpline Register', src: '' },
+      { n: '1,831', l: 'Child Marriages Stopped before the Wedding Date', src: '' },
+      { n: '1,038', l: 'Lost, Abandoned and Runaway Children Restored to Their Families', src: '' },
+      { n: '642', l: 'Child-Labour Cases Resolved, Cross-Checked Against the Trafficking Register', src: '' },
+      { n: '382', l: 'Children Intercepted from Cross-Border Trafficking Risk, 72 of Them Carried to a Registered FIR', src: '' },
     ],
   },
   sol: {
     label: 'What this programme has done',
-    note: 'Education and livelihood counts from project reports. Where a figure covers several years, it is the reconciled total for that period.',
+    note: 'Cumulative across every capacity-building activity this programme has carried out with children, adolescents and the community-based organisations around them, since 2000.',
     items: [
-      { n: '2,096', l: 'children completed the six-month bridge-centre cycle', src: '2016' },
-      { n: '1,886', l: 'young people placed in work after training', src: '2012–2015' },
-      { n: '1,287', l: 'girls enrolled in alternative learning centres', src: '2011' },
+      { n: '14,628', l: 'Children and Adolescents Reached through Capacity-Building Activities across Learning Centres, Schools and Bridge Courses', src: '' },
+      { n: '1,886', l: 'Rural Youth Trained and Placed in Formal Work', src: '' },
+      { n: '263', l: 'Women\u2019s Self-Help Groups Capacity-Built, Running Their Own Savings and Enterprise', src: '' },
+      { n: '222', l: 'Village Level Child Protection and Welfare Committees Capacity-Built', src: '' },
+      { n: '86', l: 'School Management Committees Capacity-Built, Running Their Own School Development Plans', src: '' },
+      { n: '78', l: 'Aajeevika Adhikar Sangathans Capacity-Built as Community-Led Livelihood-Rights Collectives', src: '' },
+      { n: '43', l: 'Child Parliaments Capacity-Built, Electing Their Own Child Representatives', src: '' },
+      { n: '40', l: 'Parent Teacher Associations Formed and Meeting', src: '' },
+      { n: '40', l: 'Mahila Arogya Samitis Mobilised as the Community Health Backbone', src: '' },
+      { n: '268', l: 'Village Health and Sanitation Committee Members Capacity-Built', src: '' },
+      { n: '40', l: 'Community Health Groups Capacity-Built through Further Training', src: '' },
+      { n: '26', l: 'Joint Forest Management Committees Constituted with Forest-Fringe Communities', src: '' },
+      { n: '23', l: 'Adolescent and Youth Collectives Capacity-Built \u2014 Bal Adhikar Manch, Kishori Sangathans and Border-Village Youth Groups', src: '' },
+      { n: '16', l: 'Gram Sabha Structures Strengthened through Open Meetings and Village Development Plans', src: '' },
     ],
   },
   cj: {
     label: 'What this programme has done',
-    note: 'Farming counts from project MIS. Reach means a household inside the intervention area; practice means the method was taken up.',
+    note: 'Cumulative across every farming community this programme has worked with. Money the community has drawn from government schemes because of this work is shown once, under Rights & Entitlements. Community-based organisations this work has capacity-built are shown once, under School of Leadership.',
     items: [
-      { n: '1,940', l: 'farmers in the intervention area', src: '2022–2025' },
-      { n: '603', l: 'women farmers trained', src: '2022–2025' },
-      { n: '302', l: 'farmers who reached a named government scheme', src: '2023–2025' },
+      { n: '2,460', l: 'Farmers on the Journey from Low External Input Sustainable Agriculture to Natural Farming, and towards Organic Certification', src: '' },
+      { n: '725', l: 'Women Farmers Reached and Organised into Farming Collectives', src: '' },
+      { n: '74', l: 'Community Resource Persons Guiding the Shift from Chemical-Input Farming towards Organic Certification', src: '' },
     ],
   },
   re: {
     label: 'What this programme has done',
-    note: 'Entitlement and land outcomes are counted where the household received the service or the title, not where a form was filed.',
+    note: 'Cumulative across every household and public system this programme has worked with, and the single home for every convergence figure so nothing is counted twice. Community-based organisations this work has capacity-built are shown once, under School of Leadership. Quiet, personal shifts \u2014 a family knowing and acting on a right \u2014 are real but are not counted as a number here.',
     items: [
-      { n: '1,670', l: 'families reached a government scheme they were already entitled to', src: '2003–2007' },
-      { n: '141', l: 'families recovered land', src: '2003–2007' },
-      { n: '53', l: 'families titled at Gokulpur, the first UP forest village made a revenue village', src: '2010' },
+      { n: '\u20b98,88,39,817', l: 'In Government Schemes and Village Infrastructure the Farmer Collectives Drew into Their Own Villages since 2016, through Community\u2013Administration Convergence', src: '' },
+      { n: '5,225', l: 'Women Reached and Organised Around Their Own Entitlements', src: '' },
+      { n: '4,051', l: 'Families Securing Statutory Entitlements, Land Rights and Relief', src: '' },
+      { n: '903', l: 'Gram Panchayats Surveyed across All Fourteen Development Blocks of Bahraich for the Statutory Employment-Guarantee Perspective Plan', src: '' },
     ],
   },
 };

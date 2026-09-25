@@ -1,0 +1,15 @@
+# Internal working material — never meant to be publicly servable.
+# This is a static deploy (no build step), so anything not listed here
+# is uploaded and directly fetchable by URL. Keep this list current.
+
+EVIDENCE_VAULT/
+.obsidian/
+.claude/
+Home.md
+MASTER_ARCHIVE_MOC.md
+BACKEND_ARCHITECTURE_ROADMAP.md
+FINANCIAL_TRANSPARENCY_EVIDENCE_DOSSIER_2005_2026.md
+SEO_AUDIT_AND_ACTION_PLAN.md
+*.canvas
+*.base
+.DS_Store

@@ -1,0 +1,15 @@
+# robots.txt for https://dehat-2-0.vercel.app
+User-agent: *
+Allow: /
+Allow: /DEHAT.dc.html
+Allow: /MediaArchive.dc.html
+Allow: /district-map.html
+Allow: /assets/
+
+# Disallow private pipelines, drafts and internal attachments
+Disallow: /content-pipeline/
+Disallow: /attachments/
+Disallow: /.obsidian/
+
+# Sitemap location
+Sitemap: https://dehat-2-0.vercel.app/sitemap.xml

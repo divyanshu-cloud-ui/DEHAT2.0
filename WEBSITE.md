@@ -1,3 +1,6 @@
+---
+tags: [type/moc, site-map, reference]
+---
 # DEHAT — Website content map
 
 Generated from the live site source (`DEHAT.dc.html`) and its data files.

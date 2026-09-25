@@ -40,8 +40,8 @@ export const REGISTER = [
 
   { id: 'E011', era: 'e2', year: '1989\u201390', sort: 1989, lane: 'person', who: 'Jitendra Chaturvedi', place: 'Bichhia, Bahraich', prog: 'Human Protection',
     title: 'The Doctor moves to the Forest',
-    story: 'He and his wife moved to Bichhia, at the edge of the Katarniaghat forest, and lived in a thatched house. Most of his patients were forest-dwelling families who could not find fifty paise, let alone a rupee. He treated them anyway, and the practice never became a living.' },
-  { id: 'E012', era: 'e2', year: '1989\u201393', sort: 1989.1, lane: 'person', who: 'His wife', place: 'Bichhia, Bahraich',
+    story: 'He and his life partner moved to Bichhia, at the edge of the Katarniaghat forest, and lived in a thatched house. Most of his patients were forest-dwelling families who could not find fifty paise, let alone a rupee. He treated them anyway, and the practice never became a living.' },
+  { id: 'E012', era: 'e2', year: '1989\u201393', sort: 1989.1, lane: 'person', who: 'His life partner', place: 'Bichhia, Bahraich',
     title: 'The Partnership behind the Public Life',
     story: 'She carried the household, the money and the uncertainty of a thatched house in a forest region. It was not occasional support. It remained the private infrastructure of his public life for the next thirty-two years.' },
   { id: 'E013', era: 'e2', year: '1989\u201393', sort: 1989.2, lane: 'person', who: 'Jitendra Chaturvedi', place: 'Bahraich', prog: 'School of Leadership',

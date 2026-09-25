@@ -1,3 +1,6 @@
+---
+tags: [ops, deploy-log]
+---
 repo: divyanshu-cloud-ui/DEHAT-Launch2.0
 branch: main
 

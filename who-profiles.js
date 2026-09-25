@@ -2,7 +2,7 @@
 // words (kept in who-en.js), then a short portrait written from their own answers about
 // where they come from, what they do, and what stayed with them.
 export const PROFILES = {
-  t01: { name: 'Vishal Uniyal', role: 'Project Anchor, Human Protection', place: 'Balrampur', prog: 'Human Protection', joined: 2024,
+  t01: { name: 'Vishal Uniyal', role: 'Project Anchor, Human Protection', place: 'Lakhimpur Kheri', prog: 'Human Protection', joined: 2024,
     quote: 'Lasting change begins when people are heard and become partners in the solution.',
     story: 'Growing up in Lakhimpur Kheri, I wanted my work to matter to families too often left without support. In Balrampur, I now work alongside children, adolescents, women, schools, panchayats and public departments to prevent child labour and child marriage and to reconnect children with education and entitlements.',
     story2: 'One moment stays with me: a child withdrawn from labour, re-enrolled in school and gradually returning with visible confidence. I do not describe that as an individual rescue. For me, it showed what becomes possible when a family, a school, a community and public systems move together.' },
@@ -169,7 +169,5 @@ export const ADVISERS = {
   a6: { role: 'Immunisation', name: 'Rina Dey', line: 'Communication Director at the CORE Polio Group with the WHO, and co-founder of the Alliance for Immunization and Health.', linkedin: 'https://www.linkedin.com/in/rina-dey-1378b962/', more: { label: 'Interview', href: 'https://reliefweb.int/report/world/even-smallest-question-should-be-answered' } },
   a7: { role: 'Anti-Trafficking', name: 'Leeza', line: 'Thematic Manager for anti-trafficking and migration at Caritas India.', linkedin: 'https://www.linkedin.com/in/leezaleeza5679/' },
   a8: { role: 'Livelihoods', name: 'Sudha Nagavarapu', line: 'Twenty-one years with marginal farmers on livelihood, nutrition security and entitlements, as researcher and practitioner.', linkedin: 'https://www.linkedin.com/in/sudha-nagavarapu-184b44129/' },
-  a9: { role: 'Global Health', name: 'Dr Azim K. Sherwani', line: 'Associate Professor of Global Health at SIT University, Vermont. Born and raised in Bahraich, he spends a week a month here, three days of it with DEHAT.' },
   a10: { role: 'Public Health', name: 'Dr Abid Siraj', line: 'Sixteen years in public health and development, now Academic Coordinator for India Public Health, Gender and Community Action at SIT University.', linkedin: 'https://www.linkedin.com/in/abid-siraj-phd-266a59298/' },
-  a11: { role: 'Agriculture', name: 'Sindhu Bahaduri', line: 'More than twenty-five years as an agricultural scientist, with the Gates Foundation, Tata Trusts, the Government of Uttar Pradesh and Ernst and Young.' },
 };

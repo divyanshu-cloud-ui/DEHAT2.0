@@ -1,3 +1,8 @@
+---
+tags: [moc, agent-routing]
+title: Agent Routing
+updated: 2026-08-18
+---
 # DEHAT 2.0
 
 This folder is two things at once:
@@ -18,6 +23,9 @@ This folder is two things at once:
 | Looking for... | Go to |
 |---|---|
 | Site source / assets | repo root, `assets/` |
+| Backend Architecture & Roadmap | [BACKEND_ARCHITECTURE_ROADMAP.md](BACKEND_ARCHITECTURE_ROADMAP.md) |
+| SEO Audit & Technical Plan | [SEO_AUDIT_AND_ACTION_PLAN.md](SEO_AUDIT_AND_ACTION_PLAN.md) |
+| Master Archive (proposals, budgets, audits, M&E, contracts) | [MASTER_ARCHIVE_MOC.md](MASTER_ARCHIVE_MOC.md) |
 | Raw/working content (scans, uploads, drafts, screenshots) | [content-pipeline/CONTEXT.md](content-pipeline/CONTEXT.md) |
 | Obsidian note attachments | `attachments/` |
 | Compliance/legal docs (PAN, FCRA, bank account, registration) | `assets/docs/` — gitignored, never push these |
