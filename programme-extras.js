@@ -9,7 +9,7 @@ const S = 'assets/thumb/sdg-';
 
 export const PROG_SDG = {
   sol: {
-    label: 'Goals this programme reports against',
+    label: 'Goals This Programme Reports Against',
     goals: [
       { n: '4', name: 'Quality Education', img: S + 'quality-education.png',
         how: 'Bridge learning, re-enrolment and retention for children who have left school or never entered it.' },
@@ -22,7 +22,7 @@ export const PROG_SDG = {
     ],
   },
   re: {
-    label: 'Goals this programme reports against',
+    label: 'Goals This Programme Reports Against',
     goals: [
       { n: '1', name: 'No Poverty', img: S + 'no-poverty.png',
         how: 'Facilitation of pensions, certificates and social protection entitlements the household is already eligible for.' },
@@ -37,7 +37,7 @@ export const PROG_SDG = {
     ],
   },
   cj: {
-    label: 'Goals this programme reports against',
+    label: 'Goals This Programme Reports Against',
     goals: [
       { n: '2', name: 'Zero Hunger', img: S + 'no-hunger.png',
         how: 'Nutrition-sensitive agriculture, kitchen gardens, pulse cultivation and diversified local food production.' },
@@ -52,7 +52,7 @@ export const PROG_SDG = {
     ],
   },
   hp: {
-    label: 'Goals this programme reports against',
+    label: 'Goals This Programme Reports Against',
     goals: [
       { n: '16', name: 'Peace, Justice and Strong Institutions', img: S + 'peace.png',
         how: 'Case accompaniment, legal aid and follow-through with Child Welfare Committees, Juvenile Justice Boards, Anti-Human Trafficking Units, police, the courts, Legal Services Authorities (DLSA, SLSA, NALSA) and the child rights commissions (SCPCR, NCPCR).' },
@@ -118,7 +118,7 @@ export const PROG_CYCLE = {
 // Indicator-specific by design: these are not added together, and there is no single total.
 export const PROG_FIGURES = {
   hp: {
-    label: 'What this programme has done',
+    label: 'What This Programme Has Done',
     note: 'Cumulative across every case this programme has responded to. One child may appear in more than one figure, so these are not added together. Trafficking and child labour are treated as one intersecting caseload, since children are often moved into labour by the same trafficker.',
     items: [
       { n: '3,271', l: 'Children\u2019s Cases Logged and Carried through the Emergency Helpline Register', src: '' },
@@ -129,7 +129,7 @@ export const PROG_FIGURES = {
     ],
   },
   sol: {
-    label: 'What this programme has done',
+    label: 'What This Programme Has Done',
     note: 'Cumulative across every capacity-building activity this programme has carried out with children, adolescents and the community-based organisations around them, since 2000.',
     items: [
       { n: '14,628', l: 'Children and Adolescents Reached through Capacity-Building Activities across Learning Centres, Schools and Bridge Courses', src: '' },
@@ -149,7 +149,7 @@ export const PROG_FIGURES = {
     ],
   },
   cj: {
-    label: 'What this programme has done',
+    label: 'What This Programme Has Done',
     note: 'Cumulative across every farming community this programme has worked with. Money the community has drawn from government schemes because of this work is shown once, under Rights & Entitlements. Community-based organisations this work has capacity-built are shown once, under School of Leadership.',
     items: [
       { n: '2,460', l: 'Farmers on the Journey from Low External Input Sustainable Agriculture to Natural Farming, and towards Organic Certification', src: '' },
@@ -158,7 +158,7 @@ export const PROG_FIGURES = {
     ],
   },
   re: {
-    label: 'What this programme has done',
+    label: 'What This Programme Has Done',
     note: 'Cumulative across every household and public system this programme has worked with, and the single home for every convergence figure so nothing is counted twice. Community-based organisations this work has capacity-built are shown once, under School of Leadership. Quiet, personal shifts \u2014 a family knowing and acting on a right \u2014 are real but are not counted as a number here.',
     items: [
       { n: '\u20b98,88,39,817', l: 'In Government Schemes and Village Infrastructure the Farmer Collectives Drew into Their Own Villages since 2016, through Community\u2013Administration Convergence', src: '' },

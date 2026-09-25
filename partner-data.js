@@ -33,7 +33,7 @@ const EN = {
   ],
   "tabCtas": {
     "case": {
-      "t": "Still deciding whether this case holds up?",
+      "t": "Still Deciding Whether This Case Holds Up?",
       "s": "Ask us to defend any specific claim on this page — a number, a district, a mechanism. We point to the source, or say plainly where a claim is thinner than it sounds.",
       "a": "Ask About This Case",
       "subj": "A question about the case for investing",
@@ -41,7 +41,7 @@ const EN = {
       "bTab": "give"
     },
     "route": {
-      "t": "Still not sure this is for you?",
+      "t": "Still Not Sure This Is for You?",
       "s": "Ask us the question you would ask a colleague. Which route actually fits, what we would expect of you, and whether we have the capacity this year. We answer honestly, including when the answer is no.",
       "a": "Ask About the Routes",
       "subj": "A question about the routes",
@@ -49,7 +49,7 @@ const EN = {
       "bTab": "give"
     },
     "give": {
-      "t": "Interrogate this before you give.",
+      "t": "Interrogate This Before You Give.",
       "s": "Ask where the last comparable contribution went, which account it entered, what the receipt looks like, or why a figure reads the way it does. We send the signed document, not a summary.",
       "a": "Ask About the Money",
       "subj": "A question about investing in DEHAT",
@@ -57,7 +57,7 @@ const EN = {
       "bView": "finance"
     },
     "people": {
-      "t": "Ask about anyone on this list.",
+      "t": "Ask About Anyone on This List.",
       "s": "Every partner, funder and network named here can be checked. Ask what a partnership covered, what it cost, what it produced, or why it ended.",
       "a": "Ask About a Partner",
       "subj": "A question about who DEHAT works with",
@@ -65,7 +65,7 @@ const EN = {
       "bTab": "route"
     },
     "answer": {
-      "t": "Test who we answer to.",
+      "t": "Test Who We Answer To.",
       "s": "Boards, auditors, registrations and examinations are all named. Ask for the document behind any of them, or tell us where you think the accountability is thin.",
       "a": "Ask About Our Accountability",
       "subj": "A question about DEHAT’s accountability",
@@ -143,9 +143,9 @@ const EN = {
   "restLabel": "{n} more ways in open on the other eight routes.",
   "legacy": {
     "eyebrow": "Legacy Giving",
-    "title": "The gift that outlasts the giver.",
+    "title": "The Gift That Outlasts the Giver.",
     "body": "Almost nobody is ever asked, so almost nobody ever does it. A bequest written into your will is the one form of support that can be committed to a horizon longer than any grant cycle — which is the horizon this work actually takes. Ask us for the legal name, the registration number and the clause wording, and give them to your lawyer.",
-    "action": "Read the legacy route",
+    "action": "Read the Legacy Route",
     "note": "We do not draft wills and we do not give legal advice."
   },
   "routeBackLabel": "All Nine Routes",
@@ -166,7 +166,7 @@ const EN = {
   "pickPrompt": "Choose at least one way in above.",
   "selectLabel": "Add This",
   "selectedLabel": "Added",
-  "whoTitle": "Nine routes in.",
+  "whoTitle": "Nine Routes In.",
   "whoSub": "Reading is free. Nothing is sent until you decide to send it.",
   "who": [
     {
@@ -223,7 +223,7 @@ const EN = {
       "hint": "Membership, a concern, a request"
     }
   ],
-  "whatTitle": "What would you like to do?",
+  "whatTitle": "What Would You Like to Do?",
   "whatSub": "Choose as many as apply.",
   "intents": [
     {
@@ -264,7 +264,7 @@ const EN = {
     },
     {
       "k": "converge",
-      "label": "Work with Us on District Convergence or Referral",
+      "label": "Work With Us on District Convergence or Referral",
       "for": [
         "govt",
         "peer"
@@ -447,7 +447,7 @@ const EN = {
     },
     {
       "k": "occasion",
-      "label": "Mark a Wedding, a Birthday or Another Occasion with Us",
+      "label": "Mark a Wedding, a Birthday or Another Occasion With Us",
       "for": [
         "individual",
         "school",
@@ -518,7 +518,7 @@ const EN = {
     },
     {
       "k": "schoolprog",
-      "label": "Engage Our Students with Children Who Have Left School",
+      "label": "Engage Our Students With Children Who Have Left School",
       "for": [
         "school"
       ],
@@ -534,7 +534,7 @@ const EN = {
     },
     {
       "k": "fpo",
-      "label": "Bulk-buy from Sondhi Maati Farmer Producer Company",
+      "label": "Bulk-Buy From Sondhi Maati Farmer Producer Company",
       "for": [
         "csr",
         "individual",
@@ -552,7 +552,7 @@ const EN = {
       }
     }
   ],
-  "sopTitle": "In a line or two — what are you hoping will change?",
+  "sopTitle": "In a Line or Two — What Are You Hoping Will Change?",
   "sopSub": "This is the only part we read closely. Write it however you like; there is no right answer.",
   "sopPlaceholder": "For example: we want our Corporate Social Responsibility spend in Bahraich to go somewhere the evidence is public, and we would like to start with one block.",
   "sopPrompts": [
@@ -560,12 +560,12 @@ const EN = {
     "Is there a place, an age group or an issue you already care about?",
     "What would make this worth your while a year from now?"
   ],
-  "fName": "Your name",
+  "fName": "Your Name",
   "fOrg": "Organisation (if any)",
   "fEmail": "Email",
   "fPhone": "Phone (optional)",
-  "fPlace": "Where you are based (optional)",
-  "fBudget": "Indicative scale, if you have one (optional)",
+  "fPlace": "Where You Are Based (optional)",
+  "fBudget": "Indicative Scale, If You Have One (optional)",
   "budgets": [
     "Not decided yet",
     "Under ₹5 lakh",
@@ -574,7 +574,7 @@ const EN = {
     "Above ₹1 crore",
     "Not a funding conversation"
   ],
-  "reviewTitle": "This is the message that will open in your email app.",
+  "reviewTitle": "This Is the Message That Will Open in Your Email App.",
   "reviewSub": "Nothing is sent until you press send there. You can edit every word first.",
   "send": "Open in My Email App",
   "copy": "Copy the Message Instead",
@@ -590,14 +590,14 @@ const EN = {
   "regimes": [
     {
       "k": "inr",
-      "label": "I am Investing from India",
+      "label": "I Am Investing From India",
       "note": "80G deduction available",
       "detail": "Received into the domestic account. An 80G receipt is issued against your PAN under registration AAAAD3793QF20241, valid to assessment year 2027–28. DEHAT also reports the donation in its Form 10BD statement, which is what lets you claim the deduction.",
       "col": "#EAAE28"
     },
     {
       "k": "fcra",
-      "label": "I am Investing from Outside India",
+      "label": "I Am Investing From Outside India",
       "note": "Foreign Contribution (Regulation) Act 136260010",
       "detail": "Received only into the designated Foreign Contribution (Regulation) Act account at the State Bank of India, 11 Sansad Marg, New Delhi, as required by the Foreign Contribution (Regulation) Act. Foreign contributions do not carry an 80G deduction. A receipt and a utilisation statement are issued.",
       "col": "#0E5565"
@@ -639,7 +639,7 @@ const EN = {
   "purposes": [
     {
       "k": "unrestricted",
-      "label": "Wherever it is Needed Most",
+      "label": "Wherever It Is Needed Most",
       "note": "Unrestricted"
     },
     {
@@ -673,8 +673,8 @@ const EN = {
   "fPassport": "Passport Scan, Both Sides",
   "fPassportNote": "Required for foreign contributions. Attach the photograph page and the address page. Held only for the Foreign Contribution (Regulation) Act return and the audit, and destroyed when the retention period ends.",
   "fIdCountry": "Country",
-  "fIdRef": "Passport or national ID number",
-  "fAddress": "Address for the receipt",
+  "fIdRef": "Passport or National ID Number",
+  "fAddress": "Address for the Receipt",
   "f80g": "Issue me an 80G receipt",
   "fAnon": "Do not publish my name anywhere",
   "dpNote": "DEHAT collects only what the receipt and the statutory return require. Nothing here is stored in your browser, and nothing is shared with anyone outside the finance and audit process.",
@@ -1267,17 +1267,17 @@ const EN = {
   "mediaItems": [
     {
       "pub": "The Better India",
-      "title": "Profile of DEHAT and its founder in Bahraich",
+      "title": "Profile of DEHAT and Its Founder in Bahraich",
       "href": "https://thebetterindia.com/119495/dehat-jitendra-chaturvedi-bahraich/"
     },
     {
       "pub": "Down To Earth",
-      "title": "Children, once again",
+      "title": "Children, Once Again",
       "href": "https://www.downtoearth.org.in/environment/children-once-again-38301"
     },
     {
       "pub": "Deccan Herald",
-      "title": "Coverage of the anti-trafficking work",
+      "title": "Coverage of the Anti-Trafficking Work",
       "href": "https://www.deccanherald.com/features/he-risks-his-life-save-2223044"
     }
   ],

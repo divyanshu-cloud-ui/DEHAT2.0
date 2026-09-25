@@ -24,8 +24,8 @@
 
     <header style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;padding-bottom:26px;border-bottom:1px solid var(--border,rgba(31,23,16,.09))">
       <div style="max-width:640px">
-        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#EAAE28;font-weight:700">DEHAT across the globe</span>
-        <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.02;letter-spacing:-.02em;margin:12px 0 0">Media archive</h1>
+        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#EAAE28;font-weight:700">DEHAT Across the Globe</span>
+        <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.02;letter-spacing:-.02em;margin:12px 0 0">Media Archive</h1>
         <p style="font-size:16px;line-height:1.6;color:var(--dim,#5a4f43);margin:14px 0 0;text-wrap:pretty">{{ blurb }}</p>
       </div>
       <div style="display:flex;gap:28px;flex:none">
@@ -219,7 +219,7 @@ class Component extends DCLogic {
         likes: st.l || 0, views: st.v || 0,
         archive, primary: retired ? archive : i.u,
         linkLabel: retired ? 'Archived \u2192' : 'Read \u2192',
-        altLabel: retired ? 'Original (offline)' : 'Archived copy',
+        altLabel: retired ? 'Original (Offline)' : 'Archived Copy',
         altHref: retired ? i.u : archive,
         heart: st.liked ? '\u2665' : '\u2661',
         likeColor: st.liked ? '#D2305C' : 'var(--faint,#8a7c6c)',
@@ -233,7 +233,7 @@ class Component extends DCLogic {
     return {
       blurb: 'Every headline, research report and blog recorded in DEHAT\u2019s press compendium, filterable by reach, publisher, year, development goal — Millennium before 2016, Sustainable after — Corporate Social Responsibility Schedule VII head and child rights.',
       total: ALL.length, pubCount: pubs.length, span: ALL.length ? (Math.min.apply(null, ALL.map(i => i.y)) + '\u2013' + Math.max.apply(null, ALL.map(i => i.y))) : '',
-      scopes: [scopeBtn('All', 'All coverage'), scopeBtn('National', 'National'), scopeBtn('International', 'International')],
+      scopes: [scopeBtn('All', 'All Coverage'), scopeBtn('National', 'National'), scopeBtn('International', 'International')],
       q: S.q, onQ: (e) => this.setState({ q: e.target.value }),
       selects: [
         mkSel('year', 'Year', years, 'All Years'),
@@ -245,7 +245,7 @@ class Component extends DCLogic {
       ],
       items, empty: items.length === 0,
       resultLine: items.length + (items.length === 1 ? ' item' : ' items') + (items.length === ALL.length ? '' : ' of ' + ALL.length),
-      sortLabel: S.sort === 'new' ? 'Newest first' : 'Oldest first',
+      sortLabel: S.sort === 'new' ? 'Newest First' : 'Oldest first',
       toggleSort: () => this.setState(s => ({ sort: s.sort === 'new' ? 'old' : 'new' })),
       toggleFilters: () => this.setState(s => ({ fOpen: !s.fOpen })),
       filtersH: S.fOpen ? '1200px' : '0px',

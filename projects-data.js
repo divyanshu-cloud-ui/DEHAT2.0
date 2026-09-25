@@ -102,7 +102,7 @@ export const PROGRAMMES = [
     headline: 'Leadership begins when a child\u2019s voice changes what happens next.',
     lede: 'A pathway through which children, adolescents and young people learn to understand rights, speak with confidence, act collectively and work alongside the institutions around them.',
     purpose: 'The School of Leadership connects learning with agency. Enrolment and retention matter, and so do voice, constitutional values, gender equality, digital access, livelihood choices and participation in school and village decisions. Children move from being recipients of a service to participants in decisions, and adults move from speaking for children to creating the conditions in which children can speak and be heard.',
-    whyTitle: 'Why this work matters',
+    whyTitle: 'Why This Work Matters',
     why: 'In Bahraich, Shravasti and adjoining districts, exclusion from school is rarely a single-issue problem. Poverty, gendered work, distance, unsafe mobility, social discrimination, weak school\u2013community relationships and limited access to information reinforce one another.',
     whyPoints: [
       { img: 'assets/thumb/issue-school-dropout.png', label: 'Discontinuation of schooling' },
@@ -110,7 +110,7 @@ export const PROGRAMMES = [
       { img: 'assets/thumb/issue-menstrual-hygiene.png', label: 'Adolescent health and dignity' },
       { img: 'assets/thumb/sdg-gender-equality.png', label: 'Gendered restrictions on girls' },
     ],
-    howTitle: 'How change happens',
+    howTitle: 'How Change Happens',
     how: 'Leadership work begins with the child and then engages families, teachers, School Management Committees, Gram Panchayats and the education administration.',
     layers: [
       { k: 'Behaviour change', v: 'Bridge learning and educational support, life skills, rights education and work with parents and teachers.' },
@@ -127,7 +127,7 @@ export const PROGRAMMES = [
     headline: 'A right is real only when it can be accessed.',
     lede: 'Work at the point where a legal or policy promise meets everyday life, so that access does not depend on one family\u2019s ability to navigate complexity alone.',
     purpose: 'The programme helps people understand entitlements, organise collective demand, complete administrative processes and engage public institutions with dignity. It also supports frontline systems to respond more consistently, so that schemes designed in the national and state interest actually reach the household they were written for.',
-    whyTitle: 'Why this work matters',
+    whyTitle: 'Why This Work Matters',
     why: 'Remote settlements, forest and flood-affected geographies, gender and caste exclusion, weak documentation, limited transport and fragmented information can turn formal eligibility into practical denial. Capacity building without facilitation is insufficient, and facilitation without system strengthening remains fragile.',
     whyPoints: [
       { img: 'assets/thumb/issue-malnutrition.png', label: 'Nutrition insecurity' },
@@ -135,7 +135,7 @@ export const PROGRAMMES = [
       { img: 'assets/thumb/issue-maternal-mortality.png', label: 'Maternal and newborn risk' },
       { img: 'assets/story/sm-aadhaar-mother.png', label: 'Documentation and access gaps' },
     ],
-    howTitle: 'How change happens',
+    howTitle: 'How Change Happens',
     how: 'Community institutions, local volunteers and help points are linked with Gram Sabhas, Gram Panchayats, schools, Anganwadi centres, health services and the district administration.',
     layers: [
       { k: 'Behaviour change', v: 'Rights education, counselling and household-level care practices.' },
@@ -152,7 +152,7 @@ export const PROGRAMMES = [
     headline: 'A farmer who can absorb a bad monsoon this year is still farming five years from now.',
     lede: 'Agriculture is the entry point, not the destination. Soil, seed, water, food and income are linked with women\u2019s leadership, collective institutions and public investment.',
     purpose: 'The programme treats women farmers as central actors in the rural transition rather than as beneficiaries at its edge. Ecological practice, household nutrition, collective institutions and access to public schemes are pursued together, because a family that can feed itself and earn near home does not have to send a child away to work.',
-    whyTitle: 'Why this work matters',
+    whyTitle: 'Why This Work Matters',
     why: 'Small and marginal holdings, seasonal fallowing, input costs, flood exposure, uneven irrigation, declining agricultural biodiversity and limited market power create overlapping risks. These pressures reach into household food, nutrition, migration, schooling and safety. A purely technical farm intervention cannot resolve them.',
     whyPoints: [
       { img: 'assets/thumb/sdg-clean-water.png', label: 'Water availability and quality' },
@@ -160,7 +160,7 @@ export const PROGRAMMES = [
       { img: 'assets/thumb/issue-bread-earner.png', label: 'Distress migration for work' },
       { img: 'assets/thumb/sdg-no-poverty.png', label: 'Very small landholdings' },
     ],
-    howTitle: 'How change happens',
+    howTitle: 'How Change Happens',
     how: 'Women-led Aajeevika Adhikar Sangathans and farmer groups become spaces for learning, leadership and representation, working with the agriculture, horticulture and rural development departments.',
     layers: [
       { k: 'Behaviour change', v: 'Low external input sustainable agriculture, natural farming practice and household nutrition gardens.' },
@@ -174,10 +174,10 @@ export const PROGRAMMES = [
     key: 'hp', name: 'Human Protection', order: 4, since: 2011, era: 'From 2011',
     color: '#D2305C',
     tag: 'Prevention \u00b7 Protection \u00b7 Prosecution \u00b7 Partnership',
-    headline: 'Protection begins long before a crisis.',
+    headline: 'Protection Begins Long Before a Crisis.',
     lede: 'Prevention, protection, prosecution and partnership, held together so that a child is not lost between the village, the police station, the shelter and the court.',
     purpose: 'The programme addresses trafficking, child marriage, child labour, abuse, unsafe migration and sexual and reproductive health risks as connected protection concerns rather than isolated incidents. Protection means rescue, and then repatriation or reintegration, and then the social, psychological and economic rehabilitation that decides whether a child is genuinely safe a year later.',
-    whyTitle: 'Why this work matters',
+    whyTitle: 'Why This Work Matters',
     why: 'Vulnerability accumulates. School exclusion, economic distress, unsafe migration, discrimination and weak support networks become pathways to exploitation. The Indo-Nepal border adds mobility and jurisdictional complexity, while many risks remain hidden inside households and informal labour arrangements.',
     whyPoints: [
       { img: 'assets/thumb/issue-trafficking.png', label: 'Human Trafficking across an open border' },
@@ -185,7 +185,7 @@ export const PROGRAMMES = [
       { img: 'assets/thumb/issue-child-labour.png', label: 'Child and Adolescent Labour and Unsafe Work' },
       { img: 'assets/thumb/issue-domestic-violence.png', label: 'Domestic Violence and Sexual Abuse' },
     ],
-    howTitle: 'The four Ps in practice',
+    howTitle: 'The Four Ps in Practice',
     how: 'Community structures notice early; statutory bodies act together. DEHAT works as a partner to the administration, not as a substitute for it.',
     layers: [
       { k: 'Prevention', v: 'Child Parliaments, Village Level Child Protection and Welfare Committees, Block Level Child Protection and Welfare Committees, youth groups, parents, community volunteers and migration tracking.' },
@@ -422,7 +422,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 10, prog: 'sol', cross: ['re'], name: 'Vidya: Education within the Integrated Community Programme',
+    id: 10, prog: 'sol', cross: ['re'], name: 'Vidya: Education Within the Integrated Community Programme',
     yearLabel: '2014\u20132016', yearStart: 2014, yearEnd: 2016, status: 'Completed \u00b7 continuing through the Bal Adhikar Manch it built',
     state: 'Uttar Pradesh', districts: ['Amethi'], blocks: ['Gauriganj'],
     where: 'Six villages beside the Tikaria Cement Works, Amethi district: Annibaisal, Babupur, Tikaria, Amiya, Belkhour and Asaidapur \u2014 1,314 households and 8,581 people (340 Scheduled Caste, 467 Other Backward Class, 363 General and 144 Minority).',
@@ -452,7 +452,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 11, prog: 'sol', cross: [], name: 'DISHA: Youth Skills within the Integrated Community Programme',
+    id: 11, prog: 'sol', cross: [], name: 'DISHA: Youth Skills Within the Integrated Community Programme',
     yearLabel: '2014\u20132016', yearStart: 2014, yearEnd: 2016, status: 'Completed',
     state: 'Uttar Pradesh', districts: ['Amethi'], blocks: ['Gauriganj'],
     where: 'The Tikaria and Amethi programme area, Amethi district, Uttar Pradesh.',
@@ -695,7 +695,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 21, prog: 're', cross: [], name: 'Arogya: Community Health within the Integrated Programme',
+    id: 21, prog: 're', cross: [], name: 'Arogya: Community Health Within the Integrated Programme',
     yearLabel: '2014\u20132016', yearStart: 2014, yearEnd: 2016, status: 'Completed · continuing through the government’s Village Health and Nutrition Day schedule it strengthened',
     state: 'Uttar Pradesh', districts: ['Amethi'], blocks: ['Gauriganj'],
     where: 'The same six villages beside the Tikaria Cement Works, Amethi district. There is no government hospital in any of the six; two health sub-centres serve them, at Tikaria and Annibaisal, and the nearest Primary Health Centre is six kilometres away.',
@@ -752,7 +752,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 23, prog: 're', cross: [], name: 'Relief for Rural Families during the Coronavirus Pandemic',
+    id: 23, prog: 're', cross: [], name: 'Relief for Rural Families During the Coronavirus Pandemic',
     yearLabel: '2021', yearStart: 2021, yearEnd: 2021, status: 'Completed emergency response',
     state: 'Uttar Pradesh', districts: ['Bahraich', 'Organisation-wide'], blocks: [],
     where: 'Bahraich district, and organisation-wide.',
@@ -831,7 +831,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 26, prog: 'cj', cross: ['re'], name: 'Swavlamban: Women\u2019s Livelihoods within the Integrated Programme',
+    id: 26, prog: 'cj', cross: ['re'], name: 'Swavlamban: Women\u2019s Livelihoods Within the Integrated Programme',
     yearLabel: '2014\u20132016', yearStart: 2014, yearEnd: 2016, status: 'Completed',
     state: 'Uttar Pradesh', districts: ['Amethi'], blocks: ['Gauriganj'],
     where: 'The Tikaria and Amethi programme area, Amethi district.',
@@ -1016,7 +1016,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 32, prog: 'hp', cross: [], name: 'Swaraksha: Coordinated Action against Human Trafficking',
+    id: 32, prog: 'hp', cross: [], name: 'Swaraksha: Coordinated Action Against Human Trafficking',
     yearLabel: '2017\u2013present, continuous', yearStart: 2017, yearEnd: 2026, status: 'Active \u00b7 continuous since 2017',
     state: 'Uttar Pradesh', districts: ['Bahraich', 'Shravasti'], blocks: [],
     where: 'The Bahraich Indo-Nepal border corridor.',

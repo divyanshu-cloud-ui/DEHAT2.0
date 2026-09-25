@@ -1879,10 +1879,10 @@ FIN.WORKFORCE = {
 FIN.ACCOUNTABILITY = {
   intro: 'Accountability upward to investment partners is the easy half. These are the four constituencies DEHAT considers itself answerable to, and the mechanism that makes each one real.',
   parties: [
-    { title:'Children, first', color:'#D2305C',
+    { title:'Children, First', color:'#D2305C',
       body:'No child is identified on this website. Names, photographs, case details and traceable combinations of identity and village are withheld unless there is documented informed consent and a completed safeguarding review \u2014 and even then, only where publication serves the child.',
       how:'Safeguarding review before publication' },
-    { title:'The Communities we work with', color:'#556223',
+    { title:'The Communities We Work With', color:'#556223',
       body:'Child Parliaments, youth collectives, women farmers\u2019 Aajeevika Adhikar Sangathans and their clusters and federation review the work in their own villages and set what comes next. Village and Gram Sabha processes are where the programme is judged.',
       how:'Community Institutions and Gram Sabha Review' },
     { title:'Government and Regulators', color:'#0E5565',
@@ -1893,7 +1893,7 @@ FIN.ACCOUNTABILITY = {
       how:'Audited Utilisation and Grant Reporting' },
   ],
   raise: {
-    title:'Raise a concern',
+    title:'Raise a Concern',
     body:'Anyone \u2014 a community member, a colleague, a partner or a member of the public \u2014 can raise a concern about DEHAT\u2019s conduct, safeguarding practice or use of funds. Write, call or come to the registered office. Concerns about the conduct of staff or the use of funds are placed before the Governing Board.',
     email:'joinus@dehatindia.org', phone:'+91 94150 54079',
     address:'\u201cSewakunj\u201d, Maseehabad Road via Kati Chauraha, Huzoorpur Marg, Bahraich, Uttar Pradesh 271801',
@@ -1935,13 +1935,13 @@ FIN.OPEN_REGISTER = {
 FIN.REVIEW = {
   intro: 'Work that has been examined by someone other than DEHAT.',
   items: [
-    { title:'Statutory audit', by:'Madhuresh Agrahari & Associates, Chartered Accountants', when:'Every financial year', color:'#556223',
+    { title: 'Statutory Audit', by:'Madhuresh Agrahari & Associates, Chartered Accountants', when:'Every financial year', color:'#556223',
       body:'Signed audited statements from FY2005-06 to FY2024-25, with foreign contribution accounted and audited separately from domestic funds. Each report carries the auditor\u2019s Unique Document Identification Number.' },
-    { title:'Swaraksha external evaluation', by:'Shanto Baksi, independent evaluator', when:'November 2018', color:'#D2305C',
+    { title: 'Swaraksha External Evaluation', by:'Shanto Baksi, independent evaluator', when:'November 2018', color:'#D2305C',
       body:'An evaluation of the anti-trafficking programme covering May 2017 to October 2018. It named DEHAT as the Bahraich partner, found a credible early journey and recommended stronger documentation, collaboration and sustainability planning.' },
-    { title:'Baal Prahari project assessment', by:'Phoebe Rawell for iPartner India', when:'June 2017', color:'#0E5565',
+    { title: 'Baal Prahari Project Assessment', by:'Phoebe Rawell for iPartner India', when:'June 2017', color:'#0E5565',
       body:'An external assessment of the border anti-trafficking prevention work in Bahraich district.' },
-    { title:'Due-diligence validation', by:'Charities Aid Foundation India', when:'On file', color:'#4F0E73',
+    { title: 'Due-Diligence Validation', by:'Charities Aid Foundation India', when:'On file', color:'#4F0E73',
       body:'An independent check of governance, financial management and statutory compliance.' },
     { title:'Empanelment', by:'Tata Institute of Social Sciences', when:'On file', color:'#0E5565',
       body:'Empanelled as an implementing partner for public sector undertaking corporate social responsibility programmes.' },
