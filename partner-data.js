@@ -8307,7 +8307,7 @@ const ZH = {
       "k": "印度卢比",
       "label": "我从印度投资",
       "note": "80G抵扣可用",
-      "detail": "已收到国内账户。根据您的 PAN 注册号 AAAAD3793QF20241 签发 80G 收据，有效期至 2027-28 评估年。 DEHAT 还在其 10BD 表格声明中报告了这笔捐款，您可以通过该声明申请扣除。",
+      "detail": "存入境内账户。依据批准 AAAAD3793Q25LK02（有效期为评税年度 2027–28 至 2031–32），按您的 PAN 开具 80G 收据。DEHAT 还会在其 Form 10BD 报表中申报这笔投资，您正是凭此申请扣除。",
       "col": "#EAAE28"
     },
     {
@@ -8836,6 +8836,9 @@ const ZH = {
         },
         {
           "k": "Other Sub-District Convergence Mechanisms"
+        },
+        {
+          "k": "警察局的儿童福利警官（CWPO）"
         }
       ]
     },
@@ -8907,6 +8910,12 @@ const ZH = {
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "少年司法委员会（JJB）"
+        },
+        {
+          "k": "一站式中心（Sakhi）"
         }
       ]
     },
@@ -8945,6 +8954,27 @@ const ZH = {
         {
           "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "邦法律服务管理局（SLSA）"
+        },
+        {
+          "k": "邦儿童权利保护委员会（SCPCR）"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "国家层面",
+      "items": [
+        {
+          "k": "国家法律服务管理局（NALSA）"
+        },
+        {
+          "k": "国家儿童权利保护委员会（NCPCR）"
+        },
+        {
+          "k": "妇女与儿童发展部（Vatsalya 使命）"
         }
       ]
     }
@@ -24815,7 +24845,7 @@ const SD = {
       "k": "inr",
       "label": "مان هندستان مان سيڙپڪاري ڪري رهيو آهيان",
       "note": "80G ڪٽائي دستياب آهي",
-      "detail": "گهريلو اڪائونٽ ۾ وصول ڪيو ويو. AAAAD3793QF20241 رجسٽريشن تحت توهان جي PAN جي خلاف هڪ 80G رسيد جاري ڪئي وئي آهي، جائزي واري سال 2027-28 تائين. DEHAT پڻ پنهنجي فارم 10BD بيان ۾ عطيا جي رپورٽ ڪري ٿو، جيڪو توهان کي ڪٽيونٽي جي دعوي ڪرڻ جي اجازت ڏئي ٿو.",
+      "detail": "ملڪي کاتي ۾ وصول ڪيو وڃي ٿو. منظوري AAAAD3793Q25LK02 تحت، جيڪا اسيسمينٽ سالن 2027–28 کان 2031–32 تائين صحيح آهي، توهان جي PAN تي 80G رسيد جاري ڪئي وڃي ٿي. DEHAT سيڙپڪاري کي پنهنجي Form 10BD بيان ۾ پڻ درج ڪري ٿو، ۽ اهو ئي توهان کي ڪٽوتي جي دعويٰ ڪرڻ جو حق ڏئي ٿو.",
       "col": "#EAAE28"
     },
     {
@@ -25344,6 +25374,9 @@ const SD = {
         },
         {
           "k": "Other Sub-District Convergence Mechanisms"
+        },
+        {
+          "k": "پوليس اسٽيشنن تي ٻارن جي ڀلائي پوليس آفيسر (CWPO)"
         }
       ]
     },
@@ -25415,6 +25448,12 @@ const SD = {
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "جووينائل جسٽس بورڊ (JJB)"
+        },
+        {
+          "k": "ون اسٽاپ سينٽر (سکي)"
         }
       ]
     },
@@ -25453,6 +25492,27 @@ const SD = {
         {
           "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "رياستي قانوني خدمتن جي اٿارٽي (SLSA)"
+        },
+        {
+          "k": "ٻارن جي حقن جي تحفظ جو رياستي ڪميشن (SCPCR)"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "قومي سطح",
+      "items": [
+        {
+          "k": "قومي قانوني خدمتن جي اٿارٽي (NALSA)"
+        },
+        {
+          "k": "ٻارن جي حقن جي تحفظ جو قومي ڪميشن (NCPCR)"
+        },
+        {
+          "k": "عورتن ۽ ٻارن جي ترقيءَ جي وزارت (مشن واتسليا)"
         }
       ]
     }
@@ -34863,7 +34923,7 @@ const KS = {
       "k": "inr",
       "label": "I am Investing from India",
       "note": "80G deduction available",
-      "detail": "Received into the domestic account. An 80G receipt is issued against your PAN under registration AAAAD3793QF20241, valid to assessment year 2027–28. DEHAT also reports the donation in its Form 10BD statement, which is what lets you claim the deduction.",
+      "detail": "مُلکی کھاتس منٛز حٲصِل کرنہٕ یِوان۔ منظوری AAAAD3793Q25LK02 تحت، یۄسہٕ اسیسمنٹ ؤری 2027–28 پؠٹھٕ 2031–32 تام کارآمد چھےٚ، چھےٚ تُہٕنٛدِس PAN پؠٹھ 80G رسید جٲری کرنہٕ یِوان۔ DEHAT چھُ یہِ سرمایہ کٲری پننِس Form 10BD بیانس منٛز تہِ درج کران، تہٕ یہے چھُ توٚہۍ کٹوتی ہُند دعویٰ کرنُک حق دِوان۔",
       "col": "#EAAE28"
     },
     {
@@ -35392,6 +35452,9 @@ const KS = {
         },
         {
           "k": "Other Sub-District Convergence Mechanisms"
+        },
+        {
+          "k": "پولیس اسٹیشنن پؠٹھ چائلڈ ویلفیئر پولیس آفیسر (CWPO)"
         }
       ]
     },
@@ -35463,6 +35526,12 @@ const KS = {
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "جووینائل جسٹس بورڈ (JJB)"
+        },
+        {
+          "k": "ون اسٹاپ سینٹر (سکھی)"
         }
       ]
     },
@@ -35501,6 +35570,27 @@ const KS = {
         {
           "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "ریاستی لیگل سروسز اتھارٹی (SLSA)"
+        },
+        {
+          "k": "ریاستی کمیشن برائے تحفظِ حقوقِ اطفال (SCPCR)"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "قومی سطح",
+      "items": [
+        {
+          "k": "قومی لیگل سروسز اتھارٹی (NALSA)"
+        },
+        {
+          "k": "قومی کمیشن برائے تحفظِ حقوقِ اطفال (NCPCR)"
+        },
+        {
+          "k": "زنانن تہٕ شُرِین ہٕنٛز ترقی ہٕنٛز وزارت (مشن واتسلیہ)"
         }
       ]
     }
