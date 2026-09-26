@@ -28823,7 +28823,7 @@ const PA = {
       "k": "inr",
       "label": "ਮੈਂ ਭਾਰਤ ਤੋਂ ਨਿਵੇਸ਼ ਕਰ ਰਿਹਾ ਹਾਂ",
       "note": "80G ਕਟੌਤੀ ਉਪਲਬਧ ਹੈ",
-      "detail": "ਘਰੇਲੂ ਖਾਤੇ ਵਿੱਚ ਪ੍ਰਾਪਤ ਕੀਤਾ. ਰਜਿਸਟ੍ਰੇਸ਼ਨ AAAAD3793QF20241 ਦੇ ਤਹਿਤ ਤੁਹਾਡੇ ਪੈਨ ਦੇ ਵਿਰੁੱਧ ਇੱਕ 80G ਰਸੀਦ ਜਾਰੀ ਕੀਤੀ ਜਾਂਦੀ ਹੈ, ਜੋ ਮੁਲਾਂਕਣ ਸਾਲ 2027-28 ਲਈ ਵੈਧ ਹੈ। DEHAT ਆਪਣੇ ਫਾਰਮ 10BD ਸਟੇਟਮੈਂਟ ਵਿੱਚ ਦਾਨ ਦੀ ਰਿਪੋਰਟ ਵੀ ਕਰਦਾ ਹੈ, ਜੋ ਤੁਹਾਨੂੰ ਕਟੌਤੀ ਦਾ ਦਾਅਵਾ ਕਰਨ ਦਿੰਦਾ ਹੈ।",
+      "detail": "ਘਰੇਲੂ ਖਾਤੇ ਵਿੱਚ ਪ੍ਰਾਪਤ। ਮਨਜ਼ੂਰੀ AAAAD3793Q25LK02 ਅਧੀਨ ਤੁਹਾਡੇ PAN 'ਤੇ 80G ਰਸੀਦ ਜਾਰੀ ਹੁੰਦੀ ਹੈ, ਜੋ ਮੁਲਾਂਕਣ ਸਾਲ 2027–28 ਤੋਂ 2031–32 ਤੱਕ ਵੈਧ ਹੈ। DEHAT ਇਸ ਨਿਵੇਸ਼ ਨੂੰ ਆਪਣੇ Form 10BD ਵੇਰਵੇ ਵਿੱਚ ਵੀ ਦਰਜ ਕਰਦਾ ਹੈ, ਅਤੇ ਇਸੇ ਨਾਲ ਤੁਸੀਂ ਕਟੌਤੀ ਦਾ ਦਾਅਵਾ ਕਰ ਸਕਦੇ ਹੋ।",
       "col": "#EAAE28"
     },
     {
@@ -29352,6 +29352,9 @@ const PA = {
         },
         {
           "k": "Other Sub-District Convergence Mechanisms"
+        },
+        {
+          "k": "ਥਾਣਿਆਂ ਵਿੱਚ ਬਾਲ ਭਲਾਈ ਪੁਲਿਸ ਅਧਿਕਾਰੀ (CWPO)"
         }
       ]
     },
@@ -29423,6 +29426,12 @@ const PA = {
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "ਜੁਵੇਨਾਈਲ ਜਸਟਿਸ ਬੋਰਡ (JJB)"
+        },
+        {
+          "k": "ਵਨ ਸਟਾਪ ਸੈਂਟਰ (ਸਖੀ)"
         }
       ]
     },
@@ -29461,6 +29470,27 @@ const PA = {
         {
           "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "ਰਾਜ ਕਾਨੂੰਨੀ ਸੇਵਾਵਾਂ ਅਥਾਰਟੀ (SLSA)"
+        },
+        {
+          "k": "ਰਾਜ ਬਾਲ ਅਧਿਕਾਰ ਸੁਰੱਖਿਆ ਕਮਿਸ਼ਨ (SCPCR)"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "ਰਾਸ਼ਟਰੀ ਪੱਧਰ",
+      "items": [
+        {
+          "k": "ਰਾਸ਼ਟਰੀ ਕਾਨੂੰਨੀ ਸੇਵਾਵਾਂ ਅਥਾਰਟੀ (NALSA)"
+        },
+        {
+          "k": "ਰਾਸ਼ਟਰੀ ਬਾਲ ਅਧਿਕਾਰ ਸੁਰੱਖਿਆ ਕਮਿਸ਼ਨ (NCPCR)"
+        },
+        {
+          "k": "ਮਹਿਲਾ ਅਤੇ ਬਾਲ ਵਿਕਾਸ ਮੰਤਰਾਲਾ (ਮਿਸ਼ਨ ਵਾਤਸਲਿਆ)"
         }
       ]
     }
@@ -31365,7 +31395,7 @@ const BRX = {
       "k": "inr",
       "label": "I am Investing from India",
       "note": "80G deduction available",
-      "detail": "Received into the domestic account. An 80G receipt is issued against your PAN under registration AAAAD3793QF20241, valid to assessment year 2027–28. DEHAT also reports the donation in its Form 10BD statement, which is what lets you claim the deduction.",
+      "detail": "हादरनि सिङि खाताआव मोननाय। गनायथि AAAAD3793Q25LK02 नि सिङाव नोंथांनि PAN आव 80G रसीद होनाय जायो, जायआ असेसमेन्ट बोसोर 2027–28 निफ्राय 2031–32 सिम मानि। DEHAT आ बे निवेशखौ बेनि Form 10BD फोरमायथिआवबो लिरो, आरो बेनि जाहोनानो नोंथाङा कटौतीनि दाबि खालामनो हायो।",
       "col": "#EAAE28"
     },
     {
@@ -31894,6 +31924,9 @@ const BRX = {
         },
         {
           "k": "Other Sub-District Convergence Mechanisms"
+        },
+        {
+          "k": "थानाफोराव चाइल्ड वेलफेयार पुलिस अफिसारफोर (CWPO)"
         }
       ]
     },
@@ -31965,6 +31998,12 @@ const BRX = {
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "जुभेनाइल जाष्टिस बर्ड (JJB)"
+        },
+        {
+          "k": "वान स्टप सेन्टार (सखी)"
         }
       ]
     },
@@ -32003,6 +32042,27 @@ const BRX = {
         {
           "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "राइज्यो लिगेल सार्भिसेस अथरिटि (SLSA)"
+        },
+        {
+          "k": "राइज्यो गथ' मोनथाय रैखा कमिसन (SCPCR)"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "हादरारि थाखो",
+      "items": [
+        {
+          "k": "हादरारि लिगेल सार्भिसेस अथरिटि (NALSA)"
+        },
+        {
+          "k": "हादरारि गथ' मोनथाय रैखा कमिसन (NCPCR)"
+        },
+        {
+          "k": "हिनजाव आरो गथ' जौगानाय मन्त्रालय (मिसन वात्सल्य)"
         }
       ]
     }
@@ -32621,7 +32681,7 @@ const SAT = {
       "k": "ᱤᱱᱟᱨ",
       "label": "ᱤᱧ ᱵᱷᱟᱨᱚᱛ ᱠᱷᱚᱱ ᱠᱟᱹᱣᱰᱤ ᱞᱟᱜᱟᱣ ᱮᱫᱟᱹᱧ",
       "note": "᱘᱐ᱡᱤ ᱠᱚᱢᱟᱣ ᱢᱮᱱᱟᱜᱼᱟ",
-      "detail": "ᱚᱲᱟᱜ ᱨᱮᱭᱟᱜ ᱮᱠᱟᱣᱩᱱᱴ ᱨᱮ ᱧᱟᱢ ᱟᱠᱟᱱᱟ ᱾ ᱨᱮᱡᱤᱥᱴᱨᱮᱥᱚᱱ AAAAD3793QF20241 ᱞᱟᱛᱟᱨ ᱨᱮ ᱟᱢᱟᱜ PAN ᱵᱤᱨᱩᱫᱷ ᱨᱮ ᱘᱐G ᱨᱟᱹᱥᱤᱫ ᱮᱢ ᱟᱠᱟᱱᱟ, ᱚᱱᱟ ᱫᱚ ᱒᱐᱒᱗-᱒᱘ ᱥᱮᱨᱢᱟ ᱦᱟᱹᱵᱤᱡ ᱢᱟᱱᱭᱟ ᱾ ᱰᱮᱦᱟᱴ ᱦᱚᱸ ᱟᱡᱟᱜ ᱯᱷᱚᱨᱢ ᱑᱐ᱵᱤᱰᱤ ᱥᱴᱮᱴᱢᱮᱱᱴ ᱨᱮ ᱫᱟᱱ ᱨᱮᱭᱟᱜ ᱨᱤᱯᱚᱨᱴ ᱮᱢᱟᱭᱟ, ᱚᱱᱟ ᱛᱮ ᱟᱢ ᱠᱚᱢᱟᱣ ᱫᱟᱹᱵᱤ ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱢ᱾",
+      "detail": "ᱫᱤᱥᱚᱢ ᱵᱷᱤᱛᱨᱤ ᱮᱠᱟᱣᱩᱱᱴ ᱨᱮ ᱧᱟᱢᱚᱜᱼᱟ ᱾ ᱢᱟᱱᱚᱛᱟ AAAAD3793Q25LK02 ᱞᱟᱛᱟᱨ ᱟᱢᱟᱜ PAN ᱨᱮ 80G ᱨᱟᱹᱥᱤᱫ ᱮᱢᱚᱜᱼᱟ, ᱚᱱᱟ ᱫᱚ ᱮᱥᱮᱥᱢᱮᱱᱴ ᱥᱮᱨᱢᱟ 2027–28 ᱠᱷᱚᱱ 2031–32 ᱦᱟᱹᱵᱤᱡ ᱢᱟᱱᱭᱟ ᱾ DEHAT ᱫᱚ ᱱᱚᱶᱟ ᱞᱟᱜᱽᱱᱟ ᱟᱡᱟᱜ Form 10BD ᱵᱤᱵᱨᱚᱬ ᱨᱮ ᱦᱚᱸ ᱚᱞᱟ, ᱟᱨ ᱚᱱᱟ ᱛᱮ ᱜᱮ ᱟᱢ ᱴᱮᱠᱥ ᱠᱚᱢᱟᱣ ᱫᱟᱵᱤ ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱢ ᱾",
       "col": "#ᱤᱮᱭᱤ᱒᱘"
     },
     {
@@ -33150,6 +33210,9 @@ const SAT = {
         },
         {
           "k": "Other Sub-District Convergence Mechanisms"
+        },
+        {
+          "k": "ᱛᱷᱟᱱᱟ ᱨᱮᱱ ᱪᱟᱤᱞᱰ ᱣᱮᱞᱯᱷᱮᱭᱟᱨ ᱯᱩᱞᱤᱥ ᱚᱯᱷᱤᱥᱟᱨ ᱠᱚ (CWPO)"
         }
       ]
     },
@@ -33221,6 +33284,12 @@ const SAT = {
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "ᱡᱩᱵᱷᱮᱱᱟᱭᱤᱞ ᱡᱟᱥᱴᱤᱥ ᱵᱚᱨᱰ (JJB)"
+        },
+        {
+          "k": "ᱣᱟᱱ ᱥᱴᱚᱯ ᱥᱮᱱᱴᱟᱨ (ᱥᱟᱠᱷᱤ)"
         }
       ]
     },
@@ -33259,6 +33328,27 @@ const SAT = {
         {
           "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "ᱥᱴᱮᱴ ᱞᱤᱜᱟᱞ ᱥᱟᱨᱵᱷᱤᱥᱮᱥ ᱚᱛᱷᱚᱨᱤᱴᱤ (SLSA)"
+        },
+        {
+          "k": "ᱥᱴᱮᱴ ᱠᱚᱢᱤᱥᱚᱱ ᱯᱷᱚᱨ ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱚᱯᱷ ᱪᱟᱤᱞᱰ ᱨᱟᱭᱤᱴᱥ (SCPCR)"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "ᱫᱤᱥᱚᱢ ᱫᱷᱟᱯ",
+      "items": [
+        {
+          "k": "ᱱᱮᱥᱱᱟᱞ ᱞᱤᱜᱟᱞ ᱥᱟᱨᱵᱷᱤᱥᱮᱥ ᱚᱛᱷᱚᱨᱤᱴᱤ (NALSA)"
+        },
+        {
+          "k": "ᱱᱮᱥᱱᱟᱞ ᱠᱚᱢᱤᱥᱚᱱ ᱯᱷᱚᱨ ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱚᱯᱷ ᱪᱟᱤᱞᱰ ᱨᱟᱭᱤᱴᱥ (NCPCR)"
+        },
+        {
+          "k": "ᱛᱤᱨᱞᱟᱹ ᱟᱨ ᱜᱤᱫᱽᱨᱟᱹ ᱵᱤᱠᱟᱥ ᱢᱚᱱᱛᱨᱟᱞᱚᱭ (ᱢᱤᱥᱚᱱ ᱵᱟᱛᱥᱟᱞᱭᱟ)"
         }
       ]
     }
