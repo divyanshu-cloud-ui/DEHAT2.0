@@ -728,7 +728,7 @@ export const JOURNEY = {
       body: 'Most rights work stops at access: an application made, a benefit received, a case closed. DEHAT’s experience suggests that realisation usually breaks after that point — when a benefit lapses, when the same barrier reappears in the next household, or when no institution owns the decision that produced the exclusion. Staying in partnership with the responsible institution is therefore not a layer added after access. It is part of what makes rights sustainable.',
       chainLabel: 'Where Most Rights Work Stops',
       chainStop: 1,
-      art: 'assets/story/entitlement-girl-handover.png',
+      art: 'assets/story/re-community-claim.png',
       arrows: [
         { from: 'Access', to: 'One household receives what is due' },
         { from: 'Aggregation', to: 'Repeated cases become one pattern' },
