@@ -2227,6 +2227,10 @@
         <p style="font-size:18px;line-height:1.6;color:var(--dim);max-width:680px;margin:0">{{ T.impact_sub }}</p>
       </div>
       <section data-spine="The Figures" style="padding:0 clamp(20px,5vw,64px) clamp(40px,5vw,60px);max-width:1200px;margin:0 auto">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:22px">
+          <span style="font-size:12.5px;letter-spacing:.02em;color:var(--faint)">{{ gridHint }}</span>
+          <button onClick="{{ gridRevealAll }}" class="ml-press" aria-pressed="{{ gridAllShown }}" style="background:none;border:1px solid var(--border);color:var(--text);border-radius:999px;padding:7px 15px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.04em" style-hover="border-color:var(--text)">{{ gridRevealLabel }}</button>
+        </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
           <sc-for list="{{ impactGrid }}" as="s" hint-placeholder-count="12">
             <sc-if value="{{ s.groupStart }}" hint-placeholder-val="{{ false }}">
@@ -6093,8 +6097,8 @@ class Component extends DCLogic {
       stat_reveal:'Tap to reveal',
       stat_hide:'Hide',
       stat_reveal_all:'Reveal All Four',
-      stat_hide_all:'Hide all',
-      grid_reveal_all:'Reveal all twelve',
+      stat_hide_all:'Hide All',
+      grid_reveal_all:'Reveal All Twelve',
       grid_hint:'Twelve figures, withheld. Tap one to see it.',
       bl_drag:'Drag the survey forward',
       lens_eyebrow:'Every Figure, Four Ways',
@@ -33507,7 +33511,8 @@ class Component extends DCLogic {
     const allStatsOpen = ['h0', 'h1', 'h2', 'h3'].every(k => !!this.state.statOpen[k]);
     const fork = this.state.caseFork;
     const gridArt = ['sm-ink-crowd', 'sm-ink-pair-ledger', 'sm-ink-family', 'sm-ink-four-walking', 'sm-ink-pair'];
-    const gridAllOpen = {}; for (let i = 0; i < 14; i++) gridAllOpen['g' + i] = true;
+    // Impact figures start withheld, like the home four; one button reveals or hides all twelve.
+    const gridAllOpen = {}; for (let i = 0; i < 12; i++) gridAllOpen['g' + i] = true;
     const allGridOpen = Object.keys(gridAllOpen).every(k => !!this.state.gridOpen[k]);
     const blCol = (i) => {
       const on = i === this.state.blStop;
@@ -34778,7 +34783,7 @@ class Component extends DCLogic {
         { to: 20, dec: 0, comma: false, suffix: '', prefix: '', color: '#4F0E73', label: T.stat_lbl_years },
       ].map((s, i) => {
         const id = 'g' + i;
-        const on = this.state.gridOpen[id] !== false;
+        const on = this.state.gridOpen[id] === true;
         const n = s.comma ? Number(s.to).toLocaleString('en-US') : s.to.toFixed(s.dec);
         return Object.assign({}, s, {
           id: id, edge: s.color, color: this._tok(s.color),
@@ -34791,10 +34796,11 @@ class Component extends DCLogic {
             : (on ? 'none' : 'grayscale(1) opacity(.25)'),
           cue: on ? T.stat_hide : T.stat_reveal,
           cueColor: on ? 'var(--faint)' : this._tok(s.color),
-          toggle: () => this.setState(st => ({ gridOpen: Object.assign({}, st.gridOpen, { [id]: st.gridOpen[id] === false }) })),
+          toggle: () => this.setState(st => ({ gridOpen: Object.assign({}, st.gridOpen, { [id]: !st.gridOpen[id] }) })),
         });
       }),
       gridRevealLabel: allGridOpen ? T.stat_hide_all : T.grid_reveal_all,
+      gridAllShown: allGridOpen,
       gridHint: T.grid_hint,
       gridRevealAll: () => this.setState({ gridOpen: allGridOpen ? {} : gridAllOpen }),
       blStop: this.state.blStop,
