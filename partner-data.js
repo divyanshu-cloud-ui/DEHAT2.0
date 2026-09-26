@@ -3571,7 +3571,7 @@ const ES = {
       "label": "Nivel de Gram Panchayat",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "Niños, adolescentes, mujeres, padres, agricultores, familias y miembros de la comunidad"
         },
         {
           "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
@@ -3595,7 +3595,7 @@ const ES = {
           "k": "Frontline Health Worker Cadres (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "Hogares agrícolas y colectivos de mujeres agricultoras"
         },
         {
           "k": "Farmer Groups and Producer Collectives"
@@ -3694,7 +3694,7 @@ const ES = {
           "k": "Other Sub-District Convergence Mechanisms"
         },
         {
-          "k": "Agentes de Policía para el Bienestar Infantil (CWPO) en las comisarías"
+          "k": "Child Welfare Police Officers (CWPO) at Police Stations"
         }
       ]
     },
@@ -3768,10 +3768,10 @@ const ES = {
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "Junta de Justicia Juvenil (JJB)"
+          "k": "Juvenile Justice Board (JJB)"
         },
         {
-          "k": "Centro de Atención Integral (Sakhi)"
+          "k": "One Stop Centre (Sakhi)"
         }
       ]
     },
@@ -3812,10 +3812,10 @@ const ES = {
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Autoridad Estatal de Servicios Jurídicos (SLSA)"
+          "k": "State Legal Services Authority (SLSA)"
         },
         {
-          "k": "Comisión Estatal para la Protección de los Derechos del Niño (SCPCR)"
+          "k": "State Commission for Protection of Child Rights (SCPCR)"
         }
       ]
     },
@@ -3824,13 +3824,13 @@ const ES = {
       "label": "Nivel nacional",
       "items": [
         {
-          "k": "Autoridad Nacional de Servicios Jurídicos (NALSA)"
+          "k": "National Legal Services Authority (NALSA)"
         },
         {
-          "k": "Comisión Nacional para la Protección de los Derechos del Niño (NCPCR)"
+          "k": "National Commission for Protection of Child Rights (NCPCR)"
         },
         {
-          "k": "Ministerio de la Mujer y Desarrollo Infantil (Misión Vatsalya)"
+          "k": "Ministry of Women and Child Development (Mission Vatsalya)"
         }
       ]
     }
@@ -4857,7 +4857,7 @@ const FR = {
       "label": "Niveau du Gram Panchayat",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "Enfants, adolescents, femmes, parents, agriculteurs, familles et membres de la communauté"
         },
         {
           "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
@@ -4881,7 +4881,7 @@ const FR = {
           "k": "Frontline Health Worker Cadres (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "Ménages agricoles et collectifs d'agricultrices"
         },
         {
           "k": "Farmer Groups and Producer Collectives"
@@ -4980,7 +4980,7 @@ const FR = {
           "k": "Other Sub-District Convergence Mechanisms"
         },
         {
-          "k": "Officiers de police chargés de la protection de l’enfance (CWPO) dans les commissariats"
+          "k": "Child Welfare Police Officers (CWPO) at Police Stations"
         }
       ]
     },
@@ -5054,10 +5054,10 @@ const FR = {
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "Tribunal pour mineurs (JJB)"
+          "k": "Juvenile Justice Board (JJB)"
         },
         {
-          "k": "Centre d’accueil unique (Sakhi)"
+          "k": "One Stop Centre (Sakhi)"
         }
       ]
     },
@@ -5098,10 +5098,10 @@ const FR = {
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Autorité des services juridiques de l’État (SLSA)"
+          "k": "State Legal Services Authority (SLSA)"
         },
         {
-          "k": "Commission de l’État pour la protection des droits de l’enfant (SCPCR)"
+          "k": "State Commission for Protection of Child Rights (SCPCR)"
         }
       ]
     },
@@ -5110,13 +5110,13 @@ const FR = {
       "label": "Niveau national",
       "items": [
         {
-          "k": "Autorité nationale des services juridiques (NALSA)"
+          "k": "National Legal Services Authority (NALSA)"
         },
         {
-          "k": "Commission nationale pour la protection des droits de l’enfant (NCPCR)"
+          "k": "National Commission for Protection of Child Rights (NCPCR)"
         },
         {
-          "k": "Ministère de la Femme et du Développement de l’enfant (Mission Vatsalya)"
+          "k": "Ministry of Women and Child Development (Mission Vatsalya)"
         }
       ]
     }
@@ -6143,46 +6143,46 @@ const RU = {
       "label": "Уровень Грам Панчаят",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "Дети, подростки, женщины, родители, фермеры, семьи и члены общины"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "Вилледж Хелс, Санитейшн энд Ньютришн Комитиз (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "Грам Панчаяты энд Панчаяти Радж Инститьюшнз"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "Анганвади Сентерз (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "Праймари энд Аппер Праймари Скулз"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "Скул Менеджмент Комитиз (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "Вилледж-Левел Чайлд Протекшн энд Уэлфэр Комитиз (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "Фронтлайн Хелс Воркер Кадрз (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "Фермерские домохозяйства и объединения женщин-фермеров"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "Фармер Групс энд Продьюсер Коллективз"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "Фармер Продьюсер Органайзейшнз (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "Селф-Хелп Групс (SHGs) энд Комьюнити-Бейсд Коллективз"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "Агрикалчер энд Хортикалчер Экстеншн Нетворкс"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "Комьюнити Волонтир энд Чайлд-Протекшн Нетворкс"
         }
       ]
     },
@@ -6191,40 +6191,40 @@ const RU = {
       "label": "Уровень блока",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "Офис оф зе Чайлд Девелопмент Проджект Офисер (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "Блок-Левел Чайлд Протекшн Комити (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "Блок Эдьюкейшн Департмент энд Тичер Кластер Ресорс Сентерз"
         },
         {
-          "k": "Block Health Department"
+          "k": "Блок Хелс Департмент"
         },
         {
-          "k": "Block Labour Department"
+          "k": "Блок Лейбор Департмент"
         },
         {
-          "k": "Block Development Office"
+          "k": "Блок Девелопмент Офис"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "Блок Агрикалчер Департмент"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "Блок Хортикалчер Департмент"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "Агрикалчер Экстеншн энд Текникал Ресорс Сентерз"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "Гавермент Агрикалчер энд Хортикалчер Ским Офисиз"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "Фармер Продьюсер Органайзейшнз (FPOs) энд Фармер Коллективз"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "Азер Блок-Левел Конвердженс Платформз"
         }
       ]
     },
@@ -6233,40 +6233,40 @@ const RU = {
       "label": "Уровень техсила / подокруга",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "Техсил энд Саб-Дивижнл Администрейшн"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "Полис энд Ло-Энфорсмент Оторитиз"
         },
         {
-          "k": "Labour Department"
+          "k": "Лейбор Департмент"
         },
         {
-          "k": "Education Department"
+          "k": "Эдьюкейшн Департмент"
         },
         {
-          "k": "Health Department"
+          "k": "Хелс Департмент"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "Уимен энд Чайлд Девелопмент Департмент"
         },
         {
-          "k": "Agriculture Department"
+          "k": "Агрикалчер Департмент"
         },
         {
-          "k": "Horticulture Department"
+          "k": "Хортикалчер Департмент"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "Агрикалчер Экстеншн энд Текникал Сёрвисез"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "Лэнд, Ревеню энд Агрикалчер Конвердженс Оторитиз"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "Азер Саб-Дистрикт Конвердженс Меканизмз"
         },
         {
-          "k": "Сотрудники полиции по защите детей (CWPO) в полицейских участках"
+          "k": "Чайлд Уэлфэр Полис Офисерз (CWPO) эт Полис Стейшнз"
         }
       ]
     },
@@ -6275,75 +6275,75 @@ const RU = {
       "label": "Уровень округа",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "Офис оф зе Дистрикт Мэджистрейт (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "Офис оф зе Чиф Девелопмент Офисер (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "Дистрикт Чайлд Протекшн Юнит (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "Чайлд Уэлфэр Комити (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "Дистрикт Лигал Сёрвисез Оторити (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "Спешл Джувенайл Полис Юнит (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "Анти-Хьюман Трафикинг Юнит (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "Дистрикт-Левел Чайлд Протекшн Комити (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "Дистрикт Таск Форс (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "Дистрикт Полис"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "Уимен энд Чайлд Девелопмент Департмент"
         },
         {
-          "k": "Education Department"
+          "k": "Эдьюкейшн Департмент"
         },
         {
-          "k": "Health Department"
+          "k": "Хелс Департмент"
         },
         {
-          "k": "Labour Department"
+          "k": "Лейбор Департмент"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "Дистрикт Агрикалчер Департмент"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "Дистрикт Хортикалчер Департмент"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "Агрикалчер Экстеншн энд Текникал Инститьюшнз"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "Криши Вигьян Кендры (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "Фармер Продьюсер Органайзейшнз (FPOs) энд Федерейшнз"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "Чайлд Хелплайн Сёрвисез"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "Сашастра Сима Бал (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "Совет по делам несовершеннолетних (JJB)"
+          "k": "Джувенайл Джастис Борд (JJB)"
         },
         {
-          "k": "Центр «единого окна» (Сакхи)"
+          "k": "Уан Стоп Сентер (Сакхи)"
         }
       ]
     },
@@ -6352,42 +6352,42 @@ const RU = {
       "label": "Уровень штата",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "Уимен энд Чайлд Секьюрити Органайзейшн (WCSO), Уттар-Прадеш Полис",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "Уимен энд Чайлд Девелопмент Департмент",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "Эдьюкейшн Департмент",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "Хелс Департмент",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "Лейбор Департмент",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "Уттар-Прадеш Полис энд Анти-Трафикинг Меканизмз",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "Департмент оф Агрикалчер, Гавермент оф Уттар-Прадеш",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "Департмент оф Хортикалчер энд Фуд Процессинг, Гавермент оф Уттар-Прадеш",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Орган юридической помощи штата (SLSA)"
+          "k": "Стейт Лигал Сёрвисез Оторити (SLSA)"
         },
         {
-          "k": "Комиссия штата по защите прав ребёнка (SCPCR)"
+          "k": "Стейт Комишн фор Протекшн оф Чайлд Райтс (SCPCR)"
         }
       ]
     },
@@ -6396,13 +6396,13 @@ const RU = {
       "label": "Национальный уровень",
       "items": [
         {
-          "k": "Национальный орган юридической помощи (NALSA)"
+          "k": "Нэшнл Лигал Сёрвисез Оторити (NALSA)"
         },
         {
-          "k": "Национальная комиссия по защите прав ребёнка (NCPCR)"
+          "k": "Нэшнл Комишн фор Протекшн оф Чайлд Райтс (NCPCR)"
         },
         {
-          "k": "Министерство по делам женщин и развития детей (миссия «Ватсалья»)"
+          "k": "Министри оф Уимен энд Чайлд Девелопмент (Мишн Ватсалья)"
         }
       ]
     }
@@ -7429,46 +7429,46 @@ const AR = {
       "label": "مستوى غرام بانشايات",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "الأطفال والمراهقون والنساء والآباء والأمهات والمزارعون والأسر وأفراد المجتمع"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "فيليج هيلث، سانيتيشن أند نيوتريشن كوميتيز (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "غرام بانتشايات أند بانتشاياتي راج إنستيتيوشنز"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "أنغانوادي سنترز (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "برايمري أند أبر برايمري سكولز"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "سكول مانجمنت كوميتيز (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "فيليج-ليفل تشايلد بروتكشن أند ويلفير كوميتيز (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "فرونتلاين هيلث وركر كادرز (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "الأسر الزراعية وتجمّعات المزارعات"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "فارمر غروبس أند بروديوسر كولكتيفز"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "فارمر بروديوسر أورغنايزيشنز (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "سيلف-هيلب غروبس (SHGs) أند كوميونيتي-بيسد كولكتيفز"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "أغريكلتشر أند هورتيكلتشر إكستنشن نتووركس"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "كوميونيتي فولنتير أند تشايلد-بروتكشن نتووركس"
         }
       ]
     },
@@ -7477,40 +7477,40 @@ const AR = {
       "label": "مستوى الكتلة (البلوك)",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "أوفيس أوف ذا تشايلد ديفلوبمنت بروجكت أوفيسر (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "بلوك-ليفل تشايلد بروتكشن كوميتي (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "بلوك إديوكيشن ديبارتمنت أند تيتشر كلاستر ريسورس سنترز"
         },
         {
-          "k": "Block Health Department"
+          "k": "بلوك هيلث ديبارتمنت"
         },
         {
-          "k": "Block Labour Department"
+          "k": "بلوك ليبر ديبارتمنت"
         },
         {
-          "k": "Block Development Office"
+          "k": "بلوك ديفلوبمنت أوفيس"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "بلوك أغريكلتشر ديبارتمنت"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "بلوك هورتيكلتشر ديبارتمنت"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "أغريكلتشر إكستنشن أند تكنيكال ريسورس سنترز"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "غفرنمنت أغريكلتشر أند هورتيكلتشر سكيم أوفيسز"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "فارمر بروديوسر أورغنايزيشنز (FPOs) أند فارمر كولكتيفز"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "أذر بلوك-ليفل كونفرجنس بلاتفورمز"
         }
       ]
     },
@@ -7519,40 +7519,40 @@ const AR = {
       "label": "مستوى التحصيل / شبه المنطقة",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "تحصيل أند سب-ديفيجنال أدمينيستريشن"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "بوليس أند لو-إنفورسمنت أوثوريتيز"
         },
         {
-          "k": "Labour Department"
+          "k": "ليبر ديبارتمنت"
         },
         {
-          "k": "Education Department"
+          "k": "إديوكيشن ديبارتمنت"
         },
         {
-          "k": "Health Department"
+          "k": "هيلث ديبارتمنت"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ويمن أند تشايلد ديفلوبمنت ديبارتمنت"
         },
         {
-          "k": "Agriculture Department"
+          "k": "أغريكلتشر ديبارتمنت"
         },
         {
-          "k": "Horticulture Department"
+          "k": "هورتيكلتشر ديبارتمنت"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "أغريكلتشر إكستنشن أند تكنيكال سيرفيسز"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "لاند، ريفينيو أند أغريكلتشر كونفرجنس أوثوريتيز"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "أذر سب-ديستريكت كونفرجنس ميكانيزمز"
         },
         {
-          "k": "ضباط شرطة رعاية الطفل (CWPO) في مراكز الشرطة"
+          "k": "تشايلد ويلفير بوليس أوفيسرز (CWPO) آت بوليس ستيشنز"
         }
       ]
     },
@@ -7561,75 +7561,75 @@ const AR = {
       "label": "مستوى المنطقة (المديرية)",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "أوفيس أوف ذا ديستريكت ماجستريت (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "أوفيس أوف ذا تشيف ديفلوبمنت أوفيسر (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ديستريكت تشايلد بروتكشن يونت (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "تشايلد ويلفير كوميتي (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ديستريكت ليغال سيرفيسز أوثوريتي (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "سبيشال جوفينايل بوليس يونت (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "أنتي-هيومن ترافيكينغ يونت (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ديستريكت-ليفل تشايلد بروتكشن كوميتي (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ديستريكت تاسك فورس (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ديستريكت بوليس"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ويمن أند تشايلد ديفلوبمنت ديبارتمنت"
         },
         {
-          "k": "Education Department"
+          "k": "إديوكيشن ديبارتمنت"
         },
         {
-          "k": "Health Department"
+          "k": "هيلث ديبارتمنت"
         },
         {
-          "k": "Labour Department"
+          "k": "ليبر ديبارتمنت"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ديستريكت أغريكلتشر ديبارتمنت"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ديستريكت هورتيكلتشر ديبارتمنت"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "أغريكلتشر إكستنشن أند تكنيكال إنستيتيوشنز"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "كريشي فيغيان كندراز (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "فارمر بروديوسر أورغنايزيشنز (FPOs) أند فيدريشنز"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "تشايلد هيلبلاين سيرفيسز"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "ساشاسترا سيما بال (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "مجلس قضاء الأحداث (JJB)"
+          "k": "جوفينايل جستس بورد (JJB)"
         },
         {
-          "k": "مركز الخدمة الشاملة (ساخي)"
+          "k": "ون ستوب سنتر (ساخي)"
         }
       ]
     },
@@ -7638,42 +7638,42 @@ const AR = {
       "label": "مستوى الولاية",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "ويمن أند تشايلد سيكيوريتي أورغنايزيشن (WCSO)، أوتار براديش بوليس",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "ويمن أند تشايلد ديفلوبمنت ديبارتمنت",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "إديوكيشن ديبارتمنت",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "هيلث ديبارتمنت",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "ليبر ديبارتمنت",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "أوتار براديش بوليس أند أنتي-ترافيكينغ ميكانيزمز",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ديبارتمنت أوف أغريكلتشر، غفرنمنت أوف أوتار براديش",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ديبارتمنت أوف هورتيكلتشر أند فود بروسيسينغ، غفرنمنت أوف أوتار براديش",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "هيئة الخدمات القانونية للولاية (SLSA)"
+          "k": "ستيت ليغال سيرفيسز أوثوريتي (SLSA)"
         },
         {
-          "k": "لجنة الولاية لحماية حقوق الطفل (SCPCR)"
+          "k": "ستيت كوميشن فور بروتكشن أوف تشايلد رايتس (SCPCR)"
         }
       ]
     },
@@ -7682,13 +7682,13 @@ const AR = {
       "label": "المستوى الوطني",
       "items": [
         {
-          "k": "الهيئة الوطنية للخدمات القانونية (NALSA)"
+          "k": "ناشونال ليغال سيرفيسز أوثوريتي (NALSA)"
         },
         {
-          "k": "اللجنة الوطنية لحماية حقوق الطفل (NCPCR)"
+          "k": "ناشونال كوميشن فور بروتكشن أوف تشايلد رايتس (NCPCR)"
         },
         {
-          "k": "وزارة تنمية المرأة والطفل (مهمة فاتساليا)"
+          "k": "مينستري أوف ويمن أند تشايلد ديفلوبمنت (ميشن فاتساليا)"
         }
       ]
     }
@@ -8715,7 +8715,7 @@ const ZH = {
       "label": "村级（Gram Panchayat）",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "儿童、青少年、妇女、家长、农民、家庭和社区成员"
         },
         {
           "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
@@ -8739,7 +8739,7 @@ const ZH = {
           "k": "Frontline Health Worker Cadres (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "农户家庭和女性农民合作组织"
         },
         {
           "k": "Farmer Groups and Producer Collectives"
@@ -8838,7 +8838,7 @@ const ZH = {
           "k": "Other Sub-District Convergence Mechanisms"
         },
         {
-          "k": "警察局的儿童福利警官（CWPO）"
+          "k": "Child Welfare Police Officers (CWPO) at Police Stations"
         }
       ]
     },
@@ -8912,10 +8912,10 @@ const ZH = {
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "少年司法委员会（JJB）"
+          "k": "Juvenile Justice Board (JJB)"
         },
         {
-          "k": "一站式中心（Sakhi）"
+          "k": "One Stop Centre (Sakhi)"
         }
       ]
     },
@@ -8956,10 +8956,10 @@ const ZH = {
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "邦法律服务管理局（SLSA）"
+          "k": "State Legal Services Authority (SLSA)"
         },
         {
-          "k": "邦儿童权利保护委员会（SCPCR）"
+          "k": "State Commission for Protection of Child Rights (SCPCR)"
         }
       ]
     },
@@ -8968,13 +8968,13 @@ const ZH = {
       "label": "国家层面",
       "items": [
         {
-          "k": "国家法律服务管理局（NALSA）"
+          "k": "National Legal Services Authority (NALSA)"
         },
         {
-          "k": "国家儿童权利保护委员会（NCPCR）"
+          "k": "National Commission for Protection of Child Rights (NCPCR)"
         },
         {
-          "k": "妇女与儿童发展部（Vatsalya 使命）"
+          "k": "Ministry of Women and Child Development (Mission Vatsalya)"
         }
       ]
     }
@@ -10001,46 +10001,46 @@ const UR = {
       "label": "گرام پنچایت کی سطح",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "بچے، نوعمر، خواتین، والدین، کسان، خاندان اور برادری کے افراد"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "ولیج ہیلتھ، سینیٹیشن اینڈ نیوٹریشن کمیٹیز (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "گرام پنچایتیں اینڈ پنچایتی راج انسٹی ٹیوشنز"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "آنگن واڑی سینٹرز (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "پرائمری اینڈ اپر پرائمری اسکولز"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "اسکول مینجمنٹ کمیٹیز (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "ولیج-لیول چائلڈ پروٹیکشن اینڈ ویلفیئر کمیٹیز (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "فرنٹ لائن ہیلتھ ورکر کیڈرز (ASHA، ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "کسان گھرانے اور خواتین کسانوں کے گروپ"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "فارمر گروپس اینڈ پروڈیوسر کلیکٹوز"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "فارمر پروڈیوسر آرگنائزیشنز (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "سیلف-ہیلپ گروپس (SHGs) اینڈ کمیونٹی-بیسڈ کلیکٹوز"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "ایگریکلچر اینڈ ہارٹیکلچر ایکسٹینشن نیٹ ورکس"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "کمیونٹی والنٹیئر اینڈ چائلڈ-پروٹیکشن نیٹ ورکس"
         }
       ]
     },
@@ -10049,40 +10049,40 @@ const UR = {
       "label": "بلاک کی سطح",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "آفس آف دی چائلڈ ڈیولپمنٹ پروجیکٹ آفیسر (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "بلاک-لیول چائلڈ پروٹیکشن کمیٹی (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "بلاک ایجوکیشن ڈیپارٹمنٹ اینڈ ٹیچر کلسٹر ریسورس سینٹرز"
         },
         {
-          "k": "Block Health Department"
+          "k": "بلاک ہیلتھ ڈیپارٹمنٹ"
         },
         {
-          "k": "Block Labour Department"
+          "k": "بلاک لیبر ڈیپارٹمنٹ"
         },
         {
-          "k": "Block Development Office"
+          "k": "بلاک ڈیولپمنٹ آفس"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "بلاک ایگریکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "بلاک ہارٹیکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "ایگریکلچر ایکسٹینشن اینڈ ٹیکنیکل ریسورس سینٹرز"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "گورنمنٹ ایگریکلچر اینڈ ہارٹیکلچر اسکیم آفسز"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "فارمر پروڈیوسر آرگنائزیشنز (FPOs) اینڈ فارمر کلیکٹوز"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "ادر بلاک-لیول کنورجنس پلیٹ فارمز"
         }
       ]
     },
@@ -10091,40 +10091,40 @@ const UR = {
       "label": "تحصیل / ذیلی ضلع کی سطح",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "تحصیل اینڈ سب-ڈویژنل ایڈمنسٹریشن"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "پولیس اینڈ لا-انفورسمنٹ اتھارٹیز"
         },
         {
-          "k": "Labour Department"
+          "k": "لیبر ڈیپارٹمنٹ"
         },
         {
-          "k": "Education Department"
+          "k": "ایجوکیشن ڈیپارٹمنٹ"
         },
         {
-          "k": "Health Department"
+          "k": "ہیلتھ ڈیپارٹمنٹ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ویمن اینڈ چائلڈ ڈیولپمنٹ ڈیپارٹمنٹ"
         },
         {
-          "k": "Agriculture Department"
+          "k": "ایگریکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "Horticulture Department"
+          "k": "ہارٹیکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "ایگریکلچر ایکسٹینشن اینڈ ٹیکنیکل سروسز"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "لینڈ، ریونیو اینڈ ایگریکلچر کنورجنس اتھارٹیز"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "ادر سب-ڈسٹرکٹ کنورجنس میکانزمز"
         },
         {
-          "k": "تھانوں میں چائلڈ ویلفیئر پولیس آفیسرز (CWPO)"
+          "k": "چائلڈ ویلفیئر پولیس آفیسرز (CWPO) ایٹ پولیس اسٹیشنز"
         }
       ]
     },
@@ -10133,68 +10133,68 @@ const UR = {
       "label": "ضلع کی سطح",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "آفس آف دی ڈسٹرکٹ مجسٹریٹ (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "آفس آف دی چیف ڈیولپمنٹ آفیسر (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ڈسٹرکٹ چائلڈ پروٹیکشن یونٹ (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "چائلڈ ویلفیئر کمیٹی (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ڈسٹرکٹ لیگل سروسز اتھارٹی (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "اسپیشل جووینائل پولیس یونٹ (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "اینٹی-ہیومن ٹریفکنگ یونٹ (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ڈسٹرکٹ-لیول چائلڈ پروٹیکشن کمیٹی (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ڈسٹرکٹ ٹاسک فورس (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ڈسٹرکٹ پولیس"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ویمن اینڈ چائلڈ ڈیولپمنٹ ڈیپارٹمنٹ"
         },
         {
-          "k": "Education Department"
+          "k": "ایجوکیشن ڈیپارٹمنٹ"
         },
         {
-          "k": "Health Department"
+          "k": "ہیلتھ ڈیپارٹمنٹ"
         },
         {
-          "k": "Labour Department"
+          "k": "لیبر ڈیپارٹمنٹ"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ڈسٹرکٹ ایگریکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ڈسٹرکٹ ہارٹیکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "ایگریکلچر ایکسٹینشن اینڈ ٹیکنیکل انسٹی ٹیوشنز"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "کرشی وگیان کیندر (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "فارمر پروڈیوسر آرگنائزیشنز (FPOs) اینڈ فیڈریشنز"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "چائلڈ ہیلپ لائن سروسز"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "سشستر سیما بل (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
@@ -10210,42 +10210,42 @@ const UR = {
       "label": "ریاستی سطح",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "ویمن اینڈ چائلڈ سیکیورٹی آرگنائزیشن (WCSO)، اتر پردیش پولیس",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "ویمن اینڈ چائلڈ ڈیولپمنٹ ڈیپارٹمنٹ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "ایجوکیشن ڈیپارٹمنٹ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "ہیلتھ ڈیپارٹمنٹ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "لیبر ڈیپارٹمنٹ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "اتر پردیش پولیس اینڈ اینٹی-ٹریفکنگ میکانزمز",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ڈیپارٹمنٹ آف ایگریکلچر، گورنمنٹ آف اتر پردیش",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ڈیپارٹمنٹ آف ہارٹیکلچر اینڈ فوڈ پروسیسنگ، گورنمنٹ آف اتر پردیش",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
           "k": "اسٹیٹ لیگل سروسز اتھارٹی (SLSA)"
         },
         {
-          "k": "ریاستی کمیشن برائے تحفظِ حقوقِ اطفال (SCPCR)"
+          "k": "اسٹیٹ کمیشن فار پروٹیکشن آف چائلڈ رائٹس (SCPCR)"
         }
       ]
     },
@@ -10257,10 +10257,10 @@ const UR = {
           "k": "نیشنل لیگل سروسز اتھارٹی (NALSA)"
         },
         {
-          "k": "قومی کمیشن برائے تحفظِ حقوقِ اطفال (NCPCR)"
+          "k": "نیشنل کمیشن فار پروٹیکشن آف چائلڈ رائٹس (NCPCR)"
         },
         {
-          "k": "وزارتِ ترقیِ خواتین و اطفال (مشن واتسلیہ)"
+          "k": "منسٹری آف ویمن اینڈ چائلڈ ڈیولپمنٹ (مشن واتسلیہ)"
         }
       ]
     }
@@ -11287,46 +11287,46 @@ const BN = {
       "label": "গ্রাম পঞ্চায়েত স্তর",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "শিশু, কিশোর-কিশোরী, নারী, অভিভাবক, কৃষক, পরিবার ও সমাজের সদস্যরা"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "ভিলেজ হেলথ, স্যানিটেশন অ্যান্ড নিউট্রিশন কমিটিজ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "গ্রাম পঞ্চায়েতস অ্যান্ড পঞ্চায়েতি রাজ ইনস্টিটিউশনস"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "অঙ্গনওয়াড়ি সেন্টারস (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "প্রাইমারি অ্যান্ড আপার প্রাইমারি স্কুলস"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "স্কুল ম্যানেজমেন্ট কমিটিজ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "ভিলেজ-লেভেল চাইল্ড প্রোটেকশন অ্যান্ড ওয়েলফেয়ার কমিটিজ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ফ্রন্টলাইন হেলথ ওয়ার্কার ক্যাডারস (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "কৃষক পরিবার ও নারী কৃষকদের সমষ্টি"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ফার্মার গ্রুপস অ্যান্ড প্রোডিউসার কালেক্টিভস"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ফার্মার প্রোডিউসার অর্গানাইজেশনস (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "সেলফ-হেল্প গ্রুপস (SHGs) অ্যান্ড কমিউনিটি-বেসড কালেক্টিভস"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "এগ্রিকালচার অ্যান্ড হর্টিকালচার এক্সটেনশন নেটওয়ার্কস"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "কমিউনিটি ভলান্টিয়ার অ্যান্ড চাইল্ড-প্রোটেকশন নেটওয়ার্কস"
         }
       ]
     },
@@ -11335,40 +11335,40 @@ const BN = {
       "label": "ব্লক স্তর",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "অফিস অফ দ্য চাইল্ড ডেভেলপমেন্ট প্রজেক্ট অফিসার (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ব্লক-লেভেল চাইল্ড প্রোটেকশন কমিটি (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ব্লক এডুকেশন ডিপার্টমেন্ট অ্যান্ড টিচার ক্লাস্টার রিসোর্স সেন্টারস"
         },
         {
-          "k": "Block Health Department"
+          "k": "ব্লক হেলথ ডিপার্টমেন্ট"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ব্লক লেবার ডিপার্টমেন্ট"
         },
         {
-          "k": "Block Development Office"
+          "k": "ব্লক ডেভেলপমেন্ট অফিস"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ব্লক এগ্রিকালচার ডিপার্টমেন্ট"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ব্লক হর্টিকালচার ডিপার্টমেন্ট"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "এগ্রিকালচার এক্সটেনশন অ্যান্ড টেকনিক্যাল রিসোর্স সেন্টারস"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "গভর্নমেন্ট এগ্রিকালচার অ্যান্ড হর্টিকালচার স্কিম অফিসেস"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ফার্মার প্রোডিউসার অর্গানাইজেশনস (FPOs) অ্যান্ড ফার্মার কালেক্টিভস"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "আদার ব্লক-লেভেল কনভারজেন্স প্ল্যাটফর্মস"
         }
       ]
     },
@@ -11377,40 +11377,40 @@ const BN = {
       "label": "তহশিল / উপ-জেলা স্তর",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "তহসিল অ্যান্ড সাব-ডিভিশনাল অ্যাডমিনিস্ট্রেশন"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "পুলিশ অ্যান্ড ল-এনফোর্সমেন্ট অথরিটিজ"
         },
         {
-          "k": "Labour Department"
+          "k": "লেবার ডিপার্টমেন্ট"
         },
         {
-          "k": "Education Department"
+          "k": "এডুকেশন ডিপার্টমেন্ট"
         },
         {
-          "k": "Health Department"
+          "k": "হেলথ ডিপার্টমেন্ট"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "উইমেন অ্যান্ড চাইল্ড ডেভেলপমেন্ট ডিপার্টমেন্ট"
         },
         {
-          "k": "Agriculture Department"
+          "k": "এগ্রিকালচার ডিপার্টমেন্ট"
         },
         {
-          "k": "Horticulture Department"
+          "k": "হর্টিকালচার ডিপার্টমেন্ট"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "এগ্রিকালচার এক্সটেনশন অ্যান্ড টেকনিক্যাল সার্ভিসেস"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "ল্যান্ড, রেভিনিউ অ্যান্ড এগ্রিকালচার কনভারজেন্স অথরিটিজ"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "আদার সাব-ডিস্ট্রিক্ট কনভারজেন্স মেকানিজমস"
         },
         {
-          "k": "থানাগুলিতে শিশু কল্যাণ পুলিশ আধিকারিক (CWPO)"
+          "k": "চাইল্ড ওয়েলফেয়ার পুলিশ অফিসারস (CWPO) অ্যাট পুলিশ স্টেশনস"
         }
       ]
     },
@@ -11419,68 +11419,68 @@ const BN = {
       "label": "জেলা স্তর",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "অফিস অফ দ্য ডিস্ট্রিক্ট ম্যাজিস্ট্রেট (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "অফিস অফ দ্য চিফ ডেভেলপমেন্ট অফিসার (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ডিস্ট্রিক্ট চাইল্ড প্রোটেকশন ইউনিট (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "চাইল্ড ওয়েলফেয়ার কমিটি (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ডিস্ট্রিক্ট লিগ্যাল সার্ভিসেস অথরিটি (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "স্পেশাল জুভেনাইল পুলিশ ইউনিট (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "অ্যান্টি-হিউম্যান ট্রাফিকিং ইউনিট (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ডিস্ট্রিক্ট-লেভেল চাইল্ড প্রোটেকশন কমিটি (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ডিস্ট্রিক্ট টাস্ক ফোর্স (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ডিস্ট্রিক্ট পুলিশ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "উইমেন অ্যান্ড চাইল্ড ডেভেলপমেন্ট ডিপার্টমেন্ট"
         },
         {
-          "k": "Education Department"
+          "k": "এডুকেশন ডিপার্টমেন্ট"
         },
         {
-          "k": "Health Department"
+          "k": "হেলথ ডিপার্টমেন্ট"
         },
         {
-          "k": "Labour Department"
+          "k": "লেবার ডিপার্টমেন্ট"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ডিস্ট্রিক্ট এগ্রিকালচার ডিপার্টমেন্ট"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ডিস্ট্রিক্ট হর্টিকালচার ডিপার্টমেন্ট"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "এগ্রিকালচার এক্সটেনশন অ্যান্ড টেকনিক্যাল ইনস্টিটিউশনস"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "কৃষি বিজ্ঞান কেন্দ্র (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ফার্মার প্রোডিউসার অর্গানাইজেশনস (FPOs) অ্যান্ড ফেডারেশনস"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "চাইল্ড হেল্পলাইন সার্ভিসেস"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "সশস্ত্র সীমা বল (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
@@ -11496,42 +11496,42 @@ const BN = {
       "label": "রাজ্য স্তর",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "উইমেন অ্যান্ড চাইল্ড সিকিউরিটি অর্গানাইজেশন (WCSO), উত্তর প্রদেশ পুলিশ",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "উইমেন অ্যান্ড চাইল্ড ডেভেলপমেন্ট ডিপার্টমেন্ট",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "এডুকেশন ডিপার্টমেন্ট",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "হেলথ ডিপার্টমেন্ট",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "লেবার ডিপার্টমেন্ট",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "উত্তর প্রদেশ পুলিশ অ্যান্ড অ্যান্টি-ট্রাফিকিং মেকানিজমস",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ডিপার্টমেন্ট অফ এগ্রিকালচার, গভর্নমেন্ট অফ উত্তর প্রদেশ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ডিপার্টমেন্ট অফ হর্টিকালচার অ্যান্ড ফুড প্রসেসিং, গভর্নমেন্ট অফ উত্তর প্রদেশ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "রাজ্য আইনি পরিষেবা কর্তৃপক্ষ (SLSA)"
+          "k": "স্টেট লিগ্যাল সার্ভিসেস অথরিটি (SLSA)"
         },
         {
-          "k": "রাজ্য শিশু অধিকার সুরক্ষা কমিশন (SCPCR)"
+          "k": "স্টেট কমিশন ফর প্রোটেকশন অফ চাইল্ড রাইটস (SCPCR)"
         }
       ]
     },
@@ -11540,13 +11540,13 @@ const BN = {
       "label": "জাতীয় স্তর",
       "items": [
         {
-          "k": "জাতীয় আইনি পরিষেবা কর্তৃপক্ষ (NALSA)"
+          "k": "ন্যাশনাল লিগ্যাল সার্ভিসেস অথরিটি (NALSA)"
         },
         {
-          "k": "জাতীয় শিশু অধিকার সুরক্ষা কমিশন (NCPCR)"
+          "k": "ন্যাশনাল কমিশন ফর প্রোটেকশন অফ চাইল্ড রাইটস (NCPCR)"
         },
         {
-          "k": "নারী ও শিশু উন্নয়ন মন্ত্রক (মিশন বাৎসল্য)"
+          "k": "মিনিস্ট্রি অফ উইমেন অ্যান্ড চাইল্ড ডেভেলপমেন্ট (মিশন বাৎসল্য)"
         }
       ]
     }
@@ -12573,46 +12573,46 @@ const MR = {
       "label": "ग्रामपंचायत स्तर",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "मुले, किशोरवयीन, महिला, पालक, शेतकरी, कुटुंबे आणि समुदायातील सदस्य"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "व्हिलेज हेल्थ, सॅनिटेशन अँड न्यूट्रिशन कमिटीज (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ग्राम पंचायत्स अँड पंचायती राज इन्स्टिट्यूशन्स"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "अंगणवाडी सेंटर्स (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "प्रायमरी अँड अप्पर प्रायमरी स्कूल्स"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "स्कूल मॅनेजमेंट कमिटीज (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "व्हिलेज-लेव्हल चाइल्ड प्रोटेक्शन अँड वेल्फेअर कमिटीज (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "फ्रंटलाइन हेल्थ वर्कर कॅडर्स (आशा, एएनएम)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "शेतकरी कुटुंबे आणि महिला शेतकरी गट"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "फार्मर ग्रुप्स अँड प्रोड्यूसर कलेक्टिव्ह्ज"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "फार्मर प्रोड्यूसर ऑर्गनायझेशन्स (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "सेल्फ-हेल्प ग्रुप्स (SHGs) अँड कम्युनिटी-बेस्ड कलेक्टिव्ह्ज"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "ॲग्रिकल्चर अँड हॉर्टिकल्चर एक्स्टेंशन नेटवर्क्स"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "कम्युनिटी व्हॉलंटियर अँड चाइल्ड-प्रोटेक्शन नेटवर्क्स"
         }
       ]
     },
@@ -12621,40 +12621,40 @@ const MR = {
       "label": "गट (ब्लॉक) स्तर",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ऑफिस ऑफ द चाइल्ड डेव्हलपमेंट प्रोजेक्ट ऑफिसर (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ब्लॉक-लेव्हल चाइल्ड प्रोटेक्शन कमिटी (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ब्लॉक एज्युकेशन डिपार्टमेंट अँड टीचर क्लस्टर रिसोर्स सेंटर्स"
         },
         {
-          "k": "Block Health Department"
+          "k": "ब्लॉक हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ब्लॉक लेबर डिपार्टमेंट"
         },
         {
-          "k": "Block Development Office"
+          "k": "ब्लॉक डेव्हलपमेंट ऑफिस"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ब्लॉक ॲग्रिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ब्लॉक हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "ॲग्रिकल्चर एक्स्टेंशन अँड टेक्निकल रिसोर्स सेंटर्स"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "गव्हर्नमेंट ॲग्रिकल्चर अँड हॉर्टिकल्चर स्कीम ऑफिसेस"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "फार्मर प्रोड्यूसर ऑर्गनायझेशन्स (FPOs) अँड फार्मर कलेक्टिव्ह्ज"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "अदर ब्लॉक-लेव्हल कन्व्हर्जन्स प्लॅटफॉर्म्स"
         }
       ]
     },
@@ -12663,40 +12663,40 @@ const MR = {
       "label": "तहसील / उप-जिल्हा स्तर",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "तहसील अँड सब-डिव्हिजनल ॲडमिनिस्ट्रेशन"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "पोलीस अँड लॉ-एन्फोर्समेंट ऑथॉरिटीज"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेंट"
         },
         {
-          "k": "Education Department"
+          "k": "एज्युकेशन डिपार्टमेंट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "विमेन अँड चाइल्ड डेव्हलपमेंट डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Department"
+          "k": "ॲग्रिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Horticulture Department"
+          "k": "हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "ॲग्रिकल्चर एक्स्टेंशन अँड टेक्निकल सर्व्हिसेस"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "लँड, रेव्हेन्यू अँड ॲग्रिकल्चर कन्व्हर्जन्स ऑथॉरिटीज"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "अदर सब-डिस्ट्रिक्ट कन्व्हर्जन्स मेकॅनिझम्स"
         },
         {
-          "k": "पोलीस ठाण्यांतील बाल कल्याण पोलीस अधिकारी (CWPO)"
+          "k": "चाइल्ड वेल्फेअर पोलीस ऑफिसर्स (CWPO) ॲट पोलीस स्टेशन्स"
         }
       ]
     },
@@ -12705,72 +12705,72 @@ const MR = {
       "label": "जिल्हा स्तर",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ऑफिस ऑफ द डिस्ट्रिक्ट मॅजिस्ट्रेट (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ऑफिस ऑफ द चीफ डेव्हलपमेंट ऑफिसर (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "डिस्ट्रिक्ट चाइल्ड प्रोटेक्शन युनिट (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "चाइल्ड वेल्फेअर कमिटी (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "डिस्ट्रिक्ट लीगल सर्व्हिसेस ऑथॉरिटी (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "स्पेशल ज्युव्हेनाइल पोलीस युनिट (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "अँटी-ह्यूमन ट्रॅफिकिंग युनिट (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "डिस्ट्रिक्ट-लेव्हल चाइल्ड प्रोटेक्शन कमिटी (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "डिस्ट्रिक्ट टास्क फोर्स (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "डिस्ट्रिक्ट पोलीस"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "विमेन अँड चाइल्ड डेव्हलपमेंट डिपार्टमेंट"
         },
         {
-          "k": "Education Department"
+          "k": "एज्युकेशन डिपार्टमेंट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेंट"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "डिस्ट्रिक्ट ॲग्रिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "डिस्ट्रिक्ट हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "ॲग्रिकल्चर एक्स्टेंशन अँड टेक्निकल इन्स्टिट्यूशन्स"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "कृषी विज्ञान केंद्र (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "फार्मर प्रोड्यूसर ऑर्गनायझेशन्स (FPOs) अँड फेडरेशन्स"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "चाइल्ड हेल्पलाइन सर्व्हिसेस"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "सशस्त्र सीमा बल (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "बाल न्याय मंडळ (JJB)"
+          "k": "ज्युव्हेनाइल जस्टिस बोर्ड (JJB)"
         },
         {
           "k": "वन स्टॉप सेंटर (सखी)"
@@ -12782,42 +12782,42 @@ const MR = {
       "label": "राज्य स्तर",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "विमेन अँड चाइल्ड सिक्युरिटी ऑर्गनायझेशन (WCSO), उत्तर प्रदेश पोलीस",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "विमेन अँड चाइल्ड डेव्हलपमेंट डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "एज्युकेशन डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "हेल्थ डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "लेबर डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "उत्तर प्रदेश पोलीस अँड अँटी-ट्रॅफिकिंग मेकॅनिझम्स",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "डिपार्टमेंट ऑफ ॲग्रिकल्चर, गव्हर्नमेंट ऑफ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "डिपार्टमेंट ऑफ हॉर्टिकल्चर अँड फूड प्रोसेसिंग, गव्हर्नमेंट ऑफ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "राज्य विधी सेवा प्राधिकरण (SLSA)"
+          "k": "स्टेट लीगल सर्व्हिसेस ऑथॉरिटी (SLSA)"
         },
         {
-          "k": "राज्य बाल हक्क संरक्षण आयोग (SCPCR)"
+          "k": "स्टेट कमिशन फॉर प्रोटेक्शन ऑफ चाइल्ड राइट्स (SCPCR)"
         }
       ]
     },
@@ -12826,13 +12826,13 @@ const MR = {
       "label": "राष्ट्रीय स्तर",
       "items": [
         {
-          "k": "राष्ट्रीय विधी सेवा प्राधिकरण (NALSA)"
+          "k": "नॅशनल लीगल सर्व्हिसेस ऑथॉरिटी (NALSA)"
         },
         {
-          "k": "राष्ट्रीय बाल हक्क संरक्षण आयोग (NCPCR)"
+          "k": "नॅशनल कमिशन फॉर प्रोटेक्शन ऑफ चाइल्ड राइट्स (NCPCR)"
         },
         {
-          "k": "महिला आणि बालविकास मंत्रालय (मिशन वात्सल्य)"
+          "k": "मिनिस्ट्री ऑफ विमेन अँड चाइल्ड डेव्हलपमेंट (मिशन वात्सल्य)"
         }
       ]
     }
@@ -13859,46 +13859,46 @@ const TE = {
       "label": "గ్రామ పంచాయతీ స్థాయి",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "పిల్లలు, కౌమారదశలోని వారు, మహిళలు, తల్లిదండ్రులు, రైతులు, కుటుంబాలు మరియు సమాజ సభ్యులు"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "విలేజ్ హెల్త్, శానిటేషన్ అండ్ న్యూట్రిషన్ కమిటీస్ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "గ్రామ పంచాయతీలు అండ్ పంచాయతీ రాజ్ ఇన్‌స్టిట్యూషన్స్"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "అంగన్‌వాడీ సెంటర్స్ (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "ప్రైమరీ అండ్ అప్పర్ ప్రైమరీ స్కూల్స్"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "స్కూల్ మేనేజ్‌మెంట్ కమిటీస్ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "విలేజ్-లెవెల్ చైల్డ్ ప్రొటెక్షన్ అండ్ వెల్ఫేర్ కమిటీస్ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ఫ్రంట్‌లైన్ హెల్త్ వర్కర్ క్యాడర్స్ (ఆశా, ఏఎన్ఎం)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "వ్యవసాయ కుటుంబాలు మరియు మహిళా రైతుల సమష్టి సంఘాలు"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ఫార్మర్ గ్రూప్స్ అండ్ ప్రొడ్యూసర్ కలెక్టివ్స్"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ఫార్మర్ ప్రొడ్యూసర్ ఆర్గనైజేషన్స్ (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "సెల్ఫ్-హెల్ప్ గ్రూప్స్ (SHGs) అండ్ కమ్యూనిటీ-బేస్డ్ కలెక్టివ్స్"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "అగ్రికల్చర్ అండ్ హార్టికల్చర్ ఎక్స్‌టెన్షన్ నెట్‌వర్క్స్"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "కమ్యూనిటీ వాలంటీర్ అండ్ చైల్డ్-ప్రొటెక్షన్ నెట్‌వర్క్స్"
         }
       ]
     },
@@ -13907,40 +13907,40 @@ const TE = {
       "label": "బ్లాక్ స్థాయి",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ఆఫీస్ ఆఫ్ ది చైల్డ్ డెవలప్‌మెంట్ ప్రాజెక్ట్ ఆఫీసర్ (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "బ్లాక్-లెవెల్ చైల్డ్ ప్రొటెక్షన్ కమిటీ (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "బ్లాక్ ఎడ్యుకేషన్ డిపార్ట్‌మెంట్ అండ్ టీచర్ క్లస్టర్ రిసోర్స్ సెంటర్స్"
         },
         {
-          "k": "Block Health Department"
+          "k": "బ్లాక్ హెల్త్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Block Labour Department"
+          "k": "బ్లాక్ లేబర్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Block Development Office"
+          "k": "బ్లాక్ డెవలప్‌మెంట్ ఆఫీస్"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "బ్లాక్ అగ్రికల్చర్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "బ్లాక్ హార్టికల్చర్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "అగ్రికల్చర్ ఎక్స్‌టెన్షన్ అండ్ టెక్నికల్ రిసోర్స్ సెంటర్స్"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "గవర్నమెంట్ అగ్రికల్చర్ అండ్ హార్టికల్చర్ స్కీమ్ ఆఫీసెస్"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ఫార్మర్ ప్రొడ్యూసర్ ఆర్గనైజేషన్స్ (FPOs) అండ్ ఫార్మర్ కలెక్టివ్స్"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "అదర్ బ్లాక్-లెవెల్ కన్వర్జెన్స్ ప్లాట్‌ఫామ్స్"
         }
       ]
     },
@@ -13949,40 +13949,40 @@ const TE = {
       "label": "తహసీల్ / ఉప-జిల్లా స్థాయి",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "తహసీల్ అండ్ సబ్-డివిజనల్ అడ్మినిస్ట్రేషన్"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "పోలీస్ అండ్ లా-ఎన్‌ఫోర్స్‌మెంట్ అథారిటీస్"
         },
         {
-          "k": "Labour Department"
+          "k": "లేబర్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Education Department"
+          "k": "ఎడ్యుకేషన్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Health Department"
+          "k": "హెల్త్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "విమెన్ అండ్ చైల్డ్ డెవలప్‌మెంట్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Agriculture Department"
+          "k": "అగ్రికల్చర్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Horticulture Department"
+          "k": "హార్టికల్చర్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "అగ్రికల్చర్ ఎక్స్‌టెన్షన్ అండ్ టెక్నికల్ సర్వీసెస్"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "ల్యాండ్, రెవెన్యూ అండ్ అగ్రికల్చర్ కన్వర్జెన్స్ అథారిటీస్"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "అదర్ సబ్-డిస్ట్రిక్ట్ కన్వర్జెన్స్ మెకానిజమ్స్"
         },
         {
-          "k": "పోలీస్ స్టేషన్లలో బాలల సంక్షేమ పోలీస్ అధికారులు (CWPO)"
+          "k": "చైల్డ్ వెల్ఫేర్ పోలీస్ ఆఫీసర్స్ (CWPO) ఎట్ పోలీస్ స్టేషన్స్"
         }
       ]
     },
@@ -13991,72 +13991,72 @@ const TE = {
       "label": "జిల్లా స్థాయి",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ఆఫీస్ ఆఫ్ ది డిస్ట్రిక్ట్ మేజిస్ట్రేట్ (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ఆఫీస్ ఆఫ్ ది చీఫ్ డెవలప్‌మెంట్ ఆఫీసర్ (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "డిస్ట్రిక్ట్ చైల్డ్ ప్రొటెక్షన్ యూనిట్ (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "చైల్డ్ వెల్ఫేర్ కమిటీ (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "డిస్ట్రిక్ట్ లీగల్ సర్వీసెస్ అథారిటీ (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "స్పెషల్ జువెనైల్ పోలీస్ యూనిట్ (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "యాంటీ-హ్యూమన్ ట్రాఫికింగ్ యూనిట్ (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "డిస్ట్రిక్ట్-లెవెల్ చైల్డ్ ప్రొటెక్షన్ కమిటీ (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "డిస్ట్రిక్ట్ టాస్క్ ఫోర్స్ (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "డిస్ట్రిక్ట్ పోలీస్"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "విమెన్ అండ్ చైల్డ్ డెవలప్‌మెంట్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Education Department"
+          "k": "ఎడ్యుకేషన్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Health Department"
+          "k": "హెల్త్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Labour Department"
+          "k": "లేబర్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "డిస్ట్రిక్ట్ అగ్రికల్చర్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "డిస్ట్రిక్ట్ హార్టికల్చర్ డిపార్ట్‌మెంట్"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "అగ్రికల్చర్ ఎక్స్‌టెన్షన్ అండ్ టెక్నికల్ ఇన్‌స్టిట్యూషన్స్"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "కృషి విజ్ఞాన కేంద్రాలు (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ఫార్మర్ ప్రొడ్యూసర్ ఆర్గనైజేషన్స్ (FPOs) అండ్ ఫెడరేషన్స్"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "చైల్డ్ హెల్ప్‌లైన్ సర్వీసెస్"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "సశస్త్ర సీమా బల్ (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "జువెనైల్ జస్టిస్ బోర్డు (JJB)"
+          "k": "జువెనైల్ జస్టిస్ బోర్డ్ (JJB)"
         },
         {
           "k": "వన్ స్టాప్ సెంటర్ (సఖి)"
@@ -14068,42 +14068,42 @@ const TE = {
       "label": "రాష్ట్ర స్థాయి",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "విమెన్ అండ్ చైల్డ్ సెక్యూరిటీ ఆర్గనైజేషన్ (WCSO), ఉత్తర ప్రదేశ్ పోలీస్",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "విమెన్ అండ్ చైల్డ్ డెవలప్‌మెంట్ డిపార్ట్‌మెంట్",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "ఎడ్యుకేషన్ డిపార్ట్‌మెంట్",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "హెల్త్ డిపార్ట్‌మెంట్",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "లేబర్ డిపార్ట్‌మెంట్",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "ఉత్తర ప్రదేశ్ పోలీస్ అండ్ యాంటీ-ట్రాఫికింగ్ మెకానిజమ్స్",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "డిపార్ట్‌మెంట్ ఆఫ్ అగ్రికల్చర్, గవర్నమెంట్ ఆఫ్ ఉత్తర ప్రదేశ్",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "డిపార్ట్‌మెంట్ ఆఫ్ హార్టికల్చర్ అండ్ ఫుడ్ ప్రాసెసింగ్, గవర్నమెంట్ ఆఫ్ ఉత్తర ప్రదేశ్",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "రాష్ట్ర న్యాయ సేవల ప్రాధికార సంస్థ (SLSA)"
+          "k": "స్టేట్ లీగల్ సర్వీసెస్ అథారిటీ (SLSA)"
         },
         {
-          "k": "రాష్ట్ర బాలల హక్కుల పరిరక్షణ కమిషన్ (SCPCR)"
+          "k": "స్టేట్ కమిషన్ ఫర్ ప్రొటెక్షన్ ఆఫ్ చైల్డ్ రైట్స్ (SCPCR)"
         }
       ]
     },
@@ -14112,13 +14112,13 @@ const TE = {
       "label": "జాతీయ స్థాయి",
       "items": [
         {
-          "k": "జాతీయ న్యాయ సేవల ప్రాధికార సంస్థ (NALSA)"
+          "k": "నేషనల్ లీగల్ సర్వీసెస్ అథారిటీ (NALSA)"
         },
         {
-          "k": "జాతీయ బాలల హక్కుల పరిరక్షణ కమిషన్ (NCPCR)"
+          "k": "నేషనల్ కమిషన్ ఫర్ ప్రొటెక్షన్ ఆఫ్ చైల్డ్ రైట్స్ (NCPCR)"
         },
         {
-          "k": "మహిళా మరియు శిశు అభివృద్ధి మంత్రిత్వ శాఖ (మిషన్ వాత్సల్య)"
+          "k": "మినిస్ట్రీ ఆఫ్ విమెన్ అండ్ చైల్డ్ డెవలప్‌మెంట్ (మిషన్ వాత్సల్య)"
         }
       ]
     }
@@ -15145,46 +15145,46 @@ const TA = {
       "label": "கிராம பஞ்சாயத்து நிலை",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "குழந்தைகள், வளரிளம் பருவத்தினர், பெண்கள், பெற்றோர், விவசாயிகள், குடும்பங்கள் மற்றும் சமூக உறுப்பினர்கள்"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "வில்லேஜ் ஹெல்த், சானிடேஷன் அண்ட் நியூட்ரிஷன் கமிட்டீஸ் (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "கிராம பஞ்சாயத்துகள் அண்ட் பஞ்சாயத்து ராஜ் இன்ஸ்டிடியூஷன்ஸ்"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "அங்கன்வாடி சென்டர்ஸ் (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "பிரைமரி அண்ட் அப்பர் பிரைமரி ஸ்கூல்ஸ்"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "ஸ்கூல் மேனேஜ்மென்ட் கமிட்டீஸ் (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "வில்லேஜ்-லெவல் சைல்டு புரொடெக்ஷன் அண்ட் வெல்ஃபேர் கமிட்டீஸ் (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ஃபிரன்ட்லைன் ஹெல்த் வொர்க்கர் கேடர்ஸ் (ஆஷா, ஏஎன்எம்)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "விவசாயக் குடும்பங்கள் மற்றும் பெண் விவசாயிகள் கூட்டமைப்புகள்"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ஃபார்மர் குரூப்ஸ் அண்ட் புரொடியூசர் கலெக்டிவ்ஸ்"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ஃபார்மர் புரொடியூசர் ஆர்கனைசேஷன்ஸ் (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "செல்ஃப்-ஹெல்ப் குரூப்ஸ் (SHGs) அண்ட் கம்யூனிட்டி-பேஸ்டு கலெக்டிவ்ஸ்"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "அக்ரிகல்ச்சர் அண்ட் ஹார்டிகல்ச்சர் எக்ஸ்டென்ஷன் நெட்வொர்க்ஸ்"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "கம்யூனிட்டி வாலன்டியர் அண்ட் சைல்டு-புரொடெக்ஷன் நெட்வொர்க்ஸ்"
         }
       ]
     },
@@ -15193,40 +15193,40 @@ const TA = {
       "label": "வட்டார நிலை (பிளாக்)",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ஆஃபீஸ் ஆஃப் த சைல்டு டெவலப்மென்ட் புராஜெக்ட் ஆஃபீசர் (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "பிளாக்-லெவல் சைல்டு புரொடெக்ஷன் கமிட்டி (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "பிளாக் எஜுகேஷன் டிபார்ட்மென்ட் அண்ட் டீச்சர் கிளஸ்டர் ரிசோர்ஸ் சென்டர்ஸ்"
         },
         {
-          "k": "Block Health Department"
+          "k": "பிளாக் ஹெல்த் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Block Labour Department"
+          "k": "பிளாக் லேபர் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Block Development Office"
+          "k": "பிளாக் டெவலப்மென்ட் ஆஃபீஸ்"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "பிளாக் அக்ரிகல்ச்சர் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "பிளாக் ஹார்டிகல்ச்சர் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "அக்ரிகல்ச்சர் எக்ஸ்டென்ஷன் அண்ட் டெக்னிக்கல் ரிசோர்ஸ் சென்டர்ஸ்"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "கவர்ன்மென்ட் அக்ரிகல்ச்சர் அண்ட் ஹார்டிகல்ச்சர் ஸ்கீம் ஆஃபீசஸ்"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ஃபார்மர் புரொடியூசர் ஆர்கனைசேஷன்ஸ் (FPOs) அண்ட் ஃபார்மர் கலெக்டிவ்ஸ்"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "அதர் பிளாக்-லெவல் கன்வர்ஜென்ஸ் பிளாட்ஃபார்ம்ஸ்"
         }
       ]
     },
@@ -15235,40 +15235,40 @@ const TA = {
       "label": "வட்டம் / துணை மாவட்ட நிலை",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "தெஹ்சில் அண்ட் சப்-டிவிஷனல் அட்மினிஸ்ட்ரேஷன்"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "போலீஸ் அண்ட் லா-என்ஃபோர்ஸ்மென்ட் அத்தாரிட்டீஸ்"
         },
         {
-          "k": "Labour Department"
+          "k": "லேபர் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Education Department"
+          "k": "எஜுகேஷன் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Health Department"
+          "k": "ஹெல்த் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "விமன் அண்ட் சைல்டு டெவலப்மென்ட் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Agriculture Department"
+          "k": "அக்ரிகல்ச்சர் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Horticulture Department"
+          "k": "ஹார்டிகல்ச்சர் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "அக்ரிகல்ச்சர் எக்ஸ்டென்ஷன் அண்ட் டெக்னிக்கல் சர்வீசஸ்"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "லேண்ட், ரெவின்யூ அண்ட் அக்ரிகல்ச்சர் கன்வர்ஜென்ஸ் அத்தாரிட்டீஸ்"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "அதர் சப்-டிஸ்ட்ரிக்ட் கன்வர்ஜென்ஸ் மெக்கானிசம்ஸ்"
         },
         {
-          "k": "காவல் நிலையங்களில் உள்ள குழந்தை நல காவல் அதிகாரிகள் (CWPO)"
+          "k": "சைல்டு வெல்ஃபேர் போலீஸ் ஆஃபீசர்ஸ் (CWPO) அட் போலீஸ் ஸ்டேஷன்ஸ்"
         }
       ]
     },
@@ -15277,75 +15277,75 @@ const TA = {
       "label": "மாவட்ட நிலை",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ஆஃபீஸ் ஆஃப் த டிஸ்ட்ரிக்ட் மாஜிஸ்திரேட் (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ஆஃபீஸ் ஆஃப் த சீஃப் டெவலப்மென்ட் ஆஃபீசர் (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "டிஸ்ட்ரிக்ட் சைல்டு புரொடெக்ஷன் யூனிட் (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "சைல்டு வெல்ஃபேர் கமிட்டி (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "டிஸ்ட்ரிக்ட் லீகல் சர்வீசஸ் அத்தாரிட்டி (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "ஸ்பெஷல் ஜுவனைல் போலீஸ் யூனிட் (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "ஆன்டி-ஹியூமன் டிராஃபிக்கிங் யூனிட் (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "டிஸ்ட்ரிக்ட்-லெவல் சைல்டு புரொடெக்ஷன் கமிட்டி (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "டிஸ்ட்ரிக்ட் டாஸ்க் ஃபோர்ஸ் (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "டிஸ்ட்ரிக்ட் போலீஸ்"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "விமன் அண்ட் சைல்டு டெவலப்மென்ட் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Education Department"
+          "k": "எஜுகேஷன் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Health Department"
+          "k": "ஹெல்த் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Labour Department"
+          "k": "லேபர் டிபார்ட்மென்ட்"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "டிஸ்ட்ரிக்ட் அக்ரிகல்ச்சர் டிபார்ட்மென்ட்"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "டிஸ்ட்ரிக்ட் ஹார்டிகல்ச்சர் டிபார்ட்மென்ட்"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "அக்ரிகல்ச்சர் எக்ஸ்டென்ஷன் அண்ட் டெக்னிக்கல் இன்ஸ்டிடியூஷன்ஸ்"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "கிருஷி விஞ்ஞான் கேந்திராக்கள் (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ஃபார்மர் புரொடியூசர் ஆர்கனைசேஷன்ஸ் (FPOs) அண்ட் ஃபெடரேஷன்ஸ்"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "சைல்டு ஹெல்ப்லைன் சர்வீசஸ்"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "சஷஸ்திர சீமா பல் (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "சிறார் நீதி வாரியம் (JJB)"
+          "k": "ஜுவனைல் ஜஸ்டிஸ் போர்டு (JJB)"
         },
         {
-          "k": "ஒருங்கிணைந்த சேவை மையம் (சகி)"
+          "k": "ஒன் ஸ்டாப் சென்டர் (சகி)"
         }
       ]
     },
@@ -15354,42 +15354,42 @@ const TA = {
       "label": "மாநில நிலை",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "விமன் அண்ட் சைல்டு செக்யூரிட்டி ஆர்கனைசேஷன் (WCSO), உத்தரப் பிரதேசம் போலீஸ்",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "விமன் அண்ட் சைல்டு டெவலப்மென்ட் டிபார்ட்மென்ட்",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "எஜுகேஷன் டிபார்ட்மென்ட்",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "ஹெல்த் டிபார்ட்மென்ட்",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "லேபர் டிபார்ட்மென்ட்",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "உத்தரப் பிரதேசம் போலீஸ் அண்ட் ஆன்டி-டிராஃபிக்கிங் மெக்கானிசம்ஸ்",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "டிபார்ட்மென்ட் ஆஃப் அக்ரிகல்ச்சர், கவர்ன்மென்ட் ஆஃப் உத்தரப் பிரதேசம்",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "டிபார்ட்மென்ட் ஆஃப் ஹார்டிகல்ச்சர் அண்ட் ஃபுட் பிராசஸிங், கவர்ன்மென்ட் ஆஃப் உத்தரப் பிரதேசம்",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "மாநில சட்டப் பணிகள் ஆணையம் (SLSA)"
+          "k": "ஸ்டேட் லீகல் சர்வீசஸ் அத்தாரிட்டி (SLSA)"
         },
         {
-          "k": "மாநில குழந்தை உரிமைகள் பாதுகாப்பு ஆணையம் (SCPCR)"
+          "k": "ஸ்டேட் கமிஷன் ஃபார் புரொடெக்ஷன் ஆஃப் சைல்டு ரைட்ஸ் (SCPCR)"
         }
       ]
     },
@@ -15398,13 +15398,13 @@ const TA = {
       "label": "தேசிய நிலை",
       "items": [
         {
-          "k": "தேசிய சட்டப் பணிகள் ஆணையம் (NALSA)"
+          "k": "நேஷனல் லீகல் சர்வீசஸ் அத்தாரிட்டி (NALSA)"
         },
         {
-          "k": "தேசிய குழந்தை உரிமைகள் பாதுகாப்பு ஆணையம் (NCPCR)"
+          "k": "நேஷனல் கமிஷன் ஃபார் புரொடெக்ஷன் ஆஃப் சைல்டு ரைட்ஸ் (NCPCR)"
         },
         {
-          "k": "பெண்கள் மற்றும் குழந்தைகள் மேம்பாட்டு அமைச்சகம் (மிஷன் வாத்சல்யா)"
+          "k": "மினிஸ்ட்ரி ஆஃப் விமன் அண்ட் சைல்டு டெவலப்மென்ட் (மிஷன் வாத்சல்யா)"
         }
       ]
     }
@@ -16431,46 +16431,46 @@ const GU = {
       "label": "ગ્રામ પંચાયત સ્તર",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "બાળકો, કિશોરો, મહિલાઓ, માતા-પિતા, ખેડૂતો, પરિવારો અને સમુદાયના સભ્યો"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "વિલેજ હેલ્થ, સેનિટેશન એન્ડ ન્યુટ્રિશન કમિટીઝ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ગ્રામ પંચાયતો એન્ડ પંચાયતી રાજ ઇન્સ્ટિટ્યુશન્સ"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "આંગણવાડી સેન્ટર્સ (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "પ્રાઇમરી એન્ડ અપર પ્રાઇમરી સ્કૂલ્સ"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "સ્કૂલ મેનેજમેન્ટ કમિટીઝ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "વિલેજ-લેવલ ચાઇલ્ડ પ્રોટેક્શન એન્ડ વેલ્ફેર કમિટીઝ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ફ્રન્ટલાઇન હેલ્થ વર્કર કેડર્સ (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "ખેડૂત પરિવારો અને મહિલા ખેડૂતોના સમૂહો"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ફાર્મર ગ્રુપ્સ એન્ડ પ્રોડ્યુસર કલેક્ટિવ્સ"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ફાર્મર પ્રોડ્યુસર ઓર્ગેનાઇઝેશન્સ (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "સેલ્ફ-હેલ્પ ગ્રુપ્સ (SHGs) એન્ડ કમ્યુનિટી-બેઝ્ડ કલેક્ટિવ્સ"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "એગ્રીકલ્ચર એન્ડ હોર્ટિકલ્ચર એક્સ્ટેન્શન નેટવર્ક્સ"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "કમ્યુનિટી વોલન્ટિયર એન્ડ ચાઇલ્ડ-પ્રોટેક્શન નેટવર્ક્સ"
         }
       ]
     },
@@ -16479,40 +16479,40 @@ const GU = {
       "label": "બ્લોક સ્તર",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ઓફિસ ઓફ ધ ચાઇલ્ડ ડેવલપમેન્ટ પ્રોજેક્ટ ઓફિસર (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "બ્લોક-લેવલ ચાઇલ્ડ પ્રોટેક્શન કમિટી (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "બ્લોક એજ્યુકેશન ડિપાર્ટમેન્ટ એન્ડ ટીચર ક્લસ્ટર રિસોર્સ સેન્ટર્સ"
         },
         {
-          "k": "Block Health Department"
+          "k": "બ્લોક હેલ્થ ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Block Labour Department"
+          "k": "બ્લોક લેબર ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Block Development Office"
+          "k": "બ્લોક ડેવલપમેન્ટ ઓફિસ"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "બ્લોક એગ્રીકલ્ચર ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "બ્લોક હોર્ટિકલ્ચર ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "એગ્રીકલ્ચર એક્સ્ટેન્શન એન્ડ ટેકનિકલ રિસોર્સ સેન્ટર્સ"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "ગવર્નમેન્ટ એગ્રીકલ્ચર એન્ડ હોર્ટિકલ્ચર સ્કીમ ઓફિસીસ"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ફાર્મર પ્રોડ્યુસર ઓર્ગેનાઇઝેશન્સ (FPOs) એન્ડ ફાર્મર કલેક્ટિવ્સ"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "અધર બ્લોક-લેવલ કન્વર્જન્સ પ્લેટફોર્મ્સ"
         }
       ]
     },
@@ -16521,40 +16521,40 @@ const GU = {
       "label": "તહેસીલ / પેટા-જિલ્લા સ્તર",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "તહસીલ એન્ડ સબ-ડિવિઝનલ એડમિનિસ્ટ્રેશન"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "પોલીસ એન્ડ લૉ-એન્ફોર્સમેન્ટ ઓથોરિટીઝ"
         },
         {
-          "k": "Labour Department"
+          "k": "લેબર ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Education Department"
+          "k": "એજ્યુકેશન ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Health Department"
+          "k": "હેલ્થ ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "વિમેન એન્ડ ચાઇલ્ડ ડેવલપમેન્ટ ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Agriculture Department"
+          "k": "એગ્રીકલ્ચર ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Horticulture Department"
+          "k": "હોર્ટિકલ્ચર ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "એગ્રીકલ્ચર એક્સ્ટેન્શન એન્ડ ટેકનિકલ સર્વિસીસ"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "લેન્ડ, રેવન્યુ એન્ડ એગ્રીકલ્ચર કન્વર્જન્સ ઓથોરિટીઝ"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "અધર સબ-ડિસ્ટ્રિક્ટ કન્વર્જન્સ મિકેનિઝમ્સ"
         },
         {
-          "k": "પોલીસ સ્ટેશનો પર બાળ કલ્યાણ પોલીસ અધિકારીઓ (CWPO)"
+          "k": "ચાઇલ્ડ વેલ્ફેર પોલીસ ઓફિસર્સ (CWPO) એટ પોલીસ સ્ટેશન્સ"
         }
       ]
     },
@@ -16563,75 +16563,75 @@ const GU = {
       "label": "જિલ્લા સ્તર",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ઓફિસ ઓફ ધ ડિસ્ટ્રિક્ટ મેજિસ્ટ્રેટ (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ઓફિસ ઓફ ધ ચીફ ડેવલપમેન્ટ ઓફિસર (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ડિસ્ટ્રિક્ટ ચાઇલ્ડ પ્રોટેક્શન યુનિટ (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "ચાઇલ્ડ વેલ્ફેર કમિટી (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ડિસ્ટ્રિક્ટ લીગલ સર્વિસીસ ઓથોરિટી (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "સ્પેશિયલ જુવેનાઇલ પોલીસ યુનિટ (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "એન્ટી-હ્યુમન ટ્રાફિકિંગ યુનિટ (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ડિસ્ટ્રિક્ટ-લેવલ ચાઇલ્ડ પ્રોટેક્શન કમિટી (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ડિસ્ટ્રિક્ટ ટાસ્ક ફોર્સ (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ડિસ્ટ્રિક્ટ પોલીસ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "વિમેન એન્ડ ચાઇલ્ડ ડેવલપમેન્ટ ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Education Department"
+          "k": "એજ્યુકેશન ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Health Department"
+          "k": "હેલ્થ ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Labour Department"
+          "k": "લેબર ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ડિસ્ટ્રિક્ટ એગ્રીકલ્ચર ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ડિસ્ટ્રિક્ટ હોર્ટિકલ્ચર ડિપાર્ટમેન્ટ"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "એગ્રીકલ્ચર એક્સ્ટેન્શન એન્ડ ટેકનિકલ ઇન્સ્ટિટ્યુશન્સ"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "કૃષિ વિજ્ઞાન કેન્દ્રો (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ફાર્મર પ્રોડ્યુસર ઓર્ગેનાઇઝેશન્સ (FPOs) એન્ડ ફેડરેશન્સ"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "ચાઇલ્ડ હેલ્પલાઇન સર્વિસીસ"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "સશસ્ત્ર સીમા બળ (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
           "k": "જુવેનાઇલ જસ્ટિસ બોર્ડ (JJB)"
         },
         {
-          "k": "વન સ્ટૉપ સેન્ટર (સખી)"
+          "k": "વન સ્ટોપ સેન્ટર (સખી)"
         }
       ]
     },
@@ -16640,42 +16640,42 @@ const GU = {
       "label": "રાજ્ય સ્તર",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "વિમેન એન્ડ ચાઇલ્ડ સિક્યુરિટી ઓર્ગેનાઇઝેશન (WCSO), ઉત્તર પ્રદેશ પોલીસ",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "વિમેન એન્ડ ચાઇલ્ડ ડેવલપમેન્ટ ડિપાર્ટમેન્ટ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "એજ્યુકેશન ડિપાર્ટમેન્ટ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "હેલ્થ ડિપાર્ટમેન્ટ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "લેબર ડિપાર્ટમેન્ટ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "ઉત્તર પ્રદેશ પોલીસ એન્ડ એન્ટી-ટ્રાફિકિંગ મિકેનિઝમ્સ",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ડિપાર્ટમેન્ટ ઓફ એગ્રીકલ્ચર, ગવર્નમેન્ટ ઓફ ઉત્તર પ્રદેશ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ડિપાર્ટમેન્ટ ઓફ હોર્ટિકલ્ચર એન્ડ ફૂડ પ્રોસેસિંગ, ગવર્નમેન્ટ ઓફ ઉત્તર પ્રદેશ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "રાજ્ય કાનૂની સેવા સત્તામંડળ (SLSA)"
+          "k": "સ્ટેટ લીગલ સર્વિસીસ ઓથોરિટી (SLSA)"
         },
         {
-          "k": "રાજ્ય બાળ અધિકાર સંરક્ષણ આયોગ (SCPCR)"
+          "k": "સ્ટેટ કમિશન ફોર પ્રોટેક્શન ઓફ ચાઇલ્ડ રાઇટ્સ (SCPCR)"
         }
       ]
     },
@@ -16684,13 +16684,13 @@ const GU = {
       "label": "રાષ્ટ્રીય સ્તર",
       "items": [
         {
-          "k": "રાષ્ટ્રીય કાનૂની સેવા સત્તામંડળ (NALSA)"
+          "k": "નેશનલ લીગલ સર્વિસીસ ઓથોરિટી (NALSA)"
         },
         {
-          "k": "રાષ્ટ્રીય બાળ અધિકાર સંરક્ષણ આયોગ (NCPCR)"
+          "k": "નેશનલ કમિશન ફોર પ્રોટેક્શન ઓફ ચાઇલ્ડ રાઇટ્સ (NCPCR)"
         },
         {
-          "k": "મહિલા અને બાળ વિકાસ મંત્રાલય (મિશન વાત્સલ્ય)"
+          "k": "મિનિસ્ટ્રી ઓફ વિમેન એન્ડ ચાઇલ્ડ ડેવલપમેન્ટ (મિશન વાત્સલ્ય)"
         }
       ]
     }
@@ -17717,46 +17717,46 @@ const KN = {
       "label": "ಗ್ರಾಮ ಪಂಚಾಯತ್ ಮಟ್ಟ",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "ಮಕ್ಕಳು, ಹದಿಹರೆಯದವರು, ಮಹಿಳೆಯರು, ಪೋಷಕರು, ರೈತರು, ಕುಟುಂಬಗಳು ಮತ್ತು ಸಮುದಾಯದ ಸದಸ್ಯರು"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "ವಿಲೇಜ್ ಹೆಲ್ತ್, ಸ್ಯಾನಿಟೇಶನ್ ಅಂಡ್ ನ್ಯೂಟ್ರಿಷನ್ ಕಮಿಟೀಸ್ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ಗ್ರಾಮ ಪಂಚಾಯತ್‌ಗಳು ಅಂಡ್ ಪಂಚಾಯತ್ ರಾಜ್ ಇನ್‌ಸ್ಟಿಟ್ಯೂಷನ್ಸ್"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "ಅಂಗನವಾಡಿ ಸೆಂಟರ್ಸ್ (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "ಪ್ರೈಮರಿ ಅಂಡ್ ಅಪ್ಪರ್ ಪ್ರೈಮರಿ ಸ್ಕೂಲ್ಸ್"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "ಸ್ಕೂಲ್ ಮ್ಯಾನೇಜ್‌ಮೆಂಟ್ ಕಮಿಟೀಸ್ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "ವಿಲೇಜ್-ಲೆವೆಲ್ ಚೈಲ್ಡ್ ಪ್ರೊಟೆಕ್ಷನ್ ಅಂಡ್ ವೆಲ್ಫೇರ್ ಕಮಿಟೀಸ್ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ಫ್ರಂಟ್‌ಲೈನ್ ಹೆಲ್ತ್ ವರ್ಕರ್ ಕೇಡರ್ಸ್ (ಆಶಾ, ಎಎನ್‌ಎಂ)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "ಕೃಷಿ ಕುಟುಂಬಗಳು ಮತ್ತು ಮಹಿಳಾ ರೈತರ ಸಾಮೂಹಿಕ ಸಂಘಗಳು"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ಫಾರ್ಮರ್ ಗ್ರೂಪ್ಸ್ ಅಂಡ್ ಪ್ರೊಡ್ಯೂಸರ್ ಕಲೆಕ್ಟಿವ್ಸ್"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ಫಾರ್ಮರ್ ಪ್ರೊಡ್ಯೂಸರ್ ಆರ್ಗನೈಸೇಶನ್ಸ್ (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "ಸೆಲ್ಫ್-ಹೆಲ್ಪ್ ಗ್ರೂಪ್ಸ್ (SHGs) ಅಂಡ್ ಕಮ್ಯುನಿಟಿ-ಬೇಸ್ಡ್ ಕಲೆಕ್ಟಿವ್ಸ್"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "ಅಗ್ರಿಕಲ್ಚರ್ ಅಂಡ್ ಹಾರ್ಟಿಕಲ್ಚರ್ ಎಕ್ಸ್‌ಟೆನ್ಷನ್ ನೆಟ್‌ವರ್ಕ್ಸ್"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "ಕಮ್ಯುನಿಟಿ ವಾಲಂಟಿಯರ್ ಅಂಡ್ ಚೈಲ್ಡ್-ಪ್ರೊಟೆಕ್ಷನ್ ನೆಟ್‌ವರ್ಕ್ಸ್"
         }
       ]
     },
@@ -17765,40 +17765,40 @@ const KN = {
       "label": "ಬ್ಲಾಕ್ ಮಟ್ಟ",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ಆಫೀಸ್ ಆಫ್ ದಿ ಚೈಲ್ಡ್ ಡೆವಲಪ್‌ಮೆಂಟ್ ಪ್ರಾಜೆಕ್ಟ್ ಆಫೀಸರ್ (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ಬ್ಲಾಕ್-ಲೆವೆಲ್ ಚೈಲ್ಡ್ ಪ್ರೊಟೆಕ್ಷನ್ ಕಮಿಟಿ (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ಬ್ಲಾಕ್ ಎಜುಕೇಶನ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್ ಅಂಡ್ ಟೀಚರ್ ಕ್ಲಸ್ಟರ್ ರಿಸೋರ್ಸ್ ಸೆಂಟರ್ಸ್"
         },
         {
-          "k": "Block Health Department"
+          "k": "ಬ್ಲಾಕ್ ಹೆಲ್ತ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ಬ್ಲಾಕ್ ಲೇಬರ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Block Development Office"
+          "k": "ಬ್ಲಾಕ್ ಡೆವಲಪ್‌ಮೆಂಟ್ ಆಫೀಸ್"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ಬ್ಲಾಕ್ ಅಗ್ರಿಕಲ್ಚರ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ಬ್ಲಾಕ್ ಹಾರ್ಟಿಕಲ್ಚರ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "ಅಗ್ರಿಕಲ್ಚರ್ ಎಕ್ಸ್‌ಟೆನ್ಷನ್ ಅಂಡ್ ಟೆಕ್ನಿಕಲ್ ರಿಸೋರ್ಸ್ ಸೆಂಟರ್ಸ್"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "ಗವರ್ನ್‌ಮೆಂಟ್ ಅಗ್ರಿಕಲ್ಚರ್ ಅಂಡ್ ಹಾರ್ಟಿಕಲ್ಚರ್ ಸ್ಕೀಮ್ ಆಫೀಸಸ್"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ಫಾರ್ಮರ್ ಪ್ರೊಡ್ಯೂಸರ್ ಆರ್ಗನೈಸೇಶನ್ಸ್ (FPOs) ಅಂಡ್ ಫಾರ್ಮರ್ ಕಲೆಕ್ಟಿವ್ಸ್"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "ಅದರ್ ಬ್ಲಾಕ್-ಲೆವೆಲ್ ಕನ್ವರ್ಜೆನ್ಸ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ಸ್"
         }
       ]
     },
@@ -17807,40 +17807,40 @@ const KN = {
       "label": "ತಹಶೀಲ್ / ಉಪ-ಜಿಲ್ಲಾ ಮಟ್ಟ",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "ತಹಸೀಲ್ ಅಂಡ್ ಸಬ್-ಡಿವಿಷನಲ್ ಅಡ್ಮಿನಿಸ್ಟ್ರೇಷನ್"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "ಪೊಲೀಸ್ ಅಂಡ್ ಲಾ-ಎನ್‌ಫೋರ್ಸ್‌ಮೆಂಟ್ ಅಥಾರಿಟೀಸ್"
         },
         {
-          "k": "Labour Department"
+          "k": "ಲೇಬರ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Education Department"
+          "k": "ಎಜುಕೇಶನ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Health Department"
+          "k": "ಹೆಲ್ತ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ವಿಮೆನ್ ಅಂಡ್ ಚೈಲ್ಡ್ ಡೆವಲಪ್‌ಮೆಂಟ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Agriculture Department"
+          "k": "ಅಗ್ರಿಕಲ್ಚರ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Horticulture Department"
+          "k": "ಹಾರ್ಟಿಕಲ್ಚರ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "ಅಗ್ರಿಕಲ್ಚರ್ ಎಕ್ಸ್‌ಟೆನ್ಷನ್ ಅಂಡ್ ಟೆಕ್ನಿಕಲ್ ಸರ್ವೀಸಸ್"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "ಲ್ಯಾಂಡ್, ರೆವಿನ್ಯೂ ಅಂಡ್ ಅಗ್ರಿಕಲ್ಚರ್ ಕನ್ವರ್ಜೆನ್ಸ್ ಅಥಾರಿಟೀಸ್"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "ಅದರ್ ಸಬ್-ಡಿಸ್ಟ್ರಿಕ್ಟ್ ಕನ್ವರ್ಜೆನ್ಸ್ ಮೆಕ್ಯಾನಿಸಮ್ಸ್"
         },
         {
-          "k": "ಪೊಲೀಸ್ ಠಾಣೆಗಳಲ್ಲಿರುವ ಮಕ್ಕಳ ಕಲ್ಯಾಣ ಪೊಲೀಸ್ ಅಧಿಕಾರಿಗಳು (CWPO)"
+          "k": "ಚೈಲ್ಡ್ ವೆಲ್ಫೇರ್ ಪೊಲೀಸ್ ಆಫೀಸರ್ಸ್ (CWPO) ಅಟ್ ಪೊಲೀಸ್ ಸ್ಟೇಷನ್ಸ್"
         }
       ]
     },
@@ -17849,75 +17849,75 @@ const KN = {
       "label": "ಜಿಲ್ಲಾ ಮಟ್ಟ",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ಆಫೀಸ್ ಆಫ್ ದಿ ಡಿಸ್ಟ್ರಿಕ್ಟ್ ಮ್ಯಾಜಿಸ್ಟ್ರೇಟ್ (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ಆಫೀಸ್ ಆಫ್ ದಿ ಚೀಫ್ ಡೆವಲಪ್‌ಮೆಂಟ್ ಆಫೀಸರ್ (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ಡಿಸ್ಟ್ರಿಕ್ಟ್ ಚೈಲ್ಡ್ ಪ್ರೊಟೆಕ್ಷನ್ ಯುನಿಟ್ (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "ಚೈಲ್ಡ್ ವೆಲ್ಫೇರ್ ಕಮಿಟಿ (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ಡಿಸ್ಟ್ರಿಕ್ಟ್ ಲೀಗಲ್ ಸರ್ವೀಸಸ್ ಅಥಾರಿಟಿ (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "ಸ್ಪೆಷಲ್ ಜುವೆನೈಲ್ ಪೊಲೀಸ್ ಯುನಿಟ್ (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "ಆಂಟಿ-ಹ್ಯೂಮನ್ ಟ್ರಾಫಿಕಿಂಗ್ ಯುನಿಟ್ (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ಡಿಸ್ಟ್ರಿಕ್ಟ್-ಲೆವೆಲ್ ಚೈಲ್ಡ್ ಪ್ರೊಟೆಕ್ಷನ್ ಕಮಿಟಿ (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ಡಿಸ್ಟ್ರಿಕ್ಟ್ ಟಾಸ್ಕ್ ಫೋರ್ಸ್ (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ಡಿಸ್ಟ್ರಿಕ್ಟ್ ಪೊಲೀಸ್"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ವಿಮೆನ್ ಅಂಡ್ ಚೈಲ್ಡ್ ಡೆವಲಪ್‌ಮೆಂಟ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Education Department"
+          "k": "ಎಜುಕೇಶನ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Health Department"
+          "k": "ಹೆಲ್ತ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Labour Department"
+          "k": "ಲೇಬರ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ಡಿಸ್ಟ್ರಿಕ್ಟ್ ಅಗ್ರಿಕಲ್ಚರ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ಡಿಸ್ಟ್ರಿಕ್ಟ್ ಹಾರ್ಟಿಕಲ್ಚರ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "ಅಗ್ರಿಕಲ್ಚರ್ ಎಕ್ಸ್‌ಟೆನ್ಷನ್ ಅಂಡ್ ಟೆಕ್ನಿಕಲ್ ಇನ್‌ಸ್ಟಿಟ್ಯೂಷನ್ಸ್"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "ಕೃಷಿ ವಿಜ್ಞಾನ ಕೇಂದ್ರಗಳು (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ಫಾರ್ಮರ್ ಪ್ರೊಡ್ಯೂಸರ್ ಆರ್ಗನೈಸೇಶನ್ಸ್ (FPOs) ಅಂಡ್ ಫೆಡರೇಷನ್ಸ್"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "ಚೈಲ್ಡ್ ಹೆಲ್ಪ್‌ಲೈನ್ ಸರ್ವೀಸಸ್"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "ಸಶಸ್ತ್ರ ಸೀಮಾ ಬಲ್ (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "ಬಾಲ ನ್ಯಾಯ ಮಂಡಳಿ (JJB)"
+          "k": "ಜುವೆನೈಲ್ ಜಸ್ಟಿಸ್ ಬೋರ್ಡ್ (JJB)"
         },
         {
-          "k": "ಒನ್ ಸ್ಟಾಪ್ ಸೆಂಟರ್ (ಸಖಿ)"
+          "k": "ವನ್ ಸ್ಟಾಪ್ ಸೆಂಟರ್ (ಸಖಿ)"
         }
       ]
     },
@@ -17926,42 +17926,42 @@ const KN = {
       "label": "ರಾಜ್ಯ ಮಟ್ಟ",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "ವಿಮೆನ್ ಅಂಡ್ ಚೈಲ್ಡ್ ಸೆಕ್ಯುರಿಟಿ ಆರ್ಗನೈಸೇಶನ್ (WCSO), ಉತ್ತರ ಪ್ರದೇಶ ಪೊಲೀಸ್",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "ವಿಮೆನ್ ಅಂಡ್ ಚೈಲ್ಡ್ ಡೆವಲಪ್‌ಮೆಂಟ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "ಎಜುಕೇಶನ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "ಹೆಲ್ತ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "ಲೇಬರ್ ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "ಉತ್ತರ ಪ್ರದೇಶ ಪೊಲೀಸ್ ಅಂಡ್ ಆಂಟಿ-ಟ್ರಾಫಿಕಿಂಗ್ ಮೆಕ್ಯಾನಿಸಮ್ಸ್",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್ ಆಫ್ ಅಗ್ರಿಕಲ್ಚರ್, ಗವರ್ನ್‌ಮೆಂಟ್ ಆಫ್ ಉತ್ತರ ಪ್ರದೇಶ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ಡಿಪಾರ್ಟ್‌ಮೆಂಟ್ ಆಫ್ ಹಾರ್ಟಿಕಲ್ಚರ್ ಅಂಡ್ ಫುಡ್ ಪ್ರೊಸೆಸಿಂಗ್, ಗವರ್ನ್‌ಮೆಂಟ್ ಆಫ್ ಉತ್ತರ ಪ್ರದೇಶ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "ರಾಜ್ಯ ಕಾನೂನು ಸೇವಾ ಪ್ರಾಧಿಕಾರ (SLSA)"
+          "k": "ಸ್ಟೇಟ್ ಲೀಗಲ್ ಸರ್ವೀಸಸ್ ಅಥಾರಿಟಿ (SLSA)"
         },
         {
-          "k": "ರಾಜ್ಯ ಮಕ್ಕಳ ಹಕ್ಕುಗಳ ಸಂರಕ್ಷಣಾ ಆಯೋಗ (SCPCR)"
+          "k": "ಸ್ಟೇಟ್ ಕಮಿಷನ್ ಫಾರ್ ಪ್ರೊಟೆಕ್ಷನ್ ಆಫ್ ಚೈಲ್ಡ್ ರೈಟ್ಸ್ (SCPCR)"
         }
       ]
     },
@@ -17970,13 +17970,13 @@ const KN = {
       "label": "ರಾಷ್ಟ್ರೀಯ ಮಟ್ಟ",
       "items": [
         {
-          "k": "ರಾಷ್ಟ್ರೀಯ ಕಾನೂನು ಸೇವಾ ಪ್ರಾಧಿಕಾರ (NALSA)"
+          "k": "ನ್ಯಾಷನಲ್ ಲೀಗಲ್ ಸರ್ವೀಸಸ್ ಅಥಾರಿಟಿ (NALSA)"
         },
         {
-          "k": "ರಾಷ್ಟ್ರೀಯ ಮಕ್ಕಳ ಹಕ್ಕುಗಳ ಸಂರಕ್ಷಣಾ ಆಯೋಗ (NCPCR)"
+          "k": "ನ್ಯಾಷನಲ್ ಕಮಿಷನ್ ಫಾರ್ ಪ್ರೊಟೆಕ್ಷನ್ ಆಫ್ ಚೈಲ್ಡ್ ರೈಟ್ಸ್ (NCPCR)"
         },
         {
-          "k": "ಮಹಿಳಾ ಮತ್ತು ಮಕ್ಕಳ ಅಭಿವೃದ್ಧಿ ಸಚಿವಾಲಯ (ಮಿಷನ್ ವಾತ್ಸಲ್ಯ)"
+          "k": "ಮಿನಿಸ್ಟ್ರಿ ಆಫ್ ವಿಮೆನ್ ಅಂಡ್ ಚೈಲ್ಡ್ ಡೆವಲಪ್‌ಮೆಂಟ್ (ಮಿಷನ್ ವಾತ್ಸಲ್ಯ)"
         }
       ]
     }
@@ -19003,46 +19003,46 @@ const MAI = {
       "label": "ग्राम पंचायत स्तर",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "बच्चा, किशोर-किशोरी, महिला, माता-पिता, किसान, परिवार आ समुदायक सदस्य"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "विलेज हेल्थ, सैनिटेशन एंड न्यूट्रिशन कमेटीज़ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ग्राम पंचायत्स एंड पंचायती राज इंस्टीट्यूशंस"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "आंगनवाड़ी सेंटर्स (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "प्राइमरी एंड अपर प्राइमरी स्कूल्स"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "स्कूल मैनेजमेंट कमेटीज़ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "विलेज-लेवल चाइल्ड प्रोटेक्शन एंड वेलफ़ेयर कमेटीज़ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "फ़्रंटलाइन हेल्थ वर्कर कैडर्स (आशा, एएनएम)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "खेतिहर परिवार आ महिला किसान समूह"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "फ़ार्मर ग्रुप्स एंड प्रोड्यूसर कलेक्टिव्स"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "फ़ार्मर प्रोड्यूसर ऑर्गनाइज़ेशंस (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "सेल्फ़-हेल्प ग्रुप्स (SHGs) एंड कम्युनिटी-बेस्ड कलेक्टिव्स"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "एग्रीकल्चर एंड हॉर्टिकल्चर एक्सटेंशन नेटवर्क्स"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "कम्युनिटी वॉलंटियर एंड चाइल्ड-प्रोटेक्शन नेटवर्क्स"
         }
       ]
     },
@@ -19051,40 +19051,40 @@ const MAI = {
       "label": "प्रखंड (ब्लॉक) स्तर",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ऑफ़िस ऑफ़ द चाइल्ड डेवलपमेंट प्रोजेक्ट ऑफ़िसर (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ब्लॉक-लेवल चाइल्ड प्रोटेक्शन कमेटी (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ब्लॉक एजुकेशन डिपार्टमेंट एंड टीचर क्लस्टर रिसोर्स सेंटर्स"
         },
         {
-          "k": "Block Health Department"
+          "k": "ब्लॉक हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ब्लॉक लेबर डिपार्टमेंट"
         },
         {
-          "k": "Block Development Office"
+          "k": "ब्लॉक डेवलपमेंट ऑफ़िस"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ब्लॉक एग्रीकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ब्लॉक हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "एग्रीकल्चर एक्सटेंशन एंड टेक्निकल रिसोर्स सेंटर्स"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "गवर्नमेंट एग्रीकल्चर एंड हॉर्टिकल्चर स्कीम ऑफ़िसेज़"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "फ़ार्मर प्रोड्यूसर ऑर्गनाइज़ेशंस (FPOs) एंड फ़ार्मर कलेक्टिव्स"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "अदर ब्लॉक-लेवल कन्वर्जेंस प्लेटफ़ॉर्म्स"
         }
       ]
     },
@@ -19093,40 +19093,40 @@ const MAI = {
       "label": "तहसील / उप-ज़िला स्तर",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "तहसील एंड सब-डिविज़नल एडमिनिस्ट्रेशन"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "पुलिस एंड लॉ-एनफ़ोर्समेंट अथॉरिटीज़"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेंट"
         },
         {
-          "k": "Education Department"
+          "k": "एजुकेशन डिपार्टमेंट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "विमेन एंड चाइल्ड डेवलपमेंट डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Department"
+          "k": "एग्रीकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Horticulture Department"
+          "k": "हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "एग्रीकल्चर एक्सटेंशन एंड टेक्निकल सर्विसेज़"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "लैंड, रेवेन्यू एंड एग्रीकल्चर कन्वर्जेंस अथॉरिटीज़"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "अदर सब-डिस्ट्रिक्ट कन्वर्जेंस मैकेनिज़्म्स"
         },
         {
-          "k": "थाना सभ मे बाल कल्याण पुलिस पदाधिकारी (CWPO)"
+          "k": "चाइल्ड वेलफ़ेयर पुलिस ऑफ़िसर्स (CWPO) एट पुलिस स्टेशंस"
         }
       ]
     },
@@ -19135,72 +19135,72 @@ const MAI = {
       "label": "ज़िला स्तर",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ऑफ़िस ऑफ़ द डिस्ट्रिक्ट मजिस्ट्रेट (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ऑफ़िस ऑफ़ द चीफ़ डेवलपमेंट ऑफ़िसर (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "डिस्ट्रिक्ट चाइल्ड प्रोटेक्शन यूनिट (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "चाइल्ड वेलफ़ेयर कमेटी (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "डिस्ट्रिक्ट लीगल सर्विसेज़ अथॉरिटी (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "स्पेशल जुवेनाइल पुलिस यूनिट (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "एंटी-ह्यूमन ट्रैफ़िकिंग यूनिट (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "डिस्ट्रिक्ट-लेवल चाइल्ड प्रोटेक्शन कमेटी (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "डिस्ट्रिक्ट टास्क फ़ोर्स (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "डिस्ट्रिक्ट पुलिस"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "विमेन एंड चाइल्ड डेवलपमेंट डिपार्टमेंट"
         },
         {
-          "k": "Education Department"
+          "k": "एजुकेशन डिपार्टमेंट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेंट"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "डिस्ट्रिक्ट एग्रीकल्चर डिपार्टमेंट"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "डिस्ट्रिक्ट हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "एग्रीकल्चर एक्सटेंशन एंड टेक्निकल इंस्टीट्यूशंस"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "कृषि विज्ञान केंद्र (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "फ़ार्मर प्रोड्यूसर ऑर्गनाइज़ेशंस (FPOs) एंड फ़ेडरेशंस"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "चाइल्ड हेल्पलाइन सर्विसेज़"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "सशस्त्र सीमा बल (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "किशोर न्याय बोर्ड (JJB)"
+          "k": "जुवेनाइल जस्टिस बोर्ड (JJB)"
         },
         {
           "k": "वन स्टॉप सेंटर (सखी)"
@@ -19212,42 +19212,42 @@ const MAI = {
       "label": "राज्य स्तर",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "विमेन एंड चाइल्ड सिक्योरिटी ऑर्गनाइज़ेशन (WCSO), उत्तर प्रदेश पुलिस",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "विमेन एंड चाइल्ड डेवलपमेंट डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "एजुकेशन डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "हेल्थ डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "लेबर डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "उत्तर प्रदेश पुलिस एंड एंटी-ट्रैफ़िकिंग मैकेनिज़्म्स",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "डिपार्टमेंट ऑफ़ एग्रीकल्चर, गवर्नमेंट ऑफ़ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "डिपार्टमेंट ऑफ़ हॉर्टिकल्चर एंड फ़ूड प्रोसेसिंग, गवर्नमेंट ऑफ़ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "राज्य विधिक सेवा प्राधिकरण (SLSA)"
+          "k": "स्टेट लीगल सर्विसेज़ अथॉरिटी (SLSA)"
         },
         {
-          "k": "राज्य बाल अधिकार संरक्षण आयोग (SCPCR)"
+          "k": "स्टेट कमीशन फ़ॉर प्रोटेक्शन ऑफ़ चाइल्ड राइट्स (SCPCR)"
         }
       ]
     },
@@ -19256,13 +19256,13 @@ const MAI = {
       "label": "राष्ट्रीय स्तर",
       "items": [
         {
-          "k": "राष्ट्रीय विधिक सेवा प्राधिकरण (NALSA)"
+          "k": "नेशनल लीगल सर्विसेज़ अथॉरिटी (NALSA)"
         },
         {
-          "k": "राष्ट्रीय बाल अधिकार संरक्षण आयोग (NCPCR)"
+          "k": "नेशनल कमीशन फ़ॉर प्रोटेक्शन ऑफ़ चाइल्ड राइट्स (NCPCR)"
         },
         {
-          "k": "महिला आ बाल विकास मंत्रालय (मिशन वात्सल्य)"
+          "k": "मिनिस्ट्री ऑफ़ विमेन एंड चाइल्ड डेवलपमेंट (मिशन वात्सल्य)"
         }
       ]
     }
@@ -20289,46 +20289,46 @@ const AS = {
       "label": "গ্রাম পঞ্চায়ত পৰ্যায়",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "শিশু, কিশোৰ-কিশোৰী, মহিলা, অভিভাৱক, কৃষক, পৰিয়াল আৰু সমাজৰ সদস্যসকল"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "ভিলেজ হেল্থ, চেনিটেচন এণ্ড নিউট্ৰিচন কমিটিছ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "গ্ৰাম পঞ্চায়তছ এণ্ড পঞ্চায়তী ৰাজ ইনষ্টিটিউচনছ"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "অংগনৱাড়ী চেণ্টাৰছ (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "প্ৰাইমাৰী এণ্ড আপাৰ প্ৰাইমাৰী স্কুলছ"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "স্কুল মেনেজমেণ্ট কমিটিছ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "ভিলেজ-লেভেল চাইল্ড প্ৰটেকচন এণ্ড ৱেলফেয়াৰ কমিটিছ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ফ্ৰণ্টলাইন হেল্থ ৱৰ্কাৰ কেডাৰছ (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "কৃষক পৰিয়াল আৰু মহিলা কৃষকৰ সমষ্টি"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ফাৰ্মাৰ গ্ৰুপছ এণ্ড প্ৰডিউচাৰ কালেক্টিভছ"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ফাৰ্মাৰ প্ৰডিউচাৰ অৰ্গেনাইজেচনছ (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "চেল্ফ-হেল্প গ্ৰুপছ (SHGs) এণ্ড কমিউনিটি-বেছড কালেক্টিভছ"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "এগ্ৰিকালচাৰ এণ্ড হৰ্টিকালচাৰ এক্সটেনচন নেটৱৰ্কছ"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "কমিউনিটি ভলাণ্টিয়াৰ এণ্ড চাইল্ড-প্ৰটেকচন নেটৱৰ্কছ"
         }
       ]
     },
@@ -20337,40 +20337,40 @@ const AS = {
       "label": "ব্লক পৰ্যায়",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "অফিচ অফ দ্য চাইল্ড ডেভেলপমেণ্ট প্ৰজেক্ট অফিচাৰ (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ব্লক-লেভেল চাইল্ড প্ৰটেকচন কমিটি (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ব্লক এডুকেচন ডিপাৰ্টমেণ্ট এণ্ড টিচাৰ ক্লাষ্টাৰ ৰিছ'ৰ্চ চেণ্টাৰছ"
         },
         {
-          "k": "Block Health Department"
+          "k": "ব্লক হেল্থ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ব্লক লেবাৰ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Block Development Office"
+          "k": "ব্লক ডেভেলপমেণ্ট অফিচ"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ব্লক এগ্ৰিকালচাৰ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ব্লক হৰ্টিকালচাৰ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "এগ্ৰিকালচাৰ এক্সটেনচন এণ্ড টেকনিকেল ৰিছ'ৰ্চ চেণ্টাৰছ"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "গৱৰ্ণমেণ্ট এগ্ৰিকালচাৰ এণ্ড হৰ্টিকালচাৰ স্কীম অফিচেছ"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ফাৰ্মাৰ প্ৰডিউচাৰ অৰ্গেনাইজেচনছ (FPOs) এণ্ড ফাৰ্মাৰ কালেক্টিভছ"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "আদাৰ ব্লক-লেভেল কনভাৰ্জেন্স প্লেটফৰ্মছ"
         }
       ]
     },
@@ -20379,40 +20379,40 @@ const AS = {
       "label": "তহচিল / উপ-জিলা পৰ্যায়",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "তহচিল এণ্ড চাব-ডিভিজনেল এডমিনিষ্ট্ৰেচন"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "পুলিচ এণ্ড ল'-এনফৰ্চমেণ্ট অথৰিটিছ"
         },
         {
-          "k": "Labour Department"
+          "k": "লেবাৰ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Education Department"
+          "k": "এডুকেচন ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Health Department"
+          "k": "হেল্থ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ৱিমেন এণ্ড চাইল্ড ডেভেলপমেণ্ট ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Agriculture Department"
+          "k": "এগ্ৰিকালচাৰ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Horticulture Department"
+          "k": "হৰ্টিকালচাৰ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "এগ্ৰিকালচাৰ এক্সটেনচন এণ্ড টেকনিকেল চাৰ্ভিচেছ"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "লেণ্ড, ৰেভিনিউ এণ্ড এগ্ৰিকালচাৰ কনভাৰ্জেন্স অথৰিটিছ"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "আদাৰ চাব-ডিষ্ট্ৰিক্ট কনভাৰ্জেন্স মেকানিজমছ"
         },
         {
-          "k": "থানাসমূহত শিশু কল্যাণ আৰক্ষী বিষয়া (CWPO)"
+          "k": "চাইল্ড ৱেলফেয়াৰ পুলিচ অফিচাৰছ (CWPO) এট পুলিচ ষ্টেচনছ"
         }
       ]
     },
@@ -20421,68 +20421,68 @@ const AS = {
       "label": "জিলা পৰ্যায়",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "অফিচ অফ দ্য ডিষ্ট্ৰিক্ট মেজিষ্ট্ৰেট (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "অফিচ অফ দ্য চীফ ডেভেলপমেণ্ট অফিচাৰ (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ডিষ্ট্ৰিক্ট চাইল্ড প্ৰটেকচন ইউনিট (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "চাইল্ড ৱেলফেয়াৰ কমিটি (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ডিষ্ট্ৰিক্ট লিগেল চাৰ্ভিচেছ অথৰিটি (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "স্পেচিয়েল জুভেনাইল পুলিচ ইউনিট (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "এণ্টি-হিউমেন ট্ৰেফিকিং ইউনিট (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ডিষ্ট্ৰিক্ট-লেভেল চাইল্ড প্ৰটেকচন কমিটি (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ডিষ্ট্ৰিক্ট টাস্ক ফ'ৰ্চ (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ডিষ্ট্ৰিক্ট পুলিচ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ৱিমেন এণ্ড চাইল্ড ডেভেলপমেণ্ট ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Education Department"
+          "k": "এডুকেচন ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Health Department"
+          "k": "হেল্থ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Labour Department"
+          "k": "লেবাৰ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ডিষ্ট্ৰিক্ট এগ্ৰিকালচাৰ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ডিষ্ট্ৰিক্ট হৰ্টিকালচাৰ ডিপাৰ্টমেণ্ট"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "এগ্ৰিকালচাৰ এক্সটেনচন এণ্ড টেকনিকেল ইনষ্টিটিউচনছ"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "কৃষি বিজ্ঞান কেন্দ্ৰ (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ফাৰ্মাৰ প্ৰডিউচাৰ অৰ্গেনাইজেচনছ (FPOs) এণ্ড ফেডাৰেচনছ"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "চাইল্ড হেল্পলাইন চাৰ্ভিচেছ"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "সশস্ত্ৰ সীমা বল (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
@@ -20498,42 +20498,42 @@ const AS = {
       "label": "ৰাজ্যিক পৰ্যায়",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "ৱিমেন এণ্ড চাইল্ড চিকিউৰিটি অৰ্গেনাইজেচন (WCSO), উত্তৰ প্ৰদেশ পুলিচ",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "ৱিমেন এণ্ড চাইল্ড ডেভেলপমেণ্ট ডিপাৰ্টমেণ্ট",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "এডুকেচন ডিপাৰ্টমেণ্ট",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "হেল্থ ডিপাৰ্টমেণ্ট",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "লেবাৰ ডিপাৰ্টমেণ্ট",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "উত্তৰ প্ৰদেশ পুলিচ এণ্ড এণ্টি-ট্ৰেফিকিং মেকানিজমছ",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ডিপাৰ্টমেণ্ট অফ এগ্ৰিকালচাৰ, গৱৰ্ণমেণ্ট অফ উত্তৰ প্ৰদেশ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ডিপাৰ্টমেণ্ট অফ হৰ্টিকালচাৰ এণ্ড ফুড প্ৰচেছিং, গৱৰ্ণমেণ্ট অফ উত্তৰ প্ৰদেশ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "ৰাজ্যিক আইনী সেৱা কৰ্তৃপক্ষ (SLSA)"
+          "k": "ষ্টেট লিগেল চাৰ্ভিচেছ অথৰিটি (SLSA)"
         },
         {
-          "k": "ৰাজ্যিক শিশু অধিকাৰ সুৰক্ষা আয়োগ (SCPCR)"
+          "k": "ষ্টেট কমিচন ফৰ প্ৰটেকচন অফ চাইল্ড ৰাইটছ (SCPCR)"
         }
       ]
     },
@@ -20542,13 +20542,13 @@ const AS = {
       "label": "ৰাষ্ট্ৰীয় পৰ্যায়",
       "items": [
         {
-          "k": "ৰাষ্ট্ৰীয় আইনী সেৱা কৰ্তৃপক্ষ (NALSA)"
+          "k": "নেচনেল লিগেল চাৰ্ভিচেছ অথৰিটি (NALSA)"
         },
         {
-          "k": "ৰাষ্ট্ৰীয় শিশু অধিকাৰ সুৰক্ষা আয়োগ (NCPCR)"
+          "k": "নেচনেল কমিচন ফৰ প্ৰটেকচন অফ চাইল্ড ৰাইটছ (NCPCR)"
         },
         {
-          "k": "মহিলা আৰু শিশু বিকাশ মন্ত্ৰালয় (মিছন বাৎসল্য)"
+          "k": "মিনিষ্ট্ৰী অফ ৱিমেন এণ্ড চাইল্ড ডেভেলপমেণ্ট (মিছন বাৎসল্য)"
         }
       ]
     }
@@ -21575,46 +21575,46 @@ const NE = {
       "label": "ग्राम पञ्चायत स्तर",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "बालबालिका, किशोरकिशोरी, महिला, अभिभावक, किसान, परिवार र समुदायका सदस्यहरू"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "भिलेज हेल्थ, स्यानिटेसन एन्ड न्युट्रिसन कमिटीज (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ग्राम पञ्चायत्स एन्ड पञ्चायती राज इन्स्टिच्युसन्स"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "आँगनवाडी सेन्टर्स (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "प्राइमरी एन्ड अपर प्राइमरी स्कुल्स"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "स्कुल म्यानेजमेन्ट कमिटीज (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "भिलेज-लेभल चाइल्ड प्रोटेक्सन एन्ड वेलफेयर कमिटीज (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "फ्रन्टलाइन हेल्थ वर्कर क्याडर्स (आशा, एएनएम)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "कृषक परिवारहरू र महिला किसान समूहहरू"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "फार्मर ग्रुप्स एन्ड प्रोड्युसर कलेक्टिभ्स"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "फार्मर प्रोड्युसर अर्गनाइजेसन्स (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "सेल्फ-हेल्प ग्रुप्स (SHGs) एन्ड कम्युनिटी-बेस्ड कलेक्टिभ्स"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "एग्रिकल्चर एन्ड हर्टिकल्चर एक्सटेन्सन नेटवर्क्स"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "कम्युनिटी भोलन्टियर एन्ड चाइल्ड-प्रोटेक्सन नेटवर्क्स"
         }
       ]
     },
@@ -21623,40 +21623,40 @@ const NE = {
       "label": "ब्लक स्तर",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "अफिस अफ द चाइल्ड डेभलपमेन्ट प्रोजेक्ट अफिसर (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ब्लक-लेभल चाइल्ड प्रोटेक्सन कमिटी (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ब्लक एजुकेसन डिपार्टमेन्ट एन्ड टिचर क्लस्टर रिसोर्स सेन्टर्स"
         },
         {
-          "k": "Block Health Department"
+          "k": "ब्लक हेल्थ डिपार्टमेन्ट"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ब्लक लेबर डिपार्टमेन्ट"
         },
         {
-          "k": "Block Development Office"
+          "k": "ब्लक डेभलपमेन्ट अफिस"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ब्लक एग्रिकल्चर डिपार्टमेन्ट"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ब्लक हर्टिकल्चर डिपार्टमेन्ट"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "एग्रिकल्चर एक्सटेन्सन एन्ड टेक्निकल रिसोर्स सेन्टर्स"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "गभर्नमेन्ट एग्रिकल्चर एन्ड हर्टिकल्चर स्किम अफिसेस"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "फार्मर प्रोड्युसर अर्गनाइजेसन्स (FPOs) एन्ड फार्मर कलेक्टिभ्स"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "अदर ब्लक-लेभल कन्भर्जेन्स प्लेटफर्म्स"
         }
       ]
     },
@@ -21665,40 +21665,40 @@ const NE = {
       "label": "तहसील / उप-जिल्ला स्तर",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "तहसिल एन्ड सब-डिभिजनल एड्मिनिस्ट्रेसन"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "पुलिस एन्ड ल-इन्फोर्समेन्ट अथोरिटिज"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेन्ट"
         },
         {
-          "k": "Education Department"
+          "k": "एजुकेसन डिपार्टमेन्ट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेन्ट"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "विमेन एन्ड चाइल्ड डेभलपमेन्ट डिपार्टमेन्ट"
         },
         {
-          "k": "Agriculture Department"
+          "k": "एग्रिकल्चर डिपार्टमेन्ट"
         },
         {
-          "k": "Horticulture Department"
+          "k": "हर्टिकल्चर डिपार्टमेन्ट"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "एग्रिकल्चर एक्सटेन्सन एन्ड टेक्निकल सर्भिसेस"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "ल्यान्ड, रेभेन्यु एन्ड एग्रिकल्चर कन्भर्जेन्स अथोरिटिज"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "अदर सब-डिस्ट्रिक्ट कन्भर्जेन्स मेकानिज्म्स"
         },
         {
-          "k": "प्रहरी चौकीमा बाल कल्याण प्रहरी अधिकृत (CWPO)"
+          "k": "चाइल्ड वेलफेयर पुलिस अफिसर्स (CWPO) एट पुलिस स्टेसन्स"
         }
       ]
     },
@@ -21707,72 +21707,72 @@ const NE = {
       "label": "जिल्ला स्तर",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "अफिस अफ द डिस्ट्रिक्ट म्याजिस्ट्रेट (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "अफिस अफ द चिफ डेभलपमेन्ट अफिसर (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "डिस्ट्रिक्ट चाइल्ड प्रोटेक्सन युनिट (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "चाइल्ड वेलफेयर कमिटी (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "डिस्ट्रिक्ट लिगल सर्भिसेस अथोरिटी (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "स्पेसल जुभेनाइल पुलिस युनिट (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "एन्टी-ह्युमन ट्राफिकिङ युनिट (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "डिस्ट्रिक्ट-लेभल चाइल्ड प्रोटेक्सन कमिटी (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "डिस्ट्रिक्ट टास्क फोर्स (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "डिस्ट्रिक्ट पुलिस"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "विमेन एन्ड चाइल्ड डेभलपमेन्ट डिपार्टमेन्ट"
         },
         {
-          "k": "Education Department"
+          "k": "एजुकेसन डिपार्टमेन्ट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेन्ट"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेन्ट"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "डिस्ट्रिक्ट एग्रिकल्चर डिपार्टमेन्ट"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "डिस्ट्रिक्ट हर्टिकल्चर डिपार्टमेन्ट"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "एग्रिकल्चर एक्सटेन्सन एन्ड टेक्निकल इन्स्टिच्युसन्स"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "कृषि विज्ञान केन्द्र (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "फार्मर प्रोड्युसर अर्गनाइजेसन्स (FPOs) एन्ड फेडरेसन्स"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "चाइल्ड हेल्पलाइन सर्भिसेस"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "सशस्त्र सीमा बल (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "किशोर न्याय बोर्ड (JJB)"
+          "k": "जुभेनाइल जस्टिस बोर्ड (JJB)"
         },
         {
           "k": "वन स्टप सेन्टर (सखी)"
@@ -21784,42 +21784,42 @@ const NE = {
       "label": "राज्य स्तर",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "विमेन एन्ड चाइल्ड सेक्युरिटी अर्गनाइजेसन (WCSO), उत्तर प्रदेश पुलिस",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "विमेन एन्ड चाइल्ड डेभलपमेन्ट डिपार्टमेन्ट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "एजुकेसन डिपार्टमेन्ट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "हेल्थ डिपार्टमेन्ट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "लेबर डिपार्टमेन्ट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "उत्तर प्रदेश पुलिस एन्ड एन्टी-ट्राफिकिङ मेकानिज्म्स",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "डिपार्टमेन्ट अफ एग्रिकल्चर, गभर्नमेन्ट अफ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "डिपार्टमेन्ट अफ हर्टिकल्चर एन्ड फुड प्रोसेसिङ, गभर्नमेन्ट अफ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "राज्य कानुनी सेवा प्राधिकरण (SLSA)"
+          "k": "स्टेट लिगल सर्भिसेस अथोरिटी (SLSA)"
         },
         {
-          "k": "राज्य बाल अधिकार संरक्षण आयोग (SCPCR)"
+          "k": "स्टेट कमिसन फर प्रोटेक्सन अफ चाइल्ड राइट्स (SCPCR)"
         }
       ]
     },
@@ -21828,13 +21828,13 @@ const NE = {
       "label": "राष्ट्रिय तह",
       "items": [
         {
-          "k": "राष्ट्रिय कानुनी सेवा प्राधिकरण (NALSA)"
+          "k": "नेसनल लिगल सर्भिसेस अथोरिटी (NALSA)"
         },
         {
-          "k": "राष्ट्रिय बाल अधिकार संरक्षण आयोग (NCPCR)"
+          "k": "नेसनल कमिसन फर प्रोटेक्सन अफ चाइल्ड राइट्स (NCPCR)"
         },
         {
-          "k": "महिला तथा बाल विकास मन्त्रालय (मिशन वात्सल्य)"
+          "k": "मिनिस्ट्री अफ विमेन एन्ड चाइल्ड डेभलपमेन्ट (मिशन वात्सल्य)"
         }
       ]
     }
@@ -22861,46 +22861,46 @@ const KOK = {
       "label": "ग्राम पंचायत पांवडो",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "भुरगीं, किशोरवयीन, बायलो, आवय-बापूय, शेतकार, कुटुंबां आनी समाजांतले वांगडी"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "व्हिलेज हेल्थ, सॅनिटेशन अँड न्युट्रिशन कमिटीज (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ग्राम पंचायती अँड पंचायती राज इन्स्टिट्यूशन्स"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "आंगणवाडी सेंटर्स (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "प्रायमरी अँड अप्पर प्रायमरी स्कूल्स"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "स्कूल मॅनेजमेंट कमिटीज (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "व्हिलेज-लेव्हल चायल्ड प्रोटेक्शन अँड वेल्फेअर कमिटीज (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "फ्रंटलायन हेल्थ वर्कर कॅडर्स (आशा, एएनएम)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "शेतकार कुटुंबां आनी बायल शेतकारांचे सामुहीक गट"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "फार्मर ग्रुप्स अँड प्रोड्युसर कलेक्टिव्हज"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "फार्मर प्रोड्युसर ऑर्गनायझेशन्स (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "सेल्फ-हेल्प ग्रुप्स (SHGs) अँड कम्युनिटी-बेस्ड कलेक्टिव्हज"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "ॲग्रिकल्चर अँड हॉर्टिकल्चर एक्स्टेंशन नेटवर्क्स"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "कम्युनिटी व्हॉलंटियर अँड चायल्ड-प्रोटेक्शन नेटवर्क्स"
         }
       ]
     },
@@ -22909,40 +22909,40 @@ const KOK = {
       "label": "ब्लॉक पांवडो",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ऑफिस ऑफ द चायल्ड डेव्हलपमेंट प्रोजेक्ट ऑफिसर (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ब्लॉक-लेव्हल चायल्ड प्रोटेक्शन कमिटी (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ब्लॉक एज्युकेशन डिपार्टमेंट अँड टीचर क्लस्टर रिसोर्स सेंटर्स"
         },
         {
-          "k": "Block Health Department"
+          "k": "ब्लॉक हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ब्लॉक लेबर डिपार्टमेंट"
         },
         {
-          "k": "Block Development Office"
+          "k": "ब्लॉक डेव्हलपमेंट ऑफिस"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ब्लॉक ॲग्रिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ब्लॉक हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "ॲग्रिकल्चर एक्स्टेंशन अँड टेक्निकल रिसोर्स सेंटर्स"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "गव्हर्नमेंट ॲग्रिकल्चर अँड हॉर्टिकल्चर स्कीम ऑफिसेस"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "फार्मर प्रोड्युसर ऑर्गनायझेशन्स (FPOs) अँड फार्मर कलेक्टिव्हज"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "अदर ब्लॉक-लेव्हल कन्व्हर्जन्स प्लॅटफॉर्म्स"
         }
       ]
     },
@@ -22951,40 +22951,40 @@ const KOK = {
       "label": "तहसील / उप-जिल्लो पांवडो",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "तहसील अँड सब-डिव्हिजनल ॲडमिनिस्ट्रेशन"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "पोलीस अँड लॉ-एन्फोर्समेंट ऑथॉरिटीज"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेंट"
         },
         {
-          "k": "Education Department"
+          "k": "एज्युकेशन डिपार्टमेंट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "विमेन अँड चायल्ड डेव्हलपमेंट डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Department"
+          "k": "ॲग्रिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Horticulture Department"
+          "k": "हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "ॲग्रिकल्चर एक्स्टेंशन अँड टेक्निकल सर्व्हिसेस"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "लँड, रेव्हेन्यू अँड ॲग्रिकल्चर कन्व्हर्जन्स ऑथॉरिटीज"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "अदर सब-डिस्ट्रिक्ट कन्व्हर्जन्स मेकॅनिझम्स"
         },
         {
-          "k": "पुलीस स्टेशनांनी बाल कल्याण पुलीस अधिकारी (CWPO)"
+          "k": "चायल्ड वेल्फेअर पोलीस ऑफिसर्स (CWPO) ॲट पोलीस स्टेशन्स"
         }
       ]
     },
@@ -22993,72 +22993,72 @@ const KOK = {
       "label": "जिल्लो पांवडो",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ऑफिस ऑफ द डिस्ट्रिक्ट मॅजिस्ट्रेट (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ऑफिस ऑफ द चीफ डेव्हलपमेंट ऑफिसर (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "डिस्ट्रिक्ट चायल्ड प्रोटेक्शन युनिट (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "चायल्ड वेल्फेअर कमिटी (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "डिस्ट्रिक्ट लीगल सर्व्हिसेस ऑथॉरिटी (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "स्पेशल ज्युव्हेनायल पोलीस युनिट (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "अँटी-ह्यूमन ट्रॅफिकिंग युनिट (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "डिस्ट्रिक्ट-लेव्हल चायल्ड प्रोटेक्शन कमिटी (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "डिस्ट्रिक्ट टास्क फोर्स (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "डिस्ट्रिक्ट पोलीस"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "विमेन अँड चायल्ड डेव्हलपमेंट डिपार्टमेंट"
         },
         {
-          "k": "Education Department"
+          "k": "एज्युकेशन डिपार्टमेंट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेंट"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "डिस्ट्रिक्ट ॲग्रिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "डिस्ट्रिक्ट हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "ॲग्रिकल्चर एक्स्टेंशन अँड टेक्निकल इन्स्टिट्यूशन्स"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "कृषी विज्ञान केंद्रां (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "फार्मर प्रोड्युसर ऑर्गनायझेशन्स (FPOs) अँड फेडरेशन्स"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "चायल्ड हेल्पलायन सर्व्हिसेस"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "सशस्त्र सीमा बल (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "बाल न्याय मंडळ (JJB)"
+          "k": "ज्युव्हेनायल जस्टिस बोर्ड (JJB)"
         },
         {
           "k": "वन स्टॉप सेंटर (सखी)"
@@ -23070,42 +23070,42 @@ const KOK = {
       "label": "राज्य पांवडो",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "विमेन अँड चायल्ड सिक्युरिटी ऑर्गनायझेशन (WCSO), उत्तर प्रदेश पोलीस",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "विमेन अँड चायल्ड डेव्हलपमेंट डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "एज्युकेशन डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "हेल्थ डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "लेबर डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "उत्तर प्रदेश पोलीस अँड अँटी-ट्रॅफिकिंग मेकॅनिझम्स",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "डिपार्टमेंट ऑफ ॲग्रिकल्चर, गव्हर्नमेंट ऑफ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "डिपार्टमेंट ऑफ हॉर्टिकल्चर अँड फूड प्रोसेसिंग, गव्हर्नमेंट ऑफ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "राज्य कायदेशीर सेवा प्राधिकरण (SLSA)"
+          "k": "स्टेट लीगल सर्व्हिसेस ऑथॉरिटी (SLSA)"
         },
         {
-          "k": "राज्य बाल हक्क संरक्षण आयोग (SCPCR)"
+          "k": "स्टेट कमिशन फॉर प्रोटेक्शन ऑफ चायल्ड रायट्स (SCPCR)"
         }
       ]
     },
@@ -23114,13 +23114,13 @@ const KOK = {
       "label": "राष्ट्रीय पांवडो",
       "items": [
         {
-          "k": "राष्ट्रीय कायदेशीर सेवा प्राधिकरण (NALSA)"
+          "k": "नॅशनल लीगल सर्व्हिसेस ऑथॉरिटी (NALSA)"
         },
         {
-          "k": "राष्ट्रीय बाल हक्क संरक्षण आयोग (NCPCR)"
+          "k": "नॅशनल कमिशन फॉर प्रोटेक्शन ऑफ चायल्ड रायट्स (NCPCR)"
         },
         {
-          "k": "महिला आनी बाल उदरगत मंत्रालय (मिशन वात्सल्य)"
+          "k": "मिनिस्ट्री ऑफ विमेन अँड चायल्ड डेव्हलपमेंट (मिशन वात्सल्य)"
         }
       ]
     }
@@ -24147,46 +24147,46 @@ const SA = {
       "label": "ग्रामपञ्चायतस्तरः",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "बालाः, किशोराः, महिलाः, पितरः, कृषकाः, कुटुम्बानि, समुदायसदस्याः च"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "विलेज हेल्थ, सैनिटेशन एंड न्यूट्रिशन कमेटीज (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ग्राम पंचायत्स एंड पंचायती राज इंस्टिट्यूशन्स"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "आंगनवाडी सेंटर्स (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "प्राइमरी एंड अपर प्राइमरी स्कूल्स"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "स्कूल मैनेजमेंट कमेटीज (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "विलेज-लेवल चाइल्ड प्रोटेक्शन एंड वेलफेयर कमेटीज (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "फ्रंटलाइन हेल्थ वर्कर कैडर्स (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "कृषककुटुम्बानि महिलाकृषकसमूहाः च"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "फार्मर ग्रुप्स एंड प्रोड्यूसर कलेक्टिव्स"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "फार्मर प्रोड्यूसर ऑर्गनाइजेशन्स (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "सेल्फ-हेल्प ग्रुप्स (SHGs) एंड कम्युनिटी-बेस्ड कलेक्टिव्स"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "एग्रीकल्चर एंड हॉर्टिकल्चर एक्सटेंशन नेटवर्क्स"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "कम्युनिटी वॉलंटियर एंड चाइल्ड-प्रोटेक्शन नेटवर्क्स"
         }
       ]
     },
@@ -24195,40 +24195,40 @@ const SA = {
       "label": "प्रखण्डस्तरः (ब्लॉक)",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ऑफिस ऑफ द चाइल्ड डेवलपमेंट प्रोजेक्ट ऑफिसर (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ब्लॉक-लेवल चाइल्ड प्रोटेक्शन कमेटी (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ब्लॉक एजुकेशन डिपार्टमेंट एंड टीचर क्लस्टर रिसोर्स सेंटर्स"
         },
         {
-          "k": "Block Health Department"
+          "k": "ब्लॉक हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ब्लॉक लेबर डिपार्टमेंट"
         },
         {
-          "k": "Block Development Office"
+          "k": "ब्लॉक डेवलपमेंट ऑफिस"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ब्लॉक एग्रीकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ब्लॉक हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "एग्रीकल्चर एक्सटेंशन एंड टेक्निकल रिसोर्स सेंटर्स"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "गवर्नमेंट एग्रीकल्चर एंड हॉर्टिकल्चर स्कीम ऑफिसेज"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "फार्मर प्रोड्यूसर ऑर्गनाइजेशन्स (FPOs) एंड फार्मर कलेक्टिव्स"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "अदर ब्लॉक-लेवल कन्वर्जेंस प्लेटफॉर्म्स"
         }
       ]
     },
@@ -24237,40 +24237,40 @@ const SA = {
       "label": "तहसील / उप-मण्डलस्तरः",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "तहसील एंड सब-डिविजनल एडमिनिस्ट्रेशन"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "पुलिस एंड लॉ-एन्फोर्समेंट अथॉरिटीज"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेंट"
         },
         {
-          "k": "Education Department"
+          "k": "एजुकेशन डिपार्टमेंट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "वुमेन एंड चाइल्ड डेवलपमेंट डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Department"
+          "k": "एग्रीकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Horticulture Department"
+          "k": "हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "एग्रीकल्चर एक्सटेंशन एंड टेक्निकल सर्विसेज"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "लैंड, रेवेन्यू एंड एग्रीकल्चर कन्वर्जेंस अथॉरिटीज"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "अदर सब-डिस्ट्रिक्ट कन्वर्जेंस मैकेनिज्म्स"
         },
         {
-          "k": "आरक्षकस्थानेषु बालकल्याण-आरक्षकाधिकारिणः (CWPO)"
+          "k": "चाइल्ड वेलफेयर पुलिस ऑफिसर्स (CWPO) एट पुलिस स्टेशन्स"
         }
       ]
     },
@@ -24279,72 +24279,72 @@ const SA = {
       "label": "मण्डलस्तरः (जिला)",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ऑफिस ऑफ द डिस्ट्रिक्ट मजिस्ट्रेट (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ऑफिस ऑफ द चीफ डेवलपमेंट ऑफिसर (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "डिस्ट्रिक्ट चाइल्ड प्रोटेक्शन यूनिट (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "चाइल्ड वेलफेयर कमेटी (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "डिस्ट्रिक्ट लीगल सर्विसेज अथॉरिटी (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "स्पेशल जुवेनाइल पुलिस यूनिट (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "एंटी-ह्यूमन ट्रैफिकिंग यूनिट (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "डिस्ट्रिक्ट-लेवल चाइल्ड प्रोटेक्शन कमेटी (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "डिस्ट्रिक्ट टास्क फोर्स (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "डिस्ट्रिक्ट पुलिस"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "वुमेन एंड चाइल्ड डेवलपमेंट डिपार्टमेंट"
         },
         {
-          "k": "Education Department"
+          "k": "एजुकेशन डिपार्टमेंट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेंट"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "डिस्ट्रिक्ट एग्रीकल्चर डिपार्टमेंट"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "डिस्ट्रिक्ट हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "एग्रीकल्चर एक्सटेंशन एंड टेक्निकल इंस्टिट्यूशन्स"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "कृषि विज्ञान केन्द्र (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "फार्मर प्रोड्यूसर ऑर्गनाइजेशन्स (FPOs) एंड फेडरेशन्स"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "चाइल्ड हेल्पलाइन सर्विसेज"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "सशस्त्र सीमा बल (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "किशोरन्यायमण्डलम् (JJB)"
+          "k": "जुवेनाइल जस्टिस बोर्ड (JJB)"
         },
         {
           "k": "वन स्टॉप सेंटर (सखी)"
@@ -24356,42 +24356,42 @@ const SA = {
       "label": "राज्यस्तरः",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "वुमेन एंड चाइल्ड सिक्योरिटी ऑर्गनाइजेशन (WCSO), उत्तर प्रदेश पुलिस",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "वुमेन एंड चाइल्ड डेवलपमेंट डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "एजुकेशन डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "हेल्थ डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "लेबर डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "उत्तर प्रदेश पुलिस एंड एंटी-ट्रैफिकिंग मैकेनिज्म्स",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "डिपार्टमेंट ऑफ एग्रीकल्चर, गवर्नमेंट ऑफ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "डिपार्टमेंट ऑफ हॉर्टिकल्चर एंड फूड प्रोसेसिंग, गवर्नमेंट ऑफ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "राज्य-विधिकसेवा-प्राधिकरणम् (SLSA)"
+          "k": "स्टेट लीगल सर्विसेज अथॉरिटी (SLSA)"
         },
         {
-          "k": "राज्य-बालाधिकार-संरक्षण-आयोगः (SCPCR)"
+          "k": "स्टेट कमीशन फॉर प्रोटेक्शन ऑफ चाइल्ड राइट्स (SCPCR)"
         }
       ]
     },
@@ -24400,13 +24400,13 @@ const SA = {
       "label": "राष्ट्रियस्तरः",
       "items": [
         {
-          "k": "राष्ट्रिय-विधिकसेवा-प्राधिकरणम् (NALSA)"
+          "k": "नेशनल लीगल सर्विसेज अथॉरिटी (NALSA)"
         },
         {
-          "k": "राष्ट्रिय-बालाधिकार-संरक्षण-आयोगः (NCPCR)"
+          "k": "नेशनल कमीशन फॉर प्रोटेक्शन ऑफ चाइल्ड राइट्स (NCPCR)"
         },
         {
-          "k": "महिला-बालविकास-मन्त्रालयः (मिशन वात्सल्य)"
+          "k": "मिनिस्ट्री ऑफ वुमेन एंड चाइल्ड डेवलपमेंट (मिशन वात्सल्य)"
         }
       ]
     }
@@ -25433,46 +25433,46 @@ const SD = {
       "label": "گرام پنچائت جي سطح",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "ٻار، نوجوان، عورتون، والدين، هاري، خاندان ۽ برادري جا ماڻهو"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "وليج هيلٿ، سينيٽيشن اينڊ نيوٽريشن ڪميٽيز (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "گرام پنچائتون اينڊ پنچائتي راج انسٽيٽيوشنز"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "آنگن واڙي سينٽرز (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "پرائمري اينڊ اپر پرائمري اسڪولز"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "اسڪول مئنيجمينٽ ڪميٽيز (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "وليج-ليول چائلڊ پروٽيڪشن اينڊ ويلفيئر ڪميٽيز (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "فرنٽ لائين هيلٿ ورڪر ڪيڊرز (ASHA، ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "هاري گهراڻا ۽ عورت هارين جا گروپ"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "فارمر گروپس اينڊ پروڊيوسر ڪليڪٽوز"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "فارمر پروڊيوسر آرگنائيزيشنز (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "سيلف-هيلپ گروپس (SHGs) اينڊ ڪميونٽي-بيسڊ ڪليڪٽوز"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "ايگريڪلچر اينڊ هارٽيڪلچر ايڪسٽينشن نيٽ ورڪس"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "ڪميونٽي والنٽيئر اينڊ چائلڊ-پروٽيڪشن نيٽ ورڪس"
         }
       ]
     },
@@ -25481,40 +25481,40 @@ const SD = {
       "label": "بلاڪ جي سطح",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "آفيس آف دي چائلڊ ڊولپمينٽ پروجيڪٽ آفيسر (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "بلاڪ-ليول چائلڊ پروٽيڪشن ڪميٽي (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "بلاڪ ايجوڪيشن ڊپارٽمينٽ اينڊ ٽيچر ڪلسٽر ريسورس سينٽرز"
         },
         {
-          "k": "Block Health Department"
+          "k": "بلاڪ هيلٿ ڊپارٽمينٽ"
         },
         {
-          "k": "Block Labour Department"
+          "k": "بلاڪ ليبر ڊپارٽمينٽ"
         },
         {
-          "k": "Block Development Office"
+          "k": "بلاڪ ڊولپمينٽ آفيس"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "بلاڪ ايگريڪلچر ڊپارٽمينٽ"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "بلاڪ هارٽيڪلچر ڊپارٽمينٽ"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "ايگريڪلچر ايڪسٽينشن اينڊ ٽيڪنيڪل ريسورس سينٽرز"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "گورنمينٽ ايگريڪلچر اينڊ هارٽيڪلچر اسڪيم آفيسز"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "فارمر پروڊيوسر آرگنائيزيشنز (FPOs) اينڊ فارمر ڪليڪٽوز"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "ادر بلاڪ-ليول ڪنورجنس پليٽ فارمز"
         }
       ]
     },
@@ -25523,40 +25523,40 @@ const SD = {
       "label": "تحصيل / ماتحت ضلعي جي سطح",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "تحصيل اينڊ سب-ڊويزنل ايڊمنسٽريشن"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "پوليس اينڊ لا-انفورسمينٽ اٿارٽيز"
         },
         {
-          "k": "Labour Department"
+          "k": "ليبر ڊپارٽمينٽ"
         },
         {
-          "k": "Education Department"
+          "k": "ايجوڪيشن ڊپارٽمينٽ"
         },
         {
-          "k": "Health Department"
+          "k": "هيلٿ ڊپارٽمينٽ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ويمن اينڊ چائلڊ ڊولپمينٽ ڊپارٽمينٽ"
         },
         {
-          "k": "Agriculture Department"
+          "k": "ايگريڪلچر ڊپارٽمينٽ"
         },
         {
-          "k": "Horticulture Department"
+          "k": "هارٽيڪلچر ڊپارٽمينٽ"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "ايگريڪلچر ايڪسٽينشن اينڊ ٽيڪنيڪل سروسز"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "لينڊ، ريوينيو اينڊ ايگريڪلچر ڪنورجنس اٿارٽيز"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "ادر سب-ڊسٽرڪٽ ڪنورجنس ميڪانزمز"
         },
         {
-          "k": "پوليس اسٽيشنن تي ٻارن جي ڀلائي پوليس آفيسر (CWPO)"
+          "k": "چائلڊ ويلفيئر پوليس آفيسرز (CWPO) ايٽ پوليس اسٽيشنز"
         }
       ]
     },
@@ -25565,72 +25565,72 @@ const SD = {
       "label": "ضلعي جي سطح",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "آفيس آف دي ڊسٽرڪٽ مئجسٽريٽ (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "آفيس آف دي چيف ڊولپمينٽ آفيسر (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ڊسٽرڪٽ چائلڊ پروٽيڪشن يونٽ (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "چائلڊ ويلفيئر ڪميٽي (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ڊسٽرڪٽ ليگل سروسز اٿارٽي (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "اسپيشل جوينائل پوليس يونٽ (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "اينٽي-هيومن ٽريفڪنگ يونٽ (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ڊسٽرڪٽ-ليول چائلڊ پروٽيڪشن ڪميٽي (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ڊسٽرڪٽ ٽاسڪ فورس (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ڊسٽرڪٽ پوليس"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ويمن اينڊ چائلڊ ڊولپمينٽ ڊپارٽمينٽ"
         },
         {
-          "k": "Education Department"
+          "k": "ايجوڪيشن ڊپارٽمينٽ"
         },
         {
-          "k": "Health Department"
+          "k": "هيلٿ ڊپارٽمينٽ"
         },
         {
-          "k": "Labour Department"
+          "k": "ليبر ڊپارٽمينٽ"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ڊسٽرڪٽ ايگريڪلچر ڊپارٽمينٽ"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ڊسٽرڪٽ هارٽيڪلچر ڊپارٽمينٽ"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "ايگريڪلچر ايڪسٽينشن اينڊ ٽيڪنيڪل انسٽيٽيوشنز"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "ڪرشي وگيان ڪيندر (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "فارمر پروڊيوسر آرگنائيزيشنز (FPOs) اينڊ فيڊريشنز"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "چائلڊ هيلپ لائين سروسز"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "سشستر سيما بل (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "جووينائل جسٽس بورڊ (JJB)"
+          "k": "جوينائل جسٽس بورڊ (JJB)"
         },
         {
           "k": "ون اسٽاپ سينٽر (سکي)"
@@ -25642,42 +25642,42 @@ const SD = {
       "label": "صوبائي سطح",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "ويمن اينڊ چائلڊ سيڪيورٽي آرگنائيزيشن (WCSO)، اتر پرديش پوليس",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "ويمن اينڊ چائلڊ ڊولپمينٽ ڊپارٽمينٽ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "ايجوڪيشن ڊپارٽمينٽ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "هيلٿ ڊپارٽمينٽ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "ليبر ڊپارٽمينٽ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "اتر پرديش پوليس اينڊ اينٽي-ٽريفڪنگ ميڪانزمز",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ڊپارٽمينٽ آف ايگريڪلچر، گورنمينٽ آف اتر پرديش",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ڊپارٽمينٽ آف هارٽيڪلچر اينڊ فوڊ پروسيسنگ، گورنمينٽ آف اتر پرديش",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "رياستي قانوني خدمتن جي اٿارٽي (SLSA)"
+          "k": "اسٽيٽ ليگل سروسز اٿارٽي (SLSA)"
         },
         {
-          "k": "ٻارن جي حقن جي تحفظ جو رياستي ڪميشن (SCPCR)"
+          "k": "اسٽيٽ ڪميشن فار پروٽيڪشن آف چائلڊ رائيٽس (SCPCR)"
         }
       ]
     },
@@ -25686,13 +25686,13 @@ const SD = {
       "label": "قومي سطح",
       "items": [
         {
-          "k": "قومي قانوني خدمتن جي اٿارٽي (NALSA)"
+          "k": "نيشنل ليگل سروسز اٿارٽي (NALSA)"
         },
         {
-          "k": "ٻارن جي حقن جي تحفظ جو قومي ڪميشن (NCPCR)"
+          "k": "نيشنل ڪميشن فار پروٽيڪشن آف چائلڊ رائيٽس (NCPCR)"
         },
         {
-          "k": "عورتن ۽ ٻارن جي ترقيءَ جي وزارت (مشن واتسليا)"
+          "k": "منسٽري آف ويمن اينڊ چائلڊ ڊولپمينٽ (مشن واتسليه)"
         }
       ]
     }
@@ -26719,46 +26719,46 @@ const OR = {
       "label": "ଗ୍ରାମ ପଞ୍ଚାୟତ ସ୍ତର",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "ଶିଶୁ, କିଶୋର-କିଶୋରୀ, ମହିଳା, ଅଭିଭାବକ, କୃଷକ, ପରିବାର ଏବଂ ସମୁଦାୟର ସଦସ୍ୟ"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "ଭିଲେଜ ହେଲଥ, ସାନିଟେସନ ଆଣ୍ଡ ନ୍ୟୁଟ୍ରିସନ କମିଟିଜ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ଗ୍ରାମ ପଞ୍ଚାୟତସ ଆଣ୍ଡ ପଞ୍ଚାୟତି ରାଜ ଇନଷ୍ଟିଚ୍ୟୁସନସ"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "ଅଙ୍ଗନୱାଡ଼ି ସେଣ୍ଟରସ (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "ପ୍ରାଇମେରି ଆଣ୍ଡ ଅପର ପ୍ରାଇମେରି ସ୍କୁଲସ"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "ସ୍କୁଲ ମ୍ୟାନେଜମେଣ୍ଟ କମିଟିଜ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "ଭିଲେଜ-ଲେଭେଲ ଚାଇଲ୍ଡ ପ୍ରୋଟେକସନ ଆଣ୍ଡ ୱେଲଫେୟାର କମିଟିଜ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ଫ୍ରଣ୍ଟଲାଇନ ହେଲଥ ୱର୍କର କ୍ୟାଡରସ (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "କୃଷକ ପରିବାର ଏବଂ ମହିଳା କୃଷକ ସମୂହ"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ଫାର୍ମର ଗ୍ରୁପସ ଆଣ୍ଡ ପ୍ରୋଡ୍ୟୁସର କଲେକ୍ଟିଭସ"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ଫାର୍ମର ପ୍ରୋଡ୍ୟୁସର ଅର୍ଗାନାଇଜେସନସ (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "ସେଲ୍ଫ-ହେଲ୍ପ ଗ୍ରୁପସ (SHGs) ଆଣ୍ଡ କମ୍ୟୁନିଟି-ବେସଡ କଲେକ୍ଟିଭସ"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "ଏଗ୍ରିକଲଚର ଆଣ୍ଡ ହର୍ଟିକଲଚର ଏକ୍ସଟେନସନ ନେଟୱର୍କସ"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "କମ୍ୟୁନିଟି ଭଲଣ୍ଟିୟର ଆଣ୍ଡ ଚାଇଲ୍ଡ-ପ୍ରୋଟେକସନ ନେଟୱର୍କସ"
         }
       ]
     },
@@ -26767,40 +26767,40 @@ const OR = {
       "label": "ବ୍ଲକ ସ୍ତର",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ଅଫିସ ଅଫ ଦି ଚାଇଲ୍ଡ ଡେଭଲପମେଣ୍ଟ ପ୍ରୋଜେକ୍ଟ ଅଫିସର (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ବ୍ଲକ-ଲେଭେଲ ଚାଇଲ୍ଡ ପ୍ରୋଟେକସନ କମିଟି (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ବ୍ଲକ ଏଜୁକେସନ ଡିପାର୍ଟମେଣ୍ଟ ଆଣ୍ଡ ଟିଚର କ୍ଲଷ୍ଟର ରିସୋର୍ସ ସେଣ୍ଟରସ"
         },
         {
-          "k": "Block Health Department"
+          "k": "ବ୍ଲକ ହେଲଥ ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ବ୍ଲକ ଲେବର ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Block Development Office"
+          "k": "ବ୍ଲକ ଡେଭଲପମେଣ୍ଟ ଅଫିସ"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ବ୍ଲକ ଏଗ୍ରିକଲଚର ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ବ୍ଲକ ହର୍ଟିକଲଚର ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "ଏଗ୍ରିକଲଚର ଏକ୍ସଟେନସନ ଆଣ୍ଡ ଟେକନିକାଲ ରିସୋର୍ସ ସେଣ୍ଟରସ"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "ଗଭର୍ଣ୍ଣମେଣ୍ଟ ଏଗ୍ରିକଲଚର ଆଣ୍ଡ ହର୍ଟିକଲଚର ସ୍କିମ ଅଫିସେସ"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ଫାର୍ମର ପ୍ରୋଡ୍ୟୁସର ଅର୍ଗାନାଇଜେସନସ (FPOs) ଆଣ୍ଡ ଫାର୍ମର କଲେକ୍ଟିଭସ"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "ଅଦର ବ୍ଲକ-ଲେଭେଲ କନଭର୍ଜେନ୍ସ ପ୍ଲାଟଫର୍ମସ"
         }
       ]
     },
@@ -26809,40 +26809,40 @@ const OR = {
       "label": "ତହସିଲ / ଉପ-ଜିଲ୍ଲା ସ୍ତର",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "ତହସିଲ ଆଣ୍ଡ ସବ-ଡିଭିଜନାଲ ଆଡମିନିଷ୍ଟ୍ରେସନ"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "ପୋଲିସ ଆଣ୍ଡ ଲ-ଏନଫୋର୍ସମେଣ୍ଟ ଅଥରିଟିଜ"
         },
         {
-          "k": "Labour Department"
+          "k": "ଲେବର ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Education Department"
+          "k": "ଏଜୁକେସନ ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Health Department"
+          "k": "ହେଲଥ ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ୱିମେନ ଆଣ୍ଡ ଚାଇଲ୍ଡ ଡେଭଲପମେଣ୍ଟ ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Agriculture Department"
+          "k": "ଏଗ୍ରିକଲଚର ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Horticulture Department"
+          "k": "ହର୍ଟିକଲଚର ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "ଏଗ୍ରିକଲଚର ଏକ୍ସଟେନସନ ଆଣ୍ଡ ଟେକନିକାଲ ସର୍ଭିସେସ"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "ଲ୍ୟାଣ୍ଡ, ରେଭିନ୍ୟୁ ଆଣ୍ଡ ଏଗ୍ରିକଲଚର କନଭର୍ଜେନ୍ସ ଅଥରିଟିଜ"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "ଅଦର ସବ-ଡିଷ୍ଟ୍ରିକ୍ଟ କନଭର୍ଜେନ୍ସ ମେକାନିଜମସ"
         },
         {
-          "k": "ଥାନାରେ ଶିଶୁ କଲ୍ୟାଣ ପୋଲିସ ଅଧିକାରୀ (CWPO)"
+          "k": "ଚାଇଲ୍ଡ ୱେଲଫେୟାର ପୋଲିସ ଅଫିସରସ (CWPO) ଆଟ ପୋଲିସ ଷ୍ଟେସନସ"
         }
       ]
     },
@@ -26851,72 +26851,72 @@ const OR = {
       "label": "ଜିଲ୍ଲା ସ୍ତର",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ଅଫିସ ଅଫ ଦି ଡିଷ୍ଟ୍ରିକ୍ଟ ମାଜିଷ୍ଟ୍ରେଟ (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ଅଫିସ ଅଫ ଦି ଚିଫ ଡେଭଲପମେଣ୍ଟ ଅଫିସର (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ଡିଷ୍ଟ୍ରିକ୍ଟ ଚାଇଲ୍ଡ ପ୍ରୋଟେକସନ ୟୁନିଟ (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "ଚାଇଲ୍ଡ ୱେଲଫେୟାର କମିଟି (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ଡିଷ୍ଟ୍ରିକ୍ଟ ଲିଗାଲ ସର୍ଭିସେସ ଅଥରିଟି (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "ସ୍ପେସିଆଲ ଜୁଭେନାଇଲ ପୋଲିସ ୟୁନିଟ (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "ଆଣ୍ଟି-ହ୍ୟୁମାନ ଟ୍ରାଫିକିଂ ୟୁନିଟ (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ଡିଷ୍ଟ୍ରିକ୍ଟ-ଲେଭେଲ ଚାଇଲ୍ଡ ପ୍ରୋଟେକସନ କମିଟି (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ଡିଷ୍ଟ୍ରିକ୍ଟ ଟାସ୍କ ଫୋର୍ସ (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ଡିଷ୍ଟ୍ରିକ୍ଟ ପୋଲିସ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ୱିମେନ ଆଣ୍ଡ ଚାଇଲ୍ଡ ଡେଭଲପମେଣ୍ଟ ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Education Department"
+          "k": "ଏଜୁକେସନ ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Health Department"
+          "k": "ହେଲଥ ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Labour Department"
+          "k": "ଲେବର ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ଡିଷ୍ଟ୍ରିକ୍ଟ ଏଗ୍ରିକଲଚର ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ଡିଷ୍ଟ୍ରିକ୍ଟ ହର୍ଟିକଲଚର ଡିପାର୍ଟମେଣ୍ଟ"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "ଏଗ୍ରିକଲଚର ଏକ୍ସଟେନସନ ଆଣ୍ଡ ଟେକନିକାଲ ଇନଷ୍ଟିଚ୍ୟୁସନସ"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "କୃଷି ବିଜ୍ଞାନ କେନ୍ଦ୍ର (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ଫାର୍ମର ପ୍ରୋଡ୍ୟୁସର ଅର୍ଗାନାଇଜେସନସ (FPOs) ଆଣ୍ଡ ଫେଡେରେସନସ"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "ଚାଇଲ୍ଡ ହେଲ୍ପଲାଇନ ସର୍ଭିସେସ"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "ସଶସ୍ତ୍ର ସୀମା ବଳ (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "କିଶୋର ନ୍ୟାୟ ବୋର୍ଡ (JJB)"
+          "k": "ଜୁଭେନାଇଲ ଜଷ୍ଟିସ ବୋର୍ଡ (JJB)"
         },
         {
           "k": "ୱାନ ଷ୍ଟପ ସେଣ୍ଟର (ସଖୀ)"
@@ -26928,42 +26928,42 @@ const OR = {
       "label": "ରାଜ୍ୟ ସ୍ତର",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "ୱିମେନ ଆଣ୍ଡ ଚାଇଲ୍ଡ ସିକ୍ୟୁରିଟି ଅର୍ଗାନାଇଜେସନ (WCSO), ଉତ୍ତର ପ୍ରଦେଶ ପୋଲିସ",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "ୱିମେନ ଆଣ୍ଡ ଚାଇଲ୍ଡ ଡେଭଲପମେଣ୍ଟ ଡିପାର୍ଟମେଣ୍ଟ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "ଏଜୁକେସନ ଡିପାର୍ଟମେଣ୍ଟ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "ହେଲଥ ଡିପାର୍ଟମେଣ୍ଟ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "ଲେବର ଡିପାର୍ଟମେଣ୍ଟ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "ଉତ୍ତର ପ୍ରଦେଶ ପୋଲିସ ଆଣ୍ଡ ଆଣ୍ଟି-ଟ୍ରାଫିକିଂ ମେକାନିଜମସ",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ଡିପାର୍ଟମେଣ୍ଟ ଅଫ ଏଗ୍ରିକଲଚର, ଗଭର୍ଣ୍ଣମେଣ୍ଟ ଅଫ ଉତ୍ତର ପ୍ରଦେଶ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ଡିପାର୍ଟମେଣ୍ଟ ଅଫ ହର୍ଟିକଲଚର ଆଣ୍ଡ ଫୁଡ ପ୍ରୋସେସିଂ, ଗଭର୍ଣ୍ଣମେଣ୍ଟ ଅଫ ଉତ୍ତର ପ୍ରଦେଶ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "ରାଜ୍ୟ ଆଇନ ସେବା କର୍ତ୍ତୃପକ୍ଷ (SLSA)"
+          "k": "ଷ୍ଟେଟ ଲିଗାଲ ସର୍ଭିସେସ ଅଥରିଟି (SLSA)"
         },
         {
-          "k": "ରାଜ୍ୟ ଶିଶୁ ଅଧିକାର ସୁରକ୍ଷା ଆୟୋଗ (SCPCR)"
+          "k": "ଷ୍ଟେଟ କମିସନ ଫର ପ୍ରୋଟେକସନ ଅଫ ଚାଇଲ୍ଡ ରାଇଟସ (SCPCR)"
         }
       ]
     },
@@ -26972,13 +26972,13 @@ const OR = {
       "label": "ଜାତୀୟ ସ୍ତର",
       "items": [
         {
-          "k": "ଜାତୀୟ ଆଇନ ସେବା କର୍ତ୍ତୃପକ୍ଷ (NALSA)"
+          "k": "ନ୍ୟାସନାଲ ଲିଗାଲ ସର୍ଭିସେସ ଅଥରିଟି (NALSA)"
         },
         {
-          "k": "ଜାତୀୟ ଶିଶୁ ଅଧିକାର ସୁରକ୍ଷା ଆୟୋଗ (NCPCR)"
+          "k": "ନ୍ୟାସନାଲ କମିସନ ଫର ପ୍ରୋଟେକସନ ଅଫ ଚାଇଲ୍ଡ ରାଇଟସ (NCPCR)"
         },
         {
-          "k": "ମହିଳା ଓ ଶିଶୁ ବିକାଶ ମନ୍ତ୍ରଣାଳୟ (ମିଶନ ବାତ୍ସଲ୍ୟ)"
+          "k": "ମିନିଷ୍ଟ୍ରି ଅଫ ୱିମେନ ଆଣ୍ଡ ଚାଇଲ୍ଡ ଡେଭଲପମେଣ୍ଟ (ମିସନ ବାତ୍ସଲ୍ୟ)"
         }
       ]
     }
@@ -28005,46 +28005,46 @@ const ML = {
       "label": "ഗ്രാമപഞ്ചായത്ത് തലം",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "കുട്ടികൾ, കൗമാരക്കാർ, സ്ത്രീകൾ, മാതാപിതാക്കൾ, കർഷകർ, കുടുംബങ്ങൾ, സമൂഹാംഗങ്ങൾ എന്നിവർ"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "വില്ലേജ് ഹെൽത്ത്, സാനിറ്റേഷൻ ആൻഡ് ന്യൂട്രീഷൻ കമ്മിറ്റീസ് (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ഗ്രാമപഞ്ചായത്തുകൾ ആൻഡ് പഞ്ചായത്തിരാജ് ഇൻസ്റ്റിറ്റ്യൂഷൻസ്"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "അങ്കണവാടി സെന്റേഴ്സ് (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "പ്രൈമറി ആൻഡ് അപ്പർ പ്രൈമറി സ്കൂൾസ്"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "സ്കൂൾ മാനേജ്മെന്റ് കമ്മിറ്റീസ് (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "വില്ലേജ്-ലെവൽ ചൈൽഡ് പ്രൊട്ടക്ഷൻ ആൻഡ് വെൽഫെയർ കമ്മിറ്റീസ് (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ഫ്രണ്ട്‌ലൈൻ ഹെൽത്ത് വർക്കർ കേഡേഴ്സ് (ആശ, എഎൻഎം)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "കർഷക കുടുംബങ്ങളും വനിതാ കർഷക കൂട്ടായ്മകളും"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ഫാർമർ ഗ്രൂപ്പ്സ് ആൻഡ് പ്രൊഡ്യൂസർ കളക്ടീവ്സ്"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ഫാർമർ പ്രൊഡ്യൂസർ ഓർഗനൈസേഷൻസ് (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "സെൽഫ്-ഹെൽപ്പ് ഗ്രൂപ്പ്സ് (SHGs) ആൻഡ് കമ്മ്യൂണിറ്റി-ബേസ്ഡ് കളക്ടീവ്സ്"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "അഗ്രികൾച്ചർ ആൻഡ് ഹോർട്ടികൾച്ചർ എക്സ്റ്റൻഷൻ നെറ്റ്‌വർക്ക്സ്"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "കമ്മ്യൂണിറ്റി വോളണ്ടിയർ ആൻഡ് ചൈൽഡ്-പ്രൊട്ടക്ഷൻ നെറ്റ്‌വർക്ക്സ്"
         }
       ]
     },
@@ -28053,40 +28053,40 @@ const ML = {
       "label": "ബ്ലോക്ക് തലം",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ഓഫീസ് ഓഫ് ദി ചൈൽഡ് ഡെവലപ്മെന്റ് പ്രോജക്റ്റ് ഓഫീസർ (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ബ്ലോക്ക്-ലെവൽ ചൈൽഡ് പ്രൊട്ടക്ഷൻ കമ്മിറ്റി (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ബ്ലോക്ക് എജ്യുക്കേഷൻ ഡിപ്പാർട്ട്മെന്റ് ആൻഡ് ടീച്ചർ ക്ലസ്റ്റർ റിസോഴ്സ് സെന്റേഴ്സ്"
         },
         {
-          "k": "Block Health Department"
+          "k": "ബ്ലോക്ക് ഹെൽത്ത് ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ബ്ലോക്ക് ലേബർ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Block Development Office"
+          "k": "ബ്ലോക്ക് ഡെവലപ്മെന്റ് ഓഫീസ്"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ബ്ലോക്ക് അഗ്രികൾച്ചർ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ബ്ലോക്ക് ഹോർട്ടികൾച്ചർ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "അഗ്രികൾച്ചർ എക്സ്റ്റൻഷൻ ആൻഡ് ടെക്നിക്കൽ റിസോഴ്സ് സെന്റേഴ്സ്"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "ഗവൺമെന്റ് അഗ്രികൾച്ചർ ആൻഡ് ഹോർട്ടികൾച്ചർ സ്കീം ഓഫീസസ്"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ഫാർമർ പ്രൊഡ്യൂസർ ഓർഗനൈസേഷൻസ് (FPOs) ആൻഡ് ഫാർമർ കളക്ടീവ്സ്"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "അദർ ബ്ലോക്ക്-ലെവൽ കൺവെർജൻസ് പ്ലാറ്റ്‌ഫോംസ്"
         }
       ]
     },
@@ -28095,40 +28095,40 @@ const ML = {
       "label": "താലൂക്ക് / ഉപജില്ലാ തലം",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "തഹസിൽ ആൻഡ് സബ്-ഡിവിഷണൽ അഡ്മിനിസ്ട്രേഷൻ"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "പോലീസ് ആൻഡ് ലോ-എൻഫോഴ്സ്മെന്റ് അതോറിറ്റീസ്"
         },
         {
-          "k": "Labour Department"
+          "k": "ലേബർ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Education Department"
+          "k": "എജ്യുക്കേഷൻ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Health Department"
+          "k": "ഹെൽത്ത് ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "വിമൻ ആൻഡ് ചൈൽഡ് ഡെവലപ്മെന്റ് ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Agriculture Department"
+          "k": "അഗ്രികൾച്ചർ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Horticulture Department"
+          "k": "ഹോർട്ടികൾച്ചർ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "അഗ്രികൾച്ചർ എക്സ്റ്റൻഷൻ ആൻഡ് ടെക്നിക്കൽ സർവീസസ്"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "ലാൻഡ്, റവന്യൂ ആൻഡ് അഗ്രികൾച്ചർ കൺവെർജൻസ് അതോറിറ്റീസ്"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "അദർ സബ്-ഡിസ്ട്രിക്റ്റ് കൺവെർജൻസ് മെക്കാനിസംസ്"
         },
         {
-          "k": "പോലീസ് സ്റ്റേഷനുകളിലെ ശിശുക്ഷേമ പോലീസ് ഓഫീസർമാർ (CWPO)"
+          "k": "ചൈൽഡ് വെൽഫെയർ പോലീസ് ഓഫീസേഴ്സ് (CWPO) അറ്റ് പോലീസ് സ്റ്റേഷൻസ്"
         }
       ]
     },
@@ -28137,68 +28137,68 @@ const ML = {
       "label": "ജില്ലാ തലം",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ഓഫീസ് ഓഫ് ദി ഡിസ്ട്രിക്റ്റ് മജിസ്ട്രേറ്റ് (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ഓഫീസ് ഓഫ് ദി ചീഫ് ഡെവലപ്മെന്റ് ഓഫീസർ (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ഡിസ്ട്രിക്റ്റ് ചൈൽഡ് പ്രൊട്ടക്ഷൻ യൂണിറ്റ് (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "ചൈൽഡ് വെൽഫെയർ കമ്മിറ്റി (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ഡിസ്ട്രിക്റ്റ് ലീഗൽ സർവീസസ് അതോറിറ്റി (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "സ്പെഷ്യൽ ജുവനൈൽ പോലീസ് യൂണിറ്റ് (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "ആന്റി-ഹ്യൂമൻ ട്രാഫിക്കിങ് യൂണിറ്റ് (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ഡിസ്ട്രിക്റ്റ്-ലെവൽ ചൈൽഡ് പ്രൊട്ടക്ഷൻ കമ്മിറ്റി (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ഡിസ്ട്രിക്റ്റ് ടാസ്ക് ഫോഴ്സ് (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ഡിസ്ട്രിക്റ്റ് പോലീസ്"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "വിമൻ ആൻഡ് ചൈൽഡ് ഡെവലപ്മെന്റ് ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Education Department"
+          "k": "എജ്യുക്കേഷൻ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Health Department"
+          "k": "ഹെൽത്ത് ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Labour Department"
+          "k": "ലേബർ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ഡിസ്ട്രിക്റ്റ് അഗ്രികൾച്ചർ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ഡിസ്ട്രിക്റ്റ് ഹോർട്ടികൾച്ചർ ഡിപ്പാർട്ട്മെന്റ്"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "അഗ്രികൾച്ചർ എക്സ്റ്റൻഷൻ ആൻഡ് ടെക്നിക്കൽ ഇൻസ്റ്റിറ്റ്യൂഷൻസ്"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "കൃഷി വിജ്ഞാൻ കേന്ദ്രങ്ങൾ (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ഫാർമർ പ്രൊഡ്യൂസർ ഓർഗനൈസേഷൻസ് (FPOs) ആൻഡ് ഫെഡറേഷൻസ്"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "ചൈൽഡ് ഹെൽപ്‌ലൈൻ സർവീസസ്"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "സശസ്ത്ര സീമാ ബൽ (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
@@ -28214,42 +28214,42 @@ const ML = {
       "label": "സംസ്ഥാന തലം",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "വിമൻ ആൻഡ് ചൈൽഡ് സെക്യൂരിറ്റി ഓർഗനൈസേഷൻ (WCSO), ഉത്തർപ്രദേശ് പോലീസ്",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "വിമൻ ആൻഡ് ചൈൽഡ് ഡെവലപ്മെന്റ് ഡിപ്പാർട്ട്മെന്റ്",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "എജ്യുക്കേഷൻ ഡിപ്പാർട്ട്മെന്റ്",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "ഹെൽത്ത് ഡിപ്പാർട്ട്മെന്റ്",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "ലേബർ ഡിപ്പാർട്ട്മെന്റ്",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "ഉത്തർപ്രദേശ് പോലീസ് ആൻഡ് ആന്റി-ട്രാഫിക്കിങ് മെക്കാനിസംസ്",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ഡിപ്പാർട്ട്മെന്റ് ഓഫ് അഗ്രികൾച്ചർ, ഗവൺമെന്റ് ഓഫ് ഉത്തർപ്രദേശ്",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ഡിപ്പാർട്ട്മെന്റ് ഓഫ് ഹോർട്ടികൾച്ചർ ആൻഡ് ഫുഡ് പ്രോസസ്സിങ്, ഗവൺമെന്റ് ഓഫ് ഉത്തർപ്രദേശ്",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "സംസ്ഥാന നിയമ സേവന അതോറിറ്റി (SLSA)"
+          "k": "സ്റ്റേറ്റ് ലീഗൽ സർവീസസ് അതോറിറ്റി (SLSA)"
         },
         {
-          "k": "സംസ്ഥാന ബാലാവകാശ സംരക്ഷണ കമ്മീഷൻ (SCPCR)"
+          "k": "സ്റ്റേറ്റ് കമ്മീഷൻ ഫോർ പ്രൊട്ടക്ഷൻ ഓഫ് ചൈൽഡ് റൈറ്റ്സ് (SCPCR)"
         }
       ]
     },
@@ -28258,13 +28258,13 @@ const ML = {
       "label": "ദേശീയ തലം",
       "items": [
         {
-          "k": "ദേശീയ നിയമ സേവന അതോറിറ്റി (NALSA)"
+          "k": "നാഷണൽ ലീഗൽ സർവീസസ് അതോറിറ്റി (NALSA)"
         },
         {
-          "k": "ദേശീയ ബാലാവകാശ സംരക്ഷണ കമ്മീഷൻ (NCPCR)"
+          "k": "നാഷണൽ കമ്മീഷൻ ഫോർ പ്രൊട്ടക്ഷൻ ഓഫ് ചൈൽഡ് റൈറ്റ്സ് (NCPCR)"
         },
         {
-          "k": "വനിതാ ശിശു വികസന മന്ത്രാലയം (മിഷൻ വാത്സല്യ)"
+          "k": "മിനിസ്ട്രി ഓഫ് വിമൻ ആൻഡ് ചൈൽഡ് ഡെവലപ്മെന്റ് (മിഷൻ വാത്സല്യ)"
         }
       ]
     }
@@ -29291,46 +29291,46 @@ const PA = {
       "label": "ਗ੍ਰਾਮ ਪੰਚਾਇਤ ਪੱਧਰ",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "ਬੱਚੇ, ਕਿਸ਼ੋਰ, ਔਰਤਾਂ, ਮਾਪੇ, ਕਿਸਾਨ, ਪਰਿਵਾਰ ਅਤੇ ਭਾਈਚਾਰੇ ਦੇ ਮੈਂਬਰ"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "ਵਿਲੇਜ ਹੈਲਥ, ਸੈਨੀਟੇਸ਼ਨ ਐਂਡ ਨਿਊਟ੍ਰੀਸ਼ਨ ਕਮੇਟੀਜ਼ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ਗ੍ਰਾਮ ਪੰਚਾਇਤਾਂ ਐਂਡ ਪੰਚਾਇਤੀ ਰਾਜ ਇੰਸਟੀਚਿਊਸ਼ਨਜ਼"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "ਆਂਗਣਵਾੜੀ ਸੈਂਟਰਜ਼ (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "ਪ੍ਰਾਇਮਰੀ ਐਂਡ ਅੱਪਰ ਪ੍ਰਾਇਮਰੀ ਸਕੂਲਜ਼"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "ਸਕੂਲ ਮੈਨੇਜਮੈਂਟ ਕਮੇਟੀਜ਼ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "ਵਿਲੇਜ-ਲੈਵਲ ਚਾਈਲਡ ਪ੍ਰੋਟੈਕਸ਼ਨ ਐਂਡ ਵੈਲਫੇਅਰ ਕਮੇਟੀਜ਼ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ਫਰੰਟਲਾਈਨ ਹੈਲਥ ਵਰਕਰ ਕੇਡਰਜ਼ (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "ਕਿਸਾਨ ਪਰਿਵਾਰ ਅਤੇ ਮਹਿਲਾ ਕਿਸਾਨਾਂ ਦੇ ਸਮੂਹ"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ਫਾਰਮਰ ਗਰੁੱਪਸ ਐਂਡ ਪ੍ਰੋਡਿਊਸਰ ਕਲੈਕਟਿਵਜ਼"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ਫਾਰਮਰ ਪ੍ਰੋਡਿਊਸਰ ਆਰਗੇਨਾਈਜ਼ੇਸ਼ਨਜ਼ (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "ਸੈਲਫ਼-ਹੈਲਪ ਗਰੁੱਪਸ (SHGs) ਐਂਡ ਕਮਿਊਨਿਟੀ-ਬੇਸਡ ਕਲੈਕਟਿਵਜ਼"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "ਐਗਰੀਕਲਚਰ ਐਂਡ ਹੌਰਟੀਕਲਚਰ ਐਕਸਟੈਂਸ਼ਨ ਨੈੱਟਵਰਕਸ"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "ਕਮਿਊਨਿਟੀ ਵਾਲੰਟੀਅਰ ਐਂਡ ਚਾਈਲਡ-ਪ੍ਰੋਟੈਕਸ਼ਨ ਨੈੱਟਵਰਕਸ"
         }
       ]
     },
@@ -29339,40 +29339,40 @@ const PA = {
       "label": "ਬਲਾਕ ਪੱਧਰ",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ਆਫ਼ਿਸ ਆਫ਼ ਦ ਚਾਈਲਡ ਡਿਵੈਲਪਮੈਂਟ ਪ੍ਰੋਜੈਕਟ ਅਫ਼ਸਰ (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ਬਲਾਕ-ਲੈਵਲ ਚਾਈਲਡ ਪ੍ਰੋਟੈਕਸ਼ਨ ਕਮੇਟੀ (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ਬਲਾਕ ਐਜੂਕੇਸ਼ਨ ਡਿਪਾਰਟਮੈਂਟ ਐਂਡ ਟੀਚਰ ਕਲੱਸਟਰ ਰਿਸੋਰਸ ਸੈਂਟਰਜ਼"
         },
         {
-          "k": "Block Health Department"
+          "k": "ਬਲਾਕ ਹੈਲਥ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ਬਲਾਕ ਲੇਬਰ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Block Development Office"
+          "k": "ਬਲਾਕ ਡਿਵੈਲਪਮੈਂਟ ਆਫ਼ਿਸ"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ਬਲਾਕ ਐਗਰੀਕਲਚਰ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ਬਲਾਕ ਹੌਰਟੀਕਲਚਰ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "ਐਗਰੀਕਲਚਰ ਐਕਸਟੈਂਸ਼ਨ ਐਂਡ ਟੈਕਨੀਕਲ ਰਿਸੋਰਸ ਸੈਂਟਰਜ਼"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "ਗਵਰਨਮੈਂਟ ਐਗਰੀਕਲਚਰ ਐਂਡ ਹੌਰਟੀਕਲਚਰ ਸਕੀਮ ਆਫ਼ਿਸਿਜ਼"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ਫਾਰਮਰ ਪ੍ਰੋਡਿਊਸਰ ਆਰਗੇਨਾਈਜ਼ੇਸ਼ਨਜ਼ (FPOs) ਐਂਡ ਫਾਰਮਰ ਕਲੈਕਟਿਵਜ਼"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "ਅਦਰ ਬਲਾਕ-ਲੈਵਲ ਕਨਵਰਜੈਂਸ ਪਲੇਟਫਾਰਮਜ਼"
         }
       ]
     },
@@ -29381,40 +29381,40 @@ const PA = {
       "label": "ਤਹਿਸੀਲ / ਉਪ-ਜ਼ਿਲ੍ਹਾ ਪੱਧਰ",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "ਤਹਿਸੀਲ ਐਂਡ ਸਬ-ਡਿਵੀਜ਼ਨਲ ਐਡਮਿਨਿਸਟ੍ਰੇਸ਼ਨ"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "ਪੁਲਿਸ ਐਂਡ ਲਾਅ-ਐਨਫੋਰਸਮੈਂਟ ਅਥਾਰਟੀਜ਼"
         },
         {
-          "k": "Labour Department"
+          "k": "ਲੇਬਰ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Education Department"
+          "k": "ਐਜੂਕੇਸ਼ਨ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Health Department"
+          "k": "ਹੈਲਥ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ਵਿਮੈਨ ਐਂਡ ਚਾਈਲਡ ਡਿਵੈਲਪਮੈਂਟ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Agriculture Department"
+          "k": "ਐਗਰੀਕਲਚਰ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Horticulture Department"
+          "k": "ਹੌਰਟੀਕਲਚਰ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "ਐਗਰੀਕਲਚਰ ਐਕਸਟੈਂਸ਼ਨ ਐਂਡ ਟੈਕਨੀਕਲ ਸਰਵਿਸਿਜ਼"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "ਲੈਂਡ, ਰੈਵੇਨਿਊ ਐਂਡ ਐਗਰੀਕਲਚਰ ਕਨਵਰਜੈਂਸ ਅਥਾਰਟੀਜ਼"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "ਅਦਰ ਸਬ-ਡਿਸਟ੍ਰਿਕਟ ਕਨਵਰਜੈਂਸ ਮਕੈਨਿਜ਼ਮਜ਼"
         },
         {
-          "k": "ਥਾਣਿਆਂ ਵਿੱਚ ਬਾਲ ਭਲਾਈ ਪੁਲਿਸ ਅਧਿਕਾਰੀ (CWPO)"
+          "k": "ਚਾਈਲਡ ਵੈਲਫੇਅਰ ਪੁਲਿਸ ਅਫ਼ਸਰਜ਼ (CWPO) ਐਟ ਪੁਲਿਸ ਸਟੇਸ਼ਨਜ਼"
         }
       ]
     },
@@ -29423,68 +29423,68 @@ const PA = {
       "label": "ਜ਼ਿਲ੍ਹਾ ਪੱਧਰ",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ਆਫ਼ਿਸ ਆਫ਼ ਦ ਡਿਸਟ੍ਰਿਕਟ ਮੈਜਿਸਟ੍ਰੇਟ (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ਆਫ਼ਿਸ ਆਫ਼ ਦ ਚੀਫ਼ ਡਿਵੈਲਪਮੈਂਟ ਅਫ਼ਸਰ (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ਡਿਸਟ੍ਰਿਕਟ ਚਾਈਲਡ ਪ੍ਰੋਟੈਕਸ਼ਨ ਯੂਨਿਟ (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "ਚਾਈਲਡ ਵੈਲਫੇਅਰ ਕਮੇਟੀ (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ਡਿਸਟ੍ਰਿਕਟ ਲੀਗਲ ਸਰਵਿਸਿਜ਼ ਅਥਾਰਟੀ (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "ਸਪੈਸ਼ਲ ਜੁਵੇਨਾਈਲ ਪੁਲਿਸ ਯੂਨਿਟ (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "ਐਂਟੀ-ਹਿਊਮਨ ਟ੍ਰੈਫਿਕਿੰਗ ਯੂਨਿਟ (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ਡਿਸਟ੍ਰਿਕਟ-ਲੈਵਲ ਚਾਈਲਡ ਪ੍ਰੋਟੈਕਸ਼ਨ ਕਮੇਟੀ (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ਡਿਸਟ੍ਰਿਕਟ ਟਾਸਕ ਫੋਰਸ (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ਡਿਸਟ੍ਰਿਕਟ ਪੁਲਿਸ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ਵਿਮੈਨ ਐਂਡ ਚਾਈਲਡ ਡਿਵੈਲਪਮੈਂਟ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Education Department"
+          "k": "ਐਜੂਕੇਸ਼ਨ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Health Department"
+          "k": "ਹੈਲਥ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Labour Department"
+          "k": "ਲੇਬਰ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ਡਿਸਟ੍ਰਿਕਟ ਐਗਰੀਕਲਚਰ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ਡਿਸਟ੍ਰਿਕਟ ਹੌਰਟੀਕਲਚਰ ਡਿਪਾਰਟਮੈਂਟ"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "ਐਗਰੀਕਲਚਰ ਐਕਸਟੈਂਸ਼ਨ ਐਂਡ ਟੈਕਨੀਕਲ ਇੰਸਟੀਚਿਊਸ਼ਨਜ਼"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "ਕ੍ਰਿਸ਼ੀ ਵਿਗਿਆਨ ਕੇਂਦਰ (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ਫਾਰਮਰ ਪ੍ਰੋਡਿਊਸਰ ਆਰਗੇਨਾਈਜ਼ੇਸ਼ਨਜ਼ (FPOs) ਐਂਡ ਫੈਡਰੇਸ਼ਨਜ਼"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "ਚਾਈਲਡ ਹੈਲਪਲਾਈਨ ਸਰਵਿਸਿਜ਼"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "ਸਸ਼ਸਤ੍ਰ ਸੀਮਾ ਬਲ (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
@@ -29500,42 +29500,42 @@ const PA = {
       "label": "ਰਾਜ ਪੱਧਰ",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "ਵਿਮੈਨ ਐਂਡ ਚਾਈਲਡ ਸਕਿਓਰਿਟੀ ਆਰਗੇਨਾਈਜ਼ੇਸ਼ਨ (WCSO), ਉੱਤਰ ਪ੍ਰਦੇਸ਼ ਪੁਲਿਸ",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "ਵਿਮੈਨ ਐਂਡ ਚਾਈਲਡ ਡਿਵੈਲਪਮੈਂਟ ਡਿਪਾਰਟਮੈਂਟ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "ਐਜੂਕੇਸ਼ਨ ਡਿਪਾਰਟਮੈਂਟ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "ਹੈਲਥ ਡਿਪਾਰਟਮੈਂਟ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "ਲੇਬਰ ਡਿਪਾਰਟਮੈਂਟ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "ਉੱਤਰ ਪ੍ਰਦੇਸ਼ ਪੁਲਿਸ ਐਂਡ ਐਂਟੀ-ਟ੍ਰੈਫਿਕਿੰਗ ਮਕੈਨਿਜ਼ਮਜ਼",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ਡਿਪਾਰਟਮੈਂਟ ਆਫ਼ ਐਗਰੀਕਲਚਰ, ਗਵਰਨਮੈਂਟ ਆਫ਼ ਉੱਤਰ ਪ੍ਰਦੇਸ਼",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ਡਿਪਾਰਟਮੈਂਟ ਆਫ਼ ਹੌਰਟੀਕਲਚਰ ਐਂਡ ਫੂਡ ਪ੍ਰੋਸੈਸਿੰਗ, ਗਵਰਨਮੈਂਟ ਆਫ਼ ਉੱਤਰ ਪ੍ਰਦੇਸ਼",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "ਰਾਜ ਕਾਨੂੰਨੀ ਸੇਵਾਵਾਂ ਅਥਾਰਟੀ (SLSA)"
+          "k": "ਸਟੇਟ ਲੀਗਲ ਸਰਵਿਸਿਜ਼ ਅਥਾਰਟੀ (SLSA)"
         },
         {
-          "k": "ਰਾਜ ਬਾਲ ਅਧਿਕਾਰ ਸੁਰੱਖਿਆ ਕਮਿਸ਼ਨ (SCPCR)"
+          "k": "ਸਟੇਟ ਕਮਿਸ਼ਨ ਫਾਰ ਪ੍ਰੋਟੈਕਸ਼ਨ ਆਫ਼ ਚਾਈਲਡ ਰਾਈਟਸ (SCPCR)"
         }
       ]
     },
@@ -29544,13 +29544,13 @@ const PA = {
       "label": "ਰਾਸ਼ਟਰੀ ਪੱਧਰ",
       "items": [
         {
-          "k": "ਰਾਸ਼ਟਰੀ ਕਾਨੂੰਨੀ ਸੇਵਾਵਾਂ ਅਥਾਰਟੀ (NALSA)"
+          "k": "ਨੈਸ਼ਨਲ ਲੀਗਲ ਸਰਵਿਸਿਜ਼ ਅਥਾਰਟੀ (NALSA)"
         },
         {
-          "k": "ਰਾਸ਼ਟਰੀ ਬਾਲ ਅਧਿਕਾਰ ਸੁਰੱਖਿਆ ਕਮਿਸ਼ਨ (NCPCR)"
+          "k": "ਨੈਸ਼ਨਲ ਕਮਿਸ਼ਨ ਫਾਰ ਪ੍ਰੋਟੈਕਸ਼ਨ ਆਫ਼ ਚਾਈਲਡ ਰਾਈਟਸ (NCPCR)"
         },
         {
-          "k": "ਮਹਿਲਾ ਅਤੇ ਬਾਲ ਵਿਕਾਸ ਮੰਤਰਾਲਾ (ਮਿਸ਼ਨ ਵਾਤਸਲਿਆ)"
+          "k": "ਮਿਨਿਸਟ੍ਰੀ ਆਫ਼ ਵਿਮੈਨ ਐਂਡ ਚਾਈਲਡ ਡਿਵੈਲਪਮੈਂਟ (ਮਿਸ਼ਨ ਵਾਤਸਲਯ)"
         }
       ]
     }
@@ -30577,46 +30577,46 @@ const DOI = {
       "label": "ग्राम पंचायत स्तर",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "बच्चे, किशोर-किशोरियां, जनानियां, माता-पिता, किसान, परिवार ते समुदाय दे सदस्य"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "विलेज हेल्थ, सैनिटेशन एंड न्यूट्रिशन कमेटीज़ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ग्राम पंचायत्स एंड पंचायती राज इंस्टीट्यूशंस"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "आंगनवाड़ी सेंटर्स (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "प्राइमरी एंड अपर प्राइमरी स्कूल्स"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "स्कूल मैनेजमेंट कमेटीज़ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "विलेज-लेवल चाइल्ड प्रोटेक्शन एंड वेलफ़ेयर कमेटीज़ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "फ़्रंटलाइन हेल्थ वर्कर कैडर्स (आशा, एएनएम)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "खेतीबाड़ी करने आह्ले परिवार ते जनानी किसानें दे समूह"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "फ़ार्मर ग्रुप्स एंड प्रोड्यूसर कलेक्टिव्स"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "फ़ार्मर प्रोड्यूसर ऑर्गनाइज़ेशंस (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "सेल्फ़-हेल्प ग्रुप्स (SHGs) एंड कम्युनिटी-बेस्ड कलेक्टिव्स"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "एग्रीकल्चर एंड हॉर्टिकल्चर एक्सटेंशन नेटवर्क्स"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "कम्युनिटी वॉलंटियर एंड चाइल्ड-प्रोटेक्शन नेटवर्क्स"
         }
       ]
     },
@@ -30625,40 +30625,40 @@ const DOI = {
       "label": "ब्लॉक स्तर",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ऑफ़िस ऑफ़ द चाइल्ड डेवलपमेंट प्रोजेक्ट ऑफ़िसर (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ब्लॉक-लेवल चाइल्ड प्रोटेक्शन कमेटी (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ब्लॉक एजुकेशन डिपार्टमेंट एंड टीचर क्लस्टर रिसोर्स सेंटर्स"
         },
         {
-          "k": "Block Health Department"
+          "k": "ब्लॉक हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ब्लॉक लेबर डिपार्टमेंट"
         },
         {
-          "k": "Block Development Office"
+          "k": "ब्लॉक डेवलपमेंट ऑफ़िस"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ब्लॉक एग्रीकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ब्लॉक हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "एग्रीकल्चर एक्सटेंशन एंड टेक्निकल रिसोर्स सेंटर्स"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "गवर्नमेंट एग्रीकल्चर एंड हॉर्टिकल्चर स्कीम ऑफ़िसेज़"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "फ़ार्मर प्रोड्यूसर ऑर्गनाइज़ेशंस (FPOs) एंड फ़ार्मर कलेक्टिव्स"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "अदर ब्लॉक-लेवल कन्वर्जेंस प्लेटफ़ॉर्म्स"
         }
       ]
     },
@@ -30667,40 +30667,40 @@ const DOI = {
       "label": "तहसील / उप-जिला स्तर",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "तहसील एंड सब-डिविज़नल एडमिनिस्ट्रेशन"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "पुलिस एंड लॉ-एनफ़ोर्समेंट अथॉरिटीज़"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेंट"
         },
         {
-          "k": "Education Department"
+          "k": "एजुकेशन डिपार्टमेंट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "विमेन एंड चाइल्ड डेवलपमेंट डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Department"
+          "k": "एग्रीकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Horticulture Department"
+          "k": "हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "एग्रीकल्चर एक्सटेंशन एंड टेक्निकल सर्विसेज़"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "लैंड, रेवेन्यू एंड एग्रीकल्चर कन्वर्जेंस अथॉरिटीज़"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "अदर सब-डिस्ट्रिक्ट कन्वर्जेंस मैकेनिज़्म्स"
         },
         {
-          "k": "थानें च बाल कल्याण पुलिस अधिकारी (CWPO)"
+          "k": "चाइल्ड वेलफ़ेयर पुलिस ऑफ़िसर्स (CWPO) एट पुलिस स्टेशंस"
         }
       ]
     },
@@ -30709,72 +30709,72 @@ const DOI = {
       "label": "जिला स्तर",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ऑफ़िस ऑफ़ द डिस्ट्रिक्ट मजिस्ट्रेट (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ऑफ़िस ऑफ़ द चीफ़ डेवलपमेंट ऑफ़िसर (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "डिस्ट्रिक्ट चाइल्ड प्रोटेक्शन यूनिट (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "चाइल्ड वेलफ़ेयर कमेटी (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "डिस्ट्रिक्ट लीगल सर्विसेज़ अथॉरिटी (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "स्पेशल जुवेनाइल पुलिस यूनिट (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "एंटी-ह्यूमन ट्रैफ़िकिंग यूनिट (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "डिस्ट्रिक्ट-लेवल चाइल्ड प्रोटेक्शन कमेटी (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "डिस्ट्रिक्ट टास्क फ़ोर्स (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "डिस्ट्रिक्ट पुलिस"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "विमेन एंड चाइल्ड डेवलपमेंट डिपार्टमेंट"
         },
         {
-          "k": "Education Department"
+          "k": "एजुकेशन डिपार्टमेंट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेंट"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबर डिपार्टमेंट"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "डिस्ट्रिक्ट एग्रीकल्चर डिपार्टमेंट"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "डिस्ट्रिक्ट हॉर्टिकल्चर डिपार्टमेंट"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "एग्रीकल्चर एक्सटेंशन एंड टेक्निकल इंस्टीट्यूशंस"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "कृषि विज्ञान केंद्र (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "फ़ार्मर प्रोड्यूसर ऑर्गनाइज़ेशंस (FPOs) एंड फ़ेडरेशंस"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "चाइल्ड हेल्पलाइन सर्विसेज़"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "सशस्त्र सीमा बल (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "किशोर न्याय बोर्ड (JJB)"
+          "k": "जुवेनाइल जस्टिस बोर्ड (JJB)"
         },
         {
           "k": "वन स्टॉप सेंटर (सखी)"
@@ -30786,42 +30786,42 @@ const DOI = {
       "label": "राज्य स्तर",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "विमेन एंड चाइल्ड सिक्योरिटी ऑर्गनाइज़ेशन (WCSO), उत्तर प्रदेश पुलिस",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "विमेन एंड चाइल्ड डेवलपमेंट डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "एजुकेशन डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "हेल्थ डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "लेबर डिपार्टमेंट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "उत्तर प्रदेश पुलिस एंड एंटी-ट्रैफ़िकिंग मैकेनिज़्म्स",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "डिपार्टमेंट ऑफ़ एग्रीकल्चर, गवर्नमेंट ऑफ़ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "डिपार्टमेंट ऑफ़ हॉर्टिकल्चर एंड फ़ूड प्रोसेसिंग, गवर्नमेंट ऑफ़ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "राज्य कानूनी सेवा प्राधिकरण (SLSA)"
+          "k": "स्टेट लीगल सर्विसेज़ अथॉरिटी (SLSA)"
         },
         {
-          "k": "राज्य बाल अधिकार संरक्षण आयोग (SCPCR)"
+          "k": "स्टेट कमीशन फ़ॉर प्रोटेक्शन ऑफ़ चाइल्ड राइट्स (SCPCR)"
         }
       ]
     },
@@ -30830,13 +30830,13 @@ const DOI = {
       "label": "राष्ट्री पद्धर",
       "items": [
         {
-          "k": "राष्ट्री कानूनी सेवा प्राधिकरण (NALSA)"
+          "k": "नेशनल लीगल सर्विसेज़ अथॉरिटी (NALSA)"
         },
         {
-          "k": "राष्ट्री बाल अधिकार संरक्षण आयोग (NCPCR)"
+          "k": "नेशनल कमीशन फ़ॉर प्रोटेक्शन ऑफ़ चाइल्ड राइट्स (NCPCR)"
         },
         {
-          "k": "महिला ते बाल विकास मंत्रालय (मिशन वात्सल्य)"
+          "k": "मिनिस्ट्री ऑफ़ विमेन एंड चाइल्ड डेवलपमेंट (मिशन वात्सल्य)"
         }
       ]
     }
@@ -31863,46 +31863,46 @@ const BRX = {
       "label": "ग्राम पन्चायनि थाखो",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "गथ'फोर, सेंग्रा-सिख्लाफोर, हिनजावफोर, बिमा-बिफाफोर, आबादारिफोर, नखरफोर आरो समाजनि सदस्यफोर"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "भिलेज हेल्थ, सेनिटेसन एन्ड निउट्रिसन कमिटिस (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ग्राम पन्चायतस एन्ड पन्चायति राज इन्स्टिटिउसनस"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "आंगनवाडि सेन्टारस (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "प्राइमारि एन्ड आपार प्राइमारि स्कुलस"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "स्कुल मेनेजमेन्ट कमिटिस (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "भिलेज-लेभेल चाइल्ड प्रटेक्सन एन्ड वेलफेयार कमिटिस (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "फ्रन्टलाइन हेल्थ वार्कार केडारस (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "आबादारि नखरफोर आरो हिनजाव आबादारिनि दलफोर"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "फारमार ग्रुपस एन्ड प्रडिउसार कलेक्टिभस"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "फारमार प्रडिउसार अर्गानाइजेसनस (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "सेल्फ-हेल्प ग्रुपस (SHGs) एन्ड कम्युनिटि-बेस्ड कलेक्टिभस"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "एग्रिकालचार एन्ड हर्टिकालचार एक्सटेनसन नेटवार्कस"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "कम्युनिटि भलेन्टियार एन्ड चाइल्ड-प्रटेक्सन नेटवार्कस"
         }
       ]
     },
@@ -31911,40 +31911,40 @@ const BRX = {
       "label": "ब्लकनि थाखो",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "अफिस अफ दि चाइल्ड डेभेलपमेन्ट प्रजेक्ट अफिसार (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ब्लक-लेभेल चाइल्ड प्रटेक्सन कमिटि (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ब्लक एडुकेसन डिपार्टमेन्ट एन्ड टिचार क्लास्टार रिस'र्स सेन्टारस"
         },
         {
-          "k": "Block Health Department"
+          "k": "ब्लक हेल्थ डिपार्टमेन्ट"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ब्लक लेबार डिपार्टमेन्ट"
         },
         {
-          "k": "Block Development Office"
+          "k": "ब्लक डेभेलपमेन्ट अफिस"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ब्लक एग्रिकालचार डिपार्टमेन्ट"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ब्लक हर्टिकालचार डिपार्टमेन्ट"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "एग्रिकालचार एक्सटेनसन एन्ड टेक्निकेल रिस'र्स सेन्टारस"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "गभर्नमेन्ट एग्रिकालचार एन्ड हर्टिकालचार स्किम अफिसेस"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "फारमार प्रडिउसार अर्गानाइजेसनस (FPOs) एन्ड फारमार कलेक्टिभस"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "आदार ब्लक-लेभेल कनभार्जेन्स प्लेटफर्मस"
         }
       ]
     },
@@ -31953,40 +31953,40 @@ const BRX = {
       "label": "तहसिल / उप-जिलानि थाखो",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "तहसिल एन्ड साब-डिभिजनेल एडमिनिस्ट्रेसन"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "पुलिस एन्ड ल-एनफर्समेन्ट अथरिटिस"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबार डिपार्टमेन्ट"
         },
         {
-          "k": "Education Department"
+          "k": "एडुकेसन डिपार्टमेन्ट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेन्ट"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "उइमेन एन्ड चाइल्ड डेभेलपमेन्ट डिपार्टमेन्ट"
         },
         {
-          "k": "Agriculture Department"
+          "k": "एग्रिकालचार डिपार्टमेन्ट"
         },
         {
-          "k": "Horticulture Department"
+          "k": "हर्टिकालचार डिपार्टमेन्ट"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "एग्रिकालचार एक्सटेनसन एन्ड टेक्निकेल सार्भिसेस"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "लेन्ड, रेभिनिउ एन्ड एग्रिकालचार कनभार्जेन्स अथरिटिस"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "आदार साब-डिस्ट्रिक्ट कनभार्जेन्स मेकानिजमस"
         },
         {
-          "k": "थानाफोराव चाइल्ड वेलफेयार पुलिस अफिसारफोर (CWPO)"
+          "k": "चाइल्ड वेलफेयार पुलिस अफिसारस (CWPO) एट पुलिस स्टेसनस"
         }
       ]
     },
@@ -31995,72 +31995,72 @@ const BRX = {
       "label": "जिलानि थाखो",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "अफिस अफ दि डिस्ट्रिक्ट माजिस्ट्रेट (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "अफिस अफ दि चिफ डेभेलपमेन्ट अफिसार (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "डिस्ट्रिक्ट चाइल्ड प्रटेक्सन इउनिट (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "चाइल्ड वेलफेयार कमिटि (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "डिस्ट्रिक्ट लिगेल सार्भिसेस अथरिटि (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "स्पेसियेल जुभेनाइल पुलिस इउनिट (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "एन्टि-हिउमान ट्राफिकिं इउनिट (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "डिस्ट्रिक्ट-लेभेल चाइल्ड प्रटेक्सन कमिटि (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "डिस्ट्रिक्ट टास्क फर्स (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "डिस्ट्रिक्ट पुलिस"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "उइमेन एन्ड चाइल्ड डेभेलपमेन्ट डिपार्टमेन्ट"
         },
         {
-          "k": "Education Department"
+          "k": "एडुकेसन डिपार्टमेन्ट"
         },
         {
-          "k": "Health Department"
+          "k": "हेल्थ डिपार्टमेन्ट"
         },
         {
-          "k": "Labour Department"
+          "k": "लेबार डिपार्टमेन्ट"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "डिस्ट्रिक्ट एग्रिकालचार डिपार्टमेन्ट"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "डिस्ट्रिक्ट हर्टिकालचार डिपार्टमेन्ट"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "एग्रिकालचार एक्सटेनसन एन्ड टेक्निकेल इन्स्टिटिउसनस"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "कृषि विज्ञान केन्द्र (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "फारमार प्रडिउसार अर्गानाइजेसनस (FPOs) एन्ड फेडारेसनस"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "चाइल्ड हेल्पलाइन सार्भिसेस"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "सशस्त्र सीमा बल (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "जुभेनाइल जाष्टिस बर्ड (JJB)"
+          "k": "जुभेनाइल जास्टिस ब'र्ड (JJB)"
         },
         {
           "k": "वान स्टप सेन्टार (सखी)"
@@ -32072,42 +32072,42 @@ const BRX = {
       "label": "गाहाय हादोरसानि थाखो",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "उइमेन एन्ड चाइल्ड सिकिउरिटि अर्गानाइजेसन (WCSO), उत्तर प्रदेश पुलिस",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "उइमेन एन्ड चाइल्ड डेभेलपमेन्ट डिपार्टमेन्ट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "एडुकेसन डिपार्टमेन्ट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "हेल्थ डिपार्टमेन्ट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "लेबार डिपार्टमेन्ट",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "उत्तर प्रदेश पुलिस एन्ड एन्टि-ट्राफिकिं मेकानिजमस",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "डिपार्टमेन्ट अफ एग्रिकालचार, गभर्नमेन्ट अफ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "डिपार्टमेन्ट अफ हर्टिकालचार एन्ड फुड प्र'सेसिं, गभर्नमेन्ट अफ उत्तर प्रदेश",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "राइज्यो लिगेल सार्भिसेस अथरिटि (SLSA)"
+          "k": "स्टेट लिगेल सार्भिसेस अथरिटि (SLSA)"
         },
         {
-          "k": "राइज्यो गथ' मोनथाय रैखा कमिसन (SCPCR)"
+          "k": "स्टेट कमिसन फर प्रटेक्सन अफ चाइल्ड राइटस (SCPCR)"
         }
       ]
     },
@@ -32116,13 +32116,13 @@ const BRX = {
       "label": "हादरारि थाखो",
       "items": [
         {
-          "k": "हादरारि लिगेल सार्भिसेस अथरिटि (NALSA)"
+          "k": "नेसनेल लिगेल सार्भिसेस अथरिटि (NALSA)"
         },
         {
-          "k": "हादरारि गथ' मोनथाय रैखा कमिसन (NCPCR)"
+          "k": "नेसनेल कमिसन फर प्रटेक्सन अफ चाइल्ड राइटस (NCPCR)"
         },
         {
-          "k": "हिनजाव आरो गथ' जौगानाय मन्त्रालय (मिसन वात्सल्य)"
+          "k": "मिनिस्ट्रि अफ उइमेन एन्ड चाइल्ड डेभेलपमेन्ट (मिसन वात्सल्य)"
         }
       ]
     }
@@ -33149,46 +33149,46 @@ const SAT = {
       "label": "ᱟᱹᱛᱩ ᱯᱟᱸᱪᱟᱭᱟᱛ ᱛᱷᱟᱠ",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "ᱜᱤᱫᱽᱨᱟᱹ, ᱡᱩᱣᱟᱹᱱ, ᱛᱤᱨᱞᱟᱹ, ᱟᱭᱳ-ᱵᱟᱵᱟ, ᱪᱟᱥᱤ, ᱜᱷᱟᱨᱚᱧᱡᱽ ᱟᱨ ᱜᱟᱶᱛᱟ ᱦᱚᱲ ᱠᱚ"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "ᱵᱷᱤᱞᱮᱡᱽ ᱦᱮᱞᱛᱷ, ᱥᱮᱱᱤᱴᱮᱥᱚᱱ ᱟᱨ ᱱᱭᱩᱴᱨᱤᱥᱚᱱ ᱠᱚᱢᱤᱴᱤ ᱠᱚ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ᱜᱽᱨᱟᱢ ᱯᱟᱱᱪᱟᱭᱮᱴ ᱠᱚ ᱟᱨ ᱯᱟᱱᱪᱟᱭᱮᱛᱤ ᱨᱟᱡ ᱤᱱᱥᱴᱤᱴᱭᱩᱥᱚᱱ ᱠᱚ"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "ᱟᱝᱜᱟᱱᱣᱟᱰᱤ ᱥᱮᱱᱴᱚᱨ ᱠᱚ (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "ᱯᱨᱟᱭᱢᱟᱨᱤ ᱟᱨ ᱟᱯᱟᱨ ᱯᱨᱟᱭᱢᱟᱨᱤ ᱥᱠᱩᱞ ᱠᱚ"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "ᱥᱠᱩᱞ ᱢᱮᱱᱮᱡᱢᱮᱱᱴ ᱠᱚᱢᱤᱴᱤ ᱠᱚ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "ᱵᱷᱤᱞᱮᱡᱽ-ᱞᱮᱵᱮᱞ ᱪᱟᱭᱤᱞᱰ ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱟᱨ ᱣᱮᱞᱯᱷᱮᱭᱟᱨ ᱠᱚᱢᱤᱴᱤ ᱠᱚ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ᱯᱷᱨᱚᱱᱴᱞᱟᱭᱤᱱ ᱦᱮᱞᱛᱷ ᱣᱟᱨᱠᱟᱨ ᱠᱮᱰᱟᱨ ᱠᱚ (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "ᱪᱟᱥ ᱜᱷᱟᱨᱚᱧᱡᱽ ᱠᱚ ᱟᱨ ᱛᱤᱨᱞᱟᱹ ᱪᱟᱥᱤ ᱜᱟᱶᱛᱟ ᱠᱚ"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ᱯᱷᱟᱨᱢᱟᱨ ᱜᱨᱩᱯ ᱠᱚ ᱟᱨ ᱯᱨᱚᱰᱭᱩᱥᱟᱨ ᱠᱚᱞᱮᱠᱴᱤᱵᱷ ᱠᱚ"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ᱯᱷᱟᱨᱢᱟᱨ ᱯᱨᱚᱰᱭᱩᱥᱟᱨ ᱚᱨᱜᱟᱱᱟᱭᱡᱮᱥᱚᱱ ᱠᱚ (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "ᱥᱮᱞᱯᱷ-ᱦᱮᱞᱯ ᱜᱨᱩᱯ ᱠᱚ (SHGs) ᱟᱨ ᱠᱚᱢᱭᱩᱱᱤᱴᱤ-ᱵᱮᱥᱰ ᱠᱚᱞᱮᱠᱴᱤᱵᱷ ᱠᱚ"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "ᱮᱜᱽᱨᱤᱠᱟᱞᱪᱟᱨ ᱟᱨ ᱦᱚᱨᱴᱤᱠᱟᱞᱪᱟᱨ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱱᱮᱴᱣᱟᱨᱠ ᱠᱚ"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "ᱠᱚᱢᱭᱩᱱᱤᱴᱤ ᱵᱷᱚᱞᱩᱱᱴᱤᱭᱟᱨ ᱟᱨ ᱪᱟᱭᱤᱞᱰ-ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱱᱮᱴᱣᱟᱨᱠ ᱠᱚ"
         }
       ]
     },
@@ -33197,40 +33197,40 @@ const SAT = {
       "label": "ᱵᱞᱚᱠ ᱛᱷᱟᱠ",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ᱪᱟᱭᱤᱞᱰ ᱰᱮᱵᱷᱞᱚᱯᱢᱮᱱᱴ ᱯᱨᱚᱡᱮᱠᱴ ᱚᱯᱷᱤᱥᱟᱨ (CDPO) ᱨᱮᱭᱟᱜ ᱚᱯᱷᱤᱥ"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ᱵᱞᱚᱠ-ᱞᱮᱵᱮᱞ ᱪᱟᱭᱤᱞᱰ ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱠᱚᱢᱤᱴᱤ (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ᱵᱞᱚᱠ ᱮᱰᱩᱠᱮᱥᱚᱱ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ ᱟᱨ ᱴᱤᱪᱟᱨ ᱠᱞᱟᱥᱴᱟᱨ ᱨᱤᱥᱚᱨᱥ ᱥᱮᱱᱴᱚᱨ ᱠᱚ"
         },
         {
-          "k": "Block Health Department"
+          "k": "ᱵᱞᱚᱠ ᱦᱮᱞᱛᱷ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ᱵᱞᱚᱠ ᱞᱮᱵᱚᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Block Development Office"
+          "k": "ᱵᱞᱚᱠ ᱰᱮᱵᱷᱞᱚᱯᱢᱮᱱᱴ ᱚᱯᱷᱤᱥ"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ᱵᱞᱚᱠ ᱮᱜᱽᱨᱤᱠᱟᱞᱪᱟᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ᱵᱞᱚᱠ ᱦᱚᱨᱴᱤᱠᱟᱞᱪᱟᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "ᱮᱜᱽᱨᱤᱠᱟᱞᱪᱟᱨ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱟᱨ ᱴᱮᱠᱱᱤᱠᱟᱞ ᱨᱤᱥᱚᱨᱥ ᱥᱮᱱᱴᱚᱨ ᱠᱚ"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "ᱜᱚᱵᱷᱚᱨᱢᱮᱱᱴ ᱮᱜᱽᱨᱤᱠᱟᱞᱪᱟᱨ ᱟᱨ ᱦᱚᱨᱴᱤᱠᱟᱞᱪᱟᱨ ᱥᱠᱤᱢ ᱚᱯᱷᱤᱥ ᱠᱚ"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ᱯᱷᱟᱨᱢᱟᱨ ᱯᱨᱚᱰᱭᱩᱥᱟᱨ ᱚᱨᱜᱟᱱᱟᱭᱡᱮᱥᱚᱱ ᱠᱚ (FPOs) ᱟᱨ ᱯᱷᱟᱨᱢᱟᱨ ᱠᱚᱞᱮᱠᱴᱤᱵᱷ ᱠᱚ"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "ᱚᱫᱟᱨ ᱵᱞᱚᱠ-ᱞᱮᱵᱮᱞ ᱠᱚᱱᱵᱷᱟᱨᱡᱮᱱᱥ ᱯᱞᱮᱴᱯᱷᱚᱨᱢ ᱠᱚ"
         }
       ]
     },
@@ -33239,40 +33239,40 @@ const SAT = {
       "label": "ᱛᱚᱦᱥᱤᱞ / ᱥᱟᱵᱽ-ᱰᱤᱥᱴᱨᱤᱠ ᱛᱷᱟᱠ",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "ᱛᱮᱥᱤᱞ ᱟᱨ ᱥᱟᱵ-ᱰᱤᱵᱷᱤᱡᱚᱱᱟᱞ ᱮᱰᱢᱤᱱᱤᱥᱴᱨᱮᱥᱚᱱ"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "ᱯᱩᱞᱤᱥ ᱟᱨ ᱞᱚ-ᱮᱱᱯᱷᱚᱨᱥᱢᱮᱱᱴ ᱚᱛᱷᱚᱨᱤᱴᱤ ᱠᱚ"
         },
         {
-          "k": "Labour Department"
+          "k": "ᱞᱮᱵᱚᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Education Department"
+          "k": "ᱮᱰᱩᱠᱮᱥᱚᱱ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Health Department"
+          "k": "ᱦᱮᱞᱛᱷ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ᱣᱩᱢᱮᱱ ᱟᱨ ᱪᱟᱭᱤᱞᱰ ᱰᱮᱵᱷᱞᱚᱯᱢᱮᱱᱴ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Agriculture Department"
+          "k": "ᱮᱜᱽᱨᱤᱠᱟᱞᱪᱟᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Horticulture Department"
+          "k": "ᱦᱚᱨᱴᱤᱠᱟᱞᱪᱟᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "ᱮᱜᱽᱨᱤᱠᱟᱞᱪᱟᱨ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱟᱨ ᱴᱮᱠᱱᱤᱠᱟᱞ ᱥᱟᱨᱵᱷᱤᱥᱮᱥ"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "ᱞᱮᱱᱰ, ᱨᱮᱵᱷᱮᱱᱭᱩ ᱟᱨ ᱮᱜᱽᱨᱤᱠᱟᱞᱪᱟᱨ ᱠᱚᱱᱵᱷᱟᱨᱡᱮᱱᱥ ᱚᱛᱷᱚᱨᱤᱴᱤ ᱠᱚ"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "ᱚᱫᱟᱨ ᱥᱟᱵ-ᱰᱤᱥᱴᱨᱤᱠᱴ ᱠᱚᱱᱵᱷᱟᱨᱡᱮᱱᱥ ᱢᱮᱠᱟᱱᱤᱡᱚᱢ ᱠᱚ"
         },
         {
-          "k": "ᱛᱷᱟᱱᱟ ᱨᱮᱱ ᱪᱟᱤᱞᱰ ᱣᱮᱞᱯᱷᱮᱭᱟᱨ ᱯᱩᱞᱤᱥ ᱚᱯᱷᱤᱥᱟᱨ ᱠᱚ (CWPO)"
+          "k": "ᱯᱩᱞᱤᱥ ᱥᱴᱮᱥᱚᱱ ᱠᱚ ᱨᱮ ᱪᱟᱭᱤᱞᱰ ᱣᱮᱞᱯᱷᱮᱭᱟᱨ ᱯᱩᱞᱤᱥ ᱚᱯᱷᱤᱥᱟᱨ ᱠᱚ (CWPO)"
         }
       ]
     },
@@ -33281,75 +33281,75 @@ const SAT = {
       "label": "ᱡᱤᱞᱟᱹ ᱛᱷᱟᱠ",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ᱰᱤᱥᱴᱨᱤᱠᱴ ᱢᱮᱡᱤᱥᱴᱨᱮᱴ (DM) ᱨᱮᱭᱟᱜ ᱚᱯᱷᱤᱥ"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ᱪᱤᱯᱷ ᱰᱮᱵᱷᱞᱚᱯᱢᱮᱱᱴ ᱚᱯᱷᱤᱥᱟᱨ (CDO) ᱨᱮᱭᱟᱜ ᱚᱯᱷᱤᱥ"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ᱰᱤᱥᱴᱨᱤᱠᱴ ᱪᱟᱭᱤᱞᱰ ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱭᱩᱱᱤᱴ (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "ᱪᱟᱭᱤᱞᱰ ᱣᱮᱞᱯᱷᱮᱭᱟᱨ ᱠᱚᱢᱤᱴᱤ (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ᱰᱤᱥᱴᱨᱤᱠᱴ ᱞᱤᱜᱟᱞ ᱥᱟᱨᱵᱷᱤᱥᱮᱥ ᱚᱛᱷᱚᱨᱤᱴᱤ (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "ᱥᱯᱮᱥᱟᱞ ᱡᱩᱵᱷᱮᱱᱟᱭᱤᱞ ᱯᱩᱞᱤᱥ ᱭᱩᱱᱤᱴ (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "ᱮᱱᱴᱤ-ᱦᱭᱩᱢᱮᱱ ᱴᱨᱟᱯᱷᱤᱠᱤᱝ ᱭᱩᱱᱤᱴ (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ᱰᱤᱥᱴᱨᱤᱠᱴ-ᱞᱮᱵᱮᱞ ᱪᱟᱭᱤᱞᱰ ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱠᱚᱢᱤᱴᱤ (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ᱰᱤᱥᱴᱨᱤᱠᱴ ᱴᱟᱥᱠ ᱯᱷᱚᱨᱥ (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ᱰᱤᱥᱴᱨᱤᱠᱴ ᱯᱩᱞᱤᱥ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ᱣᱩᱢᱮᱱ ᱟᱨ ᱪᱟᱭᱤᱞᱰ ᱰᱮᱵᱷᱞᱚᱯᱢᱮᱱᱴ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Education Department"
+          "k": "ᱮᱰᱩᱠᱮᱥᱚᱱ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Health Department"
+          "k": "ᱦᱮᱞᱛᱷ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Labour Department"
+          "k": "ᱞᱮᱵᱚᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ᱰᱤᱥᱴᱨᱤᱠᱴ ᱮᱜᱽᱨᱤᱠᱟᱞᱪᱟᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ᱰᱤᱥᱴᱨᱤᱠᱴ ᱦᱚᱨᱴᱤᱠᱟᱞᱪᱟᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "ᱮᱜᱽᱨᱤᱠᱟᱞᱪᱟᱨ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱟᱨ ᱴᱮᱠᱱᱤᱠᱟᱞ ᱤᱱᱥᱴᱤᱴᱭᱩᱥᱚᱱ ᱠᱚ"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "ᱠᱨᱤᱥᱤ ᱵᱤᱜᱭᱟᱱ ᱠᱮᱱᱫᱽᱨᱚ ᱠᱚ (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ᱯᱷᱟᱨᱢᱟᱨ ᱯᱨᱚᱰᱭᱩᱥᱟᱨ ᱚᱨᱜᱟᱱᱟᱭᱡᱮᱥᱚᱱ ᱠᱚ (FPOs) ᱟᱨ ᱯᱷᱮᱰᱟᱨᱮᱥᱚᱱ ᱠᱚ"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "ᱪᱟᱭᱤᱞᱰ ᱦᱮᱞᱯᱞᱟᱭᱤᱱ ᱥᱟᱨᱵᱷᱤᱥᱮᱥ"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "ᱥᱟᱥᱟᱥᱛᱨᱟ ᱥᱤᱢᱟ ᱵᱟᱞ (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
           "k": "ᱡᱩᱵᱷᱮᱱᱟᱭᱤᱞ ᱡᱟᱥᱴᱤᱥ ᱵᱚᱨᱰ (JJB)"
         },
         {
-          "k": "ᱣᱟᱱ ᱥᱴᱚᱯ ᱥᱮᱱᱴᱟᱨ (ᱥᱟᱠᱷᱤ)"
+          "k": "ᱣᱟᱱ ᱥᱴᱚᱯ ᱥᱮᱱᱴᱚᱨ (ᱥᱟᱠᱷᱤ)"
         }
       ]
     },
@@ -33358,42 +33358,42 @@ const SAT = {
       "label": "ᱯᱚᱱᱚᱛ ᱛᱷᱟᱠ",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "ᱣᱩᱢᱮᱱ ᱟᱨ ᱪᱟᱭᱤᱞᱰ ᱥᱤᱠᱭᱩᱨᱤᱴᱤ ᱚᱨᱜᱟᱱᱟᱭᱡᱮᱥᱚᱱ (WCSO), ᱩᱛᱛᱚᱨ ᱯᱨᱚᱫᱮᱥ ᱯᱩᱞᱤᱥ",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "ᱣᱩᱢᱮᱱ ᱟᱨ ᱪᱟᱭᱤᱞᱰ ᱰᱮᱵᱷᱞᱚᱯᱢᱮᱱᱴ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "ᱮᱰᱩᱠᱮᱥᱚᱱ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "ᱦᱮᱞᱛᱷ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "ᱞᱮᱵᱚᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "ᱩᱛᱛᱚᱨ ᱯᱨᱚᱫᱮᱥ ᱯᱩᱞᱤᱥ ᱟᱨ ᱮᱱᱴᱤ-ᱴᱨᱟᱯᱷᱤᱠᱤᱝ ᱢᱮᱠᱟᱱᱤᱡᱚᱢ ᱠᱚ",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ᱮᱜᱽᱨᱤᱠᱟᱞᱪᱟᱨ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ, ᱩᱛᱛᱚᱨ ᱯᱨᱚᱫᱮᱥ ᱜᱚᱵᱷᱚᱨᱢᱮᱱᱴ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ᱦᱚᱨᱴᱤᱠᱟᱞᱪᱟᱨ ᱟᱨ ᱯᱷᱩᱰ ᱯᱨᱚᱥᱮᱥᱤᱝ ᱰᱤᱯᱟᱨᱴᱢᱮᱱᱴ, ᱩᱛᱛᱚᱨ ᱯᱨᱚᱫᱮᱥ ᱜᱚᱵᱷᱚᱨᱢᱮᱱᱴ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
           "k": "ᱥᱴᱮᱴ ᱞᱤᱜᱟᱞ ᱥᱟᱨᱵᱷᱤᱥᱮᱥ ᱚᱛᱷᱚᱨᱤᱴᱤ (SLSA)"
         },
         {
-          "k": "ᱥᱴᱮᱴ ᱠᱚᱢᱤᱥᱚᱱ ᱯᱷᱚᱨ ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱚᱯᱷ ᱪᱟᱤᱞᱰ ᱨᱟᱭᱤᱴᱥ (SCPCR)"
+          "k": "ᱪᱟᱭᱤᱞᱰ ᱨᱟᱭᱤᱴᱥ ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱞᱟᱹᱜᱤᱫ ᱥᱴᱮᱴ ᱠᱚᱢᱤᱥᱚᱱ (SCPCR)"
         }
       ]
     },
@@ -33405,10 +33405,10 @@ const SAT = {
           "k": "ᱱᱮᱥᱱᱟᱞ ᱞᱤᱜᱟᱞ ᱥᱟᱨᱵᱷᱤᱥᱮᱥ ᱚᱛᱷᱚᱨᱤᱴᱤ (NALSA)"
         },
         {
-          "k": "ᱱᱮᱥᱱᱟᱞ ᱠᱚᱢᱤᱥᱚᱱ ᱯᱷᱚᱨ ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱚᱯᱷ ᱪᱟᱤᱞᱰ ᱨᱟᱭᱤᱴᱥ (NCPCR)"
+          "k": "ᱪᱟᱭᱤᱞᱰ ᱨᱟᱭᱤᱴᱥ ᱯᱨᱚᱴᱮᱠᱥᱚᱱ ᱞᱟᱹᱜᱤᱫ ᱱᱮᱥᱱᱟᱞ ᱠᱚᱢᱤᱥᱚᱱ (NCPCR)"
         },
         {
-          "k": "ᱛᱤᱨᱞᱟᱹ ᱟᱨ ᱜᱤᱫᱽᱨᱟᱹ ᱵᱤᱠᱟᱥ ᱢᱚᱱᱛᱨᱟᱞᱚᱭ (ᱢᱤᱥᱚᱱ ᱵᱟᱛᱥᱟᱞᱭᱟ)"
+          "k": "ᱣᱩᱢᱮᱱ ᱟᱨ ᱪᱟᱭᱤᱞᱰ ᱰᱮᱵᱷᱞᱚᱯᱢᱮᱱᱴ ᱢᱤᱱᱤᱥᱴᱨᱤ (ᱢᱤᱥᱚᱱ ᱵᱟᱛᱥᱟᱞᱭᱟ)"
         }
       ]
     }
@@ -34435,46 +34435,46 @@ const MNI = {
       "label": "ꯒ꯭ꯔꯥꯝ ꯄꯟꯆꯥꯌꯦꯠ ꯊꯥꯛ",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "ꯑꯉꯥꯡꯁꯤꯡ, ꯅꯍꯥꯁꯤꯡ, ꯅꯨꯄꯤꯁꯤꯡ, ꯃꯃꯥ-ꯃꯄꯥꯁꯤꯡ, ꯂꯧꯃꯤꯁꯤꯡ, ꯏꯃꯨꯡꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯈꯨꯟꯅꯥꯏꯒꯤ ꯃꯤꯁꯤꯡ"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "ꯚꯤꯂꯦꯖ ꯍꯦꯜꯊ, ꯁꯦꯅꯤꯇꯦꯁꯟ ꯑꯃꯁꯨꯡ ꯅ꯭ꯌꯨꯠꯔꯤꯁꯟ ꯀꯃꯤꯇꯤꯁꯤꯡ (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "ꯒ꯭ꯔꯥꯝ ꯄꯟꯆꯥꯌꯠꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯄꯟꯆꯥꯌꯇꯤ ꯔꯥꯖ ꯏꯟꯁꯇꯤꯠꯌꯨꯁꯅꯁꯤꯡ"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "ꯑꯉ꯭ꯒꯅꯋꯥꯗꯤ ꯁꯦꯟꯇꯔꯁꯤꯡ (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "ꯄ꯭ꯔꯥꯏꯃꯔꯤ ꯑꯃꯁꯨꯡ ꯑꯞꯄꯔ ꯄ꯭ꯔꯥꯏꯃꯔꯤ ꯁ꯭ꯀꯨꯂꯁꯤꯡ"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "ꯁ꯭ꯀꯨꯜ ꯃꯦꯅꯦꯖꯃꯦꯟꯇ ꯀꯃꯤꯇꯤꯁꯤꯡ (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "ꯚꯤꯂꯦꯖ-ꯂꯦꯚꯦꯜ ꯆꯥꯏꯜꯗ ꯄ꯭ꯔꯣꯇꯦꯛꯁꯟ ꯑꯃꯁꯨꯡ ꯋꯦꯂꯐꯦꯌꯔ ꯀꯃꯤꯇꯤꯁꯤꯡ (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "ꯐ꯭ꯔꯟꯇꯂꯥꯏꯟ ꯍꯦꯜꯊ ꯋꯥꯔꯀꯔ ꯀꯦꯗꯔꯁꯤꯡ (ASHA, ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "ꯂꯧꯃꯤ ꯏꯃꯨꯡꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯅꯨꯄꯤ ꯂꯧꯃꯤꯁꯤꯡꯒꯤ ꯀꯥꯡꯂꯨꯄꯁꯤꯡ"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "ꯐꯥꯔꯃꯔ ꯒ꯭ꯔꯨꯄꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯄ꯭ꯔꯣꯗ꯭ꯌꯨꯁꯔ ꯀꯂꯦꯛꯇꯤꯕꯁꯤꯡ"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "ꯐꯥꯔꯃꯔ ꯄ꯭ꯔꯣꯗ꯭ꯌꯨꯁꯔ ꯑꯣꯔꯒꯅꯥꯏꯖꯦꯁꯅꯁꯤꯡ (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "ꯁꯦꯜꯐ-ꯍꯦꯜꯞ ꯒ꯭ꯔꯨꯄꯁꯤꯡ (SHGs) ꯑꯃꯁꯨꯡ ꯀꯝꯝꯌꯨꯅꯤꯇꯤ-ꯕꯦꯖꯗ ꯀꯂꯦꯛꯇꯤꯕꯁꯤꯡ"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "ꯑꯦꯒ꯭ꯔꯤꯀꯂꯆꯔ ꯑꯃꯁꯨꯡ ꯍꯣꯔꯇꯤꯀꯂꯆꯔ ꯑꯦꯛꯁꯇꯦꯟꯁꯟ ꯅꯦꯇꯋꯥꯔꯀꯁꯤꯡ"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "ꯀꯝꯝꯌꯨꯅꯤꯇꯤ ꯚꯣꯂꯨꯟꯇꯤꯌꯔ ꯑꯃꯁꯨꯡ ꯆꯥꯏꯜꯗ-ꯄ꯭ꯔꯣꯇꯦꯛꯁꯟ ꯅꯦꯇꯋꯥꯔꯀꯁꯤꯡ"
         }
       ]
     },
@@ -34483,40 +34483,40 @@ const MNI = {
       "label": "ꯕ꯭ꯂꯣꯛ ꯊꯥꯛ",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "ꯆꯥꯏꯜꯗ ꯗꯤꯕꯦꯂꯄꯃꯦꯟꯇ ꯄ꯭ꯔꯣꯖꯦꯛꯇ ꯑꯣꯐꯤꯁꯔ (CDPO) ꯒꯤ ꯑꯣꯐꯤꯁ"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "ꯕ꯭ꯂꯣꯛ-ꯂꯦꯚꯦꯜ ꯆꯥꯏꯜꯗ ꯄ꯭ꯔꯣꯇꯦꯛꯁꯟ ꯀꯃꯤꯇꯤ (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "ꯕ꯭ꯂꯣꯛ ꯑꯦꯖꯨꯀꯦꯁꯟ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ ꯑꯃꯁꯨꯡ ꯇꯤꯆꯔ ꯀ꯭ꯂꯁ꯭ꯇꯔ ꯔꯤꯁꯣꯔꯁ ꯁꯦꯟꯇꯔꯁꯤꯡ"
         },
         {
-          "k": "Block Health Department"
+          "k": "ꯕ꯭ꯂꯣꯛ ꯍꯦꯜꯊ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Block Labour Department"
+          "k": "ꯕ꯭ꯂꯣꯛ ꯂꯦꯕꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Block Development Office"
+          "k": "ꯕ꯭ꯂꯣꯛ ꯗꯤꯕꯦꯂꯄꯃꯦꯟꯇ ꯑꯣꯐꯤꯁ"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "ꯕ꯭ꯂꯣꯛ ꯑꯦꯒ꯭ꯔꯤꯀꯂꯆꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "ꯕ꯭ꯂꯣꯛ ꯍꯣꯔꯇꯤꯀꯂꯆꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "ꯑꯦꯒ꯭ꯔꯤꯀꯂꯆꯔ ꯑꯦꯛꯁꯇꯦꯟꯁꯟ ꯑꯃꯁꯨꯡ ꯇꯦꯛꯅꯤꯀꯦꯜ ꯔꯤꯁꯣꯔꯁ ꯁꯦꯟꯇꯔꯁꯤꯡ"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "ꯒꯕꯔꯅꯃꯦꯟꯇ ꯑꯦꯒ꯭ꯔꯤꯀꯂꯆꯔ ꯑꯃꯁꯨꯡ ꯍꯣꯔꯇꯤꯀꯂꯆꯔ ꯁ꯭ꯀꯤꯝ ꯑꯣꯐꯤꯁꯁꯤꯡ"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "ꯐꯥꯔꯃꯔ ꯄ꯭ꯔꯣꯗ꯭ꯌꯨꯁꯔ ꯑꯣꯔꯒꯅꯥꯏꯖꯦꯁꯅꯁꯤꯡ (FPOs) ꯑꯃꯁꯨꯡ ꯐꯥꯔꯃꯔ ꯀꯂꯦꯛꯇꯤꯕꯁꯤꯡ"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "ꯑꯗꯔ ꯕ꯭ꯂꯣꯛ-ꯂꯦꯚꯦꯜ ꯀꯅꯚꯔꯖꯦꯟꯁ ꯄ꯭ꯂꯦꯠꯐꯣꯔꯃꯁꯤꯡ"
         }
       ]
     },
@@ -34525,40 +34525,40 @@ const MNI = {
       "label": "ꯇꯦꯍꯁꯤꯜ / ꯁꯕ-ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ ꯊꯥꯛ",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "ꯇꯦꯍꯁꯤꯜ ꯑꯃꯁꯨꯡ ꯁꯕ-ꯗꯤꯕꯤꯖꯅꯦꯜ ꯑꯦꯗꯃꯤꯅꯤꯁ꯭ꯠꯔꯦꯁꯟ"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "ꯄꯨꯂꯤꯁ ꯑꯃꯁꯨꯡ ꯂꯣ-ꯏꯟꯐꯣꯔꯁꯃꯦꯟꯇ ꯑꯣꯊꯣꯔꯤꯇꯤꯁꯤꯡ"
         },
         {
-          "k": "Labour Department"
+          "k": "ꯂꯦꯕꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Education Department"
+          "k": "ꯑꯦꯖꯨꯀꯦꯁꯟ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Health Department"
+          "k": "ꯍꯦꯜꯊ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ꯋꯨꯃꯦꯟ ꯑꯃꯁꯨꯡ ꯆꯥꯏꯜꯗ ꯗꯤꯕꯦꯂꯄꯃꯦꯟꯇ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Agriculture Department"
+          "k": "ꯑꯦꯒ꯭ꯔꯤꯀꯂꯆꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Horticulture Department"
+          "k": "ꯍꯣꯔꯇꯤꯀꯂꯆꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "ꯑꯦꯒ꯭ꯔꯤꯀꯂꯆꯔ ꯑꯦꯛꯁꯇꯦꯟꯁꯟ ꯑꯃꯁꯨꯡ ꯇꯦꯛꯅꯤꯀꯦꯜ ꯁꯔꯚꯤꯁꯦꯁ"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "ꯂꯦꯟꯗ, ꯔꯦꯚꯤꯟꯌꯨ ꯑꯃꯁꯨꯡ ꯑꯦꯒ꯭ꯔꯤꯀꯂꯆꯔ ꯀꯅꯚꯔꯖꯦꯟꯁ ꯑꯣꯊꯣꯔꯤꯇꯤꯁꯤꯡ"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "ꯑꯗꯔ ꯁꯕ-ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ ꯀꯅꯚꯔꯖꯦꯟꯁ ꯃꯦꯀꯥꯅꯤꯖꯃꯁꯤꯡ"
         },
         {
-          "k": "ꯄꯨꯂꯤꯁ ꯁ꯭ꯇꯦꯁꯟꯁꯤꯡꯗꯥ ꯂꯩꯕ ꯆꯥꯏꯜꯗ ꯋꯦꯜꯐꯦꯌꯔ ꯄꯨꯂꯤꯁ ꯑꯣꯐꯤꯁꯔꯁꯤꯡ (CWPO)"
+          "k": "ꯄꯨꯂꯤꯁ ꯁ꯭ꯇꯦꯁꯅꯁꯤꯡꯗꯥ ꯂꯩꯕꯥ ꯆꯥꯏꯜꯗ ꯋꯦꯂꯐꯦꯌꯔ ꯄꯨꯂꯤꯁ ꯑꯣꯐꯤꯁꯔꯁꯤꯡ (CWPO)"
         }
       ]
     },
@@ -34567,68 +34567,68 @@ const MNI = {
       "label": "ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ ꯊꯥꯛ",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ ꯃꯦꯖꯤꯁ꯭ꯠꯔꯦꯠ (DM) ꯒꯤ ꯑꯣꯐꯤꯁ"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "ꯆꯤꯐ ꯗꯤꯕꯦꯂꯄꯃꯦꯟꯇ ꯑꯣꯐꯤꯁꯔ (CDO) ꯒꯤ ꯑꯣꯐꯤꯁ"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ ꯆꯥꯏꯜꯗ ꯄ꯭ꯔꯣꯇꯦꯛꯁꯟ ꯌꯨꯅꯤꯠ (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "ꯆꯥꯏꯜꯗ ꯋꯦꯂꯐꯦꯌꯔ ꯀꯃꯤꯇꯤ (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ ꯂꯤꯒꯦꯜ ꯁꯔꯚꯤꯁꯦꯁ ꯑꯣꯊꯣꯔꯤꯇꯤ (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "ꯁ꯭ꯄꯦꯁꯤꯑꯦꯜ ꯖꯨꯚꯦꯅꯥꯏꯜ ꯄꯨꯂꯤꯁ ꯌꯨꯅꯤꯠ (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "ꯑꯦꯟꯇꯤ-ꯍ꯭ꯌꯨꯃꯦꯟ ꯇ꯭ꯔꯥꯐꯤꯀꯤꯡ ꯌꯨꯅꯤꯠ (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ-ꯂꯦꯚꯦꯜ ꯆꯥꯏꯜꯗ ꯄ꯭ꯔꯣꯇꯦꯛꯁꯟ ꯀꯃꯤꯇꯤ (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ ꯇꯥꯁ꯭ꯛ ꯐꯣꯔꯁ (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ ꯄꯨꯂꯤꯁ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ꯋꯨꯃꯦꯟ ꯑꯃꯁꯨꯡ ꯆꯥꯏꯜꯗ ꯗꯤꯕꯦꯂꯄꯃꯦꯟꯇ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Education Department"
+          "k": "ꯑꯦꯖꯨꯀꯦꯁꯟ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Health Department"
+          "k": "ꯍꯦꯜꯊ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Labour Department"
+          "k": "ꯂꯦꯕꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ ꯑꯦꯒ꯭ꯔꯤꯀꯂꯆꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ꯗꯤꯁ꯭ꯠꯔꯤꯛꯇ ꯍꯣꯔꯇꯤꯀꯂꯆꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "ꯑꯦꯒ꯭ꯔꯤꯀꯂꯆꯔ ꯑꯦꯛꯁꯇꯦꯟꯁꯟ ꯑꯃꯁꯨꯡ ꯇꯦꯛꯅꯤꯀꯦꯜ ꯏꯟꯁꯇꯤꯠꯌꯨꯁꯅꯁꯤꯡ"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "ꯀ꯭ꯔꯤꯁꯤ ꯚꯤꯒ꯭ꯌꯥꯟ ꯀꯦꯟꯗ꯭ꯔꯁꯤꯡ (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "ꯐꯥꯔꯃꯔ ꯄ꯭ꯔꯣꯗ꯭ꯌꯨꯁꯔ ꯑꯣꯔꯒꯅꯥꯏꯖꯦꯁꯅꯁꯤꯡ (FPOs) ꯑꯃꯁꯨꯡ ꯐꯦꯗꯔꯦꯁꯅꯁꯤꯡ"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "ꯆꯥꯏꯜꯗ ꯍꯦꯜꯄꯂꯥꯏꯟ ꯁꯔꯚꯤꯁꯦꯁ"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "ꯁꯁꯥꯁ꯭ꯠꯔ ꯁꯤꯃꯥ ꯕꯥꯜ (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
@@ -34644,42 +34644,42 @@ const MNI = {
       "label": "ꯁ꯭ꯇꯦꯠ ꯊꯥꯛ",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "ꯋꯨꯃꯦꯟ ꯑꯃꯁꯨꯡ ꯆꯥꯏꯜꯗ ꯁꯤꯀ꯭ꯌꯨꯔꯤꯇꯤ ꯑꯣꯔꯒꯅꯥꯏꯖꯦꯁꯟ (WCSO), ꯎꯠꯇꯔ ꯄ꯭ꯔꯗꯦꯁ ꯄꯨꯂꯤꯁ",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "ꯋꯨꯃꯦꯟ ꯑꯃꯁꯨꯡ ꯆꯥꯏꯜꯗ ꯗꯤꯕꯦꯂꯄꯃꯦꯟꯇ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "ꯑꯦꯖꯨꯀꯦꯁꯟ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "ꯍꯦꯜꯊ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "ꯂꯦꯕꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "ꯎꯠꯇꯔ ꯄ꯭ꯔꯗꯦꯁ ꯄꯨꯂꯤꯁ ꯑꯃꯁꯨꯡ ꯑꯦꯟꯇꯤ-ꯇ꯭ꯔꯥꯐꯤꯀꯤꯡ ꯃꯦꯀꯥꯅꯤꯖꯃꯁꯤꯡ",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ꯑꯦꯒ꯭ꯔꯤꯀꯂꯆꯔ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ, ꯎꯠꯇꯔ ꯄ꯭ꯔꯗꯦꯁ ꯒꯕꯔꯅꯃꯦꯟꯇ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ꯍꯣꯔꯇꯤꯀꯂꯆꯔ ꯑꯃꯁꯨꯡ ꯐꯨꯗ ꯄ꯭ꯔꯣꯁꯦꯁꯤꯡ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇ, ꯎꯠꯇꯔ ꯄ꯭ꯔꯗꯦꯁ ꯒꯕꯔꯅꯃꯦꯟꯇ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
           "k": "ꯁ꯭ꯇꯦꯠ ꯂꯤꯒꯦꯜ ꯁꯔꯚꯤꯁꯦꯁ ꯑꯣꯊꯣꯔꯤꯇꯤ (SLSA)"
         },
         {
-          "k": "ꯁ꯭ꯇꯦꯠ ꯀꯃꯤꯁꯟ ꯐꯣꯔ ꯄ꯭ꯔꯣꯇꯦꯛꯁꯟ ꯑꯣꯐ ꯆꯥꯏꯜꯗ ꯔꯥꯏꯠꯁ (SCPCR)"
+          "k": "ꯆꯥꯏꯜꯗ ꯔꯥꯏꯠꯁ ꯄ꯭ꯔꯣꯇꯦꯛꯁꯅꯒꯤ ꯁ꯭ꯇꯦꯠ ꯀꯃꯤꯁꯟ (SCPCR)"
         }
       ]
     },
@@ -34688,13 +34688,13 @@ const MNI = {
       "label": "ꯅꯥꯁꯅꯜ ꯂꯦꯚꯦꯜ",
       "items": [
         {
-          "k": "ꯅꯥꯁꯅꯜ ꯂꯤꯒꯦꯜ ꯁꯔꯚꯤꯁꯦꯁ ꯑꯣꯊꯣꯔꯤꯇꯤ (NALSA)"
+          "k": "ꯅꯦꯁ꯭ꯅꯦꯜ ꯂꯤꯒꯦꯜ ꯁꯔꯚꯤꯁꯦꯁ ꯑꯣꯊꯣꯔꯤꯇꯤ (NALSA)"
         },
         {
-          "k": "ꯅꯥꯁꯅꯜ ꯀꯃꯤꯁꯟ ꯐꯣꯔ ꯄ꯭ꯔꯣꯇꯦꯛꯁꯟ ꯑꯣꯐ ꯆꯥꯏꯜꯗ ꯔꯥꯏꯠꯁ (NCPCR)"
+          "k": "ꯆꯥꯏꯜꯗ ꯔꯥꯏꯠꯁ ꯄ꯭ꯔꯣꯇꯦꯛꯁꯅꯒꯤ ꯅꯦꯁ꯭ꯅꯦꯜ ꯀꯃꯤꯁꯟ (NCPCR)"
         },
         {
-          "k": "ꯃꯤꯅꯤꯁ꯭ꯠꯔꯤ ꯑꯣꯐ ꯋꯤꯃꯦꯟ ꯑꯦꯟꯗ ꯆꯥꯏꯜꯗ ꯗꯤꯚꯦꯂꯞꯃꯦꯟꯠ (ꯃꯤꯁꯟ ꯚꯥꯠꯁꯜꯌ)"
+          "k": "ꯋꯨꯃꯦꯟ ꯑꯃꯁꯨꯡ ꯆꯥꯏꯜꯗ ꯗꯤꯕꯦꯂꯄꯃꯦꯟꯇ ꯃꯤꯅꯤꯁ꯭ꯠꯔꯤ (ꯃꯤꯁꯟ ꯚꯥꯠꯁꯜꯌꯥ)"
         }
       ]
     }
@@ -35721,46 +35721,46 @@ const KS = {
       "label": "گرام پَنچایَت سَطَح",
       "items": [
         {
-          "k": "Children, Adolescents, Women, Parents, Farmers, Families and Community Members"
+          "k": "شُری، نوجوان، زَنانہٕ، مٲلۍ مٲجۍ، گرٛیس، خانٛدان تہٕ برادری ہٕنٛدۍ مِمبر"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "ولیج ہیلتھ، سینیٹیشن اینڈ نیوٹریشن کمیٹیز (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "گرام پنچایتس اینڈ پنچایتی راج انسٹی ٹیوشنز"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "آنگن واڑی سینٹرز (AWCs)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "پرائمری اینڈ اپر پرائمری اسکولز"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "اسکول مینجمنٹ کمیٹیز (SMCs)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "ولیج-لیول چائلڈ پروٹیکشن اینڈ ویلفیئر کمیٹیز (VLCPCs)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "فرنٹ لائن ہیلتھ ورکر کیڈرز (ASHA، ANM)"
         },
         {
-          "k": "Farming Households and Women Farmer Collectives"
+          "k": "گرٛیسۍ گَرٕ تہٕ زَنانہٕ گرٛیسَن ہٕنٛدۍ گروپ"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "فارمر گروپس اینڈ پروڈیوسر کلیکٹوز"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "فارمر پروڈیوسر آرگنائزیشنز (FPOs)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "سیلف-ہیلپ گروپس (SHGs) اینڈ کمیونٹی-بیسڈ کلیکٹوز"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "ایگریکلچر اینڈ ہارٹیکلچر ایکسٹینشن نیٹ ورکس"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "کمیونٹی والنٹیئر اینڈ چائلڈ-پروٹیکشن نیٹ ورکس"
         }
       ]
     },
@@ -35769,40 +35769,40 @@ const KS = {
       "label": "بلاک سَطَح",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "آفس آف دی چائلڈ ڈیولپمنٹ پروجیکٹ آفیسر (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "بلاک-لیول چائلڈ پروٹیکشن کمیٹی (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "بلاک ایجوکیشن ڈیپارٹمنٹ اینڈ ٹیچر کلسٹر ریسورس سینٹرز"
         },
         {
-          "k": "Block Health Department"
+          "k": "بلاک ہیلتھ ڈیپارٹمنٹ"
         },
         {
-          "k": "Block Labour Department"
+          "k": "بلاک لیبر ڈیپارٹمنٹ"
         },
         {
-          "k": "Block Development Office"
+          "k": "بلاک ڈیولپمنٹ آفس"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "بلاک ایگریکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "بلاک ہارٹیکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "ایگریکلچر ایکسٹینشن اینڈ ٹیکنیکل ریسورس سینٹرز"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "گورنمنٹ ایگریکلچر اینڈ ہارٹیکلچر اسکیم آفسز"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "فارمر پروڈیوسر آرگنائزیشنز (FPOs) اینڈ فارمر کلیکٹوز"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "ادر بلاک-لیول کنورجنس پلیٹ فارمز"
         }
       ]
     },
@@ -35811,40 +35811,40 @@ const KS = {
       "label": "تَحصیٖل / زِیلی ضِلہٕ سَطَح",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "تحصیل اینڈ سب-ڈویژنل ایڈمنسٹریشن"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "پولیس اینڈ لا-انفورسمنٹ اتھارٹیز"
         },
         {
-          "k": "Labour Department"
+          "k": "لیبر ڈیپارٹمنٹ"
         },
         {
-          "k": "Education Department"
+          "k": "ایجوکیشن ڈیپارٹمنٹ"
         },
         {
-          "k": "Health Department"
+          "k": "ہیلتھ ڈیپارٹمنٹ"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ویمن اینڈ چائلڈ ڈیولپمنٹ ڈیپارٹمنٹ"
         },
         {
-          "k": "Agriculture Department"
+          "k": "ایگریکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "Horticulture Department"
+          "k": "ہارٹیکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "ایگریکلچر ایکسٹینشن اینڈ ٹیکنیکل سروسز"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "لینڈ، ریونیو اینڈ ایگریکلچر کنورجنس اتھارٹیز"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "ادر سب-ڈسٹرکٹ کنورجنس میکانزمز"
         },
         {
-          "k": "پولیس اسٹیشنن پؠٹھ چائلڈ ویلفیئر پولیس آفیسر (CWPO)"
+          "k": "چائلڈ ویلفیئر پولیس آفیسرز (CWPO) ایٹ پولیس اسٹیشنز"
         }
       ]
     },
@@ -35853,68 +35853,68 @@ const KS = {
       "label": "ضِلہٕ سَطَح",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "آفس آف دی ڈسٹرکٹ مجسٹریٹ (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "آفس آف دی چیف ڈیولپمنٹ آفیسر (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "ڈسٹرکٹ چائلڈ پروٹیکشن یونٹ (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "چائلڈ ویلفیئر کمیٹی (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "ڈسٹرکٹ لیگل سروسز اتھارٹی (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "اسپیشل جووینائل پولیس یونٹ (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "اینٹی-ہیومن ٹریفکنگ یونٹ (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "ڈسٹرکٹ-لیول چائلڈ پروٹیکشن کمیٹی (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "ڈسٹرکٹ ٹاسک فورس (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "ڈسٹرکٹ پولیس"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "ویمن اینڈ چائلڈ ڈیولپمنٹ ڈیپارٹمنٹ"
         },
         {
-          "k": "Education Department"
+          "k": "ایجوکیشن ڈیپارٹمنٹ"
         },
         {
-          "k": "Health Department"
+          "k": "ہیلتھ ڈیپارٹمنٹ"
         },
         {
-          "k": "Labour Department"
+          "k": "لیبر ڈیپارٹمنٹ"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "ڈسٹرکٹ ایگریکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "ڈسٹرکٹ ہارٹیکلچر ڈیپارٹمنٹ"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "ایگریکلچر ایکسٹینشن اینڈ ٹیکنیکل انسٹی ٹیوشنز"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "کرشی وگیان کیندر (KVKs)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "فارمر پروڈیوسر آرگنائزیشنز (FPOs) اینڈ فیڈریشنز"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "چائلڈ ہیلپ لائن سروسز"
         },
         {
-          "k": "Sashastra Seema Bal (SSB)",
+          "k": "سشستر سیما بل (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
@@ -35930,42 +35930,42 @@ const KS = {
       "label": "رِیاسَتی سَطَح",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "ویمن اینڈ چائلڈ سیکیورٹی آرگنائزیشن (WCSO)، اتر پردیش پولیس",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "ویمن اینڈ چائلڈ ڈیولپمنٹ ڈیپارٹمنٹ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "ایجوکیشن ڈیپارٹمنٹ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "ہیلتھ ڈیپارٹمنٹ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "لیبر ڈیپارٹمنٹ",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "اتر پردیش پولیس اینڈ اینٹی-ٹریفکنگ میکانزمز",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "ڈیپارٹمنٹ آف ایگریکلچر، گورنمنٹ آف اتر پردیش",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "ڈیپارٹمنٹ آف ہارٹیکلچر اینڈ فوڈ پروسیسنگ، گورنمنٹ آف اتر پردیش",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "ریاستی لیگل سروسز اتھارٹی (SLSA)"
+          "k": "اسٹیٹ لیگل سروسز اتھارٹی (SLSA)"
         },
         {
-          "k": "ریاستی کمیشن برائے تحفظِ حقوقِ اطفال (SCPCR)"
+          "k": "اسٹیٹ کمیشن فار پروٹیکشن آف چائلڈ رائٹس (SCPCR)"
         }
       ]
     },
@@ -35974,13 +35974,13 @@ const KS = {
       "label": "قومی سطح",
       "items": [
         {
-          "k": "قومی لیگل سروسز اتھارٹی (NALSA)"
+          "k": "نیشنل لیگل سروسز اتھارٹی (NALSA)"
         },
         {
-          "k": "قومی کمیشن برائے تحفظِ حقوقِ اطفال (NCPCR)"
+          "k": "نیشنل کمیشن فار پروٹیکشن آف چائلڈ رائٹس (NCPCR)"
         },
         {
-          "k": "زنانن تہٕ شُرِین ہٕنٛز ترقی ہٕنٛز وزارت (مشن واتسلیہ)"
+          "k": "منسٹری آف ویمن اینڈ چائلڈ ڈیولپمنٹ (مشن واتسلیہ)"
         }
       ]
     }
