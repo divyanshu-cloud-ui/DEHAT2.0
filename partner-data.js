@@ -3163,7 +3163,7 @@ const ES = {
       "k": "inr",
       "label": "Estoy invirtiendo desde la India",
       "note": "Deducción de 80G disponible",
-      "detail": "Recibido en la cuenta nacional. Se emite un recibo de 80G contra su PAN con el registro AAAAD3793QF20241, válido para el año de evaluación 2027-28. DEHAT también informa la donación en su declaración Formulario 10BD, que es lo que le permite reclamar la deducción.",
+      "detail": "Se recibe en la cuenta nacional. Se emite un recibo 80G a nombre de tu PAN conforme a la aprobación AAAAD3793Q25LK02, válida para los años de evaluación 2027–28 a 2031–32. DEHAT también declara la inversión en su Form 10BD, que es lo que te permite aplicar la deducción.",
       "col": "#EAAE28"
     },
     {
@@ -3692,6 +3692,9 @@ const ES = {
         },
         {
           "k": "Other Sub-District Convergence Mechanisms"
+        },
+        {
+          "k": "Agentes de Policía para el Bienestar Infantil (CWPO) en las comisarías"
         }
       ]
     },
@@ -3763,6 +3766,12 @@ const ES = {
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "Junta de Justicia Juvenil (JJB)"
+        },
+        {
+          "k": "Centro de Atención Integral (Sakhi)"
         }
       ]
     },
@@ -3801,6 +3810,27 @@ const ES = {
         {
           "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "Autoridad Estatal de Servicios Jurídicos (SLSA)"
+        },
+        {
+          "k": "Comisión Estatal para la Protección de los Derechos del Niño (SCPCR)"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "Nivel nacional",
+      "items": [
+        {
+          "k": "Autoridad Nacional de Servicios Jurídicos (NALSA)"
+        },
+        {
+          "k": "Comisión Nacional para la Protección de los Derechos del Niño (NCPCR)"
+        },
+        {
+          "k": "Ministerio de la Mujer y Desarrollo Infantil (Misión Vatsalya)"
         }
       ]
     }
@@ -4419,7 +4449,7 @@ const FR = {
       "k": "inr",
       "label": "J'investis depuis l'Inde",
       "note": "Déduction de 80G disponible",
-      "detail": "Reçu sur le compte national. Un reçu 80G est délivré pour votre PAN sous l'enregistrement AAAAD3793QF20241, valable jusqu'à l'année d'évaluation 2027-2028. DEHAT déclare également le don dans son formulaire 10BD, ce qui vous permet de demander la déduction.",
+      "detail": "Reçu sur le compte national. Un reçu 80G est émis à votre PAN au titre de l’agrément AAAAD3793Q25LK02, valable pour les années d’imposition 2027–28 à 2031–32. DEHAT déclare aussi l’investissement dans son Form 10BD, ce qui vous permet de demander la déduction.",
       "col": "#EAAE28"
     },
     {
@@ -4948,6 +4978,9 @@ const FR = {
         },
         {
           "k": "Other Sub-District Convergence Mechanisms"
+        },
+        {
+          "k": "Officiers de police chargés de la protection de l’enfance (CWPO) dans les commissariats"
         }
       ]
     },
@@ -5019,6 +5052,12 @@ const FR = {
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "Tribunal pour mineurs (JJB)"
+        },
+        {
+          "k": "Centre d’accueil unique (Sakhi)"
         }
       ]
     },
@@ -5057,6 +5096,27 @@ const FR = {
         {
           "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "Autorité des services juridiques de l’État (SLSA)"
+        },
+        {
+          "k": "Commission de l’État pour la protection des droits de l’enfant (SCPCR)"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "Niveau national",
+      "items": [
+        {
+          "k": "Autorité nationale des services juridiques (NALSA)"
+        },
+        {
+          "k": "Commission nationale pour la protection des droits de l’enfant (NCPCR)"
+        },
+        {
+          "k": "Ministère de la Femme et du Développement de l’enfant (Mission Vatsalya)"
         }
       ]
     }
@@ -5675,7 +5735,7 @@ const RU = {
       "k": "ИНР",
       "label": "Я инвестирую из Индии",
       "note": "Возможен вычет 80G",
-      "detail": "Поступило на внутренний счет. Квитанция 80G выдается на ваш PAN под регистрацией AAAAD3793QF20241, действительная до 2027–28 расчетного года. DEHAT также сообщает о пожертвовании в своем заявлении по форме 10BD, что позволяет вам требовать вычет.",
+      "detail": "Поступает на внутренний счёт. Квитанция 80G выдаётся на ваш PAN в рамках разрешения AAAAD3793Q25LK02, действующего на налоговые годы 2027–28 — 2031–32. DEHAT также отражает инвестицию в своём отчёте по Form 10BD — именно это позволяет вам заявить вычет.",
       "col": "#EAAE28"
     },
     {
@@ -6204,6 +6264,9 @@ const RU = {
         },
         {
           "k": "Other Sub-District Convergence Mechanisms"
+        },
+        {
+          "k": "Сотрудники полиции по защите детей (CWPO) в полицейских участках"
         }
       ]
     },
@@ -6275,6 +6338,12 @@ const RU = {
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
+        },
+        {
+          "k": "Совет по делам несовершеннолетних (JJB)"
+        },
+        {
+          "k": "Центр «единого окна» (Сакхи)"
         }
       ]
     },
@@ -6313,6 +6382,27 @@ const RU = {
         {
           "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
+        },
+        {
+          "k": "Орган юридической помощи штата (SLSA)"
+        },
+        {
+          "k": "Комиссия штата по защите прав ребёнка (SCPCR)"
+        }
+      ]
+    },
+    {
+      "k": "national",
+      "label": "Национальный уровень",
+      "items": [
+        {
+          "k": "Национальный орган юридической помощи (NALSA)"
+        },
+        {
+          "k": "Национальная комиссия по защите прав ребёнка (NCPCR)"
+        },
+        {
+          "k": "Министерство по делам женщин и развития детей (миссия «Ватсалья»)"
         }
       ]
     }
