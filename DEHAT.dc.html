@@ -85,7 +85,10 @@
   .plate-nav:hover,.plate-nav:focus-visible{opacity:1}
   .plate-nav-glyph{transition:background .18s cubic-bezier(.22,.61,.36,1),transform .18s cubic-bezier(.22,.61,.36,1)}
   .plate-nav:hover .plate-nav-glyph{background:rgba(0,0,0,.42);transform:scale(1.06)}
-  @media (hover:none){.plate-nav{opacity:.9}}
+  /* Touch screens have no hover, so the arrows used to sit permanently over the story. They
+     now appear for a moment when a story opens or is touched, then fade and stop taking taps;
+     a horizontal swipe pages the deck, as the arrow keys do on desktop. */
+  @media (hover:none){.plate-nav{opacity:0;pointer-events:none}.plate-nav.nav-show{opacity:.9;pointer-events:auto}}
   .art-l{background-repeat:no-repeat,no-repeat;background-size:contain,92% 92%;background-position:left bottom,center}
   @keyframes loopFlow{0%,100%{opacity:.22;transform:scale(.9)}45%{opacity:1;transform:scale(1.15)}}
   .loop-arrow span{display:block;animation:loopFlow 3.2s ease-in-out infinite}
@@ -268,6 +271,20 @@
   /* The coarse-pointer 44px floor would override the ring's own sizing on the smallest phones
      (320px), where 44px circles cannot fit sixteen to a ring without touching. */
   @media (pointer:coarse){ .cyc-node{min-width:0;min-height:0} }
+  /* A scrolling flex row ignores its own right padding, so the last section tab ended flush
+     against the screen edge on phones. The spacer restores the same gutter at the end. */
+  .subnav-row::after{content:'';flex:none;width:clamp(16px,5vw,64px)}
+  /* Footer base row: copyright opposite one group of three links on wide screens; on phones the
+     copyright sits above and the links wrap as one left-aligned group, so none is stranded.
+     Underlines are text underlines, so the 44px touch height cannot push them off the words. */
+  .foot-base{max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(251,247,239,.1);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 32px}
+  .foot-rights{font-size:13px;line-height:1.5;color:rgba(251,247,239,.5)}
+  .foot-links{display:flex;flex-wrap:wrap;align-items:center;gap:4px 26px;margin:0;padding:0}
+  .foot-link{cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;background:none;border:none;padding:0;color:rgba(251,247,239,.72);text-decoration:underline;text-decoration-color:rgba(251,247,239,.3);text-decoration-thickness:1px;text-underline-offset:5px;display:inline-flex;align-items:center}
+  .foot-link:hover{color:#fbf7ef;text-decoration-color:currentColor}
+  .foot-link-alert{color:#F58EA6;font-weight:800;text-decoration-color:rgba(245,142,166,.5)}
+  .foot-link-alert:hover{color:#F58EA6}
+  @media (max-width:640px){ .foot-base{flex-direction:column;align-items:flex-start} .foot-links{flex-direction:column;align-items:flex-start;gap:2px} }
   .st-count{display:none;min-width:64px;text-align:center;font-weight:800;font-size:15px;color:#fff;font-variant-numeric:tabular-nums}
   @media (pointer:coarse){ .st-dot{min-width:0;min-height:0} }
   @media (max-width:640px){ .st-dot{display:none} .st-count{display:inline-block} }
@@ -573,7 +590,7 @@
 
 <sc-if value="{{ subNavOn }}" hint-placeholder-val="{{ false }}">
 <div key="subnav" data-subnav="" style="position:sticky;top:var(--nav-h,69px);z-index:46;background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch">
-  <div style="display:flex;align-items:stretch;gap:2px;padding:0 clamp(16px,5vw,64px);max-width:1480px;margin:0 auto;white-space:nowrap">
+  <div class="subnav-row" style="display:flex;align-items:stretch;gap:2px;padding:0 clamp(16px,5vw,64px);max-width:1480px;margin:0 auto;white-space:nowrap">
     <sc-for list="{{ subNav }}" as="sn" hint-placeholder-count="5">
       <button onClick="{{ sn.go }}" aria-current="{{ sn.current }}" style="flex:none;background:none;border:none;border-bottom:2px solid {{ sn.line }};cursor:pointer;padding:11px 12px;font-family:inherit;font-size:12.5px;font-weight:{{ sn.weight }};color:{{ sn.color }};white-space:nowrap;transition:color .2s cubic-bezier(.22,.61,.36,1)" style-hover="color:var(--ac-crimson)">{{ sn.label }}</button>
     </sc-for>
@@ -2432,7 +2449,7 @@
     <div key="stories" class="rise">
 
       <sc-if value="{{ hasStoryOpen }}" hint-placeholder-val="{{ false }}">
-      <div style="position:sticky;top:98px;z-index:45;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;padding:12px clamp(20px,5vw,64px);background:var(--bg);border-bottom:1px solid var(--border);transform:{{ barShift }};transition:transform .32s cubic-bezier(.22,.61,.36,1)">
+      <div ref="{{ deckBarRef }}" style="position:sticky;top:var(--nav-h,69px);z-index:45;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;padding:12px clamp(20px,5vw,64px);background:var(--bg);border-bottom:1px solid var(--border);transform:{{ barShift }};transition:transform .32s cubic-bezier(.22,.61,.36,1)">
         <button onClick="{{ leaveDeck }}" style="flex:none;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:800;letter-spacing:.04em;color:var(--faint)" style-hover="color:var(--text)">{{ rosterBack }}</button>
         <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:13px;letter-spacing:.02em;color:var(--text);flex:none">{{ deckPos }}</span>
         <span style="flex:1 1 120px;min-width:80px;height:2px;background:var(--border);position:relative">
@@ -2443,7 +2460,7 @@
       </sc-if>
 
       <sc-if value="{{ filtersOpen }}" hint-placeholder-val="{{ false }}">
-        <div class="rise" style="position:sticky;top:{{ filtTop }};z-index:44;padding:22px clamp(20px,5vw,64px);border-bottom:1px solid var(--border);background:var(--surface);transform:{{ barShift }};transition:transform .32s cubic-bezier(.22,.61,.36,1)">
+        <div class="rise" style="position:sticky;top:calc(var(--nav-h,69px) + var(--deckbar-h,58px));z-index:44;padding:22px clamp(20px,5vw,64px);border-bottom:1px solid var(--border);background:var(--surface);transform:{{ barShift }};transition:transform .32s cubic-bezier(.22,.61,.36,1)">
           <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:12px">
             <div style="display:flex;flex-wrap:wrap;gap:6px">
               <sc-for list="{{ stDimTabs }}" as="dt" hint-placeholder-count="5">
@@ -2507,14 +2524,14 @@
       </sc-if>
 
       <sc-if value="{{ hasStoryOpen }}" hint-placeholder-val="{{ true }}">
-        <article key="{{ sd.slug }}" class="rise">
+        <article key="{{ sd.slug }}" class="rise" ref="{{ deckSwipe }}">
 
           <sc-if value="{{ sd.isPlate }}" hint-placeholder-val="{{ false }}">
             <div class="plate-banner" style="position:relative;background:{{ sd.color }};padding:clamp(50px,7vw,96px) clamp(20px,5vw,64px)">
-              <button onClick="{{ deckPrev }}" aria-label="{{ T.aria_story_prev }}" class="plate-nav" style="position:absolute;left:0;top:0;bottom:0;width:clamp(56px,13%,150px);z-index:6;cursor:pointer;background:transparent;border:none;padding:0;display:flex;align-items:center;justify-content:center">
+              <button onClick="{{ deckPrev }}" aria-label="{{ T.aria_story_prev }}" class="plate-nav {{ deckNavCls }}" style="position:absolute;left:0;top:0;bottom:0;width:clamp(56px,13%,150px);z-index:6;cursor:pointer;background:transparent;border:none;padding:0;display:flex;align-items:center;justify-content:center">
                 <span class="plate-nav-glyph" aria-hidden="true" style="width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;line-height:1;background:rgba(0,0,0,.22);color:{{ sd.onFill }};border:1px solid {{ sd.onFillSoft }}">←</span>
               </button>
-              <button onClick="{{ deckNext }}" aria-label="{{ T.aria_story_next }}" class="plate-nav" style="position:absolute;right:0;top:0;bottom:0;width:clamp(56px,13%,150px);z-index:6;cursor:pointer;background:transparent;border:none;padding:0;display:flex;align-items:center;justify-content:center">
+              <button onClick="{{ deckNext }}" aria-label="{{ T.aria_story_next }}" class="plate-nav {{ deckNavCls }}" style="position:absolute;right:0;top:0;bottom:0;width:clamp(56px,13%,150px);z-index:6;cursor:pointer;background:transparent;border:none;padding:0;display:flex;align-items:center;justify-content:center">
                 <span class="plate-nav-glyph" aria-hidden="true" style="width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;line-height:1;background:rgba(0,0,0,.22);color:{{ sd.onFill }};border:1px solid {{ sd.onFillSoft }}">→</span>
               </button>
               <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,56px);align-items:center">
@@ -4516,11 +4533,13 @@
       </div>
     </div>
   </div>
-  <div style="max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(251,247,239,.1);display:flex;flex-wrap:wrap;align-items:center;gap:18px">
-    <span style="font-size:13px;color:rgba(251,247,239,.5)">{{ T.foot_rights }}</span>
-    <button onClick="{{ goPolicies }}" style="cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;background:none;border:none;padding:0;color:rgba(251,247,239,.72);border-bottom:1px solid rgba(251,247,239,.3)">{{ T.foot_policies }}</button>
-    <button onClick="{{ ck.openPrefs }}" style="cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;background:none;border:none;padding:0;color:rgba(251,247,239,.72);border-bottom:1px solid rgba(251,247,239,.3)">{{ T.foot_cookies }}</button>
-    <button onClick="{{ goRaiseConcern }}" style="cursor:pointer;font-family:inherit;font-size:13px;font-weight:800;background:none;border:none;padding:0;color:#F58EA6;border-bottom:1px solid rgba(245,142,166,.5);margin-left:auto">{{ T.foot_concern }}</button>
+  <div class="foot-base">
+    <span class="foot-rights">{{ T.foot_rights }}</span>
+    <div class="foot-links" role="navigation" aria-label="{{ T.foot_policies }}">
+      <button onClick="{{ goPolicies }}" class="foot-link">{{ T.foot_policies }}</button>
+      <button onClick="{{ ck.openPrefs }}" class="foot-link">{{ T.foot_cookies }}</button>
+      <button onClick="{{ goRaiseConcern }}" class="foot-link foot-link-alert">{{ T.foot_concern }}</button>
+    </div>
   </div>
 </footer>
 
@@ -4944,7 +4963,6 @@ class Component extends DCLogic {
         () => { try { window.scrollTo({ top: 0 }); } catch (e) {} }),
       barShift: this.state.deckBarHidden ? 'translateY(-130%)' : 'translateY(0)',
       filtersOpen: !!this.state.stFiltersOpen,
-      filtTop: entered ? '160px' : '98px',
       toggleFilters: () => this.setState(s => ({ stFiltersOpen: !s.stFiltersOpen })),
       filtLabel: nF > 0 ? T.roster_filters_n.replace('{n}', String(nF)) : T.roster_filter,
       filtBg: nF > 0 ? 'var(--text)' : 'transparent',
@@ -4953,6 +4971,9 @@ class Component extends DCLogic {
       deckPos: shown.length ? String(idx + 1) + ' / ' + shown.length : '0 / 0',
       deckProgress: shown.length ? (((idx + 1) / shown.length) * 100) + '%' : '0%',
       deckNext: step(1), deckPrev: step(-1),
+      deckNavCls: this.state.deckNav ? 'nav-show' : '',
+      deckSwipe: this._deckSwipeRef(step),
+      deckBarRef: this._deckBarRef(),
       nextLabel: nxt ? T.roster_next_story : T.roster_start_again,
       hasStoryOpen: !!cur,
       noStoryOpen: !cur,
@@ -32362,6 +32383,39 @@ class Component extends DCLogic {
   }
   // Every drafted email on the site goes to one inbox.
   _inbox() { return 'joinus@dehatindia.org'; }
+  // Stories deck on touch screens: show the arrows for a moment, then let them fade.
+  _deckPing() {
+    if (!this.state.deckNav) this.setState({ deckNav: true });
+    clearTimeout(this._deckNavT);
+    this._deckNavT = setTimeout(() => this.setState({ deckNav: false }), 2400);
+  }
+  _deckSwipeRef(step) {
+    this._deckStep = step;
+    if (!this._deckSwipeFn) this._deckSwipeFn = (el) => {
+      if (!el || el._swipe) return;
+      el._swipe = true;
+      this._deckPing();
+      let x0 = 0, y0 = 0;
+      el.addEventListener('touchstart', (e) => { const t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; this._deckPing(); }, { passive: true });
+      el.addEventListener('touchend', (e) => {
+        const t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+        if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.6) return;
+        if (this._deckStep) this._deckStep(dx < 0 ? 1 : -1)();
+      }, { passive: true });
+    };
+    return this._deckSwipeFn;
+  }
+  // The deck bar's real height (it wraps on phones) positions the filter panel under it.
+  _deckBarRef() {
+    if (!this._deckBarFn) this._deckBarFn = (el) => {
+      if (!el || el._measured) return;
+      el._measured = true;
+      const set = () => { try { document.documentElement.style.setProperty('--deckbar-h', el.offsetHeight + 'px'); } catch (e) {} };
+      set();
+      try { new ResizeObserver(set).observe(el); } catch (e) {}
+    };
+    return this._deckBarFn;
+  }
   // Horizontal swipe on the home story slider (phones). Native listeners, attached once per
   // element; a mostly-vertical gesture is left alone so the page still scrolls.
   _storySwipe(n) {
