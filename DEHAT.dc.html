@@ -231,6 +231,48 @@
   .id-copy:hover{border-color:var(--faint)}
   @media (pointer:coarse){ .id-copy{min-height:44px;padding:4px 14px} }
   @media (max-width:720px){ .id-mast{grid-template-columns:1fr} }
+  /* Drafted email preview: the exact message the visitor's email app will receive, set as a
+     letter rather than a code block. Bracketed parts of the draft ("[Your name]") render as
+     highlighted gaps to fill. It re-renders on every keystroke, so nothing in it animates
+     except its first appearance. .ml-paper is the fixed light sheet used on coloured bands. */
+  .ml-sheet{--ml-bg:var(--bg);--ml-fg:var(--text);--ml-dim:var(--dim);--ml-faint:var(--faint);--ml-rule:var(--border);--ml-slot:rgba(234,174,40,.2);--ml-slot-fg:var(--text);
+    background:var(--ml-bg);color:var(--ml-fg);border:1px solid var(--ml-rule);border-radius:16px;overflow:hidden;animation:mlIn .26s cubic-bezier(.23,1,.32,1) both}
+  .ml-paper{--ml-bg:#fbf7ef;--ml-fg:#1f1710;--ml-dim:#5a4f43;--ml-faint:#7d6f5f;--ml-rule:rgba(31,23,16,.12);--ml-slot:rgba(234,174,40,.32);--ml-slot-fg:#1f1710;border-color:transparent;box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
+  .ml-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;padding:14px clamp(16px,2vw,22px);border-bottom:1px solid var(--ml-rule);font-size:13.5px;line-height:1.45}
+  .ml-k{color:var(--ml-faint);font-weight:600}
+  .ml-v{color:var(--ml-dim);overflow-wrap:anywhere}
+  .ml-subj{color:var(--ml-fg);font-weight:700}
+  .ml-body{padding:16px clamp(16px,2vw,22px) 20px;font-size:14.5px;line-height:1.62;color:var(--ml-fg);max-height:340px;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--ml-rule) transparent}
+  .ml-body p{margin:0;max-width:66ch;overflow-wrap:anywhere;text-wrap:pretty}
+  .ml-body .ml-gap{height:.85em}
+  .ml-body .ml-h{font-weight:700;margin-top:2px}
+  .ml-body .ml-li{padding-left:1.1em;text-indent:-1.1em}
+  .ml-slot{background:var(--ml-slot);color:var(--ml-slot-fg);border-radius:5px;padding:1px 6px;box-decoration-break:clone;-webkit-box-decoration-break:clone;font-style:italic}
+  .ml-status{display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.45;color:var(--ml-faint);padding:11px clamp(16px,2vw,22px) 13px;border-top:1px solid var(--ml-rule)}
+  .ml-status i{flex:none;width:7px;height:7px;border-radius:50%;background:var(--ac-gold)}
+  .ml-status.ml-ok i{background:var(--ac-olive)}
+  .ml-press{transition:transform .16s cubic-bezier(.23,1,.32,1)}
+  .ml-press:active{transform:scale(.97)}
+  /* Home story slider. Twenty-odd dots cannot fit a phone row (the coarse-pointer 44px rule
+     turned each into a circle and pushed the arrows off screen), so phones get a counter and
+     swipe instead; dots stay on wider screens at their drawn size. */
+  /* Cycle ring on phones: the ring is sized to clear the gutter, so its centre carries only
+     the art, chapter and figure; the title is repeated directly below the ring. */
+  /* Cycle ring: sized in its own width (cqw) so every screen keeps the same proportions.
+     16 moments on a 47%-radius ring sit 18.5cqw apart; circles are 14cqw (16.2cqw when
+     enlarged), so neighbours never touch. They overhang the ring by ~5cqw a side, which the
+     ring's width formula leaves room for inside the column. Small rings drop the centre
+     title, which is repeated directly below the ring. */
+  @container (max-width:430px){ .cyc-title{display:none} .cyc-art{margin-bottom:8px !important} }
+  @container (max-width:290px){ .cyc-chapter{display:none} }
+  /* The coarse-pointer 44px floor would override the ring's own sizing on the smallest phones
+     (320px), where 44px circles cannot fit sixteen to a ring without touching. */
+  @media (pointer:coarse){ .cyc-node{min-width:0;min-height:0} }
+  .st-count{display:none;min-width:64px;text-align:center;font-weight:800;font-size:15px;color:#fff;font-variant-numeric:tabular-nums}
+  @media (pointer:coarse){ .st-dot{min-width:0;min-height:0} }
+  @media (max-width:640px){ .st-dot{display:none} .st-count{display:inline-block} }
+  @keyframes mlIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){ .ml-sheet{animation:none} .ml-press:active{transform:none} }
   .nav-drop{display:none}
   .nav-group:hover > .nav-drop,
   .nav-group:focus-within > .nav-drop{display:flex}
@@ -721,13 +763,13 @@
         </div>
         <div style="max-width:1080px;margin:0 auto">
           <div style="text-align:center;font-size:13px;letter-spacing:.01em;color:rgba(255,255,255,.6);margin:0 auto 48px;max-width:580px;line-height:1.55">{{ T.cycle_pick }}</div>
-          <div onMouseLeave="{{ wheelLeave }}" style="position:relative;width:min(92vw,660px);aspect-ratio:1;margin:0 auto 34px">
+          <div onMouseLeave="{{ wheelLeave }}" class="cyc-ring" style="position:relative;container-type:inline-size;width:min(calc((100% - 16px) / 1.11),660px);aspect-ratio:1;margin:0 auto 34px">
             <div style="position:absolute;inset:0;animation:svcSpin 90s linear infinite;animation-play-state:{{ ringPlay }}">
               <div style="position:absolute;top:50%;left:50%;width:94%;height:94%;transform:translate(-50%,-50%);border-radius:50%;border:2px dotted rgba(255,255,255,.28);pointer-events:none"></div>
               <sc-for list="{{ cycleNodes }}" as="n" hint-placeholder-count="16">
                 <div style="position:absolute;left:{{ n.posX }};top:{{ n.posY }};transform:translate(-50%,-50%)">
                   <div style="animation:svcSpinRev 90s linear infinite;animation-play-state:{{ ringPlay }}">
-                    <button onClick="{{ n.select }}" onMouseEnter="{{ n.select }}" aria-label="{{ n.shortLabel }}" title="{{ n.shortLabel }}" style="width:clamp(56px,8vw,84px);height:clamp(56px,8vw,84px);border-radius:50%;padding:0;border:none;cursor:pointer;background:{{ n.thumbBg }};box-shadow:{{ n.ring }};transform:{{ n.scale }};opacity:{{ n.opacity }};transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s cubic-bezier(.22,.61,.36,1),opacity .28s cubic-bezier(.22,.61,.36,1);overflow:hidden;display:flex;align-items:center;justify-content:center" style-hover="opacity:1">
+                    <button onClick="{{ n.select }}" onMouseEnter="{{ n.select }}" aria-label="{{ n.shortLabel }}" title="{{ n.shortLabel }}" class="cyc-node" style="width:clamp(38px,14cqw,84px);height:clamp(38px,14cqw,84px);border-radius:50%;padding:0;border:none;cursor:pointer;background:{{ n.thumbBg }};box-shadow:{{ n.ring }};transform:{{ n.scale }};opacity:{{ n.opacity }};transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s cubic-bezier(.22,.61,.36,1),opacity .28s cubic-bezier(.22,.61,.36,1);overflow:hidden;display:flex;align-items:center;justify-content:center" style-hover="opacity:1">
                       <div role="img" aria-hidden="true" style="width:80%;height:80%;pointer-events:none;background-image:{{ n.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:center"></div>
                     </button>
                   </div>
@@ -736,12 +778,12 @@
             </div>
             <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(52%,300px);text-align:center;pointer-events:none">
               <div key="{{ activeNode.title }}" class="rise">
-                <div style="height:clamp(140px,17vw,172px);margin:0 auto 16px;display:flex;align-items:flex-end;justify-content:center;overflow:visible">
+                <div class="cyc-art" style="height:clamp(56px,28cqw,172px);margin:0 auto 16px;display:flex;align-items:flex-end;justify-content:center;overflow:visible">
                   <div role="img" aria-hidden="true" style="height:110%; width:auto; max-width:min(80vw,220px); aspect-ratio:222/239; filter: drop-shadow(0 10px 22px rgba(0,0,0,.35)); background-image:{{ activeNode.imgCss }}; background-size:contain; background-repeat:no-repeat; background-position:bottom center"></div>
                 </div>
-                <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ activeNode.chapter }}</span>
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(34px,5.6vw,58px);color:#fff;line-height:.9;margin:6px 0 4px">{{ activeNode.stat }}</div>
-                <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(15px,1.9vw,21px);color:#fff;margin:0 0 8px;line-height:1.14;text-wrap:pretty">{{ activeNode.title }}</h3>
+                <span class="cyc-chapter" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ activeNode.chapter }}</span>
+                <div class="cyc-stat" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(28px,10cqw,58px);color:#fff;line-height:.9;margin:6px 0 4px">{{ activeNode.stat }}</div>
+                <h3 class="cyc-title" style="font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(15px,1.9vw,21px);color:#fff;margin:0 0 8px;line-height:1.14;text-wrap:pretty">{{ activeNode.title }}</h3>
                 <p class="svc-instory" style="font-size:clamp(11.5px,1.15vw,13.5px);line-height:1.5;color:rgba(255,255,255,.8);margin:0 0 8px;text-wrap:pretty;max-height:7.6em;overflow:hidden">{{ activeNode.story }}</p>
                 <div class="svc-instory" style="font-size:10.5px;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.02em">{{ T.f_source }} {{ activeNode.src }}</div>
               </div>
@@ -802,7 +844,7 @@
       </div>
     </section>
 
-    <section data-spine="Stories of Change" style="background:#D2305C;padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px)">
+    <section data-spine="Stories of Change" ref="{{ storySwipe }}" style="background:#D2305C;padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px)">
       <div style="max-width:1200px;margin:0 auto;text-align:center">
         <span style="font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.8); font-weight: 800">{{ T.eyebrow_stories }}</span>
         <div key="{{ activeStory.name }}" class="rise" onClick="{{ activeStory.open }}" style="margin:clamp(20px,2.6vw,30px) 0 0;display:flex;flex-direction:column;align-items:center;gap:clamp(16px,2.2vw,26px);cursor:pointer">
@@ -811,11 +853,12 @@
           <div style="font-size:16px;color:rgba(255,255,255,.9)"><strong style="font-weight:700">{{ activeStory.name }}</strong> · {{ activeStory.role }} · <span style="color:#fff">{{ activeStory.program }}</span></div>
         </div>
         <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:clamp(26px,3.2vw,38px)">
-          <button onClick="{{ prevStory }}" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:20px;cursor:pointer;transition:background .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:rgba(255,255,255,.15)">‹</button>
+          <button onClick="{{ prevStory }}" aria-label="{{ T.aria_story_prev }}" class="ml-press" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:20px;cursor:pointer;transition:background .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:rgba(255,255,255,.15)">‹</button>
+          <span class="st-count" aria-live="polite">{{ storyCount }}</span>
           <sc-for list="{{ storyDots }}" as="dot" hint-placeholder-count="2">
-            <button onClick="{{ dot.go }}" style="width:{{ dot.w }};height:10px;border-radius:999px;border:none;cursor:pointer;background:{{ dot.bg }};transition:all .3s cubic-bezier(.22,.61,.36,1)"></button>
+            <button onClick="{{ dot.go }}" class="st-dot" style="width:{{ dot.w }};height:10px;border-radius:999px;border:none;cursor:pointer;background:{{ dot.bg }};transition:all .3s cubic-bezier(.22,.61,.36,1)"></button>
           </sc-for>
-          <button onClick="{{ nextStory }}" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:20px;cursor:pointer;transition:background .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:rgba(255,255,255,.15)">›</button>
+          <button onClick="{{ nextStory }}" aria-label="{{ T.aria_story_next }}" class="ml-press" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:20px;cursor:pointer;transition:background .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:rgba(255,255,255,.15)">›</button>
         </div>
         <button onClick="{{ goStories }}" style="margin-top:28px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:800;color:#fff;border-bottom:2px solid rgba(255,255,255,.5)">{{ storiesAllLabel }} →</button>
       </div>
@@ -2718,17 +2761,24 @@
               <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;color:var(--text)">{{ pv.reviewTitle }}</div>
               <p style="font-size:13.5px;line-height:1.55;color:var(--faint);margin:5px 0 0">{{ pv.reviewSub }}</p>
             </div>
-            <pre style="margin:0;padding:22px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.65;color:var(--dim);white-space:pre-wrap;max-height:320px;overflow:auto">{{ pv.preview }}</pre>
+            <div style="padding:18px 22px 16px">
+              <div class="ml-sheet">
+                <div class="ml-head"><span class="ml-k">{{ pv.sheet.toLabel }}</span><span class="ml-v">{{ pv.sheet.to }}</span><span class="ml-k">{{ pv.sheet.subjectLabel }}</span><span class="ml-v ml-subj">{{ pv.sheet.subject }}</span></div>
+                <div class="ml-body" tabindex="0" role="document" aria-label="{{ pv.reviewTitle }}"><sc-for list="{{ pv.sheet.lines }}" as="ln" hint-placeholder-count="14"><p class="{{ ln.cls }}"><sc-for list="{{ ln.parts }}" as="pt" hint-placeholder-count="1"><span class="{{ pt.cls }}">{{ pt.t }}</span></sc-for></p></sc-for></div>
+                <div class="{{ pv.sheet.statusCls }}"><i aria-hidden="true"></i><span>{{ pv.sheet.status }}</span></div>
+              </div>
+            </div>
             <div style="display:flex;flex-wrap:wrap;gap:10px;padding:0 22px 22px">
-              <a href="{{ pv.href }}" style="font-family:inherit;font-size:14px;font-weight:800;padding:12px 24px;border-radius:999px;background:var(--ac-olive);color:var(--bg)">{{ pv.sendLabel }} →</a>
-              <a href="{{ pv.gmailHref }}" target="_blank" rel="noopener" style="font-family:inherit;font-size:14px;font-weight:700;padding:12px 22px;border-radius:999px;background:transparent;color:var(--dim);border:1.5px solid var(--border)" style-hover="color:var(--text);border-color:var(--text)">Gmail</a>
-              <a href="{{ pv.outlookHref }}" target="_blank" rel="noopener" style="font-family:inherit;font-size:14px;font-weight:700;padding:12px 22px;border-radius:999px;background:transparent;color:var(--dim);border:1.5px solid var(--border)" style-hover="color:var(--text);border-color:var(--text)">Outlook</a>
-              <a href="{{ pv.whatsappHref }}" target="_blank" rel="noopener" style="font-family:inherit;font-size:14px;font-weight:700;padding:12px 22px;border-radius:999px;background:transparent;color:var(--dim);border:1.5px solid var(--border)" style-hover="color:var(--text);border-color:var(--text)">WhatsApp</a>
-              <button onClick="{{ pv.copy }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;padding:12px 22px;border-radius:999px;background:transparent;color:var(--dim);border:1.5px solid var(--border)" style-hover="color:var(--text);border-color:var(--text)">{{ pv.copyLabel }}</button>
+              <a href="{{ pv.href }}" class="ml-press" style="font-family:inherit;font-size:14px;font-weight:800;padding:12px 24px;border-radius:999px;background:var(--ac-olive);color:var(--bg)">{{ pv.sendLabel }} →</a>
+              <a href="{{ pv.gmailHref }}" class="ml-press" target="_blank" rel="noopener" style="font-family:inherit;font-size:14px;font-weight:700;padding:12px 22px;border-radius:999px;background:transparent;color:var(--dim);border:1.5px solid var(--border)" style-hover="color:var(--text);border-color:var(--text)">Gmail</a>
+              <a href="{{ pv.outlookHref }}" class="ml-press" target="_blank" rel="noopener" style="font-family:inherit;font-size:14px;font-weight:700;padding:12px 22px;border-radius:999px;background:transparent;color:var(--dim);border:1.5px solid var(--border)" style-hover="color:var(--text);border-color:var(--text)">Outlook</a>
+              <a href="{{ pv.whatsappHref }}" class="ml-press" target="_blank" rel="noopener" style="font-family:inherit;font-size:14px;font-weight:700;padding:12px 22px;border-radius:999px;background:transparent;color:var(--dim);border:1.5px solid var(--border)" style-hover="color:var(--text);border-color:var(--text)">WhatsApp</a>
+              <button onClick="{{ pv.copy }}" class="ml-press" aria-live="polite" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;padding:12px 22px;border-radius:999px;background:transparent;color:var(--dim);border:1.5px solid var(--border)" style-hover="color:var(--text);border-color:var(--text)">{{ pv.copyLabel }}</button>
             </div>
             <sc-if value="{{ pv.needsDetails }}" hint-placeholder-val="{{ false }}">
-              <p style="font-size:13px;line-height:1.55;color:var(--faint);margin:0;padding:0 22px 20px">{{ pv.needsDetailsNote }}</p>
+              <p style="font-size:13px;line-height:1.55;color:var(--faint);margin:0;padding:0 22px 10px">{{ pv.needsDetailsNote }}</p>
             </sc-if>
+            <p style="font-size:12.5px;line-height:1.55;color:var(--faint);margin:0;padding:0 22px 20px;max-width:70ch">{{ pv.sheet.fallback }}</p>
           </div>
         </sc-if>
       </section>
@@ -3104,11 +3154,17 @@
           <sc-if value="{{ rt.hasMsg }}" hint-placeholder-val="{{ false }}">
             <p style="font-size:14px;line-height:1.6;color:{{ rt.msgCol }};margin:16px 0 0;max-width:66ch;text-wrap:pretty">{{ rt.msg }}</p>
             <sc-if value="{{ rt.hasDraft }}" hint-placeholder-val="{{ false }}">
-              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:10px">
+              <div class="ml-sheet" style="margin-top:16px;max-width:720px">
+                <div class="ml-head"><span class="ml-k">{{ rt.draftSheet.toLabel }}</span><span class="ml-v">{{ rt.draftSheet.to }}</span><span class="ml-k">{{ rt.draftSheet.subjectLabel }}</span><span class="ml-v ml-subj">{{ rt.draftSheet.subject }}</span></div>
+                <div class="ml-body" tabindex="0" role="document" aria-label="{{ rt.draftSheet.subject }}"><sc-for list="{{ rt.draftSheet.lines }}" as="ln" hint-placeholder-count="16"><p class="{{ ln.cls }}"><sc-for list="{{ ln.parts }}" as="pt" hint-placeholder-count="1"><span class="{{ pt.cls }}">{{ pt.t }}</span></sc-for></p></sc-for></div>
+                <div class="{{ rt.draftSheet.statusCls }}"><i aria-hidden="true"></i><span>{{ rt.draftSheet.status }}</span></div>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:12px">
+                <a href="{{ rt.draftMailto }}" class="ml-press" style="font-size:13.5px;font-weight:800;padding:9px 18px;border-radius:999px;background:var(--ac-teal);color:var(--bg)">{{ rt.draftOpenLabel }}</a>
                 <span style="font-size:13px;color:var(--dim)">{{ rt.draftNote }}</span>
                 <a href="{{ rt.draftGmail }}" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:700;color:var(--text)">Gmail</a>
                 <a href="{{ rt.draftOutlook }}" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:700;color:var(--text)">Outlook</a>
-                <button onClick="{{ rt.draftCopy }}" style="cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text)">{{ rt.draftCopyLabel }}</button>
+                <button onClick="{{ rt.draftCopy }}" class="ml-press" aria-live="polite" style="cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text)">{{ rt.draftCopyLabel }}</button>
               </div>
             </sc-if>
           </sc-if>
@@ -4244,14 +4300,19 @@
             </div>
 
             <div style="padding-top:18px;border-top:1px solid rgba(255,255,255,.18);display:flex;flex-direction:column;gap:12px">
-              <div style="font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.6)">{{ raiseSubjectLabel }} <span style="color:#EAAE28;font-weight:700">{{ rzSubject }}</span></div>
+              <div class="ml-sheet ml-paper">
+                <div class="ml-head"><span class="ml-k">{{ rzSheet.toLabel }}</span><span class="ml-v">{{ rzSheet.to }}</span><span class="ml-k">{{ rzSheet.subjectLabel }}</span><span class="ml-v ml-subj">{{ rzSheet.subject }}</span></div>
+                <div class="ml-body" tabindex="0" role="document" aria-label="{{ rzSheet.subject }}" style="max-height:300px"><sc-for list="{{ rzSheet.lines }}" as="ln" hint-placeholder-count="12"><p class="{{ ln.cls }}"><sc-for list="{{ ln.parts }}" as="pt" hint-placeholder-count="1"><span class="{{ pt.cls }}">{{ pt.t }}</span></sc-for></p></sc-for></div>
+                <div class="{{ rzSheet.statusCls }}"><i aria-hidden="true"></i><span>{{ rzSheet.status }}</span></div>
+              </div>
               <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-                <a href="{{ rzMailto }}" style="font-family:inherit;font-size:14.5px;font-weight:800;padding:14px 26px;border-radius:999px;background:#EAAE28;color:#2a1206;text-decoration:none">{{ raiseOpenEmail }}</a>
-                <button onClick="{{ rzCopy }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;padding:13px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff">{{ rzCopyLabel }}</button>
+                <a href="{{ rzMailto }}" class="ml-press" style="font-family:inherit;font-size:14.5px;font-weight:800;padding:14px 26px;border-radius:999px;background:#EAAE28;color:#2a1206;text-decoration:none">{{ raiseOpenEmail }}</a>
+                <button onClick="{{ rzCopy }}" class="ml-press" aria-live="polite" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;padding:13px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff">{{ rzCopyLabel }}</button>
                 <a href="{{ rzGmail }}" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:3px">Gmail</a>
                 <a href="{{ rzOutlook }}" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:3px">Outlook</a>
               </div>
-              <div style="font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.55)">{{ rzRouteNote }}</div>
+              <div style="font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.7)">{{ rzSheet.fallback }}</div>
+              <div style="font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.7)">{{ rzRouteNote }}</div>
             </div>
           </div>
         </div>
@@ -4390,13 +4451,13 @@
         <div id="refund" style="border-radius:20px;border:1px solid var(--border);background:var(--surface);padding:clamp(24px,3.2vw,38px)">
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(22px,2.6vw,30px);line-height:1.12;color:var(--text);margin:0 0 12px">{{ T.refund_h2 }}</h2>
           <p style="font-size:15.5px;line-height:1.72;color:var(--dim);margin:0 0 14px;max-width:70ch;text-wrap:pretty">{{ T.refund_p1 }}</p>
-          <p style="font-size:15.5px;line-height:1.72;color:var(--dim);margin:0 0 14px;max-width:70ch;text-wrap:pretty">{{ T.refund_p2a }} <a href="mailto:joinus@dehatindia.org?subject=Refund%20request" style="color:var(--ac-teal)">joinus@dehatindia.org</a> {{ T.refund_p2b }}</p>
+          <p style="font-size:15.5px;line-height:1.72;color:var(--dim);margin:0 0 14px;max-width:70ch;text-wrap:pretty">{{ T.refund_p2a }} <a href="{{ refundMail }}" style="color:var(--ac-teal)">joinus@dehatindia.org</a> {{ T.refund_p2b }}</p>
           <p style="font-size:15.5px;line-height:1.72;color:var(--dim);margin:0 0 14px;max-width:70ch;text-wrap:pretty">{{ T.refund_p3 }}</p>
           <p style="font-size:15.5px;line-height:1.72;color:var(--dim);margin:0 0 14px;max-width:70ch;text-wrap:pretty">{{ T.refund_p4 }}</p>
           <p style="font-size:15.5px;line-height:1.72;color:var(--dim);margin:0 0 14px;max-width:70ch;text-wrap:pretty">{{ T.refund_p5 }}</p>
           <p style="font-size:15.5px;line-height:1.72;color:var(--dim);margin:0 0 18px;max-width:70ch;text-wrap:pretty">{{ T.refund_p6 }}</p>
           <div style="display:flex;flex-wrap:wrap;gap:10px">
-            <a href="mailto:joinus@dehatindia.org?subject=Refund%20request" style="font-family:inherit;font-size:14px;font-weight:800;padding:13px 22px;border-radius:999px;border:none;background:var(--ac-crimson);color:var(--bg);text-decoration:none">{{ T.refund_cta }}</a>
+            <a href="{{ refundMail }}" style="font-family:inherit;font-size:14px;font-weight:800;padding:13px 22px;border-radius:999px;border:none;background:var(--ac-crimson);color:var(--bg);text-decoration:none">{{ T.refund_cta }}</a>
           </div>
         </div>
 
@@ -4406,7 +4467,7 @@
           <p style="font-size:15.5px;line-height:1.72;color:var(--dim);margin:0 0 18px;max-width:70ch;text-wrap:pretty">{{ T.cookie_p2 }}</p>
           <div style="display:flex;flex-wrap:wrap;gap:10px">
             <button onClick="{{ ck.openPrefs }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:13px 22px;border-radius:999px;border:none;background:var(--ac-teal);color:var(--bg)">{{ T.foot_cookies }}</button>
-            <a href="mailto:joinus@dehatindia.org?subject=Data%20and%20privacy%20request" style="font-family:inherit;font-size:14px;font-weight:700;padding:13px 22px;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--text);text-decoration:none">{{ T.cookie_ask_cta }}</a>
+            <a href="{{ dataMail }}" style="font-family:inherit;font-size:14px;font-weight:700;padding:13px 22px;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--text);text-decoration:none">{{ T.cookie_ask_cta }}</a>
           </div>
         </div>
       </div>
@@ -6764,6 +6825,54 @@ class Component extends DCLogic {
         "aria_close": "Close",
         "aria_prev": "Previous",
         "aria_more": "More",
+      draft_to: "To",
+      draft_subject: "Subject",
+      draft_gaps: "Highlighted parts are yours to fill in. You can also fill them in your email app.",
+      draft_ready: "Everything is filled in. It is ready to send.",
+      draft_fallback: "Nothing opened? Your device may not have an email app set up. Send the same message through Gmail or Outlook, or copy it.",
+      draft_slot_name: "Your name",
+      draft_slot_contact: "Your email or phone number",
+      draft_slot_fill: "add here",
+      mail_fyr_open: "I found DEHAT through your website and would like to explore working together.",
+      mail_h_about: "About me",
+      mail_h_explore: "What I would like to explore",
+      mail_h_change: "What I hope will change",
+      mail_h_scale: "Indicative scale",
+      mail_slot_change: "A line or two, in your own words, on what you hope will change",
+      mail_fyr_next: "Could someone from the team reply with a sensible next step: a call, a document or a visit, whichever fits?",
+      mail_subject_more: "+{n} more",
+      raise_written_on: "Written on {date}, through the transparency page on your website.",
+      rt_h_transfer: "The transfer",
+      rt_h_receipt: "Please issue the receipt to",
+      rt_subj_ref: "Ref. {ref}",
+      ask_mail_subject: "A question your website could not answer",
+      ask_mail_intro: "I asked the question desk on your website this, and it had no published answer:",
+      ask_slot_context: "Anything that helps you answer: the year, the programme or the district you mean",
+      fc_ask_label: "Return on Request",
+      fc_ask_title: "Ask us for the foreign contribution return filed for {fy}",
+      fc_open_title: "Open the {form} foreign contribution return filed for {fy}",
+      fc_open_full: "Open the {form} foreign contribution return for this year",
+      fc_mail_subject: "Foreign contribution return for FY {fy}",
+      fc_mail_body: "Please send me the annual return filed under the Foreign Contribution (Regulation) Act for the financial year {fy}, with the form it was filed on and the date of filing.",
+      cta_mail_intro: "I was reading “{section}” on your website and have a question:",
+      cta_slot_question: "Your question",
+      plan_mail_subject: "Funding plan request — {programme}",
+      plan_mail_body: "Please send me the full funding plan for the {programme} programme: the phases, the indicative budgets and the results framework.",
+      plan_slot_org: "Your organisation",
+      give_mail_subject: "Investing by bank transfer or in kind",
+      give_mail_body: "I would like to invest by bank transfer, or with a gift in kind. Please send me the account details and tell me what you need from me for the receipt.",
+      give_slot_detail: "Rupees or foreign currency, and roughly how much, or what you would like to give in kind",
+      refund_mail_subject: "Refund request",
+      refund_mail_body: "I would like to request a refund of an investment I made.",
+      refund_l_date: "Date of the investment",
+      refund_l_amount: "Amount",
+      refund_l_ref: "Receipt or transaction reference",
+      refund_l_reason: "Reason (optional)",
+      data_mail_subject: "Data and privacy request",
+      data_mail_body: "I would like to make a request about the personal information DEHAT holds about me.",
+      data_l_which: "What I would like",
+      data_slot_which: "to see it, correct it or delete it",
+      data_l_under: "The email or phone number you may hold it under",
     };
         const HI = {
       foot_policies:'नीतियाँ और सुरक्षा उपाय',
@@ -7625,6 +7734,54 @@ class Component extends DCLogic {
         "aria_close": "बंद करें",
         "aria_prev": "पिछला",
         "aria_more": "और देखें",
+    "draft_to": "प्रति",
+    "draft_subject": "विषय",
+    "draft_gaps": "हाइलाइट किए गए हिस्से आपको भरने हैं। चाहें तो इन्हें अपने ईमेल ऐप में भी भर सकते हैं।",
+    "draft_ready": "सब कुछ भर गया है। ईमेल भेजने के लिए तैयार है।",
+    "draft_fallback": "कुछ नहीं खुला? हो सकता है आपके डिवाइस पर कोई ईमेल ऐप सेट न हो। यही संदेश Gmail या Outlook से भेजें, या इसे कॉपी कर लें।",
+    "draft_slot_name": "आपका नाम",
+    "draft_slot_contact": "आपका ईमेल या फ़ोन नंबर",
+    "draft_slot_fill": "यहाँ लिखें",
+    "mail_fyr_open": "मुझे आपकी वेबसाइट से DEHAT के बारे में पता चला, और मेरी इच्छा है कि हम साथ मिलकर काम करने की संभावनाएँ तलाशें।",
+    "mail_h_about": "मेरे बारे में",
+    "mail_h_explore": "मेरी रुचि किसमें है",
+    "mail_h_change": "मुझे क्या बदलने की उम्मीद है",
+    "mail_h_scale": "अनुमानित पैमाना",
+    "mail_slot_change": "अपने शब्दों में एक-दो पंक्तियाँ कि आपको क्या बदलने की उम्मीद है",
+    "mail_fyr_next": "क्या टीम से कोई आगे का सही क़दम सुझाते हुए जवाब दे सकता है: एक कॉल, कोई दस्तावेज़ या एक मुलाक़ात, जो भी ठीक बैठे?",
+    "mail_subject_more": "+{n} और",
+    "raise_written_on": "{date} को आपकी वेबसाइट के पारदर्शिता पेज के ज़रिए लिखा गया।",
+    "rt_h_transfer": "हस्तांतरण",
+    "rt_h_receipt": "कृपया रसीद इनके नाम जारी करें",
+    "rt_subj_ref": "संदर्भ {ref}",
+    "ask_mail_subject": "एक सवाल, जिसका जवाब आपकी वेबसाइट पर नहीं मिला",
+    "ask_mail_intro": "मैंने आपकी वेबसाइट के प्रश्न डेस्क पर यह सवाल पूछा, पर इसका कोई प्रकाशित जवाब नहीं मिला:",
+    "ask_slot_context": "कुछ भी जो जवाब देने में मदद करे: कौन-सा साल, कार्यक्रम या ज़िला",
+    "fc_ask_label": "माँगने पर रिटर्न",
+    "fc_ask_title": "{fy} के लिए दाखिल विदेशी अंशदान रिटर्न हमसे माँगें",
+    "fc_open_title": "{fy} के लिए दाखिल {form} विदेशी अंशदान रिटर्न खोलें",
+    "fc_open_full": "इस वर्ष का {form} विदेशी अंशदान रिटर्न खोलें",
+    "fc_mail_subject": "FY {fy} का विदेशी अंशदान रिटर्न",
+    "fc_mail_body": "कृपया मुझे वित्तीय वर्ष {fy} के लिए विदेशी अंशदान (विनियमन) अधिनियम के तहत दाखिल वार्षिक रिटर्न भेजें, साथ में यह भी बताएँ कि वह किस फ़ॉर्म पर और किस तारीख़ को दाखिल किया गया।",
+    "cta_mail_intro": "आपकी वेबसाइट पर “{section}” पढ़ते हुए मेरे मन में एक सवाल आया:",
+    "cta_slot_question": "आपका सवाल",
+    "plan_mail_subject": "फ़ंडिंग प्लान का अनुरोध — {programme}",
+    "plan_mail_body": "कृपया मुझे {programme} कार्यक्रम का पूरा फ़ंडिंग प्लान भेजें: उसके चरण, अनुमानित बजट और परिणाम ढाँचा (रिज़ल्ट्स फ़्रेमवर्क)।",
+    "plan_slot_org": "आपकी संस्था",
+    "give_mail_subject": "बैंक ट्रांसफ़र से या वस्तु के रूप में निवेश",
+    "give_mail_body": "मेरी इच्छा बैंक ट्रांसफ़र से, या वस्तु के रूप में, निवेश करने की है। कृपया मुझे खाते का विवरण भेजें और बताएँ कि रसीद के लिए आपको मुझसे क्या चाहिए।",
+    "give_slot_detail": "रुपये या विदेशी मुद्रा, और लगभग कितना, या आप वस्तु के रूप में क्या देना चाहेंगे",
+    "refund_mail_subject": "रिफ़ंड का अनुरोध",
+    "refund_mail_body": "मेरा अनुरोध है कि मेरे किए गए एक निवेश का रिफ़ंड दिया जाए।",
+    "refund_l_date": "निवेश की तारीख़",
+    "refund_l_amount": "राशि",
+    "refund_l_ref": "रसीद या लेनदेन संदर्भ",
+    "refund_l_reason": "कारण (वैकल्पिक)",
+    "data_mail_subject": "डेटा और निजता से जुड़ा अनुरोध",
+    "data_mail_body": "DEHAT के पास मेरी जो निजी जानकारी है, उसके बारे में मेरा एक अनुरोध है।",
+    "data_l_which": "मेरा अनुरोध",
+    "data_slot_which": "उसे देखना, सुधारना या हटाना",
+    "data_l_under": "वह ईमेल या फ़ोन नंबर जिसके तहत यह जानकारी आपके पास हो सकती है",
     };
             const ZH = {
     "foot_policies": "政策与保障措施",
@@ -7863,7 +8020,7 @@ class Component extends DCLogic {
     "mail_subject_fallback": "询问",
     "rt_cause_label": "原因",
     "rt_mail_greeting": "您好德哈特团队，",
-    "rt_mail_intro": "我已经转了捐款。详细信息如下。",
+    "rt_mail_intro": "我已经完成了一笔投资转账，详细信息如下。",
     "rt_mail_outro": "请将其与您的银行对账单相匹配并发送收据。",
     "rt_mail_subject": "已进行转账",
     "rt_mail_investor_fallback": "投资者",
@@ -8475,6 +8632,54 @@ class Component extends DCLogic {
     "rt_hint_11": "印度",
     "rt_label_12": "公司名称",
     "rt_hint_12": "如果这笔转账来自企业",
+    "draft_to": "收件人",
+    "draft_subject": "主题",
+    "draft_gaps": "高亮部分需要您来填写，也可以在您的邮件应用里填写。",
+    "draft_ready": "所有内容都已填好，可以发送了。",
+    "draft_fallback": "什么都没打开？您的设备可能还没有设置邮件应用。请通过 Gmail 或 Outlook 发送同样的内容，或者直接复制。",
+    "draft_slot_name": "您的姓名",
+    "draft_slot_contact": "您的电子邮箱或电话号码",
+    "draft_slot_fill": "在此填写",
+    "mail_fyr_open": "我是通过贵机构的网站了解到 DEHAT 的，希望能探讨合作的可能。",
+    "mail_h_about": "关于我",
+    "mail_h_explore": "我希望探讨的方向",
+    "mail_h_change": "我希望带来的改变",
+    "mail_h_scale": "大致规模",
+    "mail_slot_change": "用您自己的话写一两句，说说您希望带来什么改变",
+    "mail_fyr_next": "能否请团队的同事回复我，建议一个合适的下一步：通话、资料或实地走访，哪种合适都可以？",
+    "mail_subject_more": "+另外 {n} 项",
+    "raise_written_on": "写于 {date}，通过贵机构网站的透明度页面发送。",
+    "rt_h_transfer": "转账信息",
+    "rt_h_receipt": "收据请开给",
+    "rt_subj_ref": "编号 {ref}",
+    "ask_mail_subject": "一个贵网站未能解答的问题",
+    "ask_mail_intro": "我在贵网站的问答台提了这个问题，但没有找到已发布的答案：",
+    "ask_slot_context": "任何有助于您回答的信息：我所指的年份、项目或地区",
+    "fc_ask_label": "申报表可索取",
+    "fc_ask_title": "向我们索取 {fy} 年度提交的外国出资申报表",
+    "fc_open_title": "打开 {fy} 年度提交的 {form} 外国出资申报表",
+    "fc_open_full": "打开本年度的 {form} 外国出资申报表",
+    "fc_mail_subject": "FY {fy} 外国出资申报表",
+    "fc_mail_body": "请将 {fy} 财年根据《外国出资（监管）法》提交的年度申报表发给我，并注明所用的表格和提交日期。",
+    "cta_mail_intro": "我在贵网站上阅读“{section}”时，有一个问题：",
+    "cta_slot_question": "您的问题",
+    "plan_mail_subject": "索取资金计划 — {programme}",
+    "plan_mail_body": "请将 {programme} 项目的完整资金计划发给我：包括各个阶段、预算估算和成果框架。",
+    "plan_slot_org": "您的机构",
+    "give_mail_subject": "通过银行转账或实物形式投资",
+    "give_mail_body": "我希望通过银行转账或以实物形式进行投资。请把账户信息发给我，并告诉我开具收据需要我提供哪些信息。",
+    "give_slot_detail": "卢比还是外币，大约多少；或者您希望以实物形式提供什么",
+    "refund_mail_subject": "退款申请",
+    "refund_mail_body": "我想申请退还我的一笔投资。",
+    "refund_l_date": "投资日期",
+    "refund_l_amount": "金额",
+    "refund_l_ref": "收据或交易编号",
+    "refund_l_reason": "原因（选填）",
+    "data_mail_subject": "数据与隐私请求",
+    "data_mail_body": "我想就 DEHAT 持有的关于我的个人信息提出一项请求。",
+    "data_l_which": "我的请求",
+    "data_slot_which": "查看、更正或删除",
+    "data_l_under": "这些信息可能登记在哪个电子邮箱或电话号码下",
     };
                 const FR = {
     "foot_policies": "Politiques et mesures de sauvegarde",
@@ -9325,6 +9530,54 @@ class Component extends DCLogic {
     "rt_hint_11": "Inde",
     "rt_label_12": "Nom de l’entreprise",
     "rt_hint_12": "Si le virement provient d’une entreprise",
+    "draft_to": "À",
+    "draft_subject": "Objet",
+    "draft_gaps": "Les parties surlignées sont à compléter par vous. Vous pouvez aussi les remplir dans votre application de messagerie.",
+    "draft_ready": "Tout est rempli. Le message est prêt à être envoyé.",
+    "draft_fallback": "Rien ne s'est ouvert ? Votre appareil n'a peut-être pas d'application de messagerie configurée. Envoyez le même message via Gmail ou Outlook, ou copiez-le.",
+    "draft_slot_name": "Votre nom",
+    "draft_slot_contact": "Votre e-mail ou numéro de téléphone",
+    "draft_slot_fill": "à compléter",
+    "mail_fyr_open": "J'ai découvert DEHAT grâce à votre site internet et j'aimerais explorer la possibilité de travailler ensemble.",
+    "mail_h_about": "À propos de moi",
+    "mail_h_explore": "Ce que j'aimerais explorer",
+    "mail_h_change": "Le changement que j'espère",
+    "mail_h_scale": "Échelle indicative",
+    "mail_slot_change": "Une ou deux lignes, avec vos propres mots, sur le changement que vous espérez",
+    "mail_fyr_next": "Quelqu'un de l'équipe pourrait-il me répondre en proposant une prochaine étape adaptée : un appel, un document ou une visite, selon ce qui convient le mieux ?",
+    "mail_subject_more": "+{n} autres",
+    "raise_written_on": "Écrit le {date}, via la page Transparence de votre site internet.",
+    "rt_h_transfer": "Le virement",
+    "rt_h_receipt": "Merci d'établir le reçu au nom de",
+    "rt_subj_ref": "Réf. {ref}",
+    "ask_mail_subject": "Une question à laquelle votre site n'a pas pu répondre",
+    "ask_mail_intro": "J'ai posé cette question au guichet de questions de votre site, et aucune réponse n'y était publiée :",
+    "ask_slot_context": "Tout ce qui peut vous aider à répondre : l'année, le programme ou le district concerné",
+    "fc_ask_label": "Déclaration sur demande",
+    "fc_ask_title": "Demandez-nous la déclaration de contributions étrangères déposée pour {fy}",
+    "fc_open_title": "Ouvrir la déclaration de contributions étrangères {form} déposée pour {fy}",
+    "fc_open_full": "Ouvrir la déclaration de contributions étrangères {form} de cette année",
+    "fc_mail_subject": "Déclaration de contributions étrangères pour le FY {fy}",
+    "fc_mail_body": "Merci de m'envoyer la déclaration annuelle déposée au titre de la Loi sur la réglementation des contributions étrangères pour l'exercice {fy}, en précisant le formulaire utilisé et la date de dépôt.",
+    "cta_mail_intro": "Je lisais « {section} » sur votre site internet et j'ai une question :",
+    "cta_slot_question": "Votre question",
+    "plan_mail_subject": "Demande de plan de financement — {programme}",
+    "plan_mail_body": "Merci de m'envoyer le plan de financement complet du programme {programme} : les phases, les budgets indicatifs et le cadre de résultats.",
+    "plan_slot_org": "Votre organisation",
+    "give_mail_subject": "Investir par virement bancaire ou en nature",
+    "give_mail_body": "J'aimerais investir par virement bancaire, ou par un apport en nature. Merci de m'envoyer les coordonnées bancaires et de m'indiquer ce dont vous avez besoin de ma part pour le reçu.",
+    "give_slot_detail": "En roupies ou en devises étrangères, et à peu près combien, ou ce que vous aimeriez apporter en nature",
+    "refund_mail_subject": "Demande de remboursement",
+    "refund_mail_body": "Je souhaiterais demander le remboursement d'un investissement que j'ai effectué.",
+    "refund_l_date": "Date de l'investissement",
+    "refund_l_amount": "Montant",
+    "refund_l_ref": "Référence du reçu ou de la transaction",
+    "refund_l_reason": "Motif (facultatif)",
+    "data_mail_subject": "Demande relative aux données et à la vie privée",
+    "data_mail_body": "Je souhaiterais faire une demande concernant les informations personnelles que DEHAT détient à mon sujet.",
+    "data_l_which": "Ce que je souhaite",
+    "data_slot_which": "les consulter, les corriger ou les supprimer",
+    "data_l_under": "L'e-mail ou le numéro de téléphone sous lequel vous pourriez les détenir",
     };
             const RU = {
     "foot_policies": "Политика и меры защиты",
@@ -10175,6 +10428,54 @@ class Component extends DCLogic {
     "rt_hint_11": "Индия",
     "rt_label_12": "Название компании",
     "rt_hint_12": "Если перевод сделан от имени организации",
+    "draft_to": "Кому",
+    "draft_subject": "Тема",
+    "draft_gaps": "Выделенные места нужно заполнить вам. Их можно заполнить и в вашем почтовом приложении.",
+    "draft_ready": "Всё заполнено. Письмо готово к отправке.",
+    "draft_fallback": "Ничего не открылось? Возможно, на вашем устройстве не настроено почтовое приложение. Отправьте то же письмо через Gmail или Outlook либо скопируйте его.",
+    "draft_slot_name": "Ваше имя",
+    "draft_slot_contact": "Ваш e-mail или номер телефона",
+    "draft_slot_fill": "добавьте здесь",
+    "mail_fyr_open": "Я узнал(а) о DEHAT на вашем сайте и хотел(а) бы обсудить возможность совместной работы.",
+    "mail_h_about": "Обо мне",
+    "mail_h_explore": "Что я хотел(а) бы обсудить",
+    "mail_h_change": "Что, я надеюсь, изменится",
+    "mail_h_scale": "Ориентировочный масштаб",
+    "mail_slot_change": "Одна-две строки своими словами о переменах, на которые вы надеетесь",
+    "mail_fyr_next": "Не мог бы кто-нибудь из команды ответить и предложить разумный следующий шаг: звонок, документ или визит — что подойдёт лучше?",
+    "mail_subject_more": "+ещё {n}",
+    "raise_written_on": "Написано {date} через страницу «Прозрачность» на вашем сайте.",
+    "rt_h_transfer": "Перевод",
+    "rt_h_receipt": "Прошу выписать квитанцию на имя",
+    "rt_subj_ref": "Реф. {ref}",
+    "ask_mail_subject": "Вопрос, на который ваш сайт не смог ответить",
+    "ask_mail_intro": "Я задал(а) этот вопрос справочной службе на вашем сайте, и опубликованного ответа на него не нашлось:",
+    "ask_slot_context": "Всё, что поможет вам ответить: год, программа или округ, о которых идёт речь",
+    "fc_ask_label": "Отчёт по запросу",
+    "fc_ask_title": "Запросите у нас отчёт об иностранных вкладах, поданный за {fy}",
+    "fc_open_title": "Открыть отчёт об иностранных вкладах {form}, поданный за {fy}",
+    "fc_open_full": "Открыть отчёт об иностранных вкладах {form} за этот год",
+    "fc_mail_subject": "Отчёт об иностранных вкладах за FY {fy}",
+    "fc_mail_body": "Прошу прислать мне годовой отчёт, поданный в соответствии с Законом об иностранных вкладах (регулировании) за финансовый год {fy}, с указанием формы, по которой он был подан, и даты подачи.",
+    "cta_mail_intro": "Я читал(а) раздел «{section}» на вашем сайте, и у меня возник вопрос:",
+    "cta_slot_question": "Ваш вопрос",
+    "plan_mail_subject": "Запрос плана финансирования — {programme}",
+    "plan_mail_body": "Прошу прислать мне полный план финансирования программы {programme}: этапы, ориентировочные бюджеты и систему оценки результатов.",
+    "plan_slot_org": "Ваша организация",
+    "give_mail_subject": "Инвестиция банковским переводом или в натуральной форме",
+    "give_mail_body": "Я хотел(а) бы инвестировать банковским переводом или вкладом в натуральной форме. Пришлите, пожалуйста, реквизиты счёта и сообщите, что вам нужно от меня для квитанции.",
+    "give_slot_detail": "В рупиях или в иностранной валюте и примерно сколько, или что вы хотели бы передать в натуральной форме",
+    "refund_mail_subject": "Запрос на возврат средств",
+    "refund_mail_body": "Я хотел(а) бы запросить возврат сделанной мной инвестиции.",
+    "refund_l_date": "Дата инвестиции",
+    "refund_l_amount": "Сумма",
+    "refund_l_ref": "Номер квитанции или транзакции",
+    "refund_l_reason": "Причина (необязательно)",
+    "data_mail_subject": "Запрос о данных и конфиденциальности",
+    "data_mail_body": "Я хотел(а) бы направить запрос о персональных данных, которые DEHAT хранит обо мне.",
+    "data_l_which": "Чего я хочу",
+    "data_slot_which": "посмотреть их, исправить или удалить",
+    "data_l_under": "E-mail или номер телефона, под которым они могут у вас храниться",
     };
         const ES = {
     "foot_policies": "Políticas y salvaguardas",
@@ -11025,6 +11326,54 @@ class Component extends DCLogic {
     "rt_hint_11": "India",
     "rt_label_12": "Nombre de la empresa",
     "rt_hint_12": "Si la transferencia vino de una empresa",
+    "draft_to": "Para",
+    "draft_subject": "Asunto",
+    "draft_gaps": "Las partes resaltadas son para que usted las complete. También puede completarlas en su aplicación de correo.",
+    "draft_ready": "Todo está completo. Ya está listo para enviar.",
+    "draft_fallback": "¿No se abrió nada? Es posible que su dispositivo no tenga configurada una aplicación de correo. Envíe el mismo mensaje por Gmail u Outlook, o cópielo.",
+    "draft_slot_name": "Su nombre",
+    "draft_slot_contact": "Su correo electrónico o número de teléfono",
+    "draft_slot_fill": "añadir aquí",
+    "mail_fyr_open": "Conocí DEHAT a través de su sitio web y me gustaría explorar la posibilidad de trabajar juntos.",
+    "mail_h_about": "Sobre mí",
+    "mail_h_explore": "Lo que me gustaría explorar",
+    "mail_h_change": "Lo que espero que cambie",
+    "mail_h_scale": "Escala indicativa",
+    "mail_slot_change": "Una o dos líneas, con sus propias palabras, sobre lo que espera que cambie",
+    "mail_fyr_next": "¿Podría alguien del equipo responderme con un siguiente paso razonable: una llamada, un documento o una visita, lo que mejor encaje?",
+    "mail_subject_more": "+{n} más",
+    "raise_written_on": "Escrito el {date}, a través de la página de transparencia de su sitio web.",
+    "rt_h_transfer": "La transferencia",
+    "rt_h_receipt": "Por favor, emitan el recibo a nombre de",
+    "rt_subj_ref": "Ref. {ref}",
+    "ask_mail_subject": "Una pregunta que su sitio web no pudo responder",
+    "ask_mail_intro": "Hice esta pregunta en el servicio de consultas de su sitio web y no había ninguna respuesta publicada:",
+    "ask_slot_context": "Cualquier dato que les ayude a responder: el año, el programa o el distrito al que me refiero",
+    "fc_ask_label": "Declaración a solicitud",
+    "fc_ask_title": "Solicítenos la declaración de contribuciones extranjeras presentada para {fy}",
+    "fc_open_title": "Abrir la declaración de contribuciones extranjeras {form} presentada para {fy}",
+    "fc_open_full": "Abrir la declaración de contribuciones extranjeras {form} de este año",
+    "fc_mail_subject": "Declaración de contribuciones extranjeras del FY {fy}",
+    "fc_mail_body": "Les ruego que me envíen la declaración anual presentada conforme a la Ley de Regulación de Contribuciones Extranjeras correspondiente al ejercicio fiscal {fy}, junto con el formulario en que se presentó y la fecha de presentación.",
+    "cta_mail_intro": "Estaba leyendo «{section}» en su sitio web y tengo una pregunta:",
+    "cta_slot_question": "Su pregunta",
+    "plan_mail_subject": "Solicitud del plan de financiación — {programme}",
+    "plan_mail_body": "Les ruego que me envíen el plan de financiación completo del programa {programme}: las fases, los presupuestos indicativos y el marco de resultados.",
+    "plan_slot_org": "Su organización",
+    "give_mail_subject": "Invertir por transferencia bancaria o en especie",
+    "give_mail_body": "Me gustaría invertir por transferencia bancaria o con una aportación en especie. Les ruego que me envíen los datos de la cuenta y me indiquen qué necesitan de mí para el recibo.",
+    "give_slot_detail": "Rupias o moneda extranjera, y aproximadamente cuánto, o lo que le gustaría aportar en especie",
+    "refund_mail_subject": "Solicitud de reembolso",
+    "refund_mail_body": "Me gustaría solicitar el reembolso de una inversión que realicé.",
+    "refund_l_date": "Fecha de la inversión",
+    "refund_l_amount": "Importe",
+    "refund_l_ref": "Referencia del recibo o de la transacción",
+    "refund_l_reason": "Motivo (opcional)",
+    "data_mail_subject": "Solicitud sobre datos y privacidad",
+    "data_mail_body": "Me gustaría hacer una solicitud sobre la información personal que DEHAT tiene sobre mí.",
+    "data_l_which": "Lo que me gustaría",
+    "data_slot_which": "verla, corregirla o eliminarla",
+    "data_l_under": "El correo electrónico o el número de teléfono con el que podrían tenerla registrada",
     };
             const AR = {
     "foot_policies": "السياسات وإجراءات الحماية",
@@ -11875,6 +12224,54 @@ class Component extends DCLogic {
     "rt_hint_11": "الهند",
     "rt_label_12": "اسم الشركة",
     "rt_hint_12": "إذا جاء التحويل من جهة تجارية",
+    "draft_to": "إلى",
+    "draft_subject": "الموضوع",
+    "draft_gaps": "الأجزاء المظلَّلة متروكة لك لتملأها. يمكنك أيضًا ملؤها في تطبيق البريد لديك.",
+    "draft_ready": "كل شيء مكتمل. الرسالة جاهزة للإرسال.",
+    "draft_fallback": "لم يُفتح شيء؟ ربما لا يوجد تطبيق بريد مُعَدّ على جهازك. أرسل الرسالة نفسها عبر Gmail أو Outlook، أو انسخها.",
+    "draft_slot_name": "اسمك",
+    "draft_slot_contact": "بريدك الإلكتروني أو رقم هاتفك",
+    "draft_slot_fill": "أضِف هنا",
+    "mail_fyr_open": "تعرّفت على DEHAT من خلال موقعكم الإلكتروني، وأودّ استكشاف فرص العمل معًا.",
+    "mail_h_about": "نبذة عني",
+    "mail_h_explore": "ما أودّ استكشافه",
+    "mail_h_change": "ما آمل أن يتغيّر",
+    "mail_h_scale": "الحجم التقريبي",
+    "mail_slot_change": "سطر أو سطران، بكلماتك الخاصة، عمّا تأمل أن يتغيّر",
+    "mail_fyr_next": "هل يمكن لأحد من الفريق أن يردّ عليّ باقتراح خطوة تالية مناسبة: مكالمة أو وثيقة أو زيارة، أيّها أنسب؟",
+    "mail_subject_more": "+{n} أخرى",
+    "raise_written_on": "كُتبت في {date}، عبر صفحة الشفافية على موقعكم.",
+    "rt_h_transfer": "التحويل",
+    "rt_h_receipt": "يُرجى إصدار الإيصال باسم",
+    "rt_subj_ref": "المرجع {ref}",
+    "ask_mail_subject": "سؤال لم يتمكّن موقعكم من الإجابة عنه",
+    "ask_mail_intro": "طرحت هذا السؤال على مكتب الأسئلة في موقعكم، ولم تكن له إجابة منشورة:",
+    "ask_slot_context": "أي شيء يساعدكم على الإجابة: السنة أو البرنامج أو المديرية التي أقصدها",
+    "fc_ask_label": "الإقرار عند الطلب",
+    "fc_ask_title": "اطلب منّا إقرار المساهمة الأجنبية المقدَّم عن {fy}",
+    "fc_open_title": "افتح إقرار المساهمة الأجنبية {form} المقدَّم عن {fy}",
+    "fc_open_full": "افتح إقرار المساهمة الأجنبية {form} لهذا العام",
+    "fc_mail_subject": "إقرار المساهمة الأجنبية عن FY {fy}",
+    "fc_mail_body": "يُرجى إرسال الإقرار السنوي المقدَّم بموجب قانون (تنظيم) المساهمة الأجنبية عن السنة المالية {fy}، مع النموذج الذي قُدِّم عليه وتاريخ تقديمه.",
+    "cta_mail_intro": "كنت أقرأ «{section}» على موقعكم ولديّ سؤال:",
+    "cta_slot_question": "سؤالك",
+    "plan_mail_subject": "طلب خطة التمويل — {programme}",
+    "plan_mail_body": "يُرجى إرسال خطة التمويل الكاملة لبرنامج {programme}: المراحل والميزانيات التقديرية وإطار النتائج.",
+    "plan_slot_org": "مؤسستك",
+    "give_mail_subject": "الاستثمار بتحويل بنكي أو بمساهمة عينية",
+    "give_mail_body": "أودّ الاستثمار بتحويل بنكي، أو بمساهمة عينية. يُرجى إرسال تفاصيل الحساب وإخباري بما تحتاجونه مني من أجل الإيصال.",
+    "give_slot_detail": "بالروبية أو بعملة أجنبية، وكم تقريبًا، أو ما تودّ تقديمه عينيًا",
+    "refund_mail_subject": "طلب استرداد",
+    "refund_mail_body": "أودّ طلب استرداد استثمار قمت به.",
+    "refund_l_date": "تاريخ الاستثمار",
+    "refund_l_amount": "المبلغ",
+    "refund_l_ref": "رقم الإيصال أو مرجع المعاملة",
+    "refund_l_reason": "السبب (اختياري)",
+    "data_mail_subject": "طلب بشأن البيانات والخصوصية",
+    "data_mail_body": "أودّ تقديم طلب بشأن المعلومات الشخصية التي تحتفظ بها DEHAT عنّي.",
+    "data_l_which": "ما أريده",
+    "data_slot_which": "الاطلاع عليها أو تصحيحها أو حذفها",
+    "data_l_under": "البريد الإلكتروني أو رقم الهاتف الذي قد تكون محفوظة تحته",
     };
             const UR = {
     "foot_policies": "پالیسیاں اور تحفظاتی اقدامات",
@@ -12725,6 +13122,54 @@ class Component extends DCLogic {
     "rt_hint_11": "بھارت",
     "rt_label_12": "کمپنی کا نام",
     "rt_hint_12": "اگر رقم کسی کاروبار کی طرف سے آئی ہو",
+    "draft_to": "بنام",
+    "draft_subject": "موضوع",
+    "draft_gaps": "نمایاں کیے گئے حصے آپ کو بھرنے ہیں۔ آپ انہیں اپنی ای میل ایپ میں بھی بھر سکتے ہیں۔",
+    "draft_ready": "سب کچھ بھر دیا گیا ہے۔ یہ بھیجنے کے لیے تیار ہے۔",
+    "draft_fallback": "کچھ نہیں کھلا؟ شاید آپ کے ڈیوائس پر ای میل ایپ سیٹ نہیں ہے۔ یہی پیغام Gmail یا Outlook کے ذریعے بھیجیں، یا اسے کاپی کر لیں۔",
+    "draft_slot_name": "آپ کا نام",
+    "draft_slot_contact": "آپ کا ای میل یا فون نمبر",
+    "draft_slot_fill": "یہاں لکھیں",
+    "mail_fyr_open": "مجھے آپ کی ویب سائٹ کے ذریعے DEHAT کے بارے میں معلوم ہوا، اور میری خواہش ہے کہ ہم مل کر کام کرنے کے امکانات پر بات کریں۔",
+    "mail_h_about": "میرے بارے میں",
+    "mail_h_explore": "مجھے کن باتوں میں دلچسپی ہے",
+    "mail_h_change": "مجھے کس تبدیلی کی امید ہے",
+    "mail_h_scale": "اندازاً پیمانہ",
+    "mail_slot_change": "آپ کس تبدیلی کی امید رکھتے ہیں، اس پر اپنے الفاظ میں ایک دو سطریں",
+    "mail_fyr_next": "کیا ٹیم میں سے کوئی ایک مناسب اگلا قدم بتا کر جواب دے سکتا ہے: ایک کال، کوئی دستاویز یا ایک ملاقات، جو بھی موزوں ہو؟",
+    "mail_subject_more": "+{n} مزید",
+    "raise_written_on": "{date} کو، آپ کی ویب سائٹ کے شفافیت والے صفحے کے ذریعے لکھا گیا۔",
+    "rt_h_transfer": "ٹرانسفر",
+    "rt_h_receipt": "براہ کرم رسید اس نام پر جاری کریں",
+    "rt_subj_ref": "حوالہ {ref}",
+    "ask_mail_subject": "ایک سوال جس کا جواب آپ کی ویب سائٹ پر نہیں ملا",
+    "ask_mail_intro": "میں نے آپ کی ویب سائٹ کے سوال ڈیسک سے یہ پوچھا، مگر اس کا کوئی شائع شدہ جواب نہیں تھا:",
+    "ask_slot_context": "کوئی بھی بات جو جواب دینے میں مدد کرے: وہ سال، پروگرام یا ضلع جس کی آپ بات کر رہے ہیں",
+    "fc_ask_label": "درخواست پر ریٹرن",
+    "fc_ask_title": "{fy} کے لیے داخل کیا گیا غیر ملکی شراکت کا ریٹرن ہم سے منگوائیں",
+    "fc_open_title": "{fy} کے لیے داخل کیا گیا {form} غیر ملکی شراکت کا ریٹرن کھولیں",
+    "fc_open_full": "اس سال کا {form} غیر ملکی شراکت کا ریٹرن کھولیں",
+    "fc_mail_subject": "FY {fy} کے لیے غیر ملکی شراکت کا ریٹرن",
+    "fc_mail_body": "براہ کرم مجھے مالی سال {fy} کے لیے فارن کنٹری بیوشن (ریگولیشن) ایکٹ کے تحت داخل کیا گیا سالانہ ریٹرن بھیجیں، اور یہ بھی بتائیں کہ یہ کس فارم پر اور کس تاریخ کو داخل کیا گیا۔",
+    "cta_mail_intro": "میں نے آپ کی ویب سائٹ پر “{section}” پڑھا اور میرا ایک سوال ہے:",
+    "cta_slot_question": "آپ کا سوال",
+    "plan_mail_subject": "فنڈنگ پلان کی درخواست — {programme}",
+    "plan_mail_body": "براہ کرم مجھے {programme} پروگرام کا مکمل فنڈنگ پلان بھیجیں: اس کے مراحل، اندازاً بجٹ اور نتائج کا فریم ورک۔",
+    "plan_slot_org": "آپ کا ادارہ",
+    "give_mail_subject": "بینک ٹرانسفر یا اشیا کی صورت میں سرمایہ کاری",
+    "give_mail_body": "میری خواہش ہے کہ بینک ٹرانسفر کے ذریعے، یا اشیا کی صورت میں کچھ دے کر سرمایہ کاری کروں۔ براہ کرم مجھے اکاؤنٹ کی تفصیلات بھیجیں اور بتائیں کہ رسید کے لیے آپ کو مجھ سے کیا چاہیے۔",
+    "give_slot_detail": "روپے یا غیر ملکی کرنسی، اور تقریباً کتنی رقم، یا آپ اشیا کی صورت میں کیا دینا چاہیں گے",
+    "refund_mail_subject": "رقم کی واپسی کی درخواست",
+    "refund_mail_body": "میری درخواست ہے کہ میری کی ہوئی ایک سرمایہ کاری کی رقم واپس کی جائے۔",
+    "refund_l_date": "سرمایہ کاری کی تاریخ",
+    "refund_l_amount": "رقم",
+    "refund_l_ref": "رسید یا ٹرانزیکشن کا حوالہ",
+    "refund_l_reason": "وجہ (اختیاری)",
+    "data_mail_subject": "ڈیٹا اور پرائیویسی سے متعلق درخواست",
+    "data_mail_body": "DEHAT کے پاس میرے بارے میں جو ذاتی معلومات ہیں، ان کے بارے میں میری ایک درخواست ہے۔",
+    "data_l_which": "مجھے کیا چاہیے",
+    "data_slot_which": "انہیں دیکھنا، درست کروانا یا حذف کروانا",
+    "data_l_under": "وہ ای میل یا فون نمبر جس کے تحت یہ معلومات آپ کے پاس ہو سکتی ہیں",
     };
             const KS = {
     "foot_policies": "پالیسیٕ تہٕ حفاظتی تدابیر",
@@ -13575,6 +14020,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ہِندوستان",
     "rt_label_12": "کمپنی ہُند ناو",
     "rt_hint_12": "اگر ٹرانسفر کُنہِ کاروبارٕ پؠٹھٕ آو",
+    "draft_to": "بنام",
+    "draft_subject": "موضوع",
+    "draft_gaps": "نُمایاں کٔرِمٕتۍ حِصہٕ چھِ تُہؠ بَرنۍ۔ تُہؠ ہیٚکِو یِم پننِس ای میل ایپس مَنٛز تہِ بٔرِتھ۔",
+    "draft_ready": "سورُے چھُ بَرنہٕ آمُت۔ یہِ چھُ سوزنہٕ خٲطرٕ تیار۔",
+    "draft_fallback": "کینٛہہ گوو نہٕ کھُلِتھ؟ ممکِن چھُ تُہٕنٛدِس ڈیوائسس پؠٹھ آسہِ نہٕ ای میل ایپ سیٹ کٔرِتھ۔ یہِ ہِوٕے پیغام سوزِو Gmail یا Outlook ذٔریعہٕ، یا کٔرِو یہِ کاپی۔",
+    "draft_slot_name": "تُہُند ناو",
+    "draft_slot_contact": "تُہُند ای میل یا فون نَمبر",
+    "draft_slot_fill": "ییٚتہِ لیٚکھِو",
+    "mail_fyr_open": "مےٚ لوٚگ تُہٕنٛدِ ویب سائٹہٕ ذٔریعہٕ DEHAT ہُنٛد پتہٕ، تہٕ میٲنۍ خٲہِش چھےٚ زِ اَسۍ کَرو مِلِتھ کٲم کَرنُک اِمکانن پؠٹھ کَتھ۔",
+    "mail_h_about": "میانہِ بارس مَنٛز",
+    "mail_h_explore": "مےٚ چھےٚ کَمَن کتھن مَنٛز دِلچسپی",
+    "mail_h_change": "مےٚ چھےٚ کَمہِ تَبدیلی ہٕنٛز اُمید",
+    "mail_h_scale": "اَنٛدازٕ پیمانہٕ",
+    "mail_slot_change": "تُہؠ چھےٚ کَمہِ تَبدیلی ہٕنٛز اُمید، امہِ پؠٹھ پننیٚن لَفظَن مَنٛز اَکھ زٕ سَطرٕ",
+    "mail_fyr_next": "کیا ٹیمہِ مَنٛزٕ ہیٚکہِ کانٛہہ برونٛہہ کُن اَکھ مُناسِب قدم وَنِتھ جواب دِتھ: اَکھ کال، کانٛہہ دستاویز یا اَکھ مُلاقات، یُس تہِ ٹھیک باسہِ؟",
+    "mail_subject_more": "+{n} بییہِ",
+    "raise_written_on": "{date} تاریخِ، تُہٕنٛدِ ویب سائٹہِ ہٕنٛدِ شفافیت صَفحہٕ ذٔریعہٕ لیٚکھنہٕ آمُت۔",
+    "rt_h_transfer": "ٹرانسفر",
+    "rt_h_receipt": "مہربٲنی کٔرِتھ کٔرِو رسید امہِ ناوٕ پؠٹھ جاری",
+    "rt_subj_ref": "حوالہٕ {ref}",
+    "ask_mail_subject": "اَکھ سوال یَمُک جواب تُہٕنٛدِ ویب سائٹہِ پؠٹھ میوٚل نہٕ",
+    "ask_mail_intro": "مےٚ پرٛژھ تُہٕنٛدِ ویب سائٹہِ ہٕنٛدِس سوال ڈیسکس یہِ، مگر اَمیُک اوس نہٕ کانٛہہ شائع کَرنہٕ آمُت جواب:",
+    "ask_slot_context": "کانٛہہ تہِ کَتھ یۄس جواب دِنَس مَنٛز مَدد کَرِ: سُہ ؤری، پروگرام یا ضِلعہٕ یَمیُک تُہؠ ذِکر چھِو کَران",
+    "fc_ask_label": "درخواستہِ پؠٹھ ریٹرن",
+    "fc_ask_title": "{fy} خٲطرٕ داخل کَرنہٕ آمُت غٲر مُلکی شراکتُک ریٹرن مَنٛگِو اَسہِ نِش",
+    "fc_open_title": "{fy} خٲطرٕ داخل کَرنہٕ آمُت {form} غٲر مُلکی شراکتُک ریٹرن کھولِو",
+    "fc_open_full": "امہِ ؤرِیُک {form} غٲر مُلکی شراکتُک ریٹرن کھولِو",
+    "fc_mail_subject": "FY {fy} خٲطرٕ غٲر مُلکی شراکتُک ریٹرن",
+    "fc_mail_body": "مہربٲنی کٔرِتھ سوزِیو مےٚ مٲلی ؤری {fy} خٲطرٕ فارن کنٹری بیوشن (ریگولیشن) ایکٹ تحت داخل کَرنہٕ آمُت سالانہ ریٹرن، تہٕ یہِ تہِ وَنِیو زِ یہِ کَمِس فارمس پؠٹھ تہٕ کَمہِ تاریخِ آو داخل کَرنہٕ۔",
+    "cta_mail_intro": "مےٚ پٔر تُہٕنٛدِ ویب سائٹہِ پؠٹھ “{section}” تہٕ میون چھُ اَکھ سوال:",
+    "cta_slot_question": "تُہُند سَوال",
+    "plan_mail_subject": "فنڈنگ پلانٕچ درخواست — {programme}",
+    "plan_mail_body": "مہربٲنی کٔرِتھ سوزِیو مےٚ {programme} پروگرامُک مُکمَل فنڈنگ پلان: اَمیُک مَرحلہٕ، اَنٛدازٕ بَجٹ تہٕ نَتیجن ہُنٛد فریم ورک۔",
+    "plan_slot_org": "تُہٕنٛز تَنظیٖم",
+    "give_mail_subject": "بینک ٹرانسفر یا چیزن ہٕنٛدِ صورتس مَنٛز سرمایہ کٲری",
+    "give_mail_body": "میٲنۍ خٲہِش چھےٚ زِ بینک ٹرانسفر ذٔریعہٕ، یا چیزن ہٕنٛدِ صورتس مَنٛز کینٛہہ دِتھ کَرہٕ سرمایہ کٲری۔ مہربٲنی کٔرِتھ سوزِیو مےٚ اکاؤنٹُک تَفصیل تہٕ وَنِیو زِ رسیدِ خٲطرٕ کیا چھُ تُہؠ مےٚ نِشہِ دَرکار۔",
+    "give_slot_detail": "روپیہ یا غٲر مُلکی کَرنسی، تہٕ تَقریباً کوٚتاہ، یا تُہؠ کیا یژھِو چیزن ہٕنٛدِ صورتس مَنٛز دِنۍ",
+    "refund_mail_subject": "رقم واپس کَرنٕچ درخواست",
+    "refund_mail_body": "میٲنۍ درخواست چھےٚ زِ مےٚ کٔرمٕژ اَکھ سرمایہ کٲری ہٕنٛز رقم یِیہِ واپس کَرنہٕ۔",
+    "refund_l_date": "سرمایہ کٲری ہٕنٛز تاریخ",
+    "refund_l_amount": "رقم",
+    "refund_l_ref": "رسید یا ٹرانزیکشن حوالہٕ",
+    "refund_l_reason": "وجہ (اختیاری)",
+    "data_mail_subject": "ڈیٹا تہٕ پرائیویسی مُتعلِق درخواست",
+    "data_mail_body": "DEHAT سٕنٛدِس نِش یۄس میٲنۍ ذاتی معلومات چھےٚ، امہِ مُتعلِق چھےٚ میٲنۍ اَکھ درخواست۔",
+    "data_l_which": "مےٚ کیا چھُ دَرکار",
+    "data_slot_which": "یہِ وُچھُن، ٹھیک کَرناوُن یا ہٹاوُن",
+    "data_l_under": "سُہ ای میل یا فون نَمبر یَتھ تحت یہِ تُہؠ نِش آسِتھ ہیٚکہِ",
     };            const BN = {
     "foot_policies": "নীতি ও সুরক্ষা ব্যবস্থা",
     "foot_cookies": "কুকি সেটিংস",
@@ -14424,6 +14917,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ভারত",
     "rt_label_12": "কোম্পানির নাম",
     "rt_hint_12": "যদি টাকাটি কোনো প্রতিষ্ঠান থেকে পাঠানো হয়ে থাকে",
+    "draft_to": "প্রাপক",
+    "draft_subject": "বিষয়",
+    "draft_gaps": "হাইলাইট করা অংশগুলো আপনাকে পূরণ করতে হবে। চাইলে আপনার ইমেল অ্যাপেও পূরণ করতে পারেন।",
+    "draft_ready": "সব পূরণ হয়ে গেছে। এখন পাঠানোর জন্য তৈরি।",
+    "draft_fallback": "কিছু খুলল না? আপনার ডিভাইসে হয়তো কোনো ইমেল অ্যাপ সেট আপ করা নেই। একই বার্তা Gmail বা Outlook দিয়ে পাঠান, অথবা কপি করে নিন।",
+    "draft_slot_name": "আপনার নাম",
+    "draft_slot_contact": "আপনার ইমেল বা ফোন নম্বর",
+    "draft_slot_fill": "এখানে লিখুন",
+    "mail_fyr_open": "আপনাদের ওয়েবসাইটের মাধ্যমে DEHAT-এর খোঁজ পেয়েছি, আর একসঙ্গে কাজ করার সম্ভাবনা নিয়ে কথা বলতে চাই।",
+    "mail_h_about": "আমার সম্পর্কে",
+    "mail_h_explore": "যে বিষয়গুলো আমি খতিয়ে দেখতে চাই",
+    "mail_h_change": "যে পরিবর্তন আমি আশা করি",
+    "mail_h_scale": "আনুমানিক পরিসর",
+    "mail_slot_change": "কী বদলাবে বলে আশা করেন, নিজের ভাষায় এক-দুই লাইনে",
+    "mail_fyr_next": "দলের কেউ কি উত্তর দিয়ে একটা উপযুক্ত পরের পদক্ষেপ জানাতে পারবেন: একটা ফোন কল, কোনো নথি বা একবার ঘুরে দেখা, যেটা মানানসই হয়?",
+    "mail_subject_more": "+আরও {n}টি",
+    "raise_written_on": "{date} তারিখে, আপনাদের ওয়েবসাইটের স্বচ্ছতা পাতার মাধ্যমে লেখা।",
+    "rt_h_transfer": "ট্রান্সফার",
+    "rt_h_receipt": "অনুগ্রহ করে রসিদটি এই নামে দেবেন",
+    "rt_subj_ref": "রেফ. {ref}",
+    "ask_mail_subject": "একটি প্রশ্ন, যার উত্তর আপনাদের ওয়েবসাইটে পাইনি",
+    "ask_mail_intro": "আপনাদের ওয়েবসাইটের প্রশ্ন-ডেস্কে আমি এটা জিজ্ঞেস করেছিলাম, কিন্তু কোনো প্রকাশিত উত্তর ছিল না:",
+    "ask_slot_context": "উত্তর দিতে যা সাহায্য করবে: কোন বছর, কোন কর্মসূচি বা কোন জেলার কথা বলছেন",
+    "fc_ask_label": "অনুরোধে রিটার্ন",
+    "fc_ask_title": "{fy}-এর জন্য দাখিল করা বিদেশী অবদান রিটার্নটি আমাদের কাছে চেয়ে নিন",
+    "fc_open_title": "{fy}-এর জন্য দাখিল করা {form} বিদেশী অবদান রিটার্নটি খুলুন",
+    "fc_open_full": "এই বছরের {form} বিদেশী অবদান রিটার্নটি খুলুন",
+    "fc_mail_subject": "FY {fy}-এর বিদেশী অবদান রিটার্ন",
+    "fc_mail_body": "অনুগ্রহ করে {fy} আর্থিক বছরের জন্য বিদেশী অবদান (নিয়ন্ত্রণ) আইনের অধীনে দাখিল করা বার্ষিক রিটার্নটি আমাকে পাঠান, সঙ্গে কোন ফর্মে দাখিল করা হয়েছিল এবং দাখিলের তারিখও জানাবেন।",
+    "cta_mail_intro": "আপনাদের ওয়েবসাইটে “{section}” পড়ছিলাম, আর একটা প্রশ্ন আছে:",
+    "cta_slot_question": "আপনার প্রশ্ন",
+    "plan_mail_subject": "ফান্ডিং পরিকল্পনার অনুরোধ — {programme}",
+    "plan_mail_body": "অনুগ্রহ করে {programme} কর্মসূচির পুরো ফান্ডিং পরিকল্পনাটি আমাকে পাঠান: পর্যায়গুলো, আনুমানিক বাজেট এবং ফলাফলের কাঠামো।",
+    "plan_slot_org": "আপনার প্রতিষ্ঠান",
+    "give_mail_subject": "ব্যাংক ট্রান্সফার বা সামগ্রীর মাধ্যমে বিনিয়োগ",
+    "give_mail_body": "আমি ব্যাংক ট্রান্সফারের মাধ্যমে, অথবা সামগ্রী দিয়ে বিনিয়োগ করতে চাই। অনুগ্রহ করে অ্যাকাউন্টের বিবরণ পাঠান, আর রসিদের জন্য আমার কাছ থেকে কী কী লাগবে জানান।",
+    "give_slot_detail": "টাকায় না বিদেশি মুদ্রায়, আর মোটামুটি কত, অথবা সামগ্রী হিসেবে কী দিতে চান",
+    "refund_mail_subject": "টাকা ফেরতের অনুরোধ",
+    "refund_mail_body": "আমার করা একটি বিনিয়োগের টাকা ফেরতের অনুরোধ জানাতে চাই।",
+    "refund_l_date": "বিনিয়োগের তারিখ",
+    "refund_l_amount": "পরিমাণ",
+    "refund_l_ref": "রসিদ বা লেনদেনের রেফারেন্স",
+    "refund_l_reason": "কারণ (ঐচ্ছিক)",
+    "data_mail_subject": "তথ্য ও গোপনীয়তা সংক্রান্ত অনুরোধ",
+    "data_mail_body": "DEHAT আমার সম্পর্কে যে ব্যক্তিগত তথ্য রাখে, সে বিষয়ে একটা অনুরোধ জানাতে চাই।",
+    "data_l_which": "আমি যা চাই",
+    "data_slot_which": "দেখতে, সংশোধন করতে বা মুছে ফেলতে",
+    "data_l_under": "যে ইমেল বা ফোন নম্বরে আপনাদের কাছে তথ্যটি থাকতে পারে",
     };
             const MR = {
     "foot_policies": "धोरणे व सुरक्षा उपाय",
@@ -15274,6 +15815,54 @@ class Component extends DCLogic {
     "rt_hint_11": "भारत",
     "rt_label_12": "कंपनीचे नाव",
     "rt_hint_12": "हस्तांतरण एखाद्या व्यवसायाकडून आले असल्यास",
+    "draft_to": "प्रति",
+    "draft_subject": "विषय",
+    "draft_gaps": "हायलाइट केलेले भाग तुम्ही भरायचे आहेत. ते तुम्ही तुमच्या ईमेल ॲपमध्येही भरू शकता.",
+    "draft_ready": "सगळं भरून झालं आहे. ईमेल पाठवायला तयार आहे.",
+    "draft_fallback": "काहीच उघडलं नाही? तुमच्या डिव्हाइसवर ईमेल ॲप सेट केलेलं नसेल. हाच संदेश Gmail किंवा Outlook मधून पाठवा, किंवा तो कॉपी करा.",
+    "draft_slot_name": "तुमचे नाव",
+    "draft_slot_contact": "तुमचा ईमेल किंवा फोन नंबर",
+    "draft_slot_fill": "इथे लिहा",
+    "mail_fyr_open": "तुमच्या वेबसाइटवरून मला DEHAT बद्दल कळलं, आणि एकत्र काम करण्याच्या शक्यता पाहायला मला आवडेल.",
+    "mail_h_about": "माझ्याबद्दल",
+    "mail_h_explore": "मला कशात रस आहे",
+    "mail_h_change": "काय बदलेल अशी मला आशा आहे",
+    "mail_h_scale": "अंदाजे प्रमाण",
+    "mail_slot_change": "काय बदलेल अशी तुम्हाला आशा आहे, याबद्दल तुमच्या शब्दांत एक-दोन ओळी",
+    "mail_fyr_next": "टीममधील कोणी पुढचं योग्य पाऊल सुचवून उत्तर देऊ शकेल का: एखादा कॉल, एखादं कागदपत्र किंवा भेट, जे योग्य वाटेल ते?",
+    "mail_subject_more": "+{n} आणखी",
+    "raise_written_on": "{date} रोजी, तुमच्या वेबसाइटवरील पारदर्शकता पेजद्वारे लिहिले.",
+    "rt_h_transfer": "हस्तांतरण",
+    "rt_h_receipt": "कृपया पावती या नावाने द्या",
+    "rt_subj_ref": "संदर्भ {ref}",
+    "ask_mail_subject": "तुमच्या वेबसाइटवर उत्तर न मिळालेला एक प्रश्न",
+    "ask_mail_intro": "तुमच्या वेबसाइटवरील प्रश्न डेस्कवर मी हा प्रश्न विचारला, पण त्याचं कोणतंही प्रकाशित उत्तर नव्हतं:",
+    "ask_slot_context": "उत्तर द्यायला मदत होईल असं काहीही: वर्ष, कार्यक्रम किंवा तुम्हाला अपेक्षित जिल्हा",
+    "fc_ask_label": "मागणीनुसार रिटर्न",
+    "fc_ask_title": "{fy} साठी दाखल केलेला विदेशी योगदान रिटर्न आमच्याकडे मागा",
+    "fc_open_title": "{fy} साठी दाखल केलेला {form} विदेशी योगदान रिटर्न उघडा",
+    "fc_open_full": "या वर्षाचा {form} विदेशी योगदान रिटर्न उघडा",
+    "fc_mail_subject": "FY {fy} साठी विदेशी योगदान रिटर्न",
+    "fc_mail_body": "कृपया आर्थिक वर्ष {fy} साठी विदेशी योगदान (नियमन) कायद्यांतर्गत दाखल केलेला वार्षिक रिटर्न मला पाठवा, आणि तो कोणत्या फॉर्मवर व कोणत्या तारखेला दाखल केला हेही कळवा.",
+    "cta_mail_intro": "तुमच्या वेबसाइटवरील “{section}” वाचताना मला एक प्रश्न पडला:",
+    "cta_slot_question": "तुमचा प्रश्न",
+    "plan_mail_subject": "फंडिंग प्लॅनची विनंती — {programme}",
+    "plan_mail_body": "कृपया {programme} कार्यक्रमाचा संपूर्ण फंडिंग प्लॅन मला पाठवा: त्याचे टप्पे, अंदाजे बजेट आणि परिणाम आराखडा (रिझल्ट्स फ्रेमवर्क).",
+    "plan_slot_org": "तुमची संस्था",
+    "give_mail_subject": "बँक ट्रान्सफरने किंवा वस्तुरूपात गुंतवणूक",
+    "give_mail_body": "मला बँक ट्रान्सफरने, किंवा वस्तुरूपात, गुंतवणूक करायला आवडेल. कृपया मला खात्याचा तपशील पाठवा आणि पावतीसाठी तुम्हाला माझ्याकडून काय हवं आहे ते सांगा.",
+    "give_slot_detail": "रुपये की परकीय चलन, आणि साधारण किती, किंवा वस्तुरूपात तुम्हाला काय द्यायला आवडेल",
+    "refund_mail_subject": "परताव्याची विनंती",
+    "refund_mail_body": "मी केलेल्या एका गुंतवणुकीचा परतावा मिळावा अशी माझी विनंती आहे.",
+    "refund_l_date": "गुंतवणुकीची तारीख",
+    "refund_l_amount": "रक्कम",
+    "refund_l_ref": "पावती किंवा व्यवहार संदर्भ",
+    "refund_l_reason": "कारण (ऐच्छिक)",
+    "data_mail_subject": "डेटा आणि गोपनीयतेबाबत विनंती",
+    "data_mail_body": "DEHAT कडे असलेल्या माझ्या वैयक्तिक माहितीबद्दल मला एक विनंती करायची आहे.",
+    "data_l_which": "मला काय हवं आहे",
+    "data_slot_which": "ती पाहणे, दुरुस्त करणे किंवा हटवणे",
+    "data_l_under": "ज्या ईमेल किंवा फोन नंबरखाली ती तुमच्याकडे असू शकते",
     };
             const TE = {
     "foot_policies": "విధానాలు మరియు రక్షణ చర్యలు",
@@ -16124,6 +16713,54 @@ class Component extends DCLogic {
     "rt_hint_11": "భారతదేశం",
     "rt_label_12": "కంపెనీ పేరు",
     "rt_hint_12": "బదిలీ ఒక వ్యాపార సంస్థ నుండి వచ్చి ఉంటే",
+    "draft_to": "గ్రహీత",
+    "draft_subject": "విషయం",
+    "draft_gaps": "హైలైట్ చేసిన భాగాలను మీరే పూరించాలి. వాటిని మీ ఈమెయిల్ యాప్‌లో కూడా పూరించవచ్చు.",
+    "draft_ready": "అన్నీ పూరించబడ్డాయి. పంపడానికి సిద్ధంగా ఉంది.",
+    "draft_fallback": "ఏమీ తెరుచుకోలేదా? మీ పరికరంలో ఈమెయిల్ యాప్ సెటప్ చేసి ఉండకపోవచ్చు. అదే సందేశాన్ని Gmail లేదా Outlook ద్వారా పంపండి, లేదా కాపీ చేసుకోండి.",
+    "draft_slot_name": "మీ పేరు",
+    "draft_slot_contact": "మీ ఈమెయిల్ లేదా ఫోన్ నంబర్",
+    "draft_slot_fill": "ఇక్కడ జోడించండి",
+    "mail_fyr_open": "మీ వెబ్‌సైట్ ద్వారా DEHAT గురించి తెలుసుకున్నాను, కలిసి పనిచేసే అవకాశాలను పరిశీలించాలనుకుంటున్నాను.",
+    "mail_h_about": "నా గురించి",
+    "mail_h_explore": "నేను పరిశీలించాలనుకుంటున్నది",
+    "mail_h_change": "ఏం మారుతుందని నేను ఆశిస్తున్నాను",
+    "mail_h_scale": "సుమారు స్థాయి",
+    "mail_slot_change": "ఏం మారుతుందని మీరు ఆశిస్తున్నారో మీ సొంత మాటల్లో ఒకటి రెండు వాక్యాలు",
+    "mail_fyr_next": "టీమ్ నుండి ఎవరైనా తగిన తదుపరి అడుగును సూచిస్తూ జవాబు ఇవ్వగలరా: ఒక కాల్, ఒక పత్రం లేదా ఒక సందర్శన, ఏది సరిపోతే అది?",
+    "mail_subject_more": "+{n} మరిన్ని",
+    "raise_written_on": "{date}న, మీ వెబ్‌సైట్‌లోని పారదర్శకత పేజీ ద్వారా రాశాను.",
+    "rt_h_transfer": "బదిలీ",
+    "rt_h_receipt": "దయచేసి రసీదును ఈ పేరు మీద జారీ చేయండి",
+    "rt_subj_ref": "రిఫరెన్స్ {ref}",
+    "ask_mail_subject": "మీ వెబ్‌సైట్‌లో జవాబు దొరకని ఒక ప్రశ్న",
+    "ask_mail_intro": "మీ వెబ్‌సైట్‌లోని ప్రశ్నల డెస్క్‌ను నేను ఇది అడిగాను, దానికి ప్రచురించిన జవాబు ఏదీ లేదు:",
+    "ask_slot_context": "జవాబు ఇవ్వడానికి సహాయపడే ఏదైనా: మీరు ఉద్దేశించిన సంవత్సరం, కార్యక్రమం లేదా జిల్లా",
+    "fc_ask_label": "అభ్యర్థనపై రిటర్న్",
+    "fc_ask_title": "{fy} కోసం దాఖలు చేసిన విదేశీ సహకారం రిటర్న్‌ను మమ్మల్ని అడగండి",
+    "fc_open_title": "{fy} కోసం దాఖలు చేసిన {form} విదేశీ సహకారం రిటర్న్‌ను తెరవండి",
+    "fc_open_full": "ఈ సంవత్సరపు {form} విదేశీ సహకారం రిటర్న్‌ను తెరవండి",
+    "fc_mail_subject": "FY {fy} విదేశీ సహకారం రిటర్న్",
+    "fc_mail_body": "దయచేసి {fy} ఆర్థిక సంవత్సరానికి విదేశీ సహకారం (నియంత్రణ) చట్టం కింద దాఖలు చేసిన వార్షిక రిటర్న్‌ను, అది దాఖలు చేసిన ఫారం మరియు దాఖలు చేసిన తేదీతో సహా నాకు పంపండి.",
+    "cta_mail_intro": "మీ వెబ్‌సైట్‌లో “{section}” చదువుతున్నాను, నాకు ఒక ప్రశ్న ఉంది:",
+    "cta_slot_question": "మీ ప్రశ్న",
+    "plan_mail_subject": "నిధుల ప్రణాళిక అభ్యర్థన — {programme}",
+    "plan_mail_body": "దయచేసి {programme} కార్యక్రమం పూర్తి నిధుల ప్రణాళికను నాకు పంపండి: దశలు, సుమారు బడ్జెట్‌లు మరియు ఫలితాల ఫ్రేమ్‌వర్క్.",
+    "plan_slot_org": "మీ సంస్థ",
+    "give_mail_subject": "బ్యాంక్ బదిలీ ద్వారా లేదా వస్తు రూపంలో పెట్టుబడి",
+    "give_mail_body": "బ్యాంక్ బదిలీ ద్వారా గానీ, వస్తు రూపంలో కానుకగా గానీ పెట్టుబడి పెట్టాలనుకుంటున్నాను. దయచేసి ఖాతా వివరాలు పంపండి, రసీదు కోసం నా నుండి ఏమి కావాలో కూడా చెప్పండి.",
+    "give_slot_detail": "రూపాయల్లోనా లేదా విదేశీ కరెన్సీలోనా, సుమారు ఎంత, లేదా వస్తు రూపంలో మీరు ఏమి ఇవ్వాలనుకుంటున్నారు",
+    "refund_mail_subject": "రీఫండ్ అభ్యర్థన",
+    "refund_mail_body": "నేను చేసిన ఒక పెట్టుబడికి రీఫండ్ కోరాలనుకుంటున్నాను.",
+    "refund_l_date": "పెట్టుబడి పెట్టిన తేదీ",
+    "refund_l_amount": "మొత్తం",
+    "refund_l_ref": "రసీదు లేదా లావాదేవీ రిఫరెన్స్",
+    "refund_l_reason": "కారణం (ఐచ్ఛికం)",
+    "data_mail_subject": "డేటా మరియు గోప్యత అభ్యర్థన",
+    "data_mail_body": "DEHAT దగ్గర ఉన్న నా వ్యక్తిగత సమాచారం గురించి ఒక అభ్యర్థన చేయాలనుకుంటున్నాను.",
+    "data_l_which": "నాకు కావలసింది",
+    "data_slot_which": "దాన్ని చూడటం, సరిచేయడం లేదా తొలగించడం",
+    "data_l_under": "మీ దగ్గర అది ఏ ఈమెయిల్ లేదా ఫోన్ నంబర్ కింద ఉండవచ్చో",
     };
             const TA = {
     "foot_policies": "கொள்கைகள் மற்றும் பாதுகாப்பு நடவடிக்கைகள்",
@@ -16974,6 +17611,54 @@ class Component extends DCLogic {
     "rt_hint_11": "இந்தியா",
     "rt_label_12": "நிறுவனத்தின் பெயர்",
     "rt_hint_12": "பரிமாற்றம் ஒரு நிறுவனத்திடமிருந்து வந்திருந்தால்",
+    "draft_to": "பெறுநர்",
+    "draft_subject": "பொருள்",
+    "draft_gaps": "தனிப்படுத்திக் காட்டப்பட்ட பகுதிகளை நீங்கள் நிரப்ப வேண்டும். உங்கள் மின்னஞ்சல் செயலியிலும் அவற்றை நிரப்பலாம்.",
+    "draft_ready": "எல்லாம் நிரப்பப்பட்டுவிட்டது. அனுப்பத் தயாராக உள்ளது.",
+    "draft_fallback": "எதுவும் திறக்கவில்லையா? உங்கள் சாதனத்தில் மின்னஞ்சல் செயலி அமைக்கப்படாமல் இருக்கலாம். அதே செய்தியை Gmail அல்லது Outlook மூலம் அனுப்புங்கள், அல்லது நகலெடுத்துக்கொள்ளுங்கள்.",
+    "draft_slot_name": "உங்கள் பெயர்",
+    "draft_slot_contact": "உங்கள் மின்னஞ்சல் அல்லது தொலைபேசி எண்",
+    "draft_slot_fill": "இங்கே சேர்க்கவும்",
+    "mail_fyr_open": "உங்கள் இணையதளம் வழியாக DEHAT பற்றி அறிந்தேன்; உங்களுடன் இணைந்து பணியாற்றும் வாய்ப்புகளை ஆராய விரும்புகிறேன்.",
+    "mail_h_about": "என்னைப் பற்றி",
+    "mail_h_explore": "நான் ஆராய விரும்புவது",
+    "mail_h_change": "என்ன மாறும் என்று நான் நம்புகிறேன்",
+    "mail_h_scale": "தோராயமான அளவு",
+    "mail_slot_change": "என்ன மாறும் என்று நீங்கள் நம்புகிறீர்கள் என்பதை உங்கள் சொந்த வார்த்தைகளில் ஓரிரு வரிகளில்",
+    "mail_fyr_next": "குழுவிலிருந்து யாராவது பொருத்தமான அடுத்த கட்டத்தைச் சொல்லி பதில் அனுப்ப முடியுமா: ஒரு அழைப்பு, ஒரு ஆவணம் அல்லது ஒரு நேரடி வருகை, எது பொருந்துமோ அது?",
+    "mail_subject_more": "+{n} மேலும்",
+    "raise_written_on": "{date} அன்று, உங்கள் இணையதளத்தின் வெளிப்படைத்தன்மைப் பக்கம் மூலம் எழுதப்பட்டது.",
+    "rt_h_transfer": "பணப் பரிமாற்றம்",
+    "rt_h_receipt": "தயவுசெய்து ரசீதை இந்தப் பெயரில் வழங்கவும்",
+    "rt_subj_ref": "குறிப்பு எண் {ref}",
+    "ask_mail_subject": "உங்கள் இணையதளத்தில் பதில் கிடைக்காத ஒரு கேள்வி",
+    "ask_mail_intro": "உங்கள் இணையதளத்தின் கேள்வி மேசையில் இதைக் கேட்டேன்; அதற்கு வெளியிடப்பட்ட பதில் எதுவும் இல்லை:",
+    "ask_slot_context": "பதிலளிக்க உதவும் எதுவும்: நீங்கள் குறிப்பிடும் ஆண்டு, திட்டம் அல்லது மாவட்டம்",
+    "fc_ask_label": "கோரிக்கையின் பேரில் ரிட்டர்ன்",
+    "fc_ask_title": "{fy} ஆண்டுக்குத் தாக்கல் செய்யப்பட்ட வெளிநாட்டு பங்களிப்பு ரிட்டர்னை எங்களிடம் கேளுங்கள்",
+    "fc_open_title": "{fy} ஆண்டுக்குத் தாக்கல் செய்யப்பட்ட {form} வெளிநாட்டு பங்களிப்பு ரிட்டர்னைத் திறக்கவும்",
+    "fc_open_full": "இந்த ஆண்டுக்கான {form} வெளிநாட்டு பங்களிப்பு ரிட்டர்னைத் திறக்கவும்",
+    "fc_mail_subject": "FY {fy}-க்கான வெளிநாட்டு பங்களிப்பு ரிட்டர்ன்",
+    "fc_mail_body": "{fy} நிதியாண்டுக்கு வெளிநாட்டு பங்களிப்பு (ஒழுங்குமுறை) சட்டத்தின் கீழ் தாக்கல் செய்யப்பட்ட வருடாந்திர ரிட்டர்னை, அது தாக்கல் செய்யப்பட்ட படிவம் மற்றும் தாக்கல் செய்த தேதியுடன் தயவுசெய்து எனக்கு அனுப்பவும்.",
+    "cta_mail_intro": "உங்கள் இணையதளத்தில் “{section}” பகுதியைப் படித்துக்கொண்டிருந்தேன்; எனக்கு ஒரு கேள்வி உள்ளது:",
+    "cta_slot_question": "உங்கள் கேள்வி",
+    "plan_mail_subject": "நிதித் திட்டக் கோரிக்கை — {programme}",
+    "plan_mail_body": "{programme} திட்டத்திற்கான முழு நிதித் திட்டத்தையும் தயவுசெய்து எனக்கு அனுப்பவும்: கட்டங்கள், தோராயமான பட்ஜெட்டுகள் மற்றும் முடிவுகளுக்கான கட்டமைப்பு.",
+    "plan_slot_org": "உங்கள் நிறுவனம்",
+    "give_mail_subject": "வங்கிப் பரிமாற்றம் அல்லது பொருளாக முதலீடு செய்தல்",
+    "give_mail_body": "வங்கிப் பரிமாற்றம் மூலமாகவோ, பொருளாக வழங்குவதன் மூலமாகவோ முதலீடு செய்ய விரும்புகிறேன். தயவுசெய்து கணக்கு விவரங்களை அனுப்பி, ரசீதுக்கு என்னிடமிருந்து என்ன தேவை என்பதையும் தெரிவிக்கவும்.",
+    "give_slot_detail": "ரூபாயிலா வெளிநாட்டு நாணயத்திலா, தோராயமாக எவ்வளவு, அல்லது பொருளாக என்ன வழங்க விரும்புகிறீர்கள்",
+    "refund_mail_subject": "பணத்தைத் திரும்பப் பெறுவதற்கான கோரிக்கை",
+    "refund_mail_body": "நான் செய்த ஒரு முதலீட்டைத் திரும்பப் பெறக் கோர விரும்புகிறேன்.",
+    "refund_l_date": "முதலீடு செய்த தேதி",
+    "refund_l_amount": "தொகை",
+    "refund_l_ref": "ரசீது அல்லது பரிவர்த்தனைக் குறிப்பு எண்",
+    "refund_l_reason": "காரணம் (விருப்பமானது)",
+    "data_mail_subject": "தரவு மற்றும் தனியுரிமை தொடர்பான கோரிக்கை",
+    "data_mail_body": "DEHAT என்னைப் பற்றி வைத்திருக்கும் தனிப்பட்ட தகவல்கள் தொடர்பாக ஒரு கோரிக்கை வைக்க விரும்புகிறேன்.",
+    "data_l_which": "நான் விரும்புவது",
+    "data_slot_which": "அதைப் பார்க்க, திருத்த அல்லது நீக்க",
+    "data_l_under": "அது உங்களிடம் எந்த மின்னஞ்சல் அல்லது தொலைபேசி எண்ணின் கீழ் இருக்கலாம்",
     };
             const GU = {
     "foot_policies": "નીતિઓ અને સુરક્ષા ઉપાયો",
@@ -17824,6 +18509,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ભારત",
     "rt_label_12": "કંપનીનું નામ",
     "rt_hint_12": "જો ટ્રાન્સફર કોઈ કંપની તરફથી આવ્યું હોય",
+    "draft_to": "પ્રતિ",
+    "draft_subject": "વિષય",
+    "draft_gaps": "હાઇલાઇટ કરેલા ભાગ તમારે ભરવાના છે. તમે એને તમારી ઇમેઇલ એપમાં પણ ભરી શકો છો.",
+    "draft_ready": "બધું ભરાઈ ગયું છે. હવે એ મોકલવા માટે તૈયાર છે.",
+    "draft_fallback": "કંઈ ખૂલ્યું નહીં? કદાચ તમારા ડિવાઇસમાં ઇમેઇલ એપ સેટ કરેલી નથી. આ જ મેસેજ Gmail કે Outlook દ્વારા મોકલો, અથવા એને કૉપિ કરી લો.",
+    "draft_slot_name": "તમારું નામ",
+    "draft_slot_contact": "તમારો ઇમેઇલ અથવા ફોન નંબર",
+    "draft_slot_fill": "અહીં લખો",
+    "mail_fyr_open": "મને તમારી વેબસાઇટ દ્વારા DEHAT વિશે જાણવા મળ્યું, અને હું સાથે મળીને કામ કરવાની શક્યતાઓ વિશે વાત કરવા માંગું છું.",
+    "mail_h_about": "મારા વિશે",
+    "mail_h_explore": "મને શેમાં રસ છે",
+    "mail_h_change": "મને શું બદલાવાની આશા છે",
+    "mail_h_scale": "અંદાજિત સ્કેલ",
+    "mail_slot_change": "તમને શું બદલાવાની આશા છે, એ વિશે તમારા પોતાના શબ્દોમાં એક-બે લાઇન",
+    "mail_fyr_next": "શું ટીમમાંથી કોઈ યોગ્ય આગળનું પગલું સૂચવીને જવાબ આપી શકે: કૉલ, કોઈ દસ્તાવેજ કે મુલાકાત, જે પણ બંધબેસતું હોય?",
+    "mail_subject_more": "+{n} વધુ",
+    "raise_written_on": "{date}ના રોજ, તમારી વેબસાઇટના પારદર્શિતા પેજ દ્વારા લખાયેલ.",
+    "rt_h_transfer": "ટ્રાન્સફર",
+    "rt_h_receipt": "કૃપા કરીને રસીદ આ નામે આપશો",
+    "rt_subj_ref": "સંદર્ભ {ref}",
+    "ask_mail_subject": "એક પ્રશ્ન, જેનો જવાબ તમારી વેબસાઇટ પર ન મળ્યો",
+    "ask_mail_intro": "મેં તમારી વેબસાઇટના પ્રશ્ન ડેસ્કને આ પૂછ્યું, પણ એનો કોઈ પ્રકાશિત જવાબ નહોતો:",
+    "ask_slot_context": "જવાબ આપવામાં મદદ થાય એવું કંઈ પણ: તમે જે વર્ષ, કાર્યક્રમ કે જિલ્લાની વાત કરો છો",
+    "fc_ask_label": "વિનંતી પર રિટર્ન",
+    "fc_ask_title": "{fy} માટે દાખલ કરેલું વિદેશી યોગદાન રિટર્ન અમારી પાસેથી માંગો",
+    "fc_open_title": "{fy} માટે દાખલ કરેલું {form} વિદેશી યોગદાન રિટર્ન ખોલો",
+    "fc_open_full": "આ વર્ષનું {form} વિદેશી યોગદાન રિટર્ન ખોલો",
+    "fc_mail_subject": "FY {fy} માટે વિદેશી યોગદાન રિટર્ન",
+    "fc_mail_body": "કૃપા કરીને મને નાણાકીય વર્ષ {fy} માટે ફોરેન કોન્ટ્રિબ્યુશન (રેગ્યુલેશન) એક્ટ હેઠળ દાખલ કરેલું વાર્ષિક રિટર્ન મોકલો, સાથે એ કયા ફોર્મ પર દાખલ થયું હતું અને દાખલ કર્યાની તારીખ પણ જણાવશો.",
+    "cta_mail_intro": "મેં તમારી વેબસાઇટ પર “{section}” વાંચ્યું અને મારે એક પ્રશ્ન પૂછવો છે:",
+    "cta_slot_question": "તમારો પ્રશ્ન",
+    "plan_mail_subject": "ફંડિંગ પ્લાન માટે વિનંતી — {programme}",
+    "plan_mail_body": "કૃપા કરીને મને {programme} કાર્યક્રમનો સંપૂર્ણ ફંડિંગ પ્લાન મોકલો: તેના તબક્કા, અંદાજિત બજેટ અને પરિણામોનું માળખું.",
+    "plan_slot_org": "તમારી સંસ્થા",
+    "give_mail_subject": "બેંક ટ્રાન્સફર અથવા વસ્તુ રૂપે રોકાણ",
+    "give_mail_body": "હું બેંક ટ્રાન્સફરથી, અથવા વસ્તુ રૂપે ભેટ આપીને રોકાણ કરવા માંગું છું. કૃપા કરીને મને ખાતાની વિગતો મોકલો અને રસીદ માટે તમને મારી પાસેથી શું જોઈએ એ જણાવો.",
+    "give_slot_detail": "રૂપિયા કે વિદેશી ચલણ, અને આશરે કેટલું, અથવા તમે વસ્તુ રૂપે શું આપવા માંગો છો",
+    "refund_mail_subject": "રિફંડ માટે વિનંતી",
+    "refund_mail_body": "મેં કરેલા એક રોકાણના રિફંડ માટે હું વિનંતી કરવા માંગું છું.",
+    "refund_l_date": "રોકાણની તારીખ",
+    "refund_l_amount": "રકમ",
+    "refund_l_ref": "રસીદ અથવા ટ્રાન્ઝેક્શન રેફરન્સ",
+    "refund_l_reason": "કારણ (વૈકલ્પિક)",
+    "data_mail_subject": "ડેટા અને પ્રાઇવસી અંગે વિનંતી",
+    "data_mail_body": "DEHAT પાસે મારા વિશે જે અંગત માહિતી છે, એ અંગે હું એક વિનંતી કરવા માંગું છું.",
+    "data_l_which": "મારે શું જોઈએ છે",
+    "data_slot_which": "એ જોવી, સુધારવી કે ડિલીટ કરવી",
+    "data_l_under": "જે ઇમેઇલ કે ફોન નંબર હેઠળ એ તમારી પાસે હોઈ શકે",
     };
             const KN = {
     "foot_policies": "ನೀತಿಗಳು ಮತ್ತು ಸುರಕ್ಷತಾ ಕ್ರಮಗಳು",
@@ -18674,6 +19407,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ಭಾರತ",
     "rt_label_12": "ಕಂಪನಿಯ ಹೆಸರು",
     "rt_hint_12": "ವರ್ಗಾವಣೆ ಒಂದು ವ್ಯಾಪಾರ ಸಂಸ್ಥೆಯಿಂದ ಬಂದಿದ್ದರೆ",
+    "draft_to": "ಸ್ವೀಕರಿಸುವವರು",
+    "draft_subject": "ವಿಷಯ",
+    "draft_gaps": "ಹೈಲೈಟ್ ಮಾಡಿದ ಭಾಗಗಳನ್ನು ನೀವೇ ತುಂಬಬೇಕು. ಅವುಗಳನ್ನು ನಿಮ್ಮ ಇಮೇಲ್ ಆ್ಯಪ್‌ನಲ್ಲೂ ತುಂಬಬಹುದು.",
+    "draft_ready": "ಎಲ್ಲವೂ ತುಂಬಿದೆ. ಕಳುಹಿಸಲು ಸಿದ್ಧವಾಗಿದೆ.",
+    "draft_fallback": "ಏನೂ ತೆರೆಯಲಿಲ್ಲವೇ? ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಇಮೇಲ್ ಆ್ಯಪ್ ಸೆಟ್ ಮಾಡಿಲ್ಲದಿರಬಹುದು. ಅದೇ ಸಂದೇಶವನ್ನು Gmail ಅಥವಾ Outlook ಮೂಲಕ ಕಳುಹಿಸಿ, ಅಥವಾ ಅದನ್ನು ನಕಲಿಸಿಕೊಳ್ಳಿ.",
+    "draft_slot_name": "ನಿಮ್ಮ ಹೆಸರು",
+    "draft_slot_contact": "ನಿಮ್ಮ ಇಮೇಲ್ ಅಥವಾ ಫೋನ್ ಸಂಖ್ಯೆ",
+    "draft_slot_fill": "ಇಲ್ಲಿ ಸೇರಿಸಿ",
+    "mail_fyr_open": "ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್ ಮೂಲಕ DEHAT ಬಗ್ಗೆ ತಿಳಿದುಕೊಂಡೆ, ಜೊತೆಯಾಗಿ ಕೆಲಸ ಮಾಡುವ ಸಾಧ್ಯತೆಗಳನ್ನು ಪರಿಶೀಲಿಸಲು ಬಯಸುತ್ತೇನೆ.",
+    "mail_h_about": "ನನ್ನ ಬಗ್ಗೆ",
+    "mail_h_explore": "ನಾನು ಪರಿಶೀಲಿಸಲು ಬಯಸುವುದು",
+    "mail_h_change": "ಏನು ಬದಲಾಗುತ್ತದೆ ಎಂದು ನಾನು ಆಶಿಸುತ್ತೇನೆ",
+    "mail_h_scale": "ಅಂದಾಜು ಪ್ರಮಾಣ",
+    "mail_slot_change": "ಏನು ಬದಲಾಗುತ್ತದೆ ಎಂದು ನೀವು ಆಶಿಸುತ್ತೀರಿ ಎಂಬುದರ ಬಗ್ಗೆ ನಿಮ್ಮದೇ ಮಾತಿನಲ್ಲಿ ಒಂದೆರಡು ಸಾಲು",
+    "mail_fyr_next": "ತಂಡದಿಂದ ಯಾರಾದರೂ ಸೂಕ್ತವಾದ ಮುಂದಿನ ಹೆಜ್ಜೆಯನ್ನು ಸೂಚಿಸಿ ಉತ್ತರಿಸಬಹುದೇ: ಒಂದು ಕರೆ, ಒಂದು ದಾಖಲೆ ಅಥವಾ ಒಂದು ಭೇಟಿ, ಯಾವುದು ಸರಿಹೊಂದುತ್ತದೋ ಅದು?",
+    "mail_subject_more": "+{n} ಇನ್ನಷ್ಟು",
+    "raise_written_on": "{date} ರಂದು, ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನ ಪಾರದರ್ಶಕತೆ ಪುಟದ ಮೂಲಕ ಬರೆಯಲಾಗಿದೆ.",
+    "rt_h_transfer": "ವರ್ಗಾವಣೆ",
+    "rt_h_receipt": "ದಯವಿಟ್ಟು ರಸೀದಿಯನ್ನು ಈ ಹೆಸರಿಗೆ ನೀಡಿ",
+    "rt_subj_ref": "ಉಲ್ಲೇಖ {ref}",
+    "ask_mail_subject": "ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಉತ್ತರ ಸಿಗದ ಒಂದು ಪ್ರಶ್ನೆ",
+    "ask_mail_intro": "ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನ ಪ್ರಶ್ನೆ ಡೆಸ್ಕ್‌ನಲ್ಲಿ ನಾನು ಇದನ್ನು ಕೇಳಿದೆ, ಅದಕ್ಕೆ ಪ್ರಕಟಿತ ಉತ್ತರ ಇರಲಿಲ್ಲ:",
+    "ask_slot_context": "ಉತ್ತರಿಸಲು ನೆರವಾಗುವ ಯಾವುದಾದರೂ: ನೀವು ಉದ್ದೇಶಿಸಿದ ವರ್ಷ, ಕಾರ್ಯಕ್ರಮ ಅಥವಾ ಜಿಲ್ಲೆ",
+    "fc_ask_label": "ಕೋರಿಕೆಯ ಮೇರೆಗೆ ರಿಟರ್ನ್",
+    "fc_ask_title": "{fy} ಗಾಗಿ ಸಲ್ಲಿಸಿದ ವಿದೇಶಿ ಕೊಡುಗೆ ರಿಟರ್ನ್ ಅನ್ನು ನಮ್ಮಿಂದ ಕೇಳಿ ಪಡೆಯಿರಿ",
+    "fc_open_title": "{fy} ಗಾಗಿ ಸಲ್ಲಿಸಿದ {form} ವಿದೇಶಿ ಕೊಡುಗೆ ರಿಟರ್ನ್ ತೆರೆಯಿರಿ",
+    "fc_open_full": "ಈ ವರ್ಷದ {form} ವಿದೇಶಿ ಕೊಡುಗೆ ರಿಟರ್ನ್ ತೆರೆಯಿರಿ",
+    "fc_mail_subject": "FY {fy} ಗಾಗಿ ವಿದೇಶಿ ಕೊಡುಗೆ ರಿಟರ್ನ್",
+    "fc_mail_body": "ದಯವಿಟ್ಟು {fy} ಹಣಕಾಸು ವರ್ಷಕ್ಕೆ ವಿದೇಶಿ ಕೊಡುಗೆ (ನಿಯಂತ್ರಣ) ಕಾಯ್ದೆಯಡಿ ಸಲ್ಲಿಸಿದ ವಾರ್ಷಿಕ ರಿಟರ್ನ್ ಅನ್ನು, ಅದನ್ನು ಸಲ್ಲಿಸಿದ ನಮೂನೆ ಮತ್ತು ಸಲ್ಲಿಕೆಯ ದಿನಾಂಕದೊಂದಿಗೆ ನನಗೆ ಕಳುಹಿಸಿ.",
+    "cta_mail_intro": "ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ “{section}” ಓದುತ್ತಿದ್ದೆ, ನನಗೆ ಒಂದು ಪ್ರಶ್ನೆ ಇದೆ:",
+    "cta_slot_question": "ನಿಮ್ಮ ಪ್ರಶ್ನೆ",
+    "plan_mail_subject": "ನಿಧಿ ಯೋಜನೆಗಾಗಿ ಕೋರಿಕೆ — {programme}",
+    "plan_mail_body": "ದಯವಿಟ್ಟು {programme} ಕಾರ್ಯಕ್ರಮದ ಸಂಪೂರ್ಣ ನಿಧಿ ಯೋಜನೆಯನ್ನು ನನಗೆ ಕಳುಹಿಸಿ: ಹಂತಗಳು, ಅಂದಾಜು ಬಜೆಟ್‌ಗಳು ಮತ್ತು ಫಲಿತಾಂಶಗಳ ಚೌಕಟ್ಟು.",
+    "plan_slot_org": "ನಿಮ್ಮ ಸಂಸ್ಥೆ",
+    "give_mail_subject": "ಬ್ಯಾಂಕ್ ವರ್ಗಾವಣೆ ಅಥವಾ ವಸ್ತು ರೂಪದಲ್ಲಿ ಹೂಡಿಕೆ",
+    "give_mail_body": "ಬ್ಯಾಂಕ್ ವರ್ಗಾವಣೆಯ ಮೂಲಕ ಅಥವಾ ವಸ್ತು ರೂಪದ ಕೊಡುಗೆಯ ಮೂಲಕ ಹೂಡಿಕೆ ಮಾಡಲು ಬಯಸುತ್ತೇನೆ. ದಯವಿಟ್ಟು ಖಾತೆಯ ವಿವರಗಳನ್ನು ಕಳುಹಿಸಿ ಮತ್ತು ರಸೀದಿಗಾಗಿ ನನ್ನಿಂದ ಏನು ಬೇಕು ಎಂದು ತಿಳಿಸಿ.",
+    "give_slot_detail": "ರೂಪಾಯಿಯಲ್ಲೋ ವಿದೇಶಿ ಕರೆನ್ಸಿಯಲ್ಲೋ, ಸುಮಾರು ಎಷ್ಟು, ಅಥವಾ ವಸ್ತು ರೂಪದಲ್ಲಿ ನೀವು ಏನು ನೀಡಲು ಬಯಸುತ್ತೀರಿ",
+    "refund_mail_subject": "ಮರುಪಾವತಿ ಕೋರಿಕೆ",
+    "refund_mail_body": "ನಾನು ಮಾಡಿದ ಒಂದು ಹೂಡಿಕೆಯ ಮರುಪಾವತಿಯನ್ನು ಕೋರಲು ಬಯಸುತ್ತೇನೆ.",
+    "refund_l_date": "ಹೂಡಿಕೆಯ ದಿನಾಂಕ",
+    "refund_l_amount": "ಮೊತ್ತ",
+    "refund_l_ref": "ರಸೀದಿ ಅಥವಾ ವಹಿವಾಟಿನ ಉಲ್ಲೇಖ",
+    "refund_l_reason": "ಕಾರಣ (ಐಚ್ಛಿಕ)",
+    "data_mail_subject": "ಡೇಟಾ ಮತ್ತು ಗೌಪ್ಯತೆ ಕೋರಿಕೆ",
+    "data_mail_body": "DEHAT ಬಳಿ ಇರುವ ನನ್ನ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯ ಕುರಿತು ಒಂದು ಕೋರಿಕೆ ಸಲ್ಲಿಸಲು ಬಯಸುತ್ತೇನೆ.",
+    "data_l_which": "ನನಗೆ ಬೇಕಾದದ್ದು",
+    "data_slot_which": "ಅದನ್ನು ನೋಡುವುದು, ಸರಿಪಡಿಸುವುದು ಅಥವಾ ಅಳಿಸುವುದು",
+    "data_l_under": "ನಿಮ್ಮ ಬಳಿ ಅದು ಯಾವ ಇಮೇಲ್ ಅಥವಾ ಫೋನ್ ಸಂಖ್ಯೆಯಡಿ ಇರಬಹುದು",
     };
             const MAI = {
     "foot_policies": "नीति आ सुरक्षा उपाय",
@@ -19524,6 +20305,54 @@ class Component extends DCLogic {
     "rt_hint_11": "भारत",
     "rt_label_12": "कंपनीक नाम",
     "rt_hint_12": "जँ ट्रांसफर कोनो व्यवसाय सँ आयल छल",
+    "draft_to": "प्रति",
+    "draft_subject": "विषय",
+    "draft_gaps": "हाइलाइट कएल भाग अहाँकेँ भरबाक अछि। अहाँ ओकरा अपन ईमेल ऐप मे सेहो भरि सकैत छी।",
+    "draft_ready": "सभ किछु भरि गेल अछि। ई पठेबाक लेल तैयार अछि।",
+    "draft_fallback": "किछु नहि खुजल? भऽ सकैत अछि जे अहाँक डिवाइस पर ईमेल ऐप सेट नहि हो। एही संदेशकेँ Gmail वा Outlook सँ पठाउ, वा एकरा कॉपी कऽ लिअ।",
+    "draft_slot_name": "अहाँक नाम",
+    "draft_slot_contact": "अहाँक ईमेल वा फोन नंबर",
+    "draft_slot_fill": "एतय लिखू",
+    "mail_fyr_open": "अहाँक वेबसाइट सँ हमरा DEHAT केर विषय मे पता चलल, आ हम संग मिलि कऽ काज करबाक संभावना तकबाक इच्छा रखैत छी।",
+    "mail_h_about": "हमरा विषय मे",
+    "mail_h_explore": "हमरा कथी मे रुचि अछि",
+    "mail_h_change": "हमरा की बदलबाक आशा अछि",
+    "mail_h_scale": "अनुमानित पैमाना",
+    "mail_slot_change": "अपन शब्द मे एक-दू पाँती जे अहाँकेँ की बदलबाक आशा अछि",
+    "mail_fyr_next": "की टीम मे सँ केओ आगाँक कोनो उचित डेग सुझबैत जवाब दऽ सकैत छथि: एकटा कॉल, कोनो दस्तावेज वा भेंट, जे उचित लागय?",
+    "mail_subject_more": "+{n} आओर",
+    "raise_written_on": "{date} केँ, अहाँक वेबसाइटक पारदर्शिता पेजक माध्यम सँ लिखल गेल।",
+    "rt_h_transfer": "ट्रांसफर",
+    "rt_h_receipt": "कृपया रसीद हिनका नाम सँ जारी करू",
+    "rt_subj_ref": "संदर्भ {ref}",
+    "ask_mail_subject": "एकटा प्रश्न जकर उत्तर अहाँक वेबसाइट नहि दऽ सकल",
+    "ask_mail_intro": "हम अहाँक वेबसाइटक प्रश्न डेस्क पर ई पुछलहुँ, मुदा एकर कोनो प्रकाशित उत्तर नहि छल:",
+    "ask_slot_context": "किछुओ जे उत्तर देबा मे मदति करय: कोन वर्ष, कार्यक्रम वा जिला",
+    "fc_ask_label": "मँगला पर रिटर्न",
+    "fc_ask_title": "{fy} लेल दाखिल विदेशी योगदान रिटर्न हमरा सभ सँ माँगू",
+    "fc_open_title": "{fy} लेल दाखिल {form} विदेशी योगदान रिटर्न खोलू",
+    "fc_open_full": "एहि वर्षक {form} विदेशी योगदान रिटर्न खोलू",
+    "fc_mail_subject": "FY {fy} केर विदेशी योगदान रिटर्न",
+    "fc_mail_body": "कृपया वित्तीय वर्ष {fy} लेल विदेशी योगदान (विनियमन) अधिनियमक अंतर्गत दाखिल वार्षिक रिटर्न हमरा पठाउ, संगहि ई सेहो जे ओ कोन फॉर्म पर आ कोन तिथि केँ दाखिल भेल छल।",
+    "cta_mail_intro": "हम अहाँक वेबसाइट पर “{section}” पढ़ि रहल छलहुँ आ हमर एकटा प्रश्न अछि:",
+    "cta_slot_question": "अहाँक प्रश्न",
+    "plan_mail_subject": "फंडिंग योजनाक अनुरोध — {programme}",
+    "plan_mail_body": "कृपया {programme} कार्यक्रमक पूरा फंडिंग योजना हमरा पठाउ: ओकर चरण, अनुमानित बजट आ परिणाम ढाँचा (रिजल्ट्स फ्रेमवर्क)।",
+    "plan_slot_org": "अहाँक संस्था",
+    "give_mail_subject": "बैंक ट्रांसफर वा वस्तुक रूप मे निवेश",
+    "give_mail_body": "हम बैंक ट्रांसफर सँ, वा वस्तुक रूप मे, निवेश करए चाहैत छी। कृपया हमरा खाताक विवरण पठाउ आ बताउ जे रसीदक लेल अहाँकेँ हमरा सँ की चाही।",
+    "give_slot_detail": "रुपैया वा विदेशी मुद्रा, आ मोटामोटी कतेक, वा वस्तुक रूप मे अहाँ की देबए चाहब",
+    "refund_mail_subject": "पाइ वापसीक अनुरोध",
+    "refund_mail_body": "हम अपन कएल एकटा निवेशक पाइ वापसीक अनुरोध करए चाहैत छी।",
+    "refund_l_date": "निवेशक तिथि",
+    "refund_l_amount": "राशि",
+    "refund_l_ref": "रसीद वा लेनदेन संदर्भ",
+    "refund_l_reason": "कारण (वैकल्पिक)",
+    "data_mail_subject": "डेटा आ गोपनीयता संबंधी अनुरोध",
+    "data_mail_body": "DEHAT लग हमर जे व्यक्तिगत जानकारी अछि, ओकरा बारे मे हम एकटा अनुरोध करए चाहैत छी।",
+    "data_l_which": "हम की चाहैत छी",
+    "data_slot_which": "ओकरा देखब, सुधारब वा हटाएब",
+    "data_l_under": "ओ ईमेल वा फोन नंबर जाहि पर ई जानकारी अहाँ लग भऽ सकैत अछि",
     };
             const AS = {
     "foot_policies": "নীতি আৰু সুৰক্ষা ব্যৱস্থা",
@@ -20374,6 +21203,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ভাৰত",
     "rt_label_12": "কোম্পানীৰ নাম",
     "rt_hint_12": "যদি ধন কোনো প্ৰতিষ্ঠানৰ পৰা পঠিওৱা হৈছে",
+    "draft_to": "প্ৰাপক",
+    "draft_subject": "বিষয়",
+    "draft_gaps": "হাইলাইট কৰা অংশবোৰ আপুনি পূৰণ কৰিব লাগিব। আপোনাৰ ইমেইল এপতো পূৰণ কৰিব পাৰে।",
+    "draft_ready": "সকলো পূৰণ হ'ল। এতিয়া পঠিয়াবলৈ সাজু।",
+    "draft_fallback": "একো নুখুলিলে? আপোনাৰ ডিভাইচত হয়তো কোনো ইমেইল এপ ছেট আপ কৰা নাই। একেটা বাৰ্তা Gmail বা Outlook ৰ জৰিয়তে পঠিয়াওক, নহ'লে কপি কৰি লওক।",
+    "draft_slot_name": "আপোনাৰ নাম",
+    "draft_slot_contact": "আপোনাৰ ইমেইল বা ফ'ন নম্বৰ",
+    "draft_slot_fill": "ইয়াত লিখক",
+    "mail_fyr_open": "আপোনালোকৰ ৱেবছাইটৰ জৰিয়তে DEHAT ৰ বিষয়ে জানিব পাৰিলোঁ, আৰু একেলগে কাম কৰাৰ সম্ভাৱনা চাব বিচাৰোঁ।",
+    "mail_h_about": "মোৰ বিষয়ে",
+    "mail_h_explore": "মই যি বিষয়বোৰ চাব বিচাৰোঁ",
+    "mail_h_change": "মই কি সলনি হোৱাটো আশা কৰোঁ",
+    "mail_h_scale": "আনুমানিক পৰিসৰ",
+    "mail_slot_change": "কি সলনি হ'ব বুলি আশা কৰে, নিজৰ ভাষাত এক-দুটা শাৰীত",
+    "mail_fyr_next": "দলৰ কোনোবাই উত্তৰ দি এটা উপযুক্ত পৰৱৰ্তী পদক্ষেপৰ কথা জনাব পাৰিবনে: এটা ফ'ন কল, কোনো নথি বা এবাৰ আহি চোৱা, যিটো খাপ খায়?",
+    "mail_subject_more": "+আৰু {n}টা",
+    "raise_written_on": "{date} তাৰিখে, আপোনালোকৰ ৱেবছাইটৰ স্বচ্ছতা পৃষ্ঠাৰ জৰিয়তে লিখা।",
+    "rt_h_transfer": "ট্ৰেন্সফাৰ",
+    "rt_h_receipt": "অনুগ্ৰহ কৰি ৰচিদখন এই নামত দিব",
+    "rt_subj_ref": "ৰেফ. {ref}",
+    "ask_mail_subject": "এটা প্ৰশ্ন, যাৰ উত্তৰ আপোনালোকৰ ৱেবছাইটত নাপালোঁ",
+    "ask_mail_intro": "আপোনালোকৰ ৱেবছাইটৰ প্ৰশ্ন-ডেস্কত মই এইটো সুধিছিলোঁ, কিন্তু কোনো প্ৰকাশিত উত্তৰ নাছিল:",
+    "ask_slot_context": "উত্তৰ দিয়াত যিটোৱে সহায় কৰিব: কোন বছৰ, কোন কাৰ্যসূচী বা কোন জিলাৰ কথা কৈছে",
+    "fc_ask_label": "অনুৰোধত ৰিটাৰ্ণ",
+    "fc_ask_title": "{fy} ৰ বাবে দাখিল কৰা বিদেশী অৱদান ৰিটাৰ্ণখন আমাৰ পৰা বিচাৰক",
+    "fc_open_title": "{fy} ৰ বাবে দাখিল কৰা {form} বিদেশী অৱদান ৰিটাৰ্ণখন খোলক",
+    "fc_open_full": "এই বছৰৰ {form} বিদেশী অৱদান ৰিটাৰ্ণখন খোলক",
+    "fc_mail_subject": "FY {fy} ৰ বিদেশী অৱদান ৰিটাৰ্ণ",
+    "fc_mail_body": "অনুগ্ৰহ কৰি {fy} বিত্তীয় বছৰৰ বাবে বিদেশী অৱদান (নিয়ন্ত্ৰণ) আইনৰ অধীনত দাখিল কৰা বাৰ্ষিক ৰিটাৰ্ণখন মোলৈ পঠিয়াওক, লগতে কোনখন ফৰ্মত দাখিল কৰা হৈছিল আৰু দাখিলৰ তাৰিখো জনাব।",
+    "cta_mail_intro": "আপোনালোকৰ ৱেবছাইটত “{section}” পঢ়ি আছিলোঁ, আৰু মোৰ এটা প্ৰশ্ন আছে:",
+    "cta_slot_question": "আপোনাৰ প্ৰশ্ন",
+    "plan_mail_subject": "ফাণ্ডিং পৰিকল্পনাৰ অনুৰোধ — {programme}",
+    "plan_mail_body": "অনুগ্ৰহ কৰি {programme} কাৰ্যসূচীৰ সম্পূৰ্ণ ফাণ্ডিং পৰিকল্পনাখন মোলৈ পঠিয়াওক: পৰ্যায়বোৰ, আনুমানিক বাজেট আৰু ফলাফলৰ কাঠামো।",
+    "plan_slot_org": "আপোনাৰ প্ৰতিষ্ঠান",
+    "give_mail_subject": "বেংক ট্ৰেন্সফাৰ বা সামগ্ৰীৰ জৰিয়তে বিনিয়োগ",
+    "give_mail_body": "মই বেংক ট্ৰেন্সফাৰৰ জৰিয়তে, নহ'লে সামগ্ৰীৰ ৰূপত বিনিয়োগ কৰিব বিচাৰোঁ। অনুগ্ৰহ কৰি একাউণ্টৰ সবিশেষ পঠিয়াওক, আৰু ৰচিদৰ বাবে মোৰ পৰা কি কি লাগিব জনাওক।",
+    "give_slot_detail": "টকাত নে বিদেশী মুদ্ৰাত, আৰু মোটামুটি কিমান, নহ'লে সামগ্ৰী হিচাপে কি দিব বিচাৰে",
+    "refund_mail_subject": "ধন ঘূৰাই পোৱাৰ অনুৰোধ",
+    "refund_mail_body": "মই কৰা এটা বিনিয়োগৰ ধন ঘূৰাই পোৱাৰ অনুৰোধ জনাব বিচাৰোঁ।",
+    "refund_l_date": "বিনিয়োগৰ তাৰিখ",
+    "refund_l_amount": "পৰিমাণ",
+    "refund_l_ref": "ৰচিদ বা লেনদেনৰ ৰেফাৰেন্স",
+    "refund_l_reason": "কাৰণ (ঐচ্ছিক)",
+    "data_mail_subject": "তথ্য আৰু গোপনীয়তা সম্পৰ্কীয় অনুৰোধ",
+    "data_mail_body": "DEHAT এ মোৰ বিষয়ে ৰখা ব্যক্তিগত তথ্যৰ সম্পৰ্কে মই এটা অনুৰোধ জনাব বিচাৰোঁ।",
+    "data_l_which": "মই যি বিচাৰোঁ",
+    "data_slot_which": "চাবলৈ, শুধৰাবলৈ বা মচি পেলাবলৈ",
+    "data_l_under": "যিটো ইমেইল বা ফ'ন নম্বৰত আপোনালোকৰ ওচৰত তথ্যখিনি থাকিব পাৰে",
     };
             const NE = {
     "foot_policies": "नीतिहरू र सुरक्षा उपायहरू",
@@ -21224,6 +22101,54 @@ class Component extends DCLogic {
     "rt_hint_11": "भारत",
     "rt_label_12": "कम्पनीको नाम",
     "rt_hint_12": "ट्रान्सफर कुनै व्यवसायबाट आएको हो भने",
+    "draft_to": "प्रति",
+    "draft_subject": "विषय",
+    "draft_gaps": "हाइलाइट गरिएका भागहरू तपाईंले भर्नुपर्छ। तपाईं तिनलाई आफ्नो इमेल एपमा पनि भर्न सक्नुहुन्छ।",
+    "draft_ready": "सबै कुरा भरिसकियो। पठाउन तयार छ।",
+    "draft_fallback": "केही खुलेन? तपाईंको डिभाइसमा इमेल एप सेटअप नभएको हुन सक्छ। यही सन्देश Gmail वा Outlook बाट पठाउनुहोस्, वा यसलाई कपी गर्नुहोस्।",
+    "draft_slot_name": "तपाईंको नाम",
+    "draft_slot_contact": "तपाईंको इमेल वा फोन नम्बर",
+    "draft_slot_fill": "यहाँ लेख्नुहोस्",
+    "mail_fyr_open": "तपाईंको वेबसाइटबाट मैले DEHAT बारे थाहा पाएँ, र सँगै काम गर्ने सम्भावना खोज्न चाहन्छु।",
+    "mail_h_about": "मेरो बारेमा",
+    "mail_h_explore": "मलाई केमा रुचि छ",
+    "mail_h_change": "के परिवर्तन होस् भन्ने मेरो आशा छ",
+    "mail_h_scale": "अनुमानित आकार",
+    "mail_slot_change": "के परिवर्तन होस् भन्ने तपाईंको आशा छ, आफ्नै शब्दमा एक-दुई लाइन",
+    "mail_fyr_next": "के टिमबाट कसैले अर्को उपयुक्त कदम सुझाउँदै जवाफ दिन सक्नुहुन्छ: एउटा कल, कुनै कागजात वा भ्रमण, जुन मिल्छ?",
+    "mail_subject_more": "+{n} थप",
+    "raise_written_on": "{date} मा, तपाईंको वेबसाइटको पारदर्शिता पेजमार्फत लेखिएको।",
+    "rt_h_transfer": "ट्रान्सफर",
+    "rt_h_receipt": "कृपया रसिद यस नाममा जारी गर्नुहोस्",
+    "rt_subj_ref": "सन्दर्भ {ref}",
+    "ask_mail_subject": "तपाईंको वेबसाइटले जवाफ दिन नसकेको एउटा प्रश्न",
+    "ask_mail_intro": "मैले तपाईंको वेबसाइटको प्रश्न डेस्कमा यो सोधेँ, तर यसको कुनै प्रकाशित जवाफ थिएन:",
+    "ask_slot_context": "जवाफ दिन मद्दत गर्ने जुनसुकै कुरा: तपाईंले भन्न खोजेको वर्ष, कार्यक्रम वा जिल्ला",
+    "fc_ask_label": "अनुरोधमा रिटर्न",
+    "fc_ask_title": "{fy} का लागि दाखिला गरिएको विदेशी योगदान रिटर्न हामीसँग माग्नुहोस्",
+    "fc_open_title": "{fy} का लागि दाखिला गरिएको {form} विदेशी योगदान रिटर्न खोल्नुहोस्",
+    "fc_open_full": "यो वर्षको {form} विदेशी योगदान रिटर्न खोल्नुहोस्",
+    "fc_mail_subject": "FY {fy} को विदेशी योगदान रिटर्न",
+    "fc_mail_body": "कृपया आर्थिक वर्ष {fy} का लागि विदेशी योगदान (नियमन) ऐनअन्तर्गत दाखिला गरिएको वार्षिक रिटर्न मलाई पठाउनुहोस्, साथै त्यो कुन फारममा र कुन मितिमा दाखिला गरिएको थियो भन्ने पनि।",
+    "cta_mail_intro": "तपाईंको वेबसाइटमा “{section}” पढ्दै थिएँ, र मेरो एउटा प्रश्न छ:",
+    "cta_slot_question": "तपाईंको प्रश्न",
+    "plan_mail_subject": "फन्डिङ योजनाको अनुरोध — {programme}",
+    "plan_mail_body": "कृपया {programme} कार्यक्रमको पूरा फन्डिङ योजना मलाई पठाउनुहोस्: यसका चरणहरू, अनुमानित बजेट र नतिजा ढाँचा (रिजल्ट्स फ्रेमवर्क)।",
+    "plan_slot_org": "तपाईंको संस्था",
+    "give_mail_subject": "बैंक ट्रान्सफर वा वस्तुगत रूपमा लगानी",
+    "give_mail_body": "म बैंक ट्रान्सफरमार्फत, वा वस्तुगत रूपमा, लगानी गर्न चाहन्छु। कृपया मलाई खाताको विवरण पठाउनुहोस् र रसिदका लागि तपाईंलाई मबाट के चाहिन्छ भन्नुहोस्।",
+    "give_slot_detail": "रुपैयाँ वा विदेशी मुद्रा, र लगभग कति, वा वस्तुगत रूपमा के दिन चाहनुहुन्छ",
+    "refund_mail_subject": "रकम फिर्ताको अनुरोध",
+    "refund_mail_body": "मैले गरेको एउटा लगानीको रकम फिर्ता माग्न चाहन्छु।",
+    "refund_l_date": "लगानीको मिति",
+    "refund_l_amount": "रकम",
+    "refund_l_ref": "रसिद वा कारोबार सन्दर्भ",
+    "refund_l_reason": "कारण (ऐच्छिक)",
+    "data_mail_subject": "डेटा र गोपनीयतासम्बन्धी अनुरोध",
+    "data_mail_body": "DEHAT सँग भएको मेरो व्यक्तिगत जानकारीबारे म एउटा अनुरोध गर्न चाहन्छु।",
+    "data_l_which": "म के चाहन्छु",
+    "data_slot_which": "त्यसलाई हेर्न, सच्याउन वा मेटाउन",
+    "data_l_under": "त्यो जानकारी तपाईंसँग जुन इमेल वा फोन नम्बरमा हुन सक्छ",
     };
             const KOK = {
     "foot_policies": "धोरणां आनी सुरक्षा उपाय",
@@ -22074,6 +22999,54 @@ class Component extends DCLogic {
     "rt_hint_11": "भारत",
     "rt_label_12": "कंपनीचें नांव",
     "rt_hint_12": "ट्रान्सफर एखाद्या वेवसायांतल्यान आयिल्लें जाल्यार",
+    "draft_to": "प्रती",
+    "draft_subject": "विशय",
+    "draft_gaps": "हायलायट केल्ले भाग तुमी भरचे. ते तुमच्या ईमेल ॲपांतूय भरूं येतात.",
+    "draft_ready": "सगळें भरलां. धाडपाक तयार आसा.",
+    "draft_fallback": "कांयच उगडलें ना? तुमच्या डिव्हायसाचेर ईमेल ॲप सेट केल्लें नासूं येता. तोच संदेश Gmail वा Outlook वरवीं धाडात, वा तो कॉपी करात.",
+    "draft_slot_name": "तुमचें नांव",
+    "draft_slot_contact": "तुमचो ईमेल वा फोन नंबर",
+    "draft_slot_fill": "हांगा घालात",
+    "mail_fyr_open": "तुमच्या संकेतथळा वरवीं म्हाका DEHAT विशीं कळ्ळें आनी एकठांय काम करपाच्यो संदी सोदून पळोवंक म्हाका आवडटलें.",
+    "mail_h_about": "म्हजे विशीं",
+    "mail_h_explore": "म्हाका कितें सोदून पळोवंक आवडटलें",
+    "mail_h_change": "कितें बदलतलें अशी म्हाका आस्त आसा",
+    "mail_h_scale": "अदमासाचें प्रमाण",
+    "mail_slot_change": "कितें बदलतलें अशी तुमकां आस्त आसा, ताचेर तुमच्याच उतरांनी एक-दोन ओळी",
+    "mail_fyr_next": "पंगडांतलें कोणूय फुडलें योग्य पावल सुचोवन जाप दिवंक शकता: एक कॉल, एक दस्तावेज वा एक भेट, जें जुळटा तें?",
+    "mail_subject_more": "+{n} आनीक",
+    "raise_written_on": "{date} दिसा, तुमच्या संकेतथळार आशिल्ल्या पारदर्शकता पाना वरवीं बरयलां.",
+    "rt_h_transfer": "हस्तांतरण",
+    "rt_h_receipt": "उपकार करून पावती ह्या नांवान दिवची",
+    "rt_subj_ref": "संदर्भ {ref}",
+    "ask_mail_subject": "तुमच्या संकेतथळाचेर जाप मेळूंक नाशिल्लो एक प्रस्न",
+    "ask_mail_intro": "तुमच्या संकेतथळावयल्या प्रस्न डेस्काक हांवें हें विचारलें, आनी ताची कसलीच प्रकाशीत जाप नाशिल्ली:",
+    "ask_slot_context": "जाप दिवपाक आदार जातलें अशें कांयूय: तुमकां अभिप्रेत आशिल्लें वर्स, कार्यावळ वा जिल्लो",
+    "fc_ask_label": "मागणी केल्यार विवरणपत्र",
+    "fc_ask_title": "{fy} खातीर भरिल्लें परकी योगदान विवरणपत्र आमचे कडल्यान मागात",
+    "fc_open_title": "{fy} खातीर भरिल्लें {form} परकी योगदान विवरणपत्र उगडात",
+    "fc_open_full": "ह्या वर्साचें {form} परकी योगदान विवरणपत्र उगडात",
+    "fc_mail_subject": "FY {fy} खातीर परकी योगदान विवरणपत्र",
+    "fc_mail_body": "उपकार करून आर्थीक वर्स {fy} खातीर परकी योगदान (नियमन) कायद्या खाला भरिल्लें वर्सुकी विवरणपत्र, तें खंयच्या फॉर्मार भरलें आनी भरपाची तारीख हांचे वांगडा म्हाका धाडात.",
+    "cta_mail_intro": "तुमच्या संकेतथळार “{section}” वाचतना म्हाका एक प्रस्न पडलो:",
+    "cta_slot_question": "तुमचो प्रस्न",
+    "plan_mail_subject": "निधी येवजणेची विनंती — {programme}",
+    "plan_mail_body": "उपकार करून {programme} कार्यावळीची पुराय निधी येवजण म्हाका धाडात: टप्पे, अदमासाचें बजेट आनी परिणामांची चौकट.",
+    "plan_slot_org": "तुमची संस्था",
+    "give_mail_subject": "बँक ट्रान्सफर वा वस्तुरूपान गुंतवणूक",
+    "give_mail_body": "बँक ट्रान्सफरान वा वस्तुरूपी भेटी वरवीं गुंतवणूक करपाक म्हाका आवडटलें. उपकार करून म्हाका खात्याचो तपशील धाडात आनी पावती खातीर म्हजे कडल्यान कितें जाय तें सांगात.",
+    "give_slot_detail": "रुपयांनी वा परकी चलनांत, आनी सुमार कितले, वा वस्तुरूपान तुमकां कितें दिवपाक आवडटलें",
+    "refund_mail_subject": "परताव्याची विनंती",
+    "refund_mail_body": "हांवें केल्ल्या एका गुंतवणुकेचो परतावो मागपाक म्हाका आवडटलें.",
+    "refund_l_date": "गुंतवणुकेची तारीख",
+    "refund_l_amount": "रक्कम",
+    "refund_l_ref": "पावती वा व्यवहाराचो संदर्भ",
+    "refund_l_reason": "कारण (पर्यायी)",
+    "data_mail_subject": "डेटा आनी खाजगीपणा विशीं विनंती",
+    "data_mail_body": "DEHAT कडेन म्हजे विशीं आशिल्ल्या खाजगी माहिती विशीं म्हाका एक विनंती करपाची आसा.",
+    "data_l_which": "म्हाका कितें जाय",
+    "data_slot_which": "ती पळोवंक, सुदारूंक वा काडून उडोवंक",
+    "data_l_under": "तुमचे कडेन ती खंयच्या ईमेल वा फोन नंबरा खाला आसूं येता",
     };
             const SA = {
     "foot_policies": "नीतयः रक्षोपायाः च",
@@ -22924,6 +23897,54 @@ class Component extends DCLogic {
     "rt_hint_11": "भारतम्",
     "rt_label_12": "कम्पनी-नाम",
     "rt_hint_12": "यदि स्थानान्तरणं कस्माच्चित् व्यवसायात् आगतम्",
+    "draft_to": "प्रति",
+    "draft_subject": "विषयः",
+    "draft_gaps": "रेखाङ्किताः अंशाः भवता पूरणीयाः। भवान् स्वस्य ईमेल-अनुप्रयोगे अपि तान् पूरयितुं शक्नोति।",
+    "draft_ready": "सर्वं पूरितम्। इदानीं प्रेषणाय सज्जम्।",
+    "draft_fallback": "किमपि न उद्घाटितम्? भवतः उपकरणे कदाचित् ईमेल-अनुप्रयोगः न स्थापितः स्यात्। तमेव सन्देशं Gmail अथवा Outlook द्वारा प्रेषयतु, अथवा तस्य प्रतिलिपिं करोतु।",
+    "draft_slot_name": "भवतः नाम",
+    "draft_slot_contact": "भवतः ईमेल अथवा दूरवाणी-सङ्ख्या",
+    "draft_slot_fill": "अत्र लिखतु",
+    "mail_fyr_open": "भवतां जालपुटद्वारा DEHAT इत्यस्य परिचयः मया प्राप्तः, सहकार्यस्य सम्भावनां च अन्वेष्टुम् इच्छामि।",
+    "mail_h_about": "मम विषये",
+    "mail_h_explore": "यत् अहम् अन्वेष्टुम् इच्छामि",
+    "mail_h_change": "यत् परिवर्तनम् अहम् आशासे",
+    "mail_h_scale": "अनुमानितं परिमाणम्",
+    "mail_slot_change": "किं परिवर्तेत इति भवतः आशा, स्वशब्दैः एकस्यां द्वयोः वा पङ्क्त्योः",
+    "mail_fyr_next": "दलस्य कश्चित् उत्तरं दत्त्वा उचितम् अग्रिमं पदं सूचयितुं शक्नोति वा: दूरवाणी-वार्ता, कश्चन प्रलेखः, अथवा एकवारम् आगत्य दर्शनम्, यत् उपयुक्तं स्यात्?",
+    "mail_subject_more": "+अन्यानि {n}",
+    "raise_written_on": "{date} दिनाङ्के, भवतां जालपुटस्य पारदर्शिता-पृष्ठद्वारा लिखितम्।",
+    "rt_h_transfer": "स्थानान्तरणम्",
+    "rt_h_receipt": "कृपया रसीदम् अस्य नाम्ना निर्गमयतु",
+    "rt_subj_ref": "सन्दर्भः {ref}",
+    "ask_mail_subject": "एकः प्रश्नः, यस्य उत्तरं भवतां जालपुटे न लब्धम्",
+    "ask_mail_intro": "भवतां जालपुटस्य प्रश्न-पटले मया एतत् पृष्टम्, परन्तु तस्य किमपि प्रकाशितम् उत्तरं न आसीत्:",
+    "ask_slot_context": "उत्तरदाने यत् साहाय्यं करोति: किं वर्षम्, कः कार्यक्रमः, अथवा कः जनपदः अभिप्रेतः",
+    "fc_ask_label": "अनुरोधेन विवरणी",
+    "fc_ask_title": "{fy} वर्षाय प्रस्तुतां विदेशीययोगदान-विवरणीम् अस्मत् याचतु",
+    "fc_open_title": "{fy} वर्षाय प्रस्तुतां {form} विदेशीययोगदान-विवरणीम् उद्घाटयतु",
+    "fc_open_full": "अस्य वर्षस्य {form} विदेशीययोगदान-विवरणीम् उद्घाटयतु",
+    "fc_mail_subject": "FY {fy} इत्यस्य विदेशीययोगदान-विवरणी",
+    "fc_mail_body": "कृपया {fy} वित्तवर्षाय विदेशीययोगदान (विनियमन) अधिनियमस्य अन्तर्गतं प्रस्तुतां वार्षिकविवरणीं मह्यं प्रेषयतु, सा यस्मिन् प्रपत्रे प्रस्तुता तत् प्रपत्रं प्रस्तुतेः दिनाङ्कं च सह सूचयतु।",
+    "cta_mail_intro": "भवतां जालपुटे “{section}” इति पठनसमये मम एकः प्रश्नः उत्पन्नः:",
+    "cta_slot_question": "भवतः प्रश्नः",
+    "plan_mail_subject": "वित्तपोषण-योजनायाः अनुरोधः — {programme}",
+    "plan_mail_body": "कृपया {programme} कार्यक्रमस्य सम्पूर्णां वित्तपोषण-योजनां मह्यं प्रेषयतु: चरणाः, अनुमानित-आयव्ययकानि, परिणाम-रूपरेखा च।",
+    "plan_slot_org": "भवतः संस्था",
+    "give_mail_subject": "बैंक-स्थानान्तरणेन वस्तुरूपेण वा निवेशः",
+    "give_mail_body": "अहं बैंक-स्थानान्तरणेन, अथवा वस्तुरूपेण निवेशं कर्तुम् इच्छामि। कृपया खाताविवरणं प्रेषयतु, रसीदार्थं मत्तः किम् अपेक्षितम् इति च सूचयतु।",
+    "give_slot_detail": "रूप्यकेषु विदेशीयमुद्रायां वा, प्रायः कियत्, अथवा वस्तुरूपेण किं दातुम् इच्छति",
+    "refund_mail_subject": "धन-प्रत्यर्पणस्य अनुरोधः",
+    "refund_mail_body": "मया कृतस्य एकस्य निवेशस्य धन-प्रत्यर्पणम् अनुरोद्धुम् इच्छामि।",
+    "refund_l_date": "निवेशस्य दिनाङ्कः",
+    "refund_l_amount": "राशिः",
+    "refund_l_ref": "रसीद-सन्दर्भः व्यवहार-सन्दर्भः वा",
+    "refund_l_reason": "कारणम् (वैकल्पिकम्)",
+    "data_mail_subject": "दत्तांश-गोपनीयता-विषयकः अनुरोधः",
+    "data_mail_body": "DEHAT मम विषये यां व्यक्तिगतसूचनां धारयति, तद्विषये अहम् एकम् अनुरोधं कर्तुम् इच्छामि।",
+    "data_l_which": "यत् अहम् इच्छामि",
+    "data_slot_which": "तां द्रष्टुं, संशोधयितुं, अपाकर्तुं वा",
+    "data_l_under": "यया ईमेल-सङ्केतेन दूरवाणी-सङ्ख्यया वा सा भवतां पार्श्वे स्यात्",
     };
             const SD = {
     "foot_policies": "پاليسيون ۽ حفاظتي طريقا",
@@ -23774,6 +24795,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ڀارت",
     "rt_label_12": "ڪمپنيءَ جو نالو",
     "rt_hint_12": "جيڪڏهن منتقلي ڪنهن ڪاروبار طرفان آئي",
+    "draft_to": "ڏانهن",
+    "draft_subject": "موضوع",
+    "draft_gaps": "نمايان ڪيل حصا توهان کي ڀرڻا آهن. توهان اهي پنهنجي اي ميل ايپ ۾ به ڀري سگهو ٿا.",
+    "draft_ready": "سڀ ڪجهه ڀرجي ويو آهي. هي موڪلڻ لاءِ تيار آهي.",
+    "draft_fallback": "ڪجهه نه کليو؟ ٿي سگهي ٿو توهان جي ڊوائيس ۾ اي ميل ايپ سيٽ ٿيل نه هجي. ساڳيو پيغام Gmail يا Outlook ذريعي موڪليو، يا ان کي ڪاپي ڪري وٺو.",
+    "draft_slot_name": "توهان جو نالو",
+    "draft_slot_contact": "توهان جي اي ميل يا فون نمبر",
+    "draft_slot_fill": "هتي لکو",
+    "mail_fyr_open": "مون کي توهان جي ويب سائيٽ ذريعي DEHAT بابت خبر پئي، ۽ منهنجي خواهش آهي ته اسين گڏجي ڪم ڪرڻ جي امڪانن تي ڳالهه ڪريون.",
+    "mail_h_about": "منهنجي باري ۾",
+    "mail_h_explore": "مون کي ڪهڙين ڳالهين ۾ دلچسپي آهي",
+    "mail_h_change": "مون کي ڪهڙي تبديلي جي اميد آهي",
+    "mail_h_scale": "اندازاً پيمانو",
+    "mail_slot_change": "توهان کي ڪهڙي تبديلي جي اميد آهي، ان بابت پنهنجن لفظن ۾ هڪ ٻه سٽون",
+    "mail_fyr_next": "ڇا ٽيم مان ڪو هڪ مناسب ايندڙ قدم ٻڌائي جواب ڏئي سگهي ٿو: هڪ ڪال، ڪو دستاويز يا هڪ ملاقات، جيڪو به مناسب هجي؟",
+    "mail_subject_more": "+{n} وڌيڪ",
+    "raise_written_on": "{date} تي، توهان جي ويب سائيٽ جي شفافيت واري صفحي ذريعي لکيل.",
+    "rt_h_transfer": "ٽرانسفر",
+    "rt_h_receipt": "مهرباني ڪري رسيد هن نالي تي جاري ڪريو",
+    "rt_subj_ref": "حوالو {ref}",
+    "ask_mail_subject": "هڪ سوال جنهن جو جواب توهان جي ويب سائيٽ تي نه مليو",
+    "ask_mail_intro": "مون توهان جي ويب سائيٽ جي سوال ڊيسڪ کان اهو پڇيو، پر ان جو ڪو شايع ٿيل جواب نه هو:",
+    "ask_slot_context": "ڪا به ڳالهه جيڪا جواب ڏيڻ ۾ مدد ڪري: اهو سال، پروگرام يا ضلعو جنهن جي توهان ڳالهه ڪري رهيا آهيو",
+    "fc_ask_label": "درخواست تي ريٽرن",
+    "fc_ask_title": "{fy} لاءِ داخل ڪيل پرڏيهي تعاون جو ريٽرن اسان کان گهرايو",
+    "fc_open_title": "{fy} لاءِ داخل ڪيل {form} پرڏيهي تعاون جو ريٽرن کوليو",
+    "fc_open_full": "هن سال جو {form} پرڏيهي تعاون جو ريٽرن کوليو",
+    "fc_mail_subject": "FY {fy} لاءِ پرڏيهي تعاون جو ريٽرن",
+    "fc_mail_body": "مهرباني ڪري مون کي مالي سال {fy} لاءِ فارين ڪنٽريبيوشن (ريگوليشن) ايڪٽ تحت داخل ڪيل سالياني ريٽرن موڪليو، ۽ اهو به ٻڌايو ته اهو ڪهڙي فارم تي ۽ ڪهڙي تاريخ تي داخل ڪيو ويو.",
+    "cta_mail_intro": "مون توهان جي ويب سائيٽ تي “{section}” پڙهيو ۽ منهنجو هڪ سوال آهي:",
+    "cta_slot_question": "توهان جو سوال",
+    "plan_mail_subject": "فنڊنگ پلان جي درخواست — {programme}",
+    "plan_mail_body": "مهرباني ڪري مون کي {programme} پروگرام جو مڪمل فنڊنگ پلان موڪليو: ان جا مرحلا، اندازاً بجيٽ ۽ نتيجن جو فريم ورڪ.",
+    "plan_slot_org": "توهان جو ادارو",
+    "give_mail_subject": "بئنڪ ٽرانسفر يا شين جي صورت ۾ سيڙپڪاري",
+    "give_mail_body": "منهنجي خواهش آهي ته بئنڪ ٽرانسفر ذريعي، يا شين جي صورت ۾ ڪجهه ڏئي سيڙپڪاري ڪريان. مهرباني ڪري مون کي اڪائونٽ جا تفصيل موڪليو ۽ ٻڌايو ته رسيد لاءِ توهان کي مون کان ڇا گهرجي.",
+    "give_slot_detail": "روپيا يا پرڏيهي ڪرنسي، ۽ لڳ ڀڳ ڪيترو، يا توهان شين جي صورت ۾ ڇا ڏيڻ چاهيو ٿا",
+    "refund_mail_subject": "رقم واپسي جي درخواست",
+    "refund_mail_body": "منهنجي درخواست آهي ته منهنجي ڪيل هڪ سيڙپڪاري جي رقم واپس ڪئي وڃي.",
+    "refund_l_date": "سيڙپڪاري جي تاريخ",
+    "refund_l_amount": "رقم",
+    "refund_l_ref": "رسيد يا ٽرانزيڪشن جو حوالو",
+    "refund_l_reason": "سبب (اختياري)",
+    "data_mail_subject": "ڊيٽا ۽ پرائيويسي بابت درخواست",
+    "data_mail_body": "DEHAT وٽ منهنجي باري ۾ جيڪا ذاتي معلومات آهي، ان بابت منهنجي هڪ درخواست آهي.",
+    "data_l_which": "مون کي ڇا گهرجي",
+    "data_slot_which": "ان کي ڏسڻ، درست ڪرائڻ يا ختم ڪرائڻ",
+    "data_l_under": "اها اي ميل يا فون نمبر جنهن تحت اها معلومات توهان وٽ ٿي سگهي ٿي",
     };
             const OR = {
     "foot_policies": "ନୀତି ଓ ସୁରକ୍ଷା ବ୍ୟବସ୍ଥା",
@@ -24624,6 +25693,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ଭାରତ",
     "rt_label_12": "କମ୍ପାନୀର ନାମ",
     "rt_hint_12": "ଯଦି ଟ୍ରାନ୍ସଫର କୌଣସି ବ୍ୟବସାୟରୁ ଆସିଥିଲା",
+    "draft_to": "ପ୍ରାପକ",
+    "draft_subject": "ବିଷୟ",
+    "draft_gaps": "ହାଇଲାଇଟ୍ ହୋଇଥିବା ଅଂଶଗୁଡ଼ିକ ଆପଣଙ୍କୁ ପୂରଣ କରିବାକୁ ହେବ। ଆପଣ ନିଜ ଇମେଲ ଆପରେ ମଧ୍ୟ ପୂରଣ କରିପାରିବେ।",
+    "draft_ready": "ସବୁକିଛି ପୂରଣ ହୋଇଗଲା। ଏବେ ପଠାଇବା ପାଇଁ ପ୍ରସ୍ତୁତ।",
+    "draft_fallback": "କିଛି ଖୋଲିଲା ନାହିଁ? ଆପଣଙ୍କ ଡିଭାଇସରେ ହୁଏତ କୌଣସି ଇମେଲ ଆପ୍ ସେଟ୍ ଅପ୍ ହୋଇନାହିଁ। ସେହି ବାର୍ତ୍ତା Gmail କିମ୍ବା Outlook ମାଧ୍ୟମରେ ପଠାନ୍ତୁ, କିମ୍ବା କପି କରିନିଅନ୍ତୁ।",
+    "draft_slot_name": "ଆପଣଙ୍କ ନାମ",
+    "draft_slot_contact": "ଆପଣଙ୍କ ଇମେଲ କିମ୍ବା ଫୋନ୍ ନମ୍ବର",
+    "draft_slot_fill": "ଏଠାରେ ଲେଖନ୍ତୁ",
+    "mail_fyr_open": "ଆପଣଙ୍କ ୱେବସାଇଟ ମାଧ୍ୟମରେ ମୁଁ DEHAT ବିଷୟରେ ଜାଣିଲି, ଏବଂ ଏକାଠି କାମ କରିବାର ସମ୍ଭାବନା ଖୋଜିବାକୁ ଚାହେଁ।",
+    "mail_h_about": "ମୋ ବିଷୟରେ",
+    "mail_h_explore": "ମୁଁ କ’ଣ ଖୋଜିବାକୁ ଚାହେଁ",
+    "mail_h_change": "ମୁଁ କେଉଁ ପରିବର୍ତ୍ତନ ଆଶା କରେ",
+    "mail_h_scale": "ଆନୁମାନିକ ପରିମାଣ",
+    "mail_slot_change": "କ’ଣ ବଦଳିବ ବୋଲି ଆଶା କରନ୍ତି, ନିଜ ଭାଷାରେ ଗୋଟିଏ-ଦୁଇଟି ଧାଡ଼ିରେ",
+    "mail_fyr_next": "ଦଳର କେହି ଜଣେ ଉତ୍ତର ଦେଇ ଏକ ଉପଯୁକ୍ତ ପରବର୍ତ୍ତୀ ପଦକ୍ଷେପ ଜଣାଇପାରିବେ କି: ଏକ ଫୋନ୍ କଲ୍, କୌଣସି ଡକ୍ୟୁମେଣ୍ଟ କିମ୍ବା ଥରେ ଆସି ଦେଖିବା, ଯାହା ଠିକ୍ ଲାଗେ?",
+    "mail_subject_more": "+ଆଉ {n}ଟି",
+    "raise_written_on": "{date} ତାରିଖରେ, ଆପଣଙ୍କ ୱେବସାଇଟର ସ୍ୱଚ୍ଛତା ପୃଷ୍ଠା ମାଧ୍ୟମରେ ଲେଖାଯାଇଛି।",
+    "rt_h_transfer": "ଟ୍ରାନ୍ସଫର",
+    "rt_h_receipt": "ଦୟାକରି ରସିଦଟି ଏହି ନାମରେ ଦିଅନ୍ତୁ",
+    "rt_subj_ref": "ରେଫ. {ref}",
+    "ask_mail_subject": "ଏକ ପ୍ରଶ୍ନ, ଯାହାର ଉତ୍ତର ଆପଣଙ୍କ ୱେବସାଇଟରେ ମିଳିଲା ନାହିଁ",
+    "ask_mail_intro": "ଆପଣଙ୍କ ୱେବସାଇଟର ପ୍ରଶ୍ନ ଡେସ୍କରେ ମୁଁ ଏହା ପଚାରିଥିଲି, କିନ୍ତୁ କୌଣସି ପ୍ରକାଶିତ ଉତ୍ତର ନଥିଲା:",
+    "ask_slot_context": "ଉତ୍ତର ଦେବାରେ ଯାହା ସାହାଯ୍ୟ କରିବ: କେଉଁ ବର୍ଷ, କେଉଁ କାର୍ଯ୍ୟକ୍ରମ କିମ୍ବା କେଉଁ ଜିଲ୍ଲା କଥା କହୁଛନ୍ତି",
+    "fc_ask_label": "ଅନୁରୋଧରେ ରିଟର୍ନ",
+    "fc_ask_title": "{fy} ପାଇଁ ଦାଖଲ ହୋଇଥିବା ବିଦେଶୀ ଅବଦାନ ରିଟର୍ନଟି ଆମଠାରୁ ମାଗନ୍ତୁ",
+    "fc_open_title": "{fy} ପାଇଁ ଦାଖଲ ହୋଇଥିବା {form} ବିଦେଶୀ ଅବଦାନ ରିଟର୍ନଟି ଖୋଲନ୍ତୁ",
+    "fc_open_full": "ଏହି ବର୍ଷର {form} ବିଦେଶୀ ଅବଦାନ ରିଟର୍ନଟି ଖୋଲନ୍ତୁ",
+    "fc_mail_subject": "FY {fy} ର ବିଦେଶୀ ଅବଦାନ ରିଟର୍ନ",
+    "fc_mail_body": "ଦୟାକରି {fy} ଆର୍ଥିକ ବର୍ଷ ପାଇଁ ଫରେନ୍ କଣ୍ଟ୍ରିବ୍ୟୁସନ (ରେଗୁଲେସନ) ଆକ୍ଟ ଅଧୀନରେ ଦାଖଲ ହୋଇଥିବା ବାର୍ଷିକ ରିଟର୍ନଟି ମୋତେ ପଠାନ୍ତୁ, ସହିତ କେଉଁ ଫର୍ମରେ ଦାଖଲ ହୋଇଥିଲା ଏବଂ ଦାଖଲର ତାରିଖ ମଧ୍ୟ ଜଣାନ୍ତୁ।",
+    "cta_mail_intro": "ମୁଁ ଆପଣଙ୍କ ୱେବସାଇଟରେ “{section}” ପଢ଼ୁଥିଲି, ଏବଂ ମୋର ଏକ ପ୍ରଶ୍ନ ଅଛି:",
+    "cta_slot_question": "ଆପଣଙ୍କ ପ୍ରଶ୍ନ",
+    "plan_mail_subject": "ପାଣ୍ଠି ଯୋଜନା ଅନୁରୋଧ — {programme}",
+    "plan_mail_body": "ଦୟାକରି {programme} କାର୍ଯ୍ୟକ୍ରମର ସମ୍ପୂର୍ଣ୍ଣ ପାଣ୍ଠି ଯୋଜନା ମୋତେ ପଠାନ୍ତୁ: ପର୍ଯ୍ୟାୟଗୁଡ଼ିକ, ଆନୁମାନିକ ବଜେଟ୍ ଏବଂ ଫଳାଫଳ ଢାଞ୍ଚା।",
+    "plan_slot_org": "ଆପଣଙ୍କ ସଂସ୍ଥା",
+    "give_mail_subject": "ବ୍ୟାଙ୍କ ଟ୍ରାନ୍ସଫର କିମ୍ବା ସାମଗ୍ରୀ ମାଧ୍ୟମରେ ନିବେଶ",
+    "give_mail_body": "ମୁଁ ବ୍ୟାଙ୍କ ଟ୍ରାନ୍ସଫର ମାଧ୍ୟମରେ, କିମ୍ବା ସାମଗ୍ରୀ ରୂପରେ ନିବେଶ କରିବାକୁ ଚାହେଁ। ଦୟାକରି ଆକାଉଣ୍ଟ ବିବରଣୀ ପଠାନ୍ତୁ, ଏବଂ ରସିଦ ପାଇଁ ମୋଠାରୁ କ’ଣ କ’ଣ ଦରକାର ଜଣାନ୍ତୁ।",
+    "give_slot_detail": "ଟଙ୍କାରେ ନା ବିଦେଶୀ ମୁଦ୍ରାରେ, ଏବଂ ପ୍ରାୟ କେତେ, କିମ୍ବା ସାମଗ୍ରୀ ଭାବରେ କ’ଣ ଦେବାକୁ ଚାହାଁନ୍ତି",
+    "refund_mail_subject": "ଟଙ୍କା ଫେରସ୍ତ ଅନୁରୋଧ",
+    "refund_mail_body": "ମୁଁ କରିଥିବା ଏକ ନିବେଶର ଟଙ୍କା ଫେରସ୍ତ ପାଇଁ ଅନୁରୋଧ କରିବାକୁ ଚାହେଁ।",
+    "refund_l_date": "ନିବେଶର ତାରିଖ",
+    "refund_l_amount": "ରାଶି",
+    "refund_l_ref": "ରସିଦ କିମ୍ବା ଲେନଦେନ ରେଫରେନ୍ସ",
+    "refund_l_reason": "କାରଣ (ଇଚ୍ଛାଧୀନ)",
+    "data_mail_subject": "ତଥ୍ୟ ଓ ଗୋପନୀୟତା ଅନୁରୋଧ",
+    "data_mail_body": "DEHAT ମୋ ବିଷୟରେ ରଖିଥିବା ବ୍ୟକ୍ତିଗତ ତଥ୍ୟ ସମ୍ପର୍କରେ ମୁଁ ଏକ ଅନୁରୋଧ କରିବାକୁ ଚାହେଁ।",
+    "data_l_which": "ମୁଁ ଯାହା ଚାହେଁ",
+    "data_slot_which": "ଦେଖିବା, ସଂଶୋଧନ କରିବା କିମ୍ବା ଡିଲିଟ୍ କରିବା",
+    "data_l_under": "ଯେଉଁ ଇମେଲ କିମ୍ବା ଫୋନ୍ ନମ୍ବରରେ ଆପଣଙ୍କ ପାଖରେ ଏହି ତଥ୍ୟ ଥାଇପାରେ",
     };
             const ML = {
     "foot_policies": "നയങ്ങളും സുരക്ഷാ നടപടികളും",
@@ -25474,6 +26591,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ഇന്ത്യ",
     "rt_label_12": "കമ്പനിയുടെ പേര്",
     "rt_hint_12": "കൈമാറ്റം ഒരു സ്ഥാപനത്തിൽ നിന്നാണെങ്കിൽ",
+    "draft_to": "സ്വീകർത്താവ്",
+    "draft_subject": "വിഷയം",
+    "draft_gaps": "ഹൈലൈറ്റ് ചെയ്ത ഭാഗങ്ങൾ നിങ്ങൾ തന്നെ പൂരിപ്പിക്കണം. നിങ്ങളുടെ ഇമെയിൽ ആപ്പിലും അവ പൂരിപ്പിക്കാം.",
+    "draft_ready": "എല്ലാം പൂരിപ്പിച്ചു. അയയ്ക്കാൻ തയ്യാറാണ്.",
+    "draft_fallback": "ഒന്നും തുറന്നില്ലേ? നിങ്ങളുടെ ഉപകരണത്തിൽ ഇമെയിൽ ആപ്പ് സജ്ജമാക്കിയിട്ടുണ്ടാകില്ല. ഇതേ സന്ദേശം Gmail അല്ലെങ്കിൽ Outlook വഴി അയയ്ക്കുക, അല്ലെങ്കിൽ പകർത്തിയെടുക്കുക.",
+    "draft_slot_name": "നിങ്ങളുടെ പേര്",
+    "draft_slot_contact": "നിങ്ങളുടെ ഇമെയിൽ അല്ലെങ്കിൽ ഫോൺ നമ്പർ",
+    "draft_slot_fill": "ഇവിടെ ചേർക്കുക",
+    "mail_fyr_open": "നിങ്ങളുടെ വെബ്സൈറ്റിലൂടെയാണ് ഞാൻ DEHAT-നെക്കുറിച്ച് അറിഞ്ഞത്, ഒരുമിച്ച് പ്രവർത്തിക്കാനുള്ള സാധ്യതകൾ പരിശോധിക്കാൻ ആഗ്രഹിക്കുന്നു.",
+    "mail_h_about": "എന്നെക്കുറിച്ച്",
+    "mail_h_explore": "ഞാൻ പരിശോധിക്കാൻ ആഗ്രഹിക്കുന്നത്",
+    "mail_h_change": "എന്ത് മാറുമെന്നാണ് ഞാൻ പ്രതീക്ഷിക്കുന്നത്",
+    "mail_h_scale": "ഏകദേശ തോത്",
+    "mail_slot_change": "എന്ത് മാറുമെന്നാണ് നിങ്ങൾ പ്രതീക്ഷിക്കുന്നത് എന്ന് നിങ്ങളുടെ സ്വന്തം വാക്കുകളിൽ ഒന്നോ രണ്ടോ വരി",
+    "mail_fyr_next": "ടീമിൽ നിന്ന് ആരെങ്കിലും ഉചിതമായ അടുത്ത ചുവട് നിർദ്ദേശിച്ച് മറുപടി നൽകാമോ: ഒരു കോൾ, ഒരു രേഖ അല്ലെങ്കിൽ ഒരു സന്ദർശനം, ഏതാണോ യോജിക്കുന്നത് അത്?",
+    "mail_subject_more": "+{n} കൂടി",
+    "raise_written_on": "{date}-ന്, നിങ്ങളുടെ വെബ്സൈറ്റിലെ സുതാര്യതാ പേജ് വഴി എഴുതിയത്.",
+    "rt_h_transfer": "കൈമാറ്റം",
+    "rt_h_receipt": "ദയവായി രസീത് ഈ പേരിൽ നൽകുക",
+    "rt_subj_ref": "റഫറൻസ് {ref}",
+    "ask_mail_subject": "നിങ്ങളുടെ വെബ്സൈറ്റിൽ ഉത്തരം കിട്ടാത്ത ഒരു ചോദ്യം",
+    "ask_mail_intro": "നിങ്ങളുടെ വെബ്സൈറ്റിലെ ചോദ്യ ഡെസ്കിൽ ഞാൻ ഇത് ചോദിച്ചു, അതിന് പ്രസിദ്ധീകരിച്ച ഉത്തരം ഉണ്ടായിരുന്നില്ല:",
+    "ask_slot_context": "ഉത്തരം നൽകാൻ സഹായിക്കുന്ന എന്തും: നിങ്ങൾ ഉദ്ദേശിക്കുന്ന വർഷം, പ്രോഗ്രാം അല്ലെങ്കിൽ ജില്ല",
+    "fc_ask_label": "ആവശ്യപ്പെട്ടാൽ റിട്ടേൺ",
+    "fc_ask_title": "{fy} വർഷത്തേക്ക് ഫയൽ ചെയ്ത വിദേശ സംഭാവന റിട്ടേൺ ഞങ്ങളോട് ആവശ്യപ്പെടുക",
+    "fc_open_title": "{fy} വർഷത്തേക്ക് ഫയൽ ചെയ്ത {form} വിദേശ സംഭാവന റിട്ടേൺ തുറക്കുക",
+    "fc_open_full": "ഈ വർഷത്തെ {form} വിദേശ സംഭാവന റിട്ടേൺ തുറക്കുക",
+    "fc_mail_subject": "FY {fy} വിദേശ സംഭാവന റിട്ടേൺ",
+    "fc_mail_body": "{fy} സാമ്പത്തിക വർഷത്തേക്ക് വിദേശ സംഭാവന (നിയന്ത്രണ) നിയമപ്രകാരം ഫയൽ ചെയ്ത വാർഷിക റിട്ടേൺ, അത് ഫയൽ ചെയ്ത ഫോമും ഫയൽ ചെയ്ത തീയതിയും സഹിതം ദയവായി എനിക്ക് അയച്ചുതരിക.",
+    "cta_mail_intro": "നിങ്ങളുടെ വെബ്സൈറ്റിൽ “{section}” വായിക്കുകയായിരുന്നു, എനിക്ക് ഒരു ചോദ്യമുണ്ട്:",
+    "cta_slot_question": "നിങ്ങളുടെ ചോദ്യം",
+    "plan_mail_subject": "ഫണ്ടിങ് പ്ലാൻ അഭ്യർത്ഥന — {programme}",
+    "plan_mail_body": "{programme} പ്രോഗ്രാമിന്റെ പൂർണ്ണ ഫണ്ടിങ് പ്ലാൻ ദയവായി എനിക്ക് അയച്ചുതരിക: ഘട്ടങ്ങൾ, ഏകദേശ ബജറ്റുകൾ, ഫലങ്ങളുടെ ചട്ടക്കൂട് എന്നിവ.",
+    "plan_slot_org": "നിങ്ങളുടെ സ്ഥാപനം",
+    "give_mail_subject": "ബാങ്ക് ട്രാൻസ്ഫർ വഴിയോ വസ്തുരൂപത്തിലോ നിക്ഷേപം",
+    "give_mail_body": "ബാങ്ക് ട്രാൻസ്ഫർ വഴിയോ വസ്തുരൂപത്തിലുള്ള സമ്മാനമായോ നിക്ഷേപിക്കാൻ ഞാൻ ആഗ്രഹിക്കുന്നു. ദയവായി അക്കൗണ്ട് വിവരങ്ങൾ അയച്ചുതരികയും രസീതിനായി എന്നിൽ നിന്ന് എന്താണ് വേണ്ടതെന്ന് അറിയിക്കുകയും ചെയ്യുക.",
+    "give_slot_detail": "രൂപയിലോ വിദേശ കറൻസിയിലോ, ഏകദേശം എത്ര, അല്ലെങ്കിൽ വസ്തുരൂപത്തിൽ എന്താണ് നൽകാൻ ആഗ്രഹിക്കുന്നത്",
+    "refund_mail_subject": "റീഫണ്ട് അഭ്യർത്ഥന",
+    "refund_mail_body": "ഞാൻ നടത്തിയ ഒരു നിക്ഷേപത്തിന്റെ റീഫണ്ട് ആവശ്യപ്പെടാൻ ആഗ്രഹിക്കുന്നു.",
+    "refund_l_date": "നിക്ഷേപിച്ച തീയതി",
+    "refund_l_amount": "തുക",
+    "refund_l_ref": "രസീത് അല്ലെങ്കിൽ ഇടപാട് റഫറൻസ്",
+    "refund_l_reason": "കാരണം (ഓപ്ഷണൽ)",
+    "data_mail_subject": "ഡാറ്റയും സ്വകാര്യതയും സംബന്ധിച്ച അഭ്യർത്ഥന",
+    "data_mail_body": "DEHAT എന്നെക്കുറിച്ച് സൂക്ഷിക്കുന്ന വ്യക്തിഗത വിവരങ്ങളെക്കുറിച്ച് ഒരു അഭ്യർത്ഥന നടത്താൻ ഞാൻ ആഗ്രഹിക്കുന്നു.",
+    "data_l_which": "എനിക്ക് വേണ്ടത്",
+    "data_slot_which": "അത് കാണാൻ, തിരുത്താൻ അല്ലെങ്കിൽ ഇല്ലാതാക്കാൻ",
+    "data_l_under": "ഏത് ഇമെയിൽ അല്ലെങ്കിൽ ഫോൺ നമ്പറിലാണ് അത് നിങ്ങളുടെ പക്കൽ ഉണ്ടാകാൻ സാധ്യത",
     };            const PA = {
     "foot_policies": "ਨੀਤੀਆਂ ਅਤੇ ਸੁਰੱਖਿਆ ਉਪਾਅ",
     "foot_cookies": "ਕੂਕੀ ਸੈਟਿੰਗਾਂ",
@@ -26323,6 +27488,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ਭਾਰਤ",
     "rt_label_12": "ਕੰਪਨੀ ਦਾ ਨਾਂ",
     "rt_hint_12": "ਜੇ ਟ੍ਰਾਂਸਫ਼ਰ ਕਿਸੇ ਕਾਰੋਬਾਰ ਵੱਲੋਂ ਆਇਆ ਹੈ",
+    "draft_to": "ਪ੍ਰਤੀ",
+    "draft_subject": "ਵਿਸ਼ਾ",
+    "draft_gaps": "ਹਾਈਲਾਈਟ ਕੀਤੇ ਹਿੱਸੇ ਤੁਸੀਂ ਭਰਨੇ ਹਨ। ਤੁਸੀਂ ਇਹਨਾਂ ਨੂੰ ਆਪਣੀ ਈਮੇਲ ਐਪ ਵਿੱਚ ਵੀ ਭਰ ਸਕਦੇ ਹੋ।",
+    "draft_ready": "ਸਭ ਕੁਝ ਭਰ ਗਿਆ ਹੈ। ਇਹ ਭੇਜਣ ਲਈ ਤਿਆਰ ਹੈ।",
+    "draft_fallback": "ਕੁਝ ਨਹੀਂ ਖੁੱਲ੍ਹਿਆ? ਹੋ ਸਕਦਾ ਹੈ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਵਿੱਚ ਈਮੇਲ ਐਪ ਸੈੱਟ ਨਾ ਹੋਵੇ। ਇਹੀ ਸੁਨੇਹਾ Gmail ਜਾਂ Outlook ਰਾਹੀਂ ਭੇਜੋ, ਜਾਂ ਇਸਨੂੰ ਕਾਪੀ ਕਰ ਲਓ।",
+    "draft_slot_name": "ਤੁਹਾਡਾ ਨਾਮ",
+    "draft_slot_contact": "ਤੁਹਾਡੀ ਈਮੇਲ ਜਾਂ ਫ਼ੋਨ ਨੰਬਰ",
+    "draft_slot_fill": "ਇੱਥੇ ਲਿਖੋ",
+    "mail_fyr_open": "ਮੈਨੂੰ ਤੁਹਾਡੀ ਵੈੱਬਸਾਈਟ ਰਾਹੀਂ DEHAT ਬਾਰੇ ਪਤਾ ਲੱਗਾ, ਅਤੇ ਮੇਰੀ ਇੱਛਾ ਹੈ ਕਿ ਅਸੀਂ ਮਿਲ ਕੇ ਕੰਮ ਕਰਨ ਦੀਆਂ ਸੰਭਾਵਨਾਵਾਂ ਬਾਰੇ ਗੱਲ ਕਰੀਏ।",
+    "mail_h_about": "ਮੇਰੇ ਬਾਰੇ",
+    "mail_h_explore": "ਮੇਰੀ ਦਿਲਚਸਪੀ ਕਿਸ ਵਿੱਚ ਹੈ",
+    "mail_h_change": "ਮੈਨੂੰ ਕਿਸ ਬਦਲਾਅ ਦੀ ਉਮੀਦ ਹੈ",
+    "mail_h_scale": "ਅੰਦਾਜ਼ਨ ਪੈਮਾਨਾ",
+    "mail_slot_change": "ਤੁਹਾਨੂੰ ਕਿਸ ਬਦਲਾਅ ਦੀ ਉਮੀਦ ਹੈ, ਇਸ ਬਾਰੇ ਆਪਣੇ ਸ਼ਬਦਾਂ ਵਿੱਚ ਇੱਕ-ਦੋ ਲਾਈਨਾਂ",
+    "mail_fyr_next": "ਕੀ ਟੀਮ ਵਿੱਚੋਂ ਕੋਈ ਇੱਕ ਢੁਕਵਾਂ ਅਗਲਾ ਕਦਮ ਦੱਸ ਕੇ ਜਵਾਬ ਦੇ ਸਕਦਾ ਹੈ: ਇੱਕ ਕਾਲ, ਕੋਈ ਦਸਤਾਵੇਜ਼ ਜਾਂ ਇੱਕ ਮੁਲਾਕਾਤ, ਜੋ ਵੀ ਠੀਕ ਬੈਠੇ?",
+    "mail_subject_more": "+{n} ਹੋਰ",
+    "raise_written_on": "{date} ਨੂੰ, ਤੁਹਾਡੀ ਵੈੱਬਸਾਈਟ ਦੇ ਪਾਰਦਰਸ਼ਤਾ ਪੰਨੇ ਰਾਹੀਂ ਲਿਖਿਆ ਗਿਆ।",
+    "rt_h_transfer": "ਟ੍ਰਾਂਸਫਰ",
+    "rt_h_receipt": "ਕਿਰਪਾ ਕਰਕੇ ਰਸੀਦ ਇਸ ਨਾਮ 'ਤੇ ਜਾਰੀ ਕਰੋ",
+    "rt_subj_ref": "ਹਵਾਲਾ {ref}",
+    "ask_mail_subject": "ਇੱਕ ਸਵਾਲ ਜਿਸਦਾ ਜਵਾਬ ਤੁਹਾਡੀ ਵੈੱਬਸਾਈਟ 'ਤੇ ਨਹੀਂ ਮਿਲਿਆ",
+    "ask_mail_intro": "ਮੈਂ ਤੁਹਾਡੀ ਵੈੱਬਸਾਈਟ ਦੇ ਸਵਾਲ ਡੈਸਕ ਤੋਂ ਇਹ ਪੁੱਛਿਆ, ਪਰ ਇਸਦਾ ਕੋਈ ਪ੍ਰਕਾਸ਼ਿਤ ਜਵਾਬ ਨਹੀਂ ਸੀ:",
+    "ask_slot_context": "ਜਵਾਬ ਦੇਣ ਵਿੱਚ ਮਦਦ ਕਰਨ ਵਾਲੀ ਕੋਈ ਵੀ ਗੱਲ: ਉਹ ਸਾਲ, ਪ੍ਰੋਗਰਾਮ ਜਾਂ ਜ਼ਿਲ੍ਹਾ ਜਿਸਦੀ ਤੁਸੀਂ ਗੱਲ ਕਰ ਰਹੇ ਹੋ",
+    "fc_ask_label": "ਬੇਨਤੀ 'ਤੇ ਰਿਟਰਨ",
+    "fc_ask_title": "{fy} ਲਈ ਦਾਇਰ ਕੀਤੀ ਵਿਦੇਸ਼ੀ ਯੋਗਦਾਨ ਰਿਟਰਨ ਸਾਡੇ ਤੋਂ ਮੰਗੋ",
+    "fc_open_title": "{fy} ਲਈ ਦਾਇਰ ਕੀਤੀ {form} ਵਿਦੇਸ਼ੀ ਯੋਗਦਾਨ ਰਿਟਰਨ ਖੋਲ੍ਹੋ",
+    "fc_open_full": "ਇਸ ਸਾਲ ਦੀ {form} ਵਿਦੇਸ਼ੀ ਯੋਗਦਾਨ ਰਿਟਰਨ ਖੋਲ੍ਹੋ",
+    "fc_mail_subject": "FY {fy} ਲਈ ਵਿਦੇਸ਼ੀ ਯੋਗਦਾਨ ਰਿਟਰਨ",
+    "fc_mail_body": "ਕਿਰਪਾ ਕਰਕੇ ਮੈਨੂੰ ਵਿੱਤੀ ਸਾਲ {fy} ਲਈ ਵਿਦੇਸ਼ੀ ਯੋਗਦਾਨ (ਰੈਗੂਲੇਸ਼ਨ) ਐਕਟ ਤਹਿਤ ਦਾਇਰ ਕੀਤੀ ਸਾਲਾਨਾ ਰਿਟਰਨ ਭੇਜੋ, ਨਾਲ ਹੀ ਇਹ ਵੀ ਦੱਸੋ ਕਿ ਇਹ ਕਿਸ ਫ਼ਾਰਮ 'ਤੇ ਦਾਇਰ ਕੀਤੀ ਗਈ ਸੀ ਅਤੇ ਦਾਇਰ ਕਰਨ ਦੀ ਤਾਰੀਖ਼ ਕੀ ਸੀ।",
+    "cta_mail_intro": "ਮੈਂ ਤੁਹਾਡੀ ਵੈੱਬਸਾਈਟ 'ਤੇ “{section}” ਪੜ੍ਹਿਆ ਅਤੇ ਮੇਰਾ ਇੱਕ ਸਵਾਲ ਹੈ:",
+    "cta_slot_question": "ਤੁਹਾਡਾ ਸਵਾਲ",
+    "plan_mail_subject": "ਫੰਡਿੰਗ ਯੋਜਨਾ ਲਈ ਬੇਨਤੀ — {programme}",
+    "plan_mail_body": "ਕਿਰਪਾ ਕਰਕੇ ਮੈਨੂੰ {programme} ਪ੍ਰੋਗਰਾਮ ਦੀ ਪੂਰੀ ਫੰਡਿੰਗ ਯੋਜਨਾ ਭੇਜੋ: ਇਸਦੇ ਪੜਾਅ, ਅੰਦਾਜ਼ਨ ਬਜਟ ਅਤੇ ਨਤੀਜਿਆਂ ਦਾ ਢਾਂਚਾ।",
+    "plan_slot_org": "ਤੁਹਾਡੀ ਸੰਸਥਾ",
+    "give_mail_subject": "ਬੈਂਕ ਟ੍ਰਾਂਸਫਰ ਜਾਂ ਵਸਤੂ ਰੂਪ ਵਿੱਚ ਨਿਵੇਸ਼",
+    "give_mail_body": "ਮੇਰੀ ਇੱਛਾ ਬੈਂਕ ਟ੍ਰਾਂਸਫਰ ਰਾਹੀਂ, ਜਾਂ ਵਸਤੂ ਰੂਪ ਵਿੱਚ ਕੁਝ ਦੇ ਕੇ ਨਿਵੇਸ਼ ਕਰਨ ਦੀ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਮੈਨੂੰ ਖਾਤੇ ਦੇ ਵੇਰਵੇ ਭੇਜੋ ਅਤੇ ਦੱਸੋ ਕਿ ਰਸੀਦ ਲਈ ਤੁਹਾਨੂੰ ਮੇਰੇ ਤੋਂ ਕੀ ਚਾਹੀਦਾ ਹੈ।",
+    "give_slot_detail": "ਰੁਪਏ ਜਾਂ ਵਿਦੇਸ਼ੀ ਮੁਦਰਾ, ਅਤੇ ਲਗਭਗ ਕਿੰਨਾ, ਜਾਂ ਤੁਸੀਂ ਵਸਤੂ ਰੂਪ ਵਿੱਚ ਕੀ ਦੇਣਾ ਚਾਹੁੰਦੇ ਹੋ",
+    "refund_mail_subject": "ਰਿਫੰਡ ਲਈ ਬੇਨਤੀ",
+    "refund_mail_body": "ਮੇਰੀ ਬੇਨਤੀ ਹੈ ਕਿ ਮੇਰੇ ਵੱਲੋਂ ਕੀਤੇ ਇੱਕ ਨਿਵੇਸ਼ ਦਾ ਰਿਫੰਡ ਕੀਤਾ ਜਾਵੇ।",
+    "refund_l_date": "ਨਿਵੇਸ਼ ਦੀ ਤਾਰੀਖ਼",
+    "refund_l_amount": "ਰਕਮ",
+    "refund_l_ref": "ਰਸੀਦ ਜਾਂ ਲੈਣ-ਦੇਣ ਦਾ ਹਵਾਲਾ",
+    "refund_l_reason": "ਕਾਰਨ (ਵਿਕਲਪਿਕ)",
+    "data_mail_subject": "ਡਾਟਾ ਅਤੇ ਪ੍ਰਾਈਵੇਸੀ ਬਾਰੇ ਬੇਨਤੀ",
+    "data_mail_body": "DEHAT ਕੋਲ ਮੇਰੇ ਬਾਰੇ ਜੋ ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਹੈ, ਉਸ ਬਾਰੇ ਮੇਰੀ ਇੱਕ ਬੇਨਤੀ ਹੈ।",
+    "data_l_which": "ਮੈਨੂੰ ਕੀ ਚਾਹੀਦਾ ਹੈ",
+    "data_slot_which": "ਇਸਨੂੰ ਦੇਖਣਾ, ਠੀਕ ਕਰਵਾਉਣਾ ਜਾਂ ਮਿਟਵਾਉਣਾ",
+    "data_l_under": "ਉਹ ਈਮੇਲ ਜਾਂ ਫ਼ੋਨ ਨੰਬਰ ਜਿਸ ਹੇਠ ਇਹ ਤੁਹਾਡੇ ਕੋਲ ਹੋ ਸਕਦੀ ਹੈ",
     };            const DOI = {
     "foot_policies": "नीतियां ते सुरक्षा उपाय",
     "foot_cookies": "कुकी सेटिंग्स",
@@ -27172,6 +28385,54 @@ class Component extends DCLogic {
     "rt_hint_11": "भारत",
     "rt_label_12": "कंपनी दा नांऽ",
     "rt_hint_12": "जेकर ट्रांसफर कुसै कारोबार आसेआ आया हा",
+    "draft_to": "प्रति",
+    "draft_subject": "विषय",
+    "draft_gaps": "हाइलाइट कीते गेदे हिस्से तुसें भरने न। तुस इ’नेंगी अपने ईमेल ऐप च बी भरी सकदे ओ।",
+    "draft_ready": "सब किश भरोई गेआ ऐ। एह् भेजने आस्तै तैयार ऐ।",
+    "draft_fallback": "किश नेईं खु’ल्लेआ? होई सकदा ऐ तुंदे डिवाइस पर कोई ईमेल ऐप सेट नेईं होऐ। इयै सनेहा Gmail जां Outlook राहें भेजो, जां इसगी कापी करी लैओ।",
+    "draft_slot_name": "तुंदा नांऽ",
+    "draft_slot_contact": "तुंदा ईमेल जां फोन नंबर",
+    "draft_slot_fill": "इत्थै लिखो",
+    "mail_fyr_open": "तुंदी वेबसाइट राहें मिगी DEHAT बारै पता लग्गा, ते मेरी मर्जी ऐ जे अस रलियै कम्म करने दियां संभावनां तुप्पचै।",
+    "mail_h_about": "मेरे बारै",
+    "mail_h_explore": "मिगी केह्दे च रुचि ऐ",
+    "mail_h_change": "मिगी केह् बदलने दी उम्मीद ऐ",
+    "mail_h_scale": "अंदाजन पैमाना",
+    "mail_slot_change": "अपने शब्दें च इक-दो सतरां जे तुसेंगी केह् बदलने दी उम्मीद ऐ",
+    "mail_fyr_next": "केह् टीम चा कोई अगले सही कदम दा सुझाऽ दिंदे होई जवाब देई सकदा ऐ: इक कॉल, कोई दस्तावेज जां इक फेरा, जेह्ड़ा बी ठीक बैठै?",
+    "mail_subject_more": "+{n} होर",
+    "raise_written_on": "{date} गी, तुंदी वेबसाइट दे पारदर्शिता पेज राहें लिखेआ गेआ।",
+    "rt_h_transfer": "ट्रांसफर",
+    "rt_h_receipt": "कृपा करियै रसीद इस नांऽ पर जारी करो",
+    "rt_subj_ref": "रेफरेंस {ref}",
+    "ask_mail_subject": "इक सुआल जिसदा जवाब तुंदी वेबसाइट नेईं देई सकी",
+    "ask_mail_intro": "में तुंदी वेबसाइट दे सुआल डेस्क पर एह् पुच्छेआ, पर इसदा कोई छपेआ दा जवाब नेईं हा:",
+    "ask_slot_context": "कोई बी गल्ल जेह्ड़ी जवाब देने च मदद करै: केह्ड़ा ब’रा, प्रोग्राम जां जिला",
+    "fc_ask_label": "मंगने पर रिटर्न",
+    "fc_ask_title": "{fy} आस्तै दाखल कीता गेदा विदेशी योगदान रिटर्न असें शा मंगो",
+    "fc_open_title": "{fy} आस्तै दाखल कीता गेदा {form} विदेशी योगदान रिटर्न खोलो",
+    "fc_open_full": "इस ब’रे दा {form} विदेशी योगदान रिटर्न खोलो",
+    "fc_mail_subject": "FY {fy} दा विदेशी योगदान रिटर्न",
+    "fc_mail_body": "कृपा करियै मिगी वित्ती ब’रे {fy} आस्तै विदेशी योगदान (नियमन) अधिनियम तैह्त दाखल कीता गेदा सलाना रिटर्न भेजो, कन्नै एह् बी दस्सो जे ओह् केह्ड़े फार्म पर ते केह्ड़ी तरीक गी दाखल कीता गेआ हा।",
+    "cta_mail_intro": "तुंदी वेबसाइट पर “{section}” पढ़दे होई मेरे मनै च इक सुआल आया:",
+    "cta_slot_question": "तुंदा सुआल",
+    "plan_mail_subject": "फंडिंग प्लान दी मंग — {programme}",
+    "plan_mail_body": "कृपा करियै मिगी {programme} प्रोग्राम दा पूरा फंडिंग प्लान भेजो: उसदे पड़ाऽ, अंदाजन बजट ते नतीजें दा ढांचा (रिजल्ट्स फ्रेमवर्क)।",
+    "plan_slot_org": "तुंदी संस्था",
+    "give_mail_subject": "बैंक ट्रांसफर जां चीजें दे रूप च निवेश",
+    "give_mail_body": "मेरी मर्जी बैंक ट्रांसफर राहें, जां चीजें दे रूप च, निवेश करने दी ऐ। कृपा करियै मिगी खाते दा ब्यौरा भेजो ते दस्सो जे रसीद आस्तै तुसेंगी मेरे शा केह् चाहिदा ऐ।",
+    "give_slot_detail": "रपेऽ जां विदेशी मुद्रा, ते लगभग कितना, जां चीजें दे रूप च तुस केह् देना चांह्दे ओ",
+    "refund_mail_subject": "पैसे बापसी दी मंग",
+    "refund_mail_body": "मेरी बेनती ऐ जे मेरे कीते गेदे इक निवेश दे पैसे बापस कीते जान।",
+    "refund_l_date": "निवेश दी तरीक",
+    "refund_l_amount": "रकम",
+    "refund_l_ref": "रसीद जां लेन-देन रेफरेंस",
+    "refund_l_reason": "कारण (वैकल्पिक)",
+    "data_mail_subject": "डेटा ते निजता बारै बेनती",
+    "data_mail_body": "DEHAT कोल मेरी जेह्ड़ी निजी जानकारी ऐ, उसदे बारै मेरी इक बेनती ऐ।",
+    "data_l_which": "मिगी केह् चाहिदा ऐ",
+    "data_slot_which": "उसी दिक्खना, ठीक करना जां हटाना",
+    "data_l_under": "ओह् ईमेल जां फोन नंबर जिस तैह्त एह् जानकारी तुंदे कोल होई सकदी ऐ",
     };            const BRX = {
     "foot_policies": "नीति आरो रैखा उपाय",
     "foot_cookies": "कुकी सेटिंग",
@@ -28021,6 +29282,54 @@ class Component extends DCLogic {
     "rt_hint_11": "भारत",
     "rt_label_12": "कम्पानिनि मुं",
     "rt_hint_12": "जुदि रांआ मोनसे बेपारनिफ्राय फैदोंमोन",
+    "draft_to": "मोनगिरि",
+    "draft_subject": "आयदा",
+    "draft_gaps": "हाइलाइट खालामनाय बाहागोफोरखौ नोंथाङा लिरनो गोनां। नोंथांनि इमेल एपआवबो लिरनो हायो।",
+    "draft_ready": "गासैबो लिरनाय जाबाय। बेयो हरनो थियारि।",
+    "draft_fallback": "जेबो खेवाखै? नोंथांनि डिभाइसआव इमेल एप सेट खालामनाय गैया जानो हागौ। बेनो खौरांखौ Gmail एबा Outlook जों हर, एबा बेखौ कपी खालाम।",
+    "draft_slot_name": "नोंथांनि मुं",
+    "draft_slot_contact": "नोंथांनि इमेल एबा फोन नम्बर",
+    "draft_slot_fill": "बेयाव लिर",
+    "mail_fyr_open": "नोंथांसोरनि वेबसाइटनिफ्राय आं DEHATनि बागै मिथिनो हाखो, आरो लोगोसे हाबा मावनायनि लामाफोर नायनो लुबैयो।",
+    "mail_h_about": "आंनि बागै",
+    "mail_h_explore": "आं मा नायनो लुबैयो",
+    "mail_h_change": "मा सोलायगौ होन्नानै आं आसा खालामो",
+    "mail_h_scale": "आनजादनि बिबां",
+    "mail_slot_change": "मा सोलायगौ होन्नानै नोंथाङा आसा खालामो, नोंथांनि गाव रावजों मोनसे-मोननै सारियाव",
+    "mail_fyr_next": "दलनि सासेयाव फिननाय होनानै गोरोबथाव उननि आगानखौ बुंनो हागौ ना: मोनसे फोन कल, मोनसे लिरबिथि एबा मोनसेथर फैनानै नायनाय, जेबा गोरोबो?",
+    "mail_subject_more": "+आरो {n}",
+    "raise_written_on": "{date}आव, नोंथांसोरनि वेबसाइटनि पारदर्शिता बिलाइनिफ्राय लिरनाय।",
+    "rt_h_transfer": "रां हरनाय",
+    "rt_h_receipt": "अननानै रसीदखौ बे मुंजों हो",
+    "rt_subj_ref": "रेफ. {ref}",
+    "ask_mail_subject": "मोनसे सोंथि, जायनि फिननाय नोंथांसोरनि वेबसाइटआव मोनाखै",
+    "ask_mail_intro": "नोंथांसोरनि वेबसाइटनि सोंथि डेस्कआव आं बेखौ सोंदोंमोन, नाथाय बेनि जेबो मुखांनाय फिननाय गैयाखै:",
+    "ask_slot_context": "फिननाय होनायाव मदद होनो हानाय जायखिजाया: नोंथाङा बुंनो सानाय बोसोर, प्रोग्राम एबा जिला",
+    "fc_ask_label": "दाबी खालामोब्ला रिटार्न",
+    "fc_ask_title": "{fy} नि थाखाय फाइल खालामनाय विदेशी अंशदान रिटार्नखौ जोंनिफ्राय बि",
+    "fc_open_title": "{fy} नि थाखाय फाइल खालामनाय {form} विदेशी अंशदान रिटार्नखौ खेव",
+    "fc_open_full": "बे बोसोरनि {form} विदेशी अंशदान रिटार्नखौ खेव",
+    "fc_mail_subject": "FY {fy} नि विदेशी अंशदान रिटार्न",
+    "fc_mail_body": "अननानै {fy} वित्तीय बोसोरनि थाखाय विदेशी अंशदान (नियमन) अधिनियमनि सिङाव फाइल खालामनाय बोसोरारि रिटार्नखौ आंनो हरदो, लोगोसे बेखौ माबे फरमआव फाइल खालामदोंमोन आरो फाइल खालामनायनि तारिखबो बुंदो।",
+    "cta_mail_intro": "आं नोंथांसोरनि वेबसाइटआव “{section}” फरायदोंमोन, आरो आंनि मोनसे सोंथि दं:",
+    "cta_slot_question": "नोंथांनि सोंथि",
+    "plan_mail_subject": "रां जोगाननायनि प्लान बिनाय — {programme}",
+    "plan_mail_body": "अननानै {programme} प्रोग्रामनि रां जोगाननायनि गोबाव प्लानखौ आंनो हरदो: बाहागोफोर, आनजाद बाजेट आरो फिथाइनि फ्रेमवार्क।",
+    "plan_slot_org": "नोंथांनि आफाद",
+    "give_mail_subject": "बेंक ट्रान्सफार एबा मुवा होनानै निवेश",
+    "give_mail_body": "आं बेंक ट्रान्सफारजों, एबा मुवा होनानै निवेश खालामनो लुबैयो। अननानै एकाउन्टनि फोरमायथि हरदो, आरो रसीदनि थाखाय आंनिफ्राय मा मा गोनां जायो बुंदो।",
+    "give_slot_detail": "रुपीयाव एबा गुबुन हादरनि रांआव, आरो आनजादै बेसेबां, एबा मुवा होनानै मा होनो लुबैयो",
+    "refund_mail_subject": "रां फिन मोननायनि दाबी",
+    "refund_mail_body": "आं खालामनाय मोनसे निवेशनि रां फिन मोननो आं दाबी खालामनो लुबैयो।",
+    "refund_l_date": "निवेशनि तारिख",
+    "refund_l_amount": "रांनि बिबां",
+    "refund_l_ref": "रसीद एबा लेनदेननि रेफारेन्स",
+    "refund_l_reason": "जाहोन (गावनि खुसि)",
+    "data_mail_subject": "डाटा आरो गोपनीयतानि दाबी",
+    "data_mail_body": "DEHATआ आंनि बागै जाय गावनि फोरमायथिफोर दोनदों, बेनि बागै आं मोनसे दाबी खालामनो लुबैयो।",
+    "data_l_which": "आं मा लुबैयो",
+    "data_slot_which": "बेखौ नुनो, सुजुनो एबा डिलिट खालामनो",
+    "data_l_under": "जाय इमेल एबा फोन नम्बरजों नोंथांसोरनि खाथियाव बे फोरमायथि थानो हागौ",
     };            const SAT = {
     "foot_policies": "ᱨᱤᱛᱤ ᱟᱨ ᱨᱟᱠᱷᱤ ᱩᱯᱟᱭ",
     "foot_cookies": "ᱠᱩᱠᱤ ᱥᱮᱴᱤᱝᱥ",
@@ -28870,6 +30179,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ᱵᱷᱟᱨᱚᱛ",
     "rt_label_12": "ᱠᱚᱢᱯᱟᱱᱤ ᱧᱩᱛᱩᱢ",
     "rt_hint_12": "ᱡᱩᱫᱤ ᱩᱪᱟᱹᱲ ᱫᱚ ᱢᱤᱫᱴᱟᱹᱝ ᱵᱮᱯᱟᱨ ᱠᱷᱚᱱ ᱦᱮᱡ ᱟᱠᱟᱱ ᱛᱟᱦᱮᱸ ᱠᱷᱟᱱ",
+    "draft_to": "ᱚᱠᱚᱭ ᱴᱷᱮᱱ",
+    "draft_subject": "ᱥᱟᱛᱟᱢ",
+    "draft_gaps": "ᱪᱤᱱᱦᱟᱹ ᱟᱠᱟᱱ ᱦᱟᱹᱴᱤᱧ ᱠᱚ ᱫᱚ ᱟᱢ ᱯᱮᱨᱮᱡ ᱞᱟᱹᱜᱤᱫ ᱠᱟᱱᱟ ᱾ ᱚᱱᱟ ᱠᱚ ᱟᱢᱟᱜ ᱤᱢᱮᱞ ᱮᱯ ᱨᱮ ᱦᱚᱸ ᱯᱮᱨᱮᱡ ᱫᱟᱲᱮᱭᱟᱜ-ᱟᱢ ᱾",
+    "draft_ready": "ᱡᱚᱛᱚ ᱯᱮᱨᱮᱡ ᱮᱱᱟ ᱾ ᱱᱚᱣᱟ ᱵᱷᱮᱡᱟᱭ ᱞᱟᱹᱜᱤᱫ ᱛᱮᱭᱟᱨ ᱜᱮᱭᱟ ᱾",
+    "draft_fallback": "ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱡᱷᱤᱡᱽ ᱞᱮᱱᱟ? ᱦᱩᱭ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ ᱟᱢᱟᱜ ᱰᱤᱵᱷᱟᱭᱤᱥ ᱨᱮ ᱤᱢᱮᱞ ᱮᱯ ᱵᱟᱝ ᱥᱮᱴ ᱟᱠᱟᱱᱟ ᱾ ᱚᱱᱟ ᱜᱮ ᱢᱮᱥᱮᱡᱽ Gmail ᱟᱨᱵᱟᱝ Outlook ᱦᱚᱛᱮᱛᱮ ᱵᱷᱮᱡᱟᱭ ᱢᱮ, ᱟᱨᱵᱟᱝ ᱱᱚᱠᱚᱞ ᱢᱮ ᱾",
+    "draft_slot_name": "ᱟᱢᱟᱜ ᱧᱩᱛᱩᱢ",
+    "draft_slot_contact": "ᱟᱢᱟᱜ ᱤᱢᱮᱞ ᱟᱨᱵᱟᱝ ᱯᱷᱚᱱ ᱱᱚᱢᱵᱚᱨ",
+    "draft_slot_fill": "ᱱᱚᱸᱰᱮ ᱥᱮᱞᱮᱫ ᱢᱮ",
+    "mail_fyr_open": "ᱤᱧ ᱟᱢᱟᱜ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱦᱚᱛᱮᱛᱮ DEHAT ᱵᱟᱵᱚᱛ ᱵᱟᱰᱟᱭ ᱞᱮᱫᱟᱹᱧ, ᱟᱨ ᱢᱤᱫᱛᱮ ᱠᱟᱹᱢᱤ ᱨᱮᱭᱟᱜ ᱦᱚᱨ ᱠᱚ ᱯᱟᱱᱛᱮ ᱥᱟᱱᱟᱹᱧ ᱠᱟᱱᱟ ᱾",
+    "mail_h_about": "ᱤᱧ ᱵᱟᱵᱚᱛ",
+    "mail_h_explore": "ᱤᱧ ᱪᱮᱫ ᱯᱟᱱᱛᱮ ᱥᱟᱱᱟᱹᱧ ᱠᱟᱱᱟ",
+    "mail_h_change": "ᱤᱧ ᱪᱮᱫ ᱟᱥᱟ ᱢᱮᱱᱟᱜ ᱛᱤᱧᱟ ᱚᱱᱟ ᱵᱚᱫᱚᱞᱚᱜ-ᱟ",
+    "mail_h_scale": "ᱩᱱᱩᱫᱩᱜ ᱥᱠᱮᱞ",
+    "mail_slot_change": "ᱪᱮᱫ ᱵᱚᱫᱚᱞᱚᱜ ᱞᱟᱹᱜᱤᱫ ᱟᱢ ᱟᱥᱟ ᱢᱮᱱᱟᱜ ᱛᱟᱢᱟ, ᱟᱢᱟᱜ ᱱᱤᱡᱮᱨ ᱟᱹᱲᱟᱹ ᱛᱮ ᱢᱤᱫ ᱥᱮ ᱵᱟᱨ ᱯᱟᱹᱨᱤ",
+    "mail_fyr_next": "ᱴᱤᱢ ᱠᱷᱚᱱ ᱡᱟᱦᱟᱸᱭ ᱜᱮ ᱢᱤᱫ ᱴᱷᱤᱠ ᱛᱟᱭᱚᱢ ᱫᱷᱟᱯ ᱥᱟᱶ ᱛᱮᱞᱟ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱜ-ᱟᱭ ᱥᱮ: ᱢᱤᱫ ᱠᱚᱞ, ᱢᱤᱫ ᱰᱚᱠᱭᱩᱢᱮᱱᱴ ᱟᱨᱵᱟᱝ ᱦᱤᱡᱩᱜ ᱧᱮᱞ, ᱡᱟᱦᱟᱸ ᱜᱮ ᱴᱷᱤᱠ ᱦᱩᱭᱩᱜ-ᱟ?",
+    "mail_subject_more": "+{n} ᱟᱨᱦᱚᱸ",
+    "raise_written_on": "{date} ᱨᱮ ᱚᱞ ᱟᱠᱟᱱᱟ, ᱟᱢᱟᱜ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱴᱨᱟᱱᱥᱯᱟᱨᱮᱱᱥᱤ ᱥᱟᱦᱴᱟ ᱦᱚᱛᱮᱛᱮ ᱾",
+    "rt_h_transfer": "ᱩᱪᱟᱹᱲ",
+    "rt_h_receipt": "ᱫᱟᱭᱟ ᱠᱟᱛᱮ ᱨᱟᱹᱥᱤᱫ ᱱᱚᱣᱟ ᱧᱩᱛᱩᱢ ᱛᱮ ᱮᱢ ᱢᱮ",
+    "rt_subj_ref": "ᱨᱮᱯᱷ. {ref}",
+    "ask_mail_subject": "ᱢᱤᱫ ᱠᱩᱠᱞᱤ ᱡᱟᱦᱟᱸ ᱨᱮᱭᱟᱜ ᱛᱮᱞᱟ ᱟᱢᱟᱜ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱵᱟᱝ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱫᱟ",
+    "ask_mail_intro": "ᱤᱧ ᱟᱢᱟᱜ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱠᱩᱠᱞᱤ ᱰᱮᱥᱠ ᱨᱮ ᱱᱚᱣᱟ ᱠᱩᱞᱤ ᱠᱮᱫᱟᱹᱧ, ᱟᱨ ᱚᱱᱰᱮ ᱪᱷᱟᱯᱟ ᱟᱠᱟᱱ ᱛᱮᱞᱟ ᱵᱟᱹᱱᱩᱜ ᱛᱟᱦᱮᱸᱠᱟᱱᱟ:",
+    "ask_slot_context": "ᱛᱮᱞᱟ ᱮᱢ ᱨᱮ ᱡᱟᱦᱟᱸᱱᱟᱜ ᱜᱚᱲᱚ ᱮᱢᱟ: ᱟᱢ ᱡᱟᱦᱟᱸ ᱥᱮᱨᱢᱟ, ᱠᱟᱹᱢᱤᱦᱚᱨᱟ ᱟᱨᱵᱟᱝ ᱡᱤᱞᱟ ᱵᱟᱵᱚᱛ ᱠᱩᱞᱤ ᱮᱫᱟᱢ",
+    "fc_ask_label": "ᱟᱨᱫᱟᱥ ᱞᱮᱠᱟᱛᱮ ᱨᱤᱴᱟᱨᱱ",
+    "fc_ask_title": "{fy} ᱞᱟᱹᱜᱤᱫ ᱯᱷᱟᱭᱤᱞ ᱟᱠᱟᱱ ᱵᱤᱫᱮᱥ ᱮᱱᱮᱢ ᱨᱤᱴᱟᱨᱱ ᱞᱟᱹᱜᱤᱫ ᱟᱞᱮ ᱴᱷᱮᱱ ᱟᱨᱫᱟᱥ ᱢᱮ",
+    "fc_open_title": "{fy} ᱞᱟᱹᱜᱤᱫ ᱯᱷᱟᱭᱤᱞ ᱟᱠᱟᱱ {form} ᱵᱤᱫᱮᱥ ᱮᱱᱮᱢ ᱨᱤᱴᱟᱨᱱ ᱡᱷᱤᱡᱽ ᱢᱮ",
+    "fc_open_full": "ᱱᱚᱣᱟ ᱥᱮᱨᱢᱟ ᱨᱮᱭᱟᱜ {form} ᱵᱤᱫᱮᱥ ᱮᱱᱮᱢ ᱨᱤᱴᱟᱨᱱ ᱡᱷᱤᱡᱽ ᱢᱮ",
+    "fc_mail_subject": "FY {fy} ᱞᱟᱹᱜᱤᱫ ᱵᱤᱫᱮᱥ ᱮᱱᱮᱢ ᱨᱤᱴᱟᱨᱱ",
+    "fc_mail_body": "ᱫᱟᱭᱟ ᱠᱟᱛᱮ ᱯᱷᱟᱭᱱᱟᱥᱤᱭᱟᱞ ᱥᱮᱨᱢᱟ {fy} ᱞᱟᱹᱜᱤᱫ ᱵᱤᱫᱮᱥ ᱮᱱᱮᱢ (ᱨᱮᱜᱩᱞᱮᱥᱚᱱ) ᱟᱹᱱ ᱞᱟᱛᱟᱨ ᱨᱮ ᱯᱷᱟᱭᱤᱞ ᱟᱠᱟᱱ ᱥᱮᱨᱢᱟ ᱨᱤᱴᱟᱨᱱ ᱤᱧ ᱴᱷᱮᱱ ᱵᱷᱮᱡᱟᱭ ᱢᱮ, ᱡᱟᱦᱟᱸ ᱯᱷᱚᱨᱢ ᱨᱮ ᱯᱷᱟᱭᱤᱞ ᱞᱮᱱᱟ ᱟᱨ ᱯᱷᱟᱭᱤᱞ ᱨᱮᱭᱟᱜ ᱢᱟᱹᱦᱤᱛ ᱥᱟᱶᱛᱮ ᱾",
+    "cta_mail_intro": "ᱤᱧ ᱟᱢᱟᱜ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱨᱮ “{section}” ᱯᱟᱲᱦᱟᱣ ᱠᱟᱱ ᱛᱟᱦᱮᱸᱠᱟᱱᱟᱹᱧ ᱟᱨ ᱤᱧᱟᱜ ᱢᱤᱫ ᱠᱩᱠᱞᱤ ᱢᱮᱱᱟᱜ-ᱟ:",
+    "cta_slot_question": "ᱟᱢᱟᱜ ᱠᱩᱠᱞᱤ",
+    "plan_mail_subject": "ᱯᱷᱟᱱᱰᱤᱝ ᱯᱞᱮᱱ ᱟᱨᱫᱟᱥ — {programme}",
+    "plan_mail_body": "ᱫᱟᱭᱟ ᱠᱟᱛᱮ {programme} ᱠᱟᱹᱢᱤᱦᱚᱨᱟ ᱨᱮᱭᱟᱜ ᱯᱩᱨᱟᱹ ᱯᱷᱟᱱᱰᱤᱝ ᱯᱞᱮᱱ ᱤᱧ ᱴᱷᱮᱱ ᱵᱷᱮᱡᱟᱭ ᱢᱮ: ᱫᱷᱟᱯ ᱠᱚ, ᱩᱱᱩᱫᱩᱜ ᱵᱟᱡᱮᱴ ᱠᱚ ᱟᱨ ᱨᱤᱡᱟᱞᱴ ᱯᱷᱨᱮᱢᱣᱟᱨᱠ ᱾",
+    "plan_slot_org": "ᱟᱢᱟᱜ ᱥᱚᱸᱥᱛᱷᱟ",
+    "give_mail_subject": "ᱵᱮᱝᱠ ᱩᱪᱟᱹᱲ ᱟᱨᱵᱟᱝ ᱡᱤᱱᱤᱥ ᱛᱮ ᱱᱤᱣᱮᱥ",
+    "give_mail_body": "ᱤᱧ ᱵᱮᱝᱠ ᱩᱪᱟᱹᱲ ᱛᱮ, ᱟᱨᱵᱟᱝ ᱡᱤᱱᱤᱥ ᱛᱮ ᱱᱤᱣᱮᱥ ᱥᱟᱱᱟᱹᱧ ᱠᱟᱱᱟ ᱾ ᱫᱟᱭᱟ ᱠᱟᱛᱮ ᱮᱠᱟᱣᱩᱱᱴ ᱵᱤᱵᱨᱚᱬ ᱤᱧ ᱴᱷᱮᱱ ᱵᱷᱮᱡᱟᱭ ᱢᱮ ᱟᱨ ᱨᱟᱹᱥᱤᱫ ᱞᱟᱹᱜᱤᱫ ᱤᱧ ᱴᱷᱮᱱ ᱠᱷᱚᱱ ᱪᱮᱫ ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ ᱚᱱᱟ ᱞᱟᱹᱭ ᱟᱹᱜᱩᱣᱟᱧ ᱢᱮ ᱾",
+    "give_slot_detail": "ᱵᱷᱟᱨᱚᱛᱤᱭᱟᱹ ᱴᱟᱠᱟ ᱟᱨᱵᱟᱝ ᱵᱤᱫᱮᱥᱤ ᱴᱟᱠᱟ, ᱟᱨ ᱟᱱᱫᱟᱡᱽ ᱛᱮ ᱛᱤᱱᱟᱹᱜ, ᱟᱨᱵᱟᱝ ᱡᱤᱱᱤᱥ ᱞᱮᱠᱟᱛᱮ ᱟᱢ ᱪᱮᱫ ᱮᱢ ᱥᱟᱱᱟᱢ ᱠᱟᱱᱟ",
+    "refund_mail_subject": "ᱯᱩᱭᱥᱟᱹ ᱨᱩᱣᱟᱹᱲ ᱟᱨᱫᱟᱥ",
+    "refund_mail_body": "ᱤᱧ ᱡᱟᱦᱟᱸ ᱞᱟᱜᱽᱱᱟ ᱮᱢ ᱞᱮᱫᱟᱹᱧ, ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱯᱩᱭᱥᱟᱹ ᱨᱩᱣᱟᱹᱲ ᱞᱟᱹᱜᱤᱫ ᱟᱨᱫᱟᱥ ᱥᱟᱱᱟᱹᱧ ᱠᱟᱱᱟ ᱾",
+    "refund_l_date": "ᱞᱟᱜᱽᱱᱟ ᱨᱮᱭᱟᱜ ᱢᱟᱹᱦᱤᱛ",
+    "refund_l_amount": "ᱴᱟᱠᱟ",
+    "refund_l_ref": "ᱨᱟᱹᱥᱤᱫ ᱟᱨᱵᱟᱝ ᱞᱮᱱᱫᱮᱱ ᱨᱮᱯᱷᱟᱨᱮᱱᱥ",
+    "refund_l_reason": "ᱠᱟᱨᱚᱱ (ᱚᱯᱥᱚᱱᱟᱞ)",
+    "data_mail_subject": "ᱰᱟᱴᱟ ᱟᱨ ᱩᱠᱩ ᱠᱩᱥᱤ ᱟᱨᱫᱟᱥ",
+    "data_mail_body": "DEHAT ᱴᱷᱮᱱ ᱤᱧ ᱵᱟᱵᱚᱛ ᱡᱟᱦᱟᱸ ᱱᱤᱡᱮᱨ ᱵᱤᱵᱨᱚᱬ ᱫᱚᱦᱚ ᱟᱠᱟᱱᱟ, ᱚᱱᱟ ᱵᱟᱵᱚᱛ ᱤᱧ ᱢᱤᱫ ᱟᱨᱫᱟᱥ ᱥᱟᱱᱟᱹᱧ ᱠᱟᱱᱟ ᱾",
+    "data_l_which": "ᱤᱧ ᱪᱮᱫ ᱥᱟᱱᱟᱹᱧ ᱠᱟᱱᱟ",
+    "data_slot_which": "ᱚᱱᱟ ᱧᱮᱞ, ᱴᱷᱤᱠ ᱟᱨᱵᱟᱝ ᱢᱮᱴᱟᱣ",
+    "data_l_under": "ᱡᱟᱦᱟᱸ ᱤᱢᱮᱞ ᱟᱨᱵᱟᱝ ᱯᱷᱚᱱ ᱱᱚᱢᱵᱚᱨ ᱛᱮ ᱟᱢ ᱚᱱᱟ ᱫᱚᱦᱚ ᱫᱟᱲᱮᱭᱟᱜ-ᱟᱢ",
     };            const MNI = {
     "foot_policies": "ꯅꯤꯇꯤ ꯑꯃꯁꯨꯡ ꯉꯥꯛꯊꯣꯛꯄꯤꯕ ꯑꯣꯏꯕꯁꯤꯡ",
     "foot_cookies": "ꯀꯨꯀꯤ ꯁꯦꯇꯤꯡ",
@@ -29719,6 +31076,54 @@ class Component extends DCLogic {
     "rt_hint_11": "ꯚꯥꯔꯠ",
     "rt_label_12": "ꯀꯝꯄꯦꯅꯤꯒꯤ ꯃꯃꯤꯡ",
     "rt_hint_12": "ꯇ꯭ꯔꯥꯟꯁꯐꯔ ꯑꯗꯨ ꯕꯤꯖꯤꯅꯦꯁ ꯑꯃꯗꯒꯤ ꯂꯥꯈꯤꯕꯗꯤ",
+    "draft_to": "ꯊꯥꯒꯗꯕꯥ",
+    "draft_subject": "ꯍꯤꯔꯝ",
+    "draft_gaps": "ꯍꯥꯏꯂꯥꯏꯠ ꯇꯧꯔꯕꯥ ꯁꯔꯨꯛꯁꯤꯡ ꯑꯗꯨ ꯅꯍꯥꯛꯅꯥ ꯍꯥꯞꯆꯤꯟꯕꯤꯒꯗꯕꯅꯤ꯫ ꯃꯈꯣꯌꯁꯤꯡ ꯑꯗꯨ ꯅꯍꯥꯛꯀꯤ ꯏꯃꯦꯜ ꯑꯦꯞꯇꯁꯨ ꯍꯥꯞꯆꯤꯟꯕꯥ ꯌꯥꯏ꯫",
+    "draft_ready": "ꯄꯨꯝꯅꯃꯛ ꯍꯥꯞꯆꯤꯟꯂꯦ꯫ ꯊꯥꯅꯕꯥ ꯁꯦꯝ ꯁꯥꯔꯦ꯫",
+    "draft_fallback": "ꯀꯔꯤꯁꯨ ꯍꯥꯡꯗꯣꯀꯈꯤꯗ꯭ꯔꯤꯕꯔꯥ? ꯅꯍꯥꯛꯀꯤ ꯗꯤꯚꯥꯏꯁꯇꯥ ꯏꯃꯦꯜ ꯑꯦꯞ ꯁꯦꯠ ꯑꯞ ꯇꯧꯗꯅꯥ ꯂꯩꯕꯥ ꯌꯥꯏ꯫ ꯃꯦꯁꯦꯖ ꯑꯗꯨꯃꯛ Gmail ꯅꯠꯠꯔꯒꯥ Outlook ꯗꯒꯤ ꯊꯥꯕꯤꯌꯨ, ꯅꯠꯠꯔꯒꯥ ꯀꯣꯄꯤ ꯇꯧꯕꯤꯌꯨ꯫",
+    "draft_slot_name": "ꯅꯍꯥꯛꯀꯤ ꯃꯤꯡ",
+    "draft_slot_contact": "ꯅꯍꯥꯛꯀꯤ ꯏꯃꯦꯜ ꯅꯠꯠꯔꯒꯥ ꯐꯣꯟ ꯅꯝꯕꯔ",
+    "draft_slot_fill": "ꯃꯐꯝ ꯑꯁꯤꯗꯥ ꯍꯥꯞꯆꯤꯟꯕꯤꯌꯨ",
+    "mail_fyr_open": "ꯑꯩꯅꯥ ꯑꯗꯣꯃꯒꯤ ꯋꯦꯕꯁꯥꯏꯠꯀꯤ ꯈꯨꯠꯊꯥꯡꯗꯥ DEHAT ꯈꯉꯂꯀꯈꯤ, ꯑꯃꯁꯨꯡ ꯄꯨꯟꯅꯥ ꯊꯕꯛ ꯇꯧꯃꯤꯟꯅꯕꯒꯤ ꯂꯝꯕꯤꯁꯤꯡ ꯊꯤꯖꯤꯅꯕꯥ ꯄꯥꯝꯃꯤ꯫",
+    "mail_h_about": "ꯑꯩꯒꯤ ꯃꯔꯃꯗꯥ",
+    "mail_h_explore": "ꯑꯩꯅꯥ ꯊꯤꯖꯤꯅꯕꯥ ꯄꯥꯝꯕꯥ ꯋꯥꯐꯃꯁꯤꯡ",
+    "mail_h_change": "ꯍꯣꯡꯂꯛꯀꯅꯤ ꯍꯥꯌꯅꯥ ꯑꯩꯅꯥ ꯑꯥꯁꯥ ꯇꯧꯔꯤꯕꯥ",
+    "mail_h_scale": "ꯑꯥꯟꯗꯥꯖ ꯇꯧꯔꯕꯥ ꯆꯥꯡ",
+    "mail_slot_change": "ꯀꯔꯤ ꯍꯣꯡꯂꯛꯀꯅꯤ ꯍꯥꯌꯅꯥ ꯅꯍꯥꯛꯅꯥ ꯑꯥꯁꯥ ꯇꯧꯔꯤꯕꯒꯦ, ꯅꯍꯥꯛ ꯃꯁꯥꯒꯤ ꯋꯥꯍꯩꯗꯥ ꯂꯥꯏꯟ ꯑꯃꯥ ꯅꯠꯠꯔꯒꯥ ꯑꯅꯤ",
+    "mail_fyr_next": "ꯇꯤꯃꯗꯒꯤ ꯀꯅꯥꯒꯨꯝꯕꯥ ꯑꯃꯅꯥ ꯃꯊꯪꯗꯥ ꯂꯧꯒꯗꯕꯥ ꯆꯨꯝꯃꯤꯟꯅꯕꯥ ꯈꯣꯡꯊꯥꯡ ꯑꯃꯒꯥ ꯂꯣꯌꯅꯅꯥ ꯄꯥꯎꯈꯨꯝ ꯄꯤꯕꯤꯕꯥ ꯌꯥꯕ꯭ꯔꯥ: ꯀꯣꯜ ꯑꯃꯥ, ꯗꯣꯀꯨꯃꯦꯟꯇ ꯑꯃꯥ ꯅꯠꯠꯔꯒꯥ ꯂꯥꯛꯇꯨꯅꯥ ꯌꯦꯡꯕꯥ ꯑꯃꯥ, ꯀꯔꯤ ꯆꯨꯝꯕꯒꯦ ꯃꯗꯨ?",
+    "mail_subject_more": "+{n} ꯍꯦꯟꯅꯥ",
+    "raise_written_on": "{date} ꯗꯥ ꯏꯈꯤꯕꯅꯤ, ꯑꯗꯣꯃꯒꯤ ꯋꯦꯕꯁꯥꯏꯠꯀꯤ ꯇ꯭ꯔꯥꯟꯁꯄꯔꯦꯟꯁꯤ ꯄꯦꯖꯀꯤ ꯈꯨꯠꯊꯥꯡꯗꯥ꯫",
+    "rt_h_transfer": "ꯇ꯭ꯔꯥꯟꯁꯐꯔ ꯑꯗꯨ",
+    "rt_h_receipt": "ꯆꯥꯅꯕꯤꯗꯨꯅꯥ ꯔꯁꯤꯗ ꯑꯁꯤ ꯃꯈꯥꯒꯤ ꯃꯤꯡꯗꯥ ꯄꯤꯕꯤꯌꯨ",
+    "rt_subj_ref": "ꯔꯦꯐ. {ref}",
+    "ask_mail_subject": "ꯑꯗꯣꯃꯒꯤ ꯋꯦꯕꯁꯥꯏꯠꯅꯥ ꯄꯥꯎꯈꯨꯝ ꯄꯤꯕꯥ ꯉꯃꯗꯕꯥ ꯋꯥꯍꯪ ꯑꯃꯥ",
+    "ask_mail_intro": "ꯑꯩꯅꯥ ꯑꯗꯣꯃꯒꯤ ꯋꯦꯕꯁꯥꯏꯠꯀꯤ ꯋꯥꯍꯪꯒꯤ ꯗꯦꯁ꯭ꯀꯇꯥ ꯃꯁꯤ ꯍꯪꯈꯤ, ꯑꯗꯨꯕꯨ ꯐꯣꯡꯈꯤꯕꯥ ꯄꯥꯎꯈꯨꯝ ꯑꯃꯠꯇꯥ ꯂꯩꯔꯃꯗꯦ:",
+    "ask_slot_context": "ꯄꯥꯎꯈꯨꯝ ꯄꯤꯅꯕꯥ ꯃꯇꯦꯡ ꯑꯣꯏꯒꯗꯕꯥ ꯀꯔꯤꯒꯨꯝꯕꯥ: ꯅꯍꯥꯛꯅꯥ ꯍꯥꯌꯔꯤꯕꯥ ꯆꯍꯤ, ꯄ꯭ꯔꯣꯒ꯭ꯔꯥꯝ ꯅꯠꯠꯔꯒꯥ ꯖꯤꯂꯥ",
+    "fc_ask_label": "ꯍꯥꯌꯖꯔꯀꯄꯗꯥ ꯔꯤꯇꯔꯟ",
+    "fc_ask_title": "{fy} ꯒꯤꯗꯃꯛ ꯐꯥꯏꯜ ꯇꯧꯈꯤꯕꯥ ꯐꯣꯔꯦꯟ ꯀꯟꯠꯔꯤꯕ꯭ꯌꯨꯁꯟ ꯔꯤꯇꯔꯟ ꯑꯗꯨ ꯑꯩꯈꯣꯌꯗꯥ ꯍꯥꯌꯖꯕꯤꯌꯨ",
+    "fc_open_title": "{fy} ꯒꯤꯗꯃꯛ ꯐꯥꯏꯜ ꯇꯧꯈꯤꯕꯥ {form} ꯐꯣꯔꯦꯟ ꯀꯟꯠꯔꯤꯕ꯭ꯌꯨꯁꯟ ꯔꯤꯇꯔꯟ ꯑꯗꯨ ꯍꯥꯡꯗꯣꯀꯎ",
+    "fc_open_full": "ꯆꯍꯤ ꯑꯁꯤꯒꯤ {form} ꯐꯣꯔꯦꯟ ꯀꯟꯠꯔꯤꯕ꯭ꯌꯨꯁꯟ ꯔꯤꯇꯔꯟ ꯑꯗꯨ ꯍꯥꯡꯗꯣꯀꯎ",
+    "fc_mail_subject": "FY {fy} ꯒꯤ ꯐꯣꯔꯦꯟ ꯀꯟꯠꯔꯤꯕ꯭ꯌꯨꯁꯟ ꯔꯤꯇꯔꯟ",
+    "fc_mail_body": "ꯆꯥꯅꯕꯤꯗꯨꯅꯥ ꯐꯥꯏꯅꯥꯟꯁꯤꯑꯦꯜ ꯆꯍꯤ {fy} ꯒꯤꯗꯃꯛ ꯐꯣꯔꯦꯟ ꯀꯟꯠꯔꯤꯕ꯭ꯌꯨꯁꯟ (ꯔꯦꯒꯨꯂꯦꯁꯟ) ꯑꯦꯛꯇꯀꯤ ꯃꯈꯥꯗꯥ ꯐꯥꯏꯜ ꯇꯧꯈꯤꯕꯥ ꯆꯍꯤꯒꯤ ꯔꯤꯇꯔꯟ ꯑꯗꯨ, ꯐꯥꯏꯜ ꯇꯧꯈꯤꯕꯥ ꯐꯣꯔꯝ ꯑꯃꯁꯨꯡ ꯐꯥꯏꯜ ꯇꯧꯈꯤꯕꯥ ꯇꯥꯡ ꯑꯗꯨꯒꯥ ꯂꯣꯌꯅꯅꯥ ꯑꯩꯉꯣꯟꯗꯥ ꯊꯥꯕꯤꯌꯨ꯫",
+    "cta_mail_intro": "ꯑꯩꯅꯥ ꯑꯗꯣꯃꯒꯤ ꯋꯦꯕꯁꯥꯏꯠꯇꯥ “{section}” ꯄꯥꯔꯤꯉꯩꯗꯥ ꯋꯥꯍꯪ ꯑꯃꯥ ꯂꯩꯔꯀꯈꯤ:",
+    "cta_slot_question": "ꯅꯍꯥꯛꯀꯤ ꯋꯥꯍꯪ",
+    "plan_mail_subject": "ꯐꯟꯗꯤꯡ ꯄ꯭ꯂꯥꯅꯒꯤ ꯔꯤꯛꯕꯦꯁ꯭ꯠ — {programme}",
+    "plan_mail_body": "ꯆꯥꯅꯕꯤꯗꯨꯅꯥ {programme} ꯄ꯭ꯔꯣꯒ꯭ꯔꯥꯃꯒꯤ ꯃꯄꯨꯡ ꯐꯥꯕꯥ ꯐꯟꯗꯤꯡ ꯄ꯭ꯂꯥꯟ ꯑꯗꯨ ꯑꯩꯉꯣꯟꯗꯥ ꯊꯥꯕꯤꯌꯨ: ꯐꯦꯖꯁꯤꯡ, ꯑꯥꯟꯗꯥꯖ ꯇꯧꯔꯕꯥ ꯕꯖꯦꯠꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯔꯤꯖꯜꯠꯁ ꯐ꯭ꯔꯦꯃꯋꯥꯔꯛ꯫",
+    "plan_slot_org": "ꯅꯍꯥꯛꯀꯤ ꯑꯣꯔꯒꯅꯥꯏꯖꯦꯁꯟ",
+    "give_mail_subject": "ꯕꯦꯉ꯭ꯛ ꯇ꯭ꯔꯥꯟꯁꯐꯔ ꯅꯠꯠꯔꯒꯥ ꯄꯣꯠꯂꯝ ꯑꯣꯏꯅꯥ ꯏꯅꯚꯦꯁ꯭ꯠ ꯇꯧꯕꯥ",
+    "give_mail_body": "ꯑꯩꯅꯥ ꯕꯦꯉ꯭ꯛ ꯇ꯭ꯔꯥꯟꯁꯐꯔꯒꯤ ꯈꯨꯠꯊꯥꯡꯗꯥ, ꯅꯠꯠꯔꯒꯥ ꯄꯣꯠꯂꯝ ꯑꯣꯏꯅꯥ ꯏꯅꯚꯦꯁ꯭ꯠ ꯇꯧꯕꯥ ꯄꯥꯝꯃꯤ꯫ ꯆꯥꯅꯕꯤꯗꯨꯅꯥ ꯑꯦꯀꯥꯎꯟꯇꯀꯤ ꯃꯔꯣꯂꯁꯤꯡ ꯑꯩꯉꯣꯟꯗꯥ ꯊꯥꯕꯤꯌꯨ ꯑꯃꯁꯨꯡ ꯔꯁꯤꯗꯀꯤꯗꯃꯛ ꯑꯩꯗꯒꯤ ꯀꯔꯤ ꯃꯊꯧ ꯇꯥꯕꯒꯦ ꯍꯥꯌꯕꯤꯌꯨ꯫",
+    "give_slot_detail": "ꯔꯨꯄꯤ ꯅꯠꯠꯔꯒꯥ ꯃꯄꯥꯟ ꯂꯩꯕꯥꯛꯀꯤ ꯁꯦꯜ, ꯑꯃꯁꯨꯡ ꯈꯟꯗꯣꯛꯅꯥ ꯀꯌꯥ, ꯅꯠꯠꯔꯒꯥ ꯄꯣꯠꯂꯝ ꯑꯣꯏꯅꯥ ꯀꯔꯤ ꯄꯤꯕꯥ ꯄꯥꯝꯕꯒꯦ",
+    "refund_mail_subject": "ꯔꯤꯐꯟꯗ ꯔꯤꯛꯕꯦꯁ꯭ꯠ",
+    "refund_mail_body": "ꯑꯩꯅꯥ ꯇꯧꯈꯤꯕꯥ ꯏꯅꯚꯦꯁ꯭ꯇꯃꯦꯟꯇ ꯑꯃꯒꯤ ꯔꯤꯐꯟꯗ ꯔꯤꯛꯕꯦꯁ꯭ꯠ ꯇꯧꯕꯥ ꯄꯥꯝꯃꯤ꯫",
+    "refund_l_date": "ꯏꯅꯚꯦꯁ꯭ꯇꯃꯦꯟꯇ ꯇꯧꯈꯤꯕꯥ ꯇꯥꯡ",
+    "refund_l_amount": "ꯁꯦꯜ ꯀꯌꯥ",
+    "refund_l_ref": "ꯔꯁꯤꯗ ꯅꯠꯠꯔꯒꯥ ꯇ꯭ꯔꯥꯟꯖꯦꯛꯁꯟ ꯔꯤꯐ꯭ꯔꯦꯟꯁ",
+    "refund_l_reason": "ꯃꯔꯝ (ꯑꯣꯄꯁꯅꯦꯜ)",
+    "data_mail_subject": "ꯗꯦꯇꯥ ꯑꯃꯁꯨꯡ ꯄ꯭ꯔꯥꯏꯚꯦꯁꯤꯒꯤ ꯔꯤꯛꯕꯦꯁ꯭ꯠ",
+    "data_mail_body": "DEHATꯅꯥ ꯑꯩꯒꯤ ꯃꯔꯃꯗꯥ ꯊꯝꯂꯤꯕꯥ ꯄꯔꯁꯣꯅꯦꯜ ꯏꯅꯐꯣꯔꯃꯦꯁꯅꯒꯤ ꯃꯔꯃꯗꯥ ꯔꯤꯛꯕꯦꯁ꯭ꯠ ꯑꯃꯥ ꯇꯧꯕꯥ ꯄꯥꯝꯃꯤ꯫",
+    "data_l_which": "ꯑꯩꯅꯥ ꯄꯥꯝꯕꯥ",
+    "data_slot_which": "ꯃꯗꯨ ꯌꯦꯡꯕꯥ, ꯆꯨꯃꯊꯣꯀꯄꯥ ꯅꯠꯠꯔꯒꯥ ꯃꯨꯠꯊꯠꯄꯥ",
+    "data_l_under": "ꯃꯁꯤ ꯊꯝꯂꯤꯕꯥ ꯌꯥꯕꯥ ꯏꯃꯦꯜ ꯅꯠꯠꯔꯒꯥ ꯐꯣꯟ ꯅꯝꯕꯔ",
     };    return { en: EN, hi: HI, zh: ZH, fr: FR, ru: RU, es: ES, ar: AR, ur: UR, ks: KS, bn: BN, mr: MR, te: TE, ta: TA, gu: GU, kn: KN, mai: MAI, as: AS, ne: NE, kok: KOK, sa: SA, sd: SD, or: OR, ml: ML, pa: PA, doi: DOI, brx: BRX, sat: SAT, mni: MNI };
   }
 
@@ -30104,9 +31509,11 @@ class Component extends DCLogic {
     const restCount = P.intents.length - shown.length;
     const canNext = [!!S.pWho, sel.length > 0, !!(S.pName && S.pEmail)][S.pStep];
     const T = { ...this._dict().en, ...(this._dict()[S.lang] || {}) };
-    const subject = T.mail_subject_prefix + ' \u2014 ' + (S.pOrg || S.pName || T.mail_subject_fallback);
+    const subject = this._mailSubject(P, T);
     const body = this._mailBody(P, T);
-    const href = 'mailto:joinus@dehatindia.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    const href = this._mailto(subject, body);
+    const web = this._webmail(this._inbox(), subject, body);
+    const sheet = this._draftSheet(subject, body, this._mailHeads(T));
     const ivDims = this._dims(T).filter(d => d.key !== 'investor');
     const reg = this._investorRegistry(allProjects, PROGS, ivDims);
     const ivF = S.ivFacets || {};
@@ -30294,25 +31701,14 @@ class Component extends DCLogic {
       ],
       budgetLabel: P.fBudget, budgetVal: S.pBudget, onBudget: this._pset('pBudget'),
       budgets: P.budgets.map((b, i) => ({ k: 'b' + i, v: b })),
-      reviewTitle: P.reviewTitle, reviewSub: P.reviewSub, preview: body,
+      reviewTitle: P.reviewTitle, reviewSub: P.reviewSub, preview: body, sheet,
       sendLabel: P.send, copyLabel: S.pCopied ? P.copied : P.copy, href,
       // mailto only works where a desktop mail client is registered. Webmail users get
       // a compose link that carries the same drafted text.
-      gmailHref: 'https://mail.google.com/mail/?view=cm&fs=1&to=joinus@dehatindia.org'
-        + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body),
-      outlookHref: 'https://outlook.office.com/mail/deeplink/compose?to=joinus@dehatindia.org'
-        + '&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body),
+      gmailHref: web.gmail,
+      outlookHref: web.outlook,
       whatsappHref: 'https://wa.me/919415054079?text=' + encodeURIComponent(subject + '\n\n' + body),
-      copy: () => {
-        const done = () => this.setState({ pCopied: true });
-        try {
-          if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(body).then(done, () => this._copyFallback(body, done));
-            return;
-          }
-        } catch (e) {}
-        this._copyFallback(body, done);
-      },
+      copy: () => this._copyText(sheet.copyText, () => this.setState({ pCopied: true })),
       backLabel: P.back, nextLabel: P.next, canNext,
       hint: sel.length === 0 ? (P.pickPrompt || P.pickOne) : (!(S.pName && S.pEmail) ? P.needName : ''),
       showHint: S.pStep !== 0 && !(sel.length > 0 && S.pName && S.pEmail),
@@ -30385,7 +31781,9 @@ class Component extends DCLogic {
       pay: () => this._pay(P),
       showPay: S.dStage === 1, payRows,
       orEmail: P.orEmail,
-      giveMail: 'mailto:joinus@dehatindia.org?subject=' + encodeURIComponent('Bank transfer or gift in kind')
+      giveMail: this._mailto(this._dt('give_mail_subject'),
+        [this._dt('mail_greeting'), '', this._dt('give_mail_body'), '', this._gap('give_slot_detail'), '',
+          this._dt('mail_thanks'), this._gap('draft_slot_name'), this._gap('draft_slot_contact')].join('\n'))
         + '&body=' + encodeURIComponent('Hello DEHAT team,\n\nI would like to give by bank transfer or in kind rather than online. Please send me the account details and tell me what you need for the receipt.\n\nThank you,\n'),
 
       peopleTitle: P.peopleTitle, peopleSub: P.peopleSub,
@@ -30496,15 +31894,19 @@ class Component extends DCLogic {
           ctaSecond: C.bView
             ? this._go(C.bView, 'compliance')
             : this._goInvolved(C.bTab || 'give'),
-          ctaHref: 'mailto:joinus@dehatindia.org?subject=' + encodeURIComponent(C.subj || 'A question')
-            + '&body=' + encodeURIComponent('Hello DEHAT team,\n\n'),
+          ctaHref: (() => {
+            const T = { ...this._dict().en, ...(this._dict()[S.lang] || {}) };
+            return this._mailto(C.subj || T.ask_mail_subject,
+              [T.mail_greeting, '', this._fill(T.cta_mail_intro, { section: C.t || '' }), '', this._gap('cta_slot_question'), '',
+                T.mail_thanks, this._gap('draft_slot_name')].join('\n'));
+          })(),
         };
       })(),
     };
   }
   _pset(k) {
     this._psets = this._psets || {};
-    if (!this._psets[k]) this._psets[k] = (e) => this.setState({ [k]: e && e.target ? e.target.value : e });
+    if (!this._psets[k]) this._psets[k] = (e) => this.setState({ [k]: e && e.target ? e.target.value : e, pCopied: false });
     return this._psets[k];
   }
   _ptog(k) {
@@ -30701,7 +32103,7 @@ class Component extends DCLogic {
       labels: Array.from({ length: 13 }, (_, i) => d('rt_label_' + i)),
       hints: Array.from({ length: 13 }, (_, i) => d('rt_hint_' + i) || ''),
     };
-    const set = (k) => (e) => this.setState({ [k]: e.target.value });
+    const set = (k) => (e) => this.setState({ [k]: e.target.value, rtCopied: false });
     const v = (k) => S[k] || '';
     const F = [
       { k: 'rtRef', label: 'Bank or Transaction Reference Number', hint: 'Any number that identifies the transfer', span: '1 / -1' },
@@ -30725,6 +32127,35 @@ class Component extends DCLogic {
     const missing = required.filter(k => !v(k));
     const human = (v('rtHuman') || '').trim().toLowerCase();
     const humanOk = human === 'seven' || human === '7';
+    // The draft is rebuilt from the form on every render, so a correction made after pressing
+    // submit reaches the email too. Two blocks: the transfer (what finance matches against the
+    // bank statement) and who the receipt is made out to.
+    const rtT = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const lab = (i) => (L ? L.labels[i] : F[i].label);
+    const tv = (k) => String(v(k)).trim();
+    let when = tv('rtDate');
+    if (/^\d{4}-\d{2}-\d{2}$/.test(when)) {
+      try { when = new Date(when + 'T00:00:00').toLocaleDateString(this.state.lang === 'en' ? 'en-IN' : this.state.lang, { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) {}
+    }
+    const fullName = [tv('rtFirst'), tv('rtLast')].filter(Boolean).join(' ');
+    const address = ['rtStreet', 'rtCity', 'rtState', 'rtPin', 'rtCountry'].map(tv).filter(Boolean).join(', ');
+    const reach = [tv('rtEmail'), tv('rtPhone')].filter(Boolean).join(' \u00b7 ');
+    const cause = S.rtCause || causes[0];
+    const dl = [rtT.mail_greeting, '', rtT.rt_mail_intro, '', rtT.rt_h_transfer,
+      lab(0) + ': ' + (tv('rtRef') || '\u2014'),
+      lab(1) + ': ' + (tv('rtAmount') || '\u2014'),
+      lab(2) + ': ' + (when || '\u2014'),
+      rtT.rt_cause_label + ': ' + cause, '', rtT.rt_h_receipt];
+    dl.push(fullName || this._gap('draft_slot_name'));
+    if (tv('rtCompany')) dl.push(tv('rtCompany'));
+    if (address) dl.push(address);
+    dl.push(reach || this._gap('draft_slot_contact'));
+    dl.push('', rtT.rt_mail_outro, '', rtT.mail_thanks, fullName || this._gap('draft_slot_name'));
+    const draftBody = dl.join('\n');
+    const draftSubject = rtT.rt_mail_subject + ' \u2014 '
+      + [tv('rtAmount'), when, tv('rtRef') ? this._fill(rtT.rt_subj_ref, { ref: tv('rtRef') }) : '', tv('rtFirst') || rtT.rt_mail_investor_fallback].filter(Boolean).join(' \u00b7 ');
+    const draftSheet = this._draftSheet(draftSubject, draftBody, [rtT.rt_h_transfer, rtT.rt_h_receipt]);
+    const draftWeb = this._webmail(this._inbox(), draftSubject, draftBody);
     return {
       eyebrow: L ? L.eyebrow : 'Already Transferred',
       title: L ? L.title : 'Tell Us About a Transfer You Have Already Made.',
@@ -30745,16 +32176,14 @@ class Component extends DCLogic {
       // After submitting: if no mail app opened, the same draft can go out through webmail or
       // be copied - the status line alone must not claim an email exists when none opened.
       hasDraft: !!(S.rtOk && S.rtDraft),
-      draftGmail: S.rtDraft ? this._webmail('joinus@dehatindia.org', S.rtDraft.subject, S.rtDraft.body).gmail : '',
-      draftOutlook: S.rtDraft ? this._webmail('joinus@dehatindia.org', S.rtDraft.subject, S.rtDraft.body).outlook : '',
+      draftSheet,
+      draftMailto: this._mailto(draftSubject, draftBody),
+      draftGmail: draftWeb.gmail,
+      draftOutlook: draftWeb.outlook,
       draftNote: this._dt('rt_fallback_note'),
+      draftOpenLabel: this._dt('raise_open_email'),
       draftCopyLabel: S.rtCopied ? this._dt('raise_copied') : this._dt('raise_copy'),
-      draftCopy: () => {
-        const body = (S.rtDraft || {}).body || '';
-        const done = () => this.setState({ rtCopied: true });
-        try { if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(body).then(done, () => this._copyFallback(body, done)); return; } } catch (e) {}
-        this._copyFallback(body, done);
-      },
+      draftCopy: () => this._copyText(draftSheet.copyText, () => this.setState({ rtCopied: true })),
       msgCol: S.rtOk ? 'var(--ac-olive)' : 'var(--ac-red)',
       note: L ? L.note : 'DEHAT reconciles every reported transfer against the bank statement before a receipt is issued. Nothing here is stored in your browser.',
       submit: () => {
@@ -30766,17 +32195,10 @@ class Component extends DCLogic {
           this.setState({ rtOk: false, rtMsg: L ? L.robot : 'Answer the arithmetic question so we know you are not a robot.' });
           return;
         }
-        const rtT = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
-        const lines = F.map((f, i) => (L ? L.labels[i] : f.label) + ': ' + (v(f.k) || '—'))
-          .concat([rtT.rt_cause_label + ': ' + (S.rtCause || causes[0])]);
-        const body = rtT.rt_mail_greeting + '\n\n' + rtT.rt_mail_intro + '\n\n'
-          + lines.join('\n') + '\n\n' + rtT.rt_mail_outro + '\n';
-        const href = 'mailto:joinus@dehatindia.org?subject='
-          + encodeURIComponent(rtT.rt_mail_subject + ' — ' + (v('rtFirst') || rtT.rt_mail_investor_fallback))
-          + '&body=' + encodeURIComponent(body);
+        const href = this._mailto(draftSubject, draftBody);
         try { window.location.href = href; } catch (e) {}
         this.setState({ rtOk: true, rtCopied: false, rtMsg: L ? L.ok : 'Your details are drafted into an email. Press send in your email app and we will reconcile it against the statement.',
-          rtDraft: { subject: decodeURIComponent(href.split('subject=')[1].split('&body=')[0]), body } });
+          rtDraft: true });
       },
     };
   }
@@ -30878,9 +32300,12 @@ class Component extends DCLogic {
       noHit: hits.length === 0,
       noHitTitle: T.ask_nohit_title,
       noHitBody: T.ask_nohit_body,
-      noHitHref: 'mailto:info@dehatindia.org?subject='
-        + encodeURIComponent('Question from the website')
-        + '&body=' + encodeURIComponent(asked),
+      // The unanswered question goes to a person with the question quoted, a gap for the
+      // context that makes it answerable, and the sender's name.
+      noHitHref: this._mailto(
+        T.ask_mail_subject + (asked ? ': ' + (asked.length > 70 ? asked.slice(0, 67).trim() + '\u2026' : asked) : ''),
+        [T.mail_greeting, '', T.ask_mail_intro, '', '\u201c' + asked + '\u201d', '', this._gap('ask_slot_context'), '',
+          T.mail_thanks, this._gap('draft_slot_name')].join('\n')),
       noHitCta: T.ask_nohit_cta,
       askSuggestLabel: T.ask_suggest_label,
       askSuggest: [T.ask_sg_0, T.ask_sg_1, T.ask_sg_2, T.ask_sg_3, T.ask_sg_4]
@@ -30931,6 +32356,80 @@ class Component extends DCLogic {
       outlook: 'https://outlook.office.com/mail/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b,
     };
   }
+  // Every drafted email on the site goes to one inbox.
+  _inbox() { return 'joinus@dehatindia.org'; }
+  // Horizontal swipe on the home story slider (phones). Native listeners, attached once per
+  // element; a mostly-vertical gesture is left alone so the page still scrolls.
+  _storySwipe(n) {
+    this._storyN = n;
+    if (!this._storySwipeRef) this._storySwipeRef = (el) => {
+      if (!el || el._swipe) return;
+      el._swipe = true;
+      let x0 = 0, y0 = 0;
+      el.addEventListener('touchstart', (e) => { const t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; }, { passive: true });
+      el.addEventListener('touchend', (e) => {
+        const t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+        if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+        const N = this._storyN || 1;
+        this.setState(s => ({ story: (s.story + (dx < 0 ? 1 : -1) + N) % N }));
+      }, { passive: true });
+    };
+    return this._storySwipeRef;
+  }
+  _mailto(subject, body) {
+    return 'mailto:' + this._inbox() + '?subject=' + encodeURIComponent(subject || '')
+      + (body ? '&body=' + encodeURIComponent(body) : '');
+  }
+  // "{name}" style placeholders in a dictionary string.
+  _fill(str, map) {
+    return String(str == null ? '' : str).replace(/\{([a-z]+)\}/g, (m, k) => (map && map[k] != null ? map[k] : m));
+  }
+  // A gap the visitor still has to fill, written into the draft in square brackets so it
+  // survives into the email app and is obvious there too.
+  _gap(key) { return '[' + (this._dt(key) || '') + ']'; }
+  // Preview model for a drafted email: header rows plus the body split into lines, each line
+  // into plain text and [gap] parts. `heads` are the section labels, set in bold.
+  _draftSheet(subject, body, heads) {
+    const H = {};
+    (heads || []).forEach(h => { if (h) H[h] = 1; });
+    let gaps = 0;
+    const lines = String(body || '').split('\n').map((ln, i) => {
+      const parts = [];
+      const re = /\[([^\]]+)\]/g;
+      let last = 0, m;
+      while ((m = re.exec(ln))) {
+        if (m.index > last) parts.push({ k: 't' + parts.length, t: ln.slice(last, m.index), cls: '' });
+        parts.push({ k: 's' + parts.length, t: m[1], cls: 'ml-slot' });
+        gaps++;
+        last = re.lastIndex;
+      }
+      if (last < ln.length) parts.push({ k: 't' + parts.length, t: ln.slice(last), cls: '' });
+      const cls = !ln.trim() ? 'ml-gap' : H[ln.trim()] ? 'ml-h' : /^\s*•/.test(ln) ? 'ml-li' : '';
+      return { k: 'l' + i, cls, parts };
+    });
+    return {
+      toLabel: this._dt('draft_to'), subjectLabel: this._dt('draft_subject'),
+      to: this._inbox(), subject, lines,
+      statusCls: gaps ? 'ml-status' : 'ml-status ml-ok',
+      status: gaps ? this._dt('draft_gaps') : this._dt('draft_ready'),
+      fallback: this._dt('draft_fallback'),
+      copyText: this._dt('draft_to') + ': ' + this._inbox() + '\n' + this._dt('draft_subject') + ': ' + subject + '\n\n' + body,
+    };
+  }
+  _copyText(text, done) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, () => this._copyFallback(text, done));
+        return;
+      }
+    } catch (e) {}
+    this._copyFallback(text, done);
+  }
+  _today() {
+    try {
+      return new Date().toLocaleDateString(this.state.lang === 'en' ? 'en-IN' : this.state.lang, { day: 'numeric', month: 'long', year: 'numeric' });
+    } catch (e) { return new Date().toDateString(); }
+  }
   _copyFallback(text, done) {
     try {
       const ta = document.createElement('textarea');
@@ -30948,32 +32447,41 @@ class Component extends DCLogic {
   _mailBody(P, T) {
     if (!T) T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
     const S = this.state;
+    const t = (s) => String(s || '').trim();
     const who = (P.who.find(w => w.k === S.pWho) || {}).label || '';
-    const ints = P.intents.filter(i => (S.pIntents || []).indexOf(i.k) >= 0).map(i => '  \u2022 ' + i.label).join('\n');
-    const L = [];
-    L.push(T.mail_greeting);
+    const ints = P.intents.filter(i => (S.pIntents || []).indexOf(i.k) >= 0).map(i => '\u2022 ' + i.label);
+    const name = t(S.pName), org = t(S.pOrg), place = t(S.pPlace), sop = t(S.pSop);
+    const reach = [t(S.pEmail), t(S.pPhone)].filter(Boolean).join(' \u00b7 ');
+    const L = [T.mail_greeting, '', T.mail_fyr_open, ''];
+    // About me: the sender as DEHAT would file them, the self-description chosen in step 1 first.
+    L.push(T.mail_h_about);
+    if (who) L.push(who);
+    if (org) L.push(org);
+    if (place) L.push(T.mail_based_in + ' ' + place);
     L.push('');
-    L.push(T.mail_intro);
+    if (ints.length) { L.push(T.mail_h_explore); ints.forEach(x => L.push(x)); L.push(''); }
+    L.push(T.mail_h_change);
+    L.push(sop || this._gap('mail_slot_change'));
     L.push('');
-    L.push(T.mail_who_am_i);
-    L.push('  ' + who);
-    if (S.pOrg) L.push('  ' + S.pOrg);
-    if (S.pPlace) L.push('  ' + T.mail_based_in + ' ' + S.pPlace);
-    L.push('');
-    L.push(T.mail_what_to_do);
-    L.push(ints || '  \u2014');
-    L.push('');
-    L.push(T.mail_what_change);
-    L.push('  ' + (S.pSop || '\u2014'));
-    if (S.pBudget && S.pBudget !== P.budgets[0]) { L.push(''); L.push(T.mail_scale); L.push('  ' + S.pBudget); }
-    L.push('');
-    L.push(T.mail_how_reach);
-    L.push('  ' + (S.pName || '') + (S.pEmail ? ' \u00b7 ' + S.pEmail : '') + (S.pPhone ? ' \u00b7 ' + S.pPhone : ''));
+    if (S.pBudget && S.pBudget !== P.budgets[0]) { L.push(T.mail_h_scale + ': ' + S.pBudget); L.push(''); }
+    L.push(T.mail_fyr_next);
     L.push('');
     L.push(T.mail_thanks);
-    L.push(S.pName || '');
+    L.push(name || this._gap('draft_slot_name'));
+    if (org) L.push(org);
+    L.push(reach || this._gap('draft_slot_contact'));
     return L.join('\n');
   }
+  // Subject line a triaging inbox can act on: the first route chosen, how many more, and who.
+  _mailSubject(P, T) {
+    const S = this.state;
+    const ints = P.intents.filter(i => (S.pIntents || []).indexOf(i.k) >= 0);
+    const who = String(S.pOrg || S.pName || '').trim();
+    let head = ints.length ? ints[0].label : T.mail_subject_prefix;
+    if (ints.length > 1) head += ' (' + this._fill(T.mail_subject_more, { n: ints.length - 1 }) + ')';
+    return head + ' \u2014 ' + (who || T.mail_subject_fallback);
+  }
+  _mailHeads(T) { return [T.mail_h_about, T.mail_h_explore, T.mail_h_change]; }
   _support(name) {
     const to = 'joinus@dehatindia.org';
     const m = (s, b) => 'mailto:' + to + '?subject=' + encodeURIComponent(s + ' \u2014 ' + name)
@@ -31662,20 +33170,16 @@ class Component extends DCLogic {
         hasFcReturnStatus: !!r.y.fcReturnStatus,
         fcReturnLabel: r.y.fcReturnForm || 'FC-4',
         fcReturnDoc: r.y.fcReturn || '',
-        fcReturnTitle: 'Open the ' + (r.y.fcReturnForm || 'FC-4')
-          + ' foreign contribution return filed for ' + r.fy,
-        fcReturnFull: 'Open the ' + (r.y.fcReturnForm || 'FC-4')
-          + ' foreign contribution return for this year',
+        fcReturnTitle: this._fill(T.fc_open_title, { form: r.y.fcReturnForm || 'FC-4', fy: r.fy }),
+        fcReturnFull: this._fill(T.fc_open_full, { form: r.y.fcReturnForm || 'FC-4' }),
         // A foreign-contribution year with no published return says so, and gives the
         // reader a way to ask for it, rather than a link to a file that is not there.
         fcAskable: r.fcra > 0 && !r.y.fcReturn,
-        fcAskLabel: 'Return on Request',
-        fcAskTitle: 'Ask us for the foreign contribution return filed for ' + r.fy,
-        fcAskHref: 'mailto:info@dehatindia.org?subject='
-          + encodeURIComponent('Foreign contribution return for FY' + r.fy)
-          + '&body=' + encodeURIComponent('Please send the annual return filed under the '
-            + 'Foreign Contribution (Regulation) Act for the financial year ' + r.fy
-            + ', together with the form it was filed on and the date of filing.'),
+        fcAskLabel: T.fc_ask_label,
+        fcAskTitle: this._fill(T.fc_ask_title, { fy: r.fy }),
+        fcAskHref: this._mailto(this._fill(T.fc_mail_subject, { fy: r.fy }),
+          [T.mail_greeting, '', this._fill(T.fc_mail_body, { fy: r.fy }), '', T.mail_thanks,
+            this._gap('draft_slot_name'), this._gap('draft_slot_contact')].join('\n')),
         bs: r.bs != null ? exact(r.bs) : '\u2014', hasBs: r.bs != null,
         fcra: rs(r.fcra), inr: rs(r.inr),
         fcraW: (r.fcra / Math.max(1, r.inv) * 100).toFixed(1) + '%',
@@ -31730,33 +33234,38 @@ class Component extends DCLogic {
 
   _raiseComposer() {
     const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
-    const EMAIL = 'joinus@dehatindia.org';
+    const EMAIL = this._inbox();
     const KINDS_EN = [
       { k: 'safeguard', label: 'Safeguarding or a Child at Risk',
         subject: 'Safeguarding concern',
         opener: 'I am writing to raise a safeguarding concern connected to DEHAT\u2019s work.',
         route: 'Safeguarding concerns go to the named safeguarding focal point and are placed before the Governing Board. Where a child may be at immediate risk, please also call 1098 or the number above.',
-        ph: 'What happened, where, and when \u2014 as much or as little as you are able to write.' },
+        ph: 'What happened, where, and when \u2014 as much or as little as you are able to write.',
+        ask: 'Please confirm that this has reached the safeguarding focal point, and tell me who is handling it.' },
       { k: 'conduct', label: 'Conduct of Someone Connected to DEHAT',
         subject: 'Concern about conduct',
         opener: 'I would like to raise a concern about the conduct of someone connected to DEHAT.',
         route: 'Concerns about the conduct of staff, fellows or volunteers are handled outside the line of the person concerned and reported to the Governing Board.',
-        ph: 'What you saw or experienced, the district or programme it relates to, and when.' },
+        ph: 'What you saw or experienced, the district or programme it relates to, and when.',
+        ask: 'Please confirm that this will be handled outside the line of the person concerned, and tell me who is handling it.' },
       { k: 'money', label: 'A Figure or the Use of Funds',
         subject: 'Query on a published figure',
         opener: 'I have a question about a figure or a use of funds published on DEHAT\u2019s transparency page.',
         route: 'Queries on figures are answered against the signed audited statement for the year in question, and the statement itself is sent with the reply.',
-        ph: 'Which figure, which year, and what you would like reconciled.' },
+        ph: 'Which figure, which year, and what you would like reconciled.',
+        ask: 'Please reply with the reconciliation and the signed audited statement it rests on.' },
       { k: 'docs', label: 'I Need Documents',
         subject: 'Document request',
         opener: 'I would like to request the following documents from DEHAT.',
         route: 'Document requests are answered from the same files published on this page. Anything not published is sent on request unless it names a child or a complainant.',
-        ph: 'Any detail that helps us send the right version \u2014 the year, the programme, the language you need.' },
+        ph: 'Any detail that helps us send the right version \u2014 the year, the programme, the language you need.',
+        ask: 'Please send these, or tell me where each one is published.' },
       { k: 'other', label: 'Something Else',
         subject: 'Message through the transparency page',
         opener: 'I am writing through DEHAT\u2019s transparency page.',
         route: 'Anything sent here is read by the core team and acknowledged. If it belongs with the Board, it is put to the Board.',
-        ph: 'Tell us what you need.' },
+        ph: 'Tell us what you need.',
+        ask: 'Please confirm that this has been received, and tell me who will reply.' },
     ];
     const KINDS = KINDS_EN.map(x => ({
       ...x,
@@ -31765,6 +33274,7 @@ class Component extends DCLogic {
       opener: this._tc('raise_kinds', x.k, 'opener', x.opener),
       route: this._tc('raise_kinds', x.k, 'route', x.route),
       ph: this._tc('raise_kinds', x.k, 'ph', x.ph),
+      ask: this._tc('raise_kinds', x.k, 'ask', x.ask),
     }));
     const DOCS_EN = [
       'The Audited Statement for a Financial Year',
@@ -31787,18 +33297,27 @@ class Component extends DCLogic {
       if (kk === 'docs' && picked.length === 1) return T.raise_doc_request_prefix + picked[0].toLowerCase();
       return cur.subject;
     }
-    const lines = [cur.opener, ''];
-    if (picked.length) {
+    // The letter: greeting, the opener for this kind of concern, the reader's own words (or a
+    // highlighted gap), any documents by name, the kind-specific ask, and a dated signature so
+    // the record shows when it was written. Anonymous is allowed: the name stays a gap.
+    const lines = [T.mail_greeting, '', cur.opener, ''];
+    // A document request names the documents first ("the following documents:"), then the note.
+    const docBlock = () => {
+      if (!picked.length) return;
       lines.push(T.raise_docs_requested_label);
-      picked.forEach(function (d) { lines.push('  \u2014 ' + d); });
+      picked.forEach(function (d) { lines.push('\u2022 ' + d); });
       lines.push('');
-    }
-    if (detail) { lines.push(detail, ''); }
-    else { lines.push('[' + cur.ph + ']', ''); }
-    lines.push(T.raise_grateful_line, '');
+    };
+    if (kk === 'docs') docBlock();
+    lines.push(detail || '[' + cur.ph + ']', '');
+    if (kk !== 'docs') docBlock();
+    lines.push(cur.ask, '');
+    lines.push(T.mail_thanks);
     lines.push(who ? who : '[' + T.raise_who_placeholder + ']');
+    lines.push('', this._fill(T.raise_written_on, { date: this._today() }));
     const body = lines.join('\n');
     const mailto = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    const sheet = this._draftSheet(subject, body, [T.raise_docs_requested_label]);
 
     const on = (a) => ({ bg: a ? '#EAAE28' : 'rgba(0,0,0,.22)', fg: a ? '#2a1206' : 'rgba(255,255,255,.85)', ring: a ? '#EAAE28' : 'rgba(255,255,255,.22)' });
     return {
@@ -31825,12 +33344,8 @@ class Component extends DCLogic {
       rzSetDetail: (e) => this.setState({ rzDetail: e.target.value, rzCopied: false }),
       rzSetWho: (e) => this.setState({ rzWho: e.target.value, rzCopied: false }),
       rzCopyLabel: this.state.rzCopied ? T.raise_copied : T.raise_copy,
-      rzCopy: () => {
-        const txt = 'To: ' + EMAIL + '\nSubject: ' + subject + '\n\n' + body;
-        const done = () => this.setState({ rzCopied: true });
-        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, done);
-        else done();
-      },
+      rzSheet: sheet,
+      rzCopy: () => this._copyText(sheet.copyText, () => this.setState({ rzCopied: true })),
     };
   }
 
@@ -32565,8 +34080,9 @@ class Component extends DCLogic {
             num: J.horizons.num, title: J.horizons.title, body: J.horizons.body,
             objLabel: J.horizons.objLabel, itemsLabel: J.horizons.itemsLabel,
             hasCta: !!J.horizons.ctaLabel, ctaLabel: J.horizons.ctaLabel || '', ctaNote: J.horizons.ctaNote || '',
-            ctaGo: 'mailto:joinus@dehatindia.org?subject=' + encodeURIComponent('Funding plan request — ' + (nar.name || ''))
-              + '&body=' + encodeURIComponent('Hello DEHAT team,\n\nPlease send me the full funding plan for the ' + (nar.name || '') + ' programme, with the phases and indicative budgets.\n\nMy name is:\nMy organisation is:\nThe best way to reach me is:\n\nThank you,\n'),
+            ctaGo: this._mailto(this._fill(this._dt('plan_mail_subject'), { programme: nar.name || '' }),
+              [this._dt('mail_greeting'), '', this._fill(this._dt('plan_mail_body'), { programme: nar.name || '' }), '',
+                this._dt('mail_thanks'), this._gap('draft_slot_name'), this._gap('plan_slot_org'), this._gap('draft_slot_contact')].join('\n')),
             railPct: ((hi + 1) / J.horizons.rows.length * 100) + '%',
             tabs: J.horizons.rows.map((r, i) => ({
               k: 'h' + i, label: r.label, n: String(i + 1).padStart(2, '0'),
@@ -33102,6 +34618,17 @@ class Component extends DCLogic {
       raiseTitle: FIN && FIN.ACCOUNTABILITY ? this._tc('accountability', 'raise', 'title', FIN.ACCOUNTABILITY.raise.title) : '',
       raiseBody: FIN && FIN.ACCOUNTABILITY ? this._tc('accountability', 'raise', 'body', FIN.ACCOUNTABILITY.raise.body) : '',
       raiseEmail: FIN && FIN.ACCOUNTABILITY ? FIN.ACCOUNTABILITY.raise.email : '',
+      // Policies page: refund and data requests open as drafts with the facts DEHAT needs.
+      refundMail: this._mailto(this._dt('refund_mail_subject'), [this._dt('mail_greeting'), '', this._dt('refund_mail_body'), '',
+        this._dt('refund_l_date') + ': ' + this._gap('draft_slot_fill'),
+        this._dt('refund_l_amount') + ': ' + this._gap('draft_slot_fill'),
+        this._dt('refund_l_ref') + ': ' + this._gap('draft_slot_fill'),
+        this._dt('refund_l_reason') + ': ' + this._gap('draft_slot_fill'), '',
+        this._dt('mail_thanks'), this._gap('draft_slot_name'), this._gap('draft_slot_contact')].join('\n')),
+      dataMail: this._mailto(this._dt('data_mail_subject'), [this._dt('mail_greeting'), '', this._dt('data_mail_body'), '',
+        this._dt('data_l_which') + ': ' + this._gap('data_slot_which'),
+        this._dt('data_l_under') + ': ' + this._gap('draft_slot_fill'), '',
+        this._dt('mail_thanks'), this._gap('draft_slot_name')].join('\n')),
       raisePhone: FIN && FIN.ACCOUNTABILITY ? FIN.ACCOUNTABILITY.raise.phone : '',
       raiseAddress: FIN && FIN.ACCOUNTABILITY ? FIN.ACCOUNTABILITY.raise.address : '',
       ...this._raiseComposer(),
@@ -33211,6 +34738,8 @@ class Component extends DCLogic {
       goInvestFromWork: this._goInvolved('give'),
       goPartnerFromWork: this._goInvolved('people'),
       activeStory, storyDots,
+      storyCount: (this.state.story % stories.length + 1) + ' / ' + stories.length,
+      storySwipe: this._storySwipe(stories.length),
       goStories: setView('stories'),
       storiesAllLabel: T.stories_all, nextStory: () => this.setState(s => ({ story: (s.story + 1) % stories.length })), prevStory: () => this.setState(s => ({ story: (s.story - 1 + stories.length) % stories.length })),
       indexName: this._tagMap('index_name', this.props.indexName || 'Child Opportunity Gap Index', this.props.indexName || 'Child Opportunity Gap Index'),
