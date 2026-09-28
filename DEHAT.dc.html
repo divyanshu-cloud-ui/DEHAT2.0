@@ -351,6 +351,20 @@
   @media (max-width:640px){ .hr{padding-bottom:16px} .hr-actions{flex-wrap:nowrap;gap:16px;margin-top:8px} .hr-cta{padding:13px 20px;font-size:15px;white-space:nowrap} .hr-link{font-size:14px;white-space:nowrap} }
   @media (max-width:640px) and (max-height:760px){ .hr-h1{font-size:24px} .hr-story{-webkit-line-clamp:2} .hr-answer-v{-webkit-line-clamp:2} .hr-art{width:44px} .hr-stat{font-size:32px} .hr-stat-row{margin-top:8px} .hr-road{height:78px;margin-top:6px} .hr-src{-webkit-line-clamp:1} .hr{padding-top:16px;padding-bottom:16px} .hr-panel{margin-top:0;padding-top:12px} .hr-answer{margin-top:7px;padding-top:7px} }
   @media (max-width:640px) and (max-height:700px){ .hr-src{display:none} }
+  /* Homepage order: story (hero) → the whole problem (Cycle) → how it breaks (Method, with vision
+     and mission) → the four fronts → where → what it adds up to → stories (+ ask) → people → press
+     → why it is an investment → where you come in. */
+  .vm-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px clamp(24px,4vw,56px);margin:0 0 clamp(30px,4vw,46px);padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .vm-pair dt{font-size:12.5px;font-weight:800;color:var(--ac-crimson);margin:0 0 6px}
+  .vm-pair dd{margin:0;font-size:16px;line-height:1.55;color:var(--text);max-width:52ch;text-wrap:pretty}
+  .st-ask{display:block;margin:18px auto 0;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:15px;font-weight:800;color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.45);text-underline-offset:5px}
+  .why-bridge{margin:0 0 clamp(28px,3.4vw,40px);padding:clamp(22px,3vw,34px) 0;border-top:1px solid var(--border)}
+  .why-h{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,42px);line-height:1.05;letter-spacing:-.02em;color:var(--text);margin:0 0 14px;max-width:22ch;text-wrap:balance}
+  .why-p{font-size:clamp(16px,1.4vw,18px);line-height:1.6;color:var(--dim);margin:0 0 8px;max-width:60ch;text-wrap:pretty}
+  .why-proof{color:var(--text);font-weight:700}
+  .why-go{margin-top:12px;font-family:inherit;font-size:15px;font-weight:800;padding:14px 26px;border-radius:999px;background:var(--ac-gold);color:#1f1710;border:none;cursor:pointer}
+  .route-small{display:block;margin:22px 0 0;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:15px;font-weight:700;color:var(--dim);text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:5px}
+  .route-small:hover{color:var(--text)}
   .st-count{display:none;min-width:64px;text-align:center;font-weight:800;font-size:15px;color:#fff;font-variant-numeric:tabular-nums}
   @media (pointer:coarse){ .st-dot{min-width:0;min-height:0} }
   @media (max-width:640px){ .st-dot{display:none} .st-count{display:inline-block} }
@@ -747,43 +761,97 @@
       </div>
     </section>
 
-    <section data-spine="What It Adds Up To" style="background:#0E5565;padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px)">
+    <section data-anchor="cycle" data-spine="The Cycle" style="background:#4F0E73;padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px)">
       <div style="max-width:1200px;margin:0 auto">
-        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:26px">
-          <span style="font-size:12.5px;letter-spacing:.02em;color:rgba(251,247,239,.7)">{{ statHint }}</span>
-          <button onClick="{{ statRevealAll }}" style="background:none;border:1px solid rgba(251,247,239,.35);color:rgba(251,247,239,.85);border-radius:999px;padding:7px 15px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.04em" style-hover="border-color:#EAAE28;color:#EAAE28">{{ statRevealLabel }}</button>
+        <div style="max-width:680px;margin:0 auto 44px;text-align:center">
+          <p style="font-size:15px;line-height:1.5;color:#EAAE28;font-weight:700;margin:0">{{ T.cycle_bridge }}</p>
+          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.02em;color:#fff;margin:14px 0 12px">{{ T.cycle_head }}</h2>
+          <p style="font-size:16px;line-height:1.6;color:rgba(255,255,255,.75);margin:0">{{ T.cycle_sub }}</p>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
-          <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="4">
-            <button onClick="{{ s.toggle }}" style="text-align:left;cursor:pointer;border-radius:18px;border:1px solid {{ s.ring }};background:{{ s.bg }};padding:20px;display:flex;flex-direction:column;gap:14px;transition:background .4s cubic-bezier(.22,.61,.36,1),border-color .4s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-3px)">
-              <div style="height:78px">
-                <div role="img" aria-hidden="true" style="width:100%;height:100%;background-image:{{ s.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:left bottom;filter:{{ s.filt }};transition:filter .6s cubic-bezier(.2,.7,.2,1)"></div>
+        <div style="max-width:1080px;margin:0 auto">
+          <div style="text-align:center;font-size:13px;letter-spacing:.01em;color:rgba(255,255,255,.6);margin:0 auto 48px;max-width:580px;line-height:1.55">{{ T.cycle_pick }}</div>
+          <div onMouseLeave="{{ wheelLeave }}" class="cyc-ring" style="position:relative;container-type:inline-size;width:min(calc((100% - 16px) / 1.11),660px);aspect-ratio:1;margin:0 auto 34px">
+            <div style="position:absolute;inset:0;animation:svcSpin 90s linear infinite;animation-play-state:{{ ringPlay }}">
+              <div style="position:absolute;top:50%;left:50%;width:94%;height:94%;transform:translate(-50%,-50%);border-radius:50%;border:2px dotted rgba(255,255,255,.28);pointer-events:none"></div>
+              <sc-for list="{{ cycleNodes }}" as="n" hint-placeholder-count="16">
+                <div style="position:absolute;left:{{ n.posX }};top:{{ n.posY }};transform:translate(-50%,-50%)">
+                  <div style="animation:svcSpinRev 90s linear infinite;animation-play-state:{{ ringPlay }}">
+                    <button onClick="{{ n.select }}" onMouseEnter="{{ n.select }}" aria-label="{{ n.shortLabel }}" title="{{ n.shortLabel }}" class="cyc-node" style="width:clamp(38px,14cqw,84px);height:clamp(38px,14cqw,84px);border-radius:50%;padding:0;border:none;cursor:pointer;background:{{ n.thumbBg }};box-shadow:{{ n.ring }};transform:{{ n.scale }};opacity:{{ n.opacity }};transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s cubic-bezier(.22,.61,.36,1),opacity .28s cubic-bezier(.22,.61,.36,1);overflow:hidden;display:flex;align-items:center;justify-content:center" style-hover="opacity:1">
+                      <div role="img" aria-hidden="true" style="width:80%;height:80%;pointer-events:none;background-image:{{ n.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+                    </button>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(52%,300px);text-align:center;pointer-events:none">
+              <div key="{{ activeNode.title }}" class="rise">
+                <div class="cyc-art" style="height:clamp(56px,28cqw,172px);margin:0 auto 16px;display:flex;align-items:flex-end;justify-content:center;overflow:visible">
+                  <div role="img" aria-hidden="true" style="height:110%; width:auto; max-width:min(80vw,220px); aspect-ratio:222/239; filter: drop-shadow(0 10px 22px rgba(0,0,0,.35)); background-image:{{ activeNode.imgCss }}; background-size:contain; background-repeat:no-repeat; background-position:bottom center"></div>
+                </div>
+                <span class="cyc-chapter" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ activeNode.chapter }}</span>
+                <div class="cyc-stat" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(28px,10cqw,58px);color:#fff;line-height:.9;margin:6px 0 4px">{{ activeNode.stat }}</div>
+                <h3 class="cyc-title" style="font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(15px,1.9vw,21px);color:#fff;margin:0 0 8px;line-height:1.14;text-wrap:pretty">{{ activeNode.title }}</h3>
+                <p class="svc-instory" style="font-size:clamp(11.5px,1.15vw,13.5px);line-height:1.5;color:rgba(255,255,255,.8);margin:0 0 8px;text-wrap:pretty;max-height:7.6em;overflow:hidden">{{ activeNode.story }}</p>
+                <div class="svc-instory" style="font-size:10.5px;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.02em">{{ T.f_source }} {{ activeNode.src }}</div>
               </div>
-              <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,3.6vw,50px);line-height:1;color:{{ s.numColor }};transition:color .4s cubic-bezier(.22,.61,.36,1)">{{ s.value }}</div>
-              <sc-if value="{{ s.isMoney }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:12px;color:rgba(251,247,239,.55)">{{ s.usdHint }}</div>
-              </sc-if>
-              <div style="font-size:14px;line-height:1.4;color:rgba(251,247,239,.85);text-transform:uppercase;letter-spacing:.04em;font-weight:600">{{ s.label }}</div>
-              <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:{{ s.cueColor }}">{{ s.cue }}</span>
-            </button>
-          </sc-for>
+            </div>
+          </div>
+          <div key="{{ activeNode.short }}" class="rise" style="text-align:center;font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#EAAE28;margin-top:44px;letter-spacing:.02em">{{ activeNode.shortLabel }}</div>
+          <div key="b{{ activeNode.title }}" class="rise svc-belowstory" style="text-align:center;max-width:440px;margin:18px auto 0">
+            <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,.8);margin:0 0 8px;text-wrap:pretty">{{ activeNode.story }}</p>
+            <div style="font-size:11px;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.02em">{{ T.f_source }} {{ activeNode.src }}</div>
+          </div>
         </div>
+        <p style="text-align:center;font-size:12px;color:rgba(255,255,255,.5);margin:40px auto 0;max-width:720px">{{ T.cycle_note }}</p>
       </div>
     </section>
 
-    <section data-spine="How We Work" style="padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
-        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
-          <div data-reveal="" style="transition-delay:{{ p.delay }};padding:32px;border-radius:20px;background:var(--surface);border:1px solid var(--border);box-shadow:0 20px 40px -30px var(--shadow);display:flex;flex-direction:column;gap:14px">
-            <div class="drift art-l" role="img" aria-hidden="true" style="height:132px;background-image:{{ p.imgCss }},var(--art-plate-soft);background-position:left center,66px center;background-size:contain,132px 132px;animation-delay:{{ p.driftDelay }}"></div>
-            <div style="width:34px;height:4px;border-radius:999px;background:{{ p.color }}"></div>
-            <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;margin:0;color:var(--text)">{{ p.title }}</h3>
-            <p style="font-size:16px;line-height:1.6;color:var(--dim);margin:0;flex:1">{{ p.body }}</p>
-            <sc-if value="{{ p.hasLink }}" hint-placeholder-val="{{ false }}">
-              <button onClick="{{ p.go }}" style="align-self:flex-start;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;color:{{ p.color }}">{{ p.linkLabel }} →</button>
+    <section data-spine="The Method" style="padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
+      <div style="max-width:700px;margin-bottom:38px">
+        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-crimson);font-weight:700">{{ T.eyebrow_process }}</span>
+        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.02em;color:var(--text);margin:14px 0 12px">{{ T.process_head }}</h2>
+        <p style="font-size:15.5px;line-height:1.65;color:var(--dim);margin:0;text-wrap:pretty">{{ T.method_sub }}</p>
+      </div>
+
+      <dl class="vm-pair">
+        <div><dt>{{ T.vision }}</dt><dd>{{ T.vision_body }}</dd></div>
+        <div><dt>{{ T.mission }}</dt><dd>{{ T.mission_body }}</dd></div>
+      </dl>
+      <div class="loop-grid">
+        <sc-for list="{{ loopCells }}" as="lc" hint-placeholder-count="9">
+          <div class="{{ lc.cls }}" style="grid-column:{{ lc.gc }};grid-row:{{ lc.gr }};display:flex;align-items:center;justify-content:center;min-width:0">
+
+            <sc-if value="{{ lc.isArrow }}" hint-placeholder-val="{{ false }}">
+              <span aria-hidden="true" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(18px,2.2vw,26px);color:{{ lc.color }};animation-delay:{{ lc.delay }};padding:6px 10px">{{ lc.glyph }}</span>
             </sc-if>
+
+            <sc-if value="{{ lc.isStation }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ lc.select }}" onMouseEnter="{{ lc.select }}" style="width:100%;height:100%;text-align:left;font-family:inherit;cursor:pointer;padding:clamp(16px,1.9vw,24px);border-radius:20px;background:{{ lc.bg }};border:1.5px solid {{ lc.ring }};box-shadow:{{ lc.shadow }};display:flex;align-items:center;gap:14px;transition:background .28s cubic-bezier(.22,.61,.36,1),border-color .28s cubic-bezier(.22,.61,.36,1),box-shadow .28s cubic-bezier(.22,.61,.36,1),transform .28s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-3px)">
+                <div class="art" role="img" aria-hidden="true" style="flex:none;width:clamp(54px,6vw,76px);height:clamp(54px,6vw,76px);background-image:{{ lc.imgCss }},var(--art-plate-soft);opacity:{{ lc.artOp }};transition:opacity .28s cubic-bezier(.22,.61,.36,1)"></div>
+                <div style="min-width:0">
+                  <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:11.5px;letter-spacing:.12em;color:{{ lc.tok }};margin-bottom:4px">{{ lc.step }}</div>
+                  <div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(15px,1.6vw,19px);line-height:1.18;color:var(--text);text-wrap:pretty">{{ lc.name }}</div>
+                </div>
+              </button>
+            </sc-if>
+
+            <sc-if value="{{ lc.isCentre }}" hint-placeholder-val="{{ false }}">
+              <div key="{{ activeStep.name }}" class="rise" style="width:100%;max-width:360px;text-align:center;padding:clamp(20px,2.4vw,30px) clamp(16px,2vw,24px);border-radius:24px;background:var(--surface2);border:1px solid var(--border)">
+                <div class="art" role="img" aria-hidden="true" style="height:clamp(100px,11vw,134px);width:clamp(100px,11vw,134px);margin:0 auto 16px;background-image:{{ activeStep.imgCss }},var(--art-plate)"></div>
+                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:11.5px;letter-spacing:.12em;color:{{ activeStep.tok }}">{{ activeStep.step }}</div>
+                <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(19px,2.2vw,25px);margin:6px 0 10px;color:var(--text);line-height:1.1;text-wrap:balance">{{ activeStep.name }}</h3>
+                <p style="font-size:14.5px;line-height:1.6;color:var(--dim);margin:0 0 16px;text-wrap:pretty">{{ activeStep.body }}</p>
+                <div style="font-size:12px;line-height:1.5;color:var(--faint);padding-top:14px;border-top:1px solid var(--border);text-wrap:pretty">{{ activeStep.handoff }}</div>
+              </div>
+            </sc-if>
+
           </div>
         </sc-for>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin-top:clamp(24px,3vw,36px)">
+        <span style="font-size:13px;color:var(--faint);text-wrap:pretty">{{ T.method_footnote }}</span>
+        <button onClick="{{ goWorkFromLoop }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:1.5px solid var(--ac-crimson);background:none;color:var(--ac-crimson);transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:var(--ac-crimson);color:#fff">{{ T.method_cta }}</button>
       </div>
     </section>
 
@@ -845,93 +913,27 @@
       <p style="font-size:13px;line-height:1.6;color:var(--faint);margin:16px 0 0;max-width:860px">{{ T.where_note }}</p>
     </section>
 
-    <section data-anchor="cycle" data-spine="The Cycle" style="background:#4F0E73;padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px)">
+    <section data-spine="What It Adds Up To" style="background:#0E5565;padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px)">
       <div style="max-width:1200px;margin:0 auto">
-        <div style="max-width:680px;margin:0 auto 44px;text-align:center">
-          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ T.eyebrow_cycle }}</span>
-          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.02em;color:#fff;margin:14px 0 12px">{{ T.cycle_head }}</h2>
-          <p style="font-size:16px;line-height:1.6;color:rgba(255,255,255,.75);margin:0">{{ T.cycle_sub }}</p>
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:26px">
+          <span style="font-size:12.5px;letter-spacing:.02em;color:rgba(251,247,239,.7)">{{ statHint }}</span>
+          <button onClick="{{ statRevealAll }}" style="background:none;border:1px solid rgba(251,247,239,.35);color:rgba(251,247,239,.85);border-radius:999px;padding:7px 15px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.04em" style-hover="border-color:#EAAE28;color:#EAAE28">{{ statRevealLabel }}</button>
         </div>
-        <div style="max-width:1080px;margin:0 auto">
-          <div style="text-align:center;font-size:13px;letter-spacing:.01em;color:rgba(255,255,255,.6);margin:0 auto 48px;max-width:580px;line-height:1.55">{{ T.cycle_pick }}</div>
-          <div onMouseLeave="{{ wheelLeave }}" class="cyc-ring" style="position:relative;container-type:inline-size;width:min(calc((100% - 16px) / 1.11),660px);aspect-ratio:1;margin:0 auto 34px">
-            <div style="position:absolute;inset:0;animation:svcSpin 90s linear infinite;animation-play-state:{{ ringPlay }}">
-              <div style="position:absolute;top:50%;left:50%;width:94%;height:94%;transform:translate(-50%,-50%);border-radius:50%;border:2px dotted rgba(255,255,255,.28);pointer-events:none"></div>
-              <sc-for list="{{ cycleNodes }}" as="n" hint-placeholder-count="16">
-                <div style="position:absolute;left:{{ n.posX }};top:{{ n.posY }};transform:translate(-50%,-50%)">
-                  <div style="animation:svcSpinRev 90s linear infinite;animation-play-state:{{ ringPlay }}">
-                    <button onClick="{{ n.select }}" onMouseEnter="{{ n.select }}" aria-label="{{ n.shortLabel }}" title="{{ n.shortLabel }}" class="cyc-node" style="width:clamp(38px,14cqw,84px);height:clamp(38px,14cqw,84px);border-radius:50%;padding:0;border:none;cursor:pointer;background:{{ n.thumbBg }};box-shadow:{{ n.ring }};transform:{{ n.scale }};opacity:{{ n.opacity }};transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s cubic-bezier(.22,.61,.36,1),opacity .28s cubic-bezier(.22,.61,.36,1);overflow:hidden;display:flex;align-items:center;justify-content:center" style-hover="opacity:1">
-                      <div role="img" aria-hidden="true" style="width:80%;height:80%;pointer-events:none;background-image:{{ n.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:center"></div>
-                    </button>
-                  </div>
-                </div>
-              </sc-for>
-            </div>
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(52%,300px);text-align:center;pointer-events:none">
-              <div key="{{ activeNode.title }}" class="rise">
-                <div class="cyc-art" style="height:clamp(56px,28cqw,172px);margin:0 auto 16px;display:flex;align-items:flex-end;justify-content:center;overflow:visible">
-                  <div role="img" aria-hidden="true" style="height:110%; width:auto; max-width:min(80vw,220px); aspect-ratio:222/239; filter: drop-shadow(0 10px 22px rgba(0,0,0,.35)); background-image:{{ activeNode.imgCss }}; background-size:contain; background-repeat:no-repeat; background-position:bottom center"></div>
-                </div>
-                <span class="cyc-chapter" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ activeNode.chapter }}</span>
-                <div class="cyc-stat" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(28px,10cqw,58px);color:#fff;line-height:.9;margin:6px 0 4px">{{ activeNode.stat }}</div>
-                <h3 class="cyc-title" style="font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(15px,1.9vw,21px);color:#fff;margin:0 0 8px;line-height:1.14;text-wrap:pretty">{{ activeNode.title }}</h3>
-                <p class="svc-instory" style="font-size:clamp(11.5px,1.15vw,13.5px);line-height:1.5;color:rgba(255,255,255,.8);margin:0 0 8px;text-wrap:pretty;max-height:7.6em;overflow:hidden">{{ activeNode.story }}</p>
-                <div class="svc-instory" style="font-size:10.5px;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.02em">{{ T.f_source }} {{ activeNode.src }}</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
+          <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="4">
+            <button onClick="{{ s.toggle }}" style="text-align:left;cursor:pointer;border-radius:18px;border:1px solid {{ s.ring }};background:{{ s.bg }};padding:20px;display:flex;flex-direction:column;gap:14px;transition:background .4s cubic-bezier(.22,.61,.36,1),border-color .4s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-3px)">
+              <div style="height:78px">
+                <div role="img" aria-hidden="true" style="width:100%;height:100%;background-image:{{ s.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:left bottom;filter:{{ s.filt }};transition:filter .6s cubic-bezier(.2,.7,.2,1)"></div>
               </div>
-            </div>
-          </div>
-          <div key="{{ activeNode.short }}" class="rise" style="text-align:center;font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#EAAE28;margin-top:44px;letter-spacing:.02em">{{ activeNode.shortLabel }}</div>
-          <div key="b{{ activeNode.title }}" class="rise svc-belowstory" style="text-align:center;max-width:440px;margin:18px auto 0">
-            <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,.8);margin:0 0 8px;text-wrap:pretty">{{ activeNode.story }}</p>
-            <div style="font-size:11px;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.02em">{{ T.f_source }} {{ activeNode.src }}</div>
-          </div>
+              <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,3.6vw,50px);line-height:1;color:{{ s.numColor }};transition:color .4s cubic-bezier(.22,.61,.36,1)">{{ s.value }}</div>
+              <sc-if value="{{ s.isMoney }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:12px;color:rgba(251,247,239,.55)">{{ s.usdHint }}</div>
+              </sc-if>
+              <div style="font-size:14px;line-height:1.4;color:rgba(251,247,239,.85);text-transform:uppercase;letter-spacing:.04em;font-weight:600">{{ s.label }}</div>
+              <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:{{ s.cueColor }}">{{ s.cue }}</span>
+            </button>
+          </sc-for>
         </div>
-        <p style="text-align:center;font-size:12px;color:rgba(255,255,255,.5);margin:40px auto 0;max-width:720px">{{ T.cycle_note }}</p>
-      </div>
-    </section>
-
-    <section data-spine="The Method" style="padding:clamp(60px,8vw,110px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
-      <div style="max-width:700px;margin-bottom:38px">
-        <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-crimson);font-weight:700">{{ T.eyebrow_process }}</span>
-        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.02em;color:var(--text);margin:14px 0 12px">{{ T.process_head }}</h2>
-        <p style="font-size:15.5px;line-height:1.65;color:var(--dim);margin:0;text-wrap:pretty">{{ T.method_sub }}</p>
-      </div>
-
-      <div class="loop-grid">
-        <sc-for list="{{ loopCells }}" as="lc" hint-placeholder-count="9">
-          <div class="{{ lc.cls }}" style="grid-column:{{ lc.gc }};grid-row:{{ lc.gr }};display:flex;align-items:center;justify-content:center;min-width:0">
-
-            <sc-if value="{{ lc.isArrow }}" hint-placeholder-val="{{ false }}">
-              <span aria-hidden="true" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(18px,2.2vw,26px);color:{{ lc.color }};animation-delay:{{ lc.delay }};padding:6px 10px">{{ lc.glyph }}</span>
-            </sc-if>
-
-            <sc-if value="{{ lc.isStation }}" hint-placeholder-val="{{ true }}">
-              <button onClick="{{ lc.select }}" onMouseEnter="{{ lc.select }}" style="width:100%;height:100%;text-align:left;font-family:inherit;cursor:pointer;padding:clamp(16px,1.9vw,24px);border-radius:20px;background:{{ lc.bg }};border:1.5px solid {{ lc.ring }};box-shadow:{{ lc.shadow }};display:flex;align-items:center;gap:14px;transition:background .28s cubic-bezier(.22,.61,.36,1),border-color .28s cubic-bezier(.22,.61,.36,1),box-shadow .28s cubic-bezier(.22,.61,.36,1),transform .28s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-3px)">
-                <div class="art" role="img" aria-hidden="true" style="flex:none;width:clamp(54px,6vw,76px);height:clamp(54px,6vw,76px);background-image:{{ lc.imgCss }},var(--art-plate-soft);opacity:{{ lc.artOp }};transition:opacity .28s cubic-bezier(.22,.61,.36,1)"></div>
-                <div style="min-width:0">
-                  <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:11.5px;letter-spacing:.12em;color:{{ lc.tok }};margin-bottom:4px">{{ lc.step }}</div>
-                  <div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(15px,1.6vw,19px);line-height:1.18;color:var(--text);text-wrap:pretty">{{ lc.name }}</div>
-                </div>
-              </button>
-            </sc-if>
-
-            <sc-if value="{{ lc.isCentre }}" hint-placeholder-val="{{ false }}">
-              <div key="{{ activeStep.name }}" class="rise" style="width:100%;max-width:360px;text-align:center;padding:clamp(20px,2.4vw,30px) clamp(16px,2vw,24px);border-radius:24px;background:var(--surface2);border:1px solid var(--border)">
-                <div class="art" role="img" aria-hidden="true" style="height:clamp(100px,11vw,134px);width:clamp(100px,11vw,134px);margin:0 auto 16px;background-image:{{ activeStep.imgCss }},var(--art-plate)"></div>
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:11.5px;letter-spacing:.12em;color:{{ activeStep.tok }}">{{ activeStep.step }}</div>
-                <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(19px,2.2vw,25px);margin:6px 0 10px;color:var(--text);line-height:1.1;text-wrap:balance">{{ activeStep.name }}</h3>
-                <p style="font-size:14.5px;line-height:1.6;color:var(--dim);margin:0 0 16px;text-wrap:pretty">{{ activeStep.body }}</p>
-                <div style="font-size:12px;line-height:1.5;color:var(--faint);padding-top:14px;border-top:1px solid var(--border);text-wrap:pretty">{{ activeStep.handoff }}</div>
-              </div>
-            </sc-if>
-
-          </div>
-        </sc-for>
-      </div>
-
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin-top:clamp(24px,3vw,36px)">
-        <span style="font-size:13px;color:var(--faint);text-wrap:pretty">{{ T.method_footnote }}</span>
-        <button onClick="{{ goWorkFromLoop }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:1.5px solid var(--ac-crimson);background:none;color:var(--ac-crimson);transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:var(--ac-crimson);color:#fff">{{ T.method_cta }}</button>
       </div>
     </section>
 
@@ -952,34 +954,7 @@
           <button onClick="{{ nextStory }}" aria-label="{{ T.aria_story_next }}" class="ml-press" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:20px;cursor:pointer;transition:background .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:rgba(255,255,255,.15)">›</button>
         </div>
         <button onClick="{{ goStories }}" style="margin-top:28px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:800;color:#fff;border-bottom:2px solid rgba(255,255,255,.5)">{{ storiesAllLabel }} →</button>
-      </div>
-    </section>
-
-    <section data-spine="In the News" style="padding:clamp(56px,7vw,88px) 0 0;max-width:1200px;margin:0 auto">
-      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding:0 clamp(20px,5vw,64px) 26px">
-        <div>
-          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ T.news_eyebrow }}</span>
-          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.04;letter-spacing:-.02em;color:var(--text);margin:12px 0 0">{{ T.news_title }}</h2>
-        </div>
-        <button onClick="{{ goMedia }}" style="padding:11px 22px;border-radius:999px;border:1px solid var(--border);background:none;color:var(--text);font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap">{{ pressAllLabel }}</button>
-      </div>
-      <div style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px clamp(20px,5vw,64px) 10px">
-        <sc-for list="{{ pressRail }}" as="pr" hint-placeholder-count="6">
-          <a href="{{ pr.href }}" target="_blank" rel="noopener" style="flex:none;width:min(78vw,300px);scroll-snap-align:start;display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:var(--surface);border:1px solid var(--border);text-decoration:none;color:inherit;transition:transform .18s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-4px)">
-            <div style="aspect-ratio:16/9;background:{{ pr.tint }};display:flex;flex-direction:column;justify-content:space-between;padding:16px 18px">
-              <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;color:{{ pr.ink }}">{{ pr.pub }}</span>
-              <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:40px;line-height:.85;color:{{ pr.ink }};opacity:.6">{{ pr.y }}</span>
-            </div>
-            <div style="padding:16px 18px 18px">
-              <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;line-height:1.3;margin:0;color:var(--text);text-wrap:pretty">{{ pr.title }}</h3>
-              <p style="font-size:12.5px;color:var(--faint);margin:9px 0 0">{{ pr.meta }}</p>
-            </div>
-          </a>
-        </sc-for>
-        <button onClick="{{ goMedia }}" style="flex:none;width:min(60vw,210px);scroll-snap-align:start;border-radius:18px;border:1px dashed var(--border);background:none;color:var(--text);cursor:pointer;font-family:inherit;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:22px">
-          <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;line-height:1.15;text-align:left">{{ pressAllLabel }}</span>
-          <span style="font-size:13px;color:var(--faint);text-align:left">{{ pressAllSub }}</span>
-        </button>
+        <button onClick="{{ goInvestFromWork }}" class="st-ask">{{ T.stories_ask }} →</button>
       </div>
     </section>
 
@@ -1012,21 +987,41 @@
       </div>
     </section>
 
-    <section data-spine="Where You Come In" style="padding:clamp(44px,6vw,80px) clamp(20px,5vw,64px) clamp(60px,8vw,100px);max-width:1200px;margin:0 auto">
-      <!-- Moved here from the end of "The Cycle" (audit found asking before The Method, Stories
-           of Change, In the News and Who Is Behind This meant asking before any proof had been
-           shown) — this now lands after every evidence section, as a second, evidence-backed
-           reinforcement directly ahead of the CTA row it already introduces, rather than a
-           faith-based ask that preceded the record. Gate (sigHero) and destination unchanged. -->
-      <sc-if value="{{ sigHero }}" hint-placeholder-val="{{ false }}">
-        <div style="margin:0 0 28px;padding:26px 30px;border-radius:20px;background:var(--surface2);border:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
-          <div style="flex:1 1 380px;min-width:0">
-            <p style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(18px,2.2vw,24px);line-height:1.3;color:var(--text);margin:0 0 6px;text-wrap:pretty">{{ T.ask_cycle_title }}</p>
-            <p style="font-size:14.5px;line-height:1.6;color:var(--dim);margin:0;text-wrap:pretty">{{ T.ask_cycle_sub }}</p>
-          </div>
-          <button onClick="{{ cycleAskGo }}" style="flex:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:14px 26px;border-radius:999px;background:var(--ac-gold);color:#1f1710;border:none;transition:transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ T.ask_cycle_cta }} →</button>
+    <section data-spine="In the News" style="padding:clamp(56px,7vw,88px) 0 0;max-width:1200px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding:0 clamp(20px,5vw,64px) 26px">
+        <div>
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ T.news_eyebrow }}</span>
+          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.04;letter-spacing:-.02em;color:var(--text);margin:12px 0 0">{{ T.news_title }}</h2>
         </div>
-      </sc-if>
+        <button onClick="{{ goMedia }}" style="padding:11px 22px;border-radius:999px;border:1px solid var(--border);background:none;color:var(--text);font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap">{{ pressAllLabel }}</button>
+      </div>
+      <div style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px clamp(20px,5vw,64px) 10px">
+        <sc-for list="{{ pressRail }}" as="pr" hint-placeholder-count="6">
+          <a href="{{ pr.href }}" target="_blank" rel="noopener" style="flex:none;width:min(78vw,300px);scroll-snap-align:start;display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:var(--surface);border:1px solid var(--border);text-decoration:none;color:inherit;transition:transform .18s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-4px)">
+            <div style="aspect-ratio:16/9;background:{{ pr.tint }};display:flex;flex-direction:column;justify-content:space-between;padding:16px 18px">
+              <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;color:{{ pr.ink }}">{{ pr.pub }}</span>
+              <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:40px;line-height:.85;color:{{ pr.ink }};opacity:.6">{{ pr.y }}</span>
+            </div>
+            <div style="padding:16px 18px 18px">
+              <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;line-height:1.3;margin:0;color:var(--text);text-wrap:pretty">{{ pr.title }}</h3>
+              <p style="font-size:12.5px;color:var(--faint);margin:9px 0 0">{{ pr.meta }}</p>
+            </div>
+          </a>
+        </sc-for>
+        <button onClick="{{ goMedia }}" style="flex:none;width:min(60vw,210px);scroll-snap-align:start;border-radius:18px;border:1px dashed var(--border);background:none;color:var(--text);cursor:pointer;font-family:inherit;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:22px">
+          <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;line-height:1.15;text-align:left">{{ pressAllLabel }}</span>
+          <span style="font-size:13px;color:var(--faint);text-align:left">{{ pressAllSub }}</span>
+        </button>
+      </div>
+    </section>
+
+    <section data-spine="Where You Come In" style="padding:clamp(44px,6vw,80px) clamp(20px,5vw,64px) clamp(60px,8vw,100px);max-width:1200px;margin:0 auto">
+      <div class="why-bridge">
+        <h2 class="why-h">{{ T.case_h1 }}</h2>
+        <p class="why-p">{{ T.case_p16 }}</p>
+        <p class="why-p why-proof">{{ T.pv_head_give_sub }}</p>
+        <button onClick="{{ cycleAskGo }}" class="why-go ml-press">{{ T.ask_cycle_cta }} →</button>
+      </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
         <sc-for list="{{ ctas }}" as="c" hint-placeholder-count="3">
           <button onClick="{{ c.go }}" class="pg-card" data-reveal="" style="transition-delay:{{ c.delay }};text-align:left;cursor:pointer;padding:30px;border-radius:20px;background:{{ c.bg }};color:{{ c.fg }};border:none;display:flex;flex-direction:column;gap:12px;transition:transform .18s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-4px)">
@@ -1037,6 +1032,7 @@
           </button>
         </sc-for>
       </div>
+      <button onClick="{{ goPartnerRoute }}" class="route-small">{{ T.cta_route_small }} →</button>
     </section>
   </div>
   </sc-if>
@@ -7008,6 +7004,10 @@ class Component extends DCLogic {
       hero_road_aria: "Her first eighteen years",
       hero_road_end_note: "Every figure on this road carries its source; every response is DEHAT’s own published work.",
       hero_road_end_resp: "Young people from these villages are prepared to lead those institutions, so the next girl’s road has someone on it too.",
+      cycle_bridge: "You walked seven moments of her road. Here are all sixteen, and how each one pulls the next.",
+      stories_ask: "Back the people in these stories",
+      cta_invest_join: "Join {n} social investors on the public record",
+      cta_route_small: "Not ready to commit? Find your route in three steps",
     };
         const HI = {
       foot_policies:'नीतियाँ और सुरक्षा उपाय',
@@ -7931,6 +7931,10 @@ class Component extends DCLogic {
       hero_road_aria: "उसके पहले अठारह साल",
       hero_road_end_note: "इस राह का हर आँकड़ा अपने स्रोत के साथ है; हर जवाब DEHAT का अपना प्रकाशित काम है।",
       hero_road_end_resp: "इन्हीं गाँवों के युवा उन संस्थाओं की अगुवाई के लिए तैयार होते हैं, ताकि अगली बच्ची की राह पर भी कोई साथ हो।",
+      cycle_bridge: "आपने उसकी राह के सात पड़ाव देखे। ये रहे सभी सोलह, और कैसे हर एक अगले को अपनी ओर खींचता है।",
+      stories_ask: "इन कहानियों के लोगों का साथ दीजिए",
+      cta_invest_join: "सार्वजनिक रिकॉर्ड पर दर्ज {n} सामाजिक निवेशकों से जुड़िए",
+      cta_route_small: "अभी तय नहीं? तीन कदमों में अपना रास्ता खोजिए",
     };
             const ZH = {
     "foot_policies": "政策与保障措施",
@@ -35278,6 +35282,7 @@ class Component extends DCLogic {
       sigHero: this.state.sigHero,
       sig: this.state.sig,
       cycleAskGo: this._goInvolved('case'),
+      goPartnerRoute: this._goInvolved('route'),
       progCloseGo: this._goInvolved('give'),
       heroStats: [
         { to: 22020, dec: 0, comma: true, suffix: '+', prefix: '', label: T.stat_children, art: 'sm-ink-crowd' },
@@ -35352,7 +35357,7 @@ class Component extends DCLogic {
         { k: 'wh3', num: '75.4%', place: this._tagMap('district_name', 'Balrampur', 'Balrampur'), body: T.why_h3 },
       ],
       ctas: [
-        { title: T.cta_donate, body: T.cta_donate_b, action: T.cta_donate_a, bg: '#D2305C', fg: '#fff', art: 'invest', go: this._goInvolved('give') },
+        { title: T.cta_donate, body: T.cta_donate_b, action: this._fill(T.cta_invest_join, { n: 48 }), bg: '#D2305C', fg: '#fff', art: 'invest', go: this._goInvolved('give') },
         { title: T.cta_vol, body: T.cta_vol_b, action: T.cta_vol_a, bg: '#EAAE28', fg: '#1f1710', art: 'volunteer', go: this._goInvolved('route') },
         { title: T.cta_partner, body: T.cta_partner_b, action: T.cta_partner_a, bg: '#0E5565', fg: '#fff', art: 'partner', go: this._goInvolved('people') },
       ].map((c, i) => Object.assign({}, c, {
