@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Her Eighteen Steps — hero prototype</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+/* Prototype for the home hero: the road becomes a staircase of her first eighteen years.
+   Each turn: the risk hanging over the next step drops away, the step is built from DEHAT's
+   response and settles into place, and she climbs onto it. Motion follows one grammar:
+   exits fall (accelerating), arrivals settle (strong ease-out), nothing loops. */
+:root{
+  --ink:#150e08; --paper:#fbf7ef; --dim:rgba(251,247,239,.72); --faint:rgba(251,247,239,.5);
+  --gold:#EAAE28; --riser:#8c5d56; --tread:#b07a70; --edge:#1c130c;
+  --ease-out:cubic-bezier(.23,1,.32,1); --ease-fall:cubic-bezier(.55,0,.9,.45);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ink);color:var(--paper);font-family:"Public Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.hero{min-height:100svh;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,64px);align-items:center;padding:clamp(24px,4vw,64px) clamp(20px,5vw,64px)}
+h1{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(32px,4.4vw,64px);line-height:1;letter-spacing:-.03em;margin:0;text-wrap:balance}
+h1 span{display:block;font-weight:400;color:rgba(251,247,239,.66);margin-top:.18em}
+.sub{font-size:clamp(15px,1.3vw,18px);line-height:1.55;color:var(--dim);max-width:46ch;margin:18px 0 0}
+.panel{margin-top:24px;border-top:1px solid rgba(251,247,239,.18);padding-top:14px;min-height:190px}
+.meta{display:flex;justify-content:space-between;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.meta b{color:var(--gold)} .meta span{color:var(--faint)}
+.told{margin:10px 0 0;font-size:15px;line-height:1.55;color:var(--dim);max-width:46ch}
+.told s{text-decoration-color:rgba(234,174,40,.8);text-decoration-thickness:2px;color:var(--faint)}
+.answer{margin:10px 0 0;font-size:15.5px;line-height:1.5;color:var(--paper);max-width:46ch}
+.answer em{font-style:normal;color:var(--gold);font-weight:700}
+.panel-in{animation:rise .36s var(--ease-out) both}
+.actions{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin-top:22px}
+.cta{font:inherit;font-weight:800;font-size:15.5px;padding:14px 26px;border-radius:999px;border:none;background:var(--gold);color:#1f1710;cursor:pointer;transition:transform .16s var(--ease-out)}
+.cta:active{transform:scale(.97)}
+.next{font:inherit;font-weight:700;font-size:15px;background:none;border:none;color:var(--paper);cursor:pointer;text-decoration:underline;text-decoration-color:rgba(251,247,239,.35);text-underline-offset:5px;padding:0}
+.hint{font-size:12.5px;color:var(--faint)}
+
+/* The stage: 8 steps rising left to right. Geometry is set per step from --i. */
+.stage{position:relative;width:100%;aspect-ratio:5/4;max-height:78svh;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;outline:none}
+.stage.drag{cursor:grabbing}
+.step{--w:calc(100% / 8.4);--rise:calc(78% / 8);position:absolute;left:calc(3% + var(--i) * (94% / 8.4));bottom:2%;width:var(--w);height:calc((var(--i) + 1) * var(--rise));pointer-events:none}
+/* One continuous staircase: each column is filled without side borders (so columns merge into a
+   single stepped mass), and only the step's own front face and top are outlined. */
+.step{background:var(--riser)}
+.step .face{position:absolute;left:0;right:0;top:0;height:var(--face,100%);overflow:hidden;border-left:2px solid var(--edge);border-top:2px solid var(--edge);display:flex;align-items:center;justify-content:center;padding:6px 6px 4px}
+.step .tread{position:absolute;left:-2px;right:0;top:-8px;height:10px;background:var(--tread);border:2px solid var(--edge);border-bottom:none;border-radius:3px 3px 0 0}
+.step .lbl{font-size:clamp(9px,.88vw,12px);line-height:1.2;font-weight:700;color:var(--paper);text-align:center;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}
+.step .age{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%);font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--faint);white-space:nowrap}
+/* not yet built: only the outline of where the step will be */
+.step.ghost{background:transparent}
+.step.ghost .face{border-left:2px dashed rgba(251,247,239,.2);border-top:2px dashed rgba(251,247,239,.2)}
+.step.ghost .tread{background:transparent;border-color:rgba(251,247,239,.2);border-style:dashed}
+.step.ghost .lbl{opacity:0}
+.step.on .age{opacity:0}
+.step.fresh{animation:settle .52s var(--ease-out) both}
+.step.top .tread{background:var(--gold)}
+
+/* The risk that hangs over the next step, and falls when she climbs */
+.risk{position:absolute;width:clamp(150px,18vw,220px);padding:10px 12px;border-radius:12px;background:rgba(21,14,8,.92);border:1px solid rgba(240,144,124,.55);box-shadow:0 14px 30px -18px rgba(0,0,0,.7);transform:translate(-50%,0);pointer-events:none;transition:left .5s var(--ease-out),bottom .5s var(--ease-out)}
+.risk .n{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1;color:#F0907C}
+.risk .t{font-size:12.5px;line-height:1.35;color:var(--dim);margin-top:4px}
+.risk.fall{animation:fall .5s var(--ease-fall) forwards}
+.risk.in{animation:hang .42s var(--ease-out) both}
+
+/* Her */
+.girl{position:absolute;left:0;bottom:0;width:clamp(40px,5.4vw,70px);aspect-ratio:219/440;transition:transform .56s var(--ease-out);pointer-events:none;z-index:3}
+.girl i{display:block;width:100%;height:100%;background:url(assets/story/hero-girl.png) bottom center/contain no-repeat;transform-origin:bottom center}
+.girl.hop i{animation:hop .56s var(--ease-out)}
+.stage:focus-visible .step.on .tread{box-shadow:0 0 0 4px rgba(234,174,40,.5)}
+
+@keyframes settle{0%{opacity:0;transform:translateY(18px) scale(.92)}60%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes fall{0%{opacity:1;transform:translate(-50%,0) rotate(0)}100%{opacity:0;transform:translate(-50%,160px) rotate(14deg)}}
+@keyframes hang{from{opacity:0;transform:translate(-50%,-12px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes hop{0%{transform:none}45%{transform:translateY(-22%) rotate(-3deg)}100%{transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){ .step.fresh,.risk.fall,.risk.in,.girl.hop i,.panel-in{animation:none} .girl,.risk{transition:none} .risk.fall{opacity:0} }
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;align-items:start}
+  .stage{order:2;aspect-ratio:1/1;max-height:none}
+  .copy{display:contents}
+  h1{order:1} .sub{display:none} .panel{order:3;margin-top:4px;min-height:0} .actions{order:4;margin-top:12px}
+  .step .lbl{display:none} .step .age{font-size:10px}
+  .risk{width:150px}
+}
+</style>
+</head>
+<body>
+<section class="hero" aria-labelledby="h">
+  <div class="copy">
+    <h1 id="h">A girl is born on the Indo-Nepal border today.<span>What happens to her next is still being decided.</span></h1>
+    <p class="sub">Every turn of her first eighteen years holds a risk. Climb with her: each one DEHAT answers becomes the next step she stands on.</p>
+    <div class="panel" id="panel" aria-live="polite"></div>
+    <div class="actions">
+      <button class="cta" id="cta">Walk Her Whole Road →</button>
+      <button class="next" id="nextBtn">Climb the next step</button>
+      <span class="hint" id="hint">Drag the stairs, tap a step, or use ← →</span>
+    </div>
+  </div>
+  <div class="stage" id="stage" tabindex="0" role="slider" aria-label="Her first eighteen years" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0"></div>
+</section>
+
+<script>
+// Eight turns. Each: the age, the risk that stands in her way (sourced, from the Cycle), and the
+// response that becomes her step (DEHAT's published response for that stage, shortened).
+// Figures and sources are the site's own; the Age 16 wording avoids the "382" field figure
+// pending the client's decision on that framing.
+const TURNS = [
+  { age:'Birth', n:'87%', risk:'of babies miss feeding in the first hour (Maharajganj, NFHS-5)', step:'Newborn care follow-up', prog:'Rights & Entitlements', resp:'Counselling on early and exclusive breastfeeding, and newborn care follow-up.' },
+  { age:'Age 1', n:'48%', risk:'of children are not fully immunised (Bahraich, NFHS-5)', step:'Immunisation tracking', prog:'Rights & Entitlements', resp:'Immunisation tracking with Anganwadi and health workers, and household counselling on missed doses.' },
+  { age:'Age 3', n:'1 in 2', risk:'children under five are stunted (Bahraich, NFHS-5)', step:'Kitchen gardens', prog:'Climate Justice', resp:'Kitchen gardens, pulse cultivation and diversified household food production.' },
+  { age:'Age 12', n:'53%', risk:'of young women use no hygienic protection (Shravasti, NFHS-5)', step:'Menstrual health support', prog:'School of Leadership', resp:'Adolescent health education and menstrual hygiene support, so a period does not end a girl’s schooling.' },
+  { age:'Age 13', n:'1 in 4', risk:'girls drop out of school (Shravasti, UDISE+)', step:'Back to school, by name', prog:'School of Leadership', resp:'Bridge learning centres, re-enrolment by name, and School Management Committees that follow up on absence.' },
+  { age:'Age 15', n:'52%', risk:'of women were married before eighteen (Shravasti, NFHS-5)', step:'Child protection committees', prog:'Human Protection', resp:'Village and block child protection committees and Child Marriage Prohibition Officers, acting before the date is fixed.' },
+  { age:'Age 16', n:'Border', risk:'an open border where trafficking can be dressed as marriage', step:'Interception and rescue', prog:'Human Protection', resp:'Interception, rescue and repatriation with the Sashastra Seema Bal, Anti-Human Trafficking Units, police and Child Welfare Committees.' },
+  { age:'Age 18', n:'', risk:'', step:'She leads next', prog:'School of Leadership', resp:'Young people from these villages are prepared to lead those institutions, so the next girl’s road has someone on it too.', end:true },
+];
+const N = TURNS.length;           // 8 steps; position 0 = standing at the foot, before the first step
+const stage = document.getElementById('stage'), panel = document.getElementById('panel');
+let pos = 0, touched = false;
+
+// Build the steps once
+TURNS.forEach((t, i) => {
+  const s = document.createElement('div');
+  s.className = 'step ghost' + (t.end ? ' top' : '');
+  s.style.setProperty('--i', i);
+  s.style.setProperty('--face', (100 / (i + 1)) + '%');
+  s.innerHTML = '<div class="face"><span class="lbl">' + t.step + '</span></div><div class="tread"></div><span class="age">' + t.age + '</span>';
+  stage.appendChild(s);
+});
+const steps = [...stage.querySelectorAll('.step')];
+const risk = document.createElement('div'); risk.className = 'risk'; stage.appendChild(risk);
+const girl = document.createElement('div'); girl.className = 'girl'; girl.innerHTML = '<i></i>'; stage.appendChild(girl);
+
+const geo = (i) => {                      // where step i's top centre sits, in px within the stage
+  const b = stage.getBoundingClientRect(), W = b.width, H = b.height;
+  const w = W / 8.4, x = W * .03 + i * (W * .94 / 8.4) + w / 2;
+  const top = H * .02 + (i + 1) * (H * .78 / 8);   // ground + (i+1) risers
+  return { x, y: top, w };
+};
+const place = (hop) => {
+  const b = stage.getBoundingClientRect();
+  // she stands on the last built step (pos-1), or on the ground before the first
+  let x, y;
+  if (pos === 0) { const g = geo(0); x = g.x - g.w * .9; y = b.height * .02; }
+  else { const g = geo(pos - 1); x = g.x; y = g.y + 2; }
+  girl.style.transform = 'translate(' + (x - girl.offsetWidth / 2) + 'px,' + (-y) + 'px)';
+  girl.style.bottom = '0px';
+  if (hop) { girl.classList.remove('hop'); void girl.offsetWidth; girl.classList.add('hop'); }
+};
+const hangRisk = () => {
+  const t = TURNS[pos];
+  if (!t || t.end) { risk.style.display = 'none'; return; }
+  risk.style.display = '';
+  risk.innerHTML = '<div class="n">' + t.n + '</div><div class="t">' + t.risk + '</div>';
+  const g = geo(pos), b = stage.getBoundingClientRect();
+  risk.style.left = Math.min(Math.max(g.x, 90), b.width - 90) + 'px';
+  risk.style.bottom = (g.y + b.height * .1 + 30) + 'px';
+  risk.classList.remove('fall'); void risk.offsetWidth; risk.classList.add('in');
+};
+const writePanel = () => {
+  const done = pos === 0 ? null : TURNS[pos - 1];
+  let html = '<div class="meta"><b>' + (done ? done.age : 'Before her first step') + '</b><span>' + pos + ' of ' + N + '</span></div>';
+  if (!done) html += '<p class="told">She is born into sixteen risks that feed each other. Climb with her.</p>';
+  else if (done.end) html += '<p class="told" style="color:var(--paper);font-family:Bricolage Grotesque,system-ui;font-weight:800;font-size:clamp(22px,2.4vw,30px);line-height:1.1">Eighteen. Every turn she got through, someone answered.</p><p class="answer"><em>' + done.prog + '</em> · ' + done.resp + '</p>';
+  else html += '<p class="told"><s>' + done.n + ' ' + done.risk + '</s></p><p class="answer"><em>' + done.prog + '</em> · ' + done.resp + '</p>';
+  panel.innerHTML = '<div class="panel-in">' + html + '</div>';
+};
+const render = (prev) => {
+  steps.forEach((s, i) => {
+    const built = i < pos;
+    s.classList.toggle('ghost', !built);
+    s.classList.toggle('built', built);
+    s.classList.toggle('on', i === pos - 1);
+    s.classList.remove('fresh');
+  });
+  if (pos > prev) { const s = steps[pos - 1]; void s.offsetWidth; s.classList.add('fresh'); }
+  stage.setAttribute('aria-valuenow', pos);
+  stage.setAttribute('aria-valuetext', pos === 0 ? 'Before her first step' : TURNS[pos - 1].age + ': ' + TURNS[pos - 1].step);
+  document.getElementById('nextBtn').textContent = pos >= N ? 'Start again' : 'Climb the next step';
+  writePanel();
+};
+const go = (n) => {
+  n = Math.max(0, Math.min(N, n));
+  if (n === pos) return;
+  const prev = pos;
+  if (n > prev && TURNS[prev] && !TURNS[prev].end) {       // climbing: the risk ahead drops first
+    risk.classList.remove('in'); void risk.offsetWidth; risk.classList.add('fall');
+  }
+  pos = n; touched = true; document.getElementById('hint').style.opacity = '.35';
+  render(prev);
+  setTimeout(() => { place(true); hangRisk(); }, n > prev ? 160 : 0);
+};
+
+// input: drag (nearest step under the pointer), tap, keys, button
+const posAt = (x) => { const b = stage.getBoundingClientRect(); const i = Math.round(((x - b.left) - b.width * .03 - (b.width / 8.4) / 2) / (b.width * .94 / 8.4)); return Math.max(0, Math.min(N, i + 1)); };
+let down = false, pid = null;
+stage.addEventListener('pointerdown', e => { down = true; pid = e.pointerId; stage.classList.add('drag'); try { stage.setPointerCapture(pid); } catch (_) {} go(posAt(e.clientX)); });
+stage.addEventListener('pointermove', e => { if (down && e.pointerId === pid) go(posAt(e.clientX)); });
+const up = e => { if (!down) return; down = false; stage.classList.remove('drag'); try { stage.releasePointerCapture(pid); } catch (_) {} };
+stage.addEventListener('pointerup', up); stage.addEventListener('pointercancel', up);
+window.addEventListener('keydown', e => {
+  const t = e.target, tag = (t.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.key === 'ArrowRight' || (e.key === 'ArrowUp' && t === stage)) { e.preventDefault(); go(pos + 1); }
+  else if (e.key === 'ArrowLeft' || (e.key === 'ArrowDown' && t === stage)) { e.preventDefault(); go(pos - 1); }
+  else if (e.key === 'Home' && t === stage) { e.preventDefault(); go(0); }
+  else if (e.key === 'End' && t === stage) { e.preventDefault(); go(N); }
+});
+document.getElementById('nextBtn').addEventListener('click', () => go(pos >= N ? 0 : pos + 1));
+document.getElementById('cta').addEventListener('click', () => { location.href = 'DEHAT.dc.html#home'; });
+window.addEventListener('resize', () => { place(false); hangRisk(); });
+
+render(0); place(false); hangRisk();
+// one unprompted climb shows the stairs can be climbed
+setTimeout(() => { if (!touched && !matchMedia('(prefers-reduced-motion: reduce)').matches) go(1); touched = false; document.getElementById('hint').style.opacity = ''; }, 2600);
+</script>
+</body>
+</html>
