@@ -15,6 +15,13 @@
   *{box-sizing:border-box}
   .m-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
   .m-card:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(0,0,0,.55)}
+  .m-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;flex:none;min-width:0}
+  .m-stat{min-width:0}
+  .m-stat-value{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,7vw,34px);line-height:1;color:var(--ac-teal,#0E5565);overflow-wrap:anywhere}
+  .m-stat-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint,#8a7c6c);margin-top:6px;font-weight:600}
+  @media (max-width:520px){
+    .m-stats{width:100%;gap:14px}
+  }
 </style>
 <script src="./media-data.js"></script>
 </helmet>
@@ -28,18 +35,18 @@
         <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.02;letter-spacing:-.02em;margin:12px 0 0">Media Archive</h1>
         <p style="font-size:16px;line-height:1.6;color:var(--dim,#5a4f43);margin:14px 0 0;text-wrap:pretty">{{ blurb }}</p>
       </div>
-      <div style="display:flex;gap:28px;flex:none">
-        <div>
-          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:34px;line-height:1;color:var(--ac-teal,#0E5565)">{{ total }}</div>
-          <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint,#8a7c6c);margin-top:6px;font-weight:600">Items</div>
+      <div class="m-stats">
+        <div class="m-stat">
+          <div class="m-stat-value">{{ total }}</div>
+          <div class="m-stat-label">Items</div>
         </div>
-        <div>
-          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:34px;line-height:1;color:var(--ac-teal,#0E5565)">{{ pubCount }}</div>
-          <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint,#8a7c6c);margin-top:6px;font-weight:600">Publishers</div>
+        <div class="m-stat">
+          <div class="m-stat-value">{{ pubCount }}</div>
+          <div class="m-stat-label">Publishers</div>
         </div>
-        <div>
-          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:34px;line-height:1;color:var(--ac-teal,#0E5565)">{{ span }}</div>
-          <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint,#8a7c6c);margin-top:6px;font-weight:600">Years covered</div>
+        <div class="m-stat">
+          <div class="m-stat-value">{{ span }}</div>
+          <div class="m-stat-label">Years covered</div>
         </div>
       </div>
     </header>

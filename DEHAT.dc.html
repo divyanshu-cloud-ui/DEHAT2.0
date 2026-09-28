@@ -599,17 +599,15 @@
 </sc-if>
 
 <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
-<div class="nav-burger" key="navmenu" style="position:sticky;top:0;z-index:49;flex-direction:column;background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px clamp(16px,5vw,64px) 18px;gap:2px">
+<div class="nav-burger" key="navmenu" style="position:fixed;top:var(--nav-h,72px);left:0;right:0;z-index:49;max-height:calc(100dvh - var(--nav-h,72px));overflow-y:auto;-webkit-overflow-scrolling:touch;flex-direction:column;background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px clamp(16px,5vw,64px) 18px;gap:2px">
   <sc-for list="{{ navGroups }}" as="item" hint-placeholder-count="4">
     <div style="border-top:1px solid var(--border)">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-        <button onClick="{{ item.go }}" style="flex:1 1 auto;text-align:left;background:none;border:none;cursor:pointer;padding:14px 4px;font-size:16px;font-weight:700;color:{{ item.color }};font-family:inherit">{{ item.label }}</button>
-        <sc-if value="{{ item.hasKids }}" hint-placeholder-val="{{ false }}">
-          <button onClick="{{ item.toggle }}" aria-label="{{ item.label }}" aria-expanded="{{ item.isOpen }}" style="flex:none;background:none;border:1px solid var(--border);width:44px;height:44px;cursor:pointer;font-size:16px;font-weight:800;color:{{ item.color }};font-family:inherit">{{ item.caret }}</button>
-        </sc-if>
+        <button onClick="{{ item.mobileTap }}" aria-expanded="{{ item.mobileExpanded }}" style="flex:1 1 auto;text-align:left;background:none;border:none;cursor:pointer;padding:14px 4px;font-size:16px;font-weight:700;color:{{ item.color }};font-family:inherit">{{ item.label }}</button>
       </div>
       <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:1px;padding:0 0 10px 14px">
+          <button onClick="{{ item.go }}" style="text-align:left;background:none;border:none;cursor:pointer;padding:10px 4px;font-size:14.5px;font-weight:700;color:var(--text);font-family:inherit">{{ item.label }}</button>
           <sc-for list="{{ item.children }}" as="kid" hint-placeholder-count="4">
             <button onClick="{{ kid.go }}" style="text-align:left;background:none;border:none;cursor:pointer;padding:10px 4px;font-size:14.5px;font-weight:600;color:{{ kid.color }};font-family:inherit">{{ kid.label }}</button>
           </sc-for>
@@ -4665,7 +4663,7 @@ class Component extends DCLogic {
     this._onDocDown = (e) => {
       try {
         if (!this.state.navMore && !this.state.navGroup) return;
-        const n = e.target && e.target.closest ? e.target.closest('nav') : null;
+        const n = e.target && e.target.closest ? e.target.closest('nav, .nav-burger') : null;
         if (!n) this.setState({ navMore: false, navGroup: '' });
       } catch (err) {}
     };
@@ -32540,20 +32538,6 @@ class Component extends DCLogic {
     return head + ' \u2014 ' + (who || T.mail_subject_fallback);
   }
   _mailHeads(T) { return [T.mail_h_about, T.mail_h_explore, T.mail_h_change]; }
-  _support(name) {
-    const to = 'joinus@dehatindia.org';
-    const m = (s, b) => 'mailto:' + to + '?subject=' + encodeURIComponent(s + ' \u2014 ' + name)
-      + '&body=' + encodeURIComponent('Hello DEHAT team,\n\n' + b + '\n\nI came to this from the ' + name + ' programme page on your website.\n\nMy name is:\nThe best way to reach me is:\n\nThank you,\n');
-    return [
-      { k: 'Invest in Rupees', v: 'Indian investments carry the 80G deduction. Approval AAAAD3793Q25LK02, valid AY 2027\u201328 to 2031\u201332.', a: 'Write to Us', href: m('Investment (INR)', 'I would like to invest in Indian rupees towards this programme, and I would like an 80G receipt. Please send me the account details and tell me what you need from me for the receipt.'), col: '#EAAE28' },
-      { k: 'Invest From Outside India', v: 'DEHAT holds Foreign Contribution (Regulation) Act registration 136260010 and receives foreign contributions only into its designated State Bank of India account.', a: 'Write to us', href: m('Investment (foreign / FCRA)', 'I would like to make a contribution from outside India towards this programme. Please send me the FCRA account details and tell me what you need from me for your FC-4 return.'), col: '#0E5565' },
-      { k: 'Partner as a company', v: 'Corporate Social Responsibility registration CSR00001181. Schedule VII alignment is stated on every project in the register above.', a: 'Start a conversation', href: m('CSR / institutional partnership', 'We are considering a CSR or institutional partnership on this programme. Please tell us which geographies currently have room, what a first year would look like, and what due diligence material you can share.'), col: '#D2305C' },
-      { k: 'Work with us', v: 'Fellowships, internships and field roles, in Bahraich and remotely.', a: 'Send your interest', href: m('Fellowship / volunteering', 'I would like to work with DEHAT on this programme, as a fellow, an intern or in a field role. Please tell me what is currently open and what you would want from me.'), col: '#556223' },
-      { k: 'Ask for the evidence', v: 'Audited accounts, evaluations and programme reports are available on request, including the documents cited in the register.', a: 'Request a report', href: m('Request for reports or data', 'Please send me the audited accounts, evaluations and programme reports for this programme. I am specifically interested in:'), col: '#4F0E73' },
-      { k: 'Visit the field', v: 'Partners, researchers and prospective colleagues are welcome to see the work in the districts where it happens.', a: 'Arrange a visit', href: m('Field visit', 'I would like to visit the field and see this programme where it happens. My rough dates are:\nThe number of people travelling is:'), col: '#A92719' },
-      { k: 'Share this work', v: 'The most useful thing many readers can do is put this page in front of someone who can act on it.', a: '', href: '', col: '#0E5565' },
-    ];
-  }
   _loadProjects() {
     if (this._projLoading || (this.state.projects && this.state.projects.length)) return;
     this._projLoading = true;
@@ -33542,7 +33526,7 @@ class Component extends DCLogic {
       if (!v || typeof v !== 'object' || seen.has(v)) return v;
       seen.add(v);
       if (Array.isArray(v)) { v.forEach(walk); return v; }
-      if (typeof v.img === 'string' && !v.imgCss) v.imgCss = 'url(' + v.img + ')';
+      if (typeof v.img === 'string' && !v.imgCss) v.imgCss = v.img.trim() ? 'url(' + v.img + ')' : 'none';
       if (typeof v.img === 'string' && v.invFilt === undefined) v.invFilt = INK_ONLY.test(v.img) ? inkFlip : 'none';
       Object.keys(v).forEach(k => { const c = v[k]; if (c && typeof c === 'object') walk(c); });
       return v;
@@ -33673,7 +33657,9 @@ class Component extends DCLogic {
         hasKids: children.length > 0, children,
         isOpen: this.state.navGroup === g.key,
         toggle: () => this.setState(st => ({ navGroup: st.navGroup === g.key ? '' : g.key })),
-        caret: children.length ? ' \u02c5' : '',
+        mobileTap: children.length ? (() => this.setState(st => ({ navGroup: st.navGroup === g.key ? '' : g.key }))) : (g.key === 'involved' ? this._goInvolved('case') : setView(g.key)),
+        mobileExpanded: children.length ? (this.state.navGroup === g.key ? 'true' : 'false') : 'false',
+        caret: '',
         color: on ? 'var(--text)' : 'var(--faint)',
         active: on ? 1 : 0,
       };
@@ -34225,7 +34211,6 @@ class Component extends DCLogic {
         figs: PFIG ? PFIG.items.map((f, i) => { const usdHint = this._usdHint(f.n); return { k: 'pf' + i, n: f.n, l: this._tc('prog_figures', prog + '_' + i, 'l', f.l), src: f.src, usdHint, hasUsd: !!usdHint }; }) : [],
         hasCyc: !!pcyc, cyc: pcyc || {},
         hasJourney: !!journey, j: journey || {}, soft, mid, fgc,
-        support: this._support(nar.name || 'DEHAT').map((s, i) => ({ ...s, k2: 'sp' + i, hasA: !!s.a, fg: this._tok(s.col) })),
         ctas: [
           { title: T.pcta_invest_title, body: T.pcta_invest_body, action: T.pcta_invest_action, bg: '#D2305C', fg: '#fff', art: 'invest', go: this._goInvolved('give') },
           { title: T.pcta_time_title, body: T.pcta_time_body, action: T.pcta_time_action, bg: '#EAAE28', fg: '#1f1710', art: 'volunteer', go: this._goInvolved('route') },
@@ -35004,7 +34989,7 @@ class Component extends DCLogic {
             .map(([key, v]) => ({
               key,
               label: this._tagMap('sdg_by_key', key, ((this._pd||{}).SDG || {})[key] || key).split(' \u00b7 ').slice(1).join(' \u00b7 ') || key,
-              imgCss: 'url(./' + (((this._pd||{}).SDG_ICON || {})[key] || '') + ')',
+              imgCss: (((this._pd||{}).SDG_ICON || {})[key]) ? ('url(./' + ((this._pd||{}).SDG_ICON || {})[key] + ')') : 'none',
               filt: dark ? 'brightness(0) invert(1) opacity(.85)' : 'none',
               countLabel: v.count + ' ' + T.lens_projects_suffix,
               rows: Object.entries(v.totals || {}).map(([k, val]) => fmtCatRow(k, val)),

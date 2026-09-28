@@ -168,9 +168,15 @@
   const tombstones = new Set();
   let loaded = false;
   let loadP = null;
+  const canPersist = () => !!(window.omelette && window.omelette.writeFile);
 
   function load() {
     if (loadP) return loadP;
+    if (!canPersist()) {
+      loaded = true;
+      loadP = Promise.resolve().then(() => { subs.forEach((fn) => fn()); });
+      return loadP;
+    }
     loadP = fetch(STATE_FILE)
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => {
@@ -231,6 +237,18 @@
 
   const S_MAX = 5;
   const clampS = (s) => Math.max(1, Math.min(S_MAX, s));
+  const usableImageUrl = (value) => {
+    const raw = String(value || '').trim();
+    if (!raw || raw === 'undefined' || raw === 'null') return '';
+    if (raw.indexOf('{{') !== -1 || raw.indexOf('}}') !== -1) return '';
+    if (/^data:image\//i.test(raw)) return raw;
+    try {
+      const u = new URL(raw, document.baseURI);
+      return (u.protocol === 'http:' || u.protocol === 'https:') ? raw : '';
+    } catch (e) {
+      return '';
+    }
+  };
 
   // Normalize a stored slot value. Pre-reframe sidecars stored a bare
   // data-URL string; newer ones store {u, s, x, y}. Either shape is valid.
@@ -248,6 +266,7 @@
     // A drop is rare + high-value — write immediately so nav-away can't lose
     // it. Gate on the initial read so we don't overwrite a sidecar we haven't
     // merged yet; the merge in load() keeps this change once the read lands.
+    if (!canPersist()) return;
     if (loaded) save(); else load().then(save);
   }
 
@@ -1097,7 +1116,7 @@
       if (stored && stored.u && !/^data:image\//i.test(stored.u)) stored = null;
       const srcAttr = this.getAttribute('src') || '';
       this._userUrl = (stored && stored.u) || null;
-      const url = this._userUrl || srcAttr;
+      const url = usableImageUrl(this._userUrl || srcAttr);
       // Don't clobber an in-flight reframe with a store-triggered re-render.
       if (!this.hasAttribute('data-reframe')) {
         this._view = {
