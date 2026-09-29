@@ -933,23 +933,18 @@
 
     <section data-spine="What It Adds Up To" style="background:#0E5565;padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px)">
       <div style="max-width:1200px;margin:0 auto">
-        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:26px">
-          <span style="font-size:12.5px;letter-spacing:.02em;color:rgba(251,247,239,.7)">{{ statHint }}</span>
-          <button onClick="{{ statRevealAll }}" style="background:none;border:1px solid rgba(251,247,239,.35);color:rgba(251,247,239,.85);border-radius:999px;padding:7px 15px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.04em" style-hover="border-color:#EAAE28;color:#EAAE28">{{ statRevealLabel }}</button>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
+        <div class="ig-grid" ref="{{ statRef }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
           <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="4">
-            <button onClick="{{ s.toggle }}" style="text-align:left;cursor:pointer;border-radius:18px;border:1px solid {{ s.ring }};background:{{ s.bg }};padding:20px;display:flex;flex-direction:column;gap:14px;transition:background .4s cubic-bezier(.22,.61,.36,1),border-color .4s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-3px)">
+            <div class="ig-card" style="--ig-rest:brightness(0) invert(1) opacity(.5);--ig-on:brightness(0) invert(1) opacity(.95);border-radius:18px;border:1px solid rgba(234,174,40,.45);background:rgba(234,174,40,.1);padding:20px;display:flex;flex-direction:column;gap:14px">
               <div style="height:78px">
-                <div role="img" aria-hidden="true" style="width:100%;height:100%;background-image:{{ s.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:left bottom;filter:{{ s.filt }};transition:filter .6s cubic-bezier(.2,.7,.2,1)"></div>
+                <div class="ig-art" role="img" aria-hidden="true" style="width:100%;height:100%;background-image:{{ s.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:left bottom"></div>
               </div>
-              <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,3.6vw,50px);line-height:1;color:{{ s.numColor }};transition:color .4s cubic-bezier(.22,.61,.36,1)">{{ s.value }}</div>
+              <div class="ig-num" data-to="{{ s.to }}" data-dec="{{ s.dec }}" data-comma="{{ s.comma }}" data-pre="{{ s.prefix }}" data-suf="{{ s.suffix }}" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,3.6vw,50px);line-height:1;color:#EAAE28;font-variant-numeric:tabular-nums">{{ s.value }}</div>
               <sc-if value="{{ s.isMoney }}" hint-placeholder-val="{{ false }}">
                 <div style="font-size:12px;color:rgba(251,247,239,.55)">{{ s.usdHint }}</div>
               </sc-if>
               <div style="font-size:14px;line-height:1.4;color:rgba(251,247,239,.85);text-transform:uppercase;letter-spacing:.04em;font-weight:600">{{ s.label }}</div>
-              <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:{{ s.cueColor }}">{{ s.cue }}</span>
-            </button>
+            </div>
           </sc-for>
         </div>
       </div>
@@ -4695,7 +4690,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;indexName&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Child Opportunity Gap Index&quot;,&quot;Child Vulnerability Index&quot;,&quot;Child Marginalisation Index&quot;],&quot;default&quot;:&quot;Child Opportunity Gap Index&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;District index&quot;}}">
 class Component extends DCLogic {
-  state = { booting: true, view: 'home', loop: 0, jSide: '', wQ: 0, wX: 'sol', wI: 0, wF: 'uncrc', progKey: 're', program: 0, node: 0, district: 0, story: 0, counts: {}, statOpen: {}, blStop: 0, caseFork: '', sdgTab: 'g', awardTab: 'all', impLens: 'year', projects: [], filters: {}, expanded: null, theme: 'dark', lang: 'en', navOpen: false, finYear: 0, finLens: 'prog', finBasis: 'received', finCurr: 'INR', finFrom: '', finTo: '', finSeg: '', finPick: '', jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0,
+  state = { booting: true, view: 'home', loop: 0, jSide: '', wQ: 0, wX: 'sol', wI: 0, wF: 'uncrc', progKey: 're', program: 0, node: 0, district: 0, story: 0, counts: {}, blStop: 0, caseFork: '', sdgTab: 'g', awardTab: 'all', impLens: 'year', projects: [], filters: {}, expanded: null, theme: 'dark', lang: 'en', navOpen: false, finYear: 0, finLens: 'prog', finBasis: 'received', finCurr: 'INR', finFrom: '', finTo: '', finSeg: '', finPick: '', jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0,
     // Phase D - readiness signals for the contextual, institution-anchored asks. `sigHero`
     // and `sig` are one-shot and sticky (set true, never reset false) once genuine engagement
     // happens, deliberately not tied to scroll depth. Session-only by design: this project's
@@ -6589,7 +6584,7 @@ class Component extends DCLogic {
       reach_blocks:'Blocks',
       reach_villages:'Villages',
       reach_children:'Children & Adolescents',
-      reach_farmers:'Women Farmers',
+      reach_farmers:'Farmer Families',
       stories_eyebrow:'Stories of change',
       stories_title:'Reality, Then Transformation.',
       stories_sub:'Every case story is organised around one of the four child rights - survival, development, protection, participation.',
@@ -6769,7 +6764,7 @@ class Component extends DCLogic {
       stat_lbl_families:'Families Securing Entitlements, Land Rights and Relief',
       stat_lbl_women:'Women Reached and Organised into Their Own Collectives',
       stat_lbl_resources:'Government Resources the Farmer Collectives Drew into Their Own Villages since 2016',
-      stat_lbl_farmers:'Farmers in Diversified and Natural Farming',
+      stat_lbl_farmers:'Farmer Families in Diversified and Natural Farming',
       stat_lbl_youth:'Rural Youth Trained and Placed in Work',
       stat_lbl_cbos:'Community-Based Organisations Capacity-Built',
       stat_lbl_investment: "Social Investment Received across All Audited Years",
@@ -7522,7 +7517,7 @@ class Component extends DCLogic {
       reach_blocks:'ब्लॉक',
       reach_villages:'गाँव',
       reach_children:'बच्चे व किशोर',
-      reach_farmers:'महिला किसान',
+      reach_farmers:'किसान परिवार',
       stories_eyebrow:'परिवर्तन की कहानियाँ',
       stories_title:'हकीकत, फिर बदलाव।',
       stories_sub:'हर कहानी चार बाल अधिकारों में से एक के इर्द-गिर्द है - जीवन, विकास, संरक्षण, सहभागिता।',
@@ -7696,7 +7691,7 @@ class Component extends DCLogic {
       stat_lbl_families:'हक़दारी, भूमि अधिकार और राहत पाने वाले परिवार',
       stat_lbl_women:'महिलाएँ जुड़ीं और अपने स्वयं के समूहों में संगठित हुईं',
       stat_lbl_resources:'2016 से किसान समूहों द्वारा अपने गाँवों में लाई गई सरकारी संसाधन राशि',
-      stat_lbl_farmers:'विविध और प्राकृतिक खेती में शामिल किसान',
+      stat_lbl_farmers:'विविध और प्राकृतिक खेती में शामिल किसान परिवार',
       stat_lbl_youth:'प्रशिक्षित और रोज़गार से जोड़े गए ग्रामीण युवा',
       stat_lbl_cbos:'क्षमता-संपन्न बनाए गए समुदाय-आधारित संगठन',
       stat_lbl_investment: "सभी लेखापरीक्षित वर्षों में प्राप्त कुल सामाजिक निवेश",
@@ -33010,7 +33005,7 @@ class Component extends DCLogic {
   }
   // Impact figures are shown at rest. Pointing at one brings it forward: the others step back,
   // its drawing takes colour and the figure re-counts from zero, so the reader feels it add up.
-  _gridRef(el) {
+  _gridRef(el, onEngage) {
     if (!el || el._igBound) return;
     el._igBound = true;
     const reduce = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -33022,11 +33017,12 @@ class Component extends DCLogic {
     const play = (num) => {
       const d = num.dataset, to = parseFloat(d.to);
       if (!isFinite(to) || reduce()) return;
+      const out = num.querySelector('.sc-interp') || num;
       cancelAnimationFrame(num._igRaf);
       const t0 = performance.now(), dur = 900;
       const step = (now) => {
         const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-        num.textContent = fmt(d, k < 1 ? to * e : to);
+        out.textContent = fmt(d, k < 1 ? to * e : to);
         if (k < 1) num._igRaf = requestAnimationFrame(step);
       };
       num._igRaf = requestAnimationFrame(step);
@@ -33037,6 +33033,7 @@ class Component extends DCLogic {
       last = card;
       const num = card.querySelector('.ig-num');
       if (num) play(num);
+      if (onEngage) onEngage();
     });
     el.addEventListener('pointerleave', () => { last = null; });
   }
@@ -33564,7 +33561,7 @@ class Component extends DCLogic {
         stats: [{ num: '₹8.88 Cr', label: 'Government Resources Drawn into the Community’s Own Villages' }, { num: '4,051+', label: 'Families Securing Entitlements and Land Rights' }] },
       { name: 'Climate Justice', key: 'cj', art: 'prog-cj', tag: 'Soil · Seed · Water · Voice', color: '#556223',
         detail: 'Strengthening sustainable farming, nutrition, and livelihoods to reduce distress migration and economic vulnerability - ensuring stability for families and safety for children.',
-        stats: [{ num: '2,460+', label: 'Farmers in Diversified and Natural Farming' }, { num: '725+', label: 'Women Farmers Organised into Their Own Collectives' }] },
+        stats: [{ num: '2,460+', label: 'Farmer Families in Diversified and Natural Farming' }, { num: '725+', label: 'Women Farmers Organised into Their Own Collectives' }] },
       { name: 'Human Protection', key: 'hp', art: 'prog-hp', tag: 'Prevention · Protection · Prosecution · Partnership', color: '#D2305C',
         detail: 'Addressing child marriage, trafficking, abuse, and migration through prevention, protection, prosecution, and partnership - ensuring a timely, coordinated system response.',
         stats: [{ num: '6,160+', label: 'Child Protection Cases Responded To' }, { num: '250', label: 'Village Child Protection Committees Anchoring the Work' }] },
@@ -34199,7 +34196,6 @@ class Component extends DCLogic {
     const dark = this.state.theme === 'dark';
     const cnt = this.state.counts;
     const cv = (id, p, sfx) => cnt[id] != null ? cnt[id] : ((p || '') + '0' + (sfx || ''));
-    const allStatsOpen = ['h0', 'h1', 'h2', 'h3'].every(k => !!this.state.statOpen[k]);
     const fork = this.state.caseFork;
     const gridArt = ['sm-ink-crowd', 'sm-ink-pair-ledger', 'sm-ink-family', 'sm-ink-four-walking', 'sm-ink-pair'];
     const blCol = (i) => {
@@ -35384,39 +35380,20 @@ class Component extends DCLogic {
         { to: 8.88, dec: 2, comma: false, suffix: ' Cr', prefix: '\u20b9', label: T.stat_resources, art: 'sm-ink-family' },
         { to: 23, dec: 0, comma: false, suffix: '', prefix: '', label: T.stat_districts, art: 'sm-ink-four-walking' },
       ].map((s, i) => {
-        const id = 'h' + i;
-        const on = !!this.state.statOpen[id];
         const n = s.comma ? Number(s.to).toLocaleString('en-US') : s.to.toFixed(s.dec);
         const isMoney = s.prefix === '\u20b9';
         return Object.assign({}, s, {
-          id: id,
+          id: 'h' + i,
           img: './assets/story/' + s.art + '.png',
-          value: on ? (s.prefix || '') + n + (s.suffix || '') : '-',
-          isMoney: isMoney && on,
+          value: (s.prefix || '') + n + (s.suffix || ''),
+          isMoney: isMoney,
           usdHint: isMoney ? this._usdHint((s.prefix || '') + n + (s.suffix || '')) : '',
-          open: on ? 1 : 0,
-          numColor: on ? '#EAAE28' : 'rgba(251,247,239,.3)',
-          filt: on ? 'brightness(0) invert(1) opacity(.95)' : 'brightness(0) invert(1) opacity(.26)',
-          bg: on ? 'rgba(234,174,40,.12)' : 'rgba(251,247,239,.05)',
-          ring: on ? 'rgba(234,174,40,.6)' : 'rgba(251,247,239,.16)',
-          cue: on ? T.stat_hide : T.stat_reveal,
-          cueColor: on ? 'rgba(251,247,239,.5)' : '#EAAE28',
-          // Phase D: revealing a withheld figure is a genuine, deliberate action (unlike scroll
-          // depth) and the readiness signal for the ask that follows "The Cycle" below. Sticky - 
-          // set once on the reveal, never cleared on a later hide.
-          toggle: () => this.setState(st => Object.assign(
-            { statOpen: Object.assign({}, st.statOpen, { [id]: !st.statOpen[id] }) },
-            !st.statOpen[id] ? { sigHero: true } : {})),
         });
       }),
+      // Pointing at a figure is the deliberate engagement that readies the ask after "The Cycle".
+      statRef: (el) => this._gridRef(el, () => { if (!this.state.sigHero) this.setState({ sigHero: true }); }),
       heroArtCss: 'url(./assets/story/sm-school-steps.png)',
       hero: this._heroRoad(T),
-      statHint: T.stat_hint,
-      statRevealLabel: allStatsOpen ? T.stat_hide_all : T.stat_reveal_all,
-      statRevealAll: () => this.setState({
-        statOpen: allStatsOpen ? {} : { h0: true, h1: true, h2: true, h3: true },
-        sigHero: allStatsOpen ? this.state.sigHero : true,
-      }),
       pillars: [
         { glyph: 'V', color: '#0E5565', title: T.vision, body: T.vision_body, art: 'vision' },
         { glyph: 'M', color: '#D2305C', title: T.mission, body: T.mission_body, art: 'mission', link: 'work', linkLabel: T.pillar_link_work },
