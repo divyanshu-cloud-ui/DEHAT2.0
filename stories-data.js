@@ -1192,7 +1192,7 @@ window.STORIES = [
     ],
     pull: 'Proximity is not access.',
     actTitle: 'Get the Three Workers in One Room First',
-    act: 'A planning meeting, household visits beforehand and a session designed as a village event. No new staff, no new facility. The services were already funded.',
+    act: 'A planning meeting, household visits beforehand and a session designed as a village event. No new team members, no new facility. The services were already funded.',
     actCta: 'Invest in a Village Health Day',
   },  {
     slug: 'the-resolution-about-salt',
@@ -1740,7 +1740,7 @@ window.STORIES = [
     body: [
       'A call to the Bahraich CHILDLINE centre reported seven children from the district held in bondage in brick factories in Kathmandu. They had been taken three months earlier on false promises of wages.',
       'They had escaped once. They travelled five hundred kilometres to the border and were recaptured there.',
-      'Three DEHAT staff left for Nepalgunj the same day. With police and officials on both sides of the border, they took custody of all seven.',
+      'Three DEHAT team members left for Nepalgunj the same day. With police and officials on both sides of the border, they took custody of all seven.',
       'All seven were traced to their families and returned.',
       'Three of them were brothers, sons of Sh. Jagram of Turhani Rajjab. They were enrolled in school, with fees, uniforms and books met under Missing Child Alert.',
       'Their father opened a shop in the village. He earns three to four times what he earned before.',

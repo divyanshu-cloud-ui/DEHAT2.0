@@ -1780,7 +1780,7 @@ FIN.ACCOUNTS = {
 // Every node carries two readings of the same line: the authority passed DOWN it,
 // and the accountability owed back UP it. The site lets a reader flip between them.
 FIN.GOVERNANCE = {
-  intro: 'DEHAT is a registered Society, so it is governed by its members and not by its staff. Every line in this chart runs both ways. Read it downward and it is a delegation of authority; read it upward and it is a line of accountability. Flip the direction, or click any body to trace its chain. Two standing committees carry the executive work under written terms of reference: the Strategic Leadership Team takes what concerns the institution, the Core Team takes what concerns the programmes. Below them the chart is drawn in two-headed arrows - anchor to anchor, anchor to project, project to grassroots, grassroots to community - and one line runs the full height of it, connecting the Strategic Leadership Team directly to the community bodies at the base.',
+  intro: 'DEHAT is a registered Society, so it is governed by its members and not by its team. Every line in this chart runs both ways. Read it downward and it is a delegation of authority; read it upward and it is a line of accountability. Flip the direction, or click any body to trace its chain. Two standing committees carry the executive work under written terms of reference: the Strategic Leadership Team takes what concerns the institution, the Core Team takes what concerns the programmes. Below them the chart is drawn in two-headed arrows - anchor to anchor, anchor to project, project to grassroots, grassroots to community - and one line runs the full height of it, connecting the Strategic Leadership Team directly to the community bodies at the base.',
   source: 'Organisation Structure version 3, as on 10 May 2022, with the Terms of Reference for the Strategic Leadership Team and the Core Team, May 2022.',
   note: 'The names of General Body and Governing Board members are filed each year in the Society\u2019s annual return to the Registrar of Societies, where they are a matter of public record.',
   nodes: [
@@ -1859,9 +1859,9 @@ FIN.GOVERNANCE = {
 // ---- WORKFORCE ---------------------------------------------------------------------
 // Source: DEHAT organisation profile, November 2016, section 1.13 Staff Strength.
 FIN.WORKFORCE = {
-  intro: 'In 2007–08 DEHAT had 16 people on its team - a chief executive, an accountant, and fourteen field and community staff, four of them part-time. By November 2016 it had 147, 77 of them women. The shape matters more than the total: 92 of the 147 were community-level workers and field animators recruited from the villages the programmes serve, and 67 of those 92 were women. The organisation is widest at the point closest to the community and narrowest at the top.',
-  total: '147 staff · 70 men, 77 women',
-  note: 'The table is published as a 2016 figure, and the 2007–08 comparison is drawn from that year’s annual report, which names all sixteen. A current staff table will replace it once the payroll register has been reconciled. Qualification bands are reproduced as recorded in the profile.',
+  intro: 'In 2007–08 DEHAT had 16 people on its team - a chief executive, an accountant, and fourteen field and community team members, four of them part-time. By November 2016 it had 147, 77 of them women. The shape matters more than the total: 92 of the 147 were community-level workers and field animators recruited from the villages the programmes serve, and 67 of those 92 were women. The organisation is widest at the point closest to the community and narrowest at the top.',
+  total: '147 team members · 70 men, 77 women',
+  note: 'The table is published as a 2016 figure, and the 2007–08 comparison is drawn from that year’s annual report, which names all sixteen. A current team table will replace it once the payroll register has been reconciled. Qualification bands are reproduced as recorded in the profile.',
   rows: [
     { role:'Project Director', qual:'Postgraduate or professional, 18 years’ experience', m:1, w:0, group:'Field' },
     { role:'Project Coordinators and Managers', qual:'Postgraduate or professional', m:8, w:1, group:'Field' },
@@ -1894,7 +1894,7 @@ FIN.ACCOUNTABILITY = {
   ],
   raise: {
     title:'Raise a Concern',
-    body:'Anyone - a community member, a colleague, a partner or a member of the public - can raise a concern about DEHAT\u2019s conduct, safeguarding practice or use of funds. Write, call or come to the registered office. Concerns about the conduct of staff or the use of funds are placed before the Governing Board.',
+    body:'Anyone - a community member, a colleague, a partner or a member of the public - can raise a concern about DEHAT\u2019s conduct, safeguarding practice or use of funds. Write, call or come to the registered office. Concerns about the conduct of team members or the use of funds are placed before the Governing Board.',
     email:'joinus@dehatindia.org', phone:'+91 94150 54079',
     address:'\u201cSewakunj\u201d, Maseehabad Road via Kati Chauraha, Huzoorpur Marg, Bahraich, Uttar Pradesh 271801',
   },

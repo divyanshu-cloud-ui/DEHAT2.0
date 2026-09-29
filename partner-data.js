@@ -386,7 +386,7 @@ const EN = {
       "detail": {
         "u": "Field roles are filled by people who understood the work before they applied. That starts here.",
         "what": "A paid role on the programme, operations, finance or documentation team.",
-        "why": "Long-term change needs staff who stay, not consultants who visit.",
+        "why": "Long-term change needs a team that stays, not consultants who visit.",
         "when": "When a vacancy is open. Interest sent between vacancies is kept and revisited.",
         "where": "Mostly Bahraich; some roles are hybrid.",
         "how": "Send what you would want to work on. We reply with what is open and what the role actually involves day to day."
@@ -31249,7 +31249,7 @@ const BRX = {
       "detail": {
         "u": "Field roles are filled by people who understood the work before they applied. That starts here.",
         "what": "A paid role on the programme, operations, finance or documentation team.",
-        "why": "Long-term change needs staff who stay, not consultants who visit.",
+        "why": "Long-term change needs a team that stays, not consultants who visit.",
         "when": "When a vacancy is open. Interest sent between vacancies is kept and revisited.",
         "where": "Mostly Bahraich; some roles are hybrid.",
         "how": "Send what you would want to work on. We reply with what is open and what the role actually involves day to day."
@@ -35107,7 +35107,7 @@ const KS = {
       "detail": {
         "u": "Field roles are filled by people who understood the work before they applied. That starts here.",
         "what": "A paid role on the programme, operations, finance or documentation team.",
-        "why": "Long-term change needs staff who stay, not consultants who visit.",
+        "why": "Long-term change needs a team that stays, not consultants who visit.",
         "when": "When a vacancy is open. Interest sent between vacancies is kept and revisited.",
         "where": "Mostly Bahraich; some roles are hybrid.",
         "how": "Send what you would want to work on. We reply with what is open and what the role actually involves day to day."

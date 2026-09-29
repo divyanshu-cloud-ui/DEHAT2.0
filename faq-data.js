@@ -147,7 +147,7 @@ FAQ.ITEMS = [
 
   { cat: 'safe', q: 'How do I report a concern or a complaint?',
     keys: ['complaint', 'report', 'concern', 'grievance', 'whistleblow', 'misconduct', 'abuse'],
-    a: 'Write to us directly. A concern about a child\u2019s safety, a staff member\u2019s conduct or the handling of money should not go through a contact form and wait its turn - say what happened and we will tell you who is handling it and by when.',
+    a: 'Write to us directly. A concern about a child\u2019s safety, a team member\u2019s conduct or the handling of money should not go through a contact form and wait its turn - say what happened and we will tell you who is handling it and by when.',
     go: { label: 'Raise It Now', view: 'finance', anchor: 'raise' } },
 
   { cat: 'safe', q: 'How do you protect the identity of children in your stories?',

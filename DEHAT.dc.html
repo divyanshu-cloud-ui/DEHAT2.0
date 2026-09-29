@@ -256,6 +256,16 @@
   .ml-status.ml-ok i{background:var(--ac-olive)}
   .ml-press{transition:transform .16s cubic-bezier(.23,1,.32,1)}
   .ml-press:active{transform:scale(.97)}
+  /* Impact figures: visible at rest; pointing at one brings it forward (the count-up is in _gridRef). */
+  .ig-card{transition:transform .35s cubic-bezier(.23,1,.32,1),opacity .35s cubic-bezier(.23,1,.32,1)}
+  .ig-art{filter:var(--ig-rest);transform-origin:left bottom;transition:filter .45s cubic-bezier(.23,1,.32,1),transform .45s cubic-bezier(.23,1,.32,1)}
+  @media (hover:hover) and (pointer:fine){
+    .ig-grid:has(.ig-card:hover) .ig-card:not(:hover){opacity:.45}
+    .ig-card:hover{transform:translateY(-4px)}
+    .ig-card:hover .ig-art{filter:var(--ig-on);transform:scale(1.06)}
+  }
+  @media (hover:none){ .ig-card:active .ig-art{filter:var(--ig-on)} }
+  @media (prefers-reduced-motion:reduce){ .ig-card,.ig-art{transition:none} .ig-card:hover{transform:none} .ig-card:hover .ig-art{transform:none} }
   /* Home story slider. Twenty-odd dots cannot fit a phone row (the coarse-pointer 44px rule
      turned each into a circle and pushed the arrows off screen), so phones get a counter and
      swipe instead; dots stay on wider screens at their drawn size. */
@@ -2324,11 +2334,7 @@
         <p style="font-size:18px;line-height:1.6;color:var(--dim);max-width:680px;margin:0">{{ T.impact_sub }}</p>
       </div>
       <section data-spine="The Figures" style="padding:0 clamp(20px,5vw,64px) clamp(40px,5vw,60px);max-width:1200px;margin:0 auto">
-        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:22px">
-          <span style="font-size:12.5px;letter-spacing:.02em;color:var(--faint)">{{ gridHint }}</span>
-          <button onClick="{{ gridRevealAll }}" class="ml-press" aria-pressed="{{ gridAllShown }}" style="background:none;border:1px solid var(--border);color:var(--text);border-radius:999px;padding:7px 15px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.04em" style-hover="border-color:var(--text)">{{ gridRevealLabel }}</button>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+        <div class="ig-grid" ref="{{ gridRef }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
           <sc-for list="{{ impactGrid }}" as="s" hint-placeholder-count="12">
             <sc-if value="{{ s.groupStart }}" hint-placeholder-val="{{ false }}">
               <div style="grid-column:1/-1;margin:8px 0 -4px;padding-top:20px;border-top:1px solid var(--border)">
@@ -2336,12 +2342,11 @@
                 <p style="font-size:13.5px;line-height:1.5;color:var(--faint);margin:6px 0 0;max-width:640px">{{ T.impact_org_group_note }}</p>
               </div>
             </sc-if>
-            <button onClick="{{ s.toggle }}" style="text-align:left;cursor:pointer;padding:26px 24px;border-radius:18px;background:{{ s.cardBg }};border:1px solid var(--border);border-bottom:5px solid {{ s.color }};display:flex;flex-direction:column;gap:12px;transition:background .4s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-3px)">
-              <div role="img" aria-hidden="true" style="height:52px;background-image:{{ s.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:left bottom;filter:{{ s.filt }};transition:filter .6s cubic-bezier(.2,.7,.2,1)"></div>
-              <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,3.4vw,44px);color:{{ s.numColor }};line-height:1;transition:color .4s cubic-bezier(.22,.61,.36,1)">{{ s.value }}</div>
+            <div class="ig-card" style="--ig-rest:{{ s.filtRest }};--ig-on:{{ s.filtOn }};padding:26px 24px;border-radius:18px;background:var(--surface);border:1px solid var(--border);border-bottom:5px solid {{ s.color }};display:flex;flex-direction:column;gap:12px">
+              <div class="ig-art" role="img" aria-hidden="true" style="height:52px;background-image:{{ s.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:left bottom"></div>
+              <div class="ig-num" data-to="{{ s.to }}" data-dec="{{ s.dec }}" data-comma="{{ s.comma }}" data-pre="{{ s.prefix }}" data-suf="{{ s.suffix }}" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,3.4vw,44px);color:{{ s.numColor }};line-height:1;font-variant-numeric:tabular-nums">{{ s.value }}</div>
               <div style="font-size:14.5px;line-height:1.45;color:var(--dim)">{{ s.label }}</div>
-              <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:{{ s.cueColor }}">{{ s.cue }}</span>
-            </button>
+            </div>
           </sc-for>
         </div>
       </section>
@@ -4690,7 +4695,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;indexName&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Child Opportunity Gap Index&quot;,&quot;Child Vulnerability Index&quot;,&quot;Child Marginalisation Index&quot;],&quot;default&quot;:&quot;Child Opportunity Gap Index&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;District index&quot;}}">
 class Component extends DCLogic {
-  state = { booting: true, view: 'home', loop: 0, jSide: '', wQ: 0, wX: 'sol', wI: 0, wF: 'uncrc', progKey: 're', program: 0, node: 0, district: 0, story: 0, counts: {}, statOpen: {}, gridOpen: {}, blStop: 0, caseFork: '', sdgTab: 'g', awardTab: 'all', impLens: 'year', projects: [], filters: {}, expanded: null, theme: 'dark', lang: 'en', navOpen: false, finYear: 0, finLens: 'prog', finBasis: 'received', finCurr: 'INR', finFrom: '', finTo: '', finSeg: '', finPick: '', jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0,
+  state = { booting: true, view: 'home', loop: 0, jSide: '', wQ: 0, wX: 'sol', wI: 0, wF: 'uncrc', progKey: 're', program: 0, node: 0, district: 0, story: 0, counts: {}, statOpen: {}, blStop: 0, caseFork: '', sdgTab: 'g', awardTab: 'all', impLens: 'year', projects: [], filters: {}, expanded: null, theme: 'dark', lang: 'en', navOpen: false, finYear: 0, finLens: 'prog', finBasis: 'received', finCurr: 'INR', finFrom: '', finTo: '', finSeg: '', finPick: '', jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0,
     // Phase D - readiness signals for the contextual, institution-anchored asks. `sigHero`
     // and `sig` are one-shot and sticky (set true, never reset false) once genuine engagement
     // happens, deliberately not tied to scroll depth. Session-only by design: this project's
@@ -5592,7 +5597,7 @@ class Component extends DCLogic {
         { k: 'p3', name: 'Protection from Sexual Exploitation and Abuse',
           holds: 'Aid is never conditional on anything a person gives in return.',
           who: 'Any community member, participant or member of the public.',
-          practice: 'Applies to staff, partners, consultants and drivers alike; reporting routes that do not pass through the person complained about; and immediate suspension from field contact while a complaint is examined.',
+          practice: 'Applies to team members, partners, consultants and drivers alike; reporting routes that do not pass through the person complained about; and immediate suspension from field contact while a complaint is examined.',
           meta: 'Board approved \u00b7 Partner condition' },
         { k: 'p4', name: 'Code of Conduct and Human Resources Policy',
           holds: 'Recruitment, pay and discipline follow written rules, not preference.',
@@ -5613,7 +5618,7 @@ class Component extends DCLogic {
           meta: 'Audited annually \u00b7 Register published' },
         { k: 'p7', name: 'Anti-Fraud, Anti-Bribery and Anti-Corruption',
           holds: 'No facilitation payment, in either direction.',
-          who: 'Any staff member, partner, vendor or community member.',
+          who: 'Any team member, partner, vendor or community member.',
           practice: 'Declared gifts register, competitive procurement above a threshold, and a stated obligation to report rather than absorb a loss quietly.',
           meta: 'Board approved \u00b7 Zero tolerance' },
         { k: 'p8', name: 'Whistleblower Protection and Complaints',
@@ -5623,7 +5628,7 @@ class Component extends DCLogic {
           meta: 'Board approved \u00b7 Anonymous route open' },
         { k: 'p9', name: 'Conflict of Interest and Related Party Rules',
           holds: 'A relationship is declared before it becomes a decision.',
-          who: 'Board members, staff, consultants and vendors.',
+          who: 'Board members, team members, consultants and vendors.',
           practice: 'Annual declarations, recusal from decisions involving family or personal interest, and related-party transactions disclosed in the accounts.',
           meta: 'Declared annually' },
         { k: 'p10', name: 'Counter-Terrorism, Sanctions and Anti-Money Laundering',
@@ -6455,7 +6460,7 @@ class Component extends DCLogic {
       fin_desc_cross:'Institutional and cross-programme costs that support the organisation as a whole rather than one single programme.',
       fin_desc_prog_opened:'Programme opened in',
       fin_admin_label:'Administration & Governance',
-      fin_admin_desc:'Core staff salaries, audit, rent, statutory filing and other running costs, exactly as itemised in the audited income and expenditure statement.',
+      fin_admin_desc:'Core team salaries, audit, rent, statutory filing and other running costs, exactly as itemised in the audited income and expenditure statement.',
       fin_prog_delivery_label:'Programme Delivery',
       fin_prog_delivery_desc:'Direct cost of work with children, families and public systems - the grant less its itemised administration line.',
       fin_not_itemised_label:'Not Separately Itemised',
@@ -6623,7 +6628,7 @@ class Component extends DCLogic {
       support_note_tpl:'The register above lists {n} projects in this programme, each with the partner who funded it and what it did. Support of any kind is welcome on the same terms.',
       who_teaser_eyebrow:'Who is behind this',
       who_teaser_head:'Thirty-Four People, a Founder, Two Boards, and a Story That Starts in 1968',
-      who_teaser_body:'This organisation is not a head office with staff posted out to the districts. Most colleagues were recruited in the districts they work in and come from the communities they work with, and the ones who came from outside stayed. Choose a face to see whose account you are reading, or follow the register from a cowshed in Champaran to four districts of work.',
+      who_teaser_body:'This organisation is not a head office with a team posted out to the districts. Most colleagues were recruited in the districts they work in and come from the communities they work with, and the ones who came from outside stayed. Choose a face to see whose account you are reading, or follow the register from a cowshed in Champaran to four districts of work.',
       who_teaser_cta:'Meet Everyone',
       who_teaser_cta2:'Read the Story Since 1968',
       who_teaser_foot:'The Who We Are page holds all thirty-four colleagues, the founder, the Governing Board, the advisers, the value system and the full register of turning points.',
@@ -6836,7 +6841,7 @@ class Component extends DCLogic {
       belief_v8_practice:'Every engagement moves through baseline, participatory appraisal and strength mapping, and carries a written exit plan from the first year, so continuity does not depend on us staying.',
       belief_v9_name:'Conflict is Growth',
       belief_v9_belief:'Disruption is a sign of health, not of failure.',
-      belief_v9_practice:'Disagreement is recorded rather than smoothed over, including between staff and community bodies. Reviews name what did not work before they name what did.',
+      belief_v9_practice:'Disagreement is recorded rather than smoothed over, including between the team and community bodies. Reviews name what did not work before they name what did.',
       belief_v10_name:'Deep Intersectionality',
       belief_v10_belief:'No household carries a single issue.',
       belief_v10_practice:'School of Leadership, Rights & Entitlements, Human Protection and Climate Justice are carried by the same team in the same village, because a family rarely experiences them as four separate problems.',
@@ -6864,7 +6869,7 @@ class Component extends DCLogic {
         "who_belief_title": "Our Belief System",
         "who_looks_like": "What it looks like",
         "who_does_work": "Who does the work?",
-        "who_staff_survey": "Everyone on the staff was asked the same questions about their own life and their own work. Most answered in Hindi. Before you read what they wrote, finish one of the sentences yourself.",
+        "who_staff_survey": "Everyone on the team was asked the same questions about their own life and their own work. Most answered in Hindi. Before you read what they wrote, finish one of the sentences yourself.",
         "who_inst_title": "Four Institutional Figures, and Where the Rest Are.",
         "who_inst_body": "Counts of children rescued, marriages stopped, girls enrolled and farmers converted sit on the programme pages, beside the method that produced them. Audited money, governance and the years we were unregistered are on Transparency.",
         "who_see_progs": "See the Programmes →",
@@ -33003,6 +33008,38 @@ class Component extends DCLogic {
     clearTimeout(this._deckNavT);
     this._deckNavT = setTimeout(() => this.setState({ deckNav: false }), 2400);
   }
+  // Impact figures are shown at rest. Pointing at one brings it forward: the others step back,
+  // its drawing takes colour and the figure re-counts from zero, so the reader feels it add up.
+  _gridRef(el) {
+    if (!el || el._igBound) return;
+    el._igBound = true;
+    const reduce = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fmt = (d, v) => {
+      const s = d.comma === 'true' ? Math.round(v).toLocaleString('en-US') : v.toFixed(+d.dec || 0);
+      return (d.pre || '') + s + (d.suf || '');
+    };
+    let last = null;
+    const play = (num) => {
+      const d = num.dataset, to = parseFloat(d.to);
+      if (!isFinite(to) || reduce()) return;
+      cancelAnimationFrame(num._igRaf);
+      const t0 = performance.now(), dur = 900;
+      const step = (now) => {
+        const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+        num.textContent = fmt(d, k < 1 ? to * e : to);
+        if (k < 1) num._igRaf = requestAnimationFrame(step);
+      };
+      num._igRaf = requestAnimationFrame(step);
+    };
+    el.addEventListener('pointerover', (e) => {
+      const card = e.target.closest && e.target.closest('.ig-card');
+      if (!card || card === last) return;
+      last = card;
+      const num = card.querySelector('.ig-num');
+      if (num) play(num);
+    });
+    el.addEventListener('pointerleave', () => { last = null; });
+  }
   _deckSwipeRef(step) {
     this._deckStep = step;
     if (!this._deckSwipeFn) this._deckSwipeFn = (el) => {
@@ -33903,7 +33940,7 @@ class Component extends DCLogic {
       { k: 'conduct', label: 'Conduct of Someone Connected to DEHAT',
         subject: 'Concern about conduct',
         opener: 'I would like to raise a concern about the conduct of someone connected to DEHAT.',
-        route: 'Concerns about the conduct of staff, fellows or volunteers are handled outside the line of the person concerned and reported to the Governing Board.',
+        route: 'Concerns about the conduct of team members, fellows or volunteers are handled outside the line of the person concerned and reported to the Governing Board.',
         ph: 'What you saw or experienced, the district or programme it relates to, and when.',
         ask: 'Please confirm that this will be handled outside the line of the person concerned, and tell me who is handling it.' },
       { k: 'money', label: 'A Figure or the Use of Funds',
@@ -34165,9 +34202,6 @@ class Component extends DCLogic {
     const allStatsOpen = ['h0', 'h1', 'h2', 'h3'].every(k => !!this.state.statOpen[k]);
     const fork = this.state.caseFork;
     const gridArt = ['sm-ink-crowd', 'sm-ink-pair-ledger', 'sm-ink-family', 'sm-ink-four-walking', 'sm-ink-pair'];
-    // Impact figures start withheld, like the home four; one button reveals or hides all twelve.
-    const gridAllOpen = {}; for (let i = 0; i < 12; i++) gridAllOpen['g' + i] = true;
-    const allGridOpen = Object.keys(gridAllOpen).every(k => !!this.state.gridOpen[k]);
     const blCol = (i) => {
       const on = i === this.state.blStop;
       return {
@@ -35439,27 +35473,17 @@ class Component extends DCLogic {
         { to: 48, dec: 0, comma: false, suffix: '', prefix: '', color: '#0E5565', label: T.stat_lbl_projects },
         { to: 20, dec: 0, comma: false, suffix: '', prefix: '', color: '#4F0E73', label: T.stat_lbl_years },
       ].map((s, i) => {
-        const id = 'g' + i;
-        const on = this.state.gridOpen[id] === true;
         const n = s.comma ? Number(s.to).toLocaleString('en-US') : s.to.toFixed(s.dec);
         return Object.assign({}, s, {
-          id: id, edge: s.color, color: this._tok(s.color),
+          id: 'g' + i, edge: s.color, color: this._tok(s.color),
           img: './assets/story/' + gridArt[i % gridArt.length] + '.png',
-          value: on ? (s.prefix || '') + n + (s.suffix || '') : '-',
-          numColor: on ? this._tok(s.color) : 'var(--faint)',
-          cardBg: on ? 'var(--surface)' : 'var(--surface2)',
-          filt: dark
-            ? (on ? 'brightness(0) invert(1) opacity(.8)' : 'brightness(0) invert(1) opacity(.2)')
-            : (on ? 'none' : 'grayscale(1) opacity(.25)'),
-          cue: on ? T.stat_hide : T.stat_reveal,
-          cueColor: on ? 'var(--faint)' : this._tok(s.color),
-          toggle: () => this.setState(st => ({ gridOpen: Object.assign({}, st.gridOpen, { [id]: !st.gridOpen[id] }) })),
+          value: (s.prefix || '') + n + (s.suffix || ''),
+          numColor: this._tok(s.color),
+          filtRest: dark ? 'brightness(0) invert(1) opacity(.42)' : 'grayscale(1) opacity(.45)',
+          filtOn: dark ? 'brightness(0) invert(1) opacity(.9)' : 'none',
         });
       }),
-      gridRevealLabel: allGridOpen ? T.stat_hide_all : T.grid_reveal_all,
-      gridAllShown: allGridOpen,
-      gridHint: T.grid_hint,
-      gridRevealAll: () => this.setState({ gridOpen: allGridOpen ? {} : gridAllOpen }),
+      gridRef: (el) => this._gridRef(el),
       blStop: this.state.blStop,
       blSet: (e) => { const v = parseInt(e.target.value, 10) || 0; this.setState({ blStop: v }); },
       blDragLabel: T.bl_drag,
