@@ -1,4 +1,4 @@
-// Ask the Record — the question bank behind DEHAT's answers desk.
+// Ask the Record - the question bank behind DEHAT's answers desk.
 //
 // Every answer here must be checkable against something already published on this
 // site or in a document DEHAT can produce on request. The assistant that reads this
@@ -10,7 +10,7 @@
 //   q       the question, in the words a reader would actually use
 //   a       the answer, plain and finite
 //   cat     category key (see FAQ.CATS)
-//   keys    extra retrieval terms — synonyms, abbreviations, misspellings
+//   keys    extra retrieval terms - synonyms, abbreviations, misspellings
 //   go      optional { label, view } to send the reader to the page that proves it
 window.FAQ = {};
 
@@ -39,11 +39,11 @@ FAQ.ITEMS = [
 
   { cat: 'give', q: 'What is the smallest amount worth giving?',
     keys: ['minimum', 'small', 'how much', 'amount', 'least'],
-    a: 'There is no minimum. Field costs are made of small recurring things \u2014 a child\u2019s travel to a hearing, a night in a shelter, a follow-up visit after a rescue. A regular small amount is more useful than an occasional large one, because it does not stop between grants.' },
+    a: 'There is no minimum. Field costs are made of small recurring things - a child\u2019s travel to a hearing, a night in a shelter, a follow-up visit after a rescue. A regular small amount is more useful than an occasional large one, because it does not stop between grants.' },
 
   { cat: 'give', q: 'Can I choose what my money is used for?',
     keys: ['restrict', 'earmark', 'specific', 'programme', 'cause', 'designate', 'purpose'],
-    a: 'Yes. The Invest page lists the purposes you can direct a contribution to, and you can also leave it unrestricted. Unrestricted money is the most useful kind, because it pays for the parts of the work no grant will fund \u2014 a case that runs three years longer than its project, or a salary between funding cycles.',
+    a: 'Yes. The Invest page lists the purposes you can direct a contribution to, and you can also leave it unrestricted. Unrestricted money is the most useful kind, because it pays for the parts of the work no grant will fund - a case that runs three years longer than its project, or a salary between funding cycles.',
     go: { label: 'See the Purposes', view: 'involved' } },
 
   { cat: 'give', q: 'Can I give something other than money?',
@@ -61,7 +61,7 @@ FAQ.ITEMS = [
 
   { cat: 'give', q: 'Can I get a refund?',
     keys: ['refund', 'money back', 'cancel', 'reverse', 'mistake', 'wrong amount', 'duplicate'],
-    a: 'For domestic investments, yes, in the circumstances set out in the refund policy \u2014 a duplicate charge, a wrong amount, a payment you did not authorise. Foreign contributions are different and cannot simply be returned on request; that is a legal restriction, not a policy choice. Read the refund policy in full before assuming either way.',
+    a: 'For domestic investments, yes, in the circumstances set out in the refund policy - a duplicate charge, a wrong amount, a payment you did not authorise. Foreign contributions are different and cannot simply be returned on request; that is a legal restriction, not a policy choice. Read the refund policy in full before assuming either way.',
     go: { label: 'Read the Refund Policy', view: 'policies' } },
 
   { cat: 'give', q: 'What does a legacy gift involve?',
@@ -72,7 +72,7 @@ FAQ.ITEMS = [
   // ---- Foreign contributions ----
   { cat: 'foreign', q: 'Can I invest from outside India?',
     keys: ['foreign', 'abroad', 'overseas', 'fcra', 'international', 'usd', 'gbp', 'euro', 'nri'],
-    a: 'Yes. DEHAT holds Foreign Contribution (Regulation) Act registration 136260010 and receives foreign contributions only into its designated State Bank of India account at 11 Sansad Marg, New Delhi. Money from a foreign source must enter that account and no other \u2014 sending it to a domestic account would put both of us in breach.',
+    a: 'Yes. DEHAT holds Foreign Contribution (Regulation) Act registration 136260010 and receives foreign contributions only into its designated State Bank of India account at 11 Sansad Marg, New Delhi. Money from a foreign source must enter that account and no other - sending it to a domestic account would put both of us in breach.',
     go: { label: 'See the Account Details', view: 'involved' } },
 
   { cat: 'foreign', q: 'What is FCRA and why does it matter to me?',
@@ -81,7 +81,7 @@ FAQ.ITEMS = [
 
   { cat: 'foreign', q: 'Am I a foreign source if I hold an Indian passport?',
     keys: ['nri', 'passport', 'foreign source', 'oci', 'pio', 'citizen', 'am i foreign'],
-    a: 'Broadly, a non-resident Indian who remains an Indian citizen is not a foreign source, so an NRI investment from an Indian citizen is normally treated as domestic. A person of Indian origin holding foreign citizenship generally is a foreign source. The distinction turns on citizenship rather than residence, and it decides which account you must use \u2014 so tell us your citizenship and we will route it correctly rather than guess.' },
+    a: 'Broadly, a non-resident Indian who remains an Indian citizen is not a foreign source, so an NRI investment from an Indian citizen is normally treated as domestic. A person of Indian origin holding foreign citizenship generally is a foreign source. The distinction turns on citizenship rather than residence, and it decides which account you must use - so tell us your citizenship and we will route it correctly rather than guess.' },
 
   { cat: 'foreign', q: 'What identification do you need from a foreign investor?',
     keys: ['kyc', 'passport', 'documents', 'identity', 'upload', 'verification'],
@@ -100,7 +100,7 @@ FAQ.ITEMS = [
   // ---- Accounts ----
   { cat: 'money', q: 'How much of my money reaches the work?',
     keys: ['overhead', 'admin', 'percentage', 'ratio', 'salaries', 'how much reaches'],
-    a: 'Rather than quote a single ratio, DEHAT publishes what was committed and what was deployed for every financial year since 2005\u201306, each drawn from a signed balance sheet. Work the proportion out yourself from the audited figures \u2014 that is a stronger answer than any number an organisation chooses about itself.',
+    a: 'Rather than quote a single ratio, DEHAT publishes what was committed and what was deployed for every financial year since 2005\u201306, each drawn from a signed balance sheet. Work the proportion out yourself from the audited figures - that is a stronger answer than any number an organisation chooses about itself.',
     go: { label: 'See Every Year', view: 'finance' } },
 
   { cat: 'money', q: 'Who audits your accounts?',
@@ -131,7 +131,7 @@ FAQ.ITEMS = [
 
   { cat: 'govern', q: 'Who runs DEHAT and who holds them accountable?',
     keys: ['board', 'governance', 'trustees', 'general body', 'leadership', 'founder', 'who is in charge'],
-    a: 'There is a founder, two boards and a general body, and all of them are named on the site with their roles. The general body is where accountability is exercised rather than observed \u2014 members can question the executive directly.',
+    a: 'There is a founder, two boards and a general body, and all of them are named on the site with their roles. The general body is where accountability is exercised rather than observed - members can question the executive directly.',
     go: { label: 'See Who Is Behind This', view: 'who' } },
 
   { cat: 'govern', q: 'Has DEHAT ever been investigated or penalised?',
@@ -142,12 +142,12 @@ FAQ.ITEMS = [
   // ---- Safeguarding ----
   { cat: 'safe', q: 'What is your child protection policy?',
     keys: ['child protection', 'safeguarding', 'pocso', 'policy', 'children', 'safety'],
-    a: 'DEHAT works with children who have been trafficked, married as minors, or put to work, so safeguarding is not an annexe to the work \u2014 it is the condition of doing it. The policies and safeguards are published in full, including how concerns are raised and who they reach.',
+    a: 'DEHAT works with children who have been trafficked, married as minors, or put to work, so safeguarding is not an annexe to the work - it is the condition of doing it. The policies and safeguards are published in full, including how concerns are raised and who they reach.',
     go: { label: 'Read the Policies', view: 'policies' } },
 
   { cat: 'safe', q: 'How do I report a concern or a complaint?',
     keys: ['complaint', 'report', 'concern', 'grievance', 'whistleblow', 'misconduct', 'abuse'],
-    a: 'Write to us directly. A concern about a child\u2019s safety, a staff member\u2019s conduct or the handling of money should not go through a contact form and wait its turn \u2014 say what happened and we will tell you who is handling it and by when.',
+    a: 'Write to us directly. A concern about a child\u2019s safety, a staff member\u2019s conduct or the handling of money should not go through a contact form and wait its turn - say what happened and we will tell you who is handling it and by when.',
     go: { label: 'Raise It Now', view: 'finance', anchor: 'raise' } },
 
   { cat: 'safe', q: 'How do you protect the identity of children in your stories?',
@@ -178,7 +178,7 @@ FAQ.ITEMS = [
   // ---- Working with DEHAT ----
   { cat: 'join', q: 'Can I volunteer or intern?',
     keys: ['volunteer', 'intern', 'internship', 'fellowship', 'student', 'work with you', 'placement'],
-    a: 'Yes \u2014 fellowships, internships and field roles, in Bahraich and remotely. Find Your Route asks what you can actually offer and how much time you have, then tells you which routes DEHAT can honour this year rather than collecting your details for a list.',
+    a: 'Yes - fellowships, internships and field roles, in Bahraich and remotely. Find Your Route asks what you can actually offer and how much time you have, then tells you which routes DEHAT can honour this year rather than collecting your details for a list.',
     go: { label: 'Find Your Route', view: 'involved' } },
 
   { cat: 'join', q: 'Are there paid jobs?',

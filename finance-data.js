@@ -1,4 +1,4 @@
-// DEHAT financial transparency dataset — audited balance sheets FY2005-06 → FY2024-25.
+// DEHAT financial transparency dataset - audited balance sheets FY2005-06 → FY2024-25.
 // Source of truth: signed, audited PDFs (Madhuresh Agrahari & Associates, CA). Where a
 // machine-readable soft copy exists (FY2024-25 .xlsx) it is used for exact figures and
 // cross-checked against the signed PDF; the signed PDF wins on any conflict.
@@ -15,7 +15,7 @@
 //   'un'            UN / multilateral
 //   'govt'          Government (central/state/scheme)
 //   'csr'           Corporate CSR (Companies Act Sch. VII)
-//   'philanthropy'  Private foundations / philanthropies (Azim Premji, Tata Trusts…) — NOT CSR
+//   'philanthropy'  Private foundations / philanthropies (Azim Premji, Tata Trusts…) - NOT CSR
 //   'foreign_org'   Foreign / FCRA-source organisation
 //   'indian_inst'   Indian institutional partner / intermediary NGO
 //   'individual'    Individual donations
@@ -49,7 +49,7 @@ FIN.STANDARDS = {
 // ---- STATUTORY & COMPLIANCE FRAMEWORK ----------------------------------------------
 // DEHAT is a registered Society (Societies Registration Act, 1860). Registrations from
 // the audited statements' own footer. The annual compliance cycle below is what an
-// auditor/Big-4 reviewer expects to see evidenced — the page can show DEHAT meets each.
+// auditor/Big-4 reviewer expects to see evidenced - the page can show DEHAT meets each.
 FIN.COMPLIANCE = {
   registrations: [
     { code:'Society Reg. 370/2000-01', what:'Registered under the Societies Registration Act, 1860; renewal valid 2025–2030' },
@@ -62,7 +62,7 @@ FIN.COMPLIANCE = {
   ],
   calendar: [
     { by:'31 May', form:'Form 10BD + 10BE', body:'Income Tax', what:'Investor-wise statement of contributions; certificates issued to investors' },
-    { by:'30 Sep', form:'Form 10B (audit)', body:'Income Tax', what:'Statutory audit — Form 10B applies because DEHAT receives foreign contribution' },
+    { by:'30 Sep', form:'Form 10B (audit)', body:'Income Tax', what:'Statutory audit - Form 10B applies because DEHAT receives foreign contribution' },
     { by:'31 Oct', form:'ITR-7',            body:'Income Tax', what:'Return of income for the trust/institution' },
     { by:'31 Dec', form:'Form FC-4',        body:'Ministry of Home Affairs', what:'Foreign contributions received & utilised, investor-wise, with 20% admin-cap check; NIL return mandatory' },
     { by:'annual', form:'Annual return',    body:'Registrar of Societies', what:'Society governance & accounts filing' },
@@ -70,8 +70,8 @@ FIN.COMPLIANCE = {
   rules: [
     { key:'85% Application', detail:'≥85% of income applied to charitable purposes each year; up to 15% accumulable, Form 10 for more (5 yrs).' },
     { key:'Foreign Contribution (Regulation) Act 20% Administrative Cap', detail:'Administrative expense ≤20% of foreign contribution (since FY2020-21; 50% before).' },
-    { key:'Separate FC Books', detail:'Foreign contribution held & audited separately from domestic (INR) funds — DEHAT keeps distinct foreign contribution and domestic rupee statements.' },
-    { key:'s.13 \u2014 No Private Benefit', detail:'No undue benefit to trustees/specified persons.' },
+    { key:'Separate FC Books', detail:'Foreign contribution held & audited separately from domestic (INR) funds - DEHAT keeps distinct foreign contribution and domestic rupee statements.' },
+    { key:'s.13 - No Private Benefit', detail:'No undue benefit to trustees/specified persons.' },
     { key:'Independent Audit', detail:'Accounts audited by a practising Chartered Accountant (Madhuresh Agrahari & Associates), signed with a Unique Document Identification Number.' },
   ],
 };
@@ -84,15 +84,15 @@ FIN.DOCUMENTS = [
   { title:'Society Registration Renewal', issuer:'Registrar of Societies, U.P.', period:'Valid 2025–2030', group:'statutory',
     desc:'Renewal of DEHAT’s registration under the Societies Registration Act, 1860 (Reg. 370/2000-01).', file:'assets/docs/society-registration-renewal-2025-2030.pdf' },
   { title:'Memorandum of Association & By-Laws', issuer:'DEHAT', period:'Governing document', group:'statutory',
-    desc:'The Society’s constitution — objects, membership, governing body and rules of operation.', file:'assets/docs/moa-bylaws.pdf' },
+    desc:'The Society’s constitution - objects, membership, governing body and rules of operation.', file:'assets/docs/moa-bylaws.pdf' },
   { title:'PAN Card', issuer:'Income Tax Department', period:'AAAAD3793Q', group:'statutory',
     desc:'Permanent Account Number of the Society.', file:'assets/docs/pan-card.pdf' },
-  { title:'Form 10AB Approval — 12A Registration', issuer:'Income Tax Department', period:'Order 17 Feb 2026', group:'statutory',
+  { title:'Form 10AB Approval - 12A Registration', issuer:'Income Tax Department', period:'Order 17 Feb 2026', group:'statutory',
     desc:'Renewal of the institution’s income-tax registration under section 12A (tax exemption on income applied to charity).', file:'assets/docs/form-10ab-approval-1.pdf' },
-  { title:'Form 10AB Approval — 80G', issuer:'Income Tax Department', period:'Order 17 Feb 2026', group:'statutory',
-    desc:'Renewal of 80G approval — Indian investors can claim a tax deduction on their contributions.', file:'assets/docs/form-10ab-approval-2.pdf' },
+  { title:'Form 10AB Approval - 80G', issuer:'Income Tax Department', period:'Order 17 Feb 2026', group:'statutory',
+    desc:'Renewal of 80G approval - Indian investors can claim a tax deduction on their contributions.', file:'assets/docs/form-10ab-approval-2.pdf' },
   { title:'CSR-1 Approval Letter', issuer:'Ministry of Corporate Affairs', period:'Registered', group:'statutory',
-    desc:'Form CSR-1 registration on the Ministry of Corporate Affairs portal — allows DEHAT to receive corporate social responsibility funds.', file:'assets/docs/csr1-approval-letter.pdf' },
+    desc:'Form CSR-1 registration on the Ministry of Corporate Affairs portal - allows DEHAT to receive corporate social responsibility funds.', file:'assets/docs/csr1-approval-letter.pdf' },
   // Foreign contribution (FCRA)
   { title:'Foreign Contribution (Regulation) Act Renewal Certificate', issuer:'Ministry of Home Affairs', period:'Registration 136260010', group:'fcra',
     desc:'Renewed clearance to receive foreign contributions; foreign funds are kept in a separate Foreign Contribution (Regulation) Act account and audited apart from domestic funds.', file:'assets/docs/fcra-renewal-certificate.pdf' },
@@ -100,8 +100,8 @@ FIN.DOCUMENTS = [
     desc:'Allotment of the Society’s TAN, quoted on every tax deducted at source challan, certificate and return.', file:'assets/docs/fcra-designated-bank-account.pdf' },
   // Third-party validations & recognition
   { title:'CAF India Validation Certificate', issuer:'CAF India', period:'Validated', group:'validation',
-    desc:'Due-diligence validation by Charities Aid Foundation India — an independent check of governance, finance and compliance.', file:'assets/docs/caf-validation-certificate.pdf' },
-  { title:'Tata Institute of Social Sciences Empanelment Certificate', issuer:'Tata Institute of Social Sciences', period:'Empanelled — Public Sector Undertaking', group:'validation',
+    desc:'Due-diligence validation by Charities Aid Foundation India - an independent check of governance, finance and compliance.', file:'assets/docs/caf-validation-certificate.pdf' },
+  { title:'Tata Institute of Social Sciences Empanelment Certificate', issuer:'Tata Institute of Social Sciences', period:'Empanelled - Public Sector Undertaking', group:'validation',
     desc:'Empanelled with the Tata Institute of Social Sciences as an implementing partner for Public Sector Undertaking corporate social responsibility programmes.', file:'assets/docs/tiss-empanelment-certificate.pdf' },
   { title:'BSE Sammaan Listing', issuer:'BSE (Bombay Stock Exchange)', period:'Listed organisation', group:'validation',
     desc:'Listed on the BSE Sammaan platform, the Bombay Stock Exchange’s vetted registry connecting corporates with credible non-governmental organisations for corporate social responsibility.', file:'assets/docs/bse-sammaan.pdf' },
@@ -109,11 +109,11 @@ FIN.DOCUMENTS = [
 
 // ---- TIME-VERSIONED REGULATORY TIMELINE --------------------------------------------
 // Statutory rules changed across DEHAT's life (registered 2000-01). Each year MUST be
-// judged against the regime then in force — not today's. `effectiveFrom` = first FY the
+// judged against the regime then in force - not today's. `effectiveFrom` = first FY the
 // rule applied. Use fcraAdminCapFor(fy) to get the correct admin cap for any year.
 FIN.REG_TIMELINE = [
-  { fy:'—',        event:'DEHAT registered as a Society (Societies Registration Act, 1860)', when:'2000-01', domain:'org' },
-  { fy:'pre-2011', event:'Foreign Contribution (Regulation) Act 1976 in force — foreign funds under the older regime',        when:'…2010-11', domain:'fcra' },
+  { fy:'-',        event:'DEHAT registered as a Society (Societies Registration Act, 1860)', when:'2000-01', domain:'org' },
+  { fy:'pre-2011', event:'Foreign Contribution (Regulation) Act 1976 in force - foreign funds under the older regime',        when:'…2010-11', domain:'fcra' },
   { fy:'2011-12',  event:'Foreign Contribution (Regulation) Act 2010 replaces the 1976 Act; administrative-expense cap 50% of foreign contribution',         when:'2011',    domain:'fcra' },
   { fy:'2016-17',  event:'Foreign contribution online returns (Form FC-4) & annual online filing regime matures',  when:'2015-16', domain:'fcra' },
   { fy:'2020-21',  event:'Foreign Contribution (Regulation) Act 2020 amendment: administrative cap cut 50%→20%, single State Bank of India, Delhi foreign contribution account, sub-granting between organisations banned', when:'Sep 2020', domain:'fcra' },
@@ -129,7 +129,7 @@ FIN.fcraAdminCapFor = function(fy){
 
 
 
-// Funder registry — canonical entities across all years (aliases map OCR variants).
+// Funder registry - canonical entities across all years (aliases map OCR variants).
 FIN.FUNDERS = {
   caritas_germany:  { name:'Caritas Germany (Deutscher Caritasverband e.V.)', type:'foreign_org', regime:'FCRA', aliases:['Deutscher Caritasverband e.V.','DCV'], note:'Legal funding partner for Surokhit Shaishav. Caritas India provides programme support but is not the same legal entity.' },
   dasra:            { name:'Dasra',                               type:'foreign_org',  regime:'FCRA', aliases:['DASRA','Darsa'] },
@@ -149,7 +149,7 @@ FIN.FUNDERS = {
   laher:            { name:'CHILDLINE India Foundation · Child Protection Committee pilot (Leher as technical agency)', type:'indian_inst',  regime:'INR',  aliases:['Laher','Lahar','Lahar project','Laher project','LEHER','CPC pilot'] },
   caritas_india_inr:{ name:'Caritas India (INR Channel)',         type:'indian_inst',  regime:'INR',  aliases:['Caritas India - Swaraksha INR','Caritas - Swaraksha Project'] },
   // Historical / one-off funders (FY2015-16 → FY2019-20)
-  birlasoft:        { name:'Birlasoft India Ltd (CSR)',           type:'csr',          regime:'INR',  aliases:['Birlasoft','Grant From- Birlasoft India Ltd','e-vidya','E-Vidhya','E Vidhya','Evidhya'], note:'"e-vidya" — computer-skills CSR programme for girl students, Government Girls Inter College, Sector 51, Noida (CSR Enabler Agreement, 12 April 2018). Not affiliated with IIMPACT despite the similar-sounding name.' },
+  birlasoft:        { name:'Birlasoft India Ltd (CSR)',           type:'csr',          regime:'INR',  aliases:['Birlasoft','Grant From- Birlasoft India Ltd','e-vidya','E-Vidhya','E Vidhya','Evidhya'], note:'"e-vidya" - computer-skills CSR programme for girl students, Government Girls Inter College, Sector 51, Noida (CSR Enabler Agreement, 12 April 2018). Not affiliated with IIMPACT despite the similar-sounding name.' },
   centum:           { name:'Centum WorkSkills India (WSI)',        type:'csr',          regime:'INR',  aliases:['Centum','WSI','Centum (WSI)','WSI Learning Centre'] },
   tmn:              { name:'TMN (Seed Treatment Programme)',        type:'indian_inst',  regime:'INR',  aliases:['TMN'], note:'FY2012-13 Society Home Account component, per the audited workbook (sheet "DEHAT -GENERAL").' },
   vidhya:           { name:'Vidhya (Scholarship Programme)',        type:'indian_inst',  regime:'INR',  aliases:['Vidhya','Vidhya Grants'], note:'FY2012-13 Society Home Account component, per the audited workbook (sheet "DEHAT -GENERAL").' },
@@ -163,14 +163,14 @@ FIN.FUNDERS = {
   sahyog:           { name:'Sahyog Society',                        type:'indian_inst',  regime:'FCRA', aliases:['Sahyog','Sahyog Society FC A/c'] },
   iimpact:          { name:'IIMPACT (Rural Girl Child Education)', type:'philanthropy', regime:'INR',  aliases:[] },
   // Renamed from a shared 'milaan' key: every use in this dataset actually describes Charity Science
-  // (a distinct organisation) — none reference Milaan Be The Change, the contracting counterparty for
+  // (a distinct organisation) - none reference Milaan Be The Change, the contracting counterparty for
   // the FY2014-15 Swabhiman programme. The two must not be conflated.
   charity_science:  { name:'Charity Science',                       type:'foreign_org',  regime:'INR',  aliases:['Charity Science Foundation'] },
   geeta_karnal:     { name:'GEETA (Karnal Partner)',          type:'indian_inst',  regime:'INR',  aliases:['GEETA Karnal','GEETA','NSE/Geeta','NSE'] },
   ipartner:         { name:'iPartner India',                        type:'indian_inst',  regime:'INR',  aliases:['iPartner India','iPartner'] },
   google:           { name:'Google (In-Kind / Ad Grants)',          type:'csr',          regime:'INR',  aliases:['Google','Income From Google','Grant from Google'] },
   // Founding-era funders (FY2005-06 → FY2011-12)
-  dfid_pacs:        { name:'Department for International Development — Poorest Areas Civil Society Programme (Lokshakti)',      type:'govt',         regime:'FCRA', aliases:['DFID','PACS','PACS Programme','Lokshakti','DFID (PACS PROGRAME)'] },
+  dfid_pacs:        { name:'Department for International Development - Poorest Areas Civil Society Programme (Lokshakti)',      type:'govt',         regime:'FCRA', aliases:['DFID','PACS','PACS Programme','Lokshakti','DFID (PACS PROGRAME)'] },
   baif:             { name:'BAIF Development Research Foundation',   type:'indian_inst',  regime:'FCRA', aliases:['BAIF','RAIF','Sure Start','SURE START PROJECT','BAIF Pune'] },
   kabir:            { name:'United Nations Development Programme (Routed via Kabir, New Delhi)', type:'un', regime:'FCRA', aliases:['Kabir','Kabir Project','Kabir New Delhi','UNDP'], note:'Kabir was the implementing intermediary; the funding this project drew on is credited to the United Nations Development Programme, one of Kabir’s own recorded funding sources for this period.' },
   tara_akshar:      { name:'Tara Akshar (Women\'s Literacy)',        type:'indian_inst',  regime:'INR',  aliases:['Tara Akshar','TARA AKSHAR'] },
@@ -179,10 +179,10 @@ FIN.FUNDERS = {
   ssa:              { name:'Sarva Shiksha Abhiyan (Govt.)',          type:'govt',         regime:'INR',  aliases:['SSA','Sarva Siksha Abhiyaan'] },
   jica:             { name:'JICA / Japan Bank (UPFMPAP Forest Project)', type:'govt', regime:'INR', aliases:['JICA','Japan Bank for International Cooperation','UPFMPAP','DMU Renukoot','DMU Sonbhadra'], note:'UP Participatory Forest Mgmt & Poverty Alleviation Project, routed through the state Divisional Management Unit' },
   // These three were previously folded into the 'individuals' bucket as "one-off domestic consultancy
-  // grants." They are not individuals — each is a distinct institution with its own agreement.
-  afc:              { name:'Agricultural Finance Corporation Ltd',   type:'indian_inst',  regime:'INR', aliases:['AFC','AFC, Lucknow'], note:'Signed letter dated 26.03.2009 (AFC:LKO:PP Basti:2009), on AFC letterhead (21 Vidhan Sabha Marg, Lucknow; Regd. Office Mumbai) — DEHAT was the paid service provider for a Gram Panchayat–level survey of Basti District under the NREGA Perspective Plan, not a grant recipient in the usual sense; a fee-for-service consultancy contract.' },
-  primenet:         { name:'Primenet, Lucknow',                     type:'indian_inst',  regime:'INR', aliases:['PRIMENET','Primenet'], note:'Same NREGA Perspective Plan survey structure as the AFC contract above (Bahraich District rather than Basti), per the signed FY2009-10 statement\'s own parallel "PRIMENET-Perspective Plan of Bahraich Dist. under NREGA" heading. No separate signed agreement letter has been located on file for this one — treated as an institutional consultancy on the strength of the audited statement\'s own structure, not an individual.' },
-  upvan:            { name:'Uttar Pradesh Voluntary Action Network', type:'indian_inst', regime:'INR', aliases:['UPVAN','UPVAN, Lucknow'], note:'Name corrected per direct confirmation — not the Forest Department, which was an earlier, unsupported guess drawn only from a coincidentally-similar partner-logo filename elsewhere on this site, not a citation. UPVAN funded a Right to Information campaign in FY2009-10 per the signed statement\'s "UPVAN -RTI Compaign Expenses" heading, which fits a civil-society voluntary-action network far better than a state forestry department.' },
+  // grants." They are not individuals - each is a distinct institution with its own agreement.
+  afc:              { name:'Agricultural Finance Corporation Ltd',   type:'indian_inst',  regime:'INR', aliases:['AFC','AFC, Lucknow'], note:'Signed letter dated 26.03.2009 (AFC:LKO:PP Basti:2009), on AFC letterhead (21 Vidhan Sabha Marg, Lucknow; Regd. Office Mumbai) - DEHAT was the paid service provider for a Gram Panchayat–level survey of Basti District under the NREGA Perspective Plan, not a grant recipient in the usual sense; a fee-for-service consultancy contract.' },
+  primenet:         { name:'Primenet, Lucknow',                     type:'indian_inst',  regime:'INR', aliases:['PRIMENET','Primenet'], note:'Same NREGA Perspective Plan survey structure as the AFC contract above (Bahraich District rather than Basti), per the signed FY2009-10 statement\'s own parallel "PRIMENET-Perspective Plan of Bahraich Dist. under NREGA" heading. No separate signed agreement letter has been located on file for this one - treated as an institutional consultancy on the strength of the audited statement\'s own structure, not an individual.' },
+  upvan:            { name:'Uttar Pradesh Voluntary Action Network', type:'indian_inst', regime:'INR', aliases:['UPVAN','UPVAN, Lucknow'], note:'Name corrected per direct confirmation - not the Forest Department, which was an earlier, unsupported guess drawn only from a coincidentally-similar partner-logo filename elsewhere on this site, not a citation. UPVAN funded a Right to Information campaign in FY2009-10 per the signed statement\'s "UPVAN -RTI Compaign Expenses" heading, which fits a civil-society voluntary-action network far better than a state forestry department.' },
   erase_poverty:    { name:'Erase Poverty (Swabhiman)',                type:'foreign_org', regime:'FCRA', aliases:['ERASE POVERTY','Erase Poverty'] },
   light_a_lamp:     { name:'Light A Lamp Foundation',                  type:'foreign_org', regime:'FCRA', aliases:['LIGHT A LAMP','Light A Lamp Foundation'] },
   sit_world:        { name:'SIT / World Learning India',               type:'foreign_org', regime:'INR',  aliases:['SIT-World Learning India','SIT','World Learning'] },
@@ -192,14 +192,14 @@ FIN.FUNDERS = {
 // Per-year records. programme/admin split is derived from Income & Expenditure line
 // items (see spend.byProject[].admin where the statement itemises it).
 // Publishing a foreign-contribution return: add BOTH keys to that year below.
-//   fcReturn:'assets/docs/<actual-file>.pdf'  — a file that really exists in assets/docs
-//   fcReturnForm:'FC-4'                        — the form that year was ACTUALLY filed on,
+//   fcReturn:'assets/docs/<actual-file>.pdf' - a file that really exists in assets/docs
+//   fcReturnForm:'FC-4' - the form that year was ACTUALLY filed on,
 //                                                as confirmed by DEHAT's auditor
 // Omit both and the row shows "Return on request" instead of a broken link. Never derive
 // the path or the form name from the year: the filing history is a matter of record.
 FIN.YEARS = [
   {
-    // FY2025-26 — figures taken from the accountant's consolidated workbook
+    // FY2025-26 - figures taken from the accountant's consolidated workbook
     // ("Balance sheet 2025-26 - DEHAT Financials.xlsx"): Cons Bal Sheet, Cons Inc & Exp,
     // INR Grant Sheet and FCRA Grant Fun schedules, which cross-foot exactly.
     // NOT YET SIGNED: the Balance Sheet and Income & Expenditure both carry a blank
@@ -224,7 +224,7 @@ FIN.YEARS = [
     // Where a project's utilisation is reported on a single combined line, admin is left at 0
     // WITHOUT adminChecked, i.e. "not broken out in this source" rather than "nil admin".
     spend:[
-      { project:'Surokhit Shaishav — Promoting Safe Childhood', funder:'caritas_germany', regime:'FCRA', total:2133696.04, admin:0 },
+      { project:'Surokhit Shaishav - Promoting Safe Childhood', funder:'caritas_germany', regime:'FCRA', total:2133696.04, admin:0 },
       { project:'Access to Justice',                            funder:'ksc_foundation',  regime:'FCRA', total:5693495.62, admin:0 },
       { project:'Panchi',                                       funder:'shes_the_first',  regime:'FCRA', total:2608540,    admin:0 },
       { project:'Skill Soldiers for a Better Future',           funder:'dasra',           regime:'FCRA', total:1141790,    admin:0 },
@@ -240,22 +240,22 @@ FIN.YEARS = [
   {
     fy:'2024-25', doc:'assets/docs/balance-sheet-2024-25.pdf', period:'1 Apr 2024 – 31 Mar 2025',
     signed:true, softcopy:true, auditor:'Madhuresh Agrahari & Associates', udin:'25528519BMNZFO7507',
-    // Basis disclosure — RESOLVED: source is DEHAT's own "Activity wise utilisation" FC-4
+    // Basis disclosure - RESOLVED: source is DEHAT's own "Activity wise utilisation" FC-4
     // preparation working paper (govt.-format schedule, cross-checked line by line, every row
     // balances exactly: Previous Balance + Receipt + "Utilised Support by DEHAT" = Utilised + Balance).
     // For Caritas/Surokhit Shaishav: opening ₹1,31,263.64 + FY24-25 grant ₹32,25,694 = ₹33,56,957.64
     // available; actual audited spend was ₹35,00,087, exceeding availability by ₹1,43,129.36.
     // For KSCF/Access to Justice: opening ₹2,73,669 + grant ₹46,17,487 = ₹48,91,156 available;
     // actual audited spend was ₹62,86,034, exceeding availability by ₹13,94,878. Both shortfalls were
-    // covered from DEHAT's own (non-FCRA) funds — the "Utilised Support by DEHAT" column — not from
+    // covered from DEHAT's own (non-FCRA) funds - the "Utilised Support by DEHAT" column - not from
     // any further foreign contribution. ₹1,43,129.36 + ₹13,94,878 = ₹15,38,007.36, matching the
     // live-vs-FC-4 difference (₹15,38,007.04, the small residual being paisa rounding). The submitted
     // FC-4 (24/12/2025) correctly reports only the foreign-contribution-funded portion of utilisation
     // (available balance minus year-end carryforward = ₹1,10,22,034.96); the audited consolidated
     // books correctly report full programme spend including DEHAT's own top-up (₹1,25,60,042.32).
-    // Both figures are right, on their own basis — this is not an error requiring correction.
+    // Both figures are right, on their own basis - this is not an error requiring correction.
     received:[
-      // FCRA (foreign) — all restricted project grants
+      // FCRA (foreign) - all restricted project grants
       { funder:'caritas_germany', regime:'FCRA', flex:'restricted', grant:3225694, interest:0 },
       { funder:'ksc_foundation',  regime:'FCRA', flex:'restricted', grant:4617487, interest:0 },
       { funder:'shes_the_first',  regime:'FCRA', flex:'restricted', grant:1876655, interest:0 },
@@ -269,7 +269,7 @@ FIN.YEARS = [
     ],
     // Spend by project (utilised). admin = amount the I&E itemises as admin/overhead.
     spend:[
-      { project:'Surokhit Shaishav — Promoting Safe Childhood', funder:'caritas_germany', regime:'FCRA', total:3500087, admin:132196 },
+      { project:'Surokhit Shaishav - Promoting Safe Childhood', funder:'caritas_germany', regime:'FCRA', total:3500087, admin:132196 },
       { project:'Access to Justice',             funder:'ksc_foundation',  regime:'FCRA', total:6286034, admin:632571 },
       { project:'Skill Soldiers for a Better Future', funder:'dasra',      regime:'FCRA', total:1484973, admin:172550 },
       { project:'Panchi',                        funder:'shes_the_first',  regime:'FCRA', total:1257835, admin:324993 },
@@ -281,22 +281,22 @@ FIN.YEARS = [
     reserves:{ closingBankFCRA:1129346, closingBankINR:691267 },
     balanceSheetTotal:2531500.55,
   },
-  // FY2005-06 … FY2023-24 — extracted from signed scanned PDFs (in progress).
+  // FY2005-06 … FY2023-24 - extracted from signed scanned PDFs (in progress).
   {
     fy:'2023-24', doc:'assets/docs/balance-sheet-2023-24.pdf', period:'1 Apr 2023 – 31 Mar 2024',
     signed:true, softcopy:false, auditor:'Madhuresh Agrahari & Associates', udin:'24528519BKEGVJ6534',
-    fcReturnStatus:'Filed FC-4 confirmed 27 August 2026 — no draft watermark, signed by DEVYANI CHATURVEDI, organisational seal present, footer reads "FCRA Annual Returns for the financial year has been Submitted on 26/12/2024" on every page. Supersedes the earlier draft-only copies.',
-    // Source: "FC-4 FY 2023-24.pdf" — a genuinely filed, signed, sealed return, distinct from every
+    fcReturnStatus:'Filed FC-4 confirmed 27 August 2026 - no draft watermark, signed by DEVYANI CHATURVEDI, organisational seal present, footer reads "FCRA Annual Returns for the financial year has been Submitted on 26/12/2024" on every page. Supersedes the earlier draft-only copies.',
+    // Source: "FC-4 FY 2023-24.pdf" - a genuinely filed, signed, sealed return, distinct from every
     // earlier-located copy that carried the "DRAFT COPY FINAL SUBMISSION IS NEEDED" watermark. Its
     // donor-level figures (KSCF 46,00,231; Caritas Germany 34,09,467; She's the First 16,10,970;
     // Dasra 10,18,932; interest 87,982; utilisation 92,81,306.48) match exactly what was already
-    // independently verified from the draft copy and the audited consolidated workbook — this document
+    // independently verified from the draft copy and the audited consolidated workbook - this document
     // only changes the filing-status finding, not any figure.
     //
     // FCRA admin source-basis conflict (disclosed, not forced to one figure): the audited workbook
     // ("Balance sheet 2023-24 - DEHAT Consolidate.xlsx", sheet "FCRA Income & Exp.") gives per-project
-    // admin figures — Caritas Germany 1,74,996.36 + KSC Foundation 7,85,905 + Dasra 93,700 + She's the
-    // First 1,43,757 + DEHAT direct fund 18,288.12 — summing to 12,16,646.48 (13.11% of total spend).
+    // admin figures - Caritas Germany 1,74,996.36 + KSC Foundation 7,85,905 + Dasra 93,700 + She's the
+    // First 1,43,757 + DEHAT direct fund 18,288.12 - summing to 12,16,646.48 (13.11% of total spend).
     // The filed FC-4 (page 3, Section 3(a)(ii), verified directly against the primary document) states
     // "Total administrative expenses as provided in rule 5... : 909784.48" (9.80% of total spend) as one
     // aggregate statutory figure, not broken down per project. Both bases are compliant with the 20%
@@ -306,22 +306,22 @@ FIN.YEARS = [
     // not silently reconciled against it.
     // Source: "Balance sheet 2023-24 - DEHAT Consolidate.xlsx", sheet " INR Grant Sheet" (Schedule -
     // Indian Grants) and sheet "Cons Inc & Exp" (signed I&E account). The I&E account itself prints
-    // "GRANTS INR (INCL. INTEREST) — Received During the Year: 10,414,166" as its own line, with
+    // "GRANTS INR (INCL. INTEREST) - Received During the Year: 10,414,166" as its own line, with
     // "Donations (INR): General Donations 8,90,345.08 + Bank Interest 4,196" as a SEPARATE income
-    // category — confirming the four named grants below (which the Grant Sheet's own TOTAL row also
+    // category - confirming the four named grants below (which the Grant Sheet's own TOTAL row also
     // sums to 10,346,482 + 67,684 interest = 10,414,166) exclude the general fund entirely. The
     // previous entry here lumped the grant-sheet's grand total (project grants + general fund,
     // 11,236,827 + 71,880) into one placeholder, which double-counted the general fund against the
     // separate `individuals` line below it.
     receivedTotal:22036289,
     received:[
-      // FCRA (foreign) — restricted project grants (Receipts & Payments, cash received)
+      // FCRA (foreign) - restricted project grants (Receipts & Payments, cash received)
       { funder:'ksc_foundation',  regime:'FCRA', flex:'restricted', grant:4600231, interest:0 },
       { funder:'caritas_germany', regime:'FCRA', flex:'restricted', grant:3409467, interest:0 },
       { funder:'shes_the_first',  regime:'FCRA', flex:'restricted', grant:1610970, interest:0 },
       { funder:'dasra',           regime:'FCRA', flex:'restricted', grant:1018932, interest:0 },
       { funder:'__fcra_general',  regime:'FCRA', flex:'flexible',   grant:0,        interest:87982, note:'Foreign contribution general fund interest' },
-      // INR (domestic) — named per the Schedule of Indian Grants
+      // INR (domestic) - named per the Schedule of Indian Grants
       { funder:'appi',            regime:'INR',  flex:'restricted', grant:4470000, interest:56297, note:'Azim Premji Philanthropic Initiatives FASAL' },
       { funder:'edele_give',      regime:'INR',  flex:'restricted', grant:4000000, interest:10848, note:'GROW project' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:697392,  interest:0,     note:'Childline India Foundation' },
@@ -329,7 +329,7 @@ FIN.YEARS = [
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:890345,   interest:4196,  note:'Individual contributions' },
     ],
     spend:[
-      { project:'Surokhit Shaishav — Promoting Safe Childhood', funder:'caritas_germany', regime:'FCRA', total:3278203, admin:174996 },
+      { project:'Surokhit Shaishav - Promoting Safe Childhood', funder:'caritas_germany', regime:'FCRA', total:3278203, admin:174996 },
       { project:'Access to Justice',             funder:'ksc_foundation',  regime:'FCRA', total:4326562, admin:785905 },
       { project:'Skill Soldiers for a Better Future', funder:'dasra',      regime:'FCRA', total:732166, admin:93700 },
       { project:'Panchi',                        funder:'shes_the_first',  regime:'FCRA', total:926087, admin:143757 },
@@ -343,7 +343,7 @@ FIN.YEARS = [
       // exactly, to the rupee, to the OneDrive-held "APPI-DEHAT FASAL V.2.budget_19th Aug.xlsx"). FY2023-24
       // (Apr 2023–Mar 2024) spans the second half of HY3 (Jan–Jun 2023), all of HY4 (Jul–Dec 2023), and the
       // first half of HY5 (Jan–Jun 2024). "Office Administration Cost" actuals: HY3 ₹76,182 (half ₹38,091),
-      // HY4 ₹1,66,285 (fully in-year, no proration), HY5 ₹72,022 (half ₹36,011) = ₹2,40,387 — office rent,
+      // HY4 ₹1,66,285 (fully in-year, no proration), HY5 ₹72,022 (half ₹36,011) = ₹2,40,387 - office rent,
       // power backup, staff meeting/hospitality and communication costs for the FASAL project office, as
       // distinct from that project's own Salary/Travel/Program lines (field staff and farmer-facing
       // activity, not DEHAT-office administration). Edge-half-year figures are linearly prorated by month
@@ -352,9 +352,9 @@ FIN.YEARS = [
       //
       // EdelGive admin: "Final Budget sheet_2023_14th JUNE'23.xlsx" (sheet "2nd Year'2023-24"; Q5–Q8 =
       // FY2023-24 per the sheet's own key) shows this entire GROW Fund grant is institutional-strengthening
-      // spend — Core Cost (Executive Director/Joint Director/COO/core-team salaries, head-office rent,
+      // spend - Core Cost (Executive Director/Joint Director/COO/core-team salaries, head-office rent,
       // audit, non-programmatic travel, communications) plus Organisation Development and Capacity Building
-      // (staff trainings, website, fundraising event) — with no beneficiary-facing programme line anywhere
+      // (staff trainings, website, fundraising event) - with no beneficiary-facing programme line anywhere
       // in the budget. None of it supports a DEHAT programme; all of it supports DEHAT's own office and
       // organisational capacity, so the full amount is Administration & Governance.
       { project:'Azim Premji Philanthropic Initiatives FASAL Programme', funder:'appi',            regime:'INR', total:4126802.70, admin:240387.00 },
@@ -363,7 +363,7 @@ FIN.YEARS = [
       // BG/N/DCL/C/23-24/80/FI for Bahraich and .../214/FI for Shravasti, "Head Services" Sandeep Kumar
       // Mitra), each with its own explicit "Administrative Expenses" sub-total distinct from Staff Salary
       // and Client Related Expenses. Bahraich: Grant Utilised (As per Accounts) ₹5,62,892 = Staff Salary
-      // ₹3,80,000 + Client Related (incl. Travel) ₹1,27,474 + Administrative Expenses ₹55,418 — the total
+      // ₹3,80,000 + Client Related (incl. Travel) ₹1,27,474 + Administrative Expenses ₹55,418 - the total
       // matches the already-recorded figure to the rupee. Shravasti: this report's own total (₹5,05,897) is
       // ₹90.02 below the already-recorded ₹5,05,987.02 (immaterial, not adjusted); its Administrative
       // Expenses sub-total is ₹49,782, applied directly as this line's admin figure.
@@ -385,8 +385,8 @@ FIN.YEARS = [
       { funder:'caritas_germany', regime:'FCRA', flex:'restricted', grant:449282,    interest:0 },
       { funder:'shes_the_first',  regime:'FCRA', flex:'restricted', grant:126301,    interest:0 },
       { funder:'__fcra_general',  regime:'FCRA', flex:'flexible',   grant:0,         interest:8314, note:'Foreign contribution general fund interest' },
-      // INR — per-funder from Financial Summary 2022-23 xlsx
-      { funder:'appi',            regime:'INR',  flex:'restricted', grant:0,         interest:45542,    note:'Azim Premji Philanthropic Initiatives FASAL — carryover only; opening ₹27,20,272.77; utilised ₹30,00,456.92' },
+      // INR - per-funder from Financial Summary 2022-23 xlsx
+      { funder:'appi',            regime:'INR',  flex:'restricted', grant:0,         interest:45542,    note:'Azim Premji Philanthropic Initiatives FASAL - carryover only; opening ₹27,20,272.77; utilised ₹30,00,456.92' },
       { funder:'edele_give',      regime:'INR',  flex:'restricted', grant:2000000,   interest:25587,    note:'GROW project; opening ₹19,98,549; utilised ₹39,79,558.95' },
       { funder:'acc',             regime:'INR',  flex:'restricted', grant:911954.5,  interest:0,        note:'Scope of Work for Malnutrition; opening -₹71,548.10; utilised ₹8,74,613' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:1695454,   interest:0,        note:'Childline India Foundation; opening -₹8,43,913; utilised ₹14,04,861' },
@@ -396,7 +396,7 @@ FIN.YEARS = [
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:187736.34, interest:5298,     note:'Individual contributions' },
     ],
     spend:[
-      { project:'Surokhit Shaishav — Promoting Safe Childhood', funder:'caritas_germany', regime:'FCRA', total:465174, admin:1674 },
+      { project:'Surokhit Shaishav - Promoting Safe Childhood', funder:'caritas_germany', regime:'FCRA', total:465174, admin:1674 },
       { project:'DEHAT Direct (Own Foreign Contribution Fund)',   funder:'__fcra_general',   regime:'FCRA', total:17448,    admin:17448 },
       { project:'Azim Premji Philanthropic Initiatives FASAL Programme',           funder:'appi',             regime:'INR',  total:3000456.92, admin:0, adminChecked:true },
       { project:'GROW (EdelGive)',                 funder:'edele_give',       regime:'INR',  total:3979558.95, admin:0, adminChecked:true },
@@ -424,9 +424,9 @@ FIN.YEARS = [
     // Balance sheet total ₹54,07,555.45; deficit ₹3,35,011.14; depreciation ₹76,851
     // INR bank closing: ₹48,62,256.85; FCRA bank closing: extracted from consolidated balance sheet
     received:[
-      // FCRA — submitted FC-4: NIL foreign contribution receipts; interest only.
+      // FCRA - submitted FC-4: NIL foreign contribution receipts; interest only.
       { funder:'__fcra_general',  regime:'FCRA', flex:'flexible', grant:0, interest:20346, note:'FCRA bank interest per submitted FC-4; no direct or local foreign contribution received during the year' },
-      // INR — identified from donation register (soft copy; source: finance-data note)
+      // INR - identified from donation register (soft copy; source: finance-data note)
       // Confirmed opening balances from FY2022-23 Financial Summary (= FY2021-22 closing):
       // Azim Premji Philanthropic Initiatives COVID Relief ₹1,45,756 | Azim Premji Philanthropic Initiatives FASAL ₹27,20,272.77 | EdelGive ₹19,98,549
       // AIH Mah ₹36,969 | ACC -₹71,548 | Childline -₹8,43,913 | CL Shravasti -₹7,75,121.80
@@ -439,48 +439,48 @@ FIN.YEARS = [
     ],
     spend:[
       // Source: FCRA-2021-22.pdf (Form FC-4 annual return, Ministry of Home Affairs, submitted
-      // 02/08/2022), Section 3(a) — replaces an earlier placeholder figure (₹21,12,893) that
+      // 02/08/2022), Section 3(a) - replaces an earlier placeholder figure (₹21,12,893) that
       // didn't match this filing. The two rows below are the return's own two named activities;
       // they sum to its Total Utilised, ₹12,58,465.80, exactly.
       // Swaraksha admin, corrected: "Draft Balance sheet 2021-22 - DEHAT.xlsx" (Foreign Contribution
-      // Accounts R&P/I&E, 1 Apr 2021 - 31 Mar 2022, signed by CA Madhuresh Agrahari & Associates — the
+      // Accounts R&P/I&E, 1 Apr 2021 - 31 Mar 2022, signed by CA Madhuresh Agrahari & Associates - the
       // same auditor and year already cited above) itemises Swaraksha's ₹9,94,752 as: Administration
       // Costs ₹1,20,526 + Capacity Building ₹6,416 + Partnership ₹3,000 + Sensitization and Awareness
       // Raising ₹53,860 + Staffing Costs ₹7,63,472 + Youth/Children/Women Group ₹28,549 + Rescue
       // ₹18,929 = ₹9,94,752 exactly. The previous admin:0 had no citation and did not survive
       // re-verification against this signed schedule.
-      { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:994752, admin:120526.00 },
+      { project:'Swaraksha - Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:994752, admin:120526.00 },
       { project:'DEHAT Core FCRA Activities & Inverter Asset', funder:'__fcra_general', regime:'FCRA', total:263713.80, admin:24913.80, note:'Admin ₹24,913.80 is the statutory Rule 5 figure printed on the return; the remaining ₹2,38,800 covers the ₹21,520 inverter asset purchase and direct operations.' },
       // Source: signed "Schedule - Indian Grants" (Madhuresh Agrahari & Associates, FRN 026205N),
       // recovered from a Gmail attachment, cross-checked against the audited consolidated I&E account.
-      // RESOLVED — the audited "Expenditure met from Grant" total of ₹92,92,625.33 is exactly:
+      // RESOLVED - the audited "Expenditure met from Grant" total of ₹92,92,625.33 is exactly:
       // Indian restricted-project utilisation ₹82,97,873.33 (the 8 lines below) + FCRA Swaraksha
       // utilisation ₹9,94,752.00 (the caritas_india_fcra line above, already counted there). The
       // ₹7,78,849.88 previously disclosed as an unidentified residual was a population-mismatch
       // artefact from comparing this line against the fuller schedule total including General Fund
-      // spend — not a real gap. This schedule itself shows no admin sub-split for the remaining lines
+      // spend - not a real gap. This schedule itself shows no admin sub-split for the remaining lines
       // below; each now carries an admin figure sourced independently (real per-project schedules for
-      // Childline and Swaraksha above, modelled/estimated figures — see each line's own comment — for
+      // Childline and Swaraksha above, modelled/estimated figures - see each line's own comment - for
       // APPI FASAL, AIH Maharashtra, and AIH Uttar Pradesh, and a direct citation for General Fund).
-      { project:'Azim Premji Philanthropic Initiatives — COVID Relief', funder:'appi', regime:'INR', total:1498000.00, admin:0, adminChecked:true, note:'Confirmed fully programme cost; no administrative allocation on this grant' },
-      // APPI FASAL admin: same source and methodology already used for FY2023-24's APPI FASAL line —
+      { project:'Azim Premji Philanthropic Initiatives - COVID Relief', funder:'appi', regime:'INR', total:1498000.00, admin:0, adminChecked:true, note:'Confirmed fully programme cost; no administrative allocation on this grant' },
+      // APPI FASAL admin: same source and methodology already used for FY2023-24's APPI FASAL line - 
       // "2110-10970_...reporting sheet.xlsx" (Budget Report sheet), APPI's own Budgeted-vs-Actuals
       // half-year utilisation report for this grant. Per that same established mapping (HY3 = Jan-Jun
       // 2023), HY1 = Jan-Jun 2022, so FY2021-22 (Apr 2021-Mar 2022) spans only the first quarter (Jan-Mar
-      // 2022) of HY1 — half of HY1 by month-count. "Office Administration Cost" HY1 actual = ₹2,24,411;
+      // 2022) of HY1 - half of HY1 by month-count. "Office Administration Cost" HY1 actual = ₹2,24,411;
       // half = ₹1,12,205.50. Cross-checked against FY2022-23's total (half-HY1 + full HY2 + half-HY3 =
-      // ₹30,42,824, vs the live ₹30,00,456.92 — within 1.4%), supporting this same HY-start assumption.
+      // ₹30,42,824, vs the live ₹30,00,456.92 - within 1.4%), supporting this same HY-start assumption.
       // Same disclosure as FY2023-24: a close estimate from real actuals, not a document stating the
       // fiscal-year figure directly.
       { project:'Azim Premji Philanthropic Initiatives FASAL',          funder:'appi', regime:'INR', total:775418.23,  admin:112205.50 },
-      { project:'GROW (EdelGive)',                                     funder:'edele_give', regime:'INR', total:1451.00, admin:1451.00, adminChecked:true, note:'Confirmed fully administrative — this small residual amount carries no programme component' },
-      // AIH admin, MODELLED (estimated:true) — superseding an earlier backward-year trend extrapolation
+      { project:'GROW (EdelGive)',                                     funder:'edele_give', regime:'INR', total:1451.00, admin:1451.00, adminChecked:true, note:'Confirmed fully administrative - this small residual amount carries no programme component' },
+      // AIH admin, MODELLED (estimated:true) - superseding an earlier backward-year trend extrapolation
       // once real, dated, month-by-month AIH utilisation reports for this exact fiscal year turned up
       // (distinct from the stale, misdated "AiH - Utilization Sheet" files rejected earlier). Real
       // monthly figures (Activity 2.2 = programme staff/mobilisation; Activity 3.1 HR/finance management
       // + Activity 3.2 communication/office/stationery = admin; Activity 3.3 field-travel-for-monitoring
       // and the separate "Confidence and Routine Immunisation Demand" component = programme) were pulled
-      // from monthly reports covering Jun-Dec 2021 (7 of 12 months for Maharashtra, 6 of 12 for UP — no
+      // from monthly reports covering Jun-Dec 2021 (7 of 12 months for Maharashtra, 6 of 12 for UP - no
       // Aug figure located for UP). The Sep-Dec sub-totals were cross-checked against each region's own
       // "Tracking Sheet (September 2021 to December 2021)" and matched exactly: Maharashtra 6,68,375,
       // UP 5,33,100.
@@ -489,20 +489,20 @@ FIN.YEARS = [
       //   Uttar Pradesh (Jun,Jul,Sep-Dec; no Aug): total 7,61,042, admin 49,042 = 6.4441% -> applied to
       //   the full-year total (10,71,522) = admin 69,050.
       // Confirmed directly: the entire AIH phase for this fiscal year ran 1 June 2021 to 31 December
-      // 2021 only — there is no Apr-May 2021 or Jan-Mar 2022 AIH activity to account for. Both state
+      // 2021 only - there is no Apr-May 2021 or Jan-Mar 2022 AIH activity to account for. Both state
       // coordinator and district coordinator contracts are explicitly noted as ending in December 2021
       // ("SC's contract is till 31st Dec 21", "District Coordinators contract is till 15th Dec 21"),
       // consistent with this. Real monthly data covers essentially the whole phase (all 7 months for
       // Maharashtra, 6 of 7 for UP), so the gap between the summed real months and each full-total figure
       // (Maharashtra 2,37,733; UP 3,10,480) sits *within* this confirmed window rather than in an
-      // unreported edge month — its specific cause (a missing document for a particular week or activity,
+      // unreported edge month - its specific cause (a missing document for a particular week or activity,
       // or a difference in how the audited total itself was appropriated) was not identified from what
       // was located, and is disclosed here rather than forced. A separately-sourced claim of 8.12%/15.50%
       // admin (citing a stale utilisation-sheet file, a PCA contract, and a completion report, none
-      // independently confirmed to carry a real cost breakdown) was not applied — a 4-7x jump from every
+      // independently confirmed to carry a real cost breakdown) was not applied - a 4-7x jump from every
       // other real data point available.
-      { project:'Alliance for Immunization & Health — Maharashtra',     funder:'aih', regime:'INR', total:1309208.00, admin:18572.00, estimated:true },
-      { project:'Alliance for Immunization & Health — Uttar Pradesh',   funder:'aih', regime:'INR', total:1071522.00, admin:69050.00, estimated:true },
+      { project:'Alliance for Immunization & Health - Maharashtra',     funder:'aih', regime:'INR', total:1309208.00, admin:18572.00, estimated:true },
+      { project:'Alliance for Immunization & Health - Uttar Pradesh',   funder:'aih', regime:'INR', total:1071522.00, admin:69050.00, estimated:true },
       // ACC Malnutrition admin, resolved from real monthly actuals and bank-confirmed invoice numbers
       // spanning the full fiscal year (Apr 2021 - Mar 2022), cross-checked against the "Cons. Grant
       // sheet.pdf" Schedule - Indian Grants (which confirms the ₹9,78,616 total to the rupee) and a
@@ -513,29 +513,29 @@ FIN.YEARS = [
       //   Aug-Dec 2021 (old PO invoices 01-05: 48,660+1,82,609+1,17,407+68,424+82,819 = 4,99,919):
       //   admin = Reporting/Comm 6,891 + NGO overhead 50,000 (10,000 x 5) + Office furniture 14,999 =
       //   71,890.
-      //   Jan 2022 (old PO invoice 06, ₹92,331 — bank-confirmed via NEFT payment advice dated
+      //   Jan 2022 (old PO invoice 06, ₹92,331 - bank-confirmed via NEFT payment advice dated
       //   15.02.2022): admin = NGO overhead 10,000 (matching the unbroken monthly pattern) + IT/
       //   stationery/antivirus 15,454 (dated invoices: Ankit Computers, Bhumi Enterprises Gauriganj) =
       //   25,454.
       //   Feb-Mar 2022 (new PO's first invoice, ₹95,996, four dated vouchers): admin = Reporting/Comm
       //   1,996 + NGO overhead 20,000 (10,000 x 2) = 21,996.
       // Total admin = 65,382 + 71,890 + 25,454 + 21,996 = 1,84,722.
-      // Basis note: summing every individually-dated monthly bill above gives ₹10,18,616 — ₹40,000
+      // Basis note: summing every individually-dated monthly bill above gives ₹10,18,616 - ₹40,000
       // above the audited ₹9,78,616. The old PO's 6-month cycle (Aug 2021-Jan 2022) reconciles exactly
       // to its own ₹6,20,050 budget (₹5,92,250 utilised, ₹27,800 underspent), so the ₹40,000 gap sits in
-      // the new PO's Feb-Mar 2022 invoice — most likely an accrual-basis split between FY2021-22 and
+      // the new PO's Feb-Mar 2022 invoice - most likely an accrual-basis split between FY2021-22 and
       // FY2022-23 that no located document resolves precisely. Not knowing which specific rupees of
       // that invoice fall outside FY2021-22, the shortfall is left in programme rather than admin.
       { project:'Scope of Work for Malnutrition (ACC)',                 funder:'acc', regime:'INR', total:978616.00,  admin:184722.00 },
       // Childline India Foundation admin, resolved: "Budget of CHILDLINE Bahraich Collab 21-22.xlsx",
-      // sheet "2021-22" — a complete Apr 2021-Mar 2022 monthly utilisation sheet for the "Childline-1098
+      // sheet "2021-22" - a complete Apr 2021-Mar 2022 monthly utilisation sheet for the "Childline-1098
       // Project, Non-Metro Collab-Bahraich." Grand Total ₹13,91,162 matches this line exactly. Its own
       // "B.3 Administative costs" category (Rent/office maintenance 30,000 + Communication 14,080 +
       // Computer Maintenance 3,600 + Stationery 6,992 + Accountant Honorarium 30,000 + Auditors fees
       // 5,000 + Awareness Material 14,930 + Postage 295 + Travel/conveyance 4,805 + Staff welfare 18,000
       // + Miscellaneous 6,665 + Training and Orientation 35,986 = 1,70,353) is admin; B.1 Staff
       // honoraria (9,12,000), B.2 Client Related Contingency (Medical+Nutrition+Shelter+Restoration =
-      // 1,67,343), B.4 Travel(outreach) (1,36,826 — its own note: "No conveyance incurred for admin
+      // 1,67,343), B.4 Travel(outreach) (1,36,826 - its own note: "No conveyance incurred for admin
       // purpose can be booked under this head"), and B.5 Open House (4,640) are programme.
       // Admin 1,70,353 + Programme 12,20,809 = 13,91,162 exactly. Independently re-confirmed by a
       // signed CA utilisation certificate (Garg Akash & Co., UDIN 22435464AMOJPZ7117, period
@@ -548,15 +548,15 @@ FIN.YEARS = [
       // 14,966 + Postage 252 + Travel/conveyance 6,841 + Staff welfare 17,950 + Miscellaneous 3,204 +
       // Training and Orientation 35,567 = 1,66,266) is admin; Staff Salary (9,12,000), Client Related
       // Expenses (Medical+Restoration+Nutrition = 45,407), Travel(outreach) (1,43,533), and Open House
-      // (4,875) are programme. Admin 1,66,266 + Programme 11,05,815 = 12,72,081 — the certificate's own
+      // (4,875) are programme. Admin 1,66,266 + Programme 11,05,815 = 12,72,081 - the certificate's own
       // total, which is ₹415.10 below the live total (12,72,496.10, sourced from the audited consolidated
-      // balance sheet); an immaterial basis variance, not a citation problem — the admin figure is applied
+      // balance sheet); an immaterial basis variance, not a citation problem - the admin figure is applied
       // against the live total as the best available real split.
       { project:'Childline Shravasti',                                 funder:'childline_india', regime:'INR', total:1272496.10, admin:166266.00 },
-      // Same schedule's item 8, disclosed separately — it is NOT part of the ₹92,92,625.33
+      // Same schedule's item 8, disclosed separately - it is NOT part of the ₹92,92,625.33
       // reconciliation above (that figure excludes it), but it is real, cited spend in its own right.
       // Admin: the signed INR Income & Expenditure account for this exact period (1 Apr 2021-31 Mar
-      // 2022) prints this precise figure as its own line item, "DEHAT General Exp. 2,15,902.12" —
+      // 2022) prints this precise figure as its own line item, "DEHAT General Exp. 2,15,902.12" - 
       // matching the same real, audited label already classified 100% admin for this organisation's
       // general/head-office expenditure in every other year it appears (FY2018-19 to FY2024-25).
       { project:'General Fund',                                        funder:'individuals', regime:'INR', total:215902.12, admin:215902.12, adminChecked:true },
@@ -589,10 +589,10 @@ FIN.YEARS = [
       // INR
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:1300113, interest:0, note:'Childline Shravasti' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:1399292, interest:0, note:'Childline BRH', project:'Childline BRH' },
-      { funder:'aih',             regime:'INR',  flex:'restricted', grant:1735198, interest:0, note:'Alliance for Immunization & Health immunization — Maharashtra' },
-      { funder:'aih',             regime:'INR',  flex:'restricted', grant:1503983, interest:0, note:'Alliance for Immunization & Health immunization — UP', project:'Alliance for Immunization & Health — Uttar Pradesh' },
+      { funder:'aih',             regime:'INR',  flex:'restricted', grant:1735198, interest:0, note:'Alliance for Immunization & Health immunization - Maharashtra' },
+      { funder:'aih',             regime:'INR',  flex:'restricted', grant:1503983, interest:0, note:'Alliance for Immunization & Health immunization - UP', project:'Alliance for Immunization & Health - Uttar Pradesh' },
       { funder:'igsss',           regime:'INR',  flex:'restricted', grant:43710,   interest:0, note:'IGSSS local contribution' },
-      { funder:'appi',            regime:'INR',  flex:'restricted', grant:1000000, interest:0, note:'Azim Premji Philanthropic Initiatives COVID relief — dry ration' },
+      { funder:'appi',            regime:'INR',  flex:'restricted', grant:1000000, interest:0, note:'Azim Premji Philanthropic Initiatives COVID relief - dry ration' },
       { funder:'acc',             regime:'INR',  flex:'restricted', grant:627765,  interest:0, note:'Scope of Work for Malnutrition (ACC)' },
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:1955094.63, interest:83413.03, note:'Individual contributions (COVID year) + interest; student fees ₹50,400; General Reserve utilised ₹4,98,973.45' },
     ],
@@ -600,12 +600,12 @@ FIN.YEARS = [
       { project:'Childline Shravasti',        funder:'childline_india', regime:'INR',  total:1300113, admin:167665 },
       { project:'Childline BRH',              funder:'childline_india', regime:'INR',  total:1399292, admin:164511 },
       { project:'Voice of Change',  funder:'sanlaap',         regime:'FCRA', total:76740,   admin:0, adminChecked:true },
-      { project:'Alliance for Immunization & Health Immunization — Maharashtra', funder:'aih',         regime:'INR',  total:1735198, admin:32056 },
-      { project:'Alliance for Immunization & Health Immunization — UP',      funder:'aih',             regime:'INR',  total:1503983, admin:32397 },
+      { project:'Alliance for Immunization & Health Immunization - Maharashtra', funder:'aih',         regime:'INR',  total:1735198, admin:32056 },
+      { project:'Alliance for Immunization & Health Immunization - UP',      funder:'aih',             regime:'INR',  total:1503983, admin:32397 },
       { project:'Su-Poshan',     funder:'igsss',           regime:'FCRA', total:517172,  admin:29514 },
       { project:'Local Contribution',   funder:'igsss',           regime:'INR',  total:43710, admin:0, adminChecked:true },
       { project:'Azim Premji Philanthropic Initiatives COVID Ration',          funder:'appi',            regime:'INR',  total:1000000, admin:0, adminChecked:true },
-      { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:1518981, admin:185436, note:'SCIAF-funded programme facilitated through Caritas India; direct SCIAF and Caritas India receipt lines remain separately disclosed.' },
+      { project:'Swaraksha - Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:1518981, admin:185436, note:'SCIAF-funded programme facilitated through Caritas India; direct SCIAF and Caritas India receipt lines remain separately disclosed.' },
       { project:'ACC Malnutrition',           funder:'acc',             regime:'INR',  total:627765, admin:0, adminChecked:true },
       { project:'Audit Fees (Foreign Contribution)',          funder:'__fcra_general',  regime:'FCRA', total:15000,   admin:15000 },
       { project:'DEHAT Direct Own Fund',      funder:'individuals',     regime:'INR',  total:2512614.08, admin:2512614.08 },
@@ -628,9 +628,9 @@ FIN.YEARS = [
       // INR
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:1310995, interest:0, note:'Childline Shravasti' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:1388772, interest:0, note:'Childline BRH (Bahraich)', project:'Childline BRH' },
-      { funder:'birlasoft',       regime:'INR',  flex:'restricted', grant:108326,  interest:0, note:'"e-vidya" computer-skills programme (CSR Enabler Agreement, 12 Apr 2018) — Government Girls Inter College, Sector 51, Noida; not an IIMPACT project despite the similar name' },
-      { funder:'aih',             regime:'INR',  flex:'restricted', grant:767824,  interest:0, note:'Alliance for Immunization & Health immunization — Maharashtra' },
-      { funder:'aih',             regime:'INR',  flex:'restricted', grant:538645,  interest:0, note:'Alliance for Immunization & Health immunization — UP', project:'Alliance for Immunization & Health — Uttar Pradesh' },
+      { funder:'birlasoft',       regime:'INR',  flex:'restricted', grant:108326,  interest:0, note:'"e-vidya" computer-skills programme (CSR Enabler Agreement, 12 Apr 2018) - Government Girls Inter College, Sector 51, Noida; not an IIMPACT project despite the similar name' },
+      { funder:'aih',             regime:'INR',  flex:'restricted', grant:767824,  interest:0, note:'Alliance for Immunization & Health immunization - Maharashtra' },
+      { funder:'aih',             regime:'INR',  flex:'restricted', grant:538645,  interest:0, note:'Alliance for Immunization & Health immunization - UP', project:'Alliance for Immunization & Health - Uttar Pradesh' },
       { funder:'igsss',           regime:'INR',  flex:'restricted', grant:209050,  interest:0, note:'IGSSS local contribution (Su-Poshan)' },
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:221479.5,interest:62004.46, note:'Individual contributions + bank interest; General Reserve utilised ₹1,27,695.84' },
     ],
@@ -638,12 +638,12 @@ FIN.YEARS = [
       { project:'Childline Shravasti',        funder:'childline_india', regime:'INR',  total:1310995, admin:166244 },
       { project:'Childline BRH',              funder:'childline_india', regime:'INR',  total:1388772, admin:167411 },
       { project:'E-Vidya (Birlasoft CSR)',    funder:'birlasoft',       regime:'INR',  total:108326, admin:47833 },
-      { project:'Alliance for Immunization & Health Immunization — Maharashtra', funder:'aih',         regime:'INR',  total:767824, admin:10800 },
-      { project:'Alliance for Immunization & Health Immunization — UP',      funder:'aih',             regime:'INR',  total:538645, admin:9600 },
+      { project:'Alliance for Immunization & Health Immunization - Maharashtra', funder:'aih',         regime:'INR',  total:767824, admin:10800 },
+      { project:'Alliance for Immunization & Health Immunization - UP',      funder:'aih',             regime:'INR',  total:538645, admin:9600 },
       { project:'Su-Poshan (IGSSS Local)',    funder:'igsss',           regime:'INR',  total:209050, admin:0, adminChecked:true },
       { project:'Stakeholder Meeting', funder:'sanlaap',      regime:'FCRA', total:108910,  admin:0, adminChecked:true },
       { project:'Suposhan / Nutrition', funder:'igsss',    regime:'FCRA', total:1048799, admin:56390 },
-      { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:1840442, admin:185541 },
+      { project:'Swaraksha - Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:1840442, admin:185541 },
       { project:'Audit Fees (Foreign Contribution)',          funder:'__fcra_general',  regime:'FCRA', total:15000,   admin:15000 },
       { project:'DEHAT Direct Own Fund',      funder:'individuals',     regime:'INR',  total:369104.34, admin:369104.34 },
     ],
@@ -661,7 +661,7 @@ FIN.YEARS = [
     // FCRA account 0072000100151405 shows four explicit quarterly interest credits: ₹12,708,
     // ₹9,878, ₹10,771 and ₹8,948, totalling ₹42,305. Thus neither signed figure exactly matches the
     // bank statement (FC-4 is ₹67.94 higher; consolidated is ₹19,865.85 lower). DEHAT's own internal
-    // "FCRA Calculation 2019.xlsx" working paper — the source computation behind that year's FC-4 —
+    // "FCRA Calculation 2019.xlsx" working paper - the source computation behind that year's FC-4 - 
     // independently uses ₹42,372.94 as "Interest Received in Bank," confirming the FC-4 figure was a
     // deliberate calculation, not a filing error. The live figure below continues to follow the
     // consolidated-statement convention used across this page, with the conflict disclosed rather
@@ -670,12 +670,12 @@ FIN.YEARS = [
       { funder:'caritas_india_fcra', regime:'FCRA', flex:'restricted', grant:2317925, interest:0, note:'Swaraksha; SCIAF allocation facilitated through Caritas India' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:303602,  interest:0, note:'Childline Shravasti' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:1292090, interest:0, note:'Childline BRH', project:'Childline BRH' },
-      { funder:'birlasoft',       regime:'INR',  flex:'restricted', grant:1115216, interest:0, note:'"e-vidya" computer-skills programme (CSR Enabler Agreement, 12 Apr 2018) — Government Girls Inter College, Sector 51, Noida; not an IIMPACT project despite the similar name' },
+      { funder:'birlasoft',       regime:'INR',  flex:'restricted', grant:1115216, interest:0, note:'"e-vidya" computer-skills programme (CSR Enabler Agreement, 12 Apr 2018) - Government Girls Inter College, Sector 51, Noida; not an IIMPACT project despite the similar name' },
       { funder:'acc',             regime:'INR',  flex:'restricted', grant:1226490, interest:0, note:'Sustainable Community Development Project / ACC school & garment skilling' },
       // Funder correction: Sujlam Suflam's own signed project I&E ("Developmental Association for
-      // Human Advancement — Sujlam Suflam Project, Income and Expenditure Account, 1 Apr 2018 – 31 Mar
+      // Human Advancement - Sujlam Suflam Project, Income and Expenditure Account, 1 Apr 2018 – 31 Mar
       // 2019", CA Akash Garg) states its income line as "Grant Utilised-SDTT ₹87,280.00" plus its own
-      // "Bank Interest ₹1,026.40" — this is a Sir Dorabji Tata Trust project (consistent with SDTT's
+      // "Bank Interest ₹1,026.40" - this is a Sir Dorabji Tata Trust project (consistent with SDTT's
       // recurring Sujalam/Sujlam Suflam NRM/livelihoods project in other years), not NABARD.
       { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:87280,   interest:1026.40, note:'Sujlam Suflam (water/NRM) project' },
       { funder:'charity_science',regime:'INR',  flex:'restricted', grant:509810,  interest:0, note:'Charity Science project' },
@@ -683,14 +683,14 @@ FIN.YEARS = [
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:220452,  interest:22439.15, note:'Individual contributions + bank interest; student fees ₹46,400; Google income ₹10,068' },
     ],
     spend:[
-      { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:2317925, admin:186295 },
+      { project:'Swaraksha - Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:2317925, admin:186295 },
       { project:'Childline Shravasti',    funder:'childline_india', regime:'INR',  total:303602,  admin:41083 },
       { project:'Childline BRH',          funder:'childline_india', regime:'INR',  total:1292090, admin:172106 },
       { project:'E-Vidya (Birlasoft CSR)', funder:'birlasoft',       regime:'INR',  total:1035216, admin:0, adminChecked:true },
       { project:'Sustainable Community Development Project',             funder:'acc',             regime:'INR',  total:1226490, admin:188826 },
       // Sujlam Suflam admin: signed I&E schedule splits ₹87,280 into Personal (Program ₹48,400 +
       // Admin ₹14,520), Program Cost ₹14,680 (Capacity Building + Travel), and Overhead Cost ₹9,680
-      // (Rent + Stationery + Staff Welfare) — sums exactly. Admin = Personal-Admin + Overhead = ₹24,200.
+      // (Rent + Stationery + Staff Welfare) - sums exactly. Admin = Personal-Admin + Overhead = ₹24,200.
       { project:'Sujlam Suflam',          funder:'sdtt',            regime:'INR',  total:87280,   admin:24200 },
       { project:'Charity Science',        funder:'charity_science',regime:'INR',  total:505440,  admin:44220 },
       { project:'GEETA Karnal',           funder:'geeta_karnal',    regime:'INR',  total:155000,  admin:0, adminChecked:true },
@@ -705,7 +705,7 @@ FIN.YEARS = [
     fy:'2017-18', doc:'assets/docs/balance-sheet-2017-18.pdf', period:'1 Apr 2017 – 31 Mar 2018',
     signed:true, softcopy:false, auditor:'Vipin Priyank Gopal & Co (Bahraich, FRN 017849C, M.No.422438)',
     // Source: DEHAT Balance Sheet Consolidated. 2017-18.pdf (signed, text-readable, re-read directly
-    // page by page — not the earlier scan). Balance Sheet signed 29/09/2018; Income & Expenditure and
+    // page by page - not the earlier scan). Balance Sheet signed 29/09/2018; Income & Expenditure and
     // Receipts & Payments schedules signed 29/10/2018. Balance sheet total ₹48,29,613.
     // Google ₹60,02,387 is in-kind Ad Grants, booked equal on income and expenditure sides.
     // Per-project totals below include that project's own fixed-asset purchases, matching how the
@@ -713,10 +713,10 @@ FIN.YEARS = [
     // fixed-asset line; Swaraksha's includes ₹34,500; Bal Prahari's includes ₹9,650).
     received:[
       { funder:'unicef',          regime:'INR',  flex:'restricted', grant:270000,  interest:0, note:'UNICEF GPDP' },
-      // Source: "Rotary 2016-ocr.pdf" (signed MoU, West Bengal stamp paper 95AA 859531) — the legal
+      // Source: "Rotary 2016-ocr.pdf" (signed MoU, West Bengal stamp paper 95AA 859531) - the legal
       // remitter is Rotary South Asia Society for Development and Cooperation (RSAS), a registered
       // Indian society, operating through its committee Rotary India Literacy Mission (RILM). Not a
-      // foreign_org/FCRA entity — corrected to the same `rilm`/INR funder already used for FY2015-16
+      // foreign_org/FCRA entity - corrected to the same `rilm`/INR funder already used for FY2015-16
       // and FY2016-17's RILM receipts.
       { funder:'rilm',            regime:'INR',  flex:'restricted', grant:1788590, interest:0, note:'RILM / Asha Kiran grant' },
       { funder:'caritas_india_fcra', regime:'FCRA', flex:'restricted', grant:1393305, interest:0, note:'Swaraksha; SCIAF allocation facilitated through Caritas India' },
@@ -727,9 +727,9 @@ FIN.YEARS = [
       { funder:'acc',             regime:'INR',  flex:'restricted', grant:1579381, interest:0, note:'Sustainable Community Development Project / ACC' },
       { funder:'ipartner',        regime:'INR',  flex:'restricted', grant:798702,  interest:0, note:'iPartner India' },
       { funder:'charity_science',regime:'INR',  flex:'restricted', grant:150000,  interest:0, note:'Charity Science Foundation' },
-      { funder:'iimpact',         regime:'INR',  flex:'restricted', grant:1878800, interest:0, note:'RGCEP appropriation on grant — genuinely IIMPACT’s, unrelated to Birlasoft/"e-vidya"; most of it carried forward unspent (see spend[] note)' },
+      { funder:'iimpact',         regime:'INR',  flex:'restricted', grant:1878800, interest:0, note:'RGCEP appropriation on grant - genuinely IIMPACT’s, unrelated to Birlasoft/"e-vidya"; most of it carried forward unspent (see spend[] note)' },
       { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:1455855, interest:0, note:'Sir Dorabji Tata Trust' },
-      { funder:'google',          regime:'INR',  flex:'restricted', grant:6002387, interest:0, note:'Google Ad Grants — IN-KIND (non-cash)', inKind:true },
+      { funder:'google',          regime:'INR',  flex:'restricted', grant:6002387, interest:0, note:'Google Ad Grants - IN-KIND (non-cash)', inKind:true },
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:448695,  interest:101174, note:'Individual contributions + bank interest' },
     ],
     spend:[
@@ -745,16 +745,16 @@ FIN.YEARS = [
       // ₹15,19,465 + Travel ₹4,035 = ₹17,73,279 programme, + its own printed "Administrative Expenses"
       // ₹2,16,656) carries no project-name header on the expenditure page, but by elimination against
       // every other funder's own explicitly-labelled block on the same statement, it belongs to Rotary
-      // (RILM/Asha Kiran) — not IIMPACT. RGCEP's real, separately labelled FY2017-18 entry is the much
+      // (RILM/Asha Kiran) - not IIMPACT. RGCEP's real, separately labelled FY2017-18 entry is the much
       // smaller line below; a prior submission had merged the two.
       { project:'RILM / Asha Kiran Project', funder:'rilm', regime:'INR', total:1989935, admin:216656 },
       // RGCEP's own explicit page ("RGCEP PROJECT: Staff Cost 1,76,721") carries no further admin
-      // sub-header of its own — the entity-wide "General Administrative Expenses" (₹4,32,747) that
+      // sub-header of its own - the entity-wide "General Administrative Expenses" (₹4,32,747) that
       // follows it on the statement is DEHAT's general admin, not RGCEP-specific, and is already
       // captured in the "DEHAT general administrative expenses" line below (this is the same line
-      // already present as "RGCEP project (staff cost)" further down — not duplicated here).
+      // already present as "RGCEP project (staff cost)" further down - not duplicated here).
       { project:'Bal Prahari (iPartner India)',         funder:'ipartner',        regime:'INR',  total:937520,  admin:62896 },
-      { project:'Swaraksha — Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:1372498, admin:87424 },
+      { project:'Swaraksha - Anti-Human Trafficking', funder:'caritas_india_fcra', regime:'FCRA', total:1372498, admin:87424 },
       { project:'Charity Science Foundation',           funder:'charity_science',regime:'INR',  total:95760,   admin:4060 },
       { project:'RGCEP Project (Staff Cost)',           funder:'iimpact',         regime:'INR',  total:176721,  admin:0, adminChecked:true },
       { project:'DEHAT General Administrative Expenses', funder:'individuals',   regime:'INR',  total:432747,  admin:432747 },
@@ -766,44 +766,44 @@ FIN.YEARS = [
     fy:'2016-17', doc:'assets/docs/balance-sheet-2016-17.pdf', period:'1 Apr 2016 – 31 Mar 2017',
     signed:true, compiled:true, softcopy:false, auditor:'Rajeev Parul & Co (Lucknow, CA Atul Kumar Srivastava, M.No.407637)',
     // Source: signed scanned copy in PUBLIC_DOCUMENTS/01_BALANCE_SHEETS/DEHAT_Audited_Balance_Sheet_FY_2016-17.pdf
-    // — every page carries the Rajeev Parul & Co round stamp, and page 3's Auditor's Report is wet-signed
+    // - every page carries the Rajeev Parul & Co round stamp, and page 3's Auditor's Report is wet-signed
     // "FOR RAJEEV PARUL & CO, Chartered Accountants / (CA Atul Kumar Srivastava) / Partner, M.No.407637 /
-    // Date: 09.10.2017 / Place: Lucknow" — the same 09.10.2017 date already noted below, confirming this is
+    // Date: 09.10.2017 / Place: Lucknow" - the same 09.10.2017 date already noted below, confirming this is
     // the signed version of the same compilation, not a different document. The previously-recorded auditor
     // ("S. Chandra Gupta & Associates, CA Rajeev Gupta, M.No.089462") does not appear anywhere in this
-    // document and was an error; corrected here from the primary source. All figures below are unaffected —
+    // document and was an error; corrected here from the primary source. All figures below are unaffected - 
     // they already match this signed copy to the rupee (balanceSheetTotal 4,997,203.91 ties to its own
     // printed "Total Rs." on the Balance Sheet page).
-    // "Compiled from the books" — an accountant's compilation (per the Auditor's Report's own wording), not a full statutory audit.
+    // "Compiled from the books" - an accountant's compilation (per the Auditor's Report's own wording), not a full statutory audit.
     // Per-funder received = Grant-Fund income lines on the consolidated I&E; spend = project-cost blocks on the I&E.
-    // Google ₹77.6L is in-kind Ad Grants (non-cash) — booked equal on income and expenditure sides.
+    // Google ₹77.6L is in-kind Ad Grants (non-cash) - booked equal on income and expenditure sides.
     // I&E income ₹1,89,78,517.80; I&E expenditure ₹2,17,46,579.40 (excl. the separately-stated depreciation line);
     // deficit therefore ≥ ₹27,68,061.60, funded from prior-year advances/receivables (large Expenses-Payable accruals). Balance sheet total ₹49,97,203.91 (as printed).
     // "Bal Prahaari anti-trafficking" (border-village programme, ₹12,56,256 received / ₹5,52,152.93
-    // utilised) was previously carried under a "funder not itemised" placeholder — grounded to iPartner
+    // utilised) was previously carried under a "funder not itemised" placeholder - grounded to iPartner
     // India via "iPartner Baal Prahari Project Assessment Report - June 2017", the same funder already
     // used for iPartner's FY2017-18 entries. "Sujalam Sufalam (livelihoods / NRM)" (₹12,22,121.93
-    // utilised) was previously carried under its own unmapped placeholder — grounded to Sir Dorabji Tata
+    // utilised) was previously carried under its own unmapped placeholder - grounded to Sir Dorabji Tata
     // Trust via "An overview on DEHAT's 'Sujlam-Sufalam' Initiative" (Sept 2016), which prints "Supported
     // by: Sir Dorabji Tata Trust" on its own title page. This is a separate project from the smaller,
-    // NABARD-funded "Sujlam Suflam (water) project" in FY2018-19 — same near-identical name, unrelated
+    // NABARD-funded "Sujlam Suflam (water) project" in FY2018-19 - same near-identical name, unrelated
     // funder and activity; kept distinct.
     note:'Received = grant income recognised on the I&E; utilised = I&E project-cost blocks (ties to ₹2,17,46,579.40). Cash grants excl. Google in-kind = ₹1,12,18,703.95. Deficit run against prior-year advances.',
     balanceSheetTotal:4997203.91, receivedTotal:18978517.80, utilisedTotal:21746579.40, surplus:-2768061.60,
     fundersActive:['google','iimpact','rilm','ipartner','sdtt','action_aid','childline_india','baif','individuals'],
     received:[
-      { funder:'google',          regime:'INR',  flex:'restricted', grant:7759813.85, interest:0, note:'Google Ad Grants — IN-KIND online advertising (non-cash)', inKind:true },
-      { funder:'iimpact',         regime:'INR',  flex:'restricted', grant:3010367.95, interest:0, note:'IIMPACT — School and Community Development Education Programme', project:'School and Community Development Education Programme' },
+      { funder:'google',          regime:'INR',  flex:'restricted', grant:7759813.85, interest:0, note:'Google Ad Grants - IN-KIND online advertising (non-cash)', inKind:true },
+      { funder:'iimpact',         regime:'INR',  flex:'restricted', grant:3010367.95, interest:0, note:'IIMPACT - School and Community Development Education Programme', project:'School and Community Development Education Programme' },
       { funder:'iimpact',         regime:'INR',  flex:'restricted', grant:2329000,    interest:0, note:'IIMPACT / Rural Girl Child Education Project education programme', project:'Rural Girl Child Education Project' },
-      { funder:'rilm',          regime:'INR',  flex:'restricted', grant:1789805,    interest:0, note:'Rotary India Literacy Mission — Asha Kiran & T-E-A-C-H child literacy programme' },
+      { funder:'rilm',          regime:'INR',  flex:'restricted', grant:1789805,    interest:0, note:'Rotary India Literacy Mission - Asha Kiran & T-E-A-C-H child literacy programme' },
       // Signed Foreign Contribution Account, I&E and R&P, year ended 31.03.2017:
       // total grant-fund receipts ₹12,56,256 = IIMPACT ₹5,31,000 + iPartner ₹6,80,734
       // + donations ₹44,522. A prior version assigned the full total to iPartner.
-      { funder:'iimpact',         regime:'FCRA', flex:'restricted', grant:531000,     interest:0, note:'IIMPACT — Bal Prahaari / foreign-contribution account', project:'Bal Prahaari' },
-      { funder:'ipartner',        regime:'FCRA', flex:'restricted', grant:680734,     interest:0, note:'iPartner India — Bal Prahaari anti-trafficking, border villages', project:'Bal Prahaari' },
+      { funder:'iimpact',         regime:'FCRA', flex:'restricted', grant:531000,     interest:0, note:'IIMPACT - Bal Prahaari / foreign-contribution account', project:'Bal Prahaari' },
+      { funder:'ipartner',        regime:'FCRA', flex:'restricted', grant:680734,     interest:0, note:'iPartner India - Bal Prahaari anti-trafficking, border villages', project:'Bal Prahaari' },
       { funder:'individuals',     regime:'FCRA', flex:'flexible',   grant:44522,      interest:0, note:'Foreign-contribution donations, as separately printed in the signed account' },
       { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:1045897,    interest:0, note:'TCL / Sir Dorabji Tata Trust' },
-      { funder:'action_aid',      regime:'FCRA', flex:'restricted', grant:919378,     interest:0, note:'ActionAid — School Management Committee federation / school governance (6 districts)' },
+      { funder:'action_aid',      regime:'FCRA', flex:'restricted', grant:919378,     interest:0, note:'ActionAid - School Management Committee federation / school governance (6 districts)' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:718000,     interest:0, note:'Childline India Foundation (1098 child-protection service)' },
       { funder:'baif',            regime:'INR',  flex:'restricted', grant:150000,     interest:0, note:'BAIF fund (received by cheque)' },
     ],
@@ -812,7 +812,7 @@ FIN.YEARS = [
       { project:'Rotary India Literacy Mission Education / Literacy',              funder:'rilm',           regime:'INR',  total:3136064,    admin:41055 },
       { project:'School and Community Development Education Programme',  funder:'iimpact',          regime:'INR',  total:2880319.27, admin:96500 },
       { project:'Rural Girl Child Education Project',               funder:'iimpact',          regime:'INR',  total:2823887.93, admin:14217.93 },
-      { project:'ActionAid — School Management Committee Federation / Governance', funder:'action_aid',       regime:'FCRA', total:1288900,    admin:10000 },
+      { project:'ActionAid - School Management Committee Federation / Governance', funder:'action_aid',       regime:'FCRA', total:1288900,    admin:10000 },
       { project:'Sujalam Sufalam (Livelihoods / NRM)',     funder:'sdtt',  regime:'INR',  total:1222121.93, admin:11000 },
       { project:'Childline (Child Protection)',            funder:'childline_india',  regime:'INR',  total:1171810.56, admin:10000 },
       { project:'Head Office / General Administration',    funder:'individuals',      regime:'INR',  total:911508.93, admin:911508.93 },
@@ -822,27 +822,27 @@ FIN.YEARS = [
   {
     fy:'2015-16', doc:'assets/docs/balance-sheet-2015-16.pdf', period:'1 Apr 2015 – 31 Mar 2016',
     signed:true, softcopy:false, auditor:'RJCP Subhash Misra & Co (Lucknow, CA Subhash Misra, M.No.076388, FRN 007415C)',
-    // Source: DEHAT_Consolidated__Balance_sheet_2015-16.pdf — the full 14-page signed consolidated
+    // Source: DEHAT_Consolidated__Balance_sheet_2015-16.pdf - the full 14-page signed consolidated
     // Income & Expenditure Account (dated 10.09.2016), re-read directly page by page. Total Income
     // ₹1,16,18,925.21 (Foreign Contribution ₹1,80,538.00 + Local Contribution ₹1,14,38,387.21) =
     // Total Expenditure ₹1,15,83,464.53 (all 9 project lines below, ₹1,13,68,133.55, + Depreciation on
-    // Fixed Assets ₹2,15,330.98) + Surplus ₹35,460.68 — every one of these figures is a specific,
+    // Fixed Assets ₹2,15,330.98) + Surplus ₹35,460.68 - every one of these figures is a specific,
     // labelled printed line, independently re-added and confirmed to the rupee. An earlier "Local
     // Contribution Account (Centum, Sahyog, Grant-in-Aid)" residual line (₹2,50,791.66) has been
     // removed: Centum, Sahyog and the Pooling Account grant are already fully counted inside the
     // Society Home Account total below, and the real depreciation + surplus (which coincidentally sum
-    // to almost the same figure) were never itemised at all — that line was double-counting, not a
+    // to almost the same figure) were never itemised at all - that line was double-counting, not a
     // genuine unresolved residual.
     receivedTotal:11618925.21, utilisedTotal:11583464.53, surplus:35460.68,
     received:[
-      { funder:'iimpact',         regime:'INR',  flex:'restricted', grant:4146876,    interest:19201, note:'RGCEP learning centres — audited appropriation on grant ₹41,46,876 + bank interest ₹19,201' },
+      { funder:'iimpact',         regime:'INR',  flex:'restricted', grant:4146876,    interest:19201, note:'RGCEP learning centres - audited appropriation on grant ₹41,46,876 + bank interest ₹19,201' },
       { funder:'acc',             regime:'INR',  flex:'restricted', grant:3539343,    interest:0, note:'SCDP/ACC Tikriya' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:1161567.83, interest:0, note:'Childline 1098' },
-      { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:1050328.13, interest:9342, note:'Sujalam Sufalam (SSP/TCL/Sir Dorabji Tata Trust) — appropriation on grant + bank interest' },
-      { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:736603.35,  interest:28033, note:'Society Home Account — donations, insurance claim, SIT/World Learning + bank interest' },
-      { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:231773,     interest:0.90, note:'FASAL programme, pre-2022 phase — audited appropriation on grant + bank interest' },
+      { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:1050328.13, interest:9342, note:'Sujalam Sufalam (SSP/TCL/Sir Dorabji Tata Trust) - appropriation on grant + bank interest' },
+      { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:736603.35,  interest:28033, note:'Society Home Account - donations, insurance claim, SIT/World Learning + bank interest' },
+      { funder:'sdtt',            regime:'INR',  flex:'restricted', grant:231773,     interest:0.90, note:'FASAL programme, pre-2022 phase - audited appropriation on grant + bank interest' },
       { funder:'rilm',          regime:'INR',  flex:'restricted', grant:207384,     interest:0, note:'Rotary India Literacy Mission, received through Rotary' },
-      { funder:'action_aid',      regime:'FCRA', flex:'restricted', grant:165688,     interest:0, note:'Swabhiman Project — appropriation on grant' },
+      { funder:'action_aid',      regime:'FCRA', flex:'restricted', grant:165688,     interest:0, note:'Swabhiman Project - appropriation on grant' },
       { funder:'__fcra_general',  regime:'FCRA', flex:'flexible',   grant:0,          interest:14850, note:'FCRA-Others: bank interest' },
       // Source: YEAR 2015 - 2016.pdf, Page 3 (Society Home Account schedule), rotation-corrected read.
       // The existing `individuals` line above (736,603.35 + 28,033 interest = 764,636.35) already
@@ -857,7 +857,7 @@ FIN.YEARS = [
       // interest lines. Those three projects are now recorded from the audited I&E income column above;
       // all receipt lines sum exactly to ₹1,16,18,925.21 and the printed surplus is ₹35,460.68.
       { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:145500,     interest:0, note:'Grant-in-Aid from Pooling Account' },
-      { funder:'centum',          regime:'INR',  flex:'restricted', grant:106235,     interest:0, note:'Grant from Centum — received ₹11,080 + receivable ₹95,155' },
+      { funder:'centum',          regime:'INR',  flex:'restricted', grant:106235,     interest:0, note:'Grant from Centum - received ₹11,080 + receivable ₹95,155' },
       { funder:'sahyog',          regime:'INR',  flex:'restricted', grant:56200,      interest:0, note:'Grant from Sahyog Society (Tarang Project)' },
     ],
     spend:[
@@ -896,20 +896,20 @@ FIN.YEARS = [
     receivedTotal:13271998.80, utilisedTotal:12859914.51, surplus:412084.29, balanceSheetTotal:7605062.18,
     fundersActive:['milaan_swabhiman','appi','acc','childline_india','iimpact','centum','sahyog','sdtt','unicef','cry','individuals'],
     received:[
-      { funder:'acc',            regime:'INR',  flex:'restricted', grant:5491245,   interest:0,     note:'SCDP Community Development Project — appropriation on grant' },
-      { funder:'iimpact',        regime:'INR',  flex:'restricted', grant:3889537,   interest:31139, note:'RGCEP Project (Local account) — appropriation on grant', project:'RGCEP Project (Local)' },
-      { funder:'childline_india',regime:'INR',  flex:'restricted', grant:1090299,   interest:0,     note:'Childline Project — appropriation on grant' },
-      { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:966252,    interest:21250, note:'FASAL programme, pre-2022 phase, routed through PANI — appropriation on grant' },
-      { funder:'iimpact',        regime:'FCRA', flex:'restricted', grant:585398,    interest:0,     note:'RGCEP Project (Foreign Contribution / IIMPACT Gurgaon) — appropriation on grant', project:'RGCEP Project (FCRA)' },
-      { funder:'individuals',    regime:'INR',  flex:'flexible',   grant:177243,    interest:0,     note:'Society Home Account — general account (donations, bank interest, travel reimbursement, project support)' },
-      { funder:'centum',         regime:'INR',  flex:'restricted', grant:804368.80, interest:0,     note:'WSI Learning Centre — Centum Fund ₹83,668.80 + candidate claims ₹7,20,700, via Society Home Account' },
-      { funder:'milaan_swabhiman', regime:'FCRA', flex:'restricted', grant:148157,  interest:0,     note:'Swabhiman Project — appropriation on grant; executed Milaan–DEHAT MoU amendment dated 6 September 2014' },
-      { funder:'__fcra_general', regime:'FCRA', flex:'flexible',   grant:0,         interest:67110, note:'FCRA-Others — bank interest ₹7,874 + donation ₹59,236' },
+      { funder:'acc',            regime:'INR',  flex:'restricted', grant:5491245,   interest:0,     note:'SCDP Community Development Project - appropriation on grant' },
+      { funder:'iimpact',        regime:'INR',  flex:'restricted', grant:3889537,   interest:31139, note:'RGCEP Project (Local account) - appropriation on grant', project:'RGCEP Project (Local)' },
+      { funder:'childline_india',regime:'INR',  flex:'restricted', grant:1090299,   interest:0,     note:'Childline Project - appropriation on grant' },
+      { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:966252,    interest:21250, note:'FASAL programme, pre-2022 phase, routed through PANI - appropriation on grant' },
+      { funder:'iimpact',        regime:'FCRA', flex:'restricted', grant:585398,    interest:0,     note:'RGCEP Project (Foreign Contribution / IIMPACT Gurgaon) - appropriation on grant', project:'RGCEP Project (FCRA)' },
+      { funder:'individuals',    regime:'INR',  flex:'flexible',   grant:177243,    interest:0,     note:'Society Home Account - general account (donations, bank interest, travel reimbursement, project support)' },
+      { funder:'centum',         regime:'INR',  flex:'restricted', grant:804368.80, interest:0,     note:'WSI Learning Centre - Centum Fund ₹83,668.80 + candidate claims ₹7,20,700, via Society Home Account' },
+      { funder:'milaan_swabhiman', regime:'FCRA', flex:'restricted', grant:148157,  interest:0,     note:'Swabhiman Project - appropriation on grant; executed Milaan–DEHAT MoU amendment dated 6 September 2014' },
+      { funder:'__fcra_general', regime:'FCRA', flex:'flexible',   grant:0,         interest:67110, note:'FCRA-Others - bank interest ₹7,874 + donation ₹59,236' },
     ],
     // Source: Financial year 2014-15.pdf (RJCP Subhash Misra & Co., signed 20.05.2015), re-read directly
     // page by page. Every spend line below reproduces a specific named line on the signed page and the
     // nine lines sum to the cent (₹1,28,59,914.51); utilisedTotal corrected from a placeholder that had
-    // wrongly equalled receivedTotal (implying zero surplus) — the audited surplus is ₹4,12,084.29.
+    // wrongly equalled receivedTotal (implying zero surplus) - the audited surplus is ₹4,12,084.29.
     spend:[
       { project:'Sustainable Community Development Project', funder:'acc', regime:'INR', total:5491245, admin:483988 },
       { project:'RGCEP Project (IIMPACT Girls Education, Local)', funder:'iimpact', regime:'INR', total:3889704.40, admin:270174 },
@@ -932,20 +932,20 @@ FIN.YEARS = [
     note:'Received = cash grant receipts (R&P); utilised = full audited I&E expenditure (₹1,35,32,337.51). The two bases differ, so received ≠ utilised; the year ran a ₹4,50,558.81 deficit (utilised − received).',
     received:[
       { funder:'iimpact',        regime:'INR',  flex:'restricted', grant:4318750, interest:9858, note:'IIMPACT / Rural Girl Child Education Project education programme (Gurgawan); 4 tranches' },
-      { funder:'erase_poverty',  regime:'FCRA', flex:'restricted', grant:3897713, interest:0, note:'Swabhiman anti-trafficking (Erase Poverty) — SLRCs, Mid-Day-Meal, Natpurwa' },
-      { funder:'acc',            regime:'INR',  flex:'restricted', grant:2073378, interest:0, note:'Sustainable Community Development Project — school & skilling (ACC Cement, Tikriya); 8 Real Time Gross Settlement tranches' },
-      { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:1456330, interest:24002, note:'FASAL programme, pre-2022 phase — Sir Dorabji Tata Trust, routed through PANI, Faizabad; 5 RTGS tranches' },
-      { funder:'jagdeep_lohani', regime:'FCRA', flex:'restricted', grant:501936,  interest:0, note:'Action on Research on Direct Democracy — grant from Mr. Jagdeep Singh Lohani' },
+      { funder:'erase_poverty',  regime:'FCRA', flex:'restricted', grant:3897713, interest:0, note:'Swabhiman anti-trafficking (Erase Poverty) - SLRCs, Mid-Day-Meal, Natpurwa' },
+      { funder:'acc',            regime:'INR',  flex:'restricted', grant:2073378, interest:0, note:'Sustainable Community Development Project - school & skilling (ACC Cement, Tikriya); 8 Real Time Gross Settlement tranches' },
+      { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:1456330, interest:24002, note:'FASAL programme, pre-2022 phase - Sir Dorabji Tata Trust, routed through PANI, Faizabad; 5 RTGS tranches' },
+      { funder:'jagdeep_lohani', regime:'FCRA', flex:'restricted', grant:501936,  interest:0, note:'Action on Research on Direct Democracy - grant from Mr. Jagdeep Singh Lohani' },
       { funder:'centum',         regime:'INR',  flex:'restricted', grant:325717,  interest:0, note:'Centum WorkSkills (WSI) learning centre' },
       { funder:'childline_india',regime:'INR',  flex:'restricted', grant:166806,  interest:0, note:'Childline India Foundation; ₹4,03,492 further receivable (grant fund ₹5,70,298)' },
       { funder:'sit_world',      regime:'INR',  flex:'restricted', grant:79148,   interest:0, note:'SIT / World Learning India (student programme receipts)' },
-      { funder:'light_a_lamp',   regime:'FCRA', flex:'restricted', grant:54752,   interest:0, note:'Swabhiman — Light A Lamp Foundation' },
+      { funder:'light_a_lamp',   regime:'FCRA', flex:'restricted', grant:54752,   interest:0, note:'Swabhiman - Light A Lamp Foundation' },
       { funder:'sahyog',         regime:'INR',  flex:'restricted', grant:52400,   interest:0, note:'Tarang project (via Sahyog)' },
       { funder:'individuals',    regime:'INR',  flex:'flexible',   grant:131832,  interest:13159, note:'Individual contributions ₹1,03,210 + local contribution ₹28,622 + interest; also Gram Niyojan Kendra programme receipts ₹3,19,258 & insurance claim ₹4,505' },
     ],
     // Source: YEAR 2013 - 2014.pdf, re-read directly page by page (Pages 6-8). The nine lines sum to
     // ₹1,35,32,337.51 exactly. ACC's admin figure is its own literal "Administation" line (Page 7,
-    // Line 33, ₹1,13,913.00) — a prior draft had mistakenly copied Childline's admin figure here.
+    // Line 33, ₹1,13,913.00) - a prior draft had mistakenly copied Childline's admin figure here.
     // Swabhiman's spend is tagged to 'erase_poverty' (not 'action_aid') to match this year's own
     // received[] funder key for the same SLRC/Mid-Day-Meal/Natpurwa programme. Admin = any printed
     // "Administration"/"Overhead"/"Management Cost"/"Support Cost" sub-line (RGCEP's admin here is
@@ -969,37 +969,37 @@ FIN.YEARS = [
     fy:'2012-13', doc:'assets/docs/balance-sheet-2012-13.pdf', period:'1 Apr 2012 – 31 Mar 2013',
     signed:true, softcopy:false, auditor:'RJCP Subhash Misra & Co (Lucknow, CA Subhash Misra, M.No.076388, FRN 007415C)',
     // Source: YEAR 2012 - 2013.pdf, re-read directly page by page (Pages 7-8), rotation-corrected.
-    // receivedTotal is the audited Income & Expenditure Account's income total — an appropriation
+    // receivedTotal is the audited Income & Expenditure Account's income total - an appropriation
     // basis (grant income recognised = grant applied that year), not a cash-receipts figure; it
     // equals utilisedTotal + surplus exactly (₹1,09,04,308.77 + ₹4,35,407.43 = ₹1,13,39,716.20). The
     // 15 lines below reproduce every "Appropriation on Grant" / "Total Income of ..." block on pages
     // 7-8 and sum to the same total to the rupee. A prior cash-receipts received[] (summing to only
     // ₹77,94,409) was comparing a cash-basis array against an appropriation-basis total, which is
-    // where the long-flagged ₹35.45L "gap" came from — not a missing grant. Consolidated R&P (a
+    // where the long-flagged ₹35.45L "gap" came from - not a missing grant. Consolidated R&P (a
     // different, cash basis, including brought-forward balances) totals ₹1,42,20,181.25 separately.
     receivedTotal:11339716.20, surplus:435407.43, utilisedTotal:10904308.77,
     note:'Both received and utilised are stated on the appropriation basis of the audited Income & Expenditure account: grant income recognised equals grant applied that year, so received[] entries are each project’s appropriated income for the year, not a cash-receipts figure.',
     received:[
-      { funder:'unicef',         regime:'INR',  flex:'restricted', grant:2718219, interest:18788, note:'UNICEF-CPP (child protection) — appropriation on grant; ₹18,788 is a contribution from the Society Home Account, not bank interest', project:'UNICEF-CPP' },
-      { funder:'iimpact',        regime:'INR',  flex:'restricted', grant:2777982, interest:0,     note:'RGCEP / Rural Girl Child Education Project — appropriation on grant' },
-      { funder:'unicef',         regime:'INR',  flex:'restricted', grant:2048588, interest:27391.20, note:'UNICEF-CHNI (child health & nutrition) — appropriation on grant; interest incl. ₹24,042 bank interest + ₹3,349.20 contribution from the Society Home Account', project:'UNICEF-CHNI' },
-      { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:879174,  interest:12940, note:'FASAL programme, pre-2022 phase, routed through PANI — appropriation on grant' },
-      { funder:'childline_india',regime:'INR',  flex:'restricted', grant:739194,  interest:0,     note:'Childline India Foundation — ₹5,19,225 grant received + ₹2,19,969 receivable' },
-      { funder:'jica',           regime:'INR',  flex:'restricted', grant:550392,  interest:0,     note:'UPFMPAP, via DMU Sonbhadra — appropriation on grant' },
-      // Note deliberately doesn't name the recouping projects (UNICEF-CHNI/CPP, JICA/UPFMPAP) — each of
+      { funder:'unicef',         regime:'INR',  flex:'restricted', grant:2718219, interest:18788, note:'UNICEF-CPP (child protection) - appropriation on grant; ₹18,788 is a contribution from the Society Home Account, not bank interest', project:'UNICEF-CPP' },
+      { funder:'iimpact',        regime:'INR',  flex:'restricted', grant:2777982, interest:0,     note:'RGCEP / Rural Girl Child Education Project - appropriation on grant' },
+      { funder:'unicef',         regime:'INR',  flex:'restricted', grant:2048588, interest:27391.20, note:'UNICEF-CHNI (child health & nutrition) - appropriation on grant; interest incl. ₹24,042 bank interest + ₹3,349.20 contribution from the Society Home Account', project:'UNICEF-CHNI' },
+      { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:879174,  interest:12940, note:'FASAL programme, pre-2022 phase, routed through PANI - appropriation on grant' },
+      { funder:'childline_india',regime:'INR',  flex:'restricted', grant:739194,  interest:0,     note:'Childline India Foundation - ₹5,19,225 grant received + ₹2,19,969 receivable' },
+      { funder:'jica',           regime:'INR',  flex:'restricted', grant:550392,  interest:0,     note:'UPFMPAP, via DMU Sonbhadra - appropriation on grant' },
+      // Note deliberately doesn't name the recouping projects (UNICEF-CHNI/CPP, JICA/UPFMPAP) - each of
       // their own grant lines is already itemised, separately and correctly tagged, elsewhere in this same
       // year's accounts. Naming them here caused a real classification bug: this line's first-match
       // keyword tagger read "JICA" in the note text and mistagged this general, mixed Society Home receipt
       // as prog:'climate' (caught by Codex Handoff #3). This is a recoupment credited back to the general
       // fund, not project spend, so it correctly falls through to the base 'individuals' tag (cross /
       // Participation) with the project names left out of the matched text on purpose.
-      { funder:'individuals',    regime:'INR',  flex:'flexible',   grant:947796,  interest:0,     note:'Society Home Account — local contribution, bank interest and inter-project overhead/travel recoupments credited back from partner-funded projects, each separately itemised elsewhere in this year’s accounts under its own funder' },
+      { funder:'individuals',    regime:'INR',  flex:'flexible',   grant:947796,  interest:0,     note:'Society Home Account - local contribution, bank interest and inter-project overhead/travel recoupments credited back from partner-funded projects, each separately itemised elsewhere in this year’s accounts under its own funder' },
       { funder:'acc',            regime:'INR',  flex:'restricted', grant:78510,   interest:0,     note:'Sustainable Community Development Project (ACC Cement, Tikariya), via Society Home Account' },
       { funder:'charity_science', regime:'INR', flex:'restricted', grant:82980,   interest:0,     note:'Charity Science / Vidhya Grants scholarship (Hem Nanda – C.S.), via Society Home Account' },
       { funder:'centum',         regime:'INR',  flex:'restricted', grant:117432,  interest:0,     note:'WSI Learning Centre (Centum Fund), via Society Home Account' },
-      { funder:'cry',            regime:'INR',  flex:'restricted', grant:140951,  interest:0,     note:'Azadi Project — CRY local (INR) fund', project:'Azadi' },
-      { funder:'cry',            regime:'FCRA', flex:'restricted', grant:155293,  interest:0,     note:'CRY Project — foreign contribution fund' },
-      { funder:'jagdeep_lohani', regime:'FCRA', flex:'restricted', grant:20000,   interest:0,     note:'Action on Research on Direct Democracy — grant from Mr. Jagdeep Singh Lohani' },
+      { funder:'cry',            regime:'INR',  flex:'restricted', grant:140951,  interest:0,     note:'Azadi Project - CRY local (INR) fund', project:'Azadi' },
+      { funder:'cry',            regime:'FCRA', flex:'restricted', grant:155293,  interest:0,     note:'CRY Project - foreign contribution fund' },
+      { funder:'jagdeep_lohani', regime:'FCRA', flex:'restricted', grant:20000,   interest:0,     note:'Action on Research on Direct Democracy - grant from Mr. Jagdeep Singh Lohani' },
       { funder:'__fcra_general', regime:'FCRA', flex:'flexible',   grant:0,       interest:3686,  note:'Foreign contribution account bank interest' },
       { funder:'acc',            regime:'INR',  flex:'restricted', grant:20400,   interest:0,     note:'ACC Project (Tikriya, direct)' },
     ],
@@ -1011,12 +1011,12 @@ FIN.YEARS = [
     //
     // Society Home Account's own 13-line schedule (page 8), verified directly against the source scan:
     // Audit Fees ₹6,554 (admin) + Fuel & Maintenance ₹94,595 (admin) + Miscellaneous ₹68,660 (admin) +
-    // Nukad Natak ₹21,600 (programme — street theatre) + Office Rent ₹22,800 (admin) + Printing/
+    // Nukad Natak ₹21,600 (programme - street theatre) + Office Rent ₹22,800 (admin) + Printing/
     // Stationery/Postage/Telephone ₹13,223 (admin) + Salary & Honorarium ₹1,20,555 (admin) + Staff
     // Meeting ₹1,377 (admin) + Travel ₹45,654 (admin) + Xylo Insurance ₹19,336 (admin) + Interest on
-    // Loan ₹14,689 (admin) + Contribution to Unicef-CPP ₹18,788 (programme — real transfer, counted on
+    // Loan ₹14,689 (admin) + Contribution to Unicef-CPP ₹18,788 (programme - real transfer, counted on
     // the receiving side) + Contribution to Unicef-CHNI ₹3,349.20 (programme) = ₹4,51,180.20 exactly.
-    // Salary & Honorarium carries no role/project specification on the page — classified admin per the
+    // Salary & Honorarium carries no role/project specification on the page - classified admin per the
     // same-year, same-auditor (CA Subhash Misra) precedent on page 7: the CRY project's own schedule
     // explicitly puts generic "Salary to Accountant" and "Salary to Project Coordinator" under
     // Administration, while only role-specific field titles (Child Right Activist, Community Organizer)
@@ -1036,7 +1036,7 @@ FIN.YEARS = [
       // split: 78510+4845+120377+3759+451180.20 = 658671.20 exactly, no residual.
       { project:'ACC Amethi (Providing Career Counsellor Program)', funder:'acc', regime:'INR', total:78510.00, admin:0, adminChecked:true },
       { project:'TMN (Seed Treatment)', funder:'tmn', regime:'INR', total:4845.00, admin:0, adminChecked:true },
-      // Centum's own workbook does not use the word "administration" — it gives a natural-account split:
+      // Centum's own workbook does not use the word "administration" - it gives a natural-account split:
       // Office Expenses ₹36,715 + Salary ₹83,662 = ₹1,20,377. Classified per standing rule: office/overhead
       // costs → admin, direct-delivery salary → programme. Admin = Office Expenses ₹36,715.
       { project:'Centum (WSI Learning Centre Program): Office ₹36,715 + Salary ₹83,662', funder:'centum', regime:'INR', total:120377.00, admin:36715.00, adminChecked:true },
@@ -1046,7 +1046,7 @@ FIN.YEARS = [
       // credited to the Society Home Account (₹1,34,020, counted in that line's received[] entry
       // above) and this project's own "Direct Program Support Cost" (₹3,29,854). UNICEF-CPP's
       // already-established admin (₹4,36,144, below) is that project's equivalent "support cost"
-      // figure, not its matching 7% overhead (₹2,27,321) — so CHNI's admin is its support-cost figure
+      // figure, not its matching 7% overhead (₹2,27,321) - so CHNI's admin is its support-cost figure
       // too, for the same treatment across both UNICEF projects. The previously-used ₹3,15,486 was
       // this project's separate "Travel Cost" line, not an admin/overhead sub-header.
       { project:'UNICEF-CHNI Project (Child Health & Nutrition)', funder:'unicef', regime:'INR', total:2048588, admin:329854 },
@@ -1072,19 +1072,19 @@ FIN.YEARS = [
       { funder:'iimpact',        regime:'INR',  flex:'restricted', grant:2670000, interest:2985, note:'IMPACT education programme' },
       { funder:'unicef',         regime:'INR',  flex:'restricted', grant:2431224, interest:18085, note:'UNICEF child health & nutrition programme; + ₹1,78,954 receivable from 2010-11' },
       { funder:'unicef',         regime:'INR',  flex:'restricted', grant:1404288, interest:0, note:'UNICEF-CPP (child protection); ₹8,32,450 further receivable', project:'UNICEF-CPP' },
-      { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:813000,  interest:2986, note:'Sir Dorabji Tata Trust — Empowering Rural Women; ₹65,655 refunded' },
+      { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:813000,  interest:2986, note:'Sir Dorabji Tata Trust - Empowering Rural Women; ₹65,655 refunded' },
       { funder:'cry',            regime:'FCRA', flex:'restricted', grant:573284,  interest:6776, note:'Child Rights and You project; ₹29,435 unutilised at year end' },
       { funder:'jica',           regime:'INR',  flex:'restricted', grant:527121,  interest:2985, note:'UPFMPAP (JICA / Japan Bank, via DMU Renukoot); activities 2011-12' },
       { funder:'childline_india',regime:'INR',  flex:'restricted', grant:415250,  interest:0, note:'Childline India Foundation; ₹3,85,550 further receivable (grant fund ₹8,00,800)' },
-      { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:191800,  interest:0, note:'FASAL programme, pre-2022 phase — Sir Dorabji Tata Trust, routed through PANI, Faizabad' },
-      { funder:'baif',           regime:'FCRA', flex:'restricted', grant:88069,   interest:0, note:'Sure Start (BAIF, Pune) — Payagpur ₹45,548 + Chitaura ₹42,521 (winding down)' },
+      { funder:'sdtt',           regime:'INR',  flex:'restricted', grant:191800,  interest:0, note:'FASAL programme, pre-2022 phase - Sir Dorabji Tata Trust, routed through PANI, Faizabad' },
+      { funder:'baif',           regime:'FCRA', flex:'restricted', grant:88069,   interest:0, note:'Sure Start (BAIF, Pune) - Payagpur ₹45,548 + Chitaura ₹42,521 (winding down)' },
       { funder:'individuals',    regime:'INR',  flex:'flexible',   grant:8500,    interest:10448, note:'Local contribution & membership fee + bank interest (General/Local Fund)' },
     ],
-    // Source: Income and Expenditure 2011-2012.docx — the full 4-page consolidated, typed (not
+    // Source: Income and Expenditure 2011-2012.docx - the full 4-page consolidated, typed (not
     // scanned-longhand) I&E account, dated 29.08.2012, read directly page by page. Every total and
     // every admin figure below reproduces a specific named, printed line on those pages (e.g. IIMPACT's
     // admin is its own "Management Cost" line, UNICEF-CHNI's is its own "Reimbursement of 7% of Indirect
-    // Cost" line — none are formulas). The nine lines below sum to exactly ₹1,08,01,710.34, matching
+    // Cost" line - none are formulas). The nine lines below sum to exactly ₹1,08,01,710.34, matching
     // utilisedTotal to the cent.
     spend:[
       { project:'Child Line Project (Childline India Foundation)', funder:'childline_india', regime:'INR', total:800800, admin:64900 },
@@ -1094,8 +1094,8 @@ FIN.YEARS = [
       { project:'UNICEF-CPP Project', funder:'unicef', regime:'INR', total:2236738, admin:96835 },
       { project:'UPFMPAP Project (JICA)', funder:'jica', regime:'INR', total:684911, admin:91714 },
       { project:'SDTT-ERW Project', funder:'sdtt', regime:'INR', total:750331, admin:107367 },
-      { project:'Sure Start Programme — Chaitura (BAIF)', funder:'baif', regime:'FCRA', total:57839, admin:4285 },
-      { project:'Sure Start Programme — Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:61758, admin:4575 },
+      { project:'Sure Start Programme - Chaitura (BAIF)', funder:'baif', regime:'FCRA', total:57839, admin:4285 },
+      { project:'Sure Start Programme - Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:61758, admin:4575 },
       { project:'CRY Project Cost', funder:'cry', regime:'FCRA', total:589437, admin:211749 },
       { project:'FCRA Other Funds (Bank Charges, Mahila Shakti Sammelan)', funder:'__fcra_general', regime:'FCRA', total:9285, admin:25 },
       { project:'General Account (Local Fund)', funder:'individuals', regime:'INR', total:241480, admin:241480 },
@@ -1110,7 +1110,7 @@ FIN.YEARS = [
     // Balance sheet ₹15,91,631.32; income ₹69,20,843.50; expenditure ₹64,00,659.05; surplus ₹5,20,184.45.
     //
     // Annexure II of that recovered scan ("Details of Grant Receipts, Utilisation, Refund and Unutilised
-    // Balance for 2010-11") is the per-project schedule this year lacked all session — it itemises every
+    // Balance for 2010-11") is the per-project schedule this year lacked all session - it itemises every
     // FCRA and Indian project's Opening / Received / Refund / Utilisation / Closing to the rupee, and every
     // row and every subtotal reconciles exactly against the audited totals:
     //   FCRA: Sure Start-Payagpur (util. ₹3,98,825) + Sure Start-Chittaura (₹4,05,744) + CRY (₹5,54,208) +
@@ -1128,23 +1128,23 @@ FIN.YEARS = [
     // UNICEF admin was previously carried as ₹1,01,346, attributed to "Form 10B (Disclosure §17-18), page
     // 7" per an earlier dossier (handoff_57). A full page-by-page transcript of this same 47-page compendium
     // (all sections mapped to exact page ranges) shows page 7 is the JICA Receipts & Payments account, not
-    // a Form 10B disclosure — no Form 10B section exists anywhere in the compendium, and ₹1,01,346 does not
+    // a Form 10B disclosure - no Form 10B section exists anywhere in the compendium, and ₹1,01,346 does not
     // appear on any page. It is almost exactly 6.542% of UNICEF's ₹15,49,146 utilisation, consistent with a
     // computed ratio rather than a transcribed figure. Resolved instead via the project's own "Direct
     // Programme Support Cost" bucket (see that spend line's own comment for the ₹1,76,968 figure).
     // CRY (₹5,54,208), Kabir (₹50,000), and NABARD (₹12,455) have no expenditure schedule anywhere in the
-    // compendium — Annexure II shows only their opening/refund/utilisation movement. Kabir and NABARD are
+    // compendium - Annexure II shows only their opening/refund/utilisation movement. Kabir and NABARD are
     // resolved as admin:0 per this dataset's established flat-total convention (see their own comments);
     // CRY is resolved as a disclosed, modelled estimate (admin: 186,528, marked estimated:true) since its
-    // own historical pattern rules out treating it the same way — see that spend line's own comment.
+    // own historical pattern rules out treating it the same way - see that spend line's own comment.
     //
     // This corrects two lines this project got wrong before finding Annexure II: Kabir was previously
     // recorded as ₹2,66,034.75 (Annexure I's opening-to-closing account movement, read as if the whole
-    // balance were spent) and CRY as ₹3,25,871.28 (an arithmetic remainder) — Annexure II shows Kabir's
+    // balance were spent) and CRY as ₹3,25,871.28 (an arithmetic remainder) - Annexure II shows Kabir's
     // account actually REFUNDED ₹2,15,000.00 back to the donor and utilised only ₹50,000, and CRY actually
     // utilised ₹5,54,208.00, not a remainder figure. SDTT-ERW was previously ₹3,41,584.00 (its opening
-    // balance) — Annexure II shows ₹19,185.00 of that was refunded, leaving ₹3,25,736.00 actually utilised.
-    // The "Other Funds" line (₹12,301.97) is removed entirely — it is not one of Annexure II's named
+    // balance) - Annexure II shows ₹19,185.00 of that was refunded, leaving ₹3,25,736.00 actually utilised.
+    // The "Other Funds" line (₹12,301.97) is removed entirely - it is not one of Annexure II's named
     // projects and has no place in the Activities Expenses figure; the schedule's four FCRA rows already
     // sum to the audited total without it. IIMPACT, SSK and NABARD were previously bundled into a single
     // "not itemised" residual and are now named individually with real utilisation figures.
@@ -1153,7 +1153,7 @@ FIN.YEARS = [
     // Indian project rows already sum to the full audited Indian Activities Expenses, so no Society Home
     // programme residual remains to be allocated.
     receivedTotal:6588804.75, utilisedTotal:6400659.05, balanceSheetTotal:1591631.32, surplus:520184.45,
-    note:'Every FY2010-11 grant receipt and utilisation is itemised by project from audited Annexure II, with project-level R&P/I&E schedules confirming admin splits for JICA, BAIF, SDTT-ERW, IIMPACT, SSK, and UNICEF. IIMPACT schedule documents ₹17,22,373 programme + ₹1,09,623 admin = ₹18,31,996 vs published Annexure II total ₹18,40,996 (₹9,000 variance). UNICEF admin (₹1,76,968, resolved from the R&P account\'s "Direct Programme Support Cost" + indirect-cost reimbursement, same-auditor classification precedent as SDTT-ERW) is drawn from the R&P cash total (₹14,88,230), while the live total (₹15,49,146) is the Annexure II statutory figure; the ₹60,916 difference is fully reconciled as an additional accrual receivable, not an unexplained gap. A prior dossier\'s claim that this figure came from "Form 10B, page 7" was checked and rejected — no such section exists in the 47-page compendium. No expenditure schedule of any kind exists for CRY (₹5,54,208), Kabir (₹50,000), or NABARD (₹12,455), confirmed against two independently-sourced copies of the compendium — Kabir and NABARD are resolved as admin:0 per this dataset\'s established flat-total convention, while CRY (whose own historical pattern rules that convention out) carries a disclosed, modelled estimate of ₹1,86,528, marked estimated:true.',
+    note:'Every FY2010-11 grant receipt and utilisation is itemised by project from audited Annexure II, with project-level R&P/I&E schedules confirming admin splits for JICA, BAIF, SDTT-ERW, IIMPACT, SSK, and UNICEF. IIMPACT schedule documents ₹17,22,373 programme + ₹1,09,623 admin = ₹18,31,996 vs published Annexure II total ₹18,40,996 (₹9,000 variance). UNICEF admin (₹1,76,968, resolved from the R&P account\'s "Direct Programme Support Cost" + indirect-cost reimbursement, same-auditor classification precedent as SDTT-ERW) is drawn from the R&P cash total (₹14,88,230), while the live total (₹15,49,146) is the Annexure II statutory figure; the ₹60,916 difference is fully reconciled as an additional accrual receivable, not an unexplained gap. A prior dossier\'s claim that this figure came from "Form 10B, page 7" was checked and rejected - no such section exists in the 47-page compendium. No expenditure schedule of any kind exists for CRY (₹5,54,208), Kabir (₹50,000), or NABARD (₹12,455), confirmed against two independently-sourced copies of the compendium - Kabir and NABARD are resolved as admin:0 per this dataset\'s established flat-total convention, while CRY (whose own historical pattern rules that convention out) carries a disclosed, modelled estimate of ₹1,86,528, marked estimated:true.',
     fundersActive:['cry','baif','kabir','sdtt','iimpact','unicef','nabard','jica','ssk'],
     received:[
       { funder:'baif',           regime:'FCRA', flex:'restricted', grant:805567,  interest:0, note:'Audited Annexure II cash receipts: Sure Start Payagpur ₹3,89,708 + Chittaura ₹4,15,859' },
@@ -1162,14 +1162,14 @@ FIN.YEARS = [
       { funder:'iimpact',        regime:'INR',  flex:'restricted', grant:2050000, interest:0, note:'Audited Annexure II cash receipt for Rural Girl Child Education' },
       { funder:'jica',           regime:'INR',  flex:'restricted', grant:849167,  interest:0, note:'Audited Annexure II cash receipt through DMU Renukoot' },
       { funder:'unicef',         regime:'INR',  flex:'restricted', grant:1370060, interest:0, note:'Audited Annexure II cash receipt' },
-      { funder:'ssk',            regime:'INR',  flex:'restricted', grant:110020,  interest:0, note:'Audited Annexure II cash receipt — Sahbhagi Shikshan Kendra, Community Based Disaster Management Committees (CBDMC) training, Mihinpurwa block' },
+      { funder:'ssk',            regime:'INR',  flex:'restricted', grant:110020,  interest:0, note:'Audited Annexure II cash receipt - Sahbhagi Shikshan Kendra, Community Based Disaster Management Committees (CBDMC) training, Mihinpurwa block' },
       { funder:'individuals',    regime:'INR',  flex:'flexible',   grant:0,       interest:796679.75, note:'Local contribution + interest (Indian funds)' },
     ],
     spend:[
       { project:'UPFMPAP Project (JICA, Through DMU Renukoot)', funder:'jica', regime:'INR', total:861797.75, admin:118336.75 },
       // UNICEF admin, resolved: the project's own R&P account (pages 1-4) has a "Direct Programme Support
-      // Cost" bucket — Office Rent ₹36,000 + Accountant (part-time) ₹30,000 + Office Assistant ₹18,000 +
-      // Stationery ₹13,368 + Telephone ₹39,170 = ₹1,36,538 — category-for-category identical to what this
+      // Cost" bucket - Office Rent ₹36,000 + Accountant (part-time) ₹30,000 + Office Assistant ₹18,000 +
+      // Stationery ₹13,368 + Telephone ₹39,170 = ₹1,36,538 - category-for-category identical to what this
       // same auditor (RJCP Subhash Misra & Co) explicitly labelled "Administration Expenses" in SDTT-ERW's
       // report, same audit engagement. Plus "Reimbursement of 7% Indirect Cost (NGO Share)" ₹40,430,
       // explicitly labelled an indirect/overhead cost. Admin = 136,538 + 40,430 = ₹1,76,968.
@@ -1177,10 +1177,10 @@ FIN.YEARS = [
       // `total` (₹15,49,146) is the audited statutory Annexure II figure. The ₹60,916 difference is fully
       // reconciled: Annexure II's closing receivable (₹1,78,954) less the project balance sheet's own
       // receivable (₹1,18,038) = ₹60,916 additional accrual recognised on the statutory basis, with no
-      // itemised cost of its own — corroborated independently by FY2011-12's own received[] note, already
+      // itemised cost of its own - corroborated independently by FY2011-12's own received[] note, already
       // live before this reconciliation, recording "+₹1,78,954 receivable from 2010-11" received in cash.
       // (A prior dossier's ₹1,01,346 "Form 10B, page 7" figure was checked and does not exist in the
-      // 47-page compendium — page 7 is the JICA R&P account, not Form 10B.)
+      // 47-page compendium - page 7 is the JICA R&P account, not Form 10B.)
       { project:'Comprehensive Health & Nutrition Intervention (Lucknow)', funder:'unicef', regime:'INR', total:1549146.00, admin:176968.00 },
       { project:'Sure Start Project (BAIF, Pune)', funder:'baif', regime:'FCRA', total:804569.00, admin:59598.00 },
       { project:'Depreciation on Fixed Assets (Indian Funds Related)', funder:'individuals', regime:'INR', total:127554.30, admin:127554.30 },
@@ -1201,16 +1201,16 @@ FIN.YEARS = [
       // 0.4% of the simple midpoint, giving good convergence between two different methods.
       { project:'Child Right Project (CRY, New Delhi)', funder:'cry', regime:'FCRA', total:554208.00, admin:186528.00, estimated:true },
       // Statutory cross-check: the signed FC-3 for FY2010-11 (submitted 29.06.2011) shows a Kabir
-      // Project line on a cash basis — opening balance ₹2,65,000 fully utilised during the year, i.e.
-      // ₹2,65,000 cash utilisation — differing from the ₹50,000 audited I&E "utilised on transfer from
+      // Project line on a cash basis - opening balance ₹2,65,000 fully utilised during the year, i.e.
+      // ₹2,65,000 cash utilisation - differing from the ₹50,000 audited I&E "utilised on transfer from
       // balance sheet" figure used here. Same accrual-vs-cash distinction already documented for other
       // years (FY2009-10, FY2020-21); the I&E figure remains the live basis per this dataset's
-      // established convention. No admin schedule accompanies either figure for this project — printed
+      // established convention. No admin schedule accompanies either figure for this project - printed
       // as one flat total with no sub-header, the same situation as Kabir/NABARD/Primenet/AFC/UPVAN in
       // FY2009-10, where the established convention (already live, adminChecked:true) is admin:0 rather
       // than guessed. Applying the same treatment here for consistency, not as a new estimate.
       { project:'Action Research on Right to Information (Kabir Project, New Delhi)', funder:'kabir', regime:'FCRA', total:50000.00, admin:0, adminChecked:true },
-      // Source: Balance Sheet 2010-11.pdf, SDTT-ERW Income & Expenditure schedule — an actual account,
+      // Source: Balance Sheet 2010-11.pdf, SDTT-ERW Income & Expenditure schedule - an actual account,
       // not a proposal budget. Programme ₹50,316 activities + ₹1,95,000 programme salary = ₹2,45,316.
       // Administration: Accountant ₹38,500 + Travel/fuel ₹14,411 + Printing ₹6,037 + Phone/postage
       // ₹9,472 + Office rent ₹12,000 = ₹80,420. This supersedes the earlier admin:null.
@@ -1220,7 +1220,7 @@ FIN.YEARS = [
       // (Auditors ₹3,930 + Office rent ₹36,000 + Phone/postage ₹30,283 + Travel/transport ₹39,410). Subtotal
       // documented spend = ₹18,31,996.00 vs published Annexure II total = ₹18,40,996.00 (reconciliation variance = ₹9,000.00).
       { project:'Rural Girl Child Education (IIMPACT, Gurgaon)', funder:'iimpact', regime:'INR', total:1840996.00, admin:109623 },
-      // Source: Balance Sheet 2010-11.pdf, Society Home Account — the actual payment line reads
+      // Source: Balance Sheet 2010-11.pdf, Society Home Account - the actual payment line reads
       // "Expenses on Programme – Formation & Training of CBDMC (SSK) ₹1,10,020," a direct account
       // entry, not a proposal budget. 100% programme, no administration shown.
       { project:'Community Based Disaster Management Committees (Mihinpurwa Block)', funder:'ssk', regime:'INR', total:110020.00, admin:0, adminChecked:true },
@@ -1242,25 +1242,25 @@ FIN.YEARS = [
     // expenditure/surplus presentation. The FC-3 cash return is retained as a separate statutory
     // cross-check: it reports current-year foreign cash receipts ₹18,79,565 and interest ₹8,688.
     received:[
-      { funder:'baif',        regime:'FCRA', flex:'restricted', grant:1036085, interest:6618.50, note:'Sure Start Payagpur + Chittaura — audited grant appropriation ₹10,36,085 + interest ₹6,618.50' },
-      { funder:'cry',         regime:'FCRA', flex:'restricted', grant:431322,  interest:1034.75, note:'CRY foreign-contribution project — appropriation + allocated interest' },
-      { funder:'kabir',       regime:'FCRA', flex:'restricted', grant:235000,  interest:1034.75, note:'Kabir/UNDP action research — appropriation + allocated interest' },
-      { funder:'sdtt',        regime:'INR',  flex:'restricted', grant:132416,  interest:0, note:'Sir Dorabji Tata Trust — Empowering Rural Women appropriation' },
+      { funder:'baif',        regime:'FCRA', flex:'restricted', grant:1036085, interest:6618.50, note:'Sure Start Payagpur + Chittaura - audited grant appropriation ₹10,36,085 + interest ₹6,618.50' },
+      { funder:'cry',         regime:'FCRA', flex:'restricted', grant:431322,  interest:1034.75, note:'CRY foreign-contribution project - appropriation + allocated interest' },
+      { funder:'kabir',       regime:'FCRA', flex:'restricted', grant:235000,  interest:1034.75, note:'Kabir/UNDP action research - appropriation + allocated interest' },
+      { funder:'sdtt',        regime:'INR',  flex:'restricted', grant:132416,  interest:0, note:'Sir Dorabji Tata Trust - Empowering Rural Women appropriation' },
       { funder:'cry',         regime:'INR',  flex:'restricted', grant:123965,  interest:0, note:'CRY local-funds project appropriation' },
-      { funder:'iimpact',     regime:'INR',  flex:'restricted', grant:178180,  interest:0, note:'IIMPACT Rural Girl Child Education — receivable recognised' },
-      { funder:'jica',        regime:'INR',  flex:'restricted', grant:71965,   interest:0, note:'UPFMPAP/JICA — receivable recognised' },
+      { funder:'iimpact',     regime:'INR',  flex:'restricted', grant:178180,  interest:0, note:'IIMPACT Rural Girl Child Education - receivable recognised' },
+      { funder:'jica',        regime:'INR',  flex:'restricted', grant:71965,   interest:0, note:'UPFMPAP/JICA - receivable recognised' },
       { funder:'nabard',      regime:'INR',  flex:'restricted', grant:220490,  interest:0, note:'NABARD ₹28,075 project income + ₹1,92,415 SHG-formation grant' },
-      { funder:'afc',         regime:'INR',  flex:'restricted', grant:43500,   interest:0, note:'Agricultural Finance Corporation Ltd — Gram Panchayat survey, Basti District (NREGA Perspective Plan)' },
-      { funder:'primenet',    regime:'INR',  flex:'restricted', grant:90300,   interest:0, note:'Primenet, Lucknow — Gram Panchayat survey, Bahraich District (NREGA Perspective Plan)' },
-      { funder:'upvan',       regime:'INR',  flex:'restricted', grant:17000,   interest:0, note:'Uttar Pradesh Voluntary Action Network — Right to Information campaign' },
+      { funder:'afc',         regime:'INR',  flex:'restricted', grant:43500,   interest:0, note:'Agricultural Finance Corporation Ltd - Gram Panchayat survey, Basti District (NREGA Perspective Plan)' },
+      { funder:'primenet',    regime:'INR',  flex:'restricted', grant:90300,   interest:0, note:'Primenet, Lucknow - Gram Panchayat survey, Bahraich District (NREGA Perspective Plan)' },
+      { funder:'upvan',       regime:'INR',  flex:'restricted', grant:17000,   interest:0, note:'Uttar Pradesh Voluntary Action Network - Right to Information campaign' },
       { funder:'individuals', regime:'INR',  flex:'flexible',   grant:304628,  interest:0, note:'General Account, after separately classifying the NABARD SHG grant and the AFC/Primenet/UPVAN institutional lines above' },
     ],
     // Source: YEAR 2009 - 2010.pdf, re-read directly page by page (Pages 5-7). The 14 lines sum to
     // ₹27,59,020.13; + surplus ₹1,34,518.88 = the printed grand total ₹28,93,539.00. AFC and Primenet
     // are institutional NREGA-perspective-plan survey consultancies (Basti and Bahraich Districts
-    // respectively) — AFC's own signed 26.03.2009 letter confirms DEHAT was the paid service provider
+    // respectively) - AFC's own signed 26.03.2009 letter confirms DEHAT was the paid service provider
     // for a Gram Panchayat–level survey, not a grant recipient. UPVAN is the Uttar Pradesh Voluntary
-    // Action Network — a civil-society RTI-campaign network, per direct confirmation, not the state
+    // Action Network - a civil-society RTI-campaign network, per direct confirmation, not the state
     // Forest Department this dataset previously and wrongly guessed from a coincidental logo filename.
     // None of the three are individuals; each now has its own funder-registry entry rather than being
     // folded into the domestic 'individuals' bucket.
@@ -1269,7 +1269,7 @@ FIN.YEARS = [
     // just the 8-page excerpt used earlier): BAIF Chittaura/Payagpur admin = their own printed "Project
     // Support Costs" + "Overheads" sub-lines; CRY (FCRA)'s admin is its own "Administrator Expenses"
     // line; SDTT-ERW and CRY (Local)'s admin are each their own "Administrativte Expenses" sub-total.
-    // IIMPACT's page has no such sub-header at all — its "Program Expenses" are one flat list with no
+    // IIMPACT's page has no such sub-header at all - its "Program Expenses" are one flat list with no
     // admin split drawn by the auditor, so a prior claim of ₹17,500 admin for this line (built from
     // Rent + Phone/Postage + a "Salary ₹13k" that isn't what the page actually says, which prints
     // "Salary to Suppervisior 10000") did not survive re-verification and admin stays at 0. General
@@ -1277,18 +1277,18 @@ FIN.YEARS = [
     // Kabir, Primenet, AFC, NABARD and UPVAN are each printed as one flat figure with no admin
     // sub-header, so admin stays at 0 for those rather than guessed.
     spend:[
-      { project:'Sure Start Project — Chittaura (BAIF)', funder:'baif', regime:'FCRA', total:592883, admin:129796 },
-      { project:'Sure Start Project — Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:447683, admin:111525 },
+      { project:'Sure Start Project - Chittaura (BAIF)', funder:'baif', regime:'FCRA', total:592883, admin:129796 },
+      { project:'Sure Start Project - Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:447683, admin:111525 },
       { project:'CRY Project (Foreign Contribution)', funder:'cry', regime:'FCRA', total:431322, admin:135389 },
       { project:'Kabir Project (United Nations Development Programme Channel)', funder:'kabir', regime:'FCRA', total:235000, admin:0, adminChecked:true },
       { project:'IIMPACT Rural Girl Child Education Programme', funder:'iimpact', regime:'INR', total:178180, admin:0, adminChecked:true },
-      { project:'SDTT — Empowering Rural Women (ERW)', funder:'sdtt', regime:'INR', total:132416, admin:43539 },
+      { project:'SDTT - Empowering Rural Women (ERW)', funder:'sdtt', regime:'INR', total:132416, admin:43539 },
       { project:'CRY Project (Local Indian Funds)', funder:'cry', regime:'INR', total:123965, admin:54835 },
-      { project:'Primenet — National Rural Employment Guarantee Act Perspective Plan, Bahraich', funder:'primenet', regime:'INR', total:90300, admin:0, adminChecked:true },
+      { project:'Primenet - National Rural Employment Guarantee Act Perspective Plan, Bahraich', funder:'primenet', regime:'INR', total:90300, admin:0, adminChecked:true },
       { project:'UPFMPAP Project (JICA)', funder:'jica', regime:'INR', total:71965, admin:0, adminChecked:true },
-      { project:'AFC — National Rural Employment Guarantee Act Perspective Plan, Basti', funder:'afc', regime:'INR', total:43500, admin:0, adminChecked:true },
+      { project:'AFC - National Rural Employment Guarantee Act Perspective Plan, Basti', funder:'afc', regime:'INR', total:43500, admin:0, adminChecked:true },
       { project:'NABARD Programme', funder:'nabard', regime:'INR', total:28159, admin:0, adminChecked:true },
-      { project:'UPVAN — Right to Information Campaign', funder:'upvan', regime:'INR', total:17000, admin:0, adminChecked:true },
+      { project:'UPVAN - Right to Information Campaign', funder:'upvan', regime:'INR', total:17000, admin:0, adminChecked:true },
       { project:'General Account & Adjustments', funder:'individuals', regime:'INR', total:297842, admin:88517 },
       { project:'Depreciation on Fixed Assets', funder:'individuals', regime:'INR', total:68805.13, admin:68805.13 },
     ],
@@ -1304,20 +1304,20 @@ FIN.YEARS = [
     // page by page. Every spend line below reproduces a specific named line on the signed page and
     // the seven lines sum to the utilisedTotal exactly.
     received:[
-      { funder:'baif',        regime:'FCRA', flex:'restricted', grant:806556, interest:0, note:'BAIF (Sure Start) — foreign contribution' },
+      { funder:'baif',        regime:'FCRA', flex:'restricted', grant:806556, interest:0, note:'BAIF (Sure Start) - foreign contribution' },
       { funder:'cry',         regime:'INR',  flex:'restricted', grant:518354, interest:0, note:'Child Rights and You' },
       { funder:'ssa',         regime:'INR',  flex:'restricted', grant:198000, interest:0, note:'Sarva Shiksha Abhiyan (govt)' },
       { funder:'nabard',      regime:'INR',  flex:'restricted', grant:4750,   interest:0, note:'NABARD' },
       // Re-read the signed Income & Expenditure page directly (Singh Agarwal & Associates): "From PANI"
       // ₹10,754 + "From PGSS" (Purvanchal Gramin Seva Samiti) ₹10,000 are each their own printed grant
-      // line, ₹20,754 combined — the PGSS ₹10,000 half of that had been dropped from this figure,
+      // line, ₹20,754 combined - the PGSS ₹10,000 half of that had been dropped from this figure,
       // which is exactly the ₹10,000 gap this year's __balance line had been carrying.
       { funder:'individuals', regime:'INR',  flex:'flexible',   grant:670881, interest:11288, note:'Local contribution ₹4,69,627 + individual contributions ₹1,75,000 + membership ₹5,500 + PANI ₹10,754 + PGSS ₹10,000' },
     ],
     spend:[
       { project:'Child Right Project (CRY)', funder:'cry', regime:'INR', total:490788, admin:0, adminChecked:true },
-      { project:'Sure Start Project — Chittaura (BAIF)', funder:'baif', regime:'FCRA', total:416968, admin:0, adminChecked:true },
-      { project:'Sure Start Project — Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:374268, admin:0, adminChecked:true },
+      { project:'Sure Start Project - Chittaura (BAIF)', funder:'baif', regime:'FCRA', total:416968, admin:0, adminChecked:true },
+      { project:'Sure Start Project - Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:374268, admin:0, adminChecked:true },
       { project:'Sarva Siksha Abhiyaan (SSA)', funder:'ssa', regime:'INR', total:210818, admin:0, adminChecked:true },
       { project:'Expence on Village Development Programme', funder:'individuals', regime:'INR', total:45739, admin:0, adminChecked:true },
       { project:'General Community Programmes (Flood Relief, Right to Information, Sanitation, Workshops)', funder:'individuals', regime:'INR', total:416360, admin:0, adminChecked:true },
@@ -1330,7 +1330,7 @@ FIN.YEARS = [
     // Source: scans/ocr-2007-08.txt (OCR of signed scan). Signed 17.05.2008.
     // I&E total ₹18,11,574; surplus ₹1,62,485; balance sheet total ₹4,43,426.
     // Disclosed, unresolved: which bank account (Foreign Contribution vs Indian) specific FY2006-08
-    // receipts actually routed through is not fully settled — the signed R&P opening/closing balances
+    // receipts actually routed through is not fully settled - the signed R&P opening/closing balances
     // for this period show both a "Balance With Bank F.C. A/c" and a "Balance With Bank Indian" line
     // (FY2006-07: ₹29,837.00 FC / ₹1,160.00 Indian opening; FY2007-08: ₹1,14,598.00 FC / ₹56,324.00
     // Indian closing), but per-funder attachment to one account vs the other isn't independently
@@ -1341,9 +1341,9 @@ FIN.YEARS = [
     // Source: "Income & Expenditure 2007-08.docx" (embedded scan of the signed statement, Singh Agarwal
     // & Associates, 17.05.2008), read directly. The income side reads: To Membership fees 4,520 / To
     // Consultancy charges 72,500 / To Contribution from Public 85,460 / To Donation and Charity
-    // 1,74,061 / To Interest 1,602 / To Grant in Aid — CRY-Child Rights & You 4,48,918 + SURE START
+    // 1,74,061 / To Interest 1,602 / To Grant in Aid - CRY-Child Rights & You 4,48,918 + SURE START
     // PROJECT 7,66,516 + NABARD (After Old Balance) 1,87,233 + TARA AKSHAR (cash 32,262 + laptop
-    // in-kind 38,502) — summing to 18,11,574 exactly. The three received[] lines this replaces had CRY
+    // in-kind 38,502) - summing to 18,11,574 exactly. The three received[] lines this replaces had CRY
     // and BAIF's figures swapped (766,516 tagged as CRY is actually the Sure Start/BAIF figure; 187,233
     // tagged as BAIF is actually NABARD's), and never separately carried NABARD or Tara Akshar on the
     // received side at all despite both already being spend-side funders for this same year.
@@ -1353,8 +1353,8 @@ FIN.YEARS = [
       { funder:'cry',         regime:'INR',  flex:'restricted', grant:448918, interest:0, note:'Child Rights and You' },
       { funder:'baif',        regime:'FCRA', flex:'restricted', grant:766516, interest:0, note:'Sure Start Project (BAIF)' },
       { funder:'nabard',      regime:'INR',  flex:'restricted', grant:187233, interest:0, note:'NABARD (after old balance)' },
-      { funder:'tara_akshar', regime:'INR',  flex:'restricted', grant:32262,  interest:0, note:'Tara Akshar — grant in cash' },
-      { funder:'tara_akshar', regime:'INR',  flex:'restricted', grant:38502,  interest:0, note:'Tara Akshar — laptop receipt, in-kind at market value', inKind:true },
+      { funder:'tara_akshar', regime:'INR',  flex:'restricted', grant:32262,  interest:0, note:'Tara Akshar - grant in cash' },
+      { funder:'tara_akshar', regime:'INR',  flex:'restricted', grant:38502,  interest:0, note:'Tara Akshar - laptop receipt, in-kind at market value', inKind:true },
       { funder:'individuals', regime:'INR',  flex:'flexible',   grant:336541, interest:1602, note:'Membership fees ₹4,520 + consultancy charges ₹72,500 + contribution from public ₹85,460 + donation and charity ₹1,74,061' },
     ],
     // Source: YEAR 2007 - 2008.pdf (Singh Agarwal & Associates, signed 17.05.2008), re-read directly
@@ -1362,8 +1362,8 @@ FIN.YEARS = [
     // the seven lines sum to the utilisedTotal exactly (₹16,49,089.00).
     spend:[
       { project:'Child Right Project (CRY)', funder:'cry', regime:'INR', total:463070, admin:0, adminChecked:true },
-      { project:'Sure Start Project — Chittaura (BAIF)', funder:'baif', regime:'FCRA', total:329814, admin:0, adminChecked:true },
-      { project:'Sure Start Project — Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:324393, admin:0, adminChecked:true },
+      { project:'Sure Start Project - Chittaura (BAIF)', funder:'baif', regime:'FCRA', total:329814, admin:0, adminChecked:true },
+      { project:'Sure Start Project - Payagpur (BAIF)', funder:'baif', regime:'FCRA', total:324393, admin:0, adminChecked:true },
       { project:'NABARD (Self-Help Group Promotion Programme)', funder:'nabard', regime:'INR', total:194522, admin:0, adminChecked:true },
       { project:'Tara Akshar (Women\'s Literacy Programme)', funder:'tara_akshar', regime:'INR', total:43016, admin:0, adminChecked:true },
       { project:'General Community Programmes', funder:'individuals', regime:'INR', total:177606, admin:0, adminChecked:true },
@@ -1373,29 +1373,29 @@ FIN.YEARS = [
   {
     fy:'2006-07', doc:'assets/docs/balance-sheet-2006-07.pdf', period:'1 Apr 2006 – 31 Mar 2007',
     signed:true, softcopy:false, auditor:'Singh Agarwal & Associates (Bahraich, CA Ashish K. Agarwal)',
-    // Source: Income & Expenditure 2006-07 (i).docx and (ii).docx — the two-page signed I&E account
+    // Source: Income & Expenditure 2006-07 (i).docx and (ii).docx - the two-page signed I&E account
     // (dated 30.10.2007), re-read directly as images (the scan is rotated and heavily degraded, which
     // the previous OCR pass misread). This corrects three real errors carried in this entry since it
     // was first built: (1) the printed "Excess of Income over Expenditure transfer to Capital A/c" line
-    // reads ₹1,25,733.00, not ₹25,733 — the account's own totals (income ₹13,57,574 − expenditure
+    // reads ₹1,25,733.00, not ₹25,733 - the account's own totals (income ₹13,57,574 − expenditure
     // ₹12,31,841) confirm this; (2) utilisedTotal was ₹12,58,551 including a ₹26,710 "Depreciation" line
-    // that does not appear anywhere on the signed pages — the real total is ₹12,31,841; (3) the DFID
-    // (PACS Programme) grant received was recorded as ₹3,26,129 — the signed page reads ₹3,49,419.
+    // that does not appear anywhere on the signed pages - the real total is ₹12,31,841; (3) the DFID
+    // (PACS Programme) grant received was recorded as ₹3,26,129 - the signed page reads ₹3,49,419.
     // A "To Grant Receivable NABARD REDP" income line (₹50,000) is on the same page and is added below
     // as its own line so receivedTotal reconciles to the signed total exactly.
     surplus:125733, balanceSheetTotal:230941, receivedTotal:1357574, utilisedTotal:1231841,
     received:[
       { funder:'cry',         regime:'INR',  flex:'restricted', grant:414169, interest:0, note:'Child Rights and You' },
-      { funder:'dfid_pacs',   regime:'FCRA', flex:'restricted', grant:349419, interest:0, note:'Department for International Development — Poorest Areas Civil Society Programme' },
+      { funder:'dfid_pacs',   regime:'FCRA', flex:'restricted', grant:349419, interest:0, note:'Department for International Development - Poorest Areas Civil Society Programme' },
       { funder:'action_aid',  regime:'FCRA', flex:'restricted', grant:165100, interest:0, note:'ActionAid (Making School Functional)' },
       { funder:'nabard',      regime:'INR',  flex:'restricted', grant:61490,  interest:0, note:'NABARD (SHG promotion)' },
-      { funder:'nabard',      regime:'INR',  flex:'restricted', grant:50000,  interest:0, note:'NABARD REDP — recorded as a grant receivable on the signed income page' },
+      { funder:'nabard',      regime:'INR',  flex:'restricted', grant:50000,  interest:0, note:'NABARD REDP - recorded as a grant receivable on the signed income page' },
       { funder:'individuals', regime:'INR',  flex:'flexible',   grant:316580, interest:816, note:'Consultancy ₹62,600 + local contribution ₹45,140 + individual contributions ₹2,06,280 + membership ₹2,560' },
     ],
     spend:[
       { project:'Making School Functional (ActionAid)', funder:'action_aid', regime:'FCRA', total:150697, admin:0, adminChecked:true },
-      { project:'PACS Programme (DFID)', funder:'dfid_pacs', regime:'FCRA', total:349431, admin:0, adminChecked:true, note:'Expenditure-side figure as printed; the income-side DFID grant this year reads ₹3,49,419 — a ₹12 difference present on the signed statement itself' },
-      { project:'Child Rights Project (CRY) — Revenue Expenses', funder:'cry', regime:'INR', total:361607, admin:0, adminChecked:true },
+      { project:'PACS Programme (DFID)', funder:'dfid_pacs', regime:'FCRA', total:349431, admin:0, adminChecked:true, note:'Expenditure-side figure as printed; the income-side DFID grant this year reads ₹3,49,419 - a ₹12 difference present on the signed statement itself' },
+      { project:'Child Rights Project (CRY) - Revenue Expenses', funder:'cry', regime:'INR', total:361607, admin:0, adminChecked:true },
       { project:'Self-Help Group Promotion Programme (NABARD)', funder:'nabard', regime:'INR', total:56040, admin:0, adminChecked:true },
       { project:'Rural Entrepreneurship Development Programme (NABARD)', funder:'nabard', regime:'INR', total:50214, admin:0, adminChecked:true },
       { project:'General Community Programmes (Right to Information, Health, Sanitation, Workshops)', funder:'individuals', regime:'INR', total:144107, admin:0, adminChecked:true },
@@ -1412,7 +1412,7 @@ FIN.YEARS = [
     // page by page. Every spend line below reproduces a specific named line on the signed page and
     // the six lines sum to the utilisedTotal exactly.
     received:[
-      { funder:'dfid_pacs',   regime:'FCRA', flex:'restricted', grant:351602, interest:0, note:'Poorest Areas Civil Society (Lokshakti) — Department for International Development programme' },
+      { funder:'dfid_pacs',   regime:'FCRA', flex:'restricted', grant:351602, interest:0, note:'Poorest Areas Civil Society (Lokshakti) - Department for International Development programme' },
       { funder:'action_aid',  regime:'FCRA', flex:'restricted', grant:338000, interest:0, note:'ActionAid' },
       { funder:'cry',         regime:'INR',  flex:'restricted', grant:162160, interest:0, note:'Child Rights and You (Azadi)' },
       { funder:'nabard',      regime:'INR',  flex:'restricted', grant:60120,  interest:0, note:'NABARD' },
@@ -1433,7 +1433,7 @@ FIN.YEARS = [
 
 
 // ============================================================================
-// LENS LAYER — classification of every rupee across the dimensions the
+// LENS LAYER - classification of every rupee across the dimensions the
 // Transparency page lets a visitor slice by. Mappings are declared here (not
 // in the UI) so they can be audited line by line.
 // ============================================================================
@@ -1461,7 +1461,7 @@ FIN.UNCRC = {
   Participation: { label:'Participation', color:'#0E5565', note:'The right to be heard, to information, association and a say in decisions' },
 };
 
-// Schedule VII to the Companies Act, 2013 — clause text as currently in force
+// Schedule VII to the Companies Act, 2013 - clause text as currently in force
 // (Schedule VII as substituted 27 Feb 2014 and amended up to the Companies
 // (CSR Policy) Amendment Rules; item numbering is the statutory numbering).
 FIN.CSR7 = {
@@ -1496,19 +1496,19 @@ FIN.ERAS = {
 // filed under 'institutional' (its UNICEF-CPP/nutrition work ran as bilateral
 // partnership MoUs, not a sovereign statutory scheme) rather than 'government'.
 // laher: the FY2022-23 'laher' line is the CHILDLINE India Foundation village/ward
-// Child Protection Committee pilot, with Leher as technical agency — child protection,
+// Child Protection Committee pilot, with Leher as technical agency - child protection,
 // not water or health. Tagged hp/Protection/iii to match the project record.
-// world_neighbors: tag prepared ahead of any FIN.YEARS entry — no signed grant
+// world_neighbors: tag prepared ahead of any FIN.YEARS entry - no signed grant
 // agreement or UC has been located yet for this funder (only a proposal budget and
 // a budget-ceiling email), so no dollars are attributed to it in FIN.YEARS. This
 // entry is inert until real audited figures exist.
 FIN.FUNDER_TAGS = {
   // Every occurrence of __fcra_general across all 20 years is DEHAT's own core FCRA-account operating
-  // cost — bank interest, audit fees, bank charges, general operations (verified line by line: never a
+  // cost - bank interest, audit fees, bank charges, general operations (verified line by line: never a
   // large unidentified grant, always a small institutional running cost). That classification is genuinely
   // settled, even though no single external funder is attached to it, so it is marked confirmed rather than
   // "Mapping Under Confirmation." This does NOT apply to __balance, which represents a real amount
-  // whose funder AND theme are still genuinely unknown — that stays unmapped.
+  // whose funder AND theme are still genuinely unknown - that stays unmapped.
   __fcra_general:   { prog:'cross',      uncrc:'Participation', csr:'none', source:'institutional', confirm:true },
   caritas_germany:  { prog:'protection', uncrc:'Protection',   csr:'iii',  source:'institutional', confirm:true },
   caritas_india_fcra:{ prog:'protection', uncrc:'Protection',  csr:'iii',  source:'institutional', confirm:true },
@@ -1543,7 +1543,7 @@ FIN.FUNDER_TAGS = {
   upvan:            { prog:'rights',     uncrc:'Participation',csr:'x',    source:'institutional', confirm:true },
   // Confirmed via the signed assignment form "Sahbhagi Shikshan Kendra May 2010.pdf" (Ref.
   // SSK/Finance/DMRC/04/10-11, 15.05.2010): "Formation of Community Based Disaster Management Committees
-  // (CBDMC) in 2 selected flood prone Gram Panchayat of Mihinpurwa block, Bahraich" — five task forces
+  // (CBDMC) in 2 selected flood prone Gram Panchayat of Mihinpurwa block, Bahraich" - five task forces
   // (Early Warning, Search & Rescue, First Aid, WATSAN & Hygiene, Social Inclusion). Genuine disaster-risk-
   // reduction/relief work, not generic institutional training despite the org's name. Tagged to match this
   // dataset's existing disaster/relief-work convention (the covid|ration|relief keyword override), and
@@ -1602,17 +1602,17 @@ FIN.tagsFor = function(funderKey, text){
 // Internal keys and audit-workflow notes must never reach a visitor. Placeholder funder
 // keys get a plain-English name; notes are only shown when they describe the work.
 FIN.PLACEHOLDER_NAMES = {
-  __fcra_general:     'Foreign Contribution Account \u2014 General Fund',
-  __fcra_grants:      'Foreign Contribution Grants \u2014 Funder Not Itemised',
-  __inr_grants:       'Domestic Grants \u2014 Funder Not Itemised',
-  __mixed:            'Several Grants \u2014 Combined in the Statement',
+  __fcra_general:     'Foreign Contribution Account - General Fund',
+  __fcra_grants:      'Foreign Contribution Grants - Funder Not Itemised',
+  __inr_grants:       'Domestic Grants - Funder Not Itemised',
+  __mixed:            'Several Grants - Combined in the Statement',
   __sujlam_suflam:    'Sujalam Sufalam Water and Livelihoods Programme',
   __balance:          'Other Income Not Itemised by Funder',
   __unitemised_spend: 'Spend Not Itemised by Funder',
-  __fcra_other_funds: 'Foreign Contribution — Other Funds (Residual Account)',
+  __fcra_other_funds: 'Foreign Contribution - Other Funds (Residual Account)',
 };
 FIN.displayName = function(k){
-  if (!k) return '\u2014';
+  if (!k) return '-';
   if (FIN.FUNDERS[k] && FIN.FUNDERS[k].name) return FIN.FUNDERS[k].name;
   if (FIN.PLACEHOLDER_NAMES[k]) return FIN.PLACEHOLDER_NAMES[k];
   return String(k).replace(/^__/,'').replace(/_/g,' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
@@ -1625,17 +1625,17 @@ FIN.publicLabel = function(entry){
   if (!n) return '';
   n = n.split(';')[0].trim();
   n = n.replace(/\s*\([^)]*(?:not itemised|funder|OCR|pending|non-cash|carryover)[^)]*\)/ig, '').trim();
-  n = n.replace(/\s*[\u2014-]?\s*grant from (mr\.?|mrs\.?|ms\.?|shri|smt\.?)\s+[^,;]+$/i, '').trim();
-  n = n.replace(/\s*[\u2014-]?\s*IN-?KIND.*$/i, '').trim();
+  n = n.replace(/\s*[ - -]?\s*grant from (mr\.?|mrs\.?|ms\.?|shri|smt\.?)\s+[^,;]+$/i, '').trim();
+  n = n.replace(/\s*[ - -]?\s*IN-?KIND.*$/i, '').trim();
   n = n.replace(/\s*\(?~?\u20b9\s?[\d.,]+\s?(L|Cr|lakh|crore)?\)?\.?$/i, '').trim();
-  n = n.replace(/[\s,;:\u2014-]+$/, '').trim();
+  n = n.replace(/[\s,;: - -]+$/, '').trim();
   if (!n || FIN.INTERNAL_NOTE.test(n)) return '';
   return n;
 };
 
 // Flatten every audited line into a taggable flow record.
-//   basis 'received' — grants + interest received in the year
-//   basis 'utilised' — expenditure applied in the year. Where the audited
+//   basis 'received' - grants + interest received in the year
+//   basis 'utilised' - expenditure applied in the year. Where the audited
 //   statement does not itemise spend by project, the audited utilised total is
 //   apportioned pro-rata across that year's funders and flagged est:true.
 FIN.flows = function(basis){
@@ -1661,7 +1661,7 @@ FIN.flows = function(basis){
       if (Math.abs(diff) > 1){
         out.push({ fy:y.fy, era:era, amt:diff, regime:'INR', funderKey:'__balance',
                    funder:FIN.PLACEHOLDER_NAMES.__balance,
-                   project: diff > 0 ? 'Other audited income for the year' : 'Adjustment to the audited receipts total \u2014 under reconciliation',
+                   project: diff > 0 ? 'Other audited income for the year' : 'Adjustment to the audited receipts total - under reconciliation',
                    prog:'cross', uncrc:'Participation', csr:'none', source:'institutional',
                    confirm:false, unmapped:true, inKind:false, admin:null, est:true, flex:null });
       }
@@ -1680,7 +1680,7 @@ FIN.flows = function(basis){
         // Named spend[] lines don't always cover the full audited utilised total for a year (e.g.
         // FY2010-11, where three projects' shares were itemised via a Form 10B disclosure but the
         // rest of that year's spend never was). The genuine shortfall is its own honest "not
-        // itemised" residual — it must never silently discard the real, itemised lines above and
+        // itemised" residual - it must never silently discard the real, itemised lines above and
         // re-apportion the whole year proportionally across received-side funders instead, which
         // would fabricate a specific per-funder utilised split that no audited document supports.
         var residual = total - spendSum;
@@ -1742,7 +1742,7 @@ FIN.IDENTITY = {
 };
 
 FIN.ACCOUNTS = {
-  intro: 'Two accounts, and the line between them is a legal one. Domestic contributions go to the IDFC FIRST account in Bahraich. Foreign contributions may only be received in the designated State Bank of India account in New Delhi \u2014 no other account may take them. Both are published in full so you can remit without asking us first.',
+  intro: 'Two accounts, and the line between them is a legal one. Domestic contributions go to the IDFC FIRST account in Bahraich. Foreign contributions may only be received in the designated State Bank of India account in New Delhi - no other account may take them. Both are published in full so you can remit without asking us first.',
   holder: 'Developmental Association for Human Advancement',
   list: [
     {
@@ -1768,7 +1768,7 @@ FIN.ACCOUNTS = {
         { k:'Branch', v:'New Delhi Main Branch \u00b7 00691' },
         { k:'Branch address', v:'11 Sansad Marg, New Delhi 110001, India' },
         { k:'IFSC', v:'SBIN0000691', mono:true },
-        { k:'SWIFT / BIC', v:'SBININBB104', mono:true, note:'Not printed on the cancelled cheque \u2014 confirm against a bank letter before publishing.' },
+        { k:'SWIFT / BIC', v:'SBININBB104', mono:true, note:'Not printed on the cancelled cheque - confirm against a bank letter before publishing.' },
         { k:'MICR', v:'110002087', mono:true },
       ],
     },
@@ -1780,7 +1780,7 @@ FIN.ACCOUNTS = {
 // Every node carries two readings of the same line: the authority passed DOWN it,
 // and the accountability owed back UP it. The site lets a reader flip between them.
 FIN.GOVERNANCE = {
-  intro: 'DEHAT is a registered Society, so it is governed by its members and not by its staff. Every line in this chart runs both ways. Read it downward and it is a delegation of authority; read it upward and it is a line of accountability. Flip the direction, or click any body to trace its chain. Two standing committees carry the executive work under written terms of reference: the Strategic Leadership Team takes what concerns the institution, the Core Team takes what concerns the programmes. Below them the chart is drawn in two-headed arrows \u2014 anchor to anchor, anchor to project, project to grassroots, grassroots to community \u2014 and one line runs the full height of it, connecting the Strategic Leadership Team directly to the community bodies at the base.',
+  intro: 'DEHAT is a registered Society, so it is governed by its members and not by its staff. Every line in this chart runs both ways. Read it downward and it is a delegation of authority; read it upward and it is a line of accountability. Flip the direction, or click any body to trace its chain. Two standing committees carry the executive work under written terms of reference: the Strategic Leadership Team takes what concerns the institution, the Core Team takes what concerns the programmes. Below them the chart is drawn in two-headed arrows - anchor to anchor, anchor to project, project to grassroots, grassroots to community - and one line runs the full height of it, connecting the Strategic Leadership Team directly to the community bodies at the base.',
   source: 'Organisation Structure version 3, as on 10 May 2022, with the Terms of Reference for the Strategic Leadership Team and the Core Team, May 2022.',
   note: 'The names of General Body and Governing Board members are filed each year in the Society\u2019s annual return to the Registrar of Societies, where they are a matter of public record.',
   nodes: [
@@ -1813,7 +1813,7 @@ FIN.GOVERNANCE = {
       up:'Reports coverage, results and failure honestly enough that the Board can act on it.',
       gives:'Runs the programmes', owes:'Reports what was delivered' },
     { id:'a_sol', parent:'prog_team', title:'School of Leadership Anchor', count:'Programme Anchor', color:'#EAAE28', role:'Programme anchor',
-      down:'Holds the leadership programme end to end \u2014 design, curriculum, the fellows and the collectives it builds.',
+      down:'Holds the leadership programme end to end - design, curriculum, the fellows and the collectives it builds.',
       up:'Accountable to the Core Team for the programme\u2019s quality, spend and reach.',
       gives:'Holds one programme', owes:'Accountable for that programme' },
     { id:'a_re', parent:'prog_team', title:'Rights and Entitlements Anchor', count:'Programme Anchor', color:'#0E5565', role:'Programme anchor',
@@ -1825,7 +1825,7 @@ FIN.GOVERNANCE = {
       up:'Accountable to the Core Team for the programme\u2019s quality, spend and reach.',
       gives:'Holds one programme', owes:'Accountable for that programme' },
     { id:'a_hp', parent:'prog_team', title:'Human Protection Anchor', count:'Programme Anchor', color:'#A92719', role:'Programme anchor',
-      down:'Holds the protection work \u2014 trafficking, child marriage, rescue and restoration \u2014 and the safeguarding standard the rest of the organisation is held to.',
+      down:'Holds the protection work - trafficking, child marriage, rescue and restoration - and the safeguarding standard the rest of the organisation is held to.',
       up:'Accountable to the Core Team for the programme\u2019s quality, spend and reach, and answerable first to the child.',
       gives:'Holds one programme', owes:'Answerable first to the child' },
     { id:'proj', parent:'prog_team', title:'Project Anchors', count:'Added as geography and grant design require', color:'#D2305C', role:'Project line',
@@ -1842,7 +1842,7 @@ FIN.GOVERNANCE = {
       gives:'Daily contact with households', owes:'Answers to their own village' },
     { id:'fin_team', parent:'prog_team', kind:'wing', title:'Finance and Admin Team', color:'#0E5565', role:'Money, people and systems',
       members:['Chief Finance Officer','Management Information Systems Officer','Administration and human resources'],
-      down:'Controls how money enters, is held and is spent \u2014 including the separate handling the Foreign Contribution (Regulation) Act requires \u2014 and holds recruitment, records and office administration.',
+      down:'Controls how money enters, is held and is spent - including the separate handling the Foreign Contribution (Regulation) Act requires - and holds recruitment, records and office administration.',
       up:'Produces the books the statutory auditor examines and the Board accepts, and is answerable for whether policy on paper is policy in practice.',
       gives:'Controls the money and the records', owes:'Produces the audited books' },
   ],
@@ -1859,7 +1859,7 @@ FIN.GOVERNANCE = {
 // ---- WORKFORCE ---------------------------------------------------------------------
 // Source: DEHAT organisation profile, November 2016, section 1.13 Staff Strength.
 FIN.WORKFORCE = {
-  intro: 'In 2007–08 DEHAT had 16 people on its team — a chief executive, an accountant, and fourteen field and community staff, four of them part-time. By November 2016 it had 147, 77 of them women. The shape matters more than the total: 92 of the 147 were community-level workers and field animators recruited from the villages the programmes serve, and 67 of those 92 were women. The organisation is widest at the point closest to the community and narrowest at the top.',
+  intro: 'In 2007–08 DEHAT had 16 people on its team - a chief executive, an accountant, and fourteen field and community staff, four of them part-time. By November 2016 it had 147, 77 of them women. The shape matters more than the total: 92 of the 147 were community-level workers and field animators recruited from the villages the programmes serve, and 67 of those 92 were women. The organisation is widest at the point closest to the community and narrowest at the top.',
   total: '147 staff · 70 men, 77 women',
   note: 'The table is published as a 2016 figure, and the 2007–08 comparison is drawn from that year’s annual report, which names all sixteen. A current staff table will replace it once the payroll register has been reconciled. Qualification bands are reproduced as recorded in the profile.',
   rows: [
@@ -1880,7 +1880,7 @@ FIN.ACCOUNTABILITY = {
   intro: 'Accountability upward to investment partners is the easy half. These are the four constituencies DEHAT considers itself answerable to, and the mechanism that makes each one real.',
   parties: [
     { title:'Children, First', color:'#D2305C',
-      body:'No child is identified on this website. Names, photographs, case details and traceable combinations of identity and village are withheld unless there is documented informed consent and a completed safeguarding review \u2014 and even then, only where publication serves the child.',
+      body:'No child is identified on this website. Names, photographs, case details and traceable combinations of identity and village are withheld unless there is documented informed consent and a completed safeguarding review - and even then, only where publication serves the child.',
       how:'Safeguarding review before publication' },
     { title:'The Communities We Work With', color:'#556223',
       body:'Child Parliaments, youth collectives, women farmers\u2019 Aajeevika Adhikar Sangathans and their clusters and federation review the work in their own villages and set what comes next. Village and Gram Sabha processes are where the programme is judged.',
@@ -1894,7 +1894,7 @@ FIN.ACCOUNTABILITY = {
   ],
   raise: {
     title:'Raise a Concern',
-    body:'Anyone \u2014 a community member, a colleague, a partner or a member of the public \u2014 can raise a concern about DEHAT\u2019s conduct, safeguarding practice or use of funds. Write, call or come to the registered office. Concerns about the conduct of staff or the use of funds are placed before the Governing Board.',
+    body:'Anyone - a community member, a colleague, a partner or a member of the public - can raise a concern about DEHAT\u2019s conduct, safeguarding practice or use of funds. Write, call or come to the registered office. Concerns about the conduct of staff or the use of funds are placed before the Governing Board.',
     email:'joinus@dehatindia.org', phone:'+91 94150 54079',
     address:'\u201cSewakunj\u201d, Maseehabad Road via Kati Chauraha, Huzoorpur Marg, Bahraich, Uttar Pradesh 271801',
   },

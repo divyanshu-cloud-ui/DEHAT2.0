@@ -79,7 +79,7 @@ async function runNumericAudit() {
     console.log(`  ${k}: ${count} languages (sample EN: "${enDict[k]}")`);
   }
 
-  // 2. Layer 2: content-i18n was split per-language (content-i18n/<code>.js) — load every
+  // 2. Layer 2: content-i18n was split per-language (content-i18n/<code>.js) - load every
   // split file so this check still sees the full 28-language set.
   console.log('\n--- Checking Layer 2: content-i18n/*.js ---');
   global.window = global;

@@ -102,11 +102,11 @@ export const PROG_CYCLE = {
   hp: {
     lede: 'Human Protection works where accumulated vulnerability turns into exploitation, and on the systems that should have noticed earlier.',
     direct: {
-      'Human Trafficking': 'Interception, rescue and repatriation with the Sashastra Seema Bal, Anti-Human Trafficking Units, police and Child Welfare Committees. A large share of the trafficking caseload is labour trafficking — children moved across the border or between districts into brick kilns, dhabas, domestic service and workshops — so trafficking and child-labour response run as one intersecting caseload, not two separate systems.',
+      'Human Trafficking': 'Interception, rescue and repatriation with the Sashastra Seema Bal, Anti-Human Trafficking Units, police and Child Welfare Committees. A large share of the trafficking caseload is labour trafficking - children moved across the border or between districts into brick kilns, dhabas, domestic service and workshops - so trafficking and child-labour response run as one intersecting caseload, not two separate systems.',
       'Child Marriage': 'Village and block child protection committees, Child Marriage Prohibition Officers, and prevention before the date is fixed.',
       'Child & Bonded Labour': 'Identification, withdrawal, labour-department action and school re-enrolment. Withdrawals from brick kilns, dhabas, workshops and domestic labour are cross-checked against the trafficking register, since many working children were moved into that labour by a trafficker in the first place.',
       'Discrimination and Violence': 'Case accompaniment, legal aid, compensation claims and psychosocial support.',
-      'Boys as Bread-Earners': 'Migration tracking that records who is moving, where, and with whom — the same tracking that flags a labour-trafficking risk before a child leaves the village.',
+      'Boys as Bread-Earners': 'Migration tracking that records who is moving, where, and with whom - the same tracking that flags a labour-trafficking risk before a child leaves the village.',
     },
     indirect: ['School Dropout', 'Menstrual Dignity', 'Underage Mother', 'The Next Mother'],
   },
@@ -114,7 +114,7 @@ export const PROG_CYCLE = {
 
 // Programme-level results, 2000-2026: the macro, cross-project footprint of each
 // programme as a whole. Project-specific detail lives on each project's own record
-// under "Impact numbers" — these figures are deliberately not a re-listing of that.
+// under "Impact numbers" - these figures are deliberately not a re-listing of that.
 // Indicator-specific by design: these are not added together, and there is no single total.
 export const PROG_FIGURES = {
   hp: {
@@ -144,7 +144,7 @@ export const PROG_FIGURES = {
       { n: '268', l: 'Village Health and Sanitation Committee Members Capacity-Built', src: '' },
       { n: '40', l: 'Community Health Groups Capacity-Built through Further Training', src: '' },
       { n: '26', l: 'Joint Forest Management Committees Constituted with Forest-Fringe Communities', src: '' },
-      { n: '23', l: 'Adolescent and Youth Collectives Capacity-Built \u2014 Bal Adhikar Manch, Kishori Sangathans and Border-Village Youth Groups', src: '' },
+      { n: '23', l: 'Adolescent and Youth Collectives Capacity-Built - Bal Adhikar Manch, Kishori Sangathans and Border-Village Youth Groups', src: '' },
       { n: '16', l: 'Gram Sabha Structures Strengthened through Open Meetings and Village Development Plans', src: '' },
     ],
   },
@@ -159,7 +159,7 @@ export const PROG_FIGURES = {
   },
   re: {
     label: 'What This Programme Has Done',
-    note: 'Cumulative across every household and public system this programme has worked with, and the single home for every convergence figure so nothing is counted twice. Community-based organisations this work has capacity-built are shown once, under School of Leadership. Quiet, personal shifts \u2014 a family knowing and acting on a right \u2014 are real but are not counted as a number here.',
+    note: 'Cumulative across every household and public system this programme has worked with, and the single home for every convergence figure so nothing is counted twice. Community-based organisations this work has capacity-built are shown once, under School of Leadership. Quiet, personal shifts - a family knowing and acting on a right - are real but are not counted as a number here.',
     items: [
       { n: '\u20b98,88,39,817', l: 'In Government Schemes and Village Infrastructure the Farmer Collectives Drew into Their Own Villages since 2016, through Community\u2013Administration Convergence', src: '' },
       { n: '5,225', l: 'Women Reached and Organised Around Their Own Entitlements', src: '' },

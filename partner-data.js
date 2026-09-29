@@ -1,4 +1,4 @@
-// partner-data.js — Get Involved and Partnership taxonomy, routes and data across 28 languages.
+// partner-data.js - Get Involved and Partnership taxonomy, routes and data across 28 languages.
 // Contains routes, facets, engagement categories and investment details.
 
 const EN = {
@@ -34,7 +34,7 @@ const EN = {
   "tabCtas": {
     "case": {
       "t": "Still Deciding Whether This Case Holds Up?",
-      "s": "Ask us to defend any specific claim on this page — a number, a district, a mechanism. We point to the source, or say plainly where a claim is thinner than it sounds.",
+      "s": "Ask us to defend any specific claim on this page - a number, a district, a mechanism. We point to the source, or say plainly where a claim is thinner than it sounds.",
       "a": "Ask About This Case",
       "subj": "A question about the case for investing",
       "b": "Continue to Invest",
@@ -144,7 +144,7 @@ const EN = {
   "legacy": {
     "eyebrow": "Legacy Giving",
     "title": "The Gift That Outlasts the Giver.",
-    "body": "Almost nobody is ever asked, so almost nobody ever does it. A bequest written into your will is the one form of support that can be committed to a horizon longer than any grant cycle — which is the horizon this work actually takes. Ask us for the legal name, the registration number and the clause wording, and give them to your lawyer.",
+    "body": "Almost nobody is ever asked, so almost nobody ever does it. A bequest written into your will is the one form of support that can be committed to a horizon longer than any grant cycle - which is the horizon this work actually takes. Ask us for the legal name, the registration number and the clause wording, and give them to your lawyer.",
     "action": "Read the Legacy Route",
     "note": "We do not draft wills and we do not give legal advice."
   },
@@ -289,7 +289,7 @@ const EN = {
       "col": "#4F0E73",
       "detail": {
         "u": "Twenty years of field records exist in Bahraich. Every year they go unstudied is a year of evidence that never reaches the people writing policy.",
-        "what": "A named research partnership on a live programme — co-designed questions, access to field data and longitudinal records, and co-publication.",
+        "what": "A named research partnership on a live programme - co-designed questions, access to field data and longitudinal records, and co-publication.",
         "why": "Practice that is never studied repeats its own mistakes. Study that never touches practice generalises badly. The pairing corrects both.",
         "when": "From the design stage, so measurement is built into the programme rather than fitted to it afterwards.",
         "where": "Field sites across Bahraich and Shravasti, with the records held at the DEHAT office and available on site.",
@@ -367,7 +367,7 @@ const EN = {
       "col": "#556223",
       "detail": {
         "u": "Small, well-scoped contributions compound. Most of what a field team needs is finishable in weeks.",
-        "what": "A defined piece of work — field, research, documentation, design or translation — on site or remotely.",
+        "what": "A defined piece of work - field, research, documentation, design or translation - on site or remotely.",
         "why": "Capacity is the binding constraint more often than money. An extra pair of hands moves a real deadline.",
         "when": "Rolling. Remote work can start almost immediately; on-site placements need lead time.",
         "where": "Bahraich, or anywhere with a connection for remote roles.",
@@ -438,10 +438,10 @@ const EN = {
       "col": "#4F0E73",
       "detail": {
         "u": "A legacy is the only gift that is decided calmly, years in advance, by someone with nothing left to gain from it. It is also the rarest, because almost nobody is ever asked.",
-        "what": "A bequest to DEHAT written into your will — a fixed sum, a share of the residue, or a named asset.",
+        "what": "A bequest to DEHAT written into your will - a fixed sum, a share of the residue, or a named asset.",
         "why": "Field work runs on money that arrives in one-year pieces. A legacy is the one form of support that can be committed to a horizon longer than any grant cycle, which is the horizon the change actually takes.",
         "when": "Whenever you next write or revise your will. Telling us is optional, but it lets us plan and lets you say what the gift is for.",
-        "where": "The registered office in Bahraich holds the society’s registration, PAN and audited accounts — everything your lawyer will ask for.",
+        "where": "The registered office in Bahraich holds the society’s registration, PAN and audited accounts - everything your lawyer will ask for.",
         "how": "Ask us for the exact legal name, registration number and clause wording to give your lawyer. We do not draft wills and we do not give legal advice; we give your lawyer what they need and step back."
       }
     },
@@ -457,9 +457,9 @@ const EN = {
       "detail": {
         "u": "A wedding, a birthday, an anniversary or a memorial redirected once can fund a whole cycle of one intervention.",
         "what": "Guests asked to give to DEHAT instead of bringing shagun or a gift, on the occasion and in the name of the person or couple marking it.",
-        "why": "It turns a private day into a public one, and reaches people the field team would not otherwise meet — but only if every gift is given directly. We cannot receipt, or safely bank, a sum collected in cash or by hand and passed to us afterward; the rule that lets us give a giver their own tax receipt requires their name against their own amount.",
+        "why": "It turns a private day into a public one, and reaches people the field team would not otherwise meet - but only if every gift is given directly. We cannot receipt, or safely bank, a sum collected in cash or by hand and passed to us afterward; the rule that lets us give a giver their own tax receipt requires their name against their own amount.",
         "when": "Four to six weeks of notice lets us prepare a page and the material, and, where possible, a voice from the field.",
-        "where": "Your venue, online, or in Bahraich. The giving itself always lands directly in DEHAT's own account — never in a personal one, even briefly, even in trust.",
+        "where": "Your venue, online, or in Bahraich. The giving itself always lands directly in DEHAT's own account - never in a personal one, even briefly, even in trust.",
         "how": "Tell us the occasion and the date. We set up a page in your name that your guests give through directly, and we handle the receipts and the follow-up."
       }
     },
@@ -474,9 +474,9 @@ const EN = {
       "detail": {
         "u": "A comedian's set, a musician's show or a filmmaker's premiere can hand this work an audience an appeal letter never reaches.",
         "what": "A show, a screening, a livestream or a piece of released work dedicated to DEHAT's communities, with the audience giving directly rather than through the artist.",
-        "why": "An audience that already trusts an artist rarely meets an NGO on its own terms. What we cannot do is bank a sum an artist collected and hands over afterward — every gift has to be given by the person giving it, in their own name, for the same reason a wedding or birthday gift does.",
+        "why": "An audience that already trusts an artist rarely meets an NGO on its own terms. What we cannot do is bank a sum an artist collected and hands over afterward - every gift has to be given by the person giving it, in their own name, for the same reason a wedding or birthday gift does.",
         "when": "Tell us the date as soon as it is fixed; four weeks lets us prepare material and, for a livestream or a large show, a recorded message from the field.",
-        "where": "Wherever your audience already is — a venue, a stream, a release. The giving itself happens on DEHAT's own page, not at the door or in the artist's account.",
+        "where": "Wherever your audience already is - a venue, a stream, a release. The giving itself happens on DEHAT's own page, not at the door or in the artist's account.",
         "how": "Tell us the date, the format and the expected reach. We give you a dedicated page and link to point your audience to, branding you can use without asking twice, and a running total you and they can both see."
       }
     },
@@ -491,7 +491,7 @@ const EN = {
       "col": "#D2305C",
       "detail": {
         "u": "The distance between an investor and the person their money reached is usually never closed. It should be.",
-        "what": "A structured meeting — in person or online — with the people and communities your support reached.",
+        "what": "A structured meeting - in person or online - with the people and communities your support reached.",
         "why": "Accountability runs both ways. Seeing the outcome changes how the next decision is made.",
         "when": "Arranged around the community’s calendar, never around the visitor’s convenience alone.",
         "where": "In the villages themselves, or over a call where travel is not possible.",
@@ -512,7 +512,7 @@ const EN = {
         "what": "A workplace commitment against child labour and child sexual abuse, with the policy and training to hold it.",
         "why": "A stated position gives employees a route to raise something they would otherwise stay quiet about.",
         "when": "Before an incident, not after. Policy written under pressure protects nobody.",
-        "where": "Your workplace and its allied spaces — contractors, vendors, transport, housing.",
+        "where": "Your workplace and its allied spaces - contractors, vendors, transport, housing.",
         "how": "We share the model commitment, help adapt it, and train the people who will have to act on it."
       }
     },
@@ -552,7 +552,7 @@ const EN = {
       }
     }
   ],
-  "sopTitle": "In a Line or Two — What Are You Hoping Will Change?",
+  "sopTitle": "In a Line or Two - What Are You Hoping Will Change?",
   "sopSub": "This is the only part we read closely. Write it however you like; there is no right answer.",
   "sopPlaceholder": "For example: we want our Corporate Social Responsibility spend in Bahraich to go somewhere the evidence is public, and we would like to start with one block.",
   "sopPrompts": [
@@ -666,9 +666,9 @@ const EN = {
   "fPanHint": "Ten characters, as printed on the card",
   "fAadhaar": "Masked Aadhaar",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "Last four digits only. Never enter your full Aadhaar number here — we neither need it nor keep it.",
+  "fAadhaarNote": "Last four digits only. Never enter your full Aadhaar number here - we neither need it nor keep it.",
   "fInrDocs": "PAN and Masked Aadhaar Scans",
-  "fInrDocsNote": "Attach a scan of your PAN card and a masked Aadhaar (last four digits visible only — UIDAI issues one from its website). Held for the 80G receipt, the Form 10BD statement and the audit, and destroyed when the retention period ends.",
+  "fInrDocsNote": "Attach a scan of your PAN card and a masked Aadhaar (last four digits visible only - UIDAI issues one from its website). Held for the 80G receipt, the Form 10BD statement and the audit, and destroyed when the retention period ends.",
   "fIdRefHint": "As printed on the passport",
   "fPassport": "Passport Scan, Both Sides",
   "fPassportNote": "Required for foreign contributions. Attach the photograph page and the address page. Held only for the Foreign Contribution (Regulation) Act return and the audit, and destroyed when the retention period ends.",
@@ -743,7 +743,7 @@ const EN = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "Member.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -845,7 +845,7 @@ const EN = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -993,7 +993,7 @@ const EN = {
     }
   ],
   "ecosystemTitle": "Government Departments, Statutory Institutions & Community Systems We Engage With",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -1319,7 +1319,7 @@ const HI = {
   "tabCtas": {
     "case": {
       "t": "अब भी तय नहीं कर पा रहे कि यह तर्क ठीक बैठता है?",
-      "s": "इस पेज़ पर किसी भी दावे की जांच मांगिए — कोई आंकड़ा, कोई ज़िला, कोई तरीका। हम स्रोत बताएंगे, या साफ़ कहेंगे कि कोई दावा जितना लगता है उससे कमज़ोर है।",
+      "s": "इस पेज़ पर किसी भी दावे की जांच मांगिए - कोई आंकड़ा, कोई ज़िला, कोई तरीका। हम स्रोत बताएंगे, या साफ़ कहेंगे कि कोई दावा जितना लगता है उससे कमज़ोर है।",
       "a": "इस तर्क के बारे में पूछें",
       "subj": "निवेश के तर्क के बारे में एक प्रश्न",
       "b": "निवेश जारी रखें",
@@ -1429,7 +1429,7 @@ const HI = {
   "legacy": {
     "eyebrow": "विरासत-दान",
     "title": "वह दान जो देने वाले से अधिक जीता है।",
-    "body": "लगभग किसी से पूछा ही नहीं जाता, इसलिए लगभग कोई करता भी नहीं। वसीयत में लिखा दान अकेला ऐसा सहयोग है जिसे किसी भी अनुदान-चक्र से लंबी अवधि के लिए तय किया जा सकता है — और यही अवधि इस काम को लगती है। हमसे सही वैधानिक नाम, पंजीकरण संख्या और खंड-भाषा माँगिए, और उसे अपने वकील को दे दीजिए।",
+    "body": "लगभग किसी से पूछा ही नहीं जाता, इसलिए लगभग कोई करता भी नहीं। वसीयत में लिखा दान अकेला ऐसा सहयोग है जिसे किसी भी अनुदान-चक्र से लंबी अवधि के लिए तय किया जा सकता है - और यही अवधि इस काम को लगती है। हमसे सही वैधानिक नाम, पंजीकरण संख्या और खंड-भाषा माँगिए, और उसे अपने वकील को दे दीजिए।",
     "action": "विरासत-दान का रास्ता पढ़िए",
     "note": "हम वसीयत नहीं लिखते और न विधिक सलाह देते हैं।"
   },
@@ -1438,13 +1438,13 @@ const HI = {
   "routeLeads": {
     "csr": "अनुसूची VII का धन वित्तीय वर्ष शुरू होने से महीनों पहले तय हो जाता है। निर्णय यहाँ जल्दी लाइए, तो पहला वर्ष योजना से चलेगा, जुगाड़ से नहीं।",
     "foundation": "बहुवर्षीय और तंत्र-स्तर की फंडिंग को ऐसा साथी चाहिए जो बताए कि पिछले अनुदान का क्या हुआ। 2005–06 से DEHAT को मिला हर रुपया रिकॉर्ड पर है, हस्ताक्षरित तुलन-पत्र के साथ।",
-    "govt": "कोई विभाग शायद ही अपनी ही फ़ाइल में चूकता है। वह चूकता है अगले विभाग को सौंपते समय — और ठीक यही वह जगह है जहाँ अभिसरण का काम होता है।",
+    "govt": "कोई विभाग शायद ही अपनी ही फ़ाइल में चूकता है। वह चूकता है अगले विभाग को सौंपते समय - और ठीक यही वह जगह है जहाँ अभिसरण का काम होता है।",
     "individual": "आपको बड़ी राशि या खाली महीने की ज़रूरत नहीं। ज़रूरत ऐसी जगह की है जहाँ प्रमाण सार्वजनिक हो और उत्तर वास्तविक।",
     "research": "ज़्यादातर ग्रामीण अधिकार-आँकड़े उसी साल गुम हो जाते हैं जिस साल फंडर की रिपोर्ट दाख़िल होती है। यह वह दुर्लभ फ़ील्ड-साइट है जहाँ बीस साल का डेटा नहीं गुमा।",
     "student": "आपकी उम्र के ज़्यादातर लोग अभी केस-स्टडी पढ़ रहे हैं। आप किसी एक के पास बैठे हो सकते हैं।",
     "school": "आपके विद्यार्थी पहले से किसी ऐसे साथी को जानते हैं जो अब कक्षा में नहीं है। जब कोई इस पर काम करता है, तो यही होता है।",
     "peer": "आपसे यह नहीं कहा जा रहा कि जो कहीं और पहले से काम कर रहा है उसे फिर से बनाइए। आपसे कहा जा रहा है कि उसे अपनाइए।",
-    "community": "यह संगठन आपका है, सवाल पूछने के लिए। सदस्यता, शिकायत या अनुरोध — तीनों रास्ते हैं, और तीनों का उत्तर आता है।"
+    "community": "यह संगठन आपका है, सवाल पूछने के लिए। सदस्यता, शिकायत या अनुरोध - तीनों रास्ते हैं, और तीनों का उत्तर आता है।"
   },
   "composeTitle": "अब बताइए कि आप क्या सोच रहे हैं",
   "composeSub": "ऊपर से लागू रास्ते चुनिए, फिर एक-दो पंक्ति लिखिए। भेजने तक कुछ नहीं जाता।",
@@ -1574,7 +1574,7 @@ const HI = {
       "col": "#4F0E73",
       "detail": {
         "u": "बीस वर्षों का फ़ील्ड रिकॉर्ड मौजूद है। हर बिना-अध्ययन बीता वर्ष एक ऐसा वर्ष है जिसका प्रमाण अप्रकाशित रह जाता है।",
-        "what": "किसी चालू कार्यक्रम पर नामित शोध साझेदारी — साथ मिलकर तय प्रश्न, फ़ील्ड डेटा तक पहुँच, और सह-प्रकाशन।",
+        "what": "किसी चालू कार्यक्रम पर नामित शोध साझेदारी - साथ मिलकर तय प्रश्न, फ़ील्ड डेटा तक पहुँच, और सह-प्रकाशन।",
         "why": "बिना अध्ययन का अभ्यास अपनी ही गलतियाँ दोहराता है; बिना अभ्यास का अध्ययन गलत सामान्यीकरण करता है।",
         "when": "डिज़ाइन चरण से, ताकि मापन कार्यक्रम में पहले से बना हो।",
         "where": "बहराइच और श्रावस्ती के फ़ील्ड स्थल; रिकॉर्ड DEHAT कार्यालय में।",
@@ -1706,7 +1706,7 @@ const HI = {
       "col": "#EAAE28",
       "detail": {
         "u": "अनुदानों के बीच फ़ील्ड का खर्च नहीं रुकता। नियमित सहयोग ही टीम को उन महीनों में बनाए रखता है।",
-        "what": "एक बार का या नियमित सहयोग — अप्रतिबंधित, या किसी नामित कार्यक्रम के लिए।",
+        "what": "एक बार का या नियमित सहयोग - अप्रतिबंधित, या किसी नामित कार्यक्रम के लिए।",
         "why": "अप्रतिबंधित धन वही ढकता है जो प्रतिबंधित अनुदान नहीं ढकते: चक्रों के बीच वेतन, यात्रा, किसी खुले मामले की अगली मुलाक़ात।",
         "when": "कभी भी। नियमित सहयोग सबसे उपयोगी है क्योंकि उसी की योजना बनाई जा सकती है।",
         "where": "भारतीय अंशदान 80G खाते में; विदेशी अंशदान केवल निर्दिष्ट FCRA खाते में।",
@@ -1723,7 +1723,7 @@ const HI = {
       "col": "#4F0E73",
       "detail": {
         "u": "विरासत-दान ही वह अकेला दान है जो वर्षों पहले, शांत मन से, ऐसे व्यक्ति द्वारा तय होता है जिसे उससे कुछ नहीं मिलना। और यही सबसे दुर्लभ है, क्योंकि कोई पूछता ही नहीं।",
-        "what": "आपकी वसीयत में DEHAT के लिए लिखा गया दान — एक निश्चित राशि, शेष संपत्ति का हिस्सा, या कोई नामित संपत्ति।",
+        "what": "आपकी वसीयत में DEHAT के लिए लिखा गया दान - एक निश्चित राशि, शेष संपत्ति का हिस्सा, या कोई नामित संपत्ति।",
         "why": "फ़ील्ड का काम एक-एक वर्ष के टुकड़ों में आने वाले धन पर चलता है। विरासत-दान अकेला ऐसा सहयोग है जिसे किसी भी अनुदान-चक्र से लंबी अवधि के लिए तय किया जा सकता है।",
         "when": "जब भी आप अगली बार वसीयत लिखें या संशोधित करें। हमें बताना अनिवार्य नहीं, पर बताने से योजना बन पाती है।",
         "where": "बहराइच स्थित पंजीकृत कार्यालय में संस्था का पंजीकरण, PAN और लेखा-परीक्षित लेखे उपलब्ध हैं।",
@@ -1742,9 +1742,9 @@ const HI = {
       "detail": {
         "u": "एक बार पुनर्निर्देशित शादी, जन्मदिन, वर्षगाँठ या स्मृति-आयोजन किसी एक हस्तक्षेप का पूरा चक्र चला सकता है।",
         "what": "मेहमानों से शगुन या उपहार लाने के बजाय, उस अवसर पर और उस व्यक्ति या जोड़े के नाम पर सीधे DEHAT को देने का अनुरोध।",
-        "why": "यह एक निजी दिन को सार्वजनिक बना देता है, और उन लोगों तक पहुँचता है जिन तक फ़ील्ड टीम अन्यथा नहीं पहुँच पाती — पर यह तभी काम करता है जब हर योगदान सीधे दिया जाए। हम नकद में या हाथों-हाथ इकट्ठा की गई और बाद में सौंपी गई राशि की रसीद नहीं दे सकते, न ही उसे सुरक्षित रूप से जमा कर सकते हैं; जो नियम किसी दानदाता को उसकी अपनी कर-रसीद देने देता है, उसके लिए उसका अपना नाम उसकी अपनी राशि के सामने दर्ज होना ज़रूरी है।",
+        "why": "यह एक निजी दिन को सार्वजनिक बना देता है, और उन लोगों तक पहुँचता है जिन तक फ़ील्ड टीम अन्यथा नहीं पहुँच पाती - पर यह तभी काम करता है जब हर योगदान सीधे दिया जाए। हम नकद में या हाथों-हाथ इकट्ठा की गई और बाद में सौंपी गई राशि की रसीद नहीं दे सकते, न ही उसे सुरक्षित रूप से जमा कर सकते हैं; जो नियम किसी दानदाता को उसकी अपनी कर-रसीद देने देता है, उसके लिए उसका अपना नाम उसकी अपनी राशि के सामने दर्ज होना ज़रूरी है।",
         "when": "चार से छह सप्ताह पहले बताने पर हम एक पेज और सामग्री तैयार कर पाते हैं, और जहाँ संभव हो, फ़ील्ड से एक आवाज़ भी।",
-        "where": "आपका आयोजन-स्थल, ऑनलाइन, या बहराइच में। योगदान हमेशा सीधे DEHAT के अपने खाते में ही आता है — किसी निजी खाते में कभी नहीं, चाहे कुछ पल के लिए ही क्यों न हो।",
+        "where": "आपका आयोजन-स्थल, ऑनलाइन, या बहराइच में। योगदान हमेशा सीधे DEHAT के अपने खाते में ही आता है - किसी निजी खाते में कभी नहीं, चाहे कुछ पल के लिए ही क्यों न हो।",
         "how": "हमें अवसर और तारीख़ बताइए। हम आपके नाम पर एक पेज बनाते हैं जिस पर आपके मेहमान सीधे दे सकें, और रसीद व फॉलो-अप हम संभालते हैं।"
       }
     },
@@ -1759,9 +1759,9 @@ const HI = {
       "detail": {
         "u": "किसी हास्य-कलाकार का सेट, किसी संगीतकार का शो या किसी फ़िल्मकार का प्रीमियर इस काम को वह दर्शक दे सकता है जहाँ कोई अपील-पत्र कभी नहीं पहुँचता।",
         "what": "DEHAT के समुदायों के नाम समर्पित एक शो, स्क्रीनिंग, लाइवस्ट्रीम या प्रकाशित कृति, जिसमें दर्शक कलाकार के ज़रिए नहीं बल्कि सीधे देते हैं।",
-        "why": "जिस दर्शक-वर्ग को पहले से ही किसी कलाकार पर भरोसा है, वह किसी NGO से अपनी शर्तों पर शायद ही कभी मिलता है। जो हम नहीं कर सकते, वह है किसी कलाकार द्वारा इकट्ठा की गई और बाद में सौंपी गई राशि जमा करना — हर योगदान उसी व्यक्ति को अपने नाम से देना होता है, ठीक उसी कारण से जिस कारण शादी या जन्मदिन के उपहार में होता है।",
+        "why": "जिस दर्शक-वर्ग को पहले से ही किसी कलाकार पर भरोसा है, वह किसी NGO से अपनी शर्तों पर शायद ही कभी मिलता है। जो हम नहीं कर सकते, वह है किसी कलाकार द्वारा इकट्ठा की गई और बाद में सौंपी गई राशि जमा करना - हर योगदान उसी व्यक्ति को अपने नाम से देना होता है, ठीक उसी कारण से जिस कारण शादी या जन्मदिन के उपहार में होता है।",
         "when": "तारीख़ तय होते ही बताइए; चार सप्ताह में हम सामग्री, और लाइवस्ट्रीम या बड़े शो के लिए फ़ील्ड से एक रिकॉर्ड किया संदेश तैयार कर लेते हैं।",
-        "where": "जहाँ भी आपका दर्शक-वर्ग पहले से मौजूद हो — कोई स्थल, कोई स्ट्रीम, कोई रिलीज़। देना DEHAT के अपने पेज पर होता है, न कि दरवाज़े पर या कलाकार के खाते में।",
+        "where": "जहाँ भी आपका दर्शक-वर्ग पहले से मौजूद हो - कोई स्थल, कोई स्ट्रीम, कोई रिलीज़। देना DEHAT के अपने पेज पर होता है, न कि दरवाज़े पर या कलाकार के खाते में।",
         "how": "हमें तारीख़, प्रारूप और अनुमानित पहुँच बताइए। हम आपको एक समर्पित पेज और लिंक देंगे जिस पर आप अपने दर्शकों को भेज सकें, ऐसी ब्रांडिंग जिसे आप बिना दोबारा पूछे इस्तेमाल कर सकें, और एक चालू योग जिसे आप और वे दोनों देख सकें।"
       }
     },
@@ -1837,7 +1837,7 @@ const HI = {
       }
     }
   ],
-  "sopTitle": "एक-दो पंक्तियों में — आप क्या बदलते देखना चाहते हैं?",
+  "sopTitle": "एक-दो पंक्तियों में - आप क्या बदलते देखना चाहते हैं?",
   "sopSub": "हम इसी हिस्से को ध्यान से पढ़ते हैं। जैसे चाहें लिखिए; कोई सही उत्तर नहीं है।",
   "sopPlaceholder": "उदाहरण: हम चाहते हैं कि बहराइच में हमारा कॉर्पोरेट सामाजिक उत्तरदायित्व व्यय वहाँ जाए जहाँ प्रमाण सार्वजनिक हों, और एक ब्लॉक से शुरुआत करें।",
   "sopPrompts": [
@@ -1951,9 +1951,9 @@ const HI = {
   "fPanHint": "दस अक्षर, जैसे कार्ड पर छपे हैं",
   "fAadhaar": "मास्क किया आधार",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "केवल अंतिम चार अंक। पूरा आधार नंबर यहाँ कभी न भरें — न हमें उसकी ज़रूरत है, न हम उसे रखते हैं।",
+  "fAadhaarNote": "केवल अंतिम चार अंक। पूरा आधार नंबर यहाँ कभी न भरें - न हमें उसकी ज़रूरत है, न हम उसे रखते हैं।",
   "fInrDocs": "PAN और मास्क किए आधार के स्कैन",
-  "fInrDocsNote": "PAN कार्ड का स्कैन और मास्क किया आधार संलग्न कीजिए (केवल अंतिम चार अंक दिखें — UIDAI की वेबसाइट से डाउनलोड किया जा सकता है)। केवल 80G रसीद, Form 10BD और लेखा-परीक्षा के लिए रखा जाता है।",
+  "fInrDocsNote": "PAN कार्ड का स्कैन और मास्क किया आधार संलग्न कीजिए (केवल अंतिम चार अंक दिखें - UIDAI की वेबसाइट से डाउनलोड किया जा सकता है)। केवल 80G रसीद, Form 10BD और लेखा-परीक्षा के लिए रखा जाता है।",
   "fIdRefHint": "पासपोर्ट पर छपा हुआ",
   "fPassport": "पासपोर्ट स्कैन, दोनों ओर",
   "fPassportNote": "विदेशी अंशदान के लिए आवश्यक। फ़ोटो वाला पृष्ठ और पता वाला पृष्ठ संलग्न कीजिए। केवल FCRA विवरणी और लेखा-परीक्षा के लिए रखा जाता है।",
@@ -2028,7 +2028,7 @@ const HI = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "सदस्य।",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -2049,7 +2049,7 @@ const HI = {
     }
   ],
   "techTitle": "सॉफ़्टवेयर और क्लाउड दान साझेदार",
-  "techNote": "DEHAT को दान में मिले उपकरण और क्लाउड क्षमता — इसीलिए हर रुपये का अधिक हिस्सा काम तक पहुँचता है।",
+  "techNote": "DEHAT को दान में मिले उपकरण और क्लाउड क्षमता - इसीलिए हर रुपये का अधिक हिस्सा काम तक पहुँचता है।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -2130,7 +2130,7 @@ const HI = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "टाटा इंस्टिट्यूट ऑफ़ सोशल साइंसेज़ का विकास संस्थाओं के मूल्यांकन एवं सूचीयन मानक ढांचा।",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -2278,7 +2278,7 @@ const HI = {
     }
   ],
   "ecosystemTitle": "सरकारी विभाग, वैधानिक संस्थाएँ और सामुदायिक व्यवस्थाएँ जिनके साथ हम जुड़े हैं",
-  "ecosystemNote": "DEHAT और जिन समुदायों के साथ यह काम करता है, वे ग्राम, ब्लॉक, तहसील, ज़िला और राज्य स्तर की निम्नलिखित संस्थाओं के सक्रिय भागीदार हैं — और इनमें नियमित रूप से आमंत्रित किए जाते हैं। कृषि और बागवानी से जुड़ी संस्थाओं को यहाँ अलग सूची के बजाय शामिल किया गया है, क्योंकि DEHAT का आजीविका और जलवायु-सुदृढ़ता से जुड़ा कार्य उसी संस्थागत ढाँचे से होकर गुज़रता है जिससे बाल-संरक्षण का कार्य गुज़रता है।",
+  "ecosystemNote": "DEHAT और जिन समुदायों के साथ यह काम करता है, वे ग्राम, ब्लॉक, तहसील, ज़िला और राज्य स्तर की निम्नलिखित संस्थाओं के सक्रिय भागीदार हैं - और इनमें नियमित रूप से आमंत्रित किए जाते हैं। कृषि और बागवानी से जुड़ी संस्थाओं को यहाँ अलग सूची के बजाय शामिल किया गया है, क्योंकि DEHAT का आजीविका और जलवायु-सुदृढ़ता से जुड़ा कार्य उसी संस्थागत ढाँचे से होकर गुज़रता है जिससे बाल-संरक्षण का कार्य गुज़रता है।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -2567,7 +2567,7 @@ const HI = {
     }
   ],
   "answerTitle": "हम किसके प्रति उत्तरदायी हैं",
-  "answerSub": "पूरा शासन चार्ट, वार्षिक जवाबदेही चक्र और जो अभी प्रकाशित नहीं है उसकी खुली पंजी — सब पारदर्शिता पृष्ठ पर हैं।",
+  "answerSub": "पूरा शासन चार्ट, वार्षिक जवाबदेही चक्र और जो अभी प्रकाशित नहीं है उसकी खुली पंजी - सब पारदर्शिता पृष्ठ पर हैं।",
   "answerGo": "पारदर्शिता पृष्ठ खोलें"
 };
 
@@ -3314,7 +3314,7 @@ const ES = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "Miembro.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -3416,7 +3416,7 @@ const ES = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -3564,7 +3564,7 @@ const ES = {
     }
   ],
   "ecosystemTitle": "Departamentos gubernamentales, instituciones estatutarias y sistemas comunitarios con los que colaboramos",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -3891,7 +3891,7 @@ const FR = {
     "case": {
           
           "t": "Vous hésitez encore sur la solidité de cet argumentaire ?",
-          "s": "Demandez-nous de justifier toute affirmation précise de cette page — un chiffre, un district, un mécanisme. Nous indiquons la source ou disons en toute franchise où une affirmation est plus fragile qu’il n’y paraît.",
+          "s": "Demandez-nous de justifier toute affirmation précise de cette page - un chiffre, un district, un mécanisme. Nous indiquons la source ou disons en toute franchise où une affirmation est plus fragile qu’il n’y paraît.",
           "a": "Poser une question sur cet argumentaire",
           "subj": "Une question sur les arguments pour investir",
           "b": "Continuer vers l’investissement",
@@ -4146,7 +4146,7 @@ const FR = {
       "col": "#4F0E73",
       "detail": {
         "u": "Vingt ans d'enregistrements de terrain existent à Bahraich. Chaque année où ces politiques ne sont pas étudiées est une année de preuves qui ne parviennent jamais à ceux qui rédigent les politiques.",
-        "what": "Un partenariat de recherche nommé sur un programme en direct — questions co-conçues, accès aux données de terrain et aux enregistrements longitudinaux, et co-publication.",
+        "what": "Un partenariat de recherche nommé sur un programme en direct - questions co-conçues, accès aux données de terrain et aux enregistrements longitudinaux, et co-publication.",
         "why": "Une pratique qui n’est jamais étudiée répète ses propres erreurs. Une étude qui ne touche jamais à la pratique généralise mal. L'appariement corrige les deux.",
         "when": "Dès la phase de conception, la mesure est donc intégrée au programme plutôt que d’y être intégrée par la suite.",
         "where": "Sites de terrain à Bahraich et Shravasti, avec les dossiers conservés au bureau DEHAT et disponibles sur place.",
@@ -4525,7 +4525,7 @@ const FR = {
   "fAadhaarHint": "XXXX XXXX 1234",
   "fAadhaarNote": "Quatre derniers chiffres uniquement. N’entrez jamais votre numéro Aadhaar complet ici – nous n’en avons pas besoin et ne le conservons pas.",
   "fInrDocs": "Scans PAN et Aadhaar masqués",
-  "fInrDocsNote": "Joignez un scan de votre carte PAN et un Aadhaar masqué (les quatre derniers chiffres visibles uniquement — l'UIDAI en émet un sur son site Web). Conservé pour le récépissé 80G, le relevé Form 10BD et l'audit, et détruit à la fin de la période de conservation.",
+  "fInrDocsNote": "Joignez un scan de votre carte PAN et un Aadhaar masqué (les quatre derniers chiffres visibles uniquement - l'UIDAI en émet un sur son site Web). Conservé pour le récépissé 80G, le relevé Form 10BD et l'audit, et détruit à la fin de la période de conservation.",
   "fIdRefHint": "Tel qu'imprimé sur le passeport",
   "fPassport": "Numérisation du passeport, recto-verso",
   "fPassportNote": "Obligatoire pour les contributions étrangères. Joindre la page de photographie et la page d'adresse. Conservé uniquement pour la déclaration de la loi sur les contributions étrangères (réglementation) et l'audit, et détruit à la fin de la période de conservation.",
@@ -4600,7 +4600,7 @@ const FR = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "Membre.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -4702,7 +4702,7 @@ const FR = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -4850,7 +4850,7 @@ const FR = {
     }
   ],
   "ecosystemTitle": "Services gouvernementaux, institutions statutaires et systèmes communautaires avec lesquels nous collaborons",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -5156,7 +5156,7 @@ const RU = {
       "k": "давать",
       "label": "Инвестировать",
       "detail": {
-        "u": "Затраты на местах не делают пауз между грантами. Регулярные инвестиции — это то, что удерживает команду на месте после окончания гранта.",
+        "u": "Затраты на местах не делают пауз между грантами. Регулярные инвестиции - это то, что удерживает команду на месте после окончания гранта.",
         "what": "Одноразовые или периодические инвестиции, неограниченные или направленные на определенную программу.",
         "why": "Неограниченные средства покрывают пробелы в отпусках с ограниченными грантами: зарплата между циклами, командировки, ведение дела.",
         "when": "В любое время. Регулярные инвестиции являются наиболее полезными, поскольку их можно планировать.",
@@ -5177,7 +5177,7 @@ const RU = {
     "case": {
           
           "t": "Всё ещё решаете, убедительны ли эти аргументы?",
-          "s": "Попросите нас подтвердить любое конкретное утверждение на этой странице — цифру, округ, механизм. Мы укажем источник или прямо скажем, где данные менее однозначны, чем кажутся.",
+          "s": "Попросите нас подтвердить любое конкретное утверждение на этой странице - цифру, округ, механизм. Мы укажем источник или прямо скажем, где данные менее однозначны, чем кажутся.",
           "a": "Спросить об этих доводах",
           "subj": "Вопрос об аргументах в пользу инвестиций",
           "b": "Перейти к инвестированию",
@@ -5287,7 +5287,7 @@ const RU = {
   "legacy": {
     "eyebrow": "Наследие",
     "title": "Подарок, который переживет дарителя.",
-    "body": "Почти никого никогда не спрашивают, поэтому почти никто никогда этого не делает. Завещание, записанное в вашем завещании, — это единственная форма поддержки, которая может быть рассчитана на более длительный период, чем любой цикл грантов — а именно этот горизонт фактически занимает эта работа. Попросите у нас юридическое название, регистрационный номер и формулировку пункта и передайте их своему адвокату.",
+    "body": "Почти никого никогда не спрашивают, поэтому почти никто никогда этого не делает. Завещание, записанное в вашем завещании, - это единственная форма поддержки, которая может быть рассчитана на более длительный период, чем любой цикл грантов - а именно этот горизонт фактически занимает эта работа. Попросите у нас юридическое название, регистрационный номер и формулировку пункта и передайте их своему адвокату.",
     "action": "Прочтите устаревший маршрут",
     "note": "Мы не составляем завещания и не даем юридических консультаций."
   },
@@ -5302,7 +5302,7 @@ const RU = {
     "student": "Большинство людей вашего возраста все еще читают тематические исследования. Вы могли бы сидеть рядом с одним.",
     "school": "Ваши ученики уже знают одноклассника, которого больше нет в классе. Вот что происходит, когда кто-то действует в соответствии с этим.",
     "peer": "Вас не просят заново изобретать то, что уже работает где-то еще. Вас просят принять это.",
-    "community": "Это ваша организация, которую следует подвергнуть сомнению. Членство, беспокойство или просьба — все это пути, и все три получают ответ."
+    "community": "Это ваша организация, которую следует подвергнуть сомнению. Членство, беспокойство или просьба - все это пути, и все три получают ответ."
   },
   "composeTitle": "Теперь расскажите нам, что вы имеете в виду",
   "composeSub": "Выберите подходящие способы из приведенных выше, затем напишите пару строк. Сообщение собирается само собой, и ничего не отправляется, пока вы не нажмете «Отправить» в своем почтовом приложении.",
@@ -5337,7 +5337,7 @@ const RU = {
       "label": "Исследовательское или академическое учреждение",
       "hint": "Полевые данные, продольное исследование, совместная публикация",
       "detail": {
-        "u": "Существуют полевые записи двух десятилетий. Каждый год, который они остаются неисследованными, — это год доказательств, которые остаются неопубликованными.",
+        "u": "Существуют полевые записи двух десятилетий. Каждый год, который они остаются неисследованными, - это год доказательств, которые остаются неопубликованными.",
         "what": "Совместное исследование в рамках живой программы с доступом к полевым данным и продольным записям.",
         "why": "Практика без изучения повторяется. Обучение без практики обобщает плохо. Соединение исправляет и то, и другое.",
         "when": "Начиная с этапа проектирования, измерения встроены в программу, а не устанавливаются впоследствии.",
@@ -5431,8 +5431,8 @@ const RU = {
       ],
       "col": "#4F0E73",
       "detail": {
-        "u": "В Бахрейхе существуют двадцатилетние полевые записи. Каждый год, который они остаются неисследованными, — это год фактов, которые никогда не доходят до людей, пишущих политику.",
-        "what": "Именованное исследовательское партнерство в прямой программе — совместная разработка вопросов, доступ к полевым данным и продольным записям, а также совместная публикация.",
+        "u": "В Бахрейхе существуют двадцатилетние полевые записи. Каждый год, который они остаются неисследованными, - это год фактов, которые никогда не доходят до людей, пишущих политику.",
+        "what": "Именованное исследовательское партнерство в прямой программе - совместная разработка вопросов, доступ к полевым данным и продольным записям, а также совместная публикация.",
         "why": "Практика, которая никогда не изучается, повторяет свои ошибки. Исследование, которое никогда не касается практики, плохо обобщает. Соединение исправляет и то, и другое.",
         "when": "Начиная с этапа проектирования, измерения встроены в программу, а не встраиваются в нее впоследствии.",
         "where": "Полевые площадки в Бахрейхе и Шравасти, записи хранятся в офисе DEHAT и доступны на месте.",
@@ -5454,7 +5454,7 @@ const RU = {
       "detail": {
         "u": "Все, что опубликовано на этом сайте, можно отследить до подписанного документа. Спросите, и вы получите документ, а не резюме.",
         "what": "Проверенные счета, оценки, отчеты по программам и исходные записи, указанные в реестре.",
-        "why": "Доверие, которое невозможно проверить, — это не доверие. Каждое утверждение здесь должно быть проверено человеком, сомневающимся в нем.",
+        "why": "Доверие, которое невозможно проверить, - это не доверие. Каждое утверждение здесь должно быть проверено человеком, сомневающимся в нем.",
         "when": "В любое время. Ничто здесь не подвергается эмбарго и ничто не зависит от переговоров о финансировании.",
         "where": "Отправлено по электронной почте; оригиналы доступны в офисе в Бахрейхе для всех, кто хочет их увидеть.",
         "how": "Назовите год, программу или документ. Если фигура еще не оцифрована, мы говорим об этом и отправляем скан."
@@ -5510,7 +5510,7 @@ const RU = {
       "col": "#556223",
       "detail": {
         "u": "Небольшие, хорошо масштабированные вклады складываются. Большую часть того, что нужно полевой команде, можно выполнить за несколько недель.",
-        "what": "Определенная часть работы — поле, исследование, документация, дизайн или перевод — на месте или удаленно.",
+        "what": "Определенная часть работы - поле, исследование, документация, дизайн или перевод - на месте или удаленно.",
         "why": "Мощность является связующим ограничением чаще, чем деньги. Дополнительная пара рук сдвигает реальный срок.",
         "when": "Роллинг. Удаленная работа может начаться практически сразу; размещение на месте требует времени.",
         "where": "Бахрайх или любое другое место, где есть подключение для удаленных ролей.",
@@ -5563,7 +5563,7 @@ const RU = {
       ],
       "col": "#EAAE28",
       "detail": {
-        "u": "Затраты на местах не делают пауз между грантами. Регулярные инвестиции — это то, что удерживает команду на месте в те месяцы, когда грант закончился, а следующий еще не начался.",
+        "u": "Затраты на местах не делают пауз между грантами. Регулярные инвестиции - это то, что удерживает команду на месте в те месяцы, когда грант закончился, а следующий еще не начался.",
         "what": "Одноразовые или периодические инвестиции, либо неограниченные, либо направленные на конкретную программу.",
         "why": "Неограниченные деньги покрывают то, на что не распространяются ограниченные гранты: зарплаты между циклами, поездки в деревню, последующие визиты по делу, которое все еще открыто.",
         "when": "В любое время. Регулярные инвестиции являются наиболее полезными из всех, потому что это единственный вид инвестиций, против которого можно планировать.",
@@ -5580,11 +5580,11 @@ const RU = {
       ],
       "col": "#4F0E73",
       "detail": {
-        "u": "Наследство — единственный подарок, решение о котором спокойно, много лет назад принимается человеком, которому уже нечего от него получить. Это еще и самый редкий вариант, потому что его почти никто никогда не спрашивает.",
-        "what": "Завещание DEHAT, записанное в вашем завещании — фиксированная сумма, доля остатка или поименованный актив.",
+        "u": "Наследство - единственный подарок, решение о котором спокойно, много лет назад принимается человеком, которому уже нечего от него получить. Это еще и самый редкий вариант, потому что его почти никто никогда не спрашивает.",
+        "what": "Завещание DEHAT, записанное в вашем завещании - фиксированная сумма, доля остатка или поименованный актив.",
         "why": "Полевые работы проводятся за счет денег, которые поступают частями по одному году. Наследие – это единственная форма поддержки, которая может быть рассчитана на более длительный период, чем любой грантовый цикл, который является горизонтом, в течение которого фактически происходят изменения.",
         "when": "Каждый раз, когда вы в следующий раз напишете или пересмотрите свое завещание. Сообщать нам об этом необязательно, но это позволяет нам спланировать и позволить вам сказать, для чего предназначен подарок.",
-        "where": "Зарегистрированный офис в Бахрейхе хранит регистрацию общества, PAN и проверенные счета — все, что запросит ваш адвокат.",
+        "where": "Зарегистрированный офис в Бахрейхе хранит регистрацию общества, PAN и проверенные счета - все, что запросит ваш адвокат.",
         "how": "Попросите нас предоставить вашему адвокату точное юридическое название, регистрационный номер и формулировку пункта. Мы не составляем завещания и не даем юридических консультаций; мы даем вашему адвокату то, что ему нужно, и отступаем."
       }
     },
@@ -5600,9 +5600,9 @@ const RU = {
       "detail": {
         "u": "Свадьба, день рождения, юбилей или мемориал, перенаправленные один раз, могут профинансировать целый цикл одного вмешательства.",
         "what": "Гости просили подарить DEHAT вместо шагуна или подарка по случаю и от имени человека или пары, отмечающих его.",
-        "why": "Он превращает частный день в публичный и достигает людей, с которыми в противном случае полевая команда не встретилась бы, — но только в том случае, если каждый подарок будет вручен напрямую. Мы не можем получить или безопасно хранить сумму, собранную наличными или вручную и переданную нам впоследствии; правило, которое позволяет нам выдавать дающему собственную налоговую квитанцию, требует, чтобы его имя было указано в счет его собственной суммы.",
+        "why": "Он превращает частный день в публичный и достигает людей, с которыми в противном случае полевая команда не встретилась бы, - но только в том случае, если каждый подарок будет вручен напрямую. Мы не можем получить или безопасно хранить сумму, собранную наличными или вручную и переданную нам впоследствии; правило, которое позволяет нам выдавать дающему собственную налоговую квитанцию, требует, чтобы его имя было указано в счет его собственной суммы.",
         "when": "Уведомление за четыре-шесть недель позволяет нам подготовить страницу и материал, а также, где это возможно, голос с мест.",
-        "where": "Место проведения, онлайн или в Бахрейхе. Само пожертвование всегда попадает непосредственно на собственный счет DEHAT — никогда на личный, даже ненадолго, даже на доверительный счет.",
+        "where": "Место проведения, онлайн или в Бахрейхе. Само пожертвование всегда попадает непосредственно на собственный счет DEHAT - никогда на личный, даже ненадолго, даже на доверительный счет.",
         "how": "Сообщите нам повод и дату. Мы создаем страницу на ваше имя, которую ваши гости пересылают напрямую, и мы занимаемся квитанциями и отслеживанием."
       }
     },
@@ -5617,9 +5617,9 @@ const RU = {
       "detail": {
         "u": "Выступление комика, шоу музыканта или премьера фильма могут вручить эту работу аудитории, до которой никогда не дойдет письмо-обращение.",
         "what": "Шоу, показ, прямая трансляция или выпущенная работа, посвященная сообществам DEHAT, при этом аудитория вносит свой вклад напрямую, а не через артиста.",
-        "why": "Аудитория, которая уже доверяет артисту, редко встречается с НПО на ее собственных условиях. Чего мы не можем сделать, так это положить в банк сумму, которую собрал художник, и передать ее потом — каждый подарок должен быть вручен человеком, который его дарит, от своего имени по той же причине, что и подарок на свадьбу или день рождения.",
-        "when": "Сообщите нам дату, как только она будет установлена; Четыре недели позволяют нам подготовить материал, а для прямой трансляции или большого шоу — записанное сообщение с мест.",
-        "where": "Где бы уже ни была ваша аудитория — место проведения, стрим, релиз. Само пожертвование происходит на собственной странице DEHAT, а не у дверей или в аккаунте артиста.",
+        "why": "Аудитория, которая уже доверяет артисту, редко встречается с НПО на ее собственных условиях. Чего мы не можем сделать, так это положить в банк сумму, которую собрал художник, и передать ее потом - каждый подарок должен быть вручен человеком, который его дарит, от своего имени по той же причине, что и подарок на свадьбу или день рождения.",
+        "when": "Сообщите нам дату, как только она будет установлена; Четыре недели позволяют нам подготовить материал, а для прямой трансляции или большого шоу - записанное сообщение с мест.",
+        "where": "Где бы уже ни была ваша аудитория - место проведения, стрим, релиз. Само пожертвование происходит на собственной странице DEHAT, а не у дверей или в аккаунте артиста.",
         "how": "Сообщите нам дату, формат и ожидаемый охват. Мы даем вам специальную страницу и ссылку, на которую можно указать вашей аудитории, брендинг, который вы можете использовать, не спрашивая дважды, и промежуточный итог, который вы и они оба можете видеть."
       }
     },
@@ -5634,7 +5634,7 @@ const RU = {
       "col": "#D2305C",
       "detail": {
         "u": "Дистанция между инвестором и человеком, до которого дошли его деньги, обычно никогда не сокращается. Так и должно быть.",
-        "what": "Структурированная встреча — лично или онлайн — с людьми и сообществами, которых вы поддержали.",
+        "what": "Структурированная встреча - лично или онлайн - с людьми и сообществами, которых вы поддержали.",
         "why": "Ответственность работает в обе стороны. Видение результата меняет способ принятия следующего решения.",
         "when": "Организовано вокруг календаря сообщества, а не только для удобства посетителей.",
         "where": "В самих селах или по вызову, куда выезд невозможен.",
@@ -5655,7 +5655,7 @@ const RU = {
         "what": "Обязательства на рабочем месте против детского труда и сексуального насилия над детьми, а также политика и обучение для их соблюдения.",
         "why": "Заявленная позиция дает сотрудникам возможность поднять вопрос, о котором в противном случае они бы молчали.",
         "when": "До инцидента, а не после. Политика, написанная под давлением, никого не защищает.",
-        "where": "Ваше рабочее место и смежные с ним пространства — подрядчики, продавцы, транспорт, жилье.",
+        "where": "Ваше рабочее место и смежные с ним пространства - подрядчики, продавцы, транспорт, жилье.",
         "how": "Мы разделяем приверженность модели, помогаем адаптировать ее и обучаем людей, которым придется действовать в соответствии с ней."
       }
     },
@@ -5735,7 +5735,7 @@ const RU = {
       "k": "ИНР",
       "label": "Я инвестирую из Индии",
       "note": "Возможен вычет 80G",
-      "detail": "Поступает на внутренний счёт. Квитанция 80G выдаётся на ваш PAN в рамках разрешения AAAAD3793Q25LK02, действующего на налоговые годы 2027–28 — 2031–32. DEHAT также отражает инвестицию в своём отчёте по Form 10BD — именно это позволяет вам заявить вычет.",
+      "detail": "Поступает на внутренний счёт. Квитанция 80G выдаётся на ваш PAN в рамках разрешения AAAAD3793Q25LK02, действующего на налоговые годы 2027–28 - 2031–32. DEHAT также отражает инвестицию в своём отчёте по Form 10BD - именно это позволяет вам заявить вычет.",
       "col": "#EAAE28"
     },
     {
@@ -5809,9 +5809,9 @@ const RU = {
   "fPanHint": "Десять символов, как напечатано на карте.",
   "fAadhaar": "Аадхаар в маске",
   "fAadhaarHint": "ХХХХ ХХХ 1234",
-  "fAadhaarNote": "Только последние четыре цифры. Никогда не вводите здесь свой полный номер Aadhaar — он нам не нужен и не хранится.",
+  "fAadhaarNote": "Только последние четыре цифры. Никогда не вводите здесь свой полный номер Aadhaar - он нам не нужен и не хранится.",
   "fInrDocs": "PAN и маскированное сканирование Aadhaar",
-  "fInrDocsNote": "Прикрепите отсканированную копию своей PAN-карты и замаскированный Aadhaar (видны только последние четыре цифры — UIDAI выдает один со своего веб-сайта). Хранится для квитанции 80G, отчета по форме 10BD и аудита и уничтожается по истечении срока хранения.",
+  "fInrDocsNote": "Прикрепите отсканированную копию своей PAN-карты и замаскированный Aadhaar (видны только последние четыре цифры - UIDAI выдает один со своего веб-сайта). Хранится для квитанции 80G, отчета по форме 10BD и аудита и уничтожается по истечении срока хранения.",
   "fIdRefHint": "Как указано в паспорте",
   "fPassport": "Скан паспорта, обе стороны",
   "fPassportNote": "Требуется для иностранных вкладов. Прикрепите страницу с фотографией и страницу с адресом. Хранится только для возврата и аудита в соответствии с Законом об иностранных вкладах (регулировании) и уничтожается по истечении срока хранения.",
@@ -5886,7 +5886,7 @@ const RU = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "Член.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -5988,7 +5988,7 @@ const RU = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -6136,7 +6136,7 @@ const RU = {
     }
   ],
   "ecosystemTitle": "Государственные ведомства, уставные институты и общественные структуры, с которыми мы работаем",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -6463,7 +6463,7 @@ const AR = {
     "case": {
           
           "t": "ما زلت تفكر فيما إذا كان هذا الطرح مقنعاً؟",
-          "s": "اطلب منا إثبات أي ادعاء محدد على هذه الصفحة — رقماً، مقاطعة، أو آلية عمل. سنشير إلى المصدر الموثق، أو نوضح بصراحة أين يكون الادعاء أضعف مما يبدو.",
+          "s": "اطلب منا إثبات أي ادعاء محدد على هذه الصفحة - رقماً، مقاطعة، أو آلية عمل. سنشير إلى المصدر الموثق، أو نوضح بصراحة أين يكون الادعاء أضعف مما يبدو.",
           "a": "استفسر عن هذا الطرح",
           "subj": "سؤال حول مبررات الاستثمار",
           "b": "المتابعة إلى الاستثمار",
@@ -7172,7 +7172,7 @@ const AR = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "عضو.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -7274,7 +7274,7 @@ const AR = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -7422,7 +7422,7 @@ const AR = {
     }
   ],
   "ecosystemTitle": "الدوائر الحكومية والمؤسسات القانونية والأنظمة المجتمعية التي نتعاون معها",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -7749,7 +7749,7 @@ const ZH = {
     "case": {
           
           "t": "仍在权衡这一投资论证是否站得住脚？",
-          "s": "随时要求我们论证本页上的任何具体主张——无论是数字、地区还是运作机制。我们将指出原始来源，或坦诚说明哪些主张比听起来更薄弱。",
+          "s": "随时要求我们论证本页上的任何具体主张-无论是数字、地区还是运作机制。我们将指出原始来源，或坦诚说明哪些主张比听起来更薄弱。",
           "a": "就此论证进行询问",
           "subj": "关于投资论证的问题",
           "b": "继续前往投资",
@@ -7859,7 +7859,7 @@ const ZH = {
   "legacy": {
     "eyebrow": "遗产捐赠",
     "title": "这份礼物比送礼者更长久。",
-    "body": "几乎没有人被问过，所以几乎没有人这样做。写入遗嘱的遗赠是一种支持形式，其期限可以比任何资助周期更长——这就是这项工作实际需要的期限。向我们询问法定名称、注册号和条款措辞，并将其提供给您的律师。",
+    "body": "几乎没有人被问过，所以几乎没有人这样做。写入遗嘱的遗赠是一种支持形式，其期限可以比任何资助周期更长-这就是这项工作实际需要的期限。向我们询问法定名称、注册号和条款措辞，并将其提供给您的律师。",
     "action": "阅读遗留路线",
     "note": "我们不起草遗嘱，也不提供法律建议。"
   },
@@ -8004,7 +8004,7 @@ const ZH = {
       "col": "#4F0E73",
       "detail": {
         "u": "巴莱奇有二十年的实地记录。每年，这些证据都未被研究，而这些证据从未到达制定政策的人们手中。",
-        "what": "实时项目的命名研究合作伙伴关系——共同设计问题、获取现场数据和纵向记录以及共同出版。",
+        "what": "实时项目的命名研究合作伙伴关系-共同设计问题、获取现场数据和纵向记录以及共同出版。",
         "why": "从未研究过的实践会重复自己的错误。不接触实践的研究概括性很差。配对纠正了两者。",
         "when": "从设计阶段开始，测量就被内置到程序中，而不是事后安装到程序中。",
         "where": "遍布 Bahraich 和 Shravasti 的现场，记录保存在 DEHAT 办公室并可在现场查阅。",
@@ -8082,7 +8082,7 @@ const ZH = {
       "col": "#556223",
       "detail": {
         "u": "小而广泛的贡献会复合。现场团队所需的大部分工作都可以在几周内完成。",
-        "what": "一项明确的工作——现场、研究、文档、设计或翻译——现场或远程。",
+        "what": "一项明确的工作-现场、研究、文档、设计或翻译-现场或远程。",
         "why": "能力往往比金钱更具有约束力。额外的一双手可以推动真正的最后期限。",
         "when": "滚动。远程工作几乎可以立即开始；现场安置需要准备时间。",
         "where": "Bahraich，或任何具有远程角色连接的地方。",
@@ -8153,10 +8153,10 @@ const ZH = {
       "col": "#4F0E73",
       "detail": {
         "u": "遗产是唯一的礼物，是由一个一无所有的人提前数年冷静地决定的。这也是最罕见的，因为几乎没有人被问过。",
-        "what": "写入您遗嘱的对 DEHAT 的遗赠——固定金额、剩余部分的一部分或指定资产。",
+        "what": "写入您遗嘱的对 DEHAT 的遗赠-固定金额、剩余部分的一部分或指定资产。",
         "why": "实地工作的资金来源是一年一次的。遗产是一种支持形式，可以承诺比任何拨款周期更长的期限，这是变革实际需要的期限。",
         "when": "每当您下次撰写或修改遗嘱时。告诉我们是可选的，但它可以让我们计划并让您说出礼物的用途。",
-        "where": "位于巴赖奇的注册办事处拥有协会的注册、PAN 和经审计的账户——您的律师会要求的一切。",
+        "where": "位于巴赖奇的注册办事处拥有协会的注册、PAN 和经审计的账户-您的律师会要求的一切。",
         "how": "向我们询问提供给您律师的确切法定名称、注册号和条款措辞。我们不起草遗嘱，也不提供法律建议；我们为您的律师提供他们需要的东西，然后退一步。"
       }
     },
@@ -8172,9 +8172,9 @@ const ZH = {
       "detail": {
         "u": "一场婚礼、生日、周年纪念日或一次纪念活动可以为一次干预的整个周期提供资金。",
         "what": "客人要求在特定场合并以标记者或夫妇的名义向 DEHAT 捐赠，而不是携带沙贡或礼物。",
-        "why": "它将私人的一天变成了公共的一天，并接触到了现场团队原本不会见到的人——但前提是每件礼物都是直接赠送的。我们无法接收或安全地存入以现金或手工收取并随后传递给我们的款项；让我们给捐赠者自己的税单的规则要求他们的名字和他们自己的金额。",
+        "why": "它将私人的一天变成了公共的一天，并接触到了现场团队原本不会见到的人-但前提是每件礼物都是直接赠送的。我们无法接收或安全地存入以现金或手工收取并随后传递给我们的款项；让我们给捐赠者自己的税单的规则要求他们的名字和他们自己的金额。",
         "when": "提前四到六周的通知让我们准备好页面和材料，并在可能的情况下准备来自现场的声音。",
-        "where": "您的场地，在线或在 Bahraich。捐赠本身总是直接进入德哈特自己的账户——从来不会进入个人账户，即使是短暂的，甚至是信托账户。",
+        "where": "您的场地，在线或在 Bahraich。捐赠本身总是直接进入德哈特自己的账户-从来不会进入个人账户，即使是短暂的，甚至是信托账户。",
         "how": "告诉我们场合和日期。我们以您的名义建立一个页面，您的客人可以直接通过该页面提供信息，并处理收据和后续事宜。"
       }
     },
@@ -8189,9 +8189,9 @@ const ZH = {
       "detail": {
         "u": "喜剧演员的布景、音乐家的表演或电影制片人的首映式都可以向观众呈现出一封呼吁信从未到达过的作品。",
         "what": "献给 DEHAT 社区的表演、放映、直播或发布的作品，观众直接而不是通过艺术家捐赠。",
-        "why": "已经信任艺术家的观众很少会以自己的方式与非政府组织会面。我们不能做的是把艺术家收集的一笔钱存入银行，然后再转交——每件礼物都必须由送礼人以自己的名义送出，就像婚礼或生日礼物一样。",
+        "why": "已经信任艺术家的观众很少会以自己的方式与非政府组织会面。我们不能做的是把艺术家收集的一笔钱存入银行，然后再转交-每件礼物都必须由送礼人以自己的名义送出，就像婚礼或生日礼物一样。",
         "when": "日期确定后立即告诉我们；四个星期让我们准备材料，并为直播或大型演出准备来自现场的录制信息。",
-        "where": "无论您的观众身在何处——场地、直播、发布。捐赠本身发生在 DEHAT 自己的页面上，而不是在门口或艺术家的帐户中。",
+        "where": "无论您的观众身在何处-场地、直播、发布。捐赠本身发生在 DEHAT 自己的页面上，而不是在门口或艺术家的帐户中。",
         "how": "告诉我们日期、形式和预期覆盖范围。我们为您提供一个专门的页面和链接来引导您的受众，您可以使用无需两次询问的品牌，以及您和他们都可以看到的运行总数。"
       }
     },
@@ -8267,7 +8267,7 @@ const ZH = {
       }
     }
   ],
-  "sopTitle": "一两行——你希望改变什么？",
+  "sopTitle": "一两行-你希望改变什么？",
   "sopSub": "这是我们仔细阅读的唯一部分。你想怎么写就怎么写；没有正确答案。",
   "sopPlaceholder": "例如：我们希望巴莱奇的企业社会责任支出能够流向证据公开的地方，并且我们希望从一个区块开始。",
   "sopPrompts": [
@@ -8458,7 +8458,7 @@ const ZH = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now-India Chapter",
       "v": "成员。",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -8560,7 +8560,7 @@ const ZH = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub-AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -8708,7 +8708,7 @@ const ZH = {
     }
   ],
   "ecosystemTitle": "我们合作的政府部门、法定机构与社区系统",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in-and consistent invitees to-the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -9035,7 +9035,7 @@ const UR = {
     "case": {
           
           "t": "اب بھی سوچ رہے ہیں کہ کیا یہ دلائل درست ہیں؟",
-          "s": "ہم سے اس صفحے پر کسی بھی مخصوص دعوے کا ثبوت مانگیں — کوئی عدد، کوئی ضلع، کوئی طریقہ کار۔ ہم اصل ماخذ دکھاتے ہیں، یا صاف بتاتے ہیں کہ کہاں کوئی دعویٰ ظاہر سے کمزور ہے۔",
+          "s": "ہم سے اس صفحے پر کسی بھی مخصوص دعوے کا ثبوت مانگیں - کوئی عدد، کوئی ضلع، کوئی طریقہ کار۔ ہم اصل ماخذ دکھاتے ہیں، یا صاف بتاتے ہیں کہ کہاں کوئی دعویٰ ظاہر سے کمزور ہے۔",
           "a": "اس معاملے کے بارے میں پوچھیں",
           "subj": "سرمایہ کاری کے دلائل کے بارے میں ایک سوال",
           "b": "سرمایہ کاری جاری رکھیں",
@@ -9290,7 +9290,7 @@ const UR = {
       "col": "#4F0E73",
       "detail": {
         "u": "بہرائچ میں بیس سال کا فیلڈ ریکارڈ موجود ہے۔ ہر سال وہ بغیر پڑھے چلے جاتے ہیں ایک ایسا ثبوت کا سال ہے جو پالیسی لکھنے والے لوگوں تک کبھی نہیں پہنچتا۔",
-        "what": "لائیو پروگرام پر ایک نامزد تحقیقی شراکت داری — شریک ڈیزائن کردہ سوالات، فیلڈ ڈیٹا تک رسائی اور طول بلد ریکارڈ، اور مشترکہ اشاعت۔",
+        "what": "لائیو پروگرام پر ایک نامزد تحقیقی شراکت داری - شریک ڈیزائن کردہ سوالات، فیلڈ ڈیٹا تک رسائی اور طول بلد ریکارڈ، اور مشترکہ اشاعت۔",
         "why": "وہ مشق جس کا کبھی مطالعہ نہیں کیا جاتا وہ اپنی غلطیوں کو دہراتا ہے۔ وہ مطالعہ جو کبھی پریکٹس کو نہیں چھوتا ہے بری طرح عام کرتا ہے۔ جوڑا دونوں کو درست کرتا ہے۔",
         "when": "ڈیزائن کے مرحلے سے، لہذا پیمائش کو پروگرام میں شامل کیا جاتا ہے بجائے اس کے کہ بعد میں اس میں فٹ کیا جائے۔",
         "where": "بہرائچ اور شراوستی میں فیلڈ سائٹس، DEHAT آفس میں موجود ریکارڈ کے ساتھ اور سائٹ پر دستیاب ہے۔",
@@ -9368,7 +9368,7 @@ const UR = {
       "col": "#556223",
       "detail": {
         "u": "چھوٹے، اچھی طرح سے دائرہ کار کی شراکت کا مرکب۔ فیلڈ ٹیم کو جس چیز کی ضرورت ہوتی ہے ان میں سے زیادہ تر ہفتوں میں ختم ہو جاتی ہے۔",
-        "what": "کام کا ایک متعین حصہ — فیلڈ، تحقیق، دستاویزات، ڈیزائن یا ترجمہ — سائٹ پر یا دور سے۔",
+        "what": "کام کا ایک متعین حصہ - فیلڈ، تحقیق، دستاویزات، ڈیزائن یا ترجمہ - سائٹ پر یا دور سے۔",
         "why": "صلاحیت پیسے سے زیادہ کثرت سے پابند رکاوٹ ہے۔ ہاتھوں کا ایک اضافی جوڑا ایک حقیقی ڈیڈ لائن منتقل کرتا ہے۔",
         "when": "رولنگ دور دراز کا کام تقریباً فوراً شروع ہو سکتا ہے۔ سائٹ پر تعیناتیوں کو لیڈ ٹائم کی ضرورت ہوتی ہے۔",
         "where": "بہرائچ، یا کہیں بھی دور دراز کے کرداروں کے لیے کنکشن کے ساتھ۔",
@@ -9439,10 +9439,10 @@ const UR = {
       "col": "#4F0E73",
       "detail": {
         "u": "میراث وہ واحد تحفہ ہے جس کا فیصلہ سکون سے، برسوں پہلے، کسی ایسے شخص کے ذریعے کیا جاتا ہے جس سے حاصل کرنے کے لیے کچھ بھی نہ بچا ہو۔ یہ سب سے نایاب بھی ہے، کیونکہ تقریباً کسی سے کبھی نہیں پوچھا جاتا۔",
-        "what": "آپ کی وصیت میں لکھی ہوئی DEHAT کی وصیت — ایک مقررہ رقم، باقیات کا حصہ، یا ایک نامزد اثاثہ۔",
+        "what": "آپ کی وصیت میں لکھی ہوئی DEHAT کی وصیت - ایک مقررہ رقم، باقیات کا حصہ، یا ایک نامزد اثاثہ۔",
         "why": "فیلڈ ورک پیسے پر چلتا ہے جو ایک سال کے ٹکڑوں میں آتا ہے۔ وراثت حمایت کی ایک شکل ہے جو کسی بھی گرانٹ سائیکل سے زیادہ طویل افق پر قائم کی جا سکتی ہے، جو افق ہے جو تبدیلی درحقیقت لیتی ہے۔",
         "when": "جب بھی آپ اگلی تحریر لکھیں یا اپنی مرضی پر نظر ثانی کریں۔ ہمیں بتانا اختیاری ہے، لیکن یہ ہمیں منصوبہ بندی کرنے دیتا ہے اور آپ کو یہ بتانے دیتا ہے کہ تحفہ کس لیے ہے۔",
-        "where": "بہرائچ میں رجسٹرڈ آفس سوسائٹی کا رجسٹریشن، PAN اور آڈٹ شدہ اکاؤنٹس رکھتا ہے — وہ سب کچھ جو آپ کا وکیل پوچھے گا۔",
+        "where": "بہرائچ میں رجسٹرڈ آفس سوسائٹی کا رجسٹریشن، PAN اور آڈٹ شدہ اکاؤنٹس رکھتا ہے - وہ سب کچھ جو آپ کا وکیل پوچھے گا۔",
         "how": "اپنے وکیل کو دینے کے لیے ہم سے درست قانونی نام، رجسٹریشن نمبر اور شق کے الفاظ کے لیے پوچھیں۔ ہم وصیت کا مسودہ نہیں بناتے ہیں اور ہم قانونی مشورہ نہیں دیتے ہیں۔ ہم آپ کے وکیل کو وہ دیتے ہیں جس کی انہیں ضرورت ہے اور پیچھے ہٹ جاتے ہیں۔"
       }
     },
@@ -9458,9 +9458,9 @@ const UR = {
       "detail": {
         "u": "ایک شادی، ایک سالگرہ، ایک سالگرہ یا ایک بار ری ڈائریکٹ کی گئی یادگار ایک مداخلت کے پورے دور کو فنڈ دے سکتی ہے۔",
         "what": "مہمانوں نے اس موقع پر شگن یا تحفہ لانے کے بجائے DEHAT کو دینے کو کہا اور اس پر نشان لگانے والے شخص یا جوڑے کے نام پر۔",
-        "why": "یہ ایک نجی دن کو عوامی دن میں بدل دیتا ہے، اور لوگوں تک پہنچتا ہے جو فیلڈ ٹیم دوسری صورت میں نہیں ملے گی — لیکن صرف اس صورت میں جب ہر تحفہ براہ راست دیا جائے۔ ہم نقد یا ہاتھ سے جمع کی گئی اور بعد میں ہمارے پاس بھیجی گئی رقم کی رسید، یا محفوظ طریقے سے بینک نہیں کر سکتے۔ قاعدہ جو ہمیں دینے والے کو ان کی اپنی ٹیکس رسید دینے دیتا ہے اس کے لیے ان کا نام ان کی اپنی رقم کے مقابلے میں درکار ہے۔",
+        "why": "یہ ایک نجی دن کو عوامی دن میں بدل دیتا ہے، اور لوگوں تک پہنچتا ہے جو فیلڈ ٹیم دوسری صورت میں نہیں ملے گی - لیکن صرف اس صورت میں جب ہر تحفہ براہ راست دیا جائے۔ ہم نقد یا ہاتھ سے جمع کی گئی اور بعد میں ہمارے پاس بھیجی گئی رقم کی رسید، یا محفوظ طریقے سے بینک نہیں کر سکتے۔ قاعدہ جو ہمیں دینے والے کو ان کی اپنی ٹیکس رسید دینے دیتا ہے اس کے لیے ان کا نام ان کی اپنی رقم کے مقابلے میں درکار ہے۔",
         "when": "چار سے چھ ہفتوں کا نوٹس ہمیں ایک صفحہ اور مواد تیار کرنے دیتا ہے، اور، جہاں ممکن ہو، فیلڈ سے ایک آواز۔",
-        "where": "آپ کا مقام، آن لائن، یا بہرائچ میں۔ دینا ہمیشہ براہ راست DEHAT کے اپنے اکاؤنٹ میں آتا ہے — کبھی بھی ذاتی میں، یہاں تک کہ مختصر طور پر، یہاں تک کہ اعتماد میں بھی۔",
+        "where": "آپ کا مقام، آن لائن، یا بہرائچ میں۔ دینا ہمیشہ براہ راست DEHAT کے اپنے اکاؤنٹ میں آتا ہے - کبھی بھی ذاتی میں، یہاں تک کہ مختصر طور پر، یہاں تک کہ اعتماد میں بھی۔",
         "how": "ہمیں موقع اور تاریخ بتائیں۔ ہم آپ کے نام پر ایک صفحہ ترتیب دیتے ہیں جسے آپ کے مہمان براہ راست دیتے ہیں، اور ہم رسیدیں اور فالو اپ سنبھالتے ہیں۔"
       }
     },
@@ -9475,9 +9475,9 @@ const UR = {
       "detail": {
         "u": "ایک کامیڈین کا سیٹ، ایک موسیقار کا شو یا فلم ساز کا پریمیئر اس کام کو سامعین تک پہنچا سکتا ہے جس کی اپیل کا خط کبھی نہیں پہنچتا۔",
         "what": "ایک شو، اسکریننگ، لائیو اسٹریم یا جاری کردہ کام کا ایک ٹکڑا جو DEHAT کی کمیونٹیز کے لیے وقف ہے، جس میں سامعین فنکار کے ذریعے دینے کے بجائے براہ راست دے رہے ہیں۔",
-        "why": "ایک سامعین جو پہلے سے ہی کسی فنکار پر بھروسہ کرتا ہے شاذ و نادر ہی کسی این جی او کو اپنی شرائط پر پورا کرتا ہے۔ جو ہم نہیں کر سکتے وہ یہ ہے کہ ایک فنکار نے جمع کی گئی رقم کو بینک میں جمع کر کے بعد میں حوالے کیا — ہر تحفہ دینے والے کو اپنے نام پر دینا ہوتا ہے، اسی وجہ سے شادی یا سالگرہ کا تحفہ ہوتا ہے۔",
+        "why": "ایک سامعین جو پہلے سے ہی کسی فنکار پر بھروسہ کرتا ہے شاذ و نادر ہی کسی این جی او کو اپنی شرائط پر پورا کرتا ہے۔ جو ہم نہیں کر سکتے وہ یہ ہے کہ ایک فنکار نے جمع کی گئی رقم کو بینک میں جمع کر کے بعد میں حوالے کیا - ہر تحفہ دینے والے کو اپنے نام پر دینا ہوتا ہے، اسی وجہ سے شادی یا سالگرہ کا تحفہ ہوتا ہے۔",
         "when": "تاریخ طے ہوتے ہی ہمیں بتائیں۔ چار ہفتے ہمیں مواد تیار کرنے دیتے ہیں اور، لائیو سٹریم یا بڑے شو کے لیے، فیلڈ سے ایک ریکارڈ شدہ پیغام۔",
-        "where": "جہاں کہیں بھی آپ کے سامعین پہلے سے موجود ہیں — ایک مقام، ایک سلسلہ، ایک ریلیز۔ دینا خود DEHAT کے اپنے صفحے پر ہوتا ہے، دروازے پر یا فنکار کے اکاؤنٹ میں نہیں۔",
+        "where": "جہاں کہیں بھی آپ کے سامعین پہلے سے موجود ہیں - ایک مقام، ایک سلسلہ، ایک ریلیز۔ دینا خود DEHAT کے اپنے صفحے پر ہوتا ہے، دروازے پر یا فنکار کے اکاؤنٹ میں نہیں۔",
         "how": "ہمیں تاریخ، فارمیٹ اور متوقع پہنچ بتائیں۔ ہم آپ کو ایک سرشار صفحہ اور لنک دیتے ہیں جو آپ کے سامعین کی طرف اشارہ کرتے ہیں، برانڈنگ جو آپ دو بار پوچھے بغیر استعمال کر سکتے ہیں، اور آپ اور وہ دونوں دیکھ سکتے ہیں۔"
       }
     },
@@ -9492,7 +9492,7 @@ const UR = {
       "col": "#D2305C",
       "detail": {
         "u": "ایک سرمایہ کار اور اس شخص کے درمیان فاصلہ جس تک ان کی رقم پہنچتی ہے عام طور پر کبھی بند نہیں ہوتی۔ یہ ہونا چاہیے۔",
-        "what": "ایک منظم میٹنگ — ذاتی طور پر یا آن لائن — ان لوگوں اور کمیونٹیز کے ساتھ جن تک آپ کی حمایت پہنچی ہے۔",
+        "what": "ایک منظم میٹنگ - ذاتی طور پر یا آن لائن - ان لوگوں اور کمیونٹیز کے ساتھ جن تک آپ کی حمایت پہنچی ہے۔",
         "why": "احتساب دونوں طریقوں سے چلتا ہے۔ نتیجہ دیکھ کر اگلا فیصلہ کرنے کا طریقہ بدل جاتا ہے۔",
         "when": "کمیونٹی کے کیلنڈر کے ارد گرد ترتیب دیا گیا، کبھی بھی اکیلے مہمان کی سہولت کے ارد گرد نہیں.",
         "where": "خود دیہات میں، یا کسی کال پر جہاں سفر ممکن نہیں ہے۔",
@@ -9513,7 +9513,7 @@ const UR = {
         "what": "چائلڈ لیبر اور بچوں کے جنسی استحصال کے خلاف کام کی جگہ پر عزم، اس کے انعقاد کی پالیسی اور تربیت کے ساتھ۔",
         "why": "بیان کردہ پوزیشن ملازمین کو کچھ اٹھانے کا راستہ فراہم کرتی ہے کہ وہ بصورت دیگر خاموش رہیں گے۔",
         "when": "کسی واقعے سے پہلے، بعد میں نہیں۔ دباؤ میں لکھی گئی پالیسی کسی کی حفاظت نہیں کرتی۔",
-        "where": "آپ کے کام کی جگہ اور اس سے منسلک جگہیں — ٹھیکیدار، دکاندار، ٹرانسپورٹ، ہاؤسنگ۔",
+        "where": "آپ کے کام کی جگہ اور اس سے منسلک جگہیں - ٹھیکیدار، دکاندار، ٹرانسپورٹ، ہاؤسنگ۔",
         "how": "ہم ماڈل کے عزم کا اشتراک کرتے ہیں، اسے ڈھالنے میں مدد کرتے ہیں، اور ان لوگوں کو تربیت دیتے ہیں جنہیں اس پر عمل کرنا ہوگا۔"
       }
     },
@@ -9667,9 +9667,9 @@ const UR = {
   "fPanHint": "دس حروف، جیسا کہ کارڈ پر پرنٹ کیا گیا ہے۔",
   "fAadhaar": "نقاب پوش آدھار",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "صرف آخری چار ہندسے۔ یہاں کبھی بھی اپنا پورا آدھار نمبر درج نہ کریں — ہمیں نہ تو اس کی ضرورت ہے اور نہ ہی اسے رکھیں۔",
+  "fAadhaarNote": "صرف آخری چار ہندسے۔ یہاں کبھی بھی اپنا پورا آدھار نمبر درج نہ کریں - ہمیں نہ تو اس کی ضرورت ہے اور نہ ہی اسے رکھیں۔",
   "fInrDocs": "PAN اور نقاب پوش آدھار اسکین",
-  "fInrDocsNote": "اپنے PAN کارڈ کا اسکین اور نقاب پوش آدھار منسلک کریں (آخری چار ہندسے صرف نظر آتے ہیں — UIDAI اپنی ویب سائٹ سے ایک جاری کرتا ہے)۔ 80G کی رسید، فارم 10BD سٹیٹمنٹ اور آڈٹ کے لیے رکھی گئی، اور برقرار رکھنے کی مدت ختم ہونے پر ختم کر دی گئی۔",
+  "fInrDocsNote": "اپنے PAN کارڈ کا اسکین اور نقاب پوش آدھار منسلک کریں (آخری چار ہندسے صرف نظر آتے ہیں - UIDAI اپنی ویب سائٹ سے ایک جاری کرتا ہے)۔ 80G کی رسید، فارم 10BD سٹیٹمنٹ اور آڈٹ کے لیے رکھی گئی، اور برقرار رکھنے کی مدت ختم ہونے پر ختم کر دی گئی۔",
   "fIdRefHint": "جیسا کہ پاسپورٹ پر پرنٹ ہوتا ہے۔",
   "fPassport": "پاسپورٹ اسکین، دونوں طرف",
   "fPassportNote": "غیر ملکی تعاون کے لیے درکار ہے۔ تصویر کا صفحہ اور ایڈریس کا صفحہ منسلک کریں۔ صرف فارن کنٹری بیوشن (ریگولیشن) ایکٹ کی واپسی اور آڈٹ کے لیے منعقد کیا جاتا ہے، اور برقرار رکھنے کی مدت ختم ہونے پر اسے تباہ کر دیا جاتا ہے۔",
@@ -9744,7 +9744,7 @@ const UR = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "ممبر۔",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -9846,7 +9846,7 @@ const UR = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -9994,7 +9994,7 @@ const UR = {
     }
   ],
   "ecosystemTitle": "سرکاری محکمے، قانونی ادارے اور کمیونٹی کے نظام جن کے ساتھ ہم کام کرتے ہیں",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -10321,7 +10321,7 @@ const BN = {
     "case": {
           
           "t": "এখনও সিদ্ধান্ত নিতে পারছেন না এই যুক্তি সঠিক কি না?",
-          "s": "এই পৃষ্ঠার যেকোনো নির্দিষ্ট দাবি প্রমাণের জন্য আমাদের জিজ্ঞাসা করুন — একটি সংখ্যা, একটি জেলা, একটি কর্মপদ্ধতি। আমরা উৎস নির্দেশ করি, বা স্পষ্টভাবে বলি কোথায় কোনো দাবি ধারণার চেয়ে দুর্বল।",
+          "s": "এই পৃষ্ঠার যেকোনো নির্দিষ্ট দাবি প্রমাণের জন্য আমাদের জিজ্ঞাসা করুন - একটি সংখ্যা, একটি জেলা, একটি কর্মপদ্ধতি। আমরা উৎস নির্দেশ করি, বা স্পষ্টভাবে বলি কোথায় কোনো দাবি ধারণার চেয়ে দুর্বল।",
           "a": "এই যুক্তির বিষয়ে জিজ্ঞাসা করুন",
           "subj": "বিনিয়োগের যুক্তির বিষয়ে একটি প্রশ্ন",
           "b": "বিনিয়োগের দিকে এগিয়ে যান",
@@ -10431,7 +10431,7 @@ const BN = {
   "legacy": {
     "eyebrow": "উত্তরাধিকার প্রদান",
     "title": "উপহার যা দাতাকে ছাড়িয়ে যায়।",
-    "body": "প্রায় কাউকেই জিজ্ঞাসা করা হয় না, তাই প্রায় কেউই এটি করে না। আপনার উইলে লিখিত একটি উইল হ'ল সমর্থনের এক রূপ যা যে কোনও অনুদান চক্রের চেয়ে দীর্ঘ দিগন্তে প্রতিশ্রুতিবদ্ধ হতে পারে — যা এই কাজটি আসলে যে দিগন্ত নেয়। আইনি নাম, নিবন্ধন নম্বর এবং ধারার শব্দের জন্য আমাদের জিজ্ঞাসা করুন এবং আপনার আইনজীবীকে দিন।",
+    "body": "প্রায় কাউকেই জিজ্ঞাসা করা হয় না, তাই প্রায় কেউই এটি করে না। আপনার উইলে লিখিত একটি উইল হ'ল সমর্থনের এক রূপ যা যে কোনও অনুদান চক্রের চেয়ে দীর্ঘ দিগন্তে প্রতিশ্রুতিবদ্ধ হতে পারে - যা এই কাজটি আসলে যে দিগন্ত নেয়। আইনি নাম, নিবন্ধন নম্বর এবং ধারার শব্দের জন্য আমাদের জিজ্ঞাসা করুন এবং আপনার আইনজীবীকে দিন।",
     "action": "উত্তরাধিকার রুট পড়ুন",
     "note": "আমরা উইলের খসড়া করি না এবং আমরা আইনি পরামর্শ দিই না।"
   },
@@ -10576,7 +10576,7 @@ const BN = {
       "col": "#4F0E73",
       "detail": {
         "u": "বাহরাইচে বিশ বছরের ফিল্ড রেকর্ড রয়েছে। প্রতি বছর তারা অশিক্ষিত হয়ে যায় এমন একটি প্রমাণের বছর যা নীতি লেখার লোকদের কাছে পৌঁছায় না।",
-        "what": "একটি লাইভ প্রোগ্রামে একটি নামযুক্ত গবেষণা অংশীদারিত্ব — সহ-পরিকল্পিত প্রশ্ন, ফিল্ড ডেটা এবং অনুদৈর্ঘ্য রেকর্ডগুলিতে অ্যাক্সেস এবং সহ-প্রকাশনা।",
+        "what": "একটি লাইভ প্রোগ্রামে একটি নামযুক্ত গবেষণা অংশীদারিত্ব - সহ-পরিকল্পিত প্রশ্ন, ফিল্ড ডেটা এবং অনুদৈর্ঘ্য রেকর্ডগুলিতে অ্যাক্সেস এবং সহ-প্রকাশনা।",
         "why": "যে অনুশীলনটি কখনও অধ্যয়ন করা হয় না তা নিজের ভুলের পুনরাবৃত্তি করে। যে অধ্যয়ন অনুশীলনকে স্পর্শ করে না তা খারাপভাবে সাধারণীকরণ করে। জুটি উভয়কেই সংশোধন করে।",
         "when": "নকশা পর্যায় থেকে, তাই পরিমাপ পরে এটি লাগানো পরিবর্তে প্রোগ্রাম মধ্যে নির্মিত হয়.",
         "where": "বাহরাইচ এবং শ্রাবস্তী জুড়ে মাঠ সাইট, DEHAT অফিসে থাকা রেকর্ড সহ এবং সাইটে উপলব্ধ।",
@@ -10654,7 +10654,7 @@ const BN = {
       "col": "#556223",
       "detail": {
         "u": "ছোট, ভাল-স্কোপড অবদান যৌগ. ফিল্ড টিমের যা প্রয়োজন তার বেশিরভাগই সপ্তাহে শেষ করা যায়।",
-        "what": "কাজের একটি সংজ্ঞায়িত অংশ — ক্ষেত্র, গবেষণা, ডকুমেন্টেশন, নকশা বা অনুবাদ — সাইটে বা দূরবর্তীভাবে।",
+        "what": "কাজের একটি সংজ্ঞায়িত অংশ - ক্ষেত্র, গবেষণা, ডকুমেন্টেশন, নকশা বা অনুবাদ - সাইটে বা দূরবর্তীভাবে।",
         "why": "ক্ষমতা অর্থের চেয়ে প্রায়ই বাধ্যতামূলক সীমাবদ্ধতা। হাতের একটি অতিরিক্ত জোড়া একটি বাস্তব সময়সীমা সরানো.",
         "when": "ঘূর্ণায়মান। দূরবর্তী কাজ প্রায় অবিলম্বে শুরু হতে পারে; অন-সাইট প্লেসমেন্ট লিড টাইম প্রয়োজন।",
         "where": "বাহরাইচ, বা দূরবর্তী ভূমিকার জন্য সংযোগ সহ যে কোনও জায়গায়।",
@@ -10728,7 +10728,7 @@ const BN = {
         "what": "আপনার উইলে লিখিত DEHAT-এর একটি উইল - একটি নির্দিষ্ট পরিমাণ, অবশিষ্টাংশের একটি অংশ, বা একটি নামকৃত সম্পদ।",
         "why": "মাঠপর্যায়ে কাজ চলে এক বছরের টুকরো টাকায়। একটি উত্তরাধিকার হল সমর্থনের এক প্রকার যা যেকোন অনুদান চক্রের চেয়ে দীর্ঘ দিগন্তে প্রতিশ্রুতিবদ্ধ হতে পারে, যে দিগন্ত পরিবর্তনটি আসলে গ্রহণ করে।",
         "when": "যখনই আপনি পরবর্তী লিখবেন বা আপনার ইচ্ছা সংশোধন করবেন। আমাদের জানানো ঐচ্ছিক, কিন্তু এটি আমাদের পরিকল্পনা করতে দেয় এবং উপহারটি কীসের জন্য তা আপনাকে বলতে দেয়৷",
-        "where": "বাহরাইচের নিবন্ধিত অফিসে সোসাইটির রেজিস্ট্রেশন, প্যান এবং নিরীক্ষিত অ্যাকাউন্ট রয়েছে — আপনার আইনজীবী যা চাইবেন তার সবকিছু।",
+        "where": "বাহরাইচের নিবন্ধিত অফিসে সোসাইটির রেজিস্ট্রেশন, প্যান এবং নিরীক্ষিত অ্যাকাউন্ট রয়েছে - আপনার আইনজীবী যা চাইবেন তার সবকিছু।",
         "how": "আপনার আইনজীবীকে সঠিক আইনি নাম, রেজিস্ট্রেশন নম্বর এবং ক্লজ শব্দের জন্য আমাদের জিজ্ঞাসা করুন। আমরা উইলের খসড়া করি না এবং আমরা আইনি পরামর্শ দিই না; আমরা আপনার আইনজীবীকে তাদের যা প্রয়োজন তা দিই এবং ফিরে যান।"
       }
     },
@@ -10744,9 +10744,9 @@ const BN = {
       "detail": {
         "u": "একটি বিবাহ, একটি জন্মদিন, একটি বার্ষিকী বা একটি স্মারক একবার পুনঃনির্দেশিত একটি হস্তক্ষেপের পুরো চক্রকে অর্থায়ন করতে পারে।",
         "what": "অতিথিরা শগুন বা উপহার আনার পরিবর্তে DEHAT-কে দিতে বলেন, অনুষ্ঠানে এবং এটি চিহ্নিত ব্যক্তি বা দম্পতির নামে।",
-        "why": "এটি একটি ব্যক্তিগত দিনকে একটি সর্বজনীন দিনে পরিণত করে, এবং লোকেদের কাছে পৌঁছে দেয় মাঠের দল অন্যথায় দেখা করতে পারে না — তবে শুধুমাত্র যদি প্রতিটি উপহার সরাসরি দেওয়া হয়। আমরা নগদে বা হাতে সংগ্রহ করা এবং পরে আমাদের কাছে প্রেরণ করা একটি রসিদ বা নিরাপদে ব্যাঙ্ক করতে পারি না; নিয়ম যা আমাদের একটি দাতাকে তাদের নিজস্ব ট্যাক্স রসিদ দিতে দেয় তাদের নিজস্ব পরিমাণের বিপরীতে তাদের নাম প্রয়োজন।",
+        "why": "এটি একটি ব্যক্তিগত দিনকে একটি সর্বজনীন দিনে পরিণত করে, এবং লোকেদের কাছে পৌঁছে দেয় মাঠের দল অন্যথায় দেখা করতে পারে না - তবে শুধুমাত্র যদি প্রতিটি উপহার সরাসরি দেওয়া হয়। আমরা নগদে বা হাতে সংগ্রহ করা এবং পরে আমাদের কাছে প্রেরণ করা একটি রসিদ বা নিরাপদে ব্যাঙ্ক করতে পারি না; নিয়ম যা আমাদের একটি দাতাকে তাদের নিজস্ব ট্যাক্স রসিদ দিতে দেয় তাদের নিজস্ব পরিমাণের বিপরীতে তাদের নাম প্রয়োজন।",
         "when": "চার থেকে ছয় সপ্তাহের নোটিশ আমাদের একটি পৃষ্ঠা এবং উপাদান প্রস্তুত করতে দেয়, এবং, যেখানে সম্ভব, ক্ষেত্র থেকে একটি ভয়েস।",
-        "where": "আপনার ভেন্যু, অনলাইনে বা বাহরাইচে। দান নিজেই সর্বদা সরাসরি DEHAT-এর নিজস্ব অ্যাকাউন্টে জমা হয় — কখনও ব্যক্তিগত অ্যাকাউন্টে নয়, এমনকি সংক্ষিপ্তভাবে, এমনকি বিশ্বাসেও।",
+        "where": "আপনার ভেন্যু, অনলাইনে বা বাহরাইচে। দান নিজেই সর্বদা সরাসরি DEHAT-এর নিজস্ব অ্যাকাউন্টে জমা হয় - কখনও ব্যক্তিগত অ্যাকাউন্টে নয়, এমনকি সংক্ষিপ্তভাবে, এমনকি বিশ্বাসেও।",
         "how": "আমাদের উপলক্ষ এবং তারিখ বলুন. আমরা আপনার নামে একটি পৃষ্ঠা সেট আপ করি যা আপনার অতিথিরা সরাসরি দেন এবং আমরা রসিদ এবং ফলো-আপ পরিচালনা করি।"
       }
     },
@@ -10778,7 +10778,7 @@ const BN = {
       "col": "#D2305C",
       "detail": {
         "u": "একজন বিনিয়োগকারী এবং যার কাছে তাদের অর্থ পৌঁছেছে তার মধ্যে দূরত্ব সাধারণত কখনই বন্ধ হয় না। এটা হওয়া উচিত।",
-        "what": "একটি কাঠামোগত মিটিং — ব্যক্তিগতভাবে বা অনলাইনে — আপনার সমর্থন পৌঁছেছে এমন লোক এবং সম্প্রদায়ের সাথে।",
+        "what": "একটি কাঠামোগত মিটিং - ব্যক্তিগতভাবে বা অনলাইনে - আপনার সমর্থন পৌঁছেছে এমন লোক এবং সম্প্রদায়ের সাথে।",
         "why": "জবাবদিহিতা উভয় উপায়ে চলে। ফলাফল দেখে পরবর্তী সিদ্ধান্ত কীভাবে নেওয়া হয় তা পরিবর্তন হয়।",
         "when": "সম্প্রদায়ের ক্যালেন্ডারের চারপাশে সাজানো, কখনও একা দর্শকের সুবিধার আশেপাশে নয়।",
         "where": "গ্রামে নিজেরাই, বা এমন একটি কলের উপর যেখানে ভ্রমণ সম্ভব নয়।",
@@ -10799,7 +10799,7 @@ const BN = {
         "what": "শিশুশ্রম এবং শিশু যৌন নির্যাতনের বিরুদ্ধে একটি কর্মক্ষেত্রের প্রতিশ্রুতি, এটি ধরে রাখার নীতি এবং প্রশিক্ষণ সহ।",
         "why": "একটি বিবৃত অবস্থান কর্মীদের এমন কিছু বাড়াতে একটি পথ দেয় যা তারা অন্যথায় চুপ করে থাকবে।",
         "when": "ঘটনার আগে, পরে নয়। চাপের মুখে লেখা নীতি কাউকে রক্ষা করে না।",
-        "where": "আপনার কর্মক্ষেত্র এবং এর সংশ্লিষ্ট স্থানগুলি — ঠিকাদার, বিক্রেতা, পরিবহন, আবাসন।",
+        "where": "আপনার কর্মক্ষেত্র এবং এর সংশ্লিষ্ট স্থানগুলি - ঠিকাদার, বিক্রেতা, পরিবহন, আবাসন।",
         "how": "আমরা মডেলের প্রতিশ্রুতি ভাগ করে নিই, এটিকে মানিয়ে নিতে সাহায্য করি এবং যাদের এটিতে কাজ করতে হবে তাদের প্রশিক্ষণ দিই।"
       }
     },
@@ -10953,9 +10953,9 @@ const BN = {
   "fPanHint": "কার্ডে মুদ্রিত দশটি অক্ষর",
   "fAadhaar": "মুখোশযুক্ত আধার",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "শেষ চারটি সংখ্যা মাত্র। এখানে কখনই আপনার সম্পূর্ণ আধার নম্বর লিখবেন না — আমাদের এটির প্রয়োজনও নেই বা রাখিও না।",
+  "fAadhaarNote": "শেষ চারটি সংখ্যা মাত্র। এখানে কখনই আপনার সম্পূর্ণ আধার নম্বর লিখবেন না - আমাদের এটির প্রয়োজনও নেই বা রাখিও না।",
   "fInrDocs": "প্যান এবং মাস্কড আধার স্ক্যান",
-  "fInrDocsNote": "আপনার প্যান কার্ডের একটি স্ক্যান এবং একটি মুখোশযুক্ত আধার সংযুক্ত করুন (শেষ চারটি সংখ্যা শুধুমাত্র দৃশ্যমান — UIDAI তার ওয়েবসাইট থেকে একটি জারি করে)। 80G রসিদ, ফর্ম 10BD বিবৃতি এবং নিরীক্ষার জন্য রাখা হয় এবং ধরে রাখার সময় শেষ হলে ধ্বংস করা হয়।",
+  "fInrDocsNote": "আপনার প্যান কার্ডের একটি স্ক্যান এবং একটি মুখোশযুক্ত আধার সংযুক্ত করুন (শেষ চারটি সংখ্যা শুধুমাত্র দৃশ্যমান - UIDAI তার ওয়েবসাইট থেকে একটি জারি করে)। 80G রসিদ, ফর্ম 10BD বিবৃতি এবং নিরীক্ষার জন্য রাখা হয় এবং ধরে রাখার সময় শেষ হলে ধ্বংস করা হয়।",
   "fIdRefHint": "পাসপোর্টে যেমন প্রিন্ট করা আছে",
   "fPassport": "পাসপোর্ট স্ক্যান, উভয় দিক",
   "fPassportNote": "বিদেশী অবদানের জন্য প্রয়োজন. ছবি পাতা এবং ঠিকানা পৃষ্ঠা সংযুক্ত করুন. শুধুমাত্র ফরেন কন্ট্রিবিউশন (রেগুলেশন) অ্যাক্ট রিটার্ন এবং অডিটের জন্য রাখা হয় এবং ধরে রাখার সময় শেষ হলে ধ্বংস করা হয়।",
@@ -11030,7 +11030,7 @@ const BN = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "সদস্য।",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -11132,7 +11132,7 @@ const BN = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -11280,7 +11280,7 @@ const BN = {
     }
   ],
   "ecosystemTitle": "সরকারি বিভাগ, সংবিধিবদ্ধ প্রতিষ্ঠান এবং সম্প্রদায় ব্যবস্থা যার সাথে আমরা কাজ করি",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -11607,7 +11607,7 @@ const MR = {
     "case": {
           
           "t": "हा युक्तिवाद योग्य ठरतो की नाही हे अद्याप ठरवत आहात?",
-          "s": "या पृष्ठावरील कोणत्याही विशिष्ट दाव्याचे समर्थन करण्यास आम्हाला सांगा — एखादी संख्या, एखादा जिल्हा, एखादी कार्यपद्धती. आम्ही स्रोत दाखवतो किंवा एखादा दावा ऐकू येतो त्यापेक्षा कुठे कमकुवत आहे ते स्पष्टपणे सांगतो.",
+          "s": "या पृष्ठावरील कोणत्याही विशिष्ट दाव्याचे समर्थन करण्यास आम्हाला सांगा - एखादी संख्या, एखादा जिल्हा, एखादी कार्यपद्धती. आम्ही स्रोत दाखवतो किंवा एखादा दावा ऐकू येतो त्यापेक्षा कुठे कमकुवत आहे ते स्पष्टपणे सांगतो.",
           "a": "या युक्तिवादाबद्दल विचारा",
           "subj": "गुंतवणुकीच्या कारणांबद्दल एक प्रश्न",
           "b": "गुंतवणुकीकडे पुढे जा",
@@ -11717,7 +11717,7 @@ const MR = {
   "legacy": {
     "eyebrow": "वारसा देणे",
     "title": "देणगी देणाऱ्यापेक्षा जास्त काळ टिकणारी भेट.",
-    "body": "जवळजवळ कोणालाही कधीही विचारले जात नाही, म्हणून जवळजवळ कोणीही ते करत नाही. तुमच्या इच्छेमध्ये लिहिलेला मृत्यूपत्र हे समर्थनाचे एक प्रकार आहे जे कोणत्याही अनुदान चक्रापेक्षा जास्त काळ क्षितिजासाठी वचनबद्ध केले जाऊ शकते — जे क्षितिज हे काम प्रत्यक्षात घेते. आम्हाला कायदेशीर नाव, नोंदणी क्रमांक आणि कलम शब्दांसाठी विचारा आणि ते तुमच्या वकिलाला द्या.",
+    "body": "जवळजवळ कोणालाही कधीही विचारले जात नाही, म्हणून जवळजवळ कोणीही ते करत नाही. तुमच्या इच्छेमध्ये लिहिलेला मृत्यूपत्र हे समर्थनाचे एक प्रकार आहे जे कोणत्याही अनुदान चक्रापेक्षा जास्त काळ क्षितिजासाठी वचनबद्ध केले जाऊ शकते - जे क्षितिज हे काम प्रत्यक्षात घेते. आम्हाला कायदेशीर नाव, नोंदणी क्रमांक आणि कलम शब्दांसाठी विचारा आणि ते तुमच्या वकिलाला द्या.",
     "action": "वारसा मार्ग वाचा",
     "note": "आम्ही इच्छापत्र तयार करत नाही आणि आम्ही कायदेशीर सल्ला देत नाही."
   },
@@ -11862,7 +11862,7 @@ const MR = {
       "col": "#4F0E73",
       "detail": {
         "u": "बहराइचमध्ये वीस वर्षांचे क्षेत्रीय विक्रम अस्तित्वात आहेत. प्रत्येक वर्षी त्यांचा अभ्यास न केलेला एक वर्ष पुराव्याचे वर्ष आहे जे धोरण लिहिणाऱ्या लोकांपर्यंत कधीही पोहोचत नाही.",
-        "what": "लाइव्ह प्रोग्रामवर नामांकित संशोधन भागीदारी — सह-डिझाइन केलेले प्रश्न, फील्ड डेटा आणि अनुदैर्ध्य रेकॉर्डमध्ये प्रवेश आणि सह-प्रकाशन.",
+        "what": "लाइव्ह प्रोग्रामवर नामांकित संशोधन भागीदारी - सह-डिझाइन केलेले प्रश्न, फील्ड डेटा आणि अनुदैर्ध्य रेकॉर्डमध्ये प्रवेश आणि सह-प्रकाशन.",
         "why": "कधीही अभ्यास न केलेला सराव स्वतःच्या चुका पुन्हा करतो. अभ्यासाला कधीही हात न लावणारा अभ्यास वाईटरित्या सामान्यीकरण करतो. जोडी दोन्ही दुरुस्त करते.",
         "when": "डिझाइन स्टेजपासून, म्हणून मापन नंतर फिट करण्याऐवजी प्रोग्राममध्ये तयार केले जाते.",
         "where": "बहराइच आणि श्रावस्तीमधील फील्ड साइट्स, DEHAT कार्यालयात असलेल्या नोंदी आणि साइटवर उपलब्ध आहेत.",
@@ -11940,7 +11940,7 @@ const MR = {
       "col": "#५५६२२३",
       "detail": {
         "u": "लहान, चांगल्या व्याप्तीचे योगदान कंपाऊंड. फील्ड टीमला आवश्यक असलेल्या बहुतेक गोष्टी आठवड्यात पूर्ण करता येतात.",
-        "what": "कामाचा एक परिभाषित भाग — क्षेत्र, संशोधन, दस्तऐवजीकरण, डिझाइन किंवा भाषांतर — साइटवर किंवा दूरस्थपणे.",
+        "what": "कामाचा एक परिभाषित भाग - क्षेत्र, संशोधन, दस्तऐवजीकरण, डिझाइन किंवा भाषांतर - साइटवर किंवा दूरस्थपणे.",
         "why": "पैशापेक्षा क्षमता ही बंधनकारक बंधने आहे. हातांची अतिरिक्त जोडी वास्तविक अंतिम मुदत हलवते.",
         "when": "रोलिंग. दूरस्थ काम जवळजवळ लगेच सुरू होऊ शकते; ऑन-साइट प्लेसमेंटला लीड टाइम आवश्यक आहे.",
         "where": "बहराइच, किंवा दूरस्थ भूमिकांसाठी कनेक्शनसह कुठेही.",
@@ -12011,10 +12011,10 @@ const MR = {
       "col": "#4F0E73",
       "detail": {
         "u": "वारसा ही एकमेव भेट आहे जी शांतपणे, अनेक वर्षे अगोदर, अशा व्यक्तीकडून ठरवली जाते ज्यातून काहीही मिळवायचे नसते. हे दुर्मिळ देखील आहे, कारण जवळजवळ कोणीही कधीही विचारले जात नाही.",
-        "what": "तुमच्या मृत्यूपत्रात DEHAT ला लिहिलेला एक मृत्यूपत्र — एक निश्चित रक्कम, अवशेषांचा हिस्सा किंवा नावाची मालमत्ता.",
+        "what": "तुमच्या मृत्यूपत्रात DEHAT ला लिहिलेला एक मृत्यूपत्र - एक निश्चित रक्कम, अवशेषांचा हिस्सा किंवा नावाची मालमत्ता.",
         "why": "फील्ड वर्क एक वर्षाच्या तुकड्यांमध्ये आलेल्या पैशावर चालते. वारसा हे समर्थनाचे एक प्रकार आहे जे कोणत्याही अनुदान चक्रापेक्षा जास्त काळ क्षितिजासाठी वचनबद्ध केले जाऊ शकते, जे क्षितिज प्रत्यक्षात बदलते.",
         "when": "जेव्हा तुम्ही पुढे लिहाल किंवा तुमची इच्छा सुधारा. आम्हाला सांगणे ऐच्छिक आहे, परंतु ते आम्हाला योजना बनवू देते आणि भेट कशासाठी आहे ते सांगू देते.",
-        "where": "बहराइचमधील नोंदणीकृत कार्यालयात सोसायटीची नोंदणी, पॅन आणि लेखापरीक्षित खाती आहेत — तुमचे वकील जे काही विचारतील.",
+        "where": "बहराइचमधील नोंदणीकृत कार्यालयात सोसायटीची नोंदणी, पॅन आणि लेखापरीक्षित खाती आहेत - तुमचे वकील जे काही विचारतील.",
         "how": "तुमच्या वकिलासाठी नेमके कायदेशीर नाव, नोंदणी क्रमांक आणि कलम शब्दांसाठी आम्हाला विचारा. आम्ही इच्छापत्र तयार करत नाही आणि आम्ही कायदेशीर सल्ला देत नाही; आम्ही तुमच्या वकिलाला जे हवे आहे ते देतो आणि मागे हटतो."
       }
     },
@@ -12030,9 +12030,9 @@ const MR = {
       "detail": {
         "u": "लग्न, वाढदिवस, वर्धापनदिन किंवा एकदा पुनर्निर्देशित केलेले स्मारक एका हस्तक्षेपाच्या संपूर्ण चक्रासाठी निधी देऊ शकते.",
         "what": "पाहुण्यांनी शगुन किंवा भेटवस्तू आणण्याऐवजी DEHAT ला देण्यास सांगितले, प्रसंगी आणि चिन्हांकित व्यक्ती किंवा जोडप्याच्या नावाने.",
-        "why": "हे एका खाजगी दिवसाचे सार्वजनिक दिवसात रूपांतर करते आणि फील्ड टीम अन्यथा भेटणार नाही अशा लोकांपर्यंत पोहोचते — परंतु प्रत्येक भेट थेट दिली गेली तरच. रोखीने किंवा हाताने गोळा केलेली आणि नंतर आम्हाला पाठवलेली रक्कम आम्ही पावती किंवा सुरक्षितपणे बँक करू शकत नाही; देणाऱ्याला त्यांची स्वतःची कर पावती देऊ देणारा नियम त्यांच्या स्वतःच्या रकमेवर त्यांचे नाव आवश्यक आहे.",
+        "why": "हे एका खाजगी दिवसाचे सार्वजनिक दिवसात रूपांतर करते आणि फील्ड टीम अन्यथा भेटणार नाही अशा लोकांपर्यंत पोहोचते - परंतु प्रत्येक भेट थेट दिली गेली तरच. रोखीने किंवा हाताने गोळा केलेली आणि नंतर आम्हाला पाठवलेली रक्कम आम्ही पावती किंवा सुरक्षितपणे बँक करू शकत नाही; देणाऱ्याला त्यांची स्वतःची कर पावती देऊ देणारा नियम त्यांच्या स्वतःच्या रकमेवर त्यांचे नाव आवश्यक आहे.",
         "when": "चार ते सहा आठवड्यांची नोटीस आम्हांला एक पान आणि साहित्य तयार करू देते आणि शक्यतो फील्डमधून आवाज तयार करू देते.",
-        "where": "तुमचे ठिकाण, ऑनलाइन किंवा बहराइचमध्ये. देणगी नेहमीच थेट DEHAT च्या स्वतःच्या खात्यात येते — कधीही वैयक्तिक खात्यात नाही, अगदी थोडक्यात, अगदी विश्वासातही.",
+        "where": "तुमचे ठिकाण, ऑनलाइन किंवा बहराइचमध्ये. देणगी नेहमीच थेट DEHAT च्या स्वतःच्या खात्यात येते - कधीही वैयक्तिक खात्यात नाही, अगदी थोडक्यात, अगदी विश्वासातही.",
         "how": "प्रसंग आणि तारीख सांगा. आम्ही तुमच्या नावावर एक पृष्ठ सेट केले आहे जे तुमचे अतिथी थेट देतात आणि आम्ही पावत्या आणि फॉलो-अप हाताळतो."
       }
     },
@@ -12047,9 +12047,9 @@ const MR = {
       "detail": {
         "u": "कॉमेडियनचा सेट, संगीतकाराचा कार्यक्रम किंवा चित्रपट निर्मात्याचा प्रीमियर हे काम प्रेक्षकांपर्यंत पोहोचवू शकतो, ज्याचे आवाहन पत्र कधीही पोहोचत नाही.",
         "what": "एखादा शो, स्क्रीनिंग, थेट प्रवाह किंवा DEHAT च्या समुदायांना समर्पित केलेल्या रिलीझ केलेल्या कामाचा एक भाग, कलाकारांद्वारे न देता थेट प्रेक्षक देतात.",
-        "why": "आधीच एखाद्या कलाकारावर विश्वास ठेवणारा प्रेक्षक क्वचितच एखाद्या NGO ला स्वतःच्या अटींवर भेटतो. कलाकाराने गोळा केलेली रक्कम बँकेत जमा करणे आणि नंतर सुपूर्द करणे हे आपण करू शकत नाही — प्रत्येक भेटवस्तू देणाऱ्या व्यक्तीने, त्यांच्या स्वत:च्या नावाने दिली पाहिजे, त्याच कारणासाठी लग्न किंवा वाढदिवस भेटवस्तू देते.",
+        "why": "आधीच एखाद्या कलाकारावर विश्वास ठेवणारा प्रेक्षक क्वचितच एखाद्या NGO ला स्वतःच्या अटींवर भेटतो. कलाकाराने गोळा केलेली रक्कम बँकेत जमा करणे आणि नंतर सुपूर्द करणे हे आपण करू शकत नाही - प्रत्येक भेटवस्तू देणाऱ्या व्यक्तीने, त्यांच्या स्वत:च्या नावाने दिली पाहिजे, त्याच कारणासाठी लग्न किंवा वाढदिवस भेटवस्तू देते.",
         "when": "तारीख निश्चित होताच सांगा; चार आठवडे आम्हाला साहित्य तयार करू देते आणि थेट प्रवाह किंवा मोठ्या शोसाठी, फील्डमधून रेकॉर्ड केलेला संदेश.",
-        "where": "तुमचे प्रेक्षक आधीपासून कुठेही आहेत — एक ठिकाण, एक प्रवाह, एक प्रकाशन. देणे स्वतः DEHAT च्या स्वतःच्या पृष्ठावर होते, दारावर किंवा कलाकाराच्या खात्यात नाही.",
+        "where": "तुमचे प्रेक्षक आधीपासून कुठेही आहेत - एक ठिकाण, एक प्रवाह, एक प्रकाशन. देणे स्वतः DEHAT च्या स्वतःच्या पृष्ठावर होते, दारावर किंवा कलाकाराच्या खात्यात नाही.",
         "how": "आम्हाला तारीख, स्वरूप आणि अपेक्षित पोहोच सांगा. तुमच्या प्रेक्षकांना निर्देशित करण्यासाठी आम्ही तुम्हाला एक समर्पित पृष्ठ आणि लिंक देतो, तुम्ही दोनदा न विचारता वापरू शकता असे ब्रँडिंग आणि तुम्ही आणि ते दोघेही पाहू शकता."
       }
     },
@@ -12064,7 +12064,7 @@ const MR = {
       "col": "#D2305C",
       "detail": {
         "u": "गुंतवणुकदार आणि त्यांचे पैसे पोहोचलेली व्यक्ती यांच्यातील अंतर सहसा कधीच बंद होत नाही. तो असावा.",
-        "what": "एक संरचित बैठक — वैयक्तिक किंवा ऑनलाइन — तुमचा पाठिंबा पोहोचलेल्या लोक आणि समुदायांसोबत.",
+        "what": "एक संरचित बैठक - वैयक्तिक किंवा ऑनलाइन - तुमचा पाठिंबा पोहोचलेल्या लोक आणि समुदायांसोबत.",
         "why": "जबाबदारी दोन्ही प्रकारे चालते. निकाल पाहून पुढील निर्णय कसा घेतला जातो ते बदलते.",
         "when": "समुदायाच्या कॅलेंडरभोवती व्यवस्था केलेले, केवळ अभ्यागतांच्या सोयीनुसार कधीही नाही.",
         "where": "स्वत: खेड्यांमध्ये, किंवा प्रवास शक्य नसलेल्या कॉलवर.",
@@ -12085,7 +12085,7 @@ const MR = {
         "what": "बालमजुरी आणि बाल लैंगिक शोषणाविरुद्ध कामाच्या ठिकाणी बांधिलकी, ती ठेवण्यासाठी धोरण आणि प्रशिक्षण.",
         "why": "नमूद केलेली स्थिती कर्मचाऱ्यांना काहीतरी वाढवण्याचा मार्ग देते अन्यथा ते शांत राहतील.",
         "when": "घटनेच्या आधी, नंतर नाही. दबावाखाली लिहिलेले धोरण कोणाचेही संरक्षण करत नाही.",
-        "where": "तुमचे कामाचे ठिकाण आणि त्याच्याशी संबंधित जागा — कंत्राटदार, विक्रेते, वाहतूक, गृहनिर्माण.",
+        "where": "तुमचे कामाचे ठिकाण आणि त्याच्याशी संबंधित जागा - कंत्राटदार, विक्रेते, वाहतूक, गृहनिर्माण.",
         "how": "आम्ही मॉडेलची वचनबद्धता सामायिक करतो, त्यास अनुकूल करण्यास मदत करतो आणि ज्या लोकांना त्यावर कार्य करावे लागेल त्यांना प्रशिक्षण देतो."
       }
     },
@@ -12239,9 +12239,9 @@ const MR = {
   "fPanHint": "कार्डवर छापल्याप्रमाणे दहा वर्ण",
   "fAadhaar": "मुखवटा घातलेला आधार",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "फक्त शेवटचे चार अंक. तुमचा पूर्ण आधार क्रमांक येथे कधीही एंटर करू नका — आम्हाला त्याची गरज नाही किंवा ठेवू नका.",
+  "fAadhaarNote": "फक्त शेवटचे चार अंक. तुमचा पूर्ण आधार क्रमांक येथे कधीही एंटर करू नका - आम्हाला त्याची गरज नाही किंवा ठेवू नका.",
   "fInrDocs": "पॅन आणि मुखवटा घातलेला आधार स्कॅन",
-  "fInrDocsNote": "तुमच्या पॅन कार्डचे स्कॅन आणि मुखवटा घातलेला आधार संलग्न करा (केवळ शेवटचे चार अंक दिसतील — UIDAI त्यांच्या वेबसाइटवरून एक जारी करते). 80G पावती, फॉर्म 10BD स्टेटमेंट आणि ऑडिटसाठी ठेवली जाते आणि धारणा कालावधी संपल्यावर नष्ट केली जाते.",
+  "fInrDocsNote": "तुमच्या पॅन कार्डचे स्कॅन आणि मुखवटा घातलेला आधार संलग्न करा (केवळ शेवटचे चार अंक दिसतील - UIDAI त्यांच्या वेबसाइटवरून एक जारी करते). 80G पावती, फॉर्म 10BD स्टेटमेंट आणि ऑडिटसाठी ठेवली जाते आणि धारणा कालावधी संपल्यावर नष्ट केली जाते.",
   "fIdRefHint": "पासपोर्टवर छापल्याप्रमाणे",
   "fPassport": "पासपोर्ट स्कॅन, दोन्ही बाजू",
   "fPassportNote": "परदेशी योगदानासाठी आवश्यक. छायाचित्र पृष्ठ आणि पत्ता पृष्ठ संलग्न करा. केवळ फॉरेन कॉन्ट्रिब्युशन (रेग्युलेशन) ऍक्ट रिटर्न आणि ऑडिटसाठी ठेवलेले आणि रिटेन्शन कालावधी संपल्यावर नष्ट केले.",
@@ -12316,7 +12316,7 @@ const MR = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "सदस्य.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -12418,7 +12418,7 @@ const MR = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -12566,7 +12566,7 @@ const MR = {
     }
   ],
   "ecosystemTitle": "शासकीय विभाग, वैधानिक संस्था आणि समुदाय व्यवस्था ज्यांच्यासोबत आम्ही काम करतो",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -12893,7 +12893,7 @@ const TE = {
     "case": {
           
           "t": "ఈ వాదన సరిపోతుందో లేదో ఇంకా నిర్ణయించుకోలేకపోతున్నారా?",
-          "s": "ఈ పేజీలోని ఏదైనా నిర్దిష్ట క్లెయిమ్‌ను సమర్థించమని మమ్మల్ని అడగండి — ఒక సంఖ్య, ఒక జిల్లా, ఒక విధానం. మేము మూలాన్ని చూపుతాము లేదా క్లెయిమ్ కనిపించే దానికంటే ఎక్కడ బలహీనంగా ఉందో స్పష్టంగా చెబుతాము.",
+          "s": "ఈ పేజీలోని ఏదైనా నిర్దిష్ట క్లెయిమ్‌ను సమర్థించమని మమ్మల్ని అడగండి - ఒక సంఖ్య, ఒక జిల్లా, ఒక విధానం. మేము మూలాన్ని చూపుతాము లేదా క్లెయిమ్ కనిపించే దానికంటే ఎక్కడ బలహీనంగా ఉందో స్పష్టంగా చెబుతాము.",
           "a": "ఈ విషయం గురించి అడగండి",
           "subj": "పెట్టుబడికి గల కారణాలపై ఒక ప్రశ్న",
           "b": "పెట్టుబడిని కొనసాగించండి",
@@ -13148,7 +13148,7 @@ const TE = {
       "col": "#4F0E73",
       "detail": {
         "u": "బహ్రైచ్‌లో ఇరవై సంవత్సరాల ఫీల్డ్ రికార్డ్‌లు ఉన్నాయి. ప్రతి సంవత్సరం వారు అధ్యయనం చేయకుండా పోయే సాక్ష్యాల సంవత్సరం, ఇది ప్రజలకు వ్రాసే విధానం చేరుకోలేదు.",
-        "what": "ప్రత్యక్ష ప్రోగ్రామ్‌లో పేరు పెట్టబడిన పరిశోధన భాగస్వామ్యం — సహ-రూపకల్పన చేయబడిన ప్రశ్నలు, ఫీల్డ్ డేటా మరియు రేఖాంశ రికార్డులకు యాక్సెస్ మరియు సహ-ప్రచురణ.",
+        "what": "ప్రత్యక్ష ప్రోగ్రామ్‌లో పేరు పెట్టబడిన పరిశోధన భాగస్వామ్యం - సహ-రూపకల్పన చేయబడిన ప్రశ్నలు, ఫీల్డ్ డేటా మరియు రేఖాంశ రికార్డులకు యాక్సెస్ మరియు సహ-ప్రచురణ.",
         "why": "ఎప్పుడూ అధ్యయనం చేయని అభ్యాసం దాని స్వంత తప్పులను పునరావృతం చేస్తుంది. అభ్యాసాన్ని ఎప్పుడూ తాకని అధ్యయనం చెడుగా సాధారణీకరిస్తుంది. జత చేయడం రెండింటినీ సరిచేస్తుంది.",
         "when": "డిజైన్ దశ నుండి, కాబట్టి కొలత తర్వాత దానికి అమర్చకుండా ప్రోగ్రామ్‌లో నిర్మించబడింది.",
         "where": "బహ్రైచ్ మరియు శ్రావస్తి అంతటా ఉన్న ఫీల్డ్ సైట్‌లు, రికార్డులు DEHAT కార్యాలయంలో ఉంచబడ్డాయి మరియు సైట్‌లో అందుబాటులో ఉన్నాయి.",
@@ -13335,7 +13335,7 @@ const TE = {
         "what": "ప్రదర్శన, స్క్రీనింగ్, లైవ్ స్ట్రీమ్ లేదా DEHAT కమ్యూనిటీలకు అంకితం చేయబడిన విడుదల చేసిన పని, కళాకారుల ద్వారా కాకుండా ప్రేక్షకులు నేరుగా అందిస్తారు.",
         "why": "కళాకారుడిని ఇప్పటికే విశ్వసించే ప్రేక్షకులు చాలా అరుదుగా NGOని దాని స్వంత నిబంధనల ప్రకారం కలుసుకుంటారు. ఒక కళాకారుడు సేకరించిన మొత్తాన్ని బ్యాంక్ చేసి, ఆ తర్వాత అందజేయడం మనం చేయలేని పని - ప్రతి బహుమతిని ఇచ్చే వ్యక్తి వారి స్వంత పేరుతో ఇవ్వాలి, అదే కారణంతో పెళ్లి లేదా పుట్టినరోజు బహుమతి.",
         "when": "తేదీని నిర్ణయించిన వెంటనే మాకు తెలియజేయండి; నాలుగు వారాలు మెటీరియల్‌ని సిద్ధం చేసి, లైవ్ స్ట్రీమ్ లేదా పెద్ద షో కోసం ఫీల్డ్ నుండి రికార్డ్ చేయబడిన సందేశాన్ని అందజేద్దాం.",
-        "where": "మీ ప్రేక్షకులు ఇప్పటికే ఎక్కడున్నా — ఒక వేదిక, స్ట్రీమ్, విడుదల. ఇవ్వడం DEHAT యొక్క స్వంత పేజీలో జరుగుతుంది, తలుపు వద్ద లేదా కళాకారుడి ఖాతాలో కాదు.",
+        "where": "మీ ప్రేక్షకులు ఇప్పటికే ఎక్కడున్నా - ఒక వేదిక, స్ట్రీమ్, విడుదల. ఇవ్వడం DEHAT యొక్క స్వంత పేజీలో జరుగుతుంది, తలుపు వద్ద లేదా కళాకారుడి ఖాతాలో కాదు.",
         "how": "తేదీ, ఫార్మాట్ మరియు ఆశించిన రీచ్‌ని మాకు తెలియజేయండి. మీ ప్రేక్షకులకు సూచించడానికి మేము మీకు అంకితమైన పేజీని మరియు లింక్‌ను అందిస్తాము, మీరు రెండుసార్లు అడగకుండానే ఉపయోగించగల బ్రాండింగ్ మరియు మీరు మరియు వారు ఇద్దరూ చూడగలిగే మొత్తం."
       }
     },
@@ -13371,7 +13371,7 @@ const TE = {
         "what": "బాల కార్మికులు మరియు బాలల లైంగిక వేధింపులకు వ్యతిరేకంగా కార్యాలయంలోని నిబద్ధత, విధానం మరియు శిక్షణతో.",
         "why": "పేర్కొన్న స్థానం ఉద్యోగులకు వారు నిశ్శబ్దంగా ఉండటానికి ఏదైనా పెంచడానికి ఒక మార్గాన్ని ఇస్తుంది.",
         "when": "ఒక సంఘటనకు ముందు, తర్వాత కాదు. ఒత్తిడిలో వ్రాసిన విధానం ఎవరినీ రక్షించదు.",
-        "where": "మీ కార్యాలయం మరియు దాని అనుబంధ స్థలాలు — కాంట్రాక్టర్లు, విక్రేతలు, రవాణా, గృహ.",
+        "where": "మీ కార్యాలయం మరియు దాని అనుబంధ స్థలాలు - కాంట్రాక్టర్లు, విక్రేతలు, రవాణా, గృహ.",
         "how": "మేము మోడల్ నిబద్ధతను పంచుకుంటాము, దానిని స్వీకరించడంలో సహాయం చేస్తాము మరియు దానిపై పని చేయాల్సిన వ్యక్తులకు శిక్షణ ఇస్తాము."
       }
     },
@@ -13411,7 +13411,7 @@ const TE = {
       }
     }
   ],
-  "sopTitle": "ఒకటి లేదా రెండు వరుసలలో — మీరు ఏమి మారుతుందని ఆశిస్తున్నారు?",
+  "sopTitle": "ఒకటి లేదా రెండు వరుసలలో - మీరు ఏమి మారుతుందని ఆశిస్తున్నారు?",
   "sopSub": "మనం నిశితంగా చదివిన ఏకైక భాగం ఇది. మీకు నచ్చిన విధంగా వ్రాయండి; సరైన సమాధానం లేదు.",
   "sopPlaceholder": "ఉదాహరణకు: బహ్రైచ్‌లో మా కార్పొరేట్ సోషల్ రెస్పాన్సిబిలిటీ ఖర్చు ఎక్కడైనా సాక్ష్యం పబ్లిక్‌గా ఉన్న చోటికి వెళ్లాలని మేము కోరుకుంటున్నాము మరియు మేము ఒక బ్లాక్‌తో ప్రారంభించాలనుకుంటున్నాము.",
   "sopPrompts": [
@@ -13602,7 +13602,7 @@ const TE = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "సభ్యుడు.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -13704,7 +13704,7 @@ const TE = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -13852,7 +13852,7 @@ const TE = {
     }
   ],
   "ecosystemTitle": "మేము కలిసి పనిచేసే ప్రభుత్వ విభాగాలు, చట్టబద్ధ సంస్థలు మరియు సమాజ వ్యవస్థలు",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -14179,7 +14179,7 @@ const TA = {
     "case": {
           
           "t": "இந்த வாதம் உறுதியானதுதானா என்று இன்னும் யோசிக்கிறீர்களா?",
-          "s": "இந்தப் பக்கத்தில் உள்ள எந்தவொரு குறிப்பிட்ட தகவலையும் நிரூபிக்குமாறு எங்களிடம் கேளுங்கள் — ஓர் எண், ஒரு மாவட்டம், ஒரு வழிமுறை. நாங்கள் மூலத்தைக் காட்டுவோம், அல்லது ஒரு தகவல் தோன்றுவதை விட எங்கு பலவீனமாக உள்ளது என்பதை வெளிப்படையாகக் கூறுவோம்.",
+          "s": "இந்தப் பக்கத்தில் உள்ள எந்தவொரு குறிப்பிட்ட தகவலையும் நிரூபிக்குமாறு எங்களிடம் கேளுங்கள் - ஓர் எண், ஒரு மாவட்டம், ஒரு வழிமுறை. நாங்கள் மூலத்தைக் காட்டுவோம், அல்லது ஒரு தகவல் தோன்றுவதை விட எங்கு பலவீனமாக உள்ளது என்பதை வெளிப்படையாகக் கூறுவோம்.",
           "a": "இந்த வாதம் குறித்துக் கேட்கவும்",
           "subj": "முதலீட்டிற்கான காரணங்கள் பற்றிய ஒரு கேள்வி",
           "b": "முதலீட்டைத் தொடரவும்",
@@ -14621,7 +14621,7 @@ const TA = {
         "what": "ஒரு நிகழ்ச்சி, திரையிடல், லைவ்ஸ்ட்ரீம் அல்லது DEHAT இன் சமூகங்களுக்காக அர்ப்பணிக்கப்பட்ட வெளியிடப்பட்ட படைப்பின் ஒரு பகுதி, கலைஞர் மூலமாக இல்லாமல் பார்வையாளர்கள் நேரடியாக வழங்குகிறார்கள்.",
         "why": "ஒரு கலைஞரை ஏற்கனவே நம்பும் பார்வையாளர்கள் ஒரு NGO வை அதன் சொந்த விதிமுறைகளின்படி சந்திப்பது அரிது. ஒரு கலைஞன் சேகரித்த ஒரு தொகையை வங்கியில் ஒப்படைப்பதுதான் நம்மால் செய்ய முடியாதது - ஒவ்வொரு பரிசும் அதைக் கொடுப்பவரால் கொடுக்கப்பட வேண்டும், அவரது சொந்த பெயரில், அதே காரணத்திற்காக ஒரு திருமண அல்லது பிறந்தநாள் பரிசு.",
         "when": "தேதியை நிர்ணயித்தவுடன் சொல்லுங்கள்; நான்கு வாரங்களில், ஒரு லைவ்ஸ்ட்ரீம் அல்லது ஒரு பெரிய நிகழ்ச்சிக்காக, புலத்தில் இருந்து பதிவுசெய்யப்பட்ட செய்தியைத் தயாரிக்கலாம்.",
-        "where": "உங்கள் பார்வையாளர்கள் ஏற்கனவே எங்கிருந்தாலும் — ஒரு இடம், ஒரு ஸ்ட்ரீம், ஒரு வெளியீடு. கொடுப்பது DEHAT இன் சொந்தப் பக்கத்தில் நடக்கும், வாசலிலோ அல்லது கலைஞரின் கணக்கிலோ அல்ல.",
+        "where": "உங்கள் பார்வையாளர்கள் ஏற்கனவே எங்கிருந்தாலும் - ஒரு இடம், ஒரு ஸ்ட்ரீம், ஒரு வெளியீடு. கொடுப்பது DEHAT இன் சொந்தப் பக்கத்தில் நடக்கும், வாசலிலோ அல்லது கலைஞரின் கணக்கிலோ அல்ல.",
         "how": "தேதி, வடிவம் மற்றும் எதிர்பார்க்கப்படும் வரம்பை எங்களிடம் கூறுங்கள். உங்கள் பார்வையாளர்களை சுட்டிக் காட்ட, இரண்டு முறை கேட்காமலேயே நீங்கள் பயன்படுத்தக்கூடிய பிராண்டிங், மற்றும் நீங்களும் அவர்களும் பார்க்கக்கூடிய மொத்த எண்ணிக்கையை நாங்கள் உங்களுக்கு வழங்குகிறோம்."
       }
     },
@@ -14888,7 +14888,7 @@ const TA = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "உறுப்பினர்.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -14990,7 +14990,7 @@ const TA = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -15138,7 +15138,7 @@ const TA = {
     }
   ],
   "ecosystemTitle": "நாங்கள் இணைந்து செயல்படும் அரசுத் துறைகள், சட்டப்பூர்வ நிறுவனங்கள் மற்றும் சமூக அமைப்புகள்",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -15465,7 +15465,7 @@ const GU = {
     "case": {
           
           "t": "હજુ પણ નક્કી નથી કરી શકતા કે આ તર્ક યોગ્ય છે?",
-          "s": "આ પૃષ્ઠ પરના કોઈપણ ચોક્કસ દાવાની સાબિતી માંગો — કોઈ આંકડો, કોઈ જિલ્લો, કોઈ પદ્ધતિ. અમે સ્ત્રોત દર્શાવીશું, અથવા સ્પષ્ટ કહીશું કે દાવો લાગે છે તેના કરતાં ક્યાં નબળો છે.",
+          "s": "આ પૃષ્ઠ પરના કોઈપણ ચોક્કસ દાવાની સાબિતી માંગો - કોઈ આંકડો, કોઈ જિલ્લો, કોઈ પદ્ધતિ. અમે સ્ત્રોત દર્શાવીશું, અથવા સ્પષ્ટ કહીશું કે દાવો લાગે છે તેના કરતાં ક્યાં નબળો છે.",
           "a": "આ તર્ક વિશે પૂછો",
           "subj": "રોકાણના તર્ક વિશે એક પ્રશ્ન",
           "b": "રોકાણ તરફ આગળ વધો",
@@ -15720,7 +15720,7 @@ const GU = {
       "col": "#4F0E73",
       "detail": {
         "u": "બહરાઈચમાં 20 વર્ષનો ફિલ્ડ રેકોર્ડ અસ્તિત્વ ધરાવે છે. દર વર્ષે તેઓ અભ્યાસ વિના જાય છે તે પુરાવાનું વર્ષ છે જે નીતિ લખતા લોકો સુધી ક્યારેય પહોંચતું નથી.",
-        "what": "લાઇવ પ્રોગ્રામ પર નામવાળી સંશોધન ભાગીદારી — સહ-ડિઝાઇન કરેલા પ્રશ્નો, ફીલ્ડ ડેટાની ઍક્સેસ અને રેખાંશ રેકોર્ડ અને સહ-પ્રકાશન.",
+        "what": "લાઇવ પ્રોગ્રામ પર નામવાળી સંશોધન ભાગીદારી - સહ-ડિઝાઇન કરેલા પ્રશ્નો, ફીલ્ડ ડેટાની ઍક્સેસ અને રેખાંશ રેકોર્ડ અને સહ-પ્રકાશન.",
         "why": "જે પ્રેક્ટિસનો ક્યારેય અભ્યાસ થતો નથી તે પોતાની ભૂલોનું પુનરાવર્તન કરે છે. અભ્યાસ કે જે અભ્યાસને ક્યારેય સ્પર્શતો નથી તે ખરાબ રીતે સામાન્ય બનાવે છે. જોડી બંનેને સુધારે છે.",
         "when": "ડિઝાઇન સ્ટેજથી, તેથી માપન પછીથી તેને ફીટ કરવાને બદલે પ્રોગ્રામમાં બનાવવામાં આવે છે.",
         "where": "બહરાઇચ અને શ્રાવસ્તિમાં ફીલ્ડ સાઇટ્સ, જેમાં DEHAT ઓફિસમાં રાખવામાં આવેલા રેકોર્ડ્સ અને સાઇટ પર ઉપલબ્ધ છે.",
@@ -15798,7 +15798,7 @@ const GU = {
       "col": "#556223",
       "detail": {
         "u": "નાના, સારી રીતે અવકાશિત યોગદાન સંયોજન. ફિલ્ડ ટીમને જે જોઈએ છે તેમાંથી મોટા ભાગના અઠવાડિયામાં સમાપ્ત થઈ શકે છે.",
-        "what": "કાર્યનો નિર્ધારિત ભાગ — ક્ષેત્ર, સંશોધન, દસ્તાવેજીકરણ, ડિઝાઇન અથવા અનુવાદ — સાઇટ પર અથવા દૂરથી.",
+        "what": "કાર્યનો નિર્ધારિત ભાગ - ક્ષેત્ર, સંશોધન, દસ્તાવેજીકરણ, ડિઝાઇન અથવા અનુવાદ - સાઇટ પર અથવા દૂરથી.",
         "why": "ક્ષમતા એ પૈસા કરતાં ઘણી વાર બંધનકર્તા અવરોધ છે. હાથની વધારાની જોડી વાસ્તવિક સમયમર્યાદાને આગળ ધપાવે છે.",
         "when": "રોલિંગ. દૂરસ્થ કાર્ય લગભગ તરત જ શરૂ થઈ શકે છે; ઑન-સાઇટ પ્લેસમેન્ટને લીડ ટાઇમની જરૂર છે.",
         "where": "બહરાઇચ, અથવા દૂરસ્થ ભૂમિકાઓ માટે કનેક્શન સાથે ગમે ત્યાં.",
@@ -15888,9 +15888,9 @@ const GU = {
       "detail": {
         "u": "લગ્ન, જન્મદિવસ, વર્ષગાંઠ અથવા એક વખત રીડાયરેક્ટ થયેલ સ્મારક એક હસ્તક્ષેપના સમગ્ર ચક્રને ભંડોળ આપી શકે છે.",
         "what": "મહેમાનોએ શગુન અથવા ભેટ લાવવાને બદલે, પ્રસંગે અને ચિહ્નિત કરનાર વ્યક્તિ અથવા દંપતીના નામે DEHAT ને આપવાનું કહ્યું.",
-        "why": "તે એક ખાનગી દિવસને જાહેરમાં ફેરવે છે, અને લોકો સુધી પહોંચે છે જે અન્યથા ફીલ્ડ ટીમને મળી શકશે નહીં — પરંતુ જો દરેક ભેટ સીધી આપવામાં આવે તો જ. અમે રોકડમાં અથવા હાથ દ્વારા એકઠી કરેલી અને પછીથી અમને મોકલવામાં આવેલી રકમની રસીદ અથવા સુરક્ષિત રીતે બેંક કરી શકતા નથી; નિયમ કે જે અમને આપનારને તેમની પોતાની કરની રસીદ આપવા દે છે તે તેમની પોતાની રકમ સામે તેમના નામની જરૂર છે.",
+        "why": "તે એક ખાનગી દિવસને જાહેરમાં ફેરવે છે, અને લોકો સુધી પહોંચે છે જે અન્યથા ફીલ્ડ ટીમને મળી શકશે નહીં - પરંતુ જો દરેક ભેટ સીધી આપવામાં આવે તો જ. અમે રોકડમાં અથવા હાથ દ્વારા એકઠી કરેલી અને પછીથી અમને મોકલવામાં આવેલી રકમની રસીદ અથવા સુરક્ષિત રીતે બેંક કરી શકતા નથી; નિયમ કે જે અમને આપનારને તેમની પોતાની કરની રસીદ આપવા દે છે તે તેમની પોતાની રકમ સામે તેમના નામની જરૂર છે.",
         "when": "ચારથી છ અઠવાડિયાની નોટિસ અમને એક પૃષ્ઠ અને સામગ્રી તૈયાર કરવા દે છે, અને શક્ય હોય ત્યાં, ક્ષેત્રમાંથી અવાજ.",
-        "where": "તમારું સ્થળ, ઓનલાઈન અથવા બહરાઈચમાં. આપવી એ હંમેશા DEHAT ના પોતાના ખાતામાં સીધું જ આવે છે — ક્યારેય વ્યક્તિગત ખાતામાં નહીં, ટૂંકમાં, વિશ્વાસમાં પણ.",
+        "where": "તમારું સ્થળ, ઓનલાઈન અથવા બહરાઈચમાં. આપવી એ હંમેશા DEHAT ના પોતાના ખાતામાં સીધું જ આવે છે - ક્યારેય વ્યક્તિગત ખાતામાં નહીં, ટૂંકમાં, વિશ્વાસમાં પણ.",
         "how": "અમને પ્રસંગ અને તારીખ જણાવો. અમે તમારા નામે એક પૃષ્ઠ સેટ કર્યું છે જે તમારા અતિથિઓ સીધા જ આપે છે અને અમે રસીદો અને ફોલો-અપને હેન્ડલ કરીએ છીએ."
       }
     },
@@ -15907,7 +15907,7 @@ const GU = {
         "what": "DEHAT ના સમુદાયોને સમર્પિત એક શો, સ્ક્રીનીંગ, લાઈવસ્ટ્રીમ અથવા રીલીઝ થયેલ કામનો એક ભાગ, જેમાં દર્શકો કલાકાર દ્વારા નહીં પણ સીધું આપે છે.",
         "why": "જે પ્રેક્ષકો પહેલેથી જ કલાકાર પર વિશ્વાસ કરે છે તે ભાગ્યે જ કોઈ એનજીઓને તેની પોતાની શરતો પર મળે છે. આપણે જે કરી શકતા નથી તે એ છે કે કલાકારે એકઠી કરેલી રકમને બેંકમાં આપીએ અને પછી તેને સોંપી દેવી - દરેક ભેટ આપનાર વ્યક્તિએ તેના પોતાના નામે આપવાની હોય છે, તે જ કારણસર લગ્ન અથવા જન્મદિવસની ભેટ આપે છે.",
         "when": "તારીખ નક્કી થતાં જ અમને જણાવો; ચાર અઠવાડિયા અમને સામગ્રી તૈયાર કરવા દે છે અને, લાઇવસ્ટ્રીમ અથવા મોટા શો માટે, ફિલ્ડમાંથી રેકોર્ડ કરેલ સંદેશ.",
-        "where": "જ્યાં પણ તમારા પ્રેક્ષકો પહેલેથી જ છે — સ્થળ, સ્ટ્રીમ, રિલીઝ. આપવી એ DEHAT ના પોતાના પેજ પર થાય છે, દરવાજા પર કે કલાકારના ખાતામાં નહીં.",
+        "where": "જ્યાં પણ તમારા પ્રેક્ષકો પહેલેથી જ છે - સ્થળ, સ્ટ્રીમ, રિલીઝ. આપવી એ DEHAT ના પોતાના પેજ પર થાય છે, દરવાજા પર કે કલાકારના ખાતામાં નહીં.",
         "how": "અમને તારીખ, ફોર્મેટ અને અપેક્ષિત પહોંચ જણાવો. અમે તમને તમારા પ્રેક્ષકોને નિર્દેશ કરવા માટે એક સમર્પિત પૃષ્ઠ અને લિંક આપીએ છીએ, તમે બે વાર પૂછ્યા વિના ઉપયોગ કરી શકો છો તે બ્રાન્ડિંગ અને તમે અને તેઓ બંને જોઈ શકે છે."
       }
     },
@@ -15922,7 +15922,7 @@ const GU = {
       "col": "#D2305C",
       "detail": {
         "u": "રોકાણકાર અને તેમના નાણાં સુધી પહોંચેલ વ્યક્તિ વચ્ચેનું અંતર સામાન્ય રીતે ક્યારેય બંધ થતું નથી. તે હોવું જોઈએ.",
-        "what": "એક સંરચિત મીટિંગ — રૂબરૂ અથવા ઓનલાઈન — તમારા સમર્થન સુધી પહોંચેલા લોકો અને સમુદાયો સાથે.",
+        "what": "એક સંરચિત મીટિંગ - રૂબરૂ અથવા ઓનલાઈન - તમારા સમર્થન સુધી પહોંચેલા લોકો અને સમુદાયો સાથે.",
         "why": "જવાબદારી બંને રીતે ચાલે છે. પરિણામ જોઈને આગળનો નિર્ણય કેવી રીતે લેવામાં આવે છે તે બદલાઈ જાય છે.",
         "when": "સમુદાયના કૅલેન્ડરની આસપાસ ગોઠવાયેલ, મુલાકાતીઓની સગવડની આસપાસ ક્યારેય નહીં.",
         "where": "ગામડાઓમાં, અથવા કૉલ પર જ્યાં મુસાફરી શક્ય નથી.",
@@ -15943,7 +15943,7 @@ const GU = {
         "what": "બાળ મજૂરી અને બાળ લૈંગિક દુર્વ્યવહાર સામે કાર્યસ્થળની પ્રતિબદ્ધતા, તેને રાખવાની નીતિ અને તાલીમ સાથે.",
         "why": "જણાવેલ સ્થિતિ કર્મચારીઓને કંઈક વધારવાનો માર્ગ આપે છે જે તેઓ અન્યથા શાંત રહેશે.",
         "when": "ઘટના પહેલા, પછી નહીં. દબાણ હેઠળ લખાયેલી નીતિ કોઈનું રક્ષણ કરતી નથી.",
-        "where": "તમારું કાર્યસ્થળ અને તેની સંલગ્ન જગ્યાઓ — ઠેકેદારો, વિક્રેતાઓ, પરિવહન, આવાસ.",
+        "where": "તમારું કાર્યસ્થળ અને તેની સંલગ્ન જગ્યાઓ - ઠેકેદારો, વિક્રેતાઓ, પરિવહન, આવાસ.",
         "how": "અમે મોડેલની પ્રતિબદ્ધતા શેર કરીએ છીએ, તેને અનુકૂલન કરવામાં મદદ કરીએ છીએ અને જે લોકોને તેના પર કાર્ય કરવું પડશે તેમને તાલીમ આપીએ છીએ."
       }
     },
@@ -16099,7 +16099,7 @@ const GU = {
   "fAadhaarHint": "XXXX XXXX 1234",
   "fAadhaarNote": "માત્ર છેલ્લા ચાર અંકો. તમારો સંપૂર્ણ આધાર નંબર અહીં ક્યારેય દાખલ કરશો નહીં - અમને તેની જરૂર નથી કે રાખી નથી.",
   "fInrDocs": "PAN અને માસ્ક કરેલ આધાર સ્કેન",
-  "fInrDocsNote": "તમારા PAN કાર્ડનું સ્કેન અને માસ્ક કરેલ આધાર જોડો (છેલ્લા ચાર અંકો જ દેખાય છે — UIDAI તેની વેબસાઇટ પરથી એક જારી કરે છે). 80G રસીદ, ફોર્મ 10BD સ્ટેટમેન્ટ અને ઓડિટ માટે રાખવામાં આવે છે અને જ્યારે રીટેન્શન અવધિ સમાપ્ત થાય છે ત્યારે નાશ કરવામાં આવે છે.",
+  "fInrDocsNote": "તમારા PAN કાર્ડનું સ્કેન અને માસ્ક કરેલ આધાર જોડો (છેલ્લા ચાર અંકો જ દેખાય છે - UIDAI તેની વેબસાઇટ પરથી એક જારી કરે છે). 80G રસીદ, ફોર્મ 10BD સ્ટેટમેન્ટ અને ઓડિટ માટે રાખવામાં આવે છે અને જ્યારે રીટેન્શન અવધિ સમાપ્ત થાય છે ત્યારે નાશ કરવામાં આવે છે.",
   "fIdRefHint": "પાસપોર્ટ પર છાપ્યા મુજબ",
   "fPassport": "પાસપોર્ટ સ્કેન, બંને બાજુ",
   "fPassportNote": "વિદેશી યોગદાન માટે જરૂરી છે. ફોટોગ્રાફ પેજ અને એડ્રેસ પેજ જોડો. માત્ર ફોરેન કોન્ટ્રીબ્યુશન (રેગ્યુલેશન) એક્ટ રીટર્ન અને ઓડિટ માટે રાખવામાં આવે છે અને જ્યારે રીટેન્શન પિરિયડ સમાપ્ત થાય છે ત્યારે તેનો નાશ કરવામાં આવે છે.",
@@ -16174,7 +16174,7 @@ const GU = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "સભ્ય.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -16276,7 +16276,7 @@ const GU = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -16424,7 +16424,7 @@ const GU = {
     }
   ],
   "ecosystemTitle": "સરકારી વિભાગો, વૈધાનિક સંસ્થાઓ અને સમુદાય પ્રણાલીઓ જેની સાથે અમે જોડાયેલા છીએ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -16751,7 +16751,7 @@ const KN = {
     "case": {
           
           "t": "ಈ ತರ್ಕವು ಸಮರ್ಥನೀಯವಾಗಿದೆಯೇ ಎಂದು ಇನ್ನೂ ನಿರ್ಧರಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲವೇ?",
-          "s": "ಈ ಪುಟದಲ್ಲಿನ ಯಾವುದೇ ನಿರ್ದಿಷ್ಟ ಹಕ್ಕನ್ನು ಸಮರ್ಥಿಸಲು ನಮ್ಮನ್ನು ಕೇಳಿ — ಒಂದು ಸಂಖ್ಯೆ, ಒಂದು ಜಿಲ್ಲೆ, ಒಂದು ಕಾರ್ಯವಿಧಾನ. ನಾವು ಮೂಲವನ್ನು ತೋರಿಸುತ್ತೇವೆ ಅಥವಾ ಹೇಳಿಕೆ ಕಾಣಿಸುವುದಕ್ಕಿಂತ ಎಲ್ಲಿ ದುರ್ಬಲವಾಗಿದೆ ಎಂಬುದನ್ನು ಸ್ಪಷ್ಟವಾಗಿ ಹೇಳುತ್ತೇವೆ.",
+          "s": "ಈ ಪುಟದಲ್ಲಿನ ಯಾವುದೇ ನಿರ್ದಿಷ್ಟ ಹಕ್ಕನ್ನು ಸಮರ್ಥಿಸಲು ನಮ್ಮನ್ನು ಕೇಳಿ - ಒಂದು ಸಂಖ್ಯೆ, ಒಂದು ಜಿಲ್ಲೆ, ಒಂದು ಕಾರ್ಯವಿಧಾನ. ನಾವು ಮೂಲವನ್ನು ತೋರಿಸುತ್ತೇವೆ ಅಥವಾ ಹೇಳಿಕೆ ಕಾಣಿಸುವುದಕ್ಕಿಂತ ಎಲ್ಲಿ ದುರ್ಬಲವಾಗಿದೆ ಎಂಬುದನ್ನು ಸ್ಪಷ್ಟವಾಗಿ ಹೇಳುತ್ತೇವೆ.",
           "a": "ಈ ತರ್ಕದ ಬಗ್ಗೆ ಕೇಳಿ",
           "subj": "ಹೂಡಿಕೆಯ ತರ್ಕದ ಬಗ್ಗೆ ಒಂದು ಪ್ರಶ್ನೆ",
           "b": "ಹೂಡಿಕೆಯನ್ನು ಮುಂದುವರಿಸಿ",
@@ -17460,7 +17460,7 @@ const KN = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "ಸದಸ್ಯ.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -17562,7 +17562,7 @@ const KN = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -17710,7 +17710,7 @@ const KN = {
     }
   ],
   "ecosystemTitle": "ನಾವು ತೊಡಗಿಸಿಕೊಂಡಿರುವ ಸರ್ಕಾರಿ ಇಲಾಖೆಗಳು, ಶಾಸನಬದ್ಧ ಸಂಸ್ಥೆಗಳು ಮತ್ತು ಸಮುದಾಯ ವ್ಯವಸ್ಥೆಗಳು",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -18037,7 +18037,7 @@ const MAI = {
     "case": {
           
           "t": "एखनो तय नहि क’ पाबि रहल छी जे ई तर्क ठीक बैसैत अछि?",
-          "s": "एहि पृष्ठ पर कोनो विशिष्ट दाबाक प्रमाण माँगू — कोनो आँकड़ा, कोनो जिला, कोनो व्यवस्था। हम स्रोत बतायब, वा स्पष्ट कहब जे कोनो दाबा जतेक लगैत अछि ओकरा सँ कतेक कमजोर अछि।",
+          "s": "एहि पृष्ठ पर कोनो विशिष्ट दाबाक प्रमाण माँगू - कोनो आँकड़ा, कोनो जिला, कोनो व्यवस्था। हम स्रोत बतायब, वा स्पष्ट कहब जे कोनो दाबा जतेक लगैत अछि ओकरा सँ कतेक कमजोर अछि।",
           "a": "एहि तर्कक बारे मे पूछू",
           "subj": "निवेशक तर्कक बारे मे एकटा प्रश्न",
           "b": "निवेश दिस आगू बढ़ू",
@@ -18147,7 +18147,7 @@ const MAI = {
   "legacy": {
     "eyebrow": "विरासत देब",
     "title": "जे वरदान दातासँ बेसी टिकैत अछि।",
-    "body": "लगभग ककरो सँ कहियो नहि पूछल जाइत छैक, तेँ लगभग कियो कहियो नहि करैत अछि । अहां कें वसीयत मे लिखल गेल वसीयत समर्थन कें एकटा रूप छै जे कोनों अनुदान चक्र सं बेसि लंबा क्षितिज कें प्रति प्रतिबद्ध कैल जा सकय छै — जे क्षितिज छै जे इ काज वास्तव मे लैत छै. कानूनी नाम, रजिस्ट्रेशन नंबर आ क्लाज वर्डिंग पूछू, आ अपन वकील के दियौ।",
+    "body": "लगभग ककरो सँ कहियो नहि पूछल जाइत छैक, तेँ लगभग कियो कहियो नहि करैत अछि । अहां कें वसीयत मे लिखल गेल वसीयत समर्थन कें एकटा रूप छै जे कोनों अनुदान चक्र सं बेसि लंबा क्षितिज कें प्रति प्रतिबद्ध कैल जा सकय छै - जे क्षितिज छै जे इ काज वास्तव मे लैत छै. कानूनी नाम, रजिस्ट्रेशन नंबर आ क्लाज वर्डिंग पूछू, आ अपन वकील के दियौ।",
     "action": "विरासत मार्ग पढ़ें",
     "note": "हम वसीयत के मसौदा नहि बनाबैत छी आ ने कानूनी सलाह दैत छी।"
   },
@@ -18292,7 +18292,7 @@ const MAI = {
       "col": "# 4F0E73",
       "detail": {
         "u": "बहराइच मे बीस सालक फील्ड रिकॉर्ड मौजूद अछि। हर साल बिना अध्ययन के एक साल एहन सबूत अछि जे नीति लिखय वाला लोक तक कहियो नहि पहुंचैत अछि.",
-        "what": "एकटा लाइव कार्यक्रम पर एकटा नामित शोध साझेदारी — सह-डिजाइन प्रश्न, फील्ड डाटा आ अनुदैर्ध्य रिकॉर्ड कें पहुंच, आ सह-प्रकाशन.",
+        "what": "एकटा लाइव कार्यक्रम पर एकटा नामित शोध साझेदारी - सह-डिजाइन प्रश्न, फील्ड डाटा आ अनुदैर्ध्य रिकॉर्ड कें पहुंच, आ सह-प्रकाशन.",
         "why": "जे अभ्यास कहियो अध्ययन नहि होइत अछि ओ अपन गलती दोहराबैत अछि । जे अध्ययन कहियो अभ्यास के नहि छूबैत अछि ओ खराब सामान्यीकरण करैत अछि । जोड़ी दुनू केँ सही करैत अछि।",
         "when": "डिजाइन स्टेज सं, तें माप प्रोग्राम में निर्मित अछि नहिं कि बाद में ओकरा पर फिट कयल जाइत अछि.",
         "where": "बहराइच आरू श्रावस्ती भर म॑ फील्ड साइट, जेकरऽ रिकॉर्ड DEHAT कार्यालय म॑ रखलऽ गेलऽ छै आरू साइट प॑ उपलब्ध छै ।",
@@ -18370,7 +18370,7 @@ const MAI = {
       "col": "# 556223",
       "detail": {
         "u": "छोट-छोट, नीक-नीक दायरा वाला योगदान यौगिक। फील्ड टीम के जे जरूरत छै ओकरा म॑ स॑ अधिकांश हफ्ता म॑ ही समाप्त होय जाय छै ।",
-        "what": "एकटा परिभाषित काज कें टुकड़ा — क्षेत्र, शोध, दस्तावेजीकरण, डिजाइन या अनुवाद — साइट पर या दूरस्थ रूप सं.",
+        "what": "एकटा परिभाषित काज कें टुकड़ा - क्षेत्र, शोध, दस्तावेजीकरण, डिजाइन या अनुवाद - साइट पर या दूरस्थ रूप सं.",
         "why": "पैसा स बेसी बेर क्षमता बाध्यकारी बाधा होइत अछि। एकटा अतिरिक्त जोड़ी हाथ एकटा असली समय सीमा के हिला दैत अछि।",
         "when": "रोलिंग। दूरस्थ काज लगभग तुरंत शुरू भ सकैत अछि; ऑन-साइट प्लेसमेंट कें लेल लीड टाइम कें जरूरत छै.",
         "where": "बहराइच, वा दूरस्थ भूमिकाक लेल कनेक्शन वाला कतहु।",
@@ -18441,10 +18441,10 @@ const MAI = {
       "col": "# 4F0E73",
       "detail": {
         "u": "विरासत एकमात्र एहन उपहार होइत छैक जे शान्त भाव सँ, सालों पहिने, एहन व्यक्ति द्वारा निर्णय कयल जाइत छैक जकरा सँ कोनो लाभ नहि बचि जाइत छैक । ई सबसँ दुर्लभ सेहो अछि, कारण लगभग ककरो सँ कहियो नहि पूछल जाइत अछि ।",
-        "what": "अहां कें वसीयत मे लिखल गेल DEHAT कें लेल एकटा वसीयत — एकटा निश्चित राशि, अवशेषक कें हिस्सा, या कोनों नामित संपत्ति.",
+        "what": "अहां कें वसीयत मे लिखल गेल DEHAT कें लेल एकटा वसीयत - एकटा निश्चित राशि, अवशेषक कें हिस्सा, या कोनों नामित संपत्ति.",
         "why": "खेतक काज पाइ पर चलैत अछि जे एक सालक टुकड़ा-टुकड़ा मे पहुँचैत अछि। विरासत समर्थन कें एकटा रूप छै जे कोनों अनुदान चक्र सं बेसि लंबा क्षितिज कें प्रति प्रतिबद्ध कैल जा सकय छै, जे वास्तव मे परिवर्तन कें क्षितिज छै.",
         "when": "जखन कखनो अहाँ अपन वसीयत लिखब वा संशोधित करब। हमरा सब के कहब वैकल्पिक अछि, मुदा एहि सं योजना बनाओल जा सकैत अछि आ अहां के कहय के मौका मिलैत अछि जे उपहार कोन काज के लेल अछि.",
-        "where": "बहराइच के पंजीकृत कार्यालय में सोसाइटी के रजिस्ट्रेशन, पैन आ ऑडिट खाता रहैत छैक — सब किछु जे अहाँक वकील मांगत.",
+        "where": "बहराइच के पंजीकृत कार्यालय में सोसाइटी के रजिस्ट्रेशन, पैन आ ऑडिट खाता रहैत छैक - सब किछु जे अहाँक वकील मांगत.",
         "how": "अपन वकील के देबय लेल हमरा सभ सं सही कानूनी नाम... रजिस्ट्रेशन नंबर आओर क्लाज वर्डिंग पूछु. हम वसीयतक मसौदा नहिं बनबैत छी आ ने कानूनी सलाह दैत छी; हम अहाँक वकील के जे चाही से द दैत छी आ पाछू हटि जाइत छी।"
       }
     },
@@ -18460,9 +18460,9 @@ const MAI = {
       "detail": {
         "u": "एक बेर पुनर्निर्देशित विवाह, जन्मदिन, वर्षगांठ या स्मारक एकटा हस्तक्षेप कें पूरा चक्र कें फंडिंग कयर सकय छै.",
         "what": "पाहुन सब कहलखिन जे शगुन या उपहार अनबाक बदला DEHAT के देब, मौका पर आ ओकरा चिन्हित करय वाला व्यक्ति या जोड़ी के नाम पर।",
-        "why": "ई एकटा निजी दिन के सार्वजनिक दिन में बदलि दैत अछि, आ एहन लोक तक पहुंचैत अछि जे फील्ड टीम के अन्यथा नहिं भेंट होयत — मुदा तखने जखन हर उपहार सीधा देल जाय. हम नकद या हाथ सं एकत्रित आ ओकर बाद हमरा सब कें पास कैल गेल राशि कें प्राप्ति नहि कयर सकय छी, या सुरक्षित रूप सं बैंक नहि कयर सकय छी; जे नियम हमरा सब के कोनो दाता के ओकर अपन कर रसीद देबय दैत अछि ओहि में ओकर नाम ओकर अपन राशि के विरुद्ध आवश्यक अछि |",
+        "why": "ई एकटा निजी दिन के सार्वजनिक दिन में बदलि दैत अछि, आ एहन लोक तक पहुंचैत अछि जे फील्ड टीम के अन्यथा नहिं भेंट होयत - मुदा तखने जखन हर उपहार सीधा देल जाय. हम नकद या हाथ सं एकत्रित आ ओकर बाद हमरा सब कें पास कैल गेल राशि कें प्राप्ति नहि कयर सकय छी, या सुरक्षित रूप सं बैंक नहि कयर सकय छी; जे नियम हमरा सब के कोनो दाता के ओकर अपन कर रसीद देबय दैत अछि ओहि में ओकर नाम ओकर अपन राशि के विरुद्ध आवश्यक अछि |",
         "when": "चारि सं छह सप्ताहक सूचना सं एकटा पन्ना आ सामग्री तैयार क सकैत छी, आ जतय संभव हो खेत सं आवाज सेहो.",
-        "where": "अहाँक आयोजन स्थल, ऑनलाइन, वा बहराइच मे। दान स्वयं सदिखन सीधा डेहट केर अपन खाता मे उतरैत अछि — कहियो व्यक्तिगत खाता मे नहि, संक्षेप मे सेहो, विश्वास मे सेहो ।",
+        "where": "अहाँक आयोजन स्थल, ऑनलाइन, वा बहराइच मे। दान स्वयं सदिखन सीधा डेहट केर अपन खाता मे उतरैत अछि - कहियो व्यक्तिगत खाता मे नहि, संक्षेप मे सेहो, विश्वास मे सेहो ।",
         "how": "अवसर आ तिथि बताउ। हम अहाँक नाम पर एकटा पेज सेट करैत छी जे अहाँक मेहमान सीधा माध्यम स दैत छथि, आ रसीद आ फॉलोअप हम सब संभालैत छी।"
       }
     },
@@ -18477,9 +18477,9 @@ const MAI = {
       "detail": {
         "u": "कोनो हास्य अभिनेता के सेट, कोनो संगीतकार के शो या कोनो फिल्म निर्माता के प्रीमियर एहि रचना के ओहि दर्शक के सौंप सकैत अछि जे एकटा अपील पत्र कहियो नहिं पहुंचैत अछि.",
         "what": "कोनो शो, कोनो स्क्रीनिंग, लाइवस्ट्रीम या रिलीज भेल काज के टुकड़ा जे DEHAT के समुदाय के समर्पित अछि, जाहि में दर्शक कलाकार के माध्यम स नै बल्कि सीधा दैत छथि ।",
-        "why": "जे दर्शक पहिने स कोनो कलाकार पर भरोसा रखैत छथि हुनका कोनो गैर सरकारी संगठन स हुनकर अपन शर्त पर शायदे भेंट होइत छनि । हम सब जे नै क सकै छी से अछि जे कोनो कलाकार द्वारा जमा कयल गेल रकम बैंक क' क' ओकरा बाद सौंप देल जाय — हर उपहार देबय वाला व्यक्ति के देबय पड़ैत छैक, ओकर अपन नाम पर, ओही कारण सं जे विवाह वा जन्मदिनक उपहार दैत छैक.",
+        "why": "जे दर्शक पहिने स कोनो कलाकार पर भरोसा रखैत छथि हुनका कोनो गैर सरकारी संगठन स हुनकर अपन शर्त पर शायदे भेंट होइत छनि । हम सब जे नै क सकै छी से अछि जे कोनो कलाकार द्वारा जमा कयल गेल रकम बैंक क' क' ओकरा बाद सौंप देल जाय - हर उपहार देबय वाला व्यक्ति के देबय पड़ैत छैक, ओकर अपन नाम पर, ओही कारण सं जे विवाह वा जन्मदिनक उपहार दैत छैक.",
         "when": "तारीख तय होइते बताउ; चारि सप्ताह में सामग्री तैयार क सकैत छी आ लाइवस्ट्रीम या पैघ शो के लेल मैदान सं रिकॉर्ड कएल गेल संदेश.",
-        "where": "जतय अहाँक दर्शक पहिने सँ छथि — कोनो आयोजन स्थल, कोनो धारा, कोनो रिलीज । दान स्वयं DEHAT के अपन पेज पर होइत छैक, दरबज्जा पर या कलाकार के खाता में नै।",
+        "where": "जतय अहाँक दर्शक पहिने सँ छथि - कोनो आयोजन स्थल, कोनो धारा, कोनो रिलीज । दान स्वयं DEHAT के अपन पेज पर होइत छैक, दरबज्जा पर या कलाकार के खाता में नै।",
         "how": "तारीख, प्रारूप आ अपेक्षित पहुँच बताउ। हम अहाँ के एकटा समर्पित पेज आ लिंक दैत छी जाहि पर अहाँ अपन दर्शक के इशारा क सकैत छी, ब्रांडिंग के उपयोग अहाँ बिना दू बेर पूछने क सकैत छी, आ एकटा रनिंग टोटल अहाँ आ ओ दुनू गोटे देख सकैत छी।"
       }
     },
@@ -18494,7 +18494,7 @@ const MAI = {
       "col": "# डी2305सी",
       "detail": {
         "u": "कोनों निवेशक आ ओकर पैसा पहुंचल व्यक्ति कें बीच कें दूरी आमतौर पर कहियो बंद नहि होयत छै. हेबाक चाही।",
-        "what": "एकटा संरचित बैठक — व्यक्तिगत रूप सं या ऑनलाइन — ओहि लोक आ समुदाय के संग जे अहां के समर्थन पहुंचल छल.",
+        "what": "एकटा संरचित बैठक - व्यक्तिगत रूप सं या ऑनलाइन - ओहि लोक आ समुदाय के संग जे अहां के समर्थन पहुंचल छल.",
         "why": "जवाबदेही दुनू दिस चलैत अछि। परिणाम देखला स अगिला निर्णय कोना लेल जाइत अछि से बदलि जाइत अछि।",
         "when": "समुदाय’क कैलेंडर’क आसपास व्यवस्थित, कहियो असगर आगंतुक’क सुविधा’क आसपास नहि.",
         "where": "गाम-गाम मे स्वयं, वा कोनो फोन पर जतय यात्रा संभव नहि हो।",
@@ -18515,7 +18515,7 @@ const MAI = {
         "what": "बाल श्रम आ बाल यौन शोषण कें खिलाफ एकटा कार्यस्थल प्रतिबद्धता, एकरा आयोजित करय कें नीति आ प्रशिक्षण कें साथ.",
         "why": "एकटा कहल गेल पद कर्मचारी कए एकटा एहन मार्ग दैत अछि जे ओ एहन चीज उठा सकथि जाहि पर ओ अन्यथा चुप रहताह।",
         "when": "कोनो घटनासँ पहिने, बादमे नहि। दबाव मे लिखल नीति ककरो सुरक्षा नहि दैत अछि।",
-        "where": "अहां कें कार्यस्थल आ ओकर संबद्ध स्थान — ठेकेदार, विक्रेता, परिवहन, आवास.",
+        "where": "अहां कें कार्यस्थल आ ओकर संबद्ध स्थान - ठेकेदार, विक्रेता, परिवहन, आवास.",
         "how": "हम मॉडल प्रतिबद्धता के साझा करैत छी, ओकरा अनुकूलित करय में मदद करैत छी, आ ओहि लोक के प्रशिक्षित करैत छी जिनका एहि पर काज करय पड़तनि."
       }
     },
@@ -18555,7 +18555,7 @@ const MAI = {
       }
     }
   ],
-  "sopTitle": "एक-दू पाँति मे — अहाँ की बदलबाक आशा क’ रहल छी ?",
+  "sopTitle": "एक-दू पाँति मे - अहाँ की बदलबाक आशा क’ रहल छी ?",
   "sopSub": "ई एकमात्र भाग अछि जकरा हम सभ बारीकीसँ पढ़ैत छी । जेना नीक लागय लिखू; कोनो सही जवाब नहि अछि।",
   "sopPlaceholder": "जेना : हम चाहैत छी जे बहराइच मे हमर कॉर्पोरेट सोशल रिस्पांसिबिलिटी खर्च कतहु जाउ जतय सबूत सार्वजनिक हो, आ हम चाहब जे एक ब्लॉक स शुरू करी।",
   "sopPrompts": [
@@ -18669,9 +18669,9 @@ const MAI = {
   "fPanHint": "दस अक्षर, जेना कार्ड पर छपल अछि",
   "fAadhaar": "नकाबपोश आधार",
   "fAadhaarHint": "XXXX XXXX 1234 के अनुसार",
-  "fAadhaarNote": "अंतिम चारि अंक मात्र। एतय अपन पूरा आधार नंबर कहियो नहि दर्ज करू — हमरा सभ केँ ने एकर आवश्यकता अछि आ ने राखि रहल छी ।",
+  "fAadhaarNote": "अंतिम चारि अंक मात्र। एतय अपन पूरा आधार नंबर कहियो नहि दर्ज करू - हमरा सभ केँ ने एकर आवश्यकता अछि आ ने राखि रहल छी ।",
   "fInrDocs": "पैन आ नकाबपोश आधार स्कैन",
-  "fInrDocsNote": "अपन पैन कार्ड कें स्कैन आ नकाबपोश आधार (अंतिम चारि अंक केवल देखाय छै — यूआईडीएआई अपन वेबसाइट सं एकटा जारी करयत छै) संलग्न करूं. 80जी रसीद, फॉर्म 10बीडी स्टेटमेंट आ ऑडिट कें लेल राखल गेलय, आ रिटेनमेंट पीरियड समाप्त भेला पर नष्ट भ गेलय.",
+  "fInrDocsNote": "अपन पैन कार्ड कें स्कैन आ नकाबपोश आधार (अंतिम चारि अंक केवल देखाय छै - यूआईडीएआई अपन वेबसाइट सं एकटा जारी करयत छै) संलग्न करूं. 80जी रसीद, फॉर्म 10बीडी स्टेटमेंट आ ऑडिट कें लेल राखल गेलय, आ रिटेनमेंट पीरियड समाप्त भेला पर नष्ट भ गेलय.",
   "fIdRefHint": "जेना पासपोर्ट पर छपल अछि",
   "fPassport": "पासपोर्ट स्कैन, दुनू दिस",
   "fPassportNote": "विदेशी योगदान के लिये आवश्यक। फोटो पृष्ठ आ पता पृष्ठ संलग्न करू। केवल विदेशी योगदान (नियमन) अधिनियम रिटर्न आ ऑडिट कें लेल राखल गेल छै, आ रिटेन अवधि समाप्त भेला पर नष्ट भ जायत छै.",
@@ -18746,7 +18746,7 @@ const MAI = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "सदस्य।",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -18848,7 +18848,7 @@ const MAI = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -18996,7 +18996,7 @@ const MAI = {
     }
   ],
   "ecosystemTitle": "सरकारी विभाग, वैधानिक संस्था आ सामुदायिक व्यवस्था जाहि संग हमरा सभ काज करैत छी",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -19323,7 +19323,7 @@ const AS = {
     "case": {
           
           "t": "এতিয়াও সিদ্ধান্ত ল’ব পৰা নাইনে এই যুক্তি যুক্তিসংগত হয়নে নহয়?",
-          "s": "এই পৃষ্ঠাত উল্লেখ থকা যিকোনো নিৰ্দিষ্ট দাবীৰ প্ৰমাণ আমাক সুধক — এটা সংখ্যা, এখন জিলা, এটা কাৰ্যপদ্ধতি। আমি উৎস দেখুৱাম, নাইবা স্পষ্টকৈ ক’ম ক’ত এটা দাবী শুনাৰ তুলনাত দুৰ্বল।",
+          "s": "এই পৃষ্ঠাত উল্লেখ থকা যিকোনো নিৰ্দিষ্ট দাবীৰ প্ৰমাণ আমাক সুধক - এটা সংখ্যা, এখন জিলা, এটা কাৰ্যপদ্ধতি। আমি উৎস দেখুৱাম, নাইবা স্পষ্টকৈ ক’ম ক’ত এটা দাবী শুনাৰ তুলনাত দুৰ্বল।",
           "a": "এই যুক্তিৰ বিষয়ে সোধক",
           "subj": "বিনিয়োগৰ যুক্তিৰ বিষয়ে এটা প্ৰশ্ন",
           "b": "বিনিয়োগৰ দিশে আগবাঢ়ক",
@@ -19433,7 +19433,7 @@ const AS = {
   "legacy": {
     "eyebrow": "লিগেচি গিভিং",
     "title": "যি উপহাৰ দাতাক বেছি দিন জীয়াই থাকে।",
-    "body": "প্ৰায় কাকো কেতিয়াও সোধা নহয়, গতিকে প্ৰায় কোনেও কেতিয়াও নকৰে। আপোনাৰ উইলত লিখা উইল হৈছে এটা ধৰণৰ সমৰ্থন যিটো যিকোনো অনুদান চক্ৰতকৈ দীঘলীয়া দিগন্তৰ প্ৰতি প্ৰতিশ্ৰুতিবদ্ধ কৰিব পাৰি — যিটো এই কামে প্ৰকৃততে লোৱা দিগন্ত। আমাৰ পৰা আইনী নাম, পঞ্জীয়ন নম্বৰ আৰু দফাৰ শব্দাংশ সুধিব, আৰু আপোনাৰ অধিবক্তাক দিয়ক।",
+    "body": "প্ৰায় কাকো কেতিয়াও সোধা নহয়, গতিকে প্ৰায় কোনেও কেতিয়াও নকৰে। আপোনাৰ উইলত লিখা উইল হৈছে এটা ধৰণৰ সমৰ্থন যিটো যিকোনো অনুদান চক্ৰতকৈ দীঘলীয়া দিগন্তৰ প্ৰতি প্ৰতিশ্ৰুতিবদ্ধ কৰিব পাৰি - যিটো এই কামে প্ৰকৃততে লোৱা দিগন্ত। আমাৰ পৰা আইনী নাম, পঞ্জীয়ন নম্বৰ আৰু দফাৰ শব্দাংশ সুধিব, আৰু আপোনাৰ অধিবক্তাক দিয়ক।",
     "action": "লিগেচি ৰুটটো পঢ়ক",
     "note": "আমি উইলৰ খচৰা প্ৰস্তুত নকৰো আৰু আইনী পৰামৰ্শও নিদিওঁ।"
   },
@@ -19578,7 +19578,7 @@ const AS = {
       "col": "#৪এফ০ই৭৩",
       "detail": {
         "u": "বাহৰেইচত বিশ বছৰৰ ক্ষেত্ৰৰ অভিলেখ আছে। প্ৰতি বছৰে তেওঁলোক অধ্যয়ণ নোহোৱাকৈ যোৱা বছৰটোৱেই হৈছে এনে এটা প্ৰমাণৰ বছৰ যিটো নীতি লিখা মানুহৰ ওচৰলৈ কেতিয়াও নাযায়।",
-        "what": "লাইভ প্ৰগ্ৰেমৰ ওপৰত এটা নামকৰণ কৰা গৱেষণা অংশীদাৰিত্ব — সহ-ডিজাইন কৰা প্ৰশ্ন, ক্ষেত্ৰৰ তথ্য আৰু দীৰ্ঘকালীন ৰেকৰ্ডৰ প্ৰৱেশ, আৰু সহ-প্ৰকাশ।",
+        "what": "লাইভ প্ৰগ্ৰেমৰ ওপৰত এটা নামকৰণ কৰা গৱেষণা অংশীদাৰিত্ব - সহ-ডিজাইন কৰা প্ৰশ্ন, ক্ষেত্ৰৰ তথ্য আৰু দীৰ্ঘকালীন ৰেকৰ্ডৰ প্ৰৱেশ, আৰু সহ-প্ৰকাশ।",
         "why": "কেতিয়াও অধ্যয়ন নকৰা অনুশীলনে নিজৰ ভুলৰ পুনৰাবৃত্তি কৰে। যি অধ্যয়নে কেতিয়াও অভ্যাসক স্পৰ্শ নকৰে, সেই অধ্যয়নে বেয়াকৈ সাধাৰণীকৰণ কৰে। যোৰাটোৱে দুয়োটাকে শুধৰাই দিয়ে।",
         "when": "ডিজাইনৰ পৰ্যায়ৰ পৰা, গতিকে জোখ-মাখৰ পিছত ইয়াৰ লগত ফিট নকৰি প্ৰগ্ৰেমত নিৰ্মাণ কৰা হয়।",
         "where": "সমগ্ৰ বাহৰেইচ আৰু শ্ৰৱস্তিৰ ক্ষেত্ৰভিত্তিক স্থান, অভিলেখসমূহ DEHAT কাৰ্যালয়ত ৰখা আৰু স্থানতে উপলব্ধ।",
@@ -19656,7 +19656,7 @@ const AS = {
       "col": "#৫৫৬২২৩",
       "detail": {
         "u": "সৰু, ভালদৰে পৰিসৰৰ অৱদান যৌগ। ফিল্ড দল এটাক যি লাগে তাৰ বেছিভাগেই সপ্তাহৰ ভিতৰতে শেষ কৰিব পৰা যায়।",
-        "what": "এটা নিৰ্দিষ্ট কাম — ক্ষেত্ৰ, গৱেষণা, নথিপত্ৰ, ডিজাইন বা অনুবাদ — ছাইটত বা দূৰৱৰ্তীভাৱে।",
+        "what": "এটা নিৰ্দিষ্ট কাম - ক্ষেত্ৰ, গৱেষণা, নথিপত্ৰ, ডিজাইন বা অনুবাদ - ছাইটত বা দূৰৱৰ্তীভাৱে।",
         "why": "ধনতকৈ ক্ষমতাই বেছিকৈ বাধ্যতামূলক বাধা। অতিৰিক্ত হাতযোৰে এটা প্ৰকৃত সময়সীমা লৰচৰ কৰে।",
         "when": "ৰোলিং। দূৰৈৰ কাম প্ৰায় লগে লগে আৰম্ভ হ’ব পাৰে; অন-ছাইট প্লেচমেণ্টৰ বাবে লিড টাইমৰ প্ৰয়োজন।",
         "where": "বাহৰাইচ, বা দূৰৱৰ্তী ভূমিকাৰ বাবে সংযোগ থকা যিকোনো ঠাইত।",
@@ -19727,10 +19727,10 @@ const AS = {
       "col": "#৪এফ০ই৭৩",
       "detail": {
         "u": "উত্তৰাধিকাৰ হ’ল একমাত্ৰ উপহাৰ যিটো শান্তভাৱে, বছৰ বছৰ আগতেই, কোনোবাই সিদ্ধান্ত লয়, যাৰ পৰা লাভ কৰিবলৈ একো বাকী নাথাকে। ইয়াৰ উপৰিও ই আটাইতকৈ বিৰল, কাৰণ প্ৰায় কাকো কেতিয়াও সোধা নহয়।",
-        "what": "আপোনাৰ উইলত লিখা DEHAT লৈ এটা উইল — এটা নিৰ্দিষ্ট ৰাশি, অৱশিষ্টৰ এটা অংশ, বা এটা নামকৰণ কৰা সম্পত্তি।",
+        "what": "আপোনাৰ উইলত লিখা DEHAT লৈ এটা উইল - এটা নিৰ্দিষ্ট ৰাশি, অৱশিষ্টৰ এটা অংশ, বা এটা নামকৰণ কৰা সম্পত্তি।",
         "why": "এবছৰৰ টুকুৰা টুকুৰকৈ অহা ধনেৰে ক্ষেত্ৰৰ কাম চলি থাকে। লিগেচি হৈছে সেই এটা ধৰণৰ সমৰ্থন যিটো যিকোনো অনুদান চক্ৰতকৈ দীঘলীয়া দিগন্তৰ প্ৰতি প্ৰতিশ্ৰুতিবদ্ধ কৰিব পাৰি, যিটো হৈছে পৰিৱৰ্তনে প্ৰকৃততে লোৱা দিগন্ত।",
         "when": "যেতিয়াই আপুনি পৰৱৰ্তী সময়ত আপোনাৰ উইল লিখে বা সংশোধন কৰিব। আমাক কোৱাটো ঐচ্ছিক, কিন্তু ই আমাক পৰিকল্পনা কৰিবলৈ দিয়ে আৰু আপোনাক ক’বলৈ দিয়ে যে উপহাৰটো কিহৰ বাবে।",
-        "where": "বাহৰেইচৰ পঞ্জীয়নভুক্ত কাৰ্যালয়ত ছ’চাইটিৰ পঞ্জীয়ন, পেন আৰু অডিট কৰা একাউণ্ট থাকে — আপোনাৰ উকীলে বিচৰা সকলো বস্তু।",
+        "where": "বাহৰেইচৰ পঞ্জীয়নভুক্ত কাৰ্যালয়ত ছ’চাইটিৰ পঞ্জীয়ন, পেন আৰু অডিট কৰা একাউণ্ট থাকে - আপোনাৰ উকীলে বিচৰা সকলো বস্তু।",
         "how": "আপোনাৰ অধিবক্তাক দিবলৈ আমাক সঠিক আইনী নাম, পঞ্জীয়ন নম্বৰ আৰু দফাৰ শব্দাংশ সুধিব। আমি উইলৰ খচৰা প্ৰস্তুত নকৰো আৰু আইনী পৰামৰ্শও নিদিওঁ; আমি আপোনাৰ উকীলক তেওঁলোকৰ প্ৰয়োজনীয়খিনি দিওঁ আৰু পিছুৱাই যাওঁ।"
       }
     },
@@ -19746,9 +19746,9 @@ const AS = {
       "detail": {
         "u": "এবাৰ পুনৰ নিৰ্দেশিত বিয়া, জন্মদিন, বৰ্ষপূৰ্তি বা স্মৃতিসৌধে এটা হস্তক্ষেপৰ গোটেই চক্ৰটোৰ বাবে ধন আগবঢ়াব পাৰে।",
         "what": "অতিথিসকলে শগুন বা উপহাৰ অনাৰ পৰিৱৰ্তে DEHATক দিবলৈ কয়, উপলক্ষে আৰু চিহ্নিত কৰা ব্যক্তি বা দম্পতীৰ নামত।",
-        "why": "ই এটা ব্যক্তিগত দিনক ৰাজহুৱা দিনলৈ ৰূপান্তৰিত কৰে, আৰু ফিল্ড দলটোৱে অন্যথা লগ নোপোৱা মানুহৰ ওচৰলৈ যায় — কিন্তু যদিহে প্ৰতিটো উপহাৰ পোনপটীয়াকৈ দিয়া হয়। আমি নগদ বা হাতেৰে সংগ্ৰহ কৰা আৰু তাৰ পিছত আমালৈ প্ৰেৰণ কৰা ধনৰাশি লাভ কৰিব নোৱাৰো, বা নিৰাপদে বেংক কৰিব নোৱাৰো; যিটো নিয়মত আমি এজন দাতাক তেওঁলোকৰ নিজৰ কৰ ৰচিদ দিব পাৰো, সেই নিয়মটোৱে তেওঁলোকৰ নিজৰ ধনৰ বিপৰীতে তেওঁলোকৰ নামটো প্ৰয়োজনীয়।",
+        "why": "ই এটা ব্যক্তিগত দিনক ৰাজহুৱা দিনলৈ ৰূপান্তৰিত কৰে, আৰু ফিল্ড দলটোৱে অন্যথা লগ নোপোৱা মানুহৰ ওচৰলৈ যায় - কিন্তু যদিহে প্ৰতিটো উপহাৰ পোনপটীয়াকৈ দিয়া হয়। আমি নগদ বা হাতেৰে সংগ্ৰহ কৰা আৰু তাৰ পিছত আমালৈ প্ৰেৰণ কৰা ধনৰাশি লাভ কৰিব নোৱাৰো, বা নিৰাপদে বেংক কৰিব নোৱাৰো; যিটো নিয়মত আমি এজন দাতাক তেওঁলোকৰ নিজৰ কৰ ৰচিদ দিব পাৰো, সেই নিয়মটোৱে তেওঁলোকৰ নিজৰ ধনৰ বিপৰীতে তেওঁলোকৰ নামটো প্ৰয়োজনীয়।",
         "when": "চাৰিৰ পৰা ছয় সপ্তাহৰ জাননী দিলে আমি এটা পৃষ্ঠা আৰু সামগ্ৰী প্ৰস্তুত কৰিব পাৰো, আৰু সম্ভৱ হ’লে ক্ষেত্ৰৰ পৰা কণ্ঠস্বৰ প্ৰস্তুত কৰিব পাৰো।",
-        "where": "আপোনাৰ স্থান, অনলাইন, বা বাহৰেইচত। দানটো নিজেই সদায় ডেহাটৰ নিজৰ একাউণ্টত পোনপটীয়াকৈ নামি পৰে — কেতিয়াও ব্যক্তিগত একাউণ্টত নহয়, আনকি চমুকৈও, আনকি আস্থাতো।",
+        "where": "আপোনাৰ স্থান, অনলাইন, বা বাহৰেইচত। দানটো নিজেই সদায় ডেহাটৰ নিজৰ একাউণ্টত পোনপটীয়াকৈ নামি পৰে - কেতিয়াও ব্যক্তিগত একাউণ্টত নহয়, আনকি চমুকৈও, আনকি আস্থাতো।",
         "how": "অনুষ্ঠানটো আৰু তাৰিখটো কওকচোন। আমি আপোনাৰ নামত এটা পৃষ্ঠা স্থাপন কৰোঁ যিটো আপোনাৰ অতিথিসকলে পোনপটীয়াকৈ দিয়ে, আৰু আমি ৰচিদ আৰু অনুসৰণ চম্ভালিছো।"
       }
     },
@@ -19763,9 +19763,9 @@ const AS = {
       "detail": {
         "u": "এজন কমেডিয়ানৰ চেট, কোনো সংগীতজ্ঞৰ শ্ব’ বা কোনো চলচ্চিত্ৰ নিৰ্মাতাৰ প্ৰিমিয়াৰে এই ৰচনাখন এনে এজন দৰ্শকৰ হাতত তুলি দিব পাৰে যিটো এখন আবেদন পত্ৰ কেতিয়াও পোৱা নাযায়।",
         "what": "DEHAT ৰ সম্প্ৰদায়সমূহৰ বাবে নিবেদিত এটা শ্ব', এটা প্ৰদৰ্শনী, এটা লাইভষ্ট্ৰিম বা মুক্তি পোৱা কামৰ এটা টুকুৰা, য'ত দৰ্শকে শিল্পীৰ জৰিয়তে নহয়, প্ৰত্যক্ষভাৱে দিয়ে।",
-        "why": "ইতিমধ্যে এজন শিল্পীক বিশ্বাস কৰা দৰ্শকে নিজৰ চৰ্তত কোনো এন জি অ’ক খুব কমেইহে লগ পায়। আমি যি কৰিব নোৱাৰো সেয়া হ’ল এজন শিল্পীয়ে সংগ্ৰহ কৰা ধনখিনি বেংক কৰি তাৰ পিছত গতাই দিয়া — প্ৰতিটো উপহাৰ দিয়া ব্যক্তিজনেও দিব লাগিব, নিজৰ নামত, একে কাৰণতে বিয়া বা জন্মদিনৰ উপহাৰ এটাই দিব লাগে।",
+        "why": "ইতিমধ্যে এজন শিল্পীক বিশ্বাস কৰা দৰ্শকে নিজৰ চৰ্তত কোনো এন জি অ’ক খুব কমেইহে লগ পায়। আমি যি কৰিব নোৱাৰো সেয়া হ’ল এজন শিল্পীয়ে সংগ্ৰহ কৰা ধনখিনি বেংক কৰি তাৰ পিছত গতাই দিয়া - প্ৰতিটো উপহাৰ দিয়া ব্যক্তিজনেও দিব লাগিব, নিজৰ নামত, একে কাৰণতে বিয়া বা জন্মদিনৰ উপহাৰ এটাই দিব লাগে।",
         "when": "তাৰিখ নিৰ্ধাৰণ হোৱাৰ লগে লগে আমাক কওক; চাৰি সপ্তাহে আমাক সামগ্ৰী প্ৰস্তুত কৰিবলৈ দিয়ে আৰু লাইভষ্ট্ৰিম বা বৃহৎ অনুষ্ঠানৰ বাবে ক্ষেত্ৰৰ পৰা ৰেকৰ্ডিং কৰা বাৰ্তা।",
-        "where": "আপোনাৰ দৰ্শক ইতিমধ্যে য’তেই আছে — এটা স্থান, এটা ষ্ট্ৰিম, এটা মুক্তি। দিয়াটো নিজেই DEHAT ৰ নিজৰ পেজত ঘটে, দুৱাৰমুখত বা শিল্পীৰ একাউণ্টত নহয়।",
+        "where": "আপোনাৰ দৰ্শক ইতিমধ্যে য’তেই আছে - এটা স্থান, এটা ষ্ট্ৰিম, এটা মুক্তি। দিয়াটো নিজেই DEHAT ৰ নিজৰ পেজত ঘটে, দুৱাৰমুখত বা শিল্পীৰ একাউণ্টত নহয়।",
         "how": "তাৰিখ, ফৰ্মেট আৰু আশা কৰা ধৰণৰ ৰিচ কওক। আমি আপোনাক আপোনাৰ দৰ্শকক আঙুলিয়াই দিবলৈ এটা নিৰ্দিষ্ট পৃষ্ঠা আৰু লিংক দিওঁ, আপুনি দুবাৰ নোসোধাকৈ ব্যৱহাৰ কৰিব পৰা ব্ৰেণ্ডিং, আৰু আপুনি আৰু তেওঁলোক দুয়োজনে চাব পৰা এটা চলি থকা মুঠ।"
       }
     },
@@ -19780,7 +19780,7 @@ const AS = {
       "col": "#ডি২৩০৫চি",
       "detail": {
         "u": "এজন বিনিয়োগকাৰী আৰু তেওঁলোকৰ ধনে পোৱা ব্যক্তিজনৰ মাজৰ দূৰত্ব সাধাৰণতে কেতিয়াও বন্ধ নহয়। হ’ব লাগে।",
-        "what": "আপোনাৰ সমৰ্থনে পোৱা লোক আৰু সম্প্ৰদায়সমূহৰ সৈতে এখন গাঁথনিগত বৈঠক — ব্যক্তিগতভাৱে বা অনলাইনত।",
+        "what": "আপোনাৰ সমৰ্থনে পোৱা লোক আৰু সম্প্ৰদায়সমূহৰ সৈতে এখন গাঁথনিগত বৈঠক - ব্যক্তিগতভাৱে বা অনলাইনত।",
         "why": "জবাবদিহিতা দুয়োটা দিশতে চলি থাকে। ফলাফল দেখিলে পৰৱৰ্তী সিদ্ধান্ত কেনেকৈ লোৱা হয় তাৰ পৰিৱৰ্তন ঘটে।",
         "when": "সম্প্ৰদায়ৰ কেলেণ্ডাৰৰ আশে-পাশে সজোৱা, কেতিয়াও কেৱল দৰ্শকৰ সুবিধাৰ আশে-পাশে নহয়।",
         "where": "গাঁওবোৰত নিজেই, বা ভ্ৰমণ সম্ভৱ নহয় কোনো ফোনত।",
@@ -19801,7 +19801,7 @@ const AS = {
         "what": "শিশু শ্ৰম আৰু শিশু যৌন নিৰ্যাতনৰ বিৰুদ্ধে কৰ্মক্ষেত্ৰৰ প্ৰতিশ্ৰুতি, ইয়াক ধৰি ৰখাৰ নীতি আৰু প্ৰশিক্ষণৰ সৈতে।",
         "why": "এটা উল্লেখিত পদই কৰ্মচাৰীসকলক এনে এটা পথ উত্থাপন কৰাৰ পথ দিয়ে যাৰ বিষয়ে তেওঁলোকে অন্যথা মনে মনে থাকিব।",
         "when": "কোনো এটা ঘটনাৰ আগত, পিছত নহয়। হেঁচাত লিখা নীতিয়ে কাকো সুৰক্ষা নিদিয়ে।",
-        "where": "আপোনাৰ কৰ্মক্ষেত্ৰ আৰু ইয়াৰ সংশ্লিষ্ট স্থানসমূহ — ঠিকাদাৰ, বিক্ৰেতা, পৰিবহণ, গৃহ নিৰ্মাণ।",
+        "where": "আপোনাৰ কৰ্মক্ষেত্ৰ আৰু ইয়াৰ সংশ্লিষ্ট স্থানসমূহ - ঠিকাদাৰ, বিক্ৰেতা, পৰিবহণ, গৃহ নিৰ্মাণ।",
         "how": "আমি আৰ্হি প্ৰতিশ্ৰুতি ভাগ কৰোঁ, ইয়াক খাপ খুৱাই লোৱাত সহায় কৰোঁ, আৰু ইয়াৰ ওপৰত কাম কৰিবলগীয়া হোৱা লোকসকলক প্ৰশিক্ষণ দিওঁ।"
       }
     },
@@ -19841,7 +19841,7 @@ const AS = {
       }
     }
   ],
-  "sopTitle": "এটা বা দুটা শাৰীত — আপুনি কি সলনি হ’ব বুলি আশা কৰিছে?",
+  "sopTitle": "এটা বা দুটা শাৰীত - আপুনি কি সলনি হ’ব বুলি আশা কৰিছে?",
   "sopSub": "এইটোৱেই একমাত্ৰ অংশ যিটো আমি ভালদৰে পঢ়ো। যিদৰে ভাল লাগে লিখক; কোনো সঠিক উত্তৰ নাই।",
   "sopPlaceholder": "উদাহৰণস্বৰূপে: আমি বিচাৰো যে বাহৰেইচত আমাৰ কৰ্পৰেট ছ’চিয়েল ৰেচপন্সিবিলিটি খৰচ প্ৰমাণ ৰাজহুৱা ঠাইলৈ যাওক, আৰু আমি এটা ব্লকৰ পৰা আৰম্ভ কৰিব বিচাৰো।",
   "sopPrompts": [
@@ -19955,9 +19955,9 @@ const AS = {
   "fPanHint": "দহটা আখৰ, কাৰ্ডত ছপা কৰা ধৰণে",
   "fAadhaar": "মুখা পিন্ধা আধাৰ",
   "fAadhaarHint": "XXXX XXXX ১২৩৪ চন",
-  "fAadhaarNote": "শেষৰ চাৰিটা অংক মাত্ৰ। ইয়াত কেতিয়াও আপোনাৰ সম্পূৰ্ণ আধাৰ নম্বৰ নিদিব — আমাক ইয়াৰ প্ৰয়োজনো নাই, না ৰাখোঁ।",
+  "fAadhaarNote": "শেষৰ চাৰিটা অংক মাত্ৰ। ইয়াত কেতিয়াও আপোনাৰ সম্পূৰ্ণ আধাৰ নম্বৰ নিদিব - আমাক ইয়াৰ প্ৰয়োজনো নাই, না ৰাখোঁ।",
   "fInrDocs": "পেন আৰু মাস্কেড আধাৰ স্কেন",
-  "fInrDocsNote": "আপোনাৰ পেন কাৰ্ডৰ স্কেন আৰু মাস্ক পিন্ধা আধাৰ সংলগ্ন কৰক (কেৱল শেষৰ চাৰিটা সংখ্যাহে দেখা যায় — ইউআইডিএআইয়ে ইয়াৰ ৱেবছাইটৰ পৰা এটা জাৰি কৰে)। ৮০জি ৰচিদ, প্ৰপত্ৰ ১০বিডিৰ বিবৃতি আৰু অডিটৰ বাবে ৰখা হয়, আৰু ধৰি ৰখাৰ সময়সীমা শেষ হ’লে ধ্বংস কৰা হয়।",
+  "fInrDocsNote": "আপোনাৰ পেন কাৰ্ডৰ স্কেন আৰু মাস্ক পিন্ধা আধাৰ সংলগ্ন কৰক (কেৱল শেষৰ চাৰিটা সংখ্যাহে দেখা যায় - ইউআইডিএআইয়ে ইয়াৰ ৱেবছাইটৰ পৰা এটা জাৰি কৰে)। ৮০জি ৰচিদ, প্ৰপত্ৰ ১০বিডিৰ বিবৃতি আৰু অডিটৰ বাবে ৰখা হয়, আৰু ধৰি ৰখাৰ সময়সীমা শেষ হ’লে ধ্বংস কৰা হয়।",
   "fIdRefHint": "পাছপ’ৰ্টত ছপা কৰা ধৰণে",
   "fPassport": "পাছপ’ৰ্ট স্কেন, দুয়োফালে",
   "fPassportNote": "বিদেশী বৰঙণিৰ বাবে প্ৰয়োজনীয়। ফটোৰ পৃষ্ঠা আৰু ঠিকনা পৃষ্ঠা সংলগ্ন কৰক। কেৱল বিদেশী অৱদান (নিয়ন্ত্ৰণ) আইন ৰিটাৰ্ণ আৰু অডিটৰ বাবে ৰখা হয়, আৰু ধৰি ৰখাৰ সময়সীমা শেষ হ’লে ধ্বংস কৰা হয়।",
@@ -20032,7 +20032,7 @@ const AS = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "সদস্য।",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -20134,7 +20134,7 @@ const AS = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -20282,7 +20282,7 @@ const AS = {
     }
   ],
   "ecosystemTitle": "চৰকাৰী বিভাগ, বিধিবদ্ধ প্ৰতিষ্ঠান আৰু সম্প্ৰদায় ব্যৱস্থা যাৰ সৈতে আমি কাম কৰোঁ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -20609,7 +20609,7 @@ const NE = {
     "case": {
           
           "t": "अझै निर्णय गर्न सक्नुभएको छैन कि यो तर्क सही छ?",
-          "s": "यस पृष्ठको कुनै पनि विशिष्ट दाबीको प्रमाण हामीसँग माग्नुहोस् — कुनै संख्या, कुनै जिल्ला, कुनै कार्यविधि। हामी स्रोत देखाउँछौं, वा स्पष्ट भन्छौं जहाँ कुनै दाबी लाग्नेभन्दा कमजोर छ।",
+          "s": "यस पृष्ठको कुनै पनि विशिष्ट दाबीको प्रमाण हामीसँग माग्नुहोस् - कुनै संख्या, कुनै जिल्ला, कुनै कार्यविधि। हामी स्रोत देखाउँछौं, वा स्पष्ट भन्छौं जहाँ कुनै दाबी लाग्नेभन्दा कमजोर छ।",
           "a": "यस तर्कको बारेमा सोध्नुहोस्",
           "subj": "लगानीको औचित्यको बारेमा एक प्रश्न",
           "b": "लगानीतर्फ अघि बढ्नुहोस्",
@@ -20864,7 +20864,7 @@ const NE = {
       "col": "#4F0E73",
       "detail": {
         "u": "बहराइचमा २० वर्षको फिल्ड रेकर्ड अवस्थित छ। प्रत्येक वर्ष तिनीहरू अध्ययन नगरी जान्छन् जुन प्रमाणको वर्ष हो जुन नीति लेख्ने मानिसहरूमा कहिल्यै पुग्दैन।",
-        "what": "प्रत्यक्ष कार्यक्रममा नामित अनुसन्धान साझेदारी — सह-डिजाइन गरिएका प्रश्नहरू, फिल्ड डाटा र अनुदैर्ध्य रेकर्डहरूमा पहुँच, र सह-प्रकाशन।",
+        "what": "प्रत्यक्ष कार्यक्रममा नामित अनुसन्धान साझेदारी - सह-डिजाइन गरिएका प्रश्नहरू, फिल्ड डाटा र अनुदैर्ध्य रेकर्डहरूमा पहुँच, र सह-प्रकाशन।",
         "why": "कहिल्यै अध्ययन नगरिएको अभ्यासले आफ्नै गल्ती दोहोर्याउँछ। अभ्यासलाई कहिल्यै नछुने अध्ययनले नराम्रोसँग सामान्य बनाउँछ। जोडीले दुवैलाई सच्याउछ।",
         "when": "डिजाइन चरणबाट, त्यसैले मापन पछि यसलाई फिट गर्नुको सट्टा कार्यक्रममा बनाइन्छ।",
         "where": "बहराइच र श्रावस्ती भरका फिल्ड साइटहरू, DEHAT कार्यालयमा राखिएका रेकर्डहरू र साइटमा उपलब्ध छन्।",
@@ -20942,7 +20942,7 @@ const NE = {
       "col": "#५५६२२३",
       "detail": {
         "u": "सानो, राम्ररी स्कोप गरिएको योगदान कम्पाउन्ड। फिल्ड टोलीलाई चाहिने धेरै जसो हप्ताहरूमा समाप्त हुन्छ।",
-        "what": "कार्यको परिभाषित टुक्रा — क्षेत्र, अनुसन्धान, कागजात, डिजाइन वा अनुवाद — साइटमा वा टाढाबाट।",
+        "what": "कार्यको परिभाषित टुक्रा - क्षेत्र, अनुसन्धान, कागजात, डिजाइन वा अनुवाद - साइटमा वा टाढाबाट।",
         "why": "क्षमता पैसा भन्दा धेरै पटक बाध्यकारी बाधा हो। हातको अतिरिक्त जोडीले वास्तविक समय सीमा सार्छ।",
         "when": "रोलिङ। टाढाको काम लगभग तुरुन्तै सुरु गर्न सकिन्छ; साइटमा नियुक्तिहरूलाई नेतृत्व समय चाहिन्छ।",
         "where": "बहराइच, वा जहाँसुकै टाढाको भूमिकाहरूको लागि जडानको साथ।",
@@ -21016,7 +21016,7 @@ const NE = {
         "what": "तपाईंको इच्छामा लेखिएको DEHAT को एक वसीयत - एक निश्चित रकम, अवशिष्ट को एक हिस्सा, वा नामित सम्पत्ति।",
         "why": "क्षेत्रीय काम पैसामा चल्छ जुन एक वर्षको टुक्रामा आउँछ। एक विरासत समर्थन को एक रूप हो जुन कुनै पनि अनुदान चक्र भन्दा लामो क्षितिजमा प्रतिबद्ध गर्न सकिन्छ, जुन परिवर्तनले वास्तवमा लिने क्षितिज हो।",
         "when": "जब तपाइँ अर्को लेख्नुहोस् वा तपाइँको इच्छा संशोधन गर्नुहोस्। हामीलाई बताउनु ऐच्छिक हो, तर यसले हामीलाई योजना बनाउँछ र उपहार के हो भनी भन्न दिन्छ।",
-        "where": "बहराइचमा दर्ता भएको कार्यालयले समाजको दर्ता, प्यान र लेखापरीक्षण खाताहरू राख्छ — तपाईंको वकिलले सोध्ने सबै कुरा।",
+        "where": "बहराइचमा दर्ता भएको कार्यालयले समाजको दर्ता, प्यान र लेखापरीक्षण खाताहरू राख्छ - तपाईंको वकिलले सोध्ने सबै कुरा।",
         "how": "हामीलाई तपाईंको वकिल दिनको लागि सही कानूनी नाम, दर्ता नम्बर र खण्ड शब्दहरूको लागि सोध्नुहोस्। हामी इच्छापत्रको मस्यौदा गर्दैनौं र हामी कानुनी सल्लाह दिदैनौं; हामी तपाईंको वकिललाई उनीहरूलाई आवश्यक पर्ने कुरा दिन्छौं र पछि हट्छौं।"
       }
     },
@@ -21049,7 +21049,7 @@ const NE = {
       "detail": {
         "u": "एक हास्य कलाकारको सेट, एक संगीतकारको शो वा एक फिल्म निर्माताको प्रिमियरले यो काम दर्शकहरूलाई दिन सक्छ जुन अपील पत्र कहिल्यै पुग्दैन।",
         "what": "DEHAT का समुदायहरूलाई समर्पित शो, स्क्रिनिङ, लाइभस्ट्रिम वा रिलीज गरिएको कामको टुक्रा, कलाकारको माध्यमबाट नभई प्रत्यक्ष रूपमा दर्शकहरूले दिने।",
-        "why": "पहिले नै कलाकारलाई विश्वास गर्ने दर्शकले विरलै कुनै एनजीओलाई आफ्नै शर्तमा भेट्छन्। हामीले गर्न नसक्ने कुरा भनेको कलाकारले जम्मा गरेको रकमलाई बैंक गरेर पछि हस्तान्तरण गर्नु हो — हरेक उपहार दिने व्यक्तिले आफ्नो नाममा दिनुपर्छ, जसरी विवाह वा जन्मदिनको उपहारले गर्छ।",
+        "why": "पहिले नै कलाकारलाई विश्वास गर्ने दर्शकले विरलै कुनै एनजीओलाई आफ्नै शर्तमा भेट्छन्। हामीले गर्न नसक्ने कुरा भनेको कलाकारले जम्मा गरेको रकमलाई बैंक गरेर पछि हस्तान्तरण गर्नु हो - हरेक उपहार दिने व्यक्तिले आफ्नो नाममा दिनुपर्छ, जसरी विवाह वा जन्मदिनको उपहारले गर्छ।",
         "when": "मिति तय हुने बित्तिकै हामीलाई भन्नुहोस्; चार हप्ताले हामीलाई सामग्री र लाइभस्ट्रिम वा ठूलो शोको लागि फिल्डबाट रेकर्ड गरिएको सन्देश तयार गर्न दिन्छ।",
         "where": "जहाँ तपाइँको दर्शक पहिले नै छ - एक स्थान, एक स्ट्रिम, एक रिलीज। दिने कुरा DEHAT को आफ्नै पृष्ठमा हुन्छ, ढोकामा वा कलाकारको खातामा होइन।",
         "how": "हामीलाई मिति, ढाँचा र अपेक्षित पहुँच बताउनुहोस्। हामी तपाइँलाई तपाइँको श्रोतालाई देखाउनको लागि एक समर्पित पृष्ठ र लिङ्क दिन्छौं, तपाइँ दुई पटक सोध्न बिना प्रयोग गर्न सक्ने ब्रान्डिङ, र चलिरहेको कुल तपाइँ र तिनीहरू दुबै देख्न सक्नुहुन्छ।"
@@ -21066,7 +21066,7 @@ const NE = {
       "col": "#D2305C",
       "detail": {
         "u": "लगानीकर्ता र उनीहरूको पैसा पुग्ने व्यक्ति बीचको दूरी सामान्यतया कहिल्यै बन्द हुँदैन। यो हुनुपर्छ।",
-        "what": "एक संरचित बैठक — व्यक्तिगत वा अनलाइन — मानिसहरू र समुदायहरूसँग तपाईंको समर्थन पुग्यो।",
+        "what": "एक संरचित बैठक - व्यक्तिगत वा अनलाइन - मानिसहरू र समुदायहरूसँग तपाईंको समर्थन पुग्यो।",
         "why": "जवाफदेहिता दुबै तरिकाले चल्छ। नतिजा हेर्दा अर्को निर्णय गर्ने तरिका परिवर्तन हुन्छ।",
         "when": "समुदायको क्यालेन्डर वरिपरि व्यवस्थित, आगन्तुकको सुविधाको वरिपरि कहिल्यै।",
         "where": "गाउँमा आफैं, वा यात्रा सम्भव नभएको कलमा।",
@@ -21087,7 +21087,7 @@ const NE = {
         "what": "बाल श्रम र बाल यौन दुर्व्यवहार विरुद्ध एक कार्यस्थल प्रतिबद्धता, नीति र प्रशिक्षण संग यसलाई राख्न।",
         "why": "एक उल्लेखित स्थितिले कर्मचारीहरूलाई केहि उठाउनको लागि मार्ग दिन्छ जुन तिनीहरू अन्यथा चुप लाग्नेछन्।",
         "when": "घटना अघि, पछि होइन। दबाबमा लेखिएको नीतिले कसैको सुरक्षा गर्दैन।",
-        "where": "तपाईंको कार्यस्थल र यसको सम्बद्ध ठाउँहरू — ठेकेदार, विक्रेता, यातायात, आवास।",
+        "where": "तपाईंको कार्यस्थल र यसको सम्बद्ध ठाउँहरू - ठेकेदार, विक्रेता, यातायात, आवास।",
         "how": "हामी मोडेल प्रतिबद्धता साझा गर्छौं, यसलाई अनुकूलन गर्न मद्दत गर्छौं, र त्यसमा कार्य गर्ने मानिसहरूलाई तालिम दिन्छौं।"
       }
     },
@@ -21241,9 +21241,9 @@ const NE = {
   "fPanHint": "दस वर्ण, कार्डमा छापिएको रूपमा",
   "fAadhaar": "मास्क गरिएको आधार",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "अन्तिम चार अंक मात्र। यहाँ आफ्नो पूर्ण आधार नम्बर कहिल्यै प्रविष्ट नगर्नुहोस् — हामीलाई न त यसको आवश्यकता छ न त राख्नु पर्छ।",
+  "fAadhaarNote": "अन्तिम चार अंक मात्र। यहाँ आफ्नो पूर्ण आधार नम्बर कहिल्यै प्रविष्ट नगर्नुहोस् - हामीलाई न त यसको आवश्यकता छ न त राख्नु पर्छ।",
   "fInrDocs": "प्यान र मास्क गरिएको आधार स्क्यानहरू",
-  "fInrDocsNote": "तपाईंको प्यान कार्डको स्क्यान र मास्क गरिएको आधार संलग्न गर्नुहोस् (अन्तिम चार अंक मात्र देखिने — UIDAI ले आफ्नो वेबसाइटबाट एउटा जारी गर्दछ)। 80G रसिद, फारम 10BD कथन र लेखा परीक्षणको लागि राखिएको, र अवधारण अवधि समाप्त भएपछि नष्ट गरियो।",
+  "fInrDocsNote": "तपाईंको प्यान कार्डको स्क्यान र मास्क गरिएको आधार संलग्न गर्नुहोस् (अन्तिम चार अंक मात्र देखिने - UIDAI ले आफ्नो वेबसाइटबाट एउटा जारी गर्दछ)। 80G रसिद, फारम 10BD कथन र लेखा परीक्षणको लागि राखिएको, र अवधारण अवधि समाप्त भएपछि नष्ट गरियो।",
   "fIdRefHint": "पासपोर्टमा छापिएको रूपमा",
   "fPassport": "पासपोर्ट स्क्यान, दुबै पक्ष",
   "fPassportNote": "विदेशी योगदानको लागि आवश्यक छ। फोटो पृष्ठ र ठेगाना पृष्ठ संलग्न गर्नुहोस्। विदेशी योगदान (नियमन) ऐन रिटर्न र अडिटको लागि मात्र राखिएको छ, र अवधारण अवधि समाप्त भएपछि नष्ट गरिएको छ।",
@@ -21318,7 +21318,7 @@ const NE = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "सदस्य।",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -21420,7 +21420,7 @@ const NE = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -21568,7 +21568,7 @@ const NE = {
     }
   ],
   "ecosystemTitle": "हामीले सहकार्य गर्ने सरकारी विभाग, वैधानिक संस्था र सामुदायिक प्रणालीहरू",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -21895,7 +21895,7 @@ const KOK = {
     "case": {
           
           "t": "हो युक्तिवाद सारको आसा काय ना तें अजून थारावंक ना?",
-          "s": "ह्या पाना वयल्या खंयच्याय खाशेल्या दाव्याची पुश्टी आमकां वि Og करात — एखादी संख्या, एखादो जिल्हो, एखादी पद्दत. आमी मूळ दाखयतले, वा एखादो दावो दिसता ते परस खंय अशक्त आसा तें स्पश्ट सांगतले.",
+          "s": "ह्या पाना वयल्या खंयच्याय खाशेल्या दाव्याची पुश्टी आमकां वि Og करात - एखादी संख्या, एखादो जिल्हो, एखादी पद्दत. आमी मूळ दाखयतले, वा एखादो दावो दिसता ते परस खंय अशक्त आसा तें स्पश्ट सांगतले.",
           "a": "ह्या युक्तिवादा विशीं विचारात",
           "subj": "गुंतवणुकीच्या युक्तिवादा विशीं एक प्रस्न",
           "b": "गुंतवणुकी कडेन फुडें वचात",
@@ -22005,7 +22005,7 @@ const KOK = {
   "legacy": {
     "eyebrow": "दायज दिवप",
     "title": "दिवप्यापरस चड तिगून उरपी दान.",
-    "body": "चड करून कोणाकूच केन्नाच विचारना, देखून चड करून कोणूच केन्नाच विचारना. तुमच्या वसीयतांत बरयल्ली वसीयत हो एक प्रकारचो आदार जो खंयच्याय अनुदान चक्रा परस चड काळ क्षितीजाक प्रतिबध्द जावंक शकता — जो क्षितीज हें काम प्रत्यक्षांत घेता. कायदेशीर नांव, नोंदणी क्रमांक आनी कलम शब्दावळी आमकां विचारात आनी तुमच्या वकिलाक दिवचे.",
+    "body": "चड करून कोणाकूच केन्नाच विचारना, देखून चड करून कोणूच केन्नाच विचारना. तुमच्या वसीयतांत बरयल्ली वसीयत हो एक प्रकारचो आदार जो खंयच्याय अनुदान चक्रा परस चड काळ क्षितीजाक प्रतिबध्द जावंक शकता - जो क्षितीज हें काम प्रत्यक्षांत घेता. कायदेशीर नांव, नोंदणी क्रमांक आनी कलम शब्दावळी आमकां विचारात आनी तुमच्या वकिलाक दिवचे.",
     "action": "दायज मार्ग वाचात",
     "note": "आमी वसीयत तयार करिनात आनी कायदेशीर सल्लोय दिना."
   },
@@ -22150,7 +22150,7 @@ const KOK = {
       "col": "# 4F0E73 हें नांव",
       "detail": {
         "u": "बहराइचांत वीस वर्सांचे शेतकी नोंदी अस्तित्वांत आसात. दर वर्सा ते अभ्यास करिनासतना वतात हें एक पुराव्याचें वर्स जें धोरण बरोवपी लोकां मेरेन केन्नाच पावना.",
-        "what": "लायव्ह कार्यावळीचेर नांव दिल्लें संशोधन भागीदारी — सह-डिझायन केल्ले प्रस्न, शेतकी डेटा आनी रेखांशीय नोंदींचो प्रवेश, आनी सह-प्रकाशन.",
+        "what": "लायव्ह कार्यावळीचेर नांव दिल्लें संशोधन भागीदारी - सह-डिझायन केल्ले प्रस्न, शेतकी डेटा आनी रेखांशीय नोंदींचो प्रवेश, आनी सह-प्रकाशन.",
         "why": "केन्नाच अभ्यास जायना अशी सराव आपल्योच चुको परतून करतात. सरावाक केन्नाच स्पर्श करिनाशिल्लो अभ्यास वायट सामान्यीकरण करता. जोडणी दोनूय दुरुस्त करता.",
         "when": "डिझायन टप्प्यासावन, देखून मापन उपरांत तातूंत फिट करचे परस कार्यावळींत बांदतात.",
         "where": "बहराइच आनी श्रावस्ती भोंवतणी शेतकी सुवाती, नोंदी DEHAT कार्यालयांत दवरल्यात आनी सुवातेर उपलब्ध आसात.",
@@ -22228,7 +22228,7 @@ const KOK = {
       "col": "# 556223",
       "detail": {
         "u": "ल्हान, बऱ्या व्याप्तीचें योगदान संयुग. मैदानाच्या पंगडाक जाय तें चडशें सप्तकांनी सोंपपाक मेळटा.",
-        "what": "व्याख्या केल्लो काम — क्षेत्र, संशोधन, दस्तावेजीकरण, डिझायन वा अणकार — साइटचेर वा पयसुल्ल्यान.",
+        "what": "व्याख्या केल्लो काम - क्षेत्र, संशोधन, दस्तावेजीकरण, डिझायन वा अणकार - साइटचेर वा पयसुल्ल्यान.",
         "why": "पयशापरस चड करून क्षमता ही बंधनकारक मर्यादा. एक अतिरिक्त हात जोडी खरी मुजत हालयता.",
         "when": "रोलिंग करप. रिमोट काम चड करून रोखडेंच सुरू जावंक शकता; ऑन-साईट प्लेसमेंटांक लीड टाईम जाय पडटा.",
         "where": "बहराइच, वा पयसुल्ल्या भुमिके खातीर जोडणी आशिल्ल्या खंयच्याय सुवातेर.",
@@ -22299,10 +22299,10 @@ const KOK = {
       "col": "# 4F0E73 हें नांव",
       "detail": {
         "u": "दायज म्हणल्यार एकूच भेट, जी शांतपणान, वर्सां आदीं, कोणाक तरी तातूंतल्यान मेळपाक कांयच उरना. तशेंच सगळ्यांत दुर्मिळ, कारण चड करून कोणाकूच केन्नाच विचारनात.",
-        "what": "तुमच्या वसीयतांत बरयल्ली DEHAT कडेन वसीयत — एक थारावीक रक्कम, उरिल्ल्या भागांतलो वाटो वा नांवाची मालमत्ता.",
+        "what": "तुमच्या वसीयतांत बरयल्ली DEHAT कडेन वसीयत - एक थारावीक रक्कम, उरिल्ल्या भागांतलो वाटो वा नांवाची मालमत्ता.",
         "why": "शेतकी काम एका वर्साच्या कुडक्यांनी पावपी पयशांचेर चलता. दायज म्हळ्यार खंयच्याय अनुदान चक्रा परस चड काळ क्षितीजाक प्रतिबध्द जावंक शकता असो एक प्रकारचो आदार, जो बदल प्रत्यक्षांत घेता तो क्षितीज.",
         "when": "जेन्ना तुमी फुडें तुमची वसीयत बरयतले वा तातूंत सुदारणा करतात. आमकां सांगप पर्यायी आसा, पूण तातूंतल्यान आमकां येवजण करपाक मेळटा आनी भेट कितें तें सांगपाक मेळटा.",
-        "where": "बहरीचांतल्या नोंदणीकृत कार्यालयांत सोसायटीची नोंदणी, पॅन आनी ऑडिट केल्लीं खातीं आसतात — तुमचो वकील मागतलो तें सगळें.",
+        "where": "बहरीचांतल्या नोंदणीकृत कार्यालयांत सोसायटीची नोंदणी, पॅन आनी ऑडिट केल्लीं खातीं आसतात - तुमचो वकील मागतलो तें सगळें.",
         "how": "तुमच्या वकिलाक दिवपाक अचूक कायदेशीर नांव, नोंदणी क्रमांक आनी कलम शब्दावळी आमकां विचारात. आमी वसीयत तयार करिनात आनी कायदेशीर सल्लोय दिना; आमी तुमच्या वकिलाक तांकां जाय तें दितात आनी फाटीं सरतात."
       }
     },
@@ -22318,9 +22318,9 @@ const KOK = {
       "detail": {
         "u": "एकदां पुनर्निर्देशित केल्लें लग्न, वाडदीस, वर्धापन दीस वा स्मारक एका हस्तक्षेपाच्या पुराय चक्राक निधी दिवंक शकता.",
         "what": "सोयऱ्यांनी शगुन वा भेट हाडचे बदला DEHAT कडेन दिवपाक सांगलें, त्या निमतान आनी ताचेर चिन्न घालपी मनशाच्या वा जोडप्याच्या नांवान.",
-        "why": "तो एक खाजगी दीस भौशीक दीसांत रुपांतरीत करता, आनी शेताच्या पंगडाक हेर रितीन मेळचो ना अशा लोकां मेरेन पावता — पूण दरेक भेट थेट दिल्यारच. रोख वा हातांतल्यान एकठांय केल्ली आनी उपरांत आमकां मेळिल्ली रक्कम आमी मेळोवंक शकनात, वा सुरक्षीतपणान बँक करूंक शकनात; दिवपी मनशाक तांची स्वताची कर पावती दिवंक दिवपी नेमांत तांच्या स्वताच्या रक्कमे आड तांचें नांव जाय पडटा.",
+        "why": "तो एक खाजगी दीस भौशीक दीसांत रुपांतरीत करता, आनी शेताच्या पंगडाक हेर रितीन मेळचो ना अशा लोकां मेरेन पावता - पूण दरेक भेट थेट दिल्यारच. रोख वा हातांतल्यान एकठांय केल्ली आनी उपरांत आमकां मेळिल्ली रक्कम आमी मेळोवंक शकनात, वा सुरक्षीतपणान बँक करूंक शकनात; दिवपी मनशाक तांची स्वताची कर पावती दिवंक दिवपी नेमांत तांच्या स्वताच्या रक्कमे आड तांचें नांव जाय पडटा.",
         "when": "चार ते स सप्तकांचो नोटीस आमकां एक पान आनी साहित्य तयार करपाक मेळटा, आनी शक्य आसल्यार शेतांतल्यान आवाज तयार करपाक मेळटा.",
-        "where": "तुमचें स्थळ, ऑनलायन, वा बहराइचांत. दिवप स्वता सदांच थेट DEHAT च्या स्वताच्या खात्यांत देंवता — केन्नाच वैयक्तीक खात्यांत, थोड्याच काळा खातीर लेगीत, विस्वासांत लेगीत.",
+        "where": "तुमचें स्थळ, ऑनलायन, वा बहराइचांत. दिवप स्वता सदांच थेट DEHAT च्या स्वताच्या खात्यांत देंवता - केन्नाच वैयक्तीक खात्यांत, थोड्याच काळा खातीर लेगीत, विस्वासांत लेगीत.",
         "how": "प्रसंग आनी तारीख सांगात. आमी तुमच्या नांवान एक पान स्थापन करतात जें तुमचे सोयरे थेट माध्यमांतल्यान दितात, आनी पावती आनी फालोअप आमी हाताळटात."
       }
     },
@@ -22335,9 +22335,9 @@ const KOK = {
       "detail": {
         "u": "विनोदी कलाकाराचो सेट, संगीतकारचो शो वा फिल्म निर्मात्याचो प्रीमियर हो काम केन्नाच पावना अशें आवाहन पत्र प्रेक्षकां कडेन दिवंक शकता.",
         "what": "एक शो, एक प्रदर्शन, एक लायव्हस्ट्रीम वा DEHAT च्या समाजांक समर्पीत केल्लो रिलीज केल्ल्या कामाचो एक कुडको, जातूंत प्रेक्षक कलाकारा वरवीं न्हय तर थेट दितात.",
-        "why": "पयलींच कलाकाराचेर विस्वास दवरपी प्रेक्षक स्वताच्या नेमा प्रमाण एनजीओक क्वचितच मेळटात. आमी करुंक शकनात तें म्हणल्यार एका कलाकारान एकठांय केल्ली रक्कम बँक करून उपरांत हातांत दिवप — दरेक भेट दिवपी मनशान, स्वताच्या नांवान, लग्न वा वाडदिसाची भेट दिता त्याच कारणाक लागून दिवची पडटा.",
+        "why": "पयलींच कलाकाराचेर विस्वास दवरपी प्रेक्षक स्वताच्या नेमा प्रमाण एनजीओक क्वचितच मेळटात. आमी करुंक शकनात तें म्हणल्यार एका कलाकारान एकठांय केल्ली रक्कम बँक करून उपरांत हातांत दिवप - दरेक भेट दिवपी मनशान, स्वताच्या नांवान, लग्न वा वाडदिसाची भेट दिता त्याच कारणाक लागून दिवची पडटा.",
         "when": "तारीख थारायता म्हणसर सांगात; चार सप्तकां आमकां साहित्य तयार करपाक दिता आनी लायव्हस्ट्रीम वा व्हडल्या शो खातीर शेतांतल्यान रेकॉर्ड केल्लो संदेश.",
-        "where": "तुमचे प्रेक्षक पयलींच खंय आसात — एक स्थळ, एक प्रवाह, एक रिलीज. दिवप स्वता DEHAT च्या स्वताच्या पेजीचेर जाता, दारांत वा कलाकाराच्या खात्यांत न्हय.",
+        "where": "तुमचे प्रेक्षक पयलींच खंय आसात - एक स्थळ, एक प्रवाह, एक रिलीज. दिवप स्वता DEHAT च्या स्वताच्या पेजीचेर जाता, दारांत वा कलाकाराच्या खात्यांत न्हय.",
         "how": "तारीख, स्वरूप आनी अपेक्षीत पावणी सांगात. तुमच्या प्रेक्षकांक निर्देशीत करपाक आमी तुमकां समर्पीत पान आनी दुवो दितात, तुमी दोन फावटीं विचारनासतना वापरूं येता अशें ब्रँडींग, आनी तुमकां आनी तांकां दोगांकय पळोवंक मेळपी एक रनिंग एकूण."
       }
     },
@@ -22352,7 +22352,7 @@ const KOK = {
       "col": "# डी2305सी",
       "detail": {
         "u": "गुंतवणूकदार आनी तांच्या पयशांनी पाविल्ल्या मनशा मदलें अंतर चड करून केन्नाच बंद जायना. अशें आसूंक जाय.",
-        "what": "तुमचो आदार मेळिल्ल्या लोकां वांगडा आनी समाजा वांगडा एक संरचीत बसका — व्यक्तिगत वा ऑनलायन.",
+        "what": "तुमचो आदार मेळिल्ल्या लोकां वांगडा आनी समाजा वांगडा एक संरचीत बसका - व्यक्तिगत वा ऑनलायन.",
         "why": "जापसालदारकी दोनूय वटांनी चलता. परिणाम पळोवन फुडलो निर्णय कसो घेतात हातूंत बदल जाता.",
         "when": "समाजाच्या पंचांगा भोंवतणी वेवस्था केल्ली, केन्नाच फकत भेट दिवप्याच्या सोयी भोंवतणी.",
         "where": "गांवांनीच, वा प्रवास शक्य नाशिल्ल्या फोनाचेर.",
@@ -22373,7 +22373,7 @@ const KOK = {
         "what": "बाल कामगार आनी भुरग्यांच्या लैंगीक अत्याचारा आड कामाच्या सुवातेर वचनबद्धताय, ती दवरपाचें धोरण आनी प्रशिक्षण.",
         "why": "सांगिल्ली सुवात कर्मचाऱ्यांक हेर तरेन ते शांत रावपाचे कितें तरी उबारपाचो मार्ग दिता.",
         "when": "घडणुके पयलीं, उपरांत न्हय. दबावा खाला बरयल्लें धोरण कोणाकूच राखण दिना.",
-        "where": "तुमची कामाची सुवात आनी ताचे संबंदीत सुवाती — कंत्राटदार, विक्रेते, येरादारी, घरां.",
+        "where": "तुमची कामाची सुवात आनी ताचे संबंदीत सुवाती - कंत्राटदार, विक्रेते, येरादारी, घरां.",
         "how": "आमी मॉडेल वचनबद्धताय वांटून घेतात, ताका अनुकूल करपाक मदत करतात आनी ताचेर वागपाक जाय आशिल्ल्या लोकांक प्रशिक्षण दितात."
       }
     },
@@ -22413,7 +22413,7 @@ const KOK = {
       }
     }
   ],
-  "sopTitle": "एक-दोन ओळींत — कितें बदलतलें अशी आस्त बाळगता?",
+  "sopTitle": "एक-दोन ओळींत - कितें बदलतलें अशी आस्त बाळगता?",
   "sopSub": "हो एकूच भाग आमी बारीकसाणेन वाचतात. तुमकां आवडटा तशें बरोवचें; ताका योग्य जाप ना.",
   "sopPlaceholder": "देखीक: बहराइचांतलो आमचो कॉर्पोरेट समाजीक जापसालदारकी खर्च खंय तरी पुरावो भौशीक आसचो अशें आमकां दिसता, आनी आमी एका ब्लॉका पासून सुरवात करपाक सोदतात.",
   "sopPrompts": [
@@ -22527,9 +22527,9 @@ const KOK = {
   "fPanHint": "धा अक्षरां, कार्डाचेर छापून आयिल्ले प्रमाण",
   "fAadhaar": "मास्क घालून आधार",
   "fAadhaarHint": "XXXX XXXX 1234 हें नांव",
-  "fAadhaarNote": "फकत निमाणे चार अंक. हांगा तुमचो पुराय आधार क्रमांक केन्नाच घालूंक नाकात — आमकां ताची गरज ना आनी नाच दवरतात.",
+  "fAadhaarNote": "फकत निमाणे चार अंक. हांगा तुमचो पुराय आधार क्रमांक केन्नाच घालूंक नाकात - आमकां ताची गरज ना आनी नाच दवरतात.",
   "fInrDocs": "पॅन आनी मास्कड आधार स्कॅन",
-  "fInrDocsNote": "तुमच्या पॅन कार्डाचें स्कॅन आनी मास्क केल्लो आधार जोडचो (निमाणे चार अंक फकत दिसतात — UIDAI आपल्या संकेतथळा वयल्यान एक जारी करता). 80जी पावती, फॉर्म 10बीडी स्टेटमेंट आनी ऑडिटा खातीर दवरतात, आनी धारणा काळ सोंपतकच नश्ट करतात.",
+  "fInrDocsNote": "तुमच्या पॅन कार्डाचें स्कॅन आनी मास्क केल्लो आधार जोडचो (निमाणे चार अंक फकत दिसतात - UIDAI आपल्या संकेतथळा वयल्यान एक जारी करता). 80जी पावती, फॉर्म 10बीडी स्टेटमेंट आनी ऑडिटा खातीर दवरतात, आनी धारणा काळ सोंपतकच नश्ट करतात.",
   "fIdRefHint": "पासपोर्टाचेर छापून आयिल्ले प्रमाण",
   "fPassport": "पासपोर्ट स्कॅन, दोनूय वटांनी",
   "fPassportNote": "परकी योगदाना खातीर गरजेचें. फोटो पान आनी पत्तो पान जोडचें. फकत परकी योगदान (नियमन) कायद्याच्या परताव्या खातीर आनी लेखापरीक्षणा खातीर दवरतात, आनी धारणा काळ सोंपतकच नश्ट करतात.",
@@ -22604,7 +22604,7 @@ const KOK = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "वांगडी.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -22706,7 +22706,7 @@ const KOK = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -22854,7 +22854,7 @@ const KOK = {
     }
   ],
   "ecosystemTitle": "सरकारी विभाग, वैधानिक संस्था आनी समाज वेवस्था जांच्या वांगडा आमी काम करतात",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -23181,7 +23181,7 @@ const SA = {
     "case": {
           
           "t": "अद्यापि निश्चयं कर्तुं न पारयन्ति यत् अयं तर्कः तिष्ठति वा?",
-          "s": "अस्मिन् पृष्ठे कस्यापि विशिष्टदावस्य समर्थनाय अस्मान् पृच्छन्तु — संख्या, मण्डलम्, पद्धतिः वा। वयं स्रोतः दर्शयामः, अथवा स्पष्टं वदामः यत्र कश्चन दावः दृश्यमानात् दुर्बलः अस्ति।",
+          "s": "अस्मिन् पृष्ठे कस्यापि विशिष्टदावस्य समर्थनाय अस्मान् पृच्छन्तु - संख्या, मण्डलम्, पद्धतिः वा। वयं स्रोतः दर्शयामः, अथवा स्पष्टं वदामः यत्र कश्चन दावः दृश्यमानात् दुर्बलः अस्ति।",
           "a": "अस्य तर्कस्य विषये पृच्छन्तु",
           "subj": "निवेशतर्कविषये कश्चन प्रश्नः",
           "b": "निवेशाय अग्रे सरत",
@@ -23291,7 +23291,7 @@ const SA = {
   "legacy": {
     "eyebrow": "विरासत दान",
     "title": "यः दानं दाता अतिस्थायि भवति।",
-    "body": "प्रायः कोऽपि कदापि न पृष्टः अतः प्रायः कोऽपि कदापि न करोति । भवतः वसीयतपत्रे लिखितः वसीयतः एव समर्थनस्य एकः रूपः यः कस्यापि अनुदानचक्रस्य अपेक्षया दीर्घकालं यावत् क्षितिजं प्रति प्रतिबद्धः भवितुम् अर्हति — यत् क्षितिजं एतत् कार्यं वस्तुतः गृह्णाति अस्मान् कानूनीनाम, पञ्जीकरणसङ्ख्या, खण्डशब्दाः च पृच्छन्तु, तानि च स्वस्य वकिलाय ददातु।",
+    "body": "प्रायः कोऽपि कदापि न पृष्टः अतः प्रायः कोऽपि कदापि न करोति । भवतः वसीयतपत्रे लिखितः वसीयतः एव समर्थनस्य एकः रूपः यः कस्यापि अनुदानचक्रस्य अपेक्षया दीर्घकालं यावत् क्षितिजं प्रति प्रतिबद्धः भवितुम् अर्हति - यत् क्षितिजं एतत् कार्यं वस्तुतः गृह्णाति अस्मान् कानूनीनाम, पञ्जीकरणसङ्ख्या, खण्डशब्दाः च पृच्छन्तु, तानि च स्वस्य वकिलाय ददातु।",
     "action": "विरासतां मार्गं पठन्तु",
     "note": "वयं वसीयतानां मसौदां न कुर्मः, विधिपरामर्शं च न दद्मः।"
   },
@@ -23436,7 +23436,7 @@ const SA = {
       "col": "# 4F0E73",
       "detail": {
         "u": "बहराइच्-नगरे विंशतिवर्षेभ्यः क्षेत्राभिलेखाः विद्यन्ते । प्रतिवर्षं ते अअध्ययनं कुर्वन्ति तत् प्रमाणवर्षं यत् नीतिलेखनजनानाम् कृते कदापि न प्राप्यते।",
-        "what": "लाइव कार्यक्रमे नामकं शोधसाझेदारी — सह-निर्मितप्रश्नाः, क्षेत्रदत्तांशस्य दीर्घकालीन-अभिलेखानां च अभिगमः, सह-प्रकाशनं च ।",
+        "what": "लाइव कार्यक्रमे नामकं शोधसाझेदारी - सह-निर्मितप्रश्नाः, क्षेत्रदत्तांशस्य दीर्घकालीन-अभिलेखानां च अभिगमः, सह-प्रकाशनं च ।",
         "why": "अभ्यासः यः कदापि न अधीयते सः स्वस्य दोषान् पुनः पुनः करोति। यः अध्ययनः कदापि अभ्यासं न स्पृशति सः दुष्टतया सामान्यीकरणं करोति। युग्मीकरणं उभयम् अपि सम्यक् करोति।",
         "when": "डिजाइन-पदार्थात्, अतः मापनं कार्यक्रमे निर्मितं भवति न तु पश्चात् तस्मिन् उपयुक्तम् ।",
         "where": "बहराइच-श्रावस्ती-देशयोः क्षेत्रस्थलानि, यत्र अभिलेखाः DEHAT-कार्यालये धारिताः सन्ति, स्थले च उपलभ्यन्ते ।",
@@ -23514,7 +23514,7 @@ const SA = {
       "col": "# 556223",
       "detail": {
         "u": "लघु, सुव्याप्तियुक्तानि योगदानानि यौगिकम्। क्षेत्रदलस्य यत् आवश्यकं तत् अधिकांशं सप्ताहेषु समाप्तं भवति ।",
-        "what": "परिभाषितं कार्यखण्डं — क्षेत्रं, अनुसन्धानं, दस्तावेजीकरणं, डिजाइनं वा अनुवादं वा — स्थले दूरस्थरूपेण वा ।",
+        "what": "परिभाषितं कार्यखण्डं - क्षेत्रं, अनुसन्धानं, दस्तावेजीकरणं, डिजाइनं वा अनुवादं वा - स्थले दूरस्थरूपेण वा ।",
         "why": "क्षमता धनस्य अपेक्षया अधिकवारं बाध्यकारी बाध्यता भवति। अतिरिक्तं हस्तयुगलं वास्तविकं समयसीमां चालयति।",
         "when": "रोलिंग। दूरस्थं कार्यं प्रायः तत्क्षणमेव आरभ्यतुं शक्यते; स्थले स्थापितानां कृते लीड् टाइम् आवश्यकम्।",
         "where": "बहराइच्, अथवा दूरस्थभूमिकानां कृते सम्पर्कयुक्तं कुत्रापि।",
@@ -23585,10 +23585,10 @@ const SA = {
       "col": "# 4F0E73",
       "detail": {
         "u": "वंशः एव एकमात्रं दानं यत् शान्ततया, वर्षाणां पूर्वं, कस्यचित् लाभं न अवशिष्टस्य कस्यचित् निर्णयः भवति । दुर्लभतममपि, यतः प्रायः कोऽपि कदापि न पृष्टः ।",
-        "what": "भवतः वसीयतपत्रे लिखितं DEHAT इत्यस्मै वसीयतम् — नियतराशिः, अवशेषस्य भागः, अथवा नामकृतः सम्पत्तिः ।",
+        "what": "भवतः वसीयतपत्रे लिखितं DEHAT इत्यस्मै वसीयतम् - नियतराशिः, अवशेषस्य भागः, अथवा नामकृतः सम्पत्तिः ।",
         "why": "क्षेत्रकार्यं एकवर्षस्य खण्डेषु आगच्छन्तं धनं चालयति। विरासतः समर्थनस्य एकं रूपं यत् कस्यापि अनुदानचक्रस्य अपेक्षया दीर्घकालं यावत् क्षितिजं प्रति प्रतिबद्धं कर्तुं शक्यते, यत् परिवर्तनं वास्तवतः क्षितिजं गृह्णाति",
         "when": "यदा कदापि भवन्तः अग्रिमे स्वेच्छापत्रं लिखन्ति वा संशोधयन्ति वा। अस्मान् कथयितुं वैकल्पिकं भवति, परन्तु अस्मान् योजनां कर्तुं शक्नोति, भवन्तं च वक्तुं शक्नोति यत् उपहारः किमर्थम् अस्ति।",
-        "where": "बहराइच्-नगरस्य पञ्जीकृतकार्यालये समाजस्य पञ्जीकरणं, पैन, लेखापरीक्षितलेखाः च सन्ति — यत् किमपि भवतः वकीलः याचयिष्यति ।",
+        "where": "बहराइच्-नगरस्य पञ्जीकृतकार्यालये समाजस्य पञ्जीकरणं, पैन, लेखापरीक्षितलेखाः च सन्ति - यत् किमपि भवतः वकीलः याचयिष्यति ।",
         "how": "अस्मान् भवतः वकिलं दातुं सटीकं कानूनी नाम, पञ्जीकरणसङ्ख्या, खण्डशब्दाः च पृच्छन्तु। वयं वसीयतानां मसौदां न कुर्मः, विधिपरामर्शं च न दद्मः; वयं भवतः वकिलाय यत् आवश्यकं तत् दद्मः, पश्चात् गच्छामः च।"
       }
     },
@@ -23604,9 +23604,9 @@ const SA = {
       "detail": {
         "u": "विवाहः, जन्मदिनः, वार्षिकोत्सवः वा एकवारं पुनर्निर्देशितः स्मारकः एकस्य हस्तक्षेपस्य सम्पूर्णचक्रस्य निधिं कर्तुं शक्नोति ।",
         "what": "अतिथयः शगुनं वा उपहारं वा आनयितुं स्थाने DEHAT इत्यस्मै दातुं पृष्टवन्तः, अवसरे तथा च तस्य चिह्नं कृत्वा व्यक्तिस्य वा दम्पत्योः नामधेयेन।",
-        "why": "एतत् निजीदिनं सार्वजनिकदिनं परिणमयति, अन्यथा क्षेत्रदलस्य साक्षात्कारं न करिष्यति इति जनान् प्राप्नोति — परन्तु प्रत्येकं उपहारं प्रत्यक्षतया दत्तं चेत् एव । नगदरूपेण हस्तेन वा संगृहीतं धनं पश्चात् अस्मान् प्रति प्रदत्तं धनं वयं प्राप्तुं, सुरक्षिततया वा बैंकं कर्तुं वा न शक्नुमः; यः नियमः अस्मान् दातारं स्वकीयं कररसीदं दातुं शक्नोति सः तेषां नाम स्वस्य राशिविरुद्धं अपेक्षते ।",
+        "why": "एतत् निजीदिनं सार्वजनिकदिनं परिणमयति, अन्यथा क्षेत्रदलस्य साक्षात्कारं न करिष्यति इति जनान् प्राप्नोति - परन्तु प्रत्येकं उपहारं प्रत्यक्षतया दत्तं चेत् एव । नगदरूपेण हस्तेन वा संगृहीतं धनं पश्चात् अस्मान् प्रति प्रदत्तं धनं वयं प्राप्तुं, सुरक्षिततया वा बैंकं कर्तुं वा न शक्नुमः; यः नियमः अस्मान् दातारं स्वकीयं कररसीदं दातुं शक्नोति सः तेषां नाम स्वस्य राशिविरुद्धं अपेक्षते ।",
         "when": "चतुःषट् सप्ताहाणां सूचनायाः कारणात् वयं पृष्ठं सामग्रीं च, यत्र सम्भवं तत्र क्षेत्रात् स्वरं च सज्जीकर्तुं शक्नुमः ।",
-        "where": "भवतः आयोजनस्थलं, ऑनलाइन, बहराइच्-नगरे वा। दानं स्वयं सर्वदा प्रत्यक्षतया DEHAT इत्यस्य स्वस्य खाते अवतरति — कदापि व्यक्तिगतं न, संक्षेपेण अपि, विश्वासे अपि ।",
+        "where": "भवतः आयोजनस्थलं, ऑनलाइन, बहराइच्-नगरे वा। दानं स्वयं सर्वदा प्रत्यक्षतया DEHAT इत्यस्य स्वस्य खाते अवतरति - कदापि व्यक्तिगतं न, संक्षेपेण अपि, विश्वासे अपि ।",
         "how": "अवसरं तिथिं च कथयतु। वयं भवतः नामधेयेन पृष्ठं स्थापयामः यत् भवतः अतिथयः प्रत्यक्षतया माध्यमेन ददति, रसीदानि च अनुवर्तनं च सम्पादयामः ।"
       }
     },
@@ -23621,9 +23621,9 @@ const SA = {
       "detail": {
         "u": "हास्यकलाकारस्य सेट्, संगीतकारस्य शो वा चलच्चित्रनिर्मातुः प्रीमियरं वा एतत् कार्यं प्रेक्षकाणां कृते समर्पयितुं शक्नोति यत् अपीलपत्रं कदापि न प्राप्नोति।",
         "what": "एकः शो, एकः प्रदर्शनः, एकः लाइवस्ट्रीमः अथवा DEHAT इत्यस्य समुदायेभ्यः समर्पितं विमोचितस्य कार्यस्य एकः भागः, यत्र प्रेक्षकाः कलाकारस्य माध्यमेन न अपितु प्रत्यक्षतया दानं कुर्वन्ति।",
-        "why": "यः प्रेक्षकः पूर्वमेव कलाकारे विश्वासं करोति सः दुर्लभतया एव स्वशर्तैः गैरसरकारीसंस्थां मिलति । यत् वयं कर्तुं न शक्नुमः तत् अस्ति यत् कश्चन कलाकारः संगृहीतं धनं बैंकं कृत्वा तदनन्तरं समर्पयति — प्रत्येकं उपहारं दातव्येन, स्वनाम्ना, विवाहस्य वा जन्मदिनस्य वा उपहारस्य समानकारणात् दातव्यं भवति",
+        "why": "यः प्रेक्षकः पूर्वमेव कलाकारे विश्वासं करोति सः दुर्लभतया एव स्वशर्तैः गैरसरकारीसंस्थां मिलति । यत् वयं कर्तुं न शक्नुमः तत् अस्ति यत् कश्चन कलाकारः संगृहीतं धनं बैंकं कृत्वा तदनन्तरं समर्पयति - प्रत्येकं उपहारं दातव्येन, स्वनाम्ना, विवाहस्य वा जन्मदिनस्य वा उपहारस्य समानकारणात् दातव्यं भवति",
         "when": "तिथिं नियतमात्रं वदतु; चतुःसप्ताहः अस्मान् सामग्रीं सज्जीकर्तुं शक्नोति, लाइवस्ट्रीमस्य वा विशालस्य शो कृते क्षेत्रात् अभिलेखितं सन्देशं च सज्जीकर्तुं शक्नोति।",
-        "where": "यत्र यत्र भवतः प्रेक्षकाः पूर्वमेव सन्ति — स्थलं, धारा, विमोचनम् । दानं स्वयं DEHAT इत्यस्य स्वस्य पृष्ठे भवति, न तु द्वारे वा कलाकारस्य खाते वा।",
+        "where": "यत्र यत्र भवतः प्रेक्षकाः पूर्वमेव सन्ति - स्थलं, धारा, विमोचनम् । दानं स्वयं DEHAT इत्यस्य स्वस्य पृष्ठे भवति, न तु द्वारे वा कलाकारस्य खाते वा।",
         "how": "तिथिं, प्रारूपं, अपेक्षितं व्याप्तिः च कथयन्तु। वयं भवन्तं भवतः प्रेक्षकान् सूचयितुं समर्पितं पृष्ठं लिङ्कं च दद्मः, ब्राण्डिंग् भवन्तः द्विवारं न पृष्ट्वा उपयोक्तुं शक्नुवन्ति, तथा च एकं रनिंग टोटलं दद्मः यत् भवन्तः ते च द्वौ अपि द्रष्टुं शक्नुवन्ति।"
       }
     },
@@ -23638,7 +23638,7 @@ const SA = {
       "col": "# डी2305सी",
       "detail": {
         "u": "निवेशकस्य धनं प्राप्तस्य व्यक्तिस्य च मध्ये यत् दूरं प्रायः कदापि न निमीलितं भवति । भवितुमर्हति।",
-        "what": "एकः संरचितः समागमः — व्यक्तिगतरूपेण वा अन्तर्जालद्वारा वा — भवतः समर्थनं प्राप्तैः जनानां समुदायैः च सह ।",
+        "what": "एकः संरचितः समागमः - व्यक्तिगतरूपेण वा अन्तर्जालद्वारा वा - भवतः समर्थनं प्राप्तैः जनानां समुदायैः च सह ।",
         "why": "उत्तरदायित्वं उभयतः धावति। परिणामं दृष्ट्वा अग्रिमनिर्णयः कथं भवति इति परिवर्तते।",
         "when": "समुदायस्य पञ्चाङ्गं परितः व्यवस्थापितं, कदापि आगन्तुकस्य सुविधां परितः न ।",
         "where": "ग्रामेषु एव, आह्वानस्य उपरि वा यत्र यात्रा न सम्भवति।",
@@ -23659,7 +23659,7 @@ const SA = {
         "what": "बालश्रमस्य बालयौनशोषणस्य च विरुद्धं कार्यस्थले प्रतिबद्धता, तस्य धारणार्थं नीतिः प्रशिक्षणं च।",
         "why": "उक्तं पदं कर्मचारिभ्यः अन्यथा शान्तं तिष्ठन्ति इति किमपि उत्थापयितुं मार्गं ददाति ।",
         "when": "घटनायाः पूर्वं, न तु पश्चात्। दबावेन लिखिता नीतिः कस्यचित् रक्षणं न करोति।",
-        "where": "भवतः कार्यस्थानं तस्य सम्बद्धानि च स्थानानि — ठेकेदाराः, विक्रेतारः, परिवहनं, आवासः च ।",
+        "where": "भवतः कार्यस्थानं तस्य सम्बद्धानि च स्थानानि - ठेकेदाराः, विक्रेतारः, परिवहनं, आवासः च ।",
         "how": "वयं आदर्शप्रतिबद्धतां साझां कुर्मः, तस्य अनुकूलनार्थं साहाय्यं कुर्मः, येषां जनानां तस्मिन् कार्यं कर्तव्यं भविष्यति तेषां प्रशिक्षणं च कुर्मः।"
       }
     },
@@ -23699,7 +23699,7 @@ const SA = {
       }
     }
   ],
-  "sopTitle": "एकपङ्क्तौ वा द्वयोः वा — किं परिवर्तनं भविष्यति इति आशासे ?",
+  "sopTitle": "एकपङ्क्तौ वा द्वयोः वा - किं परिवर्तनं भविष्यति इति आशासे ?",
   "sopSub": "एषः एव भागः वयं निकटतया पठामः। यथा रोचते तथा लिखत; न सम्यक् उत्तरम् अस्ति।",
   "sopPlaceholder": "यथा : वयं इच्छामः यत् बहराइच्-नगरे अस्माकं निगम-सामाजिक-दायित्व-व्ययः यत्र प्रमाणं सार्वजनिकं भवति तत्र गन्तव्यम्, वयं च एकेन खण्डेन आरभतुम् इच्छामः |.",
   "sopPrompts": [
@@ -23813,9 +23813,9 @@ const SA = {
   "fPanHint": "दश अक्षराणि, यथा कार्डे मुद्रितम्",
   "fAadhaar": "मुखौटाधारी आधार",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "अन्तिमचत्वारि अङ्काः एव। अत्र कदापि भवतः पूर्णाधारसङ्ख्यां न प्रविशन्तु — अस्माकं न तस्य आवश्यकता अस्ति, न च धारयामः ।",
+  "fAadhaarNote": "अन्तिमचत्वारि अङ्काः एव। अत्र कदापि भवतः पूर्णाधारसङ्ख्यां न प्रविशन्तु - अस्माकं न तस्य आवश्यकता अस्ति, न च धारयामः ।",
   "fInrDocs": "पैन एवं नकाबपोश आधार स्कैन",
-  "fInrDocsNote": "स्वस्य PAN कार्डस्य स्कैन् अपि च मुखौटाधारितं आधारं संलग्नं कुर्वन्तु (अन्तिमचत्वारि अङ्काः केवलं दृश्यन्ते — UIDAI स्वस्य जालपुटात् एकं निर्गच्छति)। 80G रसीदस्य, प्रपत्रस्य 10BD वक्तव्यस्य लेखापरीक्षायाः च कृते धारितम्, तथा च धारणकालस्य समाप्तेः समये नष्टम्।",
+  "fInrDocsNote": "स्वस्य PAN कार्डस्य स्कैन् अपि च मुखौटाधारितं आधारं संलग्नं कुर्वन्तु (अन्तिमचत्वारि अङ्काः केवलं दृश्यन्ते - UIDAI स्वस्य जालपुटात् एकं निर्गच्छति)। 80G रसीदस्य, प्रपत्रस्य 10BD वक्तव्यस्य लेखापरीक्षायाः च कृते धारितम्, तथा च धारणकालस्य समाप्तेः समये नष्टम्।",
   "fIdRefHint": "यथा पासपोर्टे मुद्रितम्",
   "fPassport": "पासपोर्ट स्कैन, उभयतः",
   "fPassportNote": "विदेशीययोगदानार्थं आवश्यकम्। छायाचित्रपृष्ठं पतापृष्ठं च संलग्नं कुर्वन्तु। केवलं विदेशीययोगदानस्य (विनियमन) अधिनियमस्य प्रतिगमनस्य लेखापरीक्षायाः च कृते धारितः, तथा च धारणकालस्य समाप्तेः समये नष्टः।",
@@ -23890,7 +23890,7 @@ const SA = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "सदस्य।",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -23992,7 +23992,7 @@ const SA = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -24140,7 +24140,7 @@ const SA = {
     }
   ],
   "ecosystemTitle": "सर्वकारीय-विभागाः, वैधानिक-संस्थाः, सामाजिक-व्यवस्थाश्च याभिः सह वयं कार्यं कुर्मः",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -24467,7 +24467,7 @@ const SD = {
     "case": {
           
           "t": "اڃا تائين فيصلو نٿا ڪري سگهو ته ڇا هي دليل صحيح آهي؟",
-          "s": "هن صفحي تي ڪنهن به مخصوص دعويٰ جي پٺڀرائي بابت اسان کان پڇو — ڪو انگ، ڪو ضلعو، ڪو طريقو. اسان ذريعو ڏيکارينداسين، يا صاف ٻڌائينداسين جتي ڪا دعويٰ لڳڻ کان ڪمزور آهي.",
+          "s": "هن صفحي تي ڪنهن به مخصوص دعويٰ جي پٺڀرائي بابت اسان کان پڇو - ڪو انگ، ڪو ضلعو، ڪو طريقو. اسان ذريعو ڏيکارينداسين، يا صاف ٻڌائينداسين جتي ڪا دعويٰ لڳڻ کان ڪمزور آهي.",
           "a": "هن دليل بابت پڇو",
           "subj": "سيڙپڪاري جي دليل بابت هڪ سوال",
           "b": "سيڙپڪاري ڏانهن اڳتي وڌو",
@@ -25176,7 +25176,7 @@ const SD = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "ميمبر.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -25278,7 +25278,7 @@ const SD = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -25426,7 +25426,7 @@ const SD = {
     }
   ],
   "ecosystemTitle": "سرڪاري کاتا، قانوني ادارا ۽ ڪميونٽي جا نظام جن سان اسين گڏجي ڪم ڪريون ٿا",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -25753,7 +25753,7 @@ const OR = {
     "case": {
           
           "t": "ଏହି ଯୁକ୍ତି ଠିକ୍ ଅଛି କି ନାହିଁ ତାହା ଏବେ ବି ସ୍ଥିର କରିପାରୁନାହାଁନ୍ତି କି?",
-          "s": "ଏହି ପୃଷ୍ଠାର ଯେକୌଣସି ନିର୍ଦ୍ଦିଷ୍ଟ ଦାବିର ପ୍ରମାଣ ଆମକୁ ପଚାରନ୍ତୁ — ଏକ ସଂଖ୍ୟା, ଏକ ଜିଲ୍ଲା, ଏକ ପଦ୍ଧତି। ଆମେ ଉତ୍ସ ଦର୍ଶାଇବୁ କିମ୍ବା ସ୍ପଷ୍ଟ ଭାବରେ କହିବୁ ଯେଉଁଠାରେ ଏକ ଦାବି ଶୁଣାଯିବା ଅପେକ୍ଷା ଦୁର୍ବଳ।",
+          "s": "ଏହି ପୃଷ୍ଠାର ଯେକୌଣସି ନିର୍ଦ୍ଦିଷ୍ଟ ଦାବିର ପ୍ରମାଣ ଆମକୁ ପଚାରନ୍ତୁ - ଏକ ସଂଖ୍ୟା, ଏକ ଜିଲ୍ଲା, ଏକ ପଦ୍ଧତି। ଆମେ ଉତ୍ସ ଦର୍ଶାଇବୁ କିମ୍ବା ସ୍ପଷ୍ଟ ଭାବରେ କହିବୁ ଯେଉଁଠାରେ ଏକ ଦାବି ଶୁଣାଯିବା ଅପେକ୍ଷା ଦୁର୍ବଳ।",
           "a": "ଏହି ଯୁକ୍ତି ବିଷୟରେ ପଚାରନ୍ତୁ",
           "subj": "ନିବେଶ ଯୁକ୍ତି ବିଷୟରେ ଏକ ପ୍ରଶ୍ନ",
           "b": "ନିବେଶ ଦିଗରେ ଆଗକୁ ବଢ଼ନ୍ତୁ",
@@ -26462,7 +26462,7 @@ const OR = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "ସଦସ୍ୟ",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -26564,7 +26564,7 @@ const OR = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -26712,7 +26712,7 @@ const OR = {
     }
   ],
   "ecosystemTitle": "ସରକାରୀ ବିଭାଗ, ବୈଧାନିକ ଅନୁଷ୍ଠାନ ଏବଂ ସମୁଦାୟ ବ୍ୟବସ୍ଥା ଯାହା ସହିତ ଆମେ କାର୍ଯ୍ୟ କରୁ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -27039,7 +27039,7 @@ const ML = {
     "case": {
           
           "t": "ഈ വാദം ശരിയാണോ എന്ന് ഇപ്പോഴും തീരുമാനിക്കാൻ കഴിയുന്നില്ലേ?",
-          "s": "ഈ പേജിലെ ഏതെങ്കിലും നിർദ്ദിഷ്ട അവകാശവാദത്തെ സാധൂകരിക്കാൻ ഞങ്ങളോട് ആവശ്യപ്പെടുക — ഒരു നമ്പർ, ഒരു ജില്ല, ഒരു സംവിധാനം. ഞങ്ങൾ സ്രോതസ്സ് ചൂണ്ടിക്കാണിക്കും, അല്ലെങ്കിൽ ഒരു അവകാശവാദം കേൾക്കുന്നതിനേക്കാൾ എവിടെയാണ് ദുർബലമെന്ന് വ്യക്തമായി പറയും.",
+          "s": "ഈ പേജിലെ ഏതെങ്കിലും നിർദ്ദിഷ്ട അവകാശവാദത്തെ സാധൂകരിക്കാൻ ഞങ്ങളോട് ആവശ്യപ്പെടുക - ഒരു നമ്പർ, ഒരു ജില്ല, ഒരു സംവിധാനം. ഞങ്ങൾ സ്രോതസ്സ് ചൂണ്ടിക്കാണിക്കും, അല്ലെങ്കിൽ ഒരു അവകാശവാദം കേൾക്കുന്നതിനേക്കാൾ എവിടെയാണ് ദുർബലമെന്ന് വ്യക്തമായി പറയും.",
           "a": "ഈ വാദത്തെക്കുറിച്ച് ചോദിക്കുക",
           "subj": "നിക്ഷേപത്തിനായുള്ള വാദത്തെക്കുറിച്ചുള്ള ഒരു ചോദ്യം",
           "b": "നിക്ഷേപത്തിലേക്ക് തുടരുക",
@@ -27748,7 +27748,7 @@ const ML = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "അംഗം.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -27850,7 +27850,7 @@ const ML = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -27998,7 +27998,7 @@ const ML = {
     }
   ],
   "ecosystemTitle": "ഞങ്ങൾ സഹകരിച്ചു പ്രവർത്തിക്കുന്ന സർക്കാർ വകുപ്പുകൾ, നിയമപരമായ സ്ഥാപനങ്ങൾ, സാമൂഹിക സംവിധാനങ്ങൾ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -28325,7 +28325,7 @@ const PA = {
     "case": {
           
           "t": "ਅਜੇ ਵੀ ਫੈਸਲਾ ਨਹੀਂ ਕਰ ਪਾ ਰਹੇ ਕਿ ਇਹ ਤਰਕ ਸਹੀ ਬੈਠਦਾ ਹੈ?",
-          "s": "ਇਸ ਪੰਨੇ ’ਤੇ ਕਿਸੇ ਵੀ ਖਾਸ ਦਾਅਵੇ ਦੀ ਪੁਸ਼ਟੀ ਮੰਗੋ — ਕੋਈ ਅੰਕੜਾ, ਕੋਈ ਜ਼ਿਲ੍ਹਾ, ਕੋਈ ਕਾਰਜਪ੍ਰਣਾਲੀ। ਅਸੀਂ ਸਰੋਤ ਦੱਸਾਂਗੇ, ਜਾਂ ਸਾਫ਼ ਕਹਾਂਗੇ ਕਿ ਕੋਈ ਦਾਅਵਾ ਲੱਗਣ ਨਾਲੋਂ ਕਿੱਥੇ ਕਮਜ਼ੋਰ ਹੈ।",
+          "s": "ਇਸ ਪੰਨੇ ’ਤੇ ਕਿਸੇ ਵੀ ਖਾਸ ਦਾਅਵੇ ਦੀ ਪੁਸ਼ਟੀ ਮੰਗੋ - ਕੋਈ ਅੰਕੜਾ, ਕੋਈ ਜ਼ਿਲ੍ਹਾ, ਕੋਈ ਕਾਰਜਪ੍ਰਣਾਲੀ। ਅਸੀਂ ਸਰੋਤ ਦੱਸਾਂਗੇ, ਜਾਂ ਸਾਫ਼ ਕਹਾਂਗੇ ਕਿ ਕੋਈ ਦਾਅਵਾ ਲੱਗਣ ਨਾਲੋਂ ਕਿੱਥੇ ਕਮਜ਼ੋਰ ਹੈ।",
           "a": "ਇਸ ਤਰਕ ਬਾਰੇ ਪੁੱਛੋ",
           "subj": "ਨਿਵੇਸ਼ ਦੇ ਤਰਕ ਬਾਰੇ ਇੱਕ ਸਵਾਲ",
           "b": "ਨਿਵੇਸ਼ ਵੱਲ ਅੱਗੇ ਵਧੋ",
@@ -28580,7 +28580,7 @@ const PA = {
       "col": "#4F0E73",
       "detail": {
         "u": "ਬਹਿਰਾਇਚ ਵਿੱਚ 20 ਸਾਲਾਂ ਦੇ ਫੀਲਡ ਰਿਕਾਰਡ ਮੌਜੂਦ ਹਨ। ਹਰ ਸਾਲ ਉਹ ਅਣਪੜ੍ਹੇ ਜਾਂਦੇ ਹਨ ਇੱਕ ਸਬੂਤ ਦਾ ਸਾਲ ਹੈ ਜੋ ਕਦੇ ਵੀ ਨੀਤੀ ਲਿਖਣ ਵਾਲੇ ਲੋਕਾਂ ਤੱਕ ਨਹੀਂ ਪਹੁੰਚਦਾ।",
-        "what": "ਲਾਈਵ ਪ੍ਰੋਗਰਾਮ 'ਤੇ ਇੱਕ ਨਾਮਿਤ ਖੋਜ ਸਾਂਝੇਦਾਰੀ — ਸਹਿ-ਡਿਜ਼ਾਈਨ ਕੀਤੇ ਸਵਾਲ, ਫੀਲਡ ਡੇਟਾ ਅਤੇ ਲੰਬਕਾਰੀ ਰਿਕਾਰਡਾਂ ਤੱਕ ਪਹੁੰਚ, ਅਤੇ ਸਹਿ-ਪ੍ਰਕਾਸ਼ਨ।",
+        "what": "ਲਾਈਵ ਪ੍ਰੋਗਰਾਮ 'ਤੇ ਇੱਕ ਨਾਮਿਤ ਖੋਜ ਸਾਂਝੇਦਾਰੀ - ਸਹਿ-ਡਿਜ਼ਾਈਨ ਕੀਤੇ ਸਵਾਲ, ਫੀਲਡ ਡੇਟਾ ਅਤੇ ਲੰਬਕਾਰੀ ਰਿਕਾਰਡਾਂ ਤੱਕ ਪਹੁੰਚ, ਅਤੇ ਸਹਿ-ਪ੍ਰਕਾਸ਼ਨ।",
         "why": "ਅਭਿਆਸ ਜੋ ਕਦੇ ਨਹੀਂ ਪੜ੍ਹਿਆ ਜਾਂਦਾ ਹੈ, ਉਹ ਆਪਣੀਆਂ ਗਲਤੀਆਂ ਨੂੰ ਦੁਹਰਾਉਂਦਾ ਹੈ. ਉਹ ਅਧਿਐਨ ਜੋ ਕਦੇ ਵੀ ਅਭਿਆਸ ਨੂੰ ਨਹੀਂ ਛੂੰਹਦਾ, ਬੁਰੀ ਤਰ੍ਹਾਂ ਆਮ ਕਰਦਾ ਹੈ। ਜੋੜੀ ਦੋਹਾਂ ਨੂੰ ਠੀਕ ਕਰਦੀ ਹੈ।",
         "when": "ਡਿਜ਼ਾਈਨ ਪੜਾਅ ਤੋਂ, ਇਸ ਲਈ ਮਾਪ ਨੂੰ ਬਾਅਦ ਵਿੱਚ ਫਿੱਟ ਕਰਨ ਦੀ ਬਜਾਏ ਪ੍ਰੋਗਰਾਮ ਵਿੱਚ ਬਣਾਇਆ ਗਿਆ ਹੈ।",
         "where": "ਬਹਿਰਾਇਚ ਅਤੇ ਸ਼ਰਾਵਸਤੀ ਵਿੱਚ ਫੀਲਡ ਸਾਈਟਾਂ, DEHAT ਦਫਤਰ ਵਿੱਚ ਰੱਖੇ ਰਿਕਾਰਡਾਂ ਦੇ ਨਾਲ ਅਤੇ ਸਾਈਟ 'ਤੇ ਉਪਲਬਧ।",
@@ -28658,7 +28658,7 @@ const PA = {
       "col": "#556223",
       "detail": {
         "u": "ਛੋਟੇ, ਚੰਗੀ-ਸਕੋਪ ਵਾਲੇ ਯੋਗਦਾਨਾਂ ਦਾ ਮਿਸ਼ਰਣ। ਇੱਕ ਫੀਲਡ ਟੀਮ ਦੀ ਲੋੜ ਵਿੱਚੋਂ ਜ਼ਿਆਦਾਤਰ ਹਫ਼ਤਿਆਂ ਵਿੱਚ ਪੂਰਾ ਹੋਣ ਯੋਗ ਹੈ।",
-        "what": "ਕੰਮ ਦਾ ਇੱਕ ਪਰਿਭਾਸ਼ਿਤ ਟੁਕੜਾ — ਖੇਤਰ, ਖੋਜ, ਦਸਤਾਵੇਜ਼, ਡਿਜ਼ਾਈਨ ਜਾਂ ਅਨੁਵਾਦ — ਸਾਈਟ 'ਤੇ ਜਾਂ ਰਿਮੋਟਲੀ।",
+        "what": "ਕੰਮ ਦਾ ਇੱਕ ਪਰਿਭਾਸ਼ਿਤ ਟੁਕੜਾ - ਖੇਤਰ, ਖੋਜ, ਦਸਤਾਵੇਜ਼, ਡਿਜ਼ਾਈਨ ਜਾਂ ਅਨੁਵਾਦ - ਸਾਈਟ 'ਤੇ ਜਾਂ ਰਿਮੋਟਲੀ।",
         "why": "ਸਮਰੱਥਾ ਪੈਸੇ ਨਾਲੋਂ ਜ਼ਿਆਦਾ ਵਾਰ ਬੰਧਨ ਵਾਲੀ ਰੁਕਾਵਟ ਹੈ। ਹੱਥਾਂ ਦਾ ਇੱਕ ਵਾਧੂ ਜੋੜਾ ਇੱਕ ਅਸਲ ਸਮਾਂ ਸੀਮਾ ਨੂੰ ਅੱਗੇ ਵਧਾਉਂਦਾ ਹੈ।",
         "when": "ਰੋਲਿੰਗ. ਰਿਮੋਟ ਕੰਮ ਲਗਭਗ ਤੁਰੰਤ ਸ਼ੁਰੂ ਹੋ ਸਕਦਾ ਹੈ; ਆਨ-ਸਾਈਟ ਪਲੇਸਮੈਂਟ ਨੂੰ ਲੀਡ ਟਾਈਮ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ।",
         "where": "ਬਹਿਰਾਇਚ, ਜਾਂ ਕਿਤੇ ਵੀ ਰਿਮੋਟ ਰੋਲ ਲਈ ਕਨੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
@@ -28729,10 +28729,10 @@ const PA = {
       "col": "#4F0E73",
       "detail": {
         "u": "ਵਿਰਾਸਤ ਇੱਕ ਅਜਿਹਾ ਤੋਹਫ਼ਾ ਹੈ ਜੋ ਸ਼ਾਂਤਮਈ ਢੰਗ ਨਾਲ, ਕਈ ਸਾਲ ਪਹਿਲਾਂ, ਕਿਸੇ ਅਜਿਹੇ ਵਿਅਕਤੀ ਦੁਆਰਾ ਨਿਸ਼ਚਿਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਜਿਸ ਵਿੱਚ ਇਸ ਤੋਂ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਕੁਝ ਵੀ ਨਹੀਂ ਬਚਿਆ ਹੁੰਦਾ ਹੈ। ਇਹ ਸਭ ਤੋਂ ਦੁਰਲੱਭ ਵੀ ਹੈ, ਕਿਉਂਕਿ ਲਗਭਗ ਕਿਸੇ ਨੂੰ ਕਦੇ ਨਹੀਂ ਪੁੱਛਿਆ ਜਾਂਦਾ ਹੈ।",
-        "what": "ਤੁਹਾਡੀ ਵਸੀਅਤ ਵਿੱਚ ਲਿਖੀ ਗਈ DEHAT ਲਈ ਇੱਕ ਵਸੀਅਤ — ਇੱਕ ਨਿਸ਼ਚਿਤ ਰਕਮ, ਰਹਿੰਦ-ਖੂੰਹਦ ਦਾ ਇੱਕ ਹਿੱਸਾ, ਜਾਂ ਇੱਕ ਨਾਮਿਤ ਸੰਪਤੀ।",
+        "what": "ਤੁਹਾਡੀ ਵਸੀਅਤ ਵਿੱਚ ਲਿਖੀ ਗਈ DEHAT ਲਈ ਇੱਕ ਵਸੀਅਤ - ਇੱਕ ਨਿਸ਼ਚਿਤ ਰਕਮ, ਰਹਿੰਦ-ਖੂੰਹਦ ਦਾ ਇੱਕ ਹਿੱਸਾ, ਜਾਂ ਇੱਕ ਨਾਮਿਤ ਸੰਪਤੀ।",
         "why": "ਫੀਲਡ ਵਰਕ ਪੈਸੇ 'ਤੇ ਚੱਲਦਾ ਹੈ ਜੋ ਇੱਕ ਸਾਲ ਦੇ ਟੁਕੜਿਆਂ ਵਿੱਚ ਆਉਂਦਾ ਹੈ। ਇੱਕ ਵਿਰਾਸਤ ਸਹਾਇਤਾ ਦਾ ਇੱਕ ਰੂਪ ਹੈ ਜੋ ਕਿਸੇ ਵੀ ਗ੍ਰਾਂਟ ਚੱਕਰ ਨਾਲੋਂ ਲੰਬੇ ਸਮੇਂ ਲਈ ਵਚਨਬੱਧ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ, ਜੋ ਅਸਲ ਵਿੱਚ ਤਬਦੀਲੀ ਲਿਆਉਂਦਾ ਹੈ।",
         "when": "ਜਦੋਂ ਵੀ ਤੁਸੀਂ ਅਗਲੀ ਵਾਰ ਆਪਣੀ ਇੱਛਾ ਨੂੰ ਲਿਖੋ ਜਾਂ ਸੋਧੋ। ਸਾਨੂੰ ਦੱਸਣਾ ਵਿਕਲਪਿਕ ਹੈ, ਪਰ ਇਹ ਸਾਨੂੰ ਯੋਜਨਾ ਬਣਾਉਣ ਦਿੰਦਾ ਹੈ ਅਤੇ ਤੁਹਾਨੂੰ ਇਹ ਦੱਸਣ ਦਿੰਦਾ ਹੈ ਕਿ ਤੋਹਫ਼ਾ ਕਿਸ ਲਈ ਹੈ।",
-        "where": "ਬਹਿਰਾਇਚ ਵਿੱਚ ਰਜਿਸਟਰਡ ਦਫ਼ਤਰ ਵਿੱਚ ਸੁਸਾਇਟੀ ਦੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ, ਪੈਨ ਅਤੇ ਆਡਿਟ ਕੀਤੇ ਖਾਤੇ ਹਨ — ਉਹ ਸਭ ਕੁਝ ਜੋ ਤੁਹਾਡਾ ਵਕੀਲ ਮੰਗੇਗਾ।",
+        "where": "ਬਹਿਰਾਇਚ ਵਿੱਚ ਰਜਿਸਟਰਡ ਦਫ਼ਤਰ ਵਿੱਚ ਸੁਸਾਇਟੀ ਦੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ, ਪੈਨ ਅਤੇ ਆਡਿਟ ਕੀਤੇ ਖਾਤੇ ਹਨ - ਉਹ ਸਭ ਕੁਝ ਜੋ ਤੁਹਾਡਾ ਵਕੀਲ ਮੰਗੇਗਾ।",
         "how": "ਆਪਣੇ ਵਕੀਲ ਨੂੰ ਦੇਣ ਲਈ ਸਾਨੂੰ ਸਹੀ ਕਨੂੰਨੀ ਨਾਮ, ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਨੰਬਰ ਅਤੇ ਧਾਰਾ ਦੇ ਸ਼ਬਦਾਂ ਲਈ ਪੁੱਛੋ। ਅਸੀਂ ਵਸੀਅਤਾਂ ਦਾ ਖਰੜਾ ਨਹੀਂ ਬਣਾਉਂਦੇ ਅਤੇ ਅਸੀਂ ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ ਦਿੰਦੇ; ਅਸੀਂ ਤੁਹਾਡੇ ਵਕੀਲ ਨੂੰ ਉਹ ਦਿੰਦੇ ਹਾਂ ਜੋ ਉਹਨਾਂ ਨੂੰ ਚਾਹੀਦਾ ਹੈ ਅਤੇ ਪਿੱਛੇ ਹਟ ਜਾਂਦੇ ਹਾਂ।"
       }
     },
@@ -28767,7 +28767,7 @@ const PA = {
         "what": "ਇੱਕ ਸ਼ੋਅ, ਇੱਕ ਸਕ੍ਰੀਨਿੰਗ, ਇੱਕ ਲਾਈਵਸਟ੍ਰੀਮ ਜਾਂ DEHAT ਦੇ ਭਾਈਚਾਰਿਆਂ ਨੂੰ ਸਮਰਪਿਤ ਕੰਮ ਦਾ ਇੱਕ ਟੁਕੜਾ, ਕਲਾਕਾਰ ਦੁਆਰਾ ਸਿੱਧੇ ਤੌਰ 'ਤੇ ਦੇਣ ਦੀ ਬਜਾਏ ਦਰਸ਼ਕ ਦੇ ਨਾਲ।",
         "why": "ਇੱਕ ਦਰਸ਼ਕ ਜੋ ਪਹਿਲਾਂ ਹੀ ਕਿਸੇ ਕਲਾਕਾਰ 'ਤੇ ਭਰੋਸਾ ਕਰਦਾ ਹੈ, ਕਦੇ-ਕਦਾਈਂ ਹੀ ਕਿਸੇ NGO ਨੂੰ ਆਪਣੀਆਂ ਸ਼ਰਤਾਂ 'ਤੇ ਮਿਲਦਾ ਹੈ। ਅਸੀਂ ਜੋ ਨਹੀਂ ਕਰ ਸਕਦੇ ਉਹ ਹੈ ਇੱਕ ਕਲਾਕਾਰ ਦੁਆਰਾ ਇਕੱਠੀ ਕੀਤੀ ਰਕਮ ਨੂੰ ਬੈਂਕ ਵਿੱਚ ਸੌਂਪਣਾ ਅਤੇ ਬਾਅਦ ਵਿੱਚ ਸੌਂਪਣਾ - ਹਰ ਤੋਹਫ਼ਾ ਦੇਣ ਵਾਲੇ ਵਿਅਕਤੀ ਦੁਆਰਾ, ਉਹਨਾਂ ਦੇ ਆਪਣੇ ਨਾਮ 'ਤੇ ਦਿੱਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ, ਉਸੇ ਕਾਰਨ ਕਰਕੇ ਜੋ ਵਿਆਹ ਜਾਂ ਜਨਮਦਿਨ ਦਾ ਤੋਹਫ਼ਾ ਦਿੰਦਾ ਹੈ।",
         "when": "ਤਰੀਕ ਨਿਸ਼ਚਿਤ ਹੁੰਦੇ ਹੀ ਸਾਨੂੰ ਦੱਸੋ; ਚਾਰ ਹਫ਼ਤੇ ਸਾਨੂੰ ਸਮੱਗਰੀ ਤਿਆਰ ਕਰਨ ਦਿੰਦੇ ਹਨ ਅਤੇ, ਲਾਈਵਸਟ੍ਰੀਮ ਜਾਂ ਇੱਕ ਵੱਡੇ ਸ਼ੋਅ ਲਈ, ਖੇਤਰ ਤੋਂ ਇੱਕ ਰਿਕਾਰਡ ਕੀਤਾ ਸੁਨੇਹਾ।",
-        "where": "ਜਿੱਥੇ ਵੀ ਤੁਹਾਡੇ ਦਰਸ਼ਕ ਪਹਿਲਾਂ ਹੀ ਹਨ — ਇੱਕ ਸਥਾਨ, ਇੱਕ ਸਟ੍ਰੀਮ, ਇੱਕ ਰੀਲੀਜ਼। ਦੇਣਾ ਖੁਦ DEHAT ਦੇ ਆਪਣੇ ਪੰਨੇ 'ਤੇ ਹੁੰਦਾ ਹੈ, ਨਾ ਕਿ ਦਰਵਾਜ਼ੇ 'ਤੇ ਜਾਂ ਕਲਾਕਾਰ ਦੇ ਖਾਤੇ ਵਿਚ।",
+        "where": "ਜਿੱਥੇ ਵੀ ਤੁਹਾਡੇ ਦਰਸ਼ਕ ਪਹਿਲਾਂ ਹੀ ਹਨ - ਇੱਕ ਸਥਾਨ, ਇੱਕ ਸਟ੍ਰੀਮ, ਇੱਕ ਰੀਲੀਜ਼। ਦੇਣਾ ਖੁਦ DEHAT ਦੇ ਆਪਣੇ ਪੰਨੇ 'ਤੇ ਹੁੰਦਾ ਹੈ, ਨਾ ਕਿ ਦਰਵਾਜ਼ੇ 'ਤੇ ਜਾਂ ਕਲਾਕਾਰ ਦੇ ਖਾਤੇ ਵਿਚ।",
         "how": "ਸਾਨੂੰ ਮਿਤੀ, ਫਾਰਮੈਟ ਅਤੇ ਸੰਭਾਵਿਤ ਪਹੁੰਚ ਦੱਸੋ। ਅਸੀਂ ਤੁਹਾਨੂੰ ਇੱਕ ਸਮਰਪਿਤ ਪੰਨਾ ਅਤੇ ਤੁਹਾਡੇ ਦਰਸ਼ਕਾਂ ਨੂੰ ਦਰਸਾਉਣ ਲਈ ਲਿੰਕ ਦਿੰਦੇ ਹਾਂ, ਬ੍ਰਾਂਡਿੰਗ ਜੋ ਤੁਸੀਂ ਦੋ ਵਾਰ ਪੁੱਛੇ ਬਿਨਾਂ ਵਰਤ ਸਕਦੇ ਹੋ, ਅਤੇ ਇੱਕ ਚੱਲ ਰਿਹਾ ਕੁੱਲ ਤੁਸੀਂ ਅਤੇ ਉਹ ਦੋਵੇਂ ਦੇਖ ਸਕਦੇ ਹਨ।"
       }
     },
@@ -28782,7 +28782,7 @@ const PA = {
       "col": "#D2305C",
       "detail": {
         "u": "ਇੱਕ ਨਿਵੇਸ਼ਕ ਅਤੇ ਉਸ ਵਿਅਕਤੀ ਦੇ ਵਿਚਕਾਰ ਦੀ ਦੂਰੀ ਜਿਸ ਤੱਕ ਉਹਨਾਂ ਦਾ ਪੈਸਾ ਪਹੁੰਚਦਾ ਹੈ ਆਮ ਤੌਰ 'ਤੇ ਕਦੇ ਵੀ ਬੰਦ ਨਹੀਂ ਹੁੰਦਾ। ਇਹ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।",
-        "what": "ਇੱਕ ਢਾਂਚਾਗਤ ਮੀਟਿੰਗ — ਵਿਅਕਤੀਗਤ ਰੂਪ ਵਿੱਚ ਜਾਂ ਔਨਲਾਈਨ — ਉਹਨਾਂ ਲੋਕਾਂ ਅਤੇ ਭਾਈਚਾਰਿਆਂ ਨਾਲ ਜਿਨ੍ਹਾਂ ਤੱਕ ਤੁਹਾਡੀ ਸਹਾਇਤਾ ਪਹੁੰਚੀ ਹੈ।",
+        "what": "ਇੱਕ ਢਾਂਚਾਗਤ ਮੀਟਿੰਗ - ਵਿਅਕਤੀਗਤ ਰੂਪ ਵਿੱਚ ਜਾਂ ਔਨਲਾਈਨ - ਉਹਨਾਂ ਲੋਕਾਂ ਅਤੇ ਭਾਈਚਾਰਿਆਂ ਨਾਲ ਜਿਨ੍ਹਾਂ ਤੱਕ ਤੁਹਾਡੀ ਸਹਾਇਤਾ ਪਹੁੰਚੀ ਹੈ।",
         "why": "ਜਵਾਬਦੇਹੀ ਦੋਵਾਂ ਤਰੀਕਿਆਂ ਨਾਲ ਚੱਲਦੀ ਹੈ। ਨਤੀਜਾ ਦੇਖ ਕੇ ਅਗਲਾ ਫੈਸਲਾ ਕਿਵੇਂ ਲਿਆ ਜਾਂਦਾ ਹੈ।",
         "when": "ਕਮਿਊਨਿਟੀ ਦੇ ਕੈਲੰਡਰ ਦੇ ਦੁਆਲੇ ਵਿਵਸਥਿਤ, ਕਦੇ ਵੀ ਇਕੱਲੇ ਵਿਜ਼ਟਰ ਦੀ ਸਹੂਲਤ ਦੇ ਦੁਆਲੇ ਨਹੀਂ।",
         "where": "ਪਿੰਡਾਂ ਵਿੱਚ ਆਪਣੇ ਆਪ, ਜਾਂ ਇੱਕ ਕਾਲ ਉੱਤੇ ਜਿੱਥੇ ਯਾਤਰਾ ਸੰਭਵ ਨਹੀਂ ਹੈ।",
@@ -28803,7 +28803,7 @@ const PA = {
         "what": "ਬਾਲ ਮਜ਼ਦੂਰੀ ਅਤੇ ਬਾਲ ਜਿਨਸੀ ਸ਼ੋਸ਼ਣ ਦੇ ਵਿਰੁੱਧ ਇੱਕ ਕੰਮ ਵਾਲੀ ਥਾਂ ਦੀ ਵਚਨਬੱਧਤਾ, ਇਸ ਨੂੰ ਰੱਖਣ ਲਈ ਨੀਤੀ ਅਤੇ ਸਿਖਲਾਈ ਦੇ ਨਾਲ।",
         "why": "ਇੱਕ ਦੱਸੀ ਸਥਿਤੀ ਕਰਮਚਾਰੀਆਂ ਨੂੰ ਕੁਝ ਚੁੱਕਣ ਲਈ ਇੱਕ ਰਸਤਾ ਦਿੰਦੀ ਹੈ ਜੋ ਉਹ ਨਹੀਂ ਤਾਂ ਚੁੱਪ ਰਹਿਣਗੇ।",
         "when": "ਘਟਨਾ ਤੋਂ ਪਹਿਲਾਂ, ਬਾਅਦ ਵਿਚ ਨਹੀਂ। ਦਬਾਅ ਹੇਠ ਲਿਖੀ ਗਈ ਨੀਤੀ ਕਿਸੇ ਦੀ ਰੱਖਿਆ ਨਹੀਂ ਕਰਦੀ।",
-        "where": "ਤੁਹਾਡੀ ਕੰਮ ਵਾਲੀ ਥਾਂ ਅਤੇ ਇਸ ਨਾਲ ਸਬੰਧਤ ਥਾਂਵਾਂ — ਠੇਕੇਦਾਰ, ਵਿਕਰੇਤਾ, ਆਵਾਜਾਈ, ਰਿਹਾਇਸ਼।",
+        "where": "ਤੁਹਾਡੀ ਕੰਮ ਵਾਲੀ ਥਾਂ ਅਤੇ ਇਸ ਨਾਲ ਸਬੰਧਤ ਥਾਂਵਾਂ - ਠੇਕੇਦਾਰ, ਵਿਕਰੇਤਾ, ਆਵਾਜਾਈ, ਰਿਹਾਇਸ਼।",
         "how": "ਅਸੀਂ ਮਾਡਲ ਪ੍ਰਤੀਬੱਧਤਾ ਨੂੰ ਸਾਂਝਾ ਕਰਦੇ ਹਾਂ, ਇਸਨੂੰ ਅਨੁਕੂਲ ਬਣਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰਦੇ ਹਾਂ, ਅਤੇ ਉਹਨਾਂ ਲੋਕਾਂ ਨੂੰ ਸਿਖਲਾਈ ਦਿੰਦੇ ਹਾਂ ਜਿਨ੍ਹਾਂ ਨੂੰ ਇਸ 'ਤੇ ਕੰਮ ਕਰਨਾ ਹੋਵੇਗਾ।"
       }
     },
@@ -29034,7 +29034,7 @@ const PA = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "ਮੈਂਬਰ।",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -29136,7 +29136,7 @@ const PA = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -29284,7 +29284,7 @@ const PA = {
     }
   ],
   "ecosystemTitle": "ਸਰਕਾਰੀ ਵਿਭਾਗ, ਕਾਨੂੰਨੀ ਸੰਸਥਾਵਾਂ ਅਤੇ ਭਾਈਚਾਰਕ ਪ੍ਰਣਾਲੀਆਂ ਜਿਨ੍ਹਾਂ ਨਾਲ ਅਸੀਂ ਕੰਮ ਕਰਦੇ ਹਾਂ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -29611,7 +29611,7 @@ const DOI = {
     "case": {
           
           "t": "अजे बी तय नेईं करी पा करदे जे एह् तर्क ठीक ऐ?",
-          "s": "इस सफ़े पर किसी बी दावे दी जांच मंगो — कोई आंकड़ा, कोई जिला, कोई तरीका। अस्से स्रोत दस्सग, या साफ़ कहग जे कोई दावा जियूं लगदा ऐ उस शा कुत्थै कमजोर ऐ।",
+          "s": "इस सफ़े पर किसी बी दावे दी जांच मंगो - कोई आंकड़ा, कोई जिला, कोई तरीका। अस्से स्रोत दस्सग, या साफ़ कहग जे कोई दावा जियूं लगदा ऐ उस शा कुत्थै कमजोर ऐ।",
           "a": "इस तर्क दे बारे च पुच्छो",
           "subj": "निवेश दे तर्क दे बारे च इक सवाल",
           "b": "निवेश आह्ले पास्से अग्गें बधो",
@@ -29721,7 +29721,7 @@ const DOI = {
   "legacy": {
     "eyebrow": "विरासत देना",
     "title": "जो दान जो दाता से अचधक टिकता शै ।",
-    "body": "लगभग कदें बी कुसै कोला नेईं पुच्छेआ जंदा, इस करी लगभग कोई कदें बी नेईं करदा। तुंदी वसीयत च लिखी दी वसीयत समर्थन दा इक रूप ऐ जेह् ड़ा कुसै बी अनुदान चक्र कोला बी लम्मी क्षितिज आस्तै प्रतिबद्ध कीता जाई सकदा ऐ — जेह्ड़ा क्षितिज ऐ जेह्ड़ा एह् कम्म असल च लैंदा ऐ। साढ़े कोला कानूनी नांऽ, रजिस्ट्रेशन नंबर ते खंड दी शब्दावली पुच्छो, ते अपने वकील गी देओ।",
+    "body": "लगभग कदें बी कुसै कोला नेईं पुच्छेआ जंदा, इस करी लगभग कोई कदें बी नेईं करदा। तुंदी वसीयत च लिखी दी वसीयत समर्थन दा इक रूप ऐ जेह् ड़ा कुसै बी अनुदान चक्र कोला बी लम्मी क्षितिज आस्तै प्रतिबद्ध कीता जाई सकदा ऐ - जेह्ड़ा क्षितिज ऐ जेह्ड़ा एह् कम्म असल च लैंदा ऐ। साढ़े कोला कानूनी नांऽ, रजिस्ट्रेशन नंबर ते खंड दी शब्दावली पुच्छो, ते अपने वकील गी देओ।",
     "action": "विरासत दा रस्ता पढ़ो",
     "note": "अस वसीयत दा मसौदा नेईं बनांदे ते ना गै कानूनी सलाह दिंदे आं।"
   },
@@ -29866,7 +29866,7 @@ const DOI = {
       "col": "# 4F0E73 ऐ",
       "detail": {
         "u": "बहराइच च बीस साल दे फील्ड रिकार्ड मौजूद न। हर साल ओह् बिना अध्ययन कीते जंदे न, एह् सबूत दा साल ऐ जेह्ड़ा नीति लिखने आह्ले लोकें तगर कदें नेईं पुज्जदा।",
-        "what": "लाइव प्रोग्राम पर इक नामित शोध साझेदारी — सह-डिजाइन कीते गेदे सवाल, फील्ड डेटा ते अनुदैर्ध्य रिकार्डें तगर पुज्ज, ते सह-प्रकाशन।",
+        "what": "लाइव प्रोग्राम पर इक नामित शोध साझेदारी - सह-डिजाइन कीते गेदे सवाल, फील्ड डेटा ते अनुदैर्ध्य रिकार्डें तगर पुज्ज, ते सह-प्रकाशन।",
         "why": "जिस अभ्यास दा कदें बी अध्ययन नेईं कीता जंदा ओह् अपनी गै गलतियें गी दोहरांदा ऐ। जेह्ड़ा अध्ययन कदें बी अभ्यास गी नेईं छुह्ंदा ओह्दे कन्नै बुरी चाल्ली सामान्यीकरण होंदा ऐ। जोड़ी दोनों गी ठीक करदी ऐ।",
         "when": "डिजाइन स्टेज थमां, इसलेई मापने गी प्रोग्राम च बनाया जंदा ऐ ना के बाद च इस च फिट कीता जंदा ऐ।",
         "where": "बहराइच ते श्रावस्ती भर च फील्ड साइटें, जिंदे च रिकार्ड डीईएचएटी दफ्तर च रक्खे गेदे न ते साइट पर उपलब्ध न।",
@@ -29944,7 +29944,7 @@ const DOI = {
       "col": "# 556223 ऐ",
       "detail": {
         "u": "छोटे, अच्छी तरह दायरेदार योगदान यौगिक। फील्ड टीम गी जेह्ड़ी लोड़ होंदी ऐ ओह्दे च मते सारे हफ्तें च गै खत्म होई सकदे न।",
-        "what": "इक परिभाशत कम्मै दा टुकड़ा — क्षेत्र, शोध, दस्तावेजीकरण, डिजाइन जां अनुवाद — साइट पर जां दूरस्थ रूप कन्नै।",
+        "what": "इक परिभाशत कम्मै दा टुकड़ा - क्षेत्र, शोध, दस्तावेजीकरण, डिजाइन जां अनुवाद - साइट पर जां दूरस्थ रूप कन्नै।",
         "why": "क्षमता पैसे कोला बी मती बार बाध्यकारी बाधा ऐ। हत्थें दी इक अतिरिक्त जोड़ी असली डेडलाइन गी हिलांदी ऐ।",
         "when": "रोलिंग। दूरस्थ कम्म लगभग तुरत शुरू होई सकदा ऐ; साइट पर प्लेसमेंट लेई लीड टाइम दी लोड़ होंदी ऐ।",
         "where": "बहराइच, या दूरस्थ भूमिकाएं लेई कनेक्शन कन्नै कुतै बी।",
@@ -30015,10 +30015,10 @@ const DOI = {
       "col": "# 4F0E73 ऐ",
       "detail": {
         "u": "विरासत इकमात्र तोहफा ऐ जिसदा फैसला शांति कन्ने, सालें पैह्लें गै, कुसै ऐसे व्यक्ति आसेआ कीता जंदा ऐ जिसदे कोला कोई फायदा नेईं बची जंदा। एह् बी सबनें कोला दुर्लभ ऐ, कीजे लगभग कुसै कोला बी कदें नेईं पुच्छेआ जंदा।",
-        "what": "तुंदी वसीयत च लिखी दी DEHAT गी इक वसीयत — इक निश्चित रकम, अवशेषें दा इक हिस्सा, जां इक नामित संपत्ति।",
+        "what": "तुंदी वसीयत च लिखी दी DEHAT गी इक वसीयत - इक निश्चित रकम, अवशेषें दा इक हिस्सा, जां इक नामित संपत्ति।",
         "why": "फील्ड वर्क पैसे उप्पर चलदा ऐ जेह्ड़ा इक साल दे टुकड़े च औंदा ऐ। विरासत समर्थन दा इक रूप ऐ जेह् ड़ा कुसै बी अनुदान चक्र थमां बी लम्मी क्षितिज आस्तै प्रतिबद्ध कीता जाई सकदा ऐ , जेह् ड़ा असल च बदलाव आस्तै क्षितिज ऐ ।",
         "when": "जदूं बी तुस अगली बारी अपनी वसीयत लिखदे ओ जां संशोधित करदे ओ। सानु दस्सना वैकल्पिक ऐ, पर एह् असेंगी योजना बनाने दी अनुमति दिंदा ऐ ते तुसेंगी आखने दी अनुमति दिंदा ऐ जे उपहार किस आस्तै ऐ।",
-        "where": "बहराइच च रजिस्टर कीते गेदे दफ्तर च सोसाइटी दा रजिस्ट्रेशन, पैन ते आडिट कीते गेदे खाते होंदे न — जेह्ड़ा बी तुंदा वकील मंगग।",
+        "where": "बहराइच च रजिस्टर कीते गेदे दफ्तर च सोसाइटी दा रजिस्ट्रेशन, पैन ते आडिट कीते गेदे खाते होंदे न - जेह्ड़ा बी तुंदा वकील मंगग।",
         "how": "अपने वकील गी देने लेई साढ़े कोला सटीक कानूनी नांऽ, रजिस्ट्रेशन नंबर ते खंड शब्दावली पुच्छो। अस वसीयत दा मसौदा नेईं बनांदे ते कानूनी सलाह नेईं दिंदे; अस तुंदे वकील गी उंदी लोड़ देई दिंदे आं ते पिच्छें हटी जंदे आं।"
       }
     },
@@ -30034,9 +30034,9 @@ const DOI = {
       "detail": {
         "u": "इक बारी पुनर्निर्देशित ब्याह, जन्मदिन, सालगिरह जां स्मारक इक हस्तक्षेप दे पूरे चक्र गी फंडिंग करी सकदा ऐ।",
         "what": "मेहमानें शगुन या तोहफा लाने दे बजाय DEHAT गी देने लेई आखेआ, मौके पर ते उस व्यक्ति जां जोड़े दे नां पर जिस पर निशान लाया गेदा ऐ।",
-        "why": "एह् इक निजी दिन गी सार्वजनिक दिन च बदली दिंदा ऐ, ते उनें लोकें तगर पुज्जदा ऐ जेह्ड़ी फील्ड टीम नेईं मिलग — पर तदूं गै जेकर हर उपहार सीधे तौर पर दित्ता जा। अस नकद जां हत्थें कन्नै इकट्ठी कीती गेदी रकम गी रसीद नेईं करी सकदे, जां सुरक्षत रूप कन्नै बैंक नेईं करी सकदे ते उसदे बाद साढ़े कोल पास नेईं करी सकदे; जिस नियम च असेंगी कुसै दाता गी उंदी अपनी कर रसीद देने दी अनुमति दित्ती जंदी ऐ, ओह्दे नांऽ दी उंदी अपनी रकम दे मुकाबले उंदी लोड़ होंदी ऐ।",
+        "why": "एह् इक निजी दिन गी सार्वजनिक दिन च बदली दिंदा ऐ, ते उनें लोकें तगर पुज्जदा ऐ जेह्ड़ी फील्ड टीम नेईं मिलग - पर तदूं गै जेकर हर उपहार सीधे तौर पर दित्ता जा। अस नकद जां हत्थें कन्नै इकट्ठी कीती गेदी रकम गी रसीद नेईं करी सकदे, जां सुरक्षत रूप कन्नै बैंक नेईं करी सकदे ते उसदे बाद साढ़े कोल पास नेईं करी सकदे; जिस नियम च असेंगी कुसै दाता गी उंदी अपनी कर रसीद देने दी अनुमति दित्ती जंदी ऐ, ओह्दे नांऽ दी उंदी अपनी रकम दे मुकाबले उंदी लोड़ होंदी ऐ।",
         "when": "चार-छै हफ्ते दा नोटिस असेंगी इक पेज ते सामग्री तैयार करने दी अनुमति दिंदा ऐ, ते जित्थें होई सकै, मैदान थमां इक आवाज़ बी।",
-        "where": "तुंदा स्थल, ऑनलाइन, जां बहराइच च। देना अपने आप च हमेशा सीधे DEHAT दे अपने खाते च उतरदा ऐ — कदें बी निजी खाते च नेईं, संक्षेप च बी, भरोसे च बी।",
+        "where": "तुंदा स्थल, ऑनलाइन, जां बहराइच च। देना अपने आप च हमेशा सीधे DEHAT दे अपने खाते च उतरदा ऐ - कदें बी निजी खाते च नेईं, संक्षेप च बी, भरोसे च बी।",
         "how": "मौका ते तारीख दस्सो। अस तुंदे नांऽ पर इक पेज सेट करदे आं जेह् ड़ा तुंदे मेहमान सीधे माध्यम कन्नै दिंदे न, ते अस रसीदें ते फॉलो-अप गी संभालने आं।"
       }
     },
@@ -30051,9 +30051,9 @@ const DOI = {
       "detail": {
         "u": "हास्य कलाकार दा सेट, संगीतकार दा शो जां फिल्म निर्माता दा प्रीमियर इस कम्मै गी उस दर्शक गी सौंप सकदा ऐ जेह्ड़ा इक अपील पत्र कदें बी नेईं पुज्जदा।",
         "what": "इक शो, इक स्क्रीनिंग, इक लाइवस्ट्रीम जां DEHAT दे समुदायें गी समर्पित जारी कीते गेदे कम्में दा इक टुकड़ा, जिस च दर्शक कलाकार दे माध्यम कन्नै नेईं बलके सीधे तौर पर दिंदे न।",
-        "why": "जेह्ड़ा दर्शक पैह्लें गै कुसै कलाकार पर भरोसा करदा ऐ ओह् कुसै गैर सरकारी संगठन कन्नै अपनी शर्तें पर शायद गै मिलदा ऐ। जेहड़ा असीं नहीं कर सकदे ओ है कि इक कलाकार ने कट्ठी कीती होई रकम नू बैंक कर के बाद विच सौंप दित्ता है — हर गिफ्ट देण वाले नू, अपने नाम ते, उसी कारण देना पैंदा है जिस करके शादी या जन्मदिन दा गिफ्ट देंदा है।",
+        "why": "जेह्ड़ा दर्शक पैह्लें गै कुसै कलाकार पर भरोसा करदा ऐ ओह् कुसै गैर सरकारी संगठन कन्नै अपनी शर्तें पर शायद गै मिलदा ऐ। जेहड़ा असीं नहीं कर सकदे ओ है कि इक कलाकार ने कट्ठी कीती होई रकम नू बैंक कर के बाद विच सौंप दित्ता है - हर गिफ्ट देण वाले नू, अपने नाम ते, उसी कारण देना पैंदा है जिस करके शादी या जन्मदिन दा गिफ्ट देंदा है।",
         "when": "तारीख तय होंदे ही दस्सो; चार हफ्ते असेंगी सामग्री ते लाइवस्ट्रीम जां बड्डे शो आस्तै मैदान थमां रिकार्ड कीता गेदा संदेश तैयार करने दी अनुमति दिंदा ऐ।",
-        "where": "जित्थें बी तुंदे दर्शक पैह्लें गै न — इक स्थल, इक धारा, इक रिलीज। देना खुद DEHAT दे अपने पेज पर होंदा ऐ, दरवाजे पर या कलाकार दे खाते च नेईं।",
+        "where": "जित्थें बी तुंदे दर्शक पैह्लें गै न - इक स्थल, इक धारा, इक रिलीज। देना खुद DEHAT दे अपने पेज पर होंदा ऐ, दरवाजे पर या कलाकार दे खाते च नेईं।",
         "how": "तारीख, प्रारूप ते उम्मीद दी पहुंच दस्सो। अस तुसेंगी अपने दर्शकें गी इशारा करने आस्तै इक समर्पित पेज ते लिंक दिंदे आं, ब्रांडिंग जिसी तुस दो बारी पुच्छे बगैर इस्तेमाल करी सकदे ओ, ते इक रनिंग टोटल तुस ते ओह् दवैं दिक्खी सकदे ओ।"
       }
     },
@@ -30068,7 +30068,7 @@ const DOI = {
       "col": "# डी2305सी",
       "detail": {
         "u": "निवेशक ते उस माह्नू दे बश्कार दूरी आमतौर उप्पर कदें बी बंद नेईं होंदी। होनी चाहिए।",
-        "what": "इक संरचित बैठक — व्यक्तिगत तौर पर जां ऑनलाइन — उनें लोकें ते समुदायें कन्नै जिंदे तगर तुंदा समर्थन पुज्जेआ हा।",
+        "what": "इक संरचित बैठक - व्यक्तिगत तौर पर जां ऑनलाइन - उनें लोकें ते समुदायें कन्नै जिंदे तगर तुंदा समर्थन पुज्जेआ हा।",
         "why": "जवाबदेही दोनों तरफ चलदी ऐ। नतीजे गी दिक्खने कन्नै अगला फैसला किस चाल्ली लैता जंदा ऐ, इस च बदलाव औंदा ऐ।",
         "when": "समुदाय दे कैलेंडर दे आसपास व्यवस्थित, कदें बी अकेले आगंतुक दी सुविधा दे आसपास नेईं।",
         "where": "ग्राएं च गै, जां कुसै काल पर जित्थें यात्रा संभव नेईं ऐ।",
@@ -30089,7 +30089,7 @@ const DOI = {
         "what": "बाल श्रम ते बाल यौन शोषण दे खिलाफ इक कम्मै च प्रतिबद्धता, जिस च इसगी चलाने दी नीति ते प्रशिक्षण।",
         "why": "इक दस्सी गेदी स्थिति कर्मचारियें गी इक रस्ता दिंदा ऐ जेह् ड़ी कुसै चीजै गी उभारी सकन जेह् ड़ी ओह् नेईं ते चुप रौंह्दे हे।",
         "when": "किसी घटना तों पहलां, बाद विच नहीं। दबाव च लिखी दी नीति कुसै दी रक्षा नेईं करदी।",
-        "where": "तुंदी कम्मै आह् ली थाह् र ते ओह्दे कन्नै सरबंधत थाह् रें — ठेकेदार, विक्रेता, परिवहन, आवास।",
+        "where": "तुंदी कम्मै आह् ली थाह् र ते ओह्दे कन्नै सरबंधत थाह् रें - ठेकेदार, विक्रेता, परिवहन, आवास।",
         "how": "अस माडल प्रतिबद्धता गी सांझा करने आं, इसगी अनुकूलित करने च मदद करने आं, ते उनें लोकें गी प्रशिक्षित करने आं जिनेंगी इस पर अमल करना होग।"
       }
     },
@@ -30129,7 +30129,7 @@ const DOI = {
       }
     }
   ],
-  "sopTitle": "एक-दो ऩॊक्ति भें — आऩ क्मा उम्भीद कय यशे शैं कक फदरेगा?",
+  "sopTitle": "एक-दो ऩॊक्ति भें - आऩ क्मा उम्भीद कय यशे शैं कक फदरेगा?",
   "sopSub": "एह् इकमात्र हिस्सा ऐ जेह्ड़ा अस नेड़में कन्नै पढ़ने आं। जिन्ना चाहो, उसी लिखो; कोई सच्चा जवाब नेईं ऐ।",
   "sopPlaceholder": "मसलन: अस चाह्न्ने आं जे बहराइच च साढ़ा कारपोरेट सोशल रिस्पांसबिलिटी खर्च कुतै बी जाह्ग ​​जित्थें सबूत सार्वजनिक होन, ते अस इक ब्लॉक कन्नै शुरू करना चांह्दे आं।",
   "sopPrompts": [
@@ -30243,9 +30243,9 @@ const DOI = {
   "fPanHint": "दस अक्षर, जिवें कार्ड ते छपे होए",
   "fAadhaar": "नकाबपोश आधार",
   "fAadhaarHint": "XXXX XXXX 1234 दा",
-  "fAadhaarNote": "पिछले चार अंक ही। इत्थें कदें बी अपना पूरा आधार नंबर नेईं दर्ज करो — असेंगी न ते इसदी लोड़ ऐ ते ना गै रक्खो।",
+  "fAadhaarNote": "पिछले चार अंक ही। इत्थें कदें बी अपना पूरा आधार नंबर नेईं दर्ज करो - असेंगी न ते इसदी लोड़ ऐ ते ना गै रक्खो।",
   "fInrDocs": "पैन ते नकाबपोश आधार स्कैन",
-  "fInrDocsNote": "अपने पैन कार्ड दा स्कैन ते नकाबपोश आधार (अंतिम चार अंक सिर्फ दिक्खे जंदे न — यूआईडीएआई अपनी वेबसाइट थमां इक जारी करदा ऐ) संलग्न करो। 80जी रसीद, फार्म 10बीडी बयान ते आडिट आस्तै रक्खेआ गेआ, ते रिटेन अवधि समाप्त होने पर नष्ट करी दित्ता गेआ।",
+  "fInrDocsNote": "अपने पैन कार्ड दा स्कैन ते नकाबपोश आधार (अंतिम चार अंक सिर्फ दिक्खे जंदे न - यूआईडीएआई अपनी वेबसाइट थमां इक जारी करदा ऐ) संलग्न करो। 80जी रसीद, फार्म 10बीडी बयान ते आडिट आस्तै रक्खेआ गेआ, ते रिटेन अवधि समाप्त होने पर नष्ट करी दित्ता गेआ।",
   "fIdRefHint": "जिय्यां पासपोर्ट उप्पर छपे दा ऐ",
   "fPassport": "पासपोर्ट स्कैन, दोनों तरफ",
   "fPassportNote": "विदेशी योगदान लेई जरूरी ऐ। फोटोग्राफ पेज ते पता पेज संलग्न करो। सिर्फ विदेशी योगदान (नियमन) अधिनियम रिटर्न ते आडिट आस्तै गै रक्खेआ जंदा ऐ, ते रिटेन अवधि समाप्त होने पर नष्ट करी दित्ता जंदा ऐ।",
@@ -30320,7 +30320,7 @@ const DOI = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "सदस्य।",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -30422,7 +30422,7 @@ const DOI = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -30570,7 +30570,7 @@ const DOI = {
     }
   ],
   "ecosystemTitle": "सरकारी विभाग, वैधानिक संस्थाएं ते सामुदायिक प्रणालियां जिनेंगी कन्ने अस्से जुड़े दे आं",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -30897,7 +30897,7 @@ const BRX = {
     "case": {
           
           "t": "दाबो थि खालामनो हायाखै बे बाथ्राया सैथो नामा?",
-          "s": "बे बिलाइयाव थानाय जेखायनो दाबि सायाव सोंथि खालाम — मोनसे अनजिमा, मोनसे जिला, मोनसे आदब। जों फुंखाखौ दिन्थिगोन, एबा रोखायै बुंगोन जेराव मोनसे दाबि खोनानायनिफ्राय लोरबां।",
+          "s": "बे बिलाइयाव थानाय जेखायनो दाबि सायाव सोंथि खालाम - मोनसे अनजिमा, मोनसे जिला, मोनसे आदब। जों फुंखाखौ दिन्थिगोन, एबा रोखायै बुंगोन जेराव मोनसे दाबि खोनानायनिफ्राय लोरबां।",
           "a": "बे बाथ्रानि सायाव सों",
           "subj": "निवेश खालामनायनि बाथ्रानि सायाव मोनसे सोंथि",
           "b": "निवेश खालामलांबाय था",
@@ -31007,7 +31007,7 @@ const BRX = {
   "legacy": {
     "eyebrow": "Legacy Giving",
     "title": "The gift that outlasts the giver.",
-    "body": "Almost nobody is ever asked, so almost nobody ever does it. A bequest written into your will is the one form of support that can be committed to a horizon longer than any grant cycle — which is the horizon this work actually takes. Ask us for the legal name, the registration number and the clause wording, and give them to your lawyer.",
+    "body": "Almost nobody is ever asked, so almost nobody ever does it. A bequest written into your will is the one form of support that can be committed to a horizon longer than any grant cycle - which is the horizon this work actually takes. Ask us for the legal name, the registration number and the clause wording, and give them to your lawyer.",
     "action": "Read the legacy route",
     "note": "We do not draft wills and we do not give legal advice."
   },
@@ -31152,7 +31152,7 @@ const BRX = {
       "col": "#4F0E73",
       "detail": {
         "u": "Twenty years of field records exist in Bahraich. Every year they go unstudied is a year of evidence that never reaches the people writing policy.",
-        "what": "A named research partnership on a live programme — co-designed questions, access to field data and longitudinal records, and co-publication.",
+        "what": "A named research partnership on a live programme - co-designed questions, access to field data and longitudinal records, and co-publication.",
         "why": "Practice that is never studied repeats its own mistakes. Study that never touches practice generalises badly. The pairing corrects both.",
         "when": "From the design stage, so measurement is built into the programme rather than fitted to it afterwards.",
         "where": "Field sites across Bahraich and Shravasti, with the records held at the DEHAT office and available on site.",
@@ -31230,7 +31230,7 @@ const BRX = {
       "col": "#556223",
       "detail": {
         "u": "Small, well-scoped contributions compound. Most of what a field team needs is finishable in weeks.",
-        "what": "A defined piece of work — field, research, documentation, design or translation — on site or remotely.",
+        "what": "A defined piece of work - field, research, documentation, design or translation - on site or remotely.",
         "why": "Capacity is the binding constraint more often than money. An extra pair of hands moves a real deadline.",
         "when": "Rolling. Remote work can start almost immediately; on-site placements need lead time.",
         "where": "Bahraich, or anywhere with a connection for remote roles.",
@@ -31301,10 +31301,10 @@ const BRX = {
       "col": "#4F0E73",
       "detail": {
         "u": "A legacy is the only gift that is decided calmly, years in advance, by someone with nothing left to gain from it. It is also the rarest, because almost nobody is ever asked.",
-        "what": "A bequest to DEHAT written into your will — a fixed sum, a share of the residue, or a named asset.",
+        "what": "A bequest to DEHAT written into your will - a fixed sum, a share of the residue, or a named asset.",
         "why": "Field work runs on money that arrives in one-year pieces. A legacy is the one form of support that can be committed to a horizon longer than any grant cycle, which is the horizon the change actually takes.",
         "when": "Whenever you next write or revise your will. Telling us is optional, but it lets us plan and lets you say what the gift is for.",
-        "where": "The registered office in Bahraich holds the society’s registration, PAN and audited accounts — everything your lawyer will ask for.",
+        "where": "The registered office in Bahraich holds the society’s registration, PAN and audited accounts - everything your lawyer will ask for.",
         "how": "Ask us for the exact legal name, registration number and clause wording to give your lawyer. We do not draft wills and we do not give legal advice; we give your lawyer what they need and step back."
       }
     },
@@ -31320,9 +31320,9 @@ const BRX = {
       "detail": {
         "u": "A wedding, a birthday, an anniversary or a memorial redirected once can fund a whole cycle of one intervention.",
         "what": "Guests asked to give to DEHAT instead of bringing shagun or a gift, on the occasion and in the name of the person or couple marking it.",
-        "why": "It turns a private day into a public one, and reaches people the field team would not otherwise meet — but only if every gift is given directly. We cannot receipt, or safely bank, a sum collected in cash or by hand and passed to us afterward; the rule that lets us give a giver their own tax receipt requires their name against their own amount.",
+        "why": "It turns a private day into a public one, and reaches people the field team would not otherwise meet - but only if every gift is given directly. We cannot receipt, or safely bank, a sum collected in cash or by hand and passed to us afterward; the rule that lets us give a giver their own tax receipt requires their name against their own amount.",
         "when": "Four to six weeks of notice lets us prepare a page and the material, and, where possible, a voice from the field.",
-        "where": "Your venue, online, or in Bahraich. The giving itself always lands directly in DEHAT's own account — never in a personal one, even briefly, even in trust.",
+        "where": "Your venue, online, or in Bahraich. The giving itself always lands directly in DEHAT's own account - never in a personal one, even briefly, even in trust.",
         "how": "Tell us the occasion and the date. We set up a page in your name that your guests give through directly, and we handle the receipts and the follow-up."
       }
     },
@@ -31337,9 +31337,9 @@ const BRX = {
       "detail": {
         "u": "A comedian's set, a musician's show or a filmmaker's premiere can hand this work an audience an appeal letter never reaches.",
         "what": "A show, a screening, a livestream or a piece of released work dedicated to DEHAT's communities, with the audience giving directly rather than through the artist.",
-        "why": "An audience that already trusts an artist rarely meets an NGO on its own terms. What we cannot do is bank a sum an artist collected and hands over afterward — every gift has to be given by the person giving it, in their own name, for the same reason a wedding or birthday gift does.",
+        "why": "An audience that already trusts an artist rarely meets an NGO on its own terms. What we cannot do is bank a sum an artist collected and hands over afterward - every gift has to be given by the person giving it, in their own name, for the same reason a wedding or birthday gift does.",
         "when": "Tell us the date as soon as it is fixed; four weeks lets us prepare material and, for a livestream or a large show, a recorded message from the field.",
-        "where": "Wherever your audience already is — a venue, a stream, a release. The giving itself happens on DEHAT's own page, not at the door or in the artist's account.",
+        "where": "Wherever your audience already is - a venue, a stream, a release. The giving itself happens on DEHAT's own page, not at the door or in the artist's account.",
         "how": "Tell us the date, the format and the expected reach. We give you a dedicated page and link to point your audience to, branding you can use without asking twice, and a running total you and they can both see."
       }
     },
@@ -31354,7 +31354,7 @@ const BRX = {
       "col": "#D2305C",
       "detail": {
         "u": "The distance between an investor and the person their money reached is usually never closed. It should be.",
-        "what": "A structured meeting — in person or online — with the people and communities your support reached.",
+        "what": "A structured meeting - in person or online - with the people and communities your support reached.",
         "why": "Accountability runs both ways. Seeing the outcome changes how the next decision is made.",
         "when": "Arranged around the community’s calendar, never around the visitor’s convenience alone.",
         "where": "In the villages themselves, or over a call where travel is not possible.",
@@ -31375,7 +31375,7 @@ const BRX = {
         "what": "A workplace commitment against child labour and child sexual abuse, with the policy and training to hold it.",
         "why": "A stated position gives employees a route to raise something they would otherwise stay quiet about.",
         "when": "Before an incident, not after. Policy written under pressure protects nobody.",
-        "where": "Your workplace and its allied spaces — contractors, vendors, transport, housing.",
+        "where": "Your workplace and its allied spaces - contractors, vendors, transport, housing.",
         "how": "We share the model commitment, help adapt it, and train the people who will have to act on it."
       }
     },
@@ -31415,7 +31415,7 @@ const BRX = {
       }
     }
   ],
-  "sopTitle": "In a line or two — what are you hoping will change?",
+  "sopTitle": "In a line or two - what are you hoping will change?",
   "sopSub": "This is the only part we read closely. Write it however you like; there is no right answer.",
   "sopPlaceholder": "For example: we want our Corporate Social Responsibility spend in Bahraich to go somewhere the evidence is public, and we would like to start with one block.",
   "sopPrompts": [
@@ -31529,9 +31529,9 @@ const BRX = {
   "fPanHint": "Ten characters, as printed on the card",
   "fAadhaar": "Masked Aadhaar",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "Last four digits only. Never enter your full Aadhaar number here — we neither need it nor keep it.",
+  "fAadhaarNote": "Last four digits only. Never enter your full Aadhaar number here - we neither need it nor keep it.",
   "fInrDocs": "PAN and Masked Aadhaar Scans",
-  "fInrDocsNote": "Attach a scan of your PAN card and a masked Aadhaar (last four digits visible only — UIDAI issues one from its website). Held for the 80G receipt, the Form 10BD statement and the audit, and destroyed when the retention period ends.",
+  "fInrDocsNote": "Attach a scan of your PAN card and a masked Aadhaar (last four digits visible only - UIDAI issues one from its website). Held for the 80G receipt, the Form 10BD statement and the audit, and destroyed when the retention period ends.",
   "fIdRefHint": "As printed on the passport",
   "fPassport": "Passport Scan, Both Sides",
   "fPassportNote": "Required for foreign contributions. Attach the photograph page and the address page. Held only for the Foreign Contribution (Regulation) Act return and the audit, and destroyed when the retention period ends.",
@@ -31606,7 +31606,7 @@ const BRX = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "Member.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -31708,7 +31708,7 @@ const BRX = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -31856,7 +31856,7 @@ const BRX = {
     }
   ],
   "ecosystemTitle": "सोरखारि बिफान, खानथिआरि आफाद आरो समाजआरि बिथांखिफोर जायजों जों खामानि मावो",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -32183,7 +32183,7 @@ const SAT = {
     "case": {
           
           "t": "ᱱᱤᱛ ᱦᱚᱸ ᱵᱟᱢ ᱴᱷᱟᱹᱣᱠᱟᱹ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ ᱱᱚᱣᱟ ᱛᱚᱨᱠᱚ ᱴᱷᱤᱠ ᱜᱮᱭᱟ ᱥᱮ ᱵᱟᱝ?",
-          "s": "ᱱᱚᱣᱟ ᱥᱟᱠᱟᱢ ᱨᱮᱱᱟᱜ ᱡᱟᱦᱟᱸᱱ ᱫᱟᱹᱵᱤ ᱨᱮᱱᱟᱜ ᱯᱨᱚᱢᱟᱬ ᱠᱷᱚᱡᱽ ᱢᱮ — ᱢᱤᱫ ᱮᱞᱠᱷᱟ, ᱢᱤᱫ ᱡᱤᱞᱟᱹ, ᱢᱤᱫ ᱠᱟᱹᱢᱤᱦᱚᱨᱟ ᱾ ᱟᱞᱮ ᱢᱩᱬ ᱩᱫᱩᱜ ᱟᱞᱮ, ᱥᱮ ᱥᱟᱯᱷᱟ ᱞᱮ ᱞᱟᱹᱭᱟ ᱚᱠᱟᱨᱮ ᱢᱤᱫ ᱫᱟᱹᱵᱤ ᱟᱸᱡᱚᱢᱚᱜ ᱠᱷᱚᱱ ᱠᱚᱢᱡᱳᱨ ᱜᱮᱭᱟ ᱾",
+          "s": "ᱱᱚᱣᱟ ᱥᱟᱠᱟᱢ ᱨᱮᱱᱟᱜ ᱡᱟᱦᱟᱸᱱ ᱫᱟᱹᱵᱤ ᱨᱮᱱᱟᱜ ᱯᱨᱚᱢᱟᱬ ᱠᱷᱚᱡᱽ ᱢᱮ - ᱢᱤᱫ ᱮᱞᱠᱷᱟ, ᱢᱤᱫ ᱡᱤᱞᱟᱹ, ᱢᱤᱫ ᱠᱟᱹᱢᱤᱦᱚᱨᱟ ᱾ ᱟᱞᱮ ᱢᱩᱬ ᱩᱫᱩᱜ ᱟᱞᱮ, ᱥᱮ ᱥᱟᱯᱷᱟ ᱞᱮ ᱞᱟᱹᱭᱟ ᱚᱠᱟᱨᱮ ᱢᱤᱫ ᱫᱟᱹᱵᱤ ᱟᱸᱡᱚᱢᱚᱜ ᱠᱷᱚᱱ ᱠᱚᱢᱡᱳᱨ ᱜᱮᱭᱟ ᱾",
           "a": "ᱱᱚᱣᱟ ᱛᱚᱨᱠᱚ ᱵᱟᱵᱚᱛ ᱠᱩᱞᱤ ᱢᱮ",
           "subj": "ᱱᱤᱣᱮᱥ ᱨᱮᱱᱟᱜ ᱛᱚᱨᱠᱚ ᱵᱟᱵᱚᱛ ᱢᱤᱫ ᱠᱩᱠᱞᱤ",
           "b": "ᱱᱤᱣᱮᱥ ᱥᱮᱫ ᱞᱟᱦᱟᱜ ᱢᱮ",
@@ -32438,7 +32438,7 @@ const SAT = {
       "col": "#᱔ᱯᱷ᱐ᱤ᱗᱓",
       "detail": {
         "u": "ᱵᱟᱦᱨᱮᱪ ᱨᱮ ᱵᱟᱨ ᱜᱮᱞ ᱥᱮᱨᱢᱟ ᱨᱮᱭᱟᱜ ᱯᱷᱤᱞᱰ ᱨᱮᱠᱚᱨᱰ ᱢᱮᱱᱟᱜᱼᱟ ᱾ ᱥᱟᱱᱟᱢ ᱥᱮᱨᱢᱟ ᱜᱮ ᱩᱱᱠᱩ ᱵᱤᱱ ᱯᱟᱲᱦᱟᱣ ᱛᱮ ᱠᱚ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ ᱚᱱᱟ ᱫᱚ ᱥᱟᱹᱵᱩᱫᱽ ᱨᱮᱭᱟᱜ ᱥᱮᱨᱢᱟ ᱠᱟᱱᱟ ᱡᱟᱦᱟᱸ ᱫᱚ ᱯᱚᱞᱤᱥᱤ ᱚᱞ ᱦᱚᱲ ᱴᱷᱮᱱ ᱵᱟᱝ ᱥᱮᱴᱮᱨᱚᱜᱼᱟ ᱾",
-        "what": "ᱢᱤᱫ ᱞᱟᱭᱤᱵᱽ ᱠᱟᱹᱢᱤᱦᱚᱨᱟ ᱨᱮ ᱢᱤᱫ ᱧᱩᱛᱩᱢᱟᱱ ᱠᱷᱚᱱᱫᱽᱨᱚᱝ ᱯᱟᱨᱴᱱᱚᱨᱥᱤᱯ — ᱥᱚᱦᱚᱫ ᱰᱤᱡᱟᱭᱤᱱ ᱠᱩᱠᱞᱤ, ᱯᱷᱤᱞᱰ ᱰᱟᱴᱟ ᱟᱨ ᱞᱚᱸᱰᱤᱱᱟᱞ ᱨᱮᱠᱚᱨᱰ ᱥᱮᱴᱮᱨ, ᱟᱨ ᱥᱚᱦᱚᱫ ᱯᱟᱹᱨᱥᱟᱞ᱾",
+        "what": "ᱢᱤᱫ ᱞᱟᱭᱤᱵᱽ ᱠᱟᱹᱢᱤᱦᱚᱨᱟ ᱨᱮ ᱢᱤᱫ ᱧᱩᱛᱩᱢᱟᱱ ᱠᱷᱚᱱᱫᱽᱨᱚᱝ ᱯᱟᱨᱴᱱᱚᱨᱥᱤᱯ - ᱥᱚᱦᱚᱫ ᱰᱤᱡᱟᱭᱤᱱ ᱠᱩᱠᱞᱤ, ᱯᱷᱤᱞᱰ ᱰᱟᱴᱟ ᱟᱨ ᱞᱚᱸᱰᱤᱱᱟᱞ ᱨᱮᱠᱚᱨᱰ ᱥᱮᱴᱮᱨ, ᱟᱨ ᱥᱚᱦᱚᱫ ᱯᱟᱹᱨᱥᱟᱞ᱾",
         "why": "ᱚᱱᱟ ᱦᱮᱣᱟ ᱡᱟᱦᱟᱸ ᱫᱚ ᱛᱤᱥ ᱦᱚᱸ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱟᱠᱟᱱᱟ ᱚᱱᱟ ᱫᱚ ᱟᱡᱟᱜ ᱵᱷᱩᱞ ᱫᱚᱦᱲᱟᱭᱟ ᱾ ᱚᱱᱟ ᱯᱟᱲᱦᱟᱣ ᱡᱟᱦᱟᱸ ᱫᱚ ᱛᱤᱥ ᱦᱚᱸ ᱦᱮᱣᱟ ᱵᱟᱭ ᱡᱚᱴᱮᱫᱟ ᱚᱱᱟ ᱫᱚ ᱵᱟᱹᱲᱤᱡ ᱞᱮᱠᱟᱭ ᱥᱟᱫᱷᱟᱨᱚᱱᱟ᱾ ᱡᱚᱲᱟᱣ ᱫᱚ ᱵᱟᱱᱟᱨ ᱜᱮ ᱴᱷᱤᱠ ᱠᱤᱱᱟᱭ ᱾",
         "when": "ᱰᱤᱡᱟᱭᱤᱱ ᱥᱴᱮᱡᱽ ᱠᱷᱚᱱ, ᱚᱱᱟᱛᱮ ᱡᱚᱠᱷᱟ ᱫᱚ ᱯᱨᱚᱜᱽᱨᱟᱢ ᱨᱮ ᱛᱮᱭᱟᱨ ᱟᱠᱟᱱᱟ ᱵᱚᱫᱚᱞ ᱛᱟᱭᱚᱢ ᱚᱱᱟ ᱨᱮ ᱯᱷᱤᱴ ᱦᱩᱭᱩᱜ ᱠᱟᱱᱟ ᱾",
         "where": "ᱵᱟᱦᱨᱮᱪ ᱟᱨ ᱥᱨᱟᱣᱟᱥᱴᱤ ᱨᱮ ᱯᱷᱤᱞᱰ ᱥᱟᱭᱤᱴ ᱠᱚ, ᱰᱮᱦᱟᱴ ᱚᱯᱷᱤᱥ ᱨᱮ ᱫᱚᱦᱚ ᱟᱠᱟᱱ ᱨᱮᱠᱚᱨᱰ ᱠᱚ ᱥᱟᱶᱛᱮ ᱟᱨ ᱚᱱᱟ ᱴᱷᱟᱶ ᱨᱮ ᱧᱟᱢᱚᱜ ᱠᱟᱱᱟ᱾",
@@ -32516,7 +32516,7 @@ const SAT = {
       "col": "#᱕᱕᱖᱒᱒᱓",
       "detail": {
         "u": "ᱠᱟᱹᱴᱤᱡ, ᱱᱟᱯᱟᱭ ᱥᱠᱚᱯ ᱮᱱᱮᱢ ᱠᱚᱢᱯᱟᱣᱩᱱᱰ᱾ ᱢᱤᱫ ᱯᱷᱤᱞᱰ ᱴᱤᱢ ᱞᱟᱹᱜᱤᱫ ᱡᱟᱦᱟᱸ ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ ᱚᱱᱟ ᱫᱚ ᱦᱟᱯᱛᱟ ᱨᱮ ᱪᱟᱵᱟᱜᱼᱟ ᱾",
-        "what": "ᱠᱟᱹᱢᱤ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱴᱩᱠᱨᱟᱹ — ᱯᱷᱤᱞᱰ, ᱠᱷᱚᱱᱫᱽᱨᱚᱝ, ᱰᱚᱠᱭᱩᱢᱮᱱᱴᱮᱥᱚᱱ, ᱰᱤᱡᱟᱭᱤᱱ ᱥᱮ ᱛᱚᱨᱡᱚᱢ — ᱥᱟᱭᱤᱴ ᱨᱮ ᱥᱮ ᱥᱟᱝᱜᱤᱧ ᱠᱷᱚᱱ ᱾",
+        "what": "ᱠᱟᱹᱢᱤ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱴᱩᱠᱨᱟᱹ - ᱯᱷᱤᱞᱰ, ᱠᱷᱚᱱᱫᱽᱨᱚᱝ, ᱰᱚᱠᱭᱩᱢᱮᱱᱴᱮᱥᱚᱱ, ᱰᱤᱡᱟᱭᱤᱱ ᱥᱮ ᱛᱚᱨᱡᱚᱢ - ᱥᱟᱭᱤᱴ ᱨᱮ ᱥᱮ ᱥᱟᱝᱜᱤᱧ ᱠᱷᱚᱱ ᱾",
         "why": "ᱯᱩᱭᱥᱟᱹ ᱠᱷᱚᱱ ᱵᱟᱹᱲᱛᱤ ᱫᱟᱲᱮ ᱫᱚ ᱛᱚᱞ ᱫᱟᱨᱟᱢ ᱠᱟᱱᱟ ᱾ ᱢᱤᱫ ᱵᱟᱹᱲᱛᱤ ᱡᱚᱲ ᱛᱤ ᱥᱟᱹᱨᱤ ᱢᱩᱪᱟᱹᱫ ᱢᱟᱦᱟᱸ ᱞᱟᱦᱟ ᱪᱟᱞᱟᱜᱼᱟ ᱾",
         "when": "ᱨᱚᱞᱤᱝ᱾ ᱥᱟᱝᱜᱤᱧ ᱠᱟᱹᱢᱤ ᱫᱚ ᱯᱨᱟᱭ ᱛᱤᱥ ᱜᱮ ᱮᱦᱚᱵ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ; ᱚᱱ-ᱥᱟᱭᱤᱴ ᱯᱞᱮᱥᱢᱮᱱᱴ ᱞᱟᱹᱜᱤᱫ ᱞᱤᱰ ᱚᱠᱛᱚ ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ ᱾",
         "where": "ᱵᱟᱦᱨᱟᱭᱪ, ᱟᱨ ᱵᱟᱝ ᱡᱟᱦᱟᱸ ᱨᱮᱜᱮ ᱥᱟᱝᱜᱤᱧ ᱵᱷᱩᱢᱤᱠᱟ ᱞᱟᱹᱜᱤᱫ ᱡᱚᱲᱟᱣ ᱥᱟᱶ ᱾",
@@ -32587,10 +32587,10 @@ const SAT = {
       "col": "#᱔ᱯᱷ᱐ᱤ᱗᱓",
       "detail": {
         "u": "ᱢᱤᱫ ᱵᱤᱨᱟᱥᱟᱛ ᱫᱚ ᱢᱤᱫ ᱥᱤᱨᱯᱟᱹ ᱠᱟᱱᱟ ᱡᱟᱦᱟᱸ ᱫᱚ ᱥᱟᱱᱛᱚᱨ ᱛᱮ ᱴᱷᱟᱹᱣᱠᱟᱹ ᱟᱠᱟᱱᱟ, ᱥᱮᱨᱢᱟ ᱢᱟᱲᱟᱝ ᱨᱮ, ᱡᱟᱦᱟᱸᱭ ᱦᱚᱲ ᱛᱮ ᱚᱱᱟ ᱠᱷᱚᱱ ᱞᱟᱵᱷ ᱞᱟᱹᱜᱤᱫ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱛᱟᱦᱮᱱᱟ᱾ ᱱᱚᱣᱟ ᱫᱚ ᱟᱹᱰᱤ ᱫᱩᱨ ᱜᱮᱭᱟ, ᱪᱮᱫᱟᱜ ᱥᱮ ᱚᱠᱚᱭ ᱦᱚᱸ ᱵᱟᱠᱚ ᱠᱩᱞᱤ ᱟᱠᱟᱫ ᱠᱚᱣᱟ ᱾",
-        "what": "ᱟᱢᱟᱜ ᱩᱭᱞ ᱨᱮ ᱚᱞ ᱟᱠᱟᱱ ᱰᱮᱦᱟᱴ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱵᱤᱠᱛᱤ — ᱢᱤᱫ ᱴᱷᱟᱹᱣᱠᱟᱹ ᱴᱟᱠᱟ, ᱢᱩᱪᱟᱹᱫ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱦᱟᱹᱴᱤᱧ, ᱵᱟᱝᱠᱷᱟᱱ ᱢᱤᱫ ᱧᱩᱛᱩᱢ ᱟᱠᱟᱱ ᱡᱤᱱᱤᱥ ᱾",
+        "what": "ᱟᱢᱟᱜ ᱩᱭᱞ ᱨᱮ ᱚᱞ ᱟᱠᱟᱱ ᱰᱮᱦᱟᱴ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱵᱤᱠᱛᱤ - ᱢᱤᱫ ᱴᱷᱟᱹᱣᱠᱟᱹ ᱴᱟᱠᱟ, ᱢᱩᱪᱟᱹᱫ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱦᱟᱹᱴᱤᱧ, ᱵᱟᱝᱠᱷᱟᱱ ᱢᱤᱫ ᱧᱩᱛᱩᱢ ᱟᱠᱟᱱ ᱡᱤᱱᱤᱥ ᱾",
         "why": "ᱯᱷᱤᱞᱰ ᱠᱟᱹᱢᱤ ᱫᱚ ᱴᱟᱠᱟ ᱛᱮ ᱪᱟᱹᱞᱩᱜ ᱠᱟᱱᱟ ᱚᱱᱟ ᱫᱚ ᱢᱤᱫ ᱥᱮᱨᱢᱟ ᱨᱮᱭᱟᱜ ᱴᱩᱠᱨᱟᱹ ᱛᱮ ᱥᱮᱴᱮᱨᱚᱜ ᱠᱟᱱᱟ ᱾ ᱢᱤᱫ ᱞᱮᱜᱽᱥᱤ ᱫᱚ ᱜᱚᱲᱚ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱞᱮᱠᱟᱱ ᱠᱟᱱᱟ ᱡᱟᱦᱟᱸ ᱫᱚ ᱡᱟᱦᱟᱱ ᱜᱚᱲᱚ ᱪᱟᱠᱨᱟ ᱠᱷᱚᱱ ᱡᱷᱟᱹᱞ ᱫᱤᱱᱟᱹᱢ ᱞᱟᱹᱜᱤᱫ ᱛᱷᱚᱯᱨᱟᱢ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ, ᱚᱠᱟ ᱫᱚ ᱫᱤᱱᱟᱹᱢ ᱵᱚᱫᱚᱞ ᱛᱮ ᱥᱟᱹᱨᱤ ᱛᱮ ᱦᱟᱛᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ᱾",
         "when": "ᱡᱟᱦᱟᱸ ᱛᱤᱱ ᱨᱮᱜᱮ ᱟᱢ ᱟᱢᱟᱜ ᱩᱭᱦᱟᱹᱨ ᱚᱞ ᱥᱮ ᱥᱩᱫᱷᱨᱟᱹᱣ ᱢᱮ ᱾ ᱟᱞᱮ ᱞᱟᱹᱭ ᱫᱚ ᱚᱯᱥᱚᱱᱟᱞ ᱠᱟᱱᱟ, ᱢᱮᱱᱠᱷᱟᱱ ᱱᱚᱣᱟ ᱟᱞᱮ ᱯᱞᱟᱱ ᱞᱮ ᱮᱢᱟ ᱟᱨ ᱟᱢ ᱞᱟᱹᱭ ᱞᱮ ᱮᱢᱟ ᱞᱮᱭᱟ ᱥᱤᱨᱯᱟᱹ ᱫᱚ ᱪᱮᱫ ᱞᱟᱹᱜᱤᱫ ᱾",
-        "where": "ᱵᱟᱦᱨᱮ ᱨᱮ ᱨᱮᱡᱤᱥᱴᱟᱨ ᱚᱯᱷᱤᱥ ᱨᱮ ᱥᱚᱢᱟᱡᱽ ᱨᱮᱡᱤᱥᱴᱟᱨ, ᱯᱟᱱ ᱟᱨ ᱚᱰᱤᱴ ᱮᱠᱟᱣᱩᱱᱴ ᱢᱮᱱᱟᱜ-ᱟ — ᱡᱟᱦᱟᱸ ᱜᱮ ᱟᱢ ᱨᱮᱱ ᱩᱠᱤᱞ ᱠᱚ ᱠᱷᱚᱡᱚᱜ-ᱟ᱾",
+        "where": "ᱵᱟᱦᱨᱮ ᱨᱮ ᱨᱮᱡᱤᱥᱴᱟᱨ ᱚᱯᱷᱤᱥ ᱨᱮ ᱥᱚᱢᱟᱡᱽ ᱨᱮᱡᱤᱥᱴᱟᱨ, ᱯᱟᱱ ᱟᱨ ᱚᱰᱤᱴ ᱮᱠᱟᱣᱩᱱᱴ ᱢᱮᱱᱟᱜ-ᱟ - ᱡᱟᱦᱟᱸ ᱜᱮ ᱟᱢ ᱨᱮᱱ ᱩᱠᱤᱞ ᱠᱚ ᱠᱷᱚᱡᱚᱜ-ᱟ᱾",
         "how": "ᱟᱢ ᱨᱮᱱ ᱩᱠᱤᱞ ᱮᱢ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱹᱦᱤᱡ ᱟᱹᱭᱤᱱᱤ ᱧᱩᱛᱩᱢ, ᱨᱮᱡᱤᱥᱴᱨᱮᱥᱚᱱ ᱱᱚᱢᱵᱚᱨ ᱟᱨ ᱫᱷᱟᱯ ᱟᱹᱲᱟᱹ ᱠᱚ ᱞᱟᱹᱭ ᱞᱮᱢ᱾ ᱟᱞᱮ ᱫᱚ ᱣᱤᱞ ᱵᱟᱝ ᱞᱮ ᱰᱨᱟᱯᱷᱴ ᱮᱫᱟ ᱟᱨ ᱟᱹᱭᱤᱱᱤ ᱥᱚᱞᱦᱟ ᱦᱚᱸ ᱵᱟᱝ ᱞᱮ ᱮᱢᱟ; ᱟᱞᱮ ᱟᱢᱤᱡ ᱩᱠᱤᱞ ᱞᱮ ᱮᱢᱟᱭᱟ ᱡᱟᱦᱟᱸ ᱩᱱᱤ ᱞᱟᱹᱠᱛᱤᱭᱟᱭ ᱟᱨ ᱛᱟᱭᱚᱢ ᱥᱮᱫ ᱞᱮ ᱪᱟᱞᱟᱜᱼᱟ ᱾"
       }
     },
@@ -32606,7 +32606,7 @@ const SAT = {
       "detail": {
         "u": "ᱢᱤᱫ ᱵᱟᱯᱞᱟ, ᱢᱤᱫ ᱡᱟᱱᱟᱢ ᱢᱟᱦᱟ, ᱢᱤᱫ ᱥᱮᱨᱢᱟᱠᱤᱭᱟᱹ ᱥᱮ ᱢᱤᱫ ᱫᱷᱟᱣ ᱫᱚᱦᱚ ᱟᱠᱟᱱ ᱢᱤᱫ ᱫᱷᱟᱣ ᱫᱚ ᱢᱤᱫ ᱛᱟᱞᱟ ᱨᱮᱭᱟᱜ ᱜᱚᱴᱟ ᱪᱟᱠᱨᱟ ᱫᱚ ᱯᱷᱟᱱᱰ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ᱾",
         "what": "ᱯᱮᱲᱟ ᱠᱚ ᱫᱚ ᱥᱟᱜᱩᱱ ᱥᱮ ᱥᱤᱨᱯᱟᱹ ᱟᱹᱜᱩ ᱵᱚᱫᱚᱞ ᱠᱟᱛᱮ ᱰᱮᱦᱟᱴ ᱮᱢ ᱞᱟᱹᱜᱤᱫ ᱠᱚ ᱢᱮᱛᱟᱜ ᱠᱚᱣᱟ, ᱚᱱᱟ ᱚᱠᱛᱚ ᱨᱮ ᱟᱨ ᱚᱱᱟ ᱪᱤᱱᱦᱟᱹ ᱟᱠᱟᱱ ᱦᱚᱲ ᱥᱮ ᱵᱟᱯᱞᱟ ᱠᱚᱣᱟᱜ ᱧᱩᱛᱩᱢ ᱛᱮ ᱾",
-        "why": "ᱱᱚᱶᱟ ᱫᱚ ᱢᱤᱫ ᱵᱟᱹᱲᱤᱡ ᱫᱤᱱ ᱯᱟᱹᱵᱤᱞ ᱫᱤᱱ ᱨᱮ ᱯᱷᱮᱨᱟᱣ ᱠᱟᱱᱟ, ᱟᱨ ᱦᱚᱲ ᱠᱚ ᱴᱷᱮᱱ ᱥᱮᱴᱮᱨᱚᱜ ᱠᱟᱱᱟ ᱡᱟᱦᱟᱸ ᱫᱚ ᱯᱷᱤᱞᱰ ᱴᱤᱢ ᱵᱟᱝ ᱧᱟᱯᱟᱢ ᱠᱟᱱᱟ — ᱢᱮᱱᱠᱷᱟᱱ ᱡᱚᱛᱚ ᱥᱤᱨᱯᱟᱹ ᱥᱚᱡᱷᱮ ᱮᱢ ᱠᱟᱱ ᱠᱷᱟᱱ ᱜᱮ᱾ ᱟᱵᱚ ᱫᱚ ᱴᱟᱠᱟ ᱥᱮ ᱛᱤ ᱛᱮ ᱥᱟᱢᱴᱟᱣ ᱟᱠᱟᱱ ᱴᱟᱠᱟ ᱟᱨ ᱛᱟᱭᱚᱢ ᱟᱵᱚ ᱴᱷᱮᱱ ᱯᱟᱥ ᱟᱠᱟᱱ ᱴᱟᱠᱟ ᱵᱟᱝ ᱵᱚᱱ ᱧᱟᱢ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ, ᱵᱟᱝᱠᱷᱟᱱ ᱨᱩᱠᱷᱤᱭᱟᱹ ᱛᱮ ᱵᱮᱝᱠ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ; ᱚᱱᱟ ᱱᱤᱭᱚᱢ ᱡᱟᱦᱟᱸ ᱫᱚ ᱟᱵᱚ ᱮᱢᱚᱜ ᱦᱚᱲ ᱟᱡᱟᱜ ᱴᱮᱠᱥ ᱨᱟᱹᱥᱤᱫ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱭᱟ ᱚᱱᱟ ᱫᱚ ᱟᱡᱟᱜ ᱴᱟᱠᱟ ᱵᱤᱨᱩᱫᱷ ᱨᱮ ᱟᱡᱟᱜ ᱧᱩᱛᱩᱢ ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ᱾",
+        "why": "ᱱᱚᱶᱟ ᱫᱚ ᱢᱤᱫ ᱵᱟᱹᱲᱤᱡ ᱫᱤᱱ ᱯᱟᱹᱵᱤᱞ ᱫᱤᱱ ᱨᱮ ᱯᱷᱮᱨᱟᱣ ᱠᱟᱱᱟ, ᱟᱨ ᱦᱚᱲ ᱠᱚ ᱴᱷᱮᱱ ᱥᱮᱴᱮᱨᱚᱜ ᱠᱟᱱᱟ ᱡᱟᱦᱟᱸ ᱫᱚ ᱯᱷᱤᱞᱰ ᱴᱤᱢ ᱵᱟᱝ ᱧᱟᱯᱟᱢ ᱠᱟᱱᱟ - ᱢᱮᱱᱠᱷᱟᱱ ᱡᱚᱛᱚ ᱥᱤᱨᱯᱟᱹ ᱥᱚᱡᱷᱮ ᱮᱢ ᱠᱟᱱ ᱠᱷᱟᱱ ᱜᱮ᱾ ᱟᱵᱚ ᱫᱚ ᱴᱟᱠᱟ ᱥᱮ ᱛᱤ ᱛᱮ ᱥᱟᱢᱴᱟᱣ ᱟᱠᱟᱱ ᱴᱟᱠᱟ ᱟᱨ ᱛᱟᱭᱚᱢ ᱟᱵᱚ ᱴᱷᱮᱱ ᱯᱟᱥ ᱟᱠᱟᱱ ᱴᱟᱠᱟ ᱵᱟᱝ ᱵᱚᱱ ᱧᱟᱢ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ, ᱵᱟᱝᱠᱷᱟᱱ ᱨᱩᱠᱷᱤᱭᱟᱹ ᱛᱮ ᱵᱮᱝᱠ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ; ᱚᱱᱟ ᱱᱤᱭᱚᱢ ᱡᱟᱦᱟᱸ ᱫᱚ ᱟᱵᱚ ᱮᱢᱚᱜ ᱦᱚᱲ ᱟᱡᱟᱜ ᱴᱮᱠᱥ ᱨᱟᱹᱥᱤᱫ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱭᱟ ᱚᱱᱟ ᱫᱚ ᱟᱡᱟᱜ ᱴᱟᱠᱟ ᱵᱤᱨᱩᱫᱷ ᱨᱮ ᱟᱡᱟᱜ ᱧᱩᱛᱩᱢ ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ᱾",
         "when": "ᱯᱩᱱ ᱠᱷᱚᱱ ᱛᱩᱨᱩᱭ ᱦᱟᱯᱛᱟ ᱱᱚᱴᱤᱥ ᱛᱮ ᱟᱵᱚ ᱢᱤᱫ ᱥᱟᱦᱴᱟ ᱟᱨ ᱡᱤᱱᱤᱥ ᱵᱚᱱ ᱥᱟᱯᱲᱟᱣ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ, ᱟᱨ ᱡᱟᱦᱟᱸ ᱨᱮ ᱦᱩᱭ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ, ᱯᱷᱤᱞᱰ ᱠᱷᱚᱱ ᱟᱲᱟᱝ ᱾",
         "where": "ᱟᱢᱟᱜ ᱥᱟᱢᱟᱝ ᱴᱷᱟᱶ, ᱚᱱᱞᱟᱭᱤᱱ, ᱟᱨ ᱵᱟᱝ ᱵᱟᱦᱨᱮᱪ ᱨᱮ ᱾ ᱮᱢ ᱫᱚ ᱥᱟᱨᱟ ᱜᱷᱟᱹᱲᱤᱡ ᱥᱚᱡᱷᱮ ᱰᱮᱦᱟᱴ ᱟᱜ ᱱᱤᱡᱮᱨ ᱮᱠᱟᱣᱩᱱᱴ ᱨᱮ ᱞᱟᱸᱫᱟ ᱟᱠᱟᱱᱟ - ᱛᱤᱥ ᱦᱚᱸ ᱯᱚᱨᱥᱚᱱᱟᱞ ᱨᱮ ᱵᱟᱝ, ᱠᱷᱟᱴᱚ ᱛᱮ ᱦᱚᱸ, ᱯᱟᱹᱛᱭᱟᱹᱣ ᱨᱮ ᱦᱚᱸ ᱵᱟᱝ ᱾",
         "how": "ᱚᱠᱛᱚ ᱟᱨ ᱢᱟᱹᱦᱤᱛ ᱞᱟᱹᱭ ᱞᱮᱢ᱾ ᱟᱞᱮ ᱟᱢᱟᱜ ᱧᱩᱛᱩᱢ ᱛᱮ ᱢᱤᱫ ᱥᱟᱦᱴᱟ ᱞᱮ ᱛᱷᱟᱯᱱᱟᱣ ᱠᱮᱫᱟ ᱡᱟᱦᱟᱸ ᱫᱚ ᱟᱢ ᱨᱮᱱ ᱯᱮᱲᱟ ᱠᱚ ᱥᱚᱡᱷᱮ ᱠᱚ ᱮᱢᱟ, ᱟᱨ ᱟᱞᱮ ᱨᱟᱹᱥᱤᱫ ᱟᱨ ᱯᱟᱧᱡᱟ ᱞᱮ ᱥᱟᱢᱵᱽᱲᱟᱣᱟ᱾"
@@ -32623,7 +32623,7 @@ const SAT = {
       "detail": {
         "u": "ᱢᱤᱫ ᱠᱚᱢᱮᱰᱤᱭᱟᱱ ᱥᱮᱴ, ᱢᱤᱫ ᱥᱮᱨᱮᱧ ᱵᱟᱡᱟᱨᱤᱡ ᱥᱚ ᱥᱮ ᱢᱤᱫ ᱯᱷᱤᱞᱢ ᱵᱮᱱᱟᱣᱤᱡ ᱟᱜ ᱯᱨᱤᱢᱤᱭᱟᱨ ᱱᱚᱣᱟ ᱠᱟᱹᱢᱤ ᱫᱚ ᱧᱮᱧᱮᱞᱤᱭᱟᱹ ᱠᱚ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱠᱚᱣᱟ ᱚᱠᱟ ᱫᱚ ᱛᱤᱥ ᱦᱚᱸ ᱵᱟᱝ ᱥᱮᱴᱮᱨᱚᱜᱼᱟ᱾",
         "what": "ᱢᱤᱫ ᱥᱚᱛᱚᱨ, ᱢᱤᱫ ᱥᱠᱨᱤᱱᱤᱝ, ᱢᱤᱫ ᱞᱟᱭᱤᱵᱽ ᱥᱴᱨᱤᱢ ᱥᱮ ᱰᱮᱦᱟᱴ ᱨᱮᱱ ᱜᱟᱶᱛᱟ ᱠᱚ ᱞᱟᱹᱜᱤᱫ ᱨᱤᱞᱤᱥ ᱠᱟᱹᱢᱤ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱴᱩᱠᱨᱟᱹ, ᱡᱟᱦᱟᱸ ᱨᱮ ᱧᱮᱧᱮᱞᱤᱭᱟᱹ ᱠᱚ ᱫᱚ ᱠᱟᱹᱨᱤᱜᱚᱞ ᱠᱚ ᱦᱚᱛᱮᱛᱮ ᱵᱟᱝ ᱥᱚᱡᱷᱮ ᱠᱚ ᱮᱢᱟ᱾",
-        "why": "ᱡᱟᱦᱟᱸᱭ ᱧᱮᱧᱮᱞᱤᱭᱟᱹ ᱠᱚ ᱢᱟᱲᱟᱝ ᱠᱷᱚᱱ ᱜᱮ ᱢᱤᱫ ᱠᱟᱹᱨᱤᱜᱚᱞ ᱨᱮ ᱯᱟᱹᱛᱭᱟᱹᱣ ᱢᱮᱱᱟᱜ ᱠᱚᱣᱟ ᱩᱱᱠᱩ ᱫᱚ ᱟᱠᱚᱣᱟᱜ ᱥᱟᱨᱛ ᱛᱮ ᱢᱤᱫ ᱮᱱᱜᱳ ᱥᱟᱶ ᱵᱟᱠᱚ ᱧᱟᱯᱟᱢᱚᱜᱼᱟ ᱾ ᱟᱵᱚ ᱪᱮᱫ ᱵᱟᱝ ᱵᱚᱱ ᱠᱚᱨᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ ᱚᱱᱟ ᱫᱚ ᱢᱤᱫ ᱠᱟᱹᱨᱤᱜᱚᱞ ᱡᱟᱣᱨᱟ ᱟᱨ ᱛᱟᱭᱚᱢ ᱛᱮ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ — ᱡᱚᱛᱚ ᱥᱤᱨᱯᱟᱹ ᱫᱚ ᱚᱱᱟ ᱮᱢ ᱠᱟᱱ ᱦᱚᱲ ᱜᱮ ᱮᱢ ᱦᱩᱭᱩᱜ-ᱟ, ᱟᱡᱟᱜ ᱧᱩᱛᱩᱢ ᱛᱮ, ᱚᱱᱟ ᱠᱟᱨᱚᱱ ᱞᱟᱹᱜᱤᱫ ᱵᱟᱯᱞᱟ ᱥᱮ ᱡᱟᱱᱟᱢ ᱢᱟᱦᱟᱸ ᱥᱤᱨᱯᱟᱹ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ᱾",
+        "why": "ᱡᱟᱦᱟᱸᱭ ᱧᱮᱧᱮᱞᱤᱭᱟᱹ ᱠᱚ ᱢᱟᱲᱟᱝ ᱠᱷᱚᱱ ᱜᱮ ᱢᱤᱫ ᱠᱟᱹᱨᱤᱜᱚᱞ ᱨᱮ ᱯᱟᱹᱛᱭᱟᱹᱣ ᱢᱮᱱᱟᱜ ᱠᱚᱣᱟ ᱩᱱᱠᱩ ᱫᱚ ᱟᱠᱚᱣᱟᱜ ᱥᱟᱨᱛ ᱛᱮ ᱢᱤᱫ ᱮᱱᱜᱳ ᱥᱟᱶ ᱵᱟᱠᱚ ᱧᱟᱯᱟᱢᱚᱜᱼᱟ ᱾ ᱟᱵᱚ ᱪᱮᱫ ᱵᱟᱝ ᱵᱚᱱ ᱠᱚᱨᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ ᱚᱱᱟ ᱫᱚ ᱢᱤᱫ ᱠᱟᱹᱨᱤᱜᱚᱞ ᱡᱟᱣᱨᱟ ᱟᱨ ᱛᱟᱭᱚᱢ ᱛᱮ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ - ᱡᱚᱛᱚ ᱥᱤᱨᱯᱟᱹ ᱫᱚ ᱚᱱᱟ ᱮᱢ ᱠᱟᱱ ᱦᱚᱲ ᱜᱮ ᱮᱢ ᱦᱩᱭᱩᱜ-ᱟ, ᱟᱡᱟᱜ ᱧᱩᱛᱩᱢ ᱛᱮ, ᱚᱱᱟ ᱠᱟᱨᱚᱱ ᱞᱟᱹᱜᱤᱫ ᱵᱟᱯᱞᱟ ᱥᱮ ᱡᱟᱱᱟᱢ ᱢᱟᱦᱟᱸ ᱥᱤᱨᱯᱟᱹ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ᱾",
         "when": "ᱢᱟᱹᱦᱤᱛ ᱞᱟᱹᱭ ᱞᱮᱢ ᱡᱟᱦᱟᱸ ᱞᱮᱠᱟ ᱜᱮ ᱱᱚᱣᱟ ᱴᱷᱟᱹᱣᱠᱟᱹ ᱞᱮᱱᱠᱷᱟᱱ; ᱯᱩᱱ ᱦᱟᱴ ᱞᱟᱹᱜᱤᱫ ᱟᱵᱚ ᱡᱤᱱᱤᱥ ᱥᱟᱯᱲᱟᱣ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ ᱵᱚᱱ ᱟᱨ ᱞᱟᱭᱤᱵᱽᱥᱴᱨᱤᱢ ᱥᱮ ᱢᱟᱨᱟᱝ ᱥᱚ ᱞᱟᱹᱜᱤᱫ ᱯᱷᱤᱞᱰ ᱠᱷᱚᱱ ᱨᱮᱠᱚᱨᱰ ᱠᱟᱱ ᱥᱟᱱᱫᱮᱥ ᱾",
         "where": "ᱟᱢ ᱨᱮᱱ ᱧᱮᱧᱮᱞᱤᱭᱟᱹ ᱡᱟᱦᱟᱸ ᱨᱮᱜᱮ ᱢᱮᱱᱟᱜ ᱠᱚᱣᱟ - ᱢᱤᱫ ᱴᱷᱟᱶ, ᱢᱤᱫ ᱥᱴᱨᱤᱢ, ᱢᱤᱫ ᱨᱤᱞᱤᱡᱽ ᱾ ᱮᱢᱚᱜ ᱫᱚ ᱰᱮᱦᱟᱴ ᱟᱜ ᱱᱤᱡᱮᱨ ᱥᱟᱦᱴᱟ ᱨᱮ ᱦᱩᱭᱩᱜ ᱠᱟᱱᱟ, ᱫᱩᱣᱟᱹᱨ ᱨᱮ ᱵᱟᱝ ᱥᱮ ᱠᱟᱹᱨᱤᱜᱚᱞ ᱟᱜ ᱮᱠᱟᱣᱩᱱᱴ ᱨᱮ ᱵᱟᱝ ᱾",
         "how": "ᱢᱟᱹᱦᱤᱛ, ᱯᱨᱚᱨᱩᱢ ᱟᱨ ᱟᱥᱟ ᱥᱮᱴᱮᱨᱚᱜ ᱞᱟᱹᱭ ᱞᱮᱢ᱾ ᱟᱞᱮ ᱟᱢ ᱢᱤᱫ ᱥᱟᱦᱴᱟ ᱟᱨ ᱞᱤᱝᱠ ᱞᱮ ᱮᱢᱟᱢᱟ ᱟᱢ ᱨᱮᱱ ᱧᱮᱧᱮᱞᱤᱭᱟᱹ ᱠᱚ ᱩᱫᱩᱜ ᱞᱟᱹᱜᱤᱫ, ᱵᱽᱨᱟᱱᱰᱤᱝ ᱟᱢ ᱵᱟᱨ ᱫᱷᱟᱣ ᱵᱟᱝ ᱠᱩᱞᱤ ᱠᱟᱛᱮ ᱵᱮᱵᱷᱟᱨ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ, ᱟᱨ ᱢᱤᱫ ᱨᱟᱱᱤᱝ ᱴᱚᱴᱟ ᱟᱢ ᱟᱨ ᱩᱱᱠᱩ ᱵᱟᱱᱟᱨ ᱠᱚ ᱧᱮᱞ ᱫᱟᱲᱮᱭᱟᱜ-ᱟ᱾"
@@ -32661,7 +32661,7 @@ const SAT = {
         "what": "ᱜᱤᱫᱽᱨᱟᱹ ᱠᱟᱹᱢᱤ ᱟᱨ ᱜᱤᱫᱽᱨᱟᱹ ᱡᱩᱶᱟᱹᱱ ᱵᱟᱹᱲᱤᱡ ᱠᱚ ᱵᱤᱨᱩᱫᱷ ᱨᱮ ᱠᱟᱹᱢᱤ ᱴᱷᱟᱶ ᱨᱮ ᱢᱤᱫ ᱴᱮᱠᱮᱴ, ᱚᱱᱟ ᱫᱚᱦᱚ ᱞᱟᱹᱜᱤᱫ ᱯᱚᱞᱤᱥ ᱟᱨ ᱜᱟᱹᱠᱷᱩᱲ ᱥᱟᱶᱛᱮ ᱾",
         "why": "ᱢᱤᱫ ᱞᱟᱹᱭ ᱟᱠᱟᱱ ᱴᱷᱟᱶ ᱠᱟᱹᱢᱤᱭᱟᱠᱚ ᱢᱤᱫ ᱰᱟᱦᱟᱨ ᱮᱢᱟᱠᱚᱣᱟ ᱡᱟᱦᱟᱸ ᱫᱚ ᱩᱱᱠᱩ ᱵᱟᱝᱠᱷᱟᱱ ᱛᱷᱤᱨ ᱠᱚ ᱛᱟᱦᱮᱱᱟ᱾",
         "when": "ᱢᱤᱫ ᱜᱡᱚᱴᱱᱟ ᱢᱟᱲᱟᱝ, ᱛᱟᱭᱚᱢ ᱫᱚ ᱵᱟᱝ ᱾ ᱪᱷᱟᱯ ᱛᱮ ᱚᱞ ᱟᱠᱟᱱ ᱯᱚᱞᱤᱥᱤ ᱫᱚ ᱚᱠᱚᱭ ᱦᱚᱸ ᱵᱟᱭ ᱨᱩᱠᱷᱤᱭᱟᱹ ᱫᱟᱲᱮᱭᱟᱠᱚᱣᱟ ᱾",
-        "where": "ᱟᱢᱟᱜ ᱠᱟᱹᱢᱤ ᱴᱷᱟᱶ ᱟᱨ ᱚᱱᱟ ᱥᱟᱶ ᱡᱚᱲᱟᱣ ᱴᱷᱟᱶ ᱠᱚ — ᱴᱷᱤᱠᱟᱹᱰᱟᱹ, ᱟᱹᱠᱷᱨᱤᱧᱤᱡ, ᱥᱟᱜᱟᱲᱚᱢ, ᱚᱲᱟᱜ ᱾",
+        "where": "ᱟᱢᱟᱜ ᱠᱟᱹᱢᱤ ᱴᱷᱟᱶ ᱟᱨ ᱚᱱᱟ ᱥᱟᱶ ᱡᱚᱲᱟᱣ ᱴᱷᱟᱶ ᱠᱚ - ᱴᱷᱤᱠᱟᱹᱰᱟᱹ, ᱟᱹᱠᱷᱨᱤᱧᱤᱡ, ᱥᱟᱜᱟᱲᱚᱢ, ᱚᱲᱟᱜ ᱾",
         "how": "ᱟᱵᱚ ᱢᱚᱰᱮᱞ ᱠᱚᱢᱤᱴᱢᱮᱱᱴ ᱵᱚᱱ ᱦᱟᱹᱴᱤᱧᱟ, ᱱᱚᱣᱟ ᱟᱯᱱᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱵᱚᱱ ᱜᱚᱲᱚᱟ, ᱟᱨ ᱦᱚᱲ ᱠᱚ ᱜᱟᱹᱠᱷᱩᱲ ᱟᱠᱚᱣᱟ ᱡᱟᱦᱟᱸᱭ ᱱᱚᱣᱟ ᱪᱮᱛᱟᱱ ᱨᱮ ᱠᱟᱹᱢᱤ ᱦᱩᱭᱩᱜ ᱛᱟᱠᱚᱣᱟ᱾"
       }
     },
@@ -32701,7 +32701,7 @@ const SAT = {
       }
     }
   ],
-  "sopTitle": "ᱢᱤᱫ ᱞᱟᱭᱤᱱ ᱥᱮ ᱵᱟᱨ ᱞᱟᱭᱤᱱ ᱨᱮ — ᱟᱢ ᱪᱮᱫ ᱵᱚᱫᱚᱞᱚᱜᱼᱟ ᱢᱮᱱᱛᱮᱢ ᱟᱥᱟ ᱮᱫᱟ?",
+  "sopTitle": "ᱢᱤᱫ ᱞᱟᱭᱤᱱ ᱥᱮ ᱵᱟᱨ ᱞᱟᱭᱤᱱ ᱨᱮ - ᱟᱢ ᱪᱮᱫ ᱵᱚᱫᱚᱞᱚᱜᱼᱟ ᱢᱮᱱᱛᱮᱢ ᱟᱥᱟ ᱮᱫᱟ?",
   "sopSub": "ᱱᱚᱣᱟ ᱫᱚ ᱮᱠᱮᱱ ᱦᱟᱹᱴᱤᱧ ᱠᱟᱱᱟ ᱡᱟᱦᱟᱸ ᱟᱞᱮ ᱥᱚᱱᱛᱚᱨ ᱛᱮ ᱞᱮ ᱯᱟᱲᱦᱟᱣ ᱟᱠᱟᱫᱟ ᱾ ᱟᱢ ᱡᱟᱦᱟᱸ ᱞᱮᱠᱟᱢ ᱠᱩᱥᱤᱭᱟᱜ-ᱟ ᱚᱞ ᱢᱮ; ᱚᱱᱰᱮ ᱴᱷᱤᱠ ᱛᱮᱞᱟ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾",
   "sopPlaceholder": "ᱫᱟᱹᱭᱠᱟᱹ ᱞᱮᱠᱟᱛᱮ: ᱟᱞᱮ ᱫᱚ ᱵᱟᱦᱨᱮ ᱨᱮ ᱟᱞᱮᱭᱟᱜ ᱠᱚᱨᱯᱚᱨᱮᱴ ᱥᱟᱶᱛᱟ ᱟᱝᱜᱤᱵᱷᱟᱨ ᱠᱷᱚᱨᱚᱪ ᱞᱮ ᱠᱷᱚᱡᱚᱜ ᱠᱟᱱᱟ ᱡᱟᱦᱟᱸ ᱨᱮ ᱥᱟᱹᱵᱩᱫᱽ ᱫᱚ ᱥᱟᱱᱟᱢ ᱦᱚᱲ ᱜᱮ ᱛᱟᱦᱮᱱᱟ, ᱟᱨ ᱟᱞᱮ ᱫᱚ ᱢᱤᱫ ᱵᱞᱚᱠ ᱠᱷᱚᱱ ᱮᱦᱚᱵ ᱞᱮ ᱠᱷᱚᱡᱚᱜ ᱠᱟᱱᱟ᱾",
   "sopPrompts": [
@@ -32817,7 +32817,7 @@ const SAT = {
   "fAadhaarHint": "ᱮᱠᱥᱮᱠᱥ ᱮᱠᱥᱮᱠᱥ ᱑᱒᱓᱔",
   "fAadhaarNote": "ᱢᱩᱪᱟᱹᱫ ᱯᱩᱱ ᱮᱞ ᱥᱩᱢᱩᱝ ᱾ ᱟᱢᱟᱜ ᱯᱩᱨᱟᱹ ᱟᱫᱷᱟᱨ ᱱᱚᱢᱵᱚᱨ ᱱᱚᱸᱰᱮ ᱛᱤᱥ ᱦᱚᱸ ᱟᱞᱚᱢ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ - ᱟᱞᱮ ᱱᱚᱣᱟ ᱵᱟᱝ ᱞᱟᱹᱠᱛᱤᱭᱟ ᱟᱨ ᱵᱟᱝ ᱫᱚᱦᱚᱭᱟ ᱾",
   "fInrDocs": "ᱯᱟᱱ ᱟᱨ ᱢᱟᱥᱠᱮᱰ ᱟᱫᱷᱟᱨ ᱥᱠᱮᱱ",
-  "fInrDocsNote": "ᱟᱢᱟᱜ PAN ᱠᱟᱨᱰ ᱨᱮᱭᱟᱜ ᱥᱠᱮᱱ ᱟᱨ ᱢᱟᱥᱠ ᱟᱫᱷᱟᱨ ᱞᱟᱴᱷᱟ ᱢᱮ (ᱢᱩᱪᱟᱹᱫ ᱯᱩᱱ ᱮᱞ ᱫᱚ ᱥᱩᱢᱩᱝ ᱧᱮᱞᱚᱜ ᱠᱟᱱᱟ — UIDAI ᱫᱚ ᱟᱡᱟᱜ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱠᱷᱚᱱ ᱢᱤᱫ ᱮ ᱮᱢ ᱮᱫᱟ)᱾ ᱘᱐ᱡᱤ ᱨᱟᱹᱥᱤᱫ, ᱯᱷᱚᱨᱢ ᱑᱐ᱵᱤᱰᱤ ᱥᱴᱮᱴᱢᱮᱱᱴ ᱟᱨ ᱚᱰᱤᱴ ᱞᱟᱹᱜᱤᱫ ᱫᱚᱦᱚ ᱞᱮᱱᱟ, ᱟᱨ ᱫᱚᱦᱚ ᱚᱠᱛᱚ ᱢᱩᱪᱟᱹᱫ ᱞᱮᱱᱠᱷᱟᱱ ᱵᱟᱹᱲᱤᱡᱚᱜᱼᱟ᱾",
+  "fInrDocsNote": "ᱟᱢᱟᱜ PAN ᱠᱟᱨᱰ ᱨᱮᱭᱟᱜ ᱥᱠᱮᱱ ᱟᱨ ᱢᱟᱥᱠ ᱟᱫᱷᱟᱨ ᱞᱟᱴᱷᱟ ᱢᱮ (ᱢᱩᱪᱟᱹᱫ ᱯᱩᱱ ᱮᱞ ᱫᱚ ᱥᱩᱢᱩᱝ ᱧᱮᱞᱚᱜ ᱠᱟᱱᱟ - UIDAI ᱫᱚ ᱟᱡᱟᱜ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱠᱷᱚᱱ ᱢᱤᱫ ᱮ ᱮᱢ ᱮᱫᱟ)᱾ ᱘᱐ᱡᱤ ᱨᱟᱹᱥᱤᱫ, ᱯᱷᱚᱨᱢ ᱑᱐ᱵᱤᱰᱤ ᱥᱴᱮᱴᱢᱮᱱᱴ ᱟᱨ ᱚᱰᱤᱴ ᱞᱟᱹᱜᱤᱫ ᱫᱚᱦᱚ ᱞᱮᱱᱟ, ᱟᱨ ᱫᱚᱦᱚ ᱚᱠᱛᱚ ᱢᱩᱪᱟᱹᱫ ᱞᱮᱱᱠᱷᱟᱱ ᱵᱟᱹᱲᱤᱡᱚᱜᱼᱟ᱾",
   "fIdRefHint": "ᱯᱟᱥᱯᱚᱨᱴ ᱨᱮ ᱪᱷᱟᱯᱟ ᱟᱠᱟᱱ ᱞᱮᱠᱟ",
   "fPassport": "ᱯᱟᱥᱯᱚᱨᱴ ᱥᱠᱮᱱ, ᱵᱟᱱᱟᱨ ᱯᱟᱦᱴᱟ",
   "fPassportNote": "ᱵᱤᱫᱮᱥ ᱮᱱᱮᱢ ᱞᱟᱹᱜᱤᱫ ᱞᱟᱹᱠᱛᱤᱭᱟᱱᱟᱜ ᱠᱟᱱᱟ ᱾ ᱯᱷᱳᱴᱳᱜᱽᱨᱟᱯᱷ ᱥᱟᱦᱴᱟ ᱟᱨ ᱴᱷᱤᱠᱟᱹᱱᱟ ᱥᱟᱦᱴᱟ ᱞᱟᱴᱷᱟ ᱢᱮ ᱾ ᱥᱩᱢᱩᱝ ᱵᱤᱫᱮᱥ ᱮᱱᱮᱢ (ᱨᱮᱜᱩᱞᱮᱥᱚᱱ) ᱟᱹᱱ ᱨᱩᱣᱟᱹᱲ ᱟᱨ ᱚᱰᱤᱴ ᱞᱟᱹᱜᱤᱫ ᱫᱚᱦᱚ ᱟᱠᱟᱱᱟ, ᱟᱨ ᱫᱚᱦᱚ ᱚᱠᱛᱚ ᱢᱩᱪᱟᱹᱫ ᱞᱮᱱᱠᱷᱟᱱ ᱵᱟᱹᱲᱤᱡ ᱟᱠᱟᱱᱟ᱾",
@@ -32892,7 +32892,7 @@ const SAT = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "ᱨᱟᱹᱥᱤᱭᱟᱹ᱾",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -32994,7 +32994,7 @@ const SAT = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -33142,7 +33142,7 @@ const SAT = {
     }
   ],
   "ecosystemTitle": "ᱥᱚᱨᱠᱟᱨᱤ ᱵᱤᱵᱷᱟᱜᱽ, ᱟᱹᱱ ᱞᱮᱠᱟᱛᱮ ᱵᱮᱱᱟᱣ ᱟᱠᱟᱱ ᱜᱟᱶᱛᱟ ᱟᱨ ᱥᱟᱶᱛᱟ ᱵᱮᱵᱚᱥᱛᱷᱟ ᱡᱟᱦᱟᱸ ᱥᱟᱶ ᱟᱞᱮ ᱡᱚᱯᱲᱟᱣ ᱢᱮᱱᱟᱜ ᱞᱮᱭᱟ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -33469,7 +33469,7 @@ const MNI = {
     "case": {
           
           "t": "ꯋꯥꯐꯝ ꯑꯁꯤ ꯆꯨꯝꯕ꯭ꯔꯥ ꯍꯥꯌꯕꯗꯨ ꯍꯧꯖꯤꯛꯁꯨ ꯂꯦꯄꯊꯣꯛꯄꯥ ꯉꯃꯗ꯭ꯔꯤꯕꯔꯥ?",
-          "s": "ꯂꯃꯥꯌ ꯑꯁꯤꯗꯥ ꯌꯥꯑꯣꯔꯤꯕꯥ ꯑꯀꯛꯅꯕꯥ ꯗꯥꯕꯤ ꯑꯃꯥ ꯉꯥꯛꯊꯣꯛꯅꯕꯥ ꯑꯩꯈꯣꯌꯗꯥ ꯍꯥꯌꯕꯤꯌꯨ — ꯃꯁꯤꯡ ꯑꯃꯥ, ꯖꯤꯂꯥ ꯑꯃꯥ, ꯊꯕꯛ ꯇꯧꯕꯒꯤ ꯃꯑꯣꯡ ꯑꯃꯥ꯫ ꯑꯩꯈꯣꯌꯅꯥ ꯃꯄꯨꯡ ꯑꯣꯏꯕꯥ ꯍꯧꯔꯀꯐꯝ ꯎꯠꯀꯅꯤ, ꯅꯠꯔꯒꯥ ꯗꯥꯕꯤ ꯑꯃꯥ ꯇꯥꯔꯤꯕꯗꯒꯤ ꯀꯗꯥꯌꯗꯥ ꯍꯦꯟꯅꯥ ꯁꯣꯟꯊꯔꯤꯕꯒꯦ ꯍꯥꯌꯕꯗꯨ ꯃꯌꯦꯛ ꯁꯦꯡꯅꯥ ꯍꯥꯌꯒꯅꯤ꯫",
+          "s": "ꯂꯃꯥꯌ ꯑꯁꯤꯗꯥ ꯌꯥꯑꯣꯔꯤꯕꯥ ꯑꯀꯛꯅꯕꯥ ꯗꯥꯕꯤ ꯑꯃꯥ ꯉꯥꯛꯊꯣꯛꯅꯕꯥ ꯑꯩꯈꯣꯌꯗꯥ ꯍꯥꯌꯕꯤꯌꯨ - ꯃꯁꯤꯡ ꯑꯃꯥ, ꯖꯤꯂꯥ ꯑꯃꯥ, ꯊꯕꯛ ꯇꯧꯕꯒꯤ ꯃꯑꯣꯡ ꯑꯃꯥ꯫ ꯑꯩꯈꯣꯌꯅꯥ ꯃꯄꯨꯡ ꯑꯣꯏꯕꯥ ꯍꯧꯔꯀꯐꯝ ꯎꯠꯀꯅꯤ, ꯅꯠꯔꯒꯥ ꯗꯥꯕꯤ ꯑꯃꯥ ꯇꯥꯔꯤꯕꯗꯒꯤ ꯀꯗꯥꯌꯗꯥ ꯍꯦꯟꯅꯥ ꯁꯣꯟꯊꯔꯤꯕꯒꯦ ꯍꯥꯌꯕꯗꯨ ꯃꯌꯦꯛ ꯁꯦꯡꯅꯥ ꯍꯥꯌꯒꯅꯤ꯫",
           "a": "ꯋꯥꯐꯝ ꯑꯁꯤꯒꯤ ꯃꯇꯥꯡꯗꯥ ꯍꯪꯕꯤꯌꯨ",
           "subj": "ꯁꯦꯜ ꯊꯥꯗꯕꯒꯤ ꯃꯔꯃꯒꯤ ꯃꯇꯥꯡꯗꯥ ꯋꯥꯍꯪ ꯑꯃꯥ",
           "b": "ꯁꯦꯜ ꯊꯥꯗꯕꯗꯥ ꯃꯈꯥ ꯆꯠꯊꯕꯤꯌꯨ",
@@ -33579,7 +33579,7 @@ const MNI = {
   "legacy": {
     "eyebrow": "ꯂꯦꯒꯦꯁꯤ ꯄꯤꯕꯥ꯫",
     "title": "ꯄꯤꯔꯤꯕꯥ ꯑꯗꯨꯗꯒꯤ ꯍꯦꯟꯅꯥ ꯁꯥꯡꯅꯥ ꯆꯠꯄꯥ ꯈꯨꯗꯣꯜ ꯑꯗꯨ꯫",
-    "body": "ꯆꯥꯎꯔꯥꯛꯅꯥ ꯀꯅꯥꯒꯨꯝꯕꯥ ꯑꯃꯠꯇꯅꯥ ꯀꯩꯗꯧꯉꯩꯗꯁꯨ ꯍꯪꯗꯦ, ꯃꯔꯝ ꯑꯗꯨꯅꯥ ꯆꯥꯎꯔꯥꯛꯅꯥ ꯀꯅꯥꯒꯨꯝꯕꯥ ꯑꯃꯠꯇꯅꯥ ꯇꯧꯗꯦ꯫ ꯅꯍꯥꯛꯀꯤ ꯋꯤꯂꯗꯥ ꯏꯕꯥ ꯋꯥꯁꯛ ꯑꯁꯤ ꯒ꯭ꯔꯥꯟꯇ ꯁꯥꯏꯀꯜ ꯑꯃꯠꯇꯗꯒꯤ ꯍꯦꯟꯅꯥ ꯁꯥꯡꯅꯥ ꯍꯣꯔꯥꯏꯖꯟ ꯑꯃꯗꯥ ꯀꯃꯤꯠ ꯇꯧꯕꯥ ꯌꯥꯕꯥ ꯁꯄꯣꯔꯇꯀꯤ ꯃꯑꯣꯡ ꯑꯃꯅꯤ — ꯃꯁꯤꯅꯥ ꯊꯕꯛ ꯑꯁꯤꯅꯥ ꯇꯁꯦꯡꯅꯥ ꯂꯧꯔꯤꯕꯥ ꯍꯣꯔꯥꯏꯖꯣꯟꯇꯦꯜ ꯑꯗꯨꯅꯤ꯫ ꯑꯩꯈꯣꯌꯗꯥ ꯑꯥꯏꯅꯒꯤ ꯑꯣꯏꯕꯥ ꯃꯃꯤꯡ, ꯔꯦꯖꯤꯁ꯭ꯠꯔꯦꯁꯟ ꯅꯝꯕꯔ ꯑꯃꯁꯨꯡ ꯀ꯭ꯂꯣꯖ ꯋꯥꯔꯗꯁꯤꯡ ꯑꯗꯨ ꯍꯪꯕꯤꯌꯨ, ꯑꯃꯁꯨꯡ ꯃꯈꯣꯌꯗꯨ ꯅꯍꯥꯛꯀꯤ ꯎꯀꯤꯂꯗꯥ ꯄꯤꯕꯤꯌꯨ꯫",
+    "body": "ꯆꯥꯎꯔꯥꯛꯅꯥ ꯀꯅꯥꯒꯨꯝꯕꯥ ꯑꯃꯠꯇꯅꯥ ꯀꯩꯗꯧꯉꯩꯗꯁꯨ ꯍꯪꯗꯦ, ꯃꯔꯝ ꯑꯗꯨꯅꯥ ꯆꯥꯎꯔꯥꯛꯅꯥ ꯀꯅꯥꯒꯨꯝꯕꯥ ꯑꯃꯠꯇꯅꯥ ꯇꯧꯗꯦ꯫ ꯅꯍꯥꯛꯀꯤ ꯋꯤꯂꯗꯥ ꯏꯕꯥ ꯋꯥꯁꯛ ꯑꯁꯤ ꯒ꯭ꯔꯥꯟꯇ ꯁꯥꯏꯀꯜ ꯑꯃꯠꯇꯗꯒꯤ ꯍꯦꯟꯅꯥ ꯁꯥꯡꯅꯥ ꯍꯣꯔꯥꯏꯖꯟ ꯑꯃꯗꯥ ꯀꯃꯤꯠ ꯇꯧꯕꯥ ꯌꯥꯕꯥ ꯁꯄꯣꯔꯇꯀꯤ ꯃꯑꯣꯡ ꯑꯃꯅꯤ - ꯃꯁꯤꯅꯥ ꯊꯕꯛ ꯑꯁꯤꯅꯥ ꯇꯁꯦꯡꯅꯥ ꯂꯧꯔꯤꯕꯥ ꯍꯣꯔꯥꯏꯖꯣꯟꯇꯦꯜ ꯑꯗꯨꯅꯤ꯫ ꯑꯩꯈꯣꯌꯗꯥ ꯑꯥꯏꯅꯒꯤ ꯑꯣꯏꯕꯥ ꯃꯃꯤꯡ, ꯔꯦꯖꯤꯁ꯭ꯠꯔꯦꯁꯟ ꯅꯝꯕꯔ ꯑꯃꯁꯨꯡ ꯀ꯭ꯂꯣꯖ ꯋꯥꯔꯗꯁꯤꯡ ꯑꯗꯨ ꯍꯪꯕꯤꯌꯨ, ꯑꯃꯁꯨꯡ ꯃꯈꯣꯌꯗꯨ ꯅꯍꯥꯛꯀꯤ ꯎꯀꯤꯂꯗꯥ ꯄꯤꯕꯤꯌꯨ꯫",
     "action": "ꯂꯦꯒꯦꯁꯤ ꯔꯨꯠ ꯑꯗꯨ ꯄꯥꯕꯤꯌꯨ꯫",
     "note": "ꯑꯩꯈꯣꯌꯅꯥ ꯋꯤꯜ ꯗ꯭ꯔꯥꯐ ꯇꯧꯗꯦ ꯑꯃꯁꯨꯡ ꯂꯤꯒꯦꯜ ꯑꯦꯗꯚꯥꯏꯖꯔꯤ ꯄꯤꯗꯦ꯫"
   },
@@ -33724,7 +33724,7 @@ const MNI = {
       "col": "#꯴ꯑꯦꯐ꯰ꯏ꯷꯳",
       "detail": {
         "u": "ꯕꯍꯔꯥꯏꯆꯇꯥ ꯆꯍꯤ ꯲꯰ꯒꯤ ꯐꯤꯜꯗ ꯔꯦꯀꯣꯔꯗ ꯂꯩꯔꯤ꯫ ꯃꯈꯣꯌꯅꯥ ꯇꯃꯗꯅꯥ ꯆꯠꯄꯥ ꯆꯍꯤ ꯈꯨꯗꯤꯡꯒꯤ ꯄꯣꯂꯤꯁꯤ ꯏꯕꯥ ꯃꯤꯑꯣꯏꯁꯤꯡꯗꯥ ꯀꯩꯗꯧꯅꯨꯡꯗꯥ ꯌꯧꯕꯥ ꯉꯃꯗꯕꯥ ꯄ꯭ꯔꯃꯥꯟ ꯆꯍꯤ ꯑꯃꯅꯤ꯫",
-        "what": "ꯂꯥꯏꯕ ꯄ꯭ꯔꯣꯒ꯭ꯔꯥꯝ ꯑꯃꯗꯥ ꯃꯃꯤꯡ ꯂꯩꯔꯕꯥ ꯔꯤꯁꯔꯆ ꯄꯥꯔꯇꯅꯔꯁꯤꯞ ꯑꯃꯥ — ꯀꯣ-ꯗꯤꯖꯥꯏꯟ ꯇꯧꯔꯕꯥ ꯋꯥꯍꯪꯁꯤꯡ, ꯐꯤꯜꯗ ꯗꯦꯇꯥ ꯑꯃꯁꯨꯡ ꯂꯣꯟꯇꯤꯆꯨꯗꯅꯦꯜ ꯔꯦꯀꯣꯔꯗꯁꯤꯡ ꯐꯪꯍꯅꯕꯥ, ꯑꯃꯁꯨꯡ ꯀꯣ-ꯄꯕ꯭ꯂꯤꯀꯦꯁꯟ꯫",
+        "what": "ꯂꯥꯏꯕ ꯄ꯭ꯔꯣꯒ꯭ꯔꯥꯝ ꯑꯃꯗꯥ ꯃꯃꯤꯡ ꯂꯩꯔꯕꯥ ꯔꯤꯁꯔꯆ ꯄꯥꯔꯇꯅꯔꯁꯤꯞ ꯑꯃꯥ - ꯀꯣ-ꯗꯤꯖꯥꯏꯟ ꯇꯧꯔꯕꯥ ꯋꯥꯍꯪꯁꯤꯡ, ꯐꯤꯜꯗ ꯗꯦꯇꯥ ꯑꯃꯁꯨꯡ ꯂꯣꯟꯇꯤꯆꯨꯗꯅꯦꯜ ꯔꯦꯀꯣꯔꯗꯁꯤꯡ ꯐꯪꯍꯅꯕꯥ, ꯑꯃꯁꯨꯡ ꯀꯣ-ꯄꯕ꯭ꯂꯤꯀꯦꯁꯟ꯫",
         "why": "ꯀꯩꯗꯧꯉꯩꯗꯥ ꯊꯤꯖꯤꯅꯗꯕꯥ ꯊꯧꯑꯣꯡ ꯑꯁꯤꯅꯥ ꯃꯁꯥꯒꯤ ꯑꯣꯏꯕꯥ ꯑꯁꯣꯏꯕꯁꯤꯡ ꯍꯟꯖꯤꯟ ꯍꯟꯖꯤꯟ ꯇꯧꯏ꯫ ꯀꯩꯗꯧꯉꯩꯗꯥ ꯄ꯭ꯔꯦꯛꯇꯤꯁꯇꯥ ꯊꯦꯡꯅꯗꯕꯥ ꯁ꯭ꯇꯗꯤ ꯑꯁꯤꯅꯥ ꯐꯠꯇꯕꯥ ꯃꯑꯣꯡꯗꯥ ꯖꯦꯅꯦꯔꯦꯂꯥꯏꯖ ꯇꯧꯏ꯫ ꯄꯦꯔꯤꯡ ꯑꯁꯤꯅꯥ ꯑꯅꯤꯃꯛ ꯀꯣꯀꯍꯜꯂꯤ꯫",
         "when": "ꯗꯤꯖꯥꯏꯅꯒꯤ ꯊꯥꯛꯇꯥ, ꯃꯔꯝ ꯑꯗꯨꯅꯥ ꯃꯥꯌ ꯄꯥꯀꯄꯥ ꯑꯁꯤ ꯃꯇꯨꯡꯗꯥ ꯃꯁꯤꯗꯥ ꯐꯤꯠ ꯇꯧꯕꯒꯤ ꯃꯍꯨꯠꯇꯥ ꯄ꯭ꯔꯣꯒ꯭ꯔꯥꯝ ꯑꯁꯤꯗꯥ ꯁꯦꯃꯒꯠꯂꯤ꯫",
         "where": "ꯕꯍꯔꯥꯏꯆ ꯑꯃꯁꯨꯡ ꯁ꯭ꯔꯥꯕꯁ꯭ꯇꯤ ꯁꯤꯅꯕꯥ ꯊꯨꯡꯅꯥ ꯐꯤꯜꯗ ꯁꯥꯏꯠꯁꯤꯡ, ꯔꯦꯀꯣꯔꯗꯁꯤꯡ ꯑꯁꯤ ꯗꯤ.ꯏ.ꯑꯩꯆ.ꯑꯦ.ꯇꯤ.ꯒꯤ ꯑꯣꯐꯤꯁꯇꯥ ꯊꯝꯂꯤꯕꯥ ꯑꯃꯁꯨꯡ ꯃꯐꯝ ꯑꯗꯨꯗꯥ ꯐꯪꯒꯅꯤ꯫",
@@ -33802,7 +33802,7 @@ const MNI = {
       "col": "#꯵꯵꯶꯲꯲꯳ꯗꯥ ꯊꯥꯕꯤꯔꯀꯎ꯫",
       "detail": {
         "u": "ꯑꯄꯤꯀꯄꯥ, ꯌꯥꯝꯅꯥ ꯐꯖꯅꯥ ꯁ꯭ꯀꯣꯞ ꯇꯧꯕꯥ ꯀꯟꯠꯔꯤꯕ꯭ꯌꯨꯁꯅꯁꯤꯡ ꯀꯝꯄꯥꯎꯟꯗ꯫ ꯐꯤꯜꯗ ꯇꯤꯝ ꯑꯃꯅꯥ ꯃꯊꯧ ꯇꯥꯔꯤꯕꯥ ꯑꯌꯥꯝꯕꯗꯤ ꯅꯨꯃꯤꯠ ꯈꯔꯅꯤꯒꯤ ꯃꯅꯨꯡꯗꯥ ꯂꯣꯏꯁꯤꯅꯕꯥ ꯌꯥꯏ꯫",
-        "what": "ꯂꯦꯄꯊꯣꯛꯂꯕꯥ ꯊꯕꯛ ꯑꯃꯥ — ꯐꯤꯜꯗ, ꯔꯤꯁꯔꯆ, ꯗꯣꯛꯌꯨꯃꯦꯟꯇꯦꯁꯟ, ꯗꯤꯖꯥꯏꯟ ꯅꯠꯠꯔꯒꯥ ꯍꯟꯗꯣꯀꯄꯥ — ꯁꯥꯏꯠꯇꯥ ꯅꯠꯠꯔꯒꯥ ꯔꯤꯃꯣꯠꯇꯥ꯫",
+        "what": "ꯂꯦꯄꯊꯣꯛꯂꯕꯥ ꯊꯕꯛ ꯑꯃꯥ - ꯐꯤꯜꯗ, ꯔꯤꯁꯔꯆ, ꯗꯣꯛꯌꯨꯃꯦꯟꯇꯦꯁꯟ, ꯗꯤꯖꯥꯏꯟ ꯅꯠꯠꯔꯒꯥ ꯍꯟꯗꯣꯀꯄꯥ - ꯁꯥꯏꯠꯇꯥ ꯅꯠꯠꯔꯒꯥ ꯔꯤꯃꯣꯠꯇꯥ꯫",
         "why": "ꯀꯦꯄꯥꯁꯤꯇꯤ ꯑꯁꯤ ꯁꯦꯅꯗꯒꯤ ꯍꯦꯟꯅꯥ ꯑꯌꯥꯝꯕꯥ ꯃꯇꯃꯗꯥ ꯕꯥꯏꯟꯗꯤꯡ ꯀꯟꯠꯔꯣꯂꯅꯤ꯫ ꯑꯍꯦꯅꯕꯥ ꯈꯨꯠꯁꯥ ꯑꯃꯅꯥ ꯑꯁꯦꯡꯕꯥ ꯑꯔꯣꯏꯕꯥ ꯃꯇꯝ ꯑꯃꯥ ꯆꯪꯁꯤꯜꯂꯤ꯫",
         "when": "ꯔꯣꯂꯤꯡ ꯇꯧꯕꯥ꯫ ꯔꯤꯃꯣꯠꯀꯤ ꯊꯕꯛ ꯑꯁꯤ ꯆꯥꯎꯔꯥꯛꯅꯥ ꯈꯨꯗꯛꯇꯥ ꯍꯧꯕꯥ ꯌꯥꯏ; ꯑꯣꯟ-ꯁꯥꯏꯠ ꯄ꯭ꯂꯦꯁꯃꯦꯟꯇꯁꯤꯡꯗꯥ ꯂꯤꯗ ꯇꯥꯏꯝ ꯃꯊꯧ ꯇꯥꯏ꯫",
         "where": "ꯕꯍꯔꯥꯏꯆ, ꯅꯠꯠꯔꯒꯥ ꯔꯤꯃꯣꯠ ꯔꯣꯂꯁꯤꯡꯒꯤꯗꯃꯛꯇꯥ ꯀꯅꯦꯛꯁꯟ ꯂꯩꯕꯥ ꯃꯐꯝ ꯑꯃꯍꯦꯛꯇꯗꯥ꯫",
@@ -33873,10 +33873,10 @@ const MNI = {
       "col": "#꯴ꯑꯦꯐ꯰ꯏ꯷꯳",
       "detail": {
         "u": "ꯂꯤꯒꯦꯁꯤ ꯍꯥꯌꯕꯁꯤ ꯆꯍꯤ ꯀꯌꯥꯒꯤ ꯃꯃꯥꯡꯗꯥ, ꯃꯁꯤꯗꯒꯤ ꯀꯥꯟꯅꯕꯥ ꯑꯃꯠꯇꯥ ꯂꯩꯇꯕꯥ ꯀꯅꯥꯒꯨꯝꯕꯥ ꯑꯃꯅꯥ ꯅꯤꯡꯊꯤꯖꯅꯥ ꯋꯥꯔꯦꯞ ꯂꯧꯕꯥ ꯑꯃꯠꯇꯥ ꯉꯥꯏꯔꯕꯥ ꯈꯨꯗꯣꯂꯅꯤ꯫ ꯃꯁꯤ ꯈ꯭ꯕꯥꯏꯗꯒꯤ ꯌꯥꯝꯅꯥ ꯊꯦꯡꯅꯕꯁꯨ ꯑꯣꯏꯔꯤ, ꯃꯔꯃꯗꯤ ꯆꯥꯎꯔꯥꯛꯅꯥ ꯀꯅꯥꯒꯨꯝꯕꯥ ꯑꯃꯠꯇꯅꯥ ꯀꯩꯗꯧꯉꯩꯗꯁꯨ ꯍꯪꯗꯦ꯫",
-        "what": "ꯅꯍꯥꯛꯀꯤ ꯋꯤꯂꯗꯥ ꯏꯕꯥ DEHATꯗꯥ ꯄꯤꯕꯥ ꯋꯥꯁꯛ ꯑꯃꯥ — ꯐꯤꯛꯁ ꯇꯧꯔꯕꯥ ꯁꯦꯅꯐꯝ ꯑꯃꯥ, ꯔꯦꯁꯤꯗꯦꯟꯇ ꯑꯗꯨꯒꯤ ꯁꯔꯨꯛ ꯑꯃꯥ, ꯅꯠꯠꯔꯒꯥ ꯃꯃꯤꯡ ꯂꯩꯔꯕꯥ ꯑꯦꯁꯦꯠ ꯑꯃꯥ꯫",
+        "what": "ꯅꯍꯥꯛꯀꯤ ꯋꯤꯂꯗꯥ ꯏꯕꯥ DEHATꯗꯥ ꯄꯤꯕꯥ ꯋꯥꯁꯛ ꯑꯃꯥ - ꯐꯤꯛꯁ ꯇꯧꯔꯕꯥ ꯁꯦꯅꯐꯝ ꯑꯃꯥ, ꯔꯦꯁꯤꯗꯦꯟꯇ ꯑꯗꯨꯒꯤ ꯁꯔꯨꯛ ꯑꯃꯥ, ꯅꯠꯠꯔꯒꯥ ꯃꯃꯤꯡ ꯂꯩꯔꯕꯥ ꯑꯦꯁꯦꯠ ꯑꯃꯥ꯫",
         "why": "ꯐꯤꯜꯗ ꯋꯥꯔꯛ ꯑꯁꯤ ꯆꯍꯤ ꯑꯃꯒꯤ ꯃꯅꯨꯡꯗꯥ ꯌꯧꯔꯀꯄꯥ ꯁꯦꯅꯐꯃꯁꯤꯡꯗꯥ ꯆꯠꯊꯔꯤ꯫ ꯂꯦꯒꯦꯁꯤ ꯍꯥꯌꯕꯁꯤ ꯒ꯭ꯔꯥꯟꯇ ꯁꯥꯏꯀꯜ ꯑꯃꯠꯇꯗꯒꯤ ꯍꯦꯟꯅꯥ ꯁꯥꯡꯅꯥ ꯍꯣꯔꯥꯏꯖꯟ ꯑꯃꯗꯥ ꯀꯃꯤꯠ ꯇꯧꯕꯥ ꯌꯥꯕꯥ ꯁꯄꯣꯔꯇꯀꯤ ꯃꯑꯣꯡ ꯑꯃꯅꯤ, ꯃꯁꯤꯅꯥ ꯑꯍꯣꯡꯕꯥ ꯑꯁꯤꯅꯥ ꯇꯁꯦꯡꯅꯥ ꯂꯧꯔꯤꯕꯥ ꯍꯣꯔꯥꯏꯖꯟ ꯑꯗꯨꯅꯤ꯫",
         "when": "ꯃꯊꯪꯒꯤ ꯑꯣꯏꯅꯥ ꯅꯍꯥꯛꯀꯤ ꯋꯥꯁꯛ ꯑꯗꯨ ꯏꯕꯥ ꯅꯠꯠꯔꯒꯥ ꯔꯤꯚꯥꯏꯁ ꯇꯧꯕꯥ ꯃꯇꯝ ꯈꯨꯗꯤꯡꯗꯥ꯫ ꯑꯩꯈꯣꯌꯗꯥ ꯍꯥꯌꯕꯥ ꯑꯁꯤ ꯑꯣꯄꯁꯅꯦꯜ ꯑꯣꯏ, ꯑꯗꯨꯕꯨ ꯃꯁꯤꯅꯥ ꯑꯩꯈꯣꯌꯗꯥ ꯄ꯭ꯂꯥꯟ ꯇꯧꯕꯥ ꯌꯥꯍꯜꯂꯤ ꯑꯃꯁꯨꯡ ꯈꯨꯗꯣꯜ ꯑꯗꯨ ꯀꯔꯤꯒꯤꯗꯃꯛ ꯑꯣꯏꯔꯤꯕꯅꯣ ꯍꯥꯌꯕꯗꯨ ꯍꯥꯌꯕꯥ ꯌꯥꯍꯜꯂꯤ꯫",
-        "where": "ꯕꯍꯔꯥꯏꯆꯇꯥ ꯂꯩꯕꯥ ꯔꯦꯖꯤꯁ꯭ꯇꯔ ꯇꯧꯔꯕꯥ ꯑꯣꯐꯤꯁ ꯑꯁꯤꯅꯥ ꯁꯣꯁꯥꯏꯇꯤꯒꯤ ꯔꯦꯖꯤꯁ꯭ꯠꯔꯦꯁꯟ, PAN ꯑꯃꯁꯨꯡ ꯑꯣꯗꯤꯠ ꯇꯧꯔꯕꯥ ꯑꯦꯀꯥꯎꯟꯇꯁꯤꯡ ꯊꯝꯃꯤ — ꯅꯍꯥꯛꯀꯤ ꯎꯀꯤꯂꯅꯥ ꯍꯥꯌꯒꯗꯕꯥ ꯄꯨꯝꯅꯃꯛ꯫",
+        "where": "ꯕꯍꯔꯥꯏꯆꯇꯥ ꯂꯩꯕꯥ ꯔꯦꯖꯤꯁ꯭ꯇꯔ ꯇꯧꯔꯕꯥ ꯑꯣꯐꯤꯁ ꯑꯁꯤꯅꯥ ꯁꯣꯁꯥꯏꯇꯤꯒꯤ ꯔꯦꯖꯤꯁ꯭ꯠꯔꯦꯁꯟ, PAN ꯑꯃꯁꯨꯡ ꯑꯣꯗꯤꯠ ꯇꯧꯔꯕꯥ ꯑꯦꯀꯥꯎꯟꯇꯁꯤꯡ ꯊꯝꯃꯤ - ꯅꯍꯥꯛꯀꯤ ꯎꯀꯤꯂꯅꯥ ꯍꯥꯌꯒꯗꯕꯥ ꯄꯨꯝꯅꯃꯛ꯫",
         "how": "ꯅꯍꯥꯛꯀꯤ ꯎꯀꯤꯂꯗꯥ ꯄꯤꯒꯗꯕꯥ ꯑꯀꯛꯅꯕꯥ ꯑꯥꯏꯅꯒꯤ ꯑꯣꯏꯕꯥ ꯃꯃꯤꯡ, ꯔꯦꯖꯤꯁ꯭ꯠꯔꯦꯁꯟ ꯅꯝꯕꯔ ꯑꯃꯁꯨꯡ ꯀ꯭ꯂꯣꯖ ꯋꯥꯔꯗꯤꯡ ꯑꯗꯨ ꯑꯩꯈꯣꯌꯗꯥ ꯍꯪꯕꯤꯌꯨ꯫ ꯑꯩꯈꯣꯌꯅꯥ ꯋꯤꯂꯁꯤꯡ ꯗ꯭ꯔꯥꯐ ꯇꯧꯗꯦ ꯑꯃꯁꯨꯡ ꯑꯩꯈꯣꯌꯅꯥ ꯂꯤꯒꯦꯜ ꯑꯦꯗꯚꯥꯏꯖꯔꯤ ꯄꯤꯗꯦ; ꯑꯩꯈꯣꯌꯅꯥ ꯅꯈꯣꯌꯒꯤ ꯎꯀꯤꯂꯗꯥ ꯃꯈꯣꯌꯅꯥ ꯃꯊꯧ ꯇꯥꯔꯤꯕꯥ ꯑꯗꯨ ꯄꯤꯔꯤ ꯑꯃꯁꯨꯡ ꯈꯣꯉꯊꯥꯡ ꯂꯧꯈꯠꯂꯤ꯫"
       }
     },
@@ -33892,9 +33892,9 @@ const MNI = {
       "detail": {
         "u": "ꯂꯨꯍꯣꯡꯕꯥ, ꯃꯄꯣꯛ ꯅꯨꯃꯤꯠ, ꯑꯦꯅꯤꯕꯔꯁꯦꯔꯤ ꯅꯠꯠꯔꯒꯥ ꯑꯃꯨꯛ ꯍꯟꯅꯥ ꯔꯤꯗꯔꯥꯏꯖ ꯇꯧꯔꯕꯥ ꯃꯦꯃꯣꯔꯤꯌꯦꯜ ꯑꯃꯅꯥ ꯏꯟꯇꯔꯚꯦꯟꯁꯟ ꯑꯃꯒꯤ ꯁꯥꯏꯀꯜ ꯄꯨꯝꯅꯃꯛ ꯐꯟꯗ ꯄꯤꯕꯥ ꯉꯃꯒꯅꯤ꯫",
         "what": "ꯃꯤꯊꯨꯡꯂꯦꯅꯁꯤꯡꯅꯥ ꯁꯒꯨꯟ ꯅꯠꯠꯔꯒꯥ ꯈꯨꯗꯣꯜ ꯑꯃꯥ ꯄꯨꯔꯀꯄꯒꯤ ꯃꯍꯨꯠꯇꯥ ꯗꯦ.ꯑꯩꯆ.ꯑꯦ.ꯇꯤ.ꯗꯥ ꯄꯤꯅꯕꯥ ꯍꯥꯌꯈꯤ, ꯊꯧꯔꯝ ꯑꯗꯨꯗꯥ ꯑꯃꯁꯨꯡ ꯃꯁꯤꯕꯨ ꯃꯥꯔꯛ ꯇꯧꯔꯤꯕꯥ ꯃꯤꯑꯣꯏ ꯅꯠꯠꯔꯒꯥ ꯃꯄꯨꯔꯣꯏꯕꯒꯤ ꯃꯤꯡꯗꯥ꯫",
-        "why": "ꯃꯁꯤꯅꯥ ꯂꯅꯥꯏꯒꯤ ꯅꯨꯃꯤꯠ ꯑꯃꯥ ꯃꯤꯌꯥꯃꯒꯤ ꯅꯨꯃꯤꯠ ꯑꯣꯏꯅꯥ ꯑꯣꯟꯊꯣꯀꯏ, ꯑꯃꯁꯨꯡ ꯐꯤꯜꯗ ꯇꯤꯝ ꯑꯗꯨꯅꯥ ꯑꯇꯣꯞꯄꯥ ꯃꯑꯣꯡ ꯑꯃꯗꯥ ꯊꯦꯡꯅꯔꯣꯏꯗꯕꯥ ꯃꯤꯑꯣꯏꯁꯤꯡꯗꯥ ꯌꯧꯍꯜꯂꯤ — ꯑꯗꯨꯕꯨ ꯀꯔꯤꯒꯨꯝꯕꯥ ꯈꯨꯗꯣꯜ ꯈꯨꯗꯤꯡꯃꯛ ꯍꯀꯊꯦꯡꯅꯅꯥ ꯄꯤꯔꯕꯈꯛꯇꯗꯥ꯫ ꯁꯦꯜ ꯅꯠꯠꯔꯒꯥ ꯈꯨꯠꯅꯥ ꯈꯣꯃꯖꯤꯜꯂꯀꯄꯥ ꯑꯃꯁꯨꯡ ꯃꯗꯨꯒꯤ ꯃꯇꯨꯡꯗꯥ ꯑꯩꯈꯣꯌꯗꯥ ꯄꯥꯁ ꯇꯧꯔꯕꯥ ꯁꯦꯅꯐꯝ ꯑꯃꯥ ꯑꯩꯈꯣꯌꯅꯥ ꯔꯤꯁꯤꯠ ꯇꯧꯕꯥ ꯌꯥꯔꯣꯏ, ꯅꯠꯠꯔꯒꯥ ꯁꯦꯐ ꯑꯣꯏꯅꯥ ꯕꯦꯉ꯭ꯛ ꯇꯧꯕꯥ ꯌꯥꯔꯣꯏ; ꯑꯩꯈꯣꯌꯅꯥ ꯄꯤꯔꯤꯕꯥ ꯃꯤꯑꯣꯏ ꯑꯃꯗꯥ ꯃꯈꯣꯌꯒꯤ ꯇꯦꯛꯁ ꯔꯤꯁꯤꯠ ꯄꯤꯕꯥ ꯌꯥꯕꯥ ꯅꯤꯌꯝ ꯑꯁꯤꯅꯥ ꯃꯈꯣꯌꯒꯤ ꯃꯁꯥꯒꯤ ꯁꯦꯅꯐꯃꯒꯤ ꯃꯇꯨꯡ ꯏꯟꯅꯥ ꯃꯈꯣꯌꯒꯤ ꯃꯤꯡ ꯃꯊꯧ ꯇꯥꯏ꯫",
+        "why": "ꯃꯁꯤꯅꯥ ꯂꯅꯥꯏꯒꯤ ꯅꯨꯃꯤꯠ ꯑꯃꯥ ꯃꯤꯌꯥꯃꯒꯤ ꯅꯨꯃꯤꯠ ꯑꯣꯏꯅꯥ ꯑꯣꯟꯊꯣꯀꯏ, ꯑꯃꯁꯨꯡ ꯐꯤꯜꯗ ꯇꯤꯝ ꯑꯗꯨꯅꯥ ꯑꯇꯣꯞꯄꯥ ꯃꯑꯣꯡ ꯑꯃꯗꯥ ꯊꯦꯡꯅꯔꯣꯏꯗꯕꯥ ꯃꯤꯑꯣꯏꯁꯤꯡꯗꯥ ꯌꯧꯍꯜꯂꯤ - ꯑꯗꯨꯕꯨ ꯀꯔꯤꯒꯨꯝꯕꯥ ꯈꯨꯗꯣꯜ ꯈꯨꯗꯤꯡꯃꯛ ꯍꯀꯊꯦꯡꯅꯅꯥ ꯄꯤꯔꯕꯈꯛꯇꯗꯥ꯫ ꯁꯦꯜ ꯅꯠꯠꯔꯒꯥ ꯈꯨꯠꯅꯥ ꯈꯣꯃꯖꯤꯜꯂꯀꯄꯥ ꯑꯃꯁꯨꯡ ꯃꯗꯨꯒꯤ ꯃꯇꯨꯡꯗꯥ ꯑꯩꯈꯣꯌꯗꯥ ꯄꯥꯁ ꯇꯧꯔꯕꯥ ꯁꯦꯅꯐꯝ ꯑꯃꯥ ꯑꯩꯈꯣꯌꯅꯥ ꯔꯤꯁꯤꯠ ꯇꯧꯕꯥ ꯌꯥꯔꯣꯏ, ꯅꯠꯠꯔꯒꯥ ꯁꯦꯐ ꯑꯣꯏꯅꯥ ꯕꯦꯉ꯭ꯛ ꯇꯧꯕꯥ ꯌꯥꯔꯣꯏ; ꯑꯩꯈꯣꯌꯅꯥ ꯄꯤꯔꯤꯕꯥ ꯃꯤꯑꯣꯏ ꯑꯃꯗꯥ ꯃꯈꯣꯌꯒꯤ ꯇꯦꯛꯁ ꯔꯤꯁꯤꯠ ꯄꯤꯕꯥ ꯌꯥꯕꯥ ꯅꯤꯌꯝ ꯑꯁꯤꯅꯥ ꯃꯈꯣꯌꯒꯤ ꯃꯁꯥꯒꯤ ꯁꯦꯅꯐꯃꯒꯤ ꯃꯇꯨꯡ ꯏꯟꯅꯥ ꯃꯈꯣꯌꯒꯤ ꯃꯤꯡ ꯃꯊꯧ ꯇꯥꯏ꯫",
         "when": "ꯅꯨꯃꯤꯠ ꯃꯔꯤꯗꯒꯤ ꯶ ꯐꯥꯑꯣꯕꯒꯤ ꯅꯣꯇꯤꯁ ꯄꯤꯕꯅꯥ ꯑꯩꯈꯣꯌꯅꯥ ꯄꯦꯖ ꯑꯃꯥ ꯑꯃꯁꯨꯡ ꯃꯆꯥꯀꯁꯤꯡ, ꯑꯃꯁꯨꯡ ꯌꯥꯔꯤꯕꯃꯈꯩ ꯂꯝ ꯑꯗꯨꯗꯒꯤ ꯈꯣꯟꯖꯦꯜ ꯑꯃꯥ ꯁꯦꯃꯒꯠꯄꯥ ꯌꯥꯍꯜꯂꯤ꯫",
-        "where": "ꯅꯍꯥꯛꯀꯤ ꯚꯦꯟꯌꯨ, ꯑꯣꯅꯂꯥꯏꯟ, ꯅꯠꯔꯒꯥ ꯕꯍꯔꯥꯏꯆꯇꯥ꯫ ꯄꯤꯕꯥ ꯃꯁꯥꯃꯛ ꯃꯇꯝ ꯄꯨꯝꯅꯃꯛꯇꯥ ꯗꯦꯍꯦꯠꯀꯤ ꯃꯁꯥꯒꯤ ꯑꯦꯀꯥꯎꯟꯇꯇꯥ ꯍꯀꯊꯦꯡꯅꯅꯥ ꯂꯦꯟꯗ ꯇꯧꯏ — ꯀꯩꯗꯧꯉꯩꯗꯁꯨ ꯄꯔꯁꯣꯅꯦꯜ ꯑꯃꯗꯥ, ꯊꯨꯅꯥ ꯐꯥꯑꯣꯕꯥ, ꯊꯥꯖꯕꯗꯥ ꯐꯥꯑꯣꯕꯥ꯫",
+        "where": "ꯅꯍꯥꯛꯀꯤ ꯚꯦꯟꯌꯨ, ꯑꯣꯅꯂꯥꯏꯟ, ꯅꯠꯔꯒꯥ ꯕꯍꯔꯥꯏꯆꯇꯥ꯫ ꯄꯤꯕꯥ ꯃꯁꯥꯃꯛ ꯃꯇꯝ ꯄꯨꯝꯅꯃꯛꯇꯥ ꯗꯦꯍꯦꯠꯀꯤ ꯃꯁꯥꯒꯤ ꯑꯦꯀꯥꯎꯟꯇꯇꯥ ꯍꯀꯊꯦꯡꯅꯅꯥ ꯂꯦꯟꯗ ꯇꯧꯏ - ꯀꯩꯗꯧꯉꯩꯗꯁꯨ ꯄꯔꯁꯣꯅꯦꯜ ꯑꯃꯗꯥ, ꯊꯨꯅꯥ ꯐꯥꯑꯣꯕꯥ, ꯊꯥꯖꯕꯗꯥ ꯐꯥꯑꯣꯕꯥ꯫",
         "how": "ꯊꯧꯔꯝ ꯑꯃꯁꯨꯡ ꯇꯥꯡ ꯑꯗꯨ ꯑꯩꯈꯣꯌꯗꯥ ꯍꯥꯌꯕꯤꯌꯨ꯫ ꯑꯩꯈꯣꯌꯅꯥ ꯑꯗꯣꯃꯒꯤ ꯃꯤꯡꯗꯥ ꯄꯦꯖ ꯑꯃꯥ ꯁꯦꯝꯃꯤ ꯃꯗꯨꯒꯤ ꯈꯨꯠꯊꯥꯡꯗꯥ ꯑꯗꯣꯃꯒꯤ ꯒꯦꯁ꯭ꯇꯁꯤꯡꯅꯥ ꯍꯀꯊꯦꯡꯅꯅꯥ ꯄꯤꯔꯤ, ꯑꯃꯁꯨꯡ ꯑꯩꯈꯣꯌꯅꯥ ꯔꯤꯁꯤꯠꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯐꯣꯂꯣ-ꯑꯄꯁꯤꯡ ꯑꯗꯨ ꯌꯦꯡꯁꯤꯜꯂꯤ꯫"
       }
     },
@@ -33909,9 +33909,9 @@ const MNI = {
       "detail": {
         "u": "ꯀꯃꯦꯗꯤꯌꯟ ꯑꯃꯒꯤ ꯁꯦꯠ, ꯃ꯭ꯌꯨꯖꯤꯁꯤꯌꯥꯟ ꯑꯃꯒꯤ ꯁꯣ ꯅꯠꯠꯔꯒꯥ ꯐꯤꯜꯃ ꯃꯦꯀꯔ ꯑꯃꯒꯤ ꯄ꯭ꯔꯤꯃꯤꯌꯥꯔꯅꯥ ꯊꯕꯛ ꯑꯁꯤ ꯀꯩꯗꯧꯉꯩꯗꯥ ꯌꯧꯕꯥ ꯉꯃꯗꯕꯥ ꯑꯄꯤꯜ ꯂꯦꯇꯔ ꯑꯃꯥ ꯑꯣꯗꯤꯑꯣꯗꯥ ꯄꯤꯕꯥ ꯌꯥꯏ꯫",
         "what": "ꯁꯣ ꯑꯃꯥ, ꯁ꯭ꯛꯔꯤꯅꯤꯡ ꯑꯃꯥ, ꯂꯥꯏꯕꯁ꯭ꯠꯔꯤꯝ ꯑꯃꯥ ꯅꯠꯠꯔꯒꯥ ꯗꯤ.ꯏ.ꯑꯩꯆ.ꯑꯦ.ꯇꯤ.ꯒꯤ ꯈꯨꯟꯅꯥꯏꯁꯤꯡꯗꯥ ꯀꯠꯊꯣꯛꯂꯕꯥ ꯔꯤꯂꯤꯖ ꯇꯧꯔꯕꯥ ꯊꯕꯛ ꯑꯃꯥ, ꯃꯁꯤꯗꯥ ꯑꯣꯗꯤꯌꯦꯟꯁꯅꯥ ꯑꯥꯔꯇꯤꯁ꯭ꯇꯀꯤ ꯈꯨꯠꯊꯥꯡꯗꯥ ꯅꯠꯇꯅꯥ ꯍꯀꯊꯦꯡꯅꯅꯥ ꯄꯤꯒꯅꯤ꯫",
-        "why": "ꯑꯥꯔꯇꯤꯁ꯭ꯠ ꯑꯃꯕꯨ ꯍꯥꯟꯅꯅꯥ ꯊꯥꯖꯕꯥ ꯊꯝꯕꯥ ꯑꯣꯗꯤꯑꯣ ꯑꯃꯅꯥ ꯃꯁꯥꯒꯤ ꯑꯣꯏꯕꯥ ꯋꯥꯐꯃꯗꯥ ꯑꯦꯟ.ꯖꯤ.ꯑꯣ. ꯑꯩꯈꯣꯌꯅꯥ ꯇꯧꯕꯥ ꯉꯃꯗꯕꯥ ꯑꯁꯤ ꯑꯥꯔꯇꯤꯁ꯭ꯠ ꯑꯃꯅꯥ ꯈꯣꯃꯖꯤꯜꯂꯀꯄꯥ ꯁꯦꯅꯐꯝ ꯑꯃꯥ ꯕꯦꯉ꯭ꯛ ꯇꯧꯗꯨꯅꯥ ꯃꯇꯨꯡꯗꯥ ꯄꯤꯁꯤꯅꯕꯅꯤ — ꯈꯨꯗꯣꯜ ꯈꯨꯗꯤꯡꯃꯛ ꯄꯤꯔꯤꯕꯥ ꯃꯤꯑꯣꯏ ꯑꯗꯨꯅꯥ ꯄꯤꯒꯗꯕꯅꯤ, ꯃꯈꯣꯌꯒꯤ ꯃꯤꯡꯗꯥ, ꯂꯨꯍꯣꯡꯕꯥ ꯅꯠꯔꯒꯥ ꯃꯄꯣꯛ ꯅꯨꯃꯤꯠꯀꯤ ꯈꯨꯗꯣꯜ ꯑꯃꯅꯥ ꯄꯤꯔꯤꯕꯥ ꯃꯔꯝ ꯑꯗꯨꯒꯥ ꯃꯥꯟꯅꯅꯥ꯫",
+        "why": "ꯑꯥꯔꯇꯤꯁ꯭ꯠ ꯑꯃꯕꯨ ꯍꯥꯟꯅꯅꯥ ꯊꯥꯖꯕꯥ ꯊꯝꯕꯥ ꯑꯣꯗꯤꯑꯣ ꯑꯃꯅꯥ ꯃꯁꯥꯒꯤ ꯑꯣꯏꯕꯥ ꯋꯥꯐꯃꯗꯥ ꯑꯦꯟ.ꯖꯤ.ꯑꯣ. ꯑꯩꯈꯣꯌꯅꯥ ꯇꯧꯕꯥ ꯉꯃꯗꯕꯥ ꯑꯁꯤ ꯑꯥꯔꯇꯤꯁ꯭ꯠ ꯑꯃꯅꯥ ꯈꯣꯃꯖꯤꯜꯂꯀꯄꯥ ꯁꯦꯅꯐꯝ ꯑꯃꯥ ꯕꯦꯉ꯭ꯛ ꯇꯧꯗꯨꯅꯥ ꯃꯇꯨꯡꯗꯥ ꯄꯤꯁꯤꯅꯕꯅꯤ - ꯈꯨꯗꯣꯜ ꯈꯨꯗꯤꯡꯃꯛ ꯄꯤꯔꯤꯕꯥ ꯃꯤꯑꯣꯏ ꯑꯗꯨꯅꯥ ꯄꯤꯒꯗꯕꯅꯤ, ꯃꯈꯣꯌꯒꯤ ꯃꯤꯡꯗꯥ, ꯂꯨꯍꯣꯡꯕꯥ ꯅꯠꯔꯒꯥ ꯃꯄꯣꯛ ꯅꯨꯃꯤꯠꯀꯤ ꯈꯨꯗꯣꯜ ꯑꯃꯅꯥ ꯄꯤꯔꯤꯕꯥ ꯃꯔꯝ ꯑꯗꯨꯒꯥ ꯃꯥꯟꯅꯅꯥ꯫",
         "when": "ꯇꯥꯡ ꯑꯗꯨ ꯂꯦꯄꯈ꯭ꯔꯕꯥ ꯃꯇꯨꯡꯗꯥ ꯑꯩꯈꯣꯌꯗꯥ ꯍꯥꯌꯕꯤꯌꯨ; ꯅꯨꯃꯤꯠ ꯃꯔꯤꯅꯤꯒꯤ ꯃꯅꯨꯡꯗꯥ ꯑꯩꯈꯣꯌꯅꯥ ꯃꯆꯥꯀꯁꯤꯡ ꯁꯦꯃꯒꯠꯄꯥ ꯌꯥꯍꯜꯂꯤ ꯑꯃꯁꯨꯡ ꯂꯥꯏꯕꯁ꯭ꯠꯔꯤꯝ ꯅꯠꯔꯒꯥ ꯑꯆꯧꯕꯥ ꯁꯣ ꯑꯃꯒꯤꯗꯃꯛ ꯂꯝ ꯑꯁꯤꯗꯒꯤ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯔꯕꯥ ꯄꯥꯎꯖꯦꯜ ꯑꯃꯥ ꯁꯦꯃꯒꯠꯄꯥ ꯌꯥꯍꯜꯂꯤ꯫",
-        "where": "ꯑꯗꯣꯃꯒꯤ ꯑꯣꯗꯤꯑꯣ ꯍꯥꯟꯅꯗꯒꯤ ꯂꯩꯔꯤꯕꯥ ꯃꯐꯝ ꯑꯃꯗꯥ — ꯚꯦꯟꯌꯨ ꯑꯃꯥ, ꯁ꯭ꯠꯔꯤꯝ ꯑꯃꯥ, ꯔꯤꯂꯤꯖ ꯑꯃꯥ꯫ ꯄꯤꯕꯥ ꯃꯁꯥꯃꯛ DEHAT ꯒꯤ ꯃꯁꯥꯒꯤ ꯄꯦꯖꯗꯥ ꯊꯣꯀꯏ, ꯊꯣꯉꯅꯥꯑꯣꯗꯥ ꯅꯠꯔꯒꯥ ꯑꯥꯔꯇꯤꯁ꯭ꯇꯀꯤ ꯑꯦꯀꯥꯎꯟꯇꯇꯥ ꯅꯠꯇꯦ꯫",
+        "where": "ꯑꯗꯣꯃꯒꯤ ꯑꯣꯗꯤꯑꯣ ꯍꯥꯟꯅꯗꯒꯤ ꯂꯩꯔꯤꯕꯥ ꯃꯐꯝ ꯑꯃꯗꯥ - ꯚꯦꯟꯌꯨ ꯑꯃꯥ, ꯁ꯭ꯠꯔꯤꯝ ꯑꯃꯥ, ꯔꯤꯂꯤꯖ ꯑꯃꯥ꯫ ꯄꯤꯕꯥ ꯃꯁꯥꯃꯛ DEHAT ꯒꯤ ꯃꯁꯥꯒꯤ ꯄꯦꯖꯗꯥ ꯊꯣꯀꯏ, ꯊꯣꯉꯅꯥꯑꯣꯗꯥ ꯅꯠꯔꯒꯥ ꯑꯥꯔꯇꯤꯁ꯭ꯇꯀꯤ ꯑꯦꯀꯥꯎꯟꯇꯇꯥ ꯅꯠꯇꯦ꯫",
         "how": "ꯇꯥꯡ, ꯐꯣꯔꯃꯦꯠ ꯑꯃꯁꯨꯡ ꯑꯦꯛꯁꯄꯦꯛꯇꯦꯗ ꯔꯤꯆ ꯑꯗꯨ ꯑꯩꯈꯣꯌꯗꯥ ꯍꯥꯌꯕꯤꯌꯨ꯫ ꯑꯩꯈꯣꯌꯅꯥ ꯑꯗꯣꯃꯗꯥ ꯑꯗꯣꯃꯒꯤ ꯑꯣꯗꯤꯑꯣꯗꯥ ꯄꯣꯏꯟꯇ ꯇꯧꯅꯕꯥ ꯀꯠꯊꯣꯛꯂꯕꯥ ꯄꯦꯖ ꯑꯃꯁꯨꯡ ꯂꯤꯉ꯭ꯛ ꯑꯃꯥ ꯄꯤꯔꯤ, ꯑꯗꯣꯝꯅꯥ ꯑꯅꯤꯔꯛ ꯍꯪꯗꯅꯥ ꯁꯤꯖꯤꯟꯅꯕꯥ ꯌꯥꯕꯥ ꯕ꯭ꯔꯥꯟꯗꯤꯡ ꯑꯃꯥ ꯄꯤꯔꯤ, ꯑꯃꯁꯨꯡ ꯑꯗꯣꯝ ꯑꯃꯁꯨꯡ ꯃꯈꯣꯌ ꯑꯅꯤꯃꯛꯅꯥ ꯎꯕꯥ ꯉꯝꯕꯥ ꯔꯟ ꯇꯧꯔꯤꯕꯥ ꯑꯄꯨꯅꯕꯥ ꯑꯃꯥ ꯄꯤꯔꯤ꯫"
       }
     },
@@ -33926,7 +33926,7 @@ const MNI = {
       "col": "#ꯗꯤ꯲꯳꯰꯵ꯁꯤ",
       "detail": {
         "u": "ꯏꯅꯚꯦꯁ꯭ꯇꯔ ꯑꯃꯒꯥ ꯃꯈꯣꯌꯒꯤ ꯁꯦꯅꯐꯝ ꯑꯗꯨꯅꯥ ꯌꯧꯔꯀꯄꯥ ꯃꯤꯑꯣꯏ ꯑꯗꯨꯒꯤ ꯃꯔꯛꯇꯥ ꯂꯩꯕꯥ ꯑꯔꯥꯞꯄꯥ ꯑꯗꯨ ꯃꯍꯧꯁꯥꯅꯥ ꯀꯩꯗꯧꯉꯩꯗꯥ ꯊꯤꯡꯖꯤꯅꯗꯦ꯫ ꯑꯣꯏꯒꯗꯕꯅꯤ꯫",
-        "what": "ꯁ꯭ꯠꯔꯀꯆꯔꯦꯜ ꯑꯣꯏꯕꯥ ꯃꯤꯐꯝ ꯑꯃꯥ — ꯃꯁꯥꯃꯛꯅꯥ ꯅꯠꯠꯔꯒꯥ ꯑꯣꯅꯂꯥꯏꯟꯗꯥ — ꯅꯍꯥꯛꯀꯤ ꯁꯄꯣꯔꯠ ꯑꯗꯨꯅꯥ ꯌꯧꯔꯀꯄꯥ ꯃꯤꯑꯣꯏꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯀꯝꯌꯨꯅꯤꯇꯤꯁꯤꯡꯒꯥ ꯂꯣꯌꯅꯅꯥ꯫",
+        "what": "ꯁ꯭ꯠꯔꯀꯆꯔꯦꯜ ꯑꯣꯏꯕꯥ ꯃꯤꯐꯝ ꯑꯃꯥ - ꯃꯁꯥꯃꯛꯅꯥ ꯅꯠꯠꯔꯒꯥ ꯑꯣꯅꯂꯥꯏꯟꯗꯥ - ꯅꯍꯥꯛꯀꯤ ꯁꯄꯣꯔꯠ ꯑꯗꯨꯅꯥ ꯌꯧꯔꯀꯄꯥ ꯃꯤꯑꯣꯏꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯀꯝꯌꯨꯅꯤꯇꯤꯁꯤꯡꯒꯥ ꯂꯣꯌꯅꯅꯥ꯫",
         "why": "ꯑꯦꯀꯥꯎꯟꯇꯦꯕꯤꯂꯤꯇꯤ ꯑꯁꯤ ꯂꯝꯕꯤ ꯑꯅꯤꯃꯛꯇꯥ ꯆꯠꯊꯔꯤ꯫ ꯐꯜ ꯑꯗꯨ ꯎꯕꯗꯥ ꯃꯊꯪꯒꯤ ꯋꯥꯔꯦꯞ ꯑꯗꯨ ꯀꯔꯝꯅꯥ ꯂꯧꯕꯒꯦ ꯍꯥꯌꯕꯗꯨ ꯍꯣꯡꯏ꯫",
         "when": "ꯀꯝꯌꯨꯅꯤꯇꯤꯒꯤ ꯀꯦꯂꯦꯟꯗꯔꯒꯤ ꯑꯀꯣꯌꯕꯗꯥ ꯁꯦꯝ ꯁꯥꯕꯥ, ꯀꯩꯗꯧꯉꯩꯗꯥ ꯚꯤꯖꯤꯇꯔꯒꯤ ꯈꯨꯗꯣꯡꯆꯥꯕꯥ ꯈꯛꯇꯒꯤ ꯑꯀꯣꯌꯕꯗꯥ ꯁꯦꯃꯒꯠꯄꯥ꯫",
         "where": "ꯈꯨꯉ꯭ꯒꯪꯁꯤꯡ ꯃꯁꯥꯃꯛꯇꯗꯥ, ꯅꯠꯠꯔꯒꯥ ꯆꯠꯊꯣꯛ-ꯆꯠꯁꯤꯟ ꯇꯧꯕꯥ ꯉꯃꯗꯕꯥ ꯀꯣꯜ ꯑꯃꯒꯤ ꯈꯨꯠꯊꯥꯡꯗꯥ꯫",
@@ -33947,7 +33947,7 @@ const MNI = {
         "what": "ꯆꯥꯏꯜꯗ ꯂꯦꯕꯔ ꯑꯃꯁꯨꯡ ꯆꯥꯏꯜꯗ ꯁꯦꯛꯁꯨꯑꯦꯜ ꯑꯦꯕ꯭ꯌꯨꯖꯒꯤ ꯃꯥꯌꯣꯛꯇꯥ ꯊꯕꯛ ꯃꯐꯃꯗꯥ ꯀꯃꯤꯠꯃꯦꯟꯇ ꯑꯃꯥ, ꯃꯁꯤꯕꯨ ꯊꯝꯅꯕꯒꯤ ꯄꯣꯂꯤꯁꯤ ꯑꯃꯁꯨꯡ ꯇ꯭ꯔꯦꯅꯤꯡꯒꯥ ꯂꯣꯌꯅꯅꯥ꯫",
         "why": "ꯁ꯭ꯇꯦꯠ ꯇꯧꯔꯕꯥ ꯄꯣꯖꯤꯁꯟ ꯑꯃꯅꯥ ꯏꯃꯞꯂꯣꯌꯤꯁꯤꯡꯗꯥ ꯃꯈꯣꯌꯅꯥ ꯅꯠꯇꯕꯗꯥ ꯊꯨꯅꯥ ꯌꯥꯡꯅꯥ ꯂꯩꯕꯥ ꯌꯥꯕꯥ ꯄꯣꯠꯁꯛ ꯑꯃꯥ ꯁꯦꯃꯒꯠꯅꯕꯥ ꯂꯝꯕꯤ ꯑꯃꯥ ꯄꯤ꯫",
         "when": "ꯊꯧꯗꯣꯛ ꯑꯃꯒꯤ ꯃꯃꯥꯡꯗꯥ, ꯃꯇꯨꯡꯗꯥ ꯅꯠꯇꯦ꯫ ꯄ꯭ꯔꯦꯁꯔꯒꯤ ꯃꯈꯥꯗꯥ ꯏꯕꯥ ꯄꯣꯂꯤꯁꯤꯅꯥ ꯀꯅꯥꯒꯨꯝꯕꯥ ꯑꯃꯠꯇꯕꯨ ꯉꯥꯀꯊꯣꯀꯄꯥ ꯉꯃꯗꯦ꯫",
-        "where": "ꯅꯍꯥꯛꯀꯤ ꯊꯕꯛ ꯃꯐꯝ ꯑꯃꯁꯨꯡ ꯃꯁꯤꯒꯥ ꯃꯔꯤ ꯂꯩꯅꯕꯥ ꯃꯐꯃꯁꯤꯡ — ꯀꯟꯠꯔꯦꯛꯇꯔꯁꯤꯡ, ꯚꯦꯟꯗꯔꯁꯤꯡ, ꯇ꯭ꯔꯥꯟꯁꯄꯣꯔꯠ, ꯍꯥꯎꯖꯤꯡ꯫",
+        "where": "ꯅꯍꯥꯛꯀꯤ ꯊꯕꯛ ꯃꯐꯝ ꯑꯃꯁꯨꯡ ꯃꯁꯤꯒꯥ ꯃꯔꯤ ꯂꯩꯅꯕꯥ ꯃꯐꯃꯁꯤꯡ - ꯀꯟꯠꯔꯦꯛꯇꯔꯁꯤꯡ, ꯚꯦꯟꯗꯔꯁꯤꯡ, ꯇ꯭ꯔꯥꯟꯁꯄꯣꯔꯠ, ꯍꯥꯎꯖꯤꯡ꯫",
         "how": "ꯑꯩꯈꯣꯌꯅꯥ ꯃꯣꯗꯦꯜ ꯀꯃꯤꯠꯃꯦꯟꯇ ꯑꯁꯤ ꯁꯦꯌꯔ ꯇꯧꯏ, ꯃꯁꯤꯕꯨ ꯑꯦꯗꯞꯇꯦꯠ ꯇꯧꯕꯗꯥ ꯃꯇꯦꯡ ꯄꯥꯡꯏ, ꯑꯃꯁꯨꯡ ꯃꯁꯤꯗꯥ ꯊꯕꯛ ꯇꯧꯒꯗꯕꯥ ꯃꯤꯑꯣꯏꯁꯤꯡ ꯇ꯭ꯔꯦꯅꯤꯡ ꯄꯤꯔꯤ꯫"
       }
     },
@@ -33987,7 +33987,7 @@ const MNI = {
       }
     }
   ],
-  "sopTitle": "ꯂꯥꯏꯅꯥ ꯑꯃꯥ ꯅꯠꯔꯒꯥ ꯑꯅꯤꯗꯥ — ꯑꯗꯣꯝꯅꯥ ꯀꯔꯤ ꯍꯣꯡꯂꯛꯀꯅꯤ ꯍꯥꯌꯅꯥ ꯑꯥꯁꯥ ꯇꯧꯔꯤꯕꯒꯦ?",
+  "sopTitle": "ꯂꯥꯏꯅꯥ ꯑꯃꯥ ꯅꯠꯔꯒꯥ ꯑꯅꯤꯗꯥ - ꯑꯗꯣꯝꯅꯥ ꯀꯔꯤ ꯍꯣꯡꯂꯛꯀꯅꯤ ꯍꯥꯌꯅꯥ ꯑꯥꯁꯥ ꯇꯧꯔꯤꯕꯒꯦ?",
   "sopSub": "ꯃꯁꯤ ꯑꯩꯈꯣꯌꯅꯥ ꯅꯤꯡꯊꯤꯅꯥ ꯄꯥꯔꯤꯕꯥ ꯁꯔꯨꯛ ꯑꯃꯈꯛꯇꯅꯤ꯫ ꯅꯍꯥꯛꯅꯥ ꯄꯥꯝꯂꯤꯕꯃꯈꯩ ꯏꯕꯤꯌꯨ; ꯑꯆꯨꯝꯕꯥ ꯄꯥꯎꯈꯨꯝ ꯑꯃꯠꯇꯥ ꯂꯩꯇꯦ꯫",
   "sopPlaceholder": "ꯈꯨꯗꯝ ꯑꯣꯏꯅꯥ: ꯑꯩꯈꯣꯌꯅꯥ ꯕꯍꯔꯥꯏꯆꯇꯥ ꯑꯩꯈꯣꯌꯒꯤ ꯀꯣꯔꯄꯣꯔꯦꯠ ꯁꯣꯁꯤꯑꯦꯜ ꯔꯦꯁ꯭ꯄꯣꯟꯁꯤꯕꯤꯂꯤꯇꯤꯒꯤ ꯆꯥꯗꯤꯡ ꯑꯁꯤ ꯄ꯭ꯔꯃꯥꯅꯁꯤꯡ ꯃꯤꯌꯥꯃꯒꯤ ꯑꯣꯏꯕꯥ ꯃꯐꯝ ꯑꯃꯗꯥ ꯆꯠꯄꯥ ꯄꯥꯝꯃꯤ, ꯑꯃꯁꯨꯡ ꯑꯩꯈꯣꯌꯅꯥ ꯕ꯭ꯂꯣꯛ ꯑꯃꯗꯒꯤ ꯍꯧꯕꯥ ꯄꯥꯝꯃꯤ꯫",
   "sopPrompts": [
@@ -34101,9 +34101,9 @@ const MNI = {
   "fPanHint": "ꯀꯥꯔꯗꯇꯥ ꯄ꯭ꯔꯤꯟꯇ ꯇꯧꯔꯕꯥ ꯃꯇꯨꯡ ꯏꯟꯅꯥ ꯆꯦꯛꯔꯦꯇꯔ ꯇꯔꯥ꯫",
   "fAadhaar": "ꯃꯥꯁ꯭ꯛ ꯎꯞꯄꯥ ꯑꯥꯙꯥꯔ꯫",
   "fAadhaarHint": "XXXX XXXX ꯱꯲꯳꯴ꯗꯥ ꯊꯣꯀꯈꯤ꯫",
-  "fAadhaarNote": "ꯑꯔꯣꯏꯕꯥ ꯗꯤꯖꯤꯠ ꯃꯔꯤ ꯈꯛꯇꯃꯛ꯫ ꯃꯐꯝ ꯑꯁꯤꯗꯥ ꯑꯗꯣꯃꯒꯤ ꯃꯄꯨꯡ ꯐꯥꯕꯥ ꯑꯥꯙꯥꯔ ꯅꯝꯕꯔ ꯑꯗꯨ ꯀꯩꯗꯧꯉꯩꯗꯥ ꯑꯦꯟꯇꯔ ꯇꯧꯔꯣꯏꯗꯕꯅꯤ — ꯑꯩꯈꯣꯌꯅꯥ ꯃꯊꯧ ꯇꯥꯗꯦ ꯅꯠꯔꯒꯥ ꯊꯃꯗꯦ꯫",
+  "fAadhaarNote": "ꯑꯔꯣꯏꯕꯥ ꯗꯤꯖꯤꯠ ꯃꯔꯤ ꯈꯛꯇꯃꯛ꯫ ꯃꯐꯝ ꯑꯁꯤꯗꯥ ꯑꯗꯣꯃꯒꯤ ꯃꯄꯨꯡ ꯐꯥꯕꯥ ꯑꯥꯙꯥꯔ ꯅꯝꯕꯔ ꯑꯗꯨ ꯀꯩꯗꯧꯉꯩꯗꯥ ꯑꯦꯟꯇꯔ ꯇꯧꯔꯣꯏꯗꯕꯅꯤ - ꯑꯩꯈꯣꯌꯅꯥ ꯃꯊꯧ ꯇꯥꯗꯦ ꯅꯠꯔꯒꯥ ꯊꯃꯗꯦ꯫",
   "fInrDocs": "ꯄꯥꯟ ꯑꯃꯁꯨꯡ ꯃꯥꯁ꯭ꯛ ꯑꯥꯙꯥꯔ ꯁ꯭ꯀꯦꯅꯁꯤꯡ꯫",
-  "fInrDocsNote": "ꯅꯍꯥꯛꯀꯤ PAN ꯀꯥꯔꯗꯀꯤ ꯁ꯭ꯀꯦꯟ ꯑꯃꯥ ꯑꯃꯁꯨꯡ ꯃꯥꯁ꯭ꯛ ꯎꯞꯄꯥ ꯑꯥꯙꯥꯔ ꯑꯃꯥ (ꯑꯔꯣꯏꯕꯥ ꯗꯤꯖꯤꯠ ꯃꯔꯤ ꯈꯛꯇꯅꯥ ꯎꯕꯥ ꯐꯪꯒꯅꯤ — UIDAIꯅꯥ ꯃꯁꯤꯒꯤ ꯋꯦꯕꯁꯥꯏꯠꯇꯒꯤ ꯑꯃꯥ ꯏꯁꯨ ꯇꯧꯏ) ꯑꯦꯇꯦꯆ ꯇꯧ꯫ ꯸꯰ꯖꯤ ꯔꯤꯁꯤꯠ, ꯐꯣꯔꯝ ꯱꯰ꯕꯤꯗꯤ ꯁ꯭ꯇꯦꯇꯃꯦꯟꯇ ꯑꯃꯁꯨꯡ ꯑꯣꯗꯤꯠꯀꯤꯗꯃꯛꯇꯥ ꯊꯃꯈꯤ, ꯑꯃꯁꯨꯡ ꯔꯤꯇꯦꯟꯁꯅꯒꯤ ꯃꯇꯝ ꯂꯣꯏꯔꯕꯥ ꯃꯇꯃꯗꯥ ꯃꯥꯡꯍꯅꯈꯤ꯫",
+  "fInrDocsNote": "ꯅꯍꯥꯛꯀꯤ PAN ꯀꯥꯔꯗꯀꯤ ꯁ꯭ꯀꯦꯟ ꯑꯃꯥ ꯑꯃꯁꯨꯡ ꯃꯥꯁ꯭ꯛ ꯎꯞꯄꯥ ꯑꯥꯙꯥꯔ ꯑꯃꯥ (ꯑꯔꯣꯏꯕꯥ ꯗꯤꯖꯤꯠ ꯃꯔꯤ ꯈꯛꯇꯅꯥ ꯎꯕꯥ ꯐꯪꯒꯅꯤ - UIDAIꯅꯥ ꯃꯁꯤꯒꯤ ꯋꯦꯕꯁꯥꯏꯠꯇꯒꯤ ꯑꯃꯥ ꯏꯁꯨ ꯇꯧꯏ) ꯑꯦꯇꯦꯆ ꯇꯧ꯫ ꯸꯰ꯖꯤ ꯔꯤꯁꯤꯠ, ꯐꯣꯔꯝ ꯱꯰ꯕꯤꯗꯤ ꯁ꯭ꯇꯦꯇꯃꯦꯟꯇ ꯑꯃꯁꯨꯡ ꯑꯣꯗꯤꯠꯀꯤꯗꯃꯛꯇꯥ ꯊꯃꯈꯤ, ꯑꯃꯁꯨꯡ ꯔꯤꯇꯦꯟꯁꯅꯒꯤ ꯃꯇꯝ ꯂꯣꯏꯔꯕꯥ ꯃꯇꯃꯗꯥ ꯃꯥꯡꯍꯅꯈꯤ꯫",
   "fIdRefHint": "ꯄꯥꯁꯄꯣꯔꯇꯇꯥ ꯄ꯭ꯔꯤꯟꯇ ꯇꯧꯔꯕꯥ ꯃꯇꯨꯡ ꯏꯟꯅꯥ꯫",
   "fPassport": "ꯄꯥꯁꯄꯣꯔꯠ ꯁ꯭ꯀꯦꯟ ꯇꯧꯕꯥ, ꯃꯥꯌꯀꯩ ꯑꯅꯤꯃꯛꯇꯥ꯫",
   "fPassportNote": "ꯃꯄꯥꯟ ꯂꯩꯕꯥꯛꯀꯤ ꯀꯟꯠꯔꯤꯕ꯭ꯌꯨꯁꯅꯁꯤꯡꯒꯤꯗꯃꯛ ꯃꯊꯧ ꯇꯥꯏ꯫ ꯐꯣꯇꯣꯒ꯭ꯔꯥꯐ ꯄꯦꯖ ꯑꯃꯁꯨꯡ ꯑꯦꯗ꯭ꯔꯦꯁ ꯄꯦꯖ ꯑꯗꯨ ꯑꯦꯇꯦꯆ ꯇꯧ꯫ ꯐꯣꯔꯦꯟ ꯀꯟꯠꯔꯤꯕ꯭ꯌꯨꯁꯟ (ꯔꯦꯒꯨꯂꯦꯁꯟ) ꯑꯦꯛꯇ ꯔꯤꯇꯔꯟ ꯑꯃꯁꯨꯡ ꯑꯣꯗꯤꯠ ꯈꯛꯇꯒꯤꯗꯃꯛ ꯊꯃꯈꯤ, ꯑꯃꯁꯨꯡ ꯔꯤꯇꯦꯟꯁꯅꯒꯤ ꯃꯇꯝ ꯂꯣꯏꯔꯕꯥ ꯃꯇꯃꯗꯥ ꯃꯥꯡꯍꯅꯈꯤ꯫",
@@ -34178,7 +34178,7 @@ const MNI = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "ꯃꯦꯝꯕꯔ ꯑꯣꯏꯔꯤ꯫",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -34280,7 +34280,7 @@ const MNI = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -34428,7 +34428,7 @@ const MNI = {
     }
   ],
   "ecosystemTitle": "ꯑꯩꯈꯣꯌꯅꯥ ꯊꯕꯛ ꯇꯧꯃꯤꯟꯅꯔꯤꯕꯥ ꯁꯔꯀꯥꯔꯒꯤ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇꯁꯤꯡ, ꯆꯠꯅ-ꯀꯥꯡꯂꯣꯟꯒꯤ ꯑꯣꯏꯕꯥ ꯏꯟꯁꯇꯤꯠꯌꯨꯁꯅꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯈꯨꯟꯅꯥꯏꯒꯤ ꯁꯤꯁ꯭ꯇꯦꯃꯁꯤꯡ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -34755,7 +34755,7 @@ const KS = {
     "case": {
           
           "t": "اَز تہِ ہیٚکِو نہٕ طَے کٔرِتھ زِ یہِ دَلیٖل چھا ٹھیٖک؟",
-          "s": "اَتھ صَفَس پؠٹھ کُنہِ تہِ خاص دَعویٰ سٕنٛز جاچ مَنٛگیو — اَکھ نَمبَر، اَکھ ضِلہٕ، اَکھ طریٖقہٕ کار۔ اَسؠ ہاوَو بٕنیادی ذٔریعہٕ، یا صﺎف پٲٹھؠ وَنو کَتَن کانٛہہ دَعویٰ چھُ کمزور۔",
+          "s": "اَتھ صَفَس پؠٹھ کُنہِ تہِ خاص دَعویٰ سٕنٛز جاچ مَنٛگیو - اَکھ نَمبَر، اَکھ ضِلہٕ، اَکھ طریٖقہٕ کار۔ اَسؠ ہاوَو بٕنیادی ذٔریعہٕ، یا صﺎف پٲٹھؠ وَنو کَتَن کانٛہہ دَعویٰ چھُ کمزور۔",
           "a": "اَتھ دَلیٖلہِ مُتعلِق پُژھِو",
           "subj": "سرمایہ کٲری ہِنٛدِس دَلیٖلَس مُتعلِق اَکھ سوال",
           "b": "سرمایہ کٲری کُن برونٛہہ پٔکِیو",
@@ -34865,7 +34865,7 @@ const KS = {
   "legacy": {
     "eyebrow": "Legacy Giving",
     "title": "The gift that outlasts the giver.",
-    "body": "Almost nobody is ever asked, so almost nobody ever does it. A bequest written into your will is the one form of support that can be committed to a horizon longer than any grant cycle — which is the horizon this work actually takes. Ask us for the legal name, the registration number and the clause wording, and give them to your lawyer.",
+    "body": "Almost nobody is ever asked, so almost nobody ever does it. A bequest written into your will is the one form of support that can be committed to a horizon longer than any grant cycle - which is the horizon this work actually takes. Ask us for the legal name, the registration number and the clause wording, and give them to your lawyer.",
     "action": "Read the legacy route",
     "note": "We do not draft wills and we do not give legal advice."
   },
@@ -35010,7 +35010,7 @@ const KS = {
       "col": "#4F0E73",
       "detail": {
         "u": "Twenty years of field records exist in Bahraich. Every year they go unstudied is a year of evidence that never reaches the people writing policy.",
-        "what": "A named research partnership on a live programme — co-designed questions, access to field data and longitudinal records, and co-publication.",
+        "what": "A named research partnership on a live programme - co-designed questions, access to field data and longitudinal records, and co-publication.",
         "why": "Practice that is never studied repeats its own mistakes. Study that never touches practice generalises badly. The pairing corrects both.",
         "when": "From the design stage, so measurement is built into the programme rather than fitted to it afterwards.",
         "where": "Field sites across Bahraich and Shravasti, with the records held at the DEHAT office and available on site.",
@@ -35088,7 +35088,7 @@ const KS = {
       "col": "#556223",
       "detail": {
         "u": "Small, well-scoped contributions compound. Most of what a field team needs is finishable in weeks.",
-        "what": "A defined piece of work — field, research, documentation, design or translation — on site or remotely.",
+        "what": "A defined piece of work - field, research, documentation, design or translation - on site or remotely.",
         "why": "Capacity is the binding constraint more often than money. An extra pair of hands moves a real deadline.",
         "when": "Rolling. Remote work can start almost immediately; on-site placements need lead time.",
         "where": "Bahraich, or anywhere with a connection for remote roles.",
@@ -35159,10 +35159,10 @@ const KS = {
       "col": "#4F0E73",
       "detail": {
         "u": "A legacy is the only gift that is decided calmly, years in advance, by someone with nothing left to gain from it. It is also the rarest, because almost nobody is ever asked.",
-        "what": "A bequest to DEHAT written into your will — a fixed sum, a share of the residue, or a named asset.",
+        "what": "A bequest to DEHAT written into your will - a fixed sum, a share of the residue, or a named asset.",
         "why": "Field work runs on money that arrives in one-year pieces. A legacy is the one form of support that can be committed to a horizon longer than any grant cycle, which is the horizon the change actually takes.",
         "when": "Whenever you next write or revise your will. Telling us is optional, but it lets us plan and lets you say what the gift is for.",
-        "where": "The registered office in Bahraich holds the society’s registration, PAN and audited accounts — everything your lawyer will ask for.",
+        "where": "The registered office in Bahraich holds the society’s registration, PAN and audited accounts - everything your lawyer will ask for.",
         "how": "Ask us for the exact legal name, registration number and clause wording to give your lawyer. We do not draft wills and we do not give legal advice; we give your lawyer what they need and step back."
       }
     },
@@ -35178,9 +35178,9 @@ const KS = {
       "detail": {
         "u": "A wedding, a birthday, an anniversary or a memorial redirected once can fund a whole cycle of one intervention.",
         "what": "Guests asked to give to DEHAT instead of bringing shagun or a gift, on the occasion and in the name of the person or couple marking it.",
-        "why": "It turns a private day into a public one, and reaches people the field team would not otherwise meet — but only if every gift is given directly. We cannot receipt, or safely bank, a sum collected in cash or by hand and passed to us afterward; the rule that lets us give a giver their own tax receipt requires their name against their own amount.",
+        "why": "It turns a private day into a public one, and reaches people the field team would not otherwise meet - but only if every gift is given directly. We cannot receipt, or safely bank, a sum collected in cash or by hand and passed to us afterward; the rule that lets us give a giver their own tax receipt requires their name against their own amount.",
         "when": "Four to six weeks of notice lets us prepare a page and the material, and, where possible, a voice from the field.",
-        "where": "Your venue, online, or in Bahraich. The giving itself always lands directly in DEHAT's own account — never in a personal one, even briefly, even in trust.",
+        "where": "Your venue, online, or in Bahraich. The giving itself always lands directly in DEHAT's own account - never in a personal one, even briefly, even in trust.",
         "how": "Tell us the occasion and the date. We set up a page in your name that your guests give through directly, and we handle the receipts and the follow-up."
       }
     },
@@ -35195,9 +35195,9 @@ const KS = {
       "detail": {
         "u": "A comedian's set, a musician's show or a filmmaker's premiere can hand this work an audience an appeal letter never reaches.",
         "what": "A show, a screening, a livestream or a piece of released work dedicated to DEHAT's communities, with the audience giving directly rather than through the artist.",
-        "why": "An audience that already trusts an artist rarely meets an NGO on its own terms. What we cannot do is bank a sum an artist collected and hands over afterward — every gift has to be given by the person giving it, in their own name, for the same reason a wedding or birthday gift does.",
+        "why": "An audience that already trusts an artist rarely meets an NGO on its own terms. What we cannot do is bank a sum an artist collected and hands over afterward - every gift has to be given by the person giving it, in their own name, for the same reason a wedding or birthday gift does.",
         "when": "Tell us the date as soon as it is fixed; four weeks lets us prepare material and, for a livestream or a large show, a recorded message from the field.",
-        "where": "Wherever your audience already is — a venue, a stream, a release. The giving itself happens on DEHAT's own page, not at the door or in the artist's account.",
+        "where": "Wherever your audience already is - a venue, a stream, a release. The giving itself happens on DEHAT's own page, not at the door or in the artist's account.",
         "how": "Tell us the date, the format and the expected reach. We give you a dedicated page and link to point your audience to, branding you can use without asking twice, and a running total you and they can both see."
       }
     },
@@ -35212,7 +35212,7 @@ const KS = {
       "col": "#D2305C",
       "detail": {
         "u": "The distance between an investor and the person their money reached is usually never closed. It should be.",
-        "what": "A structured meeting — in person or online — with the people and communities your support reached.",
+        "what": "A structured meeting - in person or online - with the people and communities your support reached.",
         "why": "Accountability runs both ways. Seeing the outcome changes how the next decision is made.",
         "when": "Arranged around the community’s calendar, never around the visitor’s convenience alone.",
         "where": "In the villages themselves, or over a call where travel is not possible.",
@@ -35233,7 +35233,7 @@ const KS = {
         "what": "A workplace commitment against child labour and child sexual abuse, with the policy and training to hold it.",
         "why": "A stated position gives employees a route to raise something they would otherwise stay quiet about.",
         "when": "Before an incident, not after. Policy written under pressure protects nobody.",
-        "where": "Your workplace and its allied spaces — contractors, vendors, transport, housing.",
+        "where": "Your workplace and its allied spaces - contractors, vendors, transport, housing.",
         "how": "We share the model commitment, help adapt it, and train the people who will have to act on it."
       }
     },
@@ -35273,7 +35273,7 @@ const KS = {
       }
     }
   ],
-  "sopTitle": "In a line or two — what are you hoping will change?",
+  "sopTitle": "In a line or two - what are you hoping will change?",
   "sopSub": "This is the only part we read closely. Write it however you like; there is no right answer.",
   "sopPlaceholder": "For example: we want our Corporate Social Responsibility spend in Bahraich to go somewhere the evidence is public, and we would like to start with one block.",
   "sopPrompts": [
@@ -35387,9 +35387,9 @@ const KS = {
   "fPanHint": "Ten characters, as printed on the card",
   "fAadhaar": "Masked Aadhaar",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "Last four digits only. Never enter your full Aadhaar number here — we neither need it nor keep it.",
+  "fAadhaarNote": "Last four digits only. Never enter your full Aadhaar number here - we neither need it nor keep it.",
   "fInrDocs": "PAN and Masked Aadhaar Scans",
-  "fInrDocsNote": "Attach a scan of your PAN card and a masked Aadhaar (last four digits visible only — UIDAI issues one from its website). Held for the 80G receipt, the Form 10BD statement and the audit, and destroyed when the retention period ends.",
+  "fInrDocsNote": "Attach a scan of your PAN card and a masked Aadhaar (last four digits visible only - UIDAI issues one from its website). Held for the 80G receipt, the Form 10BD statement and the audit, and destroyed when the retention period ends.",
   "fIdRefHint": "As printed on the passport",
   "fPassport": "Passport Scan, Both Sides",
   "fPassportNote": "Required for foreign contributions. Attach the photograph page and the address page. Held only for the Foreign Contribution (Regulation) Act return and the audit, and destroyed when the retention period ends.",
@@ -35464,7 +35464,7 @@ const KS = {
       "href": "https://www.aihindia.org"
     },
     {
-      "k": "Catalyst Now — India Chapter",
+      "k": "Catalyst Now - India Chapter",
       "v": "Member.",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
@@ -35566,7 +35566,7 @@ const KS = {
       "logo": "caf-india.png"
     },
     {
-      "k": "TISS National CSR Hub — AESDII",
+      "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
       "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
       "logo": "tiss-national-csr-hub-aesdii.png"
@@ -35714,7 +35714,7 @@ const KS = {
     }
   ],
   "ecosystemTitle": "سَرکٲری مَحکَمَہٕ، قانوٗنی اِدارٕ تہٕ بَستی ہٕنٛد نِظام یِمن سٟتؠ اَسؠ رَلہِتھ کٲم چھِ کَران",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in — and consistent invitees to — the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
   "ecosystemLevels": [
     {
       "k": "village",

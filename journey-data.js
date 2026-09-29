@@ -1,4 +1,4 @@
-// Programme journey narratives — sourced from the School of Leadership, Human Protection and
+// Programme journey narratives - sourced from the School of Leadership, Human Protection and
 // Climate Justice Programme Journey documents. Rendered on the programme pages above the register.
 
 const T = 'assets/thumb/';
@@ -34,7 +34,7 @@ export const JOURNEY = {
         { label: 'No Bridge Between Age Groups', img: T + 'right-participation.png',
           detail: 'A child who leads at twelve finds nothing designed for her at sixteen.',
           a: 'Confidence built in one stage is not carried into the next.',
-          b: 'A connected pathway — Child Parliament to PANCHI to youth groups to fellowship to community leadership.' },
+          b: 'A connected pathway - Child Parliament to PANCHI to youth groups to fellowship to community leadership.' },
         { label: 'Knowledge Held by Individuals', img: T + 'sdg-quality-education.png',
           detail: 'What a community has learned lives in one or two people’s memory.',
           a: 'When those people move or migrate, the learning goes with them.',
@@ -57,20 +57,20 @@ export const JOURNEY = {
     tiers: {
       num: '02',
       title: 'Leadership Across Life Stages',
-      body: 'Leadership cannot be developed through a single intervention, nor does it emerge at one stage of life. Each stage serves a distinct purpose — not simply preparing individuals for the next programme, but preparing them for a greater role in shaping the lives of others. Select a stage to read what it is for.',
+      body: 'Leadership cannot be developed through a single intervention, nor does it emerge at one stage of life. Each stage serves a distinct purpose - not simply preparing individuals for the next programme, but preparing them for a greater role in shaping the lives of others. Select a stage to read what it is for.',
       note: 'Across every stage the purpose stays constant: an expanding sense of responsibility, from finding one’s own voice, to enabling the voices of others, to building communities capable of continuously creating leaders.',
       rows: [
         { label: 'Childhood · Discovering Voice', w: '58%', art: 'assets/thumb/right-participation.png',
           note: 'Through Child Parliaments, children experience participation, democratic decision-making and representation for the first time. Leadership is introduced not as authority, but as the confidence to speak, listen and act together.',
           items: ['Child Parliaments', 'Democratic elections', 'Peer learning groups', 'School governance platforms'] },
         { label: 'Adolescence · Building Identity and Agency', w: '69%', art: 'assets/thumb/sdg-gender-equality.png',
-          note: 'Through PANCHI, girls question harmful gender norms, strengthen self-confidence and recognise their rights — shifting from recipients of information to facilitators, peer educators and advocates.',
+          note: 'Through PANCHI, girls question harmful gender norms, strengthen self-confidence and recognise their rights - shifting from recipients of information to facilitators, peer educators and advocates.',
           items: ['PANCHI', 'Safe peer spaces', 'Peer educators', 'SRHR and rights learning'] },
         { label: 'Youth · Taking Collective Responsibility', w: '80%', art: 'assets/thumb/sdg-partnership.png',
-          note: 'Leadership extends beyond personal growth to collective action — organising communities, engaging Panchayats and public institutions, and bringing people together to solve problems.',
+          note: 'Leadership extends beyond personal growth to collective action - organising communities, engaging Panchayats and public institutions, and bringing people together to solve problems.',
           items: ['Youth groups', 'Panchayat engagement', 'Campaigns', 'Community mobilisation'] },
         { label: 'Fellowship · Enabling Others to Lead', w: '90%', art: 'assets/thumb/sdg-quality-education.png',
-          note: 'Fellows are no longer prepared simply to lead; they are prepared to create leadership in others — accompanying communities rather than directing them.',
+          note: 'Fellows are no longer prepared simply to lead; they are prepared to create leadership in others - accompanying communities rather than directing them.',
           items: ['Community immersion', 'Constitutional values', 'Facilitation practice', 'Institution building'] },
         { label: 'Community Leadership · Sustaining the Journey', w: '100%', art: 'assets/cj/circle-discussion.png',
           note: 'Not an end point but a renewal of the cycle. Experienced leaders become resource persons, mentors and institutional leaders who prepare the next generation to take their place.',
@@ -136,8 +136,8 @@ export const JOURNEY = {
       capB: 'Leadership is carried by a community that reproduces it. It grows whether or not anyone is visiting.',
       rows: [
         { a: 'Individual leaders developed through programmes', b: 'Leadership systems that renew themselves within communities' },
-        { a: 'Participation as representation in Gram Sabhas and committees', b: 'Participation as shared governance — influencing decisions and working alongside institutions as partners' },
-        { a: 'Community knowledge held in memory and individual experience', b: 'Community intelligence — local evidence organised, preserved and used to guide action' },
+        { a: 'Participation as representation in Gram Sabhas and committees', b: 'Participation as shared governance - influencing decisions and working alongside institutions as partners' },
+        { a: 'Community knowledge held in memory and individual experience', b: 'Community intelligence - local evidence organised, preserved and used to guide action' },
         { a: 'Mentorship that happens when someone thinks to offer it', b: 'Institutionalised mentoring between experienced and emerging leaders' },
         { a: 'Structures created for specific projects', b: 'Long-term community institutions that outlast every project' },
         { a: 'Success measured within a project lifespan', b: 'Success measured across generations' },
@@ -147,18 +147,18 @@ export const JOURNEY = {
     horizons: {
       num: '05',
       title: 'A Phased Investment Roadmap',
-      body: 'The next phase is not about expanding programmes alone. It is about strengthening the systems that let communities continuously nurture leaders, realise rights, adapt to changing contexts and sustain collective action after individual projects have ended. Five shifts, each able to stand on its own — mapped in direct consultation with the communities we work with, over a planning process that ran from 2021 to 2026.',
+      body: 'The next phase is not about expanding programmes alone. It is about strengthening the systems that let communities continuously nurture leaders, realise rights, adapt to changing contexts and sustain collective action after individual projects have ended. Five shifts, each able to stand on its own - mapped in direct consultation with the communities we work with, over a planning process that ran from 2021 to 2026.',
       metaLabel: 'Indicative Funding Size',
       objLabel: 'Why This Matters',
       itemsLabel: 'Strategic Priorities',
       ctaLabel: 'Ask for the Full Funding Plan',
-      ctaNote: 'Each phase’s full funding plan — budget, results framework and implementation timeline — is ready on request, for this phase alone or as part of a longer commitment to the leadership ecosystem.',
+      ctaNote: 'Each phase’s full funding plan - budget, results framework and implementation timeline - is ready on request, for this phase alone or as part of a longer commitment to the leadership ecosystem.',
       rows: [
         { label: 'Leaders → Leadership Systems · 0–12 Months', meta: '₹20 lakh – ₹75 lakh',
           obj: 'Child Parliaments, adolescent groups, youth platforms, Community Resource Persons and community institutions increasingly function as interconnected spaces where leadership is transferred and each generation actively prepares the next.',
           items: ['Structured leadership succession pathways across every life stage', 'Institutionalised mentoring between experienced and emerging leaders', 'Community institutions as permanent spaces for leadership development', 'Mechanisms for documenting and transferring local knowledge across generations'] },
         { label: 'Participation → Decision-Making · 1–2 Years', meta: '₹75 lakh – ₹2 crore',
-          obj: 'Leadership must enable communities not only to participate in Gram Sabhas and village institutions, but to influence decisions, mobilise resources and work alongside administration as partners in delivery — a shift from representation towards shared governance.',
+          obj: 'Leadership must enable communities not only to participate in Gram Sabhas and village institutions, but to influence decisions, mobilise resources and work alongside administration as partners in delivery - a shift from representation towards shared governance.',
           items: ['Community-led planning and local decision-making processes', 'Meaningful participation in Gram Sabhas and village institutions', 'Leadership capacities for negotiation, facilitation and public engagement', 'Community–government partnerships based on trust and collaboration'] },
         { label: 'Knowledge → Community Intelligence · 2–3 Years', meta: '₹1 – 4 crore',
           obj: 'Communities already possess deep knowledge of their own realities. The opportunity is to help them organise, preserve and use it. Technology is not a substitute for leadership but an enabler of learning and collaboration.',
@@ -173,9 +173,9 @@ export const JOURNEY = {
     },
 
     close: {
-      num: '06', // horizons restored as '05' (qualitative content only — see horizons.body/rows below)
+      num: '06', // horizons restored as '05' (qualitative content only - see horizons.body/rows below)
       title: 'What Makes the Approach Different',
-      body: 'Conventional leadership programmes develop a limited number of individuals. DEHAT’s experience suggests leadership only holds when it is designed to be handed on — when each stage prepares people not for the next programme, but for a greater role in shaping the lives of others.',
+      body: 'Conventional leadership programmes develop a limited number of individuals. DEHAT’s experience suggests leadership only holds when it is designed to be handed on - when each stage prepares people not for the next programme, but for a greater role in shaping the lives of others.',
       chainLabel: 'Where Most Leadership Programmes Stop',
       chainStop: 2,
       art: 'assets/story/right-participation.png',
@@ -339,7 +339,7 @@ export const JOURNEY = {
       objLabel: 'Why This Matters',
       itemsLabel: 'Priority Investments',
       ctaLabel: 'Ask for the Full Funding Plan',
-      ctaNote: 'Each phase’s full funding plan — budget, results framework and implementation timeline — is ready on request, for this phase alone or as a multi-year commitment across all five.',
+      ctaNote: 'Each phase’s full funding plan - budget, results framework and implementation timeline - is ready on request, for this phase alone or as a multi-year commitment across all five.',
       rows: [
         { label: 'Restoration Continuity · 0–12 Months', meta: '₹25 lakh – ₹1 crore+',
           obj: 'Rescue is the visible moment; restoration is where protection is won or lost. This work keeps a case open long after the headline, through reintegration, schooling and compensation.',
@@ -360,7 +360,7 @@ export const JOURNEY = {
     },
 
     close: {
-      num: '06', // horizons restored as '05' (qualitative content only — see horizons.body/rows below)
+      num: '06', // horizons restored as '05' (qualitative content only - see horizons.body/rows below)
       title: 'What Makes the Approach Different',
       body: 'Protection failures rarely emerge from the absence of intervention alone. They emerge when continuity weakens across families, migration journeys, institutions, restoration pathways and long-term follow-up systems. Most protection work is measured at the moment of rescue. DEHAT measures it two years later.',
       chainLabel: 'Where Most Protection Work Stops',
@@ -450,7 +450,7 @@ export const JOURNEY = {
       fields: ['Community outcome', 'Ecosystem outcome', 'Critical enabler', 'Illustrative indicator'],
       paths: [
         { label: 'Climate-Adaptive Agriculture',
-          detail: 'A staged farming journey — Low External Input Sustainable Agriculture, moving to Natural Farming, and aiming towards Organic Farming certification — alongside diversified crops and natural resource stewardship.',
+          detail: 'A staged farming journey - Low External Input Sustainable Agriculture, moving to Natural Farming, and aiming towards Organic Farming certification - alongside diversified crops and natural resource stewardship.',
           v: ['Improved livelihood stability and reduced economic fragility',
               'More diversified and climate-adaptive local production systems',
               'Community mobilisers, Krishi Mitras, demonstration plots and farmer learning systems',
@@ -517,7 +517,7 @@ export const JOURNEY = {
       objLabel: 'Why This Matters',
       itemsLabel: 'Priority Investments',
       ctaLabel: 'Ask for the Full Funding Plan',
-      ctaNote: 'Each phase’s full funding plan — budget, results framework and implementation timeline — is ready on request, for this phase alone or as a multi-year commitment across all four.',
+      ctaNote: 'Each phase’s full funding plan - budget, results framework and implementation timeline - is ready on request, for this phase alone or as a multi-year commitment across all four.',
       rows: [
         { label: 'Strengthen & Scale · 0–12 Months', meta: '₹25 lakh – ₹1 crore',
           obj: 'These investments build on proven models, deliver measurable outcomes quickly, and create the community foundations required for future innovation.',
@@ -535,7 +535,7 @@ export const JOURNEY = {
     },
 
     close: {
-      num: '06', // horizons restored as '05' (qualitative content only — see horizons.body/rows below)
+      num: '06', // horizons restored as '05' (qualitative content only - see horizons.body/rows below)
       title: 'What Makes the Approach Different',
       body: 'Many climate programmes focus primarily on improving agricultural outcomes. DEHAT’s experience suggests that resilience frequently breaks elsewhere: when nutrition remains weak, when community institutions dissolve, when women lack decision-making power, when governance systems remain inaccessible, or when migration disrupts local continuity.',
       chainLabel: 'Where Most Programmes Stop',
@@ -557,13 +557,13 @@ export const JOURNEY = {
     pull: 'The question is not how we help people access schemes. It is how people and communities come to understand what they are entitled to, navigate the systems that deliver it, act when access fails, sustain what they have gained, and collectively influence the institutions responsible.',
     chipsLabel: 'The Journey as a Progression in Capability',
     chips: [
-      'Recognise — this concerns a right',
-      'Understand — what it means, who is responsible',
-      'Navigate — the process and the requirements',
-      'Claim — approach the institution',
-      'Resolve — act when access is denied or delayed',
-      'Sustain — hold access as circumstances change',
-      'Enable others — rights capability as a community resource',
+      'Recognise - this concerns a right',
+      'Understand - what it means, who is responsible',
+      'Navigate - the process and the requirements',
+      'Claim - approach the institution',
+      'Resolve - act when access is denied or delayed',
+      'Sustain - hold access as circumstances change',
+      'Enable others - rights capability as a community resource',
     ],
 
     cascade: {
@@ -580,11 +580,11 @@ export const JOURNEY = {
         { label: 'Capacity Building → Eligibility', img: T + 'issue-structural-vulnerability.png',
           detail: 'Knowing that something exists does not tell a person whether they qualify, or how to establish that qualification.',
           a: 'Eligibility sits behind documentation, administrative categories and unclear criteria. A person may satisfy the substantive conditions and still be unable to demonstrate them.',
-          b: 'Practical understanding of eligibility, documents and institutional responsibility — rights knowledge made actionable.' },
+          b: 'Practical understanding of eligibility, documents and institutional responsibility - rights knowledge made actionable.' },
         { label: 'Eligibility → Application', img: T + 'sdg-reduced-inequalities.png',
           detail: 'The problem shifts from information to navigation: where to go, which institution is responsible, what is required, how to follow up.',
           a: 'The more fragmented the system, the greater the burden placed on the individual to navigate it alone.',
-          b: 'Navigation capability held locally — fellows, Community Resource Persons and community leaders who help households act.' },
+          b: 'Navigation capability held locally - fellows, Community Resource Persons and community leaders who help households act.' },
         { label: 'Application → Access', img: T + 'sdg-partnership.png',
           detail: 'A submitted application does not guarantee access. Responsibility may sit across several frontline actors and departments.',
           a: 'Institutional delays, incomplete processing, exclusion and weak follow-up. A household often cannot know where a claim is stuck or who is responsible for resolving it.',
@@ -600,7 +600,7 @@ export const JOURNEY = {
         { label: 'Collective Claim → Institutional Partnership', img: T + 'sdg-good-health.png',
           detail: 'Public systems may have several agencies responsible for parts of the same issue, so a claim can move between them without clear ownership.',
           a: 'Even when communities organise and present evidence, institutional response can remain weak or fragmented.',
-          b: 'Institutional interfaces — Gram Panchayat, Block, Tehsil Diwas — used to place evidence in front of the institution that owns the decision.' },
+          b: 'Institutional interfaces - Gram Panchayat, Block, Tehsil Diwas - used to place evidence in front of the institution that owns the decision.' },
       ],
     },
 
@@ -664,7 +664,7 @@ export const JOURNEY = {
     pairs: {
       num: '04',
       title: 'From Programme Data to Rights Intelligence',
-      body: 'Information about people, claims, institutions and outcomes can remain distributed across projects, reports, registers and individual staff memory. The next frontier is not more reporting. It is making community knowledge usable as intelligence — so that what is happening, who is affected, what action was taken and where systems are failing can be answered continuously. Select a row to see what the shift is intended to change.',
+      body: 'Information about people, claims, institutions and outcomes can remain distributed across projects, reports, registers and individual staff memory. The next frontier is not more reporting. It is making community knowledge usable as intelligence - so that what is happening, who is affected, what action was taken and where systems are failing can be answered continuously. Select a row to see what the shift is intended to change.',
       colA: 'Today',
       colB: 'Future direction',
       colC: 'Intended outcome',
@@ -705,7 +705,7 @@ export const JOURNEY = {
       objLabel: 'Why This Matters',
       itemsLabel: 'Priority Investments',
       ctaLabel: 'Ask for the Full Funding Plan',
-      ctaNote: 'Each phase’s full funding plan — budget, results framework and implementation timeline — is ready on request, for this phase alone or as a multi-year commitment across all four.',
+      ctaNote: 'Each phase’s full funding plan - budget, results framework and implementation timeline - is ready on request, for this phase alone or as a multi-year commitment across all four.',
       rows: [
         { label: 'Strengthen Community Capability · 0–18 Months', meta: '₹25 lakh – ₹1 crore',
           obj: 'These investments strengthen the human infrastructure required for the next stage. Technology and systems only become useful when they sit inside community institutions capable of interpreting information and acting on it.',
@@ -723,9 +723,9 @@ export const JOURNEY = {
     },
 
     close: {
-      num: '06', // horizons restored as '05' (qualitative content only — see horizons.body/rows below)
+      num: '06', // horizons restored as '05' (qualitative content only - see horizons.body/rows below)
       title: 'What Makes the Approach Different',
-      body: 'Most rights work stops at access: an application made, a benefit received, a case closed. DEHAT’s experience suggests that realisation usually breaks after that point — when a benefit lapses, when the same barrier reappears in the next household, or when no institution owns the decision that produced the exclusion. Staying in partnership with the responsible institution is therefore not a layer added after access. It is part of what makes rights sustainable.',
+      body: 'Most rights work stops at access: an application made, a benefit received, a case closed. DEHAT’s experience suggests that realisation usually breaks after that point - when a benefit lapses, when the same barrier reappears in the next household, or when no institution owns the decision that produced the exclusion. Staying in partnership with the responsible institution is therefore not a layer added after access. It is part of what makes rights sustainable.',
       chainLabel: 'Where Most Rights Work Stops',
       chainStop: 1,
       art: 'assets/story/re-community-claim.png',

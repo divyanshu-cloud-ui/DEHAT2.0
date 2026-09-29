@@ -1,10 +1,10 @@
 // English layer for the DEHAT roster. Source responses were collected in Hindi and English;
 // the page renders English by default and falls back to the original Hindi when the language
-// toggle is set to Hindi. Translations are faithful — no tightening, no added claims.
+// toggle is set to Hindi. Translations are faithful - no tightening, no added claims.
 
 export const TEAM_EN = {
   t01: { name: 'Vishal Uniyal', role: 'Project Anchor, Human Protection', place: 'Balrampur', prog: 'Human Protection, Balrampur',
-    finish: 'For me, development means that every person — especially children and deprived communities — gets education, safety, equal opportunity, and the chance to live a better life with dignity.' },
+    finish: 'For me, development means that every person - especially children and deprived communities - gets education, safety, equal opportunity, and the chance to live a better life with dignity.' },
   t02: {},
   t03: { name: 'Rachna Mishra', role: 'Programme Associate', place: 'Hujurpur block, Bahraich', prog: 'DEHAT India',
     finish: 'That every person receives equal opportunity, respect and their rights, without discrimination.' },
@@ -31,21 +31,21 @@ export const TEAM_EN = {
   t14: { name: 'Amar Deep', role: 'Grassroots Anchor, Climate Justice', place: 'Bahraich', prog: 'FASAL Climate Justice team, Girijapuri',
     finish: 'Community leadership begins when every single person living in the community takes responsibility and accountability.' },
   t15: { name: 'Lakshmi Devi', role: 'Grassroots Anchor, Human Protection', place: 'Sirsiya, Shrawasti', prog: 'Human Protection',
-    finish: 'That the village develops as a whole \u2014 education, health, safety, employment, equality, freedom from discrimination, and women\u2019s participation assured.' },
+    finish: 'That the village develops as a whole - education, health, safety, employment, equality, freedom from discrimination, and women\u2019s participation assured.' },
   t16: { name: 'Hansram', role: 'Grassroots Anchor, Human Protection', place: 'Hariharpur Rani, Shrawasti', prog: 'Access to Justice',
     finish: 'My hope at DEHAT is that the work I want to do in the community, I can do well here.' },
   t17: { name: 'Vindhyavasini', role: 'Grassroots Anchor, Human Protection', place: 'Bahraich', prog: 'DEHAT India, Bahraich',
     finish: 'I love children very much, and DEHAT India works on children\u2019s rights.' },
   t18: { name: 'Mohammad Yusuf', role: 'Project Anchor, Human Protection', place: 'Shrawasti', prog: 'Access to Justice, Human Protection, Shrawasti',
-    finish: 'For me, development means that every person in society gets an equal chance to move forward \u2014 especially children, women, and families who are behind economically and socially: that they learn about their rights and can make their own decisions. Development is not only roads, buildings or more facilities, but awareness among people, children staying safe, problems like child marriage and child labour reducing, and the community coming forward on its own for its rights and responsibilities. Working at DEHAT I have felt that when community, police, administration and social organisations work together, change is possible on even the hardest problem.' },
+    finish: 'For me, development means that every person in society gets an equal chance to move forward - especially children, women, and families who are behind economically and socially: that they learn about their rights and can make their own decisions. Development is not only roads, buildings or more facilities, but awareness among people, children staying safe, problems like child marriage and child labour reducing, and the community coming forward on its own for its rights and responsibilities. Working at DEHAT I have felt that when community, police, administration and social organisations work together, change is possible on even the hardest problem.' },
   t19: { name: 'Sarjan Verma', role: 'Grassroots Anchor, Human Protection', place: 'Shrawasti', prog: 'Jamunaha',
     finish: 'My hope at DEHAT is that every child becomes safe, educated and confident, that every family receives its rights and the benefit of government schemes, and that the community itself becomes able to take decisions in children\u2019s interest and bring positive change.' },
   t20: { name: 'Sushma Kashyap', role: 'Grassroots Anchor, Human Protection', place: 'Shrawasti', prog: 'Access to Justice, DEHAT India, Shrawasti',
-    finish: 'The biggest reason I stay with this work is to see human rights assured \u2014 so that the community changes, and people take the initiative for themselves.' },
-  t21: { name: 'Sarita Srivastava', role: 'Grassroots Anchor, SRHR, Rights and Entitlements', place: 'Nawabganj and Mihinpurwa blocks, Bahraich', prog: 'Sexual and reproductive health rights \u00b7 Human Protection \u2014 Rupaidiha, Nawabganj, Mihinpurwa',
+    finish: 'The biggest reason I stay with this work is to see human rights assured - so that the community changes, and people take the initiative for themselves.' },
+  t21: { name: 'Sarita Srivastava', role: 'Grassroots Anchor, SRHR, Rights and Entitlements', place: 'Nawabganj and Mihinpurwa blocks, Bahraich', prog: 'Sexual and reproductive health rights \u00b7 Human Protection - Rupaidiha, Nawabganj, Mihinpurwa',
     finish: 'For me, development means that every person can live their life with dignity and take their own decisions. That children get the chance to study, that women get the right to speak and to decide, and that people receive the benefit of government schemes. That people in the village understand their problems and solve them together. Real development is when people understand their rights and bring change in their own lives.' },
   t22: { name: 'Adnan Ansar', role: 'Counsellor', place: 'Bahraich', prog: 'Access to Justice',
-    finish: 'That rights, safety and correct information reach the last person and the last child in society, without discrimination. When an illiterate or poor person receives the benefit of government schemes without being sent from place to place, when every child gets a safe environment and justice, and when technology is used properly to make the justice system easier for every citizen \u2014 only then is real justice possible.' },
+    finish: 'That rights, safety and correct information reach the last person and the last child in society, without discrimination. When an illiterate or poor person receives the benefit of government schemes without being sent from place to place, when every child gets a safe environment and justice, and when technology is used properly to make the justice system easier for every citizen - only then is real justice possible.' },
   t23: { name: 'Geeta Prasad', role: 'Grassroots Anchor, Climate Justice', place: 'Bahraich', prog: 'FASAL Climate Justice team, Bahraich',
     finish: 'My hope at DEHAT is that I have had the chance to work here a long time, and that the chance keeps coming.' },
   t24: {},

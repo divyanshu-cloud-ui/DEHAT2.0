@@ -1,7 +1,7 @@
-// Cumulative Impact page — every figure in the organisation's existence, sliced by lens.
+// Cumulative Impact page - every figure in the organisation's existence, sliced by lens.
 // Category totals are the same org-wide contribution figures used on the homepage (one headline
 // figure per project per category, no double count within a project). A project can appear in more
-// than one lens because it carries more than one tag — that is tagging, not adding money twice.
+// than one lens because it carries more than one tag - that is tagging, not adding money twice.
 // Money uses the audited fiscal-year ledger (finance-data.js), never the project-card figures, because
 // several ongoing projects' card totals are not yet fully received.
 
@@ -166,5 +166,5 @@ export const ENTITLEMENT_VALUE = [
   { k: 'work',     headline: 'Up to 125 days a year',
     what: 'A job card carries a guarantee of paid work at \u20b9300 a day in Uttar Pradesh. The state\u2019s own data puts the average household actually drawing on it at 37 days a year.' },
   { k: 'food',     headline: '300 kg a year',
-    what: 'A ration card entitles every member to 5 kg of grain a month \u2014 for a family of five, 300 kg a year, at no cost.' },
+    what: 'A ration card entitles every member to 5 kg of grain a month - for a family of five, 300 kg a year, at no cost.' },
 ];

@@ -238,7 +238,7 @@ class Component extends DCLogic {
     const nActive = ['year','pub','lang','dist','sdg','csr','cr'].filter(k => S[k] && S[k] !== 'All').length;
 
     return {
-      blurb: 'Every headline, research report and blog recorded in DEHAT\u2019s press compendium, filterable by reach, publisher, year, development goal — Millennium before 2016, Sustainable after — Corporate Social Responsibility Schedule VII head and child rights.',
+      blurb: 'Every headline, research report and blog recorded in DEHAT\u2019s press compendium, filterable by reach, publisher, year, development goal - Millennium before 2016, Sustainable after - Corporate Social Responsibility Schedule VII head and child rights.',
       total: ALL.length, pubCount: pubs.length, span: ALL.length ? (Math.min.apply(null, ALL.map(i => i.y)) + '\u2013' + Math.max.apply(null, ALL.map(i => i.y))) : '',
       scopes: [scopeBtn('All', 'All Coverage'), scopeBtn('National', 'National'), scopeBtn('International', 'International')],
       q: S.q, onQ: (e) => this.setState({ q: e.target.value }),
@@ -265,7 +265,7 @@ class Component extends DCLogic {
       filtersRing: S.fOpen || nActive ? 'var(--dim,#5a4f43)' : 'var(--border,rgba(31,23,16,.14))',
       filtersFg: 'var(--text,#1f1710)',
       reset: () => this.setState({ fOpen: false, mdg: 'All', q: '', scope: 'All', year: 'All', pub: 'All', lang: 'All', sdg: 'All', csr: 'All', cr: 'All' }),
-      note: 'Headlines, links, publishers, languages and dates are reproduced from the DEHAT press compendium, plus items found in a 2026 search pass. Development goal, Corporate Social Responsibility Schedule VII and child-rights tags are editorial classifications. Every item carries a Wayback Machine copy alongside the publisher link, so no entry is a dead end; where a URL uses a retired shortener, epaper image or old CMS path, the archived copy is offered first. Likes and views are counted in this browser only \u2014 shared totals across visitors need a server.'
+      note: 'Headlines, links, publishers, languages and dates are reproduced from the DEHAT press compendium, plus items found in a 2026 search pass. Development goal, Corporate Social Responsibility Schedule VII and child-rights tags are editorial classifications. Every item carries a Wayback Machine copy alongside the publisher link, so no entry is a dead end; where a URL uses a retired shortener, epaper image or old CMS path, the archived copy is offered first. Likes and views are counted in this browser only - shared totals across visitors need a server.'
     };
   }
 }
