@@ -20,7 +20,10 @@
   .m-stat-value{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,7vw,34px);line-height:1;color:var(--ac-teal,#0E5565);overflow-wrap:anywhere}
   .m-stat-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint,#8a7c6c);margin-top:6px;font-weight:600}
   @media (max-width:520px){
-    .m-stats{width:100%;gap:14px}
+    .m-stats{width:100%;grid-template-columns:1fr;gap:10px}
+    button,input,select{min-height:44px}
+    button{min-width:44px}
+    a[target="_blank"]{min-height:44px;display:inline-flex;align-items:center}
   }
 </style>
 <script src="./media-data.js"></script>

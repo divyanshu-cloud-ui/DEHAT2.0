@@ -197,6 +197,29 @@
     .j-tick{min-height:17px !important;min-width:2px !important;position:absolute}
     .j-tick::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px}
   }
+  @media (max-width:640px){
+    .nav-quick .lang-select,
+    .nav-quick .invest-btn,
+    .nav-quick button,
+    .nav-burger button,
+    .subnav-row button,
+    .scp1,
+    .scp1c,
+    .scp4,
+    .ml-press,
+    button[aria-label="Filter"]{min-height:44px !important}
+    .nav-quick button,
+    .subnav-row button,
+    .scp1,
+    .scp1c,
+    .scp4{min-width:44px !important}
+    a[target="_blank"]{min-height:44px;display:inline-flex;align-items:center}
+    button[aria-label],
+    button:not([class]){min-width:44px;min-height:44px}
+    main{overflow-x:hidden}
+    [data-subnav=""]{max-width:100vw;overflow-x:auto;overflow-y:hidden}
+    .subnav-row{width:100%;max-width:100% !important;margin:0 !important;box-sizing:border-box;overflow-x:auto;overflow-y:hidden}
+  }
 
   /* Primary nav: the hamburger is the phone and small-tablet behaviour. The old
      flat list of nine links wrapped onto three lines, so it was hidden at every
