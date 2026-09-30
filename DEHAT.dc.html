@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -1015,7 +1014,7 @@
           <sc-for list="{{ whoTeaser.faces }}" as="f" hint-placeholder-count="8">
             <button onClick="{{ f.pick }}" aria-label="{{ f.label }}" aria-pressed="{{ f.pressed }}" style="cursor:pointer;padding:0;border-radius:14px;overflow:hidden;border:1px solid {{ f.ring }};background:var(--surface2);aspect-ratio:4 / 5;transition:border-color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1),opacity .45s cubic-bezier(.22,.61,.36,1);opacity:{{ f.op }}" style-hover="transform:translateY(-3px);opacity:1">
               <sc-if value="{{ f.hasSrc }}" hint-placeholder-val="{{ false }}">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ f.src }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 100%;display:block;transition:transform .45s cubic-bezier(.22,.61,.36,1),filter .45s cubic-bezier(.22,.61,.36,1);transform:scale({{ f.scale }});filter:{{ f.filt }}" />
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ f.src }}" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 100%;display:block;transition:transform .45s cubic-bezier(.22,.61,.36,1),filter .45s cubic-bezier(.22,.61,.36,1);transform:scale({{ f.scale }});filter:{{ f.filt }}" />
               </sc-if>
             </button>
           </sc-for>
@@ -2186,7 +2185,7 @@
     <section data-spine="The Founder" data-screen-label="Founder" style="background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,64px)">
       <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(26px,4vw,56px);align-items:end">
         <div style="max-width:420px;width:100%;justify-self:start;border-radius:22px;overflow:hidden;border:1px solid var(--border);background:var(--surface);aspect-ratio:4 / 5">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ who.founder.src }}" alt="{{ who.founder.name }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ who.founder.src }}" alt="{{ who.founder.name }}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block">
         </div>
         <div style="padding-bottom:clamp(4px,1.5vw,18px)">
           <span style="font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--ac-gold)">{{ T.in_memory }}</span>
@@ -2215,7 +2214,7 @@
             <button onClick="{{ p.open }}" aria-expanded="{{ p.expanded }}" class="face-card" data-reveal="" style="transition-delay:{{ p.delay }};text-align:left;cursor:pointer;padding:0;border-radius:18px;overflow:hidden;border:1px solid {{ p.ring }};background:var(--surface);display:flex;flex-direction:column;transition:transform .22s cubic-bezier(.22,.61,.36,1),border-color .22s cubic-bezier(.22,.61,.36,1),opacity .75s cubic-bezier(.2,.7,.2,1)" style-hover="transform:translateY(-3px)">
               <div style="aspect-ratio:4 / 5;background:var(--surface2);border-bottom:1px solid var(--border);overflow:hidden">
                 <sc-if value="{{ p.hasPhoto }}" hint-placeholder-val="{{ false }}">
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ p.src }}" alt="{{ p.name }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;transition:transform .55s cubic-bezier(.22,.61,.36,1)" style-hover="transform:scale(1.03)">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ p.src }}" alt="{{ p.name }}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;transition:transform .55s cubic-bezier(.22,.61,.36,1)" style-hover="transform:scale(1.03)">
                 </sc-if>
                 <sc-if value="{{ p.noPhoto }}" hint-placeholder-val="{{ false }}">
                   <image-slot id="{{ p.photo }}" shape="rect" fit="cover" placeholder="{{ p.slotHint }}"></image-slot>
@@ -2294,7 +2293,7 @@
             <div data-reveal="" style="border-radius:18px;overflow:hidden;border:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.22,.61,.36,1),border-color .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-3px);box-shadow:0 26px 50px -40px var(--shadow)">
               <div style="aspect-ratio:4 / 5;background:var(--surface2);border-bottom:1px solid var(--border);overflow:hidden">
                 <sc-if value="{{ m.hasPhoto }}" hint-placeholder-val="{{ false }}">
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ m.src }}" alt="{{ m.name }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;transition:transform .55s cubic-bezier(.22,.61,.36,1)" style-hover="transform:scale(1.03)">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ m.src }}" alt="{{ m.name }}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;transition:transform .55s cubic-bezier(.22,.61,.36,1)" style-hover="transform:scale(1.03)">
                 </sc-if>
                 <sc-if value="{{ m.noPhoto }}" hint-placeholder-val="{{ true }}">
                   <image-slot id="{{ m.photo }}" shape="rect" fit="cover" placeholder="{{ m.slotHint }}"></image-slot>
@@ -32687,6 +32686,27 @@ class Component extends DCLogic {
       onError: error => { status.textContent = (error && error.message) || 'PayPal checkout could not be completed.'; },
     }).render(buttons);
   }
+  _loadRazorpay() {
+    if (typeof window === 'undefined') return Promise.reject(new Error('Secure checkout could not be loaded. Please refresh and try again.'));
+    if (window.Razorpay) return Promise.resolve(window.Razorpay);
+    if (!this._razorpayLoad) {
+      this._razorpayLoad = new Promise((resolve, reject) => {
+        const existing = document.querySelector('script[data-dehat-razorpay]');
+        const script = existing || document.createElement('script');
+        const done = () => window.Razorpay ? resolve(window.Razorpay) : reject(new Error('Secure checkout could not be loaded. Please refresh and try again.'));
+        script.addEventListener('load', done, { once: true });
+        script.addEventListener('error', () => reject(new Error('Secure checkout could not be loaded. Please refresh and try again.')), { once: true });
+        if (!existing) {
+          script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+          script.async = true;
+          script.defer = true;
+          script.dataset.dehatRazorpay = 'true';
+          document.head.appendChild(script);
+        }
+      });
+    }
+    return this._razorpayLoad;
+  }
   async _pay(P) {
     const p = this._payload(P);
     if (p.account === 'FCRA / foreign') {
@@ -32698,7 +32718,7 @@ class Component extends DCLogic {
       return;
     }
     try {
-      if (typeof window === 'undefined' || !window.Razorpay) throw new Error('Secure checkout could not be loaded. Please refresh and try again.');
+      const Razorpay = await this._loadRazorpay();
       const endpoint = p.frequency === 'once' ? '/api/donations/create-order' : '/api/donations/create-subscription';
       const response = await fetch(endpoint, {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -32735,7 +32755,7 @@ class Component extends DCLogic {
         },
       };
       Object.keys(checkout).forEach(k => checkout[k] == null && delete checkout[k]);
-      new window.Razorpay(checkout).open();
+      new Razorpay(checkout).open();
     } catch (error) {
       window.alert(error.message || 'Unable to open secure payment checkout.');
       this.setState({ dStage: 1 });
