@@ -34947,332 +34947,332 @@ const KS = {
   "whatTitle": "What would you like to do?",
   "whatSub": "Choose as many as apply.",
   "intents": [
-    {
-      "k": "partner",
-      "label": "Become a Corporate or Institutional Partner",
-      "for": [
-        "csr",
-        "foundation"
-      ],
-      "col": "#D2305C",
-      "detail": {
-        "u": "Form CSR-1 filings and Schedule VII allocations are decided months before the financial year turns; the block plan you fund in April is written in January.",
-        "what": "A named, multi-year partnership on one programme in one geography, published in the project register with its own budget line.",
-        "why": "Fragmented one-year grants buy activity. Systems that keep working after a grant ends need a partner who stays for the horizon the change takes.",
-        "when": "Start the conversation two quarters ahead of your CSR cycle, and the first year runs to a plan instead of a scramble.",
-        "where": "Bahraich and Shravasti in Uttar Pradesh, along the Indo-Nepal border, block by block.",
-        "how": "A scoping call, a due-diligence pack (12AB, 80G, CSR00001181, audited accounts with UDIN), a block plan, then a signed agreement."
-      }
-    },
-    {
-      "k": "consult",
-      "label": "Adopt One of Our Models, or Engage Our Community Resource Persons",
-      "for": [
-        "csr",
-        "govt",
-        "peer",
-        "foundation"
-      ],
-      "col": "#0E5565",
-      "detail": {
-        "u": "Models sitting inside one district help one district. The same model handed to a peer helps a state.",
-        "what": "DEHAT’s field-tested rights-based models, and its Community Resource Persons, made available to your team.",
-        "why": "Building an approach from scratch costs years. Adapting one that already survived contact with the field costs months.",
-        "when": "Best before your own programme design is frozen, while the operating model can still absorb what the field teaches.",
-        "where": "On your sites, or in Bahraich where the models are running and can be observed in place.",
-        "how": "A structured walkthrough of the model, then an engagement letter covering Community Resource Person time, training and review."
-      }
-    },
-    {
-      "k": "converge",
-      "label": "Work with Us on District Convergence or Referral",
-      "for": [
-        "govt",
-        "peer"
-      ],
-      "col": "#0E5565",
-      "detail": {
-        "u": "A child intercepted at a border checkpost needs a referral route that already exists. It cannot be built during the interception.",
-        "what": "Joint working with district administration on convergence, referral and evidence between departments.",
-        "why": "Protection fails at the seams between systems, not inside them. Convergence closes the seams before a case falls through.",
-        "when": "Ahead of a district plan cycle, or immediately where a referral gap has already shown itself.",
-        "where": "District and block offices across Bahraich and Shravasti, and the seven border districts the work reaches.",
-        "how": "Write to us with the department and the gap; we bring the field evidence and a proposed referral protocol."
-      }
-    },
-    {
-      "k": "research",
-      "label": "Become an Academic Research Partner",
-      "for": [
-        "research",
-        "foundation"
-      ],
-      "col": "#4F0E73",
-      "detail": {
-        "u": "Twenty years of field records exist in Bahraich. Every year they go unstudied is a year of evidence that never reaches the people writing policy.",
-        "what": "A named research partnership on a live programme - co-designed questions, access to field data and longitudinal records, and co-publication.",
-        "why": "Practice that is never studied repeats its own mistakes. Study that never touches practice generalises badly. The pairing corrects both.",
-        "when": "From the design stage, so measurement is built into the programme rather than fitted to it afterwards.",
-        "where": "Field sites across Bahraich and Shravasti, with the records held at the DEHAT office and available on site.",
-        "how": "Send a concept note and your ethics position. We reply with what data exists, in what form, over what period, and on what terms it can be used."
-      }
-    },
-    {
-      "k": "data",
-      "label": "Request Reports, Audited Accounts or Programme Data",
-      "for": [
-        "csr",
-        "foundation",
-        "govt",
-        "research",
-        "peer",
-        "individual"
-      ],
-      "col": "#4F0E73",
-      "detail": {
-        "u": "Anything published on this site can be traced to a signed document. Ask, and you get the document, not a summary.",
-        "what": "Audited accounts, evaluations, programme reports and the source records cited in the register.",
-        "why": "Trust that cannot be checked is not trust. Every claim here is meant to be verifiable by the person doubting it.",
-        "when": "Any time. Nothing here is embargoed and nothing waits on a funding conversation.",
-        "where": "Sent by email; originals available at the Bahraich office for anyone who wants to see them.",
-        "how": "Name the year, the programme or the document. If a figure is not yet digitised, we say so and send the scan."
-      }
-    },
-    {
-      "k": "visit",
-      "label": "Arrange a Field Visit in Bahraich or Shravasti",
-      "for": [
-        "csr",
-        "foundation",
-        "govt",
-        "research",
-        "student",
-        "peer",
-        "individual"
-      ],
-      "col": "#A92719",
-      "detail": {
-        "u": "Distance makes this abstract. One day in a Gram Panchayat makes it impossible to unsee.",
-        "what": "A field visit to the villages, schools and Child Parliaments where the work actually happens.",
-        "why": "Reports compress. A visit restores what compression removes: the people, the terrain and the constraints.",
-        "when": "Any month outside the monsoon peak; we will tell you honestly which weeks the field is reachable.",
-        "where": "Bahraich and Shravasti, roughly six hours from Lucknow, closer from Nepalgunj.",
-        "how": "Send rough dates and headcount. We plan the route, arrange local logistics and tell you what to expect."
-      }
-    },
-    {
-      "k": "fellow",
-      "label": "Become a DEHAT Fellow",
-      "for": [
-        "student",
-        "research"
-      ],
-      "col": "#556223",
-      "detail": {
-        "u": "A fellowship year spent close to a rights problem shapes a career more than a decade of describing one.",
-        "what": "A structured placement inside a programme, with real responsibility and a named supervisor.",
-        "why": "The sector needs people who have sat in a village meeting, not only people who have read about one.",
-        "when": "Cohorts follow the programme calendar; write early, since field placements are limited by supervision capacity.",
-        "where": "On site in Bahraich, with some functions partly remote.",
-        "how": "Tell us what you want to learn and what you can commit. We reply with what is open and what it demands."
-      }
-    },
-    {
-      "k": "intern",
-      "label": "Intern or Volunteer, on Site or Remotely",
-      "for": [
-        "student",
-        "individual",
-        "school"
-      ],
-      "col": "#556223",
-      "detail": {
-        "u": "Small, well-scoped contributions compound. Most of what a field team needs is finishable in weeks.",
-        "what": "A defined piece of work - field, research, documentation, design or translation - on site or remotely.",
-        "why": "Capacity is the binding constraint more often than money. An extra pair of hands moves a real deadline.",
-        "when": "Rolling. Remote work can start almost immediately; on-site placements need lead time.",
-        "where": "Bahraich, or anywhere with a connection for remote roles.",
-        "how": "Send your interest and availability; we match it against what is genuinely open rather than inventing a task."
-      }
-    },
-    {
-      "k": "career",
-      "label": "Apply for a Role",
-      "for": [
-        "student",
-        "individual",
-        "peer"
-      ],
-      "col": "#556223",
-      "detail": {
-        "u": "Field roles are filled by people who understood the work before they applied. That starts here.",
-        "what": "A paid role on the programme, operations, finance or documentation team.",
-        "why": "زیٖٹھِس کالس تام تَبدِیٖلی خٲطرٕ چھِ اَکہِ ٹیٖمٕچ ضروٗرَت یۄس سٟتؠ روٗزِ، نہٕ زِ چَکر مارَن والؠن صَلاحکارَن ہٕنٛز۔",
-        "when": "When a vacancy is open. Interest sent between vacancies is kept and revisited.",
-        "where": "Mostly Bahraich; some roles are hybrid.",
-        "how": "Send what you would want to work on. We reply with what is open and what the role actually involves day to day."
-      }
-    },
-    {
-      "k": "member",
-      "label": "Become a General Body Member",
-      "for": [
-        "community",
-        "individual",
-        "peer"
-      ],
-      "col": "#EAAE28",
-      "detail": {
-        "u": "The General Body is where accountability is exercised, not observed.",
-        "what": "Membership of the General Body of DEHAT, the society’s governing membership.",
-        "why": "An organisation answerable only to its funders drifts. Members ask questions funders do not.",
-        "when": "Applications are considered against the society’s governance calendar.",
-        "where": "Registered office, Bahraich, Uttar Pradesh.",
-        "how": "Write with your reason for joining; the process and obligations are explained before you commit."
-      }
-    },
-    {
-      "k": "give",
-      "label": "Invest Once, or Set up a Regular Investment",
-      "for": [
-        "individual",
-        "community",
-        "school"
-      ],
-      "col": "#EAAE28",
-      "detail": {
-        "u": "Field costs do not pause between grants. A regular investment is what keeps a team in place in the months when a grant has ended and the next has not started.",
-        "what": "A one-time or recurring investment, either unrestricted or directed to a named programme.",
-        "why": "Unrestricted money covers what restricted grants will not: salaries between cycles, travel to a village, the follow-up visit on a case that is still open.",
-        "when": "Any time. Recurring investment is the most useful of all, because it is the only kind that can be planned against.",
-        "where": "Indian contributions into the 80G account; foreign contributions only into the designated Foreign Contribution (Regulation) Act account, as the law requires.",
-        "how": "Choose an amount and a purpose on the Invest tab. The receipt and the statutory trail follow automatically, and the amount appears in the published ledger."
-      }
-    },
-    {
-      "k": "legacy",
-      "label": "Leave a Legacy Gift in Your Will",
-      "for": [
-        "individual",
-        "community"
-      ],
-      "col": "#4F0E73",
-      "detail": {
-        "u": "A legacy is the only gift that is decided calmly, years in advance, by someone with nothing left to gain from it. It is also the rarest, because almost nobody is ever asked.",
-        "what": "A bequest to DEHAT written into your will - a fixed sum, a share of the residue, or a named asset.",
-        "why": "Field work runs on money that arrives in one-year pieces. A legacy is the one form of support that can be committed to a horizon longer than any grant cycle, which is the horizon the change actually takes.",
-        "when": "Whenever you next write or revise your will. Telling us is optional, but it lets us plan and lets you say what the gift is for.",
-        "where": "The registered office in Bahraich holds the society’s registration, PAN and audited accounts - everything your lawyer will ask for.",
-        "how": "Ask us for the exact legal name, registration number and clause wording to give your lawyer. We do not draft wills and we do not give legal advice; we give your lawyer what they need and step back."
-      }
-    },
-    {
-      "k": "occasion",
-      "label": "Mark a Wedding, a Birthday or Another Occasion with Us",
-      "for": [
-        "individual",
-        "school",
-        "csr"
-      ],
-      "col": "#EAAE28",
-      "detail": {
-        "u": "A wedding, a birthday, an anniversary or a memorial redirected once can fund a whole cycle of one intervention.",
-        "what": "Guests asked to give to DEHAT instead of bringing shagun or a gift, on the occasion and in the name of the person or couple marking it.",
-        "why": "It turns a private day into a public one, and reaches people the field team would not otherwise meet - but only if every gift is given directly. We cannot receipt, or safely bank, a sum collected in cash or by hand and passed to us afterward; the rule that lets us give a giver their own tax receipt requires their name against their own amount.",
-        "when": "Four to six weeks of notice lets us prepare a page and the material, and, where possible, a voice from the field.",
-        "where": "Your venue, online, or in Bahraich. The giving itself always lands directly in DEHAT's own account - never in a personal one, even briefly, even in trust.",
-        "how": "Tell us the occasion and the date. We set up a page in your name that your guests give through directly, and we handle the receipts and the follow-up."
-      }
-    },
-    {
-      "k": "stage",
-      "label": "Dedicate a Show, a Set or a Release to DEHAT's Communities",
-      "for": [
-        "individual",
-        "peer"
-      ],
-      "col": "#D2305C",
-      "detail": {
-        "u": "A comedian's set, a musician's show or a filmmaker's premiere can hand this work an audience an appeal letter never reaches.",
-        "what": "A show, a screening, a livestream or a piece of released work dedicated to DEHAT's communities, with the audience giving directly rather than through the artist.",
-        "why": "An audience that already trusts an artist rarely meets an NGO on its own terms. What we cannot do is bank a sum an artist collected and hands over afterward - every gift has to be given by the person giving it, in their own name, for the same reason a wedding or birthday gift does.",
-        "when": "Tell us the date as soon as it is fixed; four weeks lets us prepare material and, for a livestream or a large show, a recorded message from the field.",
-        "where": "Wherever your audience already is - a venue, a stream, a release. The giving itself happens on DEHAT's own page, not at the door or in the artist's account.",
-        "how": "Tell us the date, the format and the expected reach. We give you a dedicated page and link to point your audience to, branding you can use without asking twice, and a running total you and they can both see."
-      }
-    },
-    {
-      "k": "meet",
-      "label": "Meet the People Your Support Has Reached",
-      "for": [
-        "individual",
-        "csr",
-        "foundation"
-      ],
-      "col": "#D2305C",
-      "detail": {
-        "u": "The distance between an investor and the person their money reached is usually never closed. It should be.",
-        "what": "A structured meeting - in person or online - with the people and communities your support reached.",
-        "why": "Accountability runs both ways. Seeing the outcome changes how the next decision is made.",
-        "when": "Arranged around the community’s calendar, never around the visitor’s convenience alone.",
-        "where": "In the villages themselves, or over a call where travel is not possible.",
-        "how": "Ask, and we arrange it with the consent of everyone who will be in the room."
-      }
-    },
-    {
-      "k": "workplace",
-      "label": "Commit Our Workplace Against Child Labour and Child Sexual Abuse",
-      "for": [
-        "csr",
-        "peer",
-        "school"
-      ],
-      "col": "#A92719",
-      "detail": {
-        "u": "Child labour and child sexual abuse do not stop at your supply chain’s edge. A written commitment is where the audit starts.",
-        "what": "A workplace commitment against child labour and child sexual abuse, with the policy and training to hold it.",
-        "why": "A stated position gives employees a route to raise something they would otherwise stay quiet about.",
-        "when": "Before an incident, not after. Policy written under pressure protects nobody.",
-        "where": "Your workplace and its allied spaces - contractors, vendors, transport, housing.",
-        "how": "We share the model commitment, help adapt it, and train the people who will have to act on it."
-      }
-    },
-    {
-      "k": "schoolprog",
-      "label": "Engage Our Students with Children Who Have Left School",
-      "for": [
-        "school"
-      ],
-      "col": "#0E5565",
-      "detail": {
-        "u": "A child who has left school is rarely brought back by an adult. They are brought back by another child.",
-        "what": "A structured engagement between your students and children who are out of school.",
-        "why": "Peer contact does what enrolment drives cannot: it makes returning feel ordinary rather than exceptional.",
-        "when": "Aligned to your academic calendar, with preparation before contact begins.",
-        "where": "Your school, and partner locations in Bahraich, connected online where distance requires it.",
-        "how": "We design the engagement with your teachers, brief both sets of children, and stay through the term."
-      }
-    },
-    {
-      "k": "fpo",
-      "label": "Bulk-buy from Sondhi Maati Farmer Producer Company",
-      "for": [
-        "csr",
-        "individual",
-        "peer",
-        "school"
-      ],
-      "col": "#556223",
-      "detail": {
-        "u": "Every bulk order placed with the Farmer Producer Company is income that reaches a farmer without an intermediary taking a share.",
-        "what": "Bulk purchase from Sondhi Maati Farmer Producer Company, the farmer-owned company set up out of the Climate Justice work.",
-        "why": "Procurement is a more durable transfer than a donation, because it creates a customer rather than a recipient.",
-        "when": "Order against the harvest calendar; we will tell you what is available and when.",
-        "where": "Produced by women farmers in Bahraich; delivery arranged from there.",
-        "how": "Tell us quantities and timelines and we connect you directly to the company."
-      }
+  {
+    "k": "partner",
+    "label": "کارپوریٹ یا ادارہ جاتی پارٹنر بنیں۔",
+    "for": [
+      "csr",
+      "foundation"
+    ],
+    "col": "#D2305C",
+    "detail": {
+      "u": "فارم CSR-1 فائلنگ تہٕ شیڈول VII مختص کرنے کا فیصلہ مالی سال کے بدلنے سے مہینوں پہلے چھُ کرنہٕ یِوان۔ آپ جو بلاک پلان اپریل مَنٛز فنڈ کرتے ہیں وہ جنوری مَنٛز لکھا جاتا ہے۔",
+      "what": "ایک جغرافیہ مَنٛز ایک پروگرام پؠٹھ ایک نامزد، کثیر سالہ شراکت داری، جو اس کے اپنے بجٹ لائن سٟتؠ پروجیکٹ رجسٹر مَنٛز شائع چھِ گژھان۔",
+      "why": "بکھری ہوئی ایک سال کی گرانٹس سرگرمیاں خریدیں۔ وہ سسٹم جو گرانٹ ختم ہونے پتہٕ بھی کام کرتے رہتے ہیں انہیں ایک پارٹنر کی ضرورت چھِ گژھان جو تبدیلی کے افق تک قائم رہے۔",
+      "when": "اپنے CSR سائیکل سے دو چوتھائی پہلے بات چیت شروع کریں، تہٕ پہلا سال جھگڑے کے بجائے ایک منصوبہ پؠٹھ چلتا ہے۔",
+      "where": "اتر پردیش مَنٛز بہرائچ تہٕ شراوستی، ہند-نیپال سرحد سٟتؠ، بلاک بہ بلاک۔",
+      "how": "ایک اسکوپنگ کال، ڈیو ڈیلیجنس پیک (12AB, 80G, CSR00001181، UDIN سٟتؠ آڈٹ شدہ اکاؤنٹس)، ایک بلاک پلان، پھر ایک دستخط شدہ معاہدہ۔"
     }
-  ],
+  },
+  {
+    "k": "consult",
+    "label": "ہمارے کسی ایک ماڈل کو اپنائیں، یا ہمارے کمیونٹی ریسورس پرسن کو شامل کریں۔",
+    "for": [
+      "csr",
+      "govt",
+      "peer",
+      "foundation"
+    ],
+    "col": "#0E5565",
+    "detail": {
+      "u": "ایک ضلع اندر بیٹھے ماڈلز ایک ضلع کی مدد کرتے ہیں۔ وہی ماڈل جو ایک ہم مرتبہ کے حوالے چھُ کرنہٕ یِوان ایک ریاست کی مدد کرتا ہے۔",
+      "what": "DEHAT کے فیلڈ ٹیسٹ شدہ حقوق پؠٹھ مبنی ماڈلز، تہٕ اس کے کمیونٹی ریسورس پرسنز، آپ کی ٹیم کو دستیاب کرائے گئے ہیں۔",
+      "why": "شروع سے نقطہ نظر کی تعمیر مَنٛز سالوں کی لاگت آتی ہے۔ فیلڈ سٟتؠ رابطے مَنٛز رہنے والے کو ڈھالنے مَنٛز مہینوں لگتے ہیں۔",
+      "when": "آپ کے اپنے پروگرام کے ڈیزائن کو منجمد کرنے سے پہلے سب سے بہتر، جبکہ آپریٹنگ ماڈل فیلڈ تعٲلیٖمات کو اب بھی جذب کر سکتا ہے۔",
+      "where": "آپ کی سائٹس پؠٹھ، یا بہرائچ مَنٛز جہاں ماڈلز چل رہے ہیں تہٕ جگہ جگہ دیکھے جا سکتے ہیں۔",
+      "how": "ماڈل کا ایک منظم واک تھرو، پھر ایک منگنی خط جس مَنٛز کمیونٹی ریسورس پرسن کے وقت، تربیت تہٕ جائزہ کا احاطہ کرنہٕ چھُ آمت۔"
+    }
+  },
+  {
+    "k": "converge",
+    "label": "ڈسٹرکٹ کنورجینس یا ریفرل پؠٹھ ہمارے ساتھ کام کریں۔",
+    "for": [
+      "govt",
+      "peer"
+    ],
+    "col": "#0E5565",
+    "detail": {
+      "u": "سرحدی چیک پوسٹ پؠٹھ روکے جانے والے بچے کو ریفرل روٹ کی ضرورت چھِ گژھان جو پہلے سے موجود ہو۔ یہ مداخلت دوران تعمیر نہیں کیا جا سکتا.",
+      "what": "محکموں کے درمیان کنورجنس، ریفرل تہٕ شواہد پؠٹھ ضلعی انتظامیہ سٟتؠ مشترکہ کام کرنا۔",
+      "why": "نظام کے درمیان سیون پؠٹھ تحفظ ناکام ہوجاتا ہے، ان اندر نہیں۔ کنورجنسی کیس کے گرنے سے پہلے سیون کو بند کر دیتی ہے۔",
+      "when": "ڈسٹرکٹ پلان سائیکل سے پہلے، یا فوری طور پؠٹھ جہاں ریفرل گیپ پہلے ہی ظاہر ہو چکا ہے۔",
+      "where": "بہرائچ تہٕ شراوستی کے ضلع تہٕ بلاک دفاتر تہٕ سات سرحدی اضلاع تک کام پہنچتا ہے۔",
+      "how": "محکمہ تہٕ فرق سٟتؠ ہمَنٛز لکھیں۔ ہم فیلڈ شواہد تہٕ ایک مجوزہ ریفرل پروٹوکول لاتے ہیں۔"
+    }
+  },
+  {
+    "k": "research",
+    "label": "اکیڈمک ریسرچ پارٹنر بنیں۔",
+    "for": [
+      "research",
+      "foundation"
+    ],
+    "col": "#4F0E73",
+    "detail": {
+      "u": "بہرائچ مَنٛز بیس سال کا فیلڈ ریکارڈ موجود ہے۔ ہر سال وہ بغیر پڑھے چلے جاتے ہیں ایک ایسا ثبوت کا سال ہے جو پالیسی لکھنے والے لوگوں تک کبھی نہیں پہنچتا۔",
+      "what": "لائیو پروگرام پؠٹھ ایک نامزد تحقیقی شراکت داری - شریک ڈیزائن کردہ سوالات، فیلڈ ڈیٹا تک رسائی تہٕ طول بلد ریکارڈ، تہٕ مشترکہ اشاعت۔",
+      "why": "وہ مشق جس کا کبھی مطالعہ نہیں کیا جاتا وہ اپنی غلطیوں کو دہراتا ہے۔ وہ مطالعہ جو کبھی پریکٹس کو نہیں چھوتا ہے بری طرح عام کرتا ہے۔ جوڑا دونوں کو درست کرتا ہے۔",
+      "when": "ڈیزائن کے مرحلے سے، لہذا پیمائش کو پروگرام مَنٛز شامل چھُ کرنہٕ یِوان بجائے اس کے کہ بعد مَنٛز اس مَنٛز فٹ کیا جائے۔",
+      "where": "بہرائچ تہٕ شراوستی مَنٛز فیلڈ سائٹس، DEHAT آفس مَنٛز موجود ریکارڈ سٟتؠ تہٕ سائٹ پؠٹھ دستیاب ہے۔",
+      "how": "ایک تصوراتی نوٹ تہٕ اپنی اخلاقیات کی پوزیشن بھیجیں۔ ہم جواب دیتے ہیں کہ کون سا ڈیٹا موجود ہے، کس شکل مَنٛز، کس مدت مَنٛز، تہٕ اسے کن شرائط پؠٹھ استعمال کیا جا سکتا ہے۔"
+    }
+  },
+  {
+    "k": "data",
+    "label": "رپورٹس، آڈٹ شدہ اکاؤنٹس یا پروگرام ڈیٹا کی درخواست کریں۔",
+    "for": [
+      "csr",
+      "foundation",
+      "govt",
+      "research",
+      "peer",
+      "individual"
+    ],
+    "col": "#4F0E73",
+    "detail": {
+      "u": "اس سائٹ پؠٹھ شائع ہونے والی کسی بھی چیز کو دستخط شدہ دستاویز سے ٹریس کیا جا سکتا ہے۔ پوچھیں، تہٕ آپ کو دستاویز ملے گی، خلاصہ نہیں۔",
+      "what": "آڈٹ شدہ کھاتوں، تشخیصات، پروگرام کی رپورٹس تہٕ رجسٹر مَنٛز درج سورس ریکارڈز۔",
+      "why": "اعتماد جس کی جانچ نہیں کی جاسکتی ہے وہ اعتماد نہیں ہے۔ یہاں ہر دعوے کا مطلب یہ ہے کہ اس پؠٹھ شک کرنے والے شخص کی تصدیق کی جائے۔",
+      "when": "کسی بھی وقت۔ یہاں کسی بھی چیز پؠٹھ پابندی نہیں ہے تہٕ کچھ بھی فنڈنگ ​​گفتگو کا انتظار نہیں کرتا ہے۔",
+      "where": "ای میل کِس ذٔریعہٕ بھیجا گیا؛ اصل مواد بہرائچ کے دفتر مَنٛز ہر اس شخص خٲطرٕ دستیاب ہے جو انہیں دیکھنا چاہتا ہے۔",
+      "how": "سال، پروگرام یا دستاویز کا نام دیں۔ اگر کسی اعداد و شمار کو ابھی تک ڈیجیٹائز نہیں کرنہٕ چھُ آمت، تو ہم کہتے ہیں تہٕ اسکین بھیج دیتے ہیں۔"
+    }
+  },
+  {
+    "k": "visit",
+    "label": "بہرائچ یا شراوستی مَنٛز فیلڈ وزٹ کا اہتمام کریں۔",
+    "for": [
+      "csr",
+      "foundation",
+      "govt",
+      "research",
+      "student",
+      "peer",
+      "individual"
+    ],
+    "col": "#A92719",
+    "detail": {
+      "u": "فاصلہ اس کو خلاصہ بناتا ہے۔ ایک گرام پنچایت مَنٛز ایک دن اسے دیکھنا ناممکن بنا دیتا ہے۔",
+      "what": "گامن، سکوٗلن تہٕ چائلڈ پارلیمنٹس کا فیلڈ وزٹ جہاں کام دراصل چھُ گژھان۔",
+      "why": "رپورٹس کمپریس۔ ایک دورہ بحال کرتا ہے جو کمپریشن ہٹاتا ہے: لوگ، خطہ تہٕ رکاوٹیں۔",
+      "when": "مانسون کی چوٹی سے باہر کوئی بھی مہینہ؛ ہم آپ کو ایمانداری سے بتائیں گے کہ کن ہفتوں مَنٛز فیلڈ تک رسائی ممکن ہے۔",
+      "where": "بہرائچ تہٕ شراوستی، لکھنؤ سے تقریباً چھ گھنٹے، نیپال گنج سے قریب۔",
+      "how": "کھردری تاریخیں تہٕ ہیڈ کاؤنٹ بھیجیں۔ ہم راستے کی منصوبہ بندی کرتے ہیں، مقامی لاجسٹکس کا بندوبست کرتے ہیں تہٕ آپ کو بتاتے ہیں کہ کیا توقع رکھی جائے۔"
+    }
+  },
+  {
+    "k": "fellow",
+    "label": "DEHAT فیلو بنیں۔",
+    "for": [
+      "student",
+      "research"
+    ],
+    "col": "#556223",
+    "detail": {
+      "u": "حقوق کے مسئلے نزدیٖک گزارا گیا فیلوشپ سال ایک دہائی کھۄتہٕ زِیٛادٕ کی وضاحت کرنے والے کیریئر کو تشکیل دیتا ہے۔",
+      "what": "ایک پروگرام اندر ایک منظم جگہ کا تعین، حقیقی ذمہ داری تہٕ ایک نامزد سپروائزر سٟتؠ۔",
+      "why": "اس شعبے کو ایسے لوگوں کی ضرورت ہے جو گاؤں کی میٹنگ مَنٛز بیٹھے ہوں، نہ صرف ایسے لوگوں کی جنہوں نے ایک کے بارے مَنٛز پڑھا ہو۔",
+      "when": "کوہورٹس پروگرام کیلنڈر کی پیروی کرتے ہیں۔ جلد لکھیں، کیونکہ فیلڈ جاےیں نگرانی کی صلاحیت سے محدود ہیں۔",
+      "where": "بہرائچ مَنٛز سائٹ پؠٹھ، کچھ افعال جزوی طور پؠٹھ دور دراز سٟتؠ۔",
+      "how": "ہمَنٛز بتائیں کہ آپ کیا سیکھنا چاہتے ہیں تہٕ آپ کیا کر سکتے ہیں۔ ہم جواب دیتے ہیں کہ کیا کھلا ہے تہٕ اس کا کیا مطالبہ ہے۔"
+    }
+  },
+  {
+    "k": "intern",
+    "label": "انٹرن یا رضاکار، سائٹ پؠٹھ یا دور سے",
+    "for": [
+      "student",
+      "individual",
+      "school"
+    ],
+    "col": "#556223",
+    "detail": {
+      "u": "چھوٹے، اچھی طرح سے دائرہ کار کی شراکت کا مرکب۔ فیلڈ ٹیم کو جس چیز کی ضرورت چھِ گژھان ان مَنٛز کھۄتہٕ زِیٛادٕ تر ہفتوں مَنٛز ختم ہو جاتی ہے۔",
+      "what": "کام کا ایک متعین حصہ - فیلڈ، تحقیق، دستاویزات، ڈیزائن یا ترجمہ - سائٹ پؠٹھ یا دور سے۔",
+      "why": "صلاحیت پیسے کھۄتہٕ زِیٛادٕ کثرت سے پابند رکاوٹ ہے۔ ہاتھوں کا ایک اضافی جوڑا ایک حقیقی ڈیڈ لائن منتقل کرتا ہے۔",
+      "when": "رولنگ دور دراز کا کام تقریباً فوراً شروع ہو سکتا ہے۔ سائٹ پؠٹھ تعیناتیوں کو لیڈ ٹائم کی ضرورت چھِ گژھان۔",
+      "where": "بہرائچ، یا کہیں بھی دور دراز کے کرداروں خٲطرٕ کنکشن سٟتؠ۔",
+      "how": "اپنی دلچسپی تہٕ دستیابی بھیجیں۔ ہم اسے کسی کام کی ایجاد کرنے کے بجائے حقیقی طور پؠٹھ کھلی چیزوں خِلاف میچ کرتے ہیں۔"
+    }
+  },
+  {
+    "k": "career",
+    "label": "رول خٲطرٕ درخواست دیں۔",
+    "for": [
+      "student",
+      "individual",
+      "peer"
+    ],
+    "col": "#556223",
+    "detail": {
+      "u": "فیلڈ رولز ان لوگوں کے ذریعہ بھرے جاتے ہیں جو درخواست دینے سے پہلے کام کو سمجھتے تھے۔ یہ یہاں سے شروع چھُ گژھان۔",
+      "what": "پروگرام، آپریشنز، فنانس یا دستاویزی ٹیم پؠٹھ ایک ادا شدہ کردار۔",
+      "why": "طویل مدتی تبدیلی خٲطرٕ ایسی ٹیم کی ضرورت چھِ گژھان جو مستقل قیام کرے، نہ کہ دورہ کرنے والے مشیروں کی۔",
+      "when": "جب کوئی آسامی کھلی ہو۔ خالی آسامیوں کے درمیان بھیجا گیا سود رکھا جاتا ہے تہٕ اس پؠٹھ نظرثانی چھِ کرنہٕ یِوان۔",
+      "where": "زیادہ تر بہرائچ؛ کچھ کردار ہائبرڈ ہیں۔",
+      "how": "آپ جس پؠٹھ کام کرنا چاہتے ہیں اسے بھیجیں۔ ہم اس سٟتؠ جواب دیتے ہیں کہ کیا کھلا ہے تہٕ کیا کردار درحقیقت روز بروز شامل چھُ گژھان۔"
+    }
+  },
+  {
+    "k": "member",
+    "label": "جنرل باڈی کے ممبر بنیں۔",
+    "for": [
+      "community",
+      "individual",
+      "peer"
+    ],
+    "col": "#EAAE28",
+    "detail": {
+      "u": "جنرل باڈی وہ ہے جہاں احتساب چھُ کرنہٕ یِوان، مشاہدہ نہیں کیا جاتا۔",
+      "what": "DEHAT کی جنرل باڈی کی رکنیت، سوسائٹی کی گورننگ ممبرشپ۔",
+      "why": "ایک تنظیم جو صرف اپنے فنڈرز خٲطرٕ جوابدہ ہے۔ اراکین ایسے سوالات پوچھتے ہیں جو فنڈرز نہیں کرتے۔",
+      "when": "درخواستوں کو سوسائٹی کے گورننس کیلنڈر خِلاف سمجھا جاتا ہے۔",
+      "where": "رجسٹرڈ آفس، بہرائچ، اتر پردیش۔",
+      "how": "اپنی شمولیت کی وجہ لکھیں؛ آپ کے ارتکاب سے پہلے عمل تہٕ ذمہ داریوں کی وضاحت چھِ کرنہٕ یِوان۔"
+    }
+  },
+  {
+    "k": "give",
+    "label": "ایک بار سرمایہ کاری کریں، یا باقاعدہ سرمایہ کاری قائم کریں۔",
+    "for": [
+      "individual",
+      "community",
+      "school"
+    ],
+    "col": "#EAAE28",
+    "detail": {
+      "u": "گرانٹس کے درمیان فیلڈ اخراجات نہیں رکتے۔ ایک باقاعدہ سرمایہ کاری وہ ہے جو ٹیم کو ان مہینوں مَنٛز برقرار رکھتی ہے جب گرانٹ ختم ہو جاتی ہے تہٕ اگلی شروع نہیں چھِ گژھان۔",
+      "what": "ایک بار یا بار بار چلنے والی سرمایہ کاری، یا تو غیر محدود یا کسی نامزد پروگرام کی طرف ہدایت کرنہٕ چھِ آمژ۔",
+      "why": "غیر محدود رقم کا احاطہ کرنہٕ چھُ آمت جو محدود گرانٹس نہیں کریں گے: سائیکلوں کے درمیان تنخواہ، گاؤں کا سفر، کسی کیس پؠٹھ فالو اپ دورہ جو ابھی تک کھلا ہے۔",
+      "when": "کسی بھی وقت۔ بار بار چلنے والی سرمایہ کاری سب کھۄتہٕ زِیٛادٕ مفید ہے، کیونکہ یہ واحد قسم ہے جس خِلاف منصوبہ بندی کی جا سکتی ہے۔",
+      "where": "80G اکاؤنٹ مَنٛز ہندوستانی تعاون؛ غیر ملکی شراکتیں صرف نامزد فارن کنٹری بیوشن (ریگولیشن) ایکٹ اکاؤنٹ مَنٛز، جیسا کہ قانون کی ضرورت ہے۔",
+      "how": "انویسٹ ٹیب پؠٹھ ایک رقم تہٕ مقصد کا انتخاب کریں۔ رسید تہٕ قانونی پگڈنڈی خود بخود چلتی ہے، تہٕ رقم شائع شدہ لیجر مَنٛز ظاہر چھِ گژھان۔"
+    }
+  },
+  {
+    "k": "legacy",
+    "label": "اپنی وصیت مَنٛز میراثی تحفہ چھوڑیں۔",
+    "for": [
+      "individual",
+      "community"
+    ],
+    "col": "#4F0E73",
+    "detail": {
+      "u": "میراث وہ واحد تحفہ ہے جس کا فیصلہ سکون سے، برسوں پہلے، کسی ایسے شخص کِس ذٔریعہٕ چھُ کرنہٕ یِوان جس سے حاصل کرنے خٲطرٕ کچھ بھی نہ بچا ہو۔ یہ سب سے نایاب بھی ہے، کیونکہ تقریباً کسی سے کبھی نہیں پوچھا جاتا۔",
+      "what": "آپ کی وصیت مَنٛز لکھی ہوئی DEHAT کی وصیت - ایک مقررہ رقم، باقیات کا حصہ، یا ایک نامزد اثاثہ۔",
+      "why": "فیلڈ ورک پیسے پؠٹھ چلتا ہے جو ایک سال کے ٹکڑوں مَنٛز آتا ہے۔ وراثت حمایت کی ایک شکل ہے جو کسی بھی گرانٹ سائیکل کھۄتہٕ زِیٛادٕ طویل افق پؠٹھ قائم کی جا سکتی ہے، جو افق ہے جو تبدیلی درحقیقت لیتی ہے۔",
+      "when": "جب بھی آپ اگلی تحریر لکھیں یا اپنی مرضی پؠٹھ نظر ثانی کریں۔ ہمَنٛز بتانا اختیاری ہے، لیکن یہ ہمَنٛز منصوبہ بندی کرنے دیتا ہے تہٕ آپ کو یہ بتانے دیتا ہے کہ تحفہ کس لیے ہے۔",
+      "where": "بہرائچ مَنٛز رجسٹرڈ آفس سوسائٹی کا رجسٹریشن، PAN تہٕ آڈٹ شدہ اکاؤنٹس رکھتا ہے - وہ سب کچھ جو آپ کا وکیل پوچھے گا۔",
+      "how": "اپنے وکیل کو دینے خٲطرٕ ہم سے درست قانونی نام، رجسٹریشن نمبر تہٕ شق کے الفاظ خٲطرٕ پوچھیں۔ ہم وصیت کا مسودہ نہیں بناتے ہیں تہٕ ہم قانونی مشورہ نہیں دیتے ہیں۔ ہم آپ کے وکیل کو وہ دیتے ہیں جس کی انہیں ضرورت ہے تہٕ پیچھے ہٹ جاتے ہیں۔"
+    }
+  },
+  {
+    "k": "occasion",
+    "label": "ہمارے ساتھ شادی، سالگرہ یا کسی تہٕ موقع کو نشان زد کریں۔",
+    "for": [
+      "individual",
+      "school",
+      "csr"
+    ],
+    "col": "#EAAE28",
+    "detail": {
+      "u": "ایک شادی، ایک سالگرہ، ایک سالگرہ یا ایک بار ری ڈائریکٹ کرنہٕ آیہِ یادگار ایک مداخلت کے پورے دور کو فنڈ دے سکتی ہے۔",
+      "what": "مہمانوں نے اس موقع پؠٹھ شگن یا تحفہ لانے کے بجائے DEHAT کو دینے کو کہا تہٕ اس پؠٹھ نشان لگانے والے شخص یا جوڑے کے نام پر۔",
+      "why": "یہ ایک نجی دن کو عوامی دن مَنٛز بدل دیتا ہے، تہٕ لوگوں تک پہنچتا ہے جو فیلڈ ٹیم دوسری صورت مَنٛز نہیں ملے گی - لیکن صرف اس صورت مَنٛز جب ہر تحفہ براہ راست دیا جائے۔ ہم نقد یا ہاتھ سے جمع کرنہٕ آیہِ تہٕ بعد مَنٛز ہمارے پاس بھیجی گئی رقم کی رسید، یا محفوظ طریقے سے بینک نہیں کر سکتے۔ قاعدہ جو ہمَنٛز دینے والے کو ان کی اپنی ٹیکس رسید دینے دیتا ہے اس خٲطرٕ ان کا نام ان کی اپنی رقم کے مقابلے مَنٛز درکار ہے۔",
+      "when": "چار سے چھ ہفتوں کا نوٹس ہمَنٛز ایک صفحہ تہٕ مواد تیار کرنے دیتا ہے، اور، جہاں ممکن ہو، فیلڈ سے ایک آواز۔",
+      "where": "آپ کا مقام، آن لائن، یا بہرائچ مَنٛز۔ دینا ہمیشہ براہ راست DEHAT کے اپنے اکاؤنٹ مَنٛز آتا ہے - کبھی بھی ذاتی مَنٛز، یہاں تک کہ مختصر طور پؠٹھ، یہاں تک کہ اعتماد مَنٛز بھی۔",
+      "how": "ہمَنٛز موقع تہٕ تاریخ بتائیں۔ ہم آپ کے نام پؠٹھ ایک صفحہ ترتیب دیتے ہیں جسے آپ کے مہمان براہ راست دیتے ہیں، تہٕ ہم رسیدیں تہٕ فالو اپ سنبھالتے ہیں۔"
+    }
+  },
+  {
+    "k": "stage",
+    "label": "DEHAT کی کمیونٹیز خٲطرٕ ایک شو، سیٹ یا ریلیز وقف کریں۔",
+    "for": [
+      "individual",
+      "peer"
+    ],
+    "col": "#D2305C",
+    "detail": {
+      "u": "ایک کامیڈین کا سیٹ، ایک موسیقار کا شو یا فلم ساز کا پریمیئر اس کام کو سامعین تک پہنچا سکتا ہے جس کی اپیل کا خط کبھی نہیں پہنچتا۔",
+      "what": "ایک شو، اسکریننگ، لائیو اسٹریم یا جاری کردہ کام کا ایک ٹکڑا جو DEHAT کی کمیونٹیز خٲطرٕ وقف ہے، جس مَنٛز سامعین فنکار کِس ذٔریعہٕ دینے کے بجائے براہ راست دے رہے ہیں۔",
+      "why": "ایک سامعین جو پہلے سے ہی کسی فنکار پؠٹھ بھروسہ کرتا ہے شاذ و نادر ہی کسی این جی او کو اپنی شرائط پؠٹھ پورا کرتا ہے۔ جو ہم نہیں کر سکتے وہ یہ ہے کہ ایک فنکار نے جمع کرنہٕ آیہِ رقم کو بینک مَنٛز جمع کر پتہٕ مَنٛز حوالے کیا - ہر تحفہ دینے والے کو اپنے نام پؠٹھ دینا چھُ گژھان، اسی وجہ سے شادی یا سالگرہ کا تحفہ چھُ گژھان۔",
+      "when": "تاریخ طے ہوتے ہی ہمَنٛز بتائیں۔ چار ہفتے ہمَنٛز مواد تیار کرنے دیتے ہیں اور، لائیو سٹریم یا بڑے شو خٲطرٕ، فیلڈ سے ایک ریکارڈ شدہ پیغام۔",
+      "where": "جہاں کہیں بھی آپ کے سامعین پہلے سے موجود ہیں - ایک مقام، ایک سلسلہ، ایک ریلیز۔ دینا خود DEHAT کے اپنے صفحے پؠٹھ چھُ گژھان، دروازے پؠٹھ یا فنکار کے اکاؤنٹ مَنٛز نہیں۔",
+      "how": "ہمَنٛز تاریخ، فارمیٹ تہٕ متوقع پہنچ بتائیں۔ ہم آپ کو ایک سرشار صفحہ تہٕ لنک دیتے ہیں جو آپ کے سامعین کی طرف اشارہ کرتے ہیں، برانڈنگ جو آپ دو بار پوچھے بغیر استعمال کر سکتے ہیں، تہٕ آپ تہٕ وہ دونوں دیکھ سکتے ہیں۔"
+    }
+  },
+  {
+    "k": "meet",
+    "label": "ان لوگوں سے ملیں جن تک آپ کی حمایت پہنچی ہے۔",
+    "for": [
+      "individual",
+      "csr",
+      "foundation"
+    ],
+    "col": "#D2305C",
+    "detail": {
+      "u": "ایک سرمایہ کار تہٕ اس شخص کے درمیان فاصلہ جس تک ان کی رقم پہنچتی ہے عام طور پؠٹھ کبھی بند نہیں ہوتی۔ یہ ہونا چاہیے۔",
+      "what": "ایک منظم میٹنگ - ذاتی طور پؠٹھ یا آن لائن - ان لوگوں تہٕ کمیونٹیز سٟتؠ جن تک آپ کی حمایت پہنچی ہے۔",
+      "why": "احتساب دونوں طریقوں سے چلتا ہے۔ نتیجہ دیکھ کر اگلا فیصلہ کرنے کا طریقہ بدل جاتا ہے۔",
+      "when": "کمیونٹی کے کیلنڈر کے ارد گرد ترتیب دیا گیا، کبھی بھی اکیلے مہمان کی سہولت کے ارد گرد نہیں.",
+      "where": "خود گام مَنٛز، یا کسی کال پؠٹھ جہاں سفر ممکن نہیں ہے۔",
+      "how": "پوچھیں، تہٕ ہم کمرے مَنٛز موجود ہر فرد کی رضامندی سے اس کا بندوبست کرتے ہیں۔"
+    }
+  },
+  {
+    "k": "workplace",
+    "label": "چائلڈ لیبر تہٕ بچن ہٕنٛدؠ جنسی استحصال خِلاف ہمارے کام جاے کا عزم کریں۔",
+    "for": [
+      "csr",
+      "peer",
+      "school"
+    ],
+    "col": "#A92719",
+    "detail": {
+      "u": "چائلڈ لیبر تہٕ بچن ہُنٛد جنسی استحصال آپ کی سپلائی چین کے کنارے پؠٹھ نہیں رکتا۔ ایک تحریری عہد وہ ہے جہاں آڈٹ شروع چھُ گژھان۔",
+      "what": "چائلڈ لیبر تہٕ بچن ہٕنٛدؠ جنسی استحصال خِلاف کام جاے پؠٹھ عزم، اس کے انعقاد کی پالیسی تہٕ تربیت سٟتؠ۔",
+      "why": "بیان کردہ پوزیشن ملازمین کو کچھ اٹھانے کا راستہ فراہم کرتی ہے کہ وہ بصورت دیگر خاموش رہیں گے۔",
+      "when": "کسی واقعے سے پہلے، بعد مَنٛز نہیں۔ دباؤ مَنٛز لکھی گئی پالیسی کسی تحفّظ نہیں کرتی۔",
+      "where": "آپ کے کام جاے تہٕ اس سے منسلک جگہیں - ٹھیکیدار، دکاندار، ٹرانسپورٹ، ہاؤسنگ۔",
+      "how": "ہم ماڈل کے عزم کا اشتراک کرتے ہیں، اسے ڈھالنے مَنٛز مدد کرتے ہیں، تہٕ ان لوگوں کو تربیت دیتے ہیں جنہیں اس پؠٹھ عمل کرنا ہوگا۔"
+    }
+  },
+  {
+    "k": "schoolprog",
+    "label": "ہمارے طلباء کو ان بچن سٟتؠ شامل کریں جنہوں نے سکوٗل چھوڑ دیا ہے۔",
+    "for": [
+      "school"
+    ],
+    "col": "#0E5565",
+    "detail": {
+      "u": "ایک بچہ جس نے سکوٗل چھوڑ دیا ہے شاذ و نادر ہی کوئی بالغ شخص واپس لاتا ہے۔ انہیں ایک تہٕ بچہ واپس لاتا ہے۔",
+      "what": "آپ کے طلباء تہٕ سکوٗل سے باہر بچن ہٕنٛدؠ درمیان ایک منظم مصروفیت۔",
+      "why": "ہم مرتبہ رابطہ وہ کام کرتا ہے جو اندراج کی ڈرائیوز نہیں کر سکتی: یہ واپسی کو غیر معمولی کے بجائے عام محسوس کرتا ہے۔",
+      "when": "رابطہ شروع ہونے سے پہلے تیاری سٟتؠ، آپ کے تعلیمی کیلنڈر کے مطابق۔",
+      "where": "آپ کا سکوٗل، تہٕ بہرائچ مَنٛز پارٹنر کے مقامات، آن لائن جڑے ہوئے ہیں جہاں فاصلے کی ضرورت ہے۔",
+      "how": "ہم آپ کے اساتذہ سٟتؠ مشغولیت کو ڈیزائن کرتے ہیں، بچن ہٕنٛدؠ دونوں مجموعوں کو مختصر کرتے ہیں، تہٕ مدت پوری کرتے ہیں۔"
+    }
+  },
+  {
+    "k": "fpo",
+    "label": "سوندھی ماٹی فارمر پروڈیوسر کمپنی سے بلک خریدیں۔",
+    "for": [
+      "csr",
+      "individual",
+      "peer",
+      "school"
+    ],
+    "col": "#556223",
+    "detail": {
+      "u": "فارمر پروڈیوسر کمپنی سٟتؠ دیا جانے والا ہر بلک آرڈر وہ آمدنی ہے جو کسی بیچوان کو حصہ لیے بغیر کسان تک پہنچتی ہے۔",
+      "what": "سوندھی ماٹی فارمر پروڈیوسر کمپنی سے بڑے پیمانے پؠٹھ خریداری، جو کسانوں کی ملکیت والی کمپنی ہے جو موسمیاتی انصاف کے کام سے باہر بنائی گئی ہے۔",
+      "why": "حصولی ایک عطیہ کھۄتہٕ زِیٛادٕ پائیدار منتقلی ہے، کیونکہ یہ وصول کنندہ کے بجائے گاہک پیدا کرتا ہے۔",
+      "when": "فصل کیلنڈر خِلاف آرڈر؛ ہم آپ کو بتائیں گے کہ کیا دستیاب ہے تہٕ کب۔",
+      "where": "بہرائچ مَنٛز زنانن کسانوں کے ذریعہ تیار کردہ؛ وہاں سے ڈیلیوری کا انتظام کرنہٕ چھُ آمت۔",
+      "how": "ہمَنٛز مقدار تہٕ ٹائم لائنز بتائیں تہٕ ہم آپ کو براہ راست کمپنی سے جوڑ دیتے ہیں۔"
+    }
+  }
+],
   "sopTitle": "In a line or two - what are you hoping will change?",
   "sopSub": "This is the only part we read closely. Write it however you like; there is no right answer.",
   "sopPlaceholder": "For example: we want our Corporate Social Responsibility spend in Bahraich to go somewhere the evidence is public, and we would like to start with one block.",
