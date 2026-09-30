@@ -31091,24 +31091,24 @@ const BRX = {
   "intents": [
     {
       "k": "partner",
-      "label": "Become a Corporate or Institutional Partner",
+      "label": "कर्पोरेट एबा संस्थागत बिगोमा जानाय",
       "for": [
         "csr",
         "foundation"
       ],
       "col": "#D2305C",
       "detail": {
-        "u": "Form CSR-1 filings and Schedule VII allocations are decided months before the financial year turns; the block plan you fund in April is written in January.",
-        "what": "A named, multi-year partnership on one programme in one geography, published in the project register with its own budget line.",
-        "why": "Fragmented one-year grants buy activity. Systems that keep working after a grant ends need a partner who stays for the horizon the change takes.",
-        "when": "Start the conversation two quarters ahead of your CSR cycle, and the first year runs to a plan instead of a scramble.",
-        "where": "Bahraich and Shravasti in Uttar Pradesh, along the Indo-Nepal border, block by block.",
-        "how": "A scoping call, a due-diligence pack (12AB, 80G, CSR00001181, audited accounts with UDIN), a block plan, then a signed agreement."
+        "u": "फराम CSR-1 लिरनाय आरो Schedule VII नि राननायखौ रांखान्थियारि बोसोर जागायजेननायनि माखासे दान सिगाङै थिरां खालामनाय जायो; अप्रिलाव नोंथांनि फान्ड होनाय ब्लक सानथांखिखौ जानुवारियावनो लिरनाय जायो।",
+        "what": "मोनसे जायगायाव मोनसे हाबाफारियाव मोनसे मुं गोनां, बोसोर-गोबाव बिगोमाथि, जाय गावनि आलादा बाजेट लाइनजों बिथांखि रेजिस्टारआव फसावजागोन।",
+        "why": "मोनसे बोसोरनि सिरिस्रि अनसुंथाइया खामानिखौल' बायना लायो। अनसुंथाइ जोबनाय उनआवबो खामानि मावबाय थानो गोनां खान्थिनो मोनसे बिगोमा गोनां जाय सोलायनायनि जोबथासिम थायो।",
+        "when": "गावनि CSR चक्रनि मोननै तिन-दान सिगां रायज्लायनायखौ जागायजेन, अब्ला गिबि बोसोरखौ हाहो-होहो खालामनायनि सोलाय सानथांखि बादियै सामलायनो हायो।",
+        "where": "उत्तर प्रदेशनि बहराइच आरो श्रावस्तीयाव, भारत-नेपाल सिमायाव, ब्लक बादियै।",
+        "how": "मोनसे स्कपिं कल, मोनसे आनजाद खालामनाय बिलाइ (12AB, 80G, CSR00001181, UDIN गोनां आनजाद हिसाब), मोनसे ब्लक सानथांखि, बेनि उनआव साहि खालामनाय गोरोबथा।"
       }
     },
     {
       "k": "consult",
-      "label": "Adopt One of Our Models, or Engage Our Community Resource Persons",
+      "label": "जोंनि मोनसे नमुना बाहाय, एबा समाजारि सम्पद सुबुंफोरजों लोगो ला",
       "for": [
         "csr",
         "govt",
@@ -31117,51 +31117,51 @@ const BRX = {
       ],
       "col": "#0E5565",
       "detail": {
-        "u": "Models sitting inside one district help one district. The same model handed to a peer helps a state.",
-        "what": "DEHAT’s field-tested rights-based models, and its Community Resource Persons, made available to your team.",
-        "why": "Building an approach from scratch costs years. Adapting one that already survived contact with the field costs months.",
-        "when": "Best before your own programme design is frozen, while the operating model can still absorb what the field teaches.",
-        "where": "On your sites, or in Bahraich where the models are running and can be observed in place.",
-        "how": "A structured walkthrough of the model, then an engagement letter covering Community Resource Person time, training and review."
+        "u": "मोनसे जिल्लायाव थानाय नमुनाया मोनसेल' जिल्लाखौ हेफाजाब होयो। बे नमुनाखौल' गुबुननो होनाया गासै रायजोखौ हेफाजाब होयो।",
+        "what": "DEHAT नि फोथाराव आनजाद नायनाय मोनथाय-बिथांखि नमुनाफोर आरो बेनि समाजारि सम्पद सुबुंफोरखौ नोंथांनि दोलोनो होनाय जायो।",
+        "why": "गुदिनिफ्राय मोनसे राहा बानायनो गोबां बोसोर नांगौ जायो। फोथारनि नुथायखौ सहायना थानो हानाय नमुनाखौ लायोब्ला दाननैल' नांगौ।",
+        "when": "नोंथांनि गावनि हाबाफारि डिजाइनखौ थि खालामनाय सिगां, जेब्लाबो फोथारनि सोलोंथाइखौ नमुनाया सोबना लानो हायो।",
+        "where": "नोंथांनि जायगाफोराव, एबा बहराइचाव जेराव नमुनाफोरा मावगासिनो दं आरो जायगायावनो नायनो हायो।",
+        "how": "नमुनानि मोनसे रोखा नायदिन्थिनाय, बेनि उनआव समाजारि सम्पद सुबुंनि सम, फोरोंगौथि आरो आनजादनायनि थाखाय मोनसे साहि बिलाइ।"
       }
     },
     {
       "k": "converge",
-      "label": "Work with Us on District Convergence or Referral",
+      "label": "जिल्ला जयै खामानि मावनाय एबा थिसननायाव जोंजों जयै खामानि माव",
       "for": [
         "govt",
         "peer"
       ],
       "col": "#0E5565",
       "detail": {
-        "u": "A child intercepted at a border checkpost needs a referral route that already exists. It cannot be built during the interception.",
-        "what": "Joint working with district administration on convergence, referral and evidence between departments.",
-        "why": "Protection fails at the seams between systems, not inside them. Convergence closes the seams before a case falls through.",
-        "when": "Ahead of a district plan cycle, or immediately where a referral gap has already shown itself.",
-        "where": "District and block offices across Bahraich and Shravasti, and the seven border districts the work reaches.",
-        "how": "Write to us with the department and the gap; we bring the field evidence and a proposed referral protocol."
+        "u": "प्रशासननि मोनथाय होनायनि गोहो दं; DEHAT नि थाखाय जायगानि सुबुंफोरनि फोथायनाय दं। जयै खालामोब्ला फारिलाइया नंगुबै जाफुंनाय जायो।",
+        "what": "जिल्ला सामलायगिरि, बाल कल्याण समिति, DLSA एबा बिफानफोरा सुबुंफोरखौ गोख्रों खालामनो एबा गोनांथार सुबुंफोरनो अनसुंथाइ होनो थाखाय DEHAT जों लोगो लायो।",
+        "why": "आयेन आरो बिथांखिफोरा बिलाइयावनो थायो जेब्लासिम गामियारि सुबुंफोरा बेखौ दाबी खालामनायनि साहस मोना। जों बै साहसखौ होयो।",
+        "when": "जेब्लाबो मोनसे गोदान बिथांखि जागायो, एबा जेब्ला जिल्लानि आनजादआव उन्दै गथ'फोरनि फालांगि एबा कुपोषण नुनो मोनो।",
+        "where": "तराइ सिमानि जिल्लाफोर: बहराइच, श्रावस्ती, बलरामपुर, लखीमपुर खीरी, सिद्धार्थनगर।",
+        "how": "जिल्लाधिकारी एबा बिफान गाहायजों मोनसे जथुम, मोनसे जयै मावथांखि सानथांखि, आरो रोखा मख'नाय दायथ'फोर।"
       }
     },
     {
       "k": "research",
-      "label": "Become an Academic Research Partner",
+      "label": "सोलोंथाइ बिजिरनायनि बिगोमा जा",
       "for": [
         "research",
         "foundation"
       ],
       "col": "#4F0E73",
       "detail": {
-        "u": "Twenty years of field records exist in Bahraich. Every year they go unstudied is a year of evidence that never reaches the people writing policy.",
-        "what": "A named research partnership on a live programme - co-designed questions, access to field data and longitudinal records, and co-publication.",
-        "why": "Practice that is never studied repeats its own mistakes. Study that never touches practice generalises badly. The pairing corrects both.",
-        "when": "From the design stage, so measurement is built into the programme rather than fitted to it afterwards.",
-        "where": "Field sites across Bahraich and Shravasti, with the records held at the DEHAT office and available on site.",
-        "how": "Send a concept note and your ethics position. We reply with what data exists, in what form, over what period, and on what terms it can be used."
+        "u": "गोबां बिजिरनाया गामिनिफ्राय डेटा लांखायो नाथाय गामिनो जेबो फिनल' गैया। DEHAT नि बिजिरनाया समाजनि गेजेरजों सोलायनाय लाबोयो।",
+        "what": "२६ बोसोरनि गामियारि फोथार, ४८ नि बांसिन बिथांखिफोर आरो सिमानि समाजनि डेटाजों सोलोंथाइ बिजिरनायनि बिगोमाथि।",
+        "why": "सिमानि जायगानि उन्दै गथ'फोरनि फालांगि, आइजोनि सावस्रि आरो गामियारि जिउ राहायाव सोलोंथाइनि थाखाय जोबोद गोनांथार बिजिरनायनि खाबु दं।",
+        "when": "बिजिरनायनि थांखि दानाय समाव, फील्डवर्क जागायजेननायनि मोनथाम दान सिगां।",
+        "where": "बहराइच आरो श्रावस्तीनि सिमायारि ब्लकफोराव, एबा दिल्ली/लखनऊआव मोननाय बिजिरनाय खौरांजों।",
+        "how": "मोनसे बिजिरनाय प्रप'जेल, समाजारि गनायथि (IRB/इथिक्स), डेटा बाहायनायनि गोरोबथा, आरो गाहाइ रिपर्ट लिरनाय।"
       }
     },
     {
       "k": "data",
-      "label": "Request Reports, Audited Accounts or Programme Data",
+      "label": "रिपर्ट, आनजाद खालामनाय हिसाब एबा हाबाफारि डेटा बि",
       "for": [
         "csr",
         "foundation",
@@ -31172,17 +31172,17 @@ const BRX = {
       ],
       "col": "#4F0E73",
       "detail": {
-        "u": "Anything published on this site can be traced to a signed document. Ask, and you get the document, not a summary.",
-        "what": "Audited accounts, evaluations, programme reports and the source records cited in the register.",
-        "why": "Trust that cannot be checked is not trust. Every claim here is meant to be verifiable by the person doubting it.",
-        "when": "Any time. Nothing here is embargoed and nothing waits on a funding conversation.",
-        "where": "Sent by email; originals available at the Bahraich office for anyone who wants to see them.",
-        "how": "Name the year, the programme or the document. If a figure is not yet digitised, we say so and send the scan."
+        "u": "नोंथाङा आफादनि थाखाय दान होनो सिगां जोंनि गासैबो हिसाप आरो रिपर्टखौ रोखायै नुनो मोनथाय गोनां।",
+        "what": "२० बोसोरनि आनजाद खालामनाय बिबुंथि, FCRA रिपर्ट, CSR दाखिला, आरो हाबाफारिनि आनजाद रिपर्टफोर।",
+        "why": "थारथि आरो रोखाथिया गासैबो खामानिनि गुदि बिथा। जेबो बाथ्रा एबा रांनि हिसाब जों एरसोना दोनथ'आ।",
+        "when": "जेब्लाबो। जोंनि गासैबो बिलाइफोरा वेबसाइटआव नुजानाय दं, एबा बिलाइनि थाखाय जोंनो लिरनो हायो।",
+        "where": "अनलाइन, एबा DEHAT नि गाहाय मावख' बहराइचाव।",
+        "how": "मोनसे ईमेल लिर, जाय बिलाइ नांगौ बेखौ मख', आरो जों ४८ घन्टायाव फिनल' हरगोन।"
       }
     },
     {
       "k": "visit",
-      "label": "Arrange a Field Visit in Bahraich or Shravasti",
+      "label": "बहराइच एबा श्रावस्तीयाव फोथार दावबायनाय थिरां खालाम",
       "for": [
         "csr",
         "foundation",
@@ -31194,34 +31194,34 @@ const BRX = {
       ],
       "col": "#A92719",
       "detail": {
-        "u": "Distance makes this abstract. One day in a Gram Panchayat makes it impossible to unsee.",
-        "what": "A field visit to the villages, schools and Child Parliaments where the work actually happens.",
-        "why": "Reports compress. A visit restores what compression removes: the people, the terrain and the constraints.",
-        "when": "Any month outside the monsoon peak; we will tell you honestly which weeks the field is reachable.",
-        "where": "Bahraich and Shravasti, roughly six hours from Lucknow, closer from Nepalgunj.",
-        "how": "Send rough dates and headcount. We plan the route, arrange local logistics and tell you what to expect."
+        "u": "वेबसाइट नायनायाव जेब्लाबो थारथिखौ गासै मिथिनो हाया; फोथाराव थांनानै सुबुंफोरनि जिउखौ नुनो नांगौ।",
+        "what": "३-४ साननि मोनसे रोखा फोथार दावबायनाय: लामदिन्थिग्रा फरायसालि, आबादारि नखरफोर, बाल पञ्चायत आरो सुबुं रैखाथि केन्द्र नायनाय।",
+        "why": "समाजनि सुबुंफोरनि खुगानि खोथा खोनासं, जोंनि मावथिफोरजों रायज्लाय, आरो सोलायनायनि नंगुबै महरखौ नु।",
+        "when": "अक्तोबरनिफ्राय मार्च दानसिम, जेब्ला तराइ जायगानि बारहावाया दावबायनायनि थाखाय जोबोद मोजां थायो।",
+        "where": "बहराइच, श्रावस्ती आरो सिमायारि गामिफोर, उत्तर प्रदेश।",
+        "how": "दावबायनायनि तिन सप्ता सिगां जोंनो लिर, नोंथांनि दोलोनि सोद्रोमा अनजिमा खिथा, आरो जों थाग्रा जायगा आरो लामानि बिथांखि बानायगोन।"
       }
     },
     {
       "k": "fellow",
-      "label": "Become a DEHAT Fellow",
+      "label": "DEHAT फेलो जा",
       "for": [
         "student",
         "research"
       ],
       "col": "#556223",
       "detail": {
-        "u": "A fellowship year spent close to a rights problem shapes a career more than a decade of describing one.",
-        "what": "A structured placement inside a programme, with real responsibility and a named supervisor.",
-        "why": "The sector needs people who have sat in a village meeting, not only people who have read about one.",
-        "when": "Cohorts follow the programme calendar; write early, since field placements are limited by supervision capacity.",
-        "where": "On site in Bahraich, with some functions partly remote.",
-        "how": "Tell us what you want to learn and what you can commit. We reply with what is open and what it demands."
+        "u": "फेलोसिपा मोनसे साख्रि नङा; बेयो भारतनि सिमायारि गामिफोराव जिउ सोलायनायनि मोनसे बोसोरनि थाखाय गावनि अनसुंथाइ।",
+        "what": "१ बोसोरनि मोनसे गोख्रों फोथार फेलोसिप: मोनसे थि हाबाफारियाव गामियारि समाजनि गेजेराव थांनानै खामानि मावनाय।",
+        "why": "गामिआरि तराइ सिमायाव थार सोलायनाय लाबोनायनि थाखाय गोरों आरो सांग्रां लाइमोन दैदेनगिरि नांगौ।",
+        "when": "बोसोरफ्रोमबो मे-जुन दानाव एप्लिकेसन लाबोनाय जायो, अगस्टनिफ्राय फेलोसिप जागायो।",
+        "where": "बहराइच एबा श्रावस्तीनि सिमायारि गामिफोराव।",
+        "how": "अनलाइन एप्लिकेसन, सिभि, मोनसे लिरनाय सोंथि, बेनि उनआव थोंजों सोंनाय आरो फोथार आनजाद।"
       }
     },
     {
       "k": "intern",
-      "label": "Intern or Volunteer, on Site or Remotely",
+      "label": "इन्टार्न एबा भुलान्टियार जा, जायगायाव एबा गोजानाव थानानै",
       "for": [
         "student",
         "individual",
@@ -31229,17 +31229,17 @@ const BRX = {
       ],
       "col": "#556223",
       "detail": {
-        "u": "Small, well-scoped contributions compound. Most of what a field team needs is finishable in weeks.",
-        "what": "A defined piece of work - field, research, documentation, design or translation - on site or remotely.",
-        "why": "Capacity is the binding constraint more often than money. An extra pair of hands moves a real deadline.",
-        "when": "Rolling. Remote work can start almost immediately; on-site placements need lead time.",
-        "where": "Bahraich, or anywhere with a connection for remote roles.",
-        "how": "Send your interest and availability; we match it against what is genuinely open rather than inventing a task."
+        "u": "नोंथांनि रोंगौथि, सम आरो गोहोखौ गथ'फोर आरो आइजोफोरनि मोनथाय रैखाथि खालामनो थाखाय बाहाय।",
+        "what": "२ दाननिफ्राय ६ दानसिम: रिसर्च, लिरनाय, कम्प्युटर सोलोंथाइ, डिजिटल मिडिया, एबा गामियारि हाबाफारियाव बाहागो लानाय।",
+        "why": "नंगुबै समाजारि सोलायनायनि थाखाय गासैबो थाखोनि सुबुंफोरनि अनसुंथाइ नांगौ।",
+        "when": "बोसोरनि जेब्लाबो समाव, नोंथांनि सोलोंथाइ बिथांखि एबा खौरां बादियै।",
+        "where": "बहराइच मावख'आव, गामियारि जायगाफोराव, एबा गावनि न'निफ्राय अनलाइन।",
+        "how": "गावनि सिभि आरो गावनि साननाय लिरनानै जोंनो ईमेल हर, जों मोनसे इन्टारभिउ खालामगोन।"
       }
     },
     {
       "k": "career",
-      "label": "Apply for a Role",
+      "label": "मोनसे मासि (पद) नि थाखाय एप्लिकेसन हर",
       "for": [
         "student",
         "individual",
@@ -31247,17 +31247,17 @@ const BRX = {
       ],
       "col": "#556223",
       "detail": {
-        "u": "Field roles are filled by people who understood the work before they applied. That starts here.",
-        "what": "A paid role on the programme, operations, finance or documentation team.",
-        "why": "गोबाव समनि सोलायनायनि थाखाय थाबाय थानाय मोनसे हान्जानि गोनांथि, बेरायफैग्रा सुबुंफोरनि नङा।",
-        "when": "When a vacancy is open. Interest sent between vacancies is kept and revisited.",
-        "where": "Mostly Bahraich; some roles are hybrid.",
-        "how": "Send what you would want to work on. We reply with what is open and what the role actually involves day to day."
+        "u": "DEHAT आव खामानि मावनाया मोनसे जिउनि थांखि, जेराव मोनफ्रोमबो सानआ गथ'फोरनि मोनथाय रैखाथिजों सोमोन्दो गोनां।",
+        "what": "प्रोग्राम गाहाय, फोथार दैदेनगिरि, फाइनान्स, एमआइएस, सोलोंथाइ एंकर एबा लीगल एडभाइजार मासिफोराव एप्लिकेसन।",
+        "why": "जोंनि दोलोआ सिमायारि तराइ समाजनिफ्राय दिहुनजानाय आरो भारतनि गोख्रों मावथिफोरजों दाजानाय।",
+        "when": "जेब्लाबो मासि खौरां ओंखारो, एबा गावनि सिभिखौ इयोननि थाखाय जोंनो हरना दोनो हायो।",
+        "where": "बहराइच, श्रावस्ती, बलरामपुर, लखनऊ एबा फील्ड मावख'फोराव।",
+        "how": "गावनि सिभि आरो कवर लेटर हर, जेराव नोंथां मानो DEHAT जों खामानि मावनो लुबैयो बेखौ लिर।"
       }
     },
     {
       "k": "member",
-      "label": "Become a General Body Member",
+      "label": "साधारण सभा (जेनेरेल बडि) नि सोद्रोमा जा",
       "for": [
         "community",
         "individual",
@@ -31265,17 +31265,17 @@ const BRX = {
       ],
       "col": "#EAAE28",
       "detail": {
-        "u": "The General Body is where accountability is exercised, not observed.",
-        "what": "Membership of the General Body of DEHAT, the society’s governing membership.",
-        "why": "An organisation answerable only to its funders drifts. Members ask questions funders do not.",
-        "when": "Applications are considered against the society’s governance calendar.",
-        "where": "Registered office, Bahraich, Uttar Pradesh.",
-        "how": "Write with your reason for joining; the process and obligations are explained before you commit."
+        "u": "DEHAT नि खुंथाइया सोद्रोमाफोरनि सांग्रांथि आरो बिथांखिनि सायाव गसंथि। जोंनो गोख्रों सानथांखि गोनां सोद्रोमा नांगौ।",
+        "what": "आफादनि साधारण सभायाव बाहागो लानाय, बोसोरारि जथुमाव बिबुंथि होनाय, आरो खुंथायनि सायाव नजर दोननाय।",
+        "why": "आफादनि थारथि, नेमखानथि आरो समाजारि बिबानखौ गोख्रों दोनो थाखाय सोद्रोमाफोरनि बिहोमाया जोबोद गोनां।",
+        "when": "बोसोरफ्रोमबो साधारण सभा जथुमनि सिगां, एप्लिकेसनखौ कमिटिया आनजादो।",
+        "where": "बहराइच, उत्तर प्रदेश।",
+        "how": "मेम्बारसिप फर्म सुफुं, गावनि सिगांनि समाजारि खामानिखौ मख', आरो गभर्निं बडिनि गनायथि ला।"
       }
     },
     {
       "k": "give",
-      "label": "Invest Once, or Set up a Regular Investment",
+      "label": "दान हो, एबा रोखायै बोसोरारि/दानारि अनसुंथाइ जागाय",
       "for": [
         "individual",
         "community",
@@ -31283,34 +31283,34 @@ const BRX = {
       ],
       "col": "#EAAE28",
       "detail": {
-        "u": "Field costs do not pause between grants. A regular investment is what keeps a team in place in the months when a grant has ended and the next has not started.",
-        "what": "A one-time or recurring investment, either unrestricted or directed to a named programme.",
-        "why": "Unrestricted money covers what restricted grants will not: salaries between cycles, travel to a village, the follow-up visit on a case that is still open.",
-        "when": "Any time. Recurring investment is the most useful of all, because it is the only kind that can be planned against.",
-        "where": "Indian contributions into the 80G account; foreign contributions only into the designated Foreign Contribution (Regulation) Act account, as the law requires.",
-        "how": "Choose an amount and a purpose on the Invest tab. The receipt and the statutory trail follow automatically, and the amount appears in the published ledger."
+        "u": "नोंथांनि मोनफ्रोमबो रांआ सिमानि गथ'फोरखौ फरायसालियाव लाखिनो आरो सुबुं फालांगिनिफ्राय रैखा खालामनो थाङो।",
+        "what": "मोनसे साननि दान एबा बोसोरारि/दानारि थिसननाय, ८०G खाजोना रेहाय रसीदजों।",
+        "why": "थोंजों समाजनि गेजेराव फैनाय रांआ जोंखौ खुद्रि अनसुंथाइनिफ्राय उदां खालामो आरो गोनांथार खामानियाव थोंजों बाहायजायो।",
+        "when": "दानिनो। UPI, नेट बेंकिं, कार्ड एबा FCRA गुबुन हादोरनि ट्रान्सफारजों।",
+        "where": "अनलाइन गेटवेनि गेजेरजों, थोंजों DEHAT नि बेंक एकाउन्टआव।",
+        "how": "दाननि अनजिमा सायख', ८०G नि थाखाय PAN डिटेल्स हो, आरो अनलाइन पेमेन्ट खालाम।"
       }
     },
     {
       "k": "legacy",
-      "label": "Leave a Legacy Gift in Your Will",
+      "label": "गावनि उइलाव (वसीयत) समाजारि दान लाखि",
       "for": [
         "individual",
         "community"
       ],
       "col": "#4F0E73",
       "detail": {
-        "u": "A legacy is the only gift that is decided calmly, years in advance, by someone with nothing left to gain from it. It is also the rarest, because almost nobody is ever asked.",
-        "what": "A bequest to DEHAT written into your will - a fixed sum, a share of the residue, or a named asset.",
-        "why": "Field work runs on money that arrives in one-year pieces. A legacy is the one form of support that can be committed to a horizon longer than any grant cycle, which is the horizon the change actually takes.",
-        "when": "Whenever you next write or revise your will. Telling us is optional, but it lets us plan and lets you say what the gift is for.",
-        "where": "The registered office in Bahraich holds the society’s registration, PAN and audited accounts - everything your lawyer will ask for.",
-        "how": "Ask us for the exact legal name, registration number and clause wording to give your lawyer. We do not draft wills and we do not give legal advice; we give your lawyer what they need and step back."
+        "u": "नोंथांनि जिउनि उनआवबो सिमानि गथ'फोर आरो आइजोफोरनो मोनथाय आरो रैखाथि होनायनि थांखिखौ जागायबाय लाखिनो हायो।",
+        "what": "गावनि सम्पद, सेयार एबा रांनि मोनसे बाहागोखौ DEHAT नि थांखियाव दोननायनि आयेनारि उइल।",
+        "why": "मोनसे लिगेसि दाना बोसोराव नङा, जिउ-थाखो जोबोद गोजौ सोलायनाय लाबोनायाव हेफाजाब होयो।",
+        "when": "गावनि आयेनारि उइल दानाय समाव, एबा गोजाम उइलखौ सोलायनाय समाव।",
+        "where": "भारत एबा गुबुन हादोरनि जेखुनो आयेनारि जायगायाव।",
+        "how": "DEHAT नि लीगल टिमजों रायज्लाय, रोखा फारिलाइ ला, आरो गावनि उइलआव DEHAT नि पंजिकृत मुं आरो PAN मख'।"
       }
     },
     {
       "k": "occasion",
-      "label": "Mark a Wedding, a Birthday or Another Occasion with Us",
+      "label": "हाबा, जोनोम सान एबा गुबुन फोथाव सानखौ जोंजों फालि",
       "for": [
         "individual",
         "school",
@@ -31318,34 +31318,34 @@ const BRX = {
       ],
       "col": "#EAAE28",
       "detail": {
-        "u": "A wedding, a birthday, an anniversary or a memorial redirected once can fund a whole cycle of one intervention.",
-        "what": "Guests asked to give to DEHAT instead of bringing shagun or a gift, on the occasion and in the name of the person or couple marking it.",
-        "why": "It turns a private day into a public one, and reaches people the field team would not otherwise meet - but only if every gift is given directly. We cannot receipt, or safely bank, a sum collected in cash or by hand and passed to us afterward; the rule that lets us give a giver their own tax receipt requires their name against their own amount.",
-        "when": "Four to six weeks of notice lets us prepare a page and the material, and, where possible, a voice from the field.",
-        "where": "Your venue, online, or in Bahraich. The giving itself always lands directly in DEHAT's own account - never in a personal one, even briefly, even in trust.",
-        "how": "Tell us the occasion and the date. We set up a page in your name that your guests give through directly, and we handle the receipts and the follow-up."
+        "u": "गावनि गोजोननाय सानखौ गामिनि गथ'फोरनो सोलोंथाइ, रोंगौथि आरो सुलुं होनानै गोजोनहो।",
+        "what": "गथ'फोरनो लाइब्रेरि बिजाब, फरायसालि जिनिस, आदार, एबा आइजोफोरनो बेगर होनाय बिथांखिनो अनसुंथाइ।",
+        "why": "गावनि दावबायनाय आरो गोजोननायखौ समाजनि गोजोनथायजों दानजाबनायनि बेयो मोनसे मोजां लामा।",
+        "when": "नोंथांनि फोथाव साननि मोननै सप्ता सिगां, जाहाथे जों गामियाव थांखिखौ मिलायनो हायो।",
+        "where": "बहराइच आरो श्रावस्तीनि गामियारि फरायसालिफोराव।",
+        "how": "जोंनो सान आरो बिथांखिनि खोथा लिर, जों गामिनि गथ'फोरजों बेनि फोटो आरो रिपर्ट नोंथांनो हरगोन।"
       }
     },
     {
       "k": "stage",
-      "label": "Dedicate a Show, a Set or a Release to DEHAT's Communities",
+      "label": "DEHAT नि समाजनो मोनसे सावथुन, नाटक, एबा कला आरज खालाम",
       "for": [
         "individual",
         "peer"
       ],
       "col": "#D2305C",
       "detail": {
-        "u": "A comedian's set, a musician's show or a filmmaker's premiere can hand this work an audience an appeal letter never reaches.",
-        "what": "A show, a screening, a livestream or a piece of released work dedicated to DEHAT's communities, with the audience giving directly rather than through the artist.",
-        "why": "An audience that already trusts an artist rarely meets an NGO on its own terms. What we cannot do is bank a sum an artist collected and hands over afterward - every gift has to be given by the person giving it, in their own name, for the same reason a wedding or birthday gift does.",
-        "when": "Tell us the date as soon as it is fixed; four weeks lets us prepare material and, for a livestream or a large show, a recorded message from the field.",
-        "where": "Wherever your audience already is - a venue, a stream, a release. The giving itself happens on DEHAT's own page, not at the door or in the artist's account.",
-        "how": "Tell us the date, the format and the expected reach. We give you a dedicated page and link to point your audience to, branding you can use without asking twice, and a running total you and they can both see."
+        "u": "कला, मेथाइ आरो नाटकआ सिमानि गथ'फोरनि मोन्थायारि सोदोबखौ मुलुगनां थाखोआव सौहैनो गोहो होयो।",
+        "what": "नोंथांनि कन्सार्ट, रिलिज, प्रदर्शनि एबा स' निफ्राय फैनाय रांखौ DEHAT नि गथ' रैखाथि बिथांखिनो आरज खालामनाय।",
+        "why": "सुबुं फालांगि आरो गथ' खामानि मावहोनायनि हेंथायारि सांग्रांथिखौ बांहोनो कलाया जोबोद गोख्रों हाबिला।",
+        "when": "इभेन्टनि मोनसे दान सिगां, जाहाथे जों खौरां आरो बिगोमाथिनि बिबुंथिखौ साजायनो हायो।",
+        "where": "भारतनि जेखुनो नोगोराव एबा अनलाइन।",
+        "how": "इभेन्टनि डिटेल्स जोंनो हर, जों DEHAT नि ब्यानार, भिदिअ आरो रिपर्टजों लोगो लागोन।"
       }
     },
     {
       "k": "meet",
-      "label": "Meet the People Your Support Has Reached",
+      "label": "नोंथांनि अनसुंथाइ सौहैनाय सुबुंफोरजों लोगो हम",
       "for": [
         "individual",
         "csr",
@@ -31353,17 +31353,17 @@ const BRX = {
       ],
       "col": "#D2305C",
       "detail": {
-        "u": "The distance between an investor and the person their money reached is usually never closed. It should be.",
-        "what": "A structured meeting - in person or online - with the people and communities your support reached.",
-        "why": "Accountability runs both ways. Seeing the outcome changes how the next decision is made.",
-        "when": "Arranged around the community’s calendar, never around the visitor’s convenience alone.",
-        "where": "In the villages themselves, or over a call where travel is not possible.",
-        "how": "Ask, and we arrange it with the consent of everyone who will be in the room."
+        "u": "नोंथाङा दान हरनाय रांआ बबेयाव थांखो आरो सोरखौ रैखा खालामखो, बेखौ थोंजों नुनो नोंथांनि मोनथाय दं।",
+        "what": "फरायसालियाव फिन फैनाय गथ'फोर, सुबुं फालांगिनिफ्राय रैखा मोननाय आइजोफोर, आरो आबादारि नखरफोरजों लोगो हमनाय।",
+        "why": "थोंजों लोगो हमनाया दानगिरि आरो समाजनि गेजेराव नंगुबै फोथायनाय आरो बिगोमाथि दाना होयो।",
+        "when": "बोसोरारि फोथार दावबायनायनि समाव, एबा जोंनि भिडिअ कल मिटिङाव।",
+        "where": "बहराइच, श्रावस्ती, एबा जुम/गुगल मिटनि गेजेरजों।",
+        "how": "जोंनो गावनि नांगौ समाव लिर, आरो जों प्राइभेसि आयेन मानिनानै मिटिं साजायगोन।"
       }
     },
     {
       "k": "workplace",
-      "label": "Commit Our Workplace Against Child Labour and Child Sexual Abuse",
+      "label": "गावनि खामानि जायगाखौ गथ' खामानि आरो गथ' गाज्रि आखुनिफ्राय उदां खालामनो रादाय ला",
       "for": [
         "csr",
         "peer",
@@ -31371,33 +31371,33 @@ const BRX = {
       ],
       "col": "#A92719",
       "detail": {
-        "u": "Child labour and child sexual abuse do not stop at your supply chain’s edge. A written commitment is where the audit starts.",
-        "what": "A workplace commitment against child labour and child sexual abuse, with the policy and training to hold it.",
-        "why": "A stated position gives employees a route to raise something they would otherwise stay quiet about.",
-        "when": "Before an incident, not after. Policy written under pressure protects nobody.",
-        "where": "Your workplace and its allied spaces - contractors, vendors, transport, housing.",
-        "how": "We share the model commitment, help adapt it, and train the people who will have to act on it."
+        "u": "सप्लाइ चेनाव गथ' खामानि थायोब्ला जेबो दारिमिनआ जौगानाय जानो हाया। गावनि कम्पनिखौ उदां खालाम।",
+        "what": "कम्पनि नि सप्लाइ चेन आनजादनाय, गथ' रैखाथि आयेन मानिनाय, आरो मावथिफोरनो फोरोंगौथि होनाय।",
+        "why": "तराइ सिमानिफ्राय गथ'फोरखौ नोगोरनि फ्याक्ट्रि आरो हटेलाव लांनाय जायो। बेखौ फोजोबनो कम्पनिनि गोहो नांगौ।",
+        "when": "जेब्लाबो। कम्पनिनि CSR एबा HR बिफाननि गेजेरजों जागायनो हायो।",
+        "where": "नोंथांनि अफिस, फ्याक्ट्रि एबा सप्लाइ चेन जायगायाव।",
+        "how": "DEHAT नि सुबुं रैखाथि टिमजों रायज्लाय, अदिद खालाम, आरो रैखाथि प्रमाणपत्र ला।"
       }
     },
     {
       "k": "schoolprog",
-      "label": "Engage Our Students with Children Who Have Left School",
+      "label": "गावनि फरायसाफोरखौ फरायसालि नागारनाय गथ'फोरजों सोमोन्दो खालामहो",
       "for": [
         "school"
       ],
       "col": "#0E5565",
       "detail": {
-        "u": "A child who has left school is rarely brought back by an adult. They are brought back by another child.",
-        "what": "A structured engagement between your students and children who are out of school.",
-        "why": "Peer contact does what enrolment drives cannot: it makes returning feel ordinary rather than exceptional.",
-        "when": "Aligned to your academic calendar, with preparation before contact begins.",
-        "where": "Your school, and partner locations in Bahraich, connected online where distance requires it.",
-        "how": "We design the engagement with your teachers, brief both sets of children, and stay through the term."
+        "u": "नोगोरनि गथ'फोर आरो गामिनि सिमानि गथ'फोरनि गेजेराव सोलोंथाइ आरो समानथिनि लामा दा।",
+        "what": "फरायसालि-फरायसालि सोमोन्दो, अनलाइन बिबुंथि, बिजाब राननाय, आरो लामदिन्थिग्रा फरायसालिनि गथ'फोरजों जयै सोलोंनाय।",
+        "why": "समानथि आरो अनलाइया उन्दै समनिफ्रायनो सोलोंनायनि गेजेरजों फैयो।",
+        "when": "फरायसालिनि सोलोंथाइ बोसोरनि जागायनायाव, एबा सानजुलि बन्दु समाव।",
+        "where": "नोगोरनि फरायसालि आरो बहराइचनि गामियारि सेन्टारफोरनि गेजेराव।",
+        "how": "फरायसालिनि प्रिन्सिपाल एबा कोअर्डिनेटारजों जोंनो ईमेल हर, जों मोनसे सोलोंथाइ हाबाफारि दासिम।"
       }
     },
     {
       "k": "fpo",
-      "label": "Bulk-buy from Sondhi Maati Farmer Producer Company",
+      "label": "सोंधी माटी आबादारि दिहुनगिरि कम्पनि (FPO) निफ्राय गोबाङै बाय",
       "for": [
         "csr",
         "individual",
@@ -31406,12 +31406,12 @@ const BRX = {
       ],
       "col": "#556223",
       "detail": {
-        "u": "Every bulk order placed with the Farmer Producer Company is income that reaches a farmer without an intermediary taking a share.",
-        "what": "Bulk purchase from Sondhi Maati Farmer Producer Company, the farmer-owned company set up out of the Climate Justice work.",
-        "why": "Procurement is a more durable transfer than a donation, because it creates a customer rather than a recipient.",
-        "when": "Order against the harvest calendar; we will tell you what is available and when.",
-        "where": "Produced by women farmers in Bahraich; delivery arranged from there.",
-        "how": "Tell us quantities and timelines and we connect you directly to the company."
+        "u": "बिगोमा गैयाब्ला आबादारिनि गोहो बाराया। मिथिंगायारि आबादनि दिहुननाय जिनिसखौ थोंजों बायना आबादारि नखरखौ मोजां खालाम।",
+        "what": "अर्गानिक माइ (काला नमक माइ), दालि, बेसोर, मोसाला आरो मिथिंगायारि दिहुननाय जिनिसफोरनि गोबाङै बायनाय।",
+        "why": "दलालफोरनि सोलाय आबादारिया थोंजों बेसेन मोनो, आरो नोंथाङा साखोन-सिखोन मिथिंगायारि आदार मोनो।",
+        "when": "फसल खुनाय समाव (नभेम्बर-डिसेम्बर आरो अप्रिल-मे), एबा बोसोरनि जेब्लाबो समाव।",
+        "where": "बहराइच, उत्तर प्रदेशनिफ्राय भारतनि जेखुनो जायगासिम डेलिभारि।",
+        "how": "FPO टिमजों थोंजों सोमोन्दो खालाम, केटागल नाय, आरो बल्क अर्डर खालाम।"
       }
     }
   ],
