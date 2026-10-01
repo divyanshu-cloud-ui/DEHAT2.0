@@ -3407,7 +3407,7 @@ const ES = {
     }
   ],
   "certTitle": "Transparencia, acreditaciones y certificaciones",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "Organismos independientes que han evaluado, acreditado o certificado a DEHAT según sus propios estándares publicados.",
   "certifications": [
     {
       "k": "CAF India",
@@ -3418,18 +3418,18 @@ const ES = {
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "Estándares de Evaluación y Acreditación para Instituciones de Desarrollo en la India, Instituto Tata de Ciencias Sociales.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "Certificación de transparencia para ONG.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "Menciones en medios",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "Cobertura independiente de la labor, extraída del archivo mediático completo. Los enlaces dirigen al editor; donde no se muestra ningún enlace, el sitio del medio no formaba parte del registro del archivo.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -3564,7 +3564,7 @@ const ES = {
     }
   ],
   "ecosystemTitle": "Departamentos gubernamentales, instituciones estatutarias y sistemas comunitarios con los que colaboramos",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT y las comunidades con las que colabora participan plenamente en las siguientes instituciones a nivel de aldea, bloque, tehsil, distrito y estado, siendo convocados de forma periódica. Los organismos de agricultura y horticultura se incluyen aquí en lugar de en una lista separada, porque la labor de DEHAT en medios de vida y resiliencia climática transita por el mismo tejido institucional que su labor de protección infantil.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -4693,7 +4693,7 @@ const FR = {
     }
   ],
   "certTitle": "Transparence, agréments et certifications",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "Organismes indépendants ayant évalué, agréé ou certifié DEHAT selon leurs propres normes publiées.",
   "certifications": [
     {
       "k": "CAF India",
@@ -4704,18 +4704,18 @@ const FR = {
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "Normes d'évaluation et d'habilitation des institutions de développement en Inde, Institut Tata de sciences sociales.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "Certification de transparence des ONG.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "Mentions dans les médias",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "Couverture indépendante de notre action, issue des archives médiatiques complètes. Les liens renvoient vers l'éditeur ; lorsqu'aucun lien n'apparaît, le site du média ne figurait pas dans les archives.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -4850,7 +4850,7 @@ const FR = {
     }
   ],
   "ecosystemTitle": "Services gouvernementaux, institutions statutaires et systèmes communautaires avec lesquels nous collaborons",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT et les communautés partenaires sont des participants à part entière des institutions suivantes aux niveaux du village, du bloc, du tehsil, du district et de l'État, et y sont régulièrement conviés. Les organismes agricoles et horticoles figurent ici plutôt que dans une liste distincte, car l'action de DEHAT en matière de moyens de subsistance et de résilience climatique s'inscrit dans le même tissu institutionnel que la protection de l'enfance.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -5979,7 +5979,7 @@ const RU = {
     }
   ],
   "certTitle": "Прозрачность, аккредитации и сертификаты",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "Независимые организации, проводившие экспертизу, аккредитацию или сертификацию DEHAT в соответствии со своими опубликованными стандартами.",
   "certifications": [
     {
       "k": "CAF India",
@@ -5990,18 +5990,18 @@ const RU = {
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "Стандарты оценки и аккредитации институтов развития в Индии, Институт социальных наук Тата.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "Сертификация прозрачности деятельности НКО.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "Упоминания в СМИ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "Независимое освещение деятельности, сформированное на основе полного медиаархива. Ссылки ведут на сайты изданий; если ссылка отсутствует, интернет-ресурс издания не был зафиксирован в архивных записях.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -6136,7 +6136,7 @@ const RU = {
     }
   ],
   "ecosystemTitle": "Государственные ведомства, уставные институты и общественные структуры, с которыми мы работаем",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT и сообщества, с которыми организация работает, являются постоянными участниками и регулярно приглашаются на заседания следующих институтов на уровне деревень, блоков, техсилов, округов и штатов. Сельскохозяйственные и садоводческие органы включены в общий список, поскольку работа DEHAT по поддержке источников дохода и климатической устойчивости осуществляется в рамках той же институциональной структуры, что и защита прав детей.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -7265,29 +7265,29 @@ const AR = {
     }
   ],
   "certTitle": "الشفافية وقوائم الاعتماد والشهادات",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "جهات مستقلة قامت بمراجعة DEHAT أو اعتمادها أو منحها شهادات وفقا لمعاييرها المنشورة.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "مؤسسة دعم الجمعيات الخيرية في الهند (CAF India).",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "معايير التقييم والاعتماد لمؤسسات التنمية في الهند، معهد تاتا للعلوم الاجتماعية.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "شهادة الشفافية للمنظمات غير الحكومية.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "التغطية الإعلامية",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "تغطية إعلامية مستقلة للعمل، مستخرجة من الأرشيف الإعلامي الكامل. الروابط تؤدي إلى الناشر؛ وحيث لا يظهر رابط، فإن موقع الوسيلة لم يكن جزءا من السجل الأرشيفي.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -7422,7 +7422,7 @@ const AR = {
     }
   ],
   "ecosystemTitle": "الدوائر الحكومية والمؤسسات القانونية والأنظمة المجتمعية التي نتعاون معها",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "تعد DEHAT والمجتمعات التي تعمل معها مشاركا أساسيا في المؤسسات التالية على مستوى القرية والكتلة والتحصيل والمديرية والولاية، ويتم توجيه الدعوة إليها بانتظام. تم تضمين الهيئات الزراعية والبستانية هنا بدلا من إدراجها في قائمة منفصلة، لأن عمل DEHAT في سبل العيش والمرونة المناخية يسير عبر نفس النسيج المؤسسي لبرامج حماية الطفل.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -8551,12 +8551,12 @@ const ZH = {
     }
   ],
   "certTitle": "透明度、入库与资质认证",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "根据自身公开标准对 DEHAT 进行审核、入库或认证的独立机构。",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "印度慈善援助基金会（CAF India）。",
       "logo": "caf-india.png"
     },
     {
@@ -8568,12 +8568,12 @@ const ZH = {
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "非政府组织透明度认证。",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "媒体报道",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "来自完整媒体档案的独立报道。链接直通出版机构；若未显示链接，说明该媒体的线上记录未纳入档案存档。",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -8708,7 +8708,7 @@ const ZH = {
     }
   ],
   "ecosystemTitle": "我们合作的政府部门、法定机构与社区系统",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in-and consistent invitees to-the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT 及其所服务的社区是村级、区块级、县级（Tehsil）、地区级及邦级以下机构的积极参与者，并定期应邀与会。农业与园艺机构一并列入此处而非另行立表，是因为 DEHAT 在生计与气候韧性领域的工作与儿童保护根植于同一个制度网络中。",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -9837,29 +9837,29 @@ const UR = {
     }
   ],
   "certTitle": "شفافیت، نامزدگیاں اور اسناد",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "آزاد ادارے جنہوں نے اپنے شائع شدہ معیارات کے تحت DEHAT کا جائزہ لیا، پینل میں شامل کیا یا تصدیق کی۔",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "چیریٹیز ایڈ فاؤنڈیشن انڈیا۔",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ہندوستان میں ترقیاتی اداروں کے لیے تشخیصی اور فہرست سازی کے معیارات، ٹاٹا انسٹی ٹیوٹ آف سوشل سائنسز۔",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "این جی او شفافیت سرٹیفیکیشن۔",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "میڈیا میں تذکرہ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "کام کی آزادانہ کوریج، جو مکمل میڈیا آرکائیو سے لی گئی ہے۔ لنکس پبلشر کی ویب سائٹ پر جاتے ہیں؛ جہاں کوئی لنک نہیں دیا گیا، وہ پبلشر کی ویب موجودگی آرکائیو ریکارڈ کا حصہ نہیں تھی۔",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -9994,7 +9994,7 @@ const UR = {
     }
   ],
   "ecosystemTitle": "سرکاری محکمے، قانونی ادارے اور کمیونٹی کے نظام جن کے ساتھ ہم کام کرتے ہیں",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT اور وہ برادریاں جن کے ساتھ یہ کام کرتی ہے، گاؤں، بلاک، تحصیل، ضلع اور ریاستی سطح پر درج ذیل اداروں میں باقاعدہ شریک اور مدعو ہوتی ہیں۔ زراعت اور باغبانی کے اداروں کو الگ فہرست کے بجائے یہاں شامل کیا گیا ہے، کیونکہ DEHAT کا معاش اور موسمیاتی پائیداری کا کام بچوں کے تحفظ کی طرح انہی ادارہ جاتی ڈھانچوں کے ذریعے آگے بڑھتا ہے۔",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -11123,29 +11123,29 @@ const BN = {
     }
   ],
   "certTitle": "স্বচ্ছতা, অন্তর্ভুক্তি এবং সার্টিফিকেশন",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "স্বাধীন সংস্থাসমূহ যারা নিজস্ব প্রকাশিত মানদণ্ডের ভিত্তিতে DEHAT-এর পর্যালোচনা, তালিকাভুক্তি বা প্রত্যয়ন করেছে।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "চ্যারিটিজ এইড ফাউন্ডেশন ইন্ডিয়া।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ভারতে উন্নয়ন প্রতিষ্ঠানসমূহের মূল্যায়ন ও তালিকাভুক্তি মানদণ্ড, টাটা ইনস্টিটিউট অব সোশ্যাল সায়েন্সেস।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "বেসরকারি সংস্থার স্বচ্ছতা প্রত্যয়ন।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "মিডিয়া উল্লেখ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "সম্পূর্ণ মিডিয়া সংরক্ষণাগার থেকে সংগৃহীত কাজের স্বাধীন প্রতিবেদন। লিঙ্কগুলি প্রকাশকের কাছে নিয়ে যায়; যেখানে কোনও লিঙ্ক দেখানো হয়নি, সেখানে আউটলেটের নিজস্ব ওয়েবসাইট আর্কাইভ রেকর্ডের অংশ ছিল না।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -11280,7 +11280,7 @@ const BN = {
     }
   ],
   "ecosystemTitle": "সরকারি বিভাগ, সংবিধিবদ্ধ প্রতিষ্ঠান এবং সম্প্রদায় ব্যবস্থা যার সাথে আমরা কাজ করি",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT এবং যে সম্প্রদায়গুলির সাথে এটি কাজ করে তারা গ্রাম, ব্লক, তহসিল, জেলা এবং রাজ্য স্তরের নিম্নলিখিত প্রতিষ্ঠানগুলিতে সক্রিয় অংশগ্রহণকারী এবং নিয়মিত আমন্ত্রিত। কৃষি ও উদ্যানপালন সংস্থাগুলিকে পৃথক তালিকার পরিবর্তে এখানে অন্তর্ভুক্ত করা হয়েছে, কারণ DEHAT-এর জীবিকা ও জলবায়ু সহনশীলতার কাজ শিশু সুরক্ষার মতোই একই প্রাতিষ্ঠানিক কাঠামোর মধ্য দিয়ে পরিচালিত হয়।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -12409,29 +12409,29 @@ const MR = {
     }
   ],
   "certTitle": "पारदर्शकता, नोंदणी आणि प्रमाणपत्रे",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "स्वतंत्र संस्था ज्यांनी स्वतःच्या प्रकाशित मानकांच्या आधारे DEHAT चे पुनरावलोकन, सूचीयन किंवा प्रमाणीकरण केले आहे.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "चॅरिटीज एड फाउंडेशन इंडिया.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारतातील विकास संस्थांसाठी मूल्यमापन आणि सूचीयन मानके, टाटा इन्स्टिट्यूट ऑफ सोशल सायन्सेस.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "स्वयंसेवी संस्था पारदर्शकता प्रमाणीकरण.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "माध्यमांमधील उल्लेख",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "संपूर्ण मीडिया दस्तऐवजांमधून घेतलेले कामाचे स्वतंत्र वार्तांकन. दुवे प्रकाशकाकडे नेतात; जेथे दुवा दाखवलेला नाही, तेथे प्रकाशनाची संकेतस्थळ उपस्थिती दस्तऐवजाचा भाग नव्हती.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -12566,7 +12566,7 @@ const MR = {
     }
   ],
   "ecosystemTitle": "शासकीय विभाग, वैधानिक संस्था आणि समुदाय व्यवस्था ज्यांच्यासोबत आम्ही काम करतो",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT आणि ज्या समुदायांसोबत ही संस्था काम करते ते गाव, ब्लॉक, तहसील, जिल्हा आणि राज्य स्तरावरील खालील संस्थांमध्ये सक्रिय सहभागी आहेत - आणि नियमितपणे निमंत्रित केले जातात. कृषी आणि फलोत्पादन संस्थांचा स्वतंत्र यादीऐवजी येथे समावेश केला आहे, कारण DEHAT चे उपजीविका आणि हवामान-सक्षमता कार्य बाल संरक्षणाप्रमाणेच एकाच संस्थात्मक रचनेतून चालते.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -13695,29 +13695,29 @@ const TE = {
     }
   ],
   "certTitle": "పారదర్శకత, నమోదులు మరియు ధృవీకరణలు",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "తమ స్వంత ప్రచురిత ప్రమాణాల ఆధారంగా DEHAT ను సమీక్షించిన, నమోదు చేసిన లేదా ధృవీకరించిన స్వతంత్ర సంస్థలు.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ఛారిటీస్ ఎయిడ్ ఫౌండేషన్ ఇండియా.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "భారతదేశంలోని అభివృద్ధి సంస్థల కోసం మూల్యాంకనం మరియు నమోదు ప్రమాణాలు, టాటా ఇన్స్టిట్యూట్ ఆఫ్ సోషల్ సైన్సెస్.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "ఎన్జీఓ పారదర్శకత ధృవీకరణ.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "మీడియా ప్రస్తావనలు",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "పూర్తి మీడియా ఆర్కైవ్ నుండి సేకరించిన స్వతంత్ర సమాచారం. లింకులు ప్రచురణకర్త వద్దకు తీసుకెళ్తాయి; లింక్ చూపించని చోట, ప్రచురణ వెబ్‌సైట్ ఆర్కైవ్ రికార్డులో భాగం కాదు.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -13852,7 +13852,7 @@ const TE = {
     }
   ],
   "ecosystemTitle": "మేము కలిసి పనిచేసే ప్రభుత్వ విభాగాలు, చట్టబద్ధ సంస్థలు మరియు సమాజ వ్యవస్థలు",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT మరియు అది కలిసి పనిచేసే సముదాయాలు గ్రామ, బ్లాక్, తహసీల్, జిల్లా మరియు రాష్ట్ర స్థాయిలలోని ఈ క్రింది సంస్థలలో చురుకైన భాగస్వాములు మరియు క్రమం తప్పకుండా ఆహ్వానింపబడతాయి. వ్యవసాయ, ఉద్యానవన విభాగాలను ప్రత్యేక జాబితాగా కాకుండా ఇక్కడే చేర్చారు, ఎందుకంటే DEHAT జీవనోపాధి మరియు పర్యావరణ పరిరక్షణ పనులు బాలల రక్షణ లాగే ఒకే సంస్థాగత వ్యవస్థ ద్వారా సాగుతాయి.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -14981,29 +14981,29 @@ const TA = {
     }
   ],
   "certTitle": "வெளிப்படைத்தன்மை, அங்கீகாரங்கள் மற்றும் சான்றிதழ்கள்",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "தங்களின் சொந்த வெளியிடப்பட்ட தரநிலைகளின் அடிப்படையில் DEHAT அமைப்பை மதிப்பாய்வு செய்த, பட்டியலிட்ட அல்லது சான்றளித்த சுயாதீன அமைப்புகள்.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "சாரிட்டிஸ் எய்ட் பவுண்டேஷன் இந்தியா.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "இந்தியாவில் உள்ள வளர்ச்சி நிறுவனங்களுக்கான மதிப்பீடு மற்றும் பட்டியல் தரநிலைகள், டாடா சமூக அறிவியல் நிறுவனம்.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "தன்னார்வ தொண்டு நிறுவன வெளிப்படைத்தன்மை சான்றிதழ்.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ஊடகக் குறிப்புகள்",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "முழு ஊடகக் காப்பகத்திலிருந்து பெறப்பட்ட பணிகளின் சுயாதீனத் தகவல்கள். இணைப்புகள் வெளியீட்டாளருக்கு இட்டுச் செல்கின்றன; இணைப்பு காட்டப்படாத இடங்களில், ஊடகத்தின் வலைத்தளம் காப்பகப் பதிவின் பகுதியாக இல்லை.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -15138,7 +15138,7 @@ const TA = {
     }
   ],
   "ecosystemTitle": "நாங்கள் இணைந்து செயல்படும் அரசுத் துறைகள், சட்டப்பூர்வ நிறுவனங்கள் மற்றும் சமூக அமைப்புகள்",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT மற்றும் அது இணைந்து செயல்படும் சமூகங்கள் கிராமம், வட்டாரம், தாலுகா, மாவட்டம் மற்றும் மாநில அளவிலான பின்வரும் நிறுவனங்களில் ஒருங்கிணைந்த பங்கேற்பாளர்களாகவும் வழக்கமாக அழைக்கப்படுபவர்களாகவும் உள்ளன. வேளாண்மை மற்றும் தோட்டக்கலை அமைப்புகள் தனிப் பட்டியலாக இல்லாமல் இங்கேயே சேர்க்கப்பட்டுள்ளன, ஏனெனில் DEHAT-இன் வாழ்வாதாரம் மற்றும் காலநிலை பின்னடைவுப் பணிகள் குழந்தைகள் பாதுகாப்பைப் போன்ற அதே நிறுவனக் கட்டமைப்பின் வழியே இயங்குகின்றன.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -16267,29 +16267,29 @@ const GU = {
     }
   ],
   "certTitle": "પારદર્શિતા, પેનલ સમાવેશ અને પ્રમાણપત્રો",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "સ્વતંત્ર સંસ્થાઓ જેમણે પોતાના પ્રકાશિત ધોરણોના આધારે DEHAT ની સમીક્ષા, યાદીકરણ અથવા પ્રમાણપત્ર આપ્યું છે.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ચેરિટીઝ એઇડ ફાઉન્ડેશન ઇન્ડિયા.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ભારતમાં વિકાસ સંસ્થાઓ માટે મૂલ્યાંકન અને યાદીકરણ ધોરણો, ટાટા ઇન્સ્ટિટ્યૂટ ઑફ સોશિયલ સાયન્સિસ.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "બિનસરકારી સંસ્થા પારદર્શિતા પ્રમાણપત્ર.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "મીડિયા ઉલ્લેખ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "સમગ્ર મીડિયા આર્કાઇવમાંથી મેળવેલ કાર્યનું સ્વતંત્ર કવરેજ. લિંક્સ પ્રકાશક તરફ દોરી જાય છે; જ્યાં લિંક દર્શાવેલ નથી, ત્યાં પ્રકાશનની વેબસાઇટ આર્કાઇવ રેકોર્ડનો ભાગ નહોતી.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -16424,7 +16424,7 @@ const GU = {
     }
   ],
   "ecosystemTitle": "સરકારી વિભાગો, વૈધાનિક સંસ્થાઓ અને સમુદાય પ્રણાલીઓ જેની સાથે અમે જોડાયેલા છીએ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT અને જે સમુદાયો સાથે તે કામ કરે છે તેઓ ગામ, બ્લોક, તાલુકા, જિલ્લા અને રાજ્ય સ્તરની નીચેની સંસ્થાઓમાં સક્રિય સહભાગી છે - અને નિયમિતપણે આમંત્રિત કરવામાં આવે છે. કૃષિ અને બાગાયતી સંસ્થાઓનો અલગ યાદીને બદલે અહીં સમાવેશ કરવામાં આવ્યો છે, કારણ કે DEHAT નું આજીવિકા અને આબોહવા-સ્થિતિસ્થાપકતાનું કાર્ય બાળ સુરક્ષાની જેમ જ સંસ્થાકીય માળખામાંથી પસાર થાય છે.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -17553,29 +17553,29 @@ const KN = {
     }
   ],
   "certTitle": "ಪಾರದರ್ಶಕತೆ, ನೋಂದಣಿಗಳು ಮತ್ತು ಪ್ರಮಾಣೀಕರಣಗಳು",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "ತಮ್ಮದೇ ಆದ ಪ್ರಕಟಿತ ಮಾನದಂಡಗಳ ಆಧಾರದ ಮೇಲೆ DEHAT ಅನ್ನು ಪರಿಶೀಲಿಸಿದ, ಪಟ್ಟಿಮಾಡಿದ ಅಥವಾ ಪ್ರಮಾಣೀಕರಿಸಿದ ಸ್ವತಂತ್ರ ಸಂಸ್ಥೆಗಳು.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ಚಾರಿಟೀಸ್ ಏಡ್ ಫೌಂಡೇಶನ್ ಇಂಡಿಯಾ.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ಭಾರತದಲ್ಲಿನ ಅಭಿವೃದ್ಧಿ ಸಂಸ್ಥೆಗಳ ಮೌಲ್ಯಮಾಪನ ಮತ್ತು ನೋಂದಣಿ ಮಾನದಂಡಗಳು, ಟಾಟಾ ಸಮಾಜ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "ಎನ್‌ಜಿಒ ಪಾರದರ್ಶಕತೆ ಪ್ರಮಾಣೀಕರಣ.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ಮಾಧ್ಯಮ ಉಲ್ಲೇಖಗಳು",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "ಸಂಪೂರ್ಣ ಮಾಧ್ಯಮ ದಾಖಲೆಯಿಂದ ಪಡೆದ ಕೆಲಸದ ಸ್ವತಂತ್ರ ಮಾಹಿತಿ. ಲಿಂಕ್‌ಗಳು ಪ್ರಕಾಶಕರ ಬಳಿಗೆ ಕರೆದೊಯ್ಯುತ್ತವೆ; ಯಾವುದೇ ಲಿಂಕ್ ತೋರಿಸದಿದ್ದಲ್ಲಿ, ಆ ಪ್ರಕಾಶನದ ಸ್ವಂತ ಜಾಲತಾಣವು ದಾಖಲೆಯ ಭಾಗವಾಗಿರಲಿಲ್ಲ.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -17710,7 +17710,7 @@ const KN = {
     }
   ],
   "ecosystemTitle": "ನಾವು ತೊಡಗಿಸಿಕೊಂಡಿರುವ ಸರ್ಕಾರಿ ಇಲಾಖೆಗಳು, ಶಾಸನಬದ್ಧ ಸಂಸ್ಥೆಗಳು ಮತ್ತು ಸಮುದಾಯ ವ್ಯವಸ್ಥೆಗಳು",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ಮತ್ತು ಅದು ಒಡಗೂಡಿ ಕೆಲಸ ಮಾಡುವ ಸಮುದಾಯಗಳು ಗ್ರಾಮ, ತಾಲೂಕು, ಜಿಲ್ಲಾ ಮತ್ತು ರಾಜ್ಯ ಮಟ್ಟದ ಕೆಳಗಿನ ಸಂಸ್ಥೆಗಳಲ್ಲಿ ಸಕ್ರಿಯ ಭಾಗಿದಾರರಾಗಿದ್ದು ನಿರಂತರವಾಗಿ ಆಹ್ವಾನಿಸಲ್ಪಡುತ್ತವೆ. ಕೃಷಿ ಮತ್ತು ತೋಟಗಾರಿಕಾ ಸಂಸ್ಥೆಗಳನ್ನು ಪ್ರತ್ಯೇಕ ಪಟ್ಟಿಯ ಬದಲಿಗೆ ಇಲ್ಲಿಯೇ ಸೇರಿಸಲಾಗಿದೆ, ಏಕೆಂದರೆ DEHAT ನ ಜೀವನೋಪಾಯ ಮತ್ತು ಹವಾಮಾನ-ಸ್ಥಿತಿಸ್ಥಾಪಕತ್ವ ಕಾರ್ಯವು ಮಕ್ಕಳ ರಕ್ಷಣೆಯಂತೆಯೇ ಅದೇ ಸಾಂಸ್ಥಿಕ ಚೌಕಟ್ಟಿನ ಮೂಲಕ ಸಾಗುತ್ತದೆ.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -18839,29 +18839,29 @@ const MAI = {
     }
   ],
   "certTitle": "पारदर्शिता, सूचीयन आ प्रमाणन",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "स्वतंत्र संस्था सभ जे अपन प्रकाशित मानकक आधार पर DEHAT क समीक्षा, सूचीयन वा प्रमाणन केने अछि।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "चैरिटीज़ एड फाउंडेशन इंडिया।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारत मे विकास संस्था सभ लेल मूल्यांकन आ सूचीयन मानक, टाटा इंस्टीट्यूट ऑफ सोशल साइंसेज।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "गैर-सरकारी संगठन पारदर्शिता प्रमाणन।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "मीडिया उल्लेख",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "सम्पूर्ण मीडिया अभिलेख सँ लेल गेल, अहि काजक स्वतंत्र कवरेज। लिंक प्रकाशक धरि जाइत अछि; जतय लिंक नहि देखाओल गेल अछि, ओतय प्रकाशनक अपन जालस्थल अभिलेखक हिस्सा नहि छल।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -18996,7 +18996,7 @@ const MAI = {
     }
   ],
   "ecosystemTitle": "सरकारी विभाग, वैधानिक संस्था आ सामुदायिक व्यवस्था जाहि संग हमरा सभ काज करैत छी",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT आ जिनकर संग ई काज करैत अछि ओ समुदाय गाम, प्रखण्ड, तहसील, जिला आ राज्य स्तरक निम्न संस्था सभक सक्रिय सहभागी छथि - आ नियमित रूप सँ आमंत्रित कएल जाइत छथि। कृषि आ बागवानी संस्था सभकें एतय पृथक सूचीक बदला समाहित कएल गेल अछि, किएक तँ DEHAT क आजीविका आ जलवायु-सक्षमताक काज ओही संस्थागत संरचना सँ गुजरैत अछि जाहि सँ बाल-संरक्षणक काज गुजरैत अछि।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -20125,29 +20125,29 @@ const AS = {
     }
   ],
   "certTitle": "স্বচ্ছতা, অন্তৰ্ভুক্তি আৰু প্ৰমাণপত্ৰসমূহ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "স্বতন্ত্ৰ সংস্থাসমূহ যিয়ে নিজৰ প্ৰকাশিত মানদণ্ডৰ ভিত্তিত DEHAT ৰ পৰ্যালোচনা, তালিকাভুক্তি বা প্ৰমাণীকৰণ কৰিছে।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "চেৰিটিজ এইড ফাউণ্ডেচন ইণ্ডিয়া।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ভাৰতত উন্নয়নমূলক প্ৰতিষ্ঠানসমূহৰ মূল্যায়ন আৰু তালিকাভুক্তি মানদণ্ড, টাটা ইনষ্টিটিউট অৱ ছ'চিয়েল চাইন্সেছ।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "বেচৰকাৰী সংস্থাৰ স্বচ্ছতা প্ৰমাণপত্ৰ।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "সংবাদ মাধ্যমত উল্লেখ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "সম্পূৰ্ণ সংবাদ সংগ্ৰহালয়ৰ পৰা লোৱা কাৰ্যৰ স্বতন্ত্ৰ প্ৰতিবেদন। লিংকবোৰে প্ৰকাশকলৈ লৈ যায়; য'ত কোনো লিংক দেখুওৱা হোৱা নাই, তাত প্ৰকাশনটোৰ ৱেবছাইট সংগ্ৰহালয়ৰ অংশ নাছিল।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -20282,7 +20282,7 @@ const AS = {
     }
   ],
   "ecosystemTitle": "চৰকাৰী বিভাগ, বিধিবদ্ধ প্ৰতিষ্ঠান আৰু সম্প্ৰদায় ব্যৱস্থা যাৰ সৈতে আমি কাম কৰোঁ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT আৰু ইয়াৰ সৈতে কাম কৰা সম্প্ৰদায়সমূহ গাঁও, ব্লক, তহচিল, জিলা আৰু ৰাজ্য পৰ্যায়ৰ নিম্নলিখিত সংস্থাসমূহৰ সক্ৰিয় অংশগ্ৰহণকাৰী আৰু নিয়মীয়াকৈ আমন্ত্ৰিত হয়। কৃষি আৰু উদ্যানশস্য সংস্থাসমূহক পৃথক তালিকাৰ পৰিৱৰ্তে ইয়াত অন্তৰ্ভুক্ত কৰা হৈছে, কাৰণ DEHAT ৰ জীৱিকা আৰু জলবায়ু-সহনশীলতাৰ কাম শিশু সুৰক্ষাৰ দৰেই একেটা প্ৰতিষ্ঠানিক কাঠামোৰ মাজেৰে আগবাঢ়ে।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -21411,29 +21411,29 @@ const NE = {
     }
   ],
   "certTitle": "पारदर्शिता, सूचीकरण र प्रमाणीकरण",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "स्वतन्त्र निकायहरू जसले आफ्ना प्रकाशित मापदण्डका आधारमा DEHAT को समीक्षा, सूचीकरण वा प्रमाणीकरण गरेका छन्।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "च्यारिटीज एड फाउन्डेसन इन्डिया।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारतमा विकास संस्थाहरूका लागि मूल्याङ्कन र सूचीकरण मापदण्ड, टाटा इन्स्टिच्युट अफ सोसल साइन्सेज।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "गैरसरकारी संस्था पारदर्शिता प्रमाणीकरण।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "मिडिया उल्लेख",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "सम्पूर्ण मिडिया अभिलेखबाट लिइएको कार्यको स्वतन्त्र कभरेज। लिङ्कहरू प्रकाशककहाँ पुर्‍याउँछन्; जहाँ कुनै लिङ्क देखाइएको छैन, त्यहाँ प्रकाशनको आफ्नै वेबसाइट अभिलेखको अंश थिएन।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -21568,7 +21568,7 @@ const NE = {
     }
   ],
   "ecosystemTitle": "हामीले सहकार्य गर्ने सरकारी विभाग, वैधानिक संस्था र सामुदायिक प्रणालीहरू",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT र यससँग मिलेर काम गर्ने समुदायहरू गाउँ, ब्लक, तहसील, जिल्ला र राज्य स्तरका निम्न संस्थाहरूमा सक्रिय सहभागी छन् - र नियमित रूपमा आमन्त्रित गरिन्छन्। कृषि र बागवानी निकायहरूलाई छुट्टै सूचीको सट्टा यहाँ समावेश गरिएको छ, किनभने DEHAT को जीविकोपार्जन र जलवायु-सहनशीलता कार्य बाल संरक्षणजस्तै एउटै संस्थागत संरचनाबाट अघि बढ्छ।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -22697,29 +22697,29 @@ const KOK = {
     }
   ],
   "certTitle": "पारदर्शकता, सूचीकरण आनी प्रमाणीकरण",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "स्वतंत्र संस्था ज्यो आपल्या प्रकाशीत मानदंडांचेर DEHAT चे पुनरावलोकन, सुचीयन वा प्रमाणीकरण करतात.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "चॅरिटीस एड फावंडेशन इंडिया.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारतांतल्या विकास संस्थांखातीर मुल्यांकन आनी सुचीयन मानदंडां, टाटा इन्स्टिट्यूट ऑफ सोशल सायन्सेस.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "एनजीओ पारदर्शकता प्रमाणिकरण.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "माध्यम उल्लेख",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "पुराय प्रसारमाध्यम दस्तऐवजांतल्यान घेतिल्ली कामाची स्वतंत्र माहिती. दुवे प्रकाशकाकडेन व्हरतात; खंयचोच दुवो दाखोवंक ना थंय प्रकाशनाची वेवसाईट दस्तऐवजाचो भाग नाशिल्ली.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -22854,7 +22854,7 @@ const KOK = {
     }
   ],
   "ecosystemTitle": "सरकारी विभाग, वैधानिक संस्था आनी समाज वेवस्था जांच्या वांगडा आमी काम करतात",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT आनी जांच्या वांगडा ती काम करता ते समाज गांव, ब्लॉक, तहसील, जिल्लो आनी राज्य पांवड्यांवेल्या सकयल्या संस्थांनी सक्रीय वांटेकार आसात - आनी तांकां नियमितपणान आपोवणे येता. शेतकाम आनी बागायती संस्थांचो वेगळे वळेरे बदला हांगा आस्पाव केला, कारण DEHAT चें उपजीविका आनी हवामान-सक्षमतायेचें काम भुरग्यांच्या संरक्षणाभाशेनूच एकाच संस्थात्मक रचणुकेंतल्यान चलता.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -23983,29 +23983,29 @@ const SA = {
     }
   ],
   "certTitle": "पारदर्शिता, सूचीयनम्, प्रमाणीकरणं च",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "स्वतन्त्राः संस्थाः याः स्वकीयेन प्रकाशितमानदण्डेन DEHAT संस्थायाः समीक्षणं, सूचीकरणं वा प्रमाणीकरणं कृतवत्यः सन्ति।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "चैरिटीज् एड् फाउण्डेशन् इण्डिया।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारते विकाससंस्थानां कृते मूल्याङ्कन-सूचीकरण-मानदण्डाः, टाटा इन्स्टिट्यूट् आफ् सोशल् साइन्सेस्।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "असर्वकारीसंस्थापारदर्शिताप्रमाणीकरणम्।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "माध्यमेषु उल्लेखः",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "सम्पूर्णमाध्यमाभिलेखात् सङ्गृहीतं कार्यस्य स्वतन्त्रं विवरणम्। सूत्राणि प्रकाशकं प्रति नयन्ति; यत्र सूत्रं न दृश्यते, तत्र प्रकाशनस्य जालस्थानम् अभिलेखे नासीत्।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -24140,7 +24140,7 @@ const SA = {
     }
   ],
   "ecosystemTitle": "सर्वकारीय-विभागाः, वैधानिक-संस्थाः, सामाजिक-व्यवस्थाश्च याभिः सह वयं कार्यं कुर्मः",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT संस्था याैश्च समुदायैः सह सा कार्यं करोति, ते ग्राम-खण्ड-उपमण्डल-मण्डल-राज्यस्तरीय-संस्थासु सक्रियाः सहभागिनः सन्ति - नियमितरूपेण च आमन्त्रिताः भवन्ति। कृषि-उद्यानसंस्थाः पृथक्सूच्याः स्थाने अत्रैव सम्मिलिताः, यतः DEHAT संस्थायाः आजीविका-जलवायुसहनशीलताकार्यं बालसंरक्षणकार्यमिव तस्मिन्नेव संस्थागततन्तौ प्रवहति।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -25269,29 +25269,29 @@ const SD = {
     }
   ],
   "certTitle": "شفافيت، فهرست ۾ شموليت ۽ سرٽيفڪيشن",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "آزاد ادارا جن پنهنجي شايع ٿيل معيارن جي بنياد تي DEHAT جو جائزو ورتو، شامل ڪيو يا تصديق ڪئي آهي.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "چئريٽيز ايڊ فائونڊيشن انڊيا.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "هندستان ۾ ترقياتي ادارن جي جائزي ۽ فهرست جا معيار، ٽاٽا انسٽيٽيوٽ آف سوشل سائنسز.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "اين جي او شفافيت سرٽيفڪيشن.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ميڊيا ۾ ذڪر",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "مڪمل ميڊيا آرڪائيو مان ورتل ڪم جو آزاد احوال. لنڪس پبلشر ڏانهن وٺي وڃن ٿا؛ جتي ڪو لنڪ ناهي ڏيکاريو ويو، اتي اخبار جي ويب سائيٽ آرڪائيو جو حصو نه هئي.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -25426,7 +25426,7 @@ const SD = {
     }
   ],
   "ecosystemTitle": "سرڪاري کاتا، قانوني ادارا ۽ ڪميونٽي جا نظام جن سان اسين گڏجي ڪم ڪريون ٿا",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ۽ اهي برادريون جن سان گڏ هيءَ ڪم ڪري ٿي، ڳوٺ، بلاڪ، تحصيل، ضلعي ۽ صوبائي سطح تي هيٺين ادارن ۾ مڪمل شريڪ آهن ۽ کين باقاعدگي سان گهرايو وڃي ٿو. زراعت ۽ باغبانيءَ جي ادارن کي الڳ فهرست بدران هتي شامل ڪيو ويو آهي، ڇاڪاڻ ته DEHAT جو روزگار ۽ موسمي پائيداريءَ جو ڪم ٻارن جي تحفظ وانگر ساڳئي ادارتي ڍانچي مان گذري ٿو.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -26555,29 +26555,29 @@ const OR = {
     }
   ],
   "certTitle": "ସ୍ୱଚ୍ଛତା, ତାଲିକାଭୁକ୍ତି ଏବଂ ପ୍ରମାଣପତ୍ର",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "ସ୍ୱତନ୍ତ୍ର ସଂସ୍ଥାଗୁଡ଼ିକ ଯେଉଁମାନେ ନିଜର ପ୍ରକାଶିତ ମାନଦଣ୍ଡ ଆଧାରରେ DEHAT ର ସମୀକ୍ଷା, ତାଲିକାଭୁକ୍ତ ବା ପ୍ରମାଣୀକରଣ କରିଛନ୍ତି।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ଚାରିଟିଜ୍ ଏଡ୍ ଫାଉଣ୍ଡେସନ୍ ଇଣ୍ଡିଆ।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ଭାରତରେ ବିକାଶ ସଂସ୍ଥାଗୁଡ଼ିକ ପାଇଁ ମୂଲ୍ୟାଙ୍କନ ଏବଂ ତାଲିକାଭୁକ୍ତି ମାନଦଣ୍ଡ, ଟାଟା ଇନଷ୍ଟିଚ୍ୟୁଟ୍ ଅଫ୍ ସୋସିଆଲ୍ ସାଇନ୍ସେସ୍।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "ଏନଜିଓ ସ୍ୱଚ୍ଛତା ପ୍ରମାଣପତ୍ର।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ଗଣମାଧ୍ୟମ ଉଲ୍ଲେଖ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "ସମ୍ପୂର୍ଣ୍ଣ ଗଣମାଧ୍ୟମ ଅଭିଲେଖରୁ ସଂଗୃହୀତ କାର୍ଯ୍ୟର ସ୍ୱତନ୍ତ୍ର ବିବରଣୀ। ଲିଙ୍କଗୁଡ଼ିକ ପ୍ରକାଶକଙ୍କ ପାଖକୁ ନେଇଯାଏ; ଯେଉଁଠାରେ କୌଣସି ଲିଙ୍କ୍ ନାହିଁ, ସେଠାରେ ପ୍ରକାଶନର ନିଜସ୍ୱ ୱେବସାଇଟ୍ ଅଭିଲେଖର ଅଂଶ ନଥିଲା।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -26712,7 +26712,7 @@ const OR = {
     }
   ],
   "ecosystemTitle": "ସରକାରୀ ବିଭାଗ, ବୈଧାନିକ ଅନୁଷ୍ଠାନ ଏବଂ ସମୁଦାୟ ବ୍ୟବସ୍ଥା ଯାହା ସହିତ ଆମେ କାର୍ଯ୍ୟ କରୁ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ଏବଂ ଯେଉଁ ସମୁଦାୟମାନଙ୍କ ସହ ଏହା କାର୍ଯ୍ୟ କରେ ସେମାନେ ଗ୍ରାମ, ବ୍ଲକ, ତହସିଲ, ଜିଲ୍ଲା ଏବଂ ରାଜ୍ୟ ସ୍ତରର ନିମ୍ନଲିଖିତ ଅନୁଷ୍ଠାନଗୁଡ଼ିକରେ ସକ୍ରିୟ ଅଂଶଗ୍ରହଣକାରୀ ଏବଂ ନିୟମିତ ଭାବେ ନିମନ୍ତ୍ରିତ। କୃଷି ଓ ଉଦ୍ୟାନ କୃଷି ସଂସ୍ଥାଗୁଡ଼ିକୁ ପୃଥକ ତାଲିକା ବଦଳରେ ଏଠାରେ ସାମିଲ କରାଯାଇଛି, କାରଣ DEHAT ର ଜୀବିକା ଏବଂ ଜଳବାୟୁ-ସହନଶୀଳତା କାର୍ଯ୍ୟ ଶିଶୁ ସୁରକ୍ଷା ପରି ସମାନ ଆନୁଷ୍ଠାନିକ ଢାଞ୍ଚା ଦେଇ ଗତି କରେ।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -27841,29 +27841,29 @@ const ML = {
     }
   ],
   "certTitle": "സുതാര്യത, അംഗീകാരങ്ങൾ, സർട്ടിഫിക്കേഷനുകൾ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "പ്രസിദ്ധീകരിച്ച മാനദണ്ഡങ്ങളുടെ അടിസ്ഥാനത്തിൽ DEHAT നെ വിലയിരുത്തുകയോ പട്ടികപ്പെടുത്തുകയോ സാക്ഷ്യപ്പെടുത്തുകയോ ചെയ്ത സ്വതന്ത്ര സ്ഥാപനങ്ങൾ.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ചാരിറ്റീസ് എയ്ഡ് ഫൗണ്ടേഷൻ ഇന്ത്യ.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ഇന്ത്യയിലെ വികസന സ്ഥാപനങ്ങളുടെ മൂല്യനിർണ്ണയ, എംപാനൽമെന്റ് മാനദണ്ഡങ്ങൾ, ടാറ്റ ഇൻസ്റ്റിറ്റ്യൂട്ട് ഓഫ് സോഷ്യൽ സയൻസസ്.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "എൻ‌ജി‌ഒ സുതാര്യതാ സാക്ഷ്യപത്രം.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "മാധ്യമ പരാമർശങ്ങൾ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "സമ്പൂർണ്ണ മാധ്യമ ആർക്കൈവിൽ നിന്നുള്ള പ്രവർത്തനങ്ങളുടെ സ്വതന്ത്ര റിപ്പോർട്ടുകൾ. ലിങ്കുകൾ പ്രസാധകരിലേക്ക് നയിക്കുന്നു; ലിങ്ക് കാണിക്കാത്ത ഇടങ്ങളിൽ, മാധ്യമത്തിന്റെ വെബ്സൈറ്റ് ആർക്കൈവ് രേഖയുടെ ഭാഗമായിരുന്നില്ല.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -27998,7 +27998,7 @@ const ML = {
     }
   ],
   "ecosystemTitle": "ഞങ്ങൾ സഹകരിച്ചു പ്രവർത്തിക്കുന്ന സർക്കാർ വകുപ്പുകൾ, നിയമപരമായ സ്ഥാപനങ്ങൾ, സാമൂഹിക സംവിധാനങ്ങൾ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ഉം അത് ഒപ്പം പ്രവർത്തിക്കുന്ന സമൂഹങ്ങളും ഗ്രാമ, ബ്ലോക്ക്, താലൂക്ക്, ജില്ലാ, സംസ്ഥാന തലങ്ങളിലെ താഴെ പറയുന്ന സ്ഥാപനങ്ങളിലെ സജീവ പങ്കാളികളും സ്ഥിരമായി ക്ഷണിക്കപ്പെടുന്നവരുമാണ്. കൃഷി, തോട്ടവിള സ്ഥാപനങ്ങളെ പ്രത്യേക പട്ടികയാക്കാതെ ഇവിടെ ഉൾപ്പെടുത്തിയിരിക്കുന്നു, കാരണം DEHAT ന്റെ ഉപജീവന, കാലാവസ്ഥാ-പ്രതിരോധ പ്രവർത്തനങ്ങൾ കുട്ടികളുടെ സംരക്ഷണം പോലെ അതേ സ്ഥാപന ഘടനയിലൂടെയാണ് മുന്നോട്ട് പോകുന്നത്.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -29127,29 +29127,29 @@ const PA = {
     }
   ],
   "certTitle": "ਪਾਰਦਰਸ਼ਤਾ, ਸੂਚੀਕਰਨ ਅਤੇ ਪ੍ਰਮਾਣੀਕਰਨ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "ਸੁਤੰਤਰ ਸੰਸਥਾਵਾਂ ਜਿਨ੍ਹਾਂ ਨੇ ਆਪਣੇ ਪ੍ਰਕਾਸ਼ਿਤ ਮਾਪਦੰਡਾਂ ਦੇ ਆਧਾਰ 'ਤੇ DEHAT ਦੀ ਸਮੀਖਿਆ, ਸੂਚੀਕਰਨ ਜਾਂ ਪ੍ਰਮਾਣੀਕਰਨ ਕੀਤਾ ਹੈ।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ਚੈਰਿਟੀਜ਼ ਏਡ ਫਾਊਂਡੇਸ਼ਨ ਇੰਡੀਆ।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ਭਾਰਤ ਵਿੱਚ ਵਿਕਾਸ ਸੰਸਥਾਵਾਂ ਲਈ ਮੁਲਾਂਕਣ ਅਤੇ ਸੂਚੀਕਰਨ ਮਾਪਦੰਡ, ਟਾਟਾ ਇੰਸਟੀਚਿਊਟ ਆਫ਼ ਸੋਸ਼ਲ ਸਾਇੰਸਿਜ਼।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "ਗੈਰ-ਸਰਕਾਰੀ ਸੰਗਠਨ ਪਾਰਦਰਸ਼ਤਾ ਪ੍ਰਮਾਣੀਕਰਨ।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ਮੀਡੀਆ ਜ਼ਿਕਰ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "ਪੂਰੇ ਮੀਡੀਆ ਪੁਰਾਲੇਖ ਵਿੱਚੋਂ ਲਏ ਗਏ ਕੰਮ ਦੀ ਸੁਤੰਤਰ ਕਵਰੇਜ। ਲਿੰਕ ਪ੍ਰਕਾਸ਼ਕ ਵੱਲ ਲੈ ਜਾਂਦੇ ਹਨ; ਜਿੱਥੇ ਕੋਈ ਲਿੰਕ ਨਹੀਂ ਦਿਖਾਇਆ ਗਿਆ, ਉੱਥੇ ਮੀਡੀਆ ਦੀ ਵੈੱਬਸਾਈਟ ਪੁਰਾਲੇਖ ਦਾ ਹਿੱਸਾ ਨਹੀਂ ਸੀ।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -29284,7 +29284,7 @@ const PA = {
     }
   ],
   "ecosystemTitle": "ਸਰਕਾਰੀ ਵਿਭਾਗ, ਕਾਨੂੰਨੀ ਸੰਸਥਾਵਾਂ ਅਤੇ ਭਾਈਚਾਰਕ ਪ੍ਰਣਾਲੀਆਂ ਜਿਨ੍ਹਾਂ ਨਾਲ ਅਸੀਂ ਕੰਮ ਕਰਦੇ ਹਾਂ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ਅਤੇ ਜਿਨ੍ਹਾਂ ਭਾਈਚਾਰਿਆਂ ਨਾਲ ਇਹ ਕੰਮ ਕਰਦੀ ਹੈ, ਉਹ ਪਿੰਡ, ਬਲਾਕ, ਤਹਿਸੀਲ, ਜ਼ਿਲ੍ਹਾ ਅਤੇ ਰਾਜ ਪੱਧਰ 'ਤੇ ਹੇਠ ਲਿਖੀਆਂ ਸੰਸਥਾਵਾਂ ਵਿੱਚ ਸਰਗਰਮ ਭਾਗੀਦਾਰ ਹਨ - ਅਤੇ ਨਿਯਮਿਤ ਤੌਰ 'ਤੇ ਸੱਦੇ ਜਾਂਦੇ ਹਨ। ਖੇਤੀਬਾੜੀ ਅਤੇ ਬਾਗਬਾਨੀ ਸੰਸਥਾਵਾਂ ਨੂੰ ਵੱਖਰੀ ਸੂਚੀ ਦੀ ਬਜਾਏ ਇੱਥੇ ਸ਼ਾਮਲ ਕੀਤਾ ਗਿਆ ਹੈ, ਕਿਉਂਕਿ DEHAT ਦਾ ਰੋਜ਼ੀ-ਰੋਟੀ ਅਤੇ ਜਲਵਾਯੂ-ਸਹਿਣਸ਼ੀਲਤਾ ਦਾ ਕੰਮ ਬਾਲ ਸੁਰੱਖਿਆ ਵਾਂਗ ਉਸੇ ਸੰਸਥਾਗਤ ਢਾਂਚੇ ਵਿੱਚੋਂ ਲੰਘਦਾ ਹੈ।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -30413,29 +30413,29 @@ const DOI = {
     }
   ],
   "certTitle": "पारदर्शिता, सूचीकरण ते प्रमाणीकरण",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "सुतंतर संस्थां जिंदे कन्ने अपने प्रकाशित मानदंडे दे आधार उप्पर DEHAT दी समीक्षा, सूचीकरण जां प्रमाणीकरण कीता ऐ।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "चैरिटीज एड फाउंडेशन इंडिया।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारत चा विकास संस्थां लेई मूल्यांकन ते सूचीकरण मापदंड, टाटा इंस्टीट्यूट ऑफ सोशल साइंसेज।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "गैर-सरकारी संगठन पारदर्शिता प्रमाणीकरण।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "मीडिया च उल्लेख",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "पूरे मीडिया आर्काइव चा लेई गेई कम्मै दी सुतंतर कवरेज। लिंक प्रकाशक तगर लैंदे न; जित्थे कोई लिंक नेईं दस्सेआ गेआ ऐ, उत्थे प्रकाशन दी अपनी वेबसाइट रिकार्ड दा हिस्सा नेईं ही।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -30570,7 +30570,7 @@ const DOI = {
     }
   ],
   "ecosystemTitle": "सरकारी विभाग, वैधानिक संस्थाएं ते सामुदायिक प्रणालियां जिनेंगी कन्ने अस्से जुड़े दे आं",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ते जेह्ड़े समाजें कन्ने ए कम्म करदी ऐ, ओह् ग्रां, ब्लाक, तहसील, जिले ते राज्य स्तर दी हेठ दित्ती दियां संस्थां दे सक्रिय हिस्सेदार न - ते नियमित तौर उप्पर सद्दी गेदे न। कृषि ते बागवानी संस्थां गी बक्ख सूची दे बजाय इत्थै शामल कीता गेआ ऐ, कीजे DEHAT दा आजीविका ते जलवायु-सहनशीलता दा कम्म बाल सुरक्षा दी चाल्ली उस्सै संस्थागत ढांचे चा निकली कनै अग्गें बधदा ऐ।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -31699,29 +31699,29 @@ const BRX = {
     }
   ],
   "certTitle": "रोखाथि, फारिलाइ आरो रोखा खालामनाय",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "उदां आफादफोर जायफोरा गावसोरनि फोसावनाय मानथिगोन बादियै DEHAT खौ नायबिजिरदों, थिसनदों एबा रोखा खालामदों।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "च्यारिटीज एड फाउन्डेसन इन्डिया।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारतनि जौगानाय आफादफोरनि बिजिन्नाय आरो थिसननाय मानथिगोन, टाटा इन्स्टिच्युट अफ ससियेल साइन्सेस।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "उदां आफादनि रोखाथि मानथिगोन।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "खौरां बिजों आव मोंखोननाय",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "आबुं खौरां-बिजों दोनथुमग्राफ्राय लाखानाय खामानिनी उदां खौरां। लिंकफोरा फोसावग्रानियाव थाङो; जेराव लिंक दिन्थिनाय जायाखै, बेयाव खौरां-बिजोंनि गावसिनि ओंखारथिया दोनथुमाव गैयामोन।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -31856,7 +31856,7 @@ const BRX = {
     }
   ],
   "ecosystemTitle": "सोरखारि बिफान, खानथिआरि आफाद आरो समाजआरि बिथांखिफोर जायजों जों खामानि मावो",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT आरो जायफोर समाजनि लोगोआव खामानि मावो बिसोरो गामि, ब्लक, तहसिल, जिल्ला आरो रायजो थाखोनि गाहायाव थानाय आफादफोराव गोसो होनानै बाहागो लायो - आरो बेफोराव जेब्लाबो लिंहरजायो। आबाद आरो बागानान आफादफोरखौ आलादा फारिलाइनि सोलाय बेयाव दोनफानाय जादों, मानोना DEHAT नि जिउ-राहा आरो बारहावा रैखाथिनी खामानिया गथ' रैखाथिनि बादिनो एखे आफादनि गेजेरजों दाजाबनानै थाङो।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -32985,29 +32985,29 @@ const SAT = {
     }
   ],
   "certTitle": "ᱯᱷᱟᱨᱪᱟ-ᱥᱟᱹᱨᱤ, ᱛᱟᱹᱞᱠᱟᱹ ᱟᱨ ᱥᱟᱹᱵᱩᱫ ᱥᱟᱠᱟᱢ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "ᱟᱯᱱᱟᱨ ᱩᱪᱷᱟᱹᱱ ᱟᱠᱟᱱ ᱢᱟᱱᱚᱛ ᱞᱮᱠᱟᱛᱮ DEHAT ᱠᱚ ᱯᱟᱨᱠᱷᱟᱣ, ᱛᱟᱹᱞᱠᱟᱹ ᱟᱨ ᱥᱟᱹᱵᱩᱛ ᱟᱠᱟᱫ ᱯᱷᱩᱨᱜᱟᱹᱞ ᱜᱟᱶᱛᱟ ᱠᱚ।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ᱪᱮᱨᱤᱴᱤᱡᱽ ᱮᱰ ᱯᱷᱟᱣᱩᱱᱰᱮᱥᱚᱱ ᱤᱱᱰᱤᱭᱟ।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ᱵᱷᱟᱨᱚᱛ ᱨᱮ ᱞᱟᱦᱟᱱᱛᱤ ᱜᱟᱶᱛᱟ ᱠᱚ ᱞᱟᱹᱜᱤᱫ ᱡᱚᱠᱷᱟ ᱟᱨ ᱛᱟᱹᱞᱠᱟᱹ ᱢᱟᱱᱚᱛ, ᱴᱟᱴᱟ ᱤᱱᱥᱴᱤᱴᱤᱭᱩᱴ ᱚᱯᱷ ᱥᱚᱥᱤᱭᱟᱞ ᱥᱟᱭᱤᱱᱥᱮᱥ।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "ᱵᱟᱝ-ᱥᱚᱨᱠᱟᱨᱤ ᱜᱟᱶᱛᱟ ᱯᱷᱟᱨᱪᱟ ᱥᱟᱹᱵᱩᱛ।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ᱢᱤᱰᱤᱭᱟ ᱨᱮ ᱚᱞ ᱟᱠᱟᱱ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "ᱯᱩᱨᱟᱹ ᱢᱤᱰᱤᱭᱟ ᱥᱟᱧᱪᱟᱣ ᱠᱷᱚᱱ ᱦᱟᱛᱟᱣ ᱟᱠᱟᱱ ᱠᱟᱹᱢᱤ ᱨᱮᱱᱟᱜ ᱯᱷᱩᱨᱜᱟᱹᱞ ᱠᱷᱚᱵᱚᱨ। ᱡᱚᱲᱟᱣ ᱠᱚᱫᱚ ᱩᱪᱷᱟᱹᱱᱤᱭᱟᱹ ᱴᱷᱮᱱ ᱤᱫᱤᱭᱟ; ᱡᱟᱦᱟᱸᱨᱮ ᱡᱟᱦᱟᱱ ᱡᱚᱲᱟᱣ ᱵᱟᱹᱱᱩᱜ-ᱟ, ᱚᱸᱰᱮ ᱩᱪᱷᱟᱹᱱ ᱨᱮᱱᱟᱜ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱥᱟᱧᱪᱟᱣ ᱨᱮ ᱵᱟᱝ ᱛᱟᱦᱮᱸ ᱠᱟᱱᱟ।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -33142,7 +33142,7 @@ const SAT = {
     }
   ],
   "ecosystemTitle": "ᱥᱚᱨᱠᱟᱨᱤ ᱵᱤᱵᱷᱟᱜᱽ, ᱟᱹᱱ ᱞᱮᱠᱟᱛᱮ ᱵᱮᱱᱟᱣ ᱟᱠᱟᱱ ᱜᱟᱶᱛᱟ ᱟᱨ ᱥᱟᱶᱛᱟ ᱵᱮᱵᱚᱥᱛᱷᱟ ᱡᱟᱦᱟᱸ ᱥᱟᱶ ᱟᱞᱮ ᱡᱚᱯᱲᱟᱣ ᱢᱮᱱᱟᱜ ᱞᱮᱭᱟ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ᱟᱨ ᱡᱟᱦᱟᱸ ᱥᱟᱶᱛᱟ ᱠᱚ ᱥᱟᱶ ᱱᱚᱶᱟ ᱠᱟᱹᱢᱤᱭᱟ, ᱩᱱᱠᱩ ᱫᱚ ᱟᱹᱛᱩ, ᱵᱞᱚᱠ, ᱛᱚᱦᱥᱤᱞ, ᱦᱚᱱᱚᱛ ᱟᱨ ᱯᱚᱱᱚᱛ ᱛᱷᱚᱠ ᱨᱮᱱᱟᱜ ᱱᱚᱶᱟ ᱠᱚ ᱜᱟᱶᱛᱟ ᱨᱮ ᱠᱩᱨᱩᱢᱩᱴᱩ ᱥᱮᱞᱮᱫᱤᱭᱟᱹ ᱠᱟᱱᱟ ᱠᱚ - ᱟᱨ ᱡᱟᱣᱜᱮ ᱱᱮᱣᱛᱟ ᱠᱚ ᱧᱟᱢᱟ। ᱪᱟᱥ ᱟᱨ ᱵᱟᱜᱟᱱ ᱜᱟᱶᱛᱟ ᱠᱚᱫᱚ ᱵᱷᱮᱜᱟᱨ ᱛᱟᱹᱞᱠᱟᱹ ᱵᱚᱫᱚᱞ ᱛᱮ ᱱᱚᱸᱰᱮ ᱥᱮᱞᱮᱫ ᱟᱠᱟᱱᱟ, ᱪᱮᱫᱟᱜ ᱥᱮ DEHAT ᱨᱮᱱᱟᱜ ᱟᱹᱥᱩᱞᱚᱜ ᱟᱨ ᱦᱚᱭ-ᱦᱤᱥᱤᱫ ᱫᱟᱲᱮ ᱠᱟᱹᱢᱤ ᱫᱚ ᱜᱤᱫᱽᱨᱟᱹ ᱨᱩᱠᱷᱤᱭᱟᱹ ᱞᱮᱠᱟ ᱜᱮ ᱢᱤᱫᱴᱟᱹᱝ ᱜᱟᱶᱛᱟ ᱨᱮᱱᱟᱜ ᱜᱟᱵᱟᱱ ᱛᱟᱞᱟᱛᱮ ᱪᱟᱞᱟᱜ-ᱟ।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -34271,29 +34271,29 @@ const MNI = {
     }
   ],
   "certTitle": "ꯃꯌꯦꯛ ꯁꯦꯡꯕꯥ, ꯂꯤꯁ꯭ꯇꯇꯥ ꯆꯜꯂꯛꯄꯥ ꯑꯃꯁꯨꯡ ꯁꯥꯔꯇꯤꯐꯤꯀꯦꯁꯟ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "DEHAT บุ ମখোয়গী ফোংখিবা চাংদমশিংগী মখাদা য়েংশিনখিবা, পরিং থমখিবা নত্রগা মশক খংলবিবা মীখা পোল্লোইদবা লুপশিং।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "চ্যারিটিজ এইড ফাউণ্ডেশন ইন্দিয়া।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ভারতকী চাউখৎ-থৌরাংগী লুপশিংগী মূল্যায়ন অমসুং পরিং থম্বগী চাংদমশিং, তাতা ইন্সতিত্যুত ওফ সোসিয়েল সাইন্সেস।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "এনজিওগী শেংলবা মশক খংদোকপগী সর্তিফিকেসন।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ꯃꯤꯗꯤꯌꯥꯗꯥ ꯄꯟꯈꯤꯕꯥ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "মপুং ফাবা মীদিয়া আর্কাইবদগী লৌথোকপা থবকশিংগী তোঙানবা পাউ। লিঙ্কশিং অসিনা ফোঙলিবশিংদা পুগনি; লিঙ্ক উৎপা য়াওদ্রিবা মফমদা, পাউচে অদুগী মশাগী ৱেবসাইট আর্কাইব রেকোর্দকী শরুক ওইখিদে।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -34428,7 +34428,7 @@ const MNI = {
     }
   ],
   "ecosystemTitle": "ꯑꯩꯈꯣꯌꯅꯥ ꯊꯕꯛ ꯇꯧꯃꯤꯟꯅꯔꯤꯕꯥ ꯁꯔꯀꯥꯔꯒꯤ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇꯁꯤꯡ, ꯆꯠꯅ-ꯀꯥꯡꯂꯣꯟꯒꯤ ꯑꯣꯏꯕꯥ ꯏꯟꯁꯇꯤꯠꯌꯨꯁꯅꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯈꯨꯟꯅꯥꯏꯒꯤ ꯁꯤꯁ꯭ꯇꯦꯃꯁꯤꯡ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT অমসুং মসিনা থবক তৌমিন্নরিবা খুন্নাইশিং অসিনা খুঙ্গং, ব্লোক, তহসিল, জিলা অমসুং রাজ্য থাক্কী মখাগী লুপশিং অসিদা তোঙান্না শরুক য়াবা অমসুং লেপ্পা লৈতনা বার্তন তৌবিরকপা মীওইশিংনি। লৌউ-শিংউ অমসুং হৌদোং-ৱাদোংগী লুপশিং অসি তোঙানবা পরিং অমগী মহুৎ মফমসিদা য়াওহল্লি, মরমদি DEHAT গী পুন্সি মহিং অমসুং অইং-অশাক সহনশীলতাগী থবক অসি অঙাং ঙাকশেনগী থবকগুম্না মান্নবা ইন্সতিত্যুস্নেল শকলগী মনুং চন্না চৎথরি।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -35557,29 +35557,29 @@ const KS = {
     }
   ],
   "certTitle": "شَفافِیَت، نامزَدگی تہٕ سَنَدٕ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "آزاد اِدارٕ یِمو پَننؠن شایَع کٔرمٕتؠن معِیارن مُطٲبِق DEHAT ہُنٛد جٲیزٕ نِو، امبينل کۄر یا تَصدِیق کٔر۔",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "چیرِٹیز ایڈ فاؤنڈیشن اِنڈِیا۔",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ہِنٛدوستانَس مَنٛز ترقِیٲتی اِدارَن خٲطرٕ جٲیزٕ تہٕ اندراجٕک معِیار، ٹاٹا اِنسٹِیچیوٗٹ آف سوشل سائنسز۔",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "این جی او شفافِیَت تَصدِیق نامہٕ۔",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "میٖڈیاہَس مَنٛز ذِکِر",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "کٲمؠ ہِنٛز آزادانہٕ کورِیج، یۄس پوٗرٕ مِیڈِیا آرکائیو منٛزٕ حٲصِل کَرنہٕ آمٕژ چھِ۔ لِنک چھِ ناشرَس تام واتناوَن؛ ییٚتین کانٛہہ لِنک ظٲہِر چھُنہٕ، تَتین مِیڈِیا آؤٹ لیٹ سٕنٛز پَنٕنؠ ৱؠب سائٹ آرکائیو رِکارڈُک حِصہٕ ٲس نہٕ۔",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -35714,7 +35714,7 @@ const KS = {
     }
   ],
   "ecosystemTitle": "سَرکٲری مَحکَمَہٕ، قانوٗنی اِدارٕ تہٕ بَستی ہٕنٛد نِظام یِمن سٟتؠ اَسؠ رَلہِتھ کٲم چھِ کَران",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT تہٕ تِم کمِیوٗنِٹی یِمَن سٟتؠ یہِ کٲم چھِ کَران، تِم چھِ گام، بلاک، تحصِیل، ضِلع تہٕ رِیاسَتی سطحس پؠٹھ بۄنِمؠن اِدارَن مَنٛز باقٲعدٕ حِصہٕ دار تہٕ دعوت نامہٕ حٲصِل کَرن وٲلؠ۔ زراعت تہٕ باغبٲنی ہِنٛدِ اِدارٕ چھِ اکھ الگ فِہرِست بناونہٕ بَدلہٕ ییتین شٲمِل کَرنہٕ آمٕتؠ، تِکیازِ DEHAT سٕنٛز روزگار تہٕ موسمیٲتی استحکامٕچ کٲم چھِ شُرؠن ہِنٛدِس تَحَفُظس ہِوی ادارٕ جٲتی تانے بانے مَنٛزٕ پَکان۔",
   "ecosystemLevels": [
     {
       "k": "village",
