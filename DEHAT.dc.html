@@ -16,6 +16,32 @@
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   /* ---- Theme tokens (dark is default) ---- */
+/* ---- Brush-swipe & Linen Paper Tokens (Handoff 159) ---- */
+  :root{
+    --swipe-1:url(./assets/paper/swipe-1.svg);
+    --swipe-2:url(./assets/paper/swipe-2.svg);
+    --swipe-3:url(./assets/paper/swipe-3.svg);
+    --swipe-4:url(./assets/paper/swipe-4.svg);
+    --swipe-5:url(./assets/paper/swipe-5.svg);
+    --swipe-6:url(./assets/paper/swipe-6.svg);
+    --paint:url(./assets/paper/paint.webp);
+    --paper-linen-dark:url(./assets/paper/linen-dark.png);
+    --paper-linen-light:url(./assets/paper/linen-light.png);
+    --focus:var(--text);
+
+    /* Dark theme precomputed swipe tokens (WCAG AA >= 4.5:1) */
+    --c-crimson:#D2305C; --ink-crimson:#FFFFFF; --wash-crimson:#7F2237; --hov-crimson:#861F3B;
+    --c-teal:#0E5565;    --ink-teal:#FFFFFF;    --wash-teal:#11373D;    --hov-teal:#093641;
+    --c-olive:#5C6E38;   --ink-olive:#FFFFFF;   --wash-olive:#3D4523;   --hov-olive:#3B4624;
+    --c-purple:#4F0E73;  --ink-purple:#FFFFFF;  --wash-purple:#350F44;  --hov-purple:#33094A;
+    --c-gold:#DDA42A;    --ink-gold:#151009;    --wash-gold:#715418;    --hov-gold:#F0C668;
+
+    /* Paper weave tokens */
+    --paper-on-ground:var(--paper-linen-light);
+    --paper-on-surface:var(--paper-linen-light);
+    --paper-on-colour:var(--paper-linen-light);
+    --paper-on-crimson:none;
+  }
   :root{
     --bg:#151009; --bg2:#1d160d; --surface:#241b11; --surface2:#2e2417;
     --text:#f5eede; --dim:#c6b8a3; --faint:#a99a85;
@@ -26,7 +52,21 @@
   :root{--mark-filter:brightness(0) invert(1);--logo-filter:brightness(0) invert(1);--logo-chip:#ffffff;--logo-ring:rgba(245,238,222,.16);--faint-strong:#a99a85;
     --art-plate:none;
     --art-plate-soft:none}
-  html[data-theme="light"]{--mark-filter:none;--art-plate:none;--art-plate-soft:none;--logo-filter:none;--logo-chip:#ffffff;--logo-ring:rgba(31,23,16,.10);--faint-strong:#6f6252;
+  html[data-theme="light"]{
+
+    /* Light theme precomputed swipe tokens (WCAG AA >= 4.5:1) */
+    --c-crimson:#D2305C; --ink-crimson:#FFFFFF; --wash-crimson:#E3849A; --hov-crimson:#861F3B;
+    --c-teal:#0E5565;    --ink-teal:#FFFFFF;    --wash-teal:#72999F;    --hov-teal:#093641;
+    --c-olive:#5C6E38;   --ink-olive:#FFFFFF;   --wash-olive:#9FA885;   --hov-olive:#3B4624;
+    --c-purple:#4F0E73;  --ink-purple:#FFFFFF;  --wash-purple:#A583B1;  --hov-purple:#33094A;
+    --c-gold:#DDA42A;    --ink-gold:#151009;    --wash-gold:#EAC77D;    --hov-gold:#F0C668;
+
+    /* Light theme paper weave tokens */
+    --paper-on-ground:var(--paper-linen-dark);
+    --paper-on-surface:var(--paper-linen-dark);
+    --paper-on-colour:var(--paper-linen-light);
+    --paper-on-crimson:none;
+  }--mark-filter:none;--art-plate:none;--art-plate-soft:none;--logo-filter:none;--logo-chip:#ffffff;--logo-ring:rgba(31,23,16,.10);--faint-strong:#6f6252;
     --bg:#fbf7ef; --bg2:#f4efe4; --surface:#ffffff; --surface2:#f4efe4;
     --text:#1f1710; --dim:#5a4f43; --faint:#8a7c6c;
     --border:rgba(31,23,16,.09); --nav:rgba(251,247,239,.85); --shadow:rgba(31,23,16,.4);
@@ -419,6 +459,279 @@
     .svc-instory{display:none !important}
     .svc-belowstory{display:block !important}
   }
+
+  /* Focus token inside dark and coloured bands */
+  .paper-band, [data-spine], .band-dark, .bt, .bc, .bp, .bk,
+  section[data-spine], section[style*="background:#0E5565"],
+  section[style*="background:#4F0E73"], section[style*="background:#D2305C"],
+  section[style*="background:#1a130b"], section[style*="background:#150e08"]{
+    --focus:#ffffff;
+  }
+
+  /* Opacity blink pulse for hover/active */
+  @keyframes btnBlink{0%{opacity:1}38%{opacity:.82}100%{opacity:1}}
+
+  /* ---- Brush-Swipe Buttons (Handoff 159) ---- */
+  .btn-swipe, .btn-wash{
+    --c:var(--c-crimson);
+    --ink:var(--ink-crimson);
+    --c-wash:var(--wash-crimson);
+    --c-hov:var(--hov-crimson);
+    --swipe-mask:var(--swipe-1);
+    position:relative;
+    isolation:isolate;
+    border:0;
+    border-radius:0 !important;
+    background:none !important;
+    color:var(--ink);
+    padding-block:14px;
+    padding-inline:max(28px,3ch);
+    min-height:46px;
+    max-width:100%;
+    text-wrap:balance;
+    hyphens:none;
+    font-family:inherit;
+    font-weight:700;
+    font-size:13.5px;
+    line-height:1.3;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    text-decoration:none;
+    box-sizing:border-box;
+    transition:transform .16s cubic-bezier(.23,1,.32,1),color .24s cubic-bezier(.23,1,.32,1);
+  }
+
+  /* ::before = masked paint (solid/wash colour + sweep + paint texture) */
+  .btn-swipe::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background-color:var(--c);
+    background-image:linear-gradient(var(--c-hov),var(--c-hov)),var(--paint);
+    background-size:0% 100%,360px 140px;
+    background-repeat:no-repeat,repeat;
+    background-position:0 0,0 0;
+    -webkit-mask:var(--swipe-mask) 0 0/100% 100% no-repeat;
+    mask:var(--swipe-mask) 0 0/100% 100% no-repeat;
+    pointer-events:none;
+    transition:background-size .24s cubic-bezier(.23,1,.32,1),background-color .24s cubic-bezier(.23,1,.32,1);
+  }
+
+  /* Wash variant: lighter solid tone resting, fills to full solid on hover */
+  .btn-wash{
+    color:var(--text);
+  }
+  .btn-wash::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background-color:var(--c-wash);
+    background-image:linear-gradient(var(--c),var(--c)),var(--paint);
+    background-size:0% 100%,360px 140px;
+    background-repeat:no-repeat,repeat;
+    background-position:0 0,0 0;
+    -webkit-mask:var(--swipe-mask) 0 0/100% 100% no-repeat;
+    mask:var(--swipe-mask) 0 0/100% 100% no-repeat;
+    pointer-events:none;
+    transition:background-size .24s cubic-bezier(.23,1,.32,1),background-color .24s cubic-bezier(.23,1,.32,1);
+  }
+
+  /* Right-to-Left: sweep stroke expands from right to left */
+  [dir=rtl] .btn-swipe::before, [dir=rtl] .btn-wash::before{
+    background-position:100% 0,0 0;
+  }
+
+  /* Mask rotator classes */
+  .btn-swipe.sw-a, .btn-wash.sw-a{--swipe-mask:var(--swipe-1)}
+  .btn-swipe.sw-b, .btn-wash.sw-b{--swipe-mask:var(--swipe-2)}
+  .btn-swipe.sw-c, .btn-wash.sw-c{--swipe-mask:var(--swipe-3)}
+  .btn-swipe.sw-d, .btn-wash.sw-d{--swipe-mask:var(--swipe-4)}
+  .btn-swipe.sw-e, .btn-wash.sw-e{--swipe-mask:var(--swipe-5)}
+  .btn-swipe.sw-f, .btn-wash.sw-f{--swipe-mask:var(--swipe-6)}
+
+  /* Rotation fallback for siblings without explicit sw-a..f */
+  :nth-of-type(6n+1) > .btn-swipe:not([class*="sw-"]), :nth-of-type(6n+1).btn-swipe:not([class*="sw-"]){--swipe-mask:var(--swipe-1)}
+  :nth-of-type(6n+2) > .btn-swipe:not([class*="sw-"]), :nth-of-type(6n+2).btn-swipe:not([class*="sw-"]){--swipe-mask:var(--swipe-2)}
+  :nth-of-type(6n+3) > .btn-swipe:not([class*="sw-"]), :nth-of-type(6n+3).btn-swipe:not([class*="sw-"]){--swipe-mask:var(--swipe-3)}
+  :nth-of-type(6n+4) > .btn-swipe:not([class*="sw-"]), :nth-of-type(6n+4).btn-swipe:not([class*="sw-"]){--swipe-mask:var(--swipe-4)}
+  :nth-of-type(6n+5) > .btn-swipe:not([class*="sw-"]), :nth-of-type(6n+5).btn-swipe:not([class*="sw-"]){--swipe-mask:var(--swipe-5)}
+  :nth-of-type(6n+6) > .btn-swipe:not([class*="sw-"]), :nth-of-type(6n+6).btn-swipe:not([class*="sw-"]){--swipe-mask:var(--swipe-6)}
+
+  /* Color modifiers */
+  .btn-crimson, .sw-crimson{--c:var(--c-crimson);--ink:var(--ink-crimson);--c-wash:var(--wash-crimson);--c-hov:var(--hov-crimson)}
+  .btn-teal, .sw-teal, .sw-t{--c:var(--c-teal);--ink:var(--ink-teal);--c-wash:var(--wash-teal);--c-hov:var(--hov-teal)}
+  .btn-olive, .sw-olive, .sw-ol{--c:var(--c-olive);--ink:var(--ink-olive);--c-wash:var(--wash-olive);--c-hov:var(--hov-olive)}
+  .btn-purple, .sw-purple, .sw-pu{--c:var(--c-purple);--ink:var(--ink-purple);--c-wash:var(--wash-purple);--c-hov:var(--hov-purple)}
+  .btn-gold, .sw-gold, .sw-go{--c:var(--c-gold);--ink:var(--ink-gold);--c-wash:var(--wash-gold);--c-hov:var(--hov-gold)}
+
+  /* Size modifier */
+  .btn-sm, .sw-sm{padding-block:9px;padding-inline:max(18px,2ch);font-size:12px;min-height:38px}
+
+  /* Square icon button (.btn-sq) */
+  .btn-sq{
+    width:46px;height:46px;min-height:46px;padding:0;
+    display:inline-grid;place-items:center;
+    border-radius:0 !important;border:0;background:none;
+    color:var(--text);cursor:pointer;
+    position:relative;isolation:isolate;
+    -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+    transition:transform .16s cubic-bezier(.23,1,.32,1);
+  }
+  .btn-sq::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background-color:var(--surface);background-image:var(--paint);
+    background-size:360px 140px;background-repeat:repeat;
+    border:1px solid var(--border);border-radius:0;
+    transition:background-color .2s ease,border-color .2s ease;
+  }
+  @media (hover:hover){
+    .btn-sq:hover{transform:translateY(-1px);color:var(--c-teal)}
+    .btn-sq:hover::before{border-color:var(--c-teal)}
+  }
+  [dir=rtl] .btn-sq svg{scale:-1 1}
+
+  /* Carousel dots (.btn-dot) */
+  .btn-dot{
+    width:14px;height:14px;padding:0;margin:0 4px;
+    border:0;border-radius:0 !important;background:var(--c-teal);
+    opacity:.35;cursor:pointer;position:relative;
+    -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+    transition:opacity .2s ease,transform .16s ease;
+  }
+  .btn-dot:hover{opacity:.7}
+  .btn-dot[aria-current="true"], .btn-dot[aria-pressed="true"], .btn-dot.on{
+    opacity:1;transform:scale(1.15);
+  }
+  @media (pointer:coarse), (max-width:640px){
+    .btn-dot::after{content:"";position:absolute;inset:-15px;min-width:44px;min-height:44px}
+  }
+
+  /* Focus rings (survive outside mask with 1px inner contrast ring) */
+  .btn-swipe:focus-visible, .btn-wash:focus-visible, .btn-sq:focus-visible, .btn-dot:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:4px;
+    box-shadow:0 0 0 1px var(--bg);
+  }
+
+  /* Hover states */
+  @media (hover:hover){
+    .btn-swipe:hover{transform:translateY(-1px)}
+    .btn-swipe:hover::before{
+      background-size:100% 100%,360px 140px;
+      animation:btnBlink .26s cubic-bezier(.23,1,.32,1);
+    }
+    .btn-wash:hover{
+      color:var(--ink);
+      transform:translateY(-1px);
+      transition:color 0s 90ms,transform .16s cubic-bezier(.23,1,.32,1);
+    }
+    .btn-wash:hover::before{
+      background-size:100% 100%,360px 140px;
+      animation:btnBlink .26s cubic-bezier(.23,1,.32,1);
+    }
+  }
+
+  /* Active press states */
+  .btn-swipe:active, .btn-wash:active, .btn-sq:active, .btn-dot:active{
+    transform:translate(1px,1px) scale(.985);
+  }
+  .btn-swipe:active::before, .btn-wash:active::before{
+    background-size:100% 100%,360px 140px;
+  }
+  @media (hover:none){
+    .btn-swipe:active::before, .btn-wash:active::before{
+      transition-duration:60ms;
+    }
+  }
+
+  /* Selected chips / filters / tabs (solid + label --ink + 3px bottom rule marker) */
+  .btn-swipe[aria-pressed="true"], .btn-swipe[aria-current]:not([aria-current="false"]),
+  .btn-wash[aria-pressed="true"], .btn-wash[aria-current]:not([aria-current="false"]){
+    color:var(--ink) !important;
+    box-shadow:inset 0 -3px 0 0 var(--ink);
+  }
+  .btn-swipe[aria-pressed="true"]::before, .btn-swipe[aria-current]:not([aria-current="false"])::before,
+  .btn-wash[aria-pressed="true"]::before, .btn-wash[aria-current]:not([aria-current="false"])::before{
+    background-color:var(--c) !important;
+    background-size:100% 100%,360px 140px !important;
+  }
+
+  /* Disabled states */
+  .btn-swipe:disabled, .btn-swipe[disabled], .btn-swipe[aria-busy="true"],
+  .btn-wash:disabled, .btn-wash[disabled], .btn-wash[aria-busy="true"]{
+    pointer-events:none !important;
+    opacity:.55 !important;
+    cursor:not-allowed !important;
+    transform:none !important;
+  }
+  .btn-swipe:disabled::before, .btn-swipe[disabled]::before, .btn-swipe[aria-busy="true"]::before,
+  .btn-wash:disabled::before, .btn-wash[disabled]::before, .btn-wash[aria-busy="true"]::before{
+    background-size:0% 100%,360px 140px !important;
+    animation:none !important;
+  }
+
+  /* Mobile max-width containment */
+  @media (max-width:480px){
+    .btn-swipe, .btn-wash{max-width:320px}
+  }
+
+  /* Script & Language Typography Rules */
+  .btn-swipe:lang(ar),.btn-swipe:lang(ur),.btn-swipe:lang(sd),.btn-swipe:lang(ks),
+  .btn-wash:lang(ar),.btn-wash:lang(ur),.btn-wash:lang(sd),.btn-wash:lang(ks){
+    letter-spacing:0;text-transform:none;
+  }
+  .btn-swipe:lang(hi),.btn-swipe:lang(mr),.btn-swipe:lang(ne),.btn-swipe:lang(sa),
+  .btn-swipe:lang(mai),.btn-swipe:lang(doi),.btn-swipe:lang(kok),.btn-swipe:lang(brx),
+  .btn-swipe:lang(bn),.btn-swipe:lang(as),.btn-swipe:lang(ta),.btn-swipe:lang(te),
+  .btn-swipe:lang(ml),.btn-swipe:lang(kn),.btn-swipe:lang(gu),.btn-swipe:lang(pa),
+  .btn-swipe:lang(or),.btn-swipe:lang(sat),.btn-swipe:lang(mni),
+  .btn-wash:lang(hi),.btn-wash:lang(mr),.btn-wash:lang(ne),.btn-wash:lang(sa),
+  .btn-wash:lang(mai),.btn-wash:lang(doi),.btn-wash:lang(kok),.btn-wash:lang(brx),
+  .btn-wash:lang(bn),.btn-wash:lang(as),.btn-wash:lang(ta),.btn-wash:lang(te),
+  .btn-wash:lang(ml),.btn-wash:lang(kn),.btn-wash:lang(gu),.btn-wash:lang(pa),
+  .btn-wash:lang(or),.btn-wash:lang(sat),.btn-wash:lang(mni){
+    letter-spacing:0;text-transform:none;line-height:1.5;
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion:reduce){
+    .btn-swipe, .btn-swipe:hover, .btn-swipe:active,
+    .btn-wash, .btn-wash:hover, .btn-wash:active,
+    .btn-sq, .btn-sq:hover, .btn-sq:active,
+    .btn-dot, .btn-dot:hover, .btn-dot:active{
+      transform:none !important;animation:none !important;transition:none !important;
+    }
+    .btn-swipe::before, .btn-wash::before{
+      animation:none !important;transition:none !important;
+    }
+  }
+
+  /* Windows High Contrast / Forced Colors */
+  @media (forced-colors:active){
+    .btn-swipe, .btn-wash, .btn-sq{
+      background:none !important;border:2px solid ButtonText !important;color:ButtonText !important;
+    }
+    .btn-swipe::before, .btn-wash::before, .btn-sq::before{
+      display:none !important;
+    }
+  }
+
+  /* Print Media */
+  @media print{
+    body, .paper-band, .paper-card{background-image:none !important}
+    .btn-swipe::before, .btn-wash::before{display:none !important}
+    .btn-swipe, .btn-wash{color:#000 !important;border:1px solid #000 !important;background:none !important}
+  }
+
 </style>
 <script src="./image-slot.js"></script>
 <script src="./media-data.js"></script>
