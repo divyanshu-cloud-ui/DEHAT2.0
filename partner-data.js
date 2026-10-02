@@ -3407,7 +3407,7 @@ const ES = {
     }
   ],
   "certTitle": "Transparencia, acreditaciones y certificaciones",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "Organismos independientes que han evaluado, acreditado o certificado a DEHAT según sus propios estándares publicados.",
   "certifications": [
     {
       "k": "CAF India",
@@ -3418,18 +3418,18 @@ const ES = {
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "Estándares de Evaluación y Acreditación para Instituciones de Desarrollo en la India, Instituto Tata de Ciencias Sociales.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "Certificación de transparencia para ONG.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "Menciones en medios",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "Cobertura independiente de la labor, extraída del archivo mediático completo. Los enlaces dirigen al editor; donde no se muestra ningún enlace, el sitio del medio no formaba parte del registro del archivo.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -3564,7 +3564,7 @@ const ES = {
     }
   ],
   "ecosystemTitle": "Departamentos gubernamentales, instituciones estatutarias y sistemas comunitarios con los que colaboramos",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT y las comunidades con las que colabora participan plenamente en las siguientes instituciones a nivel de aldea, bloque, tehsil, distrito y estado, siendo convocados de forma periódica. Los organismos de agricultura y horticultura se incluyen aquí en lugar de en una lista separada, porque la labor de DEHAT en medios de vida y resiliencia climática transita por el mismo tejido institucional que su labor de protección infantil.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -4693,7 +4693,7 @@ const FR = {
     }
   ],
   "certTitle": "Transparence, agréments et certifications",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "Organismes indépendants ayant évalué, agréé ou certifié DEHAT selon leurs propres normes publiées.",
   "certifications": [
     {
       "k": "CAF India",
@@ -4704,18 +4704,18 @@ const FR = {
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "Normes d'évaluation et d'habilitation des institutions de développement en Inde, Institut Tata de sciences sociales.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "Certification de transparence des ONG.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "Mentions dans les médias",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "Couverture indépendante de notre action, issue des archives médiatiques complètes. Les liens renvoient vers l'éditeur ; lorsqu'aucun lien n'apparaît, le site du média ne figurait pas dans les archives.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -4850,7 +4850,7 @@ const FR = {
     }
   ],
   "ecosystemTitle": "Services gouvernementaux, institutions statutaires et systèmes communautaires avec lesquels nous collaborons",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT et les communautés partenaires sont des participants à part entière des institutions suivantes aux niveaux du village, du bloc, du tehsil, du district et de l'État, et y sont régulièrement conviés. Les organismes agricoles et horticoles figurent ici plutôt que dans une liste distincte, car l'action de DEHAT en matière de moyens de subsistance et de résilience climatique s'inscrit dans le même tissu institutionnel que la protection de l'enfance.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -5979,7 +5979,7 @@ const RU = {
     }
   ],
   "certTitle": "Прозрачность, аккредитации и сертификаты",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "Независимые организации, проводившие экспертизу, аккредитацию или сертификацию DEHAT в соответствии со своими опубликованными стандартами.",
   "certifications": [
     {
       "k": "CAF India",
@@ -5990,18 +5990,18 @@ const RU = {
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "Стандарты оценки и аккредитации институтов развития в Индии, Институт социальных наук Тата.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "Сертификация прозрачности деятельности НКО.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "Упоминания в СМИ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "Независимое освещение деятельности, сформированное на основе полного медиаархива. Ссылки ведут на сайты изданий; если ссылка отсутствует, интернет-ресурс издания не был зафиксирован в архивных записях.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -6136,7 +6136,7 @@ const RU = {
     }
   ],
   "ecosystemTitle": "Государственные ведомства, уставные институты и общественные структуры, с которыми мы работаем",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT и сообщества, с которыми организация работает, являются постоянными участниками и регулярно приглашаются на заседания следующих институтов на уровне деревень, блоков, техсилов, округов и штатов. Сельскохозяйственные и садоводческие органы включены в общий список, поскольку работа DEHAT по поддержке источников дохода и климатической устойчивости осуществляется в рамках той же институциональной структуры, что и защита прав детей.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -7265,29 +7265,29 @@ const AR = {
     }
   ],
   "certTitle": "الشفافية وقوائم الاعتماد والشهادات",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "جهات مستقلة قامت بمراجعة DEHAT أو اعتمادها أو منحها شهادات وفقا لمعاييرها المنشورة.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "مؤسسة دعم الجمعيات الخيرية في الهند (CAF India).",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "معايير التقييم والاعتماد لمؤسسات التنمية في الهند، معهد تاتا للعلوم الاجتماعية.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "شهادة الشفافية للمنظمات غير الحكومية.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "التغطية الإعلامية",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "تغطية إعلامية مستقلة للعمل، مستخرجة من الأرشيف الإعلامي الكامل. الروابط تؤدي إلى الناشر؛ وحيث لا يظهر رابط، فإن موقع الوسيلة لم يكن جزءا من السجل الأرشيفي.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -7422,7 +7422,7 @@ const AR = {
     }
   ],
   "ecosystemTitle": "الدوائر الحكومية والمؤسسات القانونية والأنظمة المجتمعية التي نتعاون معها",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "تعد DEHAT والمجتمعات التي تعمل معها مشاركا أساسيا في المؤسسات التالية على مستوى القرية والكتلة والتحصيل والمديرية والولاية، ويتم توجيه الدعوة إليها بانتظام. تم تضمين الهيئات الزراعية والبستانية هنا بدلا من إدراجها في قائمة منفصلة، لأن عمل DEHAT في سبل العيش والمرونة المناخية يسير عبر نفس النسيج المؤسسي لبرامج حماية الطفل.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -8551,12 +8551,12 @@ const ZH = {
     }
   ],
   "certTitle": "透明度、入库与资质认证",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "根据自身公开标准对 DEHAT 进行审核、入库或认证的独立机构。",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "印度慈善援助基金会（CAF India）。",
       "logo": "caf-india.png"
     },
     {
@@ -8568,12 +8568,12 @@ const ZH = {
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "非政府组织透明度认证。",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "媒体报道",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "来自完整媒体档案的独立报道。链接直通出版机构；若未显示链接，说明该媒体的线上记录未纳入档案存档。",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -8708,7 +8708,7 @@ const ZH = {
     }
   ],
   "ecosystemTitle": "我们合作的政府部门、法定机构与社区系统",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in-and consistent invitees to-the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT 及其所服务的社区是村级、区块级、县级（Tehsil）、地区级及邦级以下机构的积极参与者，并定期应邀与会。农业与园艺机构一并列入此处而非另行立表，是因为 DEHAT 在生计与气候韧性领域的工作与儿童保护根植于同一个制度网络中。",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -9837,29 +9837,29 @@ const UR = {
     }
   ],
   "certTitle": "شفافیت، نامزدگیاں اور اسناد",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "آزاد ادارے جنہوں نے اپنے شائع شدہ معیارات کے تحت DEHAT کا جائزہ لیا، پینل میں شامل کیا یا تصدیق کی۔",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "چیریٹیز ایڈ فاؤنڈیشن انڈیا۔",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ہندوستان میں ترقیاتی اداروں کے لیے تشخیصی اور فہرست سازی کے معیارات، ٹاٹا انسٹی ٹیوٹ آف سوشل سائنسز۔",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "این جی او شفافیت سرٹیفیکیشن۔",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "میڈیا میں تذکرہ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "کام کی آزادانہ کوریج، جو مکمل میڈیا آرکائیو سے لی گئی ہے۔ لنکس پبلشر کی ویب سائٹ پر جاتے ہیں؛ جہاں کوئی لنک نہیں دیا گیا، وہ پبلشر کی ویب موجودگی آرکائیو ریکارڈ کا حصہ نہیں تھی۔",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -9994,7 +9994,7 @@ const UR = {
     }
   ],
   "ecosystemTitle": "سرکاری محکمے، قانونی ادارے اور کمیونٹی کے نظام جن کے ساتھ ہم کام کرتے ہیں",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT اور وہ برادریاں جن کے ساتھ یہ کام کرتی ہے، گاؤں، بلاک، تحصیل، ضلع اور ریاستی سطح پر درج ذیل اداروں میں باقاعدہ شریک اور مدعو ہوتی ہیں۔ زراعت اور باغبانی کے اداروں کو الگ فہرست کے بجائے یہاں شامل کیا گیا ہے، کیونکہ DEHAT کا معاش اور موسمیاتی پائیداری کا کام بچوں کے تحفظ کی طرح انہی ادارہ جاتی ڈھانچوں کے ذریعے آگے بڑھتا ہے۔",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -11123,29 +11123,29 @@ const BN = {
     }
   ],
   "certTitle": "স্বচ্ছতা, অন্তর্ভুক্তি এবং সার্টিফিকেশন",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "স্বাধীন সংস্থাসমূহ যারা নিজস্ব প্রকাশিত মানদণ্ডের ভিত্তিতে DEHAT-এর পর্যালোচনা, তালিকাভুক্তি বা প্রত্যয়ন করেছে।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "চ্যারিটিজ এইড ফাউন্ডেশন ইন্ডিয়া।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ভারতে উন্নয়ন প্রতিষ্ঠানসমূহের মূল্যায়ন ও তালিকাভুক্তি মানদণ্ড, টাটা ইনস্টিটিউট অব সোশ্যাল সায়েন্সেস।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "বেসরকারি সংস্থার স্বচ্ছতা প্রত্যয়ন।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "মিডিয়া উল্লেখ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "সম্পূর্ণ মিডিয়া সংরক্ষণাগার থেকে সংগৃহীত কাজের স্বাধীন প্রতিবেদন। লিঙ্কগুলি প্রকাশকের কাছে নিয়ে যায়; যেখানে কোনও লিঙ্ক দেখানো হয়নি, সেখানে আউটলেটের নিজস্ব ওয়েবসাইট আর্কাইভ রেকর্ডের অংশ ছিল না।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -11280,7 +11280,7 @@ const BN = {
     }
   ],
   "ecosystemTitle": "সরকারি বিভাগ, সংবিধিবদ্ধ প্রতিষ্ঠান এবং সম্প্রদায় ব্যবস্থা যার সাথে আমরা কাজ করি",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT এবং যে সম্প্রদায়গুলির সাথে এটি কাজ করে তারা গ্রাম, ব্লক, তহসিল, জেলা এবং রাজ্য স্তরের নিম্নলিখিত প্রতিষ্ঠানগুলিতে সক্রিয় অংশগ্রহণকারী এবং নিয়মিত আমন্ত্রিত। কৃষি ও উদ্যানপালন সংস্থাগুলিকে পৃথক তালিকার পরিবর্তে এখানে অন্তর্ভুক্ত করা হয়েছে, কারণ DEHAT-এর জীবিকা ও জলবায়ু সহনশীলতার কাজ শিশু সুরক্ষার মতোই একই প্রাতিষ্ঠানিক কাঠামোর মধ্য দিয়ে পরিচালিত হয়।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -12409,29 +12409,29 @@ const MR = {
     }
   ],
   "certTitle": "पारदर्शकता, नोंदणी आणि प्रमाणपत्रे",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "स्वतंत्र संस्था ज्यांनी स्वतःच्या प्रकाशित मानकांच्या आधारे DEHAT चे पुनरावलोकन, सूचीयन किंवा प्रमाणीकरण केले आहे.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "चॅरिटीज एड फाउंडेशन इंडिया.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारतातील विकास संस्थांसाठी मूल्यमापन आणि सूचीयन मानके, टाटा इन्स्टिट्यूट ऑफ सोशल सायन्सेस.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "स्वयंसेवी संस्था पारदर्शकता प्रमाणीकरण.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "माध्यमांमधील उल्लेख",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "संपूर्ण मीडिया दस्तऐवजांमधून घेतलेले कामाचे स्वतंत्र वार्तांकन. दुवे प्रकाशकाकडे नेतात; जेथे दुवा दाखवलेला नाही, तेथे प्रकाशनाची संकेतस्थळ उपस्थिती दस्तऐवजाचा भाग नव्हती.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -12566,7 +12566,7 @@ const MR = {
     }
   ],
   "ecosystemTitle": "शासकीय विभाग, वैधानिक संस्था आणि समुदाय व्यवस्था ज्यांच्यासोबत आम्ही काम करतो",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT आणि ज्या समुदायांसोबत ही संस्था काम करते ते गाव, ब्लॉक, तहसील, जिल्हा आणि राज्य स्तरावरील खालील संस्थांमध्ये सक्रिय सहभागी आहेत - आणि नियमितपणे निमंत्रित केले जातात. कृषी आणि फलोत्पादन संस्थांचा स्वतंत्र यादीऐवजी येथे समावेश केला आहे, कारण DEHAT चे उपजीविका आणि हवामान-सक्षमता कार्य बाल संरक्षणाप्रमाणेच एकाच संस्थात्मक रचनेतून चालते.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -13695,29 +13695,29 @@ const TE = {
     }
   ],
   "certTitle": "పారదర్శకత, నమోదులు మరియు ధృవీకరణలు",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "తమ స్వంత ప్రచురిత ప్రమాణాల ఆధారంగా DEHAT ను సమీక్షించిన, నమోదు చేసిన లేదా ధృవీకరించిన స్వతంత్ర సంస్థలు.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ఛారిటీస్ ఎయిడ్ ఫౌండేషన్ ఇండియా.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "భారతదేశంలోని అభివృద్ధి సంస్థల కోసం మూల్యాంకనం మరియు నమోదు ప్రమాణాలు, టాటా ఇన్స్టిట్యూట్ ఆఫ్ సోషల్ సైన్సెస్.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "ఎన్జీఓ పారదర్శకత ధృవీకరణ.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "మీడియా ప్రస్తావనలు",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "పూర్తి మీడియా ఆర్కైవ్ నుండి సేకరించిన స్వతంత్ర సమాచారం. లింకులు ప్రచురణకర్త వద్దకు తీసుకెళ్తాయి; లింక్ చూపించని చోట, ప్రచురణ వెబ్‌సైట్ ఆర్కైవ్ రికార్డులో భాగం కాదు.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -13852,7 +13852,7 @@ const TE = {
     }
   ],
   "ecosystemTitle": "మేము కలిసి పనిచేసే ప్రభుత్వ విభాగాలు, చట్టబద్ధ సంస్థలు మరియు సమాజ వ్యవస్థలు",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT మరియు అది కలిసి పనిచేసే సముదాయాలు గ్రామ, బ్లాక్, తహసీల్, జిల్లా మరియు రాష్ట్ర స్థాయిలలోని ఈ క్రింది సంస్థలలో చురుకైన భాగస్వాములు మరియు క్రమం తప్పకుండా ఆహ్వానింపబడతాయి. వ్యవసాయ, ఉద్యానవన విభాగాలను ప్రత్యేక జాబితాగా కాకుండా ఇక్కడే చేర్చారు, ఎందుకంటే DEHAT జీవనోపాధి మరియు పర్యావరణ పరిరక్షణ పనులు బాలల రక్షణ లాగే ఒకే సంస్థాగత వ్యవస్థ ద్వారా సాగుతాయి.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -14981,29 +14981,29 @@ const TA = {
     }
   ],
   "certTitle": "வெளிப்படைத்தன்மை, அங்கீகாரங்கள் மற்றும் சான்றிதழ்கள்",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "தங்களின் சொந்த வெளியிடப்பட்ட தரநிலைகளின் அடிப்படையில் DEHAT அமைப்பை மதிப்பாய்வு செய்த, பட்டியலிட்ட அல்லது சான்றளித்த சுயாதீன அமைப்புகள்.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "சாரிட்டிஸ் எய்ட் பவுண்டேஷன் இந்தியா.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "இந்தியாவில் உள்ள வளர்ச்சி நிறுவனங்களுக்கான மதிப்பீடு மற்றும் பட்டியல் தரநிலைகள், டாடா சமூக அறிவியல் நிறுவனம்.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "தன்னார்வ தொண்டு நிறுவன வெளிப்படைத்தன்மை சான்றிதழ்.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ஊடகக் குறிப்புகள்",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "முழு ஊடகக் காப்பகத்திலிருந்து பெறப்பட்ட பணிகளின் சுயாதீனத் தகவல்கள். இணைப்புகள் வெளியீட்டாளருக்கு இட்டுச் செல்கின்றன; இணைப்பு காட்டப்படாத இடங்களில், ஊடகத்தின் வலைத்தளம் காப்பகப் பதிவின் பகுதியாக இல்லை.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -15138,7 +15138,7 @@ const TA = {
     }
   ],
   "ecosystemTitle": "நாங்கள் இணைந்து செயல்படும் அரசுத் துறைகள், சட்டப்பூர்வ நிறுவனங்கள் மற்றும் சமூக அமைப்புகள்",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT மற்றும் அது இணைந்து செயல்படும் சமூகங்கள் கிராமம், வட்டாரம், தாலுகா, மாவட்டம் மற்றும் மாநில அளவிலான பின்வரும் நிறுவனங்களில் ஒருங்கிணைந்த பங்கேற்பாளர்களாகவும் வழக்கமாக அழைக்கப்படுபவர்களாகவும் உள்ளன. வேளாண்மை மற்றும் தோட்டக்கலை அமைப்புகள் தனிப் பட்டியலாக இல்லாமல் இங்கேயே சேர்க்கப்பட்டுள்ளன, ஏனெனில் DEHAT-இன் வாழ்வாதாரம் மற்றும் காலநிலை பின்னடைவுப் பணிகள் குழந்தைகள் பாதுகாப்பைப் போன்ற அதே நிறுவனக் கட்டமைப்பின் வழியே இயங்குகின்றன.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -16267,29 +16267,29 @@ const GU = {
     }
   ],
   "certTitle": "પારદર્શિતા, પેનલ સમાવેશ અને પ્રમાણપત્રો",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "સ્વતંત્ર સંસ્થાઓ જેમણે પોતાના પ્રકાશિત ધોરણોના આધારે DEHAT ની સમીક્ષા, યાદીકરણ અથવા પ્રમાણપત્ર આપ્યું છે.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ચેરિટીઝ એઇડ ફાઉન્ડેશન ઇન્ડિયા.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ભારતમાં વિકાસ સંસ્થાઓ માટે મૂલ્યાંકન અને યાદીકરણ ધોરણો, ટાટા ઇન્સ્ટિટ્યૂટ ઑફ સોશિયલ સાયન્સિસ.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "બિનસરકારી સંસ્થા પારદર્શિતા પ્રમાણપત્ર.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "મીડિયા ઉલ્લેખ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "સમગ્ર મીડિયા આર્કાઇવમાંથી મેળવેલ કાર્યનું સ્વતંત્ર કવરેજ. લિંક્સ પ્રકાશક તરફ દોરી જાય છે; જ્યાં લિંક દર્શાવેલ નથી, ત્યાં પ્રકાશનની વેબસાઇટ આર્કાઇવ રેકોર્ડનો ભાગ નહોતી.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -16424,7 +16424,7 @@ const GU = {
     }
   ],
   "ecosystemTitle": "સરકારી વિભાગો, વૈધાનિક સંસ્થાઓ અને સમુદાય પ્રણાલીઓ જેની સાથે અમે જોડાયેલા છીએ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT અને જે સમુદાયો સાથે તે કામ કરે છે તેઓ ગામ, બ્લોક, તાલુકા, જિલ્લા અને રાજ્ય સ્તરની નીચેની સંસ્થાઓમાં સક્રિય સહભાગી છે - અને નિયમિતપણે આમંત્રિત કરવામાં આવે છે. કૃષિ અને બાગાયતી સંસ્થાઓનો અલગ યાદીને બદલે અહીં સમાવેશ કરવામાં આવ્યો છે, કારણ કે DEHAT નું આજીવિકા અને આબોહવા-સ્થિતિસ્થાપકતાનું કાર્ય બાળ સુરક્ષાની જેમ જ સંસ્થાકીય માળખામાંથી પસાર થાય છે.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -17553,29 +17553,29 @@ const KN = {
     }
   ],
   "certTitle": "ಪಾರದರ್ಶಕತೆ, ನೋಂದಣಿಗಳು ಮತ್ತು ಪ್ರಮಾಣೀಕರಣಗಳು",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "ತಮ್ಮದೇ ಆದ ಪ್ರಕಟಿತ ಮಾನದಂಡಗಳ ಆಧಾರದ ಮೇಲೆ DEHAT ಅನ್ನು ಪರಿಶೀಲಿಸಿದ, ಪಟ್ಟಿಮಾಡಿದ ಅಥವಾ ಪ್ರಮಾಣೀಕರಿಸಿದ ಸ್ವತಂತ್ರ ಸಂಸ್ಥೆಗಳು.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ಚಾರಿಟೀಸ್ ಏಡ್ ಫೌಂಡೇಶನ್ ಇಂಡಿಯಾ.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ಭಾರತದಲ್ಲಿನ ಅಭಿವೃದ್ಧಿ ಸಂಸ್ಥೆಗಳ ಮೌಲ್ಯಮಾಪನ ಮತ್ತು ನೋಂದಣಿ ಮಾನದಂಡಗಳು, ಟಾಟಾ ಸಮಾಜ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "ಎನ್‌ಜಿಒ ಪಾರದರ್ಶಕತೆ ಪ್ರಮಾಣೀಕರಣ.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ಮಾಧ್ಯಮ ಉಲ್ಲೇಖಗಳು",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "ಸಂಪೂರ್ಣ ಮಾಧ್ಯಮ ದಾಖಲೆಯಿಂದ ಪಡೆದ ಕೆಲಸದ ಸ್ವತಂತ್ರ ಮಾಹಿತಿ. ಲಿಂಕ್‌ಗಳು ಪ್ರಕಾಶಕರ ಬಳಿಗೆ ಕರೆದೊಯ್ಯುತ್ತವೆ; ಯಾವುದೇ ಲಿಂಕ್ ತೋರಿಸದಿದ್ದಲ್ಲಿ, ಆ ಪ್ರಕಾಶನದ ಸ್ವಂತ ಜಾಲತಾಣವು ದಾಖಲೆಯ ಭಾಗವಾಗಿರಲಿಲ್ಲ.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -17710,7 +17710,7 @@ const KN = {
     }
   ],
   "ecosystemTitle": "ನಾವು ತೊಡಗಿಸಿಕೊಂಡಿರುವ ಸರ್ಕಾರಿ ಇಲಾಖೆಗಳು, ಶಾಸನಬದ್ಧ ಸಂಸ್ಥೆಗಳು ಮತ್ತು ಸಮುದಾಯ ವ್ಯವಸ್ಥೆಗಳು",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ಮತ್ತು ಅದು ಒಡಗೂಡಿ ಕೆಲಸ ಮಾಡುವ ಸಮುದಾಯಗಳು ಗ್ರಾಮ, ತಾಲೂಕು, ಜಿಲ್ಲಾ ಮತ್ತು ರಾಜ್ಯ ಮಟ್ಟದ ಕೆಳಗಿನ ಸಂಸ್ಥೆಗಳಲ್ಲಿ ಸಕ್ರಿಯ ಭಾಗಿದಾರರಾಗಿದ್ದು ನಿರಂತರವಾಗಿ ಆಹ್ವಾನಿಸಲ್ಪಡುತ್ತವೆ. ಕೃಷಿ ಮತ್ತು ತೋಟಗಾರಿಕಾ ಸಂಸ್ಥೆಗಳನ್ನು ಪ್ರತ್ಯೇಕ ಪಟ್ಟಿಯ ಬದಲಿಗೆ ಇಲ್ಲಿಯೇ ಸೇರಿಸಲಾಗಿದೆ, ಏಕೆಂದರೆ DEHAT ನ ಜೀವನೋಪಾಯ ಮತ್ತು ಹವಾಮಾನ-ಸ್ಥಿತಿಸ್ಥಾಪಕತ್ವ ಕಾರ್ಯವು ಮಕ್ಕಳ ರಕ್ಷಣೆಯಂತೆಯೇ ಅದೇ ಸಾಂಸ್ಥಿಕ ಚೌಕಟ್ಟಿನ ಮೂಲಕ ಸಾಗುತ್ತದೆ.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -18839,29 +18839,29 @@ const MAI = {
     }
   ],
   "certTitle": "पारदर्शिता, सूचीयन आ प्रमाणन",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "स्वतंत्र संस्था सभ जे अपन प्रकाशित मानकक आधार पर DEHAT क समीक्षा, सूचीयन वा प्रमाणन केने अछि।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "चैरिटीज़ एड फाउंडेशन इंडिया।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारत मे विकास संस्था सभ लेल मूल्यांकन आ सूचीयन मानक, टाटा इंस्टीट्यूट ऑफ सोशल साइंसेज।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "गैर-सरकारी संगठन पारदर्शिता प्रमाणन।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "मीडिया उल्लेख",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "सम्पूर्ण मीडिया अभिलेख सँ लेल गेल, अहि काजक स्वतंत्र कवरेज। लिंक प्रकाशक धरि जाइत अछि; जतय लिंक नहि देखाओल गेल अछि, ओतय प्रकाशनक अपन जालस्थल अभिलेखक हिस्सा नहि छल।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -18996,7 +18996,7 @@ const MAI = {
     }
   ],
   "ecosystemTitle": "सरकारी विभाग, वैधानिक संस्था आ सामुदायिक व्यवस्था जाहि संग हमरा सभ काज करैत छी",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT आ जिनकर संग ई काज करैत अछि ओ समुदाय गाम, प्रखण्ड, तहसील, जिला आ राज्य स्तरक निम्न संस्था सभक सक्रिय सहभागी छथि - आ नियमित रूप सँ आमंत्रित कएल जाइत छथि। कृषि आ बागवानी संस्था सभकें एतय पृथक सूचीक बदला समाहित कएल गेल अछि, किएक तँ DEHAT क आजीविका आ जलवायु-सक्षमताक काज ओही संस्थागत संरचना सँ गुजरैत अछि जाहि सँ बाल-संरक्षणक काज गुजरैत अछि।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -20125,29 +20125,29 @@ const AS = {
     }
   ],
   "certTitle": "স্বচ্ছতা, অন্তৰ্ভুক্তি আৰু প্ৰমাণপত্ৰসমূহ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "স্বতন্ত্ৰ সংস্থাসমূহ যিয়ে নিজৰ প্ৰকাশিত মানদণ্ডৰ ভিত্তিত DEHAT ৰ পৰ্যালোচনা, তালিকাভুক্তি বা প্ৰমাণীকৰণ কৰিছে।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "চেৰিটিজ এইড ফাউণ্ডেচন ইণ্ডিয়া।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ভাৰতত উন্নয়নমূলক প্ৰতিষ্ঠানসমূহৰ মূল্যায়ন আৰু তালিকাভুক্তি মানদণ্ড, টাটা ইনষ্টিটিউট অৱ ছ'চিয়েল চাইন্সেছ।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "বেচৰকাৰী সংস্থাৰ স্বচ্ছতা প্ৰমাণপত্ৰ।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "সংবাদ মাধ্যমত উল্লেখ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "সম্পূৰ্ণ সংবাদ সংগ্ৰহালয়ৰ পৰা লোৱা কাৰ্যৰ স্বতন্ত্ৰ প্ৰতিবেদন। লিংকবোৰে প্ৰকাশকলৈ লৈ যায়; য'ত কোনো লিংক দেখুওৱা হোৱা নাই, তাত প্ৰকাশনটোৰ ৱেবছাইট সংগ্ৰহালয়ৰ অংশ নাছিল।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -20282,7 +20282,7 @@ const AS = {
     }
   ],
   "ecosystemTitle": "চৰকাৰী বিভাগ, বিধিবদ্ধ প্ৰতিষ্ঠান আৰু সম্প্ৰদায় ব্যৱস্থা যাৰ সৈতে আমি কাম কৰোঁ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT আৰু ইয়াৰ সৈতে কাম কৰা সম্প্ৰদায়সমূহ গাঁও, ব্লক, তহচিল, জিলা আৰু ৰাজ্য পৰ্যায়ৰ নিম্নলিখিত সংস্থাসমূহৰ সক্ৰিয় অংশগ্ৰহণকাৰী আৰু নিয়মীয়াকৈ আমন্ত্ৰিত হয়। কৃষি আৰু উদ্যানশস্য সংস্থাসমূহক পৃথক তালিকাৰ পৰিৱৰ্তে ইয়াত অন্তৰ্ভুক্ত কৰা হৈছে, কাৰণ DEHAT ৰ জীৱিকা আৰু জলবায়ু-সহনশীলতাৰ কাম শিশু সুৰক্ষাৰ দৰেই একেটা প্ৰতিষ্ঠানিক কাঠামোৰ মাজেৰে আগবাঢ়ে।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -21411,29 +21411,29 @@ const NE = {
     }
   ],
   "certTitle": "पारदर्शिता, सूचीकरण र प्रमाणीकरण",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "स्वतन्त्र निकायहरू जसले आफ्ना प्रकाशित मापदण्डका आधारमा DEHAT को समीक्षा, सूचीकरण वा प्रमाणीकरण गरेका छन्।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "च्यारिटीज एड फाउन्डेसन इन्डिया।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारतमा विकास संस्थाहरूका लागि मूल्याङ्कन र सूचीकरण मापदण्ड, टाटा इन्स्टिच्युट अफ सोसल साइन्सेज।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "गैरसरकारी संस्था पारदर्शिता प्रमाणीकरण।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "मिडिया उल्लेख",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "सम्पूर्ण मिडिया अभिलेखबाट लिइएको कार्यको स्वतन्त्र कभरेज। लिङ्कहरू प्रकाशककहाँ पुर्‍याउँछन्; जहाँ कुनै लिङ्क देखाइएको छैन, त्यहाँ प्रकाशनको आफ्नै वेबसाइट अभिलेखको अंश थिएन।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -21568,7 +21568,7 @@ const NE = {
     }
   ],
   "ecosystemTitle": "हामीले सहकार्य गर्ने सरकारी विभाग, वैधानिक संस्था र सामुदायिक प्रणालीहरू",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT र यससँग मिलेर काम गर्ने समुदायहरू गाउँ, ब्लक, तहसील, जिल्ला र राज्य स्तरका निम्न संस्थाहरूमा सक्रिय सहभागी छन् - र नियमित रूपमा आमन्त्रित गरिन्छन्। कृषि र बागवानी निकायहरूलाई छुट्टै सूचीको सट्टा यहाँ समावेश गरिएको छ, किनभने DEHAT को जीविकोपार्जन र जलवायु-सहनशीलता कार्य बाल संरक्षणजस्तै एउटै संस्थागत संरचनाबाट अघि बढ्छ।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -22697,29 +22697,29 @@ const KOK = {
     }
   ],
   "certTitle": "पारदर्शकता, सूचीकरण आनी प्रमाणीकरण",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "स्वतंत्र संस्था ज्यो आपल्या प्रकाशीत मानदंडांचेर DEHAT चे पुनरावलोकन, सुचीयन वा प्रमाणीकरण करतात.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "चॅरिटीस एड फावंडेशन इंडिया.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारतांतल्या विकास संस्थांखातीर मुल्यांकन आनी सुचीयन मानदंडां, टाटा इन्स्टिट्यूट ऑफ सोशल सायन्सेस.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "एनजीओ पारदर्शकता प्रमाणिकरण.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "माध्यम उल्लेख",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "पुराय प्रसारमाध्यम दस्तऐवजांतल्यान घेतिल्ली कामाची स्वतंत्र माहिती. दुवे प्रकाशकाकडेन व्हरतात; खंयचोच दुवो दाखोवंक ना थंय प्रकाशनाची वेवसाईट दस्तऐवजाचो भाग नाशिल्ली.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -22854,7 +22854,7 @@ const KOK = {
     }
   ],
   "ecosystemTitle": "सरकारी विभाग, वैधानिक संस्था आनी समाज वेवस्था जांच्या वांगडा आमी काम करतात",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT आनी जांच्या वांगडा ती काम करता ते समाज गांव, ब्लॉक, तहसील, जिल्लो आनी राज्य पांवड्यांवेल्या सकयल्या संस्थांनी सक्रीय वांटेकार आसात - आनी तांकां नियमितपणान आपोवणे येता. शेतकाम आनी बागायती संस्थांचो वेगळे वळेरे बदला हांगा आस्पाव केला, कारण DEHAT चें उपजीविका आनी हवामान-सक्षमतायेचें काम भुरग्यांच्या संरक्षणाभाशेनूच एकाच संस्थात्मक रचणुकेंतल्यान चलता.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -23983,29 +23983,29 @@ const SA = {
     }
   ],
   "certTitle": "पारदर्शिता, सूचीयनम्, प्रमाणीकरणं च",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "स्वतन्त्राः संस्थाः याः स्वकीयेन प्रकाशितमानदण्डेन DEHAT संस्थायाः समीक्षणं, सूचीकरणं वा प्रमाणीकरणं कृतवत्यः सन्ति।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "चैरिटीज् एड् फाउण्डेशन् इण्डिया।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारते विकाससंस्थानां कृते मूल्याङ्कन-सूचीकरण-मानदण्डाः, टाटा इन्स्टिट्यूट् आफ् सोशल् साइन्सेस्।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "असर्वकारीसंस्थापारदर्शिताप्रमाणीकरणम्।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "माध्यमेषु उल्लेखः",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "सम्पूर्णमाध्यमाभिलेखात् सङ्गृहीतं कार्यस्य स्वतन्त्रं विवरणम्। सूत्राणि प्रकाशकं प्रति नयन्ति; यत्र सूत्रं न दृश्यते, तत्र प्रकाशनस्य जालस्थानम् अभिलेखे नासीत्।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -24140,7 +24140,7 @@ const SA = {
     }
   ],
   "ecosystemTitle": "सर्वकारीय-विभागाः, वैधानिक-संस्थाः, सामाजिक-व्यवस्थाश्च याभिः सह वयं कार्यं कुर्मः",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT संस्था याैश्च समुदायैः सह सा कार्यं करोति, ते ग्राम-खण्ड-उपमण्डल-मण्डल-राज्यस्तरीय-संस्थासु सक्रियाः सहभागिनः सन्ति - नियमितरूपेण च आमन्त्रिताः भवन्ति। कृषि-उद्यानसंस्थाः पृथक्सूच्याः स्थाने अत्रैव सम्मिलिताः, यतः DEHAT संस्थायाः आजीविका-जलवायुसहनशीलताकार्यं बालसंरक्षणकार्यमिव तस्मिन्नेव संस्थागततन्तौ प्रवहति।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -25269,29 +25269,29 @@ const SD = {
     }
   ],
   "certTitle": "شفافيت، فهرست ۾ شموليت ۽ سرٽيفڪيشن",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "آزاد ادارا جن پنهنجي شايع ٿيل معيارن جي بنياد تي DEHAT جو جائزو ورتو، شامل ڪيو يا تصديق ڪئي آهي.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "چئريٽيز ايڊ فائونڊيشن انڊيا.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "هندستان ۾ ترقياتي ادارن جي جائزي ۽ فهرست جا معيار، ٽاٽا انسٽيٽيوٽ آف سوشل سائنسز.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "اين جي او شفافيت سرٽيفڪيشن.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ميڊيا ۾ ذڪر",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "مڪمل ميڊيا آرڪائيو مان ورتل ڪم جو آزاد احوال. لنڪس پبلشر ڏانهن وٺي وڃن ٿا؛ جتي ڪو لنڪ ناهي ڏيکاريو ويو، اتي اخبار جي ويب سائيٽ آرڪائيو جو حصو نه هئي.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -25426,7 +25426,7 @@ const SD = {
     }
   ],
   "ecosystemTitle": "سرڪاري کاتا، قانوني ادارا ۽ ڪميونٽي جا نظام جن سان اسين گڏجي ڪم ڪريون ٿا",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ۽ اهي برادريون جن سان گڏ هيءَ ڪم ڪري ٿي، ڳوٺ، بلاڪ، تحصيل، ضلعي ۽ صوبائي سطح تي هيٺين ادارن ۾ مڪمل شريڪ آهن ۽ کين باقاعدگي سان گهرايو وڃي ٿو. زراعت ۽ باغبانيءَ جي ادارن کي الڳ فهرست بدران هتي شامل ڪيو ويو آهي، ڇاڪاڻ ته DEHAT جو روزگار ۽ موسمي پائيداريءَ جو ڪم ٻارن جي تحفظ وانگر ساڳئي ادارتي ڍانچي مان گذري ٿو.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -26555,29 +26555,29 @@ const OR = {
     }
   ],
   "certTitle": "ସ୍ୱଚ୍ଛତା, ତାଲିକାଭୁକ୍ତି ଏବଂ ପ୍ରମାଣପତ୍ର",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "ସ୍ୱତନ୍ତ୍ର ସଂସ୍ଥାଗୁଡ଼ିକ ଯେଉଁମାନେ ନିଜର ପ୍ରକାଶିତ ମାନଦଣ୍ଡ ଆଧାରରେ DEHAT ର ସମୀକ୍ଷା, ତାଲିକାଭୁକ୍ତ ବା ପ୍ରମାଣୀକରଣ କରିଛନ୍ତି।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ଚାରିଟିଜ୍ ଏଡ୍ ଫାଉଣ୍ଡେସନ୍ ଇଣ୍ଡିଆ।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ଭାରତରେ ବିକାଶ ସଂସ୍ଥାଗୁଡ଼ିକ ପାଇଁ ମୂଲ୍ୟାଙ୍କନ ଏବଂ ତାଲିକାଭୁକ୍ତି ମାନଦଣ୍ଡ, ଟାଟା ଇନଷ୍ଟିଚ୍ୟୁଟ୍ ଅଫ୍ ସୋସିଆଲ୍ ସାଇନ୍ସେସ୍।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "ଏନଜିଓ ସ୍ୱଚ୍ଛତା ପ୍ରମାଣପତ୍ର।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ଗଣମାଧ୍ୟମ ଉଲ୍ଲେଖ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "ସମ୍ପୂର୍ଣ୍ଣ ଗଣମାଧ୍ୟମ ଅଭିଲେଖରୁ ସଂଗୃହୀତ କାର୍ଯ୍ୟର ସ୍ୱତନ୍ତ୍ର ବିବରଣୀ। ଲିଙ୍କଗୁଡ଼ିକ ପ୍ରକାଶକଙ୍କ ପାଖକୁ ନେଇଯାଏ; ଯେଉଁଠାରେ କୌଣସି ଲିଙ୍କ୍ ନାହିଁ, ସେଠାରେ ପ୍ରକାଶନର ନିଜସ୍ୱ ୱେବସାଇଟ୍ ଅଭିଲେଖର ଅଂଶ ନଥିଲା।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -26712,7 +26712,7 @@ const OR = {
     }
   ],
   "ecosystemTitle": "ସରକାରୀ ବିଭାଗ, ବୈଧାନିକ ଅନୁଷ୍ଠାନ ଏବଂ ସମୁଦାୟ ବ୍ୟବସ୍ଥା ଯାହା ସହିତ ଆମେ କାର୍ଯ୍ୟ କରୁ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ଏବଂ ଯେଉଁ ସମୁଦାୟମାନଙ୍କ ସହ ଏହା କାର୍ଯ୍ୟ କରେ ସେମାନେ ଗ୍ରାମ, ବ୍ଲକ, ତହସିଲ, ଜିଲ୍ଲା ଏବଂ ରାଜ୍ୟ ସ୍ତରର ନିମ୍ନଲିଖିତ ଅନୁଷ୍ଠାନଗୁଡ଼ିକରେ ସକ୍ରିୟ ଅଂଶଗ୍ରହଣକାରୀ ଏବଂ ନିୟମିତ ଭାବେ ନିମନ୍ତ୍ରିତ। କୃଷି ଓ ଉଦ୍ୟାନ କୃଷି ସଂସ୍ଥାଗୁଡ଼ିକୁ ପୃଥକ ତାଲିକା ବଦଳରେ ଏଠାରେ ସାମିଲ କରାଯାଇଛି, କାରଣ DEHAT ର ଜୀବିକା ଏବଂ ଜଳବାୟୁ-ସହନଶୀଳତା କାର୍ଯ୍ୟ ଶିଶୁ ସୁରକ୍ଷା ପରି ସମାନ ଆନୁଷ୍ଠାନିକ ଢାଞ୍ଚା ଦେଇ ଗତି କରେ।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -27841,29 +27841,29 @@ const ML = {
     }
   ],
   "certTitle": "സുതാര്യത, അംഗീകാരങ്ങൾ, സർട്ടിഫിക്കേഷനുകൾ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "പ്രസിദ്ധീകരിച്ച മാനദണ്ഡങ്ങളുടെ അടിസ്ഥാനത്തിൽ DEHAT നെ വിലയിരുത്തുകയോ പട്ടികപ്പെടുത്തുകയോ സാക്ഷ്യപ്പെടുത്തുകയോ ചെയ്ത സ്വതന്ത്ര സ്ഥാപനങ്ങൾ.",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ചാരിറ്റീസ് എയ്ഡ് ഫൗണ്ടേഷൻ ഇന്ത്യ.",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ഇന്ത്യയിലെ വികസന സ്ഥാപനങ്ങളുടെ മൂല്യനിർണ്ണയ, എംപാനൽമെന്റ് മാനദണ്ഡങ്ങൾ, ടാറ്റ ഇൻസ്റ്റിറ്റ്യൂട്ട് ഓഫ് സോഷ്യൽ സയൻസസ്.",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "എൻ‌ജി‌ഒ സുതാര്യതാ സാക്ഷ്യപത്രം.",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "മാധ്യമ പരാമർശങ്ങൾ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "സമ്പൂർണ്ണ മാധ്യമ ആർക്കൈവിൽ നിന്നുള്ള പ്രവർത്തനങ്ങളുടെ സ്വതന്ത്ര റിപ്പോർട്ടുകൾ. ലിങ്കുകൾ പ്രസാധകരിലേക്ക് നയിക്കുന്നു; ലിങ്ക് കാണിക്കാത്ത ഇടങ്ങളിൽ, മാധ്യമത്തിന്റെ വെബ്സൈറ്റ് ആർക്കൈവ് രേഖയുടെ ഭാഗമായിരുന്നില്ല.",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -27998,7 +27998,7 @@ const ML = {
     }
   ],
   "ecosystemTitle": "ഞങ്ങൾ സഹകരിച്ചു പ്രവർത്തിക്കുന്ന സർക്കാർ വകുപ്പുകൾ, നിയമപരമായ സ്ഥാപനങ്ങൾ, സാമൂഹിക സംവിധാനങ്ങൾ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ഉം അത് ഒപ്പം പ്രവർത്തിക്കുന്ന സമൂഹങ്ങളും ഗ്രാമ, ബ്ലോക്ക്, താലൂക്ക്, ജില്ലാ, സംസ്ഥാന തലങ്ങളിലെ താഴെ പറയുന്ന സ്ഥാപനങ്ങളിലെ സജീവ പങ്കാളികളും സ്ഥിരമായി ക്ഷണിക്കപ്പെടുന്നവരുമാണ്. കൃഷി, തോട്ടവിള സ്ഥാപനങ്ങളെ പ്രത്യേക പട്ടികയാക്കാതെ ഇവിടെ ഉൾപ്പെടുത്തിയിരിക്കുന്നു, കാരണം DEHAT ന്റെ ഉപജീവന, കാലാവസ്ഥാ-പ്രതിരോധ പ്രവർത്തനങ്ങൾ കുട്ടികളുടെ സംരക്ഷണം പോലെ അതേ സ്ഥാപന ഘടനയിലൂടെയാണ് മുന്നോട്ട് പോകുന്നത്.",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -29127,29 +29127,29 @@ const PA = {
     }
   ],
   "certTitle": "ਪਾਰਦਰਸ਼ਤਾ, ਸੂਚੀਕਰਨ ਅਤੇ ਪ੍ਰਮਾਣੀਕਰਨ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "ਸੁਤੰਤਰ ਸੰਸਥਾਵਾਂ ਜਿਨ੍ਹਾਂ ਨੇ ਆਪਣੇ ਪ੍ਰਕਾਸ਼ਿਤ ਮਾਪਦੰਡਾਂ ਦੇ ਆਧਾਰ 'ਤੇ DEHAT ਦੀ ਸਮੀਖਿਆ, ਸੂਚੀਕਰਨ ਜਾਂ ਪ੍ਰਮਾਣੀਕਰਨ ਕੀਤਾ ਹੈ।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ਚੈਰਿਟੀਜ਼ ਏਡ ਫਾਊਂਡੇਸ਼ਨ ਇੰਡੀਆ।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ਭਾਰਤ ਵਿੱਚ ਵਿਕਾਸ ਸੰਸਥਾਵਾਂ ਲਈ ਮੁਲਾਂਕਣ ਅਤੇ ਸੂਚੀਕਰਨ ਮਾਪਦੰਡ, ਟਾਟਾ ਇੰਸਟੀਚਿਊਟ ਆਫ਼ ਸੋਸ਼ਲ ਸਾਇੰਸਿਜ਼।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "ਗੈਰ-ਸਰਕਾਰੀ ਸੰਗਠਨ ਪਾਰਦਰਸ਼ਤਾ ਪ੍ਰਮਾਣੀਕਰਨ।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ਮੀਡੀਆ ਜ਼ਿਕਰ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "ਪੂਰੇ ਮੀਡੀਆ ਪੁਰਾਲੇਖ ਵਿੱਚੋਂ ਲਏ ਗਏ ਕੰਮ ਦੀ ਸੁਤੰਤਰ ਕਵਰੇਜ। ਲਿੰਕ ਪ੍ਰਕਾਸ਼ਕ ਵੱਲ ਲੈ ਜਾਂਦੇ ਹਨ; ਜਿੱਥੇ ਕੋਈ ਲਿੰਕ ਨਹੀਂ ਦਿਖਾਇਆ ਗਿਆ, ਉੱਥੇ ਮੀਡੀਆ ਦੀ ਵੈੱਬਸਾਈਟ ਪੁਰਾਲੇਖ ਦਾ ਹਿੱਸਾ ਨਹੀਂ ਸੀ।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -29284,7 +29284,7 @@ const PA = {
     }
   ],
   "ecosystemTitle": "ਸਰਕਾਰੀ ਵਿਭਾਗ, ਕਾਨੂੰਨੀ ਸੰਸਥਾਵਾਂ ਅਤੇ ਭਾਈਚਾਰਕ ਪ੍ਰਣਾਲੀਆਂ ਜਿਨ੍ਹਾਂ ਨਾਲ ਅਸੀਂ ਕੰਮ ਕਰਦੇ ਹਾਂ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ਅਤੇ ਜਿਨ੍ਹਾਂ ਭਾਈਚਾਰਿਆਂ ਨਾਲ ਇਹ ਕੰਮ ਕਰਦੀ ਹੈ, ਉਹ ਪਿੰਡ, ਬਲਾਕ, ਤਹਿਸੀਲ, ਜ਼ਿਲ੍ਹਾ ਅਤੇ ਰਾਜ ਪੱਧਰ 'ਤੇ ਹੇਠ ਲਿਖੀਆਂ ਸੰਸਥਾਵਾਂ ਵਿੱਚ ਸਰਗਰਮ ਭਾਗੀਦਾਰ ਹਨ - ਅਤੇ ਨਿਯਮਿਤ ਤੌਰ 'ਤੇ ਸੱਦੇ ਜਾਂਦੇ ਹਨ। ਖੇਤੀਬਾੜੀ ਅਤੇ ਬਾਗਬਾਨੀ ਸੰਸਥਾਵਾਂ ਨੂੰ ਵੱਖਰੀ ਸੂਚੀ ਦੀ ਬਜਾਏ ਇੱਥੇ ਸ਼ਾਮਲ ਕੀਤਾ ਗਿਆ ਹੈ, ਕਿਉਂਕਿ DEHAT ਦਾ ਰੋਜ਼ੀ-ਰੋਟੀ ਅਤੇ ਜਲਵਾਯੂ-ਸਹਿਣਸ਼ੀਲਤਾ ਦਾ ਕੰਮ ਬਾਲ ਸੁਰੱਖਿਆ ਵਾਂਗ ਉਸੇ ਸੰਸਥਾਗਤ ਢਾਂਚੇ ਵਿੱਚੋਂ ਲੰਘਦਾ ਹੈ।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -30413,29 +30413,29 @@ const DOI = {
     }
   ],
   "certTitle": "पारदर्शिता, सूचीकरण ते प्रमाणीकरण",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "सुतंतर संस्थां जिंदे कन्ने अपने प्रकाशित मानदंडे दे आधार उप्पर DEHAT दी समीक्षा, सूचीकरण जां प्रमाणीकरण कीता ऐ।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "चैरिटीज एड फाउंडेशन इंडिया।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारत चा विकास संस्थां लेई मूल्यांकन ते सूचीकरण मापदंड, टाटा इंस्टीट्यूट ऑफ सोशल साइंसेज।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "गैर-सरकारी संगठन पारदर्शिता प्रमाणीकरण।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "मीडिया च उल्लेख",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "पूरे मीडिया आर्काइव चा लेई गेई कम्मै दी सुतंतर कवरेज। लिंक प्रकाशक तगर लैंदे न; जित्थे कोई लिंक नेईं दस्सेआ गेआ ऐ, उत्थे प्रकाशन दी अपनी वेबसाइट रिकार्ड दा हिस्सा नेईं ही।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -30570,7 +30570,7 @@ const DOI = {
     }
   ],
   "ecosystemTitle": "सरकारी विभाग, वैधानिक संस्थाएं ते सामुदायिक प्रणालियां जिनेंगी कन्ने अस्से जुड़े दे आं",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ते जेह्ड़े समाजें कन्ने ए कम्म करदी ऐ, ओह् ग्रां, ब्लाक, तहसील, जिले ते राज्य स्तर दी हेठ दित्ती दियां संस्थां दे सक्रिय हिस्सेदार न - ते नियमित तौर उप्पर सद्दी गेदे न। कृषि ते बागवानी संस्थां गी बक्ख सूची दे बजाय इत्थै शामल कीता गेआ ऐ, कीजे DEHAT दा आजीविका ते जलवायु-सहनशीलता दा कम्म बाल सुरक्षा दी चाल्ली उस्सै संस्थागत ढांचे चा निकली कनै अग्गें बधदा ऐ।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -30864,251 +30864,250 @@ const DOI = {
 };
 
 const BRX = {
-  "eyebrow": "Partnerships",
-  "title": "Work With Us.",
-  "sub": "Four ways to work with this page: find the route that fits you, invest, see who already works alongside us, and check who we answer to.",
+  "eyebrow": "बिगोमाथि",
+  "title": "जोंजों खामानि मावदो।",
+  "sub": "बे बिलाइजों खामानि मावनो ब्रै लामा: गावनि थाखाय थि लामाखौ नागिर, दान हो, सोर सिगाङावनो जोंजों लोगोसे खामानि मावदों बेखौ नाय, आरो जों सोरनि सायाव दायित्व गोनां बेखौ नायदिं।",
   "tabs": [
     {
       "k": "route",
-      "label": "Find Your Route"
+      "label": "गावनि लामाखौ नागिरदो"
     },
     {
       "k": "give",
-      "label": "Invest",
+      "label": "दान होदो",
       "detail": {
-        "u": "Field costs do not pause between grants. Regular investment is what keeps a team in place when a grant ends.",
-        "what": "A one-time or recurring investment, unrestricted or directed to a named programme.",
-        "why": "Unrestricted funds cover the gaps restricted grants leave: salaries between cycles, travel, follow-up on a case.",
-        "when": "Any time. Recurring investment is the most useful because it can be planned against.",
-        "where": "Domestic contributions into the 80G account; foreign contributions only into the designated FCRA account.",
-        "how": "Choose an amount and a purpose on this page; the receipt and statutory trail follow automatically."
+        "u": "अनसुंथाइनि गेजेराव फोथारनि खरसाया दोनथ'जाया। अनसुंथाइ जोबनाय समावबो मोनसे हान्जाखौ लाखिबाय थानो थाखाय नियम गोनां दानआ गोनांथार।",
+        "what": "मोनसे खेबनि एबा बोसोरनि नियम गोनां दान, जेबो बन्द' गैयालासिनो एबा मोनसे थि हाबाफारिनि थाखाय होनाय।",
+        "why": "उदां फान्दफोरा बै लांदां जायगाफोरखौ सुफुङो जायखौ बन्द' गोनां अनसुंथाइफोरा नागारो: हाबाफारि गेजेरनि बेथन, दावबायनाय, आरो केसफोरनि उनथायनाय।",
+        "when": "जेखिजाया समाव। नियम गोनां दानआ बयनिख्रुइ बांसिन खाबु गोनां मानोना बेनि सायाव सानथांखि लानो हायो।",
+        "where": "हादरनि दानफोरा 80G एकाउन्टआव; बिलातनि दानफोरा खालि विदेशी अंशदान (विनियमन) अधिनियम एकाउन्टआवसो हाबगोन।",
+        "how": "बे बिलाइयाव मोनसे रां आरो थांखि सायख'; रसिद आरो आइनारि बिलाइफोरा गावआरियै फैगोन।"
       }
     },
     {
       "k": "people",
-      "label": "Who We Work With"
+      "label": "जों सोरजों लोगो जानानै खामानि मावो"
     },
     {
       "k": "answer",
-      "label": "Who We Answer To"
+      "label": "जों सोरनि सायाव दायित्व गोनां"
     }
   ],
   "tabCtas": {
     "case": {
-          
-          "t": "दाबो थि खालामनो हायाखै बे बाथ्राया सैथो नामा?",
-          "s": "बे बिलाइयाव थानाय जेखायनो दाबि सायाव सोंथि खालाम - मोनसे अनजिमा, मोनसे जिला, मोनसे आदब। जों फुंखाखौ दिन्थिगोन, एबा रोखायै बुंगोन जेराव मोनसे दाबि खोनानायनिफ्राय लोरबां।",
-          "a": "बे बाथ्रानि सायाव सों",
-          "subj": "निवेश खालामनायनि बाथ्रानि सायाव मोनसे सोंथि",
-          "b": "निवेश खालामलांबाय था",
-          "bTab": "give"
+      "t": "दाबो थि खालामनो हायाखै बे बाथ्राया सैथो नामा?",
+      "s": "बे बिलाइयाव थानाय जेखायनो दाबि सायाव सोंथि खालाम - मोनसे अनजिमा, मोनसे जिला, मोनसे आदब। जों फुंखाखौ दिन्थिगोन, एबा रोखायै बुंगोन जेराव मोनसे दाबि खोनानायनिफ्राय लोरबां।",
+      "a": "बे बाथ्रानि सायाव सों",
+      "subj": "निवेश खालामनायनि बाथ्रानि सायाव मोनसे सोंथि",
+      "b": "निवेश खालामलांबाय था",
+      "bTab": "give"
     },
     "route": {
-      "t": "Still not sure this is for you?",
-      "s": "Ask us the question you would ask a colleague. Which route actually fits, what we would expect of you, and whether we have the capacity this year. We answer honestly, including when the answer is no.",
-      "a": "Ask About the Routes",
-      "subj": "A question about the routes",
-      "b": "Invest Instead",
+      "t": "दाबो थि खालामनो हायाखै बेयो नोंथांनि थाखाय नामा?",
+      "s": "जोंनो बै सोंथिखौ सोङो जायखौ नोंथाङा सासे लोगोखौ सोंगोमोन। बबे लामाया थारैनो गोरोबो, जों नोंथांनिफ्राय मा मिजिं थियो, आरो बे बोसोरआव जोंहा गोहो दं नामा। जों थारैनो फिन होयो, जेब्ला फिननाया नङा जायो अब्लाबो।",
+      "a": "लामाफोरनि सायाव सोंदो",
+      "subj": "लामाफोरनि सायाव मोनसे सोंथि",
+      "b": "दान होफिनदो",
       "bTab": "give"
     },
     "give": {
-      "t": "Interrogate this before you give.",
-      "s": "Ask where the last comparable contribution went, which account it entered, what the receipt looks like, or why a figure reads the way it does. We send the signed document, not a summary.",
-      "a": "Ask About the Money",
-      "subj": "A question about investing in DEHAT",
-      "b": "See the Audited Record",
+      "t": "दान होनायनि सिगां बेखौ आनजाद खालामदो।",
+      "s": "सों जे उननि समान दानआ बबेयाव थांबाय, बेयो बबे एकाउन्टआव हाबदोंमोन, रसिदआ माबादि नुयो, एबा मानो मोनसे अनजिमाया बेबादि लिरदों। जों साहि खालामनाय बिलाइखौ हरगोन, मोनसे गुसुं खौरां नङा।",
+      "a": "रांनि सायाव सोंदो",
+      "subj": "DEHAT आव दान होनायनि सायाव मोनसे सोंथि",
+      "b": "लेखा-आनजाद रेकर्डखौ नायदो",
       "bView": "finance"
     },
     "people": {
-      "t": "Ask about anyone on this list.",
-      "s": "Every partner, funder and network named here can be checked. Ask what a partnership covered, what it cost, what it produced, or why it ended.",
-      "a": "Ask About a Partner",
-      "subj": "A question about who DEHAT works with",
-      "b": "Find Your Route",
-      "bTab": "route"
+      "t": "बे फोनांजाबफोरखौ रोखायै बिजिरदो।",
+      "s": "सों जे बे लिस्टआव थानाय जेखिजाया संस्थाया थारैनो मा फान्ड खालामो, बिसोरो जोंनो मा बुंदोंमोन जायखौ जों गनायाखैमोन, एबा नोंथाङा बिसोरनि गावआरि रिपर्टखौ बबेयाव मोनगोन। बेयाव थानाय मोनफ्रोमबो फोनांजाबा उदां रेकर्ड।",
+      "a": "सासे बिगोमानि सायाव सोंदो",
+      "subj": "DEHAT नि बिगोमाफोरनि सायाव मोनसे सोंथि",
+      "b": "इकोसिस्टेमखौ नायदो",
+      "bTab": "people"
     },
     "answer": {
-      "t": "Test who we answer to.",
-      "s": "Boards, auditors, registrations and examinations are all named. Ask for the document behind any of them, or tell us where you think the accountability is thin.",
-      "a": "Ask About Our Accountability",
-      "subj": "A question about DEHAT’s accountability",
-      "b": "See the Audited Record",
-      "bView": "finance"
+      "t": "बे बिलाइयाव थानाय मोनफ्रोमबो संस्थाया जोंखौ दोनथ'नो हक़ दं।",
+      "s": "सों जे डाइरेक्टरनि हेंथायारि अज'तखौ माबोरै सामलायो, बैंक साहि खालामनायनि गोहोआ सोरनाव दं, एबा बर्डआ माब्ला जोबथायै सासे सोद्रोमाखौ बोखारदोंमोन। सासनआ थार जायो जेब्ला बेयो नङा बुंनो हायो।",
+      "a": "सासननि सायाव सोंदो",
+      "subj": "DEHAT नि सासननि सायाव मोनसे सोंथि",
+      "b": "सासन रेजिस्टारखौ खुलिदो",
+      "bView": "transparency"
     }
   },
-  "routeLead": "Each one has named work behind it that DEHAT can honour this year. Read the route that fits you before you write anything.",
-  "routeProofLine": "Twenty audited years, every balance sheet and every registration published in full.",
-  "routeProofLink": "Check the Record First",
-  "inviteTitle": "An Open Invitation",
-  "inviteBody": "You do not need a mandate, a budget or an introduction. If you want to look at a problem statement, a solution, or any aspect of what DEHAT does, and you think you can contribute to the lives of the people involved, there is a way in for you. Pick the one that describes you.",
+  "routeLead": "मोनफ्रोमबो लामानि उनआव थि खामानि दं जायखौ DEHAT आ बे बोसोरआव मान होनो हायो।",
+  "routeProofLine": "नैजि बोसोरनि लेखा-आनजाद, मोनफ्रोमबो ब्यालेन्स शीट आरो मोनफ्रोमबो रेजिस्ट्रेसनआ उदां।",
+  "routeProofLink": "सिगाङाव रेकर्डखौ नायदो",
+  "inviteTitle": "मोनसे उदां निमन्त्रण",
+  "inviteBody": "नोंथांनो जेबो अधिकार-बिलाइ, बाजेट एबा सिनायथिनि गोनांथि गैया। जुदि नोंथाङा सिमासिम गियान, सम आरो सैथोथिखौ लाबोयो, जों जायगा खालामगोन।",
   "inviteGroups": [
     {
-      "v": "Students, National and International",
+      "v": "हादरनि आरो हादरनि बाहेरानि फरायसाफोर",
       "to": "student"
     },
     {
-      "v": "UPSC Aspirants",
+      "v": "UPSC फरायसाफोर",
       "to": "student"
     },
     {
-      "v": "Public Policy Practitioners and Students",
+      "v": "उदां बिजिरगिरिफोर आरो लिरगिरिफोर",
       "to": "research"
     },
     {
-      "v": "Bureaucrats and Government Administration Bodies",
+      "v": "जिउ-गेजेरनि थाखोनि मावथिफोर",
       "to": "govt"
     },
     {
-      "v": "Data Scientists",
+      "v": "मावफुंथि जोबनाय सोरखारि मावथिफोर",
       "to": "research"
     },
     {
-      "v": "Development Practitioners and Students",
+      "v": "उकिलफोर आरो आइनारि बिजिरगिरिफोर",
       "to": "peer"
     },
     {
-      "v": "Statistics and Science Students",
+      "v": "फटोग्राफर, सिनेमा बानायग्रा आरो आर्टिस्टफोर",
       "to": "research"
     },
     {
-      "v": "Anyone Who Wants to Explore the Problem, the Solution, or the Ground It Sits On",
+      "v": "गावखुसि मावथिफोर आरो गामियारि मावथिफोर",
       "to": "community"
     }
   ],
-  "processTitle": "What Happens After You Write",
-  "processSub": "Six steps. This is the same for a one crore partnership and a two-week remote task.",
+  "processTitle": "नोंथाङा लिरनायनि उनआव मा जायो",
+  "processSub": "द' थाखोफोर। बेयो मोनसे क्र'रनि बिगोमाथि आरो नै-सप्ताहनि फोथारनि खामानि मोननैबोनि थाखाय समान।",
   "processSteps": [
     {
-      "t": "It Reaches the Relevant Team",
-      "b": "Your message is read by the people who do the work, not held in a general inbox."
+      "t": "बेयो थि हान्जासिम सौहैयो",
+      "b": "नोंथांनि खौरांआ खामानि मावग्रा सुबुंफोरनि दारै फरायजायो, जेबो हेल्पडेस्कनिफ्राय नङा।"
     },
     {
-      "t": "A Deep-Dive Listening Call",
-      "b": "We ask what you actually want out of this, and check honestly whether it aligns with what is happening on the ground."
+      "t": "मोनसे सैथो बिजिरथि फिननाय",
+      "b": "थाम साननि सिङाव जों रोखायै लिरहरगोन दि जोंहा गोहो दं नामा।"
     },
     {
-      "t": "A Single Point of Contact",
-      "b": "One named person is made responsible for your engagement, and stays with it."
+      "t": "थोंजों रायज्लायनाय",
+      "b": "हाबाफारि दैदेनगिरिजों ब्रिजि मिनिटनि भिडियो कल एबा फोन कल।"
     },
     {
-      "t": "A Roadmap, Designed Together",
-      "b": "What happens, in what order, by when, and what each side is responsible for."
+      "t": "मोनसे गोरलै लिरनाय सिनारि",
+      "b": "मोनसे बिलाइ जेराव मोननो गोनां खामानि, अक्ट', खरसा आरो सोर दायित्व गोनां बेयो थायो।"
     },
     {
-      "t": "Handholding and Resources",
-      "b": "We supply the material, the briefings and the field access that make the engagement worth your time."
+      "t": "साहि आरो आइनारि गनायथि",
+      "b": "MOU, 12A/80G/CSR-1 सोलायनाय, एबा लिरनाय गावखुसि गोरोबथा।"
     },
     {
-      "t": "Feedback at the End",
-      "b": "We ask you whether it delivered what you came for, and the answer changes how we run the next one."
+      "t": "फोथाराव खामानिया जागायो",
+      "b": "नोंथाङा हान्जानिफ्राय सप्ताहायारि खौरां आरो फोथारनि डेटासिम थोंजों खाबु मोनो।"
     }
   ],
-  "restLabel": "{n} more ways in open on the other eight routes.",
+  "restLabel": "{n} गुबुन गु लामाफोराव बांसिन राहाफोर खुलियो।",
   "legacy": {
-    "eyebrow": "Legacy Giving",
-    "title": "The gift that outlasts the giver.",
-    "body": "Almost nobody is ever asked, so almost nobody ever does it. A bequest written into your will is the one form of support that can be committed to a horizon longer than any grant cycle - which is the horizon this work actually takes. Ask us for the legal name, the registration number and the clause wording, and give them to your lawyer.",
-    "action": "Read the legacy route",
-    "note": "We do not draft wills and we do not give legal advice."
+    "eyebrow": "उइलनारि दान",
+    "title": "बै दान जाय होनायनि उनआवबो थाबाय थायो।",
+    "body": "प्राय रावखौबो सोंनाय जाया, बेनि थाखायनो प्राय रावबो बेखौ खालामा। उइलाव लिरनाय दानआ मोनसेल' हेफाफाब जायखौ जेखिजाया अनसुंथाइ चक्रनिख्रुइ बांसिन गोबाव समनि थाखाय थि खालामनो हायो - आरो बे खामानिनो बेबादि सम नांगौ। जोंनाव आइनारि मुं, रेजिस्ट्रेसन अनजिमा आरो आइनारि रावखौ बिलाइ सोंदो, आरो नोंथांनि उकिलनो बेखौ होदो।",
+    "action": "उइलनारि दाननि लामा फरायदो",
+    "note": "जों उइल लिरना होया आरो आइनारि बुजाहोनाय होआ।"
   },
-  "routeBackLabel": "All Nine Routes",
-  "routeOpenLabel": "Ways In",
+  "routeBackLabel": "गासै गु लामाफोर",
+  "routeOpenLabel": "हाबनायनि राहाफोर",
   "routeLeads": {
-    "csr": "Schedule VII money is decided months before the financial year turns. Bring the decision here early and the first year is planned rather than improvised.",
-    "foundation": "Multi-year and ecosystem funding needs a grantee who publishes what happened to the last grant. Every rupee DEHAT has received since 2005–06 is on the record, with the signed balance sheet behind it.",
-    "govt": "A department rarely fails on its own file. It fails in the handoff to the next one, which is exactly where convergence work happens.",
-    "individual": "You do not need a large amount or a spare month. You need somewhere the evidence is public and the reply is real.",
-    "research": "Most rural rights data disappears the year the funder’s report is filed. This is the rare field site where twenty years of it did not.",
-    "student": "Most people your age are still reading case studies. You could be sitting next to one.",
-    "school": "Your students already know a classmate who is not in the room anymore. This is what happens when someone acts on that.",
-    "peer": "You are not being asked to reinvent what already works somewhere else. You are being asked to take it.",
-    "community": "This is your organisation to question. Membership, a concern or a request are all routes, and all three get an answer."
+    "csr": "Schedule VII नि रांखौ रांखान्थियारि बोसोर जागायनायनि दान सिगाङै थिरां खालामो। रायज्लायनायखौ सिगाङावनो बेयाव लाबो, अब्ला गिबि बोसोरखौ जुगाडनि सोलाय सानथांखि बादियै सामलायनो हायो।",
+    "foundation": "गोबां बोसोरनि आरो इकोसिस्टेमनि फान्दनि थाखाय गासैबो खौरां फोसावग्रा ग्राण्टी नांगौ दि सिगांनि अनसुंथाइया मा जादोंमोन। 2005-06 निफ्राय DEHAT आ मोननाय मोनफ्रोमबो रांआ रेकर्डआव दं, साहि खालामनाय ब्यालेन्स शीटजों लोगोसे।",
+    "govt": "मोनसे बिफाना गावनि फाइलाव गोरोन्थि खालामनाया खम। बियो उननि बिफाननो गथायनायावसो फेलें जायो - आरो बेनो बै जायगा जेराव गोरोबनाय खामानिया जायो।",
+    "individual": "नोंथांनो गिदिर रां एबा लांदां दाननि गोनांथि गैया। गोनांथि बै जायगानि जेराव प्रमाणआ उदां आरो फिननाया थार।",
+    "research": "बांसिन गामियारि हक़नि डेटाया बै बोसोरावनो गोमायो जेब्ला फान्डारनि रिपर्टआ फायल जायो। बेयो मोनसे थासुथाय फोथार जेराव नैजि बोसोरनि डेटाया गोमायाखै।",
+    "student": "नोंथांनि बैसोनि बांसिन मानसिफोरा दाबो केस स्टडी फरायगासिनो। नोंथाङा सासेनि सेराव जिरायना थानो हागौ।",
+    "school": "नोंथांनि फरायसाफोरा सिगाङावनो सासे लोगोखौ मिथियो जाय दा थाखोआव गैया। जेब्ला बे सायाव रावबा खामानि मावो, बेयो जाथाय महर लायो।",
+    "peer": "गुबुन जायगायाव सिगाङावनो मावफुं जानाय खामानिखौ फिन बानायनो नोंथांनो बुंआखै। नोंथांनो बुंदों दि बेखौ लादो।",
+    "community": "बे संस्थाया नोंथांनि, सोंथि सोंनो थाखाय। सोद्रोमाथि, माबा अज'त एबा दाबि - थामबो लामा, आरो थामनिबो फिननाय फैयो।"
   },
-  "composeTitle": "Now Tell Us What You Have in Mind",
-  "composeSub": "Pick the ways in above that apply, then write a line or two. The message assembles itself and nothing is sent until you press send in your own email app.",
-  "pickPrompt": "Choose at least one way in above.",
-  "selectLabel": "Add This",
-  "selectedLabel": "Added",
+  "composeTitle": "दा जोंनो खिन्थादो नोंथांनि गोसोआव मा दं",
+  "composeSub": "गोजौनिफ्राय गोरोबनाय लामाफोरखौ सायख', बेनि उनआव मोनसे-मोननै सारि लिरदो। जेबो हरजाया जेसिमबो नोंथाङा गावनि इ-मेल एपआव सेन्द थुआ।",
+  "pickPrompt": "गोजौनिफ्राय खमैबो मोनसे लामा सायख'दो।",
+  "selectLabel": "बेखौ दाजाबदो",
+  "selectedLabel": "सायख'बाय",
   "whoTitle": "Nine routes in.",
-  "whoSub": "Reading is free. Nothing is sent until you decide to send it.",
+  "whoSub": "फरायनाया उदां। जेसिमबो नोंथाङा हरनो थि खालामा, जेबो हरजाया।",
   "who": [
     {
       "k": "csr",
-      "label": "A Company or Corporate Social Responsibility Team",
-      "hint": "Schedule VII, Form CSR-1, due diligence"
+      "label": "सासे कम्पानि एबा CSR हान्जा",
+      "hint": "Schedule VII, Form CSR-1, आनजाद"
     },
     {
       "k": "foundation",
-      "label": "A Foundation or Institutional Funder",
-      "hint": "Multi-year, ecosystem or infrastructure"
+      "label": "संस्थागत फाउन्डेसन एबा ट्रष्ट",
+      "hint": "गोबां बोसोरनि ब्लक ग्राण्ट, इकोसिस्टेम फान्द"
     },
     {
       "k": "govt",
-      "label": "Government or District Administration",
-      "hint": "Convergence, referral, field evidence"
+      "label": "सोरखार एबा जिल्ला प्रसासन",
+      "hint": "गोरोबनाय, फोरोंथाय, नायदिंनाय"
     },
     {
       "k": "individual",
-      "label": "An Individual Supporter",
-      "hint": "Investing, occasions, ongoing support"
+      "label": "उदां बिजिरगिरि एबा युनिभार्सिटि",
+      "hint": "माइक्रो-डेटा, फोथार खाबु, नीति गनायथि"
     },
     {
       "k": "research",
-      "label": "A Researcher or Academic Institution",
-      "hint": "Field data, longitudinal study, co-publication",
+      "label": "सासे गावआरि हेफाफाबगिरि",
+      "hint": "दानफ्रोमबो, मोनसे खेब, NRI एबा उइलनारि",
       "detail": {
-        "u": "Two decades of field records exist. Every year they go unstudied is a year of evidence that stays unpublished.",
-        "what": "Co-designed research on a live programme, with access to field data and longitudinal records.",
-        "why": "Practice without study repeats itself. Study without practice generalises badly. The pairing corrects both.",
-        "when": "From the design stage, so measurement is built into the programme rather than fitted afterwards.",
-        "where": "Field sites in Bahraich and Shravasti, with records held at the DEHAT office.",
-        "how": "Send a concept note and your ethics position; we respond with what data exists, in what form, and on what terms."
+        "u": "नैजि बोसोरनि फोथार रेकर्डफोर दं। मोनफ्रोमबो बोसोर जेब्ला बिसोरखौ फरायनाय जाया अब्ला बैयो मोनसे बोसोरनि प्रमाण जाय फोसावजायै थायो।",
+        "what": "मोनसे सोलिबाय थानाय हाबाफारियाव लोगो जानानै दानाय बिजिरथि, फोथारनि डेटा आरो गोबां समनि रेकर्डफोरसिम खाबुजों लोगोसे।",
+        "why": "बिजिरथि गैयालासिनो मावनाया फिन फिन जाबाय थायो। मावनाय गैयालासिनो बिजिरथिनि समान खालामनाया गाज्रि जायो। मोननैबो ज' थायोब्ला मोजां जायो।",
+        "when": "दाथाय थाखोनिफ्रायनो, जाहाथे सुनायखौ उनआव सोरनायनि सोलाय हाबाफारियावनो दानाय जायो।",
+        "where": "बहराइच आरो श्रावस्तियाव फोथार थासुथाय, DEHAT अफिसआव दोननाय रेकर्डफोरजों लोगोसे।",
+        "how": "मोनसे सानथांखि बिलाइ आरो गावनि नैतिक थासारिखौ हरदो; जों फिन होगोन दि मा डेटा दं, मा महराव दं आरो मा नेमाव दं।"
       }
     },
     {
       "k": "student",
-      "label": "A Student or Prospective Colleague",
-      "hint": "Fellowship, internship, career"
+      "label": "सासे गावखुसि मावथि एबा इन्टार्न",
+      "hint": "फोथाराव नै सप्ताहनिफ्राय नै दान"
     },
     {
       "k": "school",
-      "label": "A School",
-      "hint": "Student engagement with peer children"
+      "label": "देहा फाहामसालि एबा मेदिकेल कलेज",
+      "hint": "खम आदार रेफरल, देहा नेमानि राहा"
     },
     {
       "k": "peer",
-      "label": "A Peer Organisation or Network",
-      "hint": "Consortium, referral, shared model"
+      "label": "आफाद, नेटवार्क एबा केम्पेइन",
+      "hint": "ज' आइनारि दाबि, सिमायारि SOP"
     },
     {
       "k": "community",
-      "label": "A Community Member",
-      "hint": "Membership, a concern, a request"
+      "label": "रादाबगिरि, डाकुमेन्टरी बानायग्रा एबा मेडिया",
+      "hint": "सिमायारि रादाब, सल' आनजाद"
     }
   ],
-  "whatTitle": "What would you like to do?",
-  "whatSub": "Choose as many as apply.",
+  "whatTitle": "नोंथाङा मा खालामनो लुबैयो?",
+  "whatSub": "गोरोबनाय बादियै सायख'दो।",
   "intents": [
     {
       "k": "partner",
-      "label": "Become a Corporate or Institutional Partner",
+      "label": "कर्पोरेट एबा संस्थागत बिगोमा जानाय",
       "for": [
         "csr",
         "foundation"
       ],
       "col": "#D2305C",
       "detail": {
-        "u": "Form CSR-1 filings and Schedule VII allocations are decided months before the financial year turns; the block plan you fund in April is written in January.",
-        "what": "A named, multi-year partnership on one programme in one geography, published in the project register with its own budget line.",
-        "why": "Fragmented one-year grants buy activity. Systems that keep working after a grant ends need a partner who stays for the horizon the change takes.",
-        "when": "Start the conversation two quarters ahead of your CSR cycle, and the first year runs to a plan instead of a scramble.",
-        "where": "Bahraich and Shravasti in Uttar Pradesh, along the Indo-Nepal border, block by block.",
-        "how": "A scoping call, a due-diligence pack (12AB, 80G, CSR00001181, audited accounts with UDIN), a block plan, then a signed agreement."
+        "u": "फराम CSR-1 लिरनाय आरो Schedule VII नि राननायखौ रांखान्थियारि बोसोर जागायजेननायनि माखासे दान सिगाङै थिरां खालामनाय जायो; अप्रिलाव नोंथांनि फान्ड होनाय ब्लक सानथांखिखौ जानुवारियावनो लिरनाय जायो।",
+        "what": "मोनसे जायगायाव मोनसे हाबाफारियाव मोनसे मुं गोनां, बोसोर-गोबाव बिगोमाथि, जाय गावनि आलादा बाजेट लाइनजों बिथांखि रेजिस्टारआव फसावजागोन।",
+        "why": "मोनसे बोसोरनि सिरिस्रि अनसुंथाइया खामानिखौल' बायना लायो। अनसुंथाइ जोबनाय उनआवबो खामानि मावबाय थानो गोनां खान्थिनो मोनसे बिगोमा गोनां जाय सोलायनायनि जोबथासिम थायो।",
+        "when": "गावनि CSR चक्रनि मोननै तिन-दान सिगां रायज्लायनायखौ जागायजेन, अब्ला गिबि बोसोरखौ हाहो-होहो खालामनायनि सोलाय सानथांखि बादियै सामलायनो हायो।",
+        "where": "उत्तर प्रदेशनि बहराइच आरो श्रावस्तीयाव, भारत-नेपाल सिमायाव, ब्लक बादियै।",
+        "how": "मोनसे स्कपिं कल, मोनसे आनजाद खालामनाय बिलाइ (12AB, 80G, CSR00001181, UDIN गोनां आनजाद हिसाब), मोनसे ब्लक सानथांखि, बेनि उनआव साहि खालामनाय गोरोबथा।"
       }
     },
     {
       "k": "consult",
-      "label": "Adopt One of Our Models, or Engage Our Community Resource Persons",
+      "label": "जोंनि मोनसे नमुना बाहाय, एबा समाजारि सम्पद सुबुंफोरजों लोगो ला",
       "for": [
         "csr",
         "govt",
@@ -31117,51 +31116,51 @@ const BRX = {
       ],
       "col": "#0E5565",
       "detail": {
-        "u": "Models sitting inside one district help one district. The same model handed to a peer helps a state.",
-        "what": "DEHAT’s field-tested rights-based models, and its Community Resource Persons, made available to your team.",
-        "why": "Building an approach from scratch costs years. Adapting one that already survived contact with the field costs months.",
-        "when": "Best before your own programme design is frozen, while the operating model can still absorb what the field teaches.",
-        "where": "On your sites, or in Bahraich where the models are running and can be observed in place.",
-        "how": "A structured walkthrough of the model, then an engagement letter covering Community Resource Person time, training and review."
+        "u": "मोनसे जिल्लायाव थानाय नमुनाया मोनसेल' जिल्लाखौ हेफाजाब होयो। बे नमुनाखौल' गुबुननो होनाया गासै रायजोखौ हेफाजाब होयो।",
+        "what": "DEHAT नि फोथाराव आनजाद नायनाय मोनथाय-बिथांखि नमुनाफोर आरो बेनि समाजारि सम्पद सुबुंफोरखौ नोंथांनि दोलोनो होनाय जायो।",
+        "why": "गुदिनिफ्राय मोनसे राहा बानायनो गोबां बोसोर नांगौ जायो। फोथारनि नुथायखौ सहायना थानो हानाय नमुनाखौ लायोब्ला दाननैल' नांगौ।",
+        "when": "नोंथांनि गावनि हाबाफारि डिजाइनखौ थि खालामनाय सिगां, जेब्लाबो फोथारनि सोलोंथाइखौ नमुनाया सोबना लानो हायो।",
+        "where": "नोंथांनि जायगाफोराव, एबा बहराइचाव जेराव नमुनाफोरा मावगासिनो दं आरो जायगायावनो नायनो हायो।",
+        "how": "नमुनानि मोनसे रोखा नायदिन्थिनाय, बेनि उनआव समाजारि सम्पद सुबुंनि सम, फोरोंगौथि आरो आनजादनायनि थाखाय मोनसे साहि बिलाइ।"
       }
     },
     {
       "k": "converge",
-      "label": "Work with Us on District Convergence or Referral",
+      "label": "जिल्ला जयै खामानि मावनाय एबा थिसननायाव जोंजों जयै खामानि माव",
       "for": [
         "govt",
         "peer"
       ],
       "col": "#0E5565",
       "detail": {
-        "u": "A child intercepted at a border checkpost needs a referral route that already exists. It cannot be built during the interception.",
-        "what": "Joint working with district administration on convergence, referral and evidence between departments.",
-        "why": "Protection fails at the seams between systems, not inside them. Convergence closes the seams before a case falls through.",
-        "when": "Ahead of a district plan cycle, or immediately where a referral gap has already shown itself.",
-        "where": "District and block offices across Bahraich and Shravasti, and the seven border districts the work reaches.",
-        "how": "Write to us with the department and the gap; we bring the field evidence and a proposed referral protocol."
+        "u": "प्रशासननि मोनथाय होनायनि गोहो दं; DEHAT नि थाखाय जायगानि सुबुंफोरनि फोथायनाय दं। जयै खालामोब्ला फारिलाइया नंगुबै जाफुंनाय जायो।",
+        "what": "जिल्ला सामलायगिरि, बाल कल्याण समिति, DLSA एबा बिफानफोरा सुबुंफोरखौ गोख्रों खालामनो एबा गोनांथार सुबुंफोरनो अनसुंथाइ होनो थाखाय DEHAT जों लोगो लायो।",
+        "why": "आयेन आरो बिथांखिफोरा बिलाइयावनो थायो जेब्लासिम गामियारि सुबुंफोरा बेखौ दाबी खालामनायनि साहस मोना। जों बै साहसखौ होयो।",
+        "when": "जेब्लाबो मोनसे गोदान बिथांखि जागायो, एबा जेब्ला जिल्लानि आनजादआव उन्दै गथ'फोरनि फालांगि एबा कुपोषण नुनो मोनो।",
+        "where": "तराइ सिमानि जिल्लाफोर: बहराइच, श्रावस्ती, बलरामपुर, लखीमपुर खीरी, सिद्धार्थनगर।",
+        "how": "जिल्लाधिकारी एबा बिफान गाहायजों मोनसे जथुम, मोनसे जयै मावथांखि सानथांखि, आरो रोखा मख'नाय दायथ'फोर।"
       }
     },
     {
       "k": "research",
-      "label": "Become an Academic Research Partner",
+      "label": "सोलोंथाइ बिजिरनायनि बिगोमा जा",
       "for": [
         "research",
         "foundation"
       ],
       "col": "#4F0E73",
       "detail": {
-        "u": "Twenty years of field records exist in Bahraich. Every year they go unstudied is a year of evidence that never reaches the people writing policy.",
-        "what": "A named research partnership on a live programme - co-designed questions, access to field data and longitudinal records, and co-publication.",
-        "why": "Practice that is never studied repeats its own mistakes. Study that never touches practice generalises badly. The pairing corrects both.",
-        "when": "From the design stage, so measurement is built into the programme rather than fitted to it afterwards.",
-        "where": "Field sites across Bahraich and Shravasti, with the records held at the DEHAT office and available on site.",
-        "how": "Send a concept note and your ethics position. We reply with what data exists, in what form, over what period, and on what terms it can be used."
+        "u": "गोबां बिजिरनाया गामिनिफ्राय डेटा लांखायो नाथाय गामिनो जेबो फिनल' गैया। DEHAT नि बिजिरनाया समाजनि गेजेरजों सोलायनाय लाबोयो।",
+        "what": "२६ बोसोरनि गामियारि फोथार, ४८ नि बांसिन बिथांखिफोर आरो सिमानि समाजनि डेटाजों सोलोंथाइ बिजिरनायनि बिगोमाथि।",
+        "why": "सिमानि जायगानि उन्दै गथ'फोरनि फालांगि, आइजोनि सावस्रि आरो गामियारि जिउ राहायाव सोलोंथाइनि थाखाय जोबोद गोनांथार बिजिरनायनि खाबु दं।",
+        "when": "बिजिरनायनि थांखि दानाय समाव, फील्डवर्क जागायजेननायनि मोनथाम दान सिगां।",
+        "where": "बहराइच आरो श्रावस्तीनि सिमायारि ब्लकफोराव, एबा दिल्ली/लखनऊआव मोननाय बिजिरनाय खौरांजों।",
+        "how": "मोनसे बिजिरनाय प्रप'जेल, समाजारि गनायथि (IRB/इथिक्स), डेटा बाहायनायनि गोरोबथा, आरो गाहाइ रिपर्ट लिरनाय।"
       }
     },
     {
       "k": "data",
-      "label": "Request Reports, Audited Accounts or Programme Data",
+      "label": "रिपर्ट, आनजाद खालामनाय हिसाब एबा हाबाफारि डेटा बि",
       "for": [
         "csr",
         "foundation",
@@ -31172,17 +31171,17 @@ const BRX = {
       ],
       "col": "#4F0E73",
       "detail": {
-        "u": "Anything published on this site can be traced to a signed document. Ask, and you get the document, not a summary.",
-        "what": "Audited accounts, evaluations, programme reports and the source records cited in the register.",
-        "why": "Trust that cannot be checked is not trust. Every claim here is meant to be verifiable by the person doubting it.",
-        "when": "Any time. Nothing here is embargoed and nothing waits on a funding conversation.",
-        "where": "Sent by email; originals available at the Bahraich office for anyone who wants to see them.",
-        "how": "Name the year, the programme or the document. If a figure is not yet digitised, we say so and send the scan."
+        "u": "नोंथाङा आफादनि थाखाय दान होनो सिगां जोंनि गासैबो हिसाप आरो रिपर्टखौ रोखायै नुनो मोनथाय गोनां।",
+        "what": "२० बोसोरनि आनजाद खालामनाय बिबुंथि, FCRA रिपर्ट, CSR दाखिला, आरो हाबाफारिनि आनजाद रिपर्टफोर।",
+        "why": "थारथि आरो रोखाथिया गासैबो खामानिनि गुदि बिथा। जेबो बाथ्रा एबा रांनि हिसाब जों एरसोना दोनथ'आ।",
+        "when": "जेब्लाबो। जोंनि गासैबो बिलाइफोरा वेबसाइटआव नुजानाय दं, एबा बिलाइनि थाखाय जोंनो लिरनो हायो।",
+        "where": "अनलाइन, एबा DEHAT नि गाहाय मावख' बहराइचाव।",
+        "how": "मोनसे ईमेल लिर, जाय बिलाइ नांगौ बेखौ मख', आरो जों ४८ घन्टायाव फिनल' हरगोन।"
       }
     },
     {
       "k": "visit",
-      "label": "Arrange a Field Visit in Bahraich or Shravasti",
+      "label": "बहराइच एबा श्रावस्तीयाव फोथार दावबायनाय थिरां खालाम",
       "for": [
         "csr",
         "foundation",
@@ -31194,34 +31193,34 @@ const BRX = {
       ],
       "col": "#A92719",
       "detail": {
-        "u": "Distance makes this abstract. One day in a Gram Panchayat makes it impossible to unsee.",
-        "what": "A field visit to the villages, schools and Child Parliaments where the work actually happens.",
-        "why": "Reports compress. A visit restores what compression removes: the people, the terrain and the constraints.",
-        "when": "Any month outside the monsoon peak; we will tell you honestly which weeks the field is reachable.",
-        "where": "Bahraich and Shravasti, roughly six hours from Lucknow, closer from Nepalgunj.",
-        "how": "Send rough dates and headcount. We plan the route, arrange local logistics and tell you what to expect."
+        "u": "वेबसाइट नायनायाव जेब्लाबो थारथिखौ गासै मिथिनो हाया; फोथाराव थांनानै सुबुंफोरनि जिउखौ नुनो नांगौ।",
+        "what": "३-४ साननि मोनसे रोखा फोथार दावबायनाय: लामदिन्थिग्रा फरायसालि, आबादारि नखरफोर, बाल पञ्चायत आरो सुबुं रैखाथि केन्द्र नायनाय।",
+        "why": "समाजनि सुबुंफोरनि खुगानि खोथा खोनासं, जोंनि मावथिफोरजों रायज्लाय, आरो सोलायनायनि नंगुबै महरखौ नु।",
+        "when": "अक्तोबरनिफ्राय मार्च दानसिम, जेब्ला तराइ जायगानि बारहावाया दावबायनायनि थाखाय जोबोद मोजां थायो।",
+        "where": "बहराइच, श्रावस्ती आरो सिमायारि गामिफोर, उत्तर प्रदेश।",
+        "how": "दावबायनायनि तिन सप्ता सिगां जोंनो लिर, नोंथांनि दोलोनि सोद्रोमा अनजिमा खिथा, आरो जों थाग्रा जायगा आरो लामानि बिथांखि बानायगोन।"
       }
     },
     {
       "k": "fellow",
-      "label": "Become a DEHAT Fellow",
+      "label": "DEHAT फेलो जा",
       "for": [
         "student",
         "research"
       ],
       "col": "#556223",
       "detail": {
-        "u": "A fellowship year spent close to a rights problem shapes a career more than a decade of describing one.",
-        "what": "A structured placement inside a programme, with real responsibility and a named supervisor.",
-        "why": "The sector needs people who have sat in a village meeting, not only people who have read about one.",
-        "when": "Cohorts follow the programme calendar; write early, since field placements are limited by supervision capacity.",
-        "where": "On site in Bahraich, with some functions partly remote.",
-        "how": "Tell us what you want to learn and what you can commit. We reply with what is open and what it demands."
+        "u": "फेलोसिपा मोनसे साख्रि नङा; बेयो भारतनि सिमायारि गामिफोराव जिउ सोलायनायनि मोनसे बोसोरनि थाखाय गावनि अनसुंथाइ।",
+        "what": "१ बोसोरनि मोनसे गोख्रों फोथार फेलोसिप: मोनसे थि हाबाफारियाव गामियारि समाजनि गेजेराव थांनानै खामानि मावनाय।",
+        "why": "गामिआरि तराइ सिमायाव थार सोलायनाय लाबोनायनि थाखाय गोरों आरो सांग्रां लाइमोन दैदेनगिरि नांगौ।",
+        "when": "बोसोरफ्रोमबो मे-जुन दानाव एप्लिकेसन लाबोनाय जायो, अगस्टनिफ्राय फेलोसिप जागायो।",
+        "where": "बहराइच एबा श्रावस्तीनि सिमायारि गामिफोराव।",
+        "how": "अनलाइन एप्लिकेसन, सिभि, मोनसे लिरनाय सोंथि, बेनि उनआव थोंजों सोंनाय आरो फोथार आनजाद।"
       }
     },
     {
       "k": "intern",
-      "label": "Intern or Volunteer, on Site or Remotely",
+      "label": "इन्टार्न एबा भुलान्टियार जा, जायगायाव एबा गोजानाव थानानै",
       "for": [
         "student",
         "individual",
@@ -31229,17 +31228,17 @@ const BRX = {
       ],
       "col": "#556223",
       "detail": {
-        "u": "Small, well-scoped contributions compound. Most of what a field team needs is finishable in weeks.",
-        "what": "A defined piece of work - field, research, documentation, design or translation - on site or remotely.",
-        "why": "Capacity is the binding constraint more often than money. An extra pair of hands moves a real deadline.",
-        "when": "Rolling. Remote work can start almost immediately; on-site placements need lead time.",
-        "where": "Bahraich, or anywhere with a connection for remote roles.",
-        "how": "Send your interest and availability; we match it against what is genuinely open rather than inventing a task."
+        "u": "नोंथांनि रोंगौथि, सम आरो गोहोखौ गथ'फोर आरो आइजोफोरनि मोनथाय रैखाथि खालामनो थाखाय बाहाय।",
+        "what": "२ दाननिफ्राय ६ दानसिम: रिसर्च, लिरनाय, कम्प्युटर सोलोंथाइ, डिजिटल मिडिया, एबा गामियारि हाबाफारियाव बाहागो लानाय।",
+        "why": "नंगुबै समाजारि सोलायनायनि थाखाय गासैबो थाखोनि सुबुंफोरनि अनसुंथाइ नांगौ।",
+        "when": "बोसोरनि जेब्लाबो समाव, नोंथांनि सोलोंथाइ बिथांखि एबा खौरां बादियै।",
+        "where": "बहराइच मावख'आव, गामियारि जायगाफोराव, एबा गावनि न'निफ्राय अनलाइन।",
+        "how": "गावनि सिभि आरो गावनि साननाय लिरनानै जोंनो ईमेल हर, जों मोनसे इन्टारभिउ खालामगोन।"
       }
     },
     {
       "k": "career",
-      "label": "Apply for a Role",
+      "label": "मोनसे मासि (पद) नि थाखाय एप्लिकेसन हर",
       "for": [
         "student",
         "individual",
@@ -31247,17 +31246,17 @@ const BRX = {
       ],
       "col": "#556223",
       "detail": {
-        "u": "Field roles are filled by people who understood the work before they applied. That starts here.",
-        "what": "A paid role on the programme, operations, finance or documentation team.",
-        "why": "गोबाव समनि सोलायनायनि थाखाय थाबाय थानाय मोनसे हान्जानि गोनांथि, बेरायफैग्रा सुबुंफोरनि नङा।",
-        "when": "When a vacancy is open. Interest sent between vacancies is kept and revisited.",
-        "where": "Mostly Bahraich; some roles are hybrid.",
-        "how": "Send what you would want to work on. We reply with what is open and what the role actually involves day to day."
+        "u": "DEHAT आव खामानि मावनाया मोनसे जिउनि थांखि, जेराव मोनफ्रोमबो सानआ गथ'फोरनि मोनथाय रैखाथिजों सोमोन्दो गोनां।",
+        "what": "प्रोग्राम गाहाय, फोथार दैदेनगिरि, फाइनान्स, एमआइएस, सोलोंथाइ एंकर एबा लीगल एडभाइजार मासिफोराव एप्लिकेसन।",
+        "why": "जोंनि दोलोआ सिमायारि तराइ समाजनिफ्राय दिहुनजानाय आरो भारतनि गोख्रों मावथिफोरजों दाजानाय।",
+        "when": "जेब्लाबो मासि खौरां ओंखारो, एबा गावनि सिभिखौ इयोननि थाखाय जोंनो हरना दोनो हायो।",
+        "where": "बहराइच, श्रावस्ती, बलरामपुर, लखनऊ एबा फील्ड मावख'फोराव।",
+        "how": "गावनि सिभि आरो कवर लेटर हर, जेराव नोंथां मानो DEHAT जों खामानि मावनो लुबैयो बेखौ लिर।"
       }
     },
     {
       "k": "member",
-      "label": "Become a General Body Member",
+      "label": "साधारण सभा (जेनेरेल बडि) नि सोद्रोमा जा",
       "for": [
         "community",
         "individual",
@@ -31265,17 +31264,17 @@ const BRX = {
       ],
       "col": "#EAAE28",
       "detail": {
-        "u": "The General Body is where accountability is exercised, not observed.",
-        "what": "Membership of the General Body of DEHAT, the society’s governing membership.",
-        "why": "An organisation answerable only to its funders drifts. Members ask questions funders do not.",
-        "when": "Applications are considered against the society’s governance calendar.",
-        "where": "Registered office, Bahraich, Uttar Pradesh.",
-        "how": "Write with your reason for joining; the process and obligations are explained before you commit."
+        "u": "DEHAT नि खुंथाइया सोद्रोमाफोरनि सांग्रांथि आरो बिथांखिनि सायाव गसंथि। जोंनो गोख्रों सानथांखि गोनां सोद्रोमा नांगौ।",
+        "what": "आफादनि साधारण सभायाव बाहागो लानाय, बोसोरारि जथुमाव बिबुंथि होनाय, आरो खुंथायनि सायाव नजर दोननाय।",
+        "why": "आफादनि थारथि, नेमखानथि आरो समाजारि बिबानखौ गोख्रों दोनो थाखाय सोद्रोमाफोरनि बिहोमाया जोबोद गोनां।",
+        "when": "बोसोरफ्रोमबो साधारण सभा जथुमनि सिगां, एप्लिकेसनखौ कमिटिया आनजादो।",
+        "where": "बहराइच, उत्तर प्रदेश।",
+        "how": "मेम्बारसिप फर्म सुफुं, गावनि सिगांनि समाजारि खामानिखौ मख', आरो गभर्निं बडिनि गनायथि ला।"
       }
     },
     {
       "k": "give",
-      "label": "Invest Once, or Set up a Regular Investment",
+      "label": "दान हो, एबा रोखायै बोसोरारि/दानारि अनसुंथाइ जागाय",
       "for": [
         "individual",
         "community",
@@ -31283,34 +31282,34 @@ const BRX = {
       ],
       "col": "#EAAE28",
       "detail": {
-        "u": "Field costs do not pause between grants. A regular investment is what keeps a team in place in the months when a grant has ended and the next has not started.",
-        "what": "A one-time or recurring investment, either unrestricted or directed to a named programme.",
-        "why": "Unrestricted money covers what restricted grants will not: salaries between cycles, travel to a village, the follow-up visit on a case that is still open.",
-        "when": "Any time. Recurring investment is the most useful of all, because it is the only kind that can be planned against.",
-        "where": "Indian contributions into the 80G account; foreign contributions only into the designated Foreign Contribution (Regulation) Act account, as the law requires.",
-        "how": "Choose an amount and a purpose on the Invest tab. The receipt and the statutory trail follow automatically, and the amount appears in the published ledger."
+        "u": "नोंथांनि मोनफ्रोमबो रांआ सिमानि गथ'फोरखौ फरायसालियाव लाखिनो आरो सुबुं फालांगिनिफ्राय रैखा खालामनो थाङो।",
+        "what": "मोनसे साननि दान एबा बोसोरारि/दानारि थिसननाय, ८०G खाजोना रेहाय रसीदजों।",
+        "why": "थोंजों समाजनि गेजेराव फैनाय रांआ जोंखौ खुद्रि अनसुंथाइनिफ्राय उदां खालामो आरो गोनांथार खामानियाव थोंजों बाहायजायो।",
+        "when": "दानिनो। UPI, नेट बेंकिं, कार्ड एबा FCRA गुबुन हादोरनि ट्रान्सफारजों।",
+        "where": "अनलाइन गेटवेनि गेजेरजों, थोंजों DEHAT नि बेंक एकाउन्टआव।",
+        "how": "दाननि अनजिमा सायख', ८०G नि थाखाय PAN डिटेल्स हो, आरो अनलाइन पेमेन्ट खालाम।"
       }
     },
     {
       "k": "legacy",
-      "label": "Leave a Legacy Gift in Your Will",
+      "label": "गावनि उइलाव (वसीयत) समाजारि दान लाखि",
       "for": [
         "individual",
         "community"
       ],
       "col": "#4F0E73",
       "detail": {
-        "u": "A legacy is the only gift that is decided calmly, years in advance, by someone with nothing left to gain from it. It is also the rarest, because almost nobody is ever asked.",
-        "what": "A bequest to DEHAT written into your will - a fixed sum, a share of the residue, or a named asset.",
-        "why": "Field work runs on money that arrives in one-year pieces. A legacy is the one form of support that can be committed to a horizon longer than any grant cycle, which is the horizon the change actually takes.",
-        "when": "Whenever you next write or revise your will. Telling us is optional, but it lets us plan and lets you say what the gift is for.",
-        "where": "The registered office in Bahraich holds the society’s registration, PAN and audited accounts - everything your lawyer will ask for.",
-        "how": "Ask us for the exact legal name, registration number and clause wording to give your lawyer. We do not draft wills and we do not give legal advice; we give your lawyer what they need and step back."
+        "u": "नोंथांनि जिउनि उनआवबो सिमानि गथ'फोर आरो आइजोफोरनो मोनथाय आरो रैखाथि होनायनि थांखिखौ जागायबाय लाखिनो हायो।",
+        "what": "गावनि सम्पद, सेयार एबा रांनि मोनसे बाहागोखौ DEHAT नि थांखियाव दोननायनि आयेनारि उइल।",
+        "why": "मोनसे लिगेसि दाना बोसोराव नङा, जिउ-थाखो जोबोद गोजौ सोलायनाय लाबोनायाव हेफाजाब होयो।",
+        "when": "गावनि आयेनारि उइल दानाय समाव, एबा गोजाम उइलखौ सोलायनाय समाव।",
+        "where": "भारत एबा गुबुन हादोरनि जेखुनो आयेनारि जायगायाव।",
+        "how": "DEHAT नि लीगल टिमजों रायज्लाय, रोखा फारिलाइ ला, आरो गावनि उइलआव DEHAT नि पंजिकृत मुं आरो PAN मख'।"
       }
     },
     {
       "k": "occasion",
-      "label": "Mark a Wedding, a Birthday or Another Occasion with Us",
+      "label": "हाबा, जोनोम सान एबा गुबुन फोथाव सानखौ जोंजों फालि",
       "for": [
         "individual",
         "school",
@@ -31318,34 +31317,34 @@ const BRX = {
       ],
       "col": "#EAAE28",
       "detail": {
-        "u": "A wedding, a birthday, an anniversary or a memorial redirected once can fund a whole cycle of one intervention.",
-        "what": "Guests asked to give to DEHAT instead of bringing shagun or a gift, on the occasion and in the name of the person or couple marking it.",
-        "why": "It turns a private day into a public one, and reaches people the field team would not otherwise meet - but only if every gift is given directly. We cannot receipt, or safely bank, a sum collected in cash or by hand and passed to us afterward; the rule that lets us give a giver their own tax receipt requires their name against their own amount.",
-        "when": "Four to six weeks of notice lets us prepare a page and the material, and, where possible, a voice from the field.",
-        "where": "Your venue, online, or in Bahraich. The giving itself always lands directly in DEHAT's own account - never in a personal one, even briefly, even in trust.",
-        "how": "Tell us the occasion and the date. We set up a page in your name that your guests give through directly, and we handle the receipts and the follow-up."
+        "u": "गावनि गोजोननाय सानखौ गामिनि गथ'फोरनो सोलोंथाइ, रोंगौथि आरो सुलुं होनानै गोजोनहो।",
+        "what": "गथ'फोरनो लाइब्रेरि बिजाब, फरायसालि जिनिस, आदार, एबा आइजोफोरनो बेगर होनाय बिथांखिनो अनसुंथाइ।",
+        "why": "गावनि दावबायनाय आरो गोजोननायखौ समाजनि गोजोनथायजों दानजाबनायनि बेयो मोनसे मोजां लामा।",
+        "when": "नोंथांनि फोथाव साननि मोननै सप्ता सिगां, जाहाथे जों गामियाव थांखिखौ मिलायनो हायो।",
+        "where": "बहराइच आरो श्रावस्तीनि गामियारि फरायसालिफोराव।",
+        "how": "जोंनो सान आरो बिथांखिनि खोथा लिर, जों गामिनि गथ'फोरजों बेनि फोटो आरो रिपर्ट नोंथांनो हरगोन।"
       }
     },
     {
       "k": "stage",
-      "label": "Dedicate a Show, a Set or a Release to DEHAT's Communities",
+      "label": "DEHAT नि समाजनो मोनसे सावथुन, नाटक, एबा कला आरज खालाम",
       "for": [
         "individual",
         "peer"
       ],
       "col": "#D2305C",
       "detail": {
-        "u": "A comedian's set, a musician's show or a filmmaker's premiere can hand this work an audience an appeal letter never reaches.",
-        "what": "A show, a screening, a livestream or a piece of released work dedicated to DEHAT's communities, with the audience giving directly rather than through the artist.",
-        "why": "An audience that already trusts an artist rarely meets an NGO on its own terms. What we cannot do is bank a sum an artist collected and hands over afterward - every gift has to be given by the person giving it, in their own name, for the same reason a wedding or birthday gift does.",
-        "when": "Tell us the date as soon as it is fixed; four weeks lets us prepare material and, for a livestream or a large show, a recorded message from the field.",
-        "where": "Wherever your audience already is - a venue, a stream, a release. The giving itself happens on DEHAT's own page, not at the door or in the artist's account.",
-        "how": "Tell us the date, the format and the expected reach. We give you a dedicated page and link to point your audience to, branding you can use without asking twice, and a running total you and they can both see."
+        "u": "कला, मेथाइ आरो नाटकआ सिमानि गथ'फोरनि मोन्थायारि सोदोबखौ मुलुगनां थाखोआव सौहैनो गोहो होयो।",
+        "what": "नोंथांनि कन्सार्ट, रिलिज, प्रदर्शनि एबा स' निफ्राय फैनाय रांखौ DEHAT नि गथ' रैखाथि बिथांखिनो आरज खालामनाय।",
+        "why": "सुबुं फालांगि आरो गथ' खामानि मावहोनायनि हेंथायारि सांग्रांथिखौ बांहोनो कलाया जोबोद गोख्रों हाबिला।",
+        "when": "इभेन्टनि मोनसे दान सिगां, जाहाथे जों खौरां आरो बिगोमाथिनि बिबुंथिखौ साजायनो हायो।",
+        "where": "भारतनि जेखुनो नोगोराव एबा अनलाइन।",
+        "how": "इभेन्टनि डिटेल्स जोंनो हर, जों DEHAT नि ब्यानार, भिदिअ आरो रिपर्टजों लोगो लागोन।"
       }
     },
     {
       "k": "meet",
-      "label": "Meet the People Your Support Has Reached",
+      "label": "नोंथांनि अनसुंथाइ सौहैनाय सुबुंफोरजों लोगो हम",
       "for": [
         "individual",
         "csr",
@@ -31353,17 +31352,17 @@ const BRX = {
       ],
       "col": "#D2305C",
       "detail": {
-        "u": "The distance between an investor and the person their money reached is usually never closed. It should be.",
-        "what": "A structured meeting - in person or online - with the people and communities your support reached.",
-        "why": "Accountability runs both ways. Seeing the outcome changes how the next decision is made.",
-        "when": "Arranged around the community’s calendar, never around the visitor’s convenience alone.",
-        "where": "In the villages themselves, or over a call where travel is not possible.",
-        "how": "Ask, and we arrange it with the consent of everyone who will be in the room."
+        "u": "नोंथाङा दान हरनाय रांआ बबेयाव थांखो आरो सोरखौ रैखा खालामखो, बेखौ थोंजों नुनो नोंथांनि मोनथाय दं।",
+        "what": "फरायसालियाव फिन फैनाय गथ'फोर, सुबुं फालांगिनिफ्राय रैखा मोननाय आइजोफोर, आरो आबादारि नखरफोरजों लोगो हमनाय।",
+        "why": "थोंजों लोगो हमनाया दानगिरि आरो समाजनि गेजेराव नंगुबै फोथायनाय आरो बिगोमाथि दाना होयो।",
+        "when": "बोसोरारि फोथार दावबायनायनि समाव, एबा जोंनि भिडिअ कल मिटिङाव।",
+        "where": "बहराइच, श्रावस्ती, एबा जुम/गुगल मिटनि गेजेरजों।",
+        "how": "जोंनो गावनि नांगौ समाव लिर, आरो जों प्राइभेसि आयेन मानिनानै मिटिं साजायगोन।"
       }
     },
     {
       "k": "workplace",
-      "label": "Commit Our Workplace Against Child Labour and Child Sexual Abuse",
+      "label": "गावनि खामानि जायगाखौ गथ' खामानि आरो गथ' गाज्रि आखुनिफ्राय उदां खालामनो रादाय ला",
       "for": [
         "csr",
         "peer",
@@ -31371,33 +31370,33 @@ const BRX = {
       ],
       "col": "#A92719",
       "detail": {
-        "u": "Child labour and child sexual abuse do not stop at your supply chain’s edge. A written commitment is where the audit starts.",
-        "what": "A workplace commitment against child labour and child sexual abuse, with the policy and training to hold it.",
-        "why": "A stated position gives employees a route to raise something they would otherwise stay quiet about.",
-        "when": "Before an incident, not after. Policy written under pressure protects nobody.",
-        "where": "Your workplace and its allied spaces - contractors, vendors, transport, housing.",
-        "how": "We share the model commitment, help adapt it, and train the people who will have to act on it."
+        "u": "सप्लाइ चेनाव गथ' खामानि थायोब्ला जेबो दारिमिनआ जौगानाय जानो हाया। गावनि कम्पनिखौ उदां खालाम।",
+        "what": "कम्पनि नि सप्लाइ चेन आनजादनाय, गथ' रैखाथि आयेन मानिनाय, आरो मावथिफोरनो फोरोंगौथि होनाय।",
+        "why": "तराइ सिमानिफ्राय गथ'फोरखौ नोगोरनि फ्याक्ट्रि आरो हटेलाव लांनाय जायो। बेखौ फोजोबनो कम्पनिनि गोहो नांगौ।",
+        "when": "जेब्लाबो। कम्पनिनि CSR एबा HR बिफाननि गेजेरजों जागायनो हायो।",
+        "where": "नोंथांनि अफिस, फ्याक्ट्रि एबा सप्लाइ चेन जायगायाव।",
+        "how": "DEHAT नि सुबुं रैखाथि टिमजों रायज्लाय, अदिद खालाम, आरो रैखाथि प्रमाणपत्र ला।"
       }
     },
     {
       "k": "schoolprog",
-      "label": "Engage Our Students with Children Who Have Left School",
+      "label": "गावनि फरायसाफोरखौ फरायसालि नागारनाय गथ'फोरजों सोमोन्दो खालामहो",
       "for": [
         "school"
       ],
       "col": "#0E5565",
       "detail": {
-        "u": "A child who has left school is rarely brought back by an adult. They are brought back by another child.",
-        "what": "A structured engagement between your students and children who are out of school.",
-        "why": "Peer contact does what enrolment drives cannot: it makes returning feel ordinary rather than exceptional.",
-        "when": "Aligned to your academic calendar, with preparation before contact begins.",
-        "where": "Your school, and partner locations in Bahraich, connected online where distance requires it.",
-        "how": "We design the engagement with your teachers, brief both sets of children, and stay through the term."
+        "u": "नोगोरनि गथ'फोर आरो गामिनि सिमानि गथ'फोरनि गेजेराव सोलोंथाइ आरो समानथिनि लामा दा।",
+        "what": "फरायसालि-फरायसालि सोमोन्दो, अनलाइन बिबुंथि, बिजाब राननाय, आरो लामदिन्थिग्रा फरायसालिनि गथ'फोरजों जयै सोलोंनाय।",
+        "why": "समानथि आरो अनलाइया उन्दै समनिफ्रायनो सोलोंनायनि गेजेरजों फैयो।",
+        "when": "फरायसालिनि सोलोंथाइ बोसोरनि जागायनायाव, एबा सानजुलि बन्दु समाव।",
+        "where": "नोगोरनि फरायसालि आरो बहराइचनि गामियारि सेन्टारफोरनि गेजेराव।",
+        "how": "फरायसालिनि प्रिन्सिपाल एबा कोअर्डिनेटारजों जोंनो ईमेल हर, जों मोनसे सोलोंथाइ हाबाफारि दासिम।"
       }
     },
     {
       "k": "fpo",
-      "label": "Bulk-buy from Sondhi Maati Farmer Producer Company",
+      "label": "सोंधी माटी आबादारि दिहुनगिरि कम्पनि (FPO) निफ्राय गोबाङै बाय",
       "for": [
         "csr",
         "individual",
@@ -31406,63 +31405,63 @@ const BRX = {
       ],
       "col": "#556223",
       "detail": {
-        "u": "Every bulk order placed with the Farmer Producer Company is income that reaches a farmer without an intermediary taking a share.",
-        "what": "Bulk purchase from Sondhi Maati Farmer Producer Company, the farmer-owned company set up out of the Climate Justice work.",
-        "why": "Procurement is a more durable transfer than a donation, because it creates a customer rather than a recipient.",
-        "when": "Order against the harvest calendar; we will tell you what is available and when.",
-        "where": "Produced by women farmers in Bahraich; delivery arranged from there.",
-        "how": "Tell us quantities and timelines and we connect you directly to the company."
+        "u": "बिगोमा गैयाब्ला आबादारिनि गोहो बाराया। मिथिंगायारि आबादनि दिहुननाय जिनिसखौ थोंजों बायना आबादारि नखरखौ मोजां खालाम।",
+        "what": "अर्गानिक माइ (काला नमक माइ), दालि, बेसोर, मोसाला आरो मिथिंगायारि दिहुननाय जिनिसफोरनि गोबाङै बायनाय।",
+        "why": "दलालफोरनि सोलाय आबादारिया थोंजों बेसेन मोनो, आरो नोंथाङा साखोन-सिखोन मिथिंगायारि आदार मोनो।",
+        "when": "फसल खुनाय समाव (नभेम्बर-डिसेम्बर आरो अप्रिल-मे), एबा बोसोरनि जेब्लाबो समाव।",
+        "where": "बहराइच, उत्तर प्रदेशनिफ्राय भारतनि जेखुनो जायगासिम डेलिभारि।",
+        "how": "FPO टिमजों थोंजों सोमोन्दो खालाम, केटागल नाय, आरो बल्क अर्डर खालाम।"
       }
     }
   ],
-  "sopTitle": "In a line or two - what are you hoping will change?",
-  "sopSub": "This is the only part we read closely. Write it however you like; there is no right answer.",
-  "sopPlaceholder": "For example: we want our Corporate Social Responsibility spend in Bahraich to go somewhere the evidence is public, and we would like to start with one block.",
+  "sopTitle": "मोनसे एबा मोननै सारियाव - नोंथाङा मा सोलायनाय लुबैयो?",
+  "sopSub": "बे बाहागोखौल' जों जोबोद गोसो होनानै फरायो। जेरै गोसो लिर; जेबो गेबें फिननाय गैया।",
+  "sopPlaceholder": "बिदिन्थि हिसाबै: जों बहराइचआव गावनि CSR खरसाखौ बेफोरबादि जायगायाव होनो लुबैयो जेराव प्रमाणआ थार जायो।",
   "sopPrompts": [
-    "What has brought you to this page today?",
-    "Is there a place, an age group or an issue you already care about?",
-    "What would make this worth your while a year from now?"
+    "दिनै नोंथांखौ बे बिलाइयाव मा लाबोदों?",
+    "माबा मोनसे जायगा, बैसो हान्जा एबा जेंना दं नामा जायनि सायाव नोंथाङा सिगाङावनो सानो?",
+    "दानिफ्राय मोनसे बोसोर उनआव बियो नोंथांनि थाखाय मानो बेसेनगोनां जागोन?"
   ],
   "fName": "Your name",
-  "fOrg": "Organisation (if any)",
-  "fEmail": "Email",
-  "fPhone": "Phone (optional)",
-  "fPlace": "Where you are based (optional)",
+  "fOrg": "संस्था (जुदि दं)",
+  "fEmail": "इ-मेल",
+  "fPhone": "फोन (गावनि गोसो)",
+  "fPlace": "नोंथाङा बबेयाव थायो (गावनि गोसो)",
   "fBudget": "Indicative scale, if you have one (optional)",
   "budgets": [
-    "Not decided yet",
-    "Under ₹5 lakh",
-    "₹5–25 lakh",
-    "₹25 lakh – ₹1 crore",
-    "Above ₹1 crore",
-    "Not a funding conversation"
+    "दाबो थिरां जायाखै",
+    "₹5 लाखनि सिंआव",
+    "₹5 लाख - ₹25 लाख",
+    "₹25 लाख - ₹1 क्र'र",
+    "₹1 क्र'रनि गोजौआव",
+    "फान्दनि रायज्लायनाय नङा"
   ],
-  "reviewTitle": "This is the message that will open in your email app.",
-  "reviewSub": "Nothing is sent until you press send there. You can edit every word first.",
-  "send": "Open in My Email App",
-  "copy": "Copy the Message Instead",
-  "copied": "Copied",
-  "back": "Back",
-  "next": "Continue",
-  "step": "Step",
-  "of": "of",
-  "pickOne": "Pick at least one to continue.",
-  "needName": "Add a name and an email so we can reply.",
-  "giveTitle": "Invest",
-  "giveSub": "Indian and foreign contributions are received into two separate accounts, under two separate registrations, because the law requires it. Choose the one that applies to you and the rest follows automatically.",
+  "reviewTitle": "बेयो बै खौरां जाय नोंथांनि इ-मेल एपआव खुलिगोन।",
+  "reviewSub": "जेसिमबो नोंथाङा बैयाव सेन्द थुआ, जेबो हरजाया। नोंथाङा सिगाङावनो मोनफ्रोमबो सोदोबखौ सुद्रायनो हायो।",
+  "send": "आंनि इ-मेल एपआव खुलिदो",
+  "copy": "बेनि सोलाय खौरांखौ कपि खालामदो",
+  "copied": "खौरांखौ कपि खालामबाय",
+  "back": "उनफिन",
+  "next": "उननि",
+  "step": "थाखो",
+  "of": "नि",
+  "pickOne": "सालायबाय थानो खमैबो मोनसे सायख'दो।",
+  "needName": "मुं आरो इ-मेल दाजाबदो जाहाथे जों फिन होनो हायो।",
+  "giveTitle": "फोथाराव दान होदो।",
+  "giveSub": "भारतिया आरो बिलातनि दानफोरखौ आलादा एकाउन्टआव लानाय जायो, मोननै आलादा रेजिस्ट्रेसननि सिंआव। मोननैबो लेखा-आनजाद खालामजानाय, मोननैबो तिन-दानारि रिपर्ट फोसावो।",
   "regimes": [
     {
       "k": "inr",
       "label": "I am Investing from India",
-      "note": "80G deduction available",
+      "note": "80G खम खालामनाय मोननो हायो",
       "detail": "हादरनि सिङि खाताआव मोननाय। गनायथि AAAAD3793Q25LK02 नि सिङाव नोंथांनि PAN आव 80G रसीद होनाय जायो, जायआ असेसमेन्ट बोसोर 2027–28 निफ्राय 2031–32 सिम मानि। DEHAT आ बे निवेशखौ बेनि Form 10BD फोरमायथिआवबो लिरो, आरो बेनि जाहोनानो नोंथाङा कटौतीनि दाबि खालामनो हायो।",
       "col": "#EAAE28"
     },
     {
       "k": "fcra",
       "label": "I am Investing from Outside India",
-      "note": "Foreign Contribution (Regulation) Act 136260010",
-      "detail": "Received only into the designated Foreign Contribution (Regulation) Act account at the State Bank of India, 11 Sansad Marg, New Delhi, as required by the Foreign Contribution (Regulation) Act. Foreign contributions do not carry an 80G deduction. A receipt and a utilisation statement are issued.",
+      "note": "विदेशी अंशदान (विनियमन) अधिनियम 136260010",
+      "detail": "खालि भारतीय स्टेट बैंक, 11 संसद मार्ग, नया दिल्लीयाव थानाय थि विदेशी अंशदान (विनियमन) अधिनियम एकाउन्टआवसो लानाय जायो।",
       "col": "#0E5565"
     }
   ],
@@ -31482,7 +31481,7 @@ const BRX = {
     "$500",
     "Other"
   ],
-  "freqTitle": "How Often",
+  "freqTitle": "बेसेबां समनि उनआव",
   "freqs": [
     {
       "k": "once",
@@ -31490,15 +31489,15 @@ const BRX = {
     },
     {
       "k": "monthly",
-      "label": "Every Month"
+      "label": "दानफ्रोमबो"
     },
     {
       "k": "yearly",
-      "label": "Every Year"
+      "label": "बोसोरफ्रोमबो"
     }
   ],
-  "purposeTitle": "Where It Should Go",
-  "purposeNote": "An unrestricted investment is the most useful kind. If you would rather direct it, the programme register shows exactly what each one funds.",
+  "purposeTitle": "बेयो बबेयाव थांनांगौ",
+  "purposeNote": "उदां दानआ बयनिख्रुइ खाबु गोनां। जुदि नोंथाङा मोनसे थि जायगायाव होनो लुबैयो, हाबाफारि रेजिस्टारआ दिन्थियो जेराव ब्यालेन्सआ खम दं।",
   "purposes": [
     {
       "k": "unrestricted",
@@ -31507,112 +31506,112 @@ const BRX = {
     },
     {
       "k": "hp",
-      "label": "Human Protection"
+      "label": "मानव संरक्षण"
     },
     {
       "k": "cj",
-      "label": "Climate Justice"
+      "label": "बारहावाआरि न्याय"
     },
     {
       "k": "sol",
-      "label": "School of Leadership"
+      "label": "नेतृत्व फरायसालि"
     },
     {
       "k": "re",
-      "label": "Rights and Entitlements"
+      "label": "होखा आरो पाथ्रता"
     }
   ],
-  "idTitle": "For Your Receipt",
-  "idNoteInr": "The Income Tax Department requires a PAN against every 80G receipt, and DEHAT must report it in Form 10BD. Without it we can accept the investment but cannot issue a deduction certificate.",
-  "idNoteFcra": "For foreign contributions DEHAT records the investor’s name, country and passport or national identity reference in its Foreign Contribution (Regulation) Act return. You can share it after the payment; it is not needed to invest.",
+  "idTitle": "नोंथांनि रसिदनि थाखाय",
+  "idNoteInr": "आयकर बिफाना मोनफ्रोमबो 80G रसिदआव PAN नांगौ थिसोयो, आरो DEHAT आ बेखौ Form 10BD आव रिपर्ट खालामनांगौ जाहाथे नोंथांनि खम खालामनाया आइनारि जायो।",
+  "idNoteFcra": "बिलातनि दाननि थाखाय DEHAT आ दानहोग्रायानि मुं, देस आरो पासपोर्ट एबा जातियारि सिनायथि अनजिमाखौ रेकर्ड खालामो, जेरै विदेशी अंशदान (विनियमन) अधिनियम बादै नांगौ।",
   "fPan": "PAN",
-  "fPanHint": "Ten characters, as printed on the card",
-  "fAadhaar": "Masked Aadhaar",
+  "fPanHint": "जि हांखोफोर, जेरै कार्डआव लिरनाय दं",
+  "fAadhaar": "मास्क खालामनाय आधार",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "Last four digits only. Never enter your full Aadhaar number here - we neither need it nor keep it.",
-  "fInrDocs": "PAN and Masked Aadhaar Scans",
-  "fInrDocsNote": "Attach a scan of your PAN card and a masked Aadhaar (last four digits visible only - UIDAI issues one from its website). Held for the 80G receipt, the Form 10BD statement and the audit, and destroyed when the retention period ends.",
-  "fIdRefHint": "As printed on the passport",
-  "fPassport": "Passport Scan, Both Sides",
-  "fPassportNote": "Required for foreign contributions. Attach the photograph page and the address page. Held only for the Foreign Contribution (Regulation) Act return and the audit, and destroyed when the retention period ends.",
-  "fIdCountry": "Country",
+  "fAadhaarNote": "जोबथानि ब्रै अनजिमाल'। नोंथांनि गासै आधार नम्बरखौ बेयाव जेब्लाबो लिरनाङा - जोंनो बेखौ नाङाबो आरो जों लाखियाबो।",
+  "fInrDocs": "PAN आरो मास्क खालामनाय आधार स्क्यान",
+  "fInrDocsNote": "गावनि PAN कार्ड आरो मास्क खालामनाय आधारनि स्क्यान कपिखौ दाजाबदो (खालि जोबथानि ब्रै अनजिमाल' नुनांगौ - UIDAI आ अनलाइन मास्क कपि होयो)।",
+  "fIdRefHint": "पासपोर्टआव लिरनाय बादियै",
+  "fPassport": "पासपोर्ट स्क्यान, मोननैबो फारसे",
+  "fPassportNote": "बिलातनि दाननि थाखाय गोनांथार। फोटो थानाय बिलाइ आरो पत्ता थानाय बिलाइखौ दाजाबदो। खालि आइनारि रिपर्टनि थाखायल' लाखिनाय जायो।",
+  "fIdCountry": "नागरिकथानि देस",
   "fIdRef": "Passport or national ID number",
   "fAddress": "Address for the receipt",
-  "f80g": "Issue me an 80G receipt",
-  "fAnon": "Do not publish my name anywhere",
-  "dpNote": "DEHAT collects only what the receipt and the statutory return require. Nothing here is stored in your browser, and nothing is shared with anyone outside the finance and audit process.",
-  "payNow": "Continue to Payment",
-  "paySafe": "Payments are processed by Razorpay. DEHAT never sees your card or bank credentials.",
-  "payMissing": "The payment gateway is not connected in this preview. Your selections are shown below so a developer can wire them to the correct Razorpay account.",
-  "payDomestic": "Domestic Razorpay account · 80G · Form 10BD",
-  "payForeign": "Foreign Contribution (Regulation) Act Razorpay account · State Bank of India, 11 Sansad Marg · Form FC-4 return",
-  "orEmail": "Prefer a Bank Transfer, or Investing in Kind? Write to Us and We Will Send Account Details.",
-  "peopleTitle": "Who We Work With",
-  "peopleSub": "Every organisation below appears because it appears in a signed agreement, an audited account or a published register on this site.",
-  "investorsTitle": "Investment Partners",
-  "investorsSub": "Institutions and companies whose funding is recorded against a named project in the register.",
-  "investorsFoot": "Named funding bodies only. Implementation partners, referral institutions and government departments that appear in a project without a recorded contribution are named on that project’s entry in the register instead. Where the archive does not establish who funded early work, the register says so rather than naming anyone here.",
-  "empanelTitle": "Empanelments, Validation and Recognition",
-  "mediaTitle": "In the Press",
-  "mediaSub": "Independent coverage of the work. Links go to the publisher.",
-  "affilTitle": "Networks and Consortiums",
-  "sisterTitle": "Allied Institutions",
+  "f80g": "आंनो 80G रसिद हरदो",
+  "fAnon": "आंनि मुंखौ जेरावबो फोसावनाङा",
+  "dpNote": "DEHAT आ खालि बेखौल' बुथुमो जायखौ रसिद आरो आइनारि रिटर्ननि थाखाय नांगौ। बेयाव थानाय जेबो बाथ्रा नोंथांनि ब्राउजारआव दोनथ'जाया एबा ट्र्याकिंनि थाखाय बाहायजाया।",
+  "payNow": "रांखौ हरदो",
+  "paySafe": "दानफोरखौ Razorpay नि दारै सामलायनाय जायो। DEHAT आ नोंथांनि कार्ड एबा बैंकनि जेबो सिनायथिखौ नुया।",
+  "payMissing": "हादरनि दानफोरा Razorpay Secure Checkout आव खुलियो। अनलाइन बिलातनि कार्ड सामलायनाया गोदान खालामगासिनो - एकाउन्टनि खौरांखौ लिरहरनो जोंनो लिरदो।",
+  "payDomestic": "हादरारि Razorpay एकाउन्ट · 80G · Form 10BD",
+  "payForeign": "विदेशी अंशदान (विनियमन) अधिनियम Razorpay एकाउन्ट · भारतीय स्टेट बैंक, 11 संसद मार्ग · Form FC-4",
+  "orEmail": "बैंक ट्रान्सफार एबा जिनिस हिसाबै दान होनो लुबैयो नामा? जोंनो लिरहरदो आरो जों एकाउन्टनि खौरांखौ हरगोन।",
+  "peopleTitle": "जों सोरजों लोगो जानानै खामानि मावो",
+  "peopleSub": "गाहायनि मोनफ्रोमबो संस्थाया बेयाव नुजादों मानोना बेयो साहि खालामनाय गोरोबथा, लेखा-आनजाद हिसाब एबा उदां रेजिस्टारआव दं।",
+  "investorsTitle": "दानहोग्रा बिगोमाफोर",
+  "investorsSub": "बै संस्था आरो कम्पानि जायफोरनि फान्द होनायखौ रेजिस्टारआव थि प्रजेक्टनि सायाव रेकर्ड खालामनाय जादों।",
+  "investorsFoot": "खालि थि फान्दहोग्रा संस्थाफोरल'। मावफुं बिगोमाफोर, रेफरल संस्थाफोर आरो सोरखारि बिफानफोरा गोजौनि इकोसिस्टेम ब्लकआव दं।",
+  "empanelTitle": "तालिकाभुक्त, आनजाद आरो मानहोनाय",
+  "mediaTitle": "रादाब बिलाइयाव",
+  "mediaSub": "खामानि सायाव उदां रादाब। लिंकफोरा फोसावग्रासिम थाङो।",
+  "affilTitle": "नेटवार्क आरो कन्सर्टियाम",
+  "sisterTitle": "लोगो संस्थाफोर",
   "sisters": [
     {
-      "k": "Sondhi Maati Farmer Producer Company",
-      "v": "A farmer-owned company set up out of the Climate Justice work, through which women farmers aggregate and sell."
+      "k": "सोंधी माटी आबादारि दिहुनग्रा कम्पानि",
+      "v": "बारहावाआरि न्याय खामानिनिफ्राय दाजानाय आबादारिफोरनि गावआरि कम्पानि, जायनि गेजेरजों महिला आबादारिफोरा आबादखौ ज' खालामो, दलालफोरनि खहाखौ होबथानानै सोरखारि बाजाराव थोंजों फानो हायो।"
     },
     {
-      "k": "Sondhi Maati LLP",
-      "v": "The trading arm associated with the producer company."
+      "k": "सोंधी माटी LLP",
+      "v": "दिहुनग्रा कम्पानिजों लोगो खानाय फालांगि बिफान।"
     },
     {
       "k": "RANG",
-      "v": "The cultural and expression platform associated with DEHAT’s work with children and young people."
+      "v": "गथ' आरो युवाफोरजों DEHAT नि खामानिजों लोगो खानाय हारिमुआरि मञ्च।"
     }
   ],
   "affils": [
     {
       "k": "Campaign Against Child Labour (CACL)",
-      "v": "DEHAT takes part in inter-country consultation platforms on cross-border standard operating procedures for restoration, rehabilitation and repatriation."
+      "v": "DEHAT आ सिमायारि फोजोंफिननाय, पुनरावास आरो दैथायहरफिननायनि थाखाय अन्तर-हादरारि रायज्लायनाय मञ्चाव बाहागो लायो।"
     },
     {
       "k": "White Ribbon Alliance India",
-      "v": "Charter Member, Respectful Maternity Care.",
+      "v": "चार्टार सोद्रोमा, मानगोनां जोनोम नायदिंनाय।",
       "href": "https://www.c3india.org/wrai-rmc-charter"
     },
     {
       "k": "Association of Voluntary Agencies for Rural Development (AVARD)",
-      "v": "General Body Member.",
+      "v": "गामियारि गोरिबथि आरो जिउ-राहायाव खामानि मावग्रा गावखुसि एजेन्सिफोरनि जातियारि नेटवार्क।",
       "href": "https://avard.org"
     },
     {
       "k": "Voluntary Action Network India (VANI)",
-      "v": "Member.",
+      "v": "बाल खस्थ' आरो फालांगि चालाननि बेरेखा अन्तर-हादरारि आफाद।",
       "href": "https://www.vaniindia.org"
     },
     {
       "k": "Quality Institutional Care and Alternatives to Children",
-      "v": "State Convener, 2006–12, and Member."
+      "v": "National Food Security Act 2013 नि सिंआव गासै हक़फोरखौ नोजोर लाखिग्रा जातियारि नेटवार्क।"
     },
     {
       "k": "National Confederation of Dalit Organisations (NACDOR)",
-      "v": "Member.",
+      "v": "द' गोरिब रायजोफोराव गथ' सिख्लानि सोलोंथाय, देहा फाहामसालियाव जोनोम आरो आदारनि सायाव खामानि मावग्रा समाज नेटवार्क।",
       "href": "https://nacdor.org"
     },
     {
       "k": "Alliance for Immunisation and Health",
-      "v": "Former Partner and State Convener for Uttar Pradesh, and Member of the Core Group.",
+      "v": "काठमाण्डुयाव भारतनि दुतावास आरो नेपालनि बाल कल्याण बोर्डजों सिमायारि repatriation खान्थियाव गियान बिगोमा।",
       "href": "https://www.aihindia.org"
     },
     {
       "k": "Catalyst Now - India Chapter",
-      "v": "Member.",
+      "v": "सानजा उत्तर प्रदेशआव अरगेनिक आबाद, देसी बेगर रैखाथि आरो बायो-इनपुट दिहुननाय सेन्टारफोरखौ जौगाहोनाय संस्थागत आफाद।",
       "href": "https://catalystnow.net/chapters/india-chapter/"
     },
     {
       "k": "International Conference on Family Planning",
-      "v": "Co-Chair, and the one Youth Trailblazer Awardee from India.",
+      "v": "ज' आफादगिरि, आरो भारतनिफ्राय सासेल' युवा ट्रेलब्लेजर बान्था मोनगिरि।",
       "href": "https://theicfp.org/2025-youth-trailblazers"
     },
     {
@@ -31622,12 +31621,12 @@ const BRX = {
     },
     {
       "k": "Just Rights for Children, UK",
-      "v": "Alliance Member and Partner.",
+      "v": "आफाद सोद्रोमा आरो बिगोमा।",
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "Software and Cloud Donation Partners",
-  "techNote": "Tools and cloud capacity donated to DEHAT, so that more of every rupee reaches the work rather than the overhead behind it.",
+  "techTitle": "सफ्टवेयार आरो क्लाउड दान बिगोमाफोर",
+  "techNote": "DEHAT नो दान हिसाबै मोननाय टुलस आरो क्लाउड गोहो, जाहाथे मोनफ्रोमबो रांनि बांसिन बाहागोआ खरसायाव नङा खामानियाव सौहैयो।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -31699,29 +31698,29 @@ const BRX = {
     }
   ],
   "certTitle": "रोखाथि, फारिलाइ आरो रोखा खालामनाय",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "उदां आफादफोर जायफोरा गावसोरनि फोसावनाय मानथिगोन बादियै DEHAT खौ नायबिजिरदों, थिसनदों एबा रोखा खालामदों।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "च्यारिटीज एड फाउन्डेसन इन्डिया।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "भारतनि जौगानाय आफादफोरनि बिजिन्नाय आरो थिसननाय मानथिगोन, टाटा इन्स्टिच्युट अफ ससियेल साइन्सेस।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "उदां आफादनि रोखाथि मानथिगोन।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "खौरां बिजों आव मोंखोननाय",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "आबुं खौरां-बिजों दोनथुमग्राफ्राय लाखानाय खामानिनी उदां खौरां। लिंकफोरा फोसावग्रानियाव थाङो; जेराव लिंक दिन्थिनाय जायाखै, बेयाव खौरां-बिजोंनि गावसिनि ओंखारथिया दोनथुमाव गैयामोन।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -31856,7 +31855,7 @@ const BRX = {
     }
   ],
   "ecosystemTitle": "सोरखारि बिफान, खानथिआरि आफाद आरो समाजआरि बिथांखिफोर जायजों जों खामानि मावो",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT आरो जायफोर समाजनि लोगोआव खामानि मावो बिसोरो गामि, ब्लक, तहसिल, जिल्ला आरो रायजो थाखोनि गाहायाव थानाय आफादफोराव गोसो होनानै बाहागो लायो - आरो बेफोराव जेब्लाबो लिंहरजायो। आबाद आरो बागानान आफादफोरखौ आलादा फारिलाइनि सोलाय बेयाव दोनफानाय जादों, मानोना DEHAT नि जिउ-राहा आरो बारहावा रैखाथिनी खामानिया गथ' रैखाथिनि बादिनो एखे आफादनि गेजेरजों दाजाबनानै थाङो।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -32144,9 +32143,9 @@ const BRX = {
       "href": "https://www.deccanherald.com/features/he-risks-his-life-save-2223044"
     }
   ],
-  "answerTitle": "Who We Answer To",
-  "answerSub": "The full governance chart, the annual accountability cycle and the open register of what we are not yet publishing sit on the Transparency page.",
-  "answerGo": "Open the Transparency Page"
+  "answerTitle": "जों सोरनि सायाव दायित्व गोनां",
+  "answerSub": "आबुं सासन चार्ट, बोसोरारि दायित्व चक्र आरो दासिम फोसावाखै बेफोरनि उदां रेजिस्टारआ रोखाथि बिलाइयाव दं।",
+  "answerGo": "रोखाथि बिलाइखौ खुलिदो"
 };
 
 const SAT = {
@@ -32985,29 +32984,29 @@ const SAT = {
     }
   ],
   "certTitle": "ᱯᱷᱟᱨᱪᱟ-ᱥᱟᱹᱨᱤ, ᱛᱟᱹᱞᱠᱟᱹ ᱟᱨ ᱥᱟᱹᱵᱩᱫ ᱥᱟᱠᱟᱢ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "ᱟᱯᱱᱟᱨ ᱩᱪᱷᱟᱹᱱ ᱟᱠᱟᱱ ᱢᱟᱱᱚᱛ ᱞᱮᱠᱟᱛᱮ DEHAT ᱠᱚ ᱯᱟᱨᱠᱷᱟᱣ, ᱛᱟᱹᱞᱠᱟᱹ ᱟᱨ ᱥᱟᱹᱵᱩᱛ ᱟᱠᱟᱫ ᱯᱷᱩᱨᱜᱟᱹᱞ ᱜᱟᱶᱛᱟ ᱠᱚ।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "ᱪᱮᱨᱤᱴᱤᱡᱽ ᱮᱰ ᱯᱷᱟᱣᱩᱱᱰᱮᱥᱚᱱ ᱤᱱᱰᱤᱭᱟ।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ᱵᱷᱟᱨᱚᱛ ᱨᱮ ᱞᱟᱦᱟᱱᱛᱤ ᱜᱟᱶᱛᱟ ᱠᱚ ᱞᱟᱹᱜᱤᱫ ᱡᱚᱠᱷᱟ ᱟᱨ ᱛᱟᱹᱞᱠᱟᱹ ᱢᱟᱱᱚᱛ, ᱴᱟᱴᱟ ᱤᱱᱥᱴᱤᱴᱤᱭᱩᱴ ᱚᱯᱷ ᱥᱚᱥᱤᱭᱟᱞ ᱥᱟᱭᱤᱱᱥᱮᱥ।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "ᱵᱟᱝ-ᱥᱚᱨᱠᱟᱨᱤ ᱜᱟᱶᱛᱟ ᱯᱷᱟᱨᱪᱟ ᱥᱟᱹᱵᱩᱛ।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ᱢᱤᱰᱤᱭᱟ ᱨᱮ ᱚᱞ ᱟᱠᱟᱱ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "ᱯᱩᱨᱟᱹ ᱢᱤᱰᱤᱭᱟ ᱥᱟᱧᱪᱟᱣ ᱠᱷᱚᱱ ᱦᱟᱛᱟᱣ ᱟᱠᱟᱱ ᱠᱟᱹᱢᱤ ᱨᱮᱱᱟᱜ ᱯᱷᱩᱨᱜᱟᱹᱞ ᱠᱷᱚᱵᱚᱨ। ᱡᱚᱲᱟᱣ ᱠᱚᱫᱚ ᱩᱪᱷᱟᱹᱱᱤᱭᱟᱹ ᱴᱷᱮᱱ ᱤᱫᱤᱭᱟ; ᱡᱟᱦᱟᱸᱨᱮ ᱡᱟᱦᱟᱱ ᱡᱚᱲᱟᱣ ᱵᱟᱹᱱᱩᱜ-ᱟ, ᱚᱸᱰᱮ ᱩᱪᱷᱟᱹᱱ ᱨᱮᱱᱟᱜ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱥᱟᱧᱪᱟᱣ ᱨᱮ ᱵᱟᱝ ᱛᱟᱦᱮᱸ ᱠᱟᱱᱟ।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -33142,7 +33141,7 @@ const SAT = {
     }
   ],
   "ecosystemTitle": "ᱥᱚᱨᱠᱟᱨᱤ ᱵᱤᱵᱷᱟᱜᱽ, ᱟᱹᱱ ᱞᱮᱠᱟᱛᱮ ᱵᱮᱱᱟᱣ ᱟᱠᱟᱱ ᱜᱟᱶᱛᱟ ᱟᱨ ᱥᱟᱶᱛᱟ ᱵᱮᱵᱚᱥᱛᱷᱟ ᱡᱟᱦᱟᱸ ᱥᱟᱶ ᱟᱞᱮ ᱡᱚᱯᱲᱟᱣ ᱢᱮᱱᱟᱜ ᱞᱮᱭᱟ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT ᱟᱨ ᱡᱟᱦᱟᱸ ᱥᱟᱶᱛᱟ ᱠᱚ ᱥᱟᱶ ᱱᱚᱶᱟ ᱠᱟᱹᱢᱤᱭᱟ, ᱩᱱᱠᱩ ᱫᱚ ᱟᱹᱛᱩ, ᱵᱞᱚᱠ, ᱛᱚᱦᱥᱤᱞ, ᱦᱚᱱᱚᱛ ᱟᱨ ᱯᱚᱱᱚᱛ ᱛᱷᱚᱠ ᱨᱮᱱᱟᱜ ᱱᱚᱶᱟ ᱠᱚ ᱜᱟᱶᱛᱟ ᱨᱮ ᱠᱩᱨᱩᱢᱩᱴᱩ ᱥᱮᱞᱮᱫᱤᱭᱟᱹ ᱠᱟᱱᱟ ᱠᱚ - ᱟᱨ ᱡᱟᱣᱜᱮ ᱱᱮᱣᱛᱟ ᱠᱚ ᱧᱟᱢᱟ। ᱪᱟᱥ ᱟᱨ ᱵᱟᱜᱟᱱ ᱜᱟᱶᱛᱟ ᱠᱚᱫᱚ ᱵᱷᱮᱜᱟᱨ ᱛᱟᱹᱞᱠᱟᱹ ᱵᱚᱫᱚᱞ ᱛᱮ ᱱᱚᱸᱰᱮ ᱥᱮᱞᱮᱫ ᱟᱠᱟᱱᱟ, ᱪᱮᱫᱟᱜ ᱥᱮ DEHAT ᱨᱮᱱᱟᱜ ᱟᱹᱥᱩᱞᱚᱜ ᱟᱨ ᱦᱚᱭ-ᱦᱤᱥᱤᱫ ᱫᱟᱲᱮ ᱠᱟᱹᱢᱤ ᱫᱚ ᱜᱤᱫᱽᱨᱟᱹ ᱨᱩᱠᱷᱤᱭᱟᱹ ᱞᱮᱠᱟ ᱜᱮ ᱢᱤᱫᱴᱟᱹᱝ ᱜᱟᱶᱛᱟ ᱨᱮᱱᱟᱜ ᱜᱟᱵᱟᱱ ᱛᱟᱞᱟᱛᱮ ᱪᱟᱞᱟᱜ-ᱟ।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -34271,29 +34270,29 @@ const MNI = {
     }
   ],
   "certTitle": "ꯃꯌꯦꯛ ꯁꯦꯡꯕꯥ, ꯂꯤꯁ꯭ꯇꯇꯥ ꯆꯜꯂꯛꯄꯥ ꯑꯃꯁꯨꯡ ꯁꯥꯔꯇꯤꯐꯤꯀꯦꯁꯟ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "DEHAT บุ ମখোয়গী ফোংখিবা চাংদমশিংগী মখাদা য়েংশিনখিবা, পরিং থমখিবা নত্রগা মশক খংলবিবা মীখা পোল্লোইদবা লুপশিং।",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "চ্যারিটিজ এইড ফাউণ্ডেশন ইন্দিয়া।",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ভারতকী চাউখৎ-থৌরাংগী লুপশিংগী মূল্যায়ন অমসুং পরিং থম্বগী চাংদমশিং, তাতা ইন্সতিত্যুত ওফ সোসিয়েল সাইন্সেস।",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "এনজিওগী শেংলবা মশক খংদোকপগী সর্তিফিকেসন।",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "ꯃꯤꯗꯤꯌꯥꯗꯥ ꯄꯟꯈꯤꯕꯥ",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "মপুং ফাবা মীদিয়া আর্কাইবদগী লৌথোকপা থবকশিংগী তোঙানবা পাউ। লিঙ্কশিং অসিনা ফোঙলিবশিংদা পুগনি; লিঙ্ক উৎপা য়াওদ্রিবা মফমদা, পাউচে অদুগী মশাগী ৱেবসাইট আর্কাইব রেকোর্দকী শরুক ওইখিদে।",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -34428,7 +34427,7 @@ const MNI = {
     }
   ],
   "ecosystemTitle": "ꯑꯩꯈꯣꯌꯅꯥ ꯊꯕꯛ ꯇꯧꯃꯤꯟꯅꯔꯤꯕꯥ ꯁꯔꯀꯥꯔꯒꯤ ꯗꯤꯄꯥꯔꯇꯃꯦꯟꯇꯁꯤꯡ, ꯆꯠꯅ-ꯀꯥꯡꯂꯣꯟꯒꯤ ꯑꯣꯏꯕꯥ ꯏꯟꯁꯇꯤꯠꯌꯨꯁꯅꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯈꯨꯟꯅꯥꯏꯒꯤ ꯁꯤꯁ꯭ꯇꯦꯃꯁꯤꯡ",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT অমসুং মসিনা থবক তৌমিন্নরিবা খুন্নাইশিং অসিনা খুঙ্গং, ব্লোক, তহসিল, জিলা অমসুং রাজ্য থাক্কী মখাগী লুপশিং অসিদা তোঙান্না শরুক য়াবা অমসুং লেপ্পা লৈতনা বার্তন তৌবিরকপা মীওইশিংনি। লৌউ-শিংউ অমসুং হৌদোং-ৱাদোংগী লুপশিং অসি তোঙানবা পরিং অমগী মহুৎ মফমসিদা য়াওহল্লি, মরমদি DEHAT গী পুন্সি মহিং অমসুং অইং-অশাক সহনশীলতাগী থবক অসি অঙাং ঙাকশেনগী থবকগুম্না মান্নবা ইন্সতিত্যুস্নেল শকলগী মনুং চন্না চৎথরি।",
   "ecosystemLevels": [
     {
       "k": "village",
@@ -34947,332 +34946,332 @@ const KS = {
   "whatTitle": "What would you like to do?",
   "whatSub": "Choose as many as apply.",
   "intents": [
-    {
-      "k": "partner",
-      "label": "Become a Corporate or Institutional Partner",
-      "for": [
-        "csr",
-        "foundation"
-      ],
-      "col": "#D2305C",
-      "detail": {
-        "u": "Form CSR-1 filings and Schedule VII allocations are decided months before the financial year turns; the block plan you fund in April is written in January.",
-        "what": "A named, multi-year partnership on one programme in one geography, published in the project register with its own budget line.",
-        "why": "Fragmented one-year grants buy activity. Systems that keep working after a grant ends need a partner who stays for the horizon the change takes.",
-        "when": "Start the conversation two quarters ahead of your CSR cycle, and the first year runs to a plan instead of a scramble.",
-        "where": "Bahraich and Shravasti in Uttar Pradesh, along the Indo-Nepal border, block by block.",
-        "how": "A scoping call, a due-diligence pack (12AB, 80G, CSR00001181, audited accounts with UDIN), a block plan, then a signed agreement."
-      }
-    },
-    {
-      "k": "consult",
-      "label": "Adopt One of Our Models, or Engage Our Community Resource Persons",
-      "for": [
-        "csr",
-        "govt",
-        "peer",
-        "foundation"
-      ],
-      "col": "#0E5565",
-      "detail": {
-        "u": "Models sitting inside one district help one district. The same model handed to a peer helps a state.",
-        "what": "DEHAT’s field-tested rights-based models, and its Community Resource Persons, made available to your team.",
-        "why": "Building an approach from scratch costs years. Adapting one that already survived contact with the field costs months.",
-        "when": "Best before your own programme design is frozen, while the operating model can still absorb what the field teaches.",
-        "where": "On your sites, or in Bahraich where the models are running and can be observed in place.",
-        "how": "A structured walkthrough of the model, then an engagement letter covering Community Resource Person time, training and review."
-      }
-    },
-    {
-      "k": "converge",
-      "label": "Work with Us on District Convergence or Referral",
-      "for": [
-        "govt",
-        "peer"
-      ],
-      "col": "#0E5565",
-      "detail": {
-        "u": "A child intercepted at a border checkpost needs a referral route that already exists. It cannot be built during the interception.",
-        "what": "Joint working with district administration on convergence, referral and evidence between departments.",
-        "why": "Protection fails at the seams between systems, not inside them. Convergence closes the seams before a case falls through.",
-        "when": "Ahead of a district plan cycle, or immediately where a referral gap has already shown itself.",
-        "where": "District and block offices across Bahraich and Shravasti, and the seven border districts the work reaches.",
-        "how": "Write to us with the department and the gap; we bring the field evidence and a proposed referral protocol."
-      }
-    },
-    {
-      "k": "research",
-      "label": "Become an Academic Research Partner",
-      "for": [
-        "research",
-        "foundation"
-      ],
-      "col": "#4F0E73",
-      "detail": {
-        "u": "Twenty years of field records exist in Bahraich. Every year they go unstudied is a year of evidence that never reaches the people writing policy.",
-        "what": "A named research partnership on a live programme - co-designed questions, access to field data and longitudinal records, and co-publication.",
-        "why": "Practice that is never studied repeats its own mistakes. Study that never touches practice generalises badly. The pairing corrects both.",
-        "when": "From the design stage, so measurement is built into the programme rather than fitted to it afterwards.",
-        "where": "Field sites across Bahraich and Shravasti, with the records held at the DEHAT office and available on site.",
-        "how": "Send a concept note and your ethics position. We reply with what data exists, in what form, over what period, and on what terms it can be used."
-      }
-    },
-    {
-      "k": "data",
-      "label": "Request Reports, Audited Accounts or Programme Data",
-      "for": [
-        "csr",
-        "foundation",
-        "govt",
-        "research",
-        "peer",
-        "individual"
-      ],
-      "col": "#4F0E73",
-      "detail": {
-        "u": "Anything published on this site can be traced to a signed document. Ask, and you get the document, not a summary.",
-        "what": "Audited accounts, evaluations, programme reports and the source records cited in the register.",
-        "why": "Trust that cannot be checked is not trust. Every claim here is meant to be verifiable by the person doubting it.",
-        "when": "Any time. Nothing here is embargoed and nothing waits on a funding conversation.",
-        "where": "Sent by email; originals available at the Bahraich office for anyone who wants to see them.",
-        "how": "Name the year, the programme or the document. If a figure is not yet digitised, we say so and send the scan."
-      }
-    },
-    {
-      "k": "visit",
-      "label": "Arrange a Field Visit in Bahraich or Shravasti",
-      "for": [
-        "csr",
-        "foundation",
-        "govt",
-        "research",
-        "student",
-        "peer",
-        "individual"
-      ],
-      "col": "#A92719",
-      "detail": {
-        "u": "Distance makes this abstract. One day in a Gram Panchayat makes it impossible to unsee.",
-        "what": "A field visit to the villages, schools and Child Parliaments where the work actually happens.",
-        "why": "Reports compress. A visit restores what compression removes: the people, the terrain and the constraints.",
-        "when": "Any month outside the monsoon peak; we will tell you honestly which weeks the field is reachable.",
-        "where": "Bahraich and Shravasti, roughly six hours from Lucknow, closer from Nepalgunj.",
-        "how": "Send rough dates and headcount. We plan the route, arrange local logistics and tell you what to expect."
-      }
-    },
-    {
-      "k": "fellow",
-      "label": "Become a DEHAT Fellow",
-      "for": [
-        "student",
-        "research"
-      ],
-      "col": "#556223",
-      "detail": {
-        "u": "A fellowship year spent close to a rights problem shapes a career more than a decade of describing one.",
-        "what": "A structured placement inside a programme, with real responsibility and a named supervisor.",
-        "why": "The sector needs people who have sat in a village meeting, not only people who have read about one.",
-        "when": "Cohorts follow the programme calendar; write early, since field placements are limited by supervision capacity.",
-        "where": "On site in Bahraich, with some functions partly remote.",
-        "how": "Tell us what you want to learn and what you can commit. We reply with what is open and what it demands."
-      }
-    },
-    {
-      "k": "intern",
-      "label": "Intern or Volunteer, on Site or Remotely",
-      "for": [
-        "student",
-        "individual",
-        "school"
-      ],
-      "col": "#556223",
-      "detail": {
-        "u": "Small, well-scoped contributions compound. Most of what a field team needs is finishable in weeks.",
-        "what": "A defined piece of work - field, research, documentation, design or translation - on site or remotely.",
-        "why": "Capacity is the binding constraint more often than money. An extra pair of hands moves a real deadline.",
-        "when": "Rolling. Remote work can start almost immediately; on-site placements need lead time.",
-        "where": "Bahraich, or anywhere with a connection for remote roles.",
-        "how": "Send your interest and availability; we match it against what is genuinely open rather than inventing a task."
-      }
-    },
-    {
-      "k": "career",
-      "label": "Apply for a Role",
-      "for": [
-        "student",
-        "individual",
-        "peer"
-      ],
-      "col": "#556223",
-      "detail": {
-        "u": "Field roles are filled by people who understood the work before they applied. That starts here.",
-        "what": "A paid role on the programme, operations, finance or documentation team.",
-        "why": "زیٖٹھِس کالس تام تَبدِیٖلی خٲطرٕ چھِ اَکہِ ٹیٖمٕچ ضروٗرَت یۄس سٟتؠ روٗزِ، نہٕ زِ چَکر مارَن والؠن صَلاحکارَن ہٕنٛز۔",
-        "when": "When a vacancy is open. Interest sent between vacancies is kept and revisited.",
-        "where": "Mostly Bahraich; some roles are hybrid.",
-        "how": "Send what you would want to work on. We reply with what is open and what the role actually involves day to day."
-      }
-    },
-    {
-      "k": "member",
-      "label": "Become a General Body Member",
-      "for": [
-        "community",
-        "individual",
-        "peer"
-      ],
-      "col": "#EAAE28",
-      "detail": {
-        "u": "The General Body is where accountability is exercised, not observed.",
-        "what": "Membership of the General Body of DEHAT, the society’s governing membership.",
-        "why": "An organisation answerable only to its funders drifts. Members ask questions funders do not.",
-        "when": "Applications are considered against the society’s governance calendar.",
-        "where": "Registered office, Bahraich, Uttar Pradesh.",
-        "how": "Write with your reason for joining; the process and obligations are explained before you commit."
-      }
-    },
-    {
-      "k": "give",
-      "label": "Invest Once, or Set up a Regular Investment",
-      "for": [
-        "individual",
-        "community",
-        "school"
-      ],
-      "col": "#EAAE28",
-      "detail": {
-        "u": "Field costs do not pause between grants. A regular investment is what keeps a team in place in the months when a grant has ended and the next has not started.",
-        "what": "A one-time or recurring investment, either unrestricted or directed to a named programme.",
-        "why": "Unrestricted money covers what restricted grants will not: salaries between cycles, travel to a village, the follow-up visit on a case that is still open.",
-        "when": "Any time. Recurring investment is the most useful of all, because it is the only kind that can be planned against.",
-        "where": "Indian contributions into the 80G account; foreign contributions only into the designated Foreign Contribution (Regulation) Act account, as the law requires.",
-        "how": "Choose an amount and a purpose on the Invest tab. The receipt and the statutory trail follow automatically, and the amount appears in the published ledger."
-      }
-    },
-    {
-      "k": "legacy",
-      "label": "Leave a Legacy Gift in Your Will",
-      "for": [
-        "individual",
-        "community"
-      ],
-      "col": "#4F0E73",
-      "detail": {
-        "u": "A legacy is the only gift that is decided calmly, years in advance, by someone with nothing left to gain from it. It is also the rarest, because almost nobody is ever asked.",
-        "what": "A bequest to DEHAT written into your will - a fixed sum, a share of the residue, or a named asset.",
-        "why": "Field work runs on money that arrives in one-year pieces. A legacy is the one form of support that can be committed to a horizon longer than any grant cycle, which is the horizon the change actually takes.",
-        "when": "Whenever you next write or revise your will. Telling us is optional, but it lets us plan and lets you say what the gift is for.",
-        "where": "The registered office in Bahraich holds the society’s registration, PAN and audited accounts - everything your lawyer will ask for.",
-        "how": "Ask us for the exact legal name, registration number and clause wording to give your lawyer. We do not draft wills and we do not give legal advice; we give your lawyer what they need and step back."
-      }
-    },
-    {
-      "k": "occasion",
-      "label": "Mark a Wedding, a Birthday or Another Occasion with Us",
-      "for": [
-        "individual",
-        "school",
-        "csr"
-      ],
-      "col": "#EAAE28",
-      "detail": {
-        "u": "A wedding, a birthday, an anniversary or a memorial redirected once can fund a whole cycle of one intervention.",
-        "what": "Guests asked to give to DEHAT instead of bringing shagun or a gift, on the occasion and in the name of the person or couple marking it.",
-        "why": "It turns a private day into a public one, and reaches people the field team would not otherwise meet - but only if every gift is given directly. We cannot receipt, or safely bank, a sum collected in cash or by hand and passed to us afterward; the rule that lets us give a giver their own tax receipt requires their name against their own amount.",
-        "when": "Four to six weeks of notice lets us prepare a page and the material, and, where possible, a voice from the field.",
-        "where": "Your venue, online, or in Bahraich. The giving itself always lands directly in DEHAT's own account - never in a personal one, even briefly, even in trust.",
-        "how": "Tell us the occasion and the date. We set up a page in your name that your guests give through directly, and we handle the receipts and the follow-up."
-      }
-    },
-    {
-      "k": "stage",
-      "label": "Dedicate a Show, a Set or a Release to DEHAT's Communities",
-      "for": [
-        "individual",
-        "peer"
-      ],
-      "col": "#D2305C",
-      "detail": {
-        "u": "A comedian's set, a musician's show or a filmmaker's premiere can hand this work an audience an appeal letter never reaches.",
-        "what": "A show, a screening, a livestream or a piece of released work dedicated to DEHAT's communities, with the audience giving directly rather than through the artist.",
-        "why": "An audience that already trusts an artist rarely meets an NGO on its own terms. What we cannot do is bank a sum an artist collected and hands over afterward - every gift has to be given by the person giving it, in their own name, for the same reason a wedding or birthday gift does.",
-        "when": "Tell us the date as soon as it is fixed; four weeks lets us prepare material and, for a livestream or a large show, a recorded message from the field.",
-        "where": "Wherever your audience already is - a venue, a stream, a release. The giving itself happens on DEHAT's own page, not at the door or in the artist's account.",
-        "how": "Tell us the date, the format and the expected reach. We give you a dedicated page and link to point your audience to, branding you can use without asking twice, and a running total you and they can both see."
-      }
-    },
-    {
-      "k": "meet",
-      "label": "Meet the People Your Support Has Reached",
-      "for": [
-        "individual",
-        "csr",
-        "foundation"
-      ],
-      "col": "#D2305C",
-      "detail": {
-        "u": "The distance between an investor and the person their money reached is usually never closed. It should be.",
-        "what": "A structured meeting - in person or online - with the people and communities your support reached.",
-        "why": "Accountability runs both ways. Seeing the outcome changes how the next decision is made.",
-        "when": "Arranged around the community’s calendar, never around the visitor’s convenience alone.",
-        "where": "In the villages themselves, or over a call where travel is not possible.",
-        "how": "Ask, and we arrange it with the consent of everyone who will be in the room."
-      }
-    },
-    {
-      "k": "workplace",
-      "label": "Commit Our Workplace Against Child Labour and Child Sexual Abuse",
-      "for": [
-        "csr",
-        "peer",
-        "school"
-      ],
-      "col": "#A92719",
-      "detail": {
-        "u": "Child labour and child sexual abuse do not stop at your supply chain’s edge. A written commitment is where the audit starts.",
-        "what": "A workplace commitment against child labour and child sexual abuse, with the policy and training to hold it.",
-        "why": "A stated position gives employees a route to raise something they would otherwise stay quiet about.",
-        "when": "Before an incident, not after. Policy written under pressure protects nobody.",
-        "where": "Your workplace and its allied spaces - contractors, vendors, transport, housing.",
-        "how": "We share the model commitment, help adapt it, and train the people who will have to act on it."
-      }
-    },
-    {
-      "k": "schoolprog",
-      "label": "Engage Our Students with Children Who Have Left School",
-      "for": [
-        "school"
-      ],
-      "col": "#0E5565",
-      "detail": {
-        "u": "A child who has left school is rarely brought back by an adult. They are brought back by another child.",
-        "what": "A structured engagement between your students and children who are out of school.",
-        "why": "Peer contact does what enrolment drives cannot: it makes returning feel ordinary rather than exceptional.",
-        "when": "Aligned to your academic calendar, with preparation before contact begins.",
-        "where": "Your school, and partner locations in Bahraich, connected online where distance requires it.",
-        "how": "We design the engagement with your teachers, brief both sets of children, and stay through the term."
-      }
-    },
-    {
-      "k": "fpo",
-      "label": "Bulk-buy from Sondhi Maati Farmer Producer Company",
-      "for": [
-        "csr",
-        "individual",
-        "peer",
-        "school"
-      ],
-      "col": "#556223",
-      "detail": {
-        "u": "Every bulk order placed with the Farmer Producer Company is income that reaches a farmer without an intermediary taking a share.",
-        "what": "Bulk purchase from Sondhi Maati Farmer Producer Company, the farmer-owned company set up out of the Climate Justice work.",
-        "why": "Procurement is a more durable transfer than a donation, because it creates a customer rather than a recipient.",
-        "when": "Order against the harvest calendar; we will tell you what is available and when.",
-        "where": "Produced by women farmers in Bahraich; delivery arranged from there.",
-        "how": "Tell us quantities and timelines and we connect you directly to the company."
-      }
+  {
+    "k": "partner",
+    "label": "کارپوریٹ یا ادارہ جاتی پارٹنر بنیں۔",
+    "for": [
+      "csr",
+      "foundation"
+    ],
+    "col": "#D2305C",
+    "detail": {
+      "u": "فارم CSR-1 فائلنگ تہٕ شیڈول VII مختص کرنے کا فیصلہ مالی سال کے بدلنے سے مہینوں پہلے چھُ کرنہٕ یِوان۔ آپ جو بلاک پلان اپریل مَنٛز فنڈ کرتے ہیں وہ جنوری مَنٛز لکھا جاتا ہے۔",
+      "what": "ایک جغرافیہ مَنٛز ایک پروگرام پؠٹھ ایک نامزد، کثیر سالہ شراکت داری، جو اس کے اپنے بجٹ لائن سٟتؠ پروجیکٹ رجسٹر مَنٛز شائع چھِ گژھان۔",
+      "why": "بکھری ہوئی ایک سال کی گرانٹس سرگرمیاں خریدیں۔ وہ سسٹم جو گرانٹ ختم ہونے پتہٕ بھی کام کرتے رہتے ہیں انہیں ایک پارٹنر کی ضرورت چھِ گژھان جو تبدیلی کے افق تک قائم رہے۔",
+      "when": "اپنے CSR سائیکل سے دو چوتھائی پہلے بات چیت شروع کریں، تہٕ پہلا سال جھگڑے کے بجائے ایک منصوبہ پؠٹھ چلتا ہے۔",
+      "where": "اتر پردیش مَنٛز بہرائچ تہٕ شراوستی، ہند-نیپال سرحد سٟتؠ، بلاک بہ بلاک۔",
+      "how": "ایک اسکوپنگ کال، ڈیو ڈیلیجنس پیک (12AB, 80G, CSR00001181، UDIN سٟتؠ آڈٹ شدہ اکاؤنٹس)، ایک بلاک پلان، پھر ایک دستخط شدہ معاہدہ۔"
     }
-  ],
+  },
+  {
+    "k": "consult",
+    "label": "ہمارے کسی ایک ماڈل کو اپنائیں، یا ہمارے کمیونٹی ریسورس پرسن کو شامل کریں۔",
+    "for": [
+      "csr",
+      "govt",
+      "peer",
+      "foundation"
+    ],
+    "col": "#0E5565",
+    "detail": {
+      "u": "ایک ضلع اندر بیٹھے ماڈلز ایک ضلع کی مدد کرتے ہیں۔ وہی ماڈل جو ایک ہم مرتبہ کے حوالے چھُ کرنہٕ یِوان ایک ریاست کی مدد کرتا ہے۔",
+      "what": "DEHAT کے فیلڈ ٹیسٹ شدہ حقوق پؠٹھ مبنی ماڈلز، تہٕ اس کے کمیونٹی ریسورس پرسنز، آپ کی ٹیم کو دستیاب کرائے گئے ہیں۔",
+      "why": "شروع سے نقطہ نظر کی تعمیر مَنٛز سالوں کی لاگت آتی ہے۔ فیلڈ سٟتؠ رابطے مَنٛز رہنے والے کو ڈھالنے مَنٛز مہینوں لگتے ہیں۔",
+      "when": "آپ کے اپنے پروگرام کے ڈیزائن کو منجمد کرنے سے پہلے سب سے بہتر، جبکہ آپریٹنگ ماڈل فیلڈ تعٲلیٖمات کو اب بھی جذب کر سکتا ہے۔",
+      "where": "آپ کی سائٹس پؠٹھ، یا بہرائچ مَنٛز جہاں ماڈلز چل رہے ہیں تہٕ جگہ جگہ دیکھے جا سکتے ہیں۔",
+      "how": "ماڈل کا ایک منظم واک تھرو، پھر ایک منگنی خط جس مَنٛز کمیونٹی ریسورس پرسن کے وقت، تربیت تہٕ جائزہ کا احاطہ کرنہٕ چھُ آمت۔"
+    }
+  },
+  {
+    "k": "converge",
+    "label": "ڈسٹرکٹ کنورجینس یا ریفرل پؠٹھ ہمارے ساتھ کام کریں۔",
+    "for": [
+      "govt",
+      "peer"
+    ],
+    "col": "#0E5565",
+    "detail": {
+      "u": "سرحدی چیک پوسٹ پؠٹھ روکے جانے والے بچے کو ریفرل روٹ کی ضرورت چھِ گژھان جو پہلے سے موجود ہو۔ یہ مداخلت دوران تعمیر نہیں کیا جا سکتا.",
+      "what": "محکموں کے درمیان کنورجنس، ریفرل تہٕ شواہد پؠٹھ ضلعی انتظامیہ سٟتؠ مشترکہ کام کرنا۔",
+      "why": "نظام کے درمیان سیون پؠٹھ تحفظ ناکام ہوجاتا ہے، ان اندر نہیں۔ کنورجنسی کیس کے گرنے سے پہلے سیون کو بند کر دیتی ہے۔",
+      "when": "ڈسٹرکٹ پلان سائیکل سے پہلے، یا فوری طور پؠٹھ جہاں ریفرل گیپ پہلے ہی ظاہر ہو چکا ہے۔",
+      "where": "بہرائچ تہٕ شراوستی کے ضلع تہٕ بلاک دفاتر تہٕ سات سرحدی اضلاع تک کام پہنچتا ہے۔",
+      "how": "محکمہ تہٕ فرق سٟتؠ ہمَنٛز لکھیں۔ ہم فیلڈ شواہد تہٕ ایک مجوزہ ریفرل پروٹوکول لاتے ہیں۔"
+    }
+  },
+  {
+    "k": "research",
+    "label": "اکیڈمک ریسرچ پارٹنر بنیں۔",
+    "for": [
+      "research",
+      "foundation"
+    ],
+    "col": "#4F0E73",
+    "detail": {
+      "u": "بہرائچ مَنٛز بیس سال کا فیلڈ ریکارڈ موجود ہے۔ ہر سال وہ بغیر پڑھے چلے جاتے ہیں ایک ایسا ثبوت کا سال ہے جو پالیسی لکھنے والے لوگوں تک کبھی نہیں پہنچتا۔",
+      "what": "لائیو پروگرام پؠٹھ ایک نامزد تحقیقی شراکت داری - شریک ڈیزائن کردہ سوالات، فیلڈ ڈیٹا تک رسائی تہٕ طول بلد ریکارڈ، تہٕ مشترکہ اشاعت۔",
+      "why": "وہ مشق جس کا کبھی مطالعہ نہیں کیا جاتا وہ اپنی غلطیوں کو دہراتا ہے۔ وہ مطالعہ جو کبھی پریکٹس کو نہیں چھوتا ہے بری طرح عام کرتا ہے۔ جوڑا دونوں کو درست کرتا ہے۔",
+      "when": "ڈیزائن کے مرحلے سے، لہذا پیمائش کو پروگرام مَنٛز شامل چھُ کرنہٕ یِوان بجائے اس کے کہ بعد مَنٛز اس مَنٛز فٹ کیا جائے۔",
+      "where": "بہرائچ تہٕ شراوستی مَنٛز فیلڈ سائٹس، DEHAT آفس مَنٛز موجود ریکارڈ سٟتؠ تہٕ سائٹ پؠٹھ دستیاب ہے۔",
+      "how": "ایک تصوراتی نوٹ تہٕ اپنی اخلاقیات کی پوزیشن بھیجیں۔ ہم جواب دیتے ہیں کہ کون سا ڈیٹا موجود ہے، کس شکل مَنٛز، کس مدت مَنٛز، تہٕ اسے کن شرائط پؠٹھ استعمال کیا جا سکتا ہے۔"
+    }
+  },
+  {
+    "k": "data",
+    "label": "رپورٹس، آڈٹ شدہ اکاؤنٹس یا پروگرام ڈیٹا کی درخواست کریں۔",
+    "for": [
+      "csr",
+      "foundation",
+      "govt",
+      "research",
+      "peer",
+      "individual"
+    ],
+    "col": "#4F0E73",
+    "detail": {
+      "u": "اس سائٹ پؠٹھ شائع ہونے والی کسی بھی چیز کو دستخط شدہ دستاویز سے ٹریس کیا جا سکتا ہے۔ پوچھیں، تہٕ آپ کو دستاویز ملے گی، خلاصہ نہیں۔",
+      "what": "آڈٹ شدہ کھاتوں، تشخیصات، پروگرام کی رپورٹس تہٕ رجسٹر مَنٛز درج سورس ریکارڈز۔",
+      "why": "اعتماد جس کی جانچ نہیں کی جاسکتی ہے وہ اعتماد نہیں ہے۔ یہاں ہر دعوے کا مطلب یہ ہے کہ اس پؠٹھ شک کرنے والے شخص کی تصدیق کی جائے۔",
+      "when": "کسی بھی وقت۔ یہاں کسی بھی چیز پؠٹھ پابندی نہیں ہے تہٕ کچھ بھی فنڈنگ ​​گفتگو کا انتظار نہیں کرتا ہے۔",
+      "where": "ای میل کِس ذٔریعہٕ بھیجا گیا؛ اصل مواد بہرائچ کے دفتر مَنٛز ہر اس شخص خٲطرٕ دستیاب ہے جو انہیں دیکھنا چاہتا ہے۔",
+      "how": "سال، پروگرام یا دستاویز کا نام دیں۔ اگر کسی اعداد و شمار کو ابھی تک ڈیجیٹائز نہیں کرنہٕ چھُ آمت، تو ہم کہتے ہیں تہٕ اسکین بھیج دیتے ہیں۔"
+    }
+  },
+  {
+    "k": "visit",
+    "label": "بہرائچ یا شراوستی مَنٛز فیلڈ وزٹ کا اہتمام کریں۔",
+    "for": [
+      "csr",
+      "foundation",
+      "govt",
+      "research",
+      "student",
+      "peer",
+      "individual"
+    ],
+    "col": "#A92719",
+    "detail": {
+      "u": "فاصلہ اس کو خلاصہ بناتا ہے۔ ایک گرام پنچایت مَنٛز ایک دن اسے دیکھنا ناممکن بنا دیتا ہے۔",
+      "what": "گامن، سکوٗلن تہٕ چائلڈ پارلیمنٹس کا فیلڈ وزٹ جہاں کام دراصل چھُ گژھان۔",
+      "why": "رپورٹس کمپریس۔ ایک دورہ بحال کرتا ہے جو کمپریشن ہٹاتا ہے: لوگ، خطہ تہٕ رکاوٹیں۔",
+      "when": "مانسون کی چوٹی سے باہر کوئی بھی مہینہ؛ ہم آپ کو ایمانداری سے بتائیں گے کہ کن ہفتوں مَنٛز فیلڈ تک رسائی ممکن ہے۔",
+      "where": "بہرائچ تہٕ شراوستی، لکھنؤ سے تقریباً چھ گھنٹے، نیپال گنج سے قریب۔",
+      "how": "کھردری تاریخیں تہٕ ہیڈ کاؤنٹ بھیجیں۔ ہم راستے کی منصوبہ بندی کرتے ہیں، مقامی لاجسٹکس کا بندوبست کرتے ہیں تہٕ آپ کو بتاتے ہیں کہ کیا توقع رکھی جائے۔"
+    }
+  },
+  {
+    "k": "fellow",
+    "label": "DEHAT فیلو بنیں۔",
+    "for": [
+      "student",
+      "research"
+    ],
+    "col": "#556223",
+    "detail": {
+      "u": "حقوق کے مسئلے نزدیٖک گزارا گیا فیلوشپ سال ایک دہائی کھۄتہٕ زِیٛادٕ کی وضاحت کرنے والے کیریئر کو تشکیل دیتا ہے۔",
+      "what": "ایک پروگرام اندر ایک منظم جگہ کا تعین، حقیقی ذمہ داری تہٕ ایک نامزد سپروائزر سٟتؠ۔",
+      "why": "اس شعبے کو ایسے لوگوں کی ضرورت ہے جو گاؤں کی میٹنگ مَنٛز بیٹھے ہوں، نہ صرف ایسے لوگوں کی جنہوں نے ایک کے بارے مَنٛز پڑھا ہو۔",
+      "when": "کوہورٹس پروگرام کیلنڈر کی پیروی کرتے ہیں۔ جلد لکھیں، کیونکہ فیلڈ جاےیں نگرانی کی صلاحیت سے محدود ہیں۔",
+      "where": "بہرائچ مَنٛز سائٹ پؠٹھ، کچھ افعال جزوی طور پؠٹھ دور دراز سٟتؠ۔",
+      "how": "ہمَنٛز بتائیں کہ آپ کیا سیکھنا چاہتے ہیں تہٕ آپ کیا کر سکتے ہیں۔ ہم جواب دیتے ہیں کہ کیا کھلا ہے تہٕ اس کا کیا مطالبہ ہے۔"
+    }
+  },
+  {
+    "k": "intern",
+    "label": "انٹرن یا رضاکار، سائٹ پؠٹھ یا دور سے",
+    "for": [
+      "student",
+      "individual",
+      "school"
+    ],
+    "col": "#556223",
+    "detail": {
+      "u": "چھوٹے، اچھی طرح سے دائرہ کار کی شراکت کا مرکب۔ فیلڈ ٹیم کو جس چیز کی ضرورت چھِ گژھان ان مَنٛز کھۄتہٕ زِیٛادٕ تر ہفتوں مَنٛز ختم ہو جاتی ہے۔",
+      "what": "کام کا ایک متعین حصہ - فیلڈ، تحقیق، دستاویزات، ڈیزائن یا ترجمہ - سائٹ پؠٹھ یا دور سے۔",
+      "why": "صلاحیت پیسے کھۄتہٕ زِیٛادٕ کثرت سے پابند رکاوٹ ہے۔ ہاتھوں کا ایک اضافی جوڑا ایک حقیقی ڈیڈ لائن منتقل کرتا ہے۔",
+      "when": "رولنگ دور دراز کا کام تقریباً فوراً شروع ہو سکتا ہے۔ سائٹ پؠٹھ تعیناتیوں کو لیڈ ٹائم کی ضرورت چھِ گژھان۔",
+      "where": "بہرائچ، یا کہیں بھی دور دراز کے کرداروں خٲطرٕ کنکشن سٟتؠ۔",
+      "how": "اپنی دلچسپی تہٕ دستیابی بھیجیں۔ ہم اسے کسی کام کی ایجاد کرنے کے بجائے حقیقی طور پؠٹھ کھلی چیزوں خِلاف میچ کرتے ہیں۔"
+    }
+  },
+  {
+    "k": "career",
+    "label": "رول خٲطرٕ درخواست دیں۔",
+    "for": [
+      "student",
+      "individual",
+      "peer"
+    ],
+    "col": "#556223",
+    "detail": {
+      "u": "فیلڈ رولز ان لوگوں کے ذریعہ بھرے جاتے ہیں جو درخواست دینے سے پہلے کام کو سمجھتے تھے۔ یہ یہاں سے شروع چھُ گژھان۔",
+      "what": "پروگرام، آپریشنز، فنانس یا دستاویزی ٹیم پؠٹھ ایک ادا شدہ کردار۔",
+      "why": "طویل مدتی تبدیلی خٲطرٕ ایسی ٹیم کی ضرورت چھِ گژھان جو مستقل قیام کرے، نہ کہ دورہ کرنے والے مشیروں کی۔",
+      "when": "جب کوئی آسامی کھلی ہو۔ خالی آسامیوں کے درمیان بھیجا گیا سود رکھا جاتا ہے تہٕ اس پؠٹھ نظرثانی چھِ کرنہٕ یِوان۔",
+      "where": "زیادہ تر بہرائچ؛ کچھ کردار ہائبرڈ ہیں۔",
+      "how": "آپ جس پؠٹھ کام کرنا چاہتے ہیں اسے بھیجیں۔ ہم اس سٟتؠ جواب دیتے ہیں کہ کیا کھلا ہے تہٕ کیا کردار درحقیقت روز بروز شامل چھُ گژھان۔"
+    }
+  },
+  {
+    "k": "member",
+    "label": "جنرل باڈی کے ممبر بنیں۔",
+    "for": [
+      "community",
+      "individual",
+      "peer"
+    ],
+    "col": "#EAAE28",
+    "detail": {
+      "u": "جنرل باڈی وہ ہے جہاں احتساب چھُ کرنہٕ یِوان، مشاہدہ نہیں کیا جاتا۔",
+      "what": "DEHAT کی جنرل باڈی کی رکنیت، سوسائٹی کی گورننگ ممبرشپ۔",
+      "why": "ایک تنظیم جو صرف اپنے فنڈرز خٲطرٕ جوابدہ ہے۔ اراکین ایسے سوالات پوچھتے ہیں جو فنڈرز نہیں کرتے۔",
+      "when": "درخواستوں کو سوسائٹی کے گورننس کیلنڈر خِلاف سمجھا جاتا ہے۔",
+      "where": "رجسٹرڈ آفس، بہرائچ، اتر پردیش۔",
+      "how": "اپنی شمولیت کی وجہ لکھیں؛ آپ کے ارتکاب سے پہلے عمل تہٕ ذمہ داریوں کی وضاحت چھِ کرنہٕ یِوان۔"
+    }
+  },
+  {
+    "k": "give",
+    "label": "ایک بار سرمایہ کاری کریں، یا باقاعدہ سرمایہ کاری قائم کریں۔",
+    "for": [
+      "individual",
+      "community",
+      "school"
+    ],
+    "col": "#EAAE28",
+    "detail": {
+      "u": "گرانٹس کے درمیان فیلڈ اخراجات نہیں رکتے۔ ایک باقاعدہ سرمایہ کاری وہ ہے جو ٹیم کو ان مہینوں مَنٛز برقرار رکھتی ہے جب گرانٹ ختم ہو جاتی ہے تہٕ اگلی شروع نہیں چھِ گژھان۔",
+      "what": "ایک بار یا بار بار چلنے والی سرمایہ کاری، یا تو غیر محدود یا کسی نامزد پروگرام کی طرف ہدایت کرنہٕ چھِ آمژ۔",
+      "why": "غیر محدود رقم کا احاطہ کرنہٕ چھُ آمت جو محدود گرانٹس نہیں کریں گے: سائیکلوں کے درمیان تنخواہ، گاؤں کا سفر، کسی کیس پؠٹھ فالو اپ دورہ جو ابھی تک کھلا ہے۔",
+      "when": "کسی بھی وقت۔ بار بار چلنے والی سرمایہ کاری سب کھۄتہٕ زِیٛادٕ مفید ہے، کیونکہ یہ واحد قسم ہے جس خِلاف منصوبہ بندی کی جا سکتی ہے۔",
+      "where": "80G اکاؤنٹ مَنٛز ہندوستانی تعاون؛ غیر ملکی شراکتیں صرف نامزد فارن کنٹری بیوشن (ریگولیشن) ایکٹ اکاؤنٹ مَنٛز، جیسا کہ قانون کی ضرورت ہے۔",
+      "how": "انویسٹ ٹیب پؠٹھ ایک رقم تہٕ مقصد کا انتخاب کریں۔ رسید تہٕ قانونی پگڈنڈی خود بخود چلتی ہے، تہٕ رقم شائع شدہ لیجر مَنٛز ظاہر چھِ گژھان۔"
+    }
+  },
+  {
+    "k": "legacy",
+    "label": "اپنی وصیت مَنٛز میراثی تحفہ چھوڑیں۔",
+    "for": [
+      "individual",
+      "community"
+    ],
+    "col": "#4F0E73",
+    "detail": {
+      "u": "میراث وہ واحد تحفہ ہے جس کا فیصلہ سکون سے، برسوں پہلے، کسی ایسے شخص کِس ذٔریعہٕ چھُ کرنہٕ یِوان جس سے حاصل کرنے خٲطرٕ کچھ بھی نہ بچا ہو۔ یہ سب سے نایاب بھی ہے، کیونکہ تقریباً کسی سے کبھی نہیں پوچھا جاتا۔",
+      "what": "آپ کی وصیت مَنٛز لکھی ہوئی DEHAT کی وصیت - ایک مقررہ رقم، باقیات کا حصہ، یا ایک نامزد اثاثہ۔",
+      "why": "فیلڈ ورک پیسے پؠٹھ چلتا ہے جو ایک سال کے ٹکڑوں مَنٛز آتا ہے۔ وراثت حمایت کی ایک شکل ہے جو کسی بھی گرانٹ سائیکل کھۄتہٕ زِیٛادٕ طویل افق پؠٹھ قائم کی جا سکتی ہے، جو افق ہے جو تبدیلی درحقیقت لیتی ہے۔",
+      "when": "جب بھی آپ اگلی تحریر لکھیں یا اپنی مرضی پؠٹھ نظر ثانی کریں۔ ہمَنٛز بتانا اختیاری ہے، لیکن یہ ہمَنٛز منصوبہ بندی کرنے دیتا ہے تہٕ آپ کو یہ بتانے دیتا ہے کہ تحفہ کس لیے ہے۔",
+      "where": "بہرائچ مَنٛز رجسٹرڈ آفس سوسائٹی کا رجسٹریشن، PAN تہٕ آڈٹ شدہ اکاؤنٹس رکھتا ہے - وہ سب کچھ جو آپ کا وکیل پوچھے گا۔",
+      "how": "اپنے وکیل کو دینے خٲطرٕ ہم سے درست قانونی نام، رجسٹریشن نمبر تہٕ شق کے الفاظ خٲطرٕ پوچھیں۔ ہم وصیت کا مسودہ نہیں بناتے ہیں تہٕ ہم قانونی مشورہ نہیں دیتے ہیں۔ ہم آپ کے وکیل کو وہ دیتے ہیں جس کی انہیں ضرورت ہے تہٕ پیچھے ہٹ جاتے ہیں۔"
+    }
+  },
+  {
+    "k": "occasion",
+    "label": "ہمارے ساتھ شادی، سالگرہ یا کسی تہٕ موقع کو نشان زد کریں۔",
+    "for": [
+      "individual",
+      "school",
+      "csr"
+    ],
+    "col": "#EAAE28",
+    "detail": {
+      "u": "ایک شادی، ایک سالگرہ، ایک سالگرہ یا ایک بار ری ڈائریکٹ کرنہٕ آیہِ یادگار ایک مداخلت کے پورے دور کو فنڈ دے سکتی ہے۔",
+      "what": "مہمانوں نے اس موقع پؠٹھ شگن یا تحفہ لانے کے بجائے DEHAT کو دینے کو کہا تہٕ اس پؠٹھ نشان لگانے والے شخص یا جوڑے کے نام پر۔",
+      "why": "یہ ایک نجی دن کو عوامی دن مَنٛز بدل دیتا ہے، تہٕ لوگوں تک پہنچتا ہے جو فیلڈ ٹیم دوسری صورت مَنٛز نہیں ملے گی - لیکن صرف اس صورت مَنٛز جب ہر تحفہ براہ راست دیا جائے۔ ہم نقد یا ہاتھ سے جمع کرنہٕ آیہِ تہٕ بعد مَنٛز ہمارے پاس بھیجی گئی رقم کی رسید، یا محفوظ طریقے سے بینک نہیں کر سکتے۔ قاعدہ جو ہمَنٛز دینے والے کو ان کی اپنی ٹیکس رسید دینے دیتا ہے اس خٲطرٕ ان کا نام ان کی اپنی رقم کے مقابلے مَنٛز درکار ہے۔",
+      "when": "چار سے چھ ہفتوں کا نوٹس ہمَنٛز ایک صفحہ تہٕ مواد تیار کرنے دیتا ہے، اور، جہاں ممکن ہو، فیلڈ سے ایک آواز۔",
+      "where": "آپ کا مقام، آن لائن، یا بہرائچ مَنٛز۔ دینا ہمیشہ براہ راست DEHAT کے اپنے اکاؤنٹ مَنٛز آتا ہے - کبھی بھی ذاتی مَنٛز، یہاں تک کہ مختصر طور پؠٹھ، یہاں تک کہ اعتماد مَنٛز بھی۔",
+      "how": "ہمَنٛز موقع تہٕ تاریخ بتائیں۔ ہم آپ کے نام پؠٹھ ایک صفحہ ترتیب دیتے ہیں جسے آپ کے مہمان براہ راست دیتے ہیں، تہٕ ہم رسیدیں تہٕ فالو اپ سنبھالتے ہیں۔"
+    }
+  },
+  {
+    "k": "stage",
+    "label": "DEHAT کی کمیونٹیز خٲطرٕ ایک شو، سیٹ یا ریلیز وقف کریں۔",
+    "for": [
+      "individual",
+      "peer"
+    ],
+    "col": "#D2305C",
+    "detail": {
+      "u": "ایک کامیڈین کا سیٹ، ایک موسیقار کا شو یا فلم ساز کا پریمیئر اس کام کو سامعین تک پہنچا سکتا ہے جس کی اپیل کا خط کبھی نہیں پہنچتا۔",
+      "what": "ایک شو، اسکریننگ، لائیو اسٹریم یا جاری کردہ کام کا ایک ٹکڑا جو DEHAT کی کمیونٹیز خٲطرٕ وقف ہے، جس مَنٛز سامعین فنکار کِس ذٔریعہٕ دینے کے بجائے براہ راست دے رہے ہیں۔",
+      "why": "ایک سامعین جو پہلے سے ہی کسی فنکار پؠٹھ بھروسہ کرتا ہے شاذ و نادر ہی کسی این جی او کو اپنی شرائط پؠٹھ پورا کرتا ہے۔ جو ہم نہیں کر سکتے وہ یہ ہے کہ ایک فنکار نے جمع کرنہٕ آیہِ رقم کو بینک مَنٛز جمع کر پتہٕ مَنٛز حوالے کیا - ہر تحفہ دینے والے کو اپنے نام پؠٹھ دینا چھُ گژھان، اسی وجہ سے شادی یا سالگرہ کا تحفہ چھُ گژھان۔",
+      "when": "تاریخ طے ہوتے ہی ہمَنٛز بتائیں۔ چار ہفتے ہمَنٛز مواد تیار کرنے دیتے ہیں اور، لائیو سٹریم یا بڑے شو خٲطرٕ، فیلڈ سے ایک ریکارڈ شدہ پیغام۔",
+      "where": "جہاں کہیں بھی آپ کے سامعین پہلے سے موجود ہیں - ایک مقام، ایک سلسلہ، ایک ریلیز۔ دینا خود DEHAT کے اپنے صفحے پؠٹھ چھُ گژھان، دروازے پؠٹھ یا فنکار کے اکاؤنٹ مَنٛز نہیں۔",
+      "how": "ہمَنٛز تاریخ، فارمیٹ تہٕ متوقع پہنچ بتائیں۔ ہم آپ کو ایک سرشار صفحہ تہٕ لنک دیتے ہیں جو آپ کے سامعین کی طرف اشارہ کرتے ہیں، برانڈنگ جو آپ دو بار پوچھے بغیر استعمال کر سکتے ہیں، تہٕ آپ تہٕ وہ دونوں دیکھ سکتے ہیں۔"
+    }
+  },
+  {
+    "k": "meet",
+    "label": "ان لوگوں سے ملیں جن تک آپ کی حمایت پہنچی ہے۔",
+    "for": [
+      "individual",
+      "csr",
+      "foundation"
+    ],
+    "col": "#D2305C",
+    "detail": {
+      "u": "ایک سرمایہ کار تہٕ اس شخص کے درمیان فاصلہ جس تک ان کی رقم پہنچتی ہے عام طور پؠٹھ کبھی بند نہیں ہوتی۔ یہ ہونا چاہیے۔",
+      "what": "ایک منظم میٹنگ - ذاتی طور پؠٹھ یا آن لائن - ان لوگوں تہٕ کمیونٹیز سٟتؠ جن تک آپ کی حمایت پہنچی ہے۔",
+      "why": "احتساب دونوں طریقوں سے چلتا ہے۔ نتیجہ دیکھ کر اگلا فیصلہ کرنے کا طریقہ بدل جاتا ہے۔",
+      "when": "کمیونٹی کے کیلنڈر کے ارد گرد ترتیب دیا گیا، کبھی بھی اکیلے مہمان کی سہولت کے ارد گرد نہیں.",
+      "where": "خود گام مَنٛز، یا کسی کال پؠٹھ جہاں سفر ممکن نہیں ہے۔",
+      "how": "پوچھیں، تہٕ ہم کمرے مَنٛز موجود ہر فرد کی رضامندی سے اس کا بندوبست کرتے ہیں۔"
+    }
+  },
+  {
+    "k": "workplace",
+    "label": "چائلڈ لیبر تہٕ بچن ہٕنٛدؠ جنسی استحصال خِلاف ہمارے کام جاے کا عزم کریں۔",
+    "for": [
+      "csr",
+      "peer",
+      "school"
+    ],
+    "col": "#A92719",
+    "detail": {
+      "u": "چائلڈ لیبر تہٕ بچن ہُنٛد جنسی استحصال آپ کی سپلائی چین کے کنارے پؠٹھ نہیں رکتا۔ ایک تحریری عہد وہ ہے جہاں آڈٹ شروع چھُ گژھان۔",
+      "what": "چائلڈ لیبر تہٕ بچن ہٕنٛدؠ جنسی استحصال خِلاف کام جاے پؠٹھ عزم، اس کے انعقاد کی پالیسی تہٕ تربیت سٟتؠ۔",
+      "why": "بیان کردہ پوزیشن ملازمین کو کچھ اٹھانے کا راستہ فراہم کرتی ہے کہ وہ بصورت دیگر خاموش رہیں گے۔",
+      "when": "کسی واقعے سے پہلے، بعد مَنٛز نہیں۔ دباؤ مَنٛز لکھی گئی پالیسی کسی تحفّظ نہیں کرتی۔",
+      "where": "آپ کے کام جاے تہٕ اس سے منسلک جگہیں - ٹھیکیدار، دکاندار، ٹرانسپورٹ، ہاؤسنگ۔",
+      "how": "ہم ماڈل کے عزم کا اشتراک کرتے ہیں، اسے ڈھالنے مَنٛز مدد کرتے ہیں، تہٕ ان لوگوں کو تربیت دیتے ہیں جنہیں اس پؠٹھ عمل کرنا ہوگا۔"
+    }
+  },
+  {
+    "k": "schoolprog",
+    "label": "ہمارے طلباء کو ان بچن سٟتؠ شامل کریں جنہوں نے سکوٗل چھوڑ دیا ہے۔",
+    "for": [
+      "school"
+    ],
+    "col": "#0E5565",
+    "detail": {
+      "u": "ایک بچہ جس نے سکوٗل چھوڑ دیا ہے شاذ و نادر ہی کوئی بالغ شخص واپس لاتا ہے۔ انہیں ایک تہٕ بچہ واپس لاتا ہے۔",
+      "what": "آپ کے طلباء تہٕ سکوٗل سے باہر بچن ہٕنٛدؠ درمیان ایک منظم مصروفیت۔",
+      "why": "ہم مرتبہ رابطہ وہ کام کرتا ہے جو اندراج کی ڈرائیوز نہیں کر سکتی: یہ واپسی کو غیر معمولی کے بجائے عام محسوس کرتا ہے۔",
+      "when": "رابطہ شروع ہونے سے پہلے تیاری سٟتؠ، آپ کے تعلیمی کیلنڈر کے مطابق۔",
+      "where": "آپ کا سکوٗل، تہٕ بہرائچ مَنٛز پارٹنر کے مقامات، آن لائن جڑے ہوئے ہیں جہاں فاصلے کی ضرورت ہے۔",
+      "how": "ہم آپ کے اساتذہ سٟتؠ مشغولیت کو ڈیزائن کرتے ہیں، بچن ہٕنٛدؠ دونوں مجموعوں کو مختصر کرتے ہیں، تہٕ مدت پوری کرتے ہیں۔"
+    }
+  },
+  {
+    "k": "fpo",
+    "label": "سوندھی ماٹی فارمر پروڈیوسر کمپنی سے بلک خریدیں۔",
+    "for": [
+      "csr",
+      "individual",
+      "peer",
+      "school"
+    ],
+    "col": "#556223",
+    "detail": {
+      "u": "فارمر پروڈیوسر کمپنی سٟتؠ دیا جانے والا ہر بلک آرڈر وہ آمدنی ہے جو کسی بیچوان کو حصہ لیے بغیر کسان تک پہنچتی ہے۔",
+      "what": "سوندھی ماٹی فارمر پروڈیوسر کمپنی سے بڑے پیمانے پؠٹھ خریداری، جو کسانوں کی ملکیت والی کمپنی ہے جو موسمیاتی انصاف کے کام سے باہر بنائی گئی ہے۔",
+      "why": "حصولی ایک عطیہ کھۄتہٕ زِیٛادٕ پائیدار منتقلی ہے، کیونکہ یہ وصول کنندہ کے بجائے گاہک پیدا کرتا ہے۔",
+      "when": "فصل کیلنڈر خِلاف آرڈر؛ ہم آپ کو بتائیں گے کہ کیا دستیاب ہے تہٕ کب۔",
+      "where": "بہرائچ مَنٛز زنانن کسانوں کے ذریعہ تیار کردہ؛ وہاں سے ڈیلیوری کا انتظام کرنہٕ چھُ آمت۔",
+      "how": "ہمَنٛز مقدار تہٕ ٹائم لائنز بتائیں تہٕ ہم آپ کو براہ راست کمپنی سے جوڑ دیتے ہیں۔"
+    }
+  }
+],
   "sopTitle": "In a line or two - what are you hoping will change?",
   "sopSub": "This is the only part we read closely. Write it however you like; there is no right answer.",
   "sopPlaceholder": "For example: we want our Corporate Social Responsibility spend in Bahraich to go somewhere the evidence is public, and we would like to start with one block.",
@@ -35557,29 +35556,29 @@ const KS = {
     }
   ],
   "certTitle": "شَفافِیَت، نامزَدگی تہٕ سَنَدٕ",
-  "certNote": "Independent bodies that have reviewed, empanelled or certified DEHAT against their own published standards.",
+  "certNote": "آزاد اِدارٕ یِمو پَننؠن شایَع کٔرمٕتؠن معِیارن مُطٲبِق DEHAT ہُنٛد جٲیزٕ نِو، امبينل کۄر یا تَصدِیق کٔر۔",
   "certifications": [
     {
       "k": "CAF India",
       "href": "https://www.cafindia.org/",
-      "v": "Charities Aid Foundation India.",
+      "v": "چیرِٹیز ایڈ فاؤنڈیشن اِنڈِیا۔",
       "logo": "caf-india.png"
     },
     {
       "k": "TISS National CSR Hub - AESDII",
       "href": "https://tiss.ac.in/view/16/mumbai-campus/centre-for-excellence-in-csr/about-us-38/",
-      "v": "Assessment and Empanelment Standards for Development Institutions in India, Tata Institute of Social Sciences.",
+      "v": "ہِنٛدوستانَس مَنٛز ترقِیٲتی اِدارَن خٲطرٕ جٲیزٕ تہٕ اندراجٕک معِیار، ٹاٹا اِنسٹِیچیوٗٹ آف سوشل سائنسز۔",
       "logo": "tiss-national-csr-hub-aesdii.png"
     },
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "این جی او شفافِیَت تَصدِیق نامہٕ۔",
       "logo": "guidestar-india.png"
     }
   ],
   "mediaMentionsTitle": "میٖڈیاہَس مَنٛز ذِکِر",
-  "mediaMentionsNote": "Independent coverage of the work, drawn from the full media archive. Links go to the publisher; where no link is shown, the outlet's own site was not part of the archive record.",
+  "mediaMentionsNote": "کٲمؠ ہِنٛز آزادانہٕ کورِیج، یۄس پوٗرٕ مِیڈِیا آرکائیو منٛزٕ حٲصِل کَرنہٕ آمٕژ چھِ۔ لِنک چھِ ناشرَس تام واتناوَن؛ ییٚتین کانٛہہ لِنک ظٲہِر چھُنہٕ، تَتین مِیڈِیا آؤٹ لیٹ سٕنٛز پَنٕنؠ ৱؠب سائٹ آرکائیو رِکارڈُک حِصہٕ ٲس نہٕ۔",
   "mediaMentions": [
     {
       "k": "Dainik Jagran",
@@ -35714,7 +35713,7 @@ const KS = {
     }
   ],
   "ecosystemTitle": "سَرکٲری مَحکَمَہٕ، قانوٗنی اِدارٕ تہٕ بَستی ہٕنٛد نِظام یِمن سٟتؠ اَسؠ رَلہِتھ کٲم چھِ کَران",
-  "ecosystemNote": "DEHAT and the communities it works with are integral participants in - and consistent invitees to - the following institutions at the village, block, tehsil, district and state levels. Agriculture and horticulture bodies are included here rather than as a separate list, because DEHAT's livelihood and climate-resilience work runs through the same institutional ecosystem as its child-protection work.",
+  "ecosystemNote": "DEHAT تہٕ تِم کمِیوٗنِٹی یِمَن سٟتؠ یہِ کٲم چھِ کَران، تِم چھِ گام، بلاک، تحصِیل، ضِلع تہٕ رِیاسَتی سطحس پؠٹھ بۄنِمؠن اِدارَن مَنٛز باقٲعدٕ حِصہٕ دار تہٕ دعوت نامہٕ حٲصِل کَرن وٲلؠ۔ زراعت تہٕ باغبٲنی ہِنٛدِ اِدارٕ چھِ اکھ الگ فِہرِست بناونہٕ بَدلہٕ ییتین شٲمِل کَرنہٕ آمٕتؠ، تِکیازِ DEHAT سٕنٛز روزگار تہٕ موسمیٲتی استحکامٕچ کٲم چھِ شُرؠن ہِنٛدِس تَحَفُظس ہِوی ادارٕ جٲتی تانے بانے مَنٛزٕ پَکان۔",
   "ecosystemLevels": [
     {
       "k": "village",
