@@ -1328,7 +1328,7 @@
           <button onClick="{{ nextStory }}" aria-label="{{ T.aria_story_next }}" class="ml-press btn-sq" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:20px;cursor:pointer;transition:background .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:rgba(255,255,255,.15)">›</button>
         </div>
         <button onClick="{{ goStories }}" style="margin-top:28px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:800;color:#fff;border-bottom:2px solid rgba(255,255,255,.5)">{{ storiesAllLabel }} →</button>
-        <button onClick="{{ goInvestFromWork }}" class="st-ask">{{ T.stories_ask }} →</button>
+        <button onClick="{{ goInvestFromWork }}" class="st-ask btn-swipe btn-gold sw-a">{{ T.stories_ask }} →</button>
       </div>
     </section>
 
@@ -1394,7 +1394,7 @@
         <h2 class="why-h">{{ T.case_h1 }}</h2>
         <p class="why-p">{{ T.case_p16 }}</p>
         <p class="why-p why-proof">{{ T.pv_head_give_sub }}</p>
-        <button onClick="{{ cycleAskGo }}" class="why-go ml-press">{{ T.ask_cycle_cta }} →</button>
+        <button onClick="{{ cycleAskGo }}" class="why-go ml-press btn-swipe btn-crimson sw-b">{{ T.ask_cycle_cta }} →</button>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
         <sc-for list="{{ ctas }}" as="c" hint-placeholder-count="3">
@@ -1406,7 +1406,7 @@
           </button>
         </sc-for>
       </div>
-      <button onClick="{{ goPartnerRoute }}" class="route-small">{{ T.cta_route_small }} →</button>
+      <button onClick="{{ goPartnerRoute }}" class="route-small btn-swipe btn-teal sw-c">{{ T.cta_route_small }} →</button>
     </section>
   </div>
   </sc-if>
@@ -1485,7 +1485,7 @@
 
         <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:20px">
           <sc-for list="{{ wk.weaveTabs }}" as="wt" hint-placeholder-count="4">
-            <button class="tap-hit" onClick="{{ wt.select }}" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:22px;background:{{ wt.bg }};color:{{ wt.fg }};border:1.5px solid {{ wt.ring }};transition:background .25s cubic-bezier(.22,.61,.36,1),color .25s cubic-bezier(.22,.61,.36,1)">{{ wt.name }}</button>
+            <button class="tap-hit btn-wash sw-a" onClick="{{ wt.select }}" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:22px;background:{{ wt.bg }};color:{{ wt.fg }};border:1.5px solid {{ wt.ring }};transition:background .25s cubic-bezier(.22,.61,.36,1),color .25s cubic-bezier(.22,.61,.36,1)">{{ wt.name }}</button>
           </sc-for>
         </div>
 
@@ -1547,7 +1547,7 @@
 
           <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:20px">
             <sc-for list="{{ wk.dims }}" as="wd" hint-placeholder-count="5">
-              <button class="tap-hit" onClick="{{ wd.select }}" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:22px;background:{{ wd.bg }};color:{{ wd.fg }};border:1.5px solid {{ wd.ring }};transition:background .25s cubic-bezier(.22,.61,.36,1),color .25s cubic-bezier(.22,.61,.36,1)">{{ wd.label }}</button>
+              <button class="tap-hit btn-wash sw-b" onClick="{{ wd.select }}" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:22px;background:{{ wd.bg }};color:{{ wd.fg }};border:1.5px solid {{ wd.ring }};transition:background .25s cubic-bezier(.22,.61,.36,1),color .25s cubic-bezier(.22,.61,.36,1)">{{ wd.label }}</button>
             </sc-for>
           </div>
 
@@ -1724,7 +1724,7 @@
     <div key="{{ pp.key }}" class="rise">
       <section data-spine="The Programme" style="background:{{ pp.color }};padding:clamp(34px,5vw,60px) clamp(20px,5vw,64px) clamp(40px,5vw,66px)">
         <div style="max-width:1240px;margin:0 auto">
-          <button class="tap-hit" onClick="{{ pp.back }}" style="background:{{ pp.inkFill }};border:1px solid {{ pp.inkRing }};color:{{ pp.ink }};font-family:inherit;font-size:13px;font-weight:700;padding:9px 16px;border-radius:9px;cursor:pointer;margin-bottom:26px" style-hover="background:{{ pp.inkFillHi }}">← {{ T.nav_work }}</button>
+          <button class="tap-hit btn-wash btn-sm sw-d" onClick="{{ pp.back }}" style="background:{{ pp.inkFill }};border:1px solid {{ pp.inkRing }};color:{{ pp.ink }};font-family:inherit;font-size:13px;font-weight:700;padding:9px 16px;border-radius:9px;cursor:pointer;margin-bottom:26px" style-hover="background:{{ pp.inkFillHi }}">← {{ T.nav_work }}</button>
           <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:clamp(18px,3vw,44px)">
           <div style="flex:1 1 380px;min-width:0">
           <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 20px">
@@ -3402,7 +3402,7 @@
             <div>
               <div style="display:flex;flex-wrap:wrap;gap:8px">
                 <sc-for list="{{ pv.amounts }}" as="am" hint-placeholder-count="6">
-                  <button onClick="{{ am.select }}" style="cursor:pointer;font-family:'Bricolage Grotesque';font-weight:800;font-size:16px;padding:12px 20px;border-radius:14px;background:{{ am.bg }};color:{{ am.fg }};border:1.5px solid {{ am.ring }};transition:transform .16s cubic-bezier(.22,.61,.36,1),background .2s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ am.label }}</button>
+                  <button class="btn-wash btn-crimson sw-a" onClick="{{ am.select }}" style="cursor:pointer;font-family:'Bricolage Grotesque';font-weight:800;font-size:16px;padding:12px 20px;border-radius:14px;background:{{ am.bg }};color:{{ am.fg }};border:1.5px solid {{ am.ring }};transition:transform .16s cubic-bezier(.22,.61,.36,1),background .2s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ am.label }}</button>
                 </sc-for>
               </div>
               <sc-if value="{{ pv.isOther }}" hint-placeholder-val="{{ false }}">
@@ -3414,7 +3414,7 @@
               <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint);margin-bottom:9px">{{ pv.freqTitle }}</div>
               <div class="paper-card" style="display:inline-flex;padding:4px;border-radius:12px;background:var(--surface);border:1px solid var(--border)">
                 <sc-for list="{{ pv.freqs }}" as="fq" hint-placeholder-count="3">
-                  <button class="tap-hit" onClick="{{ fq.select }}" style="cursor:pointer;border:none;font-family:inherit;font-size:13.5px;font-weight:800;padding:9px 18px;border-radius:9px;background:{{ fq.bg }};color:{{ fq.fg }};transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)">{{ fq.label }}</button>
+                  <button class="tap-hit btn-wash btn-crimson sw-b" onClick="{{ fq.select }}" style="cursor:pointer;border:none;font-family:inherit;font-size:13.5px;font-weight:800;padding:9px 18px;border-radius:9px;background:{{ fq.bg }};color:{{ fq.fg }};transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)">{{ fq.label }}</button>
                 </sc-for>
               </div>
             </div>
@@ -3530,7 +3530,7 @@
 
             <p style="font-size:12px;line-height:1.6;color:var(--faint);margin:0;text-wrap:pretty">{{ pv.dpNote }}</p>
 
-            <button class="btn-wash sw-b" onClick="{{ pv.pay }}" style="cursor:pointer;font-family:inherit;font-size:15px;font-weight:800;padding:14px 26px;border-radius:999px;background:var(--ac-gold);color:#1f1710;border:none;transition:transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ pv.payLabel }} →</button>
+            <button class="btn-swipe btn-gold sw-b" onClick="{{ pv.pay }}" style="cursor:pointer;font-family:inherit;font-size:15px;font-weight:800;padding:14px 26px;border-radius:999px;background:var(--ac-gold);color:#1f1710;border:none;transition:transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ pv.payLabel }} →</button>
             <div style="font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)">{{ pv.payAccount }}</div>
             <p style="font-size:12px;line-height:1.55;color:var(--faint);margin:0">{{ pv.paySafe }}</p>
             <button onClick="{{ goPolicies }}" style="cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;background:none;border:none;padding:0;color:var(--faint);border-bottom:1px solid var(--border);align-self:flex-start" style-hover="color:var(--text);border-color:var(--text)">{{ T.refund_policy_lbl }}</button>
@@ -3651,7 +3651,7 @@
           <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 18px;margin-bottom:20px">
             <div class="paper-card" style="display:inline-flex;padding:4px;border-radius:12px;background:var(--surface);border:1px solid var(--border)">
               <sc-for list="{{ pv.ivStatusTabs }}" as="ist" hint-placeholder-count="3">
-                <button class="tap-hit" onClick="{{ ist.select }}" style="cursor:pointer;border:none;font-family:inherit;font-size:13px;font-weight:800;padding:9px 16px;border-radius:9px;background:{{ ist.bg }};color:{{ ist.fg }};transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)">{{ ist.label }}</button>
+                <button class="tap-hit btn-wash sw-c" onClick="{{ ist.select }}" style="cursor:pointer;border:none;font-family:inherit;font-size:13px;font-weight:800;padding:9px 16px;border-radius:9px;background:{{ ist.bg }};color:{{ ist.fg }};transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)">{{ ist.label }}</button>
               </sc-for>
             </div>
             <label style="display:flex;flex-direction:column;gap:4px">
@@ -4028,7 +4028,7 @@
                       <div class="id-k">{{ n.k }}</div>
                       <div class="id-full">{{ n.full }}</div>
                     </div>
-                    <button onClick="{{ n.copy }}" class="id-copy" style="color:{{ n.copyColor }}" aria-label="{{ n.copyLabel }} {{ n.k }}">{{ n.copyLabel }}</button>
+                    <button onClick="{{ n.copy }}" class="id-copy btn-wash btn-sm sw-d" style="color:{{ n.copyColor }}" aria-label="{{ n.copyLabel }} {{ n.k }}">{{ n.copyLabel }}</button>
                   </div>
                   <div class="id-num">{{ n.v }}</div>
                   <div class="id-meta">{{ n.meta }}</div>
@@ -4116,7 +4116,7 @@
 
           <div style="display:flex;flex-wrap:wrap;gap:6px;padding:16px clamp(16px,2vw,26px) 4px">
             <sc-for list="{{ finLensTabs }}" as="lt" hint-placeholder-count="7">
-              <button class="tap-hit" key="{{ lt.k }}" onClick="{{ lt.select }}" style="cursor:pointer;padding:9px 16px;border-radius:11px;font-size:13px;font-weight:700;background:{{ lt.bg }};color:{{ lt.fg }};border:1px solid {{ lt.ring }};transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)">{{ lt.label }}</button>
+              <button class="tap-hit btn-wash sw-e" key="{{ lt.k }}" onClick="{{ lt.select }}" style="cursor:pointer;padding:9px 16px;border-radius:11px;font-size:13px;font-weight:700;background:{{ lt.bg }};color:{{ lt.fg }};border:1px solid {{ lt.ring }};transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)">{{ lt.label }}</button>
             </sc-for>
           </div>
           <p style="font-size:12.5px;line-height:1.55;color:var(--faint);margin:10px clamp(16px,2vw,26px) 0;max-width:760px">{{ finBasisNote }}</p>
@@ -4535,7 +4535,7 @@
             </div>
             <span style="font-size:13px;color:rgba(251,247,239,.55);flex:1 1 220px;min-width:0">{{ govModeHint }}</span>
             <sc-if value="{{ govHasSel }}">
-              <button class="tap-hit" onClick="{{ govClear }}" style="border:1px solid rgba(251,247,239,.25);background:none;cursor:pointer;padding:8px 14px;border-radius:9px;font-size:12.5px;font-weight:700;font-family:inherit;color:rgba(251,247,239,.75)" style-hover="border-color:#EAAE28;color:#EAAE28">{{ T.gov_clear_trace }}</button>
+              <button class="tap-hit btn-wash btn-sm sw-f" onClick="{{ govClear }}" style="border:1px solid rgba(251,247,239,.25);background:none;cursor:pointer;padding:8px 14px;border-radius:9px;font-size:12.5px;font-weight:700;font-family:inherit;color:rgba(251,247,239,.75)" style-hover="border-color:#EAAE28;color:#EAAE28">{{ T.gov_clear_trace }}</button>
             </sc-if>
           </div>
 
@@ -4750,7 +4750,7 @@
               <div style="font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.55);margin-bottom:11px">{{ raiseStep2Note }}</div>
               <div style="display:flex;flex-wrap:wrap;gap:8px">
                 <sc-for list="{{ rzDocOpts }}" as="d" hint-placeholder-count="6">
-                  <button class="tap-hit" onClick="{{ d.toggle }}" aria-pressed="{{ d.on }}" style="cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;text-align:left;padding:8px 14px;border-radius:10px;border:1px solid {{ d.ring }};background:{{ d.bg }};color:{{ d.fg }}">{{ d.label }}</button>
+                  <button class="tap-hit btn-wash sw-a" onClick="{{ d.toggle }}" aria-pressed="{{ d.on }}" style="cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;text-align:left;padding:8px 14px;border-radius:10px;border:1px solid {{ d.ring }};background:{{ d.bg }};color:{{ d.fg }}">{{ d.label }}</button>
                 </sc-for>
               </div>
             </div>
