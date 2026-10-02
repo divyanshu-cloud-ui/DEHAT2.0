@@ -330,6 +330,47 @@
     .btn-swipe, .btn-wash{color:#000 !important;border:1px solid #000 !important;background:none !important}
   }
 
+
+  /* ---- Linen Paper Weave (Handoff 159 Step 3) ---- */
+  body, .paper-ground{
+    background-color:var(--bg);
+    background-image:var(--paper-on-ground);
+    background-size:512px 512px;
+    background-repeat:repeat;
+  }
+
+  /* Paper cards: surface and surface2 cards */
+  .paper-card{
+    background-image:var(--paper-on-surface) !important;
+    background-size:512px 512px !important;
+    background-repeat:repeat !important;
+  }
+
+  /* Coloured and deep-brown bands */
+  .paper-band{
+    background-image:var(--paper-on-colour) !important;
+    background-size:512px 512px !important;
+    background-repeat:repeat !important;
+  }
+
+  /* Surface2 bands use surface weave token */
+  .paper-band.paper-surface2{
+    background-image:var(--paper-on-surface) !important;
+  }
+
+  /* Stories of Change crimson band: dark multiply weave or none (protecting 4.87:1 text contrast) */
+  .paper-band.paper-crimson, .paper-crimson{
+    background-image:var(--paper-on-crimson, none) !important;
+  }
+
+  /* EXCLUSIONS: Nav bar, images, portraits, artwork, form fields, donation inputs get NO weave */
+  nav, .nav, header.nav, .nav-blur, .site-header,
+  img, image-slot, .art, .art-l, .story-art, .face-art, .portrait,
+  input, select, textarea, .form-input, .donate-input,
+  .razorpay-container, iframe{
+    /* Keep their own images / carets, never weave */
+  }
+
 </style>
 <script src="./media-data.js"></script>
 </helmet>
@@ -395,7 +436,7 @@
 
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:18px;padding-top:26px">
       <sc-for list="{{ items }}" as="it" hint-placeholder-count="9">
-        <article class="m-card" style="display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:var(--surface,#fff);border:1px solid var(--border,rgba(31,23,16,.09))">
+        <article class="m-card paper-card" style="display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:var(--surface,#fff);border:1px solid var(--border,rgba(31,23,16,.09))">
           <a href="{{ it.primary }}" target="_blank" rel="noopener" onClick="{{ it.open }}" style="display:block;text-decoration:none;color:inherit">
             <div style="position:relative;aspect-ratio:16/10;background:{{ it.tint }};display:flex;flex-direction:column;justify-content:space-between;padding:16px 18px">
               <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
@@ -425,8 +466,8 @@
               <span style="display:flex;align-items:center;gap:6px;font-weight:600">&#9711; {{ it.views }}</span>
             </div>
             <span style="display:flex;align-items:center;gap:10px">
-              <a class="m-card-link m-hit" href="{{ it.altHref }}" target="_blank" rel="noopener" title="{{ it.altLabel }}" style="font-size:11px;font-weight:600;color:var(--faint,#8a7c6c);text-decoration:underline">{{ it.altLabel }}</a>
-              <a class="m-card-link m-hit" href="{{ it.primary }}" target="_blank" rel="noopener" onClick="{{ it.open }}" style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ac-teal,#0E5565);text-decoration:none">{{ it.linkLabel }}</a>
+              <a class="m-card-link m-hit paper-card" href="{{ it.altHref }}" target="_blank" rel="noopener" title="{{ it.altLabel }}" style="font-size:11px;font-weight:600;color:var(--faint,#8a7c6c);text-decoration:underline">{{ it.altLabel }}</a>
+              <a class="m-card-link m-hit paper-card" href="{{ it.primary }}" target="_blank" rel="noopener" onClick="{{ it.open }}" style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ac-teal,#0E5565);text-decoration:none">{{ it.linkLabel }}</a>
             </span>
           </div>
         </article>
