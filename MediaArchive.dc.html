@@ -19,11 +19,15 @@
   .m-stat{min-width:0}
   .m-stat-value{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,7vw,34px);line-height:1;color:var(--ac-teal,#0E5565);overflow-wrap:anywhere}
   .m-stat-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint,#8a7c6c);margin-top:6px;font-weight:600}
+  .m-hit{position:relative}
+  @media (pointer:coarse), (max-width:640px){
+    .m-hit::after{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max(100%,44px);height:max(100%,44px)}
+    .m-like,.m-card-link{margin-block:14px}
+    .m-like{margin-inline:8px}
+    .m-search,.m-filter-select{min-height:44px}
+  }
   @media (max-width:520px){
     .m-stats{width:100%;grid-template-columns:1fr;gap:10px}
-    button,input,select{min-height:44px}
-    button{min-width:44px}
-    a[target="_blank"]{min-height:44px;display:inline-flex;align-items:center}
   }
 </style>
 <script src="./media-data.js"></script>
@@ -56,15 +60,15 @@
 
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:22px 0 0">
       <sc-for list="{{ scopes }}" as="s" hint-placeholder-count="3">
-        <button onClick="{{ s.pick }}" style="padding:9px 18px;border-radius:999px;border:1px solid {{ s.ring }};background:{{ s.bg }};color:{{ s.fg }};font-size:14px;font-weight:700;cursor:pointer">{{ s.label }}</button>
+        <button class="m-scope m-hit" onClick="{{ s.pick }}" style="padding:9px 18px;border-radius:999px;border:1px solid {{ s.ring }};background:{{ s.bg }};color:{{ s.fg }};font-size:14px;font-weight:700;cursor:pointer">{{ s.label }}</button>
       </sc-for>
-      <input value="{{ q }}" onChange="{{ onQ }}" placeholder="Search headlines, publishers…" style="flex:1;min-width:220px;padding:10px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit">
+      <input class="m-search" value="{{ q }}" onChange="{{ onQ }}" placeholder="Search headlines, publishers…" style="flex:1;min-width:220px;padding:10px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit">
     </div>
 
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 0 0">
-      <button onClick="{{ toggleFilters }}" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid {{ filtersRing }};background:{{ filtersBg }};color:{{ filtersFg }};font-size:13px;font-weight:700;font-family:inherit;cursor:pointer">Refine{{ activeLabel }}<span style="opacity:.6">{{ caret }}</span></button>
+      <button class="m-refine m-hit" onClick="{{ toggleFilters }}" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid {{ filtersRing }};background:{{ filtersBg }};color:{{ filtersFg }};font-size:13px;font-weight:700;font-family:inherit;cursor:pointer">Refine{{ activeLabel }}<span style="opacity:.6">{{ caret }}</span></button>
       <sc-if value="{{ anyActive }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ reset }}" style="padding:9px 14px;border-radius:999px;border:none;background:none;color:var(--faint,#8a7c6c);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:underline">Clear all</button>
+        <button class="m-reset m-hit" onClick="{{ reset }}" style="padding:9px 14px;border-radius:999px;border:none;background:none;color:var(--faint,#8a7c6c);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:underline">Clear all</button>
       </sc-if>
     </div>
 
@@ -72,7 +76,7 @@
       <sc-for list="{{ selects }}" as="f" hint-placeholder-count="5">
         <label style="display:flex;flex-direction:column;gap:6px">
           <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--faint,#8a7c6c)">{{ f.label }}</span>
-          <select value="{{ f.value }}" onChange="{{ f.onChange }}" style="margin-top:auto;appearance:none;-webkit-appearance:none;padding:10px 14px;border-radius:12px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit;cursor:pointer">
+          <select class="m-filter-select" value="{{ f.value }}" onChange="{{ f.onChange }}" style="margin-top:auto;appearance:none;-webkit-appearance:none;padding:10px 14px;border-radius:12px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit;cursor:pointer">
             <sc-for list="{{ f.options }}" as="o" hint-placeholder-count="4">
               <option value="{{ o.v }}">{{ o.label }}</option>
             </sc-for>
@@ -84,7 +88,7 @@
     <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 22px;border-bottom:1px solid var(--border,rgba(31,23,16,.09))">
       <span style="font-size:14px;color:var(--dim,#5a4f43)">{{ resultLine }}</span>
       <div style="display:flex;gap:10px;align-items:center">
-        <button onClick="{{ toggleSort }}" style="padding:8px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:none;color:var(--text,#1f1710);font-size:13px;font-weight:600;cursor:pointer">{{ sortLabel }}</button>
+        <button class="m-sort m-hit" onClick="{{ toggleSort }}" style="padding:8px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:none;color:var(--text,#1f1710);font-size:13px;font-weight:600;cursor:pointer">{{ sortLabel }}</button>
       </div>
     </div>
 
@@ -114,14 +118,14 @@
           </div>
           <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px 11px 18px;border-top:1px solid var(--border,rgba(31,23,16,.09))">
             <div style="display:flex;align-items:center;gap:14px;font-size:13px;color:var(--faint,#8a7c6c)">
-              <button onClick="{{ it.like }}" title="Like" style="display:flex;align-items:center;gap:6px;background:none;border:none;padding:0;cursor:pointer;font-size:13px;font-weight:700;color:{{ it.likeColor }}">
+              <button class="m-like m-hit" onClick="{{ it.like }}" title="Like" style="display:flex;align-items:center;gap:6px;background:none;border:none;padding:0;cursor:pointer;font-size:13px;font-weight:700;color:{{ it.likeColor }}">
                 <span style="font-size:14px">{{ it.heart }}</span>{{ it.likes }}
               </button>
               <span style="display:flex;align-items:center;gap:6px;font-weight:600">&#9711; {{ it.views }}</span>
             </div>
             <span style="display:flex;align-items:center;gap:10px">
-              <a href="{{ it.altHref }}" target="_blank" rel="noopener" title="{{ it.altLabel }}" style="font-size:11px;font-weight:600;color:var(--faint,#8a7c6c);text-decoration:underline">{{ it.altLabel }}</a>
-              <a href="{{ it.primary }}" target="_blank" rel="noopener" onClick="{{ it.open }}" style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ac-teal,#0E5565);text-decoration:none">{{ it.linkLabel }}</a>
+              <a class="m-card-link m-hit" href="{{ it.altHref }}" target="_blank" rel="noopener" title="{{ it.altLabel }}" style="font-size:11px;font-weight:600;color:var(--faint,#8a7c6c);text-decoration:underline">{{ it.altLabel }}</a>
+              <a class="m-card-link m-hit" href="{{ it.primary }}" target="_blank" rel="noopener" onClick="{{ it.open }}" style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ac-teal,#0E5565);text-decoration:none">{{ it.linkLabel }}</a>
             </span>
           </div>
         </article>
