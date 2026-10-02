@@ -402,15 +402,15 @@
 
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:22px 0 0">
       <sc-for list="{{ scopes }}" as="s" hint-placeholder-count="3">
-        <button class="m-scope m-hit" onClick="{{ s.pick }}" style="padding:9px 18px;border-radius:999px;border:1px solid {{ s.ring }};background:{{ s.bg }};color:{{ s.fg }};font-size:14px;font-weight:700;cursor:pointer">{{ s.label }}</button>
+        <button class="m-scope m-hit btn-wash sw-d" onClick="{{ s.pick }}" style="padding:9px 18px;border-radius:999px;border:1px solid {{ s.ring }};background:{{ s.bg }};color:{{ s.fg }};font-size:14px;font-weight:700;cursor:pointer">{{ s.label }}</button>
       </sc-for>
       <input class="m-search" value="{{ q }}" onChange="{{ onQ }}" placeholder="Search headlines, publishers…" style="flex:1;min-width:220px;padding:10px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit">
     </div>
 
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 0 0">
-      <button class="m-refine m-hit" onClick="{{ toggleFilters }}" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid {{ filtersRing }};background:{{ filtersBg }};color:{{ filtersFg }};font-size:13px;font-weight:700;font-family:inherit;cursor:pointer">Refine{{ activeLabel }}<span style="opacity:.6">{{ caret }}</span></button>
+      <button class="m-refine m-hit btn-wash sw-e" onClick="{{ toggleFilters }}" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid {{ filtersRing }};background:{{ filtersBg }};color:{{ filtersFg }};font-size:13px;font-weight:700;font-family:inherit;cursor:pointer">Refine{{ activeLabel }}<span style="opacity:.6">{{ caret }}</span></button>
       <sc-if value="{{ anyActive }}" hint-placeholder-val="{{ false }}">
-        <button class="m-reset m-hit" onClick="{{ reset }}" style="padding:9px 14px;border-radius:999px;border:none;background:none;color:var(--faint,#8a7c6c);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:underline">Clear all</button>
+        <button class="m-reset m-hit btn-wash btn-sm sw-f" onClick="{{ reset }}" style="padding:9px 14px;border-radius:999px;border:none;background:none;color:var(--faint,#8a7c6c);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:underline">Clear all</button>
       </sc-if>
     </div>
 
@@ -430,7 +430,7 @@
     <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 22px;border-bottom:1px solid var(--border,rgba(31,23,16,.09))">
       <span style="font-size:14px;color:var(--dim,#5a4f43)">{{ resultLine }}</span>
       <div style="display:flex;gap:10px;align-items:center">
-        <button class="m-sort m-hit" onClick="{{ toggleSort }}" style="padding:8px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:none;color:var(--text,#1f1710);font-size:13px;font-weight:600;cursor:pointer">{{ sortLabel }}</button>
+        <button class="m-sort m-hit btn-wash sw-a" onClick="{{ toggleSort }}" style="padding:8px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:none;color:var(--text,#1f1710);font-size:13px;font-weight:600;cursor:pointer">{{ sortLabel }}</button>
       </div>
     </div>
 
@@ -460,7 +460,7 @@
           </div>
           <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px 11px 18px;border-top:1px solid var(--border,rgba(31,23,16,.09))">
             <div style="display:flex;align-items:center;gap:14px;font-size:13px;color:var(--faint,#8a7c6c)">
-              <button class="m-like m-hit" onClick="{{ it.like }}" title="Like" style="display:flex;align-items:center;gap:6px;background:none;border:none;padding:0;cursor:pointer;font-size:13px;font-weight:700;color:{{ it.likeColor }}">
+              <button class="m-like m-hit btn-sq" onClick="{{ it.like }}" title="Like" style="display:flex;align-items:center;gap:6px;background:none;border:none;padding:0;cursor:pointer;font-size:13px;font-weight:700;color:{{ it.likeColor }}">
                 <span style="font-size:14px">{{ it.heart }}</span>{{ it.likes }}
               </button>
               <span style="display:flex;align-items:center;gap:6px;font-weight:600">&#9711; {{ it.views }}</span>
