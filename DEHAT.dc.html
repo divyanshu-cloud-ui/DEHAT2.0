@@ -918,7 +918,7 @@
                     <div style="font-size:12px;color:var(--faint);margin-top:4px;max-width:168px;line-height:1.35">{{ st.label }}</div>
                   </div>
                 </sc-for>
-                <button onClick="{{ activeProgram.open }}" style="margin-left:auto;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:none;background:{{ activeProgram.color }};color:#fff;transition:transform .18s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.open_programme_home }}</button>
+                <button onClick="{{ activeProgram.open }}" style="margin-left:auto;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:none;background:{{ activeProgram.color }};color:{{ activeProgram.ink }};transition:transform .18s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.open_programme_home }}</button>
               </div>
             </div>
           </div>
@@ -34484,6 +34484,7 @@ class Component extends DCLogic {
     const openProg = (k) => () => this.setState({ view: 'prog', progKey: k, expanded: null, jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0 }, () => { window.scrollTo({ top: 0 }); });
     const artUrl = (a) => 'url(./assets/art/' + a + '.png)';
     const activeProgram = Object.assign({}, programs[this.state.program], {
+      ink: this._ink(programs[this.state.program].color),   // readable label on the programme's own fill (white fails on gold)
       artCss: artUrl(programs[this.state.program].art),
       open: openProg(programs[this.state.program].key),
     });
