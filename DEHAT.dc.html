@@ -646,7 +646,7 @@
       </div>
     </sc-for>
     <div style="display:flex;align-items:center;gap:8px;margin-left:8px">
-      <select class="nav-language" value="{{ currentLang }}" onChange="{{ onLang }}" title="{{ T.language }}" style="appearance:none;-webkit-appearance:none;padding:8px 26px 8px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface) url('data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22&gt;&lt;path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%239a8c78%22 stroke-width=%221.5%22/&gt;&lt;/svg&gt;') no-repeat right 9px center;font-size:13px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer;max-width:130px">
+      <select class="nav-language" value="{{ currentLang }}" onChange="{{ onLang }}" title="{{ T.language }}" style="appearance:none;-webkit-appearance:none;padding:8px 26px 8px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface) url('data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22&gt;&lt;path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%239a8c78%22 stroke-width=%221.5%22/&gt;&lt;/svg&gt;') no-repeat right 9px center;font-size:13px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer;max-width:130px">
         <optgroup label="{{ T.lang_global }}">
           <sc-for list="{{ langsGlobal }}" as="lg" hint-placeholder-count="6">
             <option value="{{ lg.code }}">{{ lg.label }}</option>
@@ -664,7 +664,7 @@
   </div>
   <div class="nav-burger" style="align-items:center;gap:10px">
     <div class="nav-quick" style="align-items:center;gap:8px">
-      <select class="lang-select nav-language" value="{{ currentLang }}" onChange="{{ onLang }}" title="{{ T.language }}" style="appearance:none;-webkit-appearance:none;padding:8px 24px 8px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface) url('data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22&gt;&lt;path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%239a8c78%22 stroke-width=%221.5%22/&gt;&lt;/svg&gt;') no-repeat right 8px center;font-size:12.5px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer;max-width:110px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap">
+      <select class="lang-select nav-language" value="{{ currentLang }}" onChange="{{ onLang }}" title="{{ T.language }}" style="appearance:none;-webkit-appearance:none;padding:8px 24px 8px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface) url('data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22&gt;&lt;path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%239a8c78%22 stroke-width=%221.5%22/&gt;&lt;/svg&gt;') no-repeat right 8px center;font-size:12.5px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer;max-width:110px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap">
         <optgroup label="{{ T.lang_global }}">
           <sc-for list="{{ langsGlobal }}" as="lg" hint-placeholder-count="6">
             <option value="{{ lg.code }}">{{ lg.label }}</option>
@@ -1809,7 +1809,7 @@
           <sc-for list="{{ pp.filters }}" as="f" hint-placeholder-count="7">
             <label style="display:flex;flex-direction:column;gap:4px">
               <span style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700">{{ f.label }}</span>
-              <select value="{{ f.value }}" onChange="{{ f.onChange }}" style="appearance:none;-webkit-appearance:none;padding:8px 30px 8px 12px;border-radius:9px;border:1px solid var(--border);background:var(--surface) url('data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22&gt;&lt;path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%239a8c78%22 stroke-width=%221.5%22/&gt;&lt;/svg&gt;') no-repeat right 10px center;font-size:13.5px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer;max-width:200px">
+              <select value="{{ f.value }}" onChange="{{ f.onChange }}" style="appearance:none;-webkit-appearance:none;padding:8px 30px 8px 12px;border-radius:9px;border:1px solid var(--border);background:var(--surface) url('data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22&gt;&lt;path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%239a8c78%22 stroke-width=%221.5%22/&gt;&lt;/svg&gt;') no-repeat right 10px center;font-size:13.5px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer;max-width:200px">
                 <sc-for list="{{ f.options }}" as="o" hint-placeholder-count="4">
                   <option value="{{ o.value }}">{{ o.label }}</option>
                 </sc-for>
@@ -4707,9 +4707,10 @@ class Component extends DCLogic {
     pTab: 'route', pStep: 0, pcSel: '', pWho: '', pIntents: [], pOpen: '', ivFacets: {}, pSop: '', pName: '', pOrg: '', pEmail: '', pPhone: '', pPlace: '', pBudget: '', pCopied: false,
     dRegime: 'inr', dAmount: '', dAmountOther: '', dFreq: 'once', dPurpose: 'unrestricted', dPan: '', dCountry: '', dIdRef: '', dAddr: '', d80g: true, dAnon: false, dStage: 0, ivStatus: 'current', ivProg: 'all',
     whoStem: 'nyay', whoMine: '', whoReveal: false, whoPerson: '', whoBoard: 'governing', whoGroup: 'all', whoBelief: '', whoBeliefAll: false, navMore: false, navGroup: '', polOpen: '', homeFace: 't33',
-    ckDecided: true, ckPrefsOpen: false, ckOpen: '', ckPrefs: { performance: false, functional: false, targeting: false } };
+    ckDecided: true, ckPrefsOpen: false, ckOpen: '', ckPrefs: { performance: false, functional: false, targeting: false }, ...(window.DEHAT_LAUNCH?.initialState || {}) };
 
   componentDidMount() {
+    if (window.DEHAT_LAUNCH) window.DEHAT_LAUNCH.attach(this);
     this._applyTheme();
     // Open in the language the device asks for, without recording it as a choice the
     // reader made: only the picker writes that down.
@@ -4866,7 +4867,7 @@ class Component extends DCLogic {
       // framework's React-based update cycle - the parameter was never actually read
       // before this addition, so nothing had surfaced that. Treat a missing ps as
       // "changed" (harmless - worst case, one redundant hash write) rather than crash.
-      if (!ps || ps.view !== this.state.view || ps.progKey !== this.state.progKey || ps.pTab !== this.state.pTab) {
+      if (window.DEHAT_LAUNCH || !ps || ps.view !== this.state.view || ps.progKey !== this.state.progKey || ps.pTab !== this.state.pTab) {
         this._syncHash();
       }
       this._subnavFollow();
@@ -4890,6 +4891,7 @@ class Component extends DCLogic {
   // not the ledger's year/lens filters or the journey's scroll stage, which change far too
   // often to be meaningful history entries and would flood back/forward with noise.
   _syncHash() {
+    if (window.DEHAT_LAUNCH) return window.DEHAT_LAUNCH.sync(this);
     try {
       if (typeof window === 'undefined') return;
       const s = this.state;
@@ -4903,6 +4905,7 @@ class Component extends DCLogic {
   // absent or unrecognised hash rather than forcing a navigation - a plain visit to the
   // bare URL should still open on the homepage, not be treated as an invalid deep link.
   _applyHash() {
+    if (window.DEHAT_LAUNCH) return window.DEHAT_LAUNCH.apply(this);
     try {
       if (typeof window === 'undefined') return;
       const raw = (window.location.hash || '').replace(/^#/, '');
@@ -5364,6 +5367,7 @@ class Component extends DCLogic {
   // outranks that and is remembered, so a reader who switches is never switched back.
   _detectLang() {
     if (typeof window === 'undefined') return 'en';
+    if (window.DEHAT_LAUNCH) return window.DEHAT_LAUNCH.route.lang;
     const codes = this._langs().map(l => l.code);
     try {
       const saved = window.localStorage.getItem('dehat.lang');

@@ -1,0 +1,35 @@
+{
+  "organization": {
+    "name": "DEVELOPMENTAL ASSOCIATION FOR HUMAN ADVANCEMENT (DEHAT)",
+    "alternateName": "DEHAT",
+    "url": "https://dehatindia.org",
+    "logo": "https://dehatindia.org/dehat-logo.png",
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q111469552",
+      "https://www.linkedin.com/company/dehat-india/",
+      "https://www.facebook.com/dehatorgindia/",
+      "https://www.instagram.com/dehat_india/",
+      "https://www.youtube.com/@DehatIndiaOrg",
+      "https://x.com/dehatindia",
+      "https://give.do/ngos/dehat",
+      "https://guidestarindia.org/Summary.aspx?CCReg=1268"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sewakunj, Maseehabad Road via Kati Chauraha, Huzoorpur Marg",
+      "addressLocality": "Bahraich",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "271801",
+      "addressCountry": "IN"
+    },
+    "taxID": "AAAAD3793Q",
+    "vatID": "LKND01474F",
+    "foundingDate": "1989",
+    "registrationDate": "2000-08-21"
+  },
+  "website": {
+    "name": "DEHAT",
+    "url": "https://dehatindia.org"
+  },
+  "storyType": "Article"
+}

@@ -3,6 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { pathToFileURL } = require('url');
 
 const ALL_LANGUAGES = [
   // Canonical (2)
@@ -14,13 +15,20 @@ const ALL_LANGUAGES = [
   'kok', 'sa', 'sd', 'or', 'ml', 'pa', 'doi', 'brx', 'sat', 'mni', 'ks'
 ];
 
-async function runAudit() {
+async function runAudit(root = __dirname) {
+  const failures = [];
+  // Recording a failure and printing it share one path, so a new gate cannot
+  // accidentally report FAIL while leaving the process successful.
+  const fail = (gate, ...details) => {
+    failures.push(gate);
+    if (details.length) console.error(...details);
+  };
   console.log('================================================================');
   console.log(`Starting Comprehensive Audit across all ${ALL_LANGUAGES.length} languages...`);
   console.log('================================================================\n');
 
   // 1. Load Layer 1: DEHAT.dc.html _dict()
-  const html = fs.readFileSync(path.join(__dirname, 'DEHAT.dc.html'), 'utf8');
+  const html = fs.readFileSync(path.join(root, 'DEHAT.dc.html'), 'utf8');
   const startTag = '<script type="text/x-dc"';
   const startIdx = html.indexOf(startTag);
   if (startIdx === -1) throw new Error('Could not extract script from DEHAT.dc.html');
@@ -41,7 +49,7 @@ async function runAudit() {
   // combined file was 31MB, shipped to every visitor regardless of their language. Load every
   // split file here so this audit still sees the full 28-language set in one pass.
   global.window = global;
-  const contentI18nDir = path.join(__dirname, 'content-i18n');
+  const contentI18nDir = path.join(root, 'content-i18n');
   for (const f of fs.readdirSync(contentI18nDir)) {
     if (f.endsWith('.js')) require(path.join(contentI18nDir, f));
   }
@@ -65,7 +73,7 @@ async function runAudit() {
   const canonicalContentCount = Object.keys(canonicalContentLeaves).length;
 
   // 3. Load Layer 3: partner-data.js
-  const partnerModule = await import(path.join(__dirname, 'partner-data.js'));
+  const partnerModule = await import(pathToFileURL(path.join(root, 'partner-data.js')).href);
   const P = partnerModule.PARTNER || partnerModule.default;
   const canonicalPartnerLeaves = getLeaves(P.en);
   const canonicalPartnerCount = Object.keys(canonicalPartnerLeaves).length;
@@ -84,7 +92,7 @@ async function runAudit() {
   const uniqueT = [...new Set(tMatches)];
   const missingTInEn = uniqueT.filter(k => !(k in dicts.en));
   if (missingTInEn.length > 0) {
-    console.error(`✖ FAIL: ${missingTInEn.length} T.<key> reads missing in _dict().en:`, missingTInEn);
+    fail('renderer-dictionary', `✖ FAIL: ${missingTInEn.length} T.<key> reads missing in _dict().en:`, missingTInEn);
   } else {
     console.log(`✔ PASS: All ${uniqueT.length} renderer T.<key> reads exist in _dict().en`);
   }
@@ -97,7 +105,7 @@ async function runAudit() {
   const uniqueP = [...new Set(pMatches)];
   const missingPInEn = uniqueP.filter(prop => !(prop in P.en));
   if (missingPInEn.length > 0) {
-    console.error(`✖ FAIL: ${missingPInEn.length} P.<field> reads missing in PARTNER.en:`, missingPInEn);
+    fail('renderer-partner', `✖ FAIL: ${missingPInEn.length} P.<field> reads missing in PARTNER.en:`, missingPInEn);
   } else {
     console.log(`✔ PASS: All ${uniqueP.length} _partnerView P.<field> reads exist in PARTNER.en`);
   }
@@ -109,7 +117,7 @@ async function runAudit() {
     if (dicts[l]) {
       const stubs = Object.keys(dicts[l]).filter(k => typeof dicts[l][k] === 'string' && STUB_REGEX.test(dicts[l][k].trim()));
       if (stubs.length > 0) {
-        console.error(`✖ FAIL: ${l} contains ${stubs.length} self-referencing template stubs:`, stubs);
+        fail('dictionary-stubs', `✖ FAIL: ${l} contains ${stubs.length} self-referencing template stubs:`, stubs);
         totalStubs += stubs.length;
       }
     }
@@ -122,7 +130,7 @@ async function runAudit() {
   const twentyCheckKeys = ['fin_twenty_years', 'fin_explore_title', 'fin_all_twenty_years', 'stat_lbl_investment'];
   const enFrozen = twentyCheckKeys.filter(k => /\btwenty\b/i.test(dicts.en[k]));
   if (enFrozen.length > 0) {
-    console.error(`✖ FAIL: English dictionary contains frozen 'twenty' in ledger keys:`, enFrozen);
+    fail('ledger-span', `✖ FAIL: English dictionary contains frozen 'twenty' in ledger keys:`, enFrozen);
   } else {
     console.log(`✔ PASS: Ledger span and explorer keys contain no frozen 'twenty' in English`);
   }
@@ -135,7 +143,7 @@ async function runAudit() {
   if (enDictEmpties.length === 0 && enContentEmpties.length === 0 && enPartnerEmpties.length === 0) {
     console.log(`✔ PASS: Zero empty strings across all English canonical layers (Dict: ${Object.keys(dicts.en).length}, Content: ${Object.keys(enContentLeaves).length}, Partner: ${canonicalPartnerCount})`);
   } else {
-    console.error(`✖ FAIL: Empty strings found in EN (Dict: ${enDictEmpties.length}, Content: ${enContentEmpties.length}, Partner: ${enPartnerEmpties.length})`);
+    fail('english-canonical', `✖ FAIL: Empty strings found in EN (Dict: ${enDictEmpties.length}, Content: ${enContentEmpties.length}, Partner: ${enPartnerEmpties.length})`);
   }
   console.log('----------------------------------------------------------------\n');
 
@@ -154,7 +162,7 @@ async function runAudit() {
     }
   }
   if (attributeResidues.length > 0) {
-    console.error(`✖ FAIL: ${attributeResidues.length} literal attribute residues found in template:`, attributeResidues);
+    fail('template-attributes', `✖ FAIL: ${attributeResidues.length} literal attribute residues found in template:`, attributeResidues);
   } else {
     console.log(`✔ PASS: Zero literal attribute residues across template aria-label, title, alt, and placeholder attributes`);
   }
@@ -253,14 +261,13 @@ async function runAudit() {
   }
 
   if (handoff145Failures.length > 0) {
-    console.error(`✖ FAIL: ${handoff145Failures.length} Handoff 145 validation errors:`, handoff145Failures.slice(0, 10));
+    fail('roster-csr', `✖ FAIL: ${handoff145Failures.length} Handoff 145 validation errors:`, handoff145Failures.slice(0, 10));
   } else {
     console.log(`✔ PASS: All Handoff 145 invariants satisfied: 35 team portraits, 7 board names, 9 advisory names (no a9/a11), and 6 CSR categories across all 28 languages!`);
   }
   console.log('----------------------------------------------------------------\n');
 
   const results = [];
-  let allPassed = (missingTInEn.length === 0 && missingPInEn.length === 0 && totalStubs === 0 && enFrozen.length === 0 && enDictEmpties.length === 0 && enContentEmpties.length === 0 && enPartnerEmpties.length === 0 && attributeResidues.length === 0 && handoff145Failures.length === 0);
 
   for (const lang of ALL_LANGUAGES) {
     let l1Pass = false, l2Pass = false, l3Pass = false;
@@ -330,7 +337,9 @@ async function runAudit() {
     }
 
     const langPassed = l1Pass && l2Pass && l3Pass;
-    if (!langPassed) allPassed = false;
+    if (!l1Pass) fail('dictionary-parity:' + lang);
+    if (!l2Pass) fail('content-parity:' + lang);
+    if (!l3Pass) fail('partner-parity:' + lang);
 
     results.push({
       lang,
@@ -350,16 +359,25 @@ async function runAudit() {
   }
 
   console.log('\n================================================================');
-  if (allPassed) {
+  if (failures.length === 0) {
     console.log('\x1b[32m✔ OVERALL AUDIT RESULT: 100% COMPLETE & VERIFIED ACROSS ALL 28 LANGUAGES!\x1b[0m');
   } else {
-    console.log('\x1b[31m✖ OVERALL AUDIT RESULT: PARITY FAILURES DETECTED.\x1b[0m');
-    process.exit(1);
+    console.log('\x1b[31m✖ OVERALL AUDIT RESULT: FAILED GATES: ' + [...new Set(failures)].join(', ') + '.\x1b[0m');
+    process.exitCode = 1;
   }
   console.log('================================================================\n');
 }
 
-runAudit().catch(err => {
+// --root is used by isolated fixtures and can also audit another checkout.
+// The default remains this script's directory, independent of the caller's cwd.
+async function main() {
+  const args = process.argv.slice(2);
+  if (args.length && (args.length !== 2 || args[0] !== '--root')) {
+    throw new Error('Usage: node audit_all_28_languages.js [--root DIRECTORY]');
+  }
+  await runAudit(args.length ? path.resolve(args[1]) : __dirname);
+}
+main().catch(err => {
   console.error('Audit execution error:', err);
-  process.exit(1);
+  process.exitCode = 1;
 });
