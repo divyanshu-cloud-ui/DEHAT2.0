@@ -3889,13 +3889,12 @@ const FR = {
   ],
   "tabCtas": {
     "case": {
-          
-          "t": "Vous hésitez encore sur la solidité de cet argumentaire ?",
-          "s": "Demandez-nous de justifier toute affirmation précise de cette page - un chiffre, un district, un mécanisme. Nous indiquons la source ou disons en toute franchise où une affirmation est plus fragile qu’il n’y paraît.",
-          "a": "Poser une question sur cet argumentaire",
-          "subj": "Une question sur les arguments pour investir",
-          "b": "Continuer vers l’investissement",
-          "bTab": "give"
+      "t": "Vous hésitez encore sur la solidité de cet argumentaire ?",
+      "s": "Demandez-nous de justifier toute affirmation précise de cette page - un chiffre, un district, un mécanisme. Nous indiquons la source ou disons en toute franchise où une affirmation est plus fragile qu’il n’y paraît.",
+      "a": "Poser une question sur cet argumentaire",
+      "subj": "Une question sur les arguments pour investir",
+      "b": "Continuer vers l’investissement",
+      "bTab": "give"
     },
     "route": {
       "t": "Vous n'êtes toujours pas sûr que ce soit pour vous ?",
@@ -4860,43 +4859,43 @@ const FR = {
           "k": "Enfants, adolescents, femmes, parents, agriculteurs, familles et membres de la communauté"
         },
         {
-          "k": "Village Health, Sanitation and Nutrition Committees (VHSNC)"
+          "k": "Comités villageois de santé, d'assainissement et de nutrition (VHSNC)"
         },
         {
-          "k": "Gram Panchayats and Panchayati Raj Institutions"
+          "k": "Gram Panchayats et institutions de Panchayati Raj"
         },
         {
-          "k": "Anganwadi Centres (AWCs)"
+          "k": "Centres Anganwadi (AWC)"
         },
         {
-          "k": "Primary and Upper Primary Schools"
+          "k": "Écoles primaires et élémentaires supérieures"
         },
         {
-          "k": "School Management Committees (SMCs)"
+          "k": "Comités de gestion scolaire (SMC)"
         },
         {
-          "k": "Village-Level Child Protection and Welfare Committees (VLCPCs)"
+          "k": "Comités villageois de protection et de bien-être de l'enfance (VLCPC)"
         },
         {
-          "k": "Frontline Health Worker Cadres (ASHA, ANM)"
+          "k": "Cadres d'agents de santé de première ligne (ASHA, ANM)"
         },
         {
           "k": "Ménages agricoles et collectifs d'agricultrices"
         },
         {
-          "k": "Farmer Groups and Producer Collectives"
+          "k": "Groupes d'agriculteurs et collectifs de producteurs"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs)"
+          "k": "Organisations de producteurs agricoles (FPO)"
         },
         {
-          "k": "Self-Help Groups (SHGs) and Community-Based Collectives"
+          "k": "Groupes d'entraide (SHG) et collectifs communautaires"
         },
         {
-          "k": "Agriculture and Horticulture Extension Networks"
+          "k": "Réseaux de vulgarisation agricole et horticole"
         },
         {
-          "k": "Community Volunteer and Child-Protection Networks"
+          "k": "Réseaux de bénévoles communautaires et de protection de l'enfance"
         }
       ]
     },
@@ -4905,40 +4904,40 @@ const FR = {
       "label": "Niveau du bloc",
       "items": [
         {
-          "k": "Office of the Child Development Project Officer (CDPO)"
+          "k": "Bureau du responsable de projet de développement de l'enfant (CDPO)"
         },
         {
-          "k": "Block-Level Child Protection Committee (BLCPC)"
+          "k": "Comité de protection de l'enfance au niveau du bloc (BLCPC)"
         },
         {
-          "k": "Block Education Department and Teacher Cluster Resource Centres"
+          "k": "Département de l'éducation du bloc et centres de ressources pédagogiques"
         },
         {
-          "k": "Block Health Department"
+          "k": "Département de la santé du bloc"
         },
         {
-          "k": "Block Labour Department"
+          "k": "Département du travail du bloc"
         },
         {
-          "k": "Block Development Office"
+          "k": "Bureau de développement du bloc"
         },
         {
-          "k": "Block Agriculture Department"
+          "k": "Département de l'agriculture du bloc"
         },
         {
-          "k": "Block Horticulture Department"
+          "k": "Département de l'horticulture du bloc"
         },
         {
-          "k": "Agriculture Extension and Technical Resource Centres"
+          "k": "Centres de ressources techniques et de vulgarisation agricole"
         },
         {
-          "k": "Government Agriculture and Horticulture Scheme Offices"
+          "k": "Bureaux des programmes gouvernementaux d'agriculture et d'horticulture"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Farmer Collectives"
+          "k": "Organisations de producteurs agricoles (FPO) et collectifs d'agriculteurs"
         },
         {
-          "k": "Other Block-Level Convergence Platforms"
+          "k": "Autres plateformes de convergence au niveau du bloc"
         }
       ]
     },
@@ -4947,40 +4946,40 @@ const FR = {
       "label": "Niveau du tehsil / sous-district",
       "items": [
         {
-          "k": "Tehsil and Sub-Divisional Administration"
+          "k": "Administration du tehsil et sous-divisionnaire"
         },
         {
-          "k": "Police and Law-Enforcement Authorities"
+          "k": "Police et autorités chargées de l'application de la loi"
         },
         {
-          "k": "Labour Department"
+          "k": "Département du travail"
         },
         {
-          "k": "Education Department"
+          "k": "Département de l'éducation"
         },
         {
-          "k": "Health Department"
+          "k": "Département de la santé"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "Département du développement des femmes et des enfants"
         },
         {
-          "k": "Agriculture Department"
+          "k": "Département de l'agriculture"
         },
         {
-          "k": "Horticulture Department"
+          "k": "Département de l'horticulture"
         },
         {
-          "k": "Agriculture Extension and Technical Services"
+          "k": "Services techniques et de vulgarisation agricole"
         },
         {
-          "k": "Land, Revenue and Agriculture Convergence Authorities"
+          "k": "Autorités foncières, fiscales et de convergence agricole"
         },
         {
-          "k": "Other Sub-District Convergence Mechanisms"
+          "k": "Autres mécanismes de convergence sous-district"
         },
         {
-          "k": "Child Welfare Police Officers (CWPO) at Police Stations"
+          "k": "Officiers de police pour la protection de l'enfance (CWPO) dans les commissariats"
         }
       ]
     },
@@ -4989,75 +4988,75 @@ const FR = {
       "label": "Niveau du district",
       "items": [
         {
-          "k": "Office of the District Magistrate (DM)"
+          "k": "Cabinet du magistrat de district (DM)"
         },
         {
-          "k": "Office of the Chief Development Officer (CDO)"
+          "k": "Cabinet du responsable principal du développement (CDO)"
         },
         {
-          "k": "District Child Protection Unit (DCPU)"
+          "k": "Unité de protection de l'enfance du district (DCPU)"
         },
         {
-          "k": "Child Welfare Committee (CWC)"
+          "k": "Comité pour le bien-être de l'enfance (CWC)"
         },
         {
-          "k": "District Legal Services Authority (DLSA)"
+          "k": "Autorité des services juridiques du district (DLSA)"
         },
         {
-          "k": "Special Juvenile Police Unit (SJPU)"
+          "k": "Unité spéciale de police pour les mineurs (SJPU)"
         },
         {
-          "k": "Anti-Human Trafficking Unit (AHTU)"
+          "k": "Unité de lutte contre la traite des êtres humains (AHTU)"
         },
         {
-          "k": "District-Level Child Protection Committee (DLCPC)"
+          "k": "Comité de protection de l'enfance au niveau du district (DLCPC)"
         },
         {
-          "k": "District Task Force (DTF)"
+          "k": "Groupe de travail du district (DTF)"
         },
         {
-          "k": "District Police"
+          "k": "Police du district"
         },
         {
-          "k": "Women and Child Development Department"
+          "k": "Département du développement des femmes et des enfants"
         },
         {
-          "k": "Education Department"
+          "k": "Département de l'éducation"
         },
         {
-          "k": "Health Department"
+          "k": "Département de la santé"
         },
         {
-          "k": "Labour Department"
+          "k": "Département du travail"
         },
         {
-          "k": "District Agriculture Department"
+          "k": "Département de l'agriculture du district"
         },
         {
-          "k": "District Horticulture Department"
+          "k": "Département de l'horticulture du district"
         },
         {
-          "k": "Agriculture Extension and Technical Institutions"
+          "k": "Institutions techniques et de vulgarisation agricole"
         },
         {
-          "k": "Krishi Vigyan Kendras (KVKs)",
+          "k": "Centres de sciences agricoles (KVK)",
           "logo": "krishi-vigyan-kendras-kvks.png"
         },
         {
-          "k": "Farmer Producer Organisations (FPOs) and Federations"
+          "k": "Organisations et fédérations de producteurs agricoles (FPO)"
         },
         {
-          "k": "Child Helpline Services"
+          "k": "Services d'assistance téléphonique pour enfants"
         },
         {
           "k": "Sashastra Seema Bal (SSB)",
           "logo": "sashastra-seema-bal-ssb.svg"
         },
         {
-          "k": "Juvenile Justice Board (JJB)"
+          "k": "Conseil de justice pour mineurs (JJB)"
         },
         {
-          "k": "One Stop Centre (Sakhi)"
+          "k": "Centre d'accueil d'urgence One Stop (Sakhi)"
         }
       ]
     },
@@ -5066,42 +5065,42 @@ const FR = {
       "label": "Niveau de l’État",
       "items": [
         {
-          "k": "Women and Child Security Organisation (WCSO), Uttar Pradesh Police",
+          "k": "Organisation de sécurité des femmes et des enfants (WCSO), Police de l'Uttar Pradesh",
           "logo": "women-and-child-security-organisation-uttar-pradesh.png"
         },
         {
-          "k": "Women and Child Development Department",
+          "k": "Département du développement des femmes et des enfants",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Education Department",
+          "k": "Département de l'éducation",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Health Department",
+          "k": "Département de la santé",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Labour Department",
+          "k": "Département du travail",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Uttar Pradesh Police and Anti-Trafficking Mechanisms",
+          "k": "Police de l'Uttar Pradesh et dispositifs de lutte contre la traite",
           "logo": "uttar-pradesh-police.png"
         },
         {
-          "k": "Department of Agriculture, Government of Uttar Pradesh",
+          "k": "Département de l'agriculture, gouvernement de l'Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "Department of Horticulture and Food Processing, Government of Uttar Pradesh",
+          "k": "Département de l'horticulture et de la transformation alimentaire, gouvernement de l'Uttar Pradesh",
           "logo": "government-of-uttar-pradesh.svg"
         },
         {
-          "k": "State Legal Services Authority (SLSA)"
+          "k": "Autorité des services juridiques de l'État (SLSA)"
         },
         {
-          "k": "State Commission for Protection of Child Rights (SCPCR)"
+          "k": "Commission d'État pour la protection des droits de l'enfant (SCPCR)"
         }
       ]
     },
@@ -5110,13 +5109,13 @@ const FR = {
       "label": "Niveau national",
       "items": [
         {
-          "k": "National Legal Services Authority (NALSA)"
+          "k": "Autorité nationale des services juridiques (NALSA)"
         },
         {
-          "k": "National Commission for Protection of Child Rights (NCPCR)"
+          "k": "Commission nationale pour la protection des droits de l'enfant (NCPCR)"
         },
         {
-          "k": "Ministry of Women and Child Development (Mission Vatsalya)"
+          "k": "Ministère des femmes et du développement de l'enfant (Mission Vatsalya)"
         }
       ]
     }
@@ -5142,7 +5141,6 @@ const FR = {
   "answerSub": "Le tableau de gouvernance complet, le cycle de responsabilité annuel et le registre ouvert de ce que nous ne publions pas encore se trouvent sur la page Transparence.",
   "answerGo": "Ouvrez la page de transparence"
 };
-
 const RU = {
   "eyebrow": "Партнерство",
   "title": "Работайте с нами.",
@@ -34722,604 +34720,603 @@ const MNI = {
 
 const KS = {
   "eyebrow": "Partnerships",
-  "title": "Work With Us.",
-  "sub": "Four ways to work with this page: find the route that fits you, invest, see who already works alongside us, and check who we answer to.",
+  "title": "اسہٕ ہٕند ساتھ کام کریں۔",
+  "sub": "امِہ صفحہ سٟتؠ کام کرنے ہٕند چار طریقے: تِم وَتھ تلاش کرِو جو تُہؠ خٲطرٕ موزوں ہو، سرمایہ کاری کریں، وُچھِو کہ کون پہلے پؠٹھٕ اسہٕ ہٕند ساتھ کام کرتا ہے، تہٕ جاچ کٔرِو کہ اسہٕ کس کو جواب دیتے ہیں۔",
   "tabs": [
     {
       "k": "route",
-      "label": "Find Your Route"
+      "label": "اپنا وَتھ تلاش کریں۔"
     },
     {
       "k": "give",
       "label": "Invest",
       "detail": {
-        "u": "Field costs do not pause between grants. Regular investment is what keeps a team in place when a grant ends.",
-        "what": "A one-time or recurring investment, unrestricted or directed to a named programme.",
-        "why": "Unrestricted funds cover the gaps restricted grants leave: salaries between cycles, travel, follow-up on a case.",
-        "when": "Any time. Recurring investment is the most useful because it can be planned against.",
-        "where": "Domestic contributions into the 80G account; foreign contributions only into the designated FCRA account.",
-        "how": "Choose an amount and a purpose on this page; the receipt and statutory trail follow automatically."
+        "u": "گرانٹس مَنٛز فیلڈ اخراجات نہٕ رکتے۔ باقاعدہ سرمایہ کاری تِم چھُ جو گرانٹ ختم ہونے پؠٹھ ٹیم کو برقرار رکھتی ہے۔",
+        "what": "ایک بار یا بار بار چلنے والی سرمایہ کاری، غیر محدود یا کسی نامزد پروگرام ہٕنٛز طرف ہدایت ہٕنٛز گٔیہِ ہے۔",
+        "why": "غیر محدود فنڈز محدود گرانٹس ہٕنٛز چھٹیوں ہٕند خلا کو پورا کران چھِ: سائیکلوں مَنٛز تنخواہ، سفر، کیس پؠٹھ فالو اپ۔",
+        "when": "کسی بھی وقت۔ بار بار چلنے والی سرمایہ کاری سٲری پؠٹھٕ زیادہ مفید چھُ تِکیٛازِ امِہ سٕند خلاف منصوبہٕ بندی ہٕنٛز جا سکتی ہے۔",
+        "where": "80G اکاؤنٹ مَنٛز گھریلو تعاون؛ غیر ملکی شراکتیں صرف نامزد FCRA اکاؤنٹ میں۔",
+        "how": "امِہ صفحہ پؠٹھ ایک روٚپیہٕ تہٕ مقصد ہُنٛد انتخاب کریں۔ رسید تہٕ قانونی پگڈنڈی پانہٕ بخود چلتی ہے۔"
       }
     },
     {
       "k": "people",
-      "label": "Who We Work With"
+      "label": "اسہٕ کس سٟتؠ کام کرتے ہیں۔"
     },
     {
       "k": "answer",
-      "label": "Who We Answer To"
+      "label": "اسہٕ کس کو جواب دیتے ہیں۔"
     }
   ],
   "tabCtas": {
     "case": {
-          
-          "t": "اَز تہِ ہیٚکِو نہٕ طَے کٔرِتھ زِ یہِ دَلیٖل چھا ٹھیٖک؟",
-          "s": "اَتھ صَفَس پؠٹھ کُنہِ تہِ خاص دَعویٰ سٕنٛز جاچ مَنٛگیو - اَکھ نَمبَر، اَکھ ضِلہٕ، اَکھ طریٖقہٕ کار۔ اَسؠ ہاوَو بٕنیادی ذٔریعہٕ، یا صﺎف پٲٹھؠ وَنو کَتَن کانٛہہ دَعویٰ چھُ کمزور۔",
-          "a": "اَتھ دَلیٖلہِ مُتعلِق پُژھِو",
-          "subj": "سرمایہ کٲری ہِنٛدِس دَلیٖلَس مُتعلِق اَکھ سوال",
-          "b": "سرمایہ کٲری کُن برونٛہہ پٔکِیو",
-          "bTab": "give"
+      "t": "اَز تہِ ہیٚکِو نہٕ طَے کٔرِتھ زِ یہِ دَلیٖل چھا ٹھیٖک؟",
+      "s": "اَتھ صَفَس پؠٹھ کُنہِ تہِ خاص دَعویٰ سٕنٛز جاچ مَنٛگیو - اَکھ نَمبَر، اَکھ ضِلہٕ، اَکھ طریٖقہٕ کار۔ اَسؠ ہاوَو بٕنیادی ذٔریعہٕ، یا صﺎف پٲٹھؠ وَنو کَتَن کانٛہہ دَعویٰ چھُ کمزور۔",
+      "a": "اَتھ دَلیٖلہِ مُتعلِق پُژھِو",
+      "subj": "سرمایہ کٲری ہِنٛدِس دَلیٖلَس مُتعلِق اَکھ سوال",
+      "b": "سرمایہ کٲری کُن برونٛہہ پٔکِیو",
+      "bTab": "give"
     },
     "route": {
       "t": "Still not sure this is for you?",
-      "s": "Ask us the question you would ask a colleague. Which route actually fits, what we would expect of you, and whether we have the capacity this year. We answer honestly, including when the answer is no.",
-      "a": "Ask About the Routes",
-      "subj": "A question about the routes",
-      "b": "Invest Instead",
+      "s": "اسہٕ پؠٹھٕ تِم سوال پوچھیں جو تُہؠ کسی ساتھی پؠٹھٕ پوچھیں گے۔ اصل مَنٛز کون سا وَتھ فٹ بیٹھتا ہے، اسہٕ تُہؠ پؠٹھٕ کیا توقع کرِو گے، تہٕ کیا امِہ ؤری اسہٕ ہٕند پاس صلاحیت ہے؟ اسہٕ ایمانداری پؠٹھٕ جواب دیتے ہیں، بشمول جب جواب نفی مَنٛز ہو۔",
+      "a": "وَتن مُتعلِق پوچھیں۔",
+      "subj": "وَتن مُتعلِق ایک سوال",
+      "b": "امِہ سٕند بجائے سرمایہ کاری کریں۔",
       "bTab": "give"
     },
     "give": {
       "t": "Interrogate this before you give.",
-      "s": "Ask where the last comparable contribution went, which account it entered, what the receipt looks like, or why a figure reads the way it does. We send the signed document, not a summary.",
-      "a": "Ask About the Money",
-      "subj": "A question about investing in DEHAT",
-      "b": "See the Audited Record",
+      "s": "پوچھیں کہ آخری موازنہ کنٹریبیوشن کہاں گیا، یہِ کس اکاؤنٹ مَنٛز داخل ہوا، رسید کیسی دکھتی ہے، یا کوئی تَعداد امِہ طرح کیوں پڑھتا ہے۔ اسہٕ دستخط شدہ دستاویز بھیجتے ہیں، خلاصہ نہیں۔",
+      "a": "پیسے مُتعلِق پوچھیں۔",
+      "subj": "DEHAT مَنٛز سرمایہ کاری مُتعلِق ایک سوال",
+      "b": "آڈٹ شدہ ریکارڈ وُچھِو",
       "bView": "finance"
     },
     "people": {
       "t": "Ask about anyone on this list.",
-      "s": "Every partner, funder and network named here can be checked. Ask what a partnership covered, what it cost, what it produced, or why it ended.",
-      "a": "Ask About a Partner",
-      "subj": "A question about who DEHAT works with",
-      "b": "Find Your Route",
+      "s": "یہاں نامزد پریتھ پارٹنر، فنڈر تہٕ نیٹ ورک کو چیک کیا جا سکتا ہے۔ پوچھیں کہ شراکت داری ہُنٛد احاطہ کیا ہے، امِہ سٕنٛز قیمت کیا ہے، امِہ نے کیا پیدا کیا، یا یہِ کیوں ختم ہوا۔",
+      "a": "ایک ساتھی مُتعلِق پوچھیں۔",
+      "subj": "DEHAT کس سٟتؠ کام کٔراں چھُ امِہ بارے مَنٛز ایک سوال",
+      "b": "اپنا وَتھ تلاش کریں۔",
       "bTab": "route"
     },
     "answer": {
       "t": "Test who we answer to.",
-      "s": "Boards, auditors, registrations and examinations are all named. Ask for the document behind any of them, or tell us where you think the accountability is thin.",
-      "a": "Ask About Our Accountability",
-      "subj": "A question about DEHAT’s accountability",
-      "b": "See the Audited Record",
+      "s": "بورڈ، آڈیٹر، رجسٹریشن تہٕ امتحانات سٲری ہٕند ناو ہیں۔ ان مَنٛز پؠٹھٕ کسی پتھ کَنہِ دستاویز طلب کریں، یا اسہٕ بتائیں کہ تُہُند خیال مَنٛز احتساب کہاں پؠٹھٕ کم ہے۔",
+      "a": "اسہٕ ہٕند احتساب مُتعلِق پوچھیں۔",
+      "subj": "DEHAT ہٕند احتساب مُتعلِق ایک سوال",
+      "b": "آڈٹ شدہ ریکارڈ وُچھِو",
       "bView": "finance"
     }
   },
-  "routeLead": "Each one has named work behind it that DEHAT can honour this year. Read the route that fits you before you write anything.",
-  "routeProofLine": "Twenty audited years, every balance sheet and every registration published in full.",
-  "routeProofLink": "Check the Record First",
-  "inviteTitle": "An Open Invitation",
-  "inviteBody": "You do not need a mandate, a budget or an introduction. If you want to look at a problem statement, a solution, or any aspect of what DEHAT does, and you think you can contribute to the lives of the people involved, there is a way in for you. Pick the one that describes you.",
+  "routeLead": "پریتھ ایک نے امِہ پتھ کَنہِ کام ہُنٛد ناو دیا چھُ جسے DEHAT امِہ ؤری اعزاز دے سکتا ہے۔ کینٛہہ بھی لکھنے برونٛہہ تِم وَتھ پَرِو جو تُہؠ خٲطرٕ موزوں ہو۔",
+  "routeProofLine": "بیس آڈٹ شدہ سال، پریتھ بیلنس شیٹ تہٕ پریتھ رجسٹریشن مکمل طور پؠٹھ شائع ہوئی۔",
+  "routeProofLink": "پہلے ریکارڈ چیک کریں۔",
+  "inviteTitle": "اَکھ کھٔلہِ دَعوَت",
+  "inviteBody": "تُہؠ مینڈیٹ، بجٹ یا تعارف ہٕنٛز ضرورت نہٕ ہے۔ اگر تُہؠ کسی مسئلے ہٕند بیان، حل، یا DEHAT ہٕند کسی بھی پہلو کو دیکھنا چاہتے ہیں، تہٕ تُہؠ لگتا چھُ کہ تُہؠ امِہ مَنٛز شامل لوٗکن ہٕنٛز زندگیوں مَنٛز حصہ ڈال سکتے ہیں، تو تُہؠ خٲطرٕ ایک وَتھ موجود ہے۔ ایک کو چُناو کرِو جو تُہؠ بیان کرتا ہے۔",
   "inviteGroups": [
     {
-      "v": "Students, National and International",
+      "v": "طلباء، قومی تہٕ بین الاقوامی",
       "to": "student"
     },
     {
-      "v": "UPSC Aspirants",
+      "v": "یو پی ایس سی ہٕند امیدوار",
       "to": "student"
     },
     {
-      "v": "Public Policy Practitioners and Students",
+      "v": "پبلک پالیسی پریکٹیشنرز تہٕ طلباء",
       "to": "research"
     },
     {
-      "v": "Bureaucrats and Government Administration Bodies",
+      "v": "بیوروکریٹس تہٕ گورنمنٹ ایڈمنسٹریشن باڈیز",
       "to": "govt"
     },
     {
-      "v": "Data Scientists",
+      "v": "ڈیٹا سائنسدان",
       "to": "research"
     },
     {
-      "v": "Development Practitioners and Students",
+      "v": "ڈویلپمنٹ پریکٹیشنرز تہٕ طلباء",
       "to": "peer"
     },
     {
-      "v": "Statistics and Science Students",
+      "v": "شماریات تہٕ سائنس ہٕند طلباء",
       "to": "research"
     },
     {
-      "v": "Anyone Who Wants to Explore the Problem, the Solution, or the Ground It Sits On",
+      "v": "کوئی بھی جو مسئلہ، حل، یا امِہ سٕنٛز بنیاد کو تلاش کرُن چاہتا ہے۔",
       "to": "community"
     }
   ],
-  "processTitle": "What Happens After You Write",
-  "processSub": "Six steps. This is the same for a one crore partnership and a two-week remote task.",
+  "processTitle": "تُہُند لکھنے پتہٕ کیا ہوتا ہے۔",
+  "processSub": "چھ قدم۔ ایک کروڑ ہٕنٛز شراکت داری تہٕ دو ہفتے ہٕند ریموٹ ٹاسک خٲطرٕ بھی یہی ہے۔",
   "processSteps": [
     {
-      "t": "It Reaches the Relevant Team",
-      "b": "Your message is read by the people who do the work, not held in a general inbox."
+      "t": "یہِ متعلقہ ٹیم تک پہنچتا ہے۔",
+      "b": "تُہُند پیغام تِم لوٗکھ پڑھتے چھِ جو کام کرتے ہیں، عام ان باکس مَنٛز نہٕ رکھا جاتا۔"
     },
     {
-      "t": "A Deep-Dive Listening Call",
-      "b": "We ask what you actually want out of this, and check honestly whether it aligns with what is happening on the ground."
+      "t": "ایک گہری ڈوبکی سننے والی کال",
+      "b": "اسہٕ پوچھتے چھِ کہ تُہؠ اصل مَنٛز امِہ پؠٹھٕ کیا چاہتے ہیں، تہٕ ایمانداری پؠٹھٕ جاچ کٔرِو کہ آو یہِ زٔمیٖن پؠٹھ جو کینٛہہ گژھان چھُ امِہ پؠٹھٕ مطابقت رکھتا ہے۔"
     },
     {
-      "t": "A Single Point of Contact",
-      "b": "One named person is made responsible for your engagement, and stays with it."
+      "t": "رابطہ ہُنٛد ایک واحد نقطہ",
+      "b": "ایک نامی شخص کو تُہنٛز مصروفیت ہُنٛد ذمہ دار بنایا جاتا ہے، تہٕ امِہ سٟتؠ رہتا ہے۔"
     },
     {
-      "t": "A Roadmap, Designed Together",
-      "b": "What happens, in what order, by when, and what each side is responsible for."
+      "t": "ایک روڈ میپ، ایک ساتھ ڈیزائن کیا گیا۔",
+      "b": "کیا ہوتا ہے، کس ترتیب میں، کب تک، تہٕ کس چیز خٲطرٕ پریتھ فریق ذمہ دار ہے۔"
     },
     {
-      "t": "Handholding and Resources",
-      "b": "We supply the material, the briefings and the field access that make the engagement worth your time."
+      "t": "ہینڈ ہولڈنگ تہٕ وسائل",
+      "b": "اسہٕ مواد، بریفنگ تہٕ فیلڈ تک رسائی فراہم کران چھِ جو مصروفیت کو تُہُند وقت ہٕند قابل بناتے ہیں۔"
     },
     {
-      "t": "Feedback at the End",
-      "b": "We ask you whether it delivered what you came for, and the answer changes how we run the next one."
+      "t": "آخر مَنٛز رائے",
+      "b": "اسہٕ تُہؠ پؠٹھٕ پوچھتے چھِ کہ کیا امِہ نے وہی پہنچایا جس خٲطرٕ تُہؠ آیہٕ تھے، تہٕ امِہ سُنٛد جواب بدل گژھان چھُ کہ اسہٕ اگلے کو کیسے چلاتے ہیں۔"
     }
   ],
-  "restLabel": "{n} more ways in open on the other eight routes.",
+  "restLabel": "{n} دیگر آٹھ وَتن پؠٹھ مزید راستے کھلے ہیں۔",
   "legacy": {
-    "eyebrow": "Legacy Giving",
+    "eyebrow": "میراث دینا",
     "title": "The gift that outlasts the giver.",
-    "body": "Almost nobody is ever asked, so almost nobody ever does it. A bequest written into your will is the one form of support that can be committed to a horizon longer than any grant cycle - which is the horizon this work actually takes. Ask us for the legal name, the registration number and the clause wording, and give them to your lawyer.",
+    "body": "تقریبا کسی پؠٹھٕ کبھی نہٕ پوچھا جاتا ہے، لہذا تقریبا کوئی بھی ایسا نہٕ کرتا ہے۔ تُہنٛز وصیت مَنٛز لکھی گٔیہِ ایک وصیت حمایت ہٕنٛز ایک شکل چھُ جو کسی بھی گرانٹ سائیکل پؠٹھٕ زیادہ طویل افق پؠٹھ قائم ہٕنٛز جا ہیٚکہِ - جو افق چھُ جو یہِ کام درحقیقت لیتا ہے۔ اسہٕ پؠٹھٕ قانونی نام، رجسٹریشن نمبر تہٕ شق ہٕند الفاظ پوچھیں، تہٕ اپنے وکیل کو دیں۔",
     "action": "Read the legacy route",
-    "note": "We do not draft wills and we do not give legal advice."
+    "note": "اسہٕ وصیت ہُنٛد مسودہ نہٕ بناتے چھِ تہٕ اسہٕ قانونی مشورہ نہٕ دیتے ہیں۔"
   },
-  "routeBackLabel": "All Nine Routes",
-  "routeOpenLabel": "Ways In",
+  "routeBackLabel": "سٲری نو راستے",
+  "routeOpenLabel": "اندر جانے ہٕند طریقے",
   "routeLeads": {
-    "csr": "Schedule VII money is decided months before the financial year turns. Bring the decision here early and the first year is planned rather than improvised.",
-    "foundation": "Multi-year and ecosystem funding needs a grantee who publishes what happened to the last grant. Every rupee DEHAT has received since 2005–06 is on the record, with the signed balance sheet behind it.",
-    "govt": "A department rarely fails on its own file. It fails in the handoff to the next one, which is exactly where convergence work happens.",
-    "individual": "You do not need a large amount or a spare month. You need somewhere the evidence is public and the reply is real.",
-    "research": "Most rural rights data disappears the year the funder’s report is filed. This is the rare field site where twenty years of it did not.",
-    "student": "Most people your age are still reading case studies. You could be sitting next to one.",
-    "school": "Your students already know a classmate who is not in the room anymore. This is what happens when someone acts on that.",
-    "peer": "You are not being asked to reinvent what already works somewhere else. You are being asked to take it.",
-    "community": "This is your organisation to question. Membership, a concern or a request are all routes, and all three get an answer."
+    "csr": "شیڈول VII روٚپیہٕ ہُنٛد فیصلہ مالی ؤری ہٕند بدلنے پؠٹھٕ رؠتن پہلے کیا جاتا ہے۔ فیصلہ جلد یہاں لائیں تہٕ پہلا ؤری بہتر بنانے ہٕنٛز بجائے منصوبہٕ بند ہے۔",
+    "foundation": "کثیر سالہ تہٕ ایکو سسٹم فنڈنگ ​​خٲطرٕ ایک گرانٹی ہٕنٛز ضرورت چھُ جو شائع کرے کہ آخری گرانٹ ہُنٛد کیا ہوا۔ DEHAT 2005-06 پؠٹھٕ موصول ہونے والا پریتھ روپیہ ریکارڈ پؠٹھ ہے، امِہ پتھ کَنہِ دستخط شدہ بیلنس شیٹ ہے۔",
+    "govt": "کوئی محکمہ اپنی فائل مَنٛز شاذ و نادر ہی ناکام ہوتا ہے۔ یہِ اگلے ہٕند ہینڈ آف مَنٛز ناکام ہوجاتا ہے، بالکل وہی جگہ جہاں کنورجنسی کام ہوتا ہے۔",
+    "individual": "تُہؠ بڑی روٚپیہٕ یا فالتو رؠتھ ہٕنٛز ضرورت نہٕ ہے۔ تُہؠ کہیں ثبوت پَزیٖنہٕ کہ عوامی ہو تہٕ جواب حقیقی ہو۔",
+    "research": "زیادہ تر دیہی حقوق ہُنٛد ڈیٹا امِہ ؤری غائب ہو گژھان چھُ جب فنڈر ہٕنٛز رپورٹ درج ہٕنٛز جاتی ہے۔ یہِ تِم نایاب فیلڈ سائٹ چھُ جہاں بیس ؤری تک ایسا نہٕ ہوا۔",
+    "student": "تُہنٛز عمر ہٕند زیادہ تر لوٗکھ ابھی بھی کیس اسٹڈیز پڑھ رہے ہیں۔ تُہؠ ایک ہٕند پاس بیٹھ سکتے ہیں۔",
+    "school": "تُہُند طلباء پہلے پؠٹھٕ ہی ایک اسہٕ جماعت کو جانتے چھِ جو اب کمرے مَنٛز نہٕ ہے۔ جب کوئی امِہ پؠٹھ طریقہٕ کار کٔراں چھُ تو ایسا ہی ہوتا ہے۔",
+    "peer": "تُہؠ دوبارہ ایجاد کرنے خٲطرٕ نہٕ کہا جا رہا چھُ جو پہلے پؠٹھٕ کہیں تہٕ کام کر رہا ہے۔ تُہؠ پؠٹھٕ امِس لینے کو کہا جا رہا ہے۔",
+    "community": "یہِ سوال کرنے ہٕند لئے تُہنٛز تنظیم چھُ. رکنیت، تشویش یا درخواست سبھی راستے ہیں، تہٕ تینوں کو جواب ملتا ہے۔"
   },
-  "composeTitle": "Now Tell Us What You Have in Mind",
-  "composeSub": "Pick the ways in above that apply, then write a line or two. The message assembles itself and nothing is sent until you press send in your own email app.",
-  "pickPrompt": "Choose at least one way in above.",
-  "selectLabel": "Add This",
+  "composeTitle": "اب اسہٕ بتائیں کہ تُہُند ذہن مَنٛز کیا ہے۔",
+  "composeSub": "مندرجہ بالا طریقوں کو چُناو کرِو جو لاگو ہوتے ہیں، پھر ایک یا دو لائن لکھیں. پیغام پانہٕ ہی جمع ہو گژھان چھُ تہٕ کینٛہہ بھی نہٕ بھیجا جاتا جب تک کہ تُہؠ اپنی ای میل ایپ مَنٛز بھیجیں کو دبائیں۔",
+  "pickPrompt": "اوپر مَنٛز کم از کم ایک وَتھ منتخب کریں۔",
+  "selectLabel": "یہِ شامل کریں۔",
   "selectedLabel": "Added",
   "whoTitle": "Nine routes in.",
-  "whoSub": "Reading is free. Nothing is sent until you decide to send it.",
+  "whoSub": "پڑھنا مفت ہے۔ کینٛہہ بھی نہٕ بھیجا جاتا جب تک کہ تُہؠ امِس بھیجنے ہُنٛد فیصلہ نہ کریں۔",
   "who": [
     {
       "k": "csr",
-      "label": "A Company or Corporate Social Responsibility Team",
-      "hint": "Schedule VII, Form CSR-1, due diligence"
+      "label": "ایک کمپنی یا کارپوریٹ سماجی ذمہ داری ٹیم",
+      "hint": "شیڈول VII، فارم CSR-1، مناسب محنت"
     },
     {
       "k": "foundation",
-      "label": "A Foundation or Institutional Funder",
-      "hint": "Multi-year, ecosystem or infrastructure"
+      "label": "فاؤنڈیشن یا ادارہ جاتی فنڈر",
+      "hint": "کثیر سالہ، ماحولیاتی نظام یا بنیادی ڈھانچہ"
     },
     {
       "k": "govt",
-      "label": "Government or District Administration",
-      "hint": "Convergence, referral, field evidence"
+      "label": "حکومت یا ضلعی انتظامیہ",
+      "hint": "کنورجنسی، حوالہ، فیلڈ ثبوت"
     },
     {
       "k": "individual",
-      "label": "An Individual Supporter",
-      "hint": "Investing, occasions, ongoing support"
+      "label": "ایک انفرادی معاون",
+      "hint": "سرمایہ کاری، مواقع، جاری تعاون"
     },
     {
       "k": "research",
-      "label": "A Researcher or Academic Institution",
-      "hint": "Field data, longitudinal study, co-publication",
+      "label": "ایک محقق یا علمی ادارہ",
+      "hint": "فیلڈ ڈیٹا، طول بلد مطالعہ، شریک اشاعت",
       "detail": {
-        "u": "Two decades of field records exist. Every year they go unstudied is a year of evidence that stays unpublished.",
-        "what": "Co-designed research on a live programme, with access to field data and longitudinal records.",
-        "why": "Practice without study repeats itself. Study without practice generalises badly. The pairing corrects both.",
-        "when": "From the design stage, so measurement is built into the programme rather than fitted afterwards.",
-        "where": "Field sites in Bahraich and Shravasti, with records held at the DEHAT office.",
-        "how": "Send a concept note and your ethics position; we respond with what data exists, in what form, and on what terms."
+        "u": "دو دہائیوں ہُنٛد فیلڈ ریکارڈ موجود ہے۔ پریتھ ؤری تِم غیر پڑھے گژھان چھِ ثبوت ہُنٛد ایک ؤری چھُ جو غیر مطبوعہ رہتا ہے۔",
+        "what": "فیلڈ ڈیٹا تہٕ طول بلد ریکارڈ تک رسائی سٟتؠ لائیو پروگرام پؠٹھ مشترکہ ڈیزائن کردہ تحقیق۔",
+        "why": "مطالعہ ہٕند بغیر مشق پانہٕ کو دہراتی ہے۔ مشق ہٕند بغیر مطالعہ بری طرح عام ہوتا ہے۔ جوڑا دونوں کو درست کرتا ہے۔",
+        "when": "ڈیزائن ہٕند مرحلے سے، لہذا پیمائش کو بعد مَنٛز نصب کرنے ہٕند بجائے پروگرام مَنٛز بنایا گۆو ہے۔",
+        "where": "بہرائچ تہٕ شراوستی مَنٛز فیلڈ سائٹس، DEHAT آفس مَنٛز ریکارڈ ہٕند ساتھ۔",
+        "how": "ایک تصوراتی نوٹ تہٕ اپنی اخلاقی پوزیشن بھیجیں۔ اسہٕ جواب دیتے چھِ کہ کیا ڈیٹا موجود ہے، کس شکل میں، تہٕ کن شرائط پر۔"
       }
     },
     {
       "k": "student",
-      "label": "A Student or Prospective Colleague",
-      "hint": "Fellowship, internship, career"
+      "label": "ایک طالب علم یا ممکنہ ساتھی",
+      "hint": "فیلوشپ، انٹرنشپ، کیریئر"
     },
     {
       "k": "school",
       "label": "A School",
-      "hint": "Student engagement with peer children"
+      "hint": "ساتھی شُرؠن سٟتؠ طالب علم ہٕنٛز مصروفیت"
     },
     {
       "k": "peer",
-      "label": "A Peer Organisation or Network",
-      "hint": "Consortium, referral, shared model"
+      "label": "ایک اسہٕ مرتبہ تنظیم یا نیٹ ورک",
+      "hint": "کنسورشیم، حوالہ، مشترکہ ماڈل"
     },
     {
       "k": "community",
-      "label": "A Community Member",
-      "hint": "Membership, a concern, a request"
+      "label": "ایک برادری ممبر",
+      "hint": "رکنیت، ایک تشویش، ایک درخواست"
     }
   ],
   "whatTitle": "What would you like to do?",
-  "whatSub": "Choose as many as apply.",
+  "whatSub": "جتنے لاگو گژھان چھِ منتخب کریں۔",
   "intents": [
-  {
-    "k": "partner",
-    "label": "کارپوریٹ یا ادارہ جاتی پارٹنر بنیں۔",
-    "for": [
-      "csr",
-      "foundation"
-    ],
-    "col": "#D2305C",
-    "detail": {
-      "u": "فارم CSR-1 فائلنگ تہٕ شیڈول VII مختص کرنے کا فیصلہ مالی سال کے بدلنے سے مہینوں پہلے چھُ کرنہٕ یِوان۔ آپ جو بلاک پلان اپریل مَنٛز فنڈ کرتے ہیں وہ جنوری مَنٛز لکھا جاتا ہے۔",
-      "what": "ایک جغرافیہ مَنٛز ایک پروگرام پؠٹھ ایک نامزد، کثیر سالہ شراکت داری، جو اس کے اپنے بجٹ لائن سٟتؠ پروجیکٹ رجسٹر مَنٛز شائع چھِ گژھان۔",
-      "why": "بکھری ہوئی ایک سال کی گرانٹس سرگرمیاں خریدیں۔ وہ سسٹم جو گرانٹ ختم ہونے پتہٕ بھی کام کرتے رہتے ہیں انہیں ایک پارٹنر کی ضرورت چھِ گژھان جو تبدیلی کے افق تک قائم رہے۔",
-      "when": "اپنے CSR سائیکل سے دو چوتھائی پہلے بات چیت شروع کریں، تہٕ پہلا سال جھگڑے کے بجائے ایک منصوبہ پؠٹھ چلتا ہے۔",
-      "where": "اتر پردیش مَنٛز بہرائچ تہٕ شراوستی، ہند-نیپال سرحد سٟتؠ، بلاک بہ بلاک۔",
-      "how": "ایک اسکوپنگ کال، ڈیو ڈیلیجنس پیک (12AB, 80G, CSR00001181، UDIN سٟتؠ آڈٹ شدہ اکاؤنٹس)، ایک بلاک پلان، پھر ایک دستخط شدہ معاہدہ۔"
+    {
+      "k": "partner",
+      "label": "کارپوریٹ یا ادارہ جاتی پارٹنر بنیں۔",
+      "for": [
+        "csr",
+        "foundation"
+      ],
+      "col": "#D2305C",
+      "detail": {
+        "u": "فارم CSR-1 فائلنگ تہٕ شیڈول VII مختص کرنے کا فیصلہ مالی سال کے بدلنے سے مہینوں پہلے چھُ کرنہٕ یِوان۔ آپ جو بلاک پلان اپریل مَنٛز فنڈ کرتے ہیں وہ جنوری مَنٛز لکھا جاتا ہے۔",
+        "what": "ایک جغرافیہ مَنٛز ایک پروگرام پؠٹھ ایک نامزد، کثیر سالہ شراکت داری، جو اس کے اپنے بجٹ لائن سٟتؠ پروجیکٹ رجسٹر مَنٛز شائع چھِ گژھان۔",
+        "why": "بکھری ہوئی ایک سال کی گرانٹس سرگرمیاں خریدیں۔ وہ سسٹم جو گرانٹ ختم ہونے پتہٕ بھی کام کرتے رہتے ہیں انہیں ایک پارٹنر کی ضرورت چھِ گژھان جو تبدیلی کے افق تک قائم رہے۔",
+        "when": "اپنے CSR سائیکل سے دو چوتھائی پہلے بات چیت شروع کریں، تہٕ پہلا سال جھگڑے کے بجائے ایک منصوبہ پؠٹھ چلتا ہے۔",
+        "where": "اتر پردیش مَنٛز بہرائچ تہٕ شراوستی، ہند-نیپال سرحد سٟتؠ، بلاک بہ بلاک۔",
+        "how": "ایک اسکوپنگ کال، ڈیو ڈیلیجنس پیک (12AB, 80G, CSR00001181، UDIN سٟتؠ آڈٹ شدہ اکاؤنٹس)، ایک بلاک پلان، پھر ایک دستخط شدہ معاہدہ۔"
+      }
+    },
+    {
+      "k": "consult",
+      "label": "ہمارے کسی ایک ماڈل کو اپنائیں، یا ہمارے کمیونٹی ریسورس پرسن کو شامل کریں۔",
+      "for": [
+        "csr",
+        "govt",
+        "peer",
+        "foundation"
+      ],
+      "col": "#0E5565",
+      "detail": {
+        "u": "ایک ضلع اندر بیٹھے ماڈلز ایک ضلع کی مدد کرتے ہیں۔ وہی ماڈل جو ایک ہم مرتبہ کے حوالے چھُ کرنہٕ یِوان ایک ریاست کی مدد کرتا ہے۔",
+        "what": "DEHAT کے فیلڈ ٹیسٹ شدہ حقوق پؠٹھ مبنی ماڈلز، تہٕ اس کے کمیونٹی ریسورس پرسنز، آپ کی ٹیم کو دستیاب کرائے گئے ہیں۔",
+        "why": "شروع سے نقطہ نظر کی تعمیر مَنٛز سالوں کی لاگت آتی ہے۔ فیلڈ سٟتؠ رابطے مَنٛز رہنے والے کو ڈھالنے مَنٛز مہینوں لگتے ہیں۔",
+        "when": "آپ کے اپنے پروگرام کے ڈیزائن کو منجمد کرنے سے پہلے سب سے بہتر، جبکہ آپریٹنگ ماڈل فیلڈ تعٲلیٖمات کو اب بھی جذب کر سکتا ہے۔",
+        "where": "آپ کی سائٹس پؠٹھ، یا بہرائچ مَنٛز جہاں ماڈلز چل رہے ہیں تہٕ جگہ جگہ دیکھے جا سکتے ہیں۔",
+        "how": "ماڈل کا ایک منظم واک تھرو، پھر ایک منگنی خط جس مَنٛز کمیونٹی ریسورس پرسن کے وقت، تربیت تہٕ جائزہ کا احاطہ کرنہٕ چھُ آمت۔"
+      }
+    },
+    {
+      "k": "converge",
+      "label": "ڈسٹرکٹ کنورجینس یا ریفرل پؠٹھ ہمارے ساتھ کام کریں۔",
+      "for": [
+        "govt",
+        "peer"
+      ],
+      "col": "#0E5565",
+      "detail": {
+        "u": "سرحدی چیک پوسٹ پؠٹھ روکے جانے والے بچے کو ریفرل روٹ کی ضرورت چھِ گژھان جو پہلے سے موجود ہو۔ یہ مداخلت دوران تعمیر نہیں کیا جا سکتا.",
+        "what": "محکموں کے درمیان کنورجنس، ریفرل تہٕ شواہد پؠٹھ ضلعی انتظامیہ سٟتؠ مشترکہ کام کرنا۔",
+        "why": "نظام کے درمیان سیون پؠٹھ تحفظ ناکام ہوجاتا ہے، ان اندر نہیں۔ کنورجنسی کیس کے گرنے سے پہلے سیون کو بند کر دیتی ہے۔",
+        "when": "ڈسٹرکٹ پلان سائیکل سے پہلے، یا فوری طور پؠٹھ جہاں ریفرل گیپ پہلے ہی ظاہر ہو چکا ہے۔",
+        "where": "بہرائچ تہٕ شراوستی کے ضلع تہٕ بلاک دفاتر تہٕ سات سرحدی اضلاع تک کام پہنچتا ہے۔",
+        "how": "محکمہ تہٕ فرق سٟتؠ ہمَنٛز لکھیں۔ ہم فیلڈ شواہد تہٕ ایک مجوزہ ریفرل پروٹوکول لاتے ہیں۔"
+      }
+    },
+    {
+      "k": "research",
+      "label": "اکیڈمک ریسرچ پارٹنر بنیں۔",
+      "for": [
+        "research",
+        "foundation"
+      ],
+      "col": "#4F0E73",
+      "detail": {
+        "u": "بہرائچ مَنٛز بیس سال کا فیلڈ ریکارڈ موجود ہے۔ ہر سال وہ بغیر پڑھے چلے جاتے ہیں ایک ایسا ثبوت کا سال ہے جو پالیسی لکھنے والے لوگوں تک کبھی نہیں پہنچتا۔",
+        "what": "لائیو پروگرام پؠٹھ ایک نامزد تحقیقی شراکت داری - شریک ڈیزائن کردہ سوالات، فیلڈ ڈیٹا تک رسائی تہٕ طول بلد ریکارڈ، تہٕ مشترکہ اشاعت۔",
+        "why": "وہ مشق جس کا کبھی مطالعہ نہیں کیا جاتا وہ اپنی غلطیوں کو دہراتا ہے۔ وہ مطالعہ جو کبھی پریکٹس کو نہیں چھوتا ہے بری طرح عام کرتا ہے۔ جوڑا دونوں کو درست کرتا ہے۔",
+        "when": "ڈیزائن کے مرحلے سے، لہذا پیمائش کو پروگرام مَنٛز شامل چھُ کرنہٕ یِوان بجائے اس کے کہ بعد مَنٛز اس مَنٛز فٹ کیا جائے۔",
+        "where": "بہرائچ تہٕ شراوستی مَنٛز فیلڈ سائٹس، DEHAT آفس مَنٛز موجود ریکارڈ سٟتؠ تہٕ سائٹ پؠٹھ دستیاب ہے۔",
+        "how": "ایک تصوراتی نوٹ تہٕ اپنی اخلاقیات کی پوزیشن بھیجیں۔ ہم جواب دیتے ہیں کہ کون سا ڈیٹا موجود ہے، کس شکل مَنٛز، کس مدت مَنٛز، تہٕ اسے کن شرائط پؠٹھ استعمال کیا جا سکتا ہے۔"
+      }
+    },
+    {
+      "k": "data",
+      "label": "رپورٹس، آڈٹ شدہ اکاؤنٹس یا پروگرام ڈیٹا کی درخواست کریں۔",
+      "for": [
+        "csr",
+        "foundation",
+        "govt",
+        "research",
+        "peer",
+        "individual"
+      ],
+      "col": "#4F0E73",
+      "detail": {
+        "u": "اس سائٹ پؠٹھ شائع ہونے والی کسی بھی چیز کو دستخط شدہ دستاویز سے ٹریس کیا جا سکتا ہے۔ پوچھیں، تہٕ آپ کو دستاویز ملے گی، خلاصہ نہیں۔",
+        "what": "آڈٹ شدہ کھاتوں، تشخیصات، پروگرام کی رپورٹس تہٕ رجسٹر مَنٛز درج سورس ریکارڈز۔",
+        "why": "اعتماد جس کی جانچ نہیں کی جاسکتی ہے وہ اعتماد نہیں ہے۔ یہاں ہر دعوے کا مطلب یہ ہے کہ اس پؠٹھ شک کرنے والے شخص کی تصدیق کی جائے۔",
+        "when": "کسی بھی وقت۔ یہاں کسی بھی چیز پؠٹھ پابندی نہیں ہے تہٕ کچھ بھی فنڈنگ ​​گفتگو کا انتظار نہیں کرتا ہے۔",
+        "where": "ای میل کِس ذٔریعہٕ بھیجا گیا؛ اصل مواد بہرائچ کے دفتر مَنٛز ہر اس شخص خٲطرٕ دستیاب ہے جو انہیں دیکھنا چاہتا ہے۔",
+        "how": "سال، پروگرام یا دستاویز کا نام دیں۔ اگر کسی اعداد و شمار کو ابھی تک ڈیجیٹائز نہیں کرنہٕ چھُ آمت، تو ہم کہتے ہیں تہٕ اسکین بھیج دیتے ہیں۔"
+      }
+    },
+    {
+      "k": "visit",
+      "label": "بہرائچ یا شراوستی مَنٛز فیلڈ وزٹ کا اہتمام کریں۔",
+      "for": [
+        "csr",
+        "foundation",
+        "govt",
+        "research",
+        "student",
+        "peer",
+        "individual"
+      ],
+      "col": "#A92719",
+      "detail": {
+        "u": "فاصلہ اس کو خلاصہ بناتا ہے۔ ایک گرام پنچایت مَنٛز ایک دن اسے دیکھنا ناممکن بنا دیتا ہے۔",
+        "what": "گامن، سکوٗلن تہٕ چائلڈ پارلیمنٹس کا فیلڈ وزٹ جہاں کام دراصل چھُ گژھان۔",
+        "why": "رپورٹس کمپریس۔ ایک دورہ بحال کرتا ہے جو کمپریشن ہٹاتا ہے: لوگ، خطہ تہٕ رکاوٹیں۔",
+        "when": "مانسون کی چوٹی سے باہر کوئی بھی مہینہ؛ ہم آپ کو ایمانداری سے بتائیں گے کہ کن ہفتوں مَنٛز فیلڈ تک رسائی ممکن ہے۔",
+        "where": "بہرائچ تہٕ شراوستی، لکھنؤ سے تقریباً چھ گھنٹے، نیپال گنج سے قریب۔",
+        "how": "کھردری تاریخیں تہٕ ہیڈ کاؤنٹ بھیجیں۔ ہم راستے کی منصوبہ بندی کرتے ہیں، مقامی لاجسٹکس کا بندوبست کرتے ہیں تہٕ آپ کو بتاتے ہیں کہ کیا توقع رکھی جائے۔"
+      }
+    },
+    {
+      "k": "fellow",
+      "label": "DEHAT فیلو بنیں۔",
+      "for": [
+        "student",
+        "research"
+      ],
+      "col": "#556223",
+      "detail": {
+        "u": "حقوق کے مسئلے نزدیٖک گزارا گیا فیلوشپ سال ایک دہائی کھۄتہٕ زِیٛادٕ کی وضاحت کرنے والے کیریئر کو تشکیل دیتا ہے۔",
+        "what": "ایک پروگرام اندر ایک منظم جگہ کا تعین، حقیقی ذمہ داری تہٕ ایک نامزد سپروائزر سٟتؠ۔",
+        "why": "اس شعبے کو ایسے لوگوں کی ضرورت ہے جو گاؤں کی میٹنگ مَنٛز بیٹھے ہوں، نہ صرف ایسے لوگوں کی جنہوں نے ایک کے بارے مَنٛز پڑھا ہو۔",
+        "when": "کوہورٹس پروگرام کیلنڈر کی پیروی کرتے ہیں۔ جلد لکھیں، کیونکہ فیلڈ جاےیں نگرانی کی صلاحیت سے محدود ہیں۔",
+        "where": "بہرائچ مَنٛز سائٹ پؠٹھ، کچھ افعال جزوی طور پؠٹھ دور دراز سٟتؠ۔",
+        "how": "ہمَنٛز بتائیں کہ آپ کیا سیکھنا چاہتے ہیں تہٕ آپ کیا کر سکتے ہیں۔ ہم جواب دیتے ہیں کہ کیا کھلا ہے تہٕ اس کا کیا مطالبہ ہے۔"
+      }
+    },
+    {
+      "k": "intern",
+      "label": "انٹرن یا رضاکار، سائٹ پؠٹھ یا دور سے",
+      "for": [
+        "student",
+        "individual",
+        "school"
+      ],
+      "col": "#556223",
+      "detail": {
+        "u": "چھوٹے، اچھی طرح سے دائرہ کار کی شراکت کا مرکب۔ فیلڈ ٹیم کو جس چیز کی ضرورت چھِ گژھان ان مَنٛز کھۄتہٕ زِیٛادٕ تر ہفتوں مَنٛز ختم ہو جاتی ہے۔",
+        "what": "کام کا ایک متعین حصہ - فیلڈ، تحقیق، دستاویزات، ڈیزائن یا ترجمہ - سائٹ پؠٹھ یا دور سے۔",
+        "why": "صلاحیت پیسے کھۄتہٕ زِیٛادٕ کثرت سے پابند رکاوٹ ہے۔ ہاتھوں کا ایک اضافی جوڑا ایک حقیقی ڈیڈ لائن منتقل کرتا ہے۔",
+        "when": "رولنگ دور دراز کا کام تقریباً فوراً شروع ہو سکتا ہے۔ سائٹ پؠٹھ تعیناتیوں کو لیڈ ٹائم کی ضرورت چھِ گژھان۔",
+        "where": "بہرائچ، یا کہیں بھی دور دراز کے کرداروں خٲطرٕ کنکشن سٟتؠ۔",
+        "how": "اپنی دلچسپی تہٕ دستیابی بھیجیں۔ ہم اسے کسی کام کی ایجاد کرنے کے بجائے حقیقی طور پؠٹھ کھلی چیزوں خِلاف میچ کرتے ہیں۔"
+      }
+    },
+    {
+      "k": "career",
+      "label": "رول خٲطرٕ درخواست دیں۔",
+      "for": [
+        "student",
+        "individual",
+        "peer"
+      ],
+      "col": "#556223",
+      "detail": {
+        "u": "فیلڈ رولز ان لوگوں کے ذریعہ بھرے جاتے ہیں جو درخواست دینے سے پہلے کام کو سمجھتے تھے۔ یہ یہاں سے شروع چھُ گژھان۔",
+        "what": "پروگرام، آپریشنز، فنانس یا دستاویزی ٹیم پؠٹھ ایک ادا شدہ کردار۔",
+        "why": "طویل مدتی تبدیلی خٲطرٕ ایسی ٹیم کی ضرورت چھِ گژھان جو مستقل قیام کرے، نہ کہ دورہ کرنے والے مشیروں کی۔",
+        "when": "جب کوئی آسامی کھلی ہو۔ خالی آسامیوں کے درمیان بھیجا گیا سود رکھا جاتا ہے تہٕ اس پؠٹھ نظرثانی چھِ کرنہٕ یِوان۔",
+        "where": "زیادہ تر بہرائچ؛ کچھ کردار ہائبرڈ ہیں۔",
+        "how": "آپ جس پؠٹھ کام کرنا چاہتے ہیں اسے بھیجیں۔ ہم اس سٟتؠ جواب دیتے ہیں کہ کیا کھلا ہے تہٕ کیا کردار درحقیقت روز بروز شامل چھُ گژھان۔"
+      }
+    },
+    {
+      "k": "member",
+      "label": "جنرل باڈی کے ممبر بنیں۔",
+      "for": [
+        "community",
+        "individual",
+        "peer"
+      ],
+      "col": "#EAAE28",
+      "detail": {
+        "u": "جنرل باڈی وہ ہے جہاں احتساب چھُ کرنہٕ یِوان، مشاہدہ نہیں کیا جاتا۔",
+        "what": "DEHAT کی جنرل باڈی کی رکنیت، سوسائٹی کی گورننگ ممبرشپ۔",
+        "why": "ایک تنظیم جو صرف اپنے فنڈرز خٲطرٕ جوابدہ ہے۔ اراکین ایسے سوالات پوچھتے ہیں جو فنڈرز نہیں کرتے۔",
+        "when": "درخواستوں کو سوسائٹی کے گورننس کیلنڈر خِلاف سمجھا جاتا ہے۔",
+        "where": "رجسٹرڈ آفس، بہرائچ، اتر پردیش۔",
+        "how": "اپنی شمولیت کی وجہ لکھیں؛ آپ کے ارتکاب سے پہلے عمل تہٕ ذمہ داریوں کی وضاحت چھِ کرنہٕ یِوان۔"
+      }
+    },
+    {
+      "k": "give",
+      "label": "ایک بار سرمایہ کاری کریں، یا باقاعدہ سرمایہ کاری قائم کریں۔",
+      "for": [
+        "individual",
+        "community",
+        "school"
+      ],
+      "col": "#EAAE28",
+      "detail": {
+        "u": "گرانٹس کے درمیان فیلڈ اخراجات نہیں رکتے۔ ایک باقاعدہ سرمایہ کاری وہ ہے جو ٹیم کو ان مہینوں مَنٛز برقرار رکھتی ہے جب گرانٹ ختم ہو جاتی ہے تہٕ اگلی شروع نہیں چھِ گژھان۔",
+        "what": "ایک بار یا بار بار چلنے والی سرمایہ کاری، یا تو غیر محدود یا کسی نامزد پروگرام کی طرف ہدایت کرنہٕ چھِ آمژ۔",
+        "why": "غیر محدود رقم کا احاطہ کرنہٕ چھُ آمت جو محدود گرانٹس نہیں کریں گے: سائیکلوں کے درمیان تنخواہ، گاؤں کا سفر، کسی کیس پؠٹھ فالو اپ دورہ جو ابھی تک کھلا ہے۔",
+        "when": "کسی بھی وقت۔ بار بار چلنے والی سرمایہ کاری سب کھۄتہٕ زِیٛادٕ مفید ہے، کیونکہ یہ واحد قسم ہے جس خِلاف منصوبہ بندی کی جا سکتی ہے۔",
+        "where": "80G اکاؤنٹ مَنٛز ہندوستانی تعاون؛ غیر ملکی شراکتیں صرف نامزد فارن کنٹری بیوشن (ریگولیشن) ایکٹ اکاؤنٹ مَنٛز، جیسا کہ قانون کی ضرورت ہے۔",
+        "how": "انویسٹ ٹیب پؠٹھ ایک رقم تہٕ مقصد کا انتخاب کریں۔ رسید تہٕ قانونی پگڈنڈی خود بخود چلتی ہے، تہٕ رقم شائع شدہ لیجر مَنٛز ظاہر چھِ گژھان۔"
+      }
+    },
+    {
+      "k": "legacy",
+      "label": "اپنی وصیت مَنٛز میراثی تحفہ چھوڑیں۔",
+      "for": [
+        "individual",
+        "community"
+      ],
+      "col": "#4F0E73",
+      "detail": {
+        "u": "میراث وہ واحد تحفہ ہے جس کا فیصلہ سکون سے، برسوں پہلے، کسی ایسے شخص کِس ذٔریعہٕ چھُ کرنہٕ یِوان جس سے حاصل کرنے خٲطرٕ کچھ بھی نہ بچا ہو۔ یہ سب سے نایاب بھی ہے، کیونکہ تقریباً کسی سے کبھی نہیں پوچھا جاتا۔",
+        "what": "آپ کی وصیت مَنٛز لکھی ہوئی DEHAT کی وصیت - ایک مقررہ رقم، باقیات کا حصہ، یا ایک نامزد اثاثہ۔",
+        "why": "فیلڈ ورک پیسے پؠٹھ چلتا ہے جو ایک سال کے ٹکڑوں مَنٛز آتا ہے۔ وراثت حمایت کی ایک شکل ہے جو کسی بھی گرانٹ سائیکل کھۄتہٕ زِیٛادٕ طویل افق پؠٹھ قائم کی جا سکتی ہے، جو افق ہے جو تبدیلی درحقیقت لیتی ہے۔",
+        "when": "جب بھی آپ اگلی تحریر لکھیں یا اپنی مرضی پؠٹھ نظر ثانی کریں۔ ہمَنٛز بتانا اختیاری ہے، لیکن یہ ہمَنٛز منصوبہ بندی کرنے دیتا ہے تہٕ آپ کو یہ بتانے دیتا ہے کہ تحفہ کس لیے ہے۔",
+        "where": "بہرائچ مَنٛز رجسٹرڈ آفس سوسائٹی کا رجسٹریشن، PAN تہٕ آڈٹ شدہ اکاؤنٹس رکھتا ہے - وہ سب کچھ جو آپ کا وکیل پوچھے گا۔",
+        "how": "اپنے وکیل کو دینے خٲطرٕ ہم سے درست قانونی نام، رجسٹریشن نمبر تہٕ شق کے الفاظ خٲطرٕ پوچھیں۔ ہم وصیت کا مسودہ نہیں بناتے ہیں تہٕ ہم قانونی مشورہ نہیں دیتے ہیں۔ ہم آپ کے وکیل کو وہ دیتے ہیں جس کی انہیں ضرورت ہے تہٕ پیچھے ہٹ جاتے ہیں۔"
+      }
+    },
+    {
+      "k": "occasion",
+      "label": "ہمارے ساتھ شادی، سالگرہ یا کسی تہٕ موقع کو نشان زد کریں۔",
+      "for": [
+        "individual",
+        "school",
+        "csr"
+      ],
+      "col": "#EAAE28",
+      "detail": {
+        "u": "ایک شادی، ایک سالگرہ، ایک سالگرہ یا ایک بار ری ڈائریکٹ کرنہٕ آیہِ یادگار ایک مداخلت کے پورے دور کو فنڈ دے سکتی ہے۔",
+        "what": "مہمانوں نے اس موقع پؠٹھ شگن یا تحفہ لانے کے بجائے DEHAT کو دینے کو کہا تہٕ اس پؠٹھ نشان لگانے والے شخص یا جوڑے کے نام پر۔",
+        "why": "یہ ایک نجی دن کو عوامی دن مَنٛز بدل دیتا ہے، تہٕ لوگوں تک پہنچتا ہے جو فیلڈ ٹیم دوسری صورت مَنٛز نہیں ملے گی - لیکن صرف اس صورت مَنٛز جب ہر تحفہ براہ راست دیا جائے۔ ہم نقد یا ہاتھ سے جمع کرنہٕ آیہِ تہٕ بعد مَنٛز ہمارے پاس بھیجی گئی رقم کی رسید، یا محفوظ طریقے سے بینک نہیں کر سکتے۔ قاعدہ جو ہمَنٛز دینے والے کو ان کی اپنی ٹیکس رسید دینے دیتا ہے اس خٲطرٕ ان کا نام ان کی اپنی رقم کے مقابلے مَنٛز درکار ہے۔",
+        "when": "چار سے چھ ہفتوں کا نوٹس ہمَنٛز ایک صفحہ تہٕ مواد تیار کرنے دیتا ہے، اور، جہاں ممکن ہو، فیلڈ سے ایک آواز۔",
+        "where": "آپ کا مقام، آن لائن، یا بہرائچ مَنٛز۔ دینا ہمیشہ براہ راست DEHAT کے اپنے اکاؤنٹ مَنٛز آتا ہے - کبھی بھی ذاتی مَنٛز، یہاں تک کہ مختصر طور پؠٹھ، یہاں تک کہ اعتماد مَنٛز بھی۔",
+        "how": "ہمَنٛز موقع تہٕ تاریخ بتائیں۔ ہم آپ کے نام پؠٹھ ایک صفحہ ترتیب دیتے ہیں جسے آپ کے مہمان براہ راست دیتے ہیں، تہٕ ہم رسیدیں تہٕ فالو اپ سنبھالتے ہیں۔"
+      }
+    },
+    {
+      "k": "stage",
+      "label": "DEHAT کی کمیونٹیز خٲطرٕ ایک شو، سیٹ یا ریلیز وقف کریں۔",
+      "for": [
+        "individual",
+        "peer"
+      ],
+      "col": "#D2305C",
+      "detail": {
+        "u": "ایک کامیڈین کا سیٹ، ایک موسیقار کا شو یا فلم ساز کا پریمیئر اس کام کو سامعین تک پہنچا سکتا ہے جس کی اپیل کا خط کبھی نہیں پہنچتا۔",
+        "what": "ایک شو، اسکریننگ، لائیو اسٹریم یا جاری کردہ کام کا ایک ٹکڑا جو DEHAT کی کمیونٹیز خٲطرٕ وقف ہے، جس مَنٛز سامعین فنکار کِس ذٔریعہٕ دینے کے بجائے براہ راست دے رہے ہیں۔",
+        "why": "ایک سامعین جو پہلے سے ہی کسی فنکار پؠٹھ بھروسہ کرتا ہے شاذ و نادر ہی کسی این جی او کو اپنی شرائط پؠٹھ پورا کرتا ہے۔ جو ہم نہیں کر سکتے وہ یہ ہے کہ ایک فنکار نے جمع کرنہٕ آیہِ رقم کو بینک مَنٛز جمع کر پتہٕ مَنٛز حوالے کیا - ہر تحفہ دینے والے کو اپنے نام پؠٹھ دینا چھُ گژھان، اسی وجہ سے شادی یا سالگرہ کا تحفہ چھُ گژھان۔",
+        "when": "تاریخ طے ہوتے ہی ہمَنٛز بتائیں۔ چار ہفتے ہمَنٛز مواد تیار کرنے دیتے ہیں اور، لائیو سٹریم یا بڑے شو خٲطرٕ، فیلڈ سے ایک ریکارڈ شدہ پیغام۔",
+        "where": "جہاں کہیں بھی آپ کے سامعین پہلے سے موجود ہیں - ایک مقام، ایک سلسلہ، ایک ریلیز۔ دینا خود DEHAT کے اپنے صفحے پؠٹھ چھُ گژھان، دروازے پؠٹھ یا فنکار کے اکاؤنٹ مَنٛز نہیں۔",
+        "how": "ہمَنٛز تاریخ، فارمیٹ تہٕ متوقع پہنچ بتائیں۔ ہم آپ کو ایک سرشار صفحہ تہٕ لنک دیتے ہیں جو آپ کے سامعین کی طرف اشارہ کرتے ہیں، برانڈنگ جو آپ دو بار پوچھے بغیر استعمال کر سکتے ہیں، تہٕ آپ تہٕ وہ دونوں دیکھ سکتے ہیں۔"
+      }
+    },
+    {
+      "k": "meet",
+      "label": "ان لوگوں سے ملیں جن تک آپ کی حمایت پہنچی ہے۔",
+      "for": [
+        "individual",
+        "csr",
+        "foundation"
+      ],
+      "col": "#D2305C",
+      "detail": {
+        "u": "ایک سرمایہ کار تہٕ اس شخص کے درمیان فاصلہ جس تک ان کی رقم پہنچتی ہے عام طور پؠٹھ کبھی بند نہیں ہوتی۔ یہ ہونا چاہیے۔",
+        "what": "ایک منظم میٹنگ - ذاتی طور پؠٹھ یا آن لائن - ان لوگوں تہٕ کمیونٹیز سٟتؠ جن تک آپ کی حمایت پہنچی ہے۔",
+        "why": "احتساب دونوں طریقوں سے چلتا ہے۔ نتیجہ دیکھ کر اگلا فیصلہ کرنے کا طریقہ بدل جاتا ہے۔",
+        "when": "کمیونٹی کے کیلنڈر کے ارد گرد ترتیب دیا گیا، کبھی بھی اکیلے مہمان کی سہولت کے ارد گرد نہیں.",
+        "where": "خود گام مَنٛز، یا کسی کال پؠٹھ جہاں سفر ممکن نہیں ہے۔",
+        "how": "پوچھیں، تہٕ ہم کمرے مَنٛز موجود ہر فرد کی رضامندی سے اس کا بندوبست کرتے ہیں۔"
+      }
+    },
+    {
+      "k": "workplace",
+      "label": "چائلڈ لیبر تہٕ بچن ہٕنٛدؠ جنسی استحصال خِلاف ہمارے کام جاے کا عزم کریں۔",
+      "for": [
+        "csr",
+        "peer",
+        "school"
+      ],
+      "col": "#A92719",
+      "detail": {
+        "u": "چائلڈ لیبر تہٕ بچن ہُنٛد جنسی استحصال آپ کی سپلائی چین کے کنارے پؠٹھ نہیں رکتا۔ ایک تحریری عہد وہ ہے جہاں آڈٹ شروع چھُ گژھان۔",
+        "what": "چائلڈ لیبر تہٕ بچن ہٕنٛدؠ جنسی استحصال خِلاف کام جاے پؠٹھ عزم، اس کے انعقاد کی پالیسی تہٕ تربیت سٟتؠ۔",
+        "why": "بیان کردہ پوزیشن ملازمین کو کچھ اٹھانے کا راستہ فراہم کرتی ہے کہ وہ بصورت دیگر خاموش رہیں گے۔",
+        "when": "کسی واقعے سے پہلے، بعد مَنٛز نہیں۔ دباؤ مَنٛز لکھی گئی پالیسی کسی تحفّظ نہیں کرتی۔",
+        "where": "آپ کے کام جاے تہٕ اس سے منسلک جگہیں - ٹھیکیدار، دکاندار، ٹرانسپورٹ، ہاؤسنگ۔",
+        "how": "ہم ماڈل کے عزم کا اشتراک کرتے ہیں، اسے ڈھالنے مَنٛز مدد کرتے ہیں، تہٕ ان لوگوں کو تربیت دیتے ہیں جنہیں اس پؠٹھ عمل کرنا ہوگا۔"
+      }
+    },
+    {
+      "k": "schoolprog",
+      "label": "ہمارے طلباء کو ان بچن سٟتؠ شامل کریں جنہوں نے سکوٗل چھوڑ دیا ہے۔",
+      "for": [
+        "school"
+      ],
+      "col": "#0E5565",
+      "detail": {
+        "u": "ایک بچہ جس نے سکوٗل چھوڑ دیا ہے شاذ و نادر ہی کوئی بالغ شخص واپس لاتا ہے۔ انہیں ایک تہٕ بچہ واپس لاتا ہے۔",
+        "what": "آپ کے طلباء تہٕ سکوٗل سے باہر بچن ہٕنٛدؠ درمیان ایک منظم مصروفیت۔",
+        "why": "ہم مرتبہ رابطہ وہ کام کرتا ہے جو اندراج کی ڈرائیوز نہیں کر سکتی: یہ واپسی کو غیر معمولی کے بجائے عام محسوس کرتا ہے۔",
+        "when": "رابطہ شروع ہونے سے پہلے تیاری سٟتؠ، آپ کے تعلیمی کیلنڈر کے مطابق۔",
+        "where": "آپ کا سکوٗل، تہٕ بہرائچ مَنٛز پارٹنر کے مقامات، آن لائن جڑے ہوئے ہیں جہاں فاصلے کی ضرورت ہے۔",
+        "how": "ہم آپ کے اساتذہ سٟتؠ مشغولیت کو ڈیزائن کرتے ہیں، بچن ہٕنٛدؠ دونوں مجموعوں کو مختصر کرتے ہیں، تہٕ مدت پوری کرتے ہیں۔"
+      }
+    },
+    {
+      "k": "fpo",
+      "label": "سوندھی ماٹی فارمر پروڈیوسر کمپنی سے بلک خریدیں۔",
+      "for": [
+        "csr",
+        "individual",
+        "peer",
+        "school"
+      ],
+      "col": "#556223",
+      "detail": {
+        "u": "فارمر پروڈیوسر کمپنی سٟتؠ دیا جانے والا ہر بلک آرڈر وہ آمدنی ہے جو کسی بیچوان کو حصہ لیے بغیر کسان تک پہنچتی ہے۔",
+        "what": "سوندھی ماٹی فارمر پروڈیوسر کمپنی سے بڑے پیمانے پؠٹھ خریداری، جو کسانوں کی ملکیت والی کمپنی ہے جو موسمیاتی انصاف کے کام سے باہر بنائی گئی ہے۔",
+        "why": "حصولی ایک عطیہ کھۄتہٕ زِیٛادٕ پائیدار منتقلی ہے، کیونکہ یہ وصول کنندہ کے بجائے گاہک پیدا کرتا ہے۔",
+        "when": "فصل کیلنڈر خِلاف آرڈر؛ ہم آپ کو بتائیں گے کہ کیا دستیاب ہے تہٕ کب۔",
+        "where": "بہرائچ مَنٛز زنانن کسانوں کے ذریعہ تیار کردہ؛ وہاں سے ڈیلیوری کا انتظام کرنہٕ چھُ آمت۔",
+        "how": "ہمَنٛز مقدار تہٕ ٹائم لائنز بتائیں تہٕ ہم آپ کو براہ راست کمپنی سے جوڑ دیتے ہیں۔"
+      }
     }
-  },
-  {
-    "k": "consult",
-    "label": "ہمارے کسی ایک ماڈل کو اپنائیں، یا ہمارے کمیونٹی ریسورس پرسن کو شامل کریں۔",
-    "for": [
-      "csr",
-      "govt",
-      "peer",
-      "foundation"
-    ],
-    "col": "#0E5565",
-    "detail": {
-      "u": "ایک ضلع اندر بیٹھے ماڈلز ایک ضلع کی مدد کرتے ہیں۔ وہی ماڈل جو ایک ہم مرتبہ کے حوالے چھُ کرنہٕ یِوان ایک ریاست کی مدد کرتا ہے۔",
-      "what": "DEHAT کے فیلڈ ٹیسٹ شدہ حقوق پؠٹھ مبنی ماڈلز، تہٕ اس کے کمیونٹی ریسورس پرسنز، آپ کی ٹیم کو دستیاب کرائے گئے ہیں۔",
-      "why": "شروع سے نقطہ نظر کی تعمیر مَنٛز سالوں کی لاگت آتی ہے۔ فیلڈ سٟتؠ رابطے مَنٛز رہنے والے کو ڈھالنے مَنٛز مہینوں لگتے ہیں۔",
-      "when": "آپ کے اپنے پروگرام کے ڈیزائن کو منجمد کرنے سے پہلے سب سے بہتر، جبکہ آپریٹنگ ماڈل فیلڈ تعٲلیٖمات کو اب بھی جذب کر سکتا ہے۔",
-      "where": "آپ کی سائٹس پؠٹھ، یا بہرائچ مَنٛز جہاں ماڈلز چل رہے ہیں تہٕ جگہ جگہ دیکھے جا سکتے ہیں۔",
-      "how": "ماڈل کا ایک منظم واک تھرو، پھر ایک منگنی خط جس مَنٛز کمیونٹی ریسورس پرسن کے وقت، تربیت تہٕ جائزہ کا احاطہ کرنہٕ چھُ آمت۔"
-    }
-  },
-  {
-    "k": "converge",
-    "label": "ڈسٹرکٹ کنورجینس یا ریفرل پؠٹھ ہمارے ساتھ کام کریں۔",
-    "for": [
-      "govt",
-      "peer"
-    ],
-    "col": "#0E5565",
-    "detail": {
-      "u": "سرحدی چیک پوسٹ پؠٹھ روکے جانے والے بچے کو ریفرل روٹ کی ضرورت چھِ گژھان جو پہلے سے موجود ہو۔ یہ مداخلت دوران تعمیر نہیں کیا جا سکتا.",
-      "what": "محکموں کے درمیان کنورجنس، ریفرل تہٕ شواہد پؠٹھ ضلعی انتظامیہ سٟتؠ مشترکہ کام کرنا۔",
-      "why": "نظام کے درمیان سیون پؠٹھ تحفظ ناکام ہوجاتا ہے، ان اندر نہیں۔ کنورجنسی کیس کے گرنے سے پہلے سیون کو بند کر دیتی ہے۔",
-      "when": "ڈسٹرکٹ پلان سائیکل سے پہلے، یا فوری طور پؠٹھ جہاں ریفرل گیپ پہلے ہی ظاہر ہو چکا ہے۔",
-      "where": "بہرائچ تہٕ شراوستی کے ضلع تہٕ بلاک دفاتر تہٕ سات سرحدی اضلاع تک کام پہنچتا ہے۔",
-      "how": "محکمہ تہٕ فرق سٟتؠ ہمَنٛز لکھیں۔ ہم فیلڈ شواہد تہٕ ایک مجوزہ ریفرل پروٹوکول لاتے ہیں۔"
-    }
-  },
-  {
-    "k": "research",
-    "label": "اکیڈمک ریسرچ پارٹنر بنیں۔",
-    "for": [
-      "research",
-      "foundation"
-    ],
-    "col": "#4F0E73",
-    "detail": {
-      "u": "بہرائچ مَنٛز بیس سال کا فیلڈ ریکارڈ موجود ہے۔ ہر سال وہ بغیر پڑھے چلے جاتے ہیں ایک ایسا ثبوت کا سال ہے جو پالیسی لکھنے والے لوگوں تک کبھی نہیں پہنچتا۔",
-      "what": "لائیو پروگرام پؠٹھ ایک نامزد تحقیقی شراکت داری - شریک ڈیزائن کردہ سوالات، فیلڈ ڈیٹا تک رسائی تہٕ طول بلد ریکارڈ، تہٕ مشترکہ اشاعت۔",
-      "why": "وہ مشق جس کا کبھی مطالعہ نہیں کیا جاتا وہ اپنی غلطیوں کو دہراتا ہے۔ وہ مطالعہ جو کبھی پریکٹس کو نہیں چھوتا ہے بری طرح عام کرتا ہے۔ جوڑا دونوں کو درست کرتا ہے۔",
-      "when": "ڈیزائن کے مرحلے سے، لہذا پیمائش کو پروگرام مَنٛز شامل چھُ کرنہٕ یِوان بجائے اس کے کہ بعد مَنٛز اس مَنٛز فٹ کیا جائے۔",
-      "where": "بہرائچ تہٕ شراوستی مَنٛز فیلڈ سائٹس، DEHAT آفس مَنٛز موجود ریکارڈ سٟتؠ تہٕ سائٹ پؠٹھ دستیاب ہے۔",
-      "how": "ایک تصوراتی نوٹ تہٕ اپنی اخلاقیات کی پوزیشن بھیجیں۔ ہم جواب دیتے ہیں کہ کون سا ڈیٹا موجود ہے، کس شکل مَنٛز، کس مدت مَنٛز، تہٕ اسے کن شرائط پؠٹھ استعمال کیا جا سکتا ہے۔"
-    }
-  },
-  {
-    "k": "data",
-    "label": "رپورٹس، آڈٹ شدہ اکاؤنٹس یا پروگرام ڈیٹا کی درخواست کریں۔",
-    "for": [
-      "csr",
-      "foundation",
-      "govt",
-      "research",
-      "peer",
-      "individual"
-    ],
-    "col": "#4F0E73",
-    "detail": {
-      "u": "اس سائٹ پؠٹھ شائع ہونے والی کسی بھی چیز کو دستخط شدہ دستاویز سے ٹریس کیا جا سکتا ہے۔ پوچھیں، تہٕ آپ کو دستاویز ملے گی، خلاصہ نہیں۔",
-      "what": "آڈٹ شدہ کھاتوں، تشخیصات، پروگرام کی رپورٹس تہٕ رجسٹر مَنٛز درج سورس ریکارڈز۔",
-      "why": "اعتماد جس کی جانچ نہیں کی جاسکتی ہے وہ اعتماد نہیں ہے۔ یہاں ہر دعوے کا مطلب یہ ہے کہ اس پؠٹھ شک کرنے والے شخص کی تصدیق کی جائے۔",
-      "when": "کسی بھی وقت۔ یہاں کسی بھی چیز پؠٹھ پابندی نہیں ہے تہٕ کچھ بھی فنڈنگ ​​گفتگو کا انتظار نہیں کرتا ہے۔",
-      "where": "ای میل کِس ذٔریعہٕ بھیجا گیا؛ اصل مواد بہرائچ کے دفتر مَنٛز ہر اس شخص خٲطرٕ دستیاب ہے جو انہیں دیکھنا چاہتا ہے۔",
-      "how": "سال، پروگرام یا دستاویز کا نام دیں۔ اگر کسی اعداد و شمار کو ابھی تک ڈیجیٹائز نہیں کرنہٕ چھُ آمت، تو ہم کہتے ہیں تہٕ اسکین بھیج دیتے ہیں۔"
-    }
-  },
-  {
-    "k": "visit",
-    "label": "بہرائچ یا شراوستی مَنٛز فیلڈ وزٹ کا اہتمام کریں۔",
-    "for": [
-      "csr",
-      "foundation",
-      "govt",
-      "research",
-      "student",
-      "peer",
-      "individual"
-    ],
-    "col": "#A92719",
-    "detail": {
-      "u": "فاصلہ اس کو خلاصہ بناتا ہے۔ ایک گرام پنچایت مَنٛز ایک دن اسے دیکھنا ناممکن بنا دیتا ہے۔",
-      "what": "گامن، سکوٗلن تہٕ چائلڈ پارلیمنٹس کا فیلڈ وزٹ جہاں کام دراصل چھُ گژھان۔",
-      "why": "رپورٹس کمپریس۔ ایک دورہ بحال کرتا ہے جو کمپریشن ہٹاتا ہے: لوگ، خطہ تہٕ رکاوٹیں۔",
-      "when": "مانسون کی چوٹی سے باہر کوئی بھی مہینہ؛ ہم آپ کو ایمانداری سے بتائیں گے کہ کن ہفتوں مَنٛز فیلڈ تک رسائی ممکن ہے۔",
-      "where": "بہرائچ تہٕ شراوستی، لکھنؤ سے تقریباً چھ گھنٹے، نیپال گنج سے قریب۔",
-      "how": "کھردری تاریخیں تہٕ ہیڈ کاؤنٹ بھیجیں۔ ہم راستے کی منصوبہ بندی کرتے ہیں، مقامی لاجسٹکس کا بندوبست کرتے ہیں تہٕ آپ کو بتاتے ہیں کہ کیا توقع رکھی جائے۔"
-    }
-  },
-  {
-    "k": "fellow",
-    "label": "DEHAT فیلو بنیں۔",
-    "for": [
-      "student",
-      "research"
-    ],
-    "col": "#556223",
-    "detail": {
-      "u": "حقوق کے مسئلے نزدیٖک گزارا گیا فیلوشپ سال ایک دہائی کھۄتہٕ زِیٛادٕ کی وضاحت کرنے والے کیریئر کو تشکیل دیتا ہے۔",
-      "what": "ایک پروگرام اندر ایک منظم جگہ کا تعین، حقیقی ذمہ داری تہٕ ایک نامزد سپروائزر سٟتؠ۔",
-      "why": "اس شعبے کو ایسے لوگوں کی ضرورت ہے جو گاؤں کی میٹنگ مَنٛز بیٹھے ہوں، نہ صرف ایسے لوگوں کی جنہوں نے ایک کے بارے مَنٛز پڑھا ہو۔",
-      "when": "کوہورٹس پروگرام کیلنڈر کی پیروی کرتے ہیں۔ جلد لکھیں، کیونکہ فیلڈ جاےیں نگرانی کی صلاحیت سے محدود ہیں۔",
-      "where": "بہرائچ مَنٛز سائٹ پؠٹھ، کچھ افعال جزوی طور پؠٹھ دور دراز سٟتؠ۔",
-      "how": "ہمَنٛز بتائیں کہ آپ کیا سیکھنا چاہتے ہیں تہٕ آپ کیا کر سکتے ہیں۔ ہم جواب دیتے ہیں کہ کیا کھلا ہے تہٕ اس کا کیا مطالبہ ہے۔"
-    }
-  },
-  {
-    "k": "intern",
-    "label": "انٹرن یا رضاکار، سائٹ پؠٹھ یا دور سے",
-    "for": [
-      "student",
-      "individual",
-      "school"
-    ],
-    "col": "#556223",
-    "detail": {
-      "u": "چھوٹے، اچھی طرح سے دائرہ کار کی شراکت کا مرکب۔ فیلڈ ٹیم کو جس چیز کی ضرورت چھِ گژھان ان مَنٛز کھۄتہٕ زِیٛادٕ تر ہفتوں مَنٛز ختم ہو جاتی ہے۔",
-      "what": "کام کا ایک متعین حصہ - فیلڈ، تحقیق، دستاویزات، ڈیزائن یا ترجمہ - سائٹ پؠٹھ یا دور سے۔",
-      "why": "صلاحیت پیسے کھۄتہٕ زِیٛادٕ کثرت سے پابند رکاوٹ ہے۔ ہاتھوں کا ایک اضافی جوڑا ایک حقیقی ڈیڈ لائن منتقل کرتا ہے۔",
-      "when": "رولنگ دور دراز کا کام تقریباً فوراً شروع ہو سکتا ہے۔ سائٹ پؠٹھ تعیناتیوں کو لیڈ ٹائم کی ضرورت چھِ گژھان۔",
-      "where": "بہرائچ، یا کہیں بھی دور دراز کے کرداروں خٲطرٕ کنکشن سٟتؠ۔",
-      "how": "اپنی دلچسپی تہٕ دستیابی بھیجیں۔ ہم اسے کسی کام کی ایجاد کرنے کے بجائے حقیقی طور پؠٹھ کھلی چیزوں خِلاف میچ کرتے ہیں۔"
-    }
-  },
-  {
-    "k": "career",
-    "label": "رول خٲطرٕ درخواست دیں۔",
-    "for": [
-      "student",
-      "individual",
-      "peer"
-    ],
-    "col": "#556223",
-    "detail": {
-      "u": "فیلڈ رولز ان لوگوں کے ذریعہ بھرے جاتے ہیں جو درخواست دینے سے پہلے کام کو سمجھتے تھے۔ یہ یہاں سے شروع چھُ گژھان۔",
-      "what": "پروگرام، آپریشنز، فنانس یا دستاویزی ٹیم پؠٹھ ایک ادا شدہ کردار۔",
-      "why": "طویل مدتی تبدیلی خٲطرٕ ایسی ٹیم کی ضرورت چھِ گژھان جو مستقل قیام کرے، نہ کہ دورہ کرنے والے مشیروں کی۔",
-      "when": "جب کوئی آسامی کھلی ہو۔ خالی آسامیوں کے درمیان بھیجا گیا سود رکھا جاتا ہے تہٕ اس پؠٹھ نظرثانی چھِ کرنہٕ یِوان۔",
-      "where": "زیادہ تر بہرائچ؛ کچھ کردار ہائبرڈ ہیں۔",
-      "how": "آپ جس پؠٹھ کام کرنا چاہتے ہیں اسے بھیجیں۔ ہم اس سٟتؠ جواب دیتے ہیں کہ کیا کھلا ہے تہٕ کیا کردار درحقیقت روز بروز شامل چھُ گژھان۔"
-    }
-  },
-  {
-    "k": "member",
-    "label": "جنرل باڈی کے ممبر بنیں۔",
-    "for": [
-      "community",
-      "individual",
-      "peer"
-    ],
-    "col": "#EAAE28",
-    "detail": {
-      "u": "جنرل باڈی وہ ہے جہاں احتساب چھُ کرنہٕ یِوان، مشاہدہ نہیں کیا جاتا۔",
-      "what": "DEHAT کی جنرل باڈی کی رکنیت، سوسائٹی کی گورننگ ممبرشپ۔",
-      "why": "ایک تنظیم جو صرف اپنے فنڈرز خٲطرٕ جوابدہ ہے۔ اراکین ایسے سوالات پوچھتے ہیں جو فنڈرز نہیں کرتے۔",
-      "when": "درخواستوں کو سوسائٹی کے گورننس کیلنڈر خِلاف سمجھا جاتا ہے۔",
-      "where": "رجسٹرڈ آفس، بہرائچ، اتر پردیش۔",
-      "how": "اپنی شمولیت کی وجہ لکھیں؛ آپ کے ارتکاب سے پہلے عمل تہٕ ذمہ داریوں کی وضاحت چھِ کرنہٕ یِوان۔"
-    }
-  },
-  {
-    "k": "give",
-    "label": "ایک بار سرمایہ کاری کریں، یا باقاعدہ سرمایہ کاری قائم کریں۔",
-    "for": [
-      "individual",
-      "community",
-      "school"
-    ],
-    "col": "#EAAE28",
-    "detail": {
-      "u": "گرانٹس کے درمیان فیلڈ اخراجات نہیں رکتے۔ ایک باقاعدہ سرمایہ کاری وہ ہے جو ٹیم کو ان مہینوں مَنٛز برقرار رکھتی ہے جب گرانٹ ختم ہو جاتی ہے تہٕ اگلی شروع نہیں چھِ گژھان۔",
-      "what": "ایک بار یا بار بار چلنے والی سرمایہ کاری، یا تو غیر محدود یا کسی نامزد پروگرام کی طرف ہدایت کرنہٕ چھِ آمژ۔",
-      "why": "غیر محدود رقم کا احاطہ کرنہٕ چھُ آمت جو محدود گرانٹس نہیں کریں گے: سائیکلوں کے درمیان تنخواہ، گاؤں کا سفر، کسی کیس پؠٹھ فالو اپ دورہ جو ابھی تک کھلا ہے۔",
-      "when": "کسی بھی وقت۔ بار بار چلنے والی سرمایہ کاری سب کھۄتہٕ زِیٛادٕ مفید ہے، کیونکہ یہ واحد قسم ہے جس خِلاف منصوبہ بندی کی جا سکتی ہے۔",
-      "where": "80G اکاؤنٹ مَنٛز ہندوستانی تعاون؛ غیر ملکی شراکتیں صرف نامزد فارن کنٹری بیوشن (ریگولیشن) ایکٹ اکاؤنٹ مَنٛز، جیسا کہ قانون کی ضرورت ہے۔",
-      "how": "انویسٹ ٹیب پؠٹھ ایک رقم تہٕ مقصد کا انتخاب کریں۔ رسید تہٕ قانونی پگڈنڈی خود بخود چلتی ہے، تہٕ رقم شائع شدہ لیجر مَنٛز ظاہر چھِ گژھان۔"
-    }
-  },
-  {
-    "k": "legacy",
-    "label": "اپنی وصیت مَنٛز میراثی تحفہ چھوڑیں۔",
-    "for": [
-      "individual",
-      "community"
-    ],
-    "col": "#4F0E73",
-    "detail": {
-      "u": "میراث وہ واحد تحفہ ہے جس کا فیصلہ سکون سے، برسوں پہلے، کسی ایسے شخص کِس ذٔریعہٕ چھُ کرنہٕ یِوان جس سے حاصل کرنے خٲطرٕ کچھ بھی نہ بچا ہو۔ یہ سب سے نایاب بھی ہے، کیونکہ تقریباً کسی سے کبھی نہیں پوچھا جاتا۔",
-      "what": "آپ کی وصیت مَنٛز لکھی ہوئی DEHAT کی وصیت - ایک مقررہ رقم، باقیات کا حصہ، یا ایک نامزد اثاثہ۔",
-      "why": "فیلڈ ورک پیسے پؠٹھ چلتا ہے جو ایک سال کے ٹکڑوں مَنٛز آتا ہے۔ وراثت حمایت کی ایک شکل ہے جو کسی بھی گرانٹ سائیکل کھۄتہٕ زِیٛادٕ طویل افق پؠٹھ قائم کی جا سکتی ہے، جو افق ہے جو تبدیلی درحقیقت لیتی ہے۔",
-      "when": "جب بھی آپ اگلی تحریر لکھیں یا اپنی مرضی پؠٹھ نظر ثانی کریں۔ ہمَنٛز بتانا اختیاری ہے، لیکن یہ ہمَنٛز منصوبہ بندی کرنے دیتا ہے تہٕ آپ کو یہ بتانے دیتا ہے کہ تحفہ کس لیے ہے۔",
-      "where": "بہرائچ مَنٛز رجسٹرڈ آفس سوسائٹی کا رجسٹریشن، PAN تہٕ آڈٹ شدہ اکاؤنٹس رکھتا ہے - وہ سب کچھ جو آپ کا وکیل پوچھے گا۔",
-      "how": "اپنے وکیل کو دینے خٲطرٕ ہم سے درست قانونی نام، رجسٹریشن نمبر تہٕ شق کے الفاظ خٲطرٕ پوچھیں۔ ہم وصیت کا مسودہ نہیں بناتے ہیں تہٕ ہم قانونی مشورہ نہیں دیتے ہیں۔ ہم آپ کے وکیل کو وہ دیتے ہیں جس کی انہیں ضرورت ہے تہٕ پیچھے ہٹ جاتے ہیں۔"
-    }
-  },
-  {
-    "k": "occasion",
-    "label": "ہمارے ساتھ شادی، سالگرہ یا کسی تہٕ موقع کو نشان زد کریں۔",
-    "for": [
-      "individual",
-      "school",
-      "csr"
-    ],
-    "col": "#EAAE28",
-    "detail": {
-      "u": "ایک شادی، ایک سالگرہ، ایک سالگرہ یا ایک بار ری ڈائریکٹ کرنہٕ آیہِ یادگار ایک مداخلت کے پورے دور کو فنڈ دے سکتی ہے۔",
-      "what": "مہمانوں نے اس موقع پؠٹھ شگن یا تحفہ لانے کے بجائے DEHAT کو دینے کو کہا تہٕ اس پؠٹھ نشان لگانے والے شخص یا جوڑے کے نام پر۔",
-      "why": "یہ ایک نجی دن کو عوامی دن مَنٛز بدل دیتا ہے، تہٕ لوگوں تک پہنچتا ہے جو فیلڈ ٹیم دوسری صورت مَنٛز نہیں ملے گی - لیکن صرف اس صورت مَنٛز جب ہر تحفہ براہ راست دیا جائے۔ ہم نقد یا ہاتھ سے جمع کرنہٕ آیہِ تہٕ بعد مَنٛز ہمارے پاس بھیجی گئی رقم کی رسید، یا محفوظ طریقے سے بینک نہیں کر سکتے۔ قاعدہ جو ہمَنٛز دینے والے کو ان کی اپنی ٹیکس رسید دینے دیتا ہے اس خٲطرٕ ان کا نام ان کی اپنی رقم کے مقابلے مَنٛز درکار ہے۔",
-      "when": "چار سے چھ ہفتوں کا نوٹس ہمَنٛز ایک صفحہ تہٕ مواد تیار کرنے دیتا ہے، اور، جہاں ممکن ہو، فیلڈ سے ایک آواز۔",
-      "where": "آپ کا مقام، آن لائن، یا بہرائچ مَنٛز۔ دینا ہمیشہ براہ راست DEHAT کے اپنے اکاؤنٹ مَنٛز آتا ہے - کبھی بھی ذاتی مَنٛز، یہاں تک کہ مختصر طور پؠٹھ، یہاں تک کہ اعتماد مَنٛز بھی۔",
-      "how": "ہمَنٛز موقع تہٕ تاریخ بتائیں۔ ہم آپ کے نام پؠٹھ ایک صفحہ ترتیب دیتے ہیں جسے آپ کے مہمان براہ راست دیتے ہیں، تہٕ ہم رسیدیں تہٕ فالو اپ سنبھالتے ہیں۔"
-    }
-  },
-  {
-    "k": "stage",
-    "label": "DEHAT کی کمیونٹیز خٲطرٕ ایک شو، سیٹ یا ریلیز وقف کریں۔",
-    "for": [
-      "individual",
-      "peer"
-    ],
-    "col": "#D2305C",
-    "detail": {
-      "u": "ایک کامیڈین کا سیٹ، ایک موسیقار کا شو یا فلم ساز کا پریمیئر اس کام کو سامعین تک پہنچا سکتا ہے جس کی اپیل کا خط کبھی نہیں پہنچتا۔",
-      "what": "ایک شو، اسکریننگ، لائیو اسٹریم یا جاری کردہ کام کا ایک ٹکڑا جو DEHAT کی کمیونٹیز خٲطرٕ وقف ہے، جس مَنٛز سامعین فنکار کِس ذٔریعہٕ دینے کے بجائے براہ راست دے رہے ہیں۔",
-      "why": "ایک سامعین جو پہلے سے ہی کسی فنکار پؠٹھ بھروسہ کرتا ہے شاذ و نادر ہی کسی این جی او کو اپنی شرائط پؠٹھ پورا کرتا ہے۔ جو ہم نہیں کر سکتے وہ یہ ہے کہ ایک فنکار نے جمع کرنہٕ آیہِ رقم کو بینک مَنٛز جمع کر پتہٕ مَنٛز حوالے کیا - ہر تحفہ دینے والے کو اپنے نام پؠٹھ دینا چھُ گژھان، اسی وجہ سے شادی یا سالگرہ کا تحفہ چھُ گژھان۔",
-      "when": "تاریخ طے ہوتے ہی ہمَنٛز بتائیں۔ چار ہفتے ہمَنٛز مواد تیار کرنے دیتے ہیں اور، لائیو سٹریم یا بڑے شو خٲطرٕ، فیلڈ سے ایک ریکارڈ شدہ پیغام۔",
-      "where": "جہاں کہیں بھی آپ کے سامعین پہلے سے موجود ہیں - ایک مقام، ایک سلسلہ، ایک ریلیز۔ دینا خود DEHAT کے اپنے صفحے پؠٹھ چھُ گژھان، دروازے پؠٹھ یا فنکار کے اکاؤنٹ مَنٛز نہیں۔",
-      "how": "ہمَنٛز تاریخ، فارمیٹ تہٕ متوقع پہنچ بتائیں۔ ہم آپ کو ایک سرشار صفحہ تہٕ لنک دیتے ہیں جو آپ کے سامعین کی طرف اشارہ کرتے ہیں، برانڈنگ جو آپ دو بار پوچھے بغیر استعمال کر سکتے ہیں، تہٕ آپ تہٕ وہ دونوں دیکھ سکتے ہیں۔"
-    }
-  },
-  {
-    "k": "meet",
-    "label": "ان لوگوں سے ملیں جن تک آپ کی حمایت پہنچی ہے۔",
-    "for": [
-      "individual",
-      "csr",
-      "foundation"
-    ],
-    "col": "#D2305C",
-    "detail": {
-      "u": "ایک سرمایہ کار تہٕ اس شخص کے درمیان فاصلہ جس تک ان کی رقم پہنچتی ہے عام طور پؠٹھ کبھی بند نہیں ہوتی۔ یہ ہونا چاہیے۔",
-      "what": "ایک منظم میٹنگ - ذاتی طور پؠٹھ یا آن لائن - ان لوگوں تہٕ کمیونٹیز سٟتؠ جن تک آپ کی حمایت پہنچی ہے۔",
-      "why": "احتساب دونوں طریقوں سے چلتا ہے۔ نتیجہ دیکھ کر اگلا فیصلہ کرنے کا طریقہ بدل جاتا ہے۔",
-      "when": "کمیونٹی کے کیلنڈر کے ارد گرد ترتیب دیا گیا، کبھی بھی اکیلے مہمان کی سہولت کے ارد گرد نہیں.",
-      "where": "خود گام مَنٛز، یا کسی کال پؠٹھ جہاں سفر ممکن نہیں ہے۔",
-      "how": "پوچھیں، تہٕ ہم کمرے مَنٛز موجود ہر فرد کی رضامندی سے اس کا بندوبست کرتے ہیں۔"
-    }
-  },
-  {
-    "k": "workplace",
-    "label": "چائلڈ لیبر تہٕ بچن ہٕنٛدؠ جنسی استحصال خِلاف ہمارے کام جاے کا عزم کریں۔",
-    "for": [
-      "csr",
-      "peer",
-      "school"
-    ],
-    "col": "#A92719",
-    "detail": {
-      "u": "چائلڈ لیبر تہٕ بچن ہُنٛد جنسی استحصال آپ کی سپلائی چین کے کنارے پؠٹھ نہیں رکتا۔ ایک تحریری عہد وہ ہے جہاں آڈٹ شروع چھُ گژھان۔",
-      "what": "چائلڈ لیبر تہٕ بچن ہٕنٛدؠ جنسی استحصال خِلاف کام جاے پؠٹھ عزم، اس کے انعقاد کی پالیسی تہٕ تربیت سٟتؠ۔",
-      "why": "بیان کردہ پوزیشن ملازمین کو کچھ اٹھانے کا راستہ فراہم کرتی ہے کہ وہ بصورت دیگر خاموش رہیں گے۔",
-      "when": "کسی واقعے سے پہلے، بعد مَنٛز نہیں۔ دباؤ مَنٛز لکھی گئی پالیسی کسی تحفّظ نہیں کرتی۔",
-      "where": "آپ کے کام جاے تہٕ اس سے منسلک جگہیں - ٹھیکیدار، دکاندار، ٹرانسپورٹ، ہاؤسنگ۔",
-      "how": "ہم ماڈل کے عزم کا اشتراک کرتے ہیں، اسے ڈھالنے مَنٛز مدد کرتے ہیں، تہٕ ان لوگوں کو تربیت دیتے ہیں جنہیں اس پؠٹھ عمل کرنا ہوگا۔"
-    }
-  },
-  {
-    "k": "schoolprog",
-    "label": "ہمارے طلباء کو ان بچن سٟتؠ شامل کریں جنہوں نے سکوٗل چھوڑ دیا ہے۔",
-    "for": [
-      "school"
-    ],
-    "col": "#0E5565",
-    "detail": {
-      "u": "ایک بچہ جس نے سکوٗل چھوڑ دیا ہے شاذ و نادر ہی کوئی بالغ شخص واپس لاتا ہے۔ انہیں ایک تہٕ بچہ واپس لاتا ہے۔",
-      "what": "آپ کے طلباء تہٕ سکوٗل سے باہر بچن ہٕنٛدؠ درمیان ایک منظم مصروفیت۔",
-      "why": "ہم مرتبہ رابطہ وہ کام کرتا ہے جو اندراج کی ڈرائیوز نہیں کر سکتی: یہ واپسی کو غیر معمولی کے بجائے عام محسوس کرتا ہے۔",
-      "when": "رابطہ شروع ہونے سے پہلے تیاری سٟتؠ، آپ کے تعلیمی کیلنڈر کے مطابق۔",
-      "where": "آپ کا سکوٗل، تہٕ بہرائچ مَنٛز پارٹنر کے مقامات، آن لائن جڑے ہوئے ہیں جہاں فاصلے کی ضرورت ہے۔",
-      "how": "ہم آپ کے اساتذہ سٟتؠ مشغولیت کو ڈیزائن کرتے ہیں، بچن ہٕنٛدؠ دونوں مجموعوں کو مختصر کرتے ہیں، تہٕ مدت پوری کرتے ہیں۔"
-    }
-  },
-  {
-    "k": "fpo",
-    "label": "سوندھی ماٹی فارمر پروڈیوسر کمپنی سے بلک خریدیں۔",
-    "for": [
-      "csr",
-      "individual",
-      "peer",
-      "school"
-    ],
-    "col": "#556223",
-    "detail": {
-      "u": "فارمر پروڈیوسر کمپنی سٟتؠ دیا جانے والا ہر بلک آرڈر وہ آمدنی ہے جو کسی بیچوان کو حصہ لیے بغیر کسان تک پہنچتی ہے۔",
-      "what": "سوندھی ماٹی فارمر پروڈیوسر کمپنی سے بڑے پیمانے پؠٹھ خریداری، جو کسانوں کی ملکیت والی کمپنی ہے جو موسمیاتی انصاف کے کام سے باہر بنائی گئی ہے۔",
-      "why": "حصولی ایک عطیہ کھۄتہٕ زِیٛادٕ پائیدار منتقلی ہے، کیونکہ یہ وصول کنندہ کے بجائے گاہک پیدا کرتا ہے۔",
-      "when": "فصل کیلنڈر خِلاف آرڈر؛ ہم آپ کو بتائیں گے کہ کیا دستیاب ہے تہٕ کب۔",
-      "where": "بہرائچ مَنٛز زنانن کسانوں کے ذریعہ تیار کردہ؛ وہاں سے ڈیلیوری کا انتظام کرنہٕ چھُ آمت۔",
-      "how": "ہمَنٛز مقدار تہٕ ٹائم لائنز بتائیں تہٕ ہم آپ کو براہ راست کمپنی سے جوڑ دیتے ہیں۔"
-    }
-  }
-],
+  ],
   "sopTitle": "In a line or two - what are you hoping will change?",
-  "sopSub": "This is the only part we read closely. Write it however you like; there is no right answer.",
-  "sopPlaceholder": "For example: we want our Corporate Social Responsibility spend in Bahraich to go somewhere the evidence is public, and we would like to start with one block.",
+  "sopSub": "یہِ واحد حصہ چھُ جسے اسہٕ قریب پؠٹھٕ پڑھتے ہیں۔ جسے تُہؠ چاہیں لکھیں؛ کوئی صحیح جواب چھُ نہٕ.",
+  "sopPlaceholder": "مثال پٲٹھؠ: اسہٕ یَژھان چھِ کہ بہرائچ مَنٛز اسہٕ ہٕنٛز کارپوریٹ سماجی ذمہ داری ہُنٛد خرچ کسی ایسی جگہ جائے جہاں ثبوت عوامی ہوں، تہٕ اسہٕ ایک بلاک پؠٹھٕ شروعات کرُن چاہیں گے۔",
   "sopPrompts": [
-    "What has brought you to this page today?",
-    "Is there a place, an age group or an issue you already care about?",
-    "What would make this worth your while a year from now?"
+    "آج تُہؠ امِہ پیج پؠٹھ کیا لایا ہے؟",
+    "کیا کوئی جگہ، عمر ہُنٛد گروپ یا کوئی مسئلہ چھُ جس ہٕنٛز تُہؠ پہلے ہی فکر ہے؟",
+    "اب پؠٹھٕ ایک ؤری بعد تُہُند امِہ وقت کو کیا فائدہ دے گا؟"
   ],
   "fName": "Your name",
-  "fOrg": "Organisation (if any)",
+  "fOrg": "تنظیم (اگر کوئی چھُ)",
   "fEmail": "Email",
-  "fPhone": "Phone (optional)",
+  "fPhone": "فون (اختیاری)",
   "fPlace": "Where you are based (optional)",
   "fBudget": "Indicative scale, if you have one (optional)",
   "budgets": [
-    "Not decided yet",
-    "Under ₹5 lakh",
+    "ابھی فیصلہ نہٕ ہوا۔",
+    "5 لاکھ ₹ پؠٹھٕ کم",
     "₹5–25 lakh",
-    "₹25 lakh – ₹1 crore",
-    "Above ₹1 crore",
-    "Not a funding conversation"
+    "₹25 لاکھ – ₹1 کروڑ",
+    "₹1 کروڑ پؠٹھٕ زیادہ",
+    "فنڈنگ ​​ہٕنٛز بات چیت نہٕ ہے۔"
   ],
   "reviewTitle": "This is the message that will open in your email app.",
-  "reviewSub": "Nothing is sent until you press send there. You can edit every word first.",
-  "send": "Open in My Email App",
-  "copy": "Copy the Message Instead",
+  "reviewSub": "کینٛہہ بھی نہٕ بھیجا گژھان چھُ جب تک کہ تُہؠ وہاں بھیجیں کو دبائیں۔ تُہؠ پہلے پریتھ لفظ مَنٛز ترمیم کر سکتے ہیں۔",
+  "send": "مائی ای میل ایپ مَنٛز کھولیں۔",
+  "copy": "امِہ سٕند بجائے پیغام کاپی کریں۔",
   "copied": "Copied",
   "back": "Back",
   "next": "Continue",
   "step": "Step",
   "of": "of",
-  "pickOne": "Pick at least one to continue.",
-  "needName": "Add a name and an email so we can reply.",
+  "pickOne": "جاری رکھنے خٲطرٕ کم از کم ایک منتخب کریں۔",
+  "needName": "ایک ناو تہٕ ای میل شامل کرِو تاکہِ اسہٕ جواب دے سکیں۔",
   "giveTitle": "Invest",
-  "giveSub": "Indian and foreign contributions are received into two separate accounts, under two separate registrations, because the law requires it. Choose the one that applies to you and the rest follows automatically.",
+  "giveSub": "ہندوستانی تہٕ غیر ملکی تعاون دو الگ الگ اکاؤنٹس میں، دو الگ الگ رجسٹریشن تَحَت وصول کیے جاتے ہیں، تِکیٛازِ قانوٗن امِہ سُنٛد تقاضا کرتا ہے۔ ایک کو چُناو کرِو جو تُہؠ پؠٹھ لاگو گژھان چھُ تہٕ باقی پانہٕ بخود پیروی کرتا ہے۔",
   "regimes": [
     {
       "k": "inr",
       "label": "I am Investing from India",
-      "note": "80G deduction available",
+      "note": "80G کٹوتی دستیاب ہے۔",
       "detail": "مُلکی کھاتس منٛز حٲصِل کرنہٕ یِوان۔ منظوری AAAAD3793Q25LK02 تحت، یۄسہٕ اسیسمنٹ ؤری 2027–28 پؠٹھٕ 2031–32 تام کارآمد چھےٚ، چھےٚ تُہٕنٛدِس PAN پؠٹھ 80G رسید جٲری کرنہٕ یِوان۔ DEHAT چھُ یہِ سرمایہ کٲری پننِس Form 10BD بیانس منٛز تہِ درج کران، تہٕ یہے چھُ توٚہۍ کٹوتی ہُند دعویٰ کرنُک حق دِوان۔",
       "col": "#EAAE28"
     },
     {
       "k": "fcra",
       "label": "I am Investing from Outside India",
-      "note": "Foreign Contribution (Regulation) Act 136260010",
-      "detail": "Received only into the designated Foreign Contribution (Regulation) Act account at the State Bank of India, 11 Sansad Marg, New Delhi, as required by the Foreign Contribution (Regulation) Act. Foreign contributions do not carry an 80G deduction. A receipt and a utilisation statement are issued.",
+      "note": "غیر ملکی شراکت (ریگولیشن) ایکٹ 136260010",
+      "detail": "اسٹیٹ بینک آف انڈیا، 11 سنسد مارگ، نئی دہلی مَنٛز صرف نامزد فارن کنٹری بیوشن (ریگولیشن) ایکٹ اکاؤنٹ مَنٛز وصول کیا گیا، جیسا کہ فارن کنٹری بیوشن (ریگولیشن) ایکٹ ہٕنٛز ضرورت ہے۔ غیر ملکی شراکت مَنٛز 80G کٹوتی نہٕ ہوتی ہے۔ ایک رسید تہٕ استعمال ہُنٛد بیان جاری کیا جاتا ہے۔",
       "col": "#0E5565"
     }
   ],
@@ -35339,7 +35336,7 @@ const KS = {
     "$500",
     "Other"
   ],
-  "freqTitle": "How Often",
+  "freqTitle": "کتنی بار",
   "freqs": [
     {
       "k": "once",
@@ -35347,15 +35344,15 @@ const KS = {
     },
     {
       "k": "monthly",
-      "label": "Every Month"
+      "label": "پریتھ رؠتھ"
     },
     {
       "k": "yearly",
-      "label": "Every Year"
+      "label": "پریتھ ؤری"
     }
   ],
-  "purposeTitle": "Where It Should Go",
-  "purposeNote": "An unrestricted investment is the most useful kind. If you would rather direct it, the programme register shows exactly what each one funds.",
+  "purposeTitle": "امِس کہاں گژھُن چاہیے۔",
+  "purposeNote": "غیر محدود سرمایہ کاری سٲری پؠٹھٕ مفید قسم ہے۔ اگر تُہؠ امِہ سٕنٛز بجائے امِس ہدایت کرُن چاہتے ہیں، تو پروگرام ہُنٛد رجسٹر بالکل وہی دکھاتا چھُ جو پریتھ ایک فنڈ کرتا ہے۔",
   "purposes": [
     {
       "k": "unrestricted",
@@ -35364,83 +35361,83 @@ const KS = {
     },
     {
       "k": "hp",
-      "label": "Human Protection"
+      "label": "انسانی حفاظت"
     },
     {
       "k": "cj",
-      "label": "Climate Justice"
+      "label": "موسمیاتی اِنصاف"
     },
     {
       "k": "sol",
-      "label": "School of Leadership"
+      "label": "سکول آف لیڈرشپ"
     },
     {
       "k": "re",
-      "label": "Rights and Entitlements"
+      "label": "حقوق تہٕ استحقاق"
     }
   ],
-  "idTitle": "For Your Receipt",
-  "idNoteInr": "The Income Tax Department requires a PAN against every 80G receipt, and DEHAT must report it in Form 10BD. Without it we can accept the investment but cannot issue a deduction certificate.",
-  "idNoteFcra": "For foreign contributions DEHAT records the investor’s name, country and passport or national identity reference in its Foreign Contribution (Regulation) Act return. You can share it after the payment; it is not needed to invest.",
+  "idTitle": "تُہنٛز رسید خٲطرٕ",
+  "idNoteInr": "محکمہ انکم ٹیکس کو پریتھ 80G رسید ہٕند خلاف PAN ہٕنٛز ضرورت ہوتی ہے، تہٕ DEHAT کو فارم 10BD مَنٛز امِہ سٕنٛز اطلاع دینی چاہیے۔ امِہ سٕند بغیر اسہٕ سرمایہ کاری کو قبول ہیٚکَن کٔرِتھ مگر کٹوتی ہُنٛد سرٹیفکیٹ جاری نہٕ کر سکتے۔",
+  "idNoteFcra": "غیر ملکی شراکت خٲطرٕ DEHAT اپنے فارن کنٹری بیوشن (ریگولیشن) ایکٹ ریٹرن مَنٛز سرمایہ کار ہُنٛد نام، ملک تہٕ پاسپورٹ یا قومی شناخت ہُنٛد حوالہ درج کرتا ہے۔ ادائیگی پتہٕ تُہؠ امِس بانٹ سکتے ہیں۔ سرمایہ کاری کرنے ہٕنٛز ضرورت چھُ نہٕ.",
   "fPan": "PAN",
-  "fPanHint": "Ten characters, as printed on the card",
-  "fAadhaar": "Masked Aadhaar",
+  "fPanHint": "دس حروف، جیسا کہ کارڈ پؠٹھ پرنٹ کرنہٕ آو ہے۔",
+  "fAadhaar": "نقاب پوش آدھار",
   "fAadhaarHint": "XXXX XXXX 1234",
-  "fAadhaarNote": "Last four digits only. Never enter your full Aadhaar number here - we neither need it nor keep it.",
-  "fInrDocs": "PAN and Masked Aadhaar Scans",
-  "fInrDocsNote": "Attach a scan of your PAN card and a masked Aadhaar (last four digits visible only - UIDAI issues one from its website). Held for the 80G receipt, the Form 10BD statement and the audit, and destroyed when the retention period ends.",
-  "fIdRefHint": "As printed on the passport",
-  "fPassport": "Passport Scan, Both Sides",
-  "fPassportNote": "Required for foreign contributions. Attach the photograph page and the address page. Held only for the Foreign Contribution (Regulation) Act return and the audit, and destroyed when the retention period ends.",
+  "fAadhaarNote": "صرف آخری چار ہندسے۔ یہاں کبھی بھی اپنا پورا آدھار نمبر درج نہ کرِو - اسہٕ نہ تو امِہ سٕنٛز ضرورت چھُ تہٕ نہ ہی امِس رکھیں۔",
+  "fInrDocs": "PAN تہٕ نقاب پوش آدھار اسکین",
+  "fInrDocsNote": "اپنے PAN کارڈ ہُنٛد اسکین تہٕ نقاب پوش آدھار منسلک کرِو (آخری چار ہندسے صرف نظر یِوان چھِ - UIDAI اپنی ویب سائٹ پؠٹھٕ ایک جاری کٔراں چھُ)۔ 80G ہٕنٛز رسید، فارم 10BD سٹیٹمنٹ تہٕ آڈٹ خٲطرٕ رکھی گئی، تہٕ برقرار رکھنے ہٕنٛز مدت ختم ہونے پؠٹھ ختم کر دی گئی۔",
+  "fIdRefHint": "جیسا کہ پاسپورٹ پؠٹھ پرنٹ ہوتا ہے۔",
+  "fPassport": "پاسپورٹ اسکین، دونوں طرف",
+  "fPassportNote": "غیر ملکی تعاون خٲطرٕ درکار ہے۔ تصویر ہُنٛد صفحہ تہٕ ایڈریس ہُنٛد صفحہ منسلک کریں۔ صرف فارن کنٹری بیوشن (ریگولیشن) ایکٹ ہٕنٛز واپسی تہٕ آڈٹ خٲطرٕ منعقد کیا جاتا ہے، تہٕ برقرار رکھنے ہٕنٛز مدت ختم ہونے پؠٹھ امِس تباہ کر دیا جاتا ہے۔",
   "fIdCountry": "Country",
   "fIdRef": "Passport or national ID number",
   "fAddress": "Address for the receipt",
-  "f80g": "Issue me an 80G receipt",
-  "fAnon": "Do not publish my name anywhere",
-  "dpNote": "DEHAT collects only what the receipt and the statutory return require. Nothing here is stored in your browser, and nothing is shared with anyone outside the finance and audit process.",
-  "payNow": "Continue to Payment",
-  "paySafe": "Payments are processed by Razorpay. DEHAT never sees your card or bank credentials.",
+  "f80g": "مجھے 80G ہٕنٛز رسید جاری کریں۔",
+  "fAnon": "میرا ناو کہیں شائع نہ کریں۔",
+  "dpNote": "DEHAT صرف وہی جمع کٔراں چھُ جو رسید تہٕ قانونی واپسی ہٕنٛز ضرورت ہوتی ہے۔ یہاں کینٛہہ بھی تُہُند براؤزر مَنٛز محفوظ نہٕ ہے، تہٕ فنانس تہٕ آڈٹ ہٕند طریقہٕ کار پؠٹھٕ باہر کسی سٟتؠ کینٛہہ بھی شیئر نہٕ کرنہٕ آو ہے۔",
+  "payNow": "ادائیگی جاری رکھیں",
+  "paySafe": "ادائیگیوں پؠٹھ کارروائی Razorpay ذٔریعہٕ ہٕنٛز جاتی ہے۔ DEHAT کبھی بھی تُہُند کارڈ یا بینک ہٕنٛز اسناد کو نہٕ دیکھتا ہے۔",
   "payMissing": "The payment gateway is not connected in this preview. Your selections are shown below so a developer can wire them to the correct Razorpay account.",
-  "payDomestic": "Domestic Razorpay account · 80G · Form 10BD",
-  "payForeign": "Foreign Contribution (Regulation) Act Razorpay account · State Bank of India, 11 Sansad Marg · Form FC-4 return",
-  "orEmail": "Prefer a Bank Transfer, or Investing in Kind? Write to Us and We Will Send Account Details.",
-  "peopleTitle": "Who We Work With",
-  "peopleSub": "Every organisation below appears because it appears in a signed agreement, an audited account or a published register on this site.",
-  "investorsTitle": "Investment Partners",
-  "investorsSub": "Institutions and companies whose funding is recorded against a named project in the register.",
-  "investorsFoot": "Named funding bodies only. Implementation partners, referral institutions and government departments that appear in a project without a recorded contribution are named on that project’s entry in the register instead. Where the archive does not establish who funded early work, the register says so rather than naming anyone here.",
-  "empanelTitle": "Empanelments, Validation and Recognition",
-  "mediaTitle": "In the Press",
-  "mediaSub": "Independent coverage of the work. Links go to the publisher.",
-  "affilTitle": "Networks and Consortiums",
-  "sisterTitle": "Allied Institutions",
+  "payDomestic": "گھریلو Razorpay اکاؤنٹ · 80G · فارم 10BD",
+  "payForeign": "غیر ملکی شراکت (ریگولیشن) ایکٹ ریزر پے اکاؤنٹ · اسٹیٹ بینک آف انڈیا، 11 سنسد مارگ · فارم FC-4 ریٹرن",
+  "orEmail": "بینک ٹرانسفر کو ترجیح دیں، یا کسی قسم ہٕنٛز سرمایہ کاری؟ اسہٕ لکھیں تہٕ اسہٕ اکاؤنٹ ہٕنٛز تَفصیٖلات بھیجیں گے۔",
+  "peopleTitle": "اسہٕ کس سٟتؠ کام کرتے ہیں۔",
+  "peopleSub": "ذیل مَنٛز پریتھ تنظیم ظاہر گژھان چھہ تِکیٛازِ یہِ امِہ سائٹ پؠٹھ دستخط شدہ معاہدے، ایک آڈٹ شدہ اکاؤنٹ یا شائع شدہ رجسٹر مَنٛز ظاہر ہوتا ہے۔",
+  "investorsTitle": "سرمایہ کاری ہٕند شراکت دار",
+  "investorsSub": "تِم ادارے تہٕ کمپنیاں جن ہٕنٛز فنڈنگ ​​رجسٹر مَنٛز کسی نامزد پروجیکٹ ہٕند خلاف درج ہے۔",
+  "investorsFoot": "صرف نامزد فنڈنگ ​​باڈیز۔ طریقہٕ کار درآمد کرنے والے شراکت دار، حوالہ دینے والے ادارے تہٕ سرکاری محکمے جو کسی پروجیکٹ مَنٛز بغیر کسی ریکارڈ شدہ شراکت ہٕند ظاہر گژھان چھِ تِہُنٛد ناو رجسٹر مَنٛز امِہ پروجیکٹ ہٕند اندراج پؠٹھ درج ہوتا ہے۔ جہاں آرکائیو امِہ بات ہُنٛد تعین نہٕ کٔراں چھُ کہ ابتدائی کام کو کس نے فنڈز فراہم کیے ہیں، رجسٹر یہاں کسی ہُنٛد ناو لینے ہٕند بجائے ایسا کہتا ہے۔",
+  "empanelTitle": "فہرست سازی، توثیق تہٕ شناخت",
+  "mediaTitle": "پریس مَنٛز",
+  "mediaSub": "کام ہٕنٛز آزادانہ کوریج۔ لنکس پبلشر ہٕند پاس جاتے ہیں۔",
+  "affilTitle": "نیٹ ورکس تہٕ کنسورشیم",
+  "sisterTitle": "اتحادی ادارے",
   "sisters": [
     {
-      "k": "Sondhi Maati Farmer Producer Company",
-      "v": "A farmer-owned company set up out of the Climate Justice work, through which women farmers aggregate and sell."
+      "k": "سوندھی ماٹی فارمر پروڈیوسر کمپنی",
+      "v": "موسمیاتی اِنصاف ہٕند کام پؠٹھٕ باہر کسانوں ہٕنٛز ملکیت والی کمپنی قائم ہٕنٛز گٔیہِ ہے، جس ذٔریعہٕ زنانہٕ کسان جمع تہٕ فروخت کرتی ہیں۔"
     },
     {
-      "k": "Sondhi Maati LLP",
-      "v": "The trading arm associated with the producer company."
+      "k": "سوندھی ماتی ایل ایل پی",
+      "v": "پروڈیوسر کمپنی پؠٹھٕ وابستہ تجارتی بازو۔"
     },
     {
       "k": "RANG",
-      "v": "The cultural and expression platform associated with DEHAT’s work with children and young people."
+      "v": "شُرؠن تہٕ نوجوانوں سٟتؠ DEHAT ہٕند کام پؠٹھٕ وابستہ ثقافتی تہٕ اظہار ہُنٛد پلیٹ فارم۔"
     }
   ],
   "affils": [
     {
-      "k": "Campaign Against Child Labour (CACL)",
-      "v": "DEHAT takes part in inter-country consultation platforms on cross-border standard operating procedures for restoration, rehabilitation and repatriation."
+      "k": "چائلڈ لیبر ہٕند خلاف مہم (CACL)",
+      "v": "DEHAT بحالی، بحالی تہٕ وطن واپسی خٲطرٕ سرحد پار معیاری آپریٹنگ طریقہٕ کار پؠٹھ بین ملکی مشاورتی پلیٹ فارمز مَنٛز حصہ لیتا ہے۔"
     },
     {
       "k": "White Ribbon Alliance India",
-      "v": "Charter Member, Respectful Maternity Care.",
+      "v": "چارٹر ممبر، قابل احترام زچگی ہٕنٛز دیکھ بھال۔",
       "href": "https://www.c3india.org/wrai-rmc-charter"
     },
     {
       "k": "Association of Voluntary Agencies for Rural Development (AVARD)",
-      "v": "General Body Member.",
+      "v": "جنرل باڈی ممبر۔",
       "href": "https://avard.org"
     },
     {
@@ -35450,7 +35447,7 @@ const KS = {
     },
     {
       "k": "Quality Institutional Care and Alternatives to Children",
-      "v": "State Convener, 2006–12, and Member."
+      "v": "ریاستی کنوینر، 2006-12، تہٕ رکن۔"
     },
     {
       "k": "National Confederation of Dalit Organisations (NACDOR)",
@@ -35459,7 +35456,7 @@ const KS = {
     },
     {
       "k": "Alliance for Immunisation and Health",
-      "v": "Former Partner and State Convener for Uttar Pradesh, and Member of the Core Group.",
+      "v": "سابق پارٹنر تہٕ اتر پردیش ہٕند ریاستی کنوینر، تہٕ کور گروپ ہٕند رکن۔",
       "href": "https://www.aihindia.org"
     },
     {
@@ -35469,7 +35466,7 @@ const KS = {
     },
     {
       "k": "International Conference on Family Planning",
-      "v": "Co-Chair, and the one Youth Trailblazer Awardee from India.",
+      "v": "شریک چیئر، تہٕ ہندوستان پؠٹھٕ یوتھ ٹریل بلزر ایوارڈ یافتہ۔",
       "href": "https://theicfp.org/2025-youth-trailblazers"
     },
     {
@@ -35479,12 +35476,12 @@ const KS = {
     },
     {
       "k": "Just Rights for Children, UK",
-      "v": "Alliance Member and Partner.",
+      "v": "الائنس ممبر تہٕ پارٹنر۔",
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "Software and Cloud Donation Partners",
-  "techNote": "Tools and cloud capacity donated to DEHAT, so that more of every rupee reaches the work rather than the overhead behind it.",
+  "techTitle": "سافٹ ویئر تہٕ کلاؤڈ ڈونیشن پارٹنرز",
+  "techNote": "ٹولز تہٕ کلاؤڈ ہٕنٛز صلاحیت DEHAT کو سرمایہ کاری ہٕنٛز گٔیہِ ہے، تاکہِ پریتھ روپیہ امِہ پتھ کَنہِ ہونے ہٕنٛز بجائے کام تک پہنچ سکے۔",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -35986,25 +35983,24 @@ const KS = {
   ],
   "mediaItems": [
     {
-      "pub": "The Better India",
+      "pub": "بہتر ہندوستان",
       "title": "Profile of DEHAT and its founder in Bahraich",
       "href": "https://thebetterindia.com/119495/dehat-jitendra-chaturvedi-bahraich/"
     },
     {
-      "pub": "Down To Earth",
+      "pub": "ڈاون ٹو ارتھ",
       "title": "Children, once again",
       "href": "https://www.downtoearth.org.in/environment/children-once-again-38301"
     },
     {
-      "pub": "Deccan Herald",
+      "pub": "دکن ہیرالڈ",
       "title": "Coverage of the anti-trafficking work",
       "href": "https://www.deccanherald.com/features/he-risks-his-life-save-2223044"
     }
   ],
-  "answerTitle": "Who We Answer To",
-  "answerSub": "The full governance chart, the annual accountability cycle and the open register of what we are not yet publishing sit on the Transparency page.",
-  "answerGo": "Open the Transparency Page"
+  "answerTitle": "اسہٕ کس کو جواب دیتے ہیں۔",
+  "answerSub": "مکمل گورننس چارٹ، سالانہٕ احتساب سائیکل تہٕ جو اسہٕ ابھی شائع نہٕ کر رہے امِہ سُنٛد کھلا رجسٹر شفافیت ہٕند صفحے پؠٹھ بیٹھا ہے۔",
+  "answerGo": "شفافیت ہُنٛد صفحہ کھولیں۔"
 };
-
 export const PARTNER = { en: EN, hi: HI, es: ES, fr: FR, ru: RU, ar: AR, zh: ZH, ur: UR, bn: BN, mr: MR, te: TE, ta: TA, gu: GU, kn: KN, mai: MAI, as: AS, ne: NE, kok: KOK, sa: SA, sd: SD, or: OR, ml: ML, pa: PA, doi: DOI, brx: BRX, sat: SAT, mni: MNI, ks: KS };
 export default PARTNER;
