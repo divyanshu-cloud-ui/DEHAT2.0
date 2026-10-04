@@ -25,3 +25,10 @@ test('preview and production robots bytes follow the requested crawler order',()
   assert.equal((production.match(/Disallow: \/api\//g)||[]).length,10);
   assert.throws(()=>buildRobots({mode:'local',origin}),TypeError);
 });
+
+test('preview sitemap contains only published documents and available alternates',()=>{
+ const entries=[{routeId:'home',lang:'en',path:'/',kind:'app'},{routeId:'impact',lang:'ar',path:'/ar/impact',kind:'app'},{routeId:'privacy-policy',lang:'en',path:'/privacy-policy/',kind:'legal'}];
+ const xml=buildSitemap({entries,origin:'https://dehatindia.org',lastmodFor:()=>null,mode:'preview'});
+ assert.equal((xml.match(/<url>/g)||[]).length,3);assert.ok(!xml.includes('https://dehatindia.org/impact'));assert.ok(!xml.includes('/hi/'));
+ assert.throws(()=>buildSitemap({entries,origin:'https://dehatindia.org',lastmodFor:()=>null}),/Missing/);
+});

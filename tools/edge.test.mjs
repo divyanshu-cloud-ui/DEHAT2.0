@@ -37,7 +37,7 @@ test('normalisation covers explicit aliases, locale prefixes and legal slash',()
 test('production enforces published destinations and canonical www; preview cache and headers',()=>{
  assert.throws(()=>buildRoutes({...inputs,mode:'production'}),/Unpublished/);
  const full=new Set([...publishedPaths,'/work']);const rules=buildRoutes({...inputs,publishedPaths:full,mode:'production',files:['404.html']});
- assert.equal(rules[0].has[0].type,'host');assert.equal(rules[0].headers.Location,origin+'$1');
+ assert.equal(rules[1].has[0].type,'host');assert.equal(rules[1].headers.Location,origin+'$1');
  assert.equal(rules.at(-1).dest,'/404.html');
  assert.ok(!rules.some(r=>r.headers?.['X-Robots-Tag']==='noindex, nofollow'));
  assert.ok(rules.some(r=>r.src==='^/api/.*$'&&r.headers['Cache-Control']==='no-store'));
@@ -50,4 +50,20 @@ test('report-only CSP carries only measured or source referenced origins',()=>{
  const policy=buildRoutes({...inputs,mode:'preview'})[1].headers['Content-Security-Policy-Report-Only'];
  for(const host of ['https://unpkg.com','https://fonts.googleapis.com','https://fonts.gstatic.com','https://checkout.razorpay.com','https://www.paypal.com'])assert.ok(policy.includes(host),host);
  assert.ok(policy.includes("'unsafe-eval'"));assert.ok(Object.isFrozen(CSP_SOURCES));
+});
+
+test('combined normalisation and encoded redirects terminate in one hop',()=>{
+ const rules=buildRoutes({...inputs,mode:'preview',redirects:[...redirects,{source:'/old%20page',destination:'/impact',status:301}]});
+ const resolve=p=>{const r=matching(rules,p).find(r=>r.status===301);return r?p.replace(new RegExp(r.src),r.headers.Location):null;};
+ for(const prefix of ['', '/en', '/hi', '/brx'])for(const slash of ['', '/'])for(const [alias,target] of [['programmes','work'],['get-involved','get-involved/case']]){
+   const expected=(prefix==='/en'?'':prefix)+'/'+target;
+   assert.equal(resolve(prefix+'/'+alias+slash),expected);assert.equal(resolve(expected),null);
+ }
+ for(const [from,to] of [['/en/','/'],['/en','/'],['/en/impact/','/impact'],['/en/impact','/impact'],['/en/privacy-policy/','/privacy-policy/'],['/old%20page','/impact'],['/old page','/impact']])assert.equal(resolve(from),to);
+});
+test('API and asset caches are exclusive and www receives security headers',()=>{
+ const rules=buildRoutes({...inputs,mode:'production',publishedPaths:new Set([...publishedPaths,'/work'])});
+ for(const [path,value] of [['/api/paypal/config','no-store'],['/assets/image.png','public, max-age=86400, stale-while-revalidate=604800']])assert.deepEqual(matching(rules,path).filter(r=>r.headers?.['Cache-Control']).map(r=>r.headers['Cache-Control']),[value]);
+ const headers={};for(const r of matching(rules,'/impact','www.dehatindia.org')){Object.assign(headers,r.headers);if(r.status)break;}
+ assert.equal(headers['X-Content-Type-Options'],'nosniff');assert.equal(headers.Location,origin+'$1');
 });

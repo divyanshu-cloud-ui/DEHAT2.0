@@ -44,7 +44,7 @@ const run=spawnSync(process.execPath,['tools/proof-browser.mjs',root],{stdio:'in
 if(run.status!==0)throw new Error('Browser proof failed; no release output written');
 // Detect edits made during browser generation rather than stamping stale snapshots.
 for(const entry of sourceFiles)if(digest(await readFile(entry.path))!==entry.sha256)throw new Error(`Source changed during generation: ${entry.path}`);
-const sitemapEntries=[...router.inventory({localized:true}).map(({id,lang,path})=>({routeId:id,lang,path,kind:'app'})),...LEGAL_ROUTES.map(({id,path})=>({routeId:id,lang:'en',path,kind:'legal'}))];
+const sitemapEntries=routes.map(({routeId,lang,path,kind})=>({routeId,lang,path,kind}));
 const routeDataFiles=entry=>{
   if(entry.kind==='legal')return [LEGAL_ROUTES.find(route=>route.id===entry.routeId).source];
   if(entry.routeId==='stories'||entry.routeId.startsWith('story/'))return ['stories-data.js'];
@@ -89,9 +89,9 @@ try {
     await emit(route.file,html);
   }
   await emit('launch/runtime-template.html',runtimeTemplate(await readFile('DEHAT.dc.html','utf8')));
-  const sitemap=buildSitemap({entries:sitemapEntries,origin:PRODUCTION_ORIGIN,lastmodFor});
+  const sitemap=buildSitemap({entries:sitemapEntries,origin:PRODUCTION_ORIGIN,lastmodFor,mode:'preview'});
   await emit('sitemap.xml',sitemap);
-  for(const name of DISCOVERY_FILES.filter(n=>n.endsWith('.xml')&&n!=='sitemap.xml')) await emit(name,sitemap);
+  for(const name of DISCOVERY_FILES.filter(n=>n.endsWith('.xml')&&n!=='sitemap.xml')) await emit(name,'<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>'+PRODUCTION_ORIGIN+'/sitemap.xml</loc></sitemap></sitemapindex>\n');
   await emit('ads.txt','# No advertising sellers are authorized for this preview.\n');
   await emit('app-ads.txt','# No app advertising sellers are authorized for this preview.\n');
   await emit('robots.txt',buildRobots({mode:'preview',origin:PRODUCTION_ORIGIN}));

@@ -7,7 +7,8 @@ function validDate(value) {
   const date=new Date(value+'T00:00:00Z');
   return !Number.isNaN(date.getTime())&&date.toISOString().slice(0,10)===value;
 }
-export function buildSitemap({entries,origin,lastmodFor}) {
+export function buildSitemap({entries,origin,lastmodFor,mode='production'}) {
+  if(!['preview','production'].includes(mode))throw new TypeError('Unknown sitemap mode');
   if (entries.length>50000) throw new RangeError('Sitemap entry limit exceeded');
   const seen=new Set(),byIdentity=new Map();
   for(const entry of entries){
@@ -24,10 +25,11 @@ export function buildSitemap({entries,origin,lastmodFor}) {
     if(entry.kind==='app'){
       for(const code of LANGUAGES){
         const alternate=byIdentity.get(entry.routeId+'\0'+code);
+        if(!alternate&&mode==='preview')continue;
         if(!alternate)throw new TypeError(`Missing ${code} alternate for ${entry.routeId}`);
         line+=`<xhtml:link rel="alternate" hreflang="${HREFLANG[code]}" href="${xml(origin+alternate.path)}"/>`;
       }
-      line+=`<xhtml:link rel="alternate" hreflang="x-default" href="${xml(origin+byIdentity.get(entry.routeId+'\0en').path)}"/>`;
+      if(byIdentity.has(entry.routeId+'\0en'))line+=`<xhtml:link rel="alternate" hreflang="x-default" href="${xml(origin+byIdentity.get(entry.routeId+'\0en').path)}"/>`;
     }
     lines.push(line+'</url>');
   }

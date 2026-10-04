@@ -33,7 +33,7 @@ export function buildHead({route,seo,origin,languages,pathFor}) {
     '<meta property="og:site_name" content="DEHAT">',
     `<meta property="og:title" content="${attribute(seo.title)}">`,
     `<meta property="og:description" content="${attribute(seo.description)}">`,
-    `<meta property="og:url" content="${attribute(canonical)}">`,
+    ...(route.status===404?[]:[`<meta property="og:url" content="${attribute(canonical)}">`]),
     `<meta property="og:image" content="${attribute(image)}">`,
     '<meta property="og:image:width" content="1200">',
     '<meta property="og:image:height" content="630">',

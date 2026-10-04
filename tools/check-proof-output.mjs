@@ -10,7 +10,7 @@ const report={http:[],pages:[],navigation:{},api:[]};
 try{
   for(const [route,status] of [['/',200],['/ar/impact',200],['/stories/a-friend-who-noticed',200],['/media',200],['/privacy-policy/',200],['/wp-login.php',410],['/facebook',301],['/twitter',301],['/does-not-exist',404],['/.well-known/not-specified.json',404],...DISCOVERY_FILES.map(f=>['/'+f,200])]){
     const response=await fetch(local.origin+route,{redirect:'manual'});assert.equal(response.status,status,route);
-    assert.equal(response.headers.get('x-robots-tag'),'noindex',route);if(status===410)assert.equal(response.headers.get('location'),null);
+    assert.equal(response.headers.get('x-robots-tag'),'noindex, nofollow',route);if(status===410)assert.equal(response.headers.get('location'),null);
     report.http.push({route,status:response.status,location:response.headers.get('location')});
   }
   const manifest=JSON.parse(await readFile('generated/proof/manifest.json','utf8'));

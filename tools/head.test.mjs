@@ -25,7 +25,7 @@ test('story uses article and legal has no alternates',()=>{
 test('404 omits canonical and alternates and invalid inputs fail',()=>{
   const missing={...router.parseUrl('/missing'),canonicalPath:'/missing'};
   const tags=buildHead(args(missing));assert.ok(tags.includes('<meta name="robots" content="noindex">'));
-  assert.ok(!tags.includes('rel="canonical"'));assert.ok(!tags.includes('hreflang='));
+  assert.ok(!tags.includes('rel="canonical"'));assert.ok(!tags.includes('hreflang='));assert.ok(!tags.includes('og:url'));assert.ok(!buildHead(args(router.parseUrl('/missing'))).includes('og:url'));
   for(const field of ['title','description','ogImage'])assert.throws(()=>buildHead({...args(router.parseUrl('/')),seo:{...seo,[field]:''}}),TypeError);
   assert.throws(()=>buildHead({...args(router.parseUrl('/')),pathFor:()=> 'bad'}),TypeError);
   assert.throws(()=>buildHead({...args(router.parseUrl('/')),route:{...router.parseUrl('/'),lang:'de'}}),TypeError);
