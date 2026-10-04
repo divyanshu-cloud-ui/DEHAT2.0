@@ -31,6 +31,12 @@ test('required input, metadata, schema and redirect gates reject negative fixtur
       await writeFile(path.join(root,inputPaths.schema),JSON.stringify({...founderSchema,[field]:'fixture'}));
       await assert.rejects(validateLaunchInputs(options),/forbidden/);
     }
+    for(const identifier of ['ABCDE1234F','ABCD12345E']){
+      await writeFile(path.join(root,inputPaths.schema),JSON.stringify({...founderSchema,identifier}));
+      await assert.rejects(validateLaunchInputs(options),/forbidden/);
+    }
+    await writeFile(path.join(root,inputPaths.schema),JSON.stringify({...founderSchema,reference:'https://guidestarindia.org/summary'}));
+    await assert.rejects(validateLaunchInputs(options),/GuideStar/);
 
     for(const [key,value,match] of [['seo','export default {en:{}}',/SEO missing/],['schema','{}',/organization/],['redirects','source,destination,status\n/a,/a,301',/loop/],['llms','',/empty file/]]){
       await restore();await writeFile(path.join(root,inputPaths[key]),value);await assert.rejects(validateLaunchInputs(options),match);

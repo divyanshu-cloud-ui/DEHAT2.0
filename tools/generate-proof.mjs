@@ -10,6 +10,7 @@ import {validateLaunchInputs,seoRecordFor} from './validate-launch-inputs.mjs';
 import {digest,publicAsset} from './package-launch.mjs';
 import {runtimeTemplate} from './proof-server.mjs';
 import {pickerRedirectSource} from '../launch/bootstrap.mjs';
+import {buildGraph} from '../launch/schema.mjs';
 
 const root=process.cwd();
 const sandbox={window:{}};vm.runInNewContext(await readFile('stories-data.js','utf8'),sandbox);
@@ -38,10 +39,8 @@ try {
       const seo=seoRecordFor(input.seo,route);
       const canonical=PRODUCTION_ORIGIN+route.path;
       const metadata=`<title>${escape(seo.title)}</title><meta name="description" content="${escape(seo.description)}"><link rel="canonical" href="${canonical}"><meta property="og:title" content="${escape(seo.title)}"><meta property="og:description" content="${escape(seo.description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${escape(new URL(seo.ogImage,PRODUCTION_ORIGIN).href)}">`;
-      // The small proof only lists alternates actually generated; full expansion
-      // must produce all language documents before enabling the complete graph.
-      const schema={'@context':'https://schema.org','@graph':[{'@type':'Organization','@id':PRODUCTION_ORIGIN+'/#organization',...input.schema.organization},{'@type':'WebSite','@id':PRODUCTION_ORIGIN+'/#website',...input.schema.website}]};
-      if(route.storySlug) schema['@graph'].push({'@type':input.schema.storyType,headline:seo.title,description:seo.description,inLanguage:route.lang,url:canonical,mainEntityOfPage:canonical,publisher:{'@id':PRODUCTION_ORIGIN+'/#organization'}});
+      const seoFor=(id,lang=route.lang)=>input.seo?.[lang]?.[id.replace(/^story\//,'')]||input.seo?.[lang]?.[id];
+      const schema=buildGraph({route,seo,seoFor,fields:input.schema,stories:Array.from(sandbox.window.STORIES),assetExists:p=>assets.includes(p),origin:PRODUCTION_ORIGIN});
       html=html.replace(/<title>[\s\S]*?<\/title>/gi,'').replace('</head>',metadata+'<script type="application/ld+json">'+JSON.stringify(schema).replaceAll('<','\\u003c')+'</script></head>');
       if(route.path==='/')html=html.replace('<head>','<head><script>'+pickerRedirectSource+'</script>');
     }

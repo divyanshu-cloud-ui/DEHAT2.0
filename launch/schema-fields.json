@@ -1,9 +1,26 @@
 {
   "organization": {
-    "name": "DEVELOPMENTAL ASSOCIATION FOR HUMAN ADVANCEMENT (DEHAT)",
-    "alternateName": "DEHAT",
+    "name": "DEHAT",
+    "legalName": "Developmental Association for Human Advancement",
+    "alternateName": [
+      "DEHAT India"
+    ],
     "url": "https://dehatindia.org",
-    "logo": "https://dehatindia.org/dehat-logo.png",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dehatindia.org/dehat-logo.png"
+    },
+    "description": "A non-profit society in Bahraich, Uttar Pradesh, working on child rights along the Indo-Nepal border. It began as a youth collective in 1989 and was registered in 2000.",
+    "foundingDate": "1989",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sewakunj, Maseehabad Road via Kati Chauraha, Huzoorpur Marg",
+      "addressLocality": "Bahraich",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "271801",
+      "addressCountry": "IN"
+    },
+    "email": "joinus@dehatindia.org",
     "sameAs": [
       "https://www.wikidata.org/wiki/Q111469552",
       "https://www.linkedin.com/company/dehat-india/",
@@ -13,16 +30,12 @@
       "https://x.com/dehatindia",
       "https://give.do/ngos/dehat"
     ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Sewakunj, Maseehabad Road via Kati Chauraha, Huzoorpur Marg",
-      "addressLocality": "Bahraich",
-      "addressRegion": "Uttar Pradesh",
-      "postalCode": "271801",
-      "addressCountry": "IN"
-    },
-    "foundingDate": "1989",
-    "registrationDate": "2000-08-21"
+    "founder": {
+      "@type": "Person",
+      "name": "Dr. Jitendra Chaturvedi",
+      "birthDate": "1968-12-19",
+      "deathDate": "2021-05"
+    }
   },
   "website": {
     "name": "DEHAT",

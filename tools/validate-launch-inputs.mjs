@@ -134,6 +134,7 @@ export async function validateLaunchInputs({ root = process.cwd(), routes = [], 
     try {
       schema = JSON.parse(sources.schema);
       if (/"(?:taxID|vatID|bankAccount)"/.test(sources.schema)) throw new Error('Sensitive or unverified schema fields are forbidden');
+      if (/(?:[A-Z]{5}\d{4}[A-Z]|[A-Z]{4}\d{5}[A-Z])/.test(sources.schema)) throw new Error('PAN/TAN identifiers in schema are forbidden');
       if (/guidestarindia\.org/i.test(sources.schema)) throw new Error('Unverified GuideStar schema reference');
       if (!object(schema.organization) || !text(schema.organization.name) || !text(schema.organization.url)) throw new Error('needs organization.name and organization.url');
       if (!Array.isArray(schema.organization.sameAs) || !schema.organization.sameAs.length || schema.organization.sameAs.some(value => !/^https:\/\//.test(value))) throw new Error('needs verified organization.sameAs HTTPS URLs');
