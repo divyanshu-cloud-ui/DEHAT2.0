@@ -11,7 +11,7 @@ function firstSegment(title) {
   return idx !== -1 ? title.slice(0, idx) : title;
 }
 
-export function buildGraph({ route, seo, seoFor, fields, stories, assetExists, origin = 'https://dehatindia.org' }) {
+export function buildGraph({ route, seo, seoFor, fields, stories, assetExists, origin = 'https://dehatindia.org', faqItems }) {
   const baseOrigin = origin || 'https://dehatindia.org';
   const path = route?.canonicalPath || route?.path || '/';
   const canonical = baseOrigin + path;
@@ -223,6 +223,22 @@ export function buildGraph({ route, seo, seoFor, fields, stories, assetExists, o
     };
 
     graph.push(articleNode);
+  }
+
+  if (route?.routeId === 'answers' && Array.isArray(faqItems) && faqItems.length) {
+    const faqId = canonical + '#faq';
+    webpageNode.mainEntity = { '@id': faqId };
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': faqId,
+      url: canonical,
+      inLanguage: lang,
+      mainEntity: faqItems.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    });
   }
 
   return {

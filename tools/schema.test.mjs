@@ -390,3 +390,17 @@ test('custom origin parameter is respected across all node IDs and URLs', () => 
   assert.equal(graph['@graph'][3]['@id'], 'https://preview.dehatindia.org/programmes/school-of-leadership#breadcrumb');
   assert.equal(graph['@graph'][3].itemListElement[0].item, 'https://preview.dehatindia.org');
 });
+
+test('FAQ page adds ordered question graph and leaves all other routes unchanged',()=>{
+  const source={route:{routeId:'answers',canonicalPath:'/answers',lang:'en'},seo:{title:'Answers',description:'Questions'},fields:{organization:{name:'DEHAT'}},stories:[],origin:'https://dehatindia.org'};
+  const ordinary=buildGraph(source);
+  const items=[{q:'What & why?',a:'Because <rights> matter.'},{q:'How?',a:'Together.'}];
+  const graph=buildGraph({...source,faqItems:items});
+  const page=graph['@graph'].find(node=>node['@type']==='WebPage');
+  assert.deepEqual(Object.keys(page).at(-1),'mainEntity');
+  assert.deepEqual(page.mainEntity,{'@id':'https://dehatindia.org/answers#faq'});
+  const faq=graph['@graph'].at(-1);assert.equal(faq['@type'],'FAQPage');assert.deepEqual(faq.mainEntity.map(n=>n.name),items.map(n=>n.q));
+  assert.equal(faq.mainEntity[0].acceptedAnswer.text,items[0].a);
+  assert.deepEqual(buildGraph({...source,faqItems:[]}),ordinary);
+  assert.deepEqual(buildGraph({...source,route:{...source.route,routeId:'impact',canonicalPath:'/impact'},faqItems:items}),buildGraph({...source,route:{...source.route,routeId:'impact',canonicalPath:'/impact'}}));
+});

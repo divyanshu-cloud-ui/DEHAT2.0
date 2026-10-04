@@ -3,10 +3,10 @@ import path from 'node:path';
 import {createHash,randomUUID} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {validateLaunchInputs} from './validate-launch-inputs.mjs';
-import {API_ENDPOINTS,NODE_RUNTIME,DISCOVERY_FILES} from '../launch/config.mjs';
+import {API_ENDPOINTS,NODE_RUNTIME,DISCOVERY_FILES,PRODUCTION_ORIGIN} from '../launch/config.mjs';
+import {buildRoutes,omittedRedirects} from '../launch/edge.mjs';
 
 export const digest = bytes => createHash('sha256').update(bytes).digest('hex');
-const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 export function safeRelative(value) {
   if(typeof value!=='string'||!value||value.includes('\\')||value.startsWith('/')||value.split('/').some(p=>!p||p==='.'||p==='..'))throw new Error(`Unsafe output path: ${value}`);
   return value;
@@ -60,18 +60,10 @@ export async function packageLaunch({root=process.cwd(),generated=path.join(root
       for(const source of [endpoint.source,endpoint.helper])await copy(path.join(root,source),path.join(functionRoot,source));
       await writeFile(path.join(functionRoot,'.vc-config.json'),JSON.stringify({runtime:NODE_RUNTIME,handler:endpoint.source,launcherType:'Nodejs',shouldAddHelpers:!endpoint.rawBody},null,2));
     }
-    const published = new Set([...manifest.routes.map(r=>r.path),...manifest.files.map(f=>'/'+f.path),...(manifest.publicFiles||[]).map(f=>'/'+f.destination)]);
-    const usable = inputs.redirects.filter(r=>r.status===410 || r.destination.startsWith('https://') || published.has(r.destination.split(/[?#]/)[0]));
-    const omitted = inputs.redirects.filter(r=>!usable.includes(r));
-    await writeFile(path.join(staging,'proof-report.json'),JSON.stringify({scope:'five-document proof',redirects:usable.length,omittedRedirects:omitted,reason:'Destination outside the limited proof output; full rollout must include it.'},null,2));
-    const routes=[
-      {src:'.*',headers:{'X-Robots-Tag':'noindex'},continue:true},
-      ...usable.map(r=>({src:'^'+escapePattern(r.source)+'$',status:r.status,...(r.status===301?{headers:{Location:r.destination}}:{})})),
-      {src:'^/(?:MediaArchive\\.dc\\.html|district-map\\.html)$',headers:{'X-Robots-Tag':'noindex'},continue:true},
-      ...manifest.routes.map(r=>({src:'^'+escapePattern(r.path)+'$',dest:'/'+r.file})),
-      {handle:'filesystem'},
-      {src:'.*',status:404},
-    ];
+    const published=new Set([...manifest.routes.map(r=>r.path),...manifest.files.map(f=>'/'+f.path),...(manifest.publicFiles||[]).map(f=>'/'+f.destination),'/llms.txt','/llms-full.txt',...API_ENDPOINTS.map(e=>e.path)]);
+    const omitted=omittedRedirects({mode:'preview',redirects:inputs.redirects,publishedPaths:published});
+    await writeFile(path.join(staging,'proof-report.json'),JSON.stringify({scope:'five-document proof',redirects:inputs.redirects.length-omitted.length,omittedRedirects:omitted,reason:'Destination outside the limited proof output; full rollout must include it.'},null,2));
+    const routes=buildRoutes({mode:'preview',origin:PRODUCTION_ORIGIN,redirects:inputs.redirects,routes:manifest.routes,publishedPaths:published,files:manifest.files.map(file=>file.path),apis:API_ENDPOINTS});
     await writeFile(path.join(staging,'config.json'),JSON.stringify({version:3,routes},null,2));
     // Never replace an existing successful bundle without an explicit clean step.
     await mkdir(path.dirname(output),{recursive:true});await rename(staging,output);
