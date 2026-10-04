@@ -31,6 +31,12 @@ try {
         const css=Array.from(document.styleSheets,s=>{try{return Array.from(s.cssRules,r=>r.cssText).join('\n')}catch{return ''}}).join('\n');
         const body=document.getElementById('launch-live').cloneNode(true);
         body.id='launch-snapshot';body.removeAttribute('inert');body.removeAttribute('aria-hidden');body.className='';
+        const staticArt=[];
+        body.querySelectorAll('[data-launch-background]').forEach((node,index)=>{
+          node.style.removeProperty('background-image');node.setAttribute('data-proof-art',String(index));
+          staticArt.push('[data-proof-art="'+index+'"]{background-image:'+node.getAttribute('data-launch-background')+'!important}');
+        });
+        const noscript=document.createElement('noscript');noscript.innerHTML='<style>'+staticArt.join('\n').replace(/<\/style/gi,'<\\/style')+'</style>';body.append(noscript);
         body.querySelectorAll('script').forEach(n=>n.remove());
         body.querySelectorAll('[data-reveal]').forEach(n=>{n.style.opacity='1';n.style.transform='none'});
         // Scope generated IDs to the fallback while both DOM trees coexist.

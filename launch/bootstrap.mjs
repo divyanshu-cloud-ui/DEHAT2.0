@@ -1,5 +1,6 @@
 // A launch-only adapter for the unmodified generated DC runtime. The editable
 // component has opt-in hooks; ordinary DEHAT.dc.html previews keep their behaviour.
+import {observeArtwork} from './artwork.mjs';
 import { createRouter, LANGUAGES, PROGRAMMES } from './routes.mjs';
 
 const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
@@ -23,6 +24,7 @@ const routePatch = (route, stories) => ({
 });
 
 async function start() {
+  observeArtwork();
   const diagnostics = { phase: 'loading', errors: [], started: performance.now(), shifts: 0 };
   window.DEHAT_LAUNCH_DIAGNOSTICS = diagnostics;
   try {
@@ -61,7 +63,18 @@ async function start() {
     // A truthy resource table disables the DC runtime's redundant source-page fetch.
     // Missing keys retain the runtime's normal URL fallback for child components.
     window.__resources = {};
-    let component, applying = false, liveReady = false;
+    let component, applying = false, liveReady = false, navigationVersion = 0;
+    const metadataSelector = 'title,meta[name="description"],meta[property^="og:"],link[rel="canonical"],link[rel="alternate"],script[type="application/ld+json"]';
+    const updateHead = async destination => {
+      const version = ++navigationVersion;
+      const response = await fetch(destination, {headers:{Accept:'text/html'}});
+      if (!response.ok) throw new Error('Destination is outside this proof');
+      const next = new DOMParser().parseFromString(await response.text(), 'text/html');
+      if (version !== navigationVersion) return false;
+      document.head.querySelectorAll(metadataSelector).forEach(node=>node.remove());
+      next.head.querySelectorAll(metadataSelector).forEach(node=>document.head.append(document.importNode(node,true)));
+      return true;
+    };
     const baseHref = (view, lang) => router.pathFor(view === 'involved' ? 'involved/case' : view, lang);
     const enrich = values => {
       const lang = component.state.lang;
@@ -79,10 +92,15 @@ async function start() {
       for (const face of values.faces || []) face.href = router.pathFor(`story/${face.slug}`, lang);
       return values;
     };
-    const apply = instance => {
+    const apply = async instance => {
       const next = router.parseUrl(current());
       if (next.status !== 200 || next.kind !== 'app') { location.assign(current()); return; }
       if (next.lang !== instance.state.lang) { location.assign(current()); return; }
+      applying = true;
+      if (liveReady) {
+        try { if (!await updateHead(current())) return; }
+        catch { location.assign(current()); return; }
+      }
       route = next; window.DEHAT_LAUNCH.route = route; applying = true;
       instance.setState(routePatch(route, records), () => {
         applying = false;
@@ -103,18 +121,20 @@ async function start() {
         instance.forceUpdate();
       },
       apply,
-      sync(instance) {
+      async sync(instance) {
         if (applying || !liveReady) return;
-        const vals = instance._longReads(() => {});
+        const vals = instance.state.view === 'stories' ? instance._longReads(() => {}) : null;
         const state = {...instance.state, storySlug: instance.state.view === 'stories' && instance.state.stEntered ? vals.sd.slug : null};
         const destination = router.pathFor(state, instance.state.lang);
         if (destination !== location.pathname) {
           // Language changes get the matching server body/head, without a mixed-language flash.
           if (instance.state.lang !== route.lang) { location.assign(destination); return; }
+          applying = true;
+          try { if (!await updateHead(destination)) return; } catch { location.assign(destination); return; }
+          finally { applying = false; }
           history.pushState(null, '', destination); route = router.parseUrl(destination);
           window.DEHAT_LAUNCH.route = route;
-          // POC route changes use their prerendered document for canonical/SEO consistency.
-          location.replace(destination);
+          component._navMeasure?.(); component._spineScan(); component._revealAll();
         }
       },
     };
@@ -148,8 +168,22 @@ async function start() {
     diagnostics.phase = 'ready'; diagnostics.readyAt = performance.now();
     diagnostics.route = route.canonicalPath; diagnostics.lang = route.lang;
     settle(diagnostics);
-    // State-driven back/forward works for same-document entries; anchors stay native.
-    addEventListener('hashchange', () => { if (router.migrateLegacy(current())) apply(component); });
+    // Preserve native new-tab/download behaviour; same-language app links use history.
+    document.addEventListener('click', async event => {
+      const link = event.target.closest?.('a[href]');
+      if (!link || event.defaultPrevented || event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target || link.hasAttribute('download')) return;
+      const url = new URL(link.href, location.href);
+      if (url.origin !== location.origin || url.pathname === location.pathname) return;
+      const next = router.parseUrl(url);
+      if (next.status !== 200 || next.kind !== 'app' || next.lang !== component.state.lang) return;
+      event.preventDefault();
+      history.pushState(null, '', url.pathname + url.search + url.hash);
+      await apply(component); window.scrollTo(0,0);
+    });
+    addEventListener('hashchange', () => {
+      const migrated = router.migrateLegacy(current());
+      if (migrated?.replaceTo) {history.replaceState(null,'',migrated.replaceTo);apply(component);}
+    });
   } catch (error) {
     diagnostics.phase = 'failed'; diagnostics.errors.push(error.message);
     document.getElementById('launch-live')?.remove();

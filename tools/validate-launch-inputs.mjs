@@ -1,7 +1,7 @@
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { LAUNCH_INPUTS, PRODUCTION_ORIGIN } from '../launch/config.mjs';
+import { LAUNCH_INPUTS, PRODUCTION_ORIGIN, DISCOVERY_FILES } from '../launch/config.mjs';
 
 export class LaunchInputError extends Error {
   constructor(issues) {
@@ -12,6 +12,11 @@ export class LaunchInputError extends Error {
 }
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const text = value => typeof value === 'string' && value.trim().length > 0;
+
+export const SOCIAL_REDIRECT_HOSTS = Object.freeze(['www.facebook.com', 'facebook.com', 'x.com', 'twitter.com', 'www.twitter.com']);
+export function mustBeServed(source) {
+  return [...DISCOVERY_FILES, 'llms.txt', 'llms-full.txt'].some(file => source === '/' + file);
+}
 
 // Quoted commas/newlines and escaped quotes are supported; malformed CSV is fatal.
 export function parseRedirectCSV(source) {
@@ -34,8 +39,8 @@ export function parseRedirectCSV(source) {
   row.push(field.trim()); if (row.some(Boolean)) rows.push(row);
   const headers = rows.shift() || [];
   const required = ['source', 'destination', 'status'];
-  if (headers.length !== 3 || required.some(name => !headers.includes(name))) {
-    throw new Error('Redirect CSV needs exactly source,destination,status columns');
+  if (new Set(headers).size !== headers.length || required.some(name => !headers.includes(name)) || headers.some(name => ![...required, 'evidence', 'wayback_timestamp'].includes(name))) {
+    throw new Error('Redirect CSV needs source,destination,status and optional evidence,wayback_timestamp columns');
   }
   const redirects = rows.map((values, index) => {
     if (values.length !== headers.length) throw new Error(`Redirect row ${index + 2}: wrong column count`);
@@ -44,12 +49,20 @@ export function parseRedirectCSV(source) {
   const seen = new Map();
   for (const redirect of redirects) {
     if (!/^\/(?!\/)[^?#\s\\]*$/.test(redirect.source) || /\/(?:\.|\.\.)(?:\/|$)/.test(redirect.source)) throw new Error(`Invalid redirect source: ${redirect.source}`);
+    if (mustBeServed(redirect.source)) throw new Error(`Reserved file must be served, not redirected: ${redirect.source}`);
+    if (seen.has(redirect.source)) throw new Error(`Duplicate redirect source: ${redirect.source}`);
+    if (![301, 410].includes(redirect.status)) throw new Error(`Redirect status must be 301 or 410: ${redirect.source}`);
+    if (redirect.status === 410) {
+      if (redirect.destination !== '') throw new Error(`410 destination must be empty: ${redirect.source}`);
+      seen.set(redirect.source, null); continue;
+    }
+    if (!redirect.destination || /[\s\\]/.test(redirect.destination)) throw new Error(`Invalid redirect destination: ${redirect.destination}`);
     let destination;
     try { destination = new URL(redirect.destination, PRODUCTION_ORIGIN); } catch { throw new Error(`Invalid redirect destination: ${redirect.destination}`); }
-    if (destination.origin !== PRODUCTION_ORIGIN || !redirect.destination.startsWith('/')) throw new Error(`Redirect must use an on-site path: ${redirect.destination}`);
-    if (redirect.status !== 301) throw new Error(`Redirect must use status 301: ${redirect.source}`);
-    if (seen.has(redirect.source)) throw new Error(`Duplicate redirect source: ${redirect.source}`);
-    seen.set(redirect.source, destination.pathname);
+    const local = redirect.destination.startsWith('/') && !redirect.destination.startsWith('//');
+    const external = redirect.destination.startsWith('https://') && SOCIAL_REDIRECT_HOSTS.includes(destination.hostname) && !destination.port && !destination.username && !destination.password;
+    if (!(local && destination.origin === PRODUCTION_ORIGIN) && !external) throw new Error(`Redirect destination is not allowlisted: ${redirect.destination}`);
+    seen.set(redirect.source, local ? destination.pathname : null);
   }
   for (const start of seen.keys()) {
     const visited = new Set(); let current = start;
@@ -57,6 +70,9 @@ export function parseRedirectCSV(source) {
       if (visited.has(current)) throw new Error(`Redirect loop involving ${start}`);
       visited.add(current); current = seen.get(current);
     }
+  }
+  for (const [source, destination] of seen) {
+    if (destination && seen.has(destination)) throw new Error(`Redirect chain from ${source} to ${destination}`);
   }
   return redirects;
 }
@@ -117,6 +133,8 @@ export async function validateLaunchInputs({ root = process.cwd(), routes = [], 
   if (input.schema) {
     try {
       schema = JSON.parse(sources.schema);
+      if (/"(?:taxID|vatID|bankAccount)"/.test(sources.schema)) throw new Error('Sensitive or unverified schema fields are forbidden');
+      if (/guidestarindia\.org/i.test(sources.schema)) throw new Error('Unverified GuideStar schema reference');
       if (!object(schema.organization) || !text(schema.organization.name) || !text(schema.organization.url)) throw new Error('needs organization.name and organization.url');
       if (!Array.isArray(schema.organization.sameAs) || !schema.organization.sameAs.length || schema.organization.sameAs.some(value => !/^https:\/\//.test(value))) throw new Error('needs verified organization.sameAs HTTPS URLs');
       if (!object(schema.website) || !text(schema.website.name) || !text(schema.website.url)) throw new Error('needs website.name and website.url');

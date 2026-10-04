@@ -11,8 +11,7 @@
       "https://www.instagram.com/dehat_india/",
       "https://www.youtube.com/@DehatIndiaOrg",
       "https://x.com/dehatindia",
-      "https://give.do/ngos/dehat",
-      "https://guidestarindia.org/Summary.aspx?CCReg=1268"
+      "https://give.do/ngos/dehat"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -22,8 +21,6 @@
       "postalCode": "271801",
       "addressCountry": "IN"
     },
-    "taxID": "AAAAD3793Q",
-    "vatID": "LKND01474F",
     "foundingDate": "1989",
     "registrationDate": "2000-08-21"
   },

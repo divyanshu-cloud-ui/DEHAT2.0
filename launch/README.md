@@ -57,18 +57,11 @@ The local routing suite covers all 3,752 app language/path combinations, but
 only four app documents and one legal document may be generated at this gate.
 The finite production output does not serve arbitrary paths as Home.
 
-Still required before claiming the preview gate complete:
+The proof inputs, generated pages and local package are now available. Run
+`node tools/check-proof-output.mjs` to check packaged HTTP responses, metadata,
+same-document navigation and read-only handler behaviour. The local preview
+cannot prove payment-provider authentication or Vercel edge behaviour.
 
-- Deliver `seo-data.js` (including the Arabic proof metadata), `llms.txt` and
-  `llms-full.txt`. The current strict generator has only been exercised at its
-  missing-input rejection gate; its real-content output needs review.
-- Run and inspect an actual Vercel preview bundle, including real test-mode API
-  configuration. Handler packaging/405 fixtures are not payment-provider tests.
-- Complete same-document history/metadata navigation. The current proof adapter
-  deliberately uses document navigation after state-driven route changes.
-- Review snapshot/live visual differences and loading performance on slow
-  networks. Local CLS results are not field performance or Lighthouse results.
-- Review the supplied schema and add route-specific story schema plus the full
-  metadata/alternate graph when the corresponding approved inputs exist.
-
-Do not expand to all documents or publish production until the proof review.
+Handoff 165 assigns hosted preview deployment, payment-provider testing,
+cutover, further payload optimisation, and navigation refinements to Claude.
+The five-page proof remains a noindex review artifact.

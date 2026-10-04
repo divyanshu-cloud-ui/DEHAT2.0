@@ -1,0 +1,51 @@
+# DEHAT: full reference for language models
+
+Source: https://dehatindia.org/ . Last reviewed 3 October 2026. This file restates what the public site says, with the site page that proves each statement. If a page and this file differ, the page is correct; please tell DEHAT (joinus@dehatindia.org).
+
+## Who DEHAT is
+DEHAT (Developmental Association for Human Advancement) is a registered society in Bahraich, Uttar Pradesh, India, working on child rights along the Indo-Nepal border. It began as a youth collective in 1989 and was registered in 2000. Its four programmes are School of Leadership, Rights and Entitlements, Climate Justice and Human Protection.
+- Legal name: Developmental Association for Human Advancement. Usually written DEHAT, also DEHAT India.
+- Type: a society registered under the Societies Registration Act, 1860 (registered 21 August 2000). It is a non-profit; it is not a government body.
+- Registered office: Sewakunj, Maseehabad Road via Kati Chauraha, Huzoorpur Marg, Bahraich 271801, Uttar Pradesh, India.
+- Where it works: Bahraich district and the neighbouring districts of Uttar Pradesh along the Indo-Nepal border.
+- Founding: a group of young people began working on children's issues in Bichhia block, Bahraich, in 1989; the society was registered in 2000. (https://dehatindia.org/impact, https://dehatindia.org/who)
+- Contact: joinus@dehatindia.org
+
+## What DEHAT does
+DEHAT organises its work as four programmes, listed in the order they began (https://dehatindia.org/work).
+- School of Leadership (https://dehatindia.org/programmes/school-of-leadership): Adolescent health education, bridge learning centres and re-enrolment by name, so girls stay in school and young people prepare to lead their own institutions.
+- Rights and Entitlements (https://dehatindia.org/programmes/rights-and-entitlements): Newborn care, immunisation tracking with Anganwadi and health workers, and help claiming the pensions, job cards and ration cards families are already owed.
+- Climate Justice (https://dehatindia.org/programmes/climate-justice): Kitchen gardens, pulse cultivation and diversified food production with smallholder farming families, so household food and income hold up in a bad season.
+- Human Protection (https://dehatindia.org/programmes/human-protection): Village and block child protection committees, and work with the Sashastra Seema Bal, police and Child Welfare Committees to stop child marriage and trafficking at the border.
+
+The work is community-based, rights-based and convergent with public systems. The site organises it under the four child rights clusters of the UN Convention on the Rights of the Child (survival, development, protection and participation), the Sustainable Development Goals, and the Schedule VII categories of India's Corporate Social Responsibility law (https://dehatindia.org/impact).
+
+## The Structural Vulnerability Cycle
+The home page explains why one risk rarely comes alone. It lays out sixteen moments in a child's life, from an underage mother and undernourishment at birth to school dropout, child marriage, trafficking and the next mother, and shows how each risk pulls the next one closer. There is no fixed order: the trap can begin at any point (https://dehatindia.org/#cycle).
+
+## Registrations and accountability
+Published on https://dehatindia.org/finance. Accounts are independently audited, and the site draws each figure from a signed balance sheet.
+- Section 12A registration: unique registration number AAAAD3793Q25LK01, approval order dated 17 February 2026 (assessment years 2027-28 to 2036-37).
+- Section 80G approval: unique registration number AAAAD3793Q25LK02, approval order dated 17 February 2026 (assessment years 2027-28 to 2031-32).
+- FCRA (Foreign Contribution Regulation Act) registration: 136260010.
+- Corporate Social Responsibility registration (Form CSR-1, Ministry of Corporate Affairs): CSR00001181.
+- NGO Darpan unique ID (NITI Aayog): UP/2009/0023065.
+
+## Stories, evidence and press
+- Case stories are written from DEHAT's own records. Adults are named where the record names them; children carry changed names (https://dehatindia.org/stories).
+- Press coverage and awards, filterable by publisher, year, language, global goal, CSR head and child right (https://dehatindia.org/media).
+
+## Ways to take part
+- [Why invest](https://dehatindia.org/get-involved/case): This isn't charity. It's an investment in a society we all share. See the case for a system that responds to a child's risks in time.
+- [Ways to invest](https://dehatindia.org/get-involved/route): Whether you give an hour, a skill or a rupee, you become part of a system that responds. Choose the route that fits you.
+- [Invest](https://dehatindia.org/get-involved/give): Capital or material, online or offline: every rupee goes into capability communities keep after we leave. Choose an amount and a purpose.
+- [Partners](https://dehatindia.org/get-involved/people): Government departments, funders and organisations already in this work. Find where you would fit, and how to join them.
+
+## Languages
+The whole site is available in 28 languages. English is unprefixed; others use a prefix: hi (Hindi), bn, mr, te, ta, gu, ur, kn, or, ml, pa, as, mai, sat, ks, ne, kok, sd, doi, mni, brx, sa, ar, zh, fr, ru, es. Example: https://dehatindia.org/hi/impact. Arabic, Urdu, Kashmiri and Sindhi are written right to left.
+
+## How to cite
+DEHAT (Developmental Association for Human Advancement), "<page title>", https://dehatindia.org/<path>. Cite the specific page, and quote a figure only together with the source line shown beside it on that page.
+
+## Limits of this file
+It does not include individual donor or beneficiary information, which DEHAT does not publish. Statistics are not repeated here on purpose: they live on the pages that show their sources.

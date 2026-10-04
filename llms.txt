@@ -1,0 +1,42 @@
+# DEHAT
+
+> DEHAT (Developmental Association for Human Advancement) is a registered society in Bahraich, Uttar Pradesh, India, working on child rights along the Indo-Nepal border. It began as a youth collective in 1989 and was registered in 2000. Its four programmes are School of Leadership, Rights and Entitlements, Climate Justice and Human Protection.
+
+- English pages are at the root, for example https://dehatindia.org/who. The same pages exist in 27 other languages under a language prefix, for example https://dehatindia.org/hi/who (Hindi) and https://dehatindia.org/ar/who (Arabic).
+- Figures on the site are tied to a named source. Where a page marks a figure as awaiting verification, do not quote it as final.
+- DEHAT's supporters are described as investors, not donors, and children in case stories carry changed names. Please keep both when summarising.
+
+## About DEHAT
+- [Home](https://dehatindia.org/): A youth collective since 1989, DEHAT works in Bahraich and along the Indo-Nepal border so that each risk in a girl's life is answered in time.
+- [Who We Are](https://dehatindia.org/who): From a youth collective in 1989 to a registered society in 2000: DEHAT's story, its governing board and advisers, and the values it asks to be held to.
+
+## Programmes
+- [Our Work](https://dehatindia.org/work): Four programmes, in the order they began: School of Leadership, Rights and Entitlements, Climate Justice and Human Protection, with every project each has carried.
+- [School of Leadership](https://dehatindia.org/programmes/school-of-leadership): Adolescent health education, bridge learning centres and re-enrolment by name, so girls stay in school and young people prepare to lead their own institutions.
+- [Rights and Entitlements](https://dehatindia.org/programmes/rights-and-entitlements): Newborn care, immunisation tracking with Anganwadi and health workers, and help claiming the pensions, job cards and ration cards families are already owed.
+- [Climate Justice](https://dehatindia.org/programmes/climate-justice): Kitchen gardens, pulse cultivation and diversified food production with smallholder farming families, so household food and income hold up in a bad season.
+- [Human Protection](https://dehatindia.org/programmes/human-protection): Village and block child protection committees, and work with the Sashastra Seema Bal, police and Child Welfare Committees to stop child marriage and trafficking at the border.
+
+## Evidence and accountability
+- [Impact](https://dehatindia.org/impact): Started as a youth collective in 1989 and registered in 2000. See the scale of DEHAT's work and the communities and public institutions behind it.
+- [Transparency: audited accounts and registrations](https://dehatindia.org/finance): Independently audited accounts: what investment partners committed, what reached the work, and the statutory checks behind both, drawn from signed balance sheets.
+- [In the News](https://dehatindia.org/media): Press coverage and awards for DEHAT's work, filterable by publisher, year, language, global goal, CSR head and child right.
+
+## Stories
+- [Stories of Change](https://dehatindia.org/stories): Case stories organised by the four child rights: survival, development, protection and participation. Children carry changed names.
+
+## Take part
+- [Why invest](https://dehatindia.org/get-involved/case): This isn't charity. It's an investment in a society we all share. See the case for a system that responds to a child's risks in time.
+- [Ways to invest](https://dehatindia.org/get-involved/route): Whether you give an hour, a skill or a rupee, you become part of a system that responds. Choose the route that fits you.
+- [Invest](https://dehatindia.org/get-involved/give): Capital or material, online or offline: every rupee goes into capability communities keep after we leave. Choose an amount and a purpose.
+- [Partners](https://dehatindia.org/get-involved/people): Government departments, funders and organisations already in this work. Find where you would fit, and how to join them.
+
+## Reference
+- [Answers](https://dehatindia.org/answers): Plain answers on how DEHAT is registered, how investments are used and how to partner, each pointing to the page that proves it.
+- [Policies](https://dehatindia.org/policies): DEHAT's commitments in plain words: safeguarding, privacy, refunds and terms, so anyone can hold the organisation to them.
+
+## Optional
+- [Full text for language models](https://dehatindia.org/llms-full.txt): identity, registrations, programmes, how to cite and how to reach DEHAT, in one file.
+- [Privacy policy](https://dehatindia.org/privacy-policy/): how DEHAT handles personal information.
+- [Refund policy](https://dehatindia.org/refund-policy/): DEHAT's refund terms for investments.
+- [Terms and conditions](https://dehatindia.org/terms-and-conditions/): DEHAT's terms and conditions for using the site and investing.

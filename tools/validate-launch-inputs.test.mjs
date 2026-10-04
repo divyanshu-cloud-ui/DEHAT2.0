@@ -25,8 +25,34 @@ test('required input, metadata, schema and redirect gates reject negative fixtur
     await assert.rejects(validateLaunchInputs(options),/missing required input/);
     const restore=async()=>{for(const [key,value] of Object.entries(valid))await writeFile(path.join(root,inputPaths[key]),value);};
     await restore();await validateLaunchInputs(options);
+    const founderSchema={...JSON.parse(valid.schema),founder:{name:'Fixture Person',birthDate:'1968-12-19',deathDate:'2021-05'}};
+    await writeFile(path.join(root,inputPaths.schema),JSON.stringify(founderSchema));await validateLaunchInputs(options);
+    for(const field of ['taxID','vatID','bankAccount']){
+      await writeFile(path.join(root,inputPaths.schema),JSON.stringify({...founderSchema,[field]:'fixture'}));
+      await assert.rejects(validateLaunchInputs(options),/forbidden/);
+    }
+
     for(const [key,value,match] of [['seo','export default {en:{}}',/SEO missing/],['schema','{}',/organization/],['redirects','source,destination,status\n/a,/a,301',/loop/],['llms','',/empty file/]]){
       await restore();await writeFile(path.join(root,inputPaths[key]),value);await assert.rejects(validateLaunchInputs(options),match);
     }
   }finally{await rm(root,{recursive:true,force:true});}
+});
+
+test('410 has no destination and optional evidence columns remain intact',()=>{
+  assert.deepEqual(parseRedirectCSV('source,destination,status,evidence,wayback_timestamp\n/gone,,410,"Reviewed, obsolete",')[0],{source:'/gone',destination:'',status:410,evidence:'Reviewed, obsolete',wayback_timestamp:''});
+  assert.throws(()=>parseRedirectCSV('source,destination,status\n/gone,/,410'),/empty/);
+  assert.throws(()=>parseRedirectCSV('source,destination,status\n/old,,301'),/Invalid/);
+});
+test('external redirects require HTTPS and an exact approved social host',()=>{
+  for(const target of ['https://www.facebook.com/dehatorgindia/','https://x.com/dehatindia'])assert.equal(parseRedirectCSV('source,destination,status\n/social,'+target+',301')[0].destination,target);
+  for(const target of ['http://x.com/dehatindia','https://x.com.evil.test/a','https://user:pass@x.com/a','https://x.com:444/a','//x.com/a','https://example.com/a'])assert.throws(()=>parseRedirectCSV('source,destination,status\n/social,'+target+',301'),/allowlisted/);
+});
+test('redirect chains and reserved discovery paths cannot enter output',()=>{
+  assert.throws(()=>parseRedirectCSV('source,destination,status\n/a,/b,301\n/b,/c,301'),/chain/);
+  for(const source of ['/robots.txt','/sitemap.xml','/ads.txt','/app-ads.txt'])assert.throws(()=>parseRedirectCSV('source,destination,status\n'+source+',/,301'),/must be served/);
+});
+
+test('legacy sitemaps can be gone or redirected while served discovery files are reserved',()=>{
+  for(const row of ['/cause-sitemap.xml,,410','/page-sitemap.xml,/sitemap.xml,301','/.well-known/obsolete.json,,410'])assert.equal(parseRedirectCSV('source,destination,status\n'+row).length,1);
+  for(const file of ['/sitemap.xml','/sitemap_index.xml','/llms.txt','/llms-full.txt'])assert.throws(()=>parseRedirectCSV('source,destination,status\n'+file+',,410'),/must be served/);
 });

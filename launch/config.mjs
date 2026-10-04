@@ -21,3 +21,6 @@ export const API_ENDPOINTS = Object.freeze([
   { path: '/api/paypal/create-order', source: 'api/paypal/create-order.js', helper: 'api/_paypal.js', method: 'POST' },
   { path: '/api/paypal/capture-order', source: 'api/paypal/capture-order.js', helper: 'api/_paypal.js', method: 'POST' },
 ].map(Object.freeze));
+
+// Explicit discovery files for the limited preview. No guessed .well-known payloads.
+export const DISCOVERY_FILES = Object.freeze(['robots.txt','ads.txt','app-ads.txt','sitemap.xml','sitemap_index.xml']);

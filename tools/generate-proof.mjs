@@ -5,7 +5,7 @@ import {spawnSync,execFileSync} from 'node:child_process';
 import vm from 'node:vm';
 import {randomUUID} from 'node:crypto';
 import {createRouter} from '../launch/routes.mjs';
-import {PRODUCTION_ORIGIN,LAUNCH_INPUTS,API_ENDPOINTS} from '../launch/config.mjs';
+import {PRODUCTION_ORIGIN,LAUNCH_INPUTS,API_ENDPOINTS,DISCOVERY_FILES} from '../launch/config.mjs';
 import {validateLaunchInputs,seoRecordFor} from './validate-launch-inputs.mjs';
 import {digest,publicAsset} from './package-launch.mjs';
 import {runtimeTemplate} from './proof-server.mjs';
@@ -18,7 +18,7 @@ const paths=['/','/ar/impact','/stories/a-friend-who-noticed','/media','/privacy
 const routes=paths.map(p=>({...router.parseUrl(p),path:p,legal:p==='/privacy-policy/',file:p==='/'?'index.html':p.replace(/^\//,'').replace(/\/$/,'')+'/index.html'}));
 const input=await validateLaunchInputs({root,routes});
 const tracked=execFileSync('git',['ls-files','-z'],{encoding:'utf8'}).split('\0').filter(Boolean);
-const assets=[...new Set([...tracked.filter(publicAsset),'launch/bootstrap.mjs','launch/routes.mjs'])].sort();
+const assets=[...new Set([...tracked.filter(publicAsset),'launch/bootstrap.mjs','launch/routes.mjs','launch/artwork.mjs','dehat-og.png'])].sort();
 const sources=[...new Set([...assets,'DEHAT.dc.html','launch/config.mjs',...API_ENDPOINTS.flatMap(e=>[e.source,e.helper]),...routes.filter(r=>r.legal).map(r=>r.source),...Object.values(LAUNCH_INPUTS),'tools/generate-proof.mjs','tools/proof-server.mjs','tools/proof-browser.mjs','tools/validate-launch-inputs.mjs','tools/package-launch.mjs'])].sort();
 const sourceFiles=await Promise.all(sources.map(async p=>({path:p,sha256:digest(await readFile(p))})));
 const run=spawnSync(process.execPath,['tools/proof-browser.mjs',root],{stdio:'inherit',env:process.env});
@@ -41,6 +41,7 @@ try {
       // The small proof only lists alternates actually generated; full expansion
       // must produce all language documents before enabling the complete graph.
       const schema={'@context':'https://schema.org','@graph':[{'@type':'Organization','@id':PRODUCTION_ORIGIN+'/#organization',...input.schema.organization},{'@type':'WebSite','@id':PRODUCTION_ORIGIN+'/#website',...input.schema.website}]};
+      if(route.storySlug) schema['@graph'].push({'@type':input.schema.storyType,headline:seo.title,description:seo.description,inLanguage:route.lang,url:canonical,mainEntityOfPage:canonical,publisher:{'@id':PRODUCTION_ORIGIN+'/#organization'}});
       html=html.replace(/<title>[\s\S]*?<\/title>/gi,'').replace('</head>',metadata+'<script type="application/ld+json">'+JSON.stringify(schema).replaceAll('<','\\u003c')+'</script></head>');
       if(route.path==='/')html=html.replace('<head>','<head><script>'+pickerRedirectSource+'</script>');
     }
@@ -48,8 +49,19 @@ try {
   }
   await emit('launch/runtime-template.html',runtimeTemplate(await readFile('DEHAT.dc.html','utf8')));
   await emit('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+routes.map(r=>'<url><loc>'+PRODUCTION_ORIGIN+r.path+'</loc></url>').join('')+'</urlset>');
+  const sitemap='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+routes.map(r=>'<url><loc>'+PRODUCTION_ORIGIN+r.path+'</loc></url>').join('')+'</urlset>';
+  for(const name of DISCOVERY_FILES.filter(n=>n.endsWith('.xml')&&n!=='sitemap.xml')) await emit(name,sitemap);
+  await emit('ads.txt','# No advertising sellers are authorized for this preview.\n');
+  await emit('app-ads.txt','# No app advertising sellers are authorized for this preview.\n');
   await emit('robots.txt','User-agent: *\nDisallow: /\n');
-  const publicFiles=assets.map(source=>({source,destination:source,sha256:sourceFiles.find(f=>f.path===source).sha256}));
+  const observations=JSON.parse(await readFile('_internal/qa/157/proof/browser-results.json','utf8'));
+  const referenced=new Set(['dehat-og.png']);
+  for(const page of observations)for(const resource of page.layout.resources){const url=new URL(resource.name);if(url.hostname==='127.0.0.1')referenced.add(url.pathname.slice(1));}
+  for(const route of routes.filter(r=>!r.legal)){
+    const snapshot=await readFile(path.join(staging,route.file),'utf8');
+    for(const match of snapshot.matchAll(/(?:\.\/|\/)?(assets\/[a-zA-Z0-9_./-]+\.(?:png|webp|jpg|svg))/g))referenced.add(match[1]);
+  }
+  const publicFiles=assets.filter(source=>(!source.startsWith('assets/')||referenced.has(source))&&(!source.startsWith('content-i18n/')||['content-i18n/en.js','content-i18n/ar.js'].includes(source))).map(source=>({source,destination:source,sha256:sourceFiles.find(f=>f.path===source).sha256}));
   const sorted=[...sourceFiles].sort((a,b)=>a.path.localeCompare(b.path));
   await writeFile(path.join(staging,'manifest.json'),JSON.stringify({version:1,generation:{mode:'proof',nodeVersion:process.version},sourceFiles:sorted,sourceDigest:digest(JSON.stringify(sorted)),files,routes,publicFiles},null,2));
   await mkdir(path.dirname(output),{recursive:true});await rename(staging,output);

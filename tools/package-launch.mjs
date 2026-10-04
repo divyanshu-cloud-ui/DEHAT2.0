@@ -3,9 +3,10 @@ import path from 'node:path';
 import {createHash,randomUUID} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {validateLaunchInputs} from './validate-launch-inputs.mjs';
-import {API_ENDPOINTS,NODE_RUNTIME} from '../launch/config.mjs';
+import {API_ENDPOINTS,NODE_RUNTIME,DISCOVERY_FILES} from '../launch/config.mjs';
 
 export const digest = bytes => createHash('sha256').update(bytes).digest('hex');
+const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 export function safeRelative(value) {
   if(typeof value!=='string'||!value||value.includes('\\')||value.startsWith('/')||value.split('/').some(p=>!p||p==='.'||p==='..'))throw new Error(`Unsafe output path: ${value}`);
   return value;
@@ -14,7 +15,7 @@ export function publicAsset(value) {
   safeRelative(value);
   return /^(?:support|image-slot|stories-data|media-data|projects-data|programme-extras|impact-lenses|journey-data|partner-data|register-data|who-data|who-profiles|who-en|finance-data|faq-data|district-data)\.js$/.test(value)||
     /^(?:MediaArchive\.dc|district-map)\.html$/.test(value)||
-    /^launch\/(?:bootstrap\.mjs|routes\.mjs|runtime-template\.html)$/.test(value)||
+    /^launch\/(?:bootstrap\.mjs|routes\.mjs|artwork\.mjs|runtime-template\.html)$/.test(value)||
     /^content-i18n\/[a-z]{2,3}\.js$/.test(value)||
     /^dehat-[\w-]+\.png$/.test(value)||
     /^assets\/(?:ink|story|portraits|svc|art|thumb)\/[\w/.-]+\.(?:png|svg|webp|jpg)$/.test(value);
@@ -34,7 +35,7 @@ export async function verifyManifest(root,generated,manifest) {
     if(!/^\/(?!\/)/.test(route.path)||!names.has(route.file)||!route.file.endsWith('.html'))throw new Error('Route missing generated document');
   }
   const documents=new Set(manifest.routes.map(r=>r.file));
-  for(const name of names)if(!documents.has(name)&&!['sitemap.xml','robots.txt','launch/runtime-template.html'].includes(name))throw new Error(`Unreferenced generated file: ${name}`);
+  for(const name of names)if(!documents.has(name)&&![...DISCOVERY_FILES,'launch/runtime-template.html'].includes(name))throw new Error(`Unreferenced generated file: ${name}`);
 }
 export async function packageLaunch({root=process.cwd(),generated=path.join(root,'generated/proof'),output=path.join(root,'.vercel/output')}={}) {
   const manifest=JSON.parse(await readFile(path.join(generated,'manifest.json'),'utf8'));
@@ -44,7 +45,7 @@ export async function packageLaunch({root=process.cwd(),generated=path.join(root
   const copy=async(source,destination)=>{await mkdir(path.dirname(destination),{recursive:true});await copyFile(source,destination);};
   try {
     for(const file of manifest.files){
-      if(!file.path.endsWith('.html')&&!['sitemap.xml','robots.txt'].includes(file.path))throw new Error(`Unexpected generated file: ${file.path}`);
+      if(!file.path.endsWith('.html')&&!DISCOVERY_FILES.includes(file.path))throw new Error(`Unexpected generated file: ${file.path}`);
       await copy(path.join(generated,file.path),path.join(staging,'static',file.path));
     }
     for(const asset of manifest.publicFiles||[]){
@@ -59,11 +60,15 @@ export async function packageLaunch({root=process.cwd(),generated=path.join(root
       for(const source of [endpoint.source,endpoint.helper])await copy(path.join(root,source),path.join(functionRoot,source));
       await writeFile(path.join(functionRoot,'.vc-config.json'),JSON.stringify({runtime:NODE_RUNTIME,handler:endpoint.source,launcherType:'Nodejs',shouldAddHelpers:!endpoint.rawBody},null,2));
     }
+    const published = new Set([...manifest.routes.map(r=>r.path),...manifest.files.map(f=>'/'+f.path),...(manifest.publicFiles||[]).map(f=>'/'+f.destination)]);
+    const usable = inputs.redirects.filter(r=>r.status===410 || r.destination.startsWith('https://') || published.has(r.destination.split(/[?#]/)[0]));
+    const omitted = inputs.redirects.filter(r=>!usable.includes(r));
+    await writeFile(path.join(staging,'proof-report.json'),JSON.stringify({scope:'five-document proof',redirects:usable.length,omittedRedirects:omitted,reason:'Destination outside the limited proof output; full rollout must include it.'},null,2));
     const routes=[
       {src:'.*',headers:{'X-Robots-Tag':'noindex'},continue:true},
-      ...inputs.redirects.map(r=>({src:'^'+r.source.replace(/[.*+?^${}()|[\]\\]/g,'\\$')+'$',status:301,headers:{Location:r.destination}})),
+      ...usable.map(r=>({src:'^'+escapePattern(r.source)+'$',status:r.status,...(r.status===301?{headers:{Location:r.destination}}:{})})),
       {src:'^/(?:MediaArchive\\.dc\\.html|district-map\\.html)$',headers:{'X-Robots-Tag':'noindex'},continue:true},
-      ...manifest.routes.map(r=>({src:'^'+r.path.replace(/[.*+?^${}()|[\]\\]/g,'\\$')+'$',dest:'/'+r.file})),
+      ...manifest.routes.map(r=>({src:'^'+escapePattern(r.path)+'$',dest:'/'+r.file})),
       {handle:'filesystem'},
       {src:'.*',status:404},
     ];
