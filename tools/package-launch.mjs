@@ -35,7 +35,7 @@ export async function verifyManifest(root,generated,manifest) {
     if(!/^\/(?!\/)/.test(route.path)||!names.has(route.file)||!route.file.endsWith('.html'))throw new Error('Route missing generated document');
   }
   const documents=new Set(manifest.routes.map(r=>r.file));
-  for(const name of names)if(!documents.has(name)&&![...DISCOVERY_FILES,'launch/runtime-template.html'].includes(name))throw new Error(`Unreferenced generated file: ${name}`);
+  for(const name of names)if(!documents.has(name)&&![...DISCOVERY_FILES,'launch/runtime-template.html'].includes(name)&&!name.match(/^(?:[a-z]{2,3}\/)?404\.html$/))throw new Error(`Unreferenced generated file: ${name}`);
 }
 export async function packageLaunch({root=process.cwd(),generated=path.join(root,'generated/proof'),output=path.join(root,'.vercel/output')}={}) {
   const manifest=JSON.parse(await readFile(path.join(generated,'manifest.json'),'utf8'));

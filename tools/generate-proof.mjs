@@ -13,6 +13,8 @@ import {pickerRedirectSource} from '../launch/bootstrap.mjs';
 import {buildGraph} from '../launch/schema.mjs';
 import {buildHead} from '../launch/head.mjs';
 import {buildSitemap,buildRobots} from '../launch/discovery.mjs';
+import {buildNotFound} from '../launch/notfound.mjs';
+import {RTL_LANGUAGES} from '../launch/routes.mjs';
 
 const root=process.cwd();
 const sandbox={window:{}};vm.runInNewContext(await readFile('stories-data.js','utf8'),sandbox);
@@ -38,7 +40,7 @@ const routes=paths.map(p=>({...router.parseUrl(p),path:p,legal:p==='/privacy-pol
 const input=await validateLaunchInputs({root,routes});
 const tracked=execFileSync('git',['ls-files','-z'],{encoding:'utf8'}).split('\0').filter(Boolean);
 const assets=[...new Set([...tracked.filter(publicAsset),'launch/bootstrap.mjs','launch/routes.mjs','launch/artwork.mjs','dehat-og.png'])].sort();
-const sources=[...new Set([...assets,'DEHAT.dc.html','launch/config.mjs','launch/head.mjs','launch/discovery.mjs','launch/edge.mjs','launch/schema.mjs',...API_ENDPOINTS.flatMap(e=>[e.source,e.helper]),...routes.filter(r=>r.legal).map(r=>r.source),...Object.values(LAUNCH_INPUTS),'tools/generate-proof.mjs','tools/proof-server.mjs','tools/proof-browser.mjs','tools/validate-launch-inputs.mjs','tools/package-launch.mjs'])].sort();
+const sources=[...new Set([...assets,'DEHAT.dc.html','launch/config.mjs','launch/head.mjs','launch/discovery.mjs','launch/edge.mjs','launch/schema.mjs','launch/notfound.mjs','launch/notfound-copy.json',...API_ENDPOINTS.flatMap(e=>[e.source,e.helper]),...routes.filter(r=>r.legal).map(r=>r.source),...Object.values(LAUNCH_INPUTS),'tools/generate-proof.mjs','tools/proof-server.mjs','tools/proof-browser.mjs','tools/validate-launch-inputs.mjs','tools/package-launch.mjs'])].sort();
 const sourceFiles=await Promise.all(sources.map(async p=>({path:p,sha256:digest(await readFile(p))})));
 const run=spawnSync(process.execPath,['tools/proof-browser.mjs',root],{stdio:'inherit',env:process.env});
 if(run.status!==0)throw new Error('Browser proof failed; no release output written');
@@ -87,6 +89,20 @@ try {
     }
     html=html.replace(/<title>[\s\S]*?<\/title>/gi,'').replace(/<meta name="description" content="[^"]*">/gi,'').replace('</head>',buildHead({route,seo,origin:PRODUCTION_ORIGIN,languages:LANGUAGES,pathFor:router.pathFor})+'</head>');
     await emit(route.file,html);
+  }
+  const notFoundCopy=JSON.parse(await readFile('launch/notfound-copy.json','utf8'));
+  const siteSource=await readFile('DEHAT.dc.html','utf8');
+  const dictStart=siteSource.indexOf('  _dict() {');
+  const dictEnd=siteSource.indexOf('\n  _canonName(',dictStart);
+  if(dictStart<0||dictEnd<0)throw new Error('Site dictionary could not be located');
+  const dictionary=vm.runInNewContext('({'+siteSource.slice(dictStart,dictEnd)+'})')._dict();
+  const labelKeys=['nav_home','nav_work','nav_stories','nav_finance','nav_answers'];
+  for(const lang of LANGUAGES){
+    const labels=Object.fromEntries(labelKeys.map(key=>[key,dictionary[lang]?.[key]||dictionary.en[key]]));
+    const text=notFoundCopy.copy[lang]||notFoundCopy.copy.en;
+    const notFoundRoute=router.parseUrl(lang==='en'?'/missing':`/${lang}/missing`);
+    const head=buildHead({route:notFoundRoute,seo:{title:text.title,description:text.body,ogImage:input.seo.en.home.ogImage},origin:PRODUCTION_ORIGIN,languages:LANGUAGES,pathFor:router.pathFor});
+    await emit(lang==='en'?'404.html':`${lang}/404.html`,buildNotFound({lang,copy:notFoundCopy,labels,pathFor:router.pathFor,head,dir:RTL_LANGUAGES.includes(lang)?'rtl':'ltr'}));
   }
   await emit('launch/runtime-template.html',runtimeTemplate(await readFile('DEHAT.dc.html','utf8')));
   const sitemap=buildSitemap({entries:sitemapEntries,origin:PRODUCTION_ORIGIN,lastmodFor,mode:'preview'});

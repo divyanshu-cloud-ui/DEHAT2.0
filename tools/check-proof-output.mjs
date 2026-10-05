@@ -1,8 +1,9 @@
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import {writeFile,readFile} from 'node:fs/promises';
+import {writeFile,readFile,mkdir} from 'node:fs/promises';
 import {serveProofOutput} from './serve-proof-output.mjs';
 import {DISCOVERY_FILES,API_ENDPOINTS} from '../launch/config.mjs';
+import {LANGUAGES} from '../launch/routes.mjs';
 const root=process.cwd();const local=await serveProofOutput(path.resolve('.vercel/output'));
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
@@ -14,6 +15,38 @@ try{
     report.http.push({route,status:response.status,location:response.headers.get('location')});
   }
   const manifest=JSON.parse(await readFile('generated/proof/manifest.json','utf8'));
+  const edge=JSON.parse(await readFile('.vercel/output/config.json','utf8'));
+  for(const lang of LANGUAGES){
+    const file=lang==='en'?'404.html':`${lang}/404.html`;
+    assert.ok(manifest.files.some(entry=>entry.path===file),file);
+    const html=await readFile(path.join('.vercel/output/static',file),'utf8');
+    assert.ok(html.includes(`<html lang="${lang}"`),file);
+    assert.ok(html.includes('name="robots" content="noindex"'),file);
+  }
+  for(const [route,lang,file] of [['/does-not-exist','en','404.html'],['/hi/nope','hi','hi/404.html'],['/ar/x/y','ar','ar/404.html']]){
+    const response=await fetch(local.origin+route,{redirect:'manual'});
+    assert.equal(response.status,404,route);
+    const fallback=edge.routes.slice(edge.routes.findIndex(rule=>rule.handle==='filesystem')+1).find(rule=>rule.src&&new RegExp(rule.src).test(route));
+    assert.equal(fallback.dest,'/'+file,route);
+    report.http.push({route,status:response.status,document:file,lang});
+  }
+  await mkdir('_internal/qa/166',{recursive:true});
+  for(const [file,lang] of [['404.html','en'],['hi/404.html','hi']])for(const viewport of [{width:390,height:844},{width:1440,height:900}]){
+    const proof=await browser.newPage({viewport});
+    await proof.goto(local.origin+'/'+file);
+    assert.equal(await proof.locator('html').getAttribute('lang'),lang);
+    assert.equal(await proof.locator('h1').count(),1);
+    assert.equal(await proof.locator('nav a').count(),5);
+    assert.equal(await proof.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+    await proof.screenshot({path:`_internal/qa/166/${lang}-${viewport.width}x${viewport.height}.png`});
+    await proof.close();
+  }
+  for(const file of ['404.html','hi/404.html']){
+    const narrow=await browser.newPage({viewport:{width:320,height:700}});
+    await narrow.goto(local.origin+'/'+file);
+    assert.equal(await narrow.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,file);
+    await narrow.close();
+  }
   for(const route of manifest.routes.filter(r=>!r.legal)){
     const page=await browser.newPage({viewport:{width:390,height:844}});const errors=[];
     page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text()+' '+m.location().url)});

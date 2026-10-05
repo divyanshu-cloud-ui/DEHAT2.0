@@ -67,3 +67,15 @@ test('API and asset caches are exclusive and www receives security headers',()=>
  const headers={};for(const r of matching(rules,'/impact','www.dehatindia.org')){Object.assign(headers,r.headers);if(r.status)break;}
  assert.equal(headers['X-Content-Type-Options'],'nosniff');assert.equal(headers.Location,origin+'$1');
 });
+test('not-found routes choose localized documents after filesystem handling',()=>{
+ const rules=buildRoutes({...inputs,mode:'preview',files:['index.html','404.html',...['hi','ar'].map(lang=>`${lang}/404.html`)]});
+ const tail=rules.slice(rules.findIndex(rule=>rule.handle==='filesystem')+1);
+ assert.equal(tail.length,28);
+ const pick=path=>tail.find(rule=>rule.src&&new RegExp(rule.src).test(path));
+ for(const [path,dest] of [['/hi/nope','/hi/404.html'],['/ar/x/y','/ar/404.html'],['/nope','/404.html']]){
+  assert.equal(pick(path).dest,dest);assert.equal(pick(path).status,404);
+ }
+ assert.ok(rules.some(rule=>rule.dest==='/index.html'&&new RegExp(rule.src).test('/')));
+ assert.ok(rules.some(rule=>rule.status===301&&new RegExp(rule.src).test('/programmes')));
+ assert.ok(rules.some(rule=>rule.src==='^/api/.*$'&&rule.headers?.['Cache-Control']==='no-store'));
+});
