@@ -243,8 +243,16 @@ function flattenObject(obj, prefix = '', res = {}) {
  */
 function checkDictionary(dict, lang, filename, options = {}) {
   const defects = [];
+  const isNonLatin = SCRIPT_MAP[lang] && SCRIPT_MAP[lang] !== "Latin";
   for (const [key, val] of Object.entries(dict)) {
     const offending = checkString(lang, val, options);
+    if (isNonLatin && typeof val === "string" && (val.includes(" |") || val.trim().endsWith("|"))) {
+      offending.push({
+        char: "|",
+        codepoint: "U+007C",
+        script: "ASCII pipe sentence mark (expected native punctuation)"
+      });
+    }
     if (offending.length > 0) {
       defects.push({
         lang,

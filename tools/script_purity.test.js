@@ -143,4 +143,16 @@ describe('Script Purity Gate & Validator Tests', () => {
     assert.equal(results[0].offending_chars[0].script, 'Latin');
   });
 
+  test('checkDictionary flags ASCII pipe sentence mark in non-Latin languages', () => {
+    const dict = {
+      test_clean: 'ଏକ ସୁନ୍ଦର କାହାଣୀ ।',
+      test_pipe: 'ଏକ ସୁନ୍ଦର କାହାଣୀ |'
+    };
+    const results = checkDictionary(dict, 'or', 'DEHAT.dc.html');
+    assert.equal(results.length, 1);
+    assert.equal(results[0].lang, 'or');
+    assert.equal(results[0].key, 'test_pipe');
+    assert.equal(results[0].offending_chars[0].char, '|');
+  });
+
 });
