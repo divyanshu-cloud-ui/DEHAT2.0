@@ -1,5 +1,5 @@
 {
-  "_note": "Copy for the not-found (404) page, written by Claude on 5 October 2026. English and Hindi are final; Antigravity translates the other 26 languages into this same shape. Link labels are NOT here: they come from the site dictionary keys listed in links[].label_key, which already exist in all 28 languages. Edit only through Claude.",
+  "_note": "Copy for the not-found (404) page, written by Claude on 5 October 2026. English and Hindi are final; Antigravity translates the other 26 languages into this same shape. Link labels are NOT here: they come from the site dictionary keys listed in links[].label_key, which already exist in all 28 languages. Edit only through Claude. Reviewed by Claude 5 Oct 2026 (review 166): 17 OK, 9 fixed (brx, doi, es, fr, ks, ru, sa, ta, zh). Native-speaker check still advised for mni, sat, ks, doi.",
   "links": [
     {
       "route_id": "home",
@@ -44,27 +44,27 @@
     },
     "zh": {
       "eyebrow": "页面未找到",
-      "title": "此页面未载入记录。",
-      "body": "该链接可能已过时、输入有误，或来自我们之前的网站。我们发布的所有内容仍在这里，这些是开始了解的好地方。",
+      "title": "这个页面不在记录中。",
+      "body": "该链接可能已过时、输入有误，或来自我们以前的网站。我们发布的所有内容都还在这里，这些都是很好的起点。",
       "ask": "在寻找特定内容？写信给我们，会有人给您回复："
     },
     "fr": {
       "eyebrow": "Page introuvable",
-      "title": "Cette page n’est pas au registre.",
-      "body": "Le lien est peut-être ancien, mal orthographié ou issu de notre précédent site web. Tout ce que nous publions est toujours ici, et voici de bons points de départ.",
-      "ask": "Vous cherchez quelque chose de précis ? Écrivez-nous et une personne vous répondra :"
+      "title": "Cette page n’est pas répertoriée.",
+      "body": "Le lien est peut-être ancien, mal saisi ou issu de notre précédent site web. Tout ce que nous publions est toujours ici, et voici de bons points de départ.",
+      "ask": "Vous cherchez quelque chose de précis ? Écrivez-nous et une personne vous répondra :"
     },
     "ru": {
       "eyebrow": "Страница не найдена",
       "title": "Этой страницы нет в записях.",
-      "body": "Возможно, ссылка устарела, была введена с ошибкой или вела на наш предыдущий сайт. Всё, что мы публикуем, по-прежнему здесь, и отсюда удобно начать.",
-      "ask": "Ищете что-то конкретное? Напишите нам, и человек ответит:"
+      "body": "Возможно, ссылка устарела, набрана с ошибкой или осталась от нашего прежнего сайта. Всё, что мы публикуем, по-прежнему здесь, и вот с чего удобно начать.",
+      "ask": "Ищете что-то конкретное? Напишите нам, и вам ответит человек:"
     },
     "es": {
       "eyebrow": "Página no encontrada",
       "title": "Esta página no está en el registro.",
       "body": "El enlace puede ser antiguo, estar mal escrito o pertenecer a nuestro sitio web anterior. Todo lo que publicamos sigue aquí, y estos son buenos puntos de partida.",
-      "ask": "¿Busca algo en particular? Escríbanos y una persona le responderá:"
+      "ask": "¿Buscas algo en particular? Escríbenos y una persona te responderá:"
     },
     "bn": {
       "eyebrow": "পেজ পাওয়া যায়নি",
@@ -86,8 +86,8 @@
     },
     "ta": {
       "eyebrow": "பக்கம் கிடைக்கவில்லை",
-      "title": "இந்தப் பக்கம் ஆவணத்தில் இல்லை.",
-      "body": "இந்த இணைப்பு பழையதாகவோ, தவறாக தட்டச்சு செய்யப்பட்டதாகவோ அல்லது எங்களின் முந்தைய வலைத்தளத்தைச் சேர்ந்ததாகவோ இருக்கலாம். நாங்கள் வெளியிடும் அனைத்தும் இன்னும் இங்கே உள்ளன, தொடங்குவதற்கு இவை சிறந்த இடங்கள்.",
+      "title": "இந்தப் பக்கம் பதிவுகளில் இல்லை.",
+      "body": "இந்த இணைப்பு பழையதாகவோ, தவறாக தட்டச்சு செய்யப்பட்டதாகவோ அல்லது எங்களின் முந்தைய வலைத்தளத்தைச் சேர்ந்ததாகவோ இருக்கலாம். நாங்கள் வெளியிடும் அனைத்தும் இன்னும் இங்கே உள்ளன, தொடங்குவதற்கு இவை நல்ல இடங்கள்.",
       "ask": "குறிப்பிட்ட எதையாவது தேடுகிறீர்களா? எங்களுக்கு எழுதுங்கள், ஒரு நபர் பதிலளிப்பார்:"
     },
     "gu": {
@@ -148,7 +148,7 @@
       "eyebrow": "صَفَح مِلیوو نَہ",
       "title": "یہ صَفَح چھُ نَہ رِکارڈَس پؠٹھ۔",
       "body": "ہیکہِ گٔژھِتھ زِ لِنک آسہِ پُرٲنؠ، غَلط ٹایِپ کٔرمٕژ، یا سانہِ پرٛونہِ ویب سایٹٕچ۔ پریتھ کینٛہہ یُس أسی شایع چھِ کَران چھُ ونؠ تہِ یتنے، تہٕ شُروع کَرنہٕ خٲطرٕ چھِ یِم اَسَل جاے۔",
-      "ask": "کینٛہہ خاص چھِو ژھانٛڈان؟ ہمَنٛز لِکھِو، کانہہ شَخص دِیہِ جَواب:"
+      "ask": "کینٛہہ خاص چھِو ژھانٛڈان؟ اَسہِ لِکھِو، کانہہ شَخص دِیہِ جَواب:"
     },
     "ne": {
       "eyebrow": "पृष्ठ फेला परेन",
@@ -169,9 +169,9 @@
       "ask": "ڇا ڪجهه خاص ڳولي رهيا آهيو؟ اسان کي لکو، ڪو شخص جواب ڏيندو:"
     },
     "doi": {
-      "eyebrow": "सफा नेईं थ्युह्‌आ",
+      "eyebrow": "सफा नेईं लब्भा",
       "title": "एह् सफा रिकार्ड च नेईं ऐ।",
-      "body": "होई सकदा ऐ लिंक पुराना होऐ, गलत टाइप होआ होऐ, या साह्‌ड़ी पिछली वेबसाइट दा होऐ। अस जेह्‌ड़ा किश बी छापने आं, ओह् सब किश एत्थै गै ऐ, ते शुरुआत आस्तै एह् अच्छी जगहा न।",
+      "body": "होई सकदा ऐ लिंक पुराना होऐ, गलत टाइप होआ होऐ, या साढ़ी पिछली वेबसाइट दा होऐ। अस जेह्‌ड़ा किश बी छापने आं, ओह् सब किश एत्थै गै ऐ, ते शुरुआत आस्तै एह् अच्छी जगहा न।",
       "ask": "किश खास टोह्ला करदे ओ? सानु लिखो, कोई बंदा जवाब देगा:"
     },
     "mni": {
@@ -184,13 +184,13 @@
       "eyebrow": "बिलाइ मोनाखै",
       "title": "बे बिलाइया रेकर्डआव गैया।",
       "body": "लिंकआ गोजाम जानो हागौ, गोरोन्थि टाइप जानो हागौ, एबा जोंनि सिगांनि वेबसाइटनि जानो हागौ। जों फोसावनाय गासैबो दाबो बेयावनो दं, आरो जागायनो थाखाय बेफोर मोजां जायगा।",
-      "ask": "मोनसे मोजां एबा खास बस्तु नागिरदों नामा? जोंनो लिरहर, सासे मानसिया फिननाय होगोन:"
+      "ask": "मोनसे खास बस्तु नागिरदों नामा? जोंनो लिरहर, सासे मानसिया फिननाय होगोन:"
     },
     "sa": {
       "eyebrow": "पृष्ठं न प्राप्तम्",
       "title": "इदं पृष्ठं अभिलेखे नास्ति।",
       "body": "सम्भवतः अयं सम्पर्कतन्तुः पुरातनः, अशुद्धं टङ्कितः, अथवा अस्माकं पूर्वतनजालपुटात् स्यात्। वयं यत्किमपि प्रकाशयामः तत्सर्वम् अद्यापि अत्रैव अस्ति, आरम्भाय च एतानि उत्तमस्थानानि सन्ति।",
-      "ask": "किमपि विशिष्टम् अन्विष्यति वा? अस्मान् लिखन्तु, कश्चन व्यक्तिः उत्तरं दास्यति:"
+      "ask": "किमपि विशिष्टम् अन्विष्यति वा? अस्मान् लिखतु, कश्चन व्यक्तिः उत्तरं दास्यति:"
     }
   }
 }

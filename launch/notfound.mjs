@@ -20,9 +20,12 @@ export function buildNotFound({lang,copy,labels,pathFor,head,dir}) {
   const english=copy?.copy?.en;
   const fields=['eyebrow','title','body','ask'];
   if(!english||fields.some(field=>typeof english[field]!=='string'||!english[field].trim()))throw new TypeError('English not-found copy is incomplete');
+  if(typeof copy.email!=='string'||!copy.email.trim())throw new TypeError('Not-found email is missing');
   const localized=copy.copy[lang];
-  const content=localized||english;
+  const usesEnglish=field=>typeof localized?.[field]!=='string'||!localized[field].trim();
+  const content=Object.fromEntries(fields.map(field=>[field,usesEnglish(field)?english[field]:localized[field]]));
   const copyLang=localized?'':' lang="en"';
+  const fieldLang=field=>localized&&usesEnglish(field)?' lang="en"':'';
   const home=pathFor('home',lang);
   if(typeof home!=='string'||!home.startsWith('/'))throw new TypeError('Invalid home path');
   const links=copy.links.map(({route_id,label_key})=>{
@@ -32,5 +35,5 @@ export function buildNotFound({lang,copy,labels,pathFor,head,dir}) {
     if(typeof href!=='string'||!href.startsWith('/'))throw new TypeError('Invalid navigation path');
     return `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`;
   });
-  return `<!doctype html><html lang="${escapeHtml(lang)}" dir="${escapeHtml(dir)}" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">${head}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Public+Sans:ital,wght@0,400..700;1,400..600&amp;display=swap" rel="stylesheet"><style>${styles}</style></head><body><main><a class="logo" href="${escapeHtml(home)}"><img src="/dehat-logo-horizontal.png" alt="DEHAT" width="1050" height="225"></a><div class="copy"${copyLang}><p class="eyebrow">404 · ${escapeHtml(content.eyebrow)}</p><h1>${escapeHtml(content.title)}</h1><p class="body">${escapeHtml(content.body)}</p></div><nav><ul>${links.join('')}</ul></nav><p class="ask"${copyLang}>${escapeHtml(content.ask)} <a href="mailto:${escapeHtml(copy.email)}">${escapeHtml(copy.email)}</a></p></main></body></html>`;
+  return `<!doctype html><html lang="${escapeHtml(lang)}" dir="${escapeHtml(dir)}" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">${head}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Public+Sans:ital,wght@0,400..700;1,400..600&amp;display=swap" rel="stylesheet"><style>${styles}</style></head><body><main><a class="logo" href="${escapeHtml(home)}"><img src="/dehat-logo-horizontal.png" alt="DEHAT" width="1050" height="225"></a><div class="copy"${copyLang}><p class="eyebrow"${fieldLang('eyebrow')}>404 · ${escapeHtml(content.eyebrow)}</p><h1${fieldLang('title')}>${escapeHtml(content.title)}</h1><p class="body"${fieldLang('body')}>${escapeHtml(content.body)}</p></div><nav><ul>${links.join('')}</ul></nav><p class="ask"${copyLang}${fieldLang('ask')}>${escapeHtml(content.ask)} <a href="mailto:${escapeHtml(copy.email)}">${escapeHtml(copy.email)}</a></p></main></body></html>`;
 }

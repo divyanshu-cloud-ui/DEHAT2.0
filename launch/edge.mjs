@@ -78,7 +78,7 @@ export function buildRoutes({mode,origin,redirects,routes,publishedPaths,files,a
   output.push({src:`^/(?!(?:${legalNames})$)(.+)/$`,status:301,headers:location('/$1')});
   for(const route of routes)output.push({src:exact(route.path),dest:'/'+route.file});
   output.push({handle:'filesystem'});
-  if(files.includes('404.html'))for(const lang of LANGUAGES.filter(code=>code!=='en')){
+  if(files.includes('404.html'))for(const lang of LANGUAGES.filter(code=>code!=='en'&&files.includes(`${code}/404.html`))){
     output.push({src:`^/${lang}(?:/.*)?$`,dest:`/${lang}/404.html`,status:404});
   }
   output.push(files.includes('404.html')?{src:'.*',dest:'/404.html',status:404}:{src:'.*',status:404});
