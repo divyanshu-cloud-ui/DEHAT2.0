@@ -1,5 +1,18 @@
 // One production identity for canonical URLs, sitemap and metadata.
 export const PRODUCTION_ORIGIN = 'https://dehatindia.org';
+import {LANGUAGES} from './routes.mjs';
+export const PUBLISHED = Object.freeze({languages:Object.freeze([...LANGUAGES]),storyLanguages:Object.freeze(['en','hi'])});
+export const INDEXED_LANGUAGES = Object.freeze(['en','hi']);
+function uniqueSupported(codes,label){
+  if(!Array.isArray(codes)||!codes.length||new Set(codes).size!==codes.length||codes.some(code=>!LANGUAGES.includes(code)))throw new TypeError(`Invalid ${label}`);
+}
+export function validatePublication(){
+  uniqueSupported(PUBLISHED.languages,'published languages');
+  uniqueSupported(PUBLISHED.storyLanguages,'story languages');
+  uniqueSupported(INDEXED_LANGUAGES,'indexed languages');
+  if(!PUBLISHED.languages.includes('en')||!PUBLISHED.storyLanguages.includes('en')||!INDEXED_LANGUAGES.includes('en'))throw new TypeError('English must be published and indexed');
+  if(PUBLISHED.storyLanguages.some(code=>!PUBLISHED.languages.includes(code))||INDEXED_LANGUAGES.some(code=>!PUBLISHED.languages.includes(code)))throw new TypeError('Publication language subset mismatch');
+}
 export const ANALYTICS_ENABLED = false;
 export const NODE_RUNTIME = 'nodejs22.x';
 export const LAUNCH_INPUTS = Object.freeze({

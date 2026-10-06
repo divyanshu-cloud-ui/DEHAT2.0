@@ -41,7 +41,7 @@ test('production enforces published destinations and canonical www; preview cach
  assert.equal(rules.at(-1).dest,'/404.html');
  assert.ok(!rules.some(r=>r.headers?.['X-Robots-Tag']==='noindex, nofollow'));
  assert.ok(rules.some(r=>r.src==='^/api/.*$'&&r.headers['Cache-Control']==='no-store'));
- assert.ok(rules.some(r=>r.src==='^/sitemap\\.xml$'&&r.headers['Content-Type']==='application/xml; charset=utf-8'));
+ assert.ok(rules.some(r=>r.src==='^/sitemap(?:_index)?\\.xml$'&&r.headers['Content-Type']==='application/xml; charset=utf-8'));
  assert.ok(rules.some(r=>r.src==='^/llms(?:-full)?\\.txt$'&&r.headers['Cache-Control']==='public, max-age=3600'));
  assert.throws(()=>buildRoutes({...inputs,mode:'production',redirects:[]}),/required/);
  assert.throws(()=>buildRoutes({...inputs,mode:'test'}),/mode/);

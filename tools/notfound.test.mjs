@@ -47,12 +47,13 @@ test('French non-breaking spaces survive HTML escaping',()=>{
   assert.ok(html.includes('\u00a0:'));
 });
 
-test('English and Hindi render exactly the supplied copy and five localized links',()=>{
+test('English and Hindi render supplied copy, localized links and English return',()=>{
   for(const lang of ['en','hi']){
     const values=lang==='hi'?{nav_home:'मुख पृष्ठ',nav_work:'हमारा कार्य',nav_stories:'कहानियाँ',nav_finance:'पारदर्शिता',nav_answers:'उत्तर'}:labels;
     const html=render(lang,{labels:values});
     for(const field of ['eyebrow','title','body','ask'])assert.ok(html.includes(copy.copy[lang][field]),`${lang} ${field}`);
-    assert.equal((html.match(/<li><a href=/g)||[]).length,5);
+    assert.equal((html.match(/<li><a href=/g)||[]).length,lang==='en'?5:6);
+    if(lang!=='en')assert.ok(html.includes('<a href="/" lang="en">English home</a>'));
     for(const {route_id,label_key} of copy.links)assert.ok(html.includes(`<a href="${router.pathFor(route_id,lang)}">${values[label_key]}</a>`));
     assert.ok(html.includes(`<html lang="${lang}"`));
     assert.ok(html.includes('name="robots" content="noindex"'));

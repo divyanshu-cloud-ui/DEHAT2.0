@@ -18,7 +18,8 @@ export function publicAsset(value) {
     /^launch\/(?:bootstrap\.mjs|routes\.mjs|artwork\.mjs|runtime-template\.html)$/.test(value)||
     /^content-i18n\/[a-z]{2,3}\.js$/.test(value)||
     /^dehat-[\w-]+\.png$/.test(value)||
-    /^assets\/(?:ink|story|portraits|svc|art|thumb)\/[\w/.-]+\.(?:png|svg|webp|jpg)$/.test(value);
+    /^assets\/(?:ink|story|portraits|svc|art|thumb|logos|partners|cj|illus)\/[\w/.-]+\.(?:png|svg|webp|jpg)$/.test(value)||
+    /^assets\/[\w.-]+\.(?:png|svg|webp|jpg)$/.test(value);
 }
 export async function verifyManifest(root,generated,manifest) {
   if(manifest.version!==1||manifest.generation?.mode!=='proof')throw new Error('Only reviewed proof manifests can be packaged');

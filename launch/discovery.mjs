@@ -7,7 +7,7 @@ function validDate(value) {
   const date=new Date(value+'T00:00:00Z');
   return !Number.isNaN(date.getTime())&&date.toISOString().slice(0,10)===value;
 }
-export function buildSitemap({entries,origin,lastmodFor,mode='production'}) {
+export function buildSitemap({entries,origin,lastmodFor,mode='production',indexedLanguages}) {
   if(!['preview','production'].includes(mode))throw new TypeError('Unknown sitemap mode');
   if (entries.length>50000) throw new RangeError('Sitemap entry limit exceeded');
   const seen=new Set(),byIdentity=new Map();
@@ -23,9 +23,10 @@ export function buildSitemap({entries,origin,lastmodFor,mode='production'}) {
     let line=`<url><loc>${xml(origin+entry.path)}</loc>`;
     if(date!==null)line+=`<lastmod>${date}</lastmod>`;
     if(entry.kind==='app'){
-      for(const code of LANGUAGES){
+      for(const code of indexedLanguages||LANGUAGES){
         const alternate=byIdentity.get(entry.routeId+'\0'+code);
         if(!alternate&&mode==='preview')continue;
+        if(!alternate&&indexedLanguages)continue;
         if(!alternate)throw new TypeError(`Missing ${code} alternate for ${entry.routeId}`);
         line+=`<xhtml:link rel="alternate" hreflang="${HREFLANG[code]}" href="${xml(origin+alternate.path)}"/>`;
       }
@@ -43,5 +44,6 @@ export function buildRobots({mode,origin}) {
   if(mode==='preview')return 'User-agent: *\nDisallow: /\n';
   if(mode!=='production')throw new TypeError('Unknown robots mode');
   const crawlers=['GPTBot','OAI-SearchBot','ChatGPT-User','ClaudeBot','Claude-User','PerplexityBot','Google-Extended','Applebot-Extended','CCBot'];
-  return [['User-agent: *','Disallow: /api/'].join('\n'),...crawlers.map(name=>`User-agent: ${name}\nAllow: /\nDisallow: /api/`),`Sitemap: ${origin}/sitemap.xml`].join('\n\n')+'\n';
+  const blocked=['/api/','/_internal/','/generated/','/.vercel/','/launch/'];
+  return [['User-agent: *',...blocked.map(path=>`Disallow: ${path}`)].join('\n'),...crawlers.map(name=>`User-agent: ${name}\nAllow: /\n${blocked.map(path=>`Disallow: ${path}`).join('\n')}`),`Sitemap: ${origin}/sitemap_index.xml`].join('\n\n')+'\n';
 }

@@ -9,7 +9,7 @@ import {createRequire} from 'node:module';
 test('deployment allowlist excludes private documents and traversal',()=>{
   for(const name of ['../secret','/private','a/../b','a\\b','a//b'])assert.throws(()=>safeRelative(name));
   for(const name of ['.image-slots.state.json','_internal/proof.html','assets/docs/report.pdf','EVIDENCE_VAULT/file.png','PUBLIC_DOCUMENTS/file.pdf','api/_paypal.js'])assert.equal(publicAsset(name),false,name);
-  for(const name of ['support.js','content-i18n/ar.js','assets/story/web/story-002.png','launch/bootstrap.mjs'])assert.equal(publicAsset(name),true,name);
+  for(const name of ['support.js','content-i18n/ar.js','assets/story/web/story-002.png','assets/logos/actionaid-association.png','assets/partners/directorate-of-education-government-of-uttar-pradesh.png','assets/cj/community-planning-board.png','assets/story-development.png','launch/bootstrap.mjs'])assert.equal(publicAsset(name),true,name);
 });
 test('proof bundle preserves seven handlers and webhook raw body configuration',async()=>{
   const root=await mkdtemp(path.join(tmpdir(),'dehat-package-test-'));

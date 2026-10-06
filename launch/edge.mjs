@@ -1,5 +1,5 @@
 import {LANGUAGES} from './routes.mjs';
-import {LEGAL_PATHS} from './config.mjs';
+import {LEGAL_PATHS,PUBLISHED} from './config.mjs';
 
 // Each remote origin below occurs in DEHAT.dc.html, support.js or the local
 // proof resource log. This policy is report-only while the runtime is measured.
@@ -55,7 +55,7 @@ export function buildRoutes({mode,origin,redirects,routes,publishedPaths,files,a
   output.push(cache('^/[^/]*-data\\.js$',revalidate));
   output.push(cache('^/content-i18n/.*$',revalidate));
   output.push(cache('^/launch/.*$',revalidate));
-  output.push(cache('^/sitemap\\.xml$',revalidate,{'Content-Type':'application/xml; charset=utf-8'}));
+  output.push(cache('^/sitemap(?:_index)?\\.xml$',revalidate,{'Content-Type':'application/xml; charset=utf-8'}));
   output.push(cache('^/robots\\.txt$',revalidate));
   output.push(cache('^/llms(?:-full)?\\.txt$','public, max-age=3600',{'Content-Type':'text/plain; charset=utf-8'}));
   output.push(cache('^/api/.*$','no-store'));
@@ -78,9 +78,12 @@ export function buildRoutes({mode,origin,redirects,routes,publishedPaths,files,a
   output.push({src:`^/(?!(?:${legalNames})$)(.+)/$`,status:301,headers:location('/$1')});
   for(const route of routes)output.push({src:exact(route.path),dest:'/'+route.file});
   output.push({handle:'filesystem'});
-  if(files.includes('404.html'))for(const lang of LANGUAGES.filter(code=>code!=='en'&&files.includes(`${code}/404.html`))){
-    output.push({src:`^/${lang}(?:/.*)?$`,dest:`/${lang}/404.html`,status:404});
+  if(mode==='production')for(const lang of PUBLISHED.languages.filter(code=>code!=='en'&&!PUBLISHED.storyLanguages.includes(code)&&files.includes(`${code}/404.html`))){
+    output.push({src:`^/${lang}/stories/[^/]+/?$`,dest:`/${lang}/404.html`,status:404,headers:{'X-Robots-Tag':'noindex'}});
   }
-  output.push(files.includes('404.html')?{src:'.*',dest:'/404.html',status:404}:{src:'.*',status:404});
+  if(files.includes('404.html'))for(const lang of LANGUAGES.filter(code=>code!=='en'&&files.includes(`${code}/404.html`))){
+    output.push({src:`^/${lang}(?:/.*)?$`,dest:`/${lang}/404.html`,status:404,headers:{'X-Robots-Tag':'noindex'}});
+  }
+  output.push(files.includes('404.html')?{src:'.*',dest:'/404.html',status:404,headers:{'X-Robots-Tag':'noindex'}}:{src:'.*',status:404});
   return output;
 }

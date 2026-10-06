@@ -46,7 +46,7 @@ export async function proofServer(root) {
       }
       // No dotfiles, private directories, APIs or arbitrary document exposure.
       if(pathname.includes('..')||pathname.split('/').some(p=>p.startsWith('.')||p.startsWith('_'))||pathname.startsWith('/api/')||pathname.startsWith('/assets/docs/')){res.writeHead(404);return res.end('Not found');}
-      const permitted=/^\/[\w-]+\.(?:js|png|svg|webp|jpg)$/.test(pathname)||/^\/assets\/(?:ink|story|portraits|svc|art|thumb)\/[\w/.-]+\.(?:png|svg|webp|jpg)$/.test(pathname)||/^\/launch\/(?:bootstrap|routes|artwork)\.mjs$/.test(pathname)||/^\/content-i18n\/[a-z]+\.js$/.test(pathname)||['/MediaArchive.dc.html','/district-map.html'].includes(pathname)||route.kind==='legal';
+      const permitted=/^\/[\w-]+\.(?:js|png|svg|webp|jpg)$/.test(pathname)||/^\/assets\/(?:ink|story|portraits|svc|art|thumb|logos|partners|cj|illus)\/[\w/.-]+\.(?:png|svg|webp|jpg)$/.test(pathname)||/^\/assets\/[\w.-]+\.(?:png|svg|webp|jpg)$/.test(pathname)||/^\/launch\/(?:bootstrap|routes|artwork)\.mjs$/.test(pathname)||/^\/content-i18n\/[a-z]+\.js$/.test(pathname)||['/MediaArchive.dc.html','/district-map.html'].includes(pathname)||route.kind==='legal';
       if(!permitted){res.writeHead(404);return res.end('Not found');}
       const relative=route.kind==='legal'?route.source:pathname.slice(1);
       const contents=await readFile(path.join(root,relative));

@@ -20,8 +20,8 @@ test('sitemap rejects missing locale, duplicates, impossible dates and entry lim
 });
 test('preview and production robots bytes follow the requested crawler order',()=>{
   assert.equal(buildRobots({mode:'preview',origin}),'User-agent: *\nDisallow: /\n');
-  const production=buildRobots({mode:'production',origin});assert.ok(production.startsWith('User-agent: *\nDisallow: /api/\n\nUser-agent: GPTBot'));
-  assert.ok(production.endsWith('Sitemap: https://dehatindia.org/sitemap.xml\n'));
+  const production=buildRobots({mode:'production',origin});assert.ok(production.startsWith('User-agent: *\nDisallow: /api/\nDisallow: /_internal/'));
+  assert.ok(production.endsWith('Sitemap: https://dehatindia.org/sitemap_index.xml\n'));
   assert.equal((production.match(/Disallow: \/api\//g)||[]).length,10);
   assert.throws(()=>buildRobots({mode:'local',origin}),TypeError);
 });

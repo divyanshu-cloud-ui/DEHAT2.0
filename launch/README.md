@@ -65,3 +65,51 @@ cannot prove payment-provider authentication or Vercel edge behaviour.
 Handoff 165 assigns hosted preview deployment, payment-provider testing,
 cutover, further payload optimisation, and navigation refinements to Claude.
 The five-page proof remains a noindex review artifact.
+
+## Handoff 168: full site candidate
+
+`node tools/generate-site.mjs` builds the Wave 1 publication set from the
+arrays in `launch/config.mjs`: 28 languages for fixed routes, English and Hindi
+for stories, and three English legal documents. It uses four browser pages in
+parallel and writes a single prebuilt release to `.vercel/output`. The source,
+output and route digests, page timings, pending redirect destinations and Node
+peak memory are recorded in `generated/site/manifest.json`. The command
+replaces the previous output only after all source and output checks pass.
+
+The full renderer needs a headless Chromium process and loopback HTTP access.
+Use `PLAYWRIGHT_MODULE` and, if needed, `CHROME_PATH` as described above. The
+13 press PDFs in the redirect inventory are launch-time uploads; the manifest
+lists their destinations as pending until those files are present. Do not
+deploy the full candidate until the browser build, output audit and hosted
+checks are complete.
+
+## Verify the full candidate
+
+Run the renderer from an ordinary macOS Terminal with Playwright and Chromium
+available, then run the read-only output audit:
+
+```
+node tools/probe-site-route.mjs /get-involved/people
+node tools/generate-site.mjs
+node tools/verify-site.mjs
+node --test tools/*.test.mjs launch/*.test.mjs
+node audit_all_28_languages.js
+```
+
+The audit checks every source and generated-file digest, the exact publication
+inventory, metadata and schema references, sitemap membership and alternates,
+internal links and local resources, 273 redirect rules, private-file exclusion,
+and 20 local HTTP probes. Its raw details are written to
+`generated/site/verification.json`. `PASS_WITH_PENDING_UPLOADS` means the build
+passes these local checks while the 13 press PDFs remain absent. The browser
+run's measured time, per-page timings, output size and Node peak RSS are in
+`generated/site/manifest.json`. It does not measure Chromium's peak memory.
+The one-route probe is quick and reports exact failed resource URLs before the
+710-app-page browser pass is attempted.
+
+For a direct 404 check, start `node tools/serve-site-output.mjs` in another
+Terminal and use `curl -i http://127.0.0.1:8898/or/stories/a-friend-who-noticed`.
+Expect HTTP 404, `X-Robots-Tag: noindex`, and an Odia HTML document with a
+localized home link and an English home link. This loopback server approximates
+Build Output routing. A hosted preview is still required to verify Vercel's
+actual edge behaviour and prebuilt upload limits.

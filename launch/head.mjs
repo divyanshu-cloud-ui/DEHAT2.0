@@ -5,7 +5,7 @@ export const HREFLANG = Object.freeze(Object.fromEntries(LANGUAGES.map(code=>[co
 const attribute = value => String(value).replace(/[&"<>]/g, char=>({'&':'&amp;','"':'&quot;','<':'&lt;','>':'&gt;'}[char]));
 const titleText = value => String(value).replace(/[&<>]/g, char=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[char]));
 
-export function buildHead({route,seo,origin,languages,pathFor}) {
+export function buildHead({route,seo,origin,languages,pathFor,indexedLanguages=languages}) {
   if (!seo || ['title','description','ogImage'].some(field=>typeof seo[field]!=='string'||!seo[field].trim())) throw new TypeError('Complete SEO title, description and ogImage are required');
   if (!Array.isArray(languages)||!languages.includes(route?.lang)) throw new TypeError('Route language must be in languages');
   const canonical=origin+route.canonicalPath;
@@ -17,8 +17,9 @@ export function buildHead({route,seo,origin,languages,pathFor}) {
   if (route.status===404) tags.push('<meta name="robots" content="noindex">');
   else {
     tags.push(`<link rel="canonical" href="${attribute(canonical)}">`);
-    if (route.kind==='app' && route.status===200) {
-      for (const code of languages) {
+    if(route.kind==='app'&&!indexedLanguages.includes(route.lang))tags.push('<meta name="robots" content="noindex,follow">');
+    if (route.kind==='app' && route.status===200 && indexedLanguages.includes(route.lang)) {
+      for (const code of languages.filter(code=>indexedLanguages.includes(code))) {
         const path=pathFor(route.routeId,code);
         if (typeof path!=='string'||!path.startsWith('/')) throw new TypeError('Alternate path must start with /');
         tags.push(`<link rel="alternate" hreflang="${attribute(HREFLANG[code])}" href="${attribute(origin+path)}">`);
