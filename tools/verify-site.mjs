@@ -11,6 +11,7 @@ import {PUBLISHED,INDEXED_LANGUAGES,PRODUCTION_ORIGIN,API_ENDPOINTS} from '../la
 import {buildHead} from '../launch/head.mjs';
 import {buildGraph} from '../launch/schema.mjs';
 import {serveSiteOutput} from './serve-site-output.mjs';
+import {documentGate} from './document-gate.mjs';
 
 const root=process.cwd();
 const options=new Set(process.argv.slice(2));
@@ -24,7 +25,6 @@ const config=JSON.parse(await readFile('.vercel/output/config.json','utf8'));
 if(manifest.generation?.mode!=='site')throw new Error('Full site manifest is absent; run tools/generate-site.mjs first');
 const report={result:'FAIL',documents:0,indexed:0,files:0,errors:[],warnings:[],http:[],bytes:0,sourceDigest:manifest.sourceDigest};
 const fail=(kind,detail)=>report.errors.push({kind,detail});
-const warn=(kind,detail)=>report.warnings.push({kind,detail});
 const occurrences=(text,pattern)=>[...text.matchAll(pattern)].length;
 const fileSet=new Set(manifest.files.map(entry=>entry.path));
 const routeSet=new Set(manifest.routes.map(entry=>entry.path));
@@ -101,7 +101,7 @@ try{
   for(const extra of (await inventory(staticRoot)).filter(name=>!fileSet.has(name)))fail('unmanifested-file',extra);
   const redirectSources=new Set(input.redirects.map(row=>row.source));
   const linkFailures=[];
-  const pendingDocumentLinks=[];
+  const documentLinks=[];
   const relativeDocumentLinks=[];
   const resourceFailures=[];
   for(const entry of manifest.routes){
@@ -135,14 +135,14 @@ try{
       if(/^(?:mailto:|tel:|#)/i.test(href))continue;
       if(/^(?:\.\/)?assets\/docs\/[^?#]+\.pdf(?:[?#].*)?$/i.test(href)){
         const target='/'+href.replace(/^\.\//,'').split(/[?#]/)[0];
-        pendingDocumentLinks.push({page:entry.path,href,target});
+        documentLinks.push({page:entry.path,href,target});
         relativeDocumentLinks.push({page:entry.path,href,resolved:new URL(href,PRODUCTION_ORIGIN+entry.path).pathname});
         continue;
       }
       let url;try{url=new URL(href,PRODUCTION_ORIGIN+entry.path);}catch{linkFailures.push({page:entry.path,href,reason:'invalid URL'});continue;}
       if(!['dehatindia.org','www.dehatindia.org'].includes(url.hostname))continue;
-      if(/^\/assets\/docs\/[^/]+\.pdf$/i.test(url.pathname)&&!publishedFile(url.pathname)){
-        pendingDocumentLinks.push({page:entry.path,href,target:url.pathname});
+      if(/^\/assets\/docs\/[^/]+\.pdf$/i.test(url.pathname)){
+        documentLinks.push({page:entry.path,href,target:url.pathname});
         continue;
       }
       if(!staticDocument(url.pathname)&&!redirectSources.has(url.pathname)&&!API_ENDPOINTS.some(api=>api.path===url.pathname))linkFailures.push({page:entry.path,href});
@@ -155,10 +155,9 @@ try{
     }
   }
   if(linkFailures.length)fail('internal-links',`${linkFailures.length} missing targets`);
-  if(pendingDocumentLinks.length)(requireDocuments?fail:warn)('pending-document-uploads',`${pendingDocumentLinks.length} links to ${new Set(pendingDocumentLinks.map(row=>row.target)).size} unpublished PDFs`);
   if(relativeDocumentLinks.length)fail('relative-document-links',`${relativeDocumentLinks.length} PDF links resolve below their page route instead of /assets/docs/`);
   if(resourceFailures.length)fail('resources',`${resourceFailures.length} missing targets`);
-  report.linkFailures=linkFailures;report.pendingDocumentLinks=pendingDocumentLinks;report.relativeDocumentLinks=relativeDocumentLinks;report.resourceFailures=resourceFailures;
+  report.linkFailures=linkFailures;report.relativeDocumentLinks=relativeDocumentLinks;report.resourceFailures=resourceFailures;
   const sitemap=await readFile(path.join(staticRoot,'sitemap.xml'),'utf8');
   const locations=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname);
   if(locations.length!==indexedSet.size||new Set(locations).size!==indexedSet.size||locations.some(pathname=>!indexedSet.has(pathname)))fail('sitemap','Sitemap does not match indexed routes');
@@ -168,14 +167,19 @@ try{
   const index=await readFile(path.join(staticRoot,'sitemap_index.xml'),'utf8');
   if(!index.includes(PRODUCTION_ORIGIN+'/sitemap.xml'))fail('sitemap-index','Missing sitemap reference');
   for(const [name,expected] of [['llms.txt',input.llms],['llms-full.txt',input.llmsFull]])if(await readFile(path.join(staticRoot,name),'utf8')!==expected)fail('discovery',name);
-  const pending=[];
+  const redirectDestinations=[];
   for(const row of input.redirects){
     const rule=config.routes.find(candidate=>candidate.status===row.status&&candidate.src&&new RegExp(candidate.src).test(row.source));
     if(!rule)fail('redirect-rule',row.source);
-    if(row.status===301&&row.destination.startsWith('/')&&!staticDocument(new URL(row.destination,PRODUCTION_ORIGIN).pathname))pending.push(row.destination);
+    if(row.status===301&&row.destination.startsWith('/'))redirectDestinations.push(row.destination);
   }
-  if(pending.length)(requireDocuments?fail:warn)('pending-uploads',`${pending.length} local redirect destinations are absent: ${pending.join(', ')}`);
-  if(JSON.stringify(pending)!==JSON.stringify(manifest.pendingRedirectDestinations))fail('pending-manifest','Pending redirect list differs from manifest');
+  const documents=documentGate({documentLinks,redirectDestinations,available:staticDocument,requireDocuments});
+  report.errors.push(...documents.errors);
+  report.warnings.push(...documents.warnings);
+  report.pendingDocumentLinks=documents.pendingDocumentLinks;
+  report.missingDocuments=documents.missingDocuments;
+  report.missingRedirects=documents.missingRedirects;
+  if(JSON.stringify(documents.missingRedirects)!==JSON.stringify(manifest.pendingRedirectDestinations))fail('pending-manifest','Pending redirect list differs from manifest');
   const local=await serveSiteOutput(path.join(root,'.vercel/output'));
   try{
     const cases=[['/',200],['/hi',200],['/ar/impact',200],['/stories/'+stories[0].slug,200],['/hi/stories/'+stories[0].slug,200],['/media',200],['/finance',200],['/answers',200],['/privacy-policy/',200],['/robots.txt',200],['/sitemap.xml',200],['/sitemap_index.xml',200],['/llms.txt',200],['/llms-full.txt',200],['/or/stories/'+stories[0].slug,404],['/ar/does-not-exist',404],['/does-not-exist',404],['/_internal/secret',404],[input.redirects.find(row=>row.status===410).source,410],[input.redirects.find(row=>row.status===301&&!row.destination.startsWith('/assets/press/')).source,301]];

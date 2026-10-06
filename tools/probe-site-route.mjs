@@ -14,4 +14,4 @@ if(route.status!==200||route.kind!=='app')throw new Error(`Not an app document: 
 const result=await renderSite(process.cwd(),[{...route,path:pathname}],{concurrency:1,onPage:async(_,html)=>{
   if(!html.includes('id="launch-snapshot"'))throw new Error('Readable static snapshot missing');
 }});
-console.log(JSON.stringify({route:pathname,...result[0]},null,2));
+console.log(JSON.stringify({route:pathname,...result.timings[0],retries:result.retries},null,2));

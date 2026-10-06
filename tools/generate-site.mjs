@@ -123,10 +123,10 @@ function sourceDate(filename){
 function lastmodFor(route){return sourceDate(route.kind==='legal'?route.source:'DEHAT.dc.html');}
 async function checkSources(){for(const entry of sourceFiles)if(digest(await readFile(entry.path))!==entry.sha256)throw new Error(`Source changed during generation: ${entry.path}`);}
 const appRoutes=routes.filter(route=>!route.legal);
-let timings=[];
+let timings=[],retries=[];
 try{
   await mkdir(staticRoot,{recursive:true});
-  timings=await renderSite(root,appRoutes,{concurrency:4,onPage:async(route,snapshot)=>emit(route.file,await cssOutsideHtml(withMetadata(route,snapshot)))});
+  ({timings,retries}=await renderSite(root,appRoutes,{concurrency:4,onPage:async(route,snapshot)=>emit(route.file,await cssOutsideHtml(withMetadata(route,snapshot)))}));
   await checkSources();
   for(const route of routes.filter(route=>route.legal)){
     let html=await readFile(route.source,'utf8');
@@ -182,7 +182,9 @@ try{
   await checkSources();
   for(const file of files)if(digest(await readFile(path.join(staticRoot,file.path)))!==file.sha256)throw new Error(`Generated digest mismatch: ${file.path}`);
   peakNodeRssBytes=Math.max(peakNodeRssBytes,process.memoryUsage().rss);
-  const manifest={version:1,generation:{mode:'site',nodeVersion:process.version,elapsedMs:Math.round(performance.now()-start),peakNodeRssBytes},sourceFiles,sourceDigest,files,routes:routes.map(({path,file,routeId,lang,kind})=>({path,file,routeId,lang,kind})),publicFiles,indexedPaths:indexedRoutes.map(route=>route.path),pendingRedirectDestinations:missingRedirects.map(row=>row.destination),timings};
+  const routeOrder=new Map(appRoutes.map((route,index)=>[route.path,index]));
+  retries.sort((a,b)=>routeOrder.get(a.route)-routeOrder.get(b.route));
+  const manifest={version:1,generation:{mode:'site',nodeVersion:process.version,elapsedMs:Math.round(performance.now()-start),peakNodeRssBytes,retries},sourceFiles,sourceDigest,files,routes:routes.map(({path,file,routeId,lang,kind})=>({path,file,routeId,lang,kind})),publicFiles,indexedPaths:indexedRoutes.map(route=>route.path),pendingRedirectDestinations:missingRedirects.map(row=>row.destination),timings};
   const previous=output+'.previous-'+randomUUID();
   let hadPrevious=false;
   try{await rename(output,previous);hadPrevious=true;}catch(error){if(error.code!=='ENOENT')throw error;}
@@ -193,6 +195,6 @@ try{
   await writeFile('generated/site/manifest.json',JSON.stringify(manifest,null,2));
   const size=files.reduce((sum,file)=>sum+file.bytes,0);
   const appHtmlBytes=files.filter(file=>appRoutes.some(route=>route.file===file.path)).reduce((sum,file)=>sum+file.bytes,0);
-  console.log(JSON.stringify({documents:routes.length,indexed:indexedRoutes.length,files:files.length,bytes:size,appHtmlBytes,meanAppHtmlBytes:Math.round(appHtmlBytes/appRoutes.length),cssFiles:cssFiles.size,cssBytes:[...cssFiles.values()].reduce((n,css)=>n+Buffer.byteLength(css),0),runtimeTemplateBytes:Buffer.byteLength(runtime),elapsedMs:manifest.generation.elapsedMs,peakNodeRssBytes,pendingRedirects:missingRedirects.length,sourceDigest},null,2));
+  console.log(JSON.stringify({documents:routes.length,indexed:indexedRoutes.length,files:files.length,bytes:size,appHtmlBytes,meanAppHtmlBytes:Math.round(appHtmlBytes/appRoutes.length),cssFiles:cssFiles.size,cssBytes:[...cssFiles.values()].reduce((n,css)=>n+Buffer.byteLength(css),0),runtimeTemplateBytes:Buffer.byteLength(runtime),elapsedMs:manifest.generation.elapsedMs,peakNodeRssBytes,retryCount:retries.length,pendingRedirects:missingRedirects.length,sourceDigest},null,2));
 }catch(error){await rm(stage,{recursive:true,force:true});throw error;}
 finally{clearInterval(memorySample);}

@@ -2,22 +2,32 @@ import {performance} from 'node:perf_hooks';
 import {proofServer} from './proof-server.mjs';
 
 // One server and browser, with a bounded pool of independent pages.
-export async function renderSite(root,routes,{concurrency=4,onPage}={}){
-  const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
-  const local=await proofServer(root);
+export async function renderSite(root,routes,{concurrency=4,onPage,launchBrowser,serve=proofServer}={}){
+  const local=await serve(root);
   let browser;
   const timings=[];
+  const retries=[];
   let cursor=0;
   let failed=false;
   try{
-    browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
+    if(launchBrowser)browser=await launchBrowser();
+    else{
+      const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
+      browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
+    }
     async function worker(){
-      const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:1});
-      const page=await context.newPage();
+      let context,page;
+      const freshContext=async()=>{
+        if(context)await context.close();
+        context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:1});
+        page=await context.newPage();
+      };
+      await freshContext();
       try{
         while(!failed&&cursor<routes.length){
           const route=routes[cursor++];
           const start=performance.now();
+          const snapshot=await retryPage(route,async()=>{
           const errors=[];
           const badResponses=new Set();
           const pageError=error=>errors.push(error.message);
@@ -36,7 +46,7 @@ export async function renderSite(root,routes,{concurrency=4,onPage}={}){
             if(diagnostics.phase!=='ready')throw new Error(`Adapter ${diagnostics.phase}: ${JSON.stringify(diagnostics)}`);
             const failures=[...errors,...badResponses];
             if(failures.length)throw new Error(`Page errors (${failures.length} distinct): ${failures.slice(0,20).join('; ')}`);
-            const snapshot=await page.evaluate(()=>{
+            return await page.evaluate(()=>{
               const head=document.head.cloneNode(true);
               head.querySelectorAll('script,style').forEach(node=>node.remove());
               const css=Array.from(document.styleSheets,sheet=>{try{return Array.from(sheet.cssRules,rule=>rule.cssText).join('\n')}catch{return ''}}).join('\n');
@@ -55,17 +65,39 @@ export async function renderSite(root,routes,{concurrency=4,onPage}={}){
               body.querySelectorAll('[id]').forEach(node=>node.id='snapshot-'+node.id);
               return '<!doctype html><html lang="'+document.documentElement.lang+'" dir="'+document.documentElement.dir+'"><head>'+head.innerHTML+'<style>'+css.replace(/<\/style/gi,'<\\/style')+'</style></head><body><div id="launch-live" inert aria-hidden="true"></div>'+body.outerHTML+'<script type="module" src="/launch/bootstrap.mjs"></script></body></html>';
             });
+          }
+          finally{page.off('pageerror',pageError);page.off('console',consoleError);page.off('requestfailed',requestFailed);page.off('response',responseError);}
+          },freshContext,retries);
+          try{
             await onPage(route,snapshot);
             timings.push({path:route.path,ms:Math.round(performance.now()-start),bytes:Buffer.byteLength(snapshot)});
             if(timings.length%25===0)console.log(`Rendered ${timings.length}/${routes.length}`);
           }catch(error){failed=true;throw new Error(`${route.path}: ${error.message}`);}
-          finally{page.off('pageerror',pageError);page.off('console',consoleError);page.off('requestfailed',requestFailed);page.off('response',responseError);}
         }
-      }finally{await context.close();}
+      }catch(error){failed=true;throw error;}
+      finally{if(context)await context.close();}
     }
     const outcomes=await Promise.allSettled(Array.from({length:Math.min(concurrency,routes.length)},worker));
     const rejected=outcomes.find(outcome=>outcome.status==='rejected');
     if(rejected)throw rejected.reason;
-    return timings;
+    return {timings,retries};
   }finally{if(browser)await browser.close();await new Promise(resolve=>local.server.close(resolve));}
+}
+
+export async function retryPage(route,attempt,freshContext,retries){
+  try{return await attempt();}
+  catch(error){
+    const record={route:route.path,firstError:error.message||String(error),outcome:'failed'};
+    retries.push(record);
+    console.warn(`Retrying ${route.path}: ${record.firstError}`);
+    try{
+      await freshContext();
+      const result=await attempt();
+      record.outcome='succeeded';
+      return result;
+    }catch(second){
+      record.secondError=second.message||String(second);
+      throw new Error(`${route.path}: ${record.secondError}`,{cause:second});
+    }
+  }
 }
