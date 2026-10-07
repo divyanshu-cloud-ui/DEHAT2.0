@@ -175,6 +175,17 @@ function checkString(lang, value, options = {}) {
   }
 
   const offending = [];
+
+  // Flag ASCII pipe used as sentence mark in non-Latin languages
+  const isNonLatin = expectedScript !== "Latin";
+  if (isNonLatin && typeof value === "string" && (/[\s\u200b]\|/.test(value) || value.trim().endsWith("|"))) {
+    offending.push({
+      char: "|",
+      codepoint: "U+007C",
+      script: "ASCII pipe sentence mark (expected native punctuation)"
+    });
+  }
+
   let prevScript = expectedScript;
 
   const chars = Array.from(masked);
@@ -239,18 +250,30 @@ function flattenObject(obj, prefix = '', res = {}) {
 }
 
 /**
+ * Check whether a translation has a trailing danda/native full stop where English has no terminal punctuation.
+ * If English ends without '.', '!' or '?', the translation must not end with '।', '॥' or '᱾'.
+ */
+function hasTrailingDandaDefect(langVal, enVal) {
+  if (typeof langVal !== "string" || typeof enVal !== "string") return false;
+  const enTrim = enVal.trim();
+  const valTrim = langVal.trim();
+  const enHasTerminal = /[.!?]$/.test(enTrim);
+  return !enHasTerminal && /[।॥᱾]$/.test(valTrim);
+}
+
+/**
  * Audit all strings in a dictionary object for a language.
  */
-function checkDictionary(dict, lang, filename, options = {}) {
+function checkDictionary(dict, lang, filename, options = {}, enDict = null) {
   const defects = [];
-  const isNonLatin = SCRIPT_MAP[lang] && SCRIPT_MAP[lang] !== "Latin";
   for (const [key, val] of Object.entries(dict)) {
     const offending = checkString(lang, val, options);
-    if (isNonLatin && typeof val === "string" && (val.includes(" |") || val.trim().endsWith("|"))) {
+    if (enDict && enDict[key] && hasTrailingDandaDefect(val, enDict[key])) {
+      const valTrim = val.trim();
       offending.push({
-        char: "|",
-        codepoint: "U+007C",
-        script: "ASCII pipe sentence mark (expected native punctuation)"
+        char: valTrim.slice(-1),
+        codepoint: "U+" + valTrim.slice(-1).codePointAt(0).toString(16).toUpperCase().padStart(4, 0),
+        script: "Trailing danda/full stop where English has no terminal punctuation"
       });
     }
     if (offending.length > 0) {
@@ -269,11 +292,20 @@ function checkDictionary(dict, lang, filename, options = {}) {
 /**
  * Audit all strings in a content-i18n object for a language.
  */
-function checkContentI18n(contentObj, lang, filename, options = {}) {
+function checkContentI18n(contentObj, lang, filename, options = {}, enContentObj = null) {
   const defects = [];
   const flat = flattenObject(contentObj);
+  const flatEn = enContentObj ? flattenObject(enContentObj) : null;
   for (const [key, val] of Object.entries(flat)) {
     const offending = checkString(lang, val, options);
+    if (flatEn && flatEn[key] && hasTrailingDandaDefect(val, flatEn[key])) {
+      const valTrim = val.trim();
+      offending.push({
+        char: valTrim.slice(-1),
+        codepoint: "U+" + valTrim.slice(-1).codePointAt(0).toString(16).toUpperCase().padStart(4, 0),
+        script: "Trailing danda/full stop where English has no terminal punctuation"
+      });
+    }
     if (offending.length > 0) {
       defects.push({
         lang,
@@ -314,7 +346,7 @@ function runPurityAudit(options = {}) {
 
       for (const [lang, dict] of Object.entries(dicts)) {
         if (!SCRIPT_MAP[lang]) continue;
-        const dictDefects = checkDictionary(dict, lang, 'DEHAT.dc.html', options);
+        const dictDefects = checkDictionary(dict, lang, 'DEHAT.dc.html', options, dicts.en);
         defects.push(...dictDefects);
       }
     }
@@ -345,6 +377,14 @@ function runPurityAudit(options = {}) {
       }
     }
 
+    const enFilePath = path.join(contentDir, 'en.js');
+    let enContent = null;
+    if (fs.existsSync(enFilePath)) {
+      global.window = global;
+      require(enFilePath);
+      enContent = global.window.CONTENT_I18N && global.window.CONTENT_I18N.en;
+    }
+
     const contentOpts = { ...options, allowlist: contentAllowlist };
     for (const f of fs.readdirSync(contentDir)) {
       if (!f.endsWith('.js')) continue;
@@ -356,7 +396,8 @@ function runPurityAudit(options = {}) {
       require(filePath);
       const langContent = global.window.CONTENT_I18N && global.window.CONTENT_I18N[lang];
       if (langContent) {
-        const fileDefects = checkContentI18n(langContent, lang, `content-i18n/${f}`, contentOpts);
+        const compareEn = ['or', 'mai', 'sa', 'sat'].includes(lang) ? enContent : null;
+        const fileDefects = checkContentI18n(langContent, lang, `content-i18n/${f}`, contentOpts, compareEn);
         defects.push(...fileDefects);
       }
     }
@@ -381,6 +422,7 @@ module.exports = {
   DEFAULT_ALLOWLIST,
   getScript,
   checkString,
+  hasTrailingDandaDefect,
   checkDictionary,
   checkContentI18n,
   runPurityAudit

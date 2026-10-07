@@ -155,4 +155,55 @@ describe('Script Purity Gate & Validator Tests', () => {
     assert.equal(results[0].offending_chars[0].char, '|');
   });
 
+  test("checkContentI18n flags ASCII pipe in content-i18n fixture for non-Latin language", () => {
+    const mockContent = {
+      projects: {
+        item: {
+          what: "ଏକ ସୁନ୍ଦର କାହାଣୀ |"
+        }
+      }
+    };
+    const results = checkContentI18n(mockContent, "or", "content-i18n/or.js");
+    assert.equal(results.length, 1);
+    assert.equal(results[0].lang, "or");
+    assert.equal(results[0].key, "projects.item.what");
+    assert.equal(results[0].offending_chars[0].char, "|");
+  });
+
+  test("checkDictionary flags trailing danda when English has no terminal punctuation", () => {
+    const mockEn = {
+      label_clean: "Hello world",
+      sentence_clean: "Hello world."
+    };
+    const mockOr = {
+      label_clean: "ନମସ୍କାର ।",
+      sentence_clean: "ନମସ୍କାର ।"
+    };
+    const results = checkDictionary(mockOr, "or", "DEHAT.dc.html", {}, mockEn);
+    assert.equal(results.length, 1);
+    assert.equal(results[0].key, "label_clean");
+    assert.equal(results[0].offending_chars[0].char, "।");
+  });
+  test("checkContentI18n flags trailing danda when English has no terminal punctuation", () => {
+    const mockEn = {
+      projects: {
+        item: {
+          name: "Project name",
+          desc: "Project desc."
+        }
+      }
+    };
+    const mockOr = {
+      projects: {
+        item: {
+          name: "ପ୍ରକଳ୍ପ ନାମ ।",
+          desc: "ପ୍ରକଳ୍ପ ବିବରଣୀ ।"
+        }
+      }
+    };
+    const results = checkContentI18n(mockOr, "or", "content-i18n/or.js", {}, mockEn);
+    assert.equal(results.length, 1);
+    assert.equal(results[0].key, "projects.item.name");
+    assert.equal(results[0].offending_chars[0].char, "।");
+  });
 });
