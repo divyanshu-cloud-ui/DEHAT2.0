@@ -3255,7 +3255,7 @@
              lands here from an "Invest" CTA sees the real bank details without a detour through
              Transparency, and there is exactly one place these numbers are typed in, so the two
              pages can never drift apart. -->
-        <div style="margin-top:clamp(34px,4.5vw,58px);padding-top:clamp(28px,3.6vw,44px);border-top:1px solid var(--border)">
+        <div data-anchor="transfer" style="margin-top:clamp(34px,4.5vw,58px);padding-top:clamp(28px,3.6vw,44px);border-top:1px solid var(--border)">
           <div style="max-width:800px;margin-bottom:22px">
             <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-teal);font-weight:700">{{ T.fin_where_send }}</span>
             <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(21px,2.4vw,29px);line-height:1.1;color:var(--text);margin:11px 0 10px;text-wrap:balance">{{ T.fin_two_accounts }}</h3>
@@ -32342,7 +32342,7 @@ class Component extends DCLogic {
     const pay = this._payload(P);
     const payRows = [
       { k: 'p1', kk: 'Account', v: pay.account },
-      { k: 'p2', kk: fcra ? 'Payment processor' : 'Razorpay account key', v: fcra ? 'PayPal · FCRA international' : pay.razorpayAccount },
+      { k: 'p2', kk: fcra ? 'Payment processor' : 'Razorpay account key', v: fcra ? 'Bank transfer (SWIFT) · FCRA account' : pay.razorpayAccount },
       { k: 'p3', kk: 'Amount', v: (pay.currency === 'USD' ? '$' : '\u20b9') + (pay.amount || 0) + ' \u00b7 ' + pay.frequency },
       { k: 'p4', kk: 'Purpose', v: pay.purpose },
       { k: 'p5', kk: 'Statutory trail', v: pay.statutory },
@@ -32799,11 +32799,9 @@ class Component extends DCLogic {
   async _pay(P) {
     const p = this._payload(P);
     if (p.account === 'FCRA / foreign') {
-      try {
-        await this._paypalCheckout(p);
-      } catch (error) {
-        window.alert(error.message || 'Unable to open secure PayPal checkout.');
-      }
+      // PayPal does not accept an Indian non-profit, so a foreign contribution is a bank (SWIFT) transfer to the FCRA account
+      // shown below, reported afterwards under "Already Transferred". The card button takes the reader straight to those details.
+      try { const t = document.querySelector('[data-anchor="transfer"]'); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
       return;
     }
     try {
