@@ -206,4 +206,52 @@ describe('Script Purity Gate & Validator Tests', () => {
     assert.equal(results[0].key, "projects.item.name");
     assert.equal(results[0].offending_chars[0].char, "।");
   });
+
+  test("checkDictionary flags trailing full stop, cheikhei, or Urdu full stop on labels when English has no terminal punctuation", () => {
+    const mockEn = {
+      label_mni: "Filter by year",
+      label_ur: "Document request",
+      label_es: "Cookie Settings",
+      sentence_clean: "This is a full sentence."
+    };
+    const mockMni = {
+      label_mni: "ꯆꯍꯤꯒꯤ ꯃꯇꯨꯡ ꯏꯟꯅ ꯐꯤꯜꯇꯔ ꯇꯧꯕꯥ꯫",
+      sentence_clean: "ꯃꯁꯤ ꯑꯄꯨꯟꯕ ꯋꯥꯍꯩ ꯑꯃꯅꯤ꯫"
+    };
+    const mockUr = {
+      label_ur: "دستاویز کی درخواست۔"
+    };
+    const mockEs = {
+      label_es: "Configuración de cookies."
+    };
+    const resultsMni = checkDictionary(mockMni, "mni", "DEHAT.dc.html", {}, mockEn);
+    assert.equal(resultsMni.length, 1);
+    assert.equal(resultsMni[0].key, "label_mni");
+    assert.equal(resultsMni[0].offending_chars[0].char, "꯫");
+
+    const resultsUr = checkDictionary(mockUr, "ur", "DEHAT.dc.html", {}, mockEn);
+    assert.equal(resultsUr.length, 1);
+    assert.equal(resultsUr[0].key, "label_ur");
+    assert.equal(resultsUr[0].offending_chars[0].char, "۔");
+
+    const resultsEs = checkDictionary(mockEs, "es", "DEHAT.dc.html", {}, mockEn);
+    assert.equal(resultsEs.length, 1);
+    assert.equal(resultsEs[0].key, "label_es");
+    assert.equal(resultsEs[0].offending_chars[0].char, ".");
+  });
+
+  test("checkString flags Latin letters adjacent to Indic combining marks (spliced words)", () => {
+    const brokenOdia1 = "girls ିଅମାନେ ବିଦ୍ୟାଳୟକୁ ଗଲେ";
+    const brokenOdia2 = "ନୂତନ framework ାଞ୍ଚା ପ୍ରସ୍ତୁତ ହେଲା";
+    const cleanOdia = "ଝିଅମାନେ ବିଦ୍ୟାଳୟକୁ ଗଲେ";
+
+    const res1 = checkString("or", brokenOdia1);
+    assert.ok(res1.some(d => d.script === "Latin letter adjacent to Indic combining mark"));
+
+    const res2 = checkString("or", brokenOdia2);
+    assert.ok(res2.some(d => d.script === "Latin letter adjacent to Indic combining mark"));
+
+    const resClean = checkString("or", cleanOdia);
+    assert.equal(resClean.length, 0);
+  });
 });
