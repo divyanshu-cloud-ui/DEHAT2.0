@@ -302,73 +302,133 @@
   .foot-link-alert{color:#F58EA6;font-weight:800;text-decoration-color:rgba(245,142,166,.5)}
   .foot-link-alert:hover{color:#F58EA6}
   @media (max-width:640px){ .foot-base{flex-direction:column;align-items:flex-start} .foot-links{flex-direction:column;align-items:flex-start;gap:2px} }
-  /* Home hero: one girl's first eighteen years as a road. Eight stops, each a sourced risk from the
-     Cycle paired with the programme's own published response. The visitor walks it (drag, tap, arrow
-     keys); the walker moves once on its own to show the road can be walked. Solid ink ground: no
-     glows, no pill label, no accent word, one primary action. */
-  .hr{position:relative;background:#150e08;color:#fbf7ef;padding:clamp(14px,min(3.2vw,3.4vh),52px) clamp(20px,5vw,64px) clamp(10px,min(2.4vw,2.2vh),36px);display:flex;flex-direction:column;min-height:calc(100svh - var(--hero-top,117px) - var(--rail-h,52px));box-sizing:border-box}
-  .hr-grid{flex:1 1 auto;align-content:center}
-  .hr-grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,4.5vw,80px);align-items:end}
-  /* Narrow screens: the road follows the headline directly (it is the thing to do), the panel it
-     drives sits under it, then the action. */
-  @media (max-width:760px), (max-width:960px) and (orientation:portrait){ .hr-grid,.hr-copy{display:contents} .hr-h1{order:1} .hr-sub{order:2} .hr-road{order:3} .hr-panel{order:4;margin-top:8px} .hr-actions{order:5} }
-  .hr-h1{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(34px,4.1vw,62px);line-height:1;letter-spacing:-.03em;margin:0;text-wrap:balance;color:#fbf7ef}
-  .hr-h1-a,.hr-h1-b{display:block}
-  .hr-h1-b{font-weight:400;color:rgba(251,247,239,.66);margin-top:.18em;letter-spacing:-.025em}
-  .hr-sub{font-size:clamp(16px,1.35vw,19px);line-height:1.55;color:rgba(251,247,239,.8);max-width:50ch;margin:clamp(18px,2vw,26px) 0 0;text-wrap:pretty}
-  .hr-panel{border-top:1px solid rgba(251,247,239,.2);padding-top:16px;min-height:clamp(270px,22vw,310px)}
-  .hr-meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-  .hr-age{color:#EAAE28}
-  .hr-count{color:rgba(251,247,239,.55);font-variant-numeric:tabular-nums;letter-spacing:.04em}
-  .hr-stage{animation:hrIn .32s cubic-bezier(.23,1,.32,1) both}
-  .hr-stat-row{display:flex;align-items:flex-end;gap:16px;margin-top:14px}
-  .hr-art{flex:none;width:clamp(72px,7vw,96px);aspect-ratio:1;border-radius:50%;background-color:rgba(251,247,239,.9);background-size:82%;background-position:center;background-repeat:no-repeat}
-  .hr-stat{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(46px,5vw,76px);line-height:.9;letter-spacing:-.03em;color:#fbf7ef;font-variant-numeric:tabular-nums}
-  .hr-story{font-size:clamp(15px,1.15vw,16.5px);line-height:1.55;color:rgba(251,247,239,.86);margin:14px 0 0;max-width:46ch;text-wrap:pretty}
-  .hr-src{font-size:11.5px;line-height:1.45;color:rgba(251,247,239,.5);margin:8px 0 0;max-width:52ch}
-  .hr-answer{margin-top:16px;padding-top:12px;border-top:1px solid rgba(251,247,239,.14)}
-  .hr-answer-k{font-size:12.5px;color:rgba(251,247,239,.6)}
-  .hr-answer-k b{color:#EAAE28;font-weight:700}
-  .hr-answer-v{font-size:14.5px;line-height:1.5;color:#fbf7ef;margin:5px 0 0;max-width:48ch;text-wrap:pretty}
-  .hr-road{position:relative;width:100%;max-width:1320px;height:118px;margin:clamp(6px,min(2.2vw,2vh),30px) auto 24px}
-  .hr-line{position:absolute;left:0;right:0;bottom:30px;height:14px;background-size:auto 100%;background-repeat:repeat-x;opacity:.85}
-  .hr-stop{position:absolute;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none}
-  .hr-stop i{width:12px;height:12px;border-radius:50%;background:#150e08;border:2px solid rgba(251,247,239,.5);transition:background .2s ease,border-color .2s ease,transform .2s ease}
-  .hr-stop em{font-style:normal;font-size:11.5px;font-weight:700;color:rgba(251,247,239,.55);white-space:nowrap;position:absolute;top:22px}
-  .hr-stop.done i{background:rgba(234,174,40,.55);border-color:#EAAE28}
-  .hr-stop.on i{background:#EAAE28;border-color:#EAAE28;transform:scale(1.35)}
-  .hr-stop.on em{color:#EAAE28}
-  .hr-walk{position:absolute;left:0;right:0;bottom:40px;height:0;transition:transform .55s cubic-bezier(.23,1,.32,1);pointer-events:none}
-  .hr-girl{position:absolute;left:0;bottom:0;width:var(--girl-w,clamp(58px,6vw,84px));aspect-ratio:859/900;transform:translateX(-50%);background-size:contain;background-repeat:no-repeat;background-position:bottom center}
-  /* The walker stands 40px up the road and is ~1.05x as tall as wide: road height >= 40 + that,
-     so she never climbs out of the road into the headline above (phones cut the road height). */
-  .hr-road{--girl-w:clamp(56px,5.6vw,74px);cursor:grab;touch-action:pan-y;outline:none;-webkit-user-select:none;user-select:none}
-  .hr-road.dragging{cursor:grabbing}
-  .hr-road:focus-visible .hr-stop.on i{box-shadow:0 0 0 5px rgba(234,174,40,.45)}
-  .hr-hint{position:absolute;left:0;bottom:-24px;font-size:12.5px;color:rgba(251,247,239,.55);transition:opacity .4s ease}
-  .hr-hint.gone{opacity:0}
-  .hr-actions{margin:clamp(14px,min(2.4vw,2.6vh),30px) 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+  /* Home hero: the clock, her life as one line, and the programmes that answer each year. A clock
+     turns once through her first eighteen years, one tick per year; each turn of the Cycle lights as
+     the hand reaches it. Then the four programmes answer one at a time, over the years each works
+     on, and her line rises. Words sit beside the clock (above it on phones). The headline, story and
+     actions are real page text; the engine owns the clock, line and bars. Always dark. */
+  .hr{position:relative;background:#150e08;color:#fbf7ef;padding:clamp(10px,min(2.4vw,2.4vh),32px) clamp(20px,5vw,64px) 0;box-sizing:border-box;--hr-gold:#EAAE28;--hr-crimson:#D2305C;--hr-re:#3fa6ba;--hr-cj:#9fb24a;--hr-sol:#EAAE28;--hr-hp:#e65a80;--hr-dim:#c6b8a3;--hr-faint:#a99a85;--hr-ease:cubic-bezier(.23,1,.32,1)}
+  .hr-in{position:relative;max-width:1320px;margin:0 auto;padding-bottom:46px}
+  .hr-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .hr-top{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:center}
+  .hr-clockbox{order:-1;width:min(30vw,124px);justify-self:center}
+  .hr-clock{display:block;width:100%;aspect-ratio:1;overflow:visible}
+  .hr-clock .ring{fill:none;stroke:#fbf7ef;stroke-opacity:.34;stroke-width:1.6}
+  .hr-clock .tk{stroke:#fbf7ef;stroke-opacity:.6;stroke-width:2;stroke-linecap:round}
+  .hr-clock .tk.major{stroke-opacity:.9;stroke-width:2.6}
+  .hr-clock .turn{fill:#150e08;stroke:var(--hr-crimson);stroke-width:2.2;opacity:.4;transition:opacity .3s,fill .45s,stroke .45s}
+  .hr-clock .turn.on{opacity:1;fill:var(--hr-crimson)}
+  .hr-clock .turn.on.ans{fill:#150e08;stroke:var(--hr-gold)}
+  .hr-clock .hand{stroke:var(--hr-gold);stroke-width:3.4;stroke-linecap:round}
+  .hr-clock .hub{fill:var(--hr-gold)}
+  .hr-clock .arc{fill:none;stroke-width:3.4;stroke-linecap:round;transition:opacity .4s}
+  .hr-clock .arc.re{stroke:var(--hr-re)}.hr-clock .arc.sol{stroke:var(--hr-sol)}.hr-clock .arc.hp{stroke:var(--hr-hp)}.hr-clock .arc.cj{stroke:var(--hr-cj)}
+  .hr-clock .hit{fill:transparent}
+  .hr-clock .tg,.hr-clock .tl{cursor:pointer;outline:none}
+  .hr-clock .tg:focus-visible .turn{stroke:#fbf7ef;stroke-width:3}
+  .hr-clock .tl{pointer-events:all}
+  .hr-clock .tl{font-size:11px;font-weight:600;fill:var(--hr-faint);text-anchor:middle;dominant-baseline:central;font-variant-numeric:tabular-nums;transition:fill .3s}
+  .hr-clock .tl.on{fill:#fbf7ef}
+  .hr-age{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:2px;min-height:34px}
+  .hr-age b{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1;color:var(--hr-gold);font-variant-numeric:tabular-nums;min-height:1em}
+  .hr-age span{font-size:12px;font-weight:600;color:var(--hr-dim);letter-spacing:.03em}
+  .hr-words{position:relative;display:grid;place-items:center}
+  .hr-stage{position:absolute;inset:0;display:grid;place-items:center;text-align:center;z-index:1}
+  .hr-beat{display:flex;flex-direction:column;align-items:center;gap:4px;max-width:min(100%,1000px)}
+  .hr-w{display:block;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1;opacity:0;transform:translateY(.3em);filter:blur(6px);animation:hrLand .55s var(--hr-ease) forwards}
+  .hr-w:nth-child(2){animation-delay:.14s}
+  .hr-w.k{font-size:clamp(18px,3.2vw,28px);color:var(--hr-gold);text-transform:uppercase;letter-spacing:.04em}
+  .hr-w.l{font-size:clamp(34px,8vw,80px);max-width:14ch;text-wrap:balance}
+  .hr-w.m{font-size:clamp(28px,5.4vw,52px);max-width:20ch;text-wrap:balance}
+  html[lang]:not([lang=en]) .hr-w{letter-spacing:0;line-height:1.22}
+  html[lang]:not([lang=en]) .hr-w.k{text-transform:none;letter-spacing:0}
+  @keyframes hrLand{to{opacity:1;transform:none;filter:none}}
+  .hr-out .hr-w{animation:hrLeave .3s ease-in forwards}
+  @keyframes hrLeave{to{opacity:0;transform:translateY(-.25em);filter:blur(6px)}}
+  .hr-end{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+  .hr-playing .hr-end,.hr-paused .hr-end{visibility:hidden}
+  .hr-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hr-gold)}
+  .hr-h1{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(34px,6vw,60px);line-height:1.03;letter-spacing:-.025em;text-wrap:balance}
+  .hr-story{margin:0;max-width:50ch;color:rgba(251,247,239,.8);font-size:clamp(16px,2vw,19px);line-height:1.5;text-wrap:pretty}
+  html[lang]:not([lang=en]) .hr-eyebrow{letter-spacing:0;font-size:13px;text-transform:none}
+  html[lang]:not([lang=en]) .hr-h1{letter-spacing:0;line-height:1.22}
+  .hr-actions{margin:4px 0 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 24px}
   .hr-cta{font-family:inherit;padding:15px 28px;background:#EAAE28;color:#1f1710;border:none;border-radius:999px;font-size:16px;font-weight:800;cursor:pointer}
-  .hr-link{font-family:inherit;background:none;border:none;padding:0;color:rgba(251,247,239,.82);font-size:15px;font-weight:700;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(251,247,239,.35);text-underline-offset:5px}
+  .hr-link{font-family:inherit;background:none;border:none;padding:0;min-height:44px;color:rgba(251,247,239,.82);font-size:15px;font-weight:700;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(251,247,239,.35);text-underline-offset:5px}
   .hr-link:hover{color:#fbf7ef;text-decoration-color:currentColor}
-  /* Every stop's texts are capped so the screen-high hero never grows with a long stop; the full
-     story, source and response are in the Cycle section this hero leads into. */
-  .hr-story,.hr-src,.hr-answer-v{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
-  .hr-story{-webkit-line-clamp:4} .hr-src{-webkit-line-clamp:2} .hr-answer-v{-webkit-line-clamp:3}
-  @media (min-width:761px) and (max-height:820px){ .hr-story{-webkit-line-clamp:3} .hr-answer-v{-webkit-line-clamp:2} }
-  /* Very short desktop windows (a small browser pane): the headline carries the page alone. */
-  @media (min-width:761px) and (max-height:640px){ .hr-src{display:none} .hr-road{height:88px !important;--girl-w:44px !important} }
-  @media (min-width:761px) and (max-height:680px){ .hr-sub{display:none} .hr-h1{font-size:clamp(24px,min(3.4vw,5vh),44px)} .hr-story{-webkit-line-clamp:2} .hr-src{-webkit-line-clamp:1} .hr-art{width:46px} .hr-stat{font-size:clamp(30px,5.4vh,40px)} .hr-stat-row{margin-top:6px} .hr-answer{margin-top:6px;padding-top:6px} .hr-road{height:100px;--girl-w:54px} .hr-cta{padding:11px 22px;font-size:15px} }
-  @keyframes hrIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){ .hr-stage{animation:none} .hr-walk{transition:none} }
-  /* Short laptop screens: size from height too, so the screen-high hero holds its content. */
-  @media (min-width:761px) and (max-height:820px){ .hr-h1{font-size:clamp(30px,min(4.1vw,6.6vh),62px)} .hr-sub{margin-top:14px} .hr-panel{min-height:0} .hr-art{width:64px} .hr-stat{font-size:clamp(40px,6.4vh,60px)} .hr-story{font-size:15px;margin-top:10px} .hr-answer{margin-top:10px;padding-top:9px} .hr-road{height:104px;margin-top:12px;--girl-w:58px} .hr-actions{margin-top:14px} }
-  /* Phones: the road's hint carries the instruction, so the sub-line goes; the panel's texts are
-     capped (the full story, source and response live in the Cycle section below). */
-  @media (max-width:640px){ .hr-h1{font-size:clamp(27px,7vw,30px)} .hr-sub{display:none} .hr-art{width:54px} .hr-stat{font-size:40px} .hr-story{font-size:14.5px;margin-top:9px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden} .hr-src{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden} .hr-answer{margin-top:9px;padding-top:8px} .hr-answer-v{font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden} .hr-road{height:92px;margin-top:10px;--girl-w:46px} .hr-actions{margin-top:12px} .hr-stop em{display:none} .hr-stop.on em,.hr-stop.first em,.hr-stop.last em{display:block} .hr-panel{min-height:0} }
-  @media (max-width:640px){ .hr{padding-bottom:16px} .hr-actions{flex-wrap:nowrap;gap:16px;margin-top:8px} .hr-cta{padding:13px 20px;font-size:15px;white-space:nowrap} .hr-link{font-size:14px;white-space:nowrap} }
-  @media (max-width:640px) and (max-height:760px){ .hr-h1{font-size:24px} .hr-story{-webkit-line-clamp:2} .hr-answer-v{-webkit-line-clamp:2} .hr-art{width:44px} .hr-stat{font-size:32px} .hr-stat-row{margin-top:8px} .hr-road{height:80px;margin-top:6px;--girl-w:36px} .hr-src{-webkit-line-clamp:1} .hr{padding-top:16px;padding-bottom:16px} .hr-panel{margin-top:0;padding-top:12px} .hr-answer{margin-top:7px;padding-top:7px} }
-  @media (max-width:640px) and (max-height:700px){ .hr-src{display:none} .hr{padding-bottom:4px} }
+  .hr-end.in > *{animation:hrLand .55s var(--hr-ease) both}
+  .hr-end.in > :nth-child(2){animation-delay:.08s}.hr-end.in > :nth-child(3){animation-delay:.16s}.hr-end.in > :nth-child(4){animation-delay:.24s}
+  .hr-art{position:relative;padding:2px 0 0}
+  .hr-canvas{position:relative;height:clamp(84px,15svh,190px)}
+  .hr-canvas svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .hr-art .life{fill:none;stroke:#fbf7ef;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+  .hr-art .loop{fill:none;stroke:var(--hr-gold);stroke-width:2;stroke-linecap:round;stroke-dasharray:3 9}
+  .hr-art .ahead{fill:none;stroke:#fbf7ef;stroke-width:3.5;stroke-linecap:round;stroke-dasharray:2 10}
+  .hr-head{position:absolute;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:var(--hr-gold);box-shadow:0 0 0 6px rgba(234,174,40,.22);transition:opacity .4s}
+  .hr-wound{position:absolute;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:2px solid var(--hr-crimson);background:var(--hr-crimson);opacity:0;transform:scale(.4);transition:opacity .3s,transform .4s var(--hr-ease),border-color .45s,background .45s}
+  .hr-wound.on{opacity:1;transform:none}
+  .hr-wound.on.ans{border-color:var(--hr-gold);background:#150e08}
+  .hr-key{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 20px;margin-top:4px;padding:0 90px}
+  .hr-kd{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:13px;font-weight:700;color:var(--hr-dim);background:none;border:0;padding:6px 2px;min-height:36px;cursor:pointer;transition:opacity .35s}
+  .hr-kd i{width:11px;height:11px;border-radius:50%;background:var(--c);flex:none}
+  .hr-kd.re{--c:var(--hr-re)}.hr-kd.sol{--c:var(--hr-sol)}.hr-kd.hp{--c:var(--hr-hp)}.hr-kd.cj{--c:var(--hr-cj)}
+  .hr-kd.active{color:#fbf7ef}
+  .hr-kd:hover,.hr-kd:focus-visible{color:#fbf7ef}
+  .hr-kd:focus-visible{outline:2px solid var(--hr-gold);outline-offset:2px;border-radius:6px}
+  .hr-axis{position:relative;height:18px;margin-top:6px}
+  .hr-tick{position:absolute;top:0;transform:translateX(-50%);font-size:12px;font-weight:600;color:var(--hr-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .hr-tick.first{transform:none}
+  .hr-tick.on{color:#fbf7ef}
+  .hr-ctl{position:absolute;right:0;bottom:14px;z-index:2;height:34px;padding:0 14px;border-radius:999px;border:1px solid rgba(251,247,239,.16);background:#150e08;color:var(--hr-dim);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer}
+  .hr-prog{position:absolute;left:0;bottom:0;height:3px;background:var(--hr-gold);width:0;z-index:2}
+  .hr-playing .hr-prog{animation:hrGrow 41s linear forwards}.hr-paused .hr-prog{animation-play-state:paused}
+  @keyframes hrGrow{to{width:100%}}
+  @media (max-width:779px){ .hr-clock .tl{display:none} .hr-key{padding:0;gap:0 14px} .hr-kd{font-size:12.5px} .hr-canvas{height:clamp(64px,11svh,110px)} .hr-story{display:none} .hr-top{gap:6px} .hr-end{gap:8px} }
+  @media (min-width:780px){
+    .hr-top{grid-template-columns:minmax(0,1.3fr) minmax(280px,.8fr);gap:40px;min-height:clamp(260px,46svh,440px)}
+    .hr-clockbox{order:0;width:min(100%,380px,46svh)}
+    .hr-words{place-items:center start;align-self:stretch}
+    .hr-stage{place-items:center start;text-align:left}
+    .hr-beat{align-items:flex-start}
+    .hr-w.l{font-size:clamp(34px,4.6vw,60px);max-width:15ch}
+    .hr-w.m{font-size:clamp(28px,3.6vw,44px);max-width:18ch}
+    .hr-end{align-items:flex-start;text-align:left}
+    .hr-actions{justify-content:flex-start}
+  }
+  @media (max-width:640px){ .hr-cta{padding:13px 20px;font-size:15px} .hr-link{font-size:14px} .hr-ctl{bottom:10px} }
+  @media (prefers-reduced-motion:reduce){ .hr-w,.hr-end.in > *{animation:none;opacity:1;transform:none;filter:none} .hr-playing .hr-prog{animation:none} }
+  /* Invest page band: a short kinetic-type story (about ten seconds, once) built only from words the page
+     already has in every language: "When Communities Act, Systems Respond.", then each programme's tagline
+     and name, resting on "Four Fronts, One Converging Response." with the four programmes as chips. Tap the
+     band to step through; pause is always there. Above the payment cards, touching nothing in them. */
+  .ib{position:relative;overflow:hidden;isolation:isolate;border-radius:18px;background:#150e08;color:#fbf7ef;margin:0 0 clamp(32px,4vw,44px);min-height:clamp(176px,21vw,214px);display:grid;align-items:center;--ib-gold:#EAAE28;--ib-re:#3fa6ba;--ib-cj:#9fb24a;--ib-sol:#EAAE28;--ib-hp:#e65a80}
+  .ib:before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 60% 120% at 90% 20%,rgba(234,174,40,.16),transparent 70%)}
+  .ib-stage{position:absolute;inset:0;display:grid;align-content:center;padding:clamp(18px,3vw,32px);cursor:pointer;z-index:1}
+  .ib-beat{display:flex;flex-direction:column;gap:6px}
+  .ib-w{display:block;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1.03;opacity:0;transform:translateY(.3em);filter:blur(6px);animation:ibLand .5s cubic-bezier(.23,1,.32,1) forwards}
+  .ib-w:nth-child(2){animation-delay:.12s}
+  .ib-w.k{font-size:clamp(12px,1.5vw,14px);letter-spacing:.14em;text-transform:uppercase;color:var(--ib-gold)}
+  .ib-w.l{font-size:clamp(30px,5.4vw,58px)}
+  .ib-w.m{font-size:clamp(26px,4.6vw,48px)}
+  .ib-w.m.a{color:var(--ib-gold)}
+  html[lang]:not([lang=en]) .ib-w{letter-spacing:0;line-height:1.22}
+  html[lang]:not([lang=en]) .ib-w.k{text-transform:none;letter-spacing:0}
+  .ib-out .ib-w{animation:ibLeave .25s ease-in forwards}
+  @keyframes ibLand{to{opacity:1;transform:none;filter:none}}
+  @keyframes ibLeave{to{opacity:0;transform:translateY(-.25em);filter:blur(6px)}}
+  .ib-rest{padding:clamp(18px,3vw,32px);display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding-bottom:58px}
+  .ib-playing .ib-rest,.ib-paused .ib-rest{visibility:hidden}
+  .ib-title{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(24px,4vw,40px);line-height:1.08;letter-spacing:-.02em;text-wrap:balance;max-width:20ch}
+  html[lang]:not([lang=en]) .ib-title{letter-spacing:0;line-height:1.22}
+  .ib-chips{display:flex;flex-wrap:wrap;gap:8px}
+  .ib-chip{font-family:inherit;font-size:13.5px;font-weight:700;padding:8px 14px;border-radius:999px;border:1.5px solid currentColor;background:none;cursor:pointer;min-height:36px}
+  .ib-chip.re{color:var(--ib-re)}.ib-chip.sol{color:var(--ib-sol)}.ib-chip.hp{color:var(--ib-hp)}.ib-chip.cj{color:var(--ib-cj)}
+  .ib-chip:hover,.ib-chip:focus-visible{background:rgba(251,247,239,.08)}
+  .ib-ctl{position:absolute;right:12px;bottom:12px;z-index:2;height:32px;padding:0 13px;border-radius:999px;border:1px solid rgba(251,247,239,.18);background:#150e08;color:#c6b8a3;font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer}
+  .ib-prog{position:absolute;left:0;bottom:0;height:3px;background:var(--ib-gold);width:0;z-index:2}
+  .ib-playing .ib-prog{animation:ibGrow 18.4s linear forwards}.ib-paused .ib-prog{display:none}
+  @keyframes ibGrow{to{width:100%}}
+  @media (prefers-reduced-motion:reduce){ .ib-w{animation:none;opacity:1;transform:none;filter:none} .ib-playing .ib-prog{animation:none} }
   /* Homepage order: story (hero) → the whole problem (Cycle) → how it breaks (Method, with vision
      and mission) → the four fronts → where → what it adds up to → stories (+ ask) → people → press
      → why it is an investment → where you come in. */
@@ -738,40 +798,26 @@
   <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
   <div key="home">
     <section data-spine="Where It Begins" class="hr" aria-labelledby="hr-h1">
-      <div class="hr-grid">
-        <div class="hr-copy">
-          <h1 id="hr-h1" class="hr-h1"><span class="hr-h1-a">{{ hero.h1a }}</span><span class="hr-h1-b">{{ hero.h1b }}</span></h1>
-          <p class="hr-sub">{{ hero.sub }}</p>
-          <div class="hr-actions">
-            <button onClick="{{ hero.goRoad }}" class="hr-cta ml-press">{{ hero.cta }} →</button>
-            <button onClick="{{ goWork }}" class="hr-link">{{ T.hero_cta2 }}</button>
-          </div>
-        </div>
-        <div class="hr-panel" aria-live="polite">
-          <div class="hr-meta"><span class="hr-age">{{ hero.cur.age }}</span><span class="hr-count">{{ hero.count }}</span></div>
-          <sc-if value="{{ hero.cur.show }}" hint-placeholder-val="{{ false }}">
-            <div key="{{ hero.cur.k }}" class="hr-stage">
-              <div class="hr-stat-row">
-                <div class="hr-art" role="img" aria-hidden="true" style="background-image:{{ hero.cur.imgCss }}"></div>
-                <div class="hr-stat">{{ hero.cur.stat }}</div>
-              </div>
-              <p class="hr-story">{{ hero.cur.story }}</p>
-              <p class="hr-src">{{ hero.cur.src }}</p>
-              <div class="hr-answer">
-                <span class="hr-answer-k">{{ hero.answerLabel }} · <b>{{ hero.cur.prog }}</b></span>
-                <p class="hr-answer-v">{{ hero.cur.resp }}</p>
+      <div class="hr-in" ref="{{ hero.mountRef }}">
+        <p class="hr-sr">{{ hero.sr }}</p>
+        <div class="hr-top">
+          <div class="hr-words">
+            <div class="hr-stage" aria-hidden="true"></div>
+            <div class="hr-end">
+              <span class="hr-eyebrow">{{ hero.eyebrow }}</span>
+              <h1 id="hr-h1" class="hr-h1">{{ hero.h1 }}</h1>
+              <p class="hr-story">{{ hero.story }}</p>
+              <div class="hr-actions">
+                <button onClick="{{ goInvestFromWork }}" class="hr-cta ml-press">{{ hero.cta }}</button>
+                <button onClick="{{ hero.goCycle }}" class="hr-link">{{ hero.next }} ↓</button>
               </div>
             </div>
-          </sc-if>
+          </div>
+          <div class="hr-clockbox" aria-hidden="true"></div>
         </div>
-      </div>
-      <div class="hr-road" ref="{{ hero.roadRef }}" tabindex="0" role="slider" aria-label="{{ hero.aria }}" aria-valuemin="0" aria-valuemax="{{ hero.max }}" aria-valuenow="{{ hero.idx }}" aria-valuetext="{{ hero.valueText }}">
-        <div class="hr-line" aria-hidden="true" style="background-image:{{ spineRoadCss }}"></div>
-        <sc-for list="{{ hero.stops }}" as="st" hint-placeholder-count="8">
-          <span class="{{ st.cls }}" aria-hidden="true" style="left:{{ st.pos }}"><i></i><em>{{ st.label }}</em></span>
-        </sc-for>
-        <div class="hr-walk" aria-hidden="true" style="transform:translateX({{ hero.walkX }})"><div class="hr-girl" style="background-image:{{ heroArtCss }}"></div></div>
-        <span class="{{ hero.hintCls }}" aria-hidden="true">{{ hero.hint }}</span>
+        <div class="hr-art" aria-hidden="true"></div>
+        <button class="hr-ctl" type="button"></button>
+        <div class="hr-prog" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -3028,6 +3074,12 @@
 
       <sc-if value="{{ pv.isGive }}" hint-placeholder-val="{{ false }}">
       <section data-anchor="give" data-spine="Invest" style="padding:clamp(28px,4vw,48px) clamp(20px,5vw,64px) clamp(50px,6vw,80px);max-width:1100px;margin:0 auto">
+        <div class="ib" ref="{{ invBand.mountRef }}" role="group" aria-label="{{ invBand.title }}">
+          <div class="ib-stage" aria-hidden="true"></div>
+          <div class="ib-rest"><p class="ib-title">{{ invBand.title }}</p><div class="ib-chips"></div></div>
+          <button class="ib-ctl" type="button"></button>
+          <div class="ib-prog" aria-hidden="true"></div>
+        </div>
         <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(23px,2.8vw,34px);margin:0 0 10px;color:var(--text);letter-spacing:-.02em">{{ pv.giveTitle }}</h2>
         <p style="font-size:15.5px;line-height:1.7;color:var(--dim);margin:0 0 24px;max-width:820px;text-wrap:pretty">{{ pv.giveSub }}</p>
 
@@ -3043,7 +3095,7 @@
           </sc-for>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,3vw,38px);align-items:start">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(20px,3vw,32px);align-items:start;max-width:820px">
           <div style="display:flex;flex-direction:column;gap:24px">
             <div>
               <div style="display:flex;flex-wrap:wrap;gap:8px">
@@ -3724,7 +3776,7 @@
         </div>
       </section>
 
-      <section data-spine="Explore the Money" data-anchor="allocation" style="padding:0 clamp(20px,5vw,64px) clamp(50px,6vw,70px);max-width:1200px;margin:0 auto">
+      <section data-spine="Explore the Money" data-anchor="allocation" style="padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px) clamp(50px,6vw,70px);max-width:1200px;margin:0 auto">
         <div style="max-width:720px;margin-bottom:26px">
           <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-crimson);font-weight:700">{{ T.fin_explore_eyebrow }}</span>
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.05;color:var(--text);margin:12px 0 10px">{{ T.fin_explore_title }}</h2>
@@ -7024,7 +7076,31 @@ class Component extends DCLogic {
       hero_road_aria: "Her first eighteen years",
       hero_road_end_note: "Every figure on this road carries its source; every response is DEHAT’s own published work.",
       hero_road_end_resp: "Young people from these villages are prepared to lead those institutions, so the next girl’s road has someone on it too.",
-      cycle_bridge: "You walked seven moments of her road. Here are all sixteen, and how each one pulls the next.",
+      hero_th_eyebrow: "Indo-Nepal border · since 2000",
+      hero_th_story: "DEHAT works on every one of her eighteen years at once: with the girl, her family, her village, and the public system that owes her.",
+      hero_th_next: "See every turn, with its source",
+      hero_th_b0_k: "Before she is born,",
+      hero_th_b0_l: "her mother is still a child.",
+      hero_th_b1_k: "At birth,",
+      hero_th_b1_l: "she is already behind.",
+      hero_th_b2_k: "At three,",
+      hero_th_b2_l: "she cannot catch up.",
+      hero_th_b3_k: "At thirteen,",
+      hero_th_b3_l: "she is pushed out of school.",
+      hero_th_b4_k: "At fifteen,",
+      hero_th_b4_l: "she is married off.",
+      hero_th_b5_k: "At sixteen,",
+      hero_th_b5_l: "her “marriage” is a trafficker’s cover.",
+      hero_th_b6_k: "At eighteen,",
+      hero_th_b6_l: "she is the next mother.",
+      hero_th_answer: "Unless every one of those years meets an answer.",
+      hero_th_birth: "Before birth",
+      hero_th_pause: "Pause",
+      hero_th_play: "Play",
+      hero_th_replay: "Replay",
+      hero_th_sr: "A short film. A clock turns once through her first eighteen years while her life is drawn as one line. Before she is born, her mother is still a child. At birth, she is already behind. At three, she cannot catch up. At thirteen, she is pushed out of school. At fifteen, she is married off. At sixteen, her marriage is a trafficker’s cover. At eighteen, she is the next mother, and the clock is back where it began. Unless every one of those years meets an answer. Rights and Entitlements answers the years before birth to five; School of Leadership, five to eighteen; Human Protection, eleven to eighteen; Climate Justice, every year. As each one arrives, her line rises over those years, until every year is answered and the clock keeps turning past eighteen.",
+      hero_th_age: "her age",
+      cycle_bridge: "That was her first eighteen years. Here is every turn, with its figure, its source, and what answers it.",
       stories_ask: "Back the people in these stories",
       cta_invest_join: "Join {n} social investors on the public record",
       cta_route_small: "Not ready to commit? Find your route in three steps",
@@ -7951,7 +8027,31 @@ class Component extends DCLogic {
       hero_road_aria: "उसके पहले अठारह साल",
       hero_road_end_note: "इस राह का हर आँकड़ा अपने स्रोत के साथ है; हर जवाब DEHAT का अपना प्रकाशित काम है।",
       hero_road_end_resp: "इन्हीं गाँवों के युवा उन संस्थाओं की अगुवाई के लिए तैयार होते हैं, ताकि अगली बच्ची की राह पर भी कोई साथ हो।",
-      cycle_bridge: "आपने उसकी राह के सात पड़ाव देखे। ये रहे सभी सोलह, और कैसे हर एक अगले को अपनी ओर खींचता है।",
+      hero_th_eyebrow: "भारत-नेपाल सीमा · 2000 से",
+      hero_th_story: "DEHAT उसके अठारह के अठारह सालों पर एक साथ काम करता है: लड़की के साथ, उसके परिवार, उसके गाँव, और उस सरकारी तंत्र के साथ जिस पर उसका हक़ है।",
+      hero_th_next: "हर मोड़, उसके स्रोत के साथ देखिए",
+      hero_th_b0_k: "उसके जन्म से पहले ही,",
+      hero_th_b0_l: "उसकी माँ ख़ुद एक बच्ची है।",
+      hero_th_b1_k: "जन्म के समय,",
+      hero_th_b1_l: "वह पहले से कमज़ोर है।",
+      hero_th_b2_k: "तीन साल में,",
+      hero_th_b2_l: "वह पीछे छूटती जा रही है।",
+      hero_th_b3_k: "तेरह साल में,",
+      hero_th_b3_l: "उसे स्कूल से बाहर धकेल दिया जाता है।",
+      hero_th_b4_k: "पंद्रह साल में,",
+      hero_th_b4_l: "उसकी शादी कर दी जाती है।",
+      hero_th_b5_k: "सोलह साल में,",
+      hero_th_b5_l: "“शादी” की आड़ में उसकी तस्करी होती है।",
+      hero_th_b6_k: "अठारह साल में,",
+      hero_th_b6_l: "वह अगली माँ है।",
+      hero_th_answer: "जब तक उसके हर साल को कोई जवाब न मिले।",
+      hero_th_birth: "जन्म से पहले",
+      hero_th_pause: "रोकें",
+      hero_th_play: "चलाएँ",
+      hero_th_replay: "फिर से देखें",
+      hero_th_sr: "एक छोटी फ़िल्म। एक घड़ी उसके पहले अठारह सालों में एक चक्कर पूरा करती है, और उसका जीवन एक रेखा की तरह बनता है। उसके जन्म से पहले ही उसकी माँ ख़ुद एक बच्ची है। जन्म के समय वह पहले से कमज़ोर है। तीन साल में वह पीछे छूटती जा रही है। तेरह साल में उसे स्कूल से बाहर धकेल दिया जाता है। पंद्रह साल में उसकी शादी कर दी जाती है। सोलह साल में शादी की आड़ में उसकी तस्करी होती है। अठारह साल में वह अगली माँ है, और घड़ी फिर वहीं लौट आती है जहाँ से चली थी। जब तक उसके हर साल को कोई जवाब न मिले। अधिकार और हक़दारी जन्म से पहले से पाँच साल तक जवाब देता है; नेतृत्व विद्यालय पाँच से अठारह तक; मानव संरक्षण ग्यारह से अठारह तक; जलवायु न्याय हर साल। हर कार्यक्रम के आने पर उन सालों में उसकी रेखा ऊपर उठती है, जब तक हर साल को जवाब नहीं मिल जाता और घड़ी अठारह के पार भी चलती रहती है।",
+      hero_th_age: "उसकी उम्र",
+      cycle_bridge: "ये थे उसके पहले अठारह साल। ये रहा हर मोड़, उसके आँकड़े, उसके स्रोत, और उसके जवाब के साथ।",
       stories_ask: "इन कहानियों के लोगों का साथ दीजिए",
       cta_invest_join: "सार्वजनिक रिकॉर्ड पर दर्ज {n} सामाजिक निवेशकों से जुड़िए",
       cta_route_small: "अभी तय नहीं? तीन कदमों में अपना रास्ता खोजिए",
@@ -33019,120 +33119,326 @@ class Component extends DCLogic {
     };
   }
   // Every drafted email on the site goes to one inbox.
-  // Home hero: a girl's first eighteen years as a road of eight stops. Each stage stop reuses the
-  // Cycle's sourced figure and story (_cycle(), already translated) and the programme's own published
-  // response at that stage (programme-extras PROG_CYCLE, translated under prog_cycle). The last stop
-  // is her eighteenth year. The road nudges forward once, unprompted, so visitors see it moves.
-  _heroRoad(T) {
-    const STOPS = [
-      { age: 0, short: 'Undernourished at Birth', prog: 're' },
-      { age: 1, short: 'Irregular Immunisation', prog: 're' },
-      { age: 3, short: 'Malnourished Child', prog: 'cj' },
-      { age: 12, short: 'Menstrual Dignity', prog: 'sol' },
-      { age: 13, short: 'School Dropout', prog: 'sol' },
-      { age: 15, short: 'Child Marriage', prog: 'hp' },
-      { age: 16, short: 'Human Trafficking', prog: 'hp' },
-      { age: 18, end: true },
-    ];
-    const N = STOPS.length, max = N - 1;
-    const idx = Math.max(0, Math.min(max, this.state.heroStop || 0));
-    const stages = {}; this._cycle().forEach(n => { stages[n.short] = n; });
-    const PC = ((this._px || {}).PROG_CYCLE) || {};
-    const PN = { sol: 'School of Leadership', re: 'Rights & Entitlements', cj: 'Climate Justice', hp: 'Human Protection' };
-    const ageLabel = a => a === 0 ? T.hero_road_birth : this._fill(T.hero_road_age, { n: a });
-    const pos = i => (4 + (i / max) * 92).toFixed(2) + '%';
-    const s = STOPS[idx], n = s.end ? null : stages[s.short];
-    const resp = n && PC[s.prog] ? this._tc('prog_cycle', s.prog + '_direct_' + s.short, 'text', PC[s.prog].direct[s.short] || '') : '';
-    // The last stop keeps the same anatomy as the others: art, figure, story, a note where the
-    // source sits, and the programme that carries her forward (School of Leadership).
-    const cur = s.end ? {
-      k: 'hr' + idx, age: ageLabel(s.age), show: true,
-      stat: T.hero_road_end_title, story: T.hero_road_end_body, src: T.hero_road_end_note,
-      imgCss: 'url(./assets/thumb/hero-leaders.png)',
-      prog: this._tc('programmes', 'sol', 'name', PN.sol), resp: T.hero_road_end_resp,
-    } : {
-      k: 'hr' + idx, age: ageLabel(s.age), show: !!n,
-      stat: n ? n.stat : '', story: n ? n.story : '', src: n ? n.src : '',
-      imgCss: n ? 'url(' + n.img + ')' : 'none',
-      prog: s.prog ? this._tc('programmes', s.prog, 'name', PN[s.prog]) : '', resp,
+  // Invest page band (see the CSS note above). Reuses T.process_head, T.work_head, the programme names and
+  // taglines, and the hero's pause/play/replay words, so it adds no copy of its own.
+  _investBand(T) {
+    const DF = { re: ['Rights & Entitlements', 'Know · Organise · Converge'], sol: ['School of Leadership', 'Co-Create · Co-Facilitate · Lead'], hp: ['Human Protection', 'Prevention · Protection · Prosecution · Partnership'], cj: ['Climate Justice', 'Soil · Seed · Water · Voice'] };
+    const prog = {};
+    Object.keys(DF).forEach(k => { prog[k] = [this._tc('programmes', k, 'name', DF[k][0]), this._tc('programmes', k, 'tag', DF[k][1])]; });
+    this._ibData = { lang: this.state.lang, prog, intro: T.process_head, title: T.work_head, pause: T.hero_th_pause, play: T.hero_th_play, replay: T.hero_th_replay };
+    this._ibData.sig = this.state.lang + '|' + Object.keys(prog).map(k => prog[k][0]).join('|');
+    if (this._ibSync) this._ibSync();
+    return { title: T.work_head, mountRef: this._investBandRef() };
+  }
+  _investBandRef() {
+    if (this._ibMountFn) return this._ibMountFn;
+    this._ibMountFn = (el) => {
+      if (!el || el._ib) return;
+      el._ib = true;
+      const self = this, q = (s) => el.querySelector(s), D = () => self._ibData;
+      const stage = q('.ib-stage'), chips = q('.ib-chips'), ctl = q('.ib-ctl');
+      const ORDER = ['re', 'sol', 'hp', 'cj'], STEP = 3600; // relaxed: each frame stays long enough to read
+      let timers = [], state = 'rest', idx = 0, sig = null, started = false, sysPaused = false;
+      let reduce = false;
+      try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !!navigator.webdriver; } catch (e) {}
+      const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      const clear = () => { timers.forEach(clearTimeout); timers = []; };
+      const later = (fn, ms) => { timers.push(setTimeout(() => { if (!el.isConnected) { clear(); return; } fn(); }, ms)); };
+      const label = () => { const d = D(); ctl.textContent = state === 'playing' ? d.pause : state === 'paused' ? d.play : d.replay; };
+      const build = () => {
+        const d = D();
+        chips.innerHTML = ORDER.map(k => '<button type="button" class="ib-chip ' + k + '" data-k="' + k + '">' + esc(d.prog[k][0]) + '</button>').join('');
+        label();
+      };
+      // Frames: 0 is the theory of change split at its comma; 1 to 4 are the programmes.
+      const words = (i) => {
+        const d = D();
+        if (i === 0) { const m = String(d.intro).match(/^(.*?[,，،、])\s*(.+)$/); return m ? [['m a', m[1]], ['m', m[2]]] : [['m a', d.intro]]; }
+        const k = ORDER[i - 1]; return [['k', d.prog[k][1]], ['l', d.prog[k][0]]];
+      };
+      const show = (i) => {
+        idx = i;
+        const prev = stage.firstChild, html = '<div class="ib-beat">' + words(i).map(w => '<span class="ib-w ' + w[0] + '"' + (i > 0 ? ' style="color:var(--ib-' + ORDER[i - 1] + ')"' : '') + '>' + esc(w[1]) + '</span>').join('') + '</div>';
+        // the programme name carries its colour; the tagline stays gold
+        const put = () => { stage.innerHTML = html; if (i > 0) { const k = stage.querySelector('.ib-w.k'); if (k) k.style.color = ''; } };
+        if (prev && !reduce) { prev.classList.add('ib-out'); later(put, 240); } else put();
+      };
+      const rest = () => { clear(); stage.innerHTML = ''; el.classList.remove('ib-playing', 'ib-paused'); el.classList.add('ib-rest-on'); state = 'rest'; window.__dehatIbDone = true; label(); };
+      const play = (from) => {
+        clear(); el.classList.remove('ib-paused', 'ib-rest-on'); void el.offsetWidth; el.classList.add('ib-playing'); state = 'playing'; label();
+        for (let i = from; i < 5; i++) later(() => show(i), (i - from) * STEP);
+        later(rest, (5 - from) * STEP + 400);
+      };
+      const stop = () => { clear(); el.classList.remove('ib-playing'); el.classList.add('ib-paused'); state = 'paused'; label(); };
+      // Tapping the band steps to the next frame and pauses the film; the chips jump to a programme.
+      const jump = (i) => { clear(); el.classList.remove('ib-playing', 'ib-rest-on'); el.classList.add('ib-paused'); state = 'paused'; stage.innerHTML = ''; show(i); label(); };
+      stage.addEventListener('click', () => { sysPaused = false; if (state === 'paused' && idx >= 4) rest(); else jump(state === 'rest' ? 0 : idx + 1); });
+      chips.addEventListener('click', (e) => { const b = e.target.closest && e.target.closest('.ib-chip'); if (b) { sysPaused = false; jump(ORDER.indexOf(b.dataset.k) + 1); } });
+      ctl.addEventListener('click', () => { sysPaused = false; if (state === 'playing') stop(); else if (state === 'paused') { if (idx >= 4) rest(); else play(idx + 1); } else play(0); });
+      this._ibSync = () => { const d = D(); if (sig !== d.sig) { sig = d.sig; build(); if (state === 'rest' || reduce) { stage.innerHTML = ''; } } };
+      sig = D().sig; build();
+      if (reduce) { rest(); return; }
+      el.classList.add('ib-rest-on');
+      if (window.__dehatIbDone) return; // played once since the page loaded: a re-render (theme, language) keeps the resting band
+      try { new IntersectionObserver((ents) => {
+        const vis = ents[ents.length - 1].isIntersecting;
+        if (vis && !started) { started = true; play(0); }
+        else if (!vis && state === 'playing') { sysPaused = true; stop(); }
+        else if (vis && sysPaused) { sysPaused = false; if (idx >= 4) rest(); else play(idx + 1); }
+      }, { threshold: 0.35 }).observe(el); } catch (e) {}
     };
-    const set = (i) => { this._heroTouched = true; this.setState({ heroStop: Math.max(0, Math.min(max, i)) }); };
-    if (!this._heroNudge && typeof window !== 'undefined') {
-      this._heroNudge = setTimeout(() => {
-        let still = true;
-        try { still = !window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
-        if (still && !this._heroTouched && !(this.state.heroStop > 0) && this.state.view === 'home') this.setState({ heroStop: 1 });
-      }, 2600);
-    }
+    return this._ibMountFn;
+  }
+  // Home hero: a clock turns once through a girl's first eighteen years while her life is drawn as
+  // one line. Each turn of the Structural Vulnerability Cycle lights as the hand reaches it; then
+  // the four programmes answer one at a time, over the years each works on, and her line rises over
+  // them. The words for each beat are the page's own strings (hero_th_*); programme names and
+  // taglines come from the content layer; headline, story and actions are real template text.
+  _hero(T) {
+    const DF = { re: ['Rights & Entitlements', 'Know · Organise · Converge'], sol: ['School of Leadership', 'Co-Create · Co-Facilitate · Lead'], hp: ['Human Protection', 'Prevention · Protection · Prosecution · Partnership'], cj: ['Climate Justice', 'Soil · Seed · Water · Voice'] };
+    const prog = {};
+    Object.keys(DF).forEach(k => { prog[k] = [this._tc('programmes', k, 'name', DF[k][0]), this._tc('programmes', k, 'tag', DF[k][1])]; });
+    this._heroData = {
+      lang: this.state.lang, prog,
+      beats: [0, 1, 2, 3, 4, 5, 6].map(i => [T['hero_th_b' + i + '_k'], T['hero_th_b' + i + '_l']]),
+      answer: T.hero_th_answer, birth: T.hero_th_birth, age: T.hero_th_age,
+      pause: T.hero_th_pause, play: T.hero_th_play, replay: T.hero_th_replay,
+    };
+    // The programme names arrive with the language's content file, a moment after the first render, so the art re-labels when they change.
+    this._heroData.sig = Object.keys(prog).map(k => prog[k][0] + '|' + prog[k][1]).join('||');
+    if (this._heroSync) this._heroSync();
     return {
-      h1a: T.hero_road_h1a, h1b: T.hero_road_h1b, sub: T.hero_road_sub,
-      answerLabel: T.hero_road_answer, endTitle: T.hero_road_end_title, endBody: T.hero_road_end_body,
-      aria: T.hero_road_aria, cta: T.hero_road_cta,
-      hint: T.hero_road_hint, hintCls: this._heroTouched ? 'hr-hint gone' : 'hr-hint',
-      idx, max, cur,
-      count: this._fill(T.hero_road_step, { n: idx + 1, total: N }),
-      valueText: cur.age + (n ? ' - ' + n.shortLabel : ''),
-      walkX: 'calc(' + pos(idx) + ')',
-      stops: STOPS.map((st, i) => ({
-        k: 'hs' + i, pos: pos(i), label: ageLabel(st.age),
-        cls: 'hr-stop' + (i === idx ? ' on' : i < idx ? ' done' : '') + (i === 0 ? ' first' : '') + (i === max ? ' last' : ''),
-      })),
-      roadRef: this._heroRoadRef(max),
-      goRoad: this._go('home', 'cycle'),
+      eyebrow: T.hero_th_eyebrow, h1: T.ask_cycle_title, story: T.hero_th_story, sr: T.hero_th_sr,
+      cta: T.roster_invest, next: T.hero_th_next, goCycle: this._go('home', 'cycle'),
+      mountRef: this._heroMountRef(),
     };
+  }
+  // The engine-owned part of the hero. It builds the clock, the line and the bars once, then plays
+  // eight beats (about 1.7 s apart), the four programmes (1.6 s each), and rests on the headline.
+  // Reduced motion, and automated renderers, go straight to the resting frame; a pause button is
+  // always there. Everything is time-based, so a slow phone stays in step with the words.
+  _heroMountRef() {
+    if (this._heroMountFn) return this._heroMountFn;
+    this._heroMountFn = (el) => {
+      if (!el || el._hero) return;
+      el._hero = true;
+      const self = this, q = (s) => el.querySelector(s), qa = (s) => Array.prototype.slice.call(el.querySelectorAll(s));
+      // A relaxed pace so every sentence can be read: 3.4 s per story beat, 3 s per programme, about 41 s in all. It can be paused, stepped (wheel, arrows, swipe, tap) or left to play.
+      const AT = [0, 3400, 6800, 10200, 13600, 17000, 20400, 23800], ORDER = ['re', 'sol', 'hp', 'cj'], PAT = [27000, 30000, 33000, 36000], AHEAD = 39000, END = 41000;
+      const TURNS = [-1, 0, 3, 13, 15, 16, 18], YEARS = { re: [-1, 5], sol: [5, 18], hp: [11, 18], cj: [-1, 18] }, ARCR = { re: 58, sol: 52, hp: 46, cj: 40 };
+      const VW = 1000, VH = 260, X0 = 18, X1 = 940, CX = 100, CY = 100;
+      const X = (a) => X0 + (a + 1) / 19 * (X1 - X0);
+      const ANG = (a) => (a + 1) / 19 * 360;
+      const polar = (deg, r) => { const rad = (deg - 90) * Math.PI / 180; return [CX + r * Math.cos(rad), CY + r * Math.sin(rad)]; };
+      const gauss = (a, c, w) => Math.exp(-((a - c) * (a - c)) / (2 * w * w));
+      const sig = (x) => 1 / (1 + Math.exp(-x));
+      const S = { reveal: -1, hand: -1, loop: 0, re: 0, sol: 0, hp: 0, cj: 0, ahead: 0 }, Tg = Object.assign({}, S);
+      let timers = [], startedAt = 0, elapsed = 0, state = 'rest', raf = 0, last = 0, focus = null, lang = null, nameSig = null, beatNow = 0, sysPaused = false, wheelAt = 0, frozen = false;
+      let reduce = false;
+      try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !!navigator.webdriver; } catch (e) {}
+      const D = () => self._heroData;
+      const sinkY = (a) => { let y = 74 + 5.6 * (a + 1); TURNS.forEach(c => { y += 30 * gauss(a, c, .4); }); return y; };
+      const liftY = (a) => 104 - 2.7 * (a + 1);
+      const cover = (k, a) => { const r = YEARS[k]; return sig((a - (r[0] - 0.4)) / 0.15) * sig(((r[1] + 0.4) - a) / 0.15); };
+      // How much of one year is answered: the share of the programmes covering it that have arrived.
+      const answered = (a) => { let n = 0, d = 0; ORDER.forEach(k => { const c = cover(k, a); d += c; n += c * Math.max(0, Math.min(1, S[k])); }); return d > 0 ? n / d : 0; };
+      const lifeY = (a) => sinkY(a) + (liftY(a) - sinkY(a)) * answered(a);
+      const pts = (a0, a1, fy) => { let d = ''; const n = Math.max(2, Math.ceil((a1 - a0) / 0.08)); for (let i = 0; i <= n; i++) { const a = a0 + (a1 - a0) * i / n; d += (i ? 'L' : 'M') + X(a).toFixed(1) + ' ' + fy(a).toFixed(1); } return d; };
+      const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      const later = (fn, ms) => { timers.push(setTimeout(() => { if (!el.isConnected) { clear(); return; } fn(); }, ms)); };
+      const clear = () => { timers.forEach(clearTimeout); timers = []; };
+
+      // The static frame of the art: clock and line, built once. Labels are rebuilt on a language change.
+      let h = '';
+      for (let i = 0; i < 19; i++) { const a = i - 1, major = a === -1 || a === 5 || a === 10 || a === 15, p = polar(ANG(a), major ? 79 : 84), qq = polar(ANG(a), 92); h += '<line class="tk' + (major ? ' major' : '') + '" x1="' + p[0].toFixed(1) + '" y1="' + p[1].toFixed(1) + '" x2="' + qq[0].toFixed(1) + '" y2="' + qq[1].toFixed(1) + '"/>'; }
+      q('.hr-clockbox').innerHTML = '<svg class="hr-clock" viewBox="-22 -22 244 244"><circle class="ring" cx="100" cy="100" r="92"/>' + h
+        + ORDER.map(k => '<path class="arc ' + k + '"/>').join('')
+        + TURNS.map(a => { const c = polar(ANG(a), 70), x = c[0].toFixed(1), y = c[1].toFixed(1); return '<g class="tg" data-a="' + a + '" tabindex="0" role="button"><circle class="hit" cx="' + x + '" cy="' + y + '" r="11"/><circle class="turn" data-a="' + a + '" cx="' + x + '" cy="' + y + '" r="4.8"/></g>'; }).join('')
+        + [0, 3, 13, 15, 16, 18].map(a => { const c = polar(ANG(a), 107); return '<text class="tl" data-a="' + a + '" x="' + c[0].toFixed(1) + '" y="' + c[1].toFixed(1) + '">' + a + '</text>'; }).join('')
+        + '<g class="hand-g"><line class="hand" x1="100" y1="100" x2="100" y2="34"/></g><circle class="hub" cx="100" cy="100" r="5"/></svg><div class="hr-age"><b></b><span></span></div>';
+      q('.hr-art').innerHTML = '<div class="hr-canvas"><svg viewBox="0 0 1000 260" preserveAspectRatio="none"><path class="loop" vector-effect="non-scaling-stroke"/><path class="ahead" vector-effect="non-scaling-stroke"/><path class="life" vector-effect="non-scaling-stroke"/></svg>'
+        + TURNS.map(a => '<span class="hr-wound" data-a="' + a + '"></span>').join('') + '<div class="hr-head"></div></div><div class="hr-axis"></div><div class="hr-key"></div>';
+      const stage = q('.hr-stage'), end = q('.hr-end'), ctl = q('.hr-ctl'), life = q('.life'), loopP = q('.loop'), aheadP = q('.ahead'), head = q('.hr-head'),
+        handG = q('.hand-g'), ageN = q('.hr-age b'), ageL = q('.hr-age span');
+      const labels = () => {
+        const d = D(), ticks = [[-1, d.birth], [5, '5'], [10, '10'], [15, '15'], [18, '18']];
+        q('.hr-axis').innerHTML = ticks.map((t, i) => '<span class="hr-tick' + (i ? '' : ' first') + '" data-a="' + t[0] + '" style="left:' + (i ? (X(t[0]) / VW * 100) + '%' : '0') + '">' + esc(t[1]) + '</span>').join('');
+        // The dial carries each programme's colour and years, so below the line there is only a key: one dot and name per programme.
+        q('.hr-key').innerHTML = ORDER.map(k => '<button type="button" class="hr-kd ' + k + '" data-k="' + k + '"><i></i>' + esc(d.prog[k][0]) + '</button>').join('');
+        qa('.tg').forEach(g => { const i = TURNS.indexOf(+g.dataset.a); if (d.beats[i]) g.setAttribute('aria-label', d.beats[i][0] + ' ' + d.beats[i][1]); });
+        ctl.textContent = state === 'playing' ? d.pause : state === 'paused' ? d.play : d.replay;
+      };
+      const render = () => {
+        const d = D(), r = Math.max(-1, Math.min(18, S.reveal)), hd = Math.max(-1, Math.min(18, S.hand));
+        life.setAttribute('d', r > -0.99 ? pts(-1, r, lifeY) : '');
+        const ex = X(18), ey = lifeY(18), sx = X(-1), sy = lifeY(-1);
+        loopP.setAttribute('d', 'M' + ex + ' ' + ey.toFixed(1) + ' C ' + (ex + 60) + ' ' + (ey - 150).toFixed(1) + ', ' + (sx - 40) + ' ' + (sy - 140).toFixed(1) + ', ' + sx + ' ' + sy.toFixed(1));
+        loopP.style.opacity = S.loop.toFixed(3);
+        loopP.style.clipPath = 'inset(0 0 0 ' + ((1 - Math.min(1, S.loop * 1.15)) * 100).toFixed(1) + '%)';
+        aheadP.setAttribute('d', S.ahead > 0.01 ? 'M' + ex + ' ' + ey.toFixed(1) + ' L ' + (ex + (VW + 40 - ex) * S.ahead).toFixed(1) + ' ' + (ey - 26 * S.ahead).toFixed(1) : '');
+        head.style.left = (X(r) / VW * 100) + '%'; head.style.top = (lifeY(r) / VH * 100) + '%'; head.style.opacity = S.ahead > 0.5 ? 0 : 1;
+        qa('.hr-wound').forEach(w => { const a = +w.dataset.a; w.style.left = (X(a) / VW * 100) + '%'; w.style.top = (lifeY(a) / VH * 100) + '%'; w.classList.toggle('on', r >= a - 0.05); w.classList.toggle('ans', answered(a) > 0.45); });
+        qa('.hr-tick').forEach(t => { t.classList.toggle('on', +t.dataset.a <= r + 0.01); });
+        handG.setAttribute('transform', 'rotate(' + (ANG(hd) + 38 * S.ahead).toFixed(2) + ' ' + CX + ' ' + CY + ')');
+        qa('.turn').forEach(c => { const a = +c.dataset.a; c.classList.toggle('on', r >= a - 0.05); c.classList.toggle('ans', answered(a) > 0.45); });
+        qa('.tl').forEach(c => { c.classList.toggle('on', r >= +c.dataset.a - 0.05); });
+        // Each programme paints its own ring on the dial over the years it answers.
+        ORDER.forEach(k => {
+          const y = YEARS[k], sk = Math.max(0, Math.min(1, S[k])), a0 = ANG(y[0]), a1 = ANG(y[0] + (y[1] - y[0]) * sk), arc = q('.arc.' + k);
+          let dd = '';
+          if (sk > 0.004) { const n = Math.max(2, Math.ceil((a1 - a0) / 4)); for (let i = 0; i <= n; i++) { const pp = polar(a0 + (a1 - a0) * i / n, ARCR[k]); dd += (i ? 'L' : 'M') + pp[0].toFixed(1) + ' ' + pp[1].toFixed(1); } }
+          arc.setAttribute('d', dd); arc.style.opacity = (focus && focus !== k) ? 0.3 : 1;
+        });
+        const unborn = hd < -0.5;
+        ageN.textContent = unborn ? '' : String(Math.max(0, Math.min(18, Math.floor(hd + 0.05))));
+        ageL.textContent = unborn ? d.birth : d.age;
+        qa('.hr-kd').forEach(b => {
+          const k = b.dataset.k, sk = Math.max(0, Math.min(1, S[k]));
+          b.style.opacity = sk < 0.02 ? 0.28 : (focus && focus !== k ? 0.45 : 1);
+          b.classList.toggle('active', focus === k);
+        });
+      };
+      const step = (now) => {
+        const dt = Math.min(250, now - (last || now)); last = now;
+        const k = 1 - Math.pow(0.0025, dt / 1000 * 1.6);
+        let moving = false;
+        Object.keys(S).forEach(n => { const d = Tg[n] - S[n]; if (Math.abs(d) > 0.0005) { S[n] += d * k; moving = true; } else S[n] = Tg[n]; });
+        render();
+        raf = (moving && !frozen && el.isConnected) ? requestAnimationFrame(step) : 0;
+      };
+      const kick = () => { if (!raf && !frozen) { last = 0; raf = requestAnimationFrame(step); } };
+      const set = (o) => { Object.keys(o).forEach(n => { Tg[n] = o[n]; }); if (reduce) { Object.keys(Tg).forEach(n => { S[n] = Tg[n]; }); render(); } else kick(); };
+      const refresh = () => { if (reduce) render(); else kick(); };
+      const show = (i) => {
+        const d = D(), AGES = [-1, 0, 3, 13, 15, 16, 18], prev = stage.firstChild;
+        beatNow = i;
+        const words = i < 7 ? [['k', d.beats[i][0]], ['l', d.beats[i][1]]] : [['m', d.answer]];
+        const html = '<div class="hr-beat">' + words.map(w => '<span class="hr-w ' + w[0] + '">' + esc(w[1]) + '</span>').join('') + '</div>';
+        if (prev && !reduce) { prev.classList.add('hr-out'); later(() => { stage.innerHTML = html; }, 260); } else stage.innerHTML = html;
+        if (i === 7) set({ loop: 0.35 });
+        else set({ reveal: AGES[i] + (AGES[i] < 18 ? 0.6 : 0), hand: AGES[i], loop: i === 6 ? 1 : 0 });
+      };
+      // The hand goes back over the years this programme answers and sweeps them again as its ring is drawn.
+      const progWords = (k) => { const d = D(); return '<div class="hr-beat"><span class="hr-w k">' + esc(d.prog[k][1]) + '</span><span class="hr-w l" style="color:var(--hr-' + k + ')">' + esc(d.prog[k][0]) + '</span></div>'; };
+      const answer = (k) => { focus = k; const y = YEARS[k]; S.hand = y[0]; stage.innerHTML = progWords(k); const o = { loop: 0, hand: y[1] }; o[k] = 1; set(o); refresh(); };
+      const rest = () => {
+        stage.innerHTML = ''; el.classList.remove('hr-playing', 'hr-paused'); el.classList.add('hr-rest'); state = 'rest'; focus = null;
+        set({ reveal: 18, hand: 18, loop: 0, re: 1, sol: 1, hp: 1, cj: 1, ahead: 1 }); end.classList.add('in'); labels(); refresh();
+        window.__dehatHeroDone = true;
+      };
+      const schedule = (from) => {
+        AT.forEach((t, i) => { if (t >= from) later(() => show(i), t - from); });
+        ORDER.forEach((k, i) => { if (PAT[i] >= from) later(() => answer(k), PAT[i] - from); });
+        if (AHEAD >= from) later(() => { focus = null; set({ ahead: 1 }); refresh(); }, AHEAD - from);
+        later(rest, Math.max(0, END - from));
+      };
+      const play = () => {
+        clear(); end.classList.remove('in'); stage.innerHTML = ''; focus = null; el.classList.remove('hr-rest');
+        Object.keys(S).forEach(n => { S[n] = Tg[n] = 0; }); S.reveal = Tg.reveal = S.hand = Tg.hand = -1; render();
+        el.classList.remove('hr-paused'); void el.offsetWidth; el.classList.add('hr-playing');
+        state = 'playing'; frozen = false; elapsed = 0; startedAt = Date.now(); schedule(0); labels();
+      };
+      const pause = () => { clear(); elapsed += Date.now() - startedAt; el.classList.add('hr-paused'); state = 'paused'; frozen = true; if (raf) { cancelAnimationFrame(raf); raf = 0; } labels(); };
+      const resume = () => { el.classList.remove('hr-paused'); state = 'playing'; frozen = false; startedAt = Date.now(); schedule(elapsed + 1); labels(); kick(); };
+      ctl.addEventListener('click', () => { sysPaused = false; state === 'playing' ? pause() : state === 'paused' ? resume() : play(); });
+      // Interaction. Tap a turn on the clock to read that moment of her life; tap a programme to see the years
+      // it answers; wheel over the clock or swipe the words to step through; the film pauses when off screen.
+      // Steps 0 to 7 are the story; 8 to 11 are the four programmes arriving one at a time; after that, the resting frame.
+      const explore = (i) => {
+        i = Math.max(0, Math.min(11, i)); clear(); beatNow = i;
+        el.classList.remove('hr-rest', 'hr-playing'); el.classList.add('hr-paused'); end.classList.remove('in');
+        state = 'paused'; frozen = false; focus = null; S.ahead = Tg.ahead = 0;
+        if (i <= 7) { elapsed = AT[i] + 1; ORDER.forEach(k => { S[k] = Tg[k] = 0; }); stage.innerHTML = ''; show(i); }
+        else {
+          const j = i - 8, k = ORDER[j], y = YEARS[k]; elapsed = PAT[j] + 1; focus = k;
+          ORDER.forEach((n, m) => { S[n] = Tg[n] = m <= j ? 1 : 0; }); S.reveal = Tg.reveal = 18; S.loop = Tg.loop = 0; S.hand = y[0];
+          stage.innerHTML = progWords(k); set({ hand: y[1] });
+        }
+        labels(); refresh();
+      };
+      const focusProg = (k) => {
+        const d = D(), y = YEARS[k]; clear();
+        el.classList.remove('hr-rest', 'hr-playing'); el.classList.add('hr-paused'); end.classList.remove('in');
+        state = 'paused'; frozen = false; elapsed = END - 1; focus = k; beatNow = 8 + ORDER.indexOf(k);
+        ORDER.forEach(n => { S[n] = Tg[n] = 1; }); S.hand = y[0]; S.reveal = Tg.reveal = 18; S.loop = Tg.loop = 0;
+        stage.innerHTML = progWords(k);
+        set({ hand: y[1], ahead: 0 }); labels(); refresh();
+      };
+      el.addEventListener('click', (e) => {
+        const g = e.target.closest && e.target.closest('.tg, .tl, .hr-kd');
+        if (!g || !el.contains(g)) return;
+        sysPaused = false;
+        if (g.classList.contains('hr-kd')) { if (focus === g.dataset.k && state === 'paused') rest(); else focusProg(g.dataset.k); return; }
+        const i = TURNS.indexOf(+g.dataset.a); if (i >= 0) explore(i);
+      });
+      el.addEventListener('keydown', (e) => {
+        const g = e.target.closest && e.target.closest('.tg');
+        if (g && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); g.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
+      });
+      // The hero is a pinned stage. While the page is at its top, the wheel (or a trackpad swipe) steps the story
+      // forward and back, and the page does not move until the story has played through; one more scroll down then
+      // leaves for the next section, and scrolling back up rewinds the story from the end. Not used with reduced motion.
+      let acc = 0, holdUntil = 0, lastEv = 0, atEnd = false;
+      const onWheel = (e) => {
+        if (!el.isConnected) { window.removeEventListener('wheel', onWheel, { passive: false }); return; }
+        if (reduce || e.ctrlKey || window.scrollY > 8 || document.querySelector('.hr-in') !== el) return;
+        const now = Date.now(), fresh = now - lastEv > 220; lastEv = now;
+        if (now < holdUntil) { e.preventDefault(); return; }       // swallow the tail of a trackpad flick
+        const down = e.deltaY > 0;
+        if (down && atEnd && state === 'rest') { if (fresh) return; e.preventDefault(); return; } // a fresh scroll leaves; inertia is held
+        if (!down && beatNow <= 0 && state !== 'rest') return;       // at the very start there is nothing above
+        e.preventDefault();
+        acc += e.deltaY; if (Math.abs(acc) < 40) return; acc = 0;
+        holdUntil = now + 300; sysPaused = false;
+        if (down) { if (state === 'rest') { atEnd = true; return; } if (beatNow >= 11) { rest(); atEnd = true; holdUntil = now + 900; } else { explore(beatNow + 1); atEnd = false; } }
+        else { atEnd = false; if (state === 'rest') explore(11); else explore(beatNow - 1); }
+      };
+      window.addEventListener('wheel', onWheel, { passive: false });
+      // Arrow keys (and Page Up/Down, Home, End) step the story whenever the hero is on screen. Left/right always;
+      // up/down and page keys follow the pinned stage: the page scrolls normally once the story is at its end or start.
+      self._heroKeys = (e) => {
+        if (!el.isConnected || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || self.state.view !== 'home') return false;
+        const t = e.target || {}, tag = (t.tagName || '').toLowerCase();
+        if (tag === 'input' || tag === 'textarea' || tag === 'select' || t.isContentEditable) return false;
+        const key = e.key, r = el.getBoundingClientRect();
+        if (r.bottom < 80 || r.top > window.innerHeight - 80) return false;
+        const vertical = key === 'ArrowDown' || key === 'ArrowUp' || key === 'PageDown' || key === 'PageUp';
+        const fwd = key === 'ArrowRight' || key === 'ArrowDown' || key === 'PageDown', back = key === 'ArrowLeft' || key === 'ArrowUp' || key === 'PageUp';
+        if (key === 'Home' && t === el) { sysPaused = false; explore(0); e.preventDefault(); return true; }
+        if (key === 'End' && t === el) { sysPaused = false; rest(); e.preventDefault(); return true; }
+        if (!fwd && !back) return false;
+        if (vertical && window.scrollY > 8) return false;
+        if (fwd && state === 'rest') return false;
+        if (back && state !== 'rest' && beatNow <= 0) return false;
+        sysPaused = false; e.preventDefault();
+        if (fwd) { if (beatNow >= 11) rest(); else explore(beatNow + 1); }
+        else if (state === 'rest') explore(11); else explore(beatNow - 1);
+        return true;
+      };
+      let tx = 0, ty = 0;
+      q('.hr-words').addEventListener('touchstart', (e) => { const t = e.touches[0]; tx = t.clientX; ty = t.clientY; }, { passive: true });
+      q('.hr-words').addEventListener('touchend', (e) => {
+        const t = e.changedTouches[0], dx = t.clientX - tx, dy = t.clientY - ty;
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+        sysPaused = false; explore(beatNow + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+      try { new IntersectionObserver((ents) => {
+        const vis = ents[ents.length - 1].isIntersecting;
+        if (!vis && state === 'playing') { sysPaused = true; pause(); } else if (vis && sysPaused) { sysPaused = false; resume(); }
+      }, { threshold: 0.25 }).observe(el); } catch (e) {}
+      // A language change re-labels the art and plays the film again in the new language.
+      this._heroSync = () => {
+        const d = D();
+        if (lang !== d.lang) { lang = d.lang; nameSig = d.sig; labels(); if (reduce) rest(); else play(); }
+        else if (nameSig !== d.sig) { nameSig = d.sig; labels(); render(); }
+      };
+      lang = D().lang; nameSig = D().sig; labels(); render();
+      // It plays once when the page loads (and again on a language change); a re-render, such as the theme switch, keeps the resting frame.
+      if (reduce || window.__dehatHeroDone) rest(); else play();
+    };
+    return this._heroMountFn;
   }
   _inbox() { return 'joinus@dehatindia.org'; }
-  // The hero road is its own slider: press anywhere on it (the walker included) and drag, and the
-  // walker snaps to the nearest stop; arrow keys, Home and End work whenever the hero is on screen
-  // on the home page, without clicking first. (A hidden native range had a zero-size thumb in
-  // Safari once restyled, so nothing could be dragged.)
-  _heroRoadRef(max) {
-    this._heroMax = max;
-    const go = (i) => {
-      const n = Math.max(0, Math.min(this._heroMax, i));
-      this._heroTouched = true;
-      if (n !== (this.state.heroStop || 0)) this.setState({ heroStop: n });
-    };
-    this._heroKeys = (e) => {
-      if (this.state.view !== 'home' || e.metaKey || e.ctrlKey || e.altKey) return false;
-      const t = e.target || {}, tag = (t.tagName || '').toLowerCase();
-      if (tag === 'input' || tag === 'textarea' || tag === 'select' || t.isContentEditable) return false;
-      const road = this._heroRoadEl;
-      if (!road) return false;
-      const sec = road.closest('.hr') || road, r = sec.getBoundingClientRect();
-      if (r.bottom < 80 || r.top > window.innerHeight - 80) return false;
-      const cur = this.state.heroStop || 0;
-      let n = null;
-      if (e.key === 'ArrowRight' || e.key === 'ArrowUp' && t === road) n = cur + 1;
-      else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown' && t === road) n = cur - 1;
-      else if (e.key === 'Home' && t === road) n = 0;
-      else if (e.key === 'End' && t === road) n = this._heroMax;
-      if (n === null) return false;
-      e.preventDefault(); go(n); return true;
-    };
-    if (!this._heroRoadFn) this._heroRoadFn = (el) => {
-      this._heroRoadEl = el || this._heroRoadEl;
-      if (!el || el._road) return;
-      el._road = true;
-      const at = (x) => {
-        const b = el.getBoundingClientRect();
-        const pct = ((x - b.left) / Math.max(1, b.width)) * 100;
-        return Math.round(((pct - 4) / 92) * this._heroMax);
-      };
-      let down = false, id = null;
-      el.addEventListener('pointerdown', (e) => {
-        if (e.button && e.button !== 0) return;
-        down = true; id = e.pointerId; el.classList.add('dragging');
-        try { el.setPointerCapture(id); } catch (err) {}
-        go(at(e.clientX));
-      });
-      el.addEventListener('pointermove', (e) => { if (down && e.pointerId === id) go(at(e.clientX)); });
-      const up = (e) => { if (!down || (e && e.pointerId !== id)) return; down = false; el.classList.remove('dragging'); try { el.releasePointerCapture(id); } catch (err) {} };
-      el.addEventListener('pointerup', up);
-      el.addEventListener('pointercancel', up);
-    };
-    return this._heroRoadFn;
-  }
   // Stories deck on touch screens: show the arrows for a moment, then let them fade.
   _deckPing() {
     if (!this.state.deckNav) this.setState({ deckNav: true });
@@ -35529,7 +35835,8 @@ class Component extends DCLogic {
       // Pointing at a figure is the deliberate engagement that readies the ask after "The Cycle".
       statRef: (el) => this._gridRef(el, () => { if (!this.state.sigHero) this.setState({ sigHero: true }); }),
       heroArtCss: 'url(./assets/story/sm-school-steps.png)',
-      hero: this._heroRoad(T),
+      hero: this._hero(T),
+      invBand: this._investBand(T),
       pillars: [
         { glyph: 'V', color: '#0E5565', title: T.vision, body: T.vision_body, art: 'vision' },
         { glyph: 'M', color: '#D2305C', title: T.mission, body: T.mission_body, art: 'mission', link: 'work', linkLabel: T.pillar_link_work },
