@@ -3228,7 +3228,7 @@
 
             <p style="font-size:12px;line-height:1.6;color:var(--faint);margin:0;text-wrap:pretty">{{ pv.dpNote }}</p>
 
-            <button onClick="{{ pv.pay }}" style="cursor:pointer;font-family:inherit;font-size:15px;font-weight:800;padding:14px 26px;border-radius:999px;background:var(--ac-gold);color:#1f1710;border:none;transition:transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ pv.payLabel }} →</button>
+            <button onClick="{{ pv.doPay }}" style="cursor:pointer;font-family:inherit;font-size:15px;font-weight:800;padding:14px 26px;border-radius:999px;background:var(--ac-gold);color:#1f1710;border:none;transition:transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ pv.payLabel }} →</button>
             <div style="font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)">{{ pv.payAccount }}</div>
             <p style="font-size:12px;line-height:1.55;color:var(--faint);margin:0">{{ pv.paySafe }}</p>
             <button onClick="{{ goPolicies }}" style="cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;background:none;border:none;padding:0;color:var(--faint);border-bottom:1px solid var(--border);align-self:flex-start" style-hover="color:var(--text);border-color:var(--text)">{{ T.refund_policy_lbl }}</button>
@@ -33143,7 +33143,7 @@ class Component extends DCLogic {
       dpNote: P.dpNote, paySafe: P.paySafe, payMissing: P.payMissing,
       payLabel: P.payNow, canPay: this._amt() > 0,
       payAccount: fcra ? P.payForeign : P.payDomestic,
-      pay: () => this._pay(P),
+      doPay: () => this._pay(P),
       showPay: S.dStage === 1, payRows,
       orEmail: P.orEmail,
       giveMail: this._mailto(this._dt('give_mail_subject'),
