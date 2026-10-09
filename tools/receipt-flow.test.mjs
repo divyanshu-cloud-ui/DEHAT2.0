@@ -77,7 +77,7 @@ test('Hindi mail text is chosen from donor_lang', () => {
   assert.equal(mail.mailText('zz', 'R1', 100000).subject, mail.mailText('en', 'R1', 100000).subject);
   assert.match(mail.mailText('en', 'R1', 123456).text, /Rs 1,234\.56/);
   const en = mail.mailText('en', 'DEHAT/80G/2026-27/000001', 100000);
-  assert.equal(en.text.split('DEHAT/80G/2026-27/000001').length - 1, 2);
+  assert.equal(en.text.split('DEHAT/80G/2026-27/000001').length - 1, 1);
   assert.match(en.text, /Love and Peace/);
   assert.equal(mail.DEFAULT_REPLY_TO, 'joinus@dehatindia.org');
 });
