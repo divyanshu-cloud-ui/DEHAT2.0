@@ -6490,6 +6490,7 @@ class Component extends DCLogic {
       f_pin_unknown:'We could not find this PIN. Please choose your state and district yourself.',
       v_invalid_date:'Enter the date the money was sent: not in the future, and within the last three years.',
       v_invalid_ref:'Enter the reference exactly as it appears on your statement, using letters and numbers.',
+      v_recurring_limit:'Monthly and yearly gifts by card or UPI can be up to \u20b915,000. For a larger gift, please choose Once, or use bank transfer.',
       v_required:'This field is required.',
       v_too_short:'This looks too short. Please check it.',
       v_too_long:'This is too long. Please shorten it.',
@@ -34364,7 +34365,7 @@ class Component extends DCLogic {
     const S = this.state;
     return { fullName: S.dFullName, email: S.dEmail, phone: S.dPhone, phoneDial: this._dial(S.dDialIso || S.dCC), countryCode: S.dCC,
       state: S.dState, district: S.dDistrict, districtOther: !!S.dDistrictOther, city: S.dCity, postalCode: S.dPin,
-      address: S.dAddr, pan: S.dPan, receipt80G: !!S.d80g, amount: this._amt() > 0 ? this._amt() : '' };
+      address: S.dAddr, pan: S.dPan, receipt80G: !!S.d80g, amount: this._amt() > 0 ? this._amt() : '', frequency: S.dFreq };
   }
   _donorErrors() {
     const local = this._gv ? this._gv.validateDonor(this._donorInput(), { geo: this._geo || undefined, districts: this._dist || undefined }).errors : {};
@@ -34542,7 +34543,7 @@ class Component extends DCLogic {
         key: setup.keyId, name: 'DEHAT', description: p.purpose || 'Domestic contribution',
         currency: 'INR', amount: setup.amount, order_id: setup.orderId,
         subscription_id: setup.subscriptionId,
-        prefill: { name: p.fullName, email: p.email, contact: p.phone },
+        prefill: { name: p.fullName, email: p.email, contact: (this._gv && this._gv.normalizePhone(p.phoneDial, p.phone, p.countryCode)) || p.phone },
         theme: { color: '#D2305C', backdrop_color: '#151009' },
         modal: { confirm_close: true },
         notes: { purpose: p.purpose, receipt_80g: p.receipt80G ? 'requested' : 'not_requested' },

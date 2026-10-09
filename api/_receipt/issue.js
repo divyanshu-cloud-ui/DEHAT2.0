@@ -43,10 +43,13 @@ function addressLine(notes) {
  * Returns { status, outcome } where status is the HTTP status the webhook should answer with.
  * 5xx means "try again" (Razorpay retries for about 24 hours); 200 means handled or nothing to do.
  */
-async function issueReceipt({ payment, eventTime }, deps) {
+async function issueReceipt({ payment, eventTime, subscriptionNotes }, deps) {
   const { store, mailer, log } = deps;
   let notes = plainNotes(payment && payment.notes);
-  if (payment && payment.order_id && !notes.receipt_80g && deps.fetchOrder) {
+  // A recurring charge carries an empty payment 'notes'; the donor's details are on the subscription (subscription.charged event).
+  if (!notes.receipt_80g && subscriptionNotes) notes = plainNotes(subscriptionNotes);
+  const recurring = Boolean(subscriptionNotes || (payment && payment.invoice_id));
+  if (payment && payment.order_id && !payment.invoice_id && !notes.receipt_80g && deps.fetchOrder) {
     try { notes = plainNotes((await deps.fetchOrder(payment.order_id)).notes); } catch (_) { return { status: 503, outcome: 'order_lookup_failed' }; }
   }
   const skip = eligibility(payment, notes);
@@ -67,7 +70,7 @@ async function issueReceipt({ payment, eventTime }, deps) {
     receiptNo = await store.number(paymentId, financialYear(when));
     const { bytes } = await buildReceiptPdf({
       receiptNo, receivedOn: receiptDate(when), paymentId, method: payment.method,
-      purpose: englishPurpose(notes), amountPaise: Number(payment.amount),
+      purpose: englishPurpose(notes), recurring, amountPaise: Number(payment.amount),
       donorName: notes.donor_name, donorAddress: addressLine(notes), donorPan: notes.pan, donorEmail: notes.donor_email,
     });
     const { subject, text } = mailText(validLang(notes.donor_lang), receiptNo, Number(payment.amount));

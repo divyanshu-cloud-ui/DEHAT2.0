@@ -56,6 +56,7 @@ function notes(input) {
     fullName: input.fullName, email: input.email, phone: input.phone, phoneDial: input.phoneDial,
     countryCode: input.countryCode, state: input.state, district: input.district, districtOther: input.districtOther,
     city: input.city, postalCode: input.postalCode, address: input.address, pan: input.pan, receipt80G: wants80G,
+    amount: input.amount, frequency: input.frequency,
   }, { geo: GEO, districts: DISTRICTS });
   if (!result.ok) throw new ValidationError(result.errors);
   const c = result.clean;

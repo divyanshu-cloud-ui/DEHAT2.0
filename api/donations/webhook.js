@@ -28,10 +28,17 @@ async function handler(req, res) {
   try { event = JSON.parse(raw.toString('utf8')); } catch (_) { return json(res, 400, { error: 'Invalid JSON' }); }
   console.log(JSON.stringify({ source: 'razorpay-domestic', event: event.event, created_at: event.created_at }));
   // Receipts are switched on with RECEIPTS_ENABLED=1 once the store and mailbox are configured.
-  if (event.event === 'payment.captured' && process.env.RECEIPTS_ENABLED === '1') {
-    const payment = event.payload && event.payload.payment && event.payload.payment.entity;
-    const result = await issueReceipt({ payment, eventTime: event.created_at }, currentDeps());
+  const entities = (event.payload && event.payload) || {};
+  const payment = entities.payment && entities.payment.entity;
+  const subscription = entities.subscription && entities.subscription.entity;
+  if ((event.event === 'payment.captured' || event.event === 'subscription.charged') && process.env.RECEIPTS_ENABLED === '1') {
+    // subscription.charged is the event that carries the donor's details for monthly and yearly gifts.
+    const result = await issueReceipt({ payment, eventTime: event.created_at, subscriptionNotes: event.event === 'subscription.charged' && subscription ? subscription.notes : undefined }, currentDeps());
     return json(res, result.status, { received: true, receipt: result.outcome });
+  }
+  // A recurring gift that stops (card failed, retries used up, donor cancelled) is logged by id only, so the team can follow it up.
+  if (/^subscription\.(pending|halted|cancelled|completed|paused)$/.test(String(event.event))) {
+    console.log(JSON.stringify({ source: 'razorpay-subscriptions', event: event.event, subscription: subscription && subscription.id }));
   }
   json(res, 200, { received: true });
 }

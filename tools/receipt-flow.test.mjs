@@ -124,3 +124,21 @@ test('webhook: bad signature issues nothing; good one sends', async () => {
   const ok = await call(crypto.createHmac('sha256', 'whsec').update(body).digest('hex'));
   assert.equal(ok.statusCode, 200); assert.equal(r.sent.length, 1);
 });
+
+test('a monthly or yearly gift: subscription.charged issues one receipt from the subscription notes; payment.captured for it is skipped', async () => {
+  process.env.RAZORPAY_DOMESTIC_KEY_ID = 'k'; process.env.RAZORPAY_DOMESTIC_KEY_SECRET = 's';
+  process.env.RAZORPAY_DOMESTIC_WEBHOOK_SECRET = 'whsec'; process.env.RECEIPTS_ENABLED = '1';
+  const handler = require('../api/donations/webhook.js');
+  const r = rig(); handler._deps.store = r.deps.store; handler._deps.mailer = r.deps.mailer;
+  const recurringPayment = { ...pay('pay_sub1'), notes: [], order_id: 'order_x', invoice_id: 'inv_1' };
+  const send = async body => { const raw = JSON.stringify(body); const sig = crypto.createHmac('sha256', 'whsec').update(raw).digest('hex'); const res = { setHeader() {}, end(b) { this.body = b; } }; await handler({ method: 'POST', headers: { 'x-razorpay-signature': sig }, async *[Symbol.asyncIterator]() { yield Buffer.from(raw); } }, res); return res; };
+  const captured = { event: 'payment.captured', created_at: 1791500000, payload: { payment: { entity: recurringPayment } } };
+  const charged = { event: 'subscription.charged', created_at: 1791500001, payload: { payment: { entity: recurringPayment }, subscription: { entity: { id: 'sub_1', notes } } } };
+  // Razorpay sends payment.captured first: no donor details on it, so nothing is issued and nothing fails.
+  assert.equal((await send(captured)).statusCode, 200); assert.equal(r.sent.length, 0);
+  assert.equal((await send(charged)).statusCode, 200); assert.equal(r.sent.length, 1);
+  assert.match(r.sent[0].subject, /DEHAT\/80G\/2026-27\/000001/);
+  assert.equal((await send(charged)).statusCode, 200); assert.equal(r.sent.length, 1, 'a redelivered event must not send a second email');
+  const halted = await send({ event: 'subscription.halted', payload: { subscription: { entity: { id: 'sub_1' } } } });
+  assert.equal(halted.statusCode, 200);
+});

@@ -98,3 +98,12 @@ test('transfer form: optional contact fields are checked only when filled', () =
   assert.equal(tcodes({ last: 'V3rma' }).rtLast, 'invalid_chars');
   assert.equal(tcodes({ company: '<b>x</b>' }).rtCompany, 'invalid_chars');
 });
+
+test('monthly and yearly gifts are capped at the Razorpay card and UPI mandate limit', () => {
+  for (const f of ['monthly', 'yearly']) {
+    assert.equal(codes({ amount: '15000', frequency: f }).amount, undefined, f + ' 15000');
+    assert.equal(codes({ amount: '15001', frequency: f }).amount, 'recurring_limit', f + ' 15001');
+  }
+  assert.equal(codes({ amount: '500000', frequency: 'once' }).amount, undefined);
+  assert.equal(codes({ amount: '500000' }).amount, undefined);
+});

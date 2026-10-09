@@ -89,6 +89,19 @@ test('create-order refuses blank or wrong donor details and never calls Razorpay
   } finally { restore(); }
 });
 
+test('create-order accepts a large one-time gift, create-subscription refuses a recurring gift over the mandate limit', async () => {
+  const createSub = require('../api/donations/create-subscription.js');
+  const calls = mockRazorpay((m, p) => ({ status: 200, body: { id: p.includes('plans') ? 'plan_A' : (p.includes('subscriptions') ? 'sub_A' : 'order_A') } }));
+  try {
+    assert.equal((await call(createOrder, { ...DONOR, amount: 200000 })).status, 200);
+    const over = await call(createSub, { ...DONOR, amount: 20000, frequency: 'monthly' });
+    assert.equal(over.status, 400); assert.equal(over.body.fields.amount, 'recurring_limit');
+    const ok = await call(createSub, { ...DONOR, amount: 1000, frequency: 'yearly' });
+    assert.equal(ok.status, 200);
+    assert.ok(calls.some(c => c.path === '/v1/subscriptions'));
+  } finally { restore(); }
+});
+
 test('verify captures an authorized payment using the amount from the signed token', async () => {
   const calls = mockRazorpay((m, p) => p.endsWith('/capture') ? { status: 200, body: payment('captured') } : { status: 200, body: payment('authorized') });
   try {

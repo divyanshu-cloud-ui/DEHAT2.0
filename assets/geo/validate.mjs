@@ -8,6 +8,8 @@ const PLACE_OK = /^[\p{L}\p{M}][\p{L}\p{M} .'’\-(),\/]*$/u;
 const EMAIL_OK = /^[^\s@,;:<>()[\]\\"]+@[^\s@,;:<>()[\]\\"]+\.[A-Za-z¡-￿]{2,}$/u;
 export const PAN_OK = /^[A-Z]{3}[ABCFGHJKLPT][A-Z][0-9]{4}[A-Z]$/;
 export const MAX_AMOUNT = 10000000;
+// Razorpay card and UPI mandates take automatic charges only up to this amount; above it the charge fails and the gift stops.
+export const RECURRING_MAX = 15000;
 
 const letters = s => (String(s).match(LETTER) || []).length;
 const repeated = s => /(.)\1{3,}/u.test(String(s));            // "aaaa", "xxxxx"
@@ -106,6 +108,7 @@ export function validateDonor(input, ctx = {}) {
     if (v.amount === '' || v.amount === null || !Number.isFinite(n)) e.amount = 'required';
     else if (n < 1 || n > MAX_AMOUNT) e.amount = 'amount_range';
     else if (Math.round(n * 100) !== n * 100 && !/^\d+(\.\d{1,2})?$/.test(String(v.amount))) e.amount = 'amount_range';
+    else if ((v.frequency === 'monthly' || v.frequency === 'yearly') && n > RECURRING_MAX) e.amount = 'recurring_limit';
   }
   for (const k of ctx.optional || []) if (e[k] === 'required') delete e[k];
   return { ok: Object.keys(e).length === 0, errors: e, clean };

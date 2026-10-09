@@ -125,7 +125,7 @@ async function buildReceiptPdf(r) {
   draw('Amount', RIGHT, tableTop - 15, 9.5, { color: GREY, align: 'right' });
   rule(tableTop - 22);
   draw('Donation', LEFT, tableTop - 37, 11, { bold: true });
-  const purposeLines = wrap('Purpose: ' + r.purpose + ' · ' + methodText(r.method), 9.5, false, 110 * MM, 3);
+  const purposeLines = wrap('Purpose: ' + r.purpose + ' · ' + methodText(r.method) + (r.recurring ? ' · Recurring gift' : ''), 9.5, false, 110 * MM, 3);
   purposeLines.forEach((line, i) => draw(line, LEFT, tableTop - 50 - i * 12, 9.5, { color: rgb(0.42, 0.44, 0.48) }));
   const amountText = '₹' + formatInr(r.amountPaise);
   draw(amountText, RIGHT, tableTop - 37, 11, { bold: true, align: 'right' });

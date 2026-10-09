@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { toCsv, selectPayments, fetchPayments, COLUMNS } from './form113-export.mjs';
+import { toCsv, selectPayments, fetchPayments, addSubscriptionNotes, COLUMNS } from './form113-export.mjs';
 
 const base = { status: 'captured', currency: 'INR', amount: 100000, created_at: 1791500000 };
 const mk = (id, notes, extra = {}) => ({ ...base, id, notes: { receipt_80g: 'requested', pan: 'ABCDE1234F', donor_name: 'Test Donor', ...notes }, ...extra });
@@ -35,4 +35,15 @@ test('fetch pages through 100 at a time and uses India-time day bounds', async (
   assert.equal(items.length, 105); assert.equal(calls.length, 2);
   assert.match(calls[0], new RegExp('from=' + Math.floor(Date.parse('2026-04-01T00:00:00+05:30') / 1000)));
   await assert.rejects(() => fetchPayments({ from: '2026-06-30', to: '2026-04-01' }, {}, get), /from on or before to/);
+});
+
+test('recurring charges take the donor details from their subscription, fetched once per subscription', async () => {
+  const calls = [];
+  const get = async path => { calls.push(path); if (path.startsWith('invoices/')) return { subscription_id: 'sub_1' }; return { notes: { receipt_80g: 'requested', pan: 'ABCPV1234F', donor_name: 'Asha Verma' } }; };
+  const payments = [{ ...base, id: 'r1', notes: [], invoice_id: 'inv_1' }, { ...base, id: 'r2', notes: [], invoice_id: 'inv_1', created_at: 1791500100 }, mk('plain', {})];
+  await addSubscriptionNotes(payments, {}, get);
+  assert.equal(calls.filter(c => c.startsWith('subscriptions/')).length, 1);
+  const { csv, count } = toCsv(payments);
+  assert.equal(count, 3);
+  assert.match(csv, /Asha Verma/);
 });

@@ -55,6 +55,20 @@ function razorpayGet(path, { keyId, keySecret }) {
   });
 }
 
+// A monthly or yearly charge comes back with empty notes: the donor's details are on the subscription, reached through the payment's invoice.
+export async function addSubscriptionNotes(payments, creds, get = razorpayGet) {
+  const invoices = new Map(), subscriptions = new Map();
+  for (const p of payments) {
+    if (plainNotes(p.notes).receipt_80g || !p.invoice_id) continue;
+    if (!invoices.has(p.invoice_id)) invoices.set(p.invoice_id, (await get('invoices/' + encodeURIComponent(p.invoice_id), creds)).subscription_id || null);
+    const sid = invoices.get(p.invoice_id);
+    if (!sid) continue;
+    if (!subscriptions.has(sid)) subscriptions.set(sid, (await get('subscriptions/' + encodeURIComponent(sid), creds)).notes || {});
+    p.notes = subscriptions.get(sid);
+  }
+  return payments;
+}
+
 export async function fetchPayments({ from, to }, creds, get = razorpayGet) {
   const start = Math.floor(Date.parse(from + 'T00:00:00+05:30') / 1000);
   const end = Math.floor(Date.parse(to + 'T23:59:59+05:30') / 1000);
@@ -65,7 +79,7 @@ export async function fetchPayments({ from, to }, creds, get = razorpayGet) {
     all.push(...page.items);
     if (page.items.length < 100) break;
   }
-  return all;
+  return addSubscriptionNotes(all, creds, get);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
