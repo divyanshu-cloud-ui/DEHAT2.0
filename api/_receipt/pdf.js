@@ -18,6 +18,7 @@ const ORG = {
   name: 'Developmental Association for Human Advancement (DEHAT)',
   registration: 'Registered Society, Reg. No. 370/2000-2001',
   office: 'Registered Office: Amritpur Puraina, Madhvapur Koliahar, Nanpara, Bahraich, Uttar Pradesh, PIN 271855',
+  communication: 'Communication Address (Head Office): \u201cSewakunj\u201d, Maseehabad Road via Kati Chauraha, Huzoorpur Marg, Bahraich, Uttar Pradesh, PIN 271801',
   pan: 'AAAAD3793Q',
   urn80g: 'AAAAD3793Q25LK02',
   valid80g: 'valid AY 2027-28 to 2031-32',
@@ -112,7 +113,7 @@ async function buildReceiptPdf(r) {
     }
     return y;
   }
-  const yLeft = block(LEFT, leftW, colTop + 6.5, ORG.name, [ORG.registration, ORG.office], [
+  const yLeft = block(LEFT, leftW, colTop + 6.5, ORG.name, [ORG.registration, ORG.office, ORG.communication], [
     ['PAN', ORG.pan], ['80G URN', ORG.urn80g + ' · ' + ORG.valid80g], ['12A URN', ORG.urn12a + ' · ' + ORG.valid12a]]);
   const yRight = block(rightX, rightW, colTop + 6.5, r.donorName, [r.donorAddress], [['PAN', r.donorPan], ['Email', r.donorEmail]]);
   let y = Math.min(yLeft, yRight) - 14;

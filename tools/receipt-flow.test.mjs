@@ -64,6 +64,11 @@ test('receipt wording follows the Income-tax Act, 2025', () => {
   assert.match(src, /earlier section 80G/);
   assert.doesNotMatch(src, /exemption u\/s 80G/);
 });
+test('PDF names the communication address as well as the registered office', async () => {
+  const src = require('fs').readFileSync(new URL('../api/_receipt/pdf.js', import.meta.url), 'utf8');
+  assert.match(src, /Communication Address \(Head Office\)/);
+  assert.match(src, /Huzoorpur Marg, Bahraich, Uttar Pradesh, PIN 271801/);
+});
 test('PDF: one page, text, seal and logo embedded', async () => {
   const { bytes, contentBottom, footerTop } = await buildReceiptPdf({ receiptNo: 'DEHAT/80G/2026-27/000001', receivedOn: '9 Oct 2026', paymentId: 'pay_1', method: 'card', purpose: 'Wherever It Is Needed Most', amountPaise: 100000, donorName: 'Test Donor '.repeat(8), donorAddress: 'A very long address, '.repeat(6), donorPan: 'ABCDE1234F', donorEmail: 'test.donor@example.com' });
   const doc = await PDFDocument.load(bytes);
