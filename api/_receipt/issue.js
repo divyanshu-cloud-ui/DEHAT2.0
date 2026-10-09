@@ -22,6 +22,14 @@ function eligibility(payment, notes) {
   return null;
 }
 
+// The PDF is English with a Latin-script font: use the English purpose, or the stored text only when it is plain Latin.
+function englishPurpose(notes) {
+  const en = String(notes.purpose_en || '').trim();
+  if (en) return en;
+  const raw = String(notes.purpose || '').trim();
+  return /^[\u0020-\u007e\u00a0-\u00ff\u2013\u2018\u2019]+$/.test(raw) && raw ? raw : 'Wherever it is needed most';
+}
+
 function addressLine(notes) {
   const parts = [notes.receipt_address, notes.donor_city, notes.donor_state, notes.donor_postal_code && 'PIN ' + notes.donor_postal_code, notes.donor_country]
     .map(v => String(v || '').trim()).filter(Boolean);
@@ -57,7 +65,7 @@ async function issueReceipt({ payment, eventTime }, deps) {
     receiptNo = await store.number(paymentId, financialYear(when));
     const { bytes } = await buildReceiptPdf({
       receiptNo, receivedOn: receiptDate(when), paymentId, method: payment.method,
-      purpose: notes.purpose || 'Unrestricted', amountPaise: Number(payment.amount),
+      purpose: englishPurpose(notes), amountPaise: Number(payment.amount),
       donorName: notes.donor_name, donorAddress: addressLine(notes), donorPan: notes.pan, donorEmail: notes.donor_email,
     });
     const { subject, text } = mailText(validLang(notes.donor_lang), receiptNo, Number(payment.amount));
@@ -76,4 +84,4 @@ async function issueReceipt({ payment, eventTime }, deps) {
   }
 }
 
-module.exports = { addressLine, eligibility, issueReceipt };
+module.exports = { addressLine, englishPurpose, eligibility, issueReceipt };

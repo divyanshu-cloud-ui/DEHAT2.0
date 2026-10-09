@@ -45,6 +45,7 @@ function notes(input) {
   return {
     payment_regime: 'domestic_inr',
     purpose: String(input.purpose || 'Unrestricted').slice(0, 240),
+    purpose_en: String(input.purposeEn || '').slice(0, 120),
     receipt_80g: wants80G ? 'requested' : 'not_requested',
     pan: wants80G ? pan : '',
     receipt_address: String(input.address || '').slice(0, 240),

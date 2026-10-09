@@ -33476,6 +33476,9 @@ class Component extends DCLogic {
   _payload(P) {
     const S = this.state, fcra = S.dRegime === 'fcra';
     const pur = (P.purposes.find(x => x.k === S.dPurpose) || {}).label || '';
+    // The receipt PDF is English, so the purpose travels in English as well as in the reader's language.
+    const ENP = ((this._pt || {}).en || {}).purposes || [];
+    const purEn = (ENP.find(x => x.k === S.dPurpose) || {}).label || pur;
     return {
       account: fcra ? 'FCRA / foreign' : 'Domestic / INR',
       razorpayAccount: fcra ? 'RZP_FCRA_ACCOUNT_ID' : 'RZP_DOMESTIC_ACCOUNT_ID',
@@ -33483,6 +33486,7 @@ class Component extends DCLogic {
       amount: this._amt(),
       frequency: S.dFreq,
       purpose: pur,
+      purposeEn: purEn,
       receipt80G: !fcra && S.d80g,
       pan: fcra ? '' : S.dPan,
       country: fcra ? S.dCountry : 'India',
@@ -33622,7 +33626,7 @@ class Component extends DCLogic {
       const response = await fetch(endpoint, {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          amount: p.amount, frequency: p.frequency, purpose: p.purpose,
+          amount: p.amount, frequency: p.frequency, purpose: p.purpose, purposeEn: p.purposeEn,
           receipt80G: p.receipt80G, pan: p.pan, address: p.address,
           anonymous: p.anonymous, regime: 'domestic_inr',
           fullName: p.fullName, email: p.email, phone: p.phone,

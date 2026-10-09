@@ -25,7 +25,7 @@ const ORG = {
   valid12a: 'valid AY 2027-28 to 2036-37',
   contact: 'dehatindia.org · joinus@dehatindia.org',
 };
-const EXEMPTION_TEXT = 'Donation eligible for exemption u/s 80G of the Income Tax Act, 1961. 80G URN: ' + ORG.urn80g + ', valid for AY 2027-28 to 2031-32.';
+const EXEMPTION_TEXT = 'Donation eligible for deduction under section 133 of the Income-tax Act, 2025 (earlier section 80G of the Income-tax Act, 1961). Approval URN ' + ORG.urn80g + ', valid for AY 2027-28 to 2031-32. The deduction is available only to a donor who has not opted for the new tax regime.';
 const NOTE_TEXT = 'Thank you for investing with DEHAT. Please keep this receipt for your tax records.';
 const NO_GOODS = 'No goods or services were provided in exchange for this donation.';
 
@@ -84,7 +84,7 @@ async function buildReceiptPdf(r) {
 
   // Header: title, sub-line, meta rows on the left; light-mode logo on the right.
   draw('Donation Receipt', LEFT, Y(22), 22, { bold: true });
-  draw('Under Section 80G of the Income Tax Act, 1961', LEFT, Y(28), 9.5, { color: GREY });
+  draw('Under Section 133 of the Income-tax Act, 2025 (earlier Section 80G)', LEFT, Y(28), 9.5, { color: GREY });
   const meta = [['Receipt No.:', r.receiptNo], ['Received On:', r.receivedOn], ['Payment Reference:', r.paymentId + ' (Razorpay)']];
   meta.forEach(([k, v], i) => { draw(k, LEFT, Y(36 + i * 5.2), 10, { color: GREY }); draw(v, LEFT + 36 * MM, Y(36 + i * 5.2), 10); });
   const logoW = 62 * MM;
@@ -152,7 +152,7 @@ async function buildReceiptPdf(r) {
   draw('Authorised Signatory', LEFT, y - sealH - 12, 9.5, { color: GREY });
   y -= sealH + 40;
 
-  draw('80G Tax Exemption', LEFT, y, 9.5, { color: GREY });
+  draw('Tax Deduction for the Donor', LEFT, y, 9.5, { color: GREY });
   y -= 13;
   for (const line of wrap(EXEMPTION_TEXT, 9.5, false, RIGHT - LEFT, 3)) { draw(line, LEFT, y, 9.5); y -= 12.5; }
   y -= 6;
