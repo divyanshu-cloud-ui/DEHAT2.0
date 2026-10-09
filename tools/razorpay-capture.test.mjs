@@ -41,18 +41,51 @@ function confirmation({ amount = 10000, currency = 'INR', order = 'order_A', pay
   const signature = badSig ? 'deadbeef' : z.hmac(order + '|' + pay, process.env.RAZORPAY_DOMESTIC_KEY_SECRET);
   return { razorpay_payment_id: pay, razorpay_order_id: order, razorpay_signature: signature, contextToken };
 }
+const DONOR = {
+  regime: 'domestic_inr', purpose: 'Test', purposeEn: 'Test', receipt80G: true, pan: 'ABCPV1234F', lang: 'hi',
+  fullName: 'Asha Verma', email: 'asha@example.org', phone: '98765 43210', phoneDial: '91', countryCode: 'IN',
+  state: 'Uttar Pradesh', district: 'Bahraich', city: 'Bahraich', postalCode: '271801', address: '12 Station Road',
+};
 const payment = (status, extra = {}) => ({ id: 'pay_A', order_id: 'order_A', amount: 10000, currency: 'INR', status, ...extra });
 
 test('create-order asks Razorpay to capture automatically and sends the donor notes', async () => {
   const calls = mockRazorpay(() => ({ status: 200, body: { id: 'order_A' } }));
   try {
-    const r = await call(createOrder, { amount: 100, regime: 'domestic_inr', purpose: 'Test' });
+    const r = await call(createOrder, { ...DONOR, amount: 100 });
     assert.equal(r.status, 200);
     assert.equal(calls.length, 1);
     assert.equal(calls[0].path, '/v1/orders');
     assert.equal(calls[0].payload.payment_capture, true);
     assert.equal(calls[0].payload.amount, 10000);
     assert.equal(calls[0].payload.currency, 'INR');
+  } finally { restore(); }
+});
+
+test('create-order stores one composed address, an E.164 phone, and at most 15 note keys', async () => {
+  const calls = mockRazorpay(() => ({ status: 200, body: { id: 'order_A' } }));
+  try {
+    await call(createOrder, { ...DONOR, amount: 100 });
+    const n = calls[0].payload.notes;
+    assert.ok(Object.keys(n).length <= 15);
+    assert.equal(n.donor_phone, '+919876543210');
+    assert.equal(n.donor_cc, 'IN');
+    assert.equal(n.receipt_address, '12 Station Road, Bahraich, Uttar Pradesh, PIN 271801, India');
+    assert.ok(Object.values(n).every(v => String(v).length <= 256));
+  } finally { restore(); }
+});
+
+test('create-order refuses blank or wrong donor details and never calls Razorpay', async () => {
+  const calls = mockRazorpay(() => ({ status: 200, body: { id: 'order_A' } }));
+  try {
+    for (const patch of [{ fullName: '' }, { email: 'nope' }, { phone: '12345' }, { countryCode: 'ZZ' }, { state: 'Atlantis' }, { postalCode: '12' }, { pan: 'BAD' }, { amount: 0 }, { district: 'Gotham' }]) {
+      const r = await call(createOrder, { ...DONOR, amount: 100, ...patch });
+      assert.equal(r.status, 400, JSON.stringify(patch));
+      assert.ok(r.body.fields || r.body.error, JSON.stringify(patch));
+    }
+    const blank = await call(createOrder, { regime: 'domestic_inr', amount: 100 });
+    assert.equal(blank.status, 400);
+    assert.equal(blank.body.fields.fullName, 'required');
+    assert.equal(calls.length, 0);
   } finally { restore(); }
 });
 

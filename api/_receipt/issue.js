@@ -31,6 +31,8 @@ function englishPurpose(notes) {
 }
 
 function addressLine(notes) {
+  // Orders from the current form carry one composed address; older orders carry the parts separately.
+  if (notes.donor_cc) return String(notes.receipt_address || '').trim();
   const parts = [notes.receipt_address, notes.donor_city, notes.donor_state, notes.donor_postal_code && 'PIN ' + notes.donor_postal_code, notes.donor_country]
     .map(v => String(v || '').trim()).filter(Boolean);
   return parts.join(', ');

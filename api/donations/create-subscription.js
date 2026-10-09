@@ -23,6 +23,6 @@ module.exports = async function handler(req, res) {
     const token = contextToken({ kind: 'subscription', id: subscription.id, amount, currency: 'INR', createdAt: Date.now() });
     json(res, 200, { keyId: credentials().keyId, amount, currency: 'INR', subscriptionId: subscription.id, contextToken: token });
   } catch (error) {
-    json(res, 400, { error: error.message });
+    json(res, 400, error.fields ? { error: error.message, fields: error.fields } : { error: error.message });
   }
 };

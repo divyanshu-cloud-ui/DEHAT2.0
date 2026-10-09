@@ -3120,6 +3120,10 @@
               </sc-if>
             </div>
 
+            <sc-if value="{{ pv.hasAmountErr }}" hint-placeholder-val="{{ false }}">
+              <span id="df-amount" tabindex="-1" role="alert" style="margin-top:-12px;font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ pv.amountErr }}</span>
+            </sc-if>
+
             <div>
               <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint);margin-bottom:9px">{{ pv.freqTitle }}</div>
               <div style="display:inline-flex;padding:4px;border-radius:12px;background:var(--surface);border:1px solid var(--border)">
@@ -3154,7 +3158,8 @@
             <sc-if value="{{ pv.isInr }}" hint-placeholder-val="{{ true }}">
               <label style="display:flex;flex-direction:column;gap:5px">
                 <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.panLabel }}</span>
-                <input type="text" value="{{ pv.panVal }}" onChange="{{ pv.onPan }}" placeholder="{{ pv.panHint }}" style="font-family:ui-monospace,Menlo,monospace;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                <input id="df-pan" type="text" value="{{ pv.panVal }}" onChange="{{ pv.onPan }}" placeholder="{{ pv.panHint }}" style="font-family:ui-monospace,Menlo,monospace;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.panBorder }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                <sc-if value="{{ pv.hasPanErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ pv.panErr }}</span></sc-if>
               </label>
               <label style="display:flex;flex-direction:column;gap:5px;margin-top:12px">
                 <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.aadhaarLabel }}</span>
@@ -3207,17 +3212,40 @@
             </sc-if>
 
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 20px">
-              <sc-for list="{{ pv.donorFields }}" as="df" hint-placeholder-count="7">
-                <label style="display:flex;flex-direction:column;gap:5px;grid-column:{{ df.span }}">
-                  <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ df.label }}</span>
-                  <input type="{{ df.type }}" value="{{ df.val }}" onChange="{{ df.on }}" placeholder="{{ df.hint }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
-                </label>
+              <sc-for list="{{ pv.donorFields }}" as="df" hint-placeholder-count="8">
+                <div style="display:flex;flex-direction:column;gap:5px;grid-column:{{ df.span }}">
+                  <label for="{{ df.id }}" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ df.label }}</label>
+                  <sc-if value="{{ df.isText }}" hint-placeholder-val="{{ true }}">
+                    <input id="{{ df.id }}" type="{{ df.type }}" inputmode="{{ df.inputmode }}" autocomplete="{{ df.ac }}" value="{{ df.val }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                  </sc-if>
+                  <sc-if value="{{ df.isSelect }}" hint-placeholder-val="{{ false }}">
+                    <select id="{{ df.id }}" autocomplete="{{ df.ac }}" value="{{ df.val }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" aria-invalid="{{ df.invalid }}" style="width:100%;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                      <sc-for list="{{ df.options }}" as="op" hint-placeholder-count="5">
+                        <option value="{{ op.v }}">{{ op.l }}</option>
+                      </sc-for>
+                    </select>
+                  </sc-if>
+                  <sc-if value="{{ df.isPhone }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex;gap:8px">
+                      <select id="{{ df.id }}-dial" aria-label="{{ df.label }}" value="{{ df.dialVal }}" onChange="{{ df.onDial }}" style="flex:0 0 44%;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                        <sc-for list="{{ df.dialOptions }}" as="dop" hint-placeholder-count="5">
+                          <option value="{{ dop.v }}">{{ dop.l }}</option>
+                        </sc-for>
+                      </select>
+                      <input id="{{ df.id }}" type="tel" inputmode="tel" autocomplete="tel-national" value="{{ df.val }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="flex:1 1 auto;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ df.hasErr }}" hint-placeholder-val="{{ false }}">
+                    <span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ df.err }}</span>
+                  </sc-if>
+                </div>
               </sc-for>
             </div>
 
             <label style="display:flex;flex-direction:column;gap:5px">
               <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.addrLabel }}</span>
-              <input type="text" value="{{ pv.addrVal }}" onChange="{{ pv.onAddr }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+              <input id="df-address" type="text" value="{{ pv.addrVal }}" onChange="{{ pv.onAddr }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.addrBorder }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+              <sc-if value="{{ pv.hasAddrErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ pv.addrErr }}</span></sc-if>
             </label>
 
             <label style="display:flex;flex-direction:column;gap:5px">
@@ -3240,6 +3268,9 @@
 
             <p style="font-size:12px;line-height:1.6;color:var(--faint);margin:0;text-wrap:pretty">{{ pv.dpNote }}</p>
 
+            <sc-if value="{{ pv.hasFormMsg }}" hint-placeholder-val="{{ false }}">
+              <p role="alert" aria-live="polite" style="margin:0;padding:10px 14px;border-radius:12px;border:1px solid var(--ac-red);font-size:13.5px;line-height:1.5;font-weight:700;color:var(--ac-red)">{{ pv.formMsg }}</p>
+            </sc-if>
             <button onClick="{{ pv.doPay }}" style="cursor:pointer;font-family:inherit;font-size:15px;font-weight:800;padding:14px 26px;border-radius:999px;background:var(--ac-gold);color:#1f1710;border:none;transition:transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ pv.payLabel }} →</button>
             <sc-if value="{{ pv.isFcra }}" hint-placeholder-val="{{ false }}">
               <p style="font-size:12.5px;line-height:1.6;color:var(--text);margin:0;text-wrap:pretty">{{ pv.payForeignNote }}</p>
@@ -4772,11 +4803,12 @@ class Component extends DCLogic {
     // that would survive a reload or follow a visitor across sessions.
     sigHero: false, sig: {},
     pTab: 'route', pStep: 0, pcSel: '', pWho: '', pIntents: [], pOpen: '', ivFacets: {}, pSop: '', pName: '', pOrg: '', pEmail: '', pPhone: '', pPlace: '', pBudget: '', pCopied: false,
-    dRegime: 'inr', dAmount: '', dAmountOther: '', dFreq: 'once', dPurpose: 'unrestricted', dPan: '', dCountry: '', dIdRef: '', dAddr: '', d80g: true, dAnon: false, dStage: 0, ivStatus: 'current', ivProg: 'all',
+    dRegime: 'inr', dAmount: '', dAmountOther: '', dFreq: 'once', dPurpose: 'unrestricted', dCC: 'IN', dDialIso: '', dDistrict: '', dDistrictOther: false, dTouched: {}, dTry: false, dSrvErr: null, dPan: '', dCountry: '', dIdRef: '', dAddr: '', d80g: true, dAnon: false, dStage: 0, ivStatus: 'current', ivProg: 'all',
     whoStem: 'nyay', whoMine: '', whoReveal: false, whoPerson: '', whoBoard: 'governing', whoGroup: 'all', whoBelief: '', whoBeliefAll: false, navMore: false, navGroup: '', polOpen: '', homeFace: 't33',
     ckDecided: true, ckPrefsOpen: false, ckOpen: '', ckPrefs: { performance: false, functional: false, targeting: false }, ...(window.DEHAT_LAUNCH?.initialState || {}) };
 
   componentDidMount() {
+    this._loadGeo();
     if (window.DEHAT_LAUNCH) window.DEHAT_LAUNCH.attach(this);
     this._applyTheme();
     // Open in the language the device asks for, without recording it as a choice the
@@ -5367,7 +5399,7 @@ class Component extends DCLogic {
       pTab: tab, pStep: 0, pcSel: '', pWho: '', pIntents: [], pOpen: '', ivFacets: {},
       pSop: '', pName: '', pOrg: '', pEmail: '', pPhone: '', pPlace: '', pBudget: '', pCopied: false,
       dRegime: 'inr', dAmount: '', dAmountOther: '', dFreq: 'once', dPurpose: 'unrestricted',
-      dPan: '', dCountry: '', dIdRef: '', dAddr: '', d80g: true, dAnon: false, dStage: 0,
+      dCC: 'IN', dDialIso: '', dDistrict: '', dDistrictOther: false, dTouched: {}, dTry: false, dSrvErr: null, dPan: '', dCountry: '', dIdRef: '', dAddr: '', d80g: true, dAnon: false, dStage: 0,
     });
   }
   _go(view, anchor, extra) {
@@ -6409,6 +6441,26 @@ class Component extends DCLogic {
       f_postal_code:'Postal Code',
       f_country:'Country',
       f_india:'India',
+      f_district:'District',
+      f_district_opt:'District / County (Optional)',
+      f_district_other:'Other / Not Listed',
+      f_district_type:'Type Your District',
+      f_select_country:'Select Your Country',
+      f_select_state:'Select Your State or Province',
+      f_select_district:'Select Your District',
+      f_phone_hint:'Mobile number, digits only',
+      f_pin_hint:'6-digit PIN code',
+      v_required:'This field is required.',
+      v_too_short:'This looks too short. Please check it.',
+      v_too_long:'This is too long. Please shorten it.',
+      v_invalid_chars:'Please check this entry. It does not look right.',
+      v_invalid_email:'Enter a valid email address, like name@example.com.',
+      v_invalid_phone:'Enter a valid phone number for the selected country, digits only.',
+      v_invalid_pin:'Enter a valid PIN or postal code.',
+      v_invalid_pan:'Enter a valid PAN, like ABCDE1234F.',
+      v_invalid_selection:'Please choose an option from the list.',
+      v_amount_range:'Enter an amount between Rs 1 and Rs 1,00,00,000, with at most two decimals.',
+      v_fix_n:'Please correct the {n} highlighted field(s) before you continue.',
       f_additional_note:'Additional Note',
       f_additional_note_hint:'Anything we should know about this investment',
       not_itemised:'Not Itemised',
@@ -33289,7 +33341,7 @@ class Component extends DCLogic {
         fg: S.dPurpose === p.k ? 'var(--text)' : 'var(--dim)',
         select: () => this.setState({ dPurpose: p.k }) })),
       idTitle: P.idTitle, idNote: fcra ? P.idNoteFcra : P.idNoteInr, isFcra: fcra, isInr: !fcra,
-      panLabel: P.fPan, panHint: P.fPanHint, panVal: S.dPan, onPan: this._pset('dPan'),
+      panLabel: P.fPan + (S.d80g ? ' *' : ''), panHint: P.fPanHint, panVal: S.dPan, onPan: this._pset('dPan'),
       countryLabel: P.fIdCountry, countryVal: S.dCountry, onCountry: this._pset('dCountry'),
       idRefLabel: P.fIdRef, idRefVal: S.dIdRef, onIdRef: this._pset('dIdRef'),
       idRefHint: P.fIdRefHint,
@@ -33308,19 +33360,14 @@ class Component extends DCLogic {
       onPassport: this._fileAdd('dPassportFiles'),
       // Identity and contact detail the receipt and the statutory return both need,
       // asked alongside the KYC documents rather than after the payment.
-      donorFields: [
-        { k: 'dFullName', label: T.f_full_name, span: '1 / -1' },
-        { k: 'dPhone', label: T.f_phone, type: 'tel' },
-        { k: 'dEmail', label: T.f_email, type: 'email', hint: T.f_email_hint },
-        { k: 'dCity', label: T.f_city },
-        { k: 'dState', label: T.f_state },
-        { k: 'dPin', label: T.f_postal_code },
-        { k: 'dAddrCountry', label: T.f_country, hint: fcra ? '' : T.f_india },
-      ].map(f => ({ k: f.k, label: f.label, type: f.type || 'text', hint: f.hint || '',
-        span: f.span || 'auto', val: S[f.k] || '', on: this._pset(f.k) })),
+      donorFields: this._donorFields(T),
       noteLabel: T.f_additional_note, noteHint: T.f_additional_note_hint,
       noteVal: S.dNote || '', onNote: this._pset('dNote'),
-      addrLabel: P.fAddress, addrVal: S.dAddr, onAddr: this._pset('dAddr'),
+      addrLabel: P.fAddress + (S.d80g ? ' *' : ''), addrVal: S.dAddr, onAddr: this._pset('dAddr'),
+      addrErr: this._dmsg('address'), hasAddrErr: !!this._dmsg('address'), addrBorder: this._dmsg('address') ? 'var(--ac-red)' : 'var(--border)',
+      panErr: this._dmsg('pan'), hasPanErr: !!this._dmsg('pan'), panBorder: this._dmsg('pan') ? 'var(--ac-red)' : 'var(--border)',
+      amountErr: this._dmsg('amount'), hasAmountErr: !!this._dmsg('amount'),
+      formMsg: this._formSummary(), hasFormMsg: !!this._formSummary(),
       g80Label: P.f80g, g80On: S.d80g, g80Mark: S.d80g ? '\u2713' : '', toggle80: this._ptog('d80g'),
       anonLabel: P.fAnon, anonOn: S.dAnon, anonMark: S.dAnon ? '\u2713' : '', toggleAnon: this._ptog('dAnon'),
       dpNote: P.dpNote, paySafe: P.paySafe, payMissing: P.payMissing,
@@ -33467,6 +33514,104 @@ class Component extends DCLogic {
     if (!this._ptogs[k]) this._ptogs[k] = () => this.setState(s => ({ [k]: !s[k] }));
     return this._ptogs[k];
   }
+  // Donor form: the same validation module the server uses, plus the country / state / district lists.
+  _loadGeo() {
+    if (this._geoLoading) return;
+    this._geoLoading = true;
+    import('./assets/geo/validate.mjs').then(m => { this._gv = m; this.forceUpdate(); }).catch(() => { this._geoLoading = false; });
+    fetch('/assets/geo/geo.v1.json').then(r => r.json()).then(j => { this._geo = j; this.forceUpdate(); }).catch(() => { this._geoLoading = false; });
+    fetch('/assets/geo/in-districts.v1.json').then(r => r.json()).then(j => { this._dist = j; this.forceUpdate(); }).catch(() => { this._geoLoading = false; });
+  }
+  // ---- Donor form: country / state / district lists and the shared validation rules ----
+  _dial(iso) { const row = this._geo ? this._geo.countries.find(c => c[0] === iso) : null; return row ? row[2] : (iso === 'IN' ? '91' : ''); }
+  _donorInput() {
+    const S = this.state;
+    return { fullName: S.dFullName, email: S.dEmail, phone: S.dPhone, phoneDial: this._dial(S.dDialIso || S.dCC), countryCode: S.dCC,
+      state: S.dState, district: S.dDistrict, districtOther: !!S.dDistrictOther, city: S.dCity, postalCode: S.dPin,
+      address: S.dAddr, pan: S.dPan, receipt80G: !!S.d80g, amount: this._amt() > 0 ? this._amt() : '' };
+  }
+  _donorErrors() {
+    const local = this._gv ? this._gv.validateDonor(this._donorInput(), { geo: this._geo || undefined, districts: this._dist || undefined }).errors : {};
+    return Object.assign({}, local, this.state.dSrvErr || {});
+  }
+  _dmsg(k, errs) {
+    const S = this.state, e = (errs || this._donorErrors())[k];
+    return e && (S.dTry || (S.dTouched || {})[k]) ? (this._dt('v_' + e) || this._dt('v_invalid_chars')) : '';
+  }
+  _dblur(k) {
+    this._dblurs = this._dblurs || {};
+    if (!this._dblurs[k]) this._dblurs[k] = () => this.setState(s => ({ dTouched: Object.assign({}, s.dTouched, { [k]: true }) }));
+    return this._dblurs[k];
+  }
+  _countryOptions() {
+    const geo = this._geo;
+    if (!geo) return [{ v: 'IN', l: 'India', dial: '91' }];
+    const lang = this.state.lang;
+    this._cOpt = this._cOpt || {};
+    if (!this._cOpt[lang]) {
+      let dn = null;
+      try { dn = new Intl.DisplayNames([lang, 'en'], { type: 'region', fallback: 'none' }); } catch (e) {}
+      const rows = geo.countries.map(c => ({ v: c[0], l: (dn && dn.of(c[0])) || c[1], dial: c[2] }));
+      try { rows.sort((a, b) => a.l.localeCompare(b.l, lang)); } catch (e) { rows.sort((a, b) => (a.l < b.l ? -1 : 1)); }
+      const i = rows.findIndex(r => r.v === 'IN');
+      if (i > 0) rows.unshift(rows.splice(i, 1)[0]);
+      this._cOpt[lang] = rows;
+    }
+    return this._cOpt[lang];
+  }
+  _onCountry(e) { this.setState({ dCC: e.target.value, dDialIso: '', dState: '', dDistrict: '', dDistrictOther: false, dSrvErr: null, pCopied: false }); }
+  _onState(e) { this.setState({ dState: e.target.value, dDistrict: '', dDistrictOther: false, dSrvErr: null, pCopied: false }); }
+  _onDistrict(e) {
+    const v = e.target.value;
+    this.setState(v === '__other__' ? { dDistrictOther: true, dDistrict: '', dSrvErr: null } : { dDistrict: v, dDistrictOther: false, dSrvErr: null });
+  }
+  _onDial(e) { this.setState({ dDialIso: e.target.value, dSrvErr: null }); }
+  _donorFields(T) {
+    const S = this.state, errs = this._donorErrors(), geo = this._geo, dist = this._dist || {};
+    const cc = S.dCC || 'IN';
+    const mk = (k, o) => {
+      const m = this._dmsg(k, errs);
+      return Object.assign({ k, id: 'df-' + k, label: '', span: 'auto', isText: false, isSelect: false, isPhone: false, type: 'text', hint: '', inputmode: '', ac: 'off',
+        val: '', on: null, blur: this._dblur(k), options: [], dialOptions: [], dialVal: '', onDial: null, err: m, hasErr: !!m, invalid: m ? 'true' : 'false',
+        border: m ? 'var(--ac-red)' : 'var(--border)' }, o, { label: (o.label || '') + (o.req ? ' *' : '') });
+    };
+    const text = (k, stateKey, o) => mk(k, Object.assign({ isText: true, val: S[stateKey] || '', on: this._pset(stateKey) }, o));
+    const rows = [];
+    rows.push(text('fullName', 'dFullName', { label: T.f_full_name, req: true, span: '1 / -1', ac: 'name' }));
+    rows.push(mk('countryCode', { isSelect: true, label: T.f_country, req: true, ac: 'country', val: cc, on: (e) => this._onCountry(e),
+      options: [{ v: '', l: this._dt('f_select_country') }].concat(this._countryOptions().map(c => ({ v: c.v, l: c.l }))) }));
+    const dialIso = S.dDialIso || cc;
+    rows.push(mk('phone', { isPhone: true, label: T.f_phone, req: true, inputmode: 'tel', ac: 'tel-national', hint: this._dt('f_phone_hint'),
+      val: S.dPhone || '', on: this._pset('dPhone'), dialVal: dialIso, onDial: (e) => this._onDial(e),
+      dialOptions: this._countryOptions().filter(c => c.dial).map(c => ({ v: c.v, l: c.l + ' +' + c.dial })) }));
+    rows.push(text('email', 'dEmail', { label: T.f_email, req: true, type: 'email', hint: T.f_email_hint, ac: 'email', inputmode: 'email' }));
+    const states = geo && geo.states ? geo.states[cc] : null;
+    if (states && states.length) {
+      rows.push(mk('state', { isSelect: true, label: T.f_state, req: true, ac: 'address-level1', val: S.dState || '', on: (e) => this._onState(e),
+        options: [{ v: '', l: this._dt('f_select_state') }].concat(states.map(n => ({ v: n, l: n }))) }));
+    }
+    if (cc === 'IN') {
+      const list = (dist[S.dState] || []).map(n => ({ v: n, l: n }));
+      rows.push(mk('district', { isSelect: true, label: this._dt('f_district'), req: true, val: S.dDistrictOther ? '__other__' : (S.dDistrict || ''), on: (e) => this._onDistrict(e),
+        options: [{ v: '', l: this._dt('f_select_district') }].concat(list, [{ v: '__other__', l: this._dt('f_district_other') }]) }));
+      if (S.dDistrictOther) rows.push(text('district', 'dDistrict', { label: this._dt('f_district_type'), req: true, id: 'df-district-other' }));
+    } else {
+      rows.push(text('district', 'dDistrict', { label: this._dt('f_district_opt'), ac: 'address-level2' }));
+    }
+    rows.push(text('city', 'dCity', { label: T.f_city, req: true, ac: 'address-level2' }));
+    rows.push(text('postalCode', 'dPin', { label: T.f_postal_code, req: cc === 'IN', ac: 'postal-code', inputmode: cc === 'IN' ? 'numeric' : 'text', hint: cc === 'IN' ? this._dt('f_pin_hint') : '' }));
+    return rows;
+  }
+  _formSummary() {
+    const S = this.state, n = Object.keys(this._donorErrors()).length;
+    return S.dTry && n ? String(this._dt('v_fix_n')).replace('{n}', n) : '';
+  }
+  _focusFirstError(errs) {
+    const order = (this._gv && this._gv.FIELD_ORDER) || Object.keys(errs);
+    const k = order.find(x => errs[x]) || Object.keys(errs)[0];
+    const el = document.getElementById(this.state.dDistrictOther && k === 'district' ? 'df-district-other' : 'df-' + k);
+    if (el) { try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus({ preventScroll: true }); } catch (x) {} }
+  }
   _amt() {
     const S = this.state;
     const raw = S.dAmount === 'other' ? S.dAmountOther : S.dAmount;
@@ -33492,9 +33637,9 @@ class Component extends DCLogic {
       country: fcra ? S.dCountry : 'India',
       idRef: fcra ? S.dIdRef : '',
       address: S.dAddr,
-      fullName: S.dFullName || '', email: S.dEmail || '', phone: S.dPhone || '',
-      city: S.dCity || '', state: S.dState || '', postalCode: S.dPin || '',
-      addressCountry: S.dAddrCountry || 'India',
+      fullName: S.dFullName || '', email: S.dEmail || '', phone: S.dPhone || '', phoneDial: this._dial(S.dDialIso || S.dCC),
+      city: S.dCity || '', state: S.dState || '', postalCode: S.dPin || '', district: S.dDistrict || '', districtOther: !!S.dDistrictOther,
+      countryCode: S.dCC || 'IN',
       anonymous: !!S.dAnon,
       statutory: fcra ? 'FC-4 annual return; no 80G' : 'Form 10BD statement; 80G certificate 10BE',
     };
@@ -33620,6 +33765,13 @@ class Component extends DCLogic {
       try { const t = document.querySelector('[data-anchor="transfer"]'); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
       return;
     }
+    // Nothing reaches Razorpay until every field passes the same rules the server applies.
+    const formErrs = this._donorErrors();
+    if (Object.keys(formErrs).length) {
+      this.setState({ dTry: true });
+      setTimeout(() => this._focusFirstError(formErrs), 60);
+      return;
+    }
     try {
       const Razorpay = await this._loadRazorpay();
       const endpoint = p.frequency === 'once' ? '/api/donations/create-order' : '/api/donations/create-subscription';
@@ -33630,12 +33782,16 @@ class Component extends DCLogic {
           receipt80G: p.receipt80G, pan: p.pan, address: p.address,
           anonymous: p.anonymous, regime: 'domestic_inr',
           fullName: p.fullName, email: p.email, phone: p.phone,
-          city: p.city, state: p.state, postalCode: p.postalCode, country: p.addressCountry,
+          city: p.city, state: p.state, postalCode: p.postalCode, district: p.district, districtOther: p.districtOther,
+          phoneDial: p.phoneDial, countryCode: p.countryCode,
           lang: this.state.lang,
         }),
       });
       const setup = await response.json();
-      if (!response.ok) throw new Error(setup.error || 'Unable to prepare payment');
+      if (!response.ok) {
+        if (setup && setup.fields) { this.setState({ dTry: true, dSrvErr: setup.fields }); setTimeout(() => this._focusFirstError(setup.fields), 60); return; }
+        throw new Error(setup.error || 'Unable to prepare payment');
+      }
       const checkout = {
         key: setup.keyId, name: 'DEHAT', description: p.purpose || 'Domestic contribution',
         currency: 'INR', amount: setup.amount, order_id: setup.orderId,

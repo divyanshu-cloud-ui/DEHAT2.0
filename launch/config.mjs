@@ -26,8 +26,8 @@ export const LEGAL_PATHS = Object.freeze([
   '/privacy-policy/', '/refund-policy/', '/terms-and-conditions/',
 ]);
 export const API_ENDPOINTS = Object.freeze([
-  { path: '/api/donations/create-order', source: 'api/donations/create-order.js', helper: 'api/_razorpay.js', method: 'POST' },
-  { path: '/api/donations/create-subscription', source: 'api/donations/create-subscription.js', helper: 'api/_razorpay.js', method: 'POST' },
+  { path: '/api/donations/create-order', source: 'api/donations/create-order.js', helper: 'api/_razorpay.js', method: 'POST', bundle: true },
+  { path: '/api/donations/create-subscription', source: 'api/donations/create-subscription.js', helper: 'api/_razorpay.js', method: 'POST', bundle: true },
   { path: '/api/donations/verify', source: 'api/donations/verify.js', helper: 'api/_razorpay.js', method: 'POST' },
   { path: '/api/donations/webhook', source: 'api/donations/webhook.js', helper: 'api/_razorpay.js', method: 'POST', rawBody: true, bundle: true },
   { path: '/api/paypal/config', source: 'api/paypal/config.js', helper: 'api/_paypal.js', method: 'GET' },

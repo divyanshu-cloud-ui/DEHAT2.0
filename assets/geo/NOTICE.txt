@@ -1,0 +1,6 @@
+Geography data used by the donation forms.
+
+Countries, dial codes and states/provinces: "countries-states-cities" by Thiago Bueno, MIT licence (https://github.com/thiagobueno/countries-states-cities).
+India states and districts: "Indian-state-district-json" by Somen Das, MIT licence (https://github.com/KTBsomen/Indian-state-district-json), compiled from the Government of India igod.gov.in directory. India's state list is taken from this source so that it reflects the 2020 merger of Dadra and Nagar Haveli with Daman and Diu.
+DEHAT correction: Puducherry UT has four districts: Puducherry, Karaikal, Mahe, Yanam (Mahe and Yanam were missing from the source).
+Rebuild with: node tools/build-geo.mjs
