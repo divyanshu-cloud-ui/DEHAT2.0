@@ -7,6 +7,7 @@ import {randomUUID} from 'node:crypto';
 import {performance} from 'node:perf_hooks';
 import {createRouter,LEGAL_ROUTES,RTL_LANGUAGES} from '../launch/routes.mjs';
 import {PRODUCTION_ORIGIN,LAUNCH_INPUTS,API_ENDPOINTS,NODE_RUNTIME,PUBLISHED,INDEXED_LANGUAGES,validatePublication} from '../launch/config.mjs';
+import {bundleFunction} from './bundle-function.mjs';
 import {validateLaunchInputs,seoRecordFor} from './validate-launch-inputs.mjs';
 import {digest,publicAsset} from './package-launch.mjs';
 import {renderSite} from './site-browser.mjs';
@@ -166,7 +167,8 @@ try{
   }
   for(const endpoint of API_ENDPOINTS){
     const functionRoot=path.join(stage,'functions',endpoint.path.slice(1)+'.func');
-    for(const source of [endpoint.source,endpoint.helper]){
+    if(endpoint.bundle)await bundleFunction({root,source:endpoint.source,outfile:path.join(functionRoot,endpoint.source)});
+    else for(const source of [endpoint.source,endpoint.helper]){
       const destination=path.join(functionRoot,source);
       await mkdir(path.dirname(destination),{recursive:true});await copyFile(source,destination);
     }
