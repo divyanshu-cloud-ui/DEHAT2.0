@@ -18,7 +18,7 @@ export function publicAsset(value) {
     /^(?:MediaArchive\.dc|district-map)\.html$/.test(value)||
     /^launch\/(?:bootstrap\.mjs|routes\.mjs|artwork\.mjs|runtime-template\.html)$/.test(value)||
     /^content-i18n\/[a-z]{2,3}\.js$/.test(value)||
-    /^assets\/geo\/(?:geo\.v1\.json|in-districts\.v1\.json|validate\.mjs|NOTICE\.txt)$/.test(value)||
+    /^assets\/geo\/(?:geo\.v1\.json|in-districts\.v1\.json|in-pins\.v1\.json|validate\.mjs|NOTICE\.txt)$/.test(value)||
     /^dehat-[\w-]+\.png$/.test(value)||
     /^assets\/(?:ink|story|portraits|svc|art|thumb|logos|partners|cj|illus)\/[\w/.-]+\.(?:png|svg|webp|jpg)$/.test(value)||
     /^assets\/[\w.-]+\.(?:png|svg|webp|jpg)$/.test(value);

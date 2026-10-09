@@ -3216,7 +3216,7 @@
                 <div style="display:flex;flex-direction:column;gap:5px;grid-column:{{ df.span }}">
                   <label for="{{ df.id }}" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ df.label }}</label>
                   <sc-if value="{{ df.isText }}" hint-placeholder-val="{{ true }}">
-                    <input id="{{ df.id }}" type="{{ df.type }}" inputmode="{{ df.inputmode }}" autocomplete="{{ df.ac }}" value="{{ df.val }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                    <input id="{{ df.id }}" type="{{ df.type }}" inputmode="{{ df.inputmode }}" autocomplete="{{ df.ac }}" list="{{ df.listId }}" value="{{ df.val }}" onChange="{{ df.on }}" onFocus="{{ df.focus }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                   </sc-if>
                   <sc-if value="{{ df.isSelect }}" hint-placeholder-val="{{ false }}">
                     <select id="{{ df.id }}" autocomplete="{{ df.ac }}" value="{{ df.val }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" aria-invalid="{{ df.invalid }}" style="width:100%;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
@@ -3234,6 +3234,12 @@
                       </select>
                       <input id="{{ df.id }}" type="tel" inputmode="tel" autocomplete="tel-national" value="{{ df.val }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="flex:1 1 auto;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                     </div>
+                  </sc-if>
+                  <sc-if value="{{ df.hasNote }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-size:12.5px;line-height:1.45;color:var(--dim)">{{ df.note }}</span>
+                  </sc-if>
+                  <sc-if value="{{ df.hasList }}" hint-placeholder-val="{{ false }}">
+                    <datalist id="{{ df.listId }}"><sc-for list="{{ df.listOptions }}" as="lo" hint-placeholder-count="5"><option value="{{ lo.v }}">{{ lo.l }}</option></sc-for></datalist>
                   </sc-if>
                   <sc-if value="{{ df.hasErr }}" hint-placeholder-val="{{ false }}">
                     <span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ df.err }}</span>
@@ -3336,7 +3342,7 @@
               <div style="display:flex;flex-direction:column;gap:5px;grid-column:{{ rf.span }}">
                 <label for="{{ rf.id }}" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ rf.label }}</label>
                 <sc-if value="{{ rf.isText }}" hint-placeholder-val="{{ true }}">
-                  <input id="{{ rf.id }}" type="{{ rf.type }}" min="{{ rf.min }}" max="{{ rf.max }}" inputmode="{{ rf.inputmode }}" autocomplete="{{ rf.ac }}" value="{{ rf.val }}" onChange="{{ rf.on }}" onBlur="{{ rf.blur }}" placeholder="{{ rf.hint }}" aria-invalid="{{ rf.invalid }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ rf.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
+                  <input id="{{ rf.id }}" type="{{ rf.type }}" min="{{ rf.min }}" max="{{ rf.max }}" inputmode="{{ rf.inputmode }}" autocomplete="{{ rf.ac }}" list="{{ rf.listId }}" value="{{ rf.val }}" onChange="{{ rf.on }}" onFocus="{{ rf.focus }}" onBlur="{{ rf.blur }}" placeholder="{{ rf.hint }}" aria-invalid="{{ rf.invalid }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ rf.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
                 </sc-if>
                 <sc-if value="{{ rf.isSelect }}" hint-placeholder-val="{{ false }}">
                   <select id="{{ rf.id }}" autocomplete="{{ rf.ac }}" value="{{ rf.val }}" onChange="{{ rf.on }}" onBlur="{{ rf.blur }}" aria-invalid="{{ rf.invalid }}" style="width:100%;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ rf.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
@@ -3354,6 +3360,12 @@
                     </select>
                     <input id="{{ rf.id }}" type="tel" inputmode="tel" autocomplete="tel-national" value="{{ rf.val }}" onChange="{{ rf.on }}" onBlur="{{ rf.blur }}" placeholder="{{ rf.hint }}" aria-invalid="{{ rf.invalid }}" style="flex:1 1 auto;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ rf.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
                   </div>
+                </sc-if>
+                <sc-if value="{{ rf.hasNote }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-size:12.5px;line-height:1.45;color:var(--dim)">{{ rf.note }}</span>
+                </sc-if>
+                <sc-if value="{{ rf.hasList }}" hint-placeholder-val="{{ false }}">
+                  <datalist id="{{ rf.listId }}"><sc-for list="{{ rf.listOptions }}" as="lo" hint-placeholder-count="5"><option value="{{ lo.v }}">{{ lo.l }}</option></sc-for></datalist>
                 </sc-if>
                 <sc-if value="{{ rf.hasErr }}" hint-placeholder-val="{{ false }}">
                   <span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ rf.err }}</span>
@@ -6472,6 +6484,8 @@ class Component extends DCLogic {
       f_select_district:'Select Your District',
       f_phone_hint:'Mobile number, digits only',
       f_pin_hint:'6-digit PIN code',
+      f_pin_filled:'Filled in from this PIN: {place}. Please check it.',
+      f_pin_unknown:'We could not find this PIN. Please choose your state and district yourself.',
       v_invalid_date:'Enter the date the money was sent: not in the future, and within the last three years.',
       v_invalid_ref:'Enter the reference exactly as it appears on your statement, using letters and numbers.',
       v_required:'This field is required.',
@@ -7203,6 +7217,28 @@ class Component extends DCLogic {
       cta_route_small: "Not ready to commit? Find your route in three steps",
     };
         const HI = {
+      f_district:'ज़िला',
+      f_district_opt:'ज़िला / काउंटी (वैकल्पिक)',
+      f_district_other:'अन्य / सूची में नहीं है',
+      f_district_type:'अपना ज़िला लिखें',
+      f_select_country:'अपना देश चुनें',
+      f_select_state:'राज्य या प्रांत चुनें',
+      f_select_district:'अपना ज़िला चुनें',
+      f_phone_hint:'मोबाइल नंबर, केवल अंक',
+      f_pin_hint:'6 अंकों का PIN कोड',
+      v_required:'यह जानकारी ज़रूरी है।',
+      v_too_short:'यह कुछ छोटा लग रहा है। कृपया जाँच लें।',
+      v_too_long:'यह बहुत लंबा है। कृपया इसे थोड़ा छोटा करें।',
+      v_invalid_chars:'कृपया इसे जाँचें, यह सही नहीं लग रहा है।',
+      v_invalid_email:'सही ईमेल पता लिखें, जैसे name@example.com।',
+      v_invalid_phone:'चुने हुए देश के लिए सही फ़ोन नंबर लिखें, केवल अंक।',
+      v_invalid_pin:'सही PIN या पोस्टल कोड दर्ज करें।',
+      v_invalid_pan:'सही PAN दर्ज करें, जैसे ABCDE1234F।',
+      v_invalid_selection:'कृपया सूची में से कोई विकल्प चुनें।',
+      v_amount_range:'₹1 से ₹1,00,00,000 के बीच की राशि दर्ज करें, दशमलव के बाद अधिकतम दो अंक।',
+      v_invalid_date:'पैसे भेजने की तारीख दर्ज करें: भविष्य की न हो, और पिछले तीन साल के अंदर की हो।',
+      v_invalid_ref:'रेफ़रेंस नंबर ठीक वैसे ही दर्ज करें जैसा आपके स्टेटमेंट में है, अक्षरों और अंकों में।',
+      v_fix_n:'आगे बढ़ने से पहले कृपया हाइलाइट की गई {n} जानकारी ठीक कर लें।',
       foot_policies:'नीतियाँ और सुरक्षा उपाय',
       foot_cookies:'कुकी सेटिंग्स',
       foot_concern:'कोई चिंता दर्ज करें',
@@ -8160,6 +8196,28 @@ class Component extends DCLogic {
       cta_route_small: "अभी तय नहीं? तीन कदमों में अपना रास्ता खोजिए",
     };
             const ZH = {
+      f_district:'县 / 区',
+      f_district_opt:'县 / 郡（选填）',
+      f_district_other:'其他 / 未列出',
+      f_district_type:'输入您所在的县 / 区',
+      f_select_country:'选择您的国家',
+      f_select_state:'选择所在省份或邦',
+      f_select_district:'选择您所在的县 / 区',
+      f_phone_hint:'手机号码，仅限数字',
+      f_pin_hint:'6 位 PIN 邮政编码',
+      v_required:'此项为必填项。',
+      v_too_short:'内容似乎过短，请检查。',
+      v_too_long:'内容过长，请适当缩短。',
+      v_invalid_chars:'请检查此项输入，格式似乎不正确。',
+      v_invalid_email:'请输入有效的电子邮箱，例如 name@example.com。',
+      v_invalid_phone:'请输入所选国家的有效电话号码，仅限数字。',
+      v_invalid_pin:'请输入有效的 PIN 或邮政编码。',
+      v_invalid_pan:'请输入有效的 PAN，例如 ABCDE1234F。',
+      v_invalid_selection:'请从列表中选择一个选项。',
+      v_amount_range:'请输入介于 ₹1 至 ₹1,00,00,000 之间的金额，最多保留两位小数。',
+      v_invalid_date:'请输入汇款日期：不能是未来日期，且须在过去三年内。',
+      v_invalid_ref:'请输入与账单上完全一致的参考编号，使用字母和数字。',
+      v_fix_n:'在继续之前，请先更正高亮显示的 {n} 处内容。',
     "foot_policies": "政策与保障措施",
     "foot_cookies": "Cookie 设置",
     "foot_concern": "报告问题",
@@ -9106,6 +9164,28 @@ class Component extends DCLogic {
     "cta_route_small": "尚未准备好做出承诺？只需三步，找到适合您的参与方式",
     };
                 const FR = {
+      f_district:'District',
+      f_district_opt:'District / Comté (facultatif)',
+      f_district_other:'Autre / Non listé',
+      f_district_type:'Indiquez votre district',
+      f_select_country:'Sélectionnez votre pays',
+      f_select_state:'Sélectionnez l\'État ou la région',
+      f_select_district:'Sélectionnez votre district',
+      f_phone_hint:'Numéro de mobile, chiffres uniquement',
+      f_pin_hint:'Code PIN à 6 chiffres',
+      v_required:'Ce champ est obligatoire.',
+      v_too_short:'Ce texte semble trop court. Veuillez vérifier.',
+      v_too_long:'Ce texte est trop long. Veuillez le raccourcir.',
+      v_invalid_chars:'Veuillez vérifier cette saisie. Elle semble incorrecte.',
+      v_invalid_email:'Entrez une adresse e-mail valide, comme name@example.com.',
+      v_invalid_phone:'Entrez un numéro de téléphone valide pour le pays choisi, chiffres uniquement.',
+      v_invalid_pin:'Entrez un code PIN ou postal valide.',
+      v_invalid_pan:'Entrez un numéro PAN valide, comme ABCDE1234F.',
+      v_invalid_selection:'Veuillez choisir une option dans la liste.',
+      v_amount_range:'Entrez un montant entre ₹1 et ₹1,00,00,000, avec au plus deux décimales.',
+      v_invalid_date:'Entrez la date du virement : pas dans le futur, et dans les trois dernières années.',
+      v_invalid_ref:'Entrez la référence exacte figurant sur votre relevé, avec lettres et chiffres.',
+      v_fix_n:'Veuillez corriger le(s) {n} champ(s) en surbrillance avant de continuer.',
     "foot_policies": "Politiques et mesures de sauvegarde",
     "foot_cookies": "Paramètres des cookies",
     "foot_concern": "Signaler une préoccupation",
@@ -10052,6 +10132,28 @@ class Component extends DCLogic {
     "cta_route_small": "Pas encore prêt à vous engager ? Trouvez votre voie en trois étapes",
     };
             const RU = {
+      f_district:'Округ',
+      f_district_opt:'Округ / Графство (необязательно)',
+      f_district_other:'Другое / Нет в списке',
+      f_district_type:'Укажите ваш округ',
+      f_select_country:'Выберите страну',
+      f_select_state:'Выберите штат или область',
+      f_select_district:'Выберите ваш округ',
+      f_phone_hint:'Номер телефона, только цифры',
+      f_pin_hint:'6-значный PIN-код',
+      v_required:'Это поле обязательно для заполнения.',
+      v_too_short:'Значение слишком короткое. Пожалуйста, проверьте его.',
+      v_too_long:'Значение слишком длинное. Пожалуйста, сократите его.',
+      v_invalid_chars:'Пожалуйста, проверьте эту запись. Она выглядит неверно.',
+      v_invalid_email:'Введите корректный адрес эл. почты, например name@example.com.',
+      v_invalid_phone:'Введите корректный номер телефона для выбранной страны, только цифры.',
+      v_invalid_pin:'Введите корректный PIN или почтовый индекс.',
+      v_invalid_pan:'Введите корректный PAN, например ABCDE1234F.',
+      v_invalid_selection:'Пожалуйста, выберите вариант из списка.',
+      v_amount_range:'Введите сумму от ₹1 до ₹1,00,00,000, не более двух знаков после запятой.',
+      v_invalid_date:'Укажите дату перевода: не из будущего и в пределах последних трех лет.',
+      v_invalid_ref:'Введите номер транзакции в точности как в выписке, используя буквы и цифры.',
+      v_fix_n:'Пожалуйста, исправьте выделенные поля ({n}) перед продолжением.',
     "foot_policies": "Политика и меры защиты",
     "foot_cookies": "Настройки файлов cookie",
     "foot_concern": "Сообщить о проблеме",
@@ -10998,6 +11100,28 @@ class Component extends DCLogic {
     "cta_route_small": "Не готовы сразу взять обязательства? Найдите свой маршрут за три шага",
     };
         const ES = {
+      f_district:'Distrito',
+      f_district_opt:'Distrito / Condado (opcional)',
+      f_district_other:'Otro / No aparece en la lista',
+      f_district_type:'Escribe tu distrito',
+      f_select_country:'Selecciona tu país',
+      f_select_state:'Selecciona estado o provincia',
+      f_select_district:'Selecciona tu distrito',
+      f_phone_hint:'Número de móvil, solo dígitos',
+      f_pin_hint:'Código PIN de 6 dígitos',
+      v_required:'Este campo es obligatorio.',
+      v_too_short:'Parece demasiado corto. Por favor revísalo.',
+      v_too_long:'Es demasiado largo. Por favor acórtalo.',
+      v_invalid_chars:'Por favor revisa esta entrada. No parece correcta.',
+      v_invalid_email:'Introduce un correo válido, como name@example.com.',
+      v_invalid_phone:'Introduce un teléfono válido para el país seleccionado, solo dígitos.',
+      v_invalid_pin:'Introduce un PIN o código postal válido.',
+      v_invalid_pan:'Introduce un PAN válido, como ABCDE1234F.',
+      v_invalid_selection:'Por favor elige una opción de la lista.',
+      v_amount_range:'Introduce un importe entre ₹1 y ₹1,00,00,000, con un máximo de dos decimales.',
+      v_invalid_date:'Introduce la fecha del envío: no futura y dentro de los últimos tres años.',
+      v_invalid_ref:'Introduce la referencia tal como aparece en tu extracto, con letras y números.',
+      v_fix_n:'Por favor corrige los {n} campos señalados antes de continuar.',
     "foot_policies": "Políticas y salvaguardas",
     "foot_cookies": "Configuración de cookies",
     "foot_concern": "Plantear una inquietud",
@@ -11944,6 +12068,28 @@ class Component extends DCLogic {
     "cta_route_small": "¿Aún no decides comprometerte? Encuentra tu camino en tres pasos",
     };
             const AR = {
+      f_district:'المقاطعة',
+      f_district_opt:'المقاطعة / الحي (اختياري)',
+      f_district_other:'أخرى / غير مدرجة',
+      f_district_type:'اكتب اسم مقاطعتك',
+      f_select_country:'اختر بلدك',
+      f_select_state:'اختر الولاية أو المحافظة',
+      f_select_district:'اختر مقاطعتك',
+      f_phone_hint:'رقم الهاتف المحمول، أرقام فقط',
+      f_pin_hint:'رمز PIN المكون من 6 أرقام',
+      v_required:'هذا الحقل مطلوب.',
+      v_too_short:'يبدو هذا النص قصيراً جداً. يُرجى التحقق منه.',
+      v_too_long:'هذا النص طويل جداً. يُرجى اختصاره.',
+      v_invalid_chars:'يُرجى التحقق من هذه البيانات. لا تبدو صحيحة.',
+      v_invalid_email:'أدخل بريداً إلكترونياً صالحاً، مثل name@example.com.',
+      v_invalid_phone:'أدخل رقم هاتف صالح للبلد المحدد، أرقام فقط.',
+      v_invalid_pin:'أدخل رمز PIN أو رمزاً بريدياً صالحاً.',
+      v_invalid_pan:'أدخل رقم PAN صالحاً، مثل ABCDE1234F.',
+      v_invalid_selection:'يُرجى اختيار أحد الخيارات من القائمة.',
+      v_amount_range:'أدخل مبلغاً بين ₹1 و ₹1,00,00,000، وبحد أقصى خانتين عشريتين.',
+      v_invalid_date:'أدخل تاريخ إرسال المبلغ: ليس في المستقبل، وخلال السنوات الثلاث الماضية.',
+      v_invalid_ref:'أدخل الرقم المرجعي تماماً كما يظهر في كشف حسابك، بالأحرف والأرقام.',
+      v_fix_n:'يُرجى تصحيح الحقول المحددة ({n}) قبل المتابعة.',
     "foot_policies": "السياسات وإجراءات الحماية",
     "foot_cookies": "إعدادات ملفات تعريف الارتباط",
     "foot_concern": "الإبلاغ عن مشكلة",
@@ -12890,6 +13036,28 @@ class Component extends DCLogic {
     "cta_route_small": "لست مستعداً للالتزام بعد؟ اكتشف مسارك في ثلاث خطوات",
     };
             const UR = {
+      f_district:'ضلع',
+      f_district_opt:'ضلع / کاؤنٹی (اختیاری)',
+      f_district_other:'دیگر / فہرست میں نہیں',
+      f_district_type:'اپنا ضلع درج کریں',
+      f_select_country:'اپنا ملک منتخب کریں',
+      f_select_state:'ریاست یا صوبہ منتخب کریں',
+      f_select_district:'اپنا ضلع منتخب کریں',
+      f_phone_hint:'موبائل نمبر، صرف ہندسے',
+      f_pin_hint:'6 ہندسوں کا PIN کوڈ',
+      v_required:'یہ معلومات درکار ہے۔',
+      v_too_short:'یہ بہت مختصر معلوم ہوتا ہے۔ براہ کرم چیک کریں۔',
+      v_too_long:'یہ بہت طویل ہے۔ براہ کرم اسے مختصر کریں۔',
+      v_invalid_chars:'براہ کرم اس اندراج کو چیک کریں۔ یہ درست نہیں معلوم ہوتا۔',
+      v_invalid_email:'درست ای میل پتہ درج کریں، جیسے name@example.com۔',
+      v_invalid_phone:'منتخب کردہ ملک کے لیے درست فون نمبر درج کریں، صرف ہندسے۔',
+      v_invalid_pin:'درست PIN یا پوسٹل کوڈ درج کریں۔',
+      v_invalid_pan:'درست PAN درج کریں، جیسے ABCDE1234F۔',
+      v_invalid_selection:'براہ کرم فہرست میں سے ایک آپشن منتخب کریں۔',
+      v_amount_range:'₹1 سے ₹1,00,00,000 کے درمیان رقم درج کریں، زیادہ سے زیادہ دو اعشاریہ۔',
+      v_invalid_date:'رقم بھیجنے کی تاریخ درج کریں: مستقبل کی نہ ہو اور پچھلے تین سالوں کے اندر ہو۔',
+      v_invalid_ref:'حوالہ نمبر بالکل ویسے ہی درج کریں جیسا آپ کے اسٹیٹمنٹ پر ہے، حروف اور ہندسوں میں۔',
+      v_fix_n:'براہ کرم آگے بڑھنے سے پہلے نمایاں کردہ {n} معلومات درست کریں۔',
     "foot_policies": "پالیسیاں اور تحفظاتی اقدامات",
     "foot_cookies": "کوکی ترتیبات",
     "foot_concern": "تشویش کی اطلاع دیں",
@@ -13836,6 +14004,28 @@ class Component extends DCLogic {
     "cta_route_small": "ابھی طے نہیں کیا؟ تین قدموں میں اپنا راستہ تلاش کیجیے",
     };
             const KS = {
+      f_district:'ضلع',
+      f_district_opt:'ضلع / کاؤنٹی (اختیاری)',
+      f_district_other:'باقی / فِہرِستَس منٛز نہ',
+      f_district_type:'پنُن ضلع لؠکھِو',
+      f_select_country:'پنُن مُلُک ژٲرِو',
+      f_select_state:'رِیاسَتھ یا صوٗبہٕ ژٲرِو',
+      f_select_district:'پنُن ضلع ژٲرِو',
+      f_phone_hint:'موبائل نمبر، صرف ہِندسہٕ',
+      f_pin_hint:'6 ہِندسن ہُنٛد PIN کوڈ',
+      v_required:'یہِ معلومات چھِ ضروٗری۔',
+      v_too_short:'یہِ چھُ واریاہ لۄکُٹ باسان۔ مہربٲنی کٔرِتھ پرکھِو۔',
+      v_too_long:'یہِ چھُ واریاہ بوٚڑ۔ مہربٲنی کٔرِتھ کٔرِو یہِ لۄکُٹ۔',
+      v_invalid_chars:'مہربٲنی کٔرِتھ پرکھِو یہِ۔ یہِ چھُ نہٕ پۆز باسان۔',
+      v_invalid_email:'صحیح ای میل درج کٔرِو، مِثال name@example.com۔',
+      v_invalid_phone:'ژارنہٕ آمٕتہِ مُلکَس خٲطرٕ صحیح فون نمبر لؠکھِو، صرف ہِندسہٕ۔',
+      v_invalid_pin:'صحیح PIN یا پوسٹل کوڈ درج کٔرِو۔',
+      v_invalid_pan:'صحیح PAN درج کٔرِو، مِثال ABCDE1234F۔',
+      v_invalid_selection:'مہربٲنی کٔرِتھ فِہرِستَس منٛزٕ ژٲرِو اَکھ آپشن۔',
+      v_amount_range:'₹1 تہٕ ₹1,00,00,000 درمیان رَقَم لؠکھِو، زیٛادٕ کھۄتہٕ زیٛادٕ زٕ اِعشاریہ۔',
+      v_invalid_date:'پۄنسہٕ سوزنٕچ تٲریٖخ لؠکھِو: برٛونٛہمِچ نہ، تہٕ پتمؠن ترٛؠن ورین منٛز۔',
+      v_invalid_ref:'حوالہٕ نمبر لؠکھِو پۆز پٲٹھؠ یِتھ کٔنؠ سٹیٹمنٛٹس پؠٹھ چھُ، اکھَر تہٕ ہِندسہٕ ورتٲوِتھ۔',
+      v_fix_n:'مہربٲنی کٔرِتھ برٛونٛہہ پکنہٕ برٛونٛہہ کٔرِو نشاندہی کرنہٕ آمٕژ {n} معلومات درُست۔',
     "foot_policies": "پالیسیٕ تہٕ حفاظتی تدابیر",
     "foot_cookies": "کوکیہٕ ترتیبات",
     "foot_concern": "تشویش درج کرِو",
@@ -14781,6 +14971,28 @@ class Component extends DCLogic {
     "cta_invest_join": "عوامی رِکارڈَس پؠٹھ دَرج {n} سَماجی سَرمايہٕ کارَن سٟتؠ رَلِو",
     "cta_route_small": "وُنہِ چُھو نہٕ تَیار؟ ترٛین قَدَمَن مَنٛز ژھٲنٛڈیو پَنٕنؠ وَتھ",
     };            const BN = {
+      f_district:'জেলা',
+      f_district_opt:'জেলা / কাউন্টি (ঐচ্ছিক)',
+      f_district_other:'অন্যান্য / তালিকায় নেই',
+      f_district_type:'আপনার জেলা লিখুন',
+      f_select_country:'আপনার দেশ নির্বাচন করুন',
+      f_select_state:'রাজ্য বা প্রদেশ নির্বাচন করুন',
+      f_select_district:'আপনার জেলা নির্বাচন করুন',
+      f_phone_hint:'মোবাইল নম্বর, কেবল সংখ্যা',
+      f_pin_hint:'৬ সংখ্যার PIN কোড',
+      v_required:'এই ঘরটি পূরণ করা আবশ্যক।',
+      v_too_short:'এটি খুব ছোট মনে হচ্ছে। অনুগ্রহ করে যাচাই করুন।',
+      v_too_long:'এটি খুব দীর্ঘ। অনুগ্রহ করে সংক্ষেপ করুন।',
+      v_invalid_chars:'অনুগ্রহ করে এই তথ্যটি পরীক্ষা করুন। এটি সঠিক মনে হচ্ছে না।',
+      v_invalid_email:'একটি বৈধ ইমেল ঠিকানা লিখুন, যেমন name@example.com।',
+      v_invalid_phone:'নির্বাচিত দেশের জন্য একটি বৈধ ফোন নম্বর লিখুন, কেবল সংখ্যা।',
+      v_invalid_pin:'একটি বৈধ PIN বা পোস্টাল কোড লিখুন।',
+      v_invalid_pan:'একটি বৈধ PAN লিখুন, যেমন ABCDE1234F।',
+      v_invalid_selection:'অনুগ্রহ করে তালিকা থেকে একটি বিকল্প বেছে নিন।',
+      v_amount_range:'₹1 থেকে ₹1,00,00,000 এর মধ্যে একটি পরিমাণ লিখুন, সর্বোচ্চ দুই দশমিক স্থান পর্যন্ত।',
+      v_invalid_date:'টাকা পাঠানোর তারিখ লিখুন: ভবিষ্যতের নয়, এবং গত তিন বছরের মধ্যে।',
+      v_invalid_ref:'আপনার স্টেটমেন্টে যেভাবে আছে ঠিক সেভাবেই অক্ষর ও সংখ্যা ব্যবহার করে রেফারেন্স লিখুন।',
+      v_fix_n:'অনুগ্রহ করে এগিয়ে যাওয়ার আগে চিহ্নিত {n}টি তথ্য সংশোধন করুন।',
     "foot_policies": "নীতি ও সুরক্ষা ব্যবস্থা",
     "foot_cookies": "কুকি সেটিংস",
     "foot_concern": "একটি উদ্বেগ রিপোর্ট",
@@ -15727,6 +15939,28 @@ class Component extends DCLogic {
     "cta_route_small": "এখনই সিদ্ধান্ত নিতে প্রস্তুত নন? তিনটি ধাপে আপনার পথ খুঁজে নিন",
     };
             const MR = {
+      f_district:'जिल्हा',
+      f_district_opt:'जिल्हा / काउंटी (पर्यायी)',
+      f_district_other:'इतर / सूचीत नाही',
+      f_district_type:'तुमचा जिल्हा लिहा',
+      f_select_country:'तुमचा देश निवडा',
+      f_select_state:'राज्य किंवा प्रांत निवडा',
+      f_select_district:'तुमचा जिल्हा निवडा',
+      f_phone_hint:'मोबाईल क्रमांक, फक्त अंक',
+      f_pin_hint:'६ अंकी PIN कोड',
+      v_required:'ही माहिती भरणे आवश्यक आहे.',
+      v_too_short:'हे खूप लहान वाटत आहे. कृपया तपासा.',
+      v_too_long:'हे खूप मोठे आहे. कृपया थोडे लहान करा.',
+      v_invalid_chars:'कृपया ही नोंद तपासा. ही योग्य वाटत नाही.',
+      v_invalid_email:'वैध ईमेल पत्ता टाका, जसे की name@example.com.',
+      v_invalid_phone:'निवडलेल्या देशासाठी वैध फोन नंबर टाका, फक्त अंक.',
+      v_invalid_pin:'वैध PIN किंवा पोस्टल कोड टाका.',
+      v_invalid_pan:'वैध PAN टाका, जसे की ABCDE1234F.',
+      v_invalid_selection:'कृपया यादीतून एक पर्याय निवडा.',
+      v_amount_range:'₹1 ते ₹1,00,00,000 दरम्यान रक्कम टाका, जास्तीत जास्त दोन दशांश.',
+      v_invalid_date:'पैसे पाठवल्याची तारीख टाका: भविष्यातील नसावी आणि मागील तीन वर्षांतील असावी.',
+      v_invalid_ref:'स्टेटमेंटवर जसा आहे तसाच अक्षरे आणि अंक वापरून संदर्भ क्रमांक टाका.',
+      v_fix_n:'कृपया पुढे जाण्यापूर्वी हायलाइट केलेल्या {n} नोंदी दुरुस्त करा.',
     "foot_policies": "धोरणे व सुरक्षा उपाय",
     "foot_cookies": "कुकी सेटिंग्ज",
     "foot_concern": "एक चिंता नोंदवा",
@@ -16673,6 +16907,28 @@ class Component extends DCLogic {
     "cta_route_small": "अजून निश्चित नाही? तीन टप्प्यांत तुमचा मार्ग शोधा",
     };
             const TE = {
+      f_district:'జిల్లా',
+      f_district_opt:'జిల్లా / కౌంటీ (ఐచ్ఛికం)',
+      f_district_other:'ఇతర / జాబితాలో లేదు',
+      f_district_type:'మీ జిల్లాను టైప్ చేయండి',
+      f_select_country:'మీ దేశాన్ని ఎంచుకోండి',
+      f_select_state:'రాష్ట్రం / ప్రావిన్స్ ఎంచుకోండి',
+      f_select_district:'మీ జిల్లాను ఎంచుకోండి',
+      f_phone_hint:'మొబైల్ నంబర్, అంకెలు మాత్రమే',
+      f_pin_hint:'6 అంకెల PIN కోడ్',
+      v_required:'ఈ వివరాలు అవసరం.',
+      v_too_short:'ఇది చాలా తక్కువగా ఉంది. దయచేసి తనిఖీ చేయండి.',
+      v_too_long:'ఇది చాలా పొడవుగా ఉంది. దయచేసి తగ్గించండి.',
+      v_invalid_chars:'దయచేసి ఈ ఎంట్రీని తనిఖీ చేయండి. ఇది సరిగ్గా లేదు.',
+      v_invalid_email:'సరైన ఈమెయిల్ చిరునామాను నమోదు చేయండి, ఉదాహరణకు name@example.com.',
+      v_invalid_phone:'ఎంచుకున్న దేశానికి సరైన ఫోన్ నంబర్‌ను నమోదు చేయండి, అంకెలు మాత్రమే.',
+      v_invalid_pin:'సరైన PIN లేదా పోస్టల్ కోడ్‌ను నమోదు చేయండి.',
+      v_invalid_pan:'సరైన PAN నమోదు చేయండి, ఉదాహరణకు ABCDE1234F.',
+      v_invalid_selection:'దయచేసి జాబితా నుండి ఒక ఎంపికను ఎంచుకోండి.',
+      v_amount_range:'₹1 నుండి ₹1,00,00,000 మధ్య మొత్తాన్ని నమోదు చేయండి, గరిష్టంగా రెండు దశాంశాలు.',
+      v_invalid_date:'డబ్బు పంపిన తేదీని నమోదు చేయండి: భవిష్యత్తు తేదీ కాకూడదు, గత మూడేళ్లలోపు ఉండాలి.',
+      v_invalid_ref:'స్టేట్‌మెంట్‌లో ఉన్నట్లుగానే అక్షరాలు మరియు అంకెలను ఉపయోగించి రిఫరెన్స్ నమోదు చేయండి.',
+      v_fix_n:'దయచేసి కొనసాగే ముందు హైలైట్ చేసిన {n} వివరాలను సరిచేయండి.',
     "foot_policies": "విధానాలు మరియు రక్షణ చర్యలు",
     "foot_cookies": "కుకీ సెట్టింగ్‌లు",
     "foot_concern": "ఆందోళనను నివేదించండి",
@@ -17619,6 +17875,28 @@ class Component extends DCLogic {
     "cta_route_small": "ఇంకా నిర్ణయించుకోలేదా? మూడు దశల్లో మీ మార్గాన్ని కనుగొనండి",
     };
             const TA = {
+      f_district:'மாவட்டம்',
+      f_district_opt:'மாவட்டம் / கவுண்டி (விருப்பத்தேர்வு)',
+      f_district_other:'மற்றவை / பட்டியலில் இல்லை',
+      f_district_type:'உங்கள் மாவட்டத்தை தட்டச்சு செய்க',
+      f_select_country:'உங்கள் நாட்டைத் தேர்வு செய்க',
+      f_select_state:'மாநிலம் / மாகாணத்தைத் தேர்வு செய்க',
+      f_select_district:'உங்கள் மாவட்டத்தைத் தேர்வு செய்க',
+      f_phone_hint:'மொபைல் எண், எண்கள் மட்டும்',
+      f_pin_hint:'6 இலக்க PIN குறியீடு',
+      v_required:'இந்த விவரம் அவசியம் தேவை.',
+      v_too_short:'இது மிகவும் சிறியதாக உள்ளது. தயவுசெய்து சரிபார்க்கவும்.',
+      v_too_long:'இது மிகவும் நீளமாக உள்ளது. தயவுசெய்து சுருக்கவும்.',
+      v_invalid_chars:'தயவுசெய்து இந்த உள்ளீட்டைச் சரிபார்க்கவும். இது சரியாக இல்லை.',
+      v_invalid_email:'name@example.com போன்ற சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்.',
+      v_invalid_phone:'தேர்ந்தெடுக்கப்பட்ட நாட்டிற்கான சரியான தொலைபேசி எண்ணை உள்ளிடவும், எண்கள் மட்டும்.',
+      v_invalid_pin:'சரியான PIN அல்லது அஞ்சல் குறியீட்டை உள்ளிடவும்.',
+      v_invalid_pan:'ABCDE1234F போன்ற சரியான PAN எண்ணை உள்ளிடவும்.',
+      v_invalid_selection:'பட்டியலில் இருந்து ஒரு விருப்பத்தைத் தேர்ந்தெடுக்கவும்.',
+      v_amount_range:'₹1 முதல் ₹1,00,00,000 வரை அதிகபட்சம் இரண்டு தசமங்களுடன் ஒரு தொகையை உள்ளிடவும்.',
+      v_invalid_date:'பணம் அனுப்பிய தேதியை உள்ளிடவும்: எதிர்காலமாக இருக்கக்கூடாது, கடந்த மூன்று ஆண்டுகளுக்குள் இருக்க வேண்டும்.',
+      v_invalid_ref:'கணக்கு அறிக்கையில் உள்ளவாறே எழுத்துகள் மற்றும் எண்களைப் பயன்படுத்தி குறிப்பு எண்ணை உள்ளிடவும்.',
+      v_fix_n:'தொடர்வதற்கு முன் முன்னிலைப்படுத்தப்பட்ட {n} விவரங்களை சரிசெய்யவும்.',
     "foot_policies": "கொள்கைகள் மற்றும் பாதுகாப்பு நடவடிக்கைகள்",
     "foot_cookies": "குக்கீ அமைப்புகள்",
     "foot_concern": "ஒரு கவலையைப் புகாரளிக்கவும்",
@@ -18565,6 +18843,28 @@ class Component extends DCLogic {
     "cta_route_small": "இன்னும் முடிவெடுக்கவில்லையா? மூன்று படிகளில் உங்களுக்கான வழியைக் கண்டறியுங்கள்",
     };
             const GU = {
+      f_district:'જિલ્લો',
+      f_district_opt:'જિલ્લો / કાઉન્ટી (વૈકલ્પિક)',
+      f_district_other:'અન્ય / યાદીમાં નથી',
+      f_district_type:'તમારો જિલ્લો લખો',
+      f_select_country:'તમારો દેશ પસંદ કરો',
+      f_select_state:'રાજ્ય અથવા પ્રાંત પસંદ કરો',
+      f_select_district:'તમારો જિલ્લો પસંદ કરો',
+      f_phone_hint:'મોબાઇલ નંબર, માત્ર અંકો',
+      f_pin_hint:'6 અંકનો PIN કોડ',
+      v_required:'આ વિગત જરૂરી છે.',
+      v_too_short:'આ ઘણું નાનું લાગે છે. કૃપા કરીને તપાસો.',
+      v_too_long:'આ ઘણું લાંબુ છે. કૃપા કરીને ટૂંકું કરો.',
+      v_invalid_chars:'કૃપા કરીને આ વિગત તપાસો. તે બરાબર લાગતી નથી.',
+      v_invalid_email:'માન્ય ઇમેઇલ સરનામું દાખલ કરો, જેમ કે name@example.com.',
+      v_invalid_phone:'પસંદ કરેલા દેશ માટે માન્ય ફોન નંબર દાખલ કરો, માત્ર અંકો.',
+      v_invalid_pin:'માન્ય PIN અથવા પોસ્ટલ કોડ દાખલ કરો.',
+      v_invalid_pan:'માન્ય PAN દાખલ કરો, જેમ કે ABCDE1234F.',
+      v_invalid_selection:'કૃપા કરીને યાદીમાંથી એક વિકલ્પ પસંદ કરો.',
+      v_amount_range:'₹1 અને ₹1,00,00,000 વચ્ચેની રકમ દાખલ કરો, વધુમાં વધુ બે દશાંશ સાથે.',
+      v_invalid_date:'નાણાં મોકલ્યાની તારીખ દાખલ કરો: ભવિષ્યની ન હોવી જોઈએ અને છેલ્લા ત્રણ વર્ષમાં હોવી જોઈએ.',
+      v_invalid_ref:'તમારા સ્ટેટમેન્ટમાં દેખાય છે તેમ જ અક્ષરો અને અંકોનો ઉપયોગ કરીને સંદર્ભ દાખલ કરો.',
+      v_fix_n:'કૃપા કરીને આગળ વધતા પહેલા હાઇલાઇટ કરેલી {n} વિગતો સુધારો.',
     "foot_policies": "નીતિઓ અને સુરક્ષા ઉપાયો",
     "foot_cookies": "કૂકી સેટિંગ્સ",
     "foot_concern": "ચિંતાની જાણ કરો",
@@ -19511,6 +19811,28 @@ class Component extends DCLogic {
     "cta_route_small": "હજુ નક્કી નથી કર્યું? ત્રણ પગલાંમાં તમારો રસ્તો શોધો",
     };
             const KN = {
+      f_district:'ಜಿಲ್ಲೆ',
+      f_district_opt:'ಜಿಲ್ಲೆ / ಕೌಂಟಿ (ಐಚ್ಛಿಕ)',
+      f_district_other:'ಇತರೆ / ಪಟ್ಟಿಯಲ್ಲಿಲ್ಲ',
+      f_district_type:'ನಿಮ್ಮ ಜಿಲ್ಲೆಯನ್ನು ಬರೆಯಿರಿ',
+      f_select_country:'ನಿಮ್ಮ ದೇಶವನ್ನು ಆಯ್ಕೆಮಾಡಿ',
+      f_select_state:'ರಾಜ್ಯ / ಪ್ರಾಂತ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ',
+      f_select_district:'ನಿಮ್ಮ ಜಿಲ್ಲೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ',
+      f_phone_hint:'ಮೊಬೈಲ್ ಸಂಖ್ಯೆ, ಅಂಕಿಗಳು ಮಾತ್ರ',
+      f_pin_hint:'6 ಅಂಕಿಗಳ PIN ಕೋಡ್',
+      v_required:'ಈ ವಿವರ ಅಗತ್ಯವಿದೆ.',
+      v_too_short:'ಇದು ತುಂಬಾ ಚಿಕ್ಕದಾಗಿದೆ. ದಯವಿಟ್ಟು ಪರಿಶೀಲಿಸಿ.',
+      v_too_long:'ಇದು ತುಂಬಾ ಉದ್ದವಾಗಿದೆ. ದಯವಿಟ್ಟು ಸಂಕ್ಷಿಪ್ತಗೊಳಿಸಿ.',
+      v_invalid_chars:'ದಯವಿಟ್ಟು ಈ ನಮೂದನ್ನು ಪರಿಶೀಲಿಸಿ. ಇದು ಸರಿಯಾಗಿ ಕಾಣುತ್ತಿಲ್ಲ.',
+      v_invalid_email:'name@example.com ನಂತಹ ಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ.',
+      v_invalid_phone:'ಆಯ್ಕೆಮಾಡಿದ ದೇಶಕ್ಕೆ ಮಾನ್ಯವಾದ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ, ಅಂಕಿಗಳು ಮಾತ್ರ.',
+      v_invalid_pin:'ಮಾನ್ಯ PIN ಅಥವಾ ಅಂಚೆ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಿ.',
+      v_invalid_pan:'ABCDE1234F ನಂತಹ ಮಾನ್ಯ PAN ಅನ್ನು ನಮೂದಿಸಿ.',
+      v_invalid_selection:'ದಯವಿಟ್ಟು ಪಟ್ಟಿಯಿಂದ ಒಂದು ಆಯ್ಕೆಯನ್ನು ಆರಿಸಿ.',
+      v_amount_range:'₹1 ಮತ್ತು ₹1,00,00,000 ನಡುವಿನ ಮೊತ್ತವನ್ನು ನಮೂದಿಸಿ, ಗರಿಷ್ಠ ಎರಡು ದಶಮಾಂಶಗಳೊಂದಿಗೆ.',
+      v_invalid_date:'ಹಣ ಕಳುಹಿಸಿದ ದಿನಾಂಕವನ್ನು ನಮೂದಿಸಿ: ಭವಿಷ್ಯದ್ದಾಗಿರಬಾರದು ಮತ್ತು ಕಳೆದ ಮೂರು ವರ್ಷಗಳ ಒಳಗಿರಬೇಕು.',
+      v_invalid_ref:'ಸ್ಟೇಟ್‌ಮೆಂಟ್‌ನಲ್ಲಿರುವಂತೆಯೇ ಅಕ್ಷರಗಳು ಮತ್ತು ಅಂಕಿಗಳನ್ನು ಬಳಸಿ ನಿಖರವಾದ ಉಲ್ಲೇಖವನ್ನು ನಮೂದಿಸಿ.',
+      v_fix_n:'ದಯವಿಟ್ಟು ಮುಂದುವರಿಯುವ ಮೊದಲು ಹೈಲೈಟ್ ಮಾಡಲಾದ {n} ವಿವರಗಳನ್ನು ಸರಿಪಡಿಸಿ.',
     "foot_policies": "ನೀತಿಗಳು ಮತ್ತು ಸುರಕ್ಷತಾ ಕ್ರಮಗಳು",
     "foot_cookies": "ಕುಕೀ ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
     "foot_concern": "ಒಂದು ಕಳವಳವನ್ನು ವರದಿ ಮಾಡಿ",
@@ -20457,6 +20779,28 @@ class Component extends DCLogic {
     "cta_route_small": "ಇನ್ನೂ ನಿರ್ಧರಿಸಲು ಸಿದ್ಧವಿಲ್ಲವೇ? ಮೂರು ಹಂತಗಳಲ್ಲಿ ನಿಮ್ಮ ಹಾದಿಯನ್ನು ಕಂಡುಕೊಳ್ಳಿ",
     };
             const MAI = {
+      f_district:'ज़िला',
+      f_district_opt:'ज़िला / काउंटी (वैकल्पिक)',
+      f_district_other:'अन्य / सूची में नहि अछि',
+      f_district_type:'अपन ज़िला लिखू',
+      f_select_country:'अपन देश चुनू',
+      f_select_state:'राज्य वा प्रांत चुनू',
+      f_select_district:'अपन ज़िला चुनू',
+      f_phone_hint:'मोबाइल नंबर, केवल अंक',
+      f_pin_hint:'6 अंकक PIN कोड',
+      v_required:'ई जानकारी आवश्यक अछि।',
+      v_too_short:'ई बहुत छोट लगैत अछि। कृपा कऽ जाँच करू।',
+      v_too_long:'ई बहुत पैघ अछि। कृपा कऽ एकरा छोट करू।',
+      v_invalid_chars:'कृपा कऽ एकरा जाँचू, ई सही नहि लगैत अछि।',
+      v_invalid_email:'सही ईमेल पता लिखू, जेना name@example.com।',
+      v_invalid_phone:'चुनल गेल देशक लेल सही फोन नंबर लिखू, केवल अंक।',
+      v_invalid_pin:'सही PIN वा पोस्टल कोड दर्ज करू।',
+      v_invalid_pan:'सही PAN दर्ज करू, जेना ABCDE1234F।',
+      v_invalid_selection:'कृपा कऽ सूची सँ एकटा विकल्प चुनू।',
+      v_amount_range:'₹1 सँ ₹1,00,00,000 क बीचक राशि दर्ज करू, दशमलवक बाद अधिकतम दू अंक।',
+      v_invalid_date:'टका पठएबाक तारीख दर्ज करू: भविष्यक नहि होअय, आ पिछला तीन सालक भीतरक होअय।',
+      v_invalid_ref:'रेफरेंस नंबर ठीक ओहिना दर्ज करू जेना अहाँक स्टेटमेंट में अछि, अक्षर आ अंकक प्रयोग कऽ।',
+      v_fix_n:'आगू बढ़बा सँ पहिने कृपा कऽ हाइलाइट कएल गेल {n} जानकारी ठीक करू।',
     "foot_policies": "नीति आ सुरक्षा उपाय",
     "foot_cookies": "कुकी सेटिंग",
     "foot_concern": "कोनो चिंता के रिपोर्ट करू",
@@ -21403,6 +21747,28 @@ class Component extends DCLogic {
     "cta_route_small": "अखनो तय नहि? तीन पाब मे अपन बाट खोजू",
     };
             const AS = {
+      f_district:'জিলা',
+      f_district_opt:'জিলা / কাউণ্টি (ঐচ্ছিক)',
+      f_district_other:'অন্যান্য / তালিকাত নাই',
+      f_district_type:'আপোনাৰ জিলা লিখক',
+      f_select_country:'আপোনাৰ দেশ বাছক',
+      f_select_state:'ৰাজ্য বা প্ৰদেশ বাছক',
+      f_select_district:'আপোনাৰ জিলা বাছক',
+      f_phone_hint:'ম\'বাইল নম্বৰ, কেৱল সংখ্যা',
+      f_pin_hint:'৬টা সংখ্যাৰ PIN ক\'ড',
+      v_required:'এই তথ্যটো প্ৰয়োজনীয়।',
+      v_too_short:'এইটো অতি চুটি যেন লাগিছে। অনুগ্ৰহ কৰি পৰীক্ষা কৰক।',
+      v_too_long:'এইটো অতি দীঘলীয়া। অনুগ্ৰহ কৰি চুটি কৰক।',
+      v_invalid_chars:'অনুগ্ৰহ কৰি এই প্ৰবিষ্টি পৰীক্ষা কৰক। এইটো সঠিক যেন লগা নাই।',
+      v_invalid_email:'name@example.com-ৰ দৰে এটা বৈধ ইমেইল ঠিকনা দিয়ক।',
+      v_invalid_phone:'বাছনি কৰা দেশৰ বাবে এটা বৈধ ফোন নম্বৰ দিয়ক, কেৱল সংখ্যা।',
+      v_invalid_pin:'এটা বৈধ PIN বা ডাক ক\'ড দিয়ক।',
+      v_invalid_pan:'ABCDE1234F-ৰ দৰে এটা বৈধ PAN দিয়ক।',
+      v_invalid_selection:'অনুগ্ৰহ কৰি তালিকাৰ পৰা এটা বিকল্প বাছক।',
+      v_amount_range:'₹1 আৰু ₹1,00,00,000-ৰ ভিতৰত এটা পৰিমাণ দিয়ক, সৰ্বাধিক দুটা দশমিক স্থানৰ সৈতে।',
+      v_invalid_date:'ধন প্ৰেৰণৰ তাৰিখ দিয়ক: ভৱিষ্যতৰ নহয়, আৰু যোৱা তিনি বছৰৰ ভিতৰত।',
+      v_invalid_ref:'আপোনাৰ ষ্টেটমেণ্টত থকাৰ দৰেই আখৰ আৰু সংখ্যা ব্যৱহাৰ কৰি ঠিক ৰেফাৰেন্সটো দিয়ক।',
+      v_fix_n:'অনুগ্ৰহ কৰি আগবাঢ়ি যোৱাৰ আগতে চিহ্নিত {n}টা তথ্য শুধৰণি কৰক।',
     "foot_policies": "নীতি আৰু সুৰক্ষা ব্যৱস্থা",
     "foot_cookies": "কুকী ছেটিংছ",
     "foot_concern": "এটা উদ্বেগ ৰিপৰ্ট কৰক",
@@ -22349,6 +22715,28 @@ class Component extends DCLogic {
     "cta_route_small": "এতিয়াই প্ৰতিশ্ৰুতি দিবলৈ সাজু নহয়নে? তিনিটা পদক্ষেপত আপোনাৰ পথ সন্ধান কৰক",
     };
             const NE = {
+      f_district:'जिल्ला',
+      f_district_opt:'जिल्ला / काउन्टी (वैकल्पिक)',
+      f_district_other:'अन्य / सूचीमा छैन',
+      f_district_type:'आफ्नो जिल्ला लेख्नुहोस्',
+      f_select_country:'आफ्नो देश छान्नुहोस्',
+      f_select_state:'राज्य वा प्रान्त छान्नुहोस्',
+      f_select_district:'आफ्नो जिल्ला छान्नुहोस्',
+      f_phone_hint:'मोबाइल नम्बर, अंक मात्र',
+      f_pin_hint:'६ अंकको PIN कोड',
+      v_required:'यो विवरण आवश्यक छ।',
+      v_too_short:'यो धेरै छोटो देखिन्छ। कृपया जाँच गर्नुहोस्।',
+      v_too_long:'यो धेरै लामो छ। कृपया यसलाई छोटो बनाउनुहोस्।',
+      v_invalid_chars:'कृपया यो प्रविष्टि जाँच गर्नुहोस्। यो सही देखिँदैन।',
+      v_invalid_email:'name@example.com जस्तो मान्य इमेल ठेगाना प्रविष्ट गर्नुहोस्।',
+      v_invalid_phone:'छानिएको देशको लागि मान्य फोन नम्बर प्रविष्ट गर्नुहोस्, अंक मात्र।',
+      v_invalid_pin:'मान्य PIN वा हुलाक कोड प्रविष्ट गर्नुहोस्।',
+      v_invalid_pan:'ABCDE1234F जस्तो मान्य PAN प्रविष्ट गर्नुहोस्।',
+      v_invalid_selection:'कृपया सूचीबाट एउटा विकल्प छान्नुहोस्।',
+      v_amount_range:'₹1 र ₹1,00,00,000 बीचको रकम प्रविष्ट गर्नुहोस्, बढीमा दुई दशमलव अंकसहित।',
+      v_invalid_date:'पैसा पठाएको मिति प्रविष्ट गर्नुहोस्: भविष्यको नभएको र पछिल्लो तीन वर्षभित्रको।',
+      v_invalid_ref:'स्टेटमेन्टमा देखिए जस्तै अक्षर र अंक प्रयोग गरी ठीक सन्दर्भ प्रविष्ट गर्नुहोस्।',
+      v_fix_n:'कृपया अगाडि बढ्नुअघि हाइलाइट गरिएका {n} विवरणहरू सच्याउनुहोस्।',
     "foot_policies": "नीतिहरू र सुरक्षा उपायहरू",
     "foot_cookies": "कुकी सेटिङहरू",
     "foot_concern": "एक चिन्ता रिपोर्ट गर्नुहोस्",
@@ -23295,6 +23683,28 @@ class Component extends DCLogic {
     "cta_route_small": "अझै निर्णय गर्न तयार हुनुहुन्न? तीन चरणमा आफ्नो बाटो खोज्नुहोस्",
     };
             const KOK = {
+      f_district:'जिल्हो',
+      f_district_opt:'जिल्हो / काउंटी (पर्यायी)',
+      f_district_other:'हेर / वळेरींत ना',
+      f_district_type:'तुमचो जिल्हो बरोव्यात',
+      f_select_country:'तुमचो देश वेचात',
+      f_select_state:'राज्य वा प्रांत वेचात',
+      f_select_district:'तुमचो जिल्हो वेचात',
+      f_phone_hint:'मोबाईल नंबर, फकत आंकडे',
+      f_pin_hint:'६ आंकड्यांचो PIN कोड',
+      v_required:'ही म्हायती गरजेची आसा।',
+      v_too_short:'हें खूब ल्हान दिसता। उपकार करून तपासात।',
+      v_too_long:'हें खूब लांब आसा। उपकार करून ल्हान करात।',
+      v_invalid_chars:'उपकार करून ही नोंद तपासात। ती सारकी दिसना।',
+      v_invalid_email:'name@example.com सारको वैध ईमेल पत्तो बरयात।',
+      v_invalid_phone:'वेचिल्ल्या देशा खातीर वैध फोन नंबर बरयात, फकत आंकडे।',
+      v_invalid_pin:'वैध PIN वा पोस्टल कोड बरयात।',
+      v_invalid_pan:'ABCDE1234F सारको वैध PAN बरयात।',
+      v_invalid_selection:'उपकार करून वळेरींतल्यान एक पर्याय वेचात।',
+      v_amount_range:'₹1 आनी ₹1,00,00,000 मदीं रक्कम बरयात, चडांत चड दोन दशांशां सयत।',
+      v_invalid_date:'पयशे धाडिल्ले ती तारीख बरयात: फुडली न्हय, आनी फाटल्या तीन वर्सां मदली।',
+      v_invalid_ref:'स्टेटमेंटाचेर दिसता तशीच अक्षरां आनी आंकडे वापरून सारकी संदर्भ नोंद बरयात।',
+      v_fix_n:'उपकार करून फुडें वचपा पयलीं हायलाइट केल्ली {n} म्हायती सुदारात।',
     "foot_policies": "धोरणां आनी सुरक्षा उपाय",
     "foot_cookies": "कुकी सेटिंग्ज",
     "foot_concern": "एक हुस्को कळोवचो",
@@ -24241,6 +24651,28 @@ class Component extends DCLogic {
     "cta_route_small": "अजून थारावंक ना? तीन पावलांनी तुमची वाट सोदात",
     };
             const SA = {
+      f_district:'जनपदः',
+      f_district_opt:'जनपदः / प्रान्तभागः (वैकल्पिकम्)',
+      f_district_other:'अन्यत् / सूच्यां नास्ति',
+      f_district_type:'स्वजनपदं लिखतु',
+      f_select_country:'स्वदेशं चिनोतु',
+      f_select_state:'राज्यं प्रान्तं वा चिनोतु',
+      f_select_district:'स्वजनपदं चिनोतु',
+      f_phone_hint:'चलभाषसङ्ख्या, केवलम् अंकाः',
+      f_pin_hint:'षडङ्कात्मकः PIN सङ्केतः',
+      v_required:'इदं विवरणम् अनिवार्यम् अस्ति।',
+      v_too_short:'एतत् अतिलघु दृश्यते। कृपया परीक्षताम्।',
+      v_too_long:'एतत् अतिदीर्घम् अस्ति। कृपया सङ्क्षिप्यताम्।',
+      v_invalid_chars:'कृपया एतां प्रविष्टिं परीक्षताम्। एषा समीचीना न दृश्यते।',
+      v_invalid_email:'name@example.com इव उचितम् ईमेल-सङ्केतं लिखतु।',
+      v_invalid_phone:'चितदेशार्थम् उचितं दूरभाषसङ्ख्यां लिखतु, केवलम् अंकाः।',
+      v_invalid_pin:'उचितं PIN वा पत्रालयसङ्केतं लिखतु।',
+      v_invalid_pan:'ABCDE1234F इव उचितं PAN लिखतु।',
+      v_invalid_selection:'कृपया सूच्याः एकं विकल्पं चिनोतु।',
+      v_amount_range:'₹1 तः ₹1,00,00,000 मध्ये धनराशौ लिखतु, अधिकं द्विदशांशपर्यन्तम्।',
+      v_invalid_date:'धनप्रेषणस्य दिनांकं लिखतु: भविष्यत्काले न स्यात्, विगतत्रिवर्षेषु च स्यात्।',
+      v_invalid_ref:'यथा स्वविवरणपत्रे दृश्यते तथैव अक्षराणि अङ्कान् च प्रयुज्य सन्दर्भं लिखतु।',
+      v_fix_n:'कृपया अग्रे गमनात् पूर्वं चिह्नितानि {n} स्थानानि संशोध्यताम्।',
     "foot_policies": "नीतयः रक्षोपायाः च",
     "foot_cookies": "कुकी विन्यासाः",
     "foot_concern": "एकं चिन्ताम् अङ्गीकुर्वन्तु",
@@ -25187,6 +25619,28 @@ class Component extends DCLogic {
     "cta_route_small": "अद्यापि अनिर्णीतम्? त्रिभिः पदैः स्वकीयं मार्गं अन्विष्यन्तु",
     };
             const SD = {
+      f_district:'ضلعو',
+      f_district_opt:'ضلعو / ڪائونٽي (اختياري)',
+      f_district_other:'ٻيو / فهرست ۾ ناهي',
+      f_district_type:'پنهنجو ضلعو لکو',
+      f_select_country:'پنهنجو ملڪ چونڊيو',
+      f_select_state:'رياست يا صوبو چونڊيو',
+      f_select_district:'پنهنجو ضلعو چونڊيو',
+      f_phone_hint:'موبائل نمبر، صرف انگ',
+      f_pin_hint:'6 انگن وارو PIN ڪوڊ',
+      v_required:'هي معلومات گهربل آهي.',
+      v_too_short:'هي تمام ننڍو لڳي ٿو. مهرباني ڪري چڪاسيو.',
+      v_too_long:'هي تمام ڊگهو آهي. مهرباني ڪري مختصر ڪريو.',
+      v_invalid_chars:'مهرباني ڪري هن داخلا کي چڪاسيو. هي صحيح نٿي لڳي.',
+      v_invalid_email:'صحيح اي ميل پتو داخل ڪريو، جهڙوڪ name@example.com.',
+      v_invalid_phone:'چونڊيل ملڪ لاءِ صحيح فون نمبر داخل ڪريو، صرف انگ.',
+      v_invalid_pin:'صحيح PIN يا پوسٽل ڪوڊ داخل ڪريو.',
+      v_invalid_pan:'صحيح PAN داخل ڪريو، جهڙوڪ ABCDE1234F.',
+      v_invalid_selection:'مهرباني ڪري فهرست مان هڪ اختيار چونڊيو.',
+      v_amount_range:'₹1 ۽ ₹1,00,00,000 جي وچ ۾ رقم داخل ڪريو، وڌ ۾ وڌ ٻه ڄاڻايل ڏهائي.',
+      v_invalid_date:'رقم موڪلڻ جي تاريخ داخل ڪريو: مستقبل جي نه هجي ۽ گذريل ٽن سالن اندر هجي.',
+      v_invalid_ref:'حوالو بلڪل ائين داخل ڪريو جيئن توهان جي اسٽيٽمينٽ تي نظر اچي ٿو، اکر ۽ انگ استعمال ڪندي.',
+      v_fix_n:'مهرباني ڪري اڳتي وڌڻ کان اڳ نمايان ڪيل {n} معلومات درست ڪريو.',
     "foot_policies": "پاليسيون ۽ حفاظتي طريقا",
     "foot_cookies": "ڪوڪي سيٽنگون",
     "foot_concern": "هڪ ڳڻتي جي رپورٽ ڪريو",
@@ -26133,6 +26587,28 @@ class Component extends DCLogic {
     "cta_route_small": "اڃا فيصلو ناهي ڪيو؟ ٽن قدمن ۾ پنهنجو رستو ڳوليو",
     };
             const OR = {
+      f_district:'ଜିଲ୍ଲା',
+      f_district_opt:'ଜିଲ୍ଲା / କାଉଣ୍ଟି (ଇଚ୍ଛାଧୀନ)',
+      f_district_other:'ଅନ୍ୟାନ୍ୟ / ତାଲିକାରେ ନାହିଁ',
+      f_district_type:'ଆପଣଙ୍କ ଜିଲ୍ଲା ଲେଖନ୍ତୁ',
+      f_select_country:'ଆପଣଙ୍କ ଦେଶ ବାଛନ୍ତୁ',
+      f_select_state:'ରାଜ୍ୟ କିମ୍ବା ପ୍ରଦେଶ ବାଛନ୍ତୁ',
+      f_select_district:'ଆପଣଙ୍କ ଜିଲ୍ଲା ବାଛନ୍ତୁ',
+      f_phone_hint:'ମୋବାଇଲ୍ ନମ୍ବର, କେବଳ ଅଙ୍କ',
+      f_pin_hint:'୬ ଅଙ୍କ ବିଶିଷ୍ଟ PIN କୋଡ୍',
+      v_required:'ଏହି ସୂଚନା ଆବଶ୍ୟକ।',
+      v_too_short:'ଏହା ବହୁତ ଛୋଟ ଲାଗୁଛି। ଦୟାକରି ଯାଞ୍ଚ କରନ୍ତୁ।',
+      v_too_long:'ଏହା ବହୁତ ଲମ୍ବା। ଦୟାକରି ଛୋଟ କରନ୍ତୁ।',
+      v_invalid_chars:'ଦୟାକରି ଏହି ପ୍ରବେଶକୁ ଯାଞ୍ଚ କରନ୍ତୁ। ଏହା ଠିକ୍ ଲାଗୁନାହିଁ।',
+      v_invalid_email:'name@example.com ପରି ଏକ ବୈଧ ଇମେଲ୍ ଠିକଣା ପ୍ରବେଶ କରନ୍ତୁ।',
+      v_invalid_phone:'ଚୟନିତ ଦେଶ ପାଇଁ ଏକ ବୈଧ ଫୋନ୍ ନମ୍ବର ପ୍ରବେଶ କରନ୍ତୁ, କେବଳ ଅଙ୍କ।',
+      v_invalid_pin:'ଏକ ବୈଧ PIN କିମ୍ବା ଡାକ କୋଡ୍ ପ୍ରବେଶ କରନ୍ତୁ।',
+      v_invalid_pan:'ABCDE1234F ପରି ଏକ ବୈଧ PAN ପ୍ରବେଶ କରନ୍ତୁ।',
+      v_invalid_selection:'ଦୟାକରି ତାଲିକାରୁ ଏକ ବିକଳ୍ପ ବାଛନ୍ତୁ।',
+      v_amount_range:'₹1 ରୁ ₹1,00,00,000 ମଧ୍ୟରେ ଏକ ରାଶି ପ୍ରବେଶ କରନ୍ତୁ, ସର୍ବାଧିକ ଦୁଇଟି ଦଶମିକ ସହିତ।',
+      v_invalid_date:'ଟଙ୍କା ପଠାଇବା ତାରିଖ ପ୍ରବେଶ କରନ୍ତୁ: ଭବିଷ୍ୟତର ହୋଇନଥିବ, ଏବଂ ବିଗତ ତିନି ବର୍ଷ ମଧ୍ୟରେ ହୋଇଥିବ।',
+      v_invalid_ref:'ଷ୍ଟେଟମେଣ୍ଟରେ ଥିବା ପରି ଅକ୍ଷର ଏବଂ ସଂଖ୍ୟା ବ୍ୟବହାର କରି ଠିକ୍ ରେଫରେନ୍ସ ପ୍ରବେଶ କରନ୍ତୁ।',
+      v_fix_n:'ଦୟାକରି ଆଗକୁ ବଢ଼ିବା ପୂର୍ବରୁ ଚିହ୍ନିତ {n}ଟି ସୂଚନା ସଂଶୋଧନ କରନ୍ତୁ।',
     "foot_policies": "ନୀତି ଓ ସୁରକ୍ଷା ବ୍ୟବସ୍ଥା",
     "foot_cookies": "କୁକି ସେଟିଂସ",
     "foot_concern": "ଏକ ଚିନ୍ତା ରିପୋର୍ଟ କରନ୍ତୁ",
@@ -27079,6 +27555,28 @@ class Component extends DCLogic {
     "cta_route_small": "ଏବେ ବି ପ୍ରସ୍ତୁତ ନୁହଁନ୍ତି? ତିନୋଟି ପଦକ୍ଷେପରେ ନିଜର ବାଟ ଖୋଜନ୍ତୁ",
     };
             const ML = {
+      f_district:'ജില്ല',
+      f_district_opt:'ജില്ല / കൗണ്ടി (ഓപ്ഷണൽ)',
+      f_district_other:'മറ്റുള്ളവ / പട്ടികയിലില്ല',
+      f_district_type:'നിങ്ങളുടെ ജില്ല ടൈപ്പ് ചെയ്യുക',
+      f_select_country:'നിങ്ങളുടെ രാജ്യം തിരഞ്ഞെടുക്കുക',
+      f_select_state:'സംസ്ഥാനം / പ്രവിശ്യ തിരഞ്ഞെടുക്കുക',
+      f_select_district:'നിങ്ങളുടെ ജില്ല തിരഞ്ഞെടുക്കുക',
+      f_phone_hint:'മൊബൈൽ നമ്പർ, അക്കങ്ങൾ മാത്രം',
+      f_pin_hint:'6 അക്ക PIN കോഡ്',
+      v_required:'ഈ വിവരം നിർബന്ധമാണ്.',
+      v_too_short:'ഇത് വളരെ ചെറുതായി തോന്നുന്നു. ദയവായി പരിശോധിക്കുക.',
+      v_too_long:'ഇത് വളരെ വലുതാണ്. ദയവായി ചുരുക്കുക.',
+      v_invalid_chars:'ദയവായി ഈ വിവരങ്ങൾ പരിശോധിക്കുക. ഇത് ശരിയായി തോന്നുന്നില്ല.',
+      v_invalid_email:'name@example.com പോലുള്ള സാധുവായ ഇമെയിൽ വിലാസം നൽകുക.',
+      v_invalid_phone:'തിരഞ്ഞെടുത്ത രാജ്യത്തിനായി സാധുവായ ഫോൺ നമ്പർ നൽകുക, അക്കങ്ങൾ മാത്രം.',
+      v_invalid_pin:'സാധുവായ PIN അല്ലെങ്കിൽ പോസ്റ്റൽ കോഡ് നൽകുക.',
+      v_invalid_pan:'ABCDE1234F പോലുള്ള സാധുവായ PAN നൽകുക.',
+      v_invalid_selection:'ദയവായി പട്ടികയിൽ നിന്ന് ഒരു ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക.',
+      v_amount_range:'പരമാവധി രണ്ട് ദശാംശങ്ങളോടെ ₹1-നും ₹1,00,00,000-നും ഇടയിലുള്ള തുക നൽകുക.',
+      v_invalid_date:'പണം അയച്ച തീയതി നൽകുക: ഭാവിയിലെ തീയതി ആകരുത്, കഴിഞ്ഞ മൂന്ന് വർഷത്തിനുള്ളിൽ ആയിരിക്കണം.',
+      v_invalid_ref:'നിങ്ങളുടെ സ്റ്റേറ്റ്‌മെന്റിൽ കാണുന്നതുപോലെ അക്ഷരങ്ങളും അക്കങ്ങളും ഉപയോഗിച്ച് കൃത്യമായ റഫറൻസ് നൽകുക.',
+      v_fix_n:'ദയവായി തുടരുന്നതിന് മുൻപ് ഹൈലൈറ്റ് ചെയ്ത {n} വിവരങ്ങൾ തിരുത്തുക.',
     "foot_policies": "നയങ്ങളും സുരക്ഷാ നടപടികളും",
     "foot_cookies": "കുക്കി സെറ്റിംഗ്സ്",
     "foot_concern": "ഒരു ആശങ്ക റിപ്പോർട്ട് ചെയ്യുക",
@@ -28024,6 +28522,28 @@ class Component extends DCLogic {
     "cta_invest_join": "പബ്ലിക് റെക്കോർഡിലുള്ള {n} സാമൂഹിക നിക്ഷേപകർക്കൊപ്പം ചേരൂ",
     "cta_route_small": "ഇപ്പോഴും തീരുമാനമായില്ലേ? മൂന്ന് ഘട്ടങ്ങളിലൂടെ നിങ്ങളുടെ വഴി കണ്ടെത്തൂ",
     };            const PA = {
+      f_district:'ਜ਼ਿਲ੍ਹਾ',
+      f_district_opt:'ਜ਼ਿਲ੍ਹਾ / ਕਾਊਂਟੀ (ਵਿਕਲਪਿਕ)',
+      f_district_other:'ਹੋਰ / ਸੂਚੀ ਵਿੱਚ ਨਹੀਂ',
+      f_district_type:'ਆਪਣਾ ਜ਼ਿਲ੍ਹਾ ਲਿਖੋ',
+      f_select_country:'ਆਪਣਾ ਦੇਸ਼ ਚੁਣੋ',
+      f_select_state:'ਰਾਜ ਜਾਂ ਸੂਬਾ ਚੁਣੋ',
+      f_select_district:'ਆਪਣਾ ਜ਼ਿਲ੍ਹਾ ਚੁਣੋ',
+      f_phone_hint:'ਮੋਬਾਈਲ ਨੰਬਰ, ਸਿਰਫ਼ ਅੰਕ',
+      f_pin_hint:'6 ਅੰਕਾਂ ਦਾ PIN ਕੋਡ',
+      v_required:'ਇਹ ਜਾਣਕਾਰੀ ਲਾਜ਼ਮੀ ਹੈ।',
+      v_too_short:'ਇਹ ਬਹੁਤ ਛੋਟਾ ਲੱਗਦਾ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਜਾਂਚ ਕਰੋ।',
+      v_too_long:'ਇਹ ਬਹੁਤ ਲੰਮਾ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਇਸਨੂੰ ਛੋਟਾ ਕਰੋ।',
+      v_invalid_chars:'ਕਿਰਪਾ ਕਰਕੇ ਇਸ ਇੰਦਰਾਜ ਦੀ ਜਾਂਚ ਕਰੋ। ਇਹ ਸਹੀ ਨਹੀਂ ਲੱਗਦਾ।',
+      v_invalid_email:'name@example.com ਵਰਗਾ ਵੈਧ ਈਮੇਲ ਪਤਾ ਦਰਜ ਕਰੋ।',
+      v_invalid_phone:'ਚੁਣੇ ਹੋਏ ਦੇਸ਼ ਲਈ ਵੈਧ ਫ਼ੋਨ ਨੰਬਰ ਦਰਜ ਕਰੋ, ਸਿਰਫ਼ ਅੰਕ।',
+      v_invalid_pin:'ਵੈਧ PIN ਜਾਂ ਡਾਕ ਕੋਡ ਦਰਜ ਕਰੋ।',
+      v_invalid_pan:'ABCDE1234F ਵਰਗਾ ਵੈਧ PAN ਦਰਜ ਕਰੋ।',
+      v_invalid_selection:'ਕਿਰਪਾ ਕਰਕੇ ਸੂਚੀ ਵਿੱਚੋਂ ਇੱਕ ਵਿਕਲਪ ਚੁਣੋ।',
+      v_amount_range:'₹1 ਅਤੇ ₹1,00,00,000 ਦੇ ਵਿਚਕਾਰ ਰਕਮ ਦਰਜ ਕਰੋ, ਵੱਧ ਤੋਂ ਵੱਧ ਦੋ ਦਸ਼ਮਲਵ ਅੰਕਾਂ ਨਾਲ।',
+      v_invalid_date:'ਪੈਸੇ ਭੇਜਣ ਦੀ ਮਿਤੀ ਦਰਜ ਕਰੋ: ਭਵਿੱਖ ਦੀ ਨਾ ਹੋਵੇ ਅਤੇ ਪਿਛਲੇ ਤਿੰਨ ਸਾਲਾਂ ਦੇ ਅੰਦਰ ਹੋਵੇ।',
+      v_invalid_ref:'ਆਪਣੇ ਸਟੇਟਮੈਂਟ ਅਨੁਸਾਰ ਅੱਖਰਾਂ ਅਤੇ ਅੰਕਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਬਿਲਕੁਲ ਸਹੀ ਹਵਾਲਾ ਦਰਜ ਕਰੋ।',
+      v_fix_n:'ਕਿਰਪਾ ਕਰਕੇ ਅੱਗੇ ਵਧਣ ਤੋਂ ਪਹਿਲਾਂ ਹਾਈਲਾਈਟ ਕੀਤੀ ਗਈ {n} ਜਾਣਕਾਰੀ ਠੀਕ ਕਰੋ।',
     "foot_policies": "ਨੀਤੀਆਂ ਅਤੇ ਸੁਰੱਖਿਆ ਉਪਾਅ",
     "foot_cookies": "ਕੂਕੀ ਸੈਟਿੰਗਾਂ",
     "foot_concern": "ਇੱਕ ਚਿੰਤਾ ਦੀ ਰਿਪੋਰਟ ਕਰੋ",
@@ -28969,6 +29489,28 @@ class Component extends DCLogic {
     "cta_invest_join": "ਜਨਤਕ ਰਿਕਾਰਡ 'ਤੇ ਦਰਜ {n} ਸਮਾਜਿਕ ਨਿਵੇਸ਼ਕਾਂ ਨਾਲ ਜੁੜੋ",
     "cta_route_small": "ਅਜੇ ਫ਼ੈਸਲਾ ਨਹੀਂ ਕੀਤਾ? ਤਿੰਨ ਕਦਮਾਂ ਵਿੱਚ ਆਪਣਾ ਰਸਤਾ ਲੱਭੋ",
     };            const DOI = {
+      f_district:'ज़िला',
+      f_district_opt:'ज़िला / काउंटी (वैकल्पिक)',
+      f_district_other:'होर / सूची च नेईं',
+      f_district_type:'अपना ज़िला लिखो',
+      f_select_country:'अपना देश चुनो',
+      f_select_state:'राज्य जां प्रांत चुनो',
+      f_select_district:'अपना ज़िला चुनो',
+      f_phone_hint:'मोबाइल नंबर, सिर्फ अंक',
+      f_pin_hint:'6 अंकें दा PIN कोड',
+      v_required:'एह् जानकारी जरूरी ऐ।',
+      v_too_short:'एह् मती निक्की लग्गदी ऐ। कृपा करियै जाचो।',
+      v_too_long:'एह् मती लम्मी ऐ। कृपा करियै इसगी निक्का करो।',
+      v_invalid_chars:'कृपा करियै इसगी जाचो, एह् ठीक नेईं लग्गदी।',
+      v_invalid_email:'name@example.com चाल्ली सही ईमेल पता पाओ।',
+      v_invalid_phone:'चुने दे देश लेई सही फोन नंबर पाओ, सिर्फ अंक।',
+      v_invalid_pin:'सही PIN जां पोस्टल कोड दर्ज करो।',
+      v_invalid_pan:'ABCDE1234F चाल्ली सही PAN दर्ज करो।',
+      v_invalid_selection:'कृपा करियै सूची चा कोई विकल्प चुनो।',
+      v_amount_range:'₹1 थमां ₹1,00,00,000 दे बशकार रकम पाओ, बद्धो-बद्ध दो दशमलव अंकें कन्ने।',
+      v_invalid_date:'पैह्‌से भेजने दी तारीख पाओ: अग्गें दी नेईं होऐ ते पिछले त्रै साले दे अंदर होऐ।',
+      v_invalid_ref:'स्टेटमेंटे पर दित्ते मूजब ही अक्खरें ते अंकें दा इस्तेमाल करियै सही रेफरेंस पाओ।',
+      v_fix_n:'अग्गें बधने शा पैह्‌ले कृपा करियै हाइलाइट कीती दी {n} जानकारी ठीक करो।',
     "foot_policies": "नीतियां ते सुरक्षा उपाय",
     "foot_cookies": "कुकी सेटिंग्स",
     "foot_concern": "इक चिंता दी रिपोर्ट करो",
@@ -29914,6 +30456,28 @@ class Component extends DCLogic {
     "cta_invest_join": "सार्वजनिक रिकार्ड पर दर्ज {n} सामाजिक निवेशकें कन्नै जुड़ो",
     "cta_route_small": "अजें पक्का नेईं? त्रै कदमेंस चा अपना रस्ता लब्भो",
     };            const BRX = {
+      f_district:'जिला',
+      f_district_opt:'जिला / काउन्टी (गावनि खुसि)',
+      f_district_other:'गुबुन / फारियाव गैयै',
+      f_district_type:'नोंथांनि जिला लिर',
+      f_select_country:'नोंथांनि हादोरखौ सायख\'',
+      f_select_state:'रायजो एबा प्रान्त सायख\'',
+      f_select_district:'नोंथांनि जिलाखौ सायख\'',
+      f_phone_hint:'मबाइल नम्बर, अनजिमासेल\'',
+      f_pin_hint:'6 अनजिमानि PIN कोड',
+      v_required:'बे बाथ्राया गोनांथार।',
+      v_too_short:'बेयो जोबोर गुसुं नुदों। अननानै नायफिन।',
+      v_too_long:'बेयो जोबोर गोलाउ। अननानै गुसुं खालाम।',
+      v_invalid_chars:'अननानै बे लिरनायखौ नायफिन। बेयो थि नङा।',
+      v_invalid_email:'name@example.com बादि थि ईमेल थिसन।',
+      v_invalid_phone:'सायख\'नाय हादोरनि थाखाय थि फन नम्बर थिसन, अनजिमासेल\'।',
+      v_invalid_pin:'थि PIN एबा पस्टेल कोड थिसन।',
+      v_invalid_pan:'ABCDE1234F बादि थि PAN थिसन।',
+      v_invalid_selection:'अननानै फारिनिफ्राय मोनसे सायख\'।',
+      v_amount_range:'₹1 आरो ₹1,00,00,000 नि गेजेराव रां थिसन, बांसिनबा मोननै दशमलव अनजिमाजों।',
+      v_invalid_date:'रां हरनायनि अक्ट\' थिसन: इउनाव जानाय नङा, आरो थांनाय बोसोरथामनि गेजेराव।',
+      v_invalid_ref:'स्टेटमेन्टाव थानाय बादिनो हांखो आरो अनजिमा बाहायनानै थि रेफरेंस थिसन।',
+      v_fix_n:'सिगांथिं थांनायनि सिगां अननानै दागो होनाय {n} बाथ्राफोरखौ थि खालाम।',
     "foot_policies": "नीति आरो रैखा उपाय",
     "foot_cookies": "कुकी सेटिंग",
     "foot_concern": "सोंनाय बाथ्रा होनाय",
@@ -30859,6 +31423,28 @@ class Component extends DCLogic {
     "cta_invest_join": "गांसे रेकर्डआव थानाय {n} सा सामाजिक बिनियोगगिरिफोरजों लोगो जा",
     "cta_route_small": "दासिमबो थि खालामनो हायाखै? मोनथाम खोन्दोबाव नोंथांनि लामा नागिर",
     };            const SAT = {
+      f_district:'ᱡᱤᱞᱟ',
+      f_district_opt:'ᱡᱤᱞᱟ / ᱠᱟᱣᱩᱱᱴᱤ (ᱚᱯᱥᱚᱱᱟᱞ)',
+      f_district_other:'ᱮᱴᱟᱜ / ᱛᱟᱹᱞᱠᱟᱹ ᱨᱮ ᱵᱟᱹᱱᱩᱜᱼᱟ',
+      f_district_type:'ᱟᱢᱟᱜ ᱡᱤᱞᱟ ᱚᱞ ᱢᱮ',
+      f_select_country:'ᱟᱢᱟᱜ ᱫᱤᱥᱚᱢ ᱵᱟᱪᱷᱟᱣ ᱢᱮ',
+      f_select_state:'ᱯᱚᱱᱚᱛ ᱥᱮ ᱯᱨᱟᱱᱛ ᱵᱟᱪᱷᱟᱣ ᱢᱮ',
+      f_select_district:'ᱟᱢᱟᱜ ᱡᱤᱞᱟ ᱵᱟᱪᱷᱟᱣ ᱢᱮ',
+      f_phone_hint:'ᱢᱚᱵᱟᱭᱤᱞ ᱱᱚᱢᱵᱚᱨ, ᱠᱷᱟᱹᱞᱤ ᱮᱞ',
+      f_pin_hint:'6 ᱮᱞᱟᱱ PIN ᱠᱳᱰ',
+      v_required:'ᱱᱚᱣᱟ ᱵᱟᱵᱚᱛ ᱫᱚ ᱞᱟᱹᱠᱛᱤᱭᱟᱱᱟ᱾',
+      v_too_short:'ᱱᱚᱣᱟ ᱫᱚ ᱟᱹᱰᱤ ᱠᱷᱟᱴᱚ ᱧᱮᱞᱚᱜ ᱠᱟᱱᱟ᱾ ᱫᱟᱭᱟᱠᱟᱛᱮ ᱧᱮᱞ ᱵᱤᱰᱟᱹᱣ ᱢᱮ᱾',
+      v_too_long:'ᱱᱚᱣᱟ ᱫᱚ ᱟᱹᱰᱤ ᱡᱤᱞᱤᱧ ᱜᱮᱭᱟ᱾ ᱫᱟᱭᱟᱠᱟᱛᱮ ᱠᱷᱟᱴᱚᱭ ᱢᱮ᱾',
+      v_invalid_chars:'ᱫᱟᱭᱟᱠᱟᱛᱮ ᱱᱚᱣᱟ ᱧᱮᱞ ᱢᱮ᱾ ᱱᱚᱣᱟ ᱫᱚ ᱴᱷᱤᱠ ᱵᱟᱝ ᱧᱮᱞᱚᱜ ᱠᱟᱱᱟ᱾',
+      v_invalid_email:'name@example.com ᱞᱮᱠᱟ ᱢᱤᱫ ᱴᱷᱤᱠ ᱤᱢᱮᱞ ᱮᱢ ᱢᱮ᱾',
+      v_invalid_phone:'ᱵᱟᱪᱷᱟᱣ ᱟᱠᱟᱱ ᱫᱤᱥᱚᱢ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱴᱷᱤᱠ ᱯᱷᱳᱱ ᱱᱚᱢᱵᱚᱨ ᱮᱢ ᱢᱮ, ᱠᱷᱟᱹᱞᱤ ᱮᱞ᱾',
+      v_invalid_pin:'ᱢᱤᱫ ᱴᱷᱤᱠ PIN ᱥᱮ ᱯᱳᱥᱴᱟᱞ ᱠᱳᱰ ᱮᱢ ᱢᱮ᱾',
+      v_invalid_pan:'ABCDE1234F ᱞᱮᱠᱟ ᱢᱤᱫ ᱴᱷᱤᱠ PAN ᱮᱢ ᱢᱮ᱾',
+      v_invalid_selection:'ᱫᱟᱭᱟᱠᱟᱛᱮ ᱛᱟᱹᱞᱠᱟᱹ ᱠᱷᱚᱱ ᱢᱤᱫᱴᱟᱝ ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾',
+      v_amount_range:'₹1 ᱟᱨ ₹1,00,00,000 ᱛᱟᱞᱟ ᱨᱮ ᱴᱟᱠᱟ ᱮᱢ ᱢᱮ, ᱡᱟᱹᱥᱛᱤ ᱠᱷᱚᱱ ᱡᱟᱹᱥᱛᱤ ᱵᱟᱨᱭᱟ ᱫᱚᱥᱚᱢᱤᱠ ᱥᱟᱶ᱾',
+      v_invalid_date:'ᱴᱟᱠᱟ ᱵᱷᱮᱡᱟ ᱨᱮᱱᱟᱜ ᱢᱟᱹᱦᱤᱛ ᱮᱢ ᱢᱮ: ᱫᱟᱨᱟᱭ ᱠᱟᱱ ᱫᱚ ᱵᱟᱝ, ᱟᱨ ᱯᱟᱨᱚᱢᱮᱱ ᱯᱮ ᱥᱮᱨᱢᱟ ᱵᱷᱤᱛᱨᱤ ᱨᱮ᱾',
+      v_invalid_ref:'ᱥᱴᱮᱴᱢᱮᱱᱴ ᱨᱮ ᱧᱮᱞᱚᱜ ᱞᱮᱠᱟ ᱜᱮ ᱪᱤᱠᱤ ᱟᱨ ᱮᱞ ᱵᱮᱵᱷᱟᱨ ᱠᱟᱛᱮ ᱴᱷᱤᱠ ᱨᱮᱯᱷᱨᱮᱱᱥ ᱮᱢ ᱢᱮ᱾',
+      v_fix_n:'ᱫᱟᱭᱟᱠᱟᱛᱮ ᱞᱟᱦᱟᱜ ᱢᱟᱬᱟᱝ ᱨᱮ ᱪᱤᱱᱦᱟᱹᱣ ᱟᱠᱟᱱ {n} ᱵᱟᱵᱚᱛ ᱠᱚ ᱥᱩᱫᱷᱟᱹᱨ ᱢᱮ᱾',
     "foot_policies": "ᱨᱤᱛᱤ ᱟᱨ ᱨᱟᱠᱷᱤ ᱩᱯᱟᱭ",
     "foot_cookies": "ᱠᱩᱠᱤ ᱥᱮᱴᱤᱝᱥ",
     "foot_concern": "ᱢᱤᱫ ᱪᱤᱱᱛᱟᱹ ᱨᱮᱭᱟᱜ ᱠᱷᱚᱵᱚᱨ ᱢᱮ",
@@ -31804,6 +32390,28 @@ class Component extends DCLogic {
     "cta_invest_join": "ᱫᱤᱥᱩᱣᱟᱹ ᱨᱮᱠᱚᱨᱰ ᱨᱮ ᱚᱞ ᱟᱠᱟᱱ {n} ᱥᱟᱶᱛᱟ ᱨᱤᱱ ᱤᱱᱵᱷᱮᱥᱴᱚᱨ ᱥᱟᱶ ᱡᱚᱲᱟᱣᱜ ᱢᱮ",
     "cta_route_small": "ᱱᱤᱛ ᱦᱚᱸ ᱵᱟᱢ ᱴᱷᱟᱹᱣᱠᱟᱹ ᱟᱠᱟᱫᱟ? ᱯᱮᱭᱟ ᱠᱷᱚᱡ ᱛᱮ ᱟᱢᱟᱜ ᱦᱚᱨ ᱯᱟᱱᱛᱮ ᱢᱮ",
     };            const MNI = {
+      f_district:'ꯖꯤꯂꯥ',
+      f_district_opt:'ꯖꯤꯂꯥ / ꯀꯥꯎꯟꯇꯤ (ꯑꯣꯄꯁꯅꯦꯜ)',
+      f_district_other:'ꯑꯇꯣꯞꯄ / ꯂꯤꯁ꯭ꯠꯇ ꯌꯥꯎꯗꯕ',
+      f_district_type:'ꯅꯍꯥꯛꯀꯤ ꯖꯤꯂꯥ ꯏꯕꯤꯌꯨ',
+      f_select_country:'ꯅꯍꯥꯛꯀꯤ ꯂꯩꯕꯥꯛ ꯈꯜꯕꯤꯌꯨ',
+      f_select_state:'ꯁ꯭ꯇꯦꯠ ꯅꯠꯇ꯭ꯔꯒ ꯄ꯭ꯔꯣꯚꯤꯟꯁ ꯈꯜꯕꯤꯌꯨ',
+      f_select_district:'ꯅꯍꯥꯛꯀꯤ ꯖꯤꯂꯥ ꯈꯜꯕꯤꯌꯨ',
+      f_phone_hint:'ꯃꯣꯕꯥꯏꯜ ꯅꯝꯕꯔ, ꯃꯁꯤꯡ ꯈꯛꯇ',
+      f_pin_hint:'ꯃꯁꯤꯡ 6 ꯂꯩꯕ PIN ꯀꯣꯗ',
+      v_required:'ꯃꯁꯤ ꯌꯥꯝꯅ ꯃꯔꯨꯑꯣꯏꯕ ꯋꯥꯐꯝꯅꯤ ꯫',
+      v_too_short:'ꯃꯁꯤ ꯌꯥꯝꯅ ꯇꯦꯟꯊꯣꯛꯄ ꯃꯥꯜꯂꯤ ꯫ ꯆꯥꯅꯕꯤꯗꯨꯅ ꯌꯦꯡꯁꯤꯟꯕꯤꯌꯨ ꯫',
+      v_too_long:'ꯃꯁꯤ ꯌꯥꯝꯅ ꯁꯥꯡꯂꯦ ꯫ ꯆꯥꯅꯕꯤꯗꯨꯅ ꯃꯁꯤ ꯇꯦꯟꯁꯤꯜꯂꯨ ꯫',
+      v_invalid_chars:'ꯆꯥꯅꯕꯤꯗꯨꯅ ꯃꯁꯤ ꯌꯦꯡꯁꯤꯟꯕꯤꯌꯨ ꯫ ꯃꯁꯤ ꯆꯨꯝꯗꯕ ꯃꯥꯜꯂꯤ ꯫',
+      v_invalid_email:'name@example.com ꯒꯨꯝꯕ ꯆꯨꯝꯕ ꯏꯃꯦꯜ ꯑꯦꯗ꯭ꯔꯦꯁ ꯑꯃ ꯏꯌꯨ ꯫',
+      v_invalid_phone:'ꯈꯜꯂꯕ ꯂꯩꯕꯥꯛ ꯑꯗꯨꯒꯤ ꯆꯨꯝꯕ ꯐꯣꯟ ꯅꯝꯕꯔ ꯏꯌꯨ, ꯃꯁꯤꯡ ꯈꯛꯇ ꯫',
+      v_invalid_pin:'ꯆꯨꯝꯕ PIN ꯅꯠꯇ꯭ꯔꯒ ꯄꯣꯁ꯭ꯇꯦꯜ ꯀꯣꯗ ꯑꯃ ꯏꯌꯨ ꯫',
+      v_invalid_pan:'ABCDE1234F ꯒꯨꯝꯕ ꯆꯨꯝꯕ PAN ꯑꯃ ꯏꯌꯨ ꯫',
+      v_invalid_selection:'ꯆꯥꯅꯕꯤꯗꯨꯅ ꯂꯤꯁ꯭ꯠ ꯑꯁꯤꯗꯒꯤ ꯑꯃ ꯈꯜꯕꯤꯌꯨ ꯫',
+      v_amount_range:'₹1 ꯑꯃꯁꯨꯡ ₹1,00,00,000 ꯒꯤ ꯃꯔꯛꯇ ꯁꯦꯟꯐꯝ ꯏꯌꯨ, ꯗꯦꯁꯤꯃꯦꯜ ꯑꯅꯤ ꯐꯥꯎꯕ ꯌꯥꯎꯅ ꯫',
+      v_invalid_date:'ꯁꯦꯟꯐꯝ ꯊꯥꯈꯤꯕ ꯇꯥꯡ ꯑꯗꯨ ꯏꯌꯨ: ꯇꯨꯡꯒꯤ ꯑꯣꯏꯔꯣꯏꯗꯕꯅꯤ, ꯑꯃꯁꯨꯡ ꯍꯧꯈꯤꯕ ꯆꯍꯤ ꯑꯍꯨꯃꯒꯤ ꯃꯅꯨꯡꯗ ꯑꯣꯏꯒꯗꯕꯅꯤ ꯫',
+      v_invalid_ref:'ꯁ꯭ꯇꯦꯠꯃꯦꯟ꯭ꯇꯇ ꯌꯥꯎꯕ ꯃꯇꯧ ꯆꯞ ꯃꯥꯟꯅꯅ ꯃꯌꯦꯛ ꯑꯃꯁꯨꯡ ꯃꯁꯤꯡ ꯁꯤꯖꯤꯟꯅꯗꯨꯅ ꯔꯦꯐꯔꯦꯟꯁ ꯏꯌꯨ ꯫',
+      v_fix_n:'ꯆꯥꯅꯕꯤꯗꯨꯅ ꯃꯈꯥ ꯆꯠꯊꯗ꯭ꯔꯤꯉꯩꯗ ꯈꯪꯍꯜꯂꯕ {n} ꯑꯗꯨ ꯁꯦꯃꯗꯣꯛꯎ ꯫',
     "foot_policies": "ꯅꯤꯇꯤ ꯑꯃꯁꯨꯡ ꯉꯥꯛꯊꯣꯛꯄꯤꯕ ꯑꯣꯏꯕꯁꯤꯡ",
     "foot_cookies": "ꯀꯨꯀꯤ ꯁꯦꯇꯤꯡ",
     "foot_concern": "ꯀꯟꯁꯦꯟꯠꯔꯦꯁꯟ ꯑꯃꯥ ꯔꯤꯄꯣꯔꯠ ꯇꯧꯕꯥ",
@@ -33546,6 +34154,78 @@ class Component extends DCLogic {
     fetch('/assets/geo/geo.v1.json').then(r => r.json()).then(j => { this._geo = j; this.forceUpdate(); }).catch(() => { this._geoLoading = false; });
     fetch('/assets/geo/in-districts.v1.json').then(r => r.json()).then(j => { this._dist = j; this.forceUpdate(); }).catch(() => { this._geoLoading = false; });
   }
+  // ---- PIN autofill (India): PIN -> state, district, place; and district -> the PINs to choose from ----
+  _loadPins() {
+    if (this._pins || this._pinsLoading) return;
+    this._pinsLoading = true;
+    fetch('/assets/geo/in-pins.v1.json').then(r => r.json()).then(j => {
+      this._pins = j;
+      const q = this._pinPending; this._pinPending = null;
+      if (q) this._pinFill(q.k, q.pin); else this.forceUpdate();
+    }).catch(() => { this._pinsLoading = false; });
+  }
+  _pinKeys(k) {
+    return k === 'rt'
+      ? { pin: 'rtPin', state: 'rtState', district: 'rtDistrict', other: 'rtDistrictOther', city: 'rtCity', cc: 'rtCC', note: 'rtPinNote' }
+      : { pin: 'dPin', state: 'dState', district: 'dDistrict', other: 'dDistrictOther', city: 'dCity', cc: 'dCC', note: 'dPinNote' };
+  }
+  _onPin(e, k) {
+    const K = this._pinKeys(k), v = e.target.value;
+    this.setState({ [K.pin]: v, [K.note]: '', pCopied: false, rtCopied: false });
+    const pin = String(v).replace(/\s/g, '');
+    if ((this.state[K.cc] || 'IN') === 'IN' && /^[1-9]\d{5}$/.test(pin)) this._pinFill(k, pin);
+  }
+  _pinFill(k, pin) {
+    if (!this._pins) { this._pinPending = { k, pin }; this._loadPins(); return; }
+    const hit = this._pins.pins[pin], K = this._pinKeys(k);
+    if (!hit) { this.forceUpdate(); return; }
+    const st = this._pins.states[hit[0]];
+    const list = (this._dist || {})[st] || [];
+    const district = hit[1] >= 0 ? list[hit[1]] : '';
+    // The PIN is the authority for state and district. City is only filled when the donor has not typed one.
+    this.setState(s2 => ({
+      [K.state]: st, [K.district]: district || (s2[K.state] === st ? s2[K.district] : ''), [K.other]: false,
+      [K.city]: String(s2[K.city] || '').trim() ? s2[K.city] : hit[2],
+      [K.note]: [hit[2], district, st].filter(Boolean).join(', '),
+    }));
+  }
+  // PINs offered for the chosen state and district, as [pin, place]. Cached; at most 600 shown.
+  _pinsFor(state, district) {
+    if (!this._pins || !state) return [];
+    const si = this._pins.states.indexOf(state);
+    if (si < 0) return [];
+    const di = district ? ((this._dist || {})[state] || []).indexOf(district) : -1;
+    if (!district || di < 0) return [];
+    this._pinCache = this._pinCache || {};
+    const ck = si + ':' + di;
+    if (!this._pinCache[ck]) {
+      const out = [];
+      for (const pin of Object.keys(this._pins.pins)) { const v = this._pins.pins[pin]; if (v[0] === si && v[1] === di) out.push([pin, v[2]]); }
+      this._pinCache[ck] = out.slice(0, 600);
+    }
+    return this._pinCache[ck];
+  }
+  _pinOnly(k) {
+    setTimeout(() => {
+      const K = this._pinKeys(k), S = this.state;
+      if ((S[K.cc] || 'IN') !== 'IN' || S[K.other] || String(S[K.pin] || '').trim()) return;
+      const c = this._pinsFor(S[K.state], S[K.district]);
+      if (c.length === 1) this.setState({ [K.pin]: c[0][0], [K.note]: c[0][1] + ', ' + S[K.district] + ', ' + S[K.state] });
+    }, 0);
+  }
+  _pinExtras(k, hint) {
+    const K = this._pinKeys(k), S = this.state, cc = S[K.cc] || 'IN';
+    const out = { hint, focus: () => this._loadPins(), listId: 'pin-list-' + k, hasList: false, listOptions: [], note: '', hasNote: false };
+    if (cc !== 'IN') return out;
+    const opts = this._pinsFor(S[K.state], S[K.district]).map(p => ({ v: p[0], l: p[0] + ' · ' + p[1] }));
+    out.hasList = opts.length > 0; out.listOptions = opts;
+    const pin = String(S[K.pin] || '').replace(/\s/g, '');
+    let note = '';
+    if (S[K.note]) note = String(this._dt('f_pin_filled')).replace('{place}', S[K.note]);
+    else if (this._pins && /^[1-9]\d{5}$/.test(pin) && !this._pins.pins[pin]) note = this._dt('f_pin_unknown');
+    out.note = note; out.hasNote = !!note;
+    return out;
+  }
   // ---- "Already transferred" form: same dropdowns and rules as the payment form ----
   _rtErrors() {
     const S = this.state;
@@ -33578,7 +34258,7 @@ class Component extends DCLogic {
       const base = info[k] || { type: 'text', label: '', hint: '', span: 'auto' };
       const m = msg(k);
       return Object.assign({ k, id: 'rt-' + k, label: base.label + (req[k] ? ' *' : ''), span: base.span, type: base.type, hint: base.hint, isText: false, isSelect: false, isPhone: false,
-        inputmode: '', ac: 'off', val: '', on: null, blur: touch(k), options: [], dialOptions: [], dialVal: '', onDial: null, err: m, hasErr: !!m, invalid: m ? 'true' : 'false',
+        inputmode: '', ac: 'off', val: '', on: null, blur: touch(k), focus: () => {}, listId: '', hasList: false, listOptions: [], note: '', hasNote: false, options: [], dialOptions: [], dialVal: '', onDial: null, err: m, hasErr: !!m, invalid: m ? 'true' : 'false',
         border: m ? 'var(--ac-red)' : 'var(--border)', min: '', max: '' }, o);
     };
     const text = (k, o) => mk(k, Object.assign({ isText: true, val: S[k] || '', on: set(k) }, o));
@@ -33597,20 +34277,21 @@ class Component extends DCLogic {
       options: [{ v: '', l: this._dt('f_select_country') }].concat(this._countryOptions().map(c => ({ v: c.v, l: c.l }))) }));
     const states = geo && geo.states ? geo.states[cc] : null;
     if (states && states.length) {
-      rows.push(mk('rtState', { isSelect: true, ac: 'address-level1', val: S.rtState || '', on: (e) => this.setState({ rtState: e.target.value, rtDistrict: '', rtDistrictOther: false }),
+      rows.push(mk('rtState', { isSelect: true, ac: 'address-level1', val: S.rtState || '', on: (e) => { this.setState({ rtState: e.target.value, rtDistrict: '', rtDistrictOther: false }); this._loadPins(); },
         options: [{ v: '', l: this._dt('f_select_state') }].concat(states.map(n => ({ v: n, l: n }))) }));
     }
     if (cc === 'IN') {
       const list = (dist[S.rtState] || []).map(n => ({ v: n, l: n }));
       rows.push(mk('rtDistrict', { isSelect: true, label: this._dt('f_district'), val: S.rtDistrictOther ? '__other__' : (S.rtDistrict || ''),
-        on: (e) => { const v = e.target.value; this.setState(v === '__other__' ? { rtDistrictOther: true, rtDistrict: '' } : { rtDistrict: v, rtDistrictOther: false }); },
+        on: (e) => { const v = e.target.value; this.setState(v === '__other__' ? { rtDistrictOther: true, rtDistrict: '' } : { rtDistrict: v, rtDistrictOther: false }); this._loadPins(); this._pinOnly('rt'); },
         options: [{ v: '', l: this._dt('f_select_district') }].concat(list, [{ v: '__other__', l: this._dt('f_district_other') }]) }));
       if (S.rtDistrictOther) rows.push(mk('rtDistrict', { isText: true, id: 'rt-rtDistrict-other', label: this._dt('f_district_type'), val: S.rtDistrict || '', on: set('rtDistrict') }));
     } else {
       rows.push(mk('rtDistrict', { isText: true, label: this._dt('f_district_opt'), val: S.rtDistrict || '', on: set('rtDistrict') }));
     }
     rows.push(text('rtCity', { ac: 'address-level2' }));
-    rows.push(text('rtPin', { ac: 'postal-code', inputmode: cc === 'IN' ? 'numeric' : 'text', hint: cc === 'IN' ? this._dt('f_pin_hint') : info.rtPin.hint }));
+    rows.push(text('rtPin', Object.assign({ ac: 'postal-code', inputmode: cc === 'IN' ? 'numeric' : 'text', on: (e) => this._onPin(e, 'rt') },
+      this._pinExtras('rt', cc === 'IN' ? this._dt('f_pin_hint') : info.rtPin.hint))));
     rows.push(text('rtCompany', { ac: 'organization' }));
     return rows;
   }
@@ -33652,10 +34333,11 @@ class Component extends DCLogic {
     return this._cOpt[lang];
   }
   _onCountry(e) { this.setState({ dCC: e.target.value, dDialIso: '', dState: '', dDistrict: '', dDistrictOther: false, dSrvErr: null, pCopied: false }); }
-  _onState(e) { this.setState({ dState: e.target.value, dDistrict: '', dDistrictOther: false, dSrvErr: null, pCopied: false }); }
+  _onState(e) { this.setState({ dState: e.target.value, dDistrict: '', dDistrictOther: false, dSrvErr: null, pCopied: false }); this._loadPins(); }
   _onDistrict(e) {
     const v = e.target.value;
     this.setState(v === '__other__' ? { dDistrictOther: true, dDistrict: '', dSrvErr: null } : { dDistrict: v, dDistrictOther: false, dSrvErr: null });
+    this._loadPins(); this._pinOnly('d');
   }
   _onDial(e) { this.setState({ dDialIso: e.target.value, dSrvErr: null }); }
   _donorFields(T) {
@@ -33664,7 +34346,7 @@ class Component extends DCLogic {
     const mk = (k, o) => {
       const m = this._dmsg(k, errs);
       return Object.assign({ k, id: 'df-' + k, label: '', span: 'auto', isText: false, isSelect: false, isPhone: false, type: 'text', hint: '', inputmode: '', ac: 'off',
-        val: '', on: null, blur: this._dblur(k), options: [], dialOptions: [], dialVal: '', onDial: null, err: m, hasErr: !!m, invalid: m ? 'true' : 'false',
+        val: '', on: null, blur: this._dblur(k), focus: () => {}, listId: '', hasList: false, listOptions: [], note: '', hasNote: false, options: [], dialOptions: [], dialVal: '', onDial: null, err: m, hasErr: !!m, invalid: m ? 'true' : 'false',
         border: m ? 'var(--ac-red)' : 'var(--border)' }, o, { label: (o.label || '') + (o.req ? ' *' : '') });
     };
     const text = (k, stateKey, o) => mk(k, Object.assign({ isText: true, val: S[stateKey] || '', on: this._pset(stateKey) }, o));
@@ -33691,7 +34373,8 @@ class Component extends DCLogic {
       rows.push(text('district', 'dDistrict', { label: this._dt('f_district_opt'), ac: 'address-level2' }));
     }
     rows.push(text('city', 'dCity', { label: T.f_city, req: true, ac: 'address-level2' }));
-    rows.push(text('postalCode', 'dPin', { label: T.f_postal_code, req: cc === 'IN', ac: 'postal-code', inputmode: cc === 'IN' ? 'numeric' : 'text', hint: cc === 'IN' ? this._dt('f_pin_hint') : '' }));
+    rows.push(text('postalCode', 'dPin', Object.assign({ label: T.f_postal_code, req: cc === 'IN', ac: 'postal-code', inputmode: cc === 'IN' ? 'numeric' : 'text', on: (e) => this._onPin(e, 'd') },
+      this._pinExtras('d', cc === 'IN' ? this._dt('f_pin_hint') : ''))));
     return rows;
   }
   _formSummary() {
