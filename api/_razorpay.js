@@ -107,4 +107,6 @@ function readContext(token) {
   return parsed;
 }
 
-module.exports = { api, amountPaise, body, contextToken, credentials, hmac, json, notes, readContext, requirePost, same };
+function isAlreadyCaptured(error) { return /already captured|payment has been captured|already been captured/i.test(String(error && error.message || error)); }
+async function captureAuthorizedPayment(paymentId, amount, currency) { try { return await api('payments/' + encodeURIComponent(paymentId) + '/capture', { amount, currency }); } catch (error) { if (isAlreadyCaptured(error)) return { status: 'captured' }; throw error; } }
+module.exports = { api, amountPaise, body, captureAuthorizedPayment, contextToken, credentials, hmac, isAlreadyCaptured, json, notes, readContext, requirePost, same };

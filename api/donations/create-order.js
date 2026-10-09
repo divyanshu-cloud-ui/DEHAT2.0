@@ -8,6 +8,7 @@ module.exports = async function handler(req, res) {
     const amount = amountPaise(input.amount);
     const order = await api('orders', {
       amount, currency: 'INR', receipt: ('dehat_' + crypto.randomUUID()).slice(0, 40),
+      payment_capture: true,
       notes: notes(input),
     });
     const token = contextToken({ kind: 'order', id: order.id, amount, currency: 'INR', createdAt: Date.now() });

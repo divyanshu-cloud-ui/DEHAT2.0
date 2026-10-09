@@ -1,4 +1,4 @@
-const { api, body, credentials, hmac, json, readContext, requirePost, same } = require('../_razorpay');
+const { api, body, captureAuthorizedPayment, credentials, hmac, json, readContext, requirePost, same } = require('../_razorpay');
 
 module.exports = async function handler(req, res) {
   if (!requirePost(req, res)) return;
@@ -19,7 +19,8 @@ module.exports = async function handler(req, res) {
     if (payment.currency !== context.currency || Number(payment.amount) !== Number(context.amount)) throw new Error('Payment amount or currency mismatch');
     if (context.kind === 'order' && payment.order_id !== context.id) throw new Error('Payment is not linked to this order');
     if (context.kind === 'subscription' && payment.subscription_id !== context.id) throw new Error('Payment is not linked to this subscription');
-    if (!['authorized', 'captured'].includes(payment.status)) throw new Error('Payment is not authorized');
+    if (payment.status === 'authorized') await captureAuthorizedPayment(paymentId, context.amount, context.currency);
+    else if (payment.status !== 'captured') throw new Error('Payment is not authorized');
     json(res, 200, { verified: true, paymentId });
   } catch (error) {
     json(res, 400, { verified: false, error: error.message });
