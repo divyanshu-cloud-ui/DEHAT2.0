@@ -34041,7 +34041,7 @@ class Component extends DCLogic {
       testMode: this._pmode === 'test',
       g80Label: P.f80g, g80On: S.d80g, g80Mark: S.d80g ? '\u2713' : '', toggle80: this._ptog('d80g'),
       anonLabel: P.fAnon, anonOn: S.dAnon, anonMark: S.dAnon ? '\u2713' : '', toggleAnon: this._ptog('dAnon'),
-      dpNote: P.dpNote, paySafe: P.paySafe, payMissing: P.payMissing,
+      dpNote: P.dpNote, paySafe: P.paySafe, payMissing: fcra ? (P.payMissingFcra || P.payMissing) : (P.payMissingInr || P.payMissing),
       payLabel: fcra ? this._dt('pay_foreign_btn') : P.payNow, canPay: this._amt() > 0,
       payForeignNote: this._dt('pay_foreign_note'),
       payAccount: fcra ? P.payForeign : P.payDomestic,
