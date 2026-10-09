@@ -19,7 +19,11 @@ async function handler(req, res) {
   for await (const chunk of req) chunks.push(Buffer.from(chunk));
   const raw = Buffer.concat(chunks);
   const signature = req.headers['x-razorpay-signature'];
-  if (!same(hmac(raw, secret), signature)) return json(res, 400, { error: 'Invalid webhook signature' });
+  if (!same(hmac(raw, secret), signature)) {
+    // Diagnostic only: no secret, signature value or body content is logged.
+    console.log(JSON.stringify({ source: 'razorpay-domestic', rejected: 'invalid_signature', has_signature: Boolean(signature), body_bytes: raw.length, secret_chars: secret.length }));
+    return json(res, 400, { error: 'Invalid webhook signature' });
+  }
   let event;
   try { event = JSON.parse(raw.toString('utf8')); } catch (_) { return json(res, 400, { error: 'Invalid JSON' }); }
   console.log(JSON.stringify({ source: 'razorpay-domestic', event: event.event, created_at: event.created_at }));
