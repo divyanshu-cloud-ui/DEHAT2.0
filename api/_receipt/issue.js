@@ -47,7 +47,8 @@ async function issueReceipt({ payment, eventTime, subscriptionNotes }, deps) {
   const { store, mailer, log } = deps;
   let notes = plainNotes(payment && payment.notes);
   // A recurring charge carries an empty payment 'notes'; the donor's details are on the subscription (subscription.charged event).
-  if (!notes.receipt_80g && subscriptionNotes) notes = plainNotes(subscriptionNotes);
+  // The subscription's notes win; the payment's own notes (which may be partial) only fill gaps.
+  if (subscriptionNotes) notes = Object.assign({}, notes, plainNotes(subscriptionNotes));
   const recurring = Boolean(subscriptionNotes || (payment && payment.invoice_id));
   if (payment && payment.order_id && !payment.invoice_id && !notes.receipt_80g && deps.fetchOrder) {
     try { notes = plainNotes((await deps.fetchOrder(payment.order_id)).notes); } catch (_) { return { status: 503, outcome: 'order_lookup_failed' }; }

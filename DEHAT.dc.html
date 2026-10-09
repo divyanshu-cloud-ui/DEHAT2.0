@@ -3162,26 +3162,7 @@
                 <input id="df-pan" type="text" value="{{ pv.panVal }}" onChange="{{ pv.onPan }}" placeholder="{{ pv.panHint }}" style="font-family:ui-monospace,Menlo,monospace;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.panBorder }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                 <sc-if value="{{ pv.hasPanErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ pv.panErr }}</span></sc-if>
               </label>
-              <label style="display:flex;flex-direction:column;gap:5px;margin-top:12px">
-                <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.aadhaarLabel }}</span>
-                <input type="text" value="{{ pv.aadhaarVal }}" onChange="{{ pv.onAadhaar }}" placeholder="{{ pv.aadhaarHint }}" style="font-family:ui-monospace,Menlo,monospace;font-size:15px;letter-spacing:.08em;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
-                <span style="font-size:12.5px;line-height:1.5;color:var(--faint);text-wrap:pretty">{{ pv.aadhaarNote }}</span>
-              </label>
-              <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;padding:14px 16px;border-radius:14px;border:1px dashed var(--border);background:var(--surface)">
-                <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.inrDocLabel }}</span>
-                <p style="font-size:13px;line-height:1.55;color:var(--dim);margin:0;text-wrap:pretty">{{ pv.inrDocNote }}</p>
-                <sc-if value="{{ pv.hasInrDocs }}" hint-placeholder-val="{{ false }}">
-                  <div style="display:flex;flex-wrap:wrap;gap:8px">
-                    <sc-for list="{{ pv.inrDocs }}" as="fd" hint-placeholder-count="2">
-                      <span style="display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:{{ fd.col }};border:1px solid var(--border);border-radius:999px;padding:7px 8px 7px 14px">{{ fd.name }}<button class="attachment-remove tap-hit tap-icon-small" onClick="{{ fd.remove }}" aria-label="{{ T.aria_remove_attachment }}" style="cursor:pointer;font-family:inherit;width:20px;height:20px;border-radius:50%;border:none;background:var(--surface2);color:var(--faint);font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center">×</button></span>
-                    </sc-for>
-                  </div>
-                </sc-if>
-                <input type="file" accept="image/*,application/pdf" multiple="{{ true }}" onChange="{{ pv.onInrDocs }}" style="font-family:inherit;font-size:13.5px;color:var(--dim)">
-                <sc-if value="{{ pv.hasInrDocs }}" hint-placeholder-val="{{ false }}">
-                  <span style="font-size:12px;color:var(--faint)">{{ pv.addMoreLabel }}</span>
-                </sc-if>
-              </div>
+              
             </sc-if>
 
             <sc-if value="{{ pv.isFcra }}" hint-placeholder-val="{{ false }}">
@@ -3194,21 +3175,7 @@
                   <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.idRefLabel }}</span>
                   <input type="text" value="{{ pv.idRefVal }}" onChange="{{ pv.onIdRef }}" placeholder="{{ pv.idRefHint }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
                 </label>
-                <div style="display:flex;flex-direction:column;gap:8px;padding:14px 16px;border-radius:14px;border:1px dashed var(--border);background:var(--surface)">
-                  <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.passportLabel }}</span>
-                  <p style="font-size:13px;line-height:1.55;color:var(--dim);margin:0;text-wrap:pretty">{{ pv.passportNote }}</p>
-                  <sc-if value="{{ pv.hasPassportFiles }}" hint-placeholder-val="{{ false }}">
-                    <div style="display:flex;flex-wrap:wrap;gap:8px">
-                      <sc-for list="{{ pv.passportFiles }}" as="pf" hint-placeholder-count="2">
-                        <span style="display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:{{ pf.col }};border:1px solid var(--border);border-radius:999px;padding:7px 8px 7px 14px">{{ pf.name }}<button class="attachment-remove tap-hit tap-icon-small" onClick="{{ pf.remove }}" aria-label="{{ T.aria_remove_attachment }}" style="cursor:pointer;font-family:inherit;width:20px;height:20px;border-radius:50%;border:none;background:var(--surface2);color:var(--faint);font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center">×</button></span>
-                      </sc-for>
-                    </div>
-                  </sc-if>
-                  <input type="file" accept="image/*,application/pdf" multiple="{{ true }}" onChange="{{ pv.onPassport }}" style="font-family:inherit;font-size:13.5px;color:var(--dim)">
-                  <sc-if value="{{ pv.hasPassportFiles }}" hint-placeholder-val="{{ false }}">
-                    <span style="font-size:12px;color:var(--faint)">{{ pv.addMoreLabel }}</span>
-                  </sc-if>
-                </div>
+                
               </div>
             </sc-if>
 
@@ -34034,19 +34001,6 @@ class Component extends DCLogic {
       countryLabel: P.fIdCountry, countryVal: S.dCountry, onCountry: this._pset('dCountry'),
       idRefLabel: P.fIdRef, idRefVal: S.dIdRef, onIdRef: this._pset('dIdRef'),
       idRefHint: P.fIdRefHint,
-      // Know-your-investor requirements. Aadhaar is taken masked - only the last four
-      // digits - because the full number is neither needed nor safe to hold.
-      aadhaarLabel: P.fAadhaar, aadhaarHint: P.fAadhaarHint, aadhaarNote: P.fAadhaarNote,
-      aadhaarVal: S.dAadhaar || '', onAadhaar: this._pset('dAadhaar'),
-      inrDocLabel: P.fInrDocs, inrDocNote: P.fInrDocsNote,
-      hasInrDocs: (S.dInrDocs || []).length > 0,
-      inrDocs: this._fileChips('dInrDocs', 'var(--ac-gold)'),
-      onInrDocs: this._fileAdd('dInrDocs'),
-      addMoreLabel: T.add_another_attachment,
-      passportLabel: P.fPassport, passportNote: P.fPassportNote,
-      hasPassportFiles: (S.dPassportFiles || []).length > 0,
-      passportFiles: this._fileChips('dPassportFiles', 'var(--ac-teal)'),
-      onPassport: this._fileAdd('dPassportFiles'),
       // Identity and contact detail the receipt and the statutory return both need,
       // asked alongside the KYC documents rather than after the payment.
       donorFields: this._donorFields(T),
@@ -34685,24 +34639,6 @@ class Component extends DCLogic {
           rtDraft: true });
       },
     };
-  }
-  // Attachments accumulate across picks. A native file input replaces its selection
-  // every time, so a second pick would silently drop the first document.
-  _fileAdd(key) {
-    return (e) => {
-      const picked = [].slice.call((e.target && e.target.files) || []).map(f => f.name);
-      if (!picked.length) return;
-      const have = this.state[key] || [];
-      const merged = have.concat(picked.filter(n => have.indexOf(n) < 0));
-      this.setState({ [key]: merged });
-      try { e.target.value = ''; } catch (err) {}
-    };
-  }
-  _fileChips(key, col) {
-    return (this.state[key] || []).map((name, i) => ({
-      k: key + i, name, col,
-      remove: () => this.setState(s => ({ [key]: (s[key] || []).filter((_, j) => j !== i) })),
-    }));
   }
   // ---- Ask the Record ----
   // A retrieval desk, not a generative one. It scores the reader's question against the
