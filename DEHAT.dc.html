@@ -34208,6 +34208,8 @@ class Component extends DCLogic {
   _loadPayMode() {
     if (this._payModeLoading) return;
     this._payModeLoading = true;
+    // Local test servers have no payment API; only the real site (and its Vercel previews) can report a mode.
+    if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;
     fetch('/api/donations/status').then(r => r.json()).then(j => { this._pmode = j && j.mode; this.forceUpdate(); }).catch(() => {});
   }
   // Donor form: the same validation module the server uses, plus the country / state / district lists.
