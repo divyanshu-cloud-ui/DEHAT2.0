@@ -5,6 +5,8 @@ const { mailStrings } = require('./assets');
 const LANGS = Object.keys(mailStrings);
 // Every receipt is also copied (BCC, so the donor does not see it) to the organisation's finance and donations mailboxes.
 const DEFAULT_BCC = 'finance@dehatindia.org,donate@dehatindia.org';
+// Replies to the receipt email reach a person, not the sending mailbox.
+const DEFAULT_REPLY_TO = 'joinus@dehatindia.org';
 
 function validLang(value) { return LANGS.includes(String(value || '')) ? String(value) : 'en'; }
 
@@ -31,11 +33,11 @@ function transportFromEnv(env = process.env) {
   const transport = nodemailer.createTransport({ host, port, secure: port === 465, auth: { user, pass }, connectionTimeout: 15000, socketTimeout: 20000 });
   return {
     async send(message) {
-      const info = await transport.sendMail({ from, bcc: env.RECEIPT_BCC || DEFAULT_BCC, replyTo: env.RECEIPT_REPLY_TO || undefined, ...message });
+      const info = await transport.sendMail({ from, bcc: env.RECEIPT_BCC || DEFAULT_BCC, replyTo: env.RECEIPT_REPLY_TO || DEFAULT_REPLY_TO, ...message });
       if (!info.accepted || !info.accepted.length) throw new Error('Mail server accepted no recipient');
       return info;
     },
   };
 }
 
-module.exports = { DEFAULT_BCC, fill, mailText, transportFromEnv, validLang };
+module.exports = { DEFAULT_BCC, DEFAULT_REPLY_TO, fill, mailText, transportFromEnv, validLang };

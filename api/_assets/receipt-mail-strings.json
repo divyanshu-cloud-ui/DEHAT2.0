@@ -1,8 +1,8 @@
 {
   "strings": {
     "en": {
-      "receipt_mail_subject": "Your DEHAT donation receipt {receipt}",
-      "receipt_mail_body": "Thank you for investing with DEHAT. Your 80G donation receipt {receipt} for {amount} is attached. Please keep it for your tax records. If anything looks wrong, reply to this email."
+      "receipt_mail_subject": "You're in. Your DEHAT receipt {receipt} is attached",
+      "receipt_mail_body": "Dear friend,\n\nThank you. With {amount}, you have become a social investor in a world where every child's rights are recognised and upheld. That is not a small thing, and we don't treat it as one.\n\nYour 80G receipt, number {receipt}, is attached. Please keep it for your tax records.\n\nWhat happens now is up to both of us. Here are three ways to stay in this with us, and each takes under a minute:\n\n1. Tell us why you gave. Reply with one line. We read every reply, and your reason often moves us more than the amount.\n2. Pass it on. Forward this email, or send dehatindia.org to one person who would care. One conversation from you does more than any advertisement we could run.\n3. Bring more than money. If you have time, skills or contacts that could help, say so in your reply. Many of our best ideas have come from people who first wrote just to say hello.\n\nYou will always be able to see where your rupee went. Every year of our accounts is audited, and what you invest is reported against the work it paid for.\n\nIf anything on the receipt looks wrong, reply and we will fix it.\n\nWith Gratitude, Love and Peace,\nThe DEHAT Team\ndehatindia.org"
     },
     "hi": {
       "receipt_mail_subject": "आपकी DEHAT दान रसीद {receipt}",

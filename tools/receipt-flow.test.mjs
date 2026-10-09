@@ -76,6 +76,10 @@ test('Hindi mail text is chosen from donor_lang', () => {
   assert.notEqual(mail.mailText('hi', 'R1', 100000).subject, mail.mailText('en', 'R1', 100000).subject);
   assert.equal(mail.mailText('zz', 'R1', 100000).subject, mail.mailText('en', 'R1', 100000).subject);
   assert.match(mail.mailText('en', 'R1', 123456).text, /Rs 1,234\.56/);
+  const en = mail.mailText('en', 'DEHAT/80G/2026-27/000001', 100000);
+  assert.equal(en.text.split('DEHAT/80G/2026-27/000001').length - 1, 2);
+  assert.match(en.text, /Love and Peace/);
+  assert.equal(mail.DEFAULT_REPLY_TO, 'joinus@dehatindia.org');
 });
 test('nothing issued when not eligible', async () => {
   for (const [p, why] of [[pay('p2', { notes: { ...notes, receipt_80g: 'not_requested' } }), 'receipt_not_requested'], [pay('p3', { notes: { ...notes, pan: 'BAD' } }), 'invalid_pan'], [pay('p4', { notes: { ...notes, donor_email: 'x' } }), 'invalid_email'], [pay('p5', { status: 'authorized' }), 'not_captured']]) {
