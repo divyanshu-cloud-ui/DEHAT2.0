@@ -67,7 +67,7 @@ try{
   assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),'https://dehatindia.org/');
   report.navigation={sameDocument:true,back:true,canonicalUpdated:true};await page.close();
   for(const endpoint of API_ENDPOINTS){const response=await fetch(local.origin+endpoint.path,{method:'DELETE'});assert.equal(response.status,405);report.api.push({path:endpoint.path,method:'DELETE',status:response.status});}
-  const config=await fetch(local.origin+'/api/paypal/config');report.api.push({path:'/api/paypal/config',method:'GET',status:config.status,note:'No provider credentials supplied; a configuration error is expected locally.'});
+  const config=await fetch(local.origin+'/api/donations/status');report.api.push({path:'/api/donations/status',method:'GET',status:config.status,note:'No provider credentials supplied; a configuration error is expected locally.'});
   assert.equal(config.status,500);
   report.result='PASS';
 }catch(error){report.result='FAIL';report.failure=error.stack;process.exitCode=1;console.error(error.message);}

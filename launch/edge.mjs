@@ -8,12 +8,12 @@ export const CSP_SOURCES = Object.freeze(Object.fromEntries(Object.entries({
   'object-src': ["'none'"],
   'base-uri': ["'self'"],
   'frame-ancestors': ["'self'"],
-  'script-src': ["'self'","'unsafe-inline'","'unsafe-eval'",'https://unpkg.com','https://checkout.razorpay.com','https://www.paypal.com'],
+  'script-src': ["'self'","'unsafe-inline'","'unsafe-eval'",'https://unpkg.com','https://checkout.razorpay.com','https://cdn.razorpay.com'],
   'style-src': ["'self'","'unsafe-inline'",'https://fonts.googleapis.com'],
   'font-src': ["'self'",'https://fonts.gstatic.com'],
   'img-src': ["'self'",'data:','blob:'],
-  'connect-src': ["'self'",'https://api.razorpay.com','https://www.paypal.com'],
-  'frame-src': ["'self'",'https://checkout.razorpay.com','https://www.paypal.com'],
+  'connect-src': ["'self'",'https://api.razorpay.com','https://lumberjack.razorpay.com'],
+  'frame-src': ["'self'",'https://checkout.razorpay.com','https://api.razorpay.com'],
 }).map(([directive,sources])=>[directive,Object.freeze(sources)])));
 
 const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');

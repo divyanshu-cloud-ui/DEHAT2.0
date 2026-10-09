@@ -8,7 +8,7 @@ const origin='https://dehatindia.org';const redirects=[
 ];
 const documents=[{path:'/',file:'index.html'},{path:'/impact',file:'impact/index.html'},{path:'/privacy-policy/',file:'privacy-policy/index.html'}];
 const publishedPaths=new Set(['/', '/impact','/privacy-policy/','/robots.txt','/sitemap.xml','/dehat-og.png']);
-const inputs={origin,redirects,routes:documents,publishedPaths,files:['index.html'],apis:[{path:'/api/paypal/config'}]};
+const inputs={origin,redirects,routes:documents,publishedPaths,files:['index.html'],apis:[{path:'/api/donations/status'}]};
 const matching=(rules,path,host='dehatindia.org')=>rules.filter(r=>r.src&&new RegExp(r.src).test(path)&&(!r.has||r.has.every(h=>h.type!=='host'||new RegExp(h.value).test(host))));
 test('preview has noindex, security and appropriate status rules',()=>{
  const before=JSON.stringify(inputs);const rules=buildRoutes({...inputs,mode:'preview'});
@@ -48,7 +48,8 @@ test('production enforces published destinations and canonical www; preview cach
 });
 test('report-only CSP carries only measured or source referenced origins',()=>{
  const policy=buildRoutes({...inputs,mode:'preview'})[1].headers['Content-Security-Policy-Report-Only'];
- for(const host of ['https://unpkg.com','https://fonts.googleapis.com','https://fonts.gstatic.com','https://checkout.razorpay.com','https://www.paypal.com'])assert.ok(policy.includes(host),host);
+ for(const host of ['https://unpkg.com','https://fonts.googleapis.com','https://fonts.gstatic.com','https://checkout.razorpay.com','https://cdn.razorpay.com','https://api.razorpay.com','https://lumberjack.razorpay.com'])assert.ok(policy.includes(host),host);
+ assert.ok(!/paypal/i.test(policy),'PayPal must not appear in the content-security policy');
  assert.ok(policy.includes("'unsafe-eval'"));assert.ok(Object.isFrozen(CSP_SOURCES));
 });
 
@@ -63,7 +64,7 @@ test('combined normalisation and encoded redirects terminate in one hop',()=>{
 });
 test('API and asset caches are exclusive and www receives security headers',()=>{
  const rules=buildRoutes({...inputs,mode:'production',publishedPaths:new Set([...publishedPaths,'/work'])});
- for(const [path,value] of [['/api/paypal/config','no-store'],['/assets/image.png','public, max-age=86400, stale-while-revalidate=604800']])assert.deepEqual(matching(rules,path).filter(r=>r.headers?.['Cache-Control']).map(r=>r.headers['Cache-Control']),[value]);
+ for(const [path,value] of [['/api/donations/status','no-store'],['/assets/image.png','public, max-age=86400, stale-while-revalidate=604800']])assert.deepEqual(matching(rules,path).filter(r=>r.headers?.['Cache-Control']).map(r=>r.headers['Cache-Control']),[value]);
  const headers={};for(const r of matching(rules,'/impact','www.dehatindia.org')){Object.assign(headers,r.headers);if(r.status)break;}
  assert.equal(headers['X-Content-Type-Options'],'nosniff');assert.equal(headers.Location,origin+'$1');
 });

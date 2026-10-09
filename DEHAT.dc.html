@@ -3080,6 +3080,9 @@
           <button class="ib-ctl" type="button"></button>
           <div class="ib-prog" aria-hidden="true"></div>
         </div>
+        <sc-if value="{{ pv.testMode }}" hint-placeholder-val="{{ false }}">
+          <p role="status" style="margin:0 0 18px;padding:12px 16px;border-radius:14px;border:1.5px solid var(--ac-red);font-size:14px;line-height:1.55;font-weight:700;color:var(--ac-red)">Test Mode: this page is connected to Razorpay's test system. No real money is taken here, and any receipt is for testing only.</p>
+        </sc-if>
         <div data-anchor="give-choices" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin:0 0 clamp(26px,3.4vw,40px)">
           <button type="button" onClick="{{ pv.goPayForm }}" class="tap-hit" style="cursor:pointer;font-family:inherit;text-align:start;display:flex;flex-direction:column;gap:6px;padding:18px 20px;border-radius:18px;border:1.5px solid var(--ac-gold);background:transparent;color:var(--text)" style-hover="transform:translateY(-2px)">
             <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:19px;line-height:1.2">{{ pv.choicePayT }}</span>
@@ -4841,6 +4844,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     this._loadGeo();
+    this._loadPayMode();
     if (window.DEHAT_LAUNCH) window.DEHAT_LAUNCH.attach(this);
     this._applyTheme();
     // Open in the language the device asks for, without recording it as a choice the
@@ -33998,6 +34002,7 @@ class Component extends DCLogic {
       panErr: this._dmsg('pan'), hasPanErr: !!this._dmsg('pan'), panBorder: this._dmsg('pan') ? 'var(--ac-red)' : 'var(--border)',
       amountErr: this._dmsg('amount'), hasAmountErr: !!this._dmsg('amount'),
       formMsg: this._formSummary(), hasFormMsg: !!this._formSummary(),
+      testMode: this._pmode === 'test',
       g80Label: P.f80g, g80On: S.d80g, g80Mark: S.d80g ? '\u2713' : '', toggle80: this._ptog('d80g'),
       anonLabel: P.fAnon, anonOn: S.dAnon, anonMark: S.dAnon ? '\u2713' : '', toggleAnon: this._ptog('dAnon'),
       dpNote: P.dpNote, paySafe: P.paySafe, payMissing: P.payMissing,
@@ -34143,6 +34148,12 @@ class Component extends DCLogic {
     this._ptogs = this._ptogs || {};
     if (!this._ptogs[k]) this._ptogs[k] = () => this.setState(s => ({ [k]: !s[k] }));
     return this._ptogs[k];
+  }
+  // Launch fail-safe: if the payment system is still on Razorpay's test keys, say so on the page instead of letting visitors believe a gift is real.
+  _loadPayMode() {
+    if (this._payModeLoading) return;
+    this._payModeLoading = true;
+    fetch('/api/donations/status').then(r => r.json()).then(j => { this._pmode = j && j.mode; this.forceUpdate(); }).catch(() => {});
   }
   // Donor form: the same validation module the server uses, plus the country / state / district lists.
   _loadGeo() {
@@ -34416,98 +34427,6 @@ class Component extends DCLogic {
       anonymous: !!S.dAnon,
       statutory: fcra ? 'FC-4 annual return; no 80G' : 'Form 10BD statement; 80G certificate 10BE',
     };
-  }
-  async _paypalSdk(currency) {
-    const configured = await fetch('/api/paypal/config');
-    const config = await configured.json();
-    if (!configured.ok) throw new Error(config.error || 'PayPal is not configured');
-    const key = config.clientId + ':' + currency;
-    if (window.paypal && window.__dehatPayPalKey === key) return window.paypal;
-    const previous = document.getElementById('dehat-paypal-sdk');
-    if (previous) previous.remove();
-    delete window.paypal;
-    await new Promise((resolve, reject) => {
-      const script = document.createElement('script');
-      script.id = 'dehat-paypal-sdk';
-      script.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(config.clientId)
-        + '&currency=' + encodeURIComponent(currency) + '&intent=capture&components=buttons,funding-eligibility';
-      script.async = true;
-      script.onload = resolve;
-      script.onerror = () => reject(new Error('Secure PayPal checkout could not be loaded'));
-      document.head.appendChild(script);
-    });
-    if (!window.paypal) throw new Error('Secure PayPal checkout could not be loaded');
-    window.__dehatPayPalKey = key;
-    return window.paypal;
-  }
-  async _paypalCheckout(p) {
-    if (p.frequency !== 'once') {
-      throw new Error('International recurring contributions require PayPal subscription approval and fixed live plan IDs. Please choose One time for now.');
-    }
-    const paypal = await this._paypalSdk(p.currency);
-    const old = document.getElementById('dehat-paypal-layer');
-    if (old) old.remove();
-    const layer = document.createElement('div');
-    layer.id = 'dehat-paypal-layer';
-    layer.setAttribute('role', 'dialog');
-    layer.setAttribute('aria-modal', 'true');
-    layer.setAttribute('aria-label', 'DEHAT international contribution checkout');
-    layer.style.cssText = 'position:fixed;inset:0;z-index:2147483000;background:rgba(21,16,9,.78);display:grid;place-items:center;padding:20px';
-    const card = document.createElement('div');
-    card.style.cssText = 'width:min(480px,100%);max-height:calc(100vh - 40px);overflow:auto;background:#fff;color:#151009;border-radius:20px;padding:24px;box-shadow:0 24px 80px rgba(0,0,0,.35)';
-    const title = document.createElement('div');
-    title.style.cssText = 'font:800 22px/1.25 system-ui;margin:0 36px 6px 0;color:#0E5565';
-    title.textContent = 'DEHAT · International contribution';
-    const note = document.createElement('div');
-    note.style.cssText = 'font:14px/1.5 system-ui;color:#514b45;margin-bottom:18px';
-    note.textContent = p.currency + ' ' + Number(p.amount).toFixed(p.currency === 'JPY' ? 0 : 2)
-      + ' · Foreign contribution under FCRA · No Indian 80G benefit';
-    const close = document.createElement('button');
-    close.type = 'button';
-    close.setAttribute('aria-label', 'Close PayPal checkout');
-    close.textContent = '\u00d7';
-    close.style.cssText = 'float:right;border:0;background:transparent;font:28px/1 system-ui;cursor:pointer;color:#514b45';
-    close.onclick = () => layer.remove();
-    const buttons = document.createElement('div');
-    const status = document.createElement('div');
-    status.setAttribute('aria-live', 'polite');
-    status.style.cssText = 'font:13px/1.45 system-ui;color:#514b45;margin-top:12px';
-    card.appendChild(close); card.appendChild(title); card.appendChild(note); card.appendChild(buttons); card.appendChild(status);
-    layer.appendChild(card); document.body.appendChild(layer);
-    layer.addEventListener('click', e => { if (e.target === layer) layer.remove(); });
-    let contextToken = '';
-    await paypal.Buttons({
-      style: { layout: 'vertical', shape: 'pill', label: 'paypal', color: 'gold' },
-      createOrder: async () => {
-        status.textContent = 'Preparing secure checkout\u2026';
-        const response = await fetch('/api/paypal/create-order', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            amount: p.amount, currency: p.currency, purpose: p.purpose,
-            regime: 'fcra_foreign', fullName: p.fullName, email: p.email,
-            country: p.country, idRef: p.idRef, address: p.address,
-          }),
-        });
-        const setup = await response.json();
-        if (!response.ok) throw new Error(setup.error || 'Unable to prepare PayPal payment');
-        contextToken = setup.contextToken;
-        status.textContent = '';
-        return setup.orderId;
-      },
-      onApprove: async data => {
-        status.textContent = 'Confirming your contribution\u2026';
-        const response = await fetch('/api/paypal/capture-order', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ orderId: data.orderID, contextToken }),
-        });
-        const proof = await response.json();
-        if (!response.ok || !proof.verified) throw new Error(proof.error || 'PayPal confirmation could not be verified');
-        status.textContent = 'Thank you. PayPal confirmed contribution ' + proof.captureId + '.';
-        this.setState({ dStage: 1 });
-      },
-      onCancel: () => { status.textContent = 'Checkout was cancelled. No contribution was captured.'; },
-      onError: error => { status.textContent = (error && error.message) || 'PayPal checkout could not be completed.'; },
-    }).render(buttons);
   }
   _loadRazorpay() {
     if (typeof window === 'undefined') return Promise.reject(new Error('Secure checkout could not be loaded. Please refresh and try again.'));

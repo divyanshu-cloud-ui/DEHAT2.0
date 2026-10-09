@@ -41,9 +41,7 @@ export const API_ROUTES = freezeRecords([
   { path: '/api/donations/create-subscription', method: 'POST' },
   { path: '/api/donations/verify', method: 'POST' },
   { path: '/api/donations/webhook', method: 'POST' },
-  { path: '/api/paypal/config', method: 'GET' },
-  { path: '/api/paypal/create-order', method: 'POST' },
-  { path: '/api/paypal/capture-order', method: 'POST' },
+  { path: '/api/donations/status', method: 'GET' },
 ]);
 
 const LANG_SET = new Set(LANGUAGES);
