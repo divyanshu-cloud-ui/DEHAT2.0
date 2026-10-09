@@ -58,3 +58,4 @@ Desktop.ini
 /.vercel/
 /generated/*.staging-*/
 .DS_Store
+node_modules/

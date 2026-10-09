@@ -33627,6 +33627,7 @@ class Component extends DCLogic {
           anonymous: p.anonymous, regime: 'domestic_inr',
           fullName: p.fullName, email: p.email, phone: p.phone,
           city: p.city, state: p.state, postalCode: p.postalCode, country: p.addressCountry,
+          lang: this.state.lang,
         }),
       });
       const setup = await response.json();

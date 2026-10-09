@@ -1,0 +1,116 @@
+{
+  "strings": {
+    "en": {
+      "receipt_mail_subject": "Your DEHAT donation receipt {receipt}",
+      "receipt_mail_body": "Thank you for investing with DEHAT. Your 80G donation receipt {receipt} for {amount} is attached. Please keep it for your tax records. If anything looks wrong, reply to this email."
+    },
+    "hi": {
+      "receipt_mail_subject": "आपकी DEHAT दान रसीद {receipt}",
+      "receipt_mail_body": "DEHAT के साथ जुड़ने के लिए धन्यवाद। {amount} के लिए आपकी 80G दान रसीद {receipt} संलग्न है। कृपया इसे अपने टैक्स रिकॉर्ड के लिए रखें। यदि कुछ गलत लगे, तो इस ईमेल का उत्तर दें।"
+    },
+    "zh": {
+      "receipt_mail_subject": "您的 DEHAT 捐款收据 {receipt}",
+      "receipt_mail_body": "感谢您支持 DEHAT。随信附上金额为 {amount} 的 80G 捐款收据 {receipt}。请妥善保存以备税务记录之用。如有任何疑问，请直接回复此邮件。"
+    },
+    "fr": {
+      "receipt_mail_subject": "Votre reçu de don DEHAT {receipt}",
+      "receipt_mail_body": "Merci de votre investissement aux côtés de DEHAT. Votre reçu de don 80G {receipt} d'un montant de {amount} est joint. Veuillez le conserver pour vos déclarations fiscales. En cas d'erreur, répondez à cet e-mail."
+    },
+    "ru": {
+      "receipt_mail_subject": "Ваша квитанция о пожертвовании DEHAT {receipt}",
+      "receipt_mail_body": "Спасибо за поддержку DEHAT. Ваша квитанция о пожертвовании 80G {receipt} на сумму {amount} прикреплена к письму. Пожалуйста, сохраните ее для налоговой отчетности. Если что-то указано неверно, ответьте на это письмо."
+    },
+    "es": {
+      "receipt_mail_subject": "Su recibo de donación de DEHAT {receipt}",
+      "receipt_mail_body": "Gracias por apoyar a DEHAT. Se adjunta su recibo de donación 80G {receipt} por un importe de {amount}. Consérvelo para sus registros fiscales. Si observa algún error, responda a este correo."
+    },
+    "ar": {
+      "receipt_mail_subject": "إيصال تبرعك لـ DEHAT برقم {receipt}",
+      "receipt_mail_body": "شكراً لمساهمتك مع DEHAT. إيصال التبرع 80G برقم {receipt} بمبلغ {amount} مرفق طيه. يرجى الاحتفاظ به لسجلاتك الضريبية. إذا بدا أي شيء غير صحيح، يُرجى الرد على هذا البريد الإلكتروني."
+    },
+    "ur": {
+      "receipt_mail_subject": "آپ کی DEHAT عطیہ رسید {receipt}",
+      "receipt_mail_body": "DEHAT کے ساتھ تعاون کرنے کا شکریہ۔ {amount} کے لیے آپ کی 80G عطیہ رسید {receipt} منسلک ہے۔ براہ کرم اسے اپنے ٹیکس ریکارڈ کے لیے محفوظ رکھیں۔ اگر کوئی بات غلط لگے تو اس ای میل کا جواب دیں۔"
+    },
+    "ks": {
+      "receipt_mail_subject": "تُہنٛز DEHAT عطیہ رسید {receipt}",
+      "receipt_mail_body": "DEHAT سٕتی مَدَتھ کَرنہٕ خٲطرٕ شُکریہ۔ {amount} خٲطرٕ تُہنٛز 80G عطیہ رسید {receipt} چھِ اَتھ سٕتی شٲمِل۔ مہربٲنی کٔرِتھ تھٲوِو یہِ پننؠن ٹیکس رِکارڈن خٲطرٕ محفوظ۔ اگر کانہہ چیز غَلَط باسی، تیٚلہِ کٔرِو اَتھ ای میلَس جَواب۔"
+    },
+    "bn": {
+      "receipt_mail_subject": "আপনার DEHAT দান রসিদ {receipt}",
+      "receipt_mail_body": "DEHAT-এর সাথে যুক্ত থাকার জন্য ধন্যবাদ। {amount}-এর জন্য আপনার 80G দান রসিদ {receipt} সংযুক্ত করা হয়েছে। অনুগ্রহ করে এটি আপনার ট্যাক্স রেকর্ডের জন্য রাখুন। কোনো ভুল নজরে পড়লে, এই ইমেলের উত্তর দিন।"
+    },
+    "mr": {
+      "receipt_mail_subject": "तुमची DEHAT देणगी पावती {receipt}",
+      "receipt_mail_body": "DEHAT सोबत गुंतवणूक केल्याबद्दल धन्यवाद. {amount} साठी तुमची 80G देणगी पावती {receipt} जोडली आहे. कृपया ती तुमच्या कर नोंदींसाठी ठेवा. काही चूक आढळल्यास, या ईमेलला उत्तर द्या."
+    },
+    "te": {
+      "receipt_mail_subject": "మీ DEHAT విరాళం రసీదు {receipt}",
+      "receipt_mail_body": "DEHAT తో భాగస్వామ్యమైనందుకు ధన్యవాదాలు. {amount} మొత్తానికి మీ 80G విరాళం రసీదు {receipt} జతచేయబడింది. దయచేసి దీన్ని మీ పన్ను రికార్డుల కోసం ఉంచుకోండి. ఏదైనా తప్పుగా అనిపిస్తే, ఈ ఇమెయిల్‌కు ప్రత్యుత్తరం ఇవ్వండి."
+    },
+    "ta": {
+      "receipt_mail_subject": "உங்கள் DEHAT நன்கொடை ரசீது {receipt}",
+      "receipt_mail_body": "DEHAT உடன் பங்களித்ததற்கு நன்றி. {amount} தொகைகான உங்கள் 80G நன்கொடை ரசீது {receipt} இணைக்கப்பட்டுள்ளது. உங்கள் வரி ஆவணங்களுக்காக இதை வைத்துக் கொள்ளவும். ஏதேனும் தவறாகத் தெரிந்தால், இந்த மின்னஞ்சலுக்குப் பதிலளிக்கவும்."
+    },
+    "gu": {
+      "receipt_mail_subject": "તમારી DEHAT દાન રસીદ {receipt}",
+      "receipt_mail_body": "DEHAT સાથે જોડાવા બદલ આભાર. {amount} ની તમારી 80G દાન રસીદ {receipt} સાથે જોડેલ છે. કૃપા કરીને તેને તમારા ટેક્સ રેકોર્ડ માટે સાચવી રાખો. જો કંઈ ખોટું જણાય, તો આ ઈમેલનો જવાબ આપો."
+    },
+    "kn": {
+      "receipt_mail_subject": "ನಿಮ್ಮ DEHAT ದೇಣಿಗೆ ರಸೀದಿ {receipt}",
+      "receipt_mail_body": "DEHAT ನೊಂದಿಗೆ ಕೈಜೋಡಿಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು. {amount} ಮೊತ್ತಕ್ಕೆ ನಿಮ್ಮ 80G ದೇಣಿಗೆ ರಸೀದಿ {receipt} ಅನ್ನು ಲಗತ್ತಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ಇದನ್ನು ನಿಮ್ಮ ತೆರಿಗೆ ದಾಖಲೆಗಳಿಗಾಗಿ ಇರಿಸಿಕೊಳ್ಳಿ. ಏನಾದರೂ ತಪ್ಪಾಗಿ ಕಂಡುಬಂದರೆ, ಈ ಇಮೇಲ್‌ಗೆ ಪ್ರತ್ಯುತ್ತರಿಸಿ."
+    },
+    "mai": {
+      "receipt_mail_subject": "अहाँक DEHAT दान रसीद {receipt}",
+      "receipt_mail_body": "DEHAT संग जुड़बाक लेल धन्यवाद। {amount} क लेल अहाँक 80G दान रसीद {receipt} संलग्न अछि। कृपा कऽ एकरा अपन टैक्स रिकॉर्डक लेल राखू। जँ किछु गलत लगय तऽ एह ईमेलक उत्तर दिअ।"
+    },
+    "as": {
+      "receipt_mail_subject": "আপোনাৰ DEHAT দানৰ ৰচিদ {receipt}",
+      "receipt_mail_body": "DEHAT-ৰ সৈতে জড়িত হোৱাৰ বাবে ধন্যবাদ। {amount}-ৰ বাবে আপোনাৰ 80G দানৰ ৰচিদ {receipt} সংলগ্ন কৰা হৈছে। অনুগ্ৰহ কৰি ইয়াক আপোনাৰ কৰ ৰেকৰ্ডৰ বাবে ৰাখক। যদি কিবা ভুল দেখা যায়, তেন্তে এই ইমেইলৰ উত্তৰ দিয়ক।"
+    },
+    "ne": {
+      "receipt_mail_subject": "तपाईंको DEHAT दान रसिद {receipt}",
+      "receipt_mail_body": "DEHAT सँग जोडिनुभएकोमा धन्यवाद। {amount} को लागि तपाईंको 80G दान रसिद {receipt} संलग्न गरिएको छ। कृपया यसलाई आफ्नो कर अभिलेखको लागि राख्नुहोस्। यदि केही गलत देखिएमा, यस इमेलको जवाफ दिनुहोस्।"
+    },
+    "kok": {
+      "receipt_mail_subject": "तुमची DEHAT देणगी पावती {receipt}",
+      "receipt_mail_body": "DEHAT कडेन हातभार लायिल्ल्या खातीर देव बरें करूं. {amount} खातीर तुमची 80G देणगी पावती {receipt} जोडल्या. उपकार करून ती तुमच्या कर नोंदी खातीर दवरात. किदेंय चूक दिसल्यार, ह्या ईमेलाक जाप दियात."
+    },
+    "sa": {
+      "receipt_mail_subject": "भवतः DEHAT दानप्राप्तिपत्रम् {receipt}",
+      "receipt_mail_body": "DEHAT संस्थायाः सहयोगाय धन्यवादाः। {amount} धनराशये भवतः 80G दानप्राप्तिपत्रम् {receipt} संलग्नम् अस्ति। कृपया स्वस्य कर-अभिलेखार्थम् एतत् स्थापयन्तु। यदि किमपि त्रुटिपूर्णं दृश्यते तर्हि अस्य ईमेल-पत्रस्य उत्तरं ददतु।"
+    },
+    "sd": {
+      "receipt_mail_subject": "توهان جي DEHAT عطئي جي رسيد {receipt}",
+      "receipt_mail_body": "DEHAT سان سهڪار ڪرڻ لاءِ مهرباني. {amount} لاءِ توهان جي 80G عطئي جي رسيد {receipt} شامل آهي. مهرباني ڪري ان کي پنهنجي ٽيڪس رڪارڊ لاءِ محفوظ رکو. جيڪڏهن ڪجهه غلط لڳي ته هن اي ميل جو جواب ڏيو."
+    },
+    "or": {
+      "receipt_mail_subject": "ଆପଣଙ୍କ DEHAT ଦାନ ରସିଦ {receipt}",
+      "receipt_mail_body": "DEHAT ସହିତ ସହଭାଗୀ ହୋଇଥିବାରୁ ଧନ୍ୟବାଦ । {amount} ପାଇଁ ଆପଣଙ୍କ 80G ଦାନ ରସିଦ {receipt} ସଂଲଗ୍ନ କରାଯାଇଛି । ଦୟାକରି ଏହାକୁ ଆପଣଙ୍କ ଟ୍ୟାକ୍ସ ରେକର୍ଡ ପାଇଁ ରଖନ୍ତୁ । ଯଦି କିଛି ଭୁଲ୍ ଲାଗେ, ଏହି ଇମେଲର ଉତ୍ତର ଦିଅନ୍ତୁ ।"
+    },
+    "ml": {
+      "receipt_mail_subject": "നിങ്ങളുടെ DEHAT സംഭാവന രസീത് {receipt}",
+      "receipt_mail_body": "DEHAT-നൊപ്പം ചേർന്നതിന് നന്ദി. {amount}-നുള്ള നിങ്ങളുടെ 80G സംഭാവന രസീത് {receipt} ഇതോടൊപ്പം ചേർത്തിരിക്കുന്നു. ദയവായി ഇത് നിങ്ങളുടെ നികുതി രേഖകൾക്കായി സൂക്ഷിക്കുക. എന്തെങ്കിലും തെറ്റായി തോന്നുകയാണെങ്കിൽ, ഈ ഇമെയിലിന് മറുപടി നൽകുക."
+    },
+    "pa": {
+      "receipt_mail_subject": "ਤੁਹਾਡੀ DEHAT ਦਾਨ ਰਸੀਦ {receipt}",
+      "receipt_mail_body": "DEHAT ਨਾਲ ਜੁੜਨ ਲਈ ਧੰਨਵਾਦ। {amount} ਲਈ ਤੁਹਾਡੀ 80G ਦਾਨ ਰਸੀਦ {receipt} ਨੱਥੀ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਇਸਨੂੰ ਆਪਣੇ ਟੈਕਸ ਰਿਕਾਰਡ ਲਈ ਰੱਖੋ। ਜੇਕਰ ਕੁਝ ਗਲਤ ਲੱਗਦਾ ਹੈ, ਤਾਂ ਇਸ ਈਮੇਲ ਦਾ ਜਵਾਬ ਦਿਓ।"
+    },
+    "doi": {
+      "receipt_mail_subject": "तुंदी DEHAT दान रसीद {receipt}",
+      "receipt_mail_body": "DEHAT कन्ने जुड़ने लेई धन्यवाद। {amount} लेई तुंदी 80G दान रसीद {receipt} नत्थी ऐ। कृपा करियै इसगी अपने टैक्स रिकार्ड लेई रक्खो। जेकर किश गलत लग्गै, तां इस ईमेल दा जबाब देओ।"
+    },
+    "brx": {
+      "receipt_mail_subject": "नोंथांनि DEHAT दान रसिद {receipt}",
+      "receipt_mail_body": "DEHAT जों हेफाजाब होनायनि थाखाय साबायखर। {amount} नि थाखाय नोंथांनि 80G दान रसिद {receipt} खौ दाजाबनाय जाबाय। अननानै बेखौ नोंथांनि खाजोनानि रेकर्डनि थाखाय दोन। जुदि माबा गोरोन्थि नुयो, बे ईमेलनो फिनजाव हर।"
+    },
+    "sat": {
+      "receipt_mail_subject": "ᱟᱢᱟᱜ DEHAT ᱫᱟᱱ ᱨᱟᱥᱤᱫ {receipt}",
+      "receipt_mail_body": "DEHAT ᱥᱟᱶ ᱡᱚᱲᱟᱣᱜ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱨᱦᱟᱣ ᱾ {amount} ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ 80G ᱫᱟᱱ ᱨᱟᱥᱤᱫ {receipt} ᱡᱚᱲᱟᱣ ᱢᱮᱱᱟᱜ-ᱟ ᱾ ᱫᱟᱭᱟᱠᱟᱛᱮ ᱱᱚᱣᱟ ᱫᱚ ᱟᱢᱟᱜ ᱴᱮᱠᱥ ᱨᱮᱠᱚᱨᱰ ᱞᱟᱹᱜᱤᱫ ᱫᱚᱦᱚᱭ ᱢᱮ ᱾ ᱡᱩᱫᱤ ᱡᱟᱦᱟᱸᱱᱟᱜ ᱵᱷᱩᱞ ᱧᱮᱞᱚᱜ-ᱟ, ᱮᱱᱠᱷᱟᱱ ᱱᱚᱣᱟ ᱤᱢᱮᱞ ᱨᱮ ᱛᱮᱞᱟ ᱮᱢ ᱢᱮ ᱾"
+    },
+    "mni": {
+      "receipt_mail_subject": "ꯅꯍꯥꯛꯀꯤ DEHAT ꯀꯠꯊꯣꯛꯄꯒꯤ ꯔꯁꯤꯗ {receipt}",
+      "receipt_mail_body": "DEHAT ꯒ ꯂꯣꯏꯅꯅ ꯁꯔꯨꯛ ꯌꯥꯕꯤꯕꯒꯤꯗꯃꯛ ꯊꯥꯒꯠꯆꯔꯤ ꯫ {amount} ꯒꯤ ꯅꯍꯥꯛꯀꯤ 80G ꯀꯠꯊꯣꯛꯄꯒꯤ ꯔꯁꯤꯗ {receipt} ꯌꯥꯎꯔꯤ ꯫ ꯆꯥꯅꯕꯤꯗꯨꯅ ꯃꯁꯤ ꯅꯍꯥꯛꯀꯤ ꯇꯦꯛꯁ ꯔꯦꯀꯣꯔ꯭ꯗꯀꯤꯗꯃꯛ ꯊꯝꯕꯤꯌꯨ ꯫ ꯀꯔꯤꯒꯨꯝꯕ ꯑꯔꯥꯟꯕ ꯌꯥꯎꯔꯕꯗꯤ, ꯏꯃꯦꯜ ꯑꯁꯤꯗ ꯄꯥꯎꯈꯨꯝ ꯄꯤꯔꯛꯎ ꯫"
+    }
+  }
+}

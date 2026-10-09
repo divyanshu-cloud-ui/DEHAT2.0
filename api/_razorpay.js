@@ -56,6 +56,7 @@ function notes(input) {
     donor_postal_code: String(input.postalCode || '').slice(0, 20),
     donor_country: String(input.country || 'India').slice(0, 80),
     publish_name: input.anonymous ? 'no' : 'yes',
+    donor_lang: /^[a-z]{2,3}$/.test(String(input.lang || '')) ? String(input.lang) : 'en',
   };
 }
 

@@ -29,7 +29,7 @@ test('proof bundle preserves seven handlers and webhook raw body configuration',
       const dir=path.join(root,'.vercel/output/functions',endpoint.path.slice(1)+'.func');
       const config=JSON.parse(await readFile(path.join(dir,'.vc-config.json')));
       assert.equal(config.shouldAddHelpers,!endpoint.rawBody);
-      assert.equal(await readFile(path.join(dir,endpoint.source),'utf8'),await readFile(path.join(root,endpoint.source),'utf8'));
+      if(!endpoint.bundle)assert.equal(await readFile(path.join(dir,endpoint.source),'utf8'),await readFile(path.join(root,endpoint.source),'utf8'));
       const handler=createRequire(import.meta.url)(path.join(dir,endpoint.source));
       const res={setHeader(){},end(body){this.body=body;}};
       await handler({method:'DELETE'},res);assert.equal(res.statusCode,405,endpoint.path);
