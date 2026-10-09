@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { validateDonor, normalizePhone, FIELD_ORDER } from '../assets/geo/validate.mjs';
+import { validateDonor, validateTransfer, normalizePhone, FIELD_ORDER } from '../assets/geo/validate.mjs';
 
 const ctx = { geo: JSON.parse(readFileSync('assets/geo/geo.v1.json', 'utf8')), districts: JSON.parse(readFileSync('assets/geo/in-districts.v1.json', 'utf8')) };
 const good = { fullName: 'Asha Verma', email: 'asha@example.org', phone: '98765 43210', countryCode: 'IN', state: 'Uttar Pradesh', district: 'Bahraich', city: 'Bahraich', postalCode: '271801', address: '12 Station Road', pan: 'ABCPV1234F', receipt80G: true, amount: '500' };
@@ -71,4 +71,30 @@ test('amount: between 1 and 1,00,00,000, at most two decimals', () => {
 test('without the lists, shape rules still apply but membership is not checked', () => {
   assert.deepEqual(validateDonor(good, {}).errors, {});
   assert.equal(validateDonor({ ...good, email: 'x' }, {}).errors.email, 'invalid_email');
+});
+
+const transfer = { ref: 'UTR 4321 0987 6543', amount: '5,000', date: '2026-10-01', first: 'Asha', last: 'Verma', email: 'asha@example.org', countryCode: 'IN' };
+const tcodes = (patch, extra) => validateTransfer({ ...transfer, ...patch }, { ...ctx, today: '2026-10-09', ...(extra || {}) }).errors;
+test('transfer form: only reference, amount, date, first name, email and country are required', () => {
+  assert.deepEqual(tcodes({}), {});
+  const blank = validateTransfer({ countryCode: 'IN' }, { ...ctx, today: '2026-10-09' }).errors;
+  assert.deepEqual(Object.keys(blank).sort(), ['rtAmount', 'rtDate', 'rtEmail', 'rtFirst', 'rtRef']);
+  assert.equal(validateTransfer({}, { ...ctx }).errors.rtCountry, 'required');
+});
+test('transfer form: reference, amount and date rules', () => {
+  for (const r of ['1', 'abc', 'xxxxxx', '!!!!!!', 'A'.repeat(41)]) assert.ok(tcodes({ ref: r }).rtRef, r);
+  for (const r of ['N123456789', 'UTR 4321 0987', 'HDFCR52026100112345', 'cheque 00123']) assert.equal(tcodes({ ref: r }).rtRef, undefined, r);
+  for (const a of ['0', 'abc', '10000001', '5.555', '-5']) assert.equal(tcodes({ amount: a }).rtAmount, 'amount_range', a);
+  for (const a of ['5000', 'Rs 5,000', '\u20b9 12,500.50', 'INR 100']) assert.equal(tcodes({ amount: a }).rtAmount, undefined, a);
+  for (const d of ['2026-10-12', '2026-02-30', '2020-01-01', 'yesterday', '10/01/2026']) assert.equal(tcodes({ date: d }).rtDate, 'invalid_date', d);
+  for (const d of ['2026-10-09', '2026-10-10', '2024-01-15']) assert.equal(tcodes({ date: d }).rtDate, undefined, d);
+});
+test('transfer form: optional contact fields are checked only when filled', () => {
+  assert.deepEqual(tcodes({ phone: '', city: '', state: '', postalCode: '', street: '' }), {});
+  assert.equal(tcodes({ phone: '123' }).rtPhone, 'invalid_phone');
+  assert.equal(tcodes({ postalCode: '12' }).rtPin, 'invalid_pin');
+  assert.equal(tcodes({ state: 'Atlantis' }).rtState, 'invalid_selection');
+  assert.equal(tcodes({ email: 'x' }).rtEmail, 'invalid_email');
+  assert.equal(tcodes({ last: 'V3rma' }).rtLast, 'invalid_chars');
+  assert.equal(tcodes({ company: '<b>x</b>' }).rtCompany, 'invalid_chars');
 });

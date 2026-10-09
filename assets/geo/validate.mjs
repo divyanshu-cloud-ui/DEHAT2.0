@@ -107,8 +107,53 @@ export function validateDonor(input, ctx = {}) {
     else if (n < 1 || n > MAX_AMOUNT) e.amount = 'amount_range';
     else if (Math.round(n * 100) !== n * 100 && !/^\d+(\.\d{1,2})?$/.test(String(v.amount))) e.amount = 'amount_range';
   }
+  for (const k of ctx.optional || []) if (e[k] === 'required') delete e[k];
   return { ok: Object.keys(e).length === 0, errors: e, clean };
 }
+
+// "Already sent the money" form: the transfer details plus the donor's contact details. Only reference, amount, date, first name, email
+// and country are required; everything else is checked only if it was filled in. Keys are the form's own (rtRef, rtFirst, ...).
+const DAY = 86400000;
+export function validateTransfer(input, ctx = {}) {
+  const v = input || {};
+  const e = {};
+  const ref = trim(v.ref);
+  if (!ref) e.rtRef = 'required';
+  else if (ref.length < 4) e.rtRef = 'too_short';
+  else if (ref.length > 40) e.rtRef = 'too_long';
+  else if (!/^[A-Za-z0-9][A-Za-z0-9 \-_/.]*$/.test(ref) || repeated(ref) || !/\d/.test(ref) && letters(ref) < 4) e.rtRef = 'invalid_ref';
+
+  const rawAmount = trim(v.amount).replace(/^(?:rs\.?|inr|\u20b9)\s*/i, '').replace(/,/g, '');
+  if (!rawAmount) e.rtAmount = 'required';
+  else if (!/^\d+(\.\d{1,2})?$/.test(rawAmount) || Number(rawAmount) < 1 || Number(rawAmount) > MAX_AMOUNT) e.rtAmount = 'amount_range';
+
+  const date = trim(v.date);
+  if (!date) e.rtDate = 'required';
+  else {
+    const d = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date);
+    const t = d ? Date.UTC(+d[1], +d[2] - 1, +d[3]) : NaN;
+    const real = d && new Date(t).getUTCDate() === +d[3];
+    const now = ctx.today ? Date.parse(ctx.today) : Date.now();
+    if (!real || t > now + DAY || t < now - 3 * 366 * DAY) e.rtDate = 'invalid_date';
+  }
+
+  const donor = validateDonor({
+    fullName: v.first, email: v.email, phone: v.phone, phoneDial: v.phoneDial, countryCode: v.countryCode,
+    state: v.state, district: v.district, districtOther: v.districtOther, city: v.city, postalCode: v.postalCode, address: v.street, receipt80G: false,
+  }, { geo: ctx.geo, districts: ctx.districts, optional: ['phone', 'city', 'state', 'district', 'postalCode', 'address'] });
+  const map = { fullName: 'rtFirst', email: 'rtEmail', phone: 'rtPhone', countryCode: 'rtCountry', state: 'rtState', district: 'rtDistrict', city: 'rtCity', postalCode: 'rtPin', address: 'rtStreet' };
+  // blank optional contact fields are not checked at all
+  const filled = { phone: v.phone, city: v.city, state: v.state, district: v.district, postalCode: v.postalCode, address: v.street };
+  for (const [k, code] of Object.entries(donor.errors)) {
+    if (k in filled && !trim(filled[k]) && code !== 'required') continue;
+    e[map[k]] = code;
+  }
+  if (trim(v.last) && !NAME_OK.test(trim(v.last))) e.rtLast = 'invalid_chars';
+  if (trim(v.company) && (trim(v.company).length > 100 || /[<>]/.test(v.company))) e.rtCompany = 'invalid_chars';
+  return { ok: Object.keys(e).length === 0, errors: e, clean: donor.clean };
+}
+
+export const TRANSFER_ORDER = ['rtRef', 'rtAmount', 'rtDate', 'rtFirst', 'rtLast', 'rtPhone', 'rtEmail', 'rtStreet', 'rtCountry', 'rtState', 'rtDistrict', 'rtCity', 'rtPin', 'rtCompany'];
 
 // Display order for focusing the first problem on screen.
 export const FIELD_ORDER = ['amount', 'fullName', 'countryCode', 'phone', 'email', 'state', 'district', 'city', 'postalCode', 'address', 'pan'];

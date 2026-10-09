@@ -3227,7 +3227,7 @@
                   </sc-if>
                   <sc-if value="{{ df.isPhone }}" hint-placeholder-val="{{ false }}">
                     <div style="display:flex;gap:8px">
-                      <select id="{{ df.id }}-dial" aria-label="{{ df.label }}" value="{{ df.dialVal }}" onChange="{{ df.onDial }}" style="flex:0 0 44%;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                      <select id="{{ df.id }}-dial" aria-label="{{ df.label }}" value="{{ df.dialVal }}" onChange="{{ df.onDial }}" style="flex:0 0 38%;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                         <sc-for list="{{ df.dialOptions }}" as="dop" hint-placeholder-count="5">
                           <option value="{{ dop.v }}">{{ dop.l }}</option>
                         </sc-for>
@@ -3332,11 +3332,33 @@
           <p style="font-size:15.5px;line-height:1.65;color:var(--dim);margin:0 0 clamp(24px,3vw,34px);max-width:66ch;text-wrap:pretty">{{ rt.sub }}</p>
 
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px 24px">
-            <sc-for list="{{ rt.fields }}" as="rf" hint-placeholder-count="12">
-              <label style="display:flex;flex-direction:column;gap:5px;grid-column:{{ rf.span }}">
-                <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ rf.label }}</span>
-                <input type="{{ rf.type }}" value="{{ rf.val }}" onChange="{{ rf.on }}" placeholder="{{ rf.hint }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
-              </label>
+            <sc-for list="{{ rt.fields }}" as="rf" hint-placeholder-count="14">
+              <div style="display:flex;flex-direction:column;gap:5px;grid-column:{{ rf.span }}">
+                <label for="{{ rf.id }}" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ rf.label }}</label>
+                <sc-if value="{{ rf.isText }}" hint-placeholder-val="{{ true }}">
+                  <input id="{{ rf.id }}" type="{{ rf.type }}" min="{{ rf.min }}" max="{{ rf.max }}" inputmode="{{ rf.inputmode }}" autocomplete="{{ rf.ac }}" value="{{ rf.val }}" onChange="{{ rf.on }}" onBlur="{{ rf.blur }}" placeholder="{{ rf.hint }}" aria-invalid="{{ rf.invalid }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ rf.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
+                </sc-if>
+                <sc-if value="{{ rf.isSelect }}" hint-placeholder-val="{{ false }}">
+                  <select id="{{ rf.id }}" autocomplete="{{ rf.ac }}" value="{{ rf.val }}" onChange="{{ rf.on }}" onBlur="{{ rf.blur }}" aria-invalid="{{ rf.invalid }}" style="width:100%;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ rf.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
+                    <sc-for list="{{ rf.options }}" as="rop" hint-placeholder-count="5">
+                      <option value="{{ rop.v }}">{{ rop.l }}</option>
+                    </sc-for>
+                  </select>
+                </sc-if>
+                <sc-if value="{{ rf.isPhone }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;gap:8px">
+                    <select id="{{ rf.id }}-dial" aria-label="{{ rf.label }}" value="{{ rf.dialVal }}" onChange="{{ rf.onDial }}" style="flex:0 0 38%;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ rf.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
+                      <sc-for list="{{ rf.dialOptions }}" as="rdop" hint-placeholder-count="5">
+                        <option value="{{ rdop.v }}">{{ rdop.l }}</option>
+                      </sc-for>
+                    </select>
+                    <input id="{{ rf.id }}" type="tel" inputmode="tel" autocomplete="tel-national" value="{{ rf.val }}" onChange="{{ rf.on }}" onBlur="{{ rf.blur }}" placeholder="{{ rf.hint }}" aria-invalid="{{ rf.invalid }}" style="flex:1 1 auto;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ rf.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
+                  </div>
+                </sc-if>
+                <sc-if value="{{ rf.hasErr }}" hint-placeholder-val="{{ false }}">
+                  <span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ rf.err }}</span>
+                </sc-if>
+              </div>
             </sc-for>
 
             <label style="display:flex;flex-direction:column;gap:5px;grid-column:1 / -1">
@@ -6446,10 +6468,12 @@ class Component extends DCLogic {
       f_district_other:'Other / Not Listed',
       f_district_type:'Type Your District',
       f_select_country:'Select Your Country',
-      f_select_state:'Select Your State or Province',
+      f_select_state:'Select State or Province',
       f_select_district:'Select Your District',
       f_phone_hint:'Mobile number, digits only',
       f_pin_hint:'6-digit PIN code',
+      v_invalid_date:'Enter the date the money was sent: not in the future, and within the last three years.',
+      v_invalid_ref:'Enter the reference exactly as it appears on your statement, using letters and numbers.',
       v_required:'This field is required.',
       v_too_short:'This looks too short. Please check it.',
       v_too_long:'This is too long. Please shorten it.',
@@ -6459,7 +6483,7 @@ class Component extends DCLogic {
       v_invalid_pin:'Enter a valid PIN or postal code.',
       v_invalid_pan:'Enter a valid PAN, like ABCDE1234F.',
       v_invalid_selection:'Please choose an option from the list.',
-      v_amount_range:'Enter an amount between Rs 1 and Rs 1,00,00,000, with at most two decimals.',
+      v_amount_range:'Enter an amount between \u20b91 and \u20b91,00,00,000, with at most two decimals.',
       v_fix_n:'Please correct the {n} highlighted field(s) before you continue.',
       f_additional_note:'Additional Note',
       f_additional_note_hint:'Anything we should know about this investment',
@@ -33522,6 +33546,74 @@ class Component extends DCLogic {
     fetch('/assets/geo/geo.v1.json').then(r => r.json()).then(j => { this._geo = j; this.forceUpdate(); }).catch(() => { this._geoLoading = false; });
     fetch('/assets/geo/in-districts.v1.json').then(r => r.json()).then(j => { this._dist = j; this.forceUpdate(); }).catch(() => { this._geoLoading = false; });
   }
+  // ---- "Already transferred" form: same dropdowns and rules as the payment form ----
+  _rtErrors() {
+    const S = this.state;
+    if (!this._gv) { // rules file not loaded yet: still insist on the five required fields
+      const e = {};
+      ['rtRef', 'rtAmount', 'rtDate', 'rtFirst', 'rtEmail'].forEach(k => { if (!String(S[k] || '').trim()) e[k] = 'required'; });
+      return e;
+    }
+    return this._gv.validateTransfer({ ref: S.rtRef, amount: S.rtAmount, date: S.rtDate, first: S.rtFirst, last: S.rtLast, phone: S.rtPhone,
+      phoneDial: this._dial(S.rtDialIso || S.rtCC || 'IN'), email: S.rtEmail, street: S.rtStreet, countryCode: S.rtCC || 'IN', state: S.rtState,
+      district: S.rtDistrict, districtOther: !!S.rtDistrictOther, city: S.rtCity, postalCode: S.rtPin, company: S.rtCompany },
+      { geo: this._geo || undefined, districts: this._dist || undefined }).errors;
+  }
+  _rtFocusFirst(errs) {
+    const order = (this._gv && this._gv.TRANSFER_ORDER) || Object.keys(errs);
+    const k = order.find(x => errs[x]) || Object.keys(errs)[0];
+    const el = document.getElementById(this.state.rtDistrictOther && k === 'rtDistrict' ? 'rt-rtDistrict-other' : 'rt-' + k);
+    if (el) { try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus({ preventScroll: true }); } catch (x) {} }
+  }
+  _rtFields(F, L, errs, set) {
+    const S = this.state, geo = this._geo, dist = this._dist || {};
+    const cc = S.rtCC || 'IN';
+    const info = {};
+    F.forEach((f, i) => { info[f.k] = { type: f.type || 'text', label: L ? L.labels[i] : f.label, hint: L ? (L.hints[i] || '') : (f.hint || ''), span: f.span || 'auto' }; });
+    const req = { rtRef: 1, rtAmount: 1, rtDate: 1, rtFirst: 1, rtEmail: 1, rtCountry: 1 };
+    const touch = (k) => { this._rtTouch = this._rtTouch || {}; if (!this._rtTouch[k]) this._rtTouch[k] = () => this.setState(s2 => ({ rtTouched: Object.assign({}, s2.rtTouched, { [k]: true }) })); return this._rtTouch[k]; };
+    const msg = (k) => { const c = errs[k]; return c && (S.rtTry || (S.rtTouched || {})[k]) ? (this._dt('v_' + c) || this._dt('v_invalid_chars')) : ''; };
+    const today = new Date(), iso = (d) => d.toISOString().slice(0, 10);
+    const mk = (k, o) => {
+      const base = info[k] || { type: 'text', label: '', hint: '', span: 'auto' };
+      const m = msg(k);
+      return Object.assign({ k, id: 'rt-' + k, label: base.label + (req[k] ? ' *' : ''), span: base.span, type: base.type, hint: base.hint, isText: false, isSelect: false, isPhone: false,
+        inputmode: '', ac: 'off', val: '', on: null, blur: touch(k), options: [], dialOptions: [], dialVal: '', onDial: null, err: m, hasErr: !!m, invalid: m ? 'true' : 'false',
+        border: m ? 'var(--ac-red)' : 'var(--border)', min: '', max: '' }, o);
+    };
+    const text = (k, o) => mk(k, Object.assign({ isText: true, val: S[k] || '', on: set(k) }, o));
+    const rows = [];
+    rows.push(text('rtRef'));
+    rows.push(text('rtAmount', { inputmode: 'decimal' }));
+    rows.push(text('rtDate', { min: iso(new Date(today.getTime() - 3 * 366 * 86400000)), max: iso(today) }));
+    rows.push(text('rtFirst', { ac: 'given-name' }));
+    rows.push(text('rtLast', { ac: 'family-name' }));
+    rows.push(mk('rtPhone', { span: '1 / -1', isPhone: true, ac: 'tel-national', inputmode: 'tel', hint: this._dt('f_phone_hint'), val: S.rtPhone || '', on: set('rtPhone'),
+      dialVal: S.rtDialIso || cc, onDial: (e) => this.setState({ rtDialIso: e.target.value }),
+      dialOptions: this._countryOptions().filter(c => c.dial).map(c => ({ v: c.v, l: '+' + c.dial + ' ' + c.l })) }));
+    rows.push(text('rtEmail', { ac: 'email', inputmode: 'email' }));
+    rows.push(text('rtStreet', { ac: 'street-address' }));
+    rows.push(mk('rtCountry', { span: '1 / -1', isSelect: true, ac: 'country', val: cc, on: (e) => this.setState({ rtCC: e.target.value, rtDialIso: '', rtState: '', rtDistrict: '', rtDistrictOther: false }),
+      options: [{ v: '', l: this._dt('f_select_country') }].concat(this._countryOptions().map(c => ({ v: c.v, l: c.l }))) }));
+    const states = geo && geo.states ? geo.states[cc] : null;
+    if (states && states.length) {
+      rows.push(mk('rtState', { isSelect: true, ac: 'address-level1', val: S.rtState || '', on: (e) => this.setState({ rtState: e.target.value, rtDistrict: '', rtDistrictOther: false }),
+        options: [{ v: '', l: this._dt('f_select_state') }].concat(states.map(n => ({ v: n, l: n }))) }));
+    }
+    if (cc === 'IN') {
+      const list = (dist[S.rtState] || []).map(n => ({ v: n, l: n }));
+      rows.push(mk('rtDistrict', { isSelect: true, label: this._dt('f_district'), val: S.rtDistrictOther ? '__other__' : (S.rtDistrict || ''),
+        on: (e) => { const v = e.target.value; this.setState(v === '__other__' ? { rtDistrictOther: true, rtDistrict: '' } : { rtDistrict: v, rtDistrictOther: false }); },
+        options: [{ v: '', l: this._dt('f_select_district') }].concat(list, [{ v: '__other__', l: this._dt('f_district_other') }]) }));
+      if (S.rtDistrictOther) rows.push(mk('rtDistrict', { isText: true, id: 'rt-rtDistrict-other', label: this._dt('f_district_type'), val: S.rtDistrict || '', on: set('rtDistrict') }));
+    } else {
+      rows.push(mk('rtDistrict', { isText: true, label: this._dt('f_district_opt'), val: S.rtDistrict || '', on: set('rtDistrict') }));
+    }
+    rows.push(text('rtCity', { ac: 'address-level2' }));
+    rows.push(text('rtPin', { ac: 'postal-code', inputmode: cc === 'IN' ? 'numeric' : 'text', hint: cc === 'IN' ? this._dt('f_pin_hint') : info.rtPin.hint }));
+    rows.push(text('rtCompany', { ac: 'organization' }));
+    return rows;
+  }
   // ---- Donor form: country / state / district lists and the shared validation rules ----
   _dial(iso) { const row = this._geo ? this._geo.countries.find(c => c[0] === iso) : null; return row ? row[2] : (iso === 'IN' ? '91' : ''); }
   _donorInput() {
@@ -33578,12 +33670,12 @@ class Component extends DCLogic {
     const text = (k, stateKey, o) => mk(k, Object.assign({ isText: true, val: S[stateKey] || '', on: this._pset(stateKey) }, o));
     const rows = [];
     rows.push(text('fullName', 'dFullName', { label: T.f_full_name, req: true, span: '1 / -1', ac: 'name' }));
-    rows.push(mk('countryCode', { isSelect: true, label: T.f_country, req: true, ac: 'country', val: cc, on: (e) => this._onCountry(e),
+    rows.push(mk('countryCode', { span: '1 / -1', isSelect: true, label: T.f_country, req: true, ac: 'country', val: cc, on: (e) => this._onCountry(e),
       options: [{ v: '', l: this._dt('f_select_country') }].concat(this._countryOptions().map(c => ({ v: c.v, l: c.l }))) }));
     const dialIso = S.dDialIso || cc;
-    rows.push(mk('phone', { isPhone: true, label: T.f_phone, req: true, inputmode: 'tel', ac: 'tel-national', hint: this._dt('f_phone_hint'),
+    rows.push(mk('phone', { span: '1 / -1', isPhone: true, label: T.f_phone, req: true, inputmode: 'tel', ac: 'tel-national', hint: this._dt('f_phone_hint'),
       val: S.dPhone || '', on: this._pset('dPhone'), dialVal: dialIso, onDial: (e) => this._onDial(e),
-      dialOptions: this._countryOptions().filter(c => c.dial).map(c => ({ v: c.v, l: c.l + ' +' + c.dial })) }));
+      dialOptions: this._countryOptions().filter(c => c.dial).map(c => ({ v: c.v, l: '+' + c.dial + ' ' + c.l })) }));
     rows.push(text('email', 'dEmail', { label: T.f_email, req: true, type: 'email', hint: T.f_email_hint, ac: 'email', inputmode: 'email' }));
     const states = geo && geo.states ? geo.states[cc] : null;
     if (states && states.length) {
@@ -33856,8 +33948,8 @@ class Component extends DCLogic {
     const unres = (P.purposes || []).find(p => p.k === 'unrestricted');
     const causes = [(unres && unres.label) || 'Wherever It Is Needed Most']
       .concat((P.purposes || []).filter(p => p.k !== 'unrestricted').map(p => p.label));
-    const required = ['rtRef', 'rtAmount', 'rtDate', 'rtFirst', 'rtEmail'];
-    const missing = required.filter(k => !v(k));
+    const rtErrs = this._rtErrors();
+    const missing = Object.keys(rtErrs);
     const human = (v('rtHuman') || '').trim().toLowerCase();
     const humanOk = human === 'seven' || human === '7';
     // The draft is rebuilt from the form on every render, so a correction made after pressing
@@ -33871,8 +33963,11 @@ class Component extends DCLogic {
       try { when = new Date(when + 'T00:00:00').toLocaleDateString(this.state.lang === 'en' ? 'en-IN' : this.state.lang, { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) {}
     }
     const fullName = [tv('rtFirst'), tv('rtLast')].filter(Boolean).join(' ');
-    const address = ['rtStreet', 'rtCity', 'rtState', 'rtPin', 'rtCountry'].map(tv).filter(Boolean).join(', ');
-    const reach = [tv('rtEmail'), tv('rtPhone')].filter(Boolean).join(' \u00b7 ');
+    const rtCCode = S.rtCC || 'IN';
+    const rtCountryName = ((this._countryOptions().find(c => c.v === rtCCode)) || {}).l || rtCCode;
+    const address = [tv('rtStreet'), tv('rtCity'), tv('rtDistrict'), tv('rtState'), tv('rtPin'), rtCountryName].filter(Boolean).join(', ');
+    const rtPhoneFull = tv('rtPhone') ? '+' + this._dial(S.rtDialIso || rtCCode) + ' ' + tv('rtPhone') : '';
+    const reach = [tv('rtEmail'), rtPhoneFull].filter(Boolean).join(' \u00b7 ');
     const cause = S.rtCause || causes[0];
     const dl = [rtT.mail_greeting, '', rtT.rt_mail_intro, '', rtT.rt_h_transfer,
       lab(0) + ': ' + (tv('rtRef') || '-'),
@@ -33893,9 +33988,7 @@ class Component extends DCLogic {
       eyebrow: L ? L.eyebrow : 'Already Transferred',
       title: L ? L.title : 'Tell Us About a Transfer You Have Already Made.',
       sub: L ? L.sub : 'If you have sent money by National Electronic Funds Transfer (NEFT), Real Time Gross Settlement (RTGS), Immediate Payment Service (IMPS), cheque or a direct deposit, record it here so we can match the credit in our account to your receipt. This does not move any money.',
-      fields: F.map((f, i) => ({ k: f.k, label: L ? L.labels[i] : f.label,
-        hint: L ? (L.hints[i] || '') : (f.hint || ''), type: f.type || 'text',
-        span: f.span || 'auto', val: v(f.k), on: set(f.k) })),
+      fields: this._rtFields(F, L, rtErrs, set),
       causeLabel: L ? L.cause : 'Cause the Transfer Was For',
       causes: causes.map((c, i) => ({ k: 'rc' + i, v: c })),
       causeVal: S.rtCause || causes[0],
@@ -33921,7 +34014,8 @@ class Component extends DCLogic {
       note: L ? L.note : 'DEHAT reconciles every reported transfer against the bank statement before a receipt is issued. Nothing here is stored in your browser.',
       submit: () => {
         if (missing.length) {
-          this.setState({ rtOk: false, rtMsg: L ? L.missing : 'Add the reference number, amount, date, first name and email before submitting.' });
+          this.setState({ rtOk: false, rtTry: true, rtMsg: String(this._dt('v_fix_n')).replace('{n}', missing.length) });
+          setTimeout(() => this._rtFocusFirst(rtErrs), 60);
           return;
         }
         if (!humanOk) {

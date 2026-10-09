@@ -20,6 +20,7 @@ test('proof bundle preserves seven handlers and webhook raw body configuration',
     for(const name of ['llms.txt','llms-full.txt'])await writeFile(path.join(root,name),'Fixture documentation');
     await writeFile(path.join(root,'_internal/qa/REDIRECTS_156.csv'),'source,destination,status\n/old,/impact,301');
     await cp(new URL('../api/',import.meta.url),path.join(root,'api'),{recursive:true});
+    await cp(new URL('../assets/geo/',import.meta.url),path.join(root,'assets/geo'),{recursive:true});
     await writeFile(path.join(root,'source.js'),'fixture');
     const html='<main>Fixture</main>';await writeFile(path.join(root,'generated/proof/index.html'),html);
     const sourceFiles=[{path:'source.js',sha256:digest('fixture')}];
