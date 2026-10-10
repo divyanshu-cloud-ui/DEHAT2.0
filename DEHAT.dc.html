@@ -3246,6 +3246,24 @@
               <p role="alert" aria-live="polite" style="margin:0;padding:10px 14px;border-radius:12px;border:1px solid var(--ac-red);font-size:13.5px;line-height:1.5;font-weight:700;color:var(--ac-red)">{{ pv.formMsg }}</p>
             </sc-if>
             <button onClick="{{ pv.doPay }}" style="cursor:pointer;font-family:inherit;font-size:15px;font-weight:800;padding:14px 26px;border-radius:999px;background:var(--ac-gold);color:#1f1710;border:none;transition:transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ pv.payLabel }} →</button>
+            <sc-if value="{{ pv.showUpi }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ pv.doUpi }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:12px 22px;border-radius:999px;background:transparent;color:var(--text);border:1.5px solid var(--border)">{{ pv.upiBtn }}</button>
+            </sc-if>
+            <sc-if value="{{ pv.hasUpiErr }}" hint-placeholder-val="{{ false }}">
+              <p role="alert" aria-live="polite" style="margin:0;font-size:13px;line-height:1.5;font-weight:700;color:var(--ac-red)">{{ pv.upiErr }}</p>
+            </sc-if>
+            <sc-if value="{{ pv.hasUpi }}" hint-placeholder-val="{{ false }}">
+              <div data-anchor="upi-qr" style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:22px;border-radius:18px;border:1px solid var(--border);background:var(--surface)">
+                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;color:var(--text)">{{ pv.upiTitle }}</div>
+                <img src="{{ pv.upiQr }}" alt="{{ pv.upiAlt }}" width="220" height="220" style="width:220px;height:220px;background:#ffffff;border-radius:12px;padding:10px">
+                <div style="font-size:24px;font-weight:800;color:var(--text)">{{ pv.upiAmount }}</div>
+                <div style="font-size:14px;color:var(--dim)">{{ pv.upiPayTo }} <span style="font-family:ui-monospace,Menlo,monospace;color:var(--text)">{{ pv.upiVpa }}</span></div>
+                <div style="font-size:13.5px;line-height:1.5;font-weight:700;padding:8px 14px;border-radius:12px;background:var(--surface2);color:var(--ac-gold)">{{ pv.upiRef }}</div>
+                <a href="{{ pv.upiUri }}" style="display:inline-flex;justify-content:center;width:100%;max-width:320px;font-size:15px;font-weight:800;padding:13px 22px;border-radius:999px;background:var(--ac-gold);color:#1f1710;text-decoration:none">{{ pv.upiOpen }}</a>
+                <p style="font-size:13px;line-height:1.55;color:var(--dim);margin:0;max-width:46ch">{{ pv.upiReceipt }}</p>
+                <p style="font-size:12.5px;line-height:1.5;color:var(--faint);margin:0;max-width:46ch">{{ pv.upiInstant }}</p>
+              </div>
+            </sc-if>
             <sc-if value="{{ pv.isFcra }}" hint-placeholder-val="{{ false }}">
               <p style="font-size:12.5px;line-height:1.6;color:var(--text);margin:0;text-wrap:pretty">{{ pv.payForeignNote }}</p>
             </sc-if>
@@ -4074,7 +4092,7 @@
                   </sc-if><sc-if value="{{ r.noDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.docAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">{{ T.fin_bs_lbl }} · {{ T.fin_doc_request_short }}</a></sc-if>
                   <sc-if value="{{ r.hasFcReturn }}" hint-placeholder-val="{{ false }}">
                     <a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcReturnDoc }}" target="_blank" rel="noopener" title="{{ r.fcReturnTitle }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--ac-purple);text-decoration:none;white-space:nowrap">{{ r.fcReturnLabel }}<span aria-hidden="true">&#8599;</span></a>
-                  </sc-if><sc-if value="{{ r.noFcReturnDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcDocAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">FC-4 · {{ T.fin_doc_request_short }}</a></sc-if>
+                  </sc-if><sc-if value="{{ r.noFcReturnDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcDocAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">FC-4 · {{ T.fin_doc_request_short }}</a></sc-if><sc-if value="{{ r.hasItr }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.itrDoc }}" target="_blank" rel="noopener" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--ac-teal);text-decoration:none;white-space:nowrap">ITR<span aria-hidden="true">&#8599;</span></a></sc-if><sc-if value="{{ r.noItr }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.itrAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">ITR · {{ T.fin_doc_request_short }}</a></sc-if>
                   <sc-if value="{{ r.fcAskable }}" hint-placeholder-val="{{ false }}">
                     <a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcAskHref }}" title="{{ r.fcAskTitle }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">{{ r.fcAskLabel }}</a>
                   </sc-if>
@@ -4099,7 +4117,7 @@
                         </sc-if><sc-if value="{{ r.noDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.docAsk }}" style="margin-top:10px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--faint);text-decoration:none">{{ T.fin_bs_lbl }} · {{ T.fin_doc_request_short }}</a></sc-if>
                         <sc-if value="{{ r.hasFcReturn }}" hint-placeholder-val="{{ false }}">
                           <a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcReturnDoc }}" target="_blank" rel="noopener" style="margin-top:8px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ac-purple);text-decoration:none;border-bottom:1px solid rgba(79,14,115,.35);padding-bottom:2px">{{ r.fcReturnFull }}<span aria-hidden="true">&#8599;</span></a>
-                        </sc-if><sc-if value="{{ r.noFcReturnDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcDocAsk }}" style="margin-top:8px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--faint);text-decoration:none">FC-4 · {{ T.fin_doc_request_short }}</a></sc-if>
+                        </sc-if><sc-if value="{{ r.noFcReturnDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcDocAsk }}" style="margin-top:8px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--faint);text-decoration:none">FC-4 · {{ T.fin_doc_request_short }}</a></sc-if><sc-if value="{{ r.hasItr }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.itrDoc }}" target="_blank" rel="noopener" style="margin-top:8px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ac-teal);text-decoration:none">ITR<span aria-hidden="true">&#8599;</span></a></sc-if><sc-if value="{{ r.noItr }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.itrAsk }}" style="margin-top:8px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--faint);text-decoration:none">ITR · {{ T.fin_doc_request_short }}</a></sc-if>
                         <sc-if value="{{ r.hasFcReturnStatus }}" hint-placeholder-val="{{ false }}">
                           <div style="margin-top:10px;padding:9px 11px;border-left:3px solid var(--ac-amber);background:var(--surface2);font-size:12px;line-height:1.55;color:var(--dim)">{{ r.fcReturnStatus }}</div>
                         </sc-if>
@@ -6861,6 +6879,16 @@ class Component extends DCLogic {
       fin_docg_fcra:'Foreign Contribution · Foreign Contribution (Regulation) Act',
       fin_docg_validation:'Validations & Recognition',
       fin_doc_view:'View Document',
+      upi_qr_btn:'Pay by UPI QR instead (no gateway fee)',
+      upi_qr_title:'Scan and pay with any UPI app',
+      upi_qr_payto:'Pay to',
+      upi_qr_ref:'Reference {code} is already in the payment note. Please do not change it.',
+      upi_qr_open:'Open in my UPI app',
+      upi_qr_receipt:'Your receipt is emailed once your payment is matched in our bank statement, usually within one working day.',
+      upi_qr_instant:'Prefer an instant receipt? Use the payment button above for card, UPI or netbanking.',
+      upi_qr_error:'We could not create your QR just now. Please try again, or use card, UPI or netbanking.',
+      v_upi_limit:'A UPI QR gift can be up to \u20b91,00,000. For a larger gift, please use netbanking or bank transfer.',
+      v_upi_once_only:'UPI QR is for one-time gifts. For monthly or yearly gifts, please use card, UPI or netbanking.',
       rt_label_13:'Currency',
       rt_ref_help_abroad:'Sending from abroad? Use your bank\u2019s SWIFT or transfer reference, shown on your bank\u2019s confirmation.',
       fin_doc_request:'Available on request',
@@ -34226,6 +34254,16 @@ class Component extends DCLogic {
       payForeignNote: this._dt('pay_foreign_note'),
       payAccount: fcra ? P.payForeign : P.payDomestic,
       doPay: () => this._pay(P),
+      showUpi: S.dRegime !== 'fcra' && (S.dFreq || 'once') === 'once',
+      doUpi: () => this._payUpi(P),
+      upiBtn: this._dt('upi_qr_btn'),
+      hasUpiErr: !!S.upiErr, upiErr: S.upiErr || '',
+      hasUpi: !!(S.upi && S.upi.code && S.upi.amount === Math.round(this._amt() * 100) && (S.dFreq || 'once') === 'once' && S.dRegime !== 'fcra'), upiTitle: this._dt('upi_qr_title'), upiAlt: this._dt('upi_qr_title'),
+      upiQr: (S.upi && S.upi.qr) || '', upiUri: (S.upi && S.upi.uri) || '',
+      upiAmount: S.upi ? '\u20b9' + (S.upi.amount / 100).toLocaleString('en-IN', { maximumFractionDigits: 2 }) : '',
+      upiPayTo: this._dt('upi_qr_payto'), upiVpa: (S.upi && S.upi.vpa) || '',
+      upiRef: S.upi ? this._fill(this._dt('upi_qr_ref'), { code: S.upi.code }) : '',
+      upiOpen: this._dt('upi_qr_open'), upiReceipt: this._dt('upi_qr_receipt'), upiInstant: this._dt('upi_qr_instant'),
       choicePayT: this._dt('give_choice_pay_t'), choicePayS: this._dt('give_choice_pay_s'),
       choiceRepT: this._dt('give_choice_rep_t'), choiceRepS: this._dt('give_choice_rep_s'),
       goPayForm: () => { try { const e = document.querySelector('[data-anchor="pay-form"]'); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (x) {} },
@@ -34758,6 +34796,45 @@ class Component extends DCLogic {
     } catch (error) {
       window.alert(error.message || 'Unable to open secure payment checkout.');
       this.setState({ dStage: 1 });
+    }
+  }
+  // UPI QR straight into DEHAT's bank account: the same form and rules as the card route, then a one-time QR
+  // whose reference code lets finance match the credit and send the receipt.
+  async _payUpi(P) {
+    const p = this._payload(P);
+    if (p.account === 'FCRA / foreign') return;
+    const formErrs = this._donorErrors();
+    if (Object.keys(formErrs).length) {
+      this.setState({ dTry: true });
+      setTimeout(() => this._focusFirstError(formErrs), 60);
+      return;
+    }
+    this.setState({ upiErr: '' });
+    try {
+      const response = await fetch('/api/donations/upi-intent', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: p.amount, frequency: 'once', purpose: p.purpose, purposeEn: p.purposeEn,
+          receipt80G: p.receipt80G, pan: p.pan, address: p.address, anonymous: p.anonymous, regime: 'domestic_inr',
+          fullName: p.fullName, email: p.email, phone: p.phone,
+          city: p.city, state: p.state, postalCode: p.postalCode, district: p.district, districtOther: p.districtOther,
+          phoneDial: p.phoneDial, countryCode: p.countryCode, lang: this.state.lang,
+        }),
+      });
+      const out = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        if (out && out.fields) {
+          const code = out.fields.amount;
+          if (code === 'upi_limit' || code === 'upi_once_only') { this.setState({ upiErr: this._dt('v_' + code) }); return; }
+          this.setState({ dTry: true, dSrvErr: out.fields }); setTimeout(() => this._focusFirstError(out.fields), 60); return;
+        }
+        throw new Error('upi');
+      }
+      this.setState({ upi: out }, () => {
+        try { const el = document.querySelector('[data-anchor="upi-qr"]'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+      });
+    } catch (error) {
+      this.setState({ upiErr: this._dt('upi_qr_error') });
     }
   }
   // Report-a-transfer: someone who has already moved money by NEFT/RTGS/IMPS or a
@@ -36224,6 +36301,7 @@ class Component extends DCLogic {
         hasFcReturnStatus: !!r.y.fcReturnStatus,
         fcReturnLabel: r.y.fcReturnForm || 'FC-4',
         fcReturnDoc: this._docUrl(r.y.fcReturn), fcDocAsk: this._docAsk(r.fy ? 'FCRA return ' + r.fy : 'FCRA return'),
+        itrDoc: this._docUrl(r.y.itr), hasItr: !!this._docUrl(r.y.itr), noItr: !!r.y.itr && !this._docUrl(r.y.itr), itrAsk: this._docAsk(r.fy ? 'Income tax return for FY ' + r.fy : 'Income tax return'),
         fcReturnTitle: this._fill(T.fc_open_title, { form: r.y.fcReturnForm || 'FC-4', fy: r.fy }),
         fcReturnFull: this._fill(T.fc_open_full, { form: r.y.fcReturnForm || 'FC-4' }),
         // A foreign-contribution year with no published return says so, and gives the

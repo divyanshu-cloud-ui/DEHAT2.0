@@ -97,14 +97,34 @@ FIN.DOCUMENTS = [
   { title:'Foreign Contribution (Regulation) Act Renewal Certificate', issuer:'Ministry of Home Affairs', period:'Registration 136260010', group:'fcra',
     desc:'Renewed clearance to receive foreign contributions; foreign funds are kept in a separate Foreign Contribution (Regulation) Act account and audited apart from domestic funds.', file:'assets/docs/fcra-renewal-certificate.pdf' },
   { title:'Tax Deduction Account Number (TAN) Allotment', issuer:'Income Tax Department', period:'TAN LKND07117F', group:'statutory',
-    desc:'Allotment of the Society’s TAN, quoted on every tax deducted at source challan, certificate and return.', file:'assets/docs/fcra-designated-bank-account.pdf' },
+    desc:'Allotment of the Society’s TAN, quoted on every tax deducted at source challan, certificate and return.', file:'assets/docs/tan-allotment-letter.pdf' },
   // Third-party validations & recognition
   { title:'CAF India Validation Certificate', issuer:'CAF India', period:'Validated', group:'validation',
     desc:'Due-diligence validation by Charities Aid Foundation India - an independent check of governance, finance and compliance.', file:'assets/docs/caf-validation-certificate.pdf' },
   { title:'Tata Institute of Social Sciences Empanelment Certificate', issuer:'Tata Institute of Social Sciences', period:'Empanelled - Public Sector Undertaking', group:'validation',
     desc:'Empanelled with the Tata Institute of Social Sciences as an implementing partner for Public Sector Undertaking corporate social responsibility programmes.', file:'assets/docs/tiss-empanelment-certificate.pdf' },
   { title:'BSE Sammaan Listing', issuer:'BSE (Bombay Stock Exchange)', period:'Listed organisation', group:'validation',
-    desc:'Listed on the BSE Sammaan platform, the Bombay Stock Exchange’s vetted registry connecting corporates with credible non-governmental organisations for corporate social responsibility.', file:'assets/docs/bse-sammaan.pdf' },
+    desc:'Listed on the BSE Sammaan platform, the Bombay Stock Exchange’s vetted registry connecting corporates with credible non-governmental organisations for corporate social responsibility.', file:'assets/docs/bse-sammaan.pdf' },  // Added 11 Oct 2026: essential documents that had no card. Each shows "Available on request" until published.
+  { title:'Society Registration Certificate (2000)', issuer:'Registrar of Societies, Uttar Pradesh', period:'Registered 21 Aug 2000', group:'statutory',
+    desc:'The founding registration of DEHAT as a society under the Societies Registration Act, 1860 (No. 370/2000-2001).', file:'assets/docs/society-registration-2000.pdf' },
+  { title:'Governing Body List Filed with the Registrar', issuer:'Deputy Registrar of Societies', period:'Certified list', group:'statutory',
+    desc:'The certified list of the Society’s governing body, as filed with the Registrar of Societies.', file:'assets/docs/society-governing-body-list.pdf' },
+  { title:'Section 12AA Original Registration Order', issuer:'Commissioner of Income Tax, Bareilly', period:'Original order', group:'statutory',
+    desc:'The first income-tax registration of the Society as a charitable institution, under the law then in force.', file:'assets/docs/12aa-original-registration.pdf' },
+  { title:'Section 80G Original Approval Order', issuer:'Commissioner of Income Tax, Bareilly', period:'Original order', group:'statutory',
+    desc:'The first approval that let Indian donors claim a tax deduction on gifts to DEHAT, under the law then in force.', file:'assets/docs/80g-original-approval.pdf' },
+  { title:'Form 10BD Statement of Donations', issuer:'Income Tax Department', period:'FY 2023-24', group:'statutory',
+    desc:'Acknowledgement of the statement of donations DEHAT filed for the year, which carries donors’ deductions into their tax records.', file:'assets/docs/form-10bd-2023-24.pdf' },
+  { title:'Form 10B Audit Report', issuer:'Income Tax Department', period:'FY 2021-22', group:'statutory',
+    desc:'The statutory audit report of a charitable institution, filed with the Income Tax Department for the year.', file:'assets/docs/form-10b-2021-22.pdf' },
+  { title:'NGO Darpan Registration', issuer:'NITI Aayog', period:'UP/2009/0023065', group:'statutory',
+    desc:'DEHAT’s registration on NITI Aayog’s NGO Darpan portal, the Government of India directory of voluntary organisations.', file:'assets/docs/ngo-darpan-registration.pdf' },
+  { title:'FCRA Designated Bank Account Confirmation', issuer:'State Bank of India, New Delhi Main Branch', period:'Designated account', group:'fcra',
+    desc:'Confirmation of the account at the State Bank of India, New Delhi Main Branch, designated to receive foreign contributions, as the Foreign Contribution (Regulation) Act requires.', file:'assets/docs/fcra-designated-bank-account.pdf' },
+  { title:'FCRA Audited Financial Statements FY 2016-17', issuer:'Statutory auditor', period:'FY 2016-17', group:'fcra',
+    desc:'Audited statements of the separate Foreign Contribution (Regulation) Act account for the year, kept apart from domestic funds.', file:'assets/docs/fcra-statements-2016-17.pdf' },
+  { title:'FCRA Audited Financial Statements FY 2015-16', issuer:'Statutory auditor', period:'FY 2015-16', group:'fcra',
+    desc:'Audited statements of the separate Foreign Contribution (Regulation) Act account for the year, kept apart from domestic funds.', file:'assets/docs/fcra-statements-2015-16.pdf' },
 ];
 
 // ---- TIME-VERSIONED REGULATORY TIMELINE --------------------------------------------
@@ -238,7 +258,7 @@ FIN.YEARS = [
     balanceSheetTotal:3870930.66,
   },
   {
-    fy:'2024-25', doc:'assets/docs/balance-sheet-2024-25.pdf', period:'1 Apr 2024 – 31 Mar 2025',
+    fy:'2024-25', doc:'assets/docs/balance-sheet-2024-25.pdf', itr:'assets/docs/itr-ay-2025-26.pdf', fcReturn:'assets/docs/fc4-2024-25.pdf', fcReturnForm:'FC-4', period:'1 Apr 2024 – 31 Mar 2025',
     signed:true, softcopy:true, auditor:'Madhuresh Agrahari & Associates', udin:'25528519BMNZFO7507',
     // Basis disclosure - RESOLVED: source is DEHAT's own "Activity wise utilisation" FC-4
     // preparation working paper (govt.-format schedule, cross-checked line by line, every row
@@ -283,7 +303,7 @@ FIN.YEARS = [
   },
   // FY2005-06 … FY2023-24 - extracted from signed scanned PDFs (in progress).
   {
-    fy:'2023-24', doc:'assets/docs/balance-sheet-2023-24.pdf', period:'1 Apr 2023 – 31 Mar 2024',
+    fy:'2023-24', doc:'assets/docs/balance-sheet-2023-24.pdf', itr:'assets/docs/itr-ay-2024-25.pdf', fcReturn:'assets/docs/fc4-2023-24.pdf', fcReturnForm:'FC-4', period:'1 Apr 2023 – 31 Mar 2024',
     signed:true, softcopy:false, auditor:'Madhuresh Agrahari & Associates', udin:'24528519BKEGVJ6534',
     fcReturnStatus:'Filed FC-4 confirmed 27 August 2026 - no draft watermark, signed by DEVYANI CHATURVEDI, organisational seal present, footer reads "FCRA Annual Returns for the financial year has been Submitted on 26/12/2024" on every page. Supersedes the earlier draft-only copies.',
     // Source: "FC-4 FY 2023-24.pdf" - a genuinely filed, signed, sealed return, distinct from every
@@ -376,7 +396,7 @@ FIN.YEARS = [
     balanceSheetTotal:5296331.59,
   },
   {
-    fy:'2022-23', doc:'assets/docs/balance-sheet-2022-23.pdf', period:'1 Apr 2022 – 31 Mar 2023',
+    fy:'2022-23', doc:'assets/docs/balance-sheet-2022-23.pdf', itr:'assets/docs/itr-ay-2023-24.pdf', fcReturn:'assets/docs/fc4-2022-23.pdf', fcReturnForm:'FC-4', period:'1 Apr 2022 – 31 Mar 2023',
     signed:true, softcopy:true, auditor:'Madhuresh Agrahari & Associates', udin:'23528519BGXVMU3256',
     // Source: DEHAT B.S. Consolidated 2022-23.pdf (signed) + Financial Summary 2022-23 xlsx (per-funder INR schedule)
     received:[
@@ -412,7 +432,7 @@ FIN.YEARS = [
     balanceSheetTotal:null, // scanned; not digitised
   },
   {
-    fy:'2021-22', doc:'assets/docs/balance-sheet-2021-22.pdf', period:'1 Apr 2021 – 31 Mar 2022',
+    fy:'2021-22', doc:'assets/docs/balance-sheet-2021-22.pdf', itr:'assets/docs/itr-ay-2022-23.pdf', fcReturn:'assets/docs/fc4-2021-22.pdf', fcReturnForm:'FC-4', period:'1 Apr 2021 – 31 Mar 2022',
     signed:true, softcopy:true, auditor:'Madhuresh Agrahari & Associates', udin:'22528519BDJWNE2102',
     // Source: signed consolidated statement + submitted FC-4 (02/08/2022). The workbook titled
     // "Last 3 Year Income Expenditure Detail" labels its FY2021-22 Caritas/IGSSS/Sanlaap columns
@@ -569,7 +589,7 @@ FIN.YEARS = [
     closingCashINR:1154,
   },
   {
-    fy:'2020-21', doc:'assets/docs/balance-sheet-2020-21.pdf', period:'1 Apr 2020 – 31 Mar 2021',
+    fy:'2020-21', doc:'assets/docs/balance-sheet-2020-21.pdf', itr:'assets/docs/itr-ay-2021-22.pdf', fcReturn:'assets/docs/fc4-2020-21.pdf', fcReturnForm:'FC-4', period:'1 Apr 2020 – 31 Mar 2021',
     signed:true, softcopy:false, auditor:'Garg Akash & Co (Lucknow, M.No.435464)', udin:'21435464AAAABJ9151',
     // Source: 5. DEHAT Consolidated Balance Sheet 2020-21.pdf (scanned; read visually). Signed 30/05/2021.
     // Actuals on utilised/income-recognised basis (I&E): Caritas ₹9,97,900; SCIAF ₹5,21,081;
@@ -615,7 +635,7 @@ FIN.YEARS = [
     reserves:{ closingBankTotal:1688400.74 },
   },
   {
-    fy:'2019-20', doc:'assets/docs/balance-sheet-2019-20.pdf', period:'1 Apr 2019 – 31 Mar 2020',
+    fy:'2019-20', doc:'assets/docs/balance-sheet-2019-20.pdf', itr:'assets/docs/itr-ay-2020-21.pdf', fcReturn:'assets/docs/fc4-2019-20.pdf', fcReturnForm:'FC-4', period:'1 Apr 2019 – 31 Mar 2020',
     signed:true, softcopy:false, auditor:'Garg Akash & Co (Lucknow, M.No.435464)',
     // Source: DEHAT Consolidated Balance Sheet 2019-20.pdf (scanned; read visually). Signed 24/08/2020.
     // Org books grant amounts on a UTILISED basis (I&E "Grant Utilised" = income); received≈utilised.
@@ -652,7 +672,7 @@ FIN.YEARS = [
     reserves:{ closingBankTotal:1631477.62 },
   },
   {
-    fy:'2018-19', doc:'assets/docs/balance-sheet-2018-19.pdf', period:'1 Apr 2018 – 31 Mar 2019',
+    fy:'2018-19', doc:'assets/docs/balance-sheet-2018-19.pdf', itr:'assets/docs/itr-ay-2019-20.pdf', fcReturn:'assets/docs/fc4-2018-19.pdf', fcReturnForm:'FC-4', period:'1 Apr 2018 – 31 Mar 2019',
     signed:true, softcopy:false, auditor:'Garg Akash & Co (Lucknow, M.No.435464)',
     // Source: Balance Sheet Consolidated 2018-19.pdf (scanned; read visually). Signed 05/06/2019.
     // Utilised basis (I&E "Grant Utilised"). Balance sheet total ₹20,30,614.81; surplus ₹49,488.07
@@ -702,7 +722,7 @@ FIN.YEARS = [
     balanceSheetTotal:2030614.81,
   },
   {
-    fy:'2017-18', doc:'assets/docs/balance-sheet-2017-18.pdf', period:'1 Apr 2017 – 31 Mar 2018',
+    fy:'2017-18', doc:'assets/docs/balance-sheet-2017-18.pdf', itr:'assets/docs/itr-ay-2018-19.pdf', fcReturn:'assets/docs/fc4-2017-18.pdf', fcReturnForm:'FC-4', period:'1 Apr 2017 – 31 Mar 2018',
     signed:true, softcopy:false, auditor:'Vipin Priyank Gopal & Co (Bahraich, FRN 017849C, M.No.422438)',
     // Source: DEHAT Balance Sheet Consolidated. 2017-18.pdf (signed, text-readable, re-read directly
     // page by page - not the earlier scan). Balance Sheet signed 29/09/2018; Income & Expenditure and
@@ -763,7 +783,7 @@ FIN.YEARS = [
     note:'Grant-Fund income and full project-level expenditure directly transcribed from the signed statutory audit (Vipin Priyank Gopal & Co, dated 29/10/2018 on the I&E). Google ₹60.02L is in-kind Ad Grants, not cash.',
   },
   {
-    fy:'2016-17', doc:'assets/docs/balance-sheet-2016-17.pdf', period:'1 Apr 2016 – 31 Mar 2017',
+    fy:'2016-17', doc:'assets/docs/balance-sheet-2016-17.pdf', itr:'assets/docs/itr-ay-2017-18.pdf', period:'1 Apr 2016 – 31 Mar 2017',
     signed:true, compiled:true, softcopy:false, auditor:'Rajeev Parul & Co (Lucknow, CA Atul Kumar Srivastava, M.No.407637)',
     // Source: signed scanned copy in PUBLIC_DOCUMENTS/01_BALANCE_SHEETS/DEHAT_Audited_Balance_Sheet_FY_2016-17.pdf
     // - every page carries the Rajeev Parul & Co round stamp, and page 3's Auditor's Report is wet-signed
@@ -820,7 +840,7 @@ FIN.YEARS = [
     ],
   },
   {
-    fy:'2015-16', doc:'assets/docs/balance-sheet-2015-16.pdf', period:'1 Apr 2015 – 31 Mar 2016',
+    fy:'2015-16', doc:'assets/docs/balance-sheet-2015-16.pdf', itr:'assets/docs/itr-ay-2016-17.pdf', period:'1 Apr 2015 – 31 Mar 2016',
     signed:true, softcopy:false, auditor:'RJCP Subhash Misra & Co (Lucknow, CA Subhash Misra, M.No.076388, FRN 007415C)',
     // Source: DEHAT_Consolidated__Balance_sheet_2015-16.pdf - the full 14-page signed consolidated
     // Income & Expenditure Account (dated 10.09.2016), re-read directly page by page. Total Income
@@ -874,7 +894,7 @@ FIN.YEARS = [
     ],
   },
   {
-    fy:'2014-15', doc:'assets/docs/balance-sheet-2014-15.pdf', period:'1 Apr 2014 – 31 Mar 2015',
+    fy:'2014-15', doc:'assets/docs/balance-sheet-2014-15.pdf', itr:'assets/docs/itr-ay-2015-16.pdf', period:'1 Apr 2014 – 31 Mar 2015',
     signed:true, softcopy:false, auditor:'RJCP Subhash Misra & Co (Lucknow, CA Subhash Misra, M.No.076388, FRN 007415C)',
     // Source: scans/ocr-2014-15.txt (OCR of signed scan). Signed 20.05.2015.
     // Fund-accounting I&E: income recognised = grant applied to the year. Cash R&P (₹2.79 cr)
@@ -923,7 +943,7 @@ FIN.YEARS = [
     ],
   },
   {
-    fy:'2013-14', doc:'assets/docs/balance-sheet-2013-14.pdf', period:'1 Apr 2013 – 31 Mar 2014',
+    fy:'2013-14', doc:'assets/docs/balance-sheet-2013-14.pdf', itr:'assets/docs/itr-ay-2014-15.pdf', period:'1 Apr 2013 – 31 Mar 2014',
     signed:true, softcopy:false, auditor:'RJCP Subhash Misra & Co (Lucknow, CA Subhash Misra, M.No.076388, FRN 007415C)',
     // Source: re-scanned consolidated R&P/I&E/Balance Sheet 2013-14 (legible copy, signed 12.06.2014).
     // Per-funder = grant RECEIVED in cash during the year (R&P "Grant Received" lines).
@@ -966,7 +986,7 @@ FIN.YEARS = [
     ],
   },
   {
-    fy:'2012-13', doc:'assets/docs/balance-sheet-2012-13.pdf', period:'1 Apr 2012 – 31 Mar 2013',
+    fy:'2012-13', doc:'assets/docs/balance-sheet-2012-13.pdf', itr:'assets/docs/itr-ay-2013-14.pdf', period:'1 Apr 2012 – 31 Mar 2013',
     signed:true, softcopy:false, auditor:'RJCP Subhash Misra & Co (Lucknow, CA Subhash Misra, M.No.076388, FRN 007415C)',
     // Source: YEAR 2012 - 2013.pdf, re-read directly page by page (Pages 7-8), rotation-corrected.
     // receivedTotal is the audited Income & Expenditure Account's income total - an appropriation
