@@ -22,6 +22,8 @@ export const LAUNCH_INPUTS = Object.freeze({
   llmsFull: 'llms-full.txt',
   redirects: '_internal/qa/REDIRECTS_156.csv',
 });
+// Public Vercel Blob store that holds the published statutory PDFs (store_od8fzyXAvAci3BF9, bom1).
+export const DOCS_ORIGIN = 'https://od8fzyxavaci3bf9.public.blob.vercel-storage.com';
 export const LEGAL_PATHS = Object.freeze([
   '/privacy-policy/', '/refund-policy/', '/terms-and-conditions/',
 ]);

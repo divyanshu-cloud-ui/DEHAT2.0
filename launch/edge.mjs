@@ -1,5 +1,5 @@
 import {LANGUAGES} from './routes.mjs';
-import {LEGAL_PATHS,PUBLISHED} from './config.mjs';
+import {DOCS_ORIGIN,LEGAL_PATHS,PUBLISHED} from './config.mjs';
 
 // Each remote origin below occurs in DEHAT.dc.html, support.js or the local
 // proof resource log. This policy is report-only while the runtime is measured.
@@ -50,6 +50,10 @@ export function buildRoutes({mode,origin,redirects,routes,publishedPaths,files,a
 
   output.push({src:'^/(?:MediaArchive\\.dc\\.html|district-map\\.html)$',headers:{'X-Robots-Tag':'noindex'},continue:true});
   output.push(cache('^/assets/.*$',media));
+  // Published statutory PDFs live in a public Vercel Blob store and are served from this same address.
+  // The manifest lists what is published, so it is cached for minutes, not a day.
+  output.push(cache('^/assets/docs/manifest\\.json$','public, max-age=300, stale-while-revalidate=3600',{'Content-Type':'application/json; charset=utf-8'}));
+  output.push({src:'^/assets/docs/(.+)$',dest:DOCS_ORIGIN+'/docs/$1'});
   output.push(cache('^/dehat-[^/]*\\.png$',media));
   output.push(cache('^/(?!api/|assets/)(?:$|[^.]*|.*\\.html)$',revalidate));
   output.push(cache('^/[^/]*-data\\.js$',revalidate));
