@@ -126,9 +126,16 @@ export function validateTransfer(input, ctx = {}) {
   else if (ref.length > 40) e.rtRef = 'too_long';
   else if (!/^[A-Za-z0-9][A-Za-z0-9 \-_/.]*$/.test(ref) || repeated(ref) || !/\d/.test(ref) && letters(ref) < 4) e.rtRef = 'invalid_ref';
 
+  // A transfer from abroad is in a foreign currency, so the currency must be said; from India it defaults to rupees.
+  const country = trim(v.countryCode) || 'IN';
+  const currency = trim(v.currency).toUpperCase();
+  if (!currency && country !== 'IN') e.rtCurrency = 'required';
+  else if (currency && !/^[A-Z]{3}$/.test(currency)) e.rtCurrency = 'invalid_chars';
+  const rupees = !currency || currency === 'INR';
+
   const rawAmount = trim(v.amount).replace(/^(?:rs\.?|inr|\u20b9)\s*/i, '').replace(/,/g, '');
   if (!rawAmount) e.rtAmount = 'required';
-  else if (!/^\d+(\.\d{1,2})?$/.test(rawAmount) || Number(rawAmount) < 1 || Number(rawAmount) > MAX_AMOUNT) e.rtAmount = 'amount_range';
+  else if (!/^\d+(\.\d{1,2})?$/.test(rawAmount) || Number(rawAmount) < 1 || Number(rawAmount) > (rupees ? MAX_AMOUNT : MAX_AMOUNT * 100)) e.rtAmount = 'amount_range';
 
   const date = trim(v.date);
   if (!date) e.rtDate = 'required';
@@ -156,7 +163,7 @@ export function validateTransfer(input, ctx = {}) {
   return { ok: Object.keys(e).length === 0, errors: e, clean: donor.clean };
 }
 
-export const TRANSFER_ORDER = ['rtRef', 'rtAmount', 'rtDate', 'rtFirst', 'rtLast', 'rtPhone', 'rtEmail', 'rtStreet', 'rtCountry', 'rtState', 'rtDistrict', 'rtCity', 'rtPin', 'rtCompany'];
+export const TRANSFER_ORDER = ['rtRef', 'rtAmount', 'rtCurrency', 'rtDate', 'rtFirst', 'rtLast', 'rtPhone', 'rtEmail', 'rtStreet', 'rtCountry', 'rtState', 'rtDistrict', 'rtCity', 'rtPin', 'rtCompany'];
 
 // Display order for focusing the first problem on screen.
 export const FIELD_ORDER = ['amount', 'fullName', 'countryCode', 'phone', 'email', 'state', 'district', 'city', 'postalCode', 'address', 'pan'];

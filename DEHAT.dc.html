@@ -4071,10 +4071,10 @@
                   </button>
                   <sc-if value="{{ r.hasDoc }}" hint-placeholder-val="{{ true }}">
                     <a class="finance-doc-link tap-hit tap-chip" href="{{ r.doc }}" target="_blank" rel="noopener" title="{{ T.title_open_balance_sheet }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--ac-teal);text-decoration:none;white-space:nowrap">{{ T.fin_bs_lbl }}<span aria-hidden="true">&#8599;</span></a>
-                  </sc-if>
+                  </sc-if><sc-if value="{{ r.noDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.docAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">{{ T.fin_bs_lbl }} · {{ T.fin_doc_request_short }}</a></sc-if>
                   <sc-if value="{{ r.hasFcReturn }}" hint-placeholder-val="{{ false }}">
                     <a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcReturnDoc }}" target="_blank" rel="noopener" title="{{ r.fcReturnTitle }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--ac-purple);text-decoration:none;white-space:nowrap">{{ r.fcReturnLabel }}<span aria-hidden="true">&#8599;</span></a>
-                  </sc-if>
+                  </sc-if><sc-if value="{{ r.noFcReturnDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcDocAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">FC-4 · {{ T.fin_doc_request_short }}</a></sc-if>
                   <sc-if value="{{ r.fcAskable }}" hint-placeholder-val="{{ false }}">
                     <a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcAskHref }}" title="{{ r.fcAskTitle }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">{{ r.fcAskLabel }}</a>
                   </sc-if>
@@ -4096,10 +4096,10 @@
                         </sc-if>
                         <sc-if value="{{ r.hasDoc }}" hint-placeholder-val="{{ false }}">
                           <a class="finance-doc-link tap-hit tap-chip" href="{{ r.doc }}" target="_blank" rel="noopener" style="margin-top:10px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ac-teal);text-decoration:none;border-bottom:1px solid rgba(14,85,101,.35);padding-bottom:2px">{{ T.fin_open_stmt }}<span aria-hidden="true">&#8599;</span></a>
-                        </sc-if>
+                        </sc-if><sc-if value="{{ r.noDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.docAsk }}" style="margin-top:10px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--faint);text-decoration:none">{{ T.fin_bs_lbl }} · {{ T.fin_doc_request_short }}</a></sc-if>
                         <sc-if value="{{ r.hasFcReturn }}" hint-placeholder-val="{{ false }}">
                           <a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcReturnDoc }}" target="_blank" rel="noopener" style="margin-top:8px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ac-purple);text-decoration:none;border-bottom:1px solid rgba(79,14,115,.35);padding-bottom:2px">{{ r.fcReturnFull }}<span aria-hidden="true">&#8599;</span></a>
-                        </sc-if>
+                        </sc-if><sc-if value="{{ r.noFcReturnDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcDocAsk }}" style="margin-top:8px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--faint);text-decoration:none">FC-4 · {{ T.fin_doc_request_short }}</a></sc-if>
                         <sc-if value="{{ r.hasFcReturnStatus }}" hint-placeholder-val="{{ false }}">
                           <div style="margin-top:10px;padding:9px 11px;border-left:3px solid var(--ac-amber);background:var(--surface2);font-size:12px;line-height:1.55;color:var(--dim)">{{ r.fcReturnStatus }}</div>
                         </sc-if>
@@ -4247,7 +4247,7 @@
                 </div>
                 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px">
                   <sc-for list="{{ g.docs }}" as="d" hint-placeholder-count="4">
-                    <a href="{{ d.file }}" target="_blank" rel="noopener" style="display:flex;flex-direction:column;text-decoration:none;padding:20px;border-radius:15px;background:var(--surface);border:1px solid var(--border);border-top:4px solid {{ d.color }};transition:transform .18s cubic-bezier(.22,.61,.36,1),box-shadow .18s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.12)">
+                    <sc-if value="{{ d.has }}" hint-placeholder-val="{{ true }}"><a href="{{ d.href }}" target="_blank" rel="noopener" style="display:flex;flex-direction:column;text-decoration:none;padding:20px;border-radius:15px;background:var(--surface);border:1px solid var(--border);border-top:4px solid {{ d.color }};transition:transform .18s cubic-bezier(.22,.61,.36,1),box-shadow .18s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.12)">
                       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
                         <div style="min-width:0">
                           <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:16px;line-height:1.25;color:var(--text)">{{ d.title }}</div>
@@ -4258,7 +4258,18 @@
                       <div style="align-self:flex-start;margin:12px 0 10px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;background:var(--surface2);color:{{ d.color }}">{{ d.period }}</div>
                       <p style="font-size:13px;line-height:1.5;color:var(--dim);margin:0 0 14px">{{ d.desc }}</p>
                       <span style="margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:{{ d.color }}">{{ T.fin_doc_view }} →</span>
-                    </a>
+                    </a></sc-if><sc-if value="{{ d.hasNot }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;text-decoration:none;padding:20px;border-radius:15px;background:var(--surface);border:1px solid var(--border);border-top:4px solid {{ d.color }};transition:transform .18s cubic-bezier(.22,.61,.36,1),box-shadow .18s cubic-bezier(.22,.61,.36,1)">
+                      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+                        <div style="min-width:0">
+                          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:16px;line-height:1.25;color:var(--text)">{{ d.title }}</div>
+                          <div style="font-size:12.5px;color:var(--faint);margin-top:4px">{{ d.issuer }}</div>
+                        </div>
+                        <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:var(--surface2);color:{{ d.color }};font-size:15px;font-weight:800">PDF</span>
+                      </div>
+                      <div style="align-self:flex-start;margin:12px 0 10px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;background:var(--surface2);color:{{ d.color }}">{{ d.period }}</div>
+                      <p style="font-size:13px;line-height:1.5;color:var(--dim);margin:0 0 14px">{{ d.desc }}</p>
+                      <div style="margin-top:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:11px;font-weight:800;padding:3px 9px;border-radius:6px;background:var(--bg-warning,rgba(234,174,40,.16));color:var(--text-warning,#EAAE28)">{{ T.fin_doc_request }}</span><a href="{{ d.askHref }}" style="font-size:12.5px;font-weight:700;color:{{ d.color }};text-decoration:none">{{ T.fin_doc_email }} ✉</a></div>
+                    </div></sc-if>
                   </sc-for>
                 </div>
               </div>
@@ -4812,6 +4823,7 @@ class Component extends DCLogic {
   componentDidMount() {
     this._loadGeo();
     this._loadPayMode();
+    this._loadDocs();
     if (window.DEHAT_LAUNCH) window.DEHAT_LAUNCH.attach(this);
     this._applyTheme();
     // Open in the language the device asks for, without recording it as a choice the
@@ -6849,6 +6861,12 @@ class Component extends DCLogic {
       fin_docg_fcra:'Foreign Contribution · Foreign Contribution (Regulation) Act',
       fin_docg_validation:'Validations & Recognition',
       fin_doc_view:'View Document',
+      rt_label_13:'Currency',
+      rt_ref_help_abroad:'Sending from abroad? Use your bank\u2019s SWIFT or transfer reference, shown on your bank\u2019s confirmation.',
+      fin_doc_request:'Available on request',
+      fin_doc_email:'Email us for a copy',
+      fin_doc_request_short:'On request',
+      fin_doc_mail_subject:'Request for a copy: {title}',
       fin_pending_label:'Audited Scan on File - Figures Being Digitised',
       ask_title:'Ask the Record',
       ask_lead:'This desk answers only from what DEHAT has already published. Ask a question in your own words. If the answer is not on this site, it will say so and give you a person to write to rather than guess.',
@@ -7187,6 +7205,10 @@ class Component extends DCLogic {
       cta_route_small: "Not ready to commit? Find your route in three steps",
     };
         const HI = {
+      fin_doc_request:'अनुरोध पर उपलब्ध',
+      fin_doc_email:'प्रति के लिए हमें ईमेल करें',
+      fin_doc_request_short:'अनुरोध पर',
+      fin_doc_mail_subject:'प्रति के लिए अनुरोध: {title}',
       v_recurring_limit:'कार्ड या UPI से मासिक या वार्षिक सहयोग ₹15,000 तक ही हो सकता है। बड़ी राशि के लिए कृपया एक बार चुनें या बैंक ट्रांसफर इस्तेमाल करें।',
       f_pin_filled:'इस PIN के आधार पर भरा गया: {place}। कृपया इसे जाँच लें।',
       f_pin_unknown:'हमें यह PIN नहीं मिला। कृपया अपना राज्य और ज़िला खुद चुन लें।',
@@ -8169,6 +8191,10 @@ class Component extends DCLogic {
       cta_route_small: "अभी तय नहीं? तीन कदमों में अपना रास्ता खोजिए",
     };
             const ZH = {
+      fin_doc_request:'按需提供',
+      fin_doc_email:'发邮件获取副本',
+      fin_doc_request_short:'按需提供',
+      fin_doc_mail_subject:'索取副本：{title}',
       v_recurring_limit:'通过银行卡或 UPI 进行的按月和按年支持限额为 ₹15,000。若要支持更多，请选择“一次”或使用银行转账。',
       f_pin_filled:'已根据此 PIN 自动填入：{place}。请核对。',
       f_pin_unknown:'未找到此 PIN。请自行选择您的州/邦和地区。',
@@ -9140,6 +9166,10 @@ class Component extends DCLogic {
     "cta_route_small": "尚未准备好做出承诺？只需三步，找到适合您的参与方式",
     };
                 const FR = {
+      fin_doc_request:'Disponible sur demande',
+      fin_doc_email:'Écrivez-nous pour obtenir une copie',
+      fin_doc_request_short:'Sur demande',
+      fin_doc_mail_subject:'Demande de copie : {title}',
       v_recurring_limit:'Les dons par carte ou UPI sont limités à ₹15,000 par mois ou an. Pour donner plus, choisissez Une fois ou le virement bancaire.',
       f_pin_filled:'Rempli à partir de ce PIN : {place}. Veuillez vérifier.',
       f_pin_unknown:'Nous n\'avons pas trouvé ce PIN. Veuillez choisir vous-même votre État et district.',
@@ -10111,6 +10141,10 @@ class Component extends DCLogic {
     "cta_route_small": "Pas encore prêt à vous engager ? Trouvez votre voie en trois étapes",
     };
             const RU = {
+      fin_doc_request:'Доступно по запросу',
+      fin_doc_email:'Напишите нам, чтобы получить копию',
+      fin_doc_request_short:'По запросу',
+      fin_doc_mail_subject:'Запрос копии: {title}',
       v_recurring_limit:'Взносы картой или через UPI могут быть до ₹15,000. Для большей суммы выберите «Один раз» или банковский перевод.',
       f_pin_filled:'Заполнено по этому PIN: {place}. Пожалуйста, проверьте.',
       f_pin_unknown:'Мы не нашли этот PIN. Пожалуйста, выберите ваш штат и район самостоятельно.',
@@ -11082,6 +11116,10 @@ class Component extends DCLogic {
     "cta_route_small": "Не готовы сразу взять обязательства? Найдите свой маршрут за три шага",
     };
         const ES = {
+      fin_doc_request:'Disponible a petición',
+      fin_doc_email:'Escríbenos para solicitar una copia',
+      fin_doc_request_short:'A petición',
+      fin_doc_mail_subject:'Solicitud de copia: {title}',
       v_recurring_limit:'Los aportes con tarjeta o UPI pueden ser de hasta ₹15,000. Para un monto mayor, elige «una vez» o usa transferencia bancaria.',
       f_pin_filled:'Completado a partir de este PIN: {place}. Por favor, verifícalo.',
       f_pin_unknown:'No encontramos este PIN. Por favor, selecciona tu estado y distrito manualmente.',
@@ -12053,6 +12091,10 @@ class Component extends DCLogic {
     "cta_route_small": "¿Aún no decides comprometerte? Encuentra tu camino en tres pasos",
     };
             const AR = {
+      fin_doc_request:'متاح عند الطلب',
+      fin_doc_email:'راسلنا للحصول على نسخة',
+      fin_doc_request_short:'عند الطلب',
+      fin_doc_mail_subject:'طلب نسخة: {title}',
       v_recurring_limit:'المساهمات الشهرية والسنوية بالبطاقة أو UPI تصل إلى ₹15,000. لمبلغ أكبر، اختر "مرة واحدة" أو التحويل المصرفي.',
       f_pin_filled:'تمت التعبئة بناءً على هذا الـ PIN: {place}. يُرجى التحقق من ذلك.',
       f_pin_unknown:'لم نتمكن من العثور على هذا الـ PIN. يُرجى اختيار ولايتك ومنطقتك بنفسك.',
@@ -13024,6 +13066,10 @@ class Component extends DCLogic {
     "cta_route_small": "لست مستعداً للالتزام بعد؟ اكتشف مسارك في ثلاث خطوات",
     };
             const UR = {
+      fin_doc_request:'درخواست پر دستیاب',
+      fin_doc_email:'کاپی کے لیے ہمیں ای میل کریں',
+      fin_doc_request_short:'درخواست پر',
+      fin_doc_mail_subject:'کاپی کی درخواست: {title}',
       v_recurring_limit:'کارڈ یا UPI سے ماہانہ اور سالانہ تعاون کی حد ₹15,000 تک ہے۔ بڑی رقم کے لیے ایک بار منتخب کریں یا بینک ٹرانسفر استعمال کریں۔',
       f_pin_filled:'اس PIN کی بنیاد پر بھرا گیا: {place}۔ برائے مہربانی اسے چیک کر لیں۔',
       f_pin_unknown:'ہمیں یہ PIN نہیں ملا۔ برائے مہربانی اپنی ریاست اور ضلع خود منتخب کریں۔',
@@ -13995,6 +14041,10 @@ class Component extends DCLogic {
     "cta_route_small": "ابھی طے نہیں کیا؟ تین قدموں میں اپنا راستہ تلاش کیجیے",
     };
             const KS = {
+      fin_doc_request:'درخواستس پؠٹھ دستیاب',
+      fin_doc_email:'کاپی خٲطرٕ کٔرِو اسہٕ ای میل',
+      fin_doc_request_short:'درخواستس پؠٹھ',
+      fin_doc_mail_subject:'کاپی ہٕنٛز درخواست: {title}',
       v_recurring_limit:'کارڈ یا UPI ذٔریعہ ہر رؠتھ تہٕ ؤریہِ چُھ حَد ₹15,000 تام۔ بٔڑِس رَقَمہ خٲطرٕ ژٲرِو Once یا کٔرِو بینک ٹرانسفر اِستعمال۔',
       f_pin_filled:'یَتھ PIN پؠٹھٕ بھرنہٕ آمُت: {place}۔ مہربٲنی کٔرِتھ یہِ وٕچھِو۔',
       f_pin_unknown:'أسی ہیٚکِ نہ یہِ PIN لبِتھ۔ مہربٲنی کٔرِتھ پنُن رِیاسَتھ تہٕ ضلع پانئے ژٲرِو۔',
@@ -14965,6 +15015,10 @@ class Component extends DCLogic {
     "cta_invest_join": "عوامی رِکارڈَس پؠٹھ دَرج {n} سَماجی سَرمايہٕ کارَن سٟتؠ رَلِو",
     "cta_route_small": "وُنہِ چُھو نہٕ تَیار؟ ترٛین قَدَمَن مَنٛز ژھٲنٛڈیو پَنٕنؠ وَتھ",
     };            const BN = {
+      fin_doc_request:'অনুরোধে উপলব্ধ',
+      fin_doc_email:'কপির জন্য আমাদের ইমেল করুন',
+      fin_doc_request_short:'অনুরোধে',
+      fin_doc_mail_subject:'কপির জন্য অনুরোধ: {title}',
       v_recurring_limit:'কার্ড বা UPI-তে মাসিক ও বার্ষিক অনুদান ₹15,000 পর্যন্ত হতে পারে। বেশি অর্থের জন্য একবার বাছুন বা ব্যাঙ্ক ট্রান্সফার ব্যবহার করুন।',
       f_pin_filled:'এই PIN থেকে পূরণ করা হয়েছে: {place}। অনুগ্রহ করে দেখে নিন।',
       f_pin_unknown:'আমরা এই PIN খুঁজে পাইনি। অনুগ্রহ করে আপনার রাজ্য এবং জেলা নিজে বেছে নিন।',
@@ -15936,6 +15990,10 @@ class Component extends DCLogic {
     "cta_route_small": "এখনই সিদ্ধান্ত নিতে প্রস্তুত নন? তিনটি ধাপে আপনার পথ খুঁজে নিন",
     };
             const MR = {
+      fin_doc_request:'विनंतीनुसार उपलब्ध',
+      fin_doc_email:'प्रतीसाठी आम्हाला ईमेल करा',
+      fin_doc_request_short:'विनंतीनुसार',
+      fin_doc_mail_subject:'प्रतीसाठी विनंती: {title}',
       v_recurring_limit:'कार्ड किंवा UPI द्वारे दरमहा व दरवर्षी ₹15,000 पर्यंतच देता येतात. मोठ्या रकमेसाठी कृपया एकदा निवडा किंवा बँक ट्रान्सफर वापरा.',
       f_pin_filled:'या PIN वरून भरले आहे: {place}. कृपया तपासून घ्या.',
       f_pin_unknown:'आम्हाला हा PIN सापडला नाही. कृपया तुमचे राज्य आणि जिल्हा स्वतः निवडा.',
@@ -16907,6 +16965,10 @@ class Component extends DCLogic {
     "cta_route_small": "अजून निश्चित नाही? तीन टप्प्यांत तुमचा मार्ग शोधा",
     };
             const TE = {
+      fin_doc_request:'అభ్యర్థనపై లభ్యం',
+      fin_doc_email:'ప్రతి కోసం మాకు ఈమెయిల్ చేయండి',
+      fin_doc_request_short:'అభ్యర్థనపై',
+      fin_doc_mail_subject:'ప్రతి కోసం అభ్యర్థన: {title}',
       v_recurring_limit:'కార్డ్ లేదా UPI ద్వారా నెల, ఏడాదికి ₹15,000 వరకు ఇవ్వవచ్చు. ఎక్కువ మొత్తం కోసం ఒకసారి ఎంచుకోండి లేదా బ్యాంక్ బదిలీ వాడండి.',
       f_pin_filled:'ఈ PIN ఆధారంగా నింపబడింది: {place}. దయచేసి ఒకసారి సరిచూసుకోండి.',
       f_pin_unknown:'ఈ PIN మాకు కనుగొనబడలేదు. దయచేసి మీ రాష్ట్రం మరియు జిల్లాను మీరే ఎంచుకోండి.',
@@ -17878,6 +17940,10 @@ class Component extends DCLogic {
     "cta_route_small": "ఇంకా నిర్ణయించుకోలేదా? మూడు దశల్లో మీ మార్గాన్ని కనుగొనండి",
     };
             const TA = {
+      fin_doc_request:'கோரிக்கையின் பேரில் கிடைக்கும்',
+      fin_doc_email:'நகலுக்கு எங்களுக்கு மின்னஞ்சல் அனுப்புங்கள்',
+      fin_doc_request_short:'கோரிக்கையின் பேரில்',
+      fin_doc_mail_subject:'நகலுக்கான கோரிக்கை: {title}',
       v_recurring_limit:'கார்டு அல்லது UPI மூலம் மாத/வருட உதவி ₹15,000 வரை மட்டுமே இயலும். அதிக தொகைக்கு ஒருமுறை அல்லது வங்கி பரிமாற்றத்தைப் பயன்படுத்துங்கள்.',
       f_pin_filled:'இந்த PIN மூலம் நிரப்பப்பட்டது: {place}. தயவுசெய்து சரிபார்க்கவும்.',
       f_pin_unknown:'இந்த PIN கிடைக்கவில்லை. உங்கள் மாநிலம் மற்றும் மாவட்டத்தை நீங்களே தேர்வு செய்யவும்.',
@@ -18849,6 +18915,10 @@ class Component extends DCLogic {
     "cta_route_small": "இன்னும் முடிவெடுக்கவில்லையா? மூன்று படிகளில் உங்களுக்கான வழியைக் கண்டறியுங்கள்",
     };
             const GU = {
+      fin_doc_request:'વિનંતી પર ઉપલબ્ધ',
+      fin_doc_email:'નકલ માટે અમને ઈમેલ કરો',
+      fin_doc_request_short:'વિનંતી પર',
+      fin_doc_mail_subject:'નકલ માટે વિનંતી: {title}',
       v_recurring_limit:'કાર્ડ કે UPI દ્વારા માસિક અને વાર્ષિક રકમ ₹15,000 સુધી હોઈ શકે છે. મોટી રકમ માટે એકવાર પસંદ કરો અથવા બેંક ટ્રાન્સફર વાપરો.',
       f_pin_filled:'આ PIN પરથી વિગતો ભરાઈ છે: {place}. કૃપા કરીને ચકાસી લો.',
       f_pin_unknown:'અમને આ PIN મળ્યો નથી. કૃપા કરીને તમારું રાજ્ય અને જિલ્લો જાતે પસંદ કરો.',
@@ -19820,6 +19890,10 @@ class Component extends DCLogic {
     "cta_route_small": "હજુ નક્કી નથી કર્યું? ત્રણ પગલાંમાં તમારો રસ્તો શોધો",
     };
             const KN = {
+      fin_doc_request:'ವಿನಂತಿಯ ಮೇರೆಗೆ ಲಭ್ಯ',
+      fin_doc_email:'ಪ್ರತಿಗಾಗಿ ನಮಗೆ ಇಮೇಲ್ ಮಾಡಿ',
+      fin_doc_request_short:'ವಿನಂತಿಯ ಮೇರೆಗೆ',
+      fin_doc_mail_subject:'ಪ್ರತಿಗಾಗಿ ವಿನಂತಿ: {title}',
       v_recurring_limit:'ಕಾರ್ಡ್ ಅಥವಾ UPI ಮೂಲಕ ಮಾಸಿಕ ಮತ್ತು ವಾರ್ಷಿಕ ಕೊಡುಗೆ ₹15,000 ವರೆಗೆ ಇರಬಹುದು. ಹೆಚ್ಚಿನ ಮೊತ್ತಕ್ಕೆ ಒಮ್ಮೆ ಆಯ್ಕೆಮಾಡಿ ಅಥವಾ ಬ್ಯಾಂಕ್ ವರ್ಗಾವಣೆ ಬಳಸಿ.',
       f_pin_filled:'ಈ PIN ಆಧಾರದ ಮೇಲೆ ಭರ್ತಿ ಮಾಡಲಾಗಿದೆ: {place}. ದಯವಿಟ್ಟು ಪರಿಶೀಲಿಸಿ.',
       f_pin_unknown:'ಈ PIN ಕಂಡುಬಂದಿಲ್ಲ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ರಾಜ್ಯ ಮತ್ತು ಜಿಲ್ಲೆಯನ್ನು ನೀವೇ ಆಯ್ಕೆಮಾಡಿ.',
@@ -20791,6 +20865,10 @@ class Component extends DCLogic {
     "cta_route_small": "ಇನ್ನೂ ನಿರ್ಧರಿಸಲು ಸಿದ್ಧವಿಲ್ಲವೇ? ಮೂರು ಹಂತಗಳಲ್ಲಿ ನಿಮ್ಮ ಹಾದಿಯನ್ನು ಕಂಡುಕೊಳ್ಳಿ",
     };
             const MAI = {
+      fin_doc_request:'अनुरोध पर उपलब्ध',
+      fin_doc_email:'प्रति लेल हमरा ईमेल करू',
+      fin_doc_request_short:'अनुरोध पर',
+      fin_doc_mail_subject:'प्रति लेल अनुरोध: {title}',
       v_recurring_limit:'कार्ड या UPI सँ हर महीना आ सालक सहयोग ₹15,000 धरि भऽ सकैत अछि। बेसी राशिकेँ लेल एक बेर चुनू वा बैंक ट्रांसफर करू।',
       f_pin_filled:'एहि PIN सं भरल गेल: {place}। कृपा कऽ एकरा जाँइच लिय।',
       f_pin_unknown:'हमरा सभ के ई PIN नहि भेटल। कृपा कऽ अपन राज्य आ जिला खुद चुनू।',
@@ -21762,6 +21840,10 @@ class Component extends DCLogic {
     "cta_route_small": "अखनो तय नहि? तीन पाब मे अपन बाट खोजू",
     };
             const AS = {
+      fin_doc_request:'অনুৰোধ সাপেক্ষে উপলব্ধ',
+      fin_doc_email:'প্ৰতিলিপিৰ বাবে আমাক ইমেইল কৰক',
+      fin_doc_request_short:'অনুৰোধ সাপেক্ষে',
+      fin_doc_mail_subject:'প্ৰতিলিপিৰ বাবে অনুৰোধ: {title}',
       v_recurring_limit:'কাৰ্ড বা UPI-ৰ যোগেদি মাহেকীয়া আৰু বাৰ্ষিক দান ₹15,000 পৰ্যন্ত হ’ব পাৰে। অধিক ধনৰ বাবে এবাৰ বাছক নাইবা বেংক স্থানান্তৰ ব্যৱহাৰ কৰক।',
       f_pin_filled:'এই PIN ৰ পৰা পূৰণ কৰা হৈছে: {place}। অনুগ্ৰহ কৰি পৰীক্ষা কৰক।',
       f_pin_unknown:'আমি এই PIN বিচাৰি নাপালোঁ। অনুগ্ৰহ কৰি আপোনাৰ ৰাজ্য আৰু জিলা নিজেই বাছক।',
@@ -22733,6 +22815,10 @@ class Component extends DCLogic {
     "cta_route_small": "এতিয়াই প্ৰতিশ্ৰুতি দিবলৈ সাজু নহয়নে? তিনিটা পদক্ষেপত আপোনাৰ পথ সন্ধান কৰক",
     };
             const NE = {
+      fin_doc_request:'अनुरोधमा उपलब्ध',
+      fin_doc_email:'प्रतिका लागि हामीलाई इमेल गर्नुहोस्',
+      fin_doc_request_short:'अनुरोधमा',
+      fin_doc_mail_subject:'प्रतिका लागि अनुरोध: {title}',
       v_recurring_limit:'कार्ड वा UPI बाट मासिक र वार्षिक सहयोग ₹15,000 सम्म हुन सक्छ। ठूलो रकमका लागि एक पटक छान्नुहोस् वा बैंक ट्रान्सफर प्रयोग गर्नुहोस्।',
       f_pin_filled:'यो PIN बाट भरिएको: {place}। कृपया जाँच गर्नुहोस्।',
       f_pin_unknown:'हामीले यो PIN फेला पार्न सकेनौं। कृपया आफ्नो राज्य र जिल्ला आफैं छान्नुहोस्।',
@@ -23704,6 +23790,10 @@ class Component extends DCLogic {
     "cta_route_small": "अझै निर्णय गर्न तयार हुनुहुन्न? तीन चरणमा आफ्नो बाटो खोज्नुहोस्",
     };
             const KOK = {
+      fin_doc_request:'मागणेनुसार उपलब्ध',
+      fin_doc_email:'प्रती खातीर आमकां ईमेल करात',
+      fin_doc_request_short:'मागणेनुसार',
+      fin_doc_mail_subject:'प्रती खातीर मागणी: {title}',
       v_recurring_limit:'कार्ड वा UPI वरवीं दर म्हयन्याक आनी वर्साक ₹15,000 मेरेन दिवं येता. चड रक्कमे खातीर एकदां वेंचून काढा वा बँक ट्रान्सफर वापरात.',
       f_pin_filled:'ह्या PIN वरून भरिल्लें: {place}. उपकार करून तपासून घेयात.',
       f_pin_unknown:'आम्कां हो PIN मेळूंक ना. उपकार करून तुमचें राज्य आनी जिल्लो स्वता वेंचून काढा.',
@@ -24675,6 +24765,10 @@ class Component extends DCLogic {
     "cta_route_small": "अजून थारावंक ना? तीन पावलांनी तुमची वाट सोदात",
     };
             const SA = {
+      fin_doc_request:'अनुरोधेन उपलब्धम्',
+      fin_doc_email:'प्रतिलिप्यर्थम् अस्मान् विपत्रेण सम्पर्कं कुर्वन्तु',
+      fin_doc_request_short:'अनुरोधेन',
+      fin_doc_mail_subject:'प्रतिलिप्यर्थम् अनुरोधः: {title}',
       v_recurring_limit:'पत्रकेन UPI द्वारा वा मासिक-वार्षिक-योगदानं ₹15,000 पर्यन्तं भवितुम् अर्हति। अधिकाय एकदा चिनोतु अधिकोष-अन्तरणं वा प्रयुञ्जताम्।',
       f_pin_filled:'अनेन PIN इत्यनेन पूरितम्: {place}। कृपया परीक्ष्यताम्।',
       f_pin_unknown:'अयं PIN न प्राप्तः। कृपया स्वकीयं राज्यं जनपदं च स्वयमेव चिनोतु।',
@@ -25646,6 +25740,10 @@ class Component extends DCLogic {
     "cta_route_small": "अद्यापि अनिर्णीतम्? त्रिभिः पदैः स्वकीयं मार्गं अन्विष्यन्तु",
     };
             const SD = {
+      fin_doc_request:'درخواست تي دستياب',
+      fin_doc_email:'نقل لاءِ اسان کي اي ميل ڪريو',
+      fin_doc_request_short:'درخواست تي',
+      fin_doc_mail_subject:'نقل لاءِ درخواست: {title}',
       v_recurring_limit:'ڪارڊ يا UPI ذريعي ماهوار ۽ ساليانو سهڪار ₹15,000 تائين ٿي سگهي ٿو. وڏي رقم لاءِ هڪ دفعو چونڊيو يا بئنڪ ٽرانسفر استعمال ڪريو.',
       f_pin_filled:'هن PIN مان ڀريو ويو: {place}۔ مهرباني ڪري چڪاس ڪريو.',
       f_pin_unknown:'اسان کي هي PIN نه مليو. مهرباني ڪري پنهنجي رياست ۽ ضلعو پاڻ چونڊيو.',
@@ -26617,6 +26715,10 @@ class Component extends DCLogic {
     "cta_route_small": "اڃا فيصلو ناهي ڪيو؟ ٽن قدمن ۾ پنهنجو رستو ڳوليو",
     };
             const OR = {
+      fin_doc_request:'ଅନୁରୋଧ କ୍ରମେ ଉପଲବ୍ଧ',
+      fin_doc_email:'ନକଲ ପାଇଁ ଆମକୁ ଇମେଲ କରନ୍ତୁ',
+      fin_doc_request_short:'ଅନୁରୋଧ କ୍ରମେ',
+      fin_doc_mail_subject:'ନକଲ ପାଇଁ ଅନୁରୋଧ: {title}',
       v_recurring_limit:'କାର୍ଡ ବା UPI ରେ ମାସିକ ଓ ବାର୍ଷିକ ଦାନ ₹15,000 ଯାଏଁ ହୋଇପାରିବ । ବଡ଼ ଦାନ ପାଇଁ ଥରେ ବାଛନ୍ତୁ କିମ୍ବା ବ୍ୟାଙ୍କ ଟ୍ରାନ୍ସଫର ବ୍ୟବହାର କରନ୍ତୁ ।',
       f_pin_filled:'ଏହି PIN ରୁ ପୂରଣ କରାଗଲା: {place}। ଦୟାକରି ଏହାକୁ ଯାଞ୍ଚ କରନ୍ତୁ।',
       f_pin_unknown:'ଆମେ ଏହି PIN ପାଇପାରିଲୁ ନାହିଁ। ଦୟାକରି ଆପଣଙ୍କ ରାଜ୍ୟ ଏବଂ ଜିଲ୍ଲା ନିଜେ ବାଛନ୍ତୁ।',
@@ -27588,6 +27690,10 @@ class Component extends DCLogic {
     "cta_route_small": "ଏବେ ବି ପ୍ରସ୍ତୁତ ନୁହଁନ୍ତି? ତିନୋଟି ପଦକ୍ଷେପରେ ନିଜର ବାଟ ଖୋଜନ୍ତୁ",
     };
             const ML = {
+      fin_doc_request:'ആവശ്യപ്പെടുമ്പോൾ ലഭ്യമാണ്',
+      fin_doc_email:'പകർപ്പിനായി ഞങ്ങൾക്ക് ഇമെയിൽ ചെയ്യുക',
+      fin_doc_request_short:'ആവശ്യപ്പെടുമ്പോൾ',
+      fin_doc_mail_subject:'പകർപ്പിനായുള്ള അഭ്യർത്ഥന: {title}',
       v_recurring_limit:'കാർഡ് അല്ലെങ്കിൽ UPI വഴി മാസ/വാർഷിക തുക ₹15,000 വരെയാകാം. വലിയ തുകയ്ക്ക് ഒരിക്കൽ തിരഞ്ഞെടുക്കുക അല്ലെങ്കിൽ ബാങ്ക് ട്രാൻസ്ഫർ ചെയ്യുക.',
       f_pin_filled:'ഈ PIN അടിസ്ഥാനമാക്കി പൂരിപ്പിച്ചത്: {place}. ദയവായി പരിശോധിക്കുക.',
       f_pin_unknown:'ഈ PIN കണ്ടെത്താനായില്ല. ദയവായി നിങ്ങളുടെ സംസ്ഥാനവും ജില്ലയും സ്വയം തിരഞ്ഞെടുക്കുക.',
@@ -28558,6 +28664,10 @@ class Component extends DCLogic {
     "cta_invest_join": "പബ്ലിക് റെക്കോർഡിലുള്ള {n} സാമൂഹിക നിക്ഷേപകർക്കൊപ്പം ചേരൂ",
     "cta_route_small": "ഇപ്പോഴും തീരുമാനമായില്ലേ? മൂന്ന് ഘട്ടങ്ങളിലൂടെ നിങ്ങളുടെ വഴി കണ്ടെത്തൂ",
     };            const PA = {
+      fin_doc_request:'ਬੇਨਤੀ ਤੇ ਉਪਲਬਧ',
+      fin_doc_email:'ਕਾਪੀ ਲਈ ਸਾਨੂੰ ਈਮੇਲ ਕਰੋ',
+      fin_doc_request_short:'ਬੇਨਤੀ ਤੇ',
+      fin_doc_mail_subject:'ਕਾਪੀ ਲਈ ਬੇਨਤੀ: {title}',
       v_recurring_limit:'ਕਾਰਡ ਜਾਂ UPI ਰਾਹੀਂ ਮਹੀਨਾਵਾਰ ਅਤੇ ਸਾਲਾਨਾ ਦਾਨ ₹15,000 ਤੱਕ ਹੋ ਸਕਦਾ ਹੈ। ਵੱਡੀ ਰਕਮ ਲਈ ਇੱਕ ਵਾਰ ਚੁਣੋ ਜਾਂ ਬੈਂਕ ਟਰਾਂਸਫਰ ਵਰਤੋ।',
       f_pin_filled:'ਇਸ PIN ਤੋਂ ਭਰਿਆ ਗਿਆ: {place}। ਕਿਰਪਾ ਕਰਕੇ ਇਸਦੀ ਜਾਂਚ ਕਰੋ।',
       f_pin_unknown:'ਸਾਨੂੰ ਇਹ PIN ਨਹੀਂ ਮਿਲਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਸੂਬਾ ਅਤੇ ਜ਼ਿਲ੍ਹਾ ਖ਼ੁਦ ਚੁਣੋ।',
@@ -29528,6 +29638,10 @@ class Component extends DCLogic {
     "cta_invest_join": "ਜਨਤਕ ਰਿਕਾਰਡ 'ਤੇ ਦਰਜ {n} ਸਮਾਜਿਕ ਨਿਵੇਸ਼ਕਾਂ ਨਾਲ ਜੁੜੋ",
     "cta_route_small": "ਅਜੇ ਫ਼ੈਸਲਾ ਨਹੀਂ ਕੀਤਾ? ਤਿੰਨ ਕਦਮਾਂ ਵਿੱਚ ਆਪਣਾ ਰਸਤਾ ਲੱਭੋ",
     };            const DOI = {
+      fin_doc_request:'अनुरोध पर उपलब्ध',
+      fin_doc_email:'कापी आस्तै सांह् ई-मेल करो',
+      fin_doc_request_short:'अनुरोध पर',
+      fin_doc_mail_subject:'कापी आस्तै अनुरोध: {title}',
       v_recurring_limit:'कार्ड या UPI राहें म्हीने ते ब’रे दा दान ₹15,000 तगर होई सकदा ऐ। बड्डे दाने लेई इक बारी चुनो या बैंक ट्रांसफर बरतो।',
       f_pin_filled:'इस PIN थमां भरेआ गेआ: {place}। कृपा करियै इकी जांची लैओ।',
       f_pin_unknown:'सान्गी एह् PIN नेईं थ्हेआ। कृपा करियै अपना राज्य ते ज़िला आपूं चुनो।',
@@ -30498,6 +30612,10 @@ class Component extends DCLogic {
     "cta_invest_join": "सार्वजनिक रिकार्ड पर दर्ज {n} सामाजिक निवेशकें कन्नै जुड़ो",
     "cta_route_small": "अजें पक्का नेईं? त्रै कदमेंस चा अपना रस्ता लब्भो",
     };            const BRX = {
+      fin_doc_request:'दाबी बादियै मोननो हागौ',
+      fin_doc_email:'कपी मोननो जोंगखौ ईमेल खालाम',
+      fin_doc_request_short:'दाबी बादियै',
+      fin_doc_mail_subject:'कपी मोननो दाबी: {title}',
       v_recurring_limit:'कार्ड एबा UPI जों दानफ्रोमबो आरो बोसोरफ्रोमबोनि दानआ ₹15,000 सिम जानो हागौ। बांसिननि थाखाय Once सायख\' एबा बैंक ट्रान्सफर बाहाय।',
       f_pin_filled:'बे PIN निफ्राय आबुं खालामबाय: {place}। अननानै नायफिन।',
       f_pin_unknown:'जों बे PIN खौ मोनासै। अननानै नोंनि रायजो आरो जिल्लाखौ गावसिनो सायख\'।',
@@ -31468,6 +31586,10 @@ class Component extends DCLogic {
     "cta_invest_join": "गांसे रेकर्डआव थानाय {n} सा सामाजिक बिनियोगगिरिफोरजों लोगो जा",
     "cta_route_small": "दासिमबो थि खालामनो हायाखै? मोनथाम खोन्दोबाव नोंथांनि लामा नागिर",
     };            const SAT = {
+      fin_doc_request:'ᱠᱷᱚᱡ ᱞᱮᱠᱷᱟᱱ ᱧᱟᱢᱚᱜᱼᱟ',
+      fin_doc_email:'ᱱᱚᱠᱚᱞ ᱞᱟᱹᱜᱤᱫ ᱟᱞᱮ ᱤᱢᱮᱞ ᱢᱮ',
+      fin_doc_request_short:'ᱠᱷᱚᱡ ᱞᱮᱠᱷᱟᱱ',
+      fin_doc_mail_subject:'ᱱᱚᱠᱚᱞ ᱞᱟᱹᱜᱤᱫ ᱟᱨᱫᱟᱥ: {title}',
       v_recurring_limit:'ᱠᱟᱨᱰ ᱥᱮ UPI ᱛᱮ ᱪᱟᱸᱫᱚᱠᱤᱭᱟᱹ ᱟᱨ ᱥᱮᱨᱢᱟᱠᱤᱭᱟᱹ ᱜᱚᱲᱚ ₹15,000 ᱫᱷᱟᱹᱵᱤᱡ ᱜᱮ ᱜᱟᱱᱚᱜᱼᱟ᱾ ᱵᱟᱹᱲᱛᱤ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱫᱷᱟᱣ ᱵᱟᱪᱷᱟᱣ ᱢᱮ ᱥᱮ ᱵᱮᱝᱠ ᱴᱨᱟᱱᱥᱯᱷᱟᱨ ᱵᱮᱵᱷᱟᱨ ᱢᱮ᱾',
       f_pin_filled:'ᱱᱚᱶᱟ PIN ᱠᱷᱚᱱ ᱯᱮᱨᱮᱡ ᱟᱠᱟᱱᱟ: {place}᱾ ᱫᱟᱭᱟᱠᱟᱛᱮ ᱧᱮᱞ ᱵᱤᱰᱟᱹᱣ ᱢᱮ᱾',
       f_pin_unknown:'ᱟᱞᱮ ᱱᱚᱶᱟ PIN ᱵᱟᱞᱮ ᱧᱟᱢ ᱞᱮᱫᱟ᱾ ᱫᱟᱭᱟᱠᱟᱛᱮ ᱟᱢᱟᱜ ᱯᱚᱱᱚᱛ ᱟᱨ ᱡᱤᱞᱟ ᱟᱢᱛᱮ ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾',
@@ -32438,6 +32560,10 @@ class Component extends DCLogic {
     "cta_invest_join": "ᱫᱤᱥᱩᱣᱟᱹ ᱨᱮᱠᱚᱨᱰ ᱨᱮ ᱚᱞ ᱟᱠᱟᱱ {n} ᱥᱟᱶᱛᱟ ᱨᱤᱱ ᱤᱱᱵᱷᱮᱥᱴᱚᱨ ᱥᱟᱶ ᱡᱚᱲᱟᱣᱜ ᱢᱮ",
     "cta_route_small": "ᱱᱤᱛ ᱦᱚᱸ ᱵᱟᱢ ᱴᱷᱟᱹᱣᱠᱟᱹ ᱟᱠᱟᱫᱟ? ᱯᱮᱭᱟ ᱠᱷᱚᱡ ᱛᱮ ᱟᱢᱟᱜ ᱦᱚᱨ ᱯᱟᱱᱛᱮ ᱢᱮ",
     };            const MNI = {
+      fin_doc_request:'ꯍꯥꯏꯔꯛꯄꯗ ꯐꯪꯒꯅꯤ',
+      fin_doc_email:'ꯀꯣꯄꯤ ꯑꯃꯒꯤꯗꯃꯛ ꯑꯩꯈꯣꯏꯗ ꯏꯃꯦꯏꯜ ꯄꯤꯕꯤꯌꯨ',
+      fin_doc_request_short:'ꯍꯥꯏꯔꯛꯄꯗ',
+      fin_doc_mail_subject:'ꯀꯣꯄꯤ ꯑꯃꯒꯤꯗꯃꯛ ꯍꯥꯏꯖꯕ: {title}',
       v_recurring_limit:'ꯀꯥꯔ꯭ꯗ ꯅꯠꯇ꯭ꯔꯒ UPI ꯅ ꯊꯥꯒꯤ ꯑꯃꯁꯨꯡ ꯆꯍꯤꯒꯤ ꯃꯇꯦꯡ ₹15,000 ꯐꯥꯎꯕ ꯑꯣꯏꯕ ꯌꯥꯏ ꯫ ꯍꯦꯟꯅ ꯄꯤꯅꯕ ꯑꯃꯨꯛꯈꯛ ꯈꯅꯕꯤꯌꯨ ꯅꯠꯇ꯭ꯔꯒ ꯕꯦꯡꯛ ꯇ꯭ꯔꯥꯟꯁꯐꯔ ꯁꯤꯖꯤꯟꯅꯕꯤꯌꯨ ꯫',
       f_pin_filled:'PIN ꯑꯁꯤꯗꯒꯤ ꯃꯦꯟꯁꯤꯜꯂꯛꯂꯦ: {place} ꯫ ꯆꯥꯅꯕꯤꯗꯨꯅ ꯌꯦꯡꯁꯤꯅꯕꯤꯌꯨ ꯫',
       f_pin_unknown:'PIN ꯑꯁꯤ ꯐꯪꯗ꯭ꯔꯦ ꯫ ꯆꯥꯅꯕꯤꯗꯨꯅ ꯅꯍꯥꯛꯀꯤ ꯔꯥꯖ꯭ꯌ ꯑꯃꯁꯨꯡ ꯖꯤꯂꯥ ꯅꯁꯥꯃꯛꯅ ꯈꯅꯕꯤꯌꯨ ꯫',
@@ -34186,6 +34312,20 @@ class Component extends DCLogic {
     return this._ptogs[k];
   }
   // Launch fail-safe: if the payment system is still on Razorpay's test keys, say so on the page instead of letting visitors believe a gift is real.
+  // Published statutory PDFs are listed in /assets/docs/manifest.json (kept in the public Blob store).
+  // A card or link shows a PDF only when it is listed; everything else shows "Available on request".
+  _loadDocs() {
+    const h = typeof location !== 'undefined' ? location.hostname : '';
+    if (h === 'localhost' || h === '127.0.0.1' || h === '[::1]') return;
+    fetch('/assets/docs/manifest.json').then(r => r.ok ? r.json() : null).then(j => { if (j && j.files) { this._docs = j.files; this.forceUpdate(); } }).catch(() => {});
+  }
+  _docUrl(file) {
+    const f = this._docs && file && this._docs[file];
+    return f && f.url ? f.url : '';
+  }
+  _docAsk(title) {
+    return this._mailto(this._fill(this._dt('fin_doc_mail_subject'), { title: title || '' }), '');
+  }
   _loadPayMode() {
     if (this._payModeLoading) return;
     this._payModeLoading = true;
@@ -34282,7 +34422,7 @@ class Component extends DCLogic {
       return e;
     }
     return this._gv.validateTransfer({ ref: S.rtRef, amount: S.rtAmount, date: S.rtDate, first: S.rtFirst, last: S.rtLast, phone: S.rtPhone,
-      phoneDial: this._dial(S.rtDialIso || S.rtCC || 'IN'), email: S.rtEmail, street: S.rtStreet, countryCode: S.rtCC || 'IN', state: S.rtState,
+      phoneDial: this._dial(S.rtDialIso || S.rtCC || 'IN'), currency: S.rtCurrency || ((S.rtCC || 'IN') === 'IN' ? 'INR' : ''), email: S.rtEmail, street: S.rtStreet, countryCode: S.rtCC || 'IN', state: S.rtState,
       district: S.rtDistrict, districtOther: !!S.rtDistrictOther, city: S.rtCity, postalCode: S.rtPin, company: S.rtCompany },
       { geo: this._geo || undefined, districts: this._dist || undefined }).errors;
   }
@@ -34310,8 +34450,10 @@ class Component extends DCLogic {
     };
     const text = (k, o) => mk(k, Object.assign({ isText: true, val: S[k] || '', on: set(k) }, o));
     const rows = [];
-    rows.push(text('rtRef'));
+    rows.push(text('rtRef', cc !== 'IN' ? { note: this._dt('rt_ref_help_abroad'), hasNote: true } : {}));
     rows.push(text('rtAmount', { inputmode: 'decimal' }));
+    rows.push(mk('rtCurrency', { isSelect: true, label: this._dt('rt_label_13') + (cc !== 'IN' ? ' *' : ''), val: S.rtCurrency || (cc === 'IN' ? 'INR' : ''), on: set('rtCurrency'),
+      options: [{ v: '', l: this._dt('rt_label_13') }].concat(this._currencyOptions()) }));
     rows.push(text('rtDate', { min: iso(new Date(today.getTime() - 3 * 366 * 86400000)), max: iso(today) }));
     rows.push(text('rtFirst', { ac: 'given-name' }));
     rows.push(text('rtLast', { ac: 'family-name' }));
@@ -34341,6 +34483,19 @@ class Component extends DCLogic {
       this._pinExtras('rt', cc === 'IN' ? this._dt('f_pin_hint') : info.rtPin.hint))));
     rows.push(text('rtCompany', { ac: 'organization' }));
     return rows;
+  }
+  // Currencies named in the reader's language (Intl.DisplayNames); rupees and the usual donor currencies come first.
+  _currencyOptions() {
+    const lang = this.state.lang;
+    this._curOpt = this._curOpt || {};
+    if (this._curOpt[lang]) return this._curOpt[lang];
+    let codes = ['INR', 'USD', 'GBP', 'EUR', 'AUD', 'CAD', 'AED', 'SGD', 'CHF', 'JPY', 'NZD', 'SAR', 'QAR', 'KWD', 'HKD', 'SEK', 'NOK', 'DKK', 'ZAR', 'MYR', 'NPR', 'BDT'];
+    try { if (Intl.supportedValuesOf) codes = Array.from(new Set(codes.concat(Intl.supportedValuesOf('currency')))); } catch (e) {}
+    let dn = null;
+    try { dn = new Intl.DisplayNames([lang === 'en' ? 'en-IN' : lang, 'en'], { type: 'currency' }); } catch (e) {}
+    const name = (c) => { try { return dn ? dn.of(c) : c; } catch (e) { return c; } };
+    const first = codes.slice(0, 22), rest = codes.slice(22).sort((a, b) => String(name(a)).localeCompare(String(name(b))));
+    return (this._curOpt[lang] = first.concat(rest).map(c => ({ v: c, l: c + ' \u00b7 ' + name(c) })));
   }
   // ---- Donor form: country / state / district lists and the shared validation rules ----
   _dial(iso) { const row = this._geo ? this._geo.countries.find(c => c[0] === iso) : null; return row ? row[2] : (iso === 'IN' ? '91' : ''); }
@@ -34563,7 +34718,7 @@ class Component extends DCLogic {
       eyebrow: d('rt_eyebrow'), title: d('rt_title'), sub: d('rt_sub'), cause: d('rt_cause'),
       human: d('rt_human'), humanHint: d('rt_human_hint'), submit: d('rt_submit'),
       missing: d('rt_missing'), robot: d('rt_robot'), ok: d('rt_ok'), note: d('rt_note'),
-      labels: Array.from({ length: 13 }, (_, i) => d('rt_label_' + i)),
+      labels: Array.from({ length: 14 }, (_, i) => d('rt_label_' + i)),
       hints: Array.from({ length: 13 }, (_, i) => d('rt_hint_' + i) || ''),
     };
     const set = (k) => (e) => this.setState({ [k]: e.target.value, rtCopied: false });
@@ -34609,7 +34764,7 @@ class Component extends DCLogic {
     const cause = S.rtCause || causes[0];
     const dl = [rtT.mail_greeting, '', rtT.rt_mail_intro, '', rtT.rt_h_transfer,
       lab(0) + ': ' + (tv('rtRef') || '-'),
-      lab(1) + ': ' + (tv('rtAmount') || '-'),
+      lab(1) + ': ' + ((S.rtCurrency || (rtCCode === 'IN' ? 'INR' : '')) ? (S.rtCurrency || 'INR') + ' ' : '') + (tv('rtAmount') || '-'),
       lab(2) + ': ' + (when || '-'),
       rtT.rt_cause_label + ': ' + cause, '', rtT.rt_h_receipt];
     dl.push(fullName || this._gap('draft_slot_name'));
@@ -34619,7 +34774,7 @@ class Component extends DCLogic {
     dl.push('', rtT.rt_mail_outro, '', rtT.mail_thanks, fullName || this._gap('draft_slot_name'));
     const draftBody = dl.join('\n');
     const draftSubject = rtT.rt_mail_subject + ' - '
-      + [tv('rtAmount'), when, tv('rtRef') ? this._fill(rtT.rt_subj_ref, { ref: tv('rtRef') }) : '', tv('rtFirst') || rtT.rt_mail_investor_fallback].filter(Boolean).join(' \u00b7 ');
+      + [tv('rtAmount') ? ((S.rtCurrency || (rtCCode === 'IN' ? 'INR' : '')) ? (S.rtCurrency || 'INR') + ' ' : '') + tv('rtAmount') : '', when, tv('rtRef') ? this._fill(rtT.rt_subj_ref, { ref: tv('rtRef') }) : '', tv('rtFirst') || rtT.rt_mail_investor_fallback].filter(Boolean).join(' \u00b7 ');
     const draftSheet = this._draftSheet(draftSubject, draftBody, [rtT.rt_h_transfer, rtT.rt_h_receipt]);
     const draftWeb = this._webmail(this._inbox(), draftSubject, draftBody);
     return {
@@ -36006,15 +36161,15 @@ class Component extends DCLogic {
         partnerHead: r.summaryOnly ? 'Investment Partners Recorded This Year' : 'Investment Partners This Year',
         partnerCaveat: 'Summary year: these are the partners the certified statement names. It does not itemise the year\u2019s receipts in full, so this roster is not the complete list.',
         firm: r.firm, firmFull: r.firmFull,
-        udin: r.udin, hasUdin: !!r.udin, doc: r.doc, hasDoc: !!r.doc,
+        udin: r.udin, hasUdin: !!r.udin, doc: this._docUrl(r.doc), hasDoc: !!this._docUrl(r.doc), noDoc: !!r.doc && !this._docUrl(r.doc), docAsk: this._docAsk(r.fy ? 'Balance sheet ' + r.fy : 'Balance sheet'),
         // The annual foreign-contribution return is published only where a real file
         // has been placed in the data. Never derive the path or the form name: which
         // form a year was filed on is DEHAT's statutory history, not something to infer.
-        hasFcReturn: !!r.y.fcReturn,
+        hasFcReturn: !!this._docUrl(r.y.fcReturn), noFcReturnDoc: !!r.y.fcReturn && !this._docUrl(r.y.fcReturn),
         fcReturnStatus: r.y.fcReturnStatus || '',
         hasFcReturnStatus: !!r.y.fcReturnStatus,
         fcReturnLabel: r.y.fcReturnForm || 'FC-4',
-        fcReturnDoc: r.y.fcReturn || '',
+        fcReturnDoc: this._docUrl(r.y.fcReturn), fcDocAsk: this._docAsk(r.fy ? 'FCRA return ' + r.fy : 'FCRA return'),
         fcReturnTitle: this._fill(T.fc_open_title, { form: r.y.fcReturnForm || 'FC-4', fy: r.fy }),
         fcReturnFull: this._fill(T.fc_open_full, { form: r.y.fcReturnForm || 'FC-4' }),
         // A foreign-contribution year with no published return says so, and gives the
@@ -37402,7 +37557,7 @@ class Component extends DCLogic {
         ];
         return G.map(g => ({
           label: g.label, color: g.color, dot: g.color,
-          docs: FIN.DOCUMENTS.filter(d => d.group === g.key).map(d => ({ title: this._tc('fin_doc', d.title, 'title', d.title), issuer: d.issuer, period: d.period, desc: this._tc('fin_doc', d.title, 'desc', d.desc), file: d.file, color: this._tok(g.color) })),
+          docs: FIN.DOCUMENTS.filter(d => d.group === g.key).map(d => ({ title: this._tc('fin_doc', d.title, 'title', d.title), issuer: d.issuer, period: d.period, desc: this._tc('fin_doc', d.title, 'desc', d.desc), file: d.file, href: this._docUrl(d.file), has: !!this._docUrl(d.file), hasNot: !this._docUrl(d.file), askHref: this._docAsk(d.title), color: this._tok(g.color) })),
         })).filter(g => g.docs.length);
       })() : [],
       idIntro: FIN && FIN.IDENTITY ? this._tc('fin_identity', 'main', 'intro', FIN.IDENTITY.intro) : '',

@@ -107,3 +107,18 @@ test('monthly and yearly gifts are capped at the Razorpay card and UPI mandate l
   assert.equal(codes({ amount: '500000', frequency: 'once' }).amount, undefined);
   assert.equal(codes({ amount: '500000' }).amount, undefined);
 });
+
+test('a transfer from abroad must name its currency; from India it defaults to rupees', () => {
+  assert.equal(tcodes({ countryCode: 'IN', currency: '' }).rtCurrency, undefined);
+  assert.equal(tcodes({ countryCode: 'US', currency: '' }).rtCurrency, 'required');
+  assert.equal(tcodes({ countryCode: 'US', currency: 'USD' }).rtCurrency, undefined);
+  assert.equal(tcodes({ countryCode: 'US', currency: 'usd' }).rtCurrency, undefined);
+  assert.equal(tcodes({ countryCode: 'US', currency: 'US' }).rtCurrency, 'invalid_chars');
+  assert.equal(tcodes({ countryCode: 'IN', currency: 'INR' }).rtCurrency, undefined);
+});
+
+test('the rupee ceiling does not apply to a foreign-currency amount', () => {
+  assert.equal(tcodes({ countryCode: 'IN', currency: 'INR', amount: '999999999' }).rtAmount, 'amount_range');
+  assert.equal(tcodes({ countryCode: 'US', currency: 'USD', amount: '25000000' }).rtAmount, undefined);
+  assert.equal(tcodes({ countryCode: 'US', currency: 'USD', amount: '0' }).rtAmount, 'amount_range');
+});
