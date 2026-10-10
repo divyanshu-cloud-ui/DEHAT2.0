@@ -215,8 +215,8 @@ test('legal URLs remain English-only and are outside app alternates', () => {
 });
 
 test('API identities are explicit and never localized or added to document inventory', () => {
-  assert.equal(API_ROUTES.length, 5);
-  assert.equal(new Set(API_ROUTES.map(route => route.path)).size, 5);
+  assert.equal(API_ROUTES.length, 7);
+  assert.equal(new Set(API_ROUTES.map(route => route.path)).size, 7);
   assert.equal(API_ROUTES.filter(route => route.method === 'GET').length, 1);
   assert.equal(API_ROUTES.find(route => route.method === 'GET').path, '/api/donations/status');
   for (const endpoint of API_ROUTES) {

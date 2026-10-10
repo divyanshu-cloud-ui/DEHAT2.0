@@ -30,7 +30,7 @@ const EXEMPTION_TEXT = 'Donation eligible for deduction under section 133 of the
 const NOTE_TEXT = 'Thank you for investing with DEHAT. Please keep this receipt for your tax records.';
 const NO_GOODS = 'No goods or services were provided in exchange for this donation.';
 
-const METHOD_TEXT = { card: 'Paid online by card', upi: 'Paid online by UPI', netbanking: 'Paid online by netbanking', wallet: 'Paid online by wallet', emi: 'Paid online by card EMI' };
+const METHOD_TEXT = { card: 'Paid online by card', upi: 'Paid online by UPI', netbanking: 'Paid online by netbanking', wallet: 'Paid online by wallet', emi: 'Paid online by card EMI', upi_qr: 'Paid by UPI QR into the bank account' };
 function methodText(method) { return METHOD_TEXT[method] || 'Paid online'; }
 
 async function buildReceiptPdf(r) {

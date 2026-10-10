@@ -42,6 +42,8 @@ export const API_ROUTES = freezeRecords([
   { path: '/api/donations/verify', method: 'POST' },
   { path: '/api/donations/webhook', method: 'POST' },
   { path: '/api/donations/status', method: 'GET' },
+  { path: '/api/donations/upi-intent', method: 'POST' },
+  { path: '/api/donations/upi-reconcile', method: 'POST' },
 ]);
 
 const LANG_SET = new Set(LANGUAGES);
