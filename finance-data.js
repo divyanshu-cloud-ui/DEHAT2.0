@@ -104,27 +104,13 @@ FIN.DOCUMENTS = [
   { title:'Tata Institute of Social Sciences Empanelment Certificate', issuer:'Tata Institute of Social Sciences', period:'Empanelled - Public Sector Undertaking', group:'validation',
     desc:'Empanelled with the Tata Institute of Social Sciences as an implementing partner for Public Sector Undertaking corporate social responsibility programmes.', file:'assets/docs/tiss-empanelment-certificate.pdf' },
   { title:'BSE Sammaan Listing', issuer:'BSE (Bombay Stock Exchange)', period:'Listed organisation', group:'validation',
-    desc:'Listed on the BSE Sammaan platform, the Bombay Stock Exchange’s vetted registry connecting corporates with credible non-governmental organisations for corporate social responsibility.', file:'assets/docs/bse-sammaan.pdf' },  // Added 11 Oct 2026: essential documents that had no card. Each shows "Available on request" until published.
-  { title:'Society Registration Certificate (2000)', issuer:'Registrar of Societies, Uttar Pradesh', period:'Registered 21 Aug 2000', group:'statutory',
-    desc:'The founding registration of DEHAT as a society under the Societies Registration Act, 1860 (No. 370/2000-2001).', file:'assets/docs/society-registration-2000.pdf' },
-  { title:'Governing Body List Filed with the Registrar', issuer:'Deputy Registrar of Societies', period:'Certified list', group:'statutory',
-    desc:'The certified list of the Society’s governing body, as filed with the Registrar of Societies.', file:'assets/docs/society-governing-body-list.pdf' },
-  { title:'Section 12AA Original Registration Order', issuer:'Commissioner of Income Tax, Bareilly', period:'Original order', group:'statutory',
-    desc:'The first income-tax registration of the Society as a charitable institution, under the law then in force.', file:'assets/docs/12aa-original-registration.pdf' },
-  { title:'Section 80G Original Approval Order', issuer:'Commissioner of Income Tax, Bareilly', period:'Original order', group:'statutory',
-    desc:'The first approval that let Indian donors claim a tax deduction on gifts to DEHAT, under the law then in force.', file:'assets/docs/80g-original-approval.pdf' },
-  { title:'Form 10BD Statement of Donations', issuer:'Income Tax Department', period:'FY 2023-24', group:'statutory',
-    desc:'Acknowledgement of the statement of donations DEHAT filed for the year, which carries donors’ deductions into their tax records.', file:'assets/docs/form-10bd-2023-24.pdf' },
+    desc:'Listed on the BSE Sammaan platform, the Bombay Stock Exchange’s vetted registry connecting corporates with credible non-governmental organisations for corporate social responsibility.', file:'assets/docs/bse-sammaan.pdf' },  // Added 11 Oct 2026: essential documents that had no card (owner trimmed the list the same day). Each shows "Available on request" until published.
   { title:'Form 10B Audit Report', issuer:'Income Tax Department', period:'FY 2021-22', group:'statutory',
     desc:'The statutory audit report of a charitable institution, filed with the Income Tax Department for the year.', file:'assets/docs/form-10b-2021-22.pdf' },
   { title:'NGO Darpan Registration', issuer:'NITI Aayog', period:'UP/2009/0023065', group:'statutory',
     desc:'DEHAT’s registration on NITI Aayog’s NGO Darpan portal, the Government of India directory of voluntary organisations.', file:'assets/docs/ngo-darpan-registration.pdf' },
   { title:'FCRA Designated Bank Account Confirmation', issuer:'State Bank of India, New Delhi Main Branch', period:'Designated account', group:'fcra',
     desc:'Confirmation of the account at the State Bank of India, New Delhi Main Branch, designated to receive foreign contributions, as the Foreign Contribution (Regulation) Act requires.', file:'assets/docs/fcra-designated-bank-account.pdf' },
-  { title:'FCRA Audited Financial Statements FY 2016-17', issuer:'Statutory auditor', period:'FY 2016-17', group:'fcra',
-    desc:'Audited statements of the separate Foreign Contribution (Regulation) Act account for the year, kept apart from domestic funds.', file:'assets/docs/fcra-statements-2016-17.pdf' },
-  { title:'FCRA Audited Financial Statements FY 2015-16', issuer:'Statutory auditor', period:'FY 2015-16', group:'fcra',
-    desc:'Audited statements of the separate Foreign Contribution (Regulation) Act account for the year, kept apart from domestic funds.', file:'assets/docs/fcra-statements-2015-16.pdf' },
 ];
 
 // ---- TIME-VERSIONED REGULATORY TIMELINE --------------------------------------------
