@@ -105,8 +105,6 @@ FIN.DOCUMENTS = [
     desc:'Empanelled with the Tata Institute of Social Sciences as an implementing partner for Public Sector Undertaking corporate social responsibility programmes.', file:'assets/docs/tiss-empanelment-certificate.pdf' },
   { title:'BSE Sammaan Listing', issuer:'BSE (Bombay Stock Exchange)', period:'Listed organisation', group:'validation',
     desc:'Listed on the BSE Sammaan platform, the Bombay Stock Exchange’s vetted registry connecting corporates with credible non-governmental organisations for corporate social responsibility.', file:'assets/docs/bse-sammaan.pdf' },  // Added 11 Oct 2026: essential documents that had no card (owner trimmed the list the same day). Each shows "Available on request" until published.
-  { title:'Form 10B Audit Report', issuer:'Income Tax Department', period:'FY 2021-22', group:'statutory',
-    desc:'The statutory audit report of a charitable institution, filed with the Income Tax Department for the year.', file:'assets/docs/form-10b-2021-22.pdf' },
   { title:'NGO Darpan Registration', issuer:'NITI Aayog', period:'UP/2009/0023065', group:'statutory',
     desc:'DEHAT’s registration on NITI Aayog’s NGO Darpan portal, the Government of India directory of voluntary organisations.', file:'assets/docs/ngo-darpan-registration.pdf' },
   { title:'FCRA Designated Bank Account Confirmation', issuer:'State Bank of India, New Delhi Main Branch', period:'Designated account', group:'fcra',
