@@ -127,7 +127,7 @@ const appRoutes=routes.filter(route=>!route.legal);
 let timings=[],retries=[];
 try{
   await mkdir(staticRoot,{recursive:true});
-  ({timings,retries}=await renderSite(root,appRoutes,{concurrency:4,onPage:async(route,snapshot)=>emit(route.file,await cssOutsideHtml(withMetadata(route,snapshot)))}));
+  ({timings,retries}=await renderSite(root,appRoutes,{concurrency:Number(process.env.SITE_CONCURRENCY)||4,onPage:async(route,snapshot)=>emit(route.file,await cssOutsideHtml(withMetadata(route,snapshot)))}));
   await checkSources();
   for(const route of routes.filter(route=>route.legal)){
     let html=await readFile(route.source,'utf8');
