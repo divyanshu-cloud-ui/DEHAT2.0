@@ -30,3 +30,12 @@ test('404 omits canonical and alternates and invalid inputs fail',()=>{
   assert.throws(()=>buildHead({...args(router.parseUrl('/')),pathFor:()=> 'bad'}),TypeError);
   assert.throws(()=>buildHead({...args(router.parseUrl('/')),route:{...router.parseUrl('/'),lang:'de'}}),TypeError);
 });
+
+test('head sets the colour scheme from the device before first paint, without breaking tag order',()=>{
+  const result=buildHead(args(router.parseUrl('/impact')));
+  assert.ok(result.includes('<meta name="color-scheme" content="dark light">'));
+  assert.ok(result.includes('(prefers-color-scheme: light)'));
+  const boot=result.split('\n').find(line=>line.startsWith('<script>'));
+  assert.ok(boot&&boot.includes("localStorage.getItem('dehat.theme')")&&boot.includes("setAttribute('data-theme'"));
+  assert.ok(result.indexOf('<script>')<result.indexOf('og:type'));
+});

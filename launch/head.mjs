@@ -5,6 +5,7 @@ export const HREFLANG = Object.freeze(Object.fromEntries(LANGUAGES.map(code=>[co
 const attribute = value => String(value).replace(/[&"<>]/g, char=>({'&':'&amp;','"':'&quot;','<':'&lt;','>':'&gt;'}[char]));
 const titleText = value => String(value).replace(/[&<>]/g, char=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[char]));
 
+export const THEME_BOOT = "(function(){try{var t=localStorage.getItem('dehat.theme');if(t!=='light'&&t!=='dark')t=(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();";
 export function buildHead({route,seo,origin,languages,pathFor,indexedLanguages=languages}) {
   if (!seo || ['title','description','ogImage'].some(field=>typeof seo[field]!=='string'||!seo[field].trim())) throw new TypeError('Complete SEO title, description and ogImage are required');
   if (!Array.isArray(languages)||!languages.includes(route?.lang)) throw new TypeError('Route language must be in languages');
@@ -29,6 +30,14 @@ export function buildHead({route,seo,origin,languages,pathFor,indexedLanguages=l
       tags.push(`<link rel="alternate" hreflang="x-default" href="${attribute(origin+english)}">`);
     }
   }
+  // Colour scheme follows the device until the reader chooses; this runs before first paint so there is no flash.
+  tags.push(
+    '<meta name="color-scheme" content="dark light">',
+    '<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#151009">',
+    '<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbf7ef">',
+  );
+  // Error pages stay script-free; their own stylesheet already follows the device.
+  if (route.status!==404) tags.push(`<script>${THEME_BOOT}</script>`);
   tags.push(
     `<meta property="og:type" content="${route.storySlug?'article':'website'}">`,
     '<meta property="og:site_name" content="DEHAT">',
