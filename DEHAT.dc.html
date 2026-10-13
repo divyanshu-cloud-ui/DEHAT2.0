@@ -5085,7 +5085,7 @@ class Component extends DCLogic {
     return out;
   }
   _longReads(setView) {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const A = './assets/story/';
     // Story illustrations ship in two web sizes; shared ink art still sits at the root.
     const NUMBERED = /^story-\d{3}$/;
@@ -5416,7 +5416,7 @@ class Component extends DCLogic {
     return Object.assign(base, {
       spineOn: true,
       spineLabel: this._tagMap('spine', S.nodes[idx].label, S.nodes[idx].label),
-      spineCount: (idx + 1) + ' ' + ({ ...this._dict().en, ...(this._dict()[this.state.lang] || {}) }).word_of_count + ' ' + S.nodes.length,
+      spineCount: (idx + 1) + ' ' + (this._mergedDict()).word_of_count + ' ' + S.nodes.length,
       spineNodes: S.nodes.map((n, i) => ({
         label: this._tagMap('spine', n.label, n.label),
         left: (n.at * 100).toFixed(2) + '%',
@@ -5891,7 +5891,7 @@ class Component extends DCLogic {
     }));
   }
   _consent() {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const S = this.state;
     const P = S.ckPrefs || { performance: false, functional: false, targeting: false };
     const set = (obj) => { try { window.localStorage.setItem('dehat.consent', JSON.stringify(obj)); } catch (e) {} };
@@ -5941,7 +5941,7 @@ class Component extends DCLogic {
     };
   }
   _beliefs() {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     return [
       { label: T.belief_cat_1, ac: 'purple', items: [
         { k: 'v1', n: '01', name: T.belief_v1_name, belief: T.belief_v1_belief, practice: T.belief_v1_practice },
@@ -5969,7 +5969,7 @@ class Component extends DCLogic {
     ];
   }
   _districtOf(role, place) {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     // SLT, Core Team and Programme Anchors work across all districts and programmes.
     if (/Strategic Leadership Team|Core Team|Programme Anchor|Programme Director|Executive Director|Joint Reflection|Management Information System|Monitoring and Evaluation/i.test(role || '')) return T.across_districts;
     const p = (place || '').trim();
@@ -6004,7 +6004,7 @@ class Component extends DCLogic {
     return this._por(id);
   }
   _whoView(setView) {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const W = this._wd || {};
     const S = this.state;
     const stems = W.stems || [];
@@ -6250,7 +6250,22 @@ class Component extends DCLogic {
       goFinance: setView('finance'),
     };
   }
+  _mergedDict(lang = this.state.lang) {
+    const cache = this._mergedDictCache || (this._mergedDictCache = Object.create(null));
+    if (!cache[lang]) {
+      const dictionary = this._dict();
+      cache[lang] = { ...dictionary.en, ...(dictionary[lang] || {}) };
+      const diagnostics = window.DEHAT_LAUNCH_DIAGNOSTICS;
+      if (diagnostics) diagnostics.mergedDictBuilds = (diagnostics.mergedDictBuilds || 0) + 1;
+    }
+    return cache[lang];
+  }
   _dict() {
+    const diagnostics = typeof window === 'undefined' ? null : window.DEHAT_LAUNCH_DIAGNOSTICS;
+    if (diagnostics) diagnostics.dictCalls = (diagnostics.dictCalls || 0) + 1;
+    if (this._dict?._cache) return this._dict._cache;
+    if (diagnostics) diagnostics.dictBuilds = (diagnostics.dictBuilds || 0) + 1;
+    const build = () => {
         const EN = {
       foot_policies:'Policies and Safeguards',
       foot_cookies:'Cookie Settings',
@@ -34042,6 +34057,10 @@ class Component extends DCLogic {
     "cta_invest_join": "ꯃꯤꯌꯥꯝꯒꯤ ꯔꯦꯀꯣꯔꯗꯇ ꯌꯥꯎꯔꯕ {n} ꯁꯣꯁꯤꯌꯦꯜ ꯏꯟꯚꯦꯁꯇꯔꯁꯤꯡꯒ ꯂꯣꯌꯅꯅ ꯌꯥꯎꯁꯤꯜꯂꯨ",
     "cta_route_small": "ꯍꯧꯖꯤꯛꯁꯨ ꯂꯦꯞꯊꯣꯛꯇ꯭ꯔꯤꯕ꯭ꯔꯥ? ꯈꯣꯡꯊꯥꯡ ꯑꯍꯨꯝꯗ ꯅꯍꯥꯛꯀꯤ ꯂꯝꯕꯤ ꯊꯤꯌꯨ",
     };    return { en: EN, hi: HI, zh: ZH, fr: FR, ru: RU, es: ES, ar: AR, ur: UR, ks: KS, bn: BN, mr: MR, te: TE, ta: TA, gu: GU, kn: KN, mai: MAI, as: AS, ne: NE, kok: KOK, sa: SA, sd: SD, or: OR, ml: ML, pa: PA, doi: DOI, brx: BRX, sat: SAT, mni: MNI };
+    };
+    const dictionary = build();
+    if (this._dict) this._dict._cache = dictionary;
+    return dictionary;
   }
 
   _canonName(raw) {
@@ -34201,11 +34220,11 @@ class Component extends DCLogic {
     };
   }
   _progExtra() {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     return { inst: T.prog_extra_inst };
   }
   _investmentCase(tok) {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const kv = (arr, pre) => arr.map((t, i) => ({ k: pre + i, t, col: tok(['#EAAE28', '#0E5565', '#556223', '#D2305C', '#4F0E73', '#0E5565'][i % 6]) }));
     const retArt = ['sm-prog-rights-entitlements', 'sm-school-steps-gate', 'sm-prog-climate-justice', 'sm-aadhaar-mother', 'sm-market-stall'];
     return {
@@ -34425,7 +34444,7 @@ class Component extends DCLogic {
       .map(i => (i.detail ? i : Object.assign({}, i, { detail: (EN_INT[i.k] || {}).detail })));
     const restCount = P.intents.length - shown.length;
     const canNext = [!!S.pWho, sel.length > 0, !!(S.pName && S.pEmail)][S.pStep];
-    const T = { ...this._dict().en, ...(this._dict()[S.lang] || {}) };
+    const T = this._mergedDict(S.lang);
     const subject = this._mailSubject(P, T);
     const body = this._mailBody(P, T);
     const href = this._mailto(subject, body);
@@ -34810,7 +34829,7 @@ class Component extends DCLogic {
             ? this._go(C.bView, 'compliance')
             : this._goInvolved(C.bTab || 'give'),
           ctaHref: (() => {
-            const T = { ...this._dict().en, ...(this._dict()[S.lang] || {}) };
+            const T = this._mergedDict(S.lang);
             return this._mailto(C.subj || T.ask_mail_subject,
               [T.mail_greeting, '', this._fill(T.cta_mail_intro, { section: C.t || '' }), '', this._gap('cta_slot_question'), '',
                 T.mail_thanks, this._gap('draft_slot_name')].join('\n'));
@@ -35305,7 +35324,7 @@ class Component extends DCLogic {
     // The draft is rebuilt from the form on every render, so a correction made after pressing
     // submit reaches the email too. Two blocks: the transfer (what finance matches against the
     // bank statement) and who the receipt is made out to.
-    const rtT = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const rtT = this._mergedDict();
     const lab = (i) => (L ? L.labels[i] : F[i].label);
     const tv = (k) => String(v(k)).trim();
     let when = tv('rtDate');
@@ -35414,7 +35433,7 @@ class Component extends DCLogic {
     return score / Math.sqrt(words.length);
   }
   _askVals(setView) {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const F = this._faq || (typeof window !== 'undefined' ? window.FAQ : null);
     const cats = (F && F.CATS) || [];
     const items = (F && F.ITEMS) || [];
@@ -35504,9 +35523,7 @@ class Component extends DCLogic {
   // One dictionary string in the current language (English fallback), for code paths that
   // build their values outside renderVals' own T.
   _dt(key) {
-    const d = this._dict();
-    const l = d[this.state.lang] || {};
-    return l[key] != null ? l[key] : (d.en || {})[key];
+    return this._mergedDict()[key];
   }
   _webmail(to, subject, body) {
     const s = encodeURIComponent(subject || ''), b = encodeURIComponent(body || '');
@@ -36016,7 +36033,7 @@ class Component extends DCLogic {
     done();
   }
   _mailBody(P, T) {
-    if (!T) T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    if (!T) T = this._mergedDict();
     const S = this.state;
     const t = (s) => String(s || '').trim();
     const who = (P.who.find(w => w.k === S.pWho) || {}).label || '';
@@ -36275,7 +36292,7 @@ class Component extends DCLogic {
     return out.length ? out : [{ quote: '', name: '', role: '', program: '', art: 'sm-mother-daughter', slug: '' }];
   }
   _arch() {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const A = './assets/art/';
     const P = {
       sol: { name: 'School of Leadership', color: '#EAAE28', art: A + 'prog-sol.png' },
@@ -36597,7 +36614,7 @@ class Component extends DCLogic {
     return '≈ ' + this._pd.fmtUSD(this._pd.usd(n, y)) + ' USD (' + y + ' rate)';
   }
   _ledger() {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const FIN = (typeof window !== 'undefined' && window.FIN) ? window.FIN : null;
     const S = this.state;
     const sortKey = S.ledSort || 'recent';
@@ -36791,7 +36808,7 @@ class Component extends DCLogic {
   }
 
   _raiseComposer() {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const EMAIL = this._inbox();
     const KINDS_EN = [
       { k: 'safeguard', label: 'Safeguarding or a Child at Risk',
@@ -36921,7 +36938,7 @@ class Component extends DCLogic {
       return o;
     }) }) : null;
     const mode = this.state.govMode === 'up' ? 'up' : 'down';
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const base = {
       govMode: mode,
       flowAnim: 'govDown 2s linear infinite',
@@ -37005,7 +37022,7 @@ class Component extends DCLogic {
 
   // Curated press rail for the home page; full archive lives on the Media page.
   _pressRail(setView) {
-    const T = { ...this._dict().en, ...(this._dict()[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const ALL = window.DEHAT_MEDIA || [];
     const picks = [
       'harpers.org', '101reporters.com', 'risingnepaldaily.com', 'theprint.in',
