@@ -2198,7 +2198,7 @@
         <div style="border-radius:20px;border:1px solid var(--border);background:var(--surface);padding:clamp(20px,3vw,34px);box-shadow:0 22px 46px -34px var(--shadow)">
           <label for="who-mine" style="display:block;font-family:'Newsreader';font-style:italic;font-size:clamp(19px,2.2vw,27px);line-height:1.3;color:var(--text);margin-bottom:6px">{{ who.stemHi }}</label>
           
-          <textarea id="who-mine" value="{{ who.mine }}" onChange="{{ who.onMine }}" rows="3" placeholder="{{ who.placeholder }}" style="width:100%;box-sizing:border-box;resize:vertical;padding:14px 16px;border-radius:14px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:inherit;font-size:16px;line-height:1.55"></textarea>
+          <textarea id="who-mine" defaultValue="{{ who.mine }}" onChange="{{ who.onMine }}" onBlur="{{ who.onMineBlur }}" rows="3" placeholder="{{ who.placeholder }}" style="width:100%;box-sizing:border-box;resize:vertical;padding:14px 16px;border-radius:14px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:inherit;font-size:16px;line-height:1.55"></textarea>
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:16px">
             <button onClick="{{ who.reveal }}" style="padding:12px 22px;border-radius:999px;border:none;background:#D2305C;color:#fff;font-size:14.5px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px -10px rgba(210,48,92,.7)">{{ who.revealLabel }}</button>
             <span style="font-size:13px;color:var(--faint)">{{ who.revealHint }}</span>
@@ -2883,7 +2883,7 @@
             <div>
               <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(18px,2vw,23px);margin:0 0 8px;color:var(--text);letter-spacing:-.02em;text-wrap:balance">{{ pv.sopTitle }}</h2>
               <p style="font-size:14.5px;line-height:1.6;color:var(--dim);margin:0 0 14px">{{ pv.sopSub }}</p>
-              <textarea value="{{ pv.sopVal }}" onChange="{{ pv.onSop }}" placeholder="{{ pv.sopPlaceholder }}" rows="6" style="width:100%;font-family:inherit;font-size:15px;line-height:1.6;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:14px 16px;resize:vertical" style-focus="border-color:var(--ac-olive);outline:none"></textarea>
+              <textarea defaultValue="{{ pv.sopVal }}" onChange="{{ pv.onSop }}" onBlur="{{ pv.onSopBlur }}" placeholder="{{ pv.sopPlaceholder }}" rows="6" style="width:100%;font-family:inherit;font-size:15px;line-height:1.6;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:14px 16px;resize:vertical" style-focus="border-color:var(--ac-olive);outline:none"></textarea>
               <div style="display:flex;flex-direction:column;gap:6px;margin-top:12px">
                 <sc-for list="{{ pv.sopPrompts }}" as="qp" hint-placeholder-count="3">
                   <span style="font-size:13px;line-height:1.5;color:var(--faint)"> - {{ qp.v }}</span>
@@ -2894,7 +2894,7 @@
               <sc-for list="{{ pv.fields }}" as="fd" hint-placeholder-count="5">
                 <label style="display:flex;flex-direction:column;gap:5px">
                   <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ fd.label }}</span>
-                  <input type="{{ fd.type }}" value="{{ fd.val }}" onChange="{{ fd.on }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-olive);outline:none">
+                  <input type="{{ fd.type }}" defaultValue="{{ fd.val }}" onChange="{{ fd.on }}" onBlur="{{ fd.blur }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-olive);outline:none">
                 </label>
               </sc-for>
               <label style="display:flex;flex-direction:column;gap:5px">
@@ -3121,7 +3121,7 @@
                 </sc-for>
               </div>
               <sc-if value="{{ pv.isOther }}" hint-placeholder-val="{{ false }}">
-                <input type="text" value="{{ pv.otherVal }}" onChange="{{ pv.onOther }}" placeholder="0" style="margin-top:10px;width:100%;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:12px 16px" style-focus="border-color:var(--ac-gold);outline:none">
+                <input type="text" defaultValue="{{ pv.otherVal }}" onChange="{{ pv.onOther }}" onBlur="{{ pv.onOtherBlur }}" placeholder="0" style="margin-top:10px;width:100%;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:12px 16px" style-focus="border-color:var(--ac-gold);outline:none">
               </sc-if>
             </div>
 
@@ -3163,7 +3163,7 @@
             <sc-if value="{{ pv.isInr }}" hint-placeholder-val="{{ true }}">
               <label style="display:flex;flex-direction:column;gap:5px">
                 <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.panLabel }}</span>
-                <input id="df-pan" type="text" value="{{ pv.panVal }}" onChange="{{ pv.onPan }}" placeholder="{{ pv.panHint }}" style="font-family:ui-monospace,Menlo,monospace;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.panBorder }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                <input id="df-pan" type="text" defaultValue="{{ pv.panVal }}" onChange="{{ pv.onPan }}" onBlur="{{ pv.panBlur }}" placeholder="{{ pv.panHint }}" style="font-family:ui-monospace,Menlo,monospace;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.panBorder }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                 <sc-if value="{{ pv.hasPanErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ pv.panErr }}</span></sc-if>
               </label>
               
@@ -3173,11 +3173,11 @@
               <div style="display:flex;flex-direction:column;gap:12px">
                 <label style="display:flex;flex-direction:column;gap:5px">
                   <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.countryLabel }}</span>
-                  <input type="text" value="{{ pv.countryVal }}" onChange="{{ pv.onCountry }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
+                  <input type="text" defaultValue="{{ pv.countryVal }}" onChange="{{ pv.onCountry }}" onBlur="{{ pv.countryBlur }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
                 </label>
                 <label style="display:flex;flex-direction:column;gap:5px">
                   <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.idRefLabel }}</span>
-                  <input type="text" value="{{ pv.idRefVal }}" onChange="{{ pv.onIdRef }}" placeholder="{{ pv.idRefHint }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
+                  <input type="text" defaultValue="{{ pv.idRefVal }}" onChange="{{ pv.onIdRef }}" onBlur="{{ pv.idRefBlur }}" placeholder="{{ pv.idRefHint }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
                 </label>
                 
               </div>
@@ -3222,13 +3222,13 @@
 
             <label style="display:flex;flex-direction:column;gap:5px">
               <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.addrLabel }}</span>
-              <input id="df-address" type="text" value="{{ pv.addrVal }}" onChange="{{ pv.onAddr }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.addrBorder }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+              <input id="df-address" type="text" defaultValue="{{ pv.addrVal }}" onChange="{{ pv.onAddr }}" onBlur="{{ pv.addrBlur }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.addrBorder }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
               <sc-if value="{{ pv.hasAddrErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ pv.addrErr }}</span></sc-if>
             </label>
 
             <label style="display:flex;flex-direction:column;gap:5px">
               <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.noteLabel }}</span>
-              <textarea value="{{ pv.noteVal }}" onChange="{{ pv.onNote }}" rows="3" placeholder="{{ pv.noteHint }}" style="font-family:inherit;font-size:15px;line-height:1.6;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px;resize:vertical" style-focus="border-color:var(--ac-gold);outline:none"></textarea>
+              <textarea defaultValue="{{ pv.noteVal }}" onChange="{{ pv.onNote }}" onBlur="{{ pv.noteBlur }}" rows="3" placeholder="{{ pv.noteHint }}" style="font-family:inherit;font-size:15px;line-height:1.6;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px;resize:vertical" style-focus="border-color:var(--ac-gold);outline:none"></textarea>
             </label>
 
             <div style="display:flex;flex-direction:column;gap:9px">
@@ -4536,8 +4536,8 @@
 
             <div style="display:flex;flex-direction:column;gap:11px">
               <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:rgba(255,255,255,.6)">{{ raiseStep3 }}</div>
-              <textarea onChange="{{ rzSetDetail }}" rows="4" placeholder="{{ rzPlaceholder }}" style="font-family:inherit;font-size:14px;line-height:1.6;color:#fff;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:13px 15px;resize:vertical;width:100%;box-sizing:border-box"></textarea>
-              <input onChange="{{ rzSetWho }}" placeholder="{{ raiseWhoPlaceholder }}" style="font-family:inherit;font-size:14px;color:#fff;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:12px 15px;width:100%;box-sizing:border-box" />
+              <textarea id="raise-detail" defaultValue="{{ rzDetailVal }}" onChange="{{ rzSetDetail }}" onBlur="{{ rzBlurDetail }}" rows="4" placeholder="{{ rzPlaceholder }}" style="font-family:inherit;font-size:14px;line-height:1.6;color:#fff;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:13px 15px;resize:vertical;width:100%;box-sizing:border-box"></textarea>
+              <input id="raise-who" defaultValue="{{ rzWhoVal }}" onChange="{{ rzSetWho }}" onBlur="{{ rzBlurWho }}" placeholder="{{ raiseWhoPlaceholder }}" style="font-family:inherit;font-size:14px;color:#fff;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:12px 15px;width:100%;box-sizing:border-box" />
             </div>
 
             <div style="padding-top:18px;border-top:1px solid rgba(255,255,255,.18);display:flex;flex-direction:column;gap:12px">
@@ -4569,7 +4569,7 @@
         <p style="font-size:16px;line-height:1.7;color:var(--dim);margin:0 0 28px;max-width:62ch;text-wrap:pretty">{{ ask.askLead }}</p>
 
         <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px;border-radius:18px;border:1.5px solid var(--border);background:var(--surface)">
-          <input value="{{ ask.askValue }}" onChange="{{ ask.onAsk }}" onKeyDown="{{ ask.onAskKey }}" placeholder="{{ ask.askPlaceholder }}" aria-label="{{ T.aria_ask_question }}" style="flex:1 1 260px;min-width:0;font-family:inherit;font-size:15.5px;padding:13px 16px;border-radius:999px;border:1px solid var(--border);background:var(--bg);color:var(--text)">
+          <input id="ask-query" defaultValue="{{ ask.askValue }}" onChange="{{ ask.onAsk }}" onBlur="{{ ask.onAskBlur }}" onKeyDown="{{ ask.onAskKey }}" placeholder="{{ ask.askPlaceholder }}" aria-label="{{ T.aria_ask_question }}" style="flex:1 1 260px;min-width:0;font-family:inherit;font-size:15.5px;padding:13px 16px;border-radius:999px;border:1px solid var(--border);background:var(--bg);color:var(--text)">
           <button onClick="{{ ask.askSubmit }}" style="cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:800;padding:13px 28px;border-radius:999px;border:none;background:var(--ac-crimson);color:var(--bg)">{{ ask.askSubmitLabel }}</button>
         </div>
 
@@ -6132,7 +6132,8 @@ class Component extends DCLogic {
       stemEn: (S.lang === 'hi') ? active.en : (this._dt('who_asked_hindi') + ' ' + active.text),
       placeholder: this._dt('who_mine_placeholder'),
       mine: S.whoMine || '',
-      onMine: (e) => this.setState({ whoMine: e.target.value }),
+      onMine: this._deferPageField('whoMine').on,
+      onMineBlur: this._deferPageField('whoMine').blur,
       reveal: () => this.setState({ whoReveal: !S.whoReveal }),
       revealLabel: S.whoReveal ? this._dt('who_reveal_hide') : this._dt('who_reveal_show').replace('{n}', answers.length),
       revealHint: S.whoReveal ? '' : (typed ? this._dt('who_reveal_compare') : this._dt('who_reveal_hint')),
@@ -34629,13 +34630,13 @@ class Component extends DCLogic {
       restLabel: String(P.restLabel || (((this._pt || {}).en || {}).restLabel) || '{n}').replace('{n}', restCount),
       sopTitle: P.sopTitle, sopSub: P.sopSub, sopPlaceholder: P.sopPlaceholder,
       sopPrompts: P.sopPrompts.map((v, i) => ({ k: 'q' + i, v })),
-      sopVal: S.pSop, onSop: this._pset('pSop'),
+      sopVal: S.pSop, onSop: this._deferPageField('pSop').on, onSopBlur: this._deferPageField('pSop').blur,
       fields: [
-        { k: 'f1', label: P.fName, val: S.pName, on: this._pset('pName'), req: true, type: 'text' },
-        { k: 'f2', label: P.fEmail, val: S.pEmail, on: this._pset('pEmail'), req: true, type: 'email' },
-        { k: 'f3', label: P.fOrg, val: S.pOrg, on: this._pset('pOrg'), req: false, type: 'text' },
-        { k: 'f4', label: P.fPhone, val: S.pPhone, on: this._pset('pPhone'), req: false, type: 'tel' },
-        { k: 'f5', label: P.fPlace, val: S.pPlace, on: this._pset('pPlace'), req: false, type: 'text' },
+        { k: 'f1', label: P.fName, val: S.pName, ...this._deferPageField('pName'), req: true, type: 'text' },
+        { k: 'f2', label: P.fEmail, val: S.pEmail, ...this._deferPageField('pEmail'), req: true, type: 'email' },
+        { k: 'f3', label: P.fOrg, val: S.pOrg, ...this._deferPageField('pOrg'), req: false, type: 'text' },
+        { k: 'f4', label: P.fPhone, val: S.pPhone, ...this._deferPageField('pPhone'), req: false, type: 'tel' },
+        { k: 'f5', label: P.fPlace, val: S.pPlace, ...this._deferPageField('pPlace'), req: false, type: 'text' },
       ],
       budgetLabel: P.fBudget, budgetVal: S.pBudget, onBudget: this._pset('pBudget'),
       budgets: P.budgets.map((b, i) => ({ k: 'b' + i, v: b })),
@@ -34666,7 +34667,8 @@ class Component extends DCLogic {
         ring: S.dRegime === r.k ? tok(r.col) : 'var(--border)',
         fg: tok(r.col),
         select: () => this.setState({ dRegime: r.k, dAmount: '' }) })),
-      amounts, isOther: S.dAmount === 'other', otherVal: S.dAmountOther, onOther: this._pset('dAmountOther'),
+      amounts, isOther: S.dAmount === 'other', otherVal: S.dAmountOther,
+      onOther: this._deferredDonorField('dAmountOther', 'amount').on, onOtherBlur: this._deferredDonorField('dAmountOther', 'amount').blur,
       freqTitle: P.freqTitle,
       freqs: P.freqs.map(f => ({ k: f.k, label: f.label, on: S.dFreq === f.k,
         bg: S.dFreq === f.k ? 'var(--text)' : 'transparent',
@@ -34679,16 +34681,20 @@ class Component extends DCLogic {
         fg: S.dPurpose === p.k ? 'var(--text)' : 'var(--dim)',
         select: () => this.setState({ dPurpose: p.k }) })),
       idTitle: P.idTitle, idNote: fcra ? P.idNoteFcra : P.idNoteInr, isFcra: fcra, isInr: !fcra,
-      panLabel: P.fPan + (S.d80g ? ' *' : ''), panHint: P.fPanHint, panVal: S.dPan, onPan: this._pset('dPan'),
-      countryLabel: P.fIdCountry, countryVal: S.dCountry, onCountry: this._pset('dCountry'),
-      idRefLabel: P.fIdRef, idRefVal: S.dIdRef, onIdRef: this._pset('dIdRef'),
+      panLabel: P.fPan + (S.d80g ? ' *' : ''), panHint: P.fPanHint, panVal: S.dPan,
+      onPan: this._deferredDonorField('dPan', 'pan').on, panBlur: this._deferredDonorField('dPan', 'pan').blur,
+      countryLabel: P.fIdCountry, countryVal: S.dCountry,
+      onCountry: this._deferPageField('dCountry').on, countryBlur: this._deferPageField('dCountry').blur,
+      idRefLabel: P.fIdRef, idRefVal: S.dIdRef,
+      onIdRef: this._deferPageField('dIdRef').on, idRefBlur: this._deferPageField('dIdRef').blur,
       idRefHint: P.fIdRefHint,
       // Identity and contact detail the receipt and the statutory return both need,
       // asked alongside the KYC documents rather than after the payment.
       donorFields: this._donorFields(T),
       noteLabel: T.f_additional_note, noteHint: T.f_additional_note_hint,
-      noteVal: S.dNote || '', onNote: this._pset('dNote'),
-      addrLabel: P.fAddress + (S.d80g ? ' *' : ''), addrVal: S.dAddr, onAddr: this._pset('dAddr'),
+      noteVal: S.dNote || '', onNote: this._deferPageField('dNote').on, noteBlur: this._deferPageField('dNote').blur,
+      addrLabel: P.fAddress + (S.d80g ? ' *' : ''), addrVal: S.dAddr,
+      onAddr: this._deferredDonorField('dAddr', 'address').on, addrBlur: this._deferredDonorField('dAddr', 'address').blur,
       addrErr: this._dmsg('address'), hasAddrErr: !!this._dmsg('address'), addrBorder: this._dmsg('address') ? 'var(--ac-red)' : 'var(--border)',
       panErr: this._dmsg('pan'), hasPanErr: !!this._dmsg('pan'), panBorder: this._dmsg('pan') ? 'var(--ac-red)' : 'var(--border)',
       amountErr: this._dmsg('amount'), hasAmountErr: !!this._dmsg('amount'),
@@ -34727,7 +34733,7 @@ class Component extends DCLogic {
       // Phase D: scrolling this rail to its end (see the ivRail ref callback) is the readiness
       // signal for the register's own dead end.
       sigRegEnd: !!S.sig.regend, regEndGo: this._goInvolved('give'),
-      ...this._investmentCase(tok),
+      ...(S.pTab === 'case' ? this._investmentCase(tok) : {}),
       investors, ivStatusTabs, ivProgOpts, ivProg: S.ivProg,
       ivFilters, ivAnyFacet, ivClear,
       ivToggle: () => this.setState(s => ({ ivFOpen: !s.ivFOpen })),
@@ -34844,6 +34850,21 @@ class Component extends DCLogic {
     this._psets = this._psets || {};
     if (!this._psets[k]) this._psets[k] = (e) => this.setState({ [k]: e && e.target ? e.target.value : e, pCopied: false });
     return this._psets[k];
+  }
+  _pageField(k) {
+    return this._pendingPage && Object.prototype.hasOwnProperty.call(this._pendingPage, k) ? this._pendingPage[k] : this.state[k];
+  }
+  _deferPageField(k) {
+    this._deferredFields = this._deferredFields || {};
+    if (!this._deferredFields[k]) this._deferredFields[k] = {
+      on: e => { (this._pendingPage || (this._pendingPage = {}))[k] = e.target.value; },
+      blur: e => {
+        const value = e.target.value;
+        if (this._pendingPage) delete this._pendingPage[k];
+        if (this.state[k] !== value) this.setState({ [k]: value, pCopied: false, rzCopied: false });
+      },
+    };
+    return this._deferredFields[k];
   }
   _ptog(k) {
     this._ptogs = this._ptogs || {};
@@ -35043,7 +35064,7 @@ class Component extends DCLogic {
     const field = key => this._pendingDonor && Object.prototype.hasOwnProperty.call(this._pendingDonor, key) ? this._pendingDonor[key] : S[key];
     return { fullName: field('dFullName'), email: field('dEmail'), phone: field('dPhone'), phoneDial: this._dial(S.dDialIso || S.dCC), countryCode: S.dCC,
       state: S.dState, district: field('dDistrict'), districtOther: !!S.dDistrictOther, city: S.dCity, postalCode: S.dPin,
-      address: S.dAddr, pan: S.dPan, receipt80G: !!S.d80g, amount: this._amt() > 0 ? this._amt() : '', frequency: S.dFreq };
+      address: field('dAddr'), pan: field('dPan'), receipt80G: !!S.d80g, amount: this._amt() > 0 ? this._amt() : '', frequency: S.dFreq };
   }
   _donorErrors() {
     const local = this._gv ? this._gv.validateDonor(this._donorInput(), { geo: this._geo || undefined, districts: this._dist || undefined }).errors : {};
@@ -35059,7 +35080,8 @@ class Component extends DCLogic {
     return this._dblurs[k];
   }
   _deferredDonorField(stateKey, validationKey) {
-    return {
+    this._deferredDonorFields = this._deferredDonorFields || {};
+    if (!this._deferredDonorFields[stateKey]) this._deferredDonorFields[stateKey] = {
       on: e => { (this._pendingDonor || (this._pendingDonor = {}))[stateKey] = e.target.value; },
       blur: e => {
         const value = e.target.value;
@@ -35067,6 +35089,7 @@ class Component extends DCLogic {
         this.setState(s => ({ [stateKey]: value, dTouched: Object.assign({}, s.dTouched, { [validationKey]: true }) }));
       },
     };
+    return this._deferredDonorFields[stateKey];
   }
   _countryOptions() {
     const geo = this._geo;
@@ -35146,7 +35169,7 @@ class Component extends DCLogic {
   }
   _amt() {
     const S = this.state;
-    const raw = S.dAmount === 'other' ? S.dAmountOther : S.dAmount;
+    const raw = S.dAmount === 'other' ? (this._pendingDonor?.dAmountOther ?? S.dAmountOther) : S.dAmount;
     const n = parseFloat(String(raw || '').replace(/[^0-9.]/g, ''));
     return isFinite(n) && n > 0 ? n : 0;
   }
@@ -35166,10 +35189,10 @@ class Component extends DCLogic {
       purpose: pur,
       purposeEn: purEn,
       receipt80G: !fcra && S.d80g,
-      pan: fcra ? '' : S.dPan,
-      country: fcra ? S.dCountry : 'India',
-      idRef: fcra ? S.dIdRef : '',
-      address: S.dAddr,
+      pan: fcra ? '' : field('dPan'),
+      country: fcra ? this._pageField('dCountry') : 'India',
+      idRef: fcra ? this._pageField('dIdRef') : '',
+      address: field('dAddr'),
       fullName: field('dFullName') || '', email: field('dEmail') || '', phone: field('dPhone') || '', phoneDial: this._dial(S.dDialIso || S.dCC),
       city: S.dCity || '', state: S.dState || '', postalCode: S.dPin || '', district: field('dDistrict') || '', districtOther: !!S.dDistrictOther,
       countryCode: S.dCC || 'IN',
@@ -35484,12 +35507,13 @@ class Component extends DCLogic {
       askLead: T.ask_lead,
       askPlaceholder: T.ask_placeholder,
       askValue: query,
-      onAsk: e => this.setState({ askQ: e.target.value }),
-      askSubmit: () => this.setState(s => ({ askAsked: s.askQ, askOpen: '' })),
+      onAsk: this._deferPageField('askQ').on,
+      onAskBlur: this._deferPageField('askQ').blur,
+      askSubmit: () => this.setState({ askQ: document.getElementById('ask-query')?.value || '', askAsked: document.getElementById('ask-query')?.value || '', askOpen: '' }),
       askSubmitLabel: T.ask_submit,
-      askClear: () => this.setState({ askQ: '', askAsked: '' }),
+      askClear: () => { const input = document.getElementById('ask-query'); if (input) input.value = ''; this.setState({ askQ: '', askAsked: '' }); },
       askClearLabel: T.ask_clear,
-      onAskKey: e => { if (e.key === 'Enter') this.setState(s => ({ askAsked: s.askQ, askOpen: '' })); },
+      onAskKey: e => { if (e.key === 'Enter') this.setState({ askQ: e.target.value, askAsked: e.target.value, askOpen: '' }); },
       hasAsked: !!asked,
       askEcho: asked,
       hasHits: hits.length > 0,
@@ -35507,7 +35531,7 @@ class Component extends DCLogic {
       askSuggestLabel: T.ask_suggest_label,
       askSuggest: [T.ask_sg_0, T.ask_sg_1, T.ask_sg_2, T.ask_sg_3, T.ask_sg_4]
         .map((t, i) => ({ k: 'sg' + i, label: t,
-          pick: () => this.setState({ askQ: t, askAsked: t, askOpen: '' }) })),
+          pick: () => { const input = document.getElementById('ask-query'); if (input) input.value = t; this.setState({ askQ: t, askAsked: t, askOpen: '' }); } })),
       faqTitle: T.faq_title,
       faqSub: T.faq_sub,
       askCats: [{ k: '', label: T.ask_cat_all }].concat(cats.map(c => ({ k: c.k, label: catLabel(c) })))
@@ -36906,8 +36930,8 @@ class Component extends DCLogic {
     const kk = this.state.rzKind || 'safeguard';
     const cur = KINDS.filter(x => x.k === kk)[0] || KINDS[0];
     const picked = this.state.rzDocs || [];
-    const detail = (this.state.rzDetail || '').trim();
-    const who = (this.state.rzWho || '').trim();
+    const detail = (this._pageField('rzDetail') || '').trim();
+    const who = (this._pageField('rzWho') || '').trim();
 
     const subject = subjectLine();
     function subjectLine() {
@@ -36958,8 +36982,9 @@ class Component extends DCLogic {
       rzMailto: mailto,
       rzGmail: this._webmail(EMAIL, subject, body).gmail,
       rzOutlook: this._webmail(EMAIL, subject, body).outlook,
-      rzSetDetail: (e) => this.setState({ rzDetail: e.target.value, rzCopied: false }),
-      rzSetWho: (e) => this.setState({ rzWho: e.target.value, rzCopied: false }),
+      rzDetailVal: this.state.rzDetail || '', rzWhoVal: this.state.rzWho || '',
+      rzSetDetail: this._deferPageField('rzDetail').on, rzBlurDetail: this._deferPageField('rzDetail').blur,
+      rzSetWho: this._deferPageField('rzWho').on, rzBlurWho: this._deferPageField('rzWho').blur,
       rzCopyLabel: this.state.rzCopied ? T.raise_copied : T.raise_copy,
       rzSheet: sheet,
       rzCopy: () => this._copyText(sheet.copyText, () => this.setState({ rzCopied: true })),
