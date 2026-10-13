@@ -3188,7 +3188,7 @@
                 <div style="display:flex;flex-direction:column;gap:5px;grid-column:{{ df.span }}">
                   <label for="{{ df.id }}" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ df.label }}</label>
                   <sc-if value="{{ df.isText }}" hint-placeholder-val="{{ true }}">
-                    <input id="{{ df.id }}" type="{{ df.type }}" inputmode="{{ df.inputmode }}" autocomplete="{{ df.ac }}" list="{{ df.listId }}" value="{{ df.val }}" onChange="{{ df.on }}" onFocus="{{ df.focus }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                    <input id="{{ df.id }}" type="{{ df.type }}" inputmode="{{ df.inputmode }}" autocomplete="{{ df.ac }}" list="{{ df.listId }}" value="{{ df.bindVal }}" defaultValue="{{ df.defaultVal }}" onChange="{{ df.on }}" onFocus="{{ df.focus }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                   </sc-if>
                   <sc-if value="{{ df.isSelect }}" hint-placeholder-val="{{ false }}">
                     <select id="{{ df.id }}" autocomplete="{{ df.ac }}" value="{{ df.val }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" aria-invalid="{{ df.invalid }}" style="width:100%;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
@@ -3204,7 +3204,7 @@
                           <option value="{{ dop.v }}">{{ dop.l }}</option>
                         </sc-for>
                       </select>
-                      <input id="{{ df.id }}" type="tel" inputmode="tel" autocomplete="tel-national" value="{{ df.val }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="flex:1 1 auto;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                      <input id="{{ df.id }}" type="tel" inputmode="tel" autocomplete="tel-national" value="{{ df.bindVal }}" defaultValue="{{ df.defaultVal }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="flex:1 1 auto;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                     </div>
                   </sc-if>
                   <sc-if value="{{ df.hasNote }}" hint-placeholder-val="{{ false }}">
@@ -35040,8 +35040,9 @@ class Component extends DCLogic {
   _dial(iso) { const row = this._geo ? this._geo.countries.find(c => c[0] === iso) : null; return row ? row[2] : (iso === 'IN' ? '91' : ''); }
   _donorInput() {
     const S = this.state;
-    return { fullName: S.dFullName, email: S.dEmail, phone: S.dPhone, phoneDial: this._dial(S.dDialIso || S.dCC), countryCode: S.dCC,
-      state: S.dState, district: S.dDistrict, districtOther: !!S.dDistrictOther, city: S.dCity, postalCode: S.dPin,
+    const field = key => this._pendingDonor && Object.prototype.hasOwnProperty.call(this._pendingDonor, key) ? this._pendingDonor[key] : S[key];
+    return { fullName: field('dFullName'), email: field('dEmail'), phone: field('dPhone'), phoneDial: this._dial(S.dDialIso || S.dCC), countryCode: S.dCC,
+      state: S.dState, district: field('dDistrict'), districtOther: !!S.dDistrictOther, city: S.dCity, postalCode: S.dPin,
       address: S.dAddr, pan: S.dPan, receipt80G: !!S.d80g, amount: this._amt() > 0 ? this._amt() : '', frequency: S.dFreq };
   }
   _donorErrors() {
@@ -35056,6 +35057,16 @@ class Component extends DCLogic {
     this._dblurs = this._dblurs || {};
     if (!this._dblurs[k]) this._dblurs[k] = () => this.setState(s => ({ dTouched: Object.assign({}, s.dTouched, { [k]: true }) }));
     return this._dblurs[k];
+  }
+  _deferredDonorField(stateKey, validationKey) {
+    return {
+      on: e => { (this._pendingDonor || (this._pendingDonor = {}))[stateKey] = e.target.value; },
+      blur: e => {
+        const value = e.target.value;
+        if (this._pendingDonor) delete this._pendingDonor[stateKey];
+        this.setState(s => ({ [stateKey]: value, dTouched: Object.assign({}, s.dTouched, { [validationKey]: true }) }));
+      },
+    };
   }
   _countryOptions() {
     const geo = this._geo;
@@ -35087,17 +35098,22 @@ class Component extends DCLogic {
     const mk = (k, o) => {
       const m = this._dmsg(k, errs);
       return Object.assign({ k, id: 'df-' + k, label: '', span: 'auto', isText: false, isSelect: false, isPhone: false, type: 'text', hint: '', inputmode: '', ac: 'off',
-        val: '', on: null, blur: this._dblur(k), focus: () => {}, listId: '', hasList: false, listOptions: [], note: '', hasNote: false, options: [], dialOptions: [], dialVal: '', onDial: null, err: m, hasErr: !!m, invalid: m ? 'true' : 'false',
+        val: '', bindVal: null, defaultVal: null, on: null, blur: this._dblur(k), focus: () => {}, listId: '', hasList: false, listOptions: [], note: '', hasNote: false, options: [], dialOptions: [], dialVal: '', onDial: null, err: m, hasErr: !!m, invalid: m ? 'true' : 'false',
         border: m ? 'var(--ac-red)' : 'var(--border)' }, o, { label: (o.label || '') + (o.req ? ' *' : '') });
     };
-    const text = (k, stateKey, o) => mk(k, Object.assign({ isText: true, val: S[stateKey] || '', on: this._pset(stateKey) }, o));
+    const text = (k, stateKey, o) => {
+      const controlled = k === 'city' || k === 'postalCode';
+      return mk(k, Object.assign({ isText: true, val: S[stateKey] || '', bindVal: controlled ? S[stateKey] || '' : null,
+        defaultVal: controlled ? null : S[stateKey] || '',
+        ...controlled ? { on: this._pset(stateKey) } : this._deferredDonorField(stateKey, k) }, o));
+    };
     const rows = [];
     rows.push(text('fullName', 'dFullName', { label: T.f_full_name, req: true, span: '1 / -1', ac: 'name' }));
     rows.push(mk('countryCode', { span: '1 / -1', isSelect: true, label: T.f_country, req: true, ac: 'country', val: cc, on: (e) => this._onCountry(e),
       options: [{ v: '', l: this._dt('f_select_country') }].concat(this._countryOptions().map(c => ({ v: c.v, l: c.l }))) }));
     const dialIso = S.dDialIso || cc;
     rows.push(mk('phone', { span: '1 / -1', isPhone: true, label: T.f_phone, req: true, inputmode: 'tel', ac: 'tel-national', hint: this._dt('f_phone_hint'),
-      val: S.dPhone || '', on: this._pset('dPhone'), dialVal: dialIso, onDial: (e) => this._onDial(e),
+      val: S.dPhone || '', bindVal: null, defaultVal: S.dPhone || '', ...this._deferredDonorField('dPhone', 'phone'), dialVal: dialIso, onDial: (e) => this._onDial(e),
       dialOptions: this._countryOptions().filter(c => c.dial).map(c => ({ v: c.v, l: '+' + c.dial + ' ' + c.l })) }));
     rows.push(text('email', 'dEmail', { label: T.f_email, req: true, type: 'email', hint: T.f_email_hint, ac: 'email', inputmode: 'email' }));
     const states = geo && geo.states ? geo.states[cc] : null;
@@ -35136,6 +35152,7 @@ class Component extends DCLogic {
   }
   _payload(P) {
     const S = this.state, fcra = S.dRegime === 'fcra';
+    const field = key => this._pendingDonor && Object.prototype.hasOwnProperty.call(this._pendingDonor, key) ? this._pendingDonor[key] : S[key];
     const pur = (P.purposes.find(x => x.k === S.dPurpose) || {}).label || '';
     // The receipt PDF is English, so the purpose travels in English as well as in the reader's language.
     const ENP = ((this._pt || {}).en || {}).purposes || [];
@@ -35153,8 +35170,8 @@ class Component extends DCLogic {
       country: fcra ? S.dCountry : 'India',
       idRef: fcra ? S.dIdRef : '',
       address: S.dAddr,
-      fullName: S.dFullName || '', email: S.dEmail || '', phone: S.dPhone || '', phoneDial: this._dial(S.dDialIso || S.dCC),
-      city: S.dCity || '', state: S.dState || '', postalCode: S.dPin || '', district: S.dDistrict || '', districtOther: !!S.dDistrictOther,
+      fullName: field('dFullName') || '', email: field('dEmail') || '', phone: field('dPhone') || '', phoneDial: this._dial(S.dDialIso || S.dCC),
+      city: S.dCity || '', state: S.dState || '', postalCode: S.dPin || '', district: field('dDistrict') || '', districtOther: !!S.dDistrictOther,
       countryCode: S.dCC || 'IN',
       anonymous: !!S.dAnon,
       statutory: fcra ? 'FC-4 annual return; no 80G' : 'Form 10BD statement; 80G certificate 10BE',
