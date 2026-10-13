@@ -4858,7 +4858,7 @@ class Component extends DCLogic {
     const detected = this._detectLang();
     if (detected && detected !== this.state.lang) this.setState({ lang: detected }, () => this._applyLangAttrs());
     else this._applyLangAttrs();
-    if (window._loadContentLang) window._loadContentLang(detected || this.state.lang, () => this.forceUpdate());
+    if (window._loadContentLang) window._loadContentLang(detected || this.state.lang, () => this._scheduleUpdate());
     // Deep link support: a bare visit stays on the homepage (_applyHash no-ops on an empty
     // hash), but #finance, #prog/re, #involved/give etc. land directly there, and the
     // popstate listener makes the browser's own back/forward move between them afterward.
@@ -4945,7 +4945,7 @@ class Component extends DCLogic {
     // Hero-number widths are measured in the real font; remeasure once it lands.
     try {
       if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(() => { this._numCache = {}; this.forceUpdate(); });
+        document.fonts.ready.then(() => { this._numCache = {}; this._scheduleUpdate(); });
       }
     } catch (e) {}
     try {
@@ -4967,12 +4967,12 @@ class Component extends DCLogic {
     this._loadFinance();
     if (!window.DEHAT_MEDIA) {
       this._mediaPoll = setInterval(() => {
-        if (window.DEHAT_MEDIA) { clearInterval(this._mediaPoll); this.forceUpdate(); }
+        if (window.DEHAT_MEDIA) { clearInterval(this._mediaPoll); this._scheduleUpdate(); }
       }, 150);
       setTimeout(() => clearInterval(this._mediaPoll), 8000);
     }
     this._timer = setInterval(() => {
-      if (this.state.view === 'home') this.setState(s => ({ story: (s.story + 1) % this._stories().length }));
+      if (this.state.view === 'home' && !document.hidden && this._storyVisible) this.setState(s => ({ story: (s.story + 1) % this._stories().length }));
     }, 7000);
     this._lastView = this.state.view;
     this._revealInit();
@@ -5290,7 +5290,7 @@ class Component extends DCLogic {
       );
     });
   }
-  componentWillUnmount() { try { document.removeEventListener('pointerdown', this._onDocDown, true); window.removeEventListener('keydown', this._onEsc); } catch (e) {} try { if (this._navRO) this._navRO.disconnect(); if (this._navMeasure) window.removeEventListener('resize', this._navMeasure); } catch (e) {} try { if (this._jBound) { window.removeEventListener('scroll', this._jBound); window.removeEventListener('resize', this._jBound); } } catch (e) {} clearInterval(this._timer); clearInterval(this._revealTimer); if (this._deckBound) { window.removeEventListener('scroll', this._deckBound); } if (this._revealBound) { window.removeEventListener('scroll', this._revealBound); window.removeEventListener('resize', this._revealBound); } if (this._io) this._io.disconnect(); if (this._mo) this._mo.disconnect(); if (this._raf) cancelAnimationFrame(this._raf); }
+  componentWillUnmount() { try { document.removeEventListener('pointerdown', this._onDocDown, true); window.removeEventListener('keydown', this._onEsc); } catch (e) {} try { if (this._navRO) this._navRO.disconnect(); if (this._navMeasure) window.removeEventListener('resize', this._navMeasure); } catch (e) {} try { if (this._jBound) { window.removeEventListener('scroll', this._jBound); window.removeEventListener('resize', this._jBound); } } catch (e) {} clearInterval(this._timer); clearInterval(this._revealTimer); if (this._deckBound) { window.removeEventListener('scroll', this._deckBound); } if (this._revealBound) { window.removeEventListener('scroll', this._revealBound); window.removeEventListener('resize', this._revealBound); } if (this._io) this._io.disconnect(); if (this._mo) this._mo.disconnect(); if (this._storyObserver) this._storyObserver.disconnect(); if (this._scanFrame) cancelAnimationFrame(this._scanFrame); if (this._raf) cancelAnimationFrame(this._raf); if (this._updateFrame) cancelAnimationFrame(this._updateFrame); }
 
   // ---------- scroll reveal + section anchoring ----------
   _revealAll() {
@@ -5300,7 +5300,6 @@ class Component extends DCLogic {
     if (typeof window === 'undefined') return;
     try {
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this._revealAll(); return; }
-      if (!this._revealTimer) this._revealTimer = setInterval(() => this._revealScan(), 300);
       if (!this._revealBound) {
         this._revealBound = () => {
           if (this._revealRaf) return;
@@ -5351,8 +5350,11 @@ class Component extends DCLogic {
       const sig = nodes.map(n => n.label + ':' + n.at.toFixed(3)).join('|') + '#' + active;
       if (sig === this._spineSig) return;
       this._spineSig = sig;
+      const previous = this._spine;
+      const needsRender = !previous || previous.active !== active || previous.nodes.length !== nodes.length ||
+        nodes.some((node, index) => node.label !== previous.nodes[index].label);
       this._spine = { nodes: nodes, active: active };
-      this.forceUpdate();
+      if (needsRender) this._scheduleUpdate();
     } catch (e) {}
   }
   // Bottom edge of the sticky header stack as it is right now: the sub-nav strip when one is
@@ -5574,7 +5576,7 @@ class Component extends DCLogic {
   _setLang(code, remember) {
     if (remember !== false) { try { window.localStorage.setItem('dehat.lang', code); } catch (e) {} }
     this.setState({ lang: code }, () => { this._applyLangAttrs(); this._applyTheme(); });
-    if (window._loadContentLang) window._loadContentLang(code, () => this.forceUpdate());
+    if (window._loadContentLang) window._loadContentLang(code, () => this._scheduleUpdate());
   }
 
   _langs() {
@@ -35953,6 +35955,14 @@ class Component extends DCLogic {
     if (!this._storySwipeRef) this._storySwipeRef = (el) => {
       if (!el || el._swipe) return;
       el._swipe = true;
+      this._storyVisible = !window.IntersectionObserver;
+      if (window.IntersectionObserver) {
+        this._storyObserver?.disconnect();
+        this._storyObserver = new IntersectionObserver(entries => {
+          this._storyVisible = entries.some(entry => entry.isIntersecting);
+        }, { threshold: 0.1 });
+        this._storyObserver.observe(el);
+      }
       let x0 = 0, y0 = 0;
       el.addEventListener('touchstart', (e) => { const t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; }, { passive: true });
       el.addEventListener('touchend', (e) => {
@@ -36070,44 +36080,50 @@ class Component extends DCLogic {
     return head + ' - ' + (who || T.mail_subject_fallback);
   }
   _mailHeads(T) { return [T.mail_h_about, T.mail_h_explore, T.mail_h_change]; }
+  _scheduleUpdate() {
+    if (this._updateFrame) return;
+    this._updateFrame = requestAnimationFrame(() => { this._updateFrame = 0; this.forceUpdate(); });
+  }
   _loadProjects() {
+    if (window.DEHAT_LAUNCH) return;
     if (this._projLoading || (this.state.projects && this.state.projects.length)) return;
     this._projLoading = true;
     import('./projects-data.js')
       .then(m => { this._pd = m; this.setState({ projects: m.PROJECTS || [] }); })
       .catch(() => { this._projLoading = false; });
     import('./programme-extras.js')
-      .then(m => { this._px = m; this.forceUpdate(); })
+      .then(m => { this._px = m; this._scheduleUpdate(); })
       .catch(() => {});
     import('./impact-lenses.js')
-      .then(m => { this._il = m; this.forceUpdate(); })
+      .then(m => { this._il = m; this._scheduleUpdate(); })
       .catch(() => {});
     import('./journey-data.js')
-      .then(m => { this._jd = m.JOURNEY || null; this.forceUpdate(); })
+      .then(m => { this._jd = m.JOURNEY || null; this._scheduleUpdate(); })
       .catch(() => {});
     import('./partner-data.js')
-      .then(m => { this._pt = m.PARTNER || null; this.forceUpdate(); })
+      .then(m => { this._pt = m.PARTNER || null; this._scheduleUpdate(); })
       .catch(() => {});
     import('./register-data.js?v=4')
-      .then(m => { this._rg = m || null; this.forceUpdate(); })
+      .then(m => { this._rg = m || null; this._scheduleUpdate(); })
       .catch(() => {});
     import('./faq-data.js')
-      .then(() => { this._faq = (typeof window !== 'undefined') ? window.FAQ : null; this.forceUpdate(); })
+      .then(() => { this._faq = (typeof window !== 'undefined') ? window.FAQ : null; this._scheduleUpdate(); })
       .catch(() => {});
     import('./who-data.js?v=3')
-      .then(m => { this._wd = m.WHO || null; this.forceUpdate(); })
+      .then(m => { this._wd = m.WHO || null; this._scheduleUpdate(); })
       .catch(() => {});
     import('./who-profiles.js')
-      .then(m => { this._wp = m || null; this.forceUpdate(); })
+      .then(m => { this._wp = m || null; this._scheduleUpdate(); })
       .catch(() => {});
     import('./who-en.js')
-      .then(m => { this._we = m.TEAM_EN || null; this.forceUpdate(); })
+      .then(m => { this._we = m.TEAM_EN || null; this._scheduleUpdate(); })
       .catch(() => {});
   }
   _loadFinance() {
+    if (window.DEHAT_LAUNCH) return;
     if (this._finLoaded) return;
     this._finLoaded = true;
-    import('./finance-data.js').then(() => { this._fin = (typeof window !== 'undefined') ? window.FIN : null; this.forceUpdate(); }).catch(() => { this._finLoaded = false; });
+    import('./finance-data.js').then(() => { this._fin = (typeof window !== 'undefined') ? window.FIN : null; this._scheduleUpdate(); }).catch(() => { this._finLoaded = false; });
   }
   _progMeta(T) {
     const P = (this._pd && this._pd.PROGRAMMES) ? this._pd.PROGRAMMES : [];
@@ -36240,7 +36256,15 @@ class Component extends DCLogic {
         this._loop();
       });
     }, { threshold: 0.25 });
-    const boot = () => { this._scan(); try { this._mo = new MutationObserver(() => this._scan()); this._mo.observe(document.body, { childList: true, subtree: true }); } catch (e) {} };
+    const boot = () => { this._scan(); try {
+      this._mo = new MutationObserver(records => {
+        const added = records.some(record => Array.from(record.addedNodes).some(node => node.nodeType === 1 &&
+          (node.matches?.('[data-count-id],[data-reveal-cta]') || node.querySelector?.('[data-count-id],[data-reveal-cta]'))));
+        if (!added || this._scanFrame) return;
+        this._scanFrame = requestAnimationFrame(() => { this._scanFrame = 0; this._scan(); });
+      });
+      this._mo.observe(document.body, { childList: true, subtree: true });
+    } catch (e) {} };
     if (document.body) boot(); else setTimeout(boot, 0);
   }
   _scan() {
@@ -37051,6 +37075,8 @@ class Component extends DCLogic {
   // Wraps the real renderVals so every {img} carries a ready CSS url() string;
   // keeps url(...) literals out of the template so the bundler can resolve assets.
   renderVals() {
+    const diagnostics = window.DEHAT_LAUNCH_DIAGNOSTICS;
+    const dictBefore = diagnostics?.dictCalls || 0;
     const seen = new Set();
     // Ink-only artwork (black line, no skin tones) disappears on a dark surface; flip it
     // while preserving its spot colour.
@@ -37065,18 +37091,22 @@ class Component extends DCLogic {
       Object.keys(v).forEach(k => { const c = v[k]; if (c && typeof c === 'object') walk(c); });
       return v;
     };
-    return walk(Object.assign(this._renderValsBase(), this._spineVals(), {
+    const values = walk(Object.assign(this._renderValsBase(), this._spineVals(), {
       ck: this._consent(),
       booting: !!this.state.booting,
       bootMark: 'url(./dehat-mark.png)',
     }));
+    if (diagnostics) {
+      diagnostics.fullRenders = (diagnostics.fullRenders || 0) + 1;
+      diagnostics.dictCallsLastRender = (diagnostics.dictCalls || 0) - dictBefore;
+    }
+    return values;
   }
 
   _renderValsBase() {
     this._ensure();
     const V = this.state.view;
-    const D = this._dict();
-    const T = { ...D.en, ...(D[this.state.lang] || {}) };
+    const T = this._mergedDict();
     const dark = this.state.theme === 'dark';
     const cnt = this._countValues || this.state.counts;
     const cv = (id, p, sfx) => cnt[id] != null ? cnt[id] : ((p || '') + '0' + (sfx || ''));
@@ -38109,14 +38139,14 @@ class Component extends DCLogic {
       finHasSeg: !!finSegDetail,
       finLinesHead: activeSegKey ? (segMeta(activeSegKey).label + ' - ' + T.fin_lines_behind_it) : T.fin_lines_in_view,
       isHome: V === 'home', isWork: V === 'work', isImpact: V === 'impact',
-      isWho: V === 'who', who: this._whoView(setView),
+      isWho: V === 'who', who: V === 'who' ? this._whoView(setView) : {},
       isProg: V === 'prog' && !!pp, pp, programmeIndex,
       isStories: V === 'stories', isInvolved: V === 'involved', isFinance: V === 'finance', isMedia: V === 'media',
-      isPolicies: V === 'policies', policyGroups: this._policies(), goPolicies: setView('policies'),
+      isPolicies: V === 'policies', policyGroups: V === 'policies' ? this._policies() : [], goPolicies: setView('policies'),
       goRaiseConcern: this._go('finance', 'raise', { rzKind: 'safeguard' }),
       whoTeaser: this._whoTeaser(setView, T),
-      pv: this._partnerView(allProjects, FIN, PROGS) || {},
-      rt: this._reportTransfer(((this._pt || {})[this.state.lang] || (this._pt || {}).en) || {}),
+      pv: V === 'involved' ? (this._partnerView(allProjects, FIN, PROGS) || {}) : {},
+      rt: V === 'involved' ? this._reportTransfer(((this._pt || {})[this.state.lang] || (this._pt || {}).en) || {}) : {},
       hasPv: !!this._pt,
       goFinance: this._go('finance', 'allocation'),
       finStats: [
@@ -38125,7 +38155,7 @@ class Component extends DCLogic {
         { to: (finTotalRec - finTotalFcra) / 1e7, dec: 2, comma: false, prefix: '\u20b9', suffix: ' Cr', label: T.fin_stat_inr },
         { to: FIN ? Object.keys(FIN.FUNDERS).length : 0, dec: 0, comma: false, prefix: '', suffix: '', label: T.fin_stat_funders },
       ].map((s, i) => ({ ...s, id: 'f' + i, value: cv('f' + i, s.prefix, s.suffix) })),
-      ...this._ledger(), finFunderList,
+      ...(V === 'finance' ? this._ledger() : {}), finFunderList,
       finDocGroups: FIN && FIN.DOCUMENTS ? (() => {
         const G = [
           { key: 'statutory', label: T.fin_docg_statutory, color: '#556223' },
@@ -38182,7 +38212,7 @@ class Component extends DCLogic {
       govIntro: FIN && FIN.GOVERNANCE ? this._tc('fin_governance', 'main', 'intro', FIN.GOVERNANCE.intro) : '',
       govNote: FIN && FIN.GOVERNANCE ? this._tc('fin_governance', 'main', 'note', FIN.GOVERNANCE.note) : '',
       govSource: FIN && FIN.GOVERNANCE ? this._tc('fin_governance', 'main', 'source', FIN.GOVERNANCE.source) : '',
-      ...this._govView(),
+      ...(V === 'finance' ? this._govView() : {}),
       accIntro: FIN && FIN.ACCOUNTABILITY ? this._tc('accountability', 'main', 'intro', FIN.ACCOUNTABILITY.intro) : '',
       accParties: FIN && FIN.ACCOUNTABILITY ? FIN.ACCOUNTABILITY.parties.map((p, i) => ({
         ...p,
@@ -38207,12 +38237,12 @@ class Component extends DCLogic {
         this._dt('mail_thanks'), this._gap('draft_slot_name')].join('\n')),
       raisePhone: FIN && FIN.ACCOUNTABILITY ? FIN.ACCOUNTABILITY.raise.phone : '',
       raiseAddress: FIN && FIN.ACCOUNTABILITY ? FIN.ACCOUNTABILITY.raise.address : '',
-      ...this._raiseComposer(),
+      ...(V === 'finance' ? this._raiseComposer() : {}),
       finReg: FIN ? FIN.COMPLIANCE.registrations.map(r => ({ code: r.code, what: this._tc('fin_compliance', r.code, 'what', r.what) })) : [],
       finCal: FIN ? FIN.COMPLIANCE.calendar.map(c => ({ by: c.by, form: c.form, body: c.body, what: this._tc('fin_calendar', c.form, 'what', c.what) })) : [],
       finRules: FIN ? FIN.COMPLIANCE.rules.map(r => ({ key: this._tc('fin_rules', r.key, 'key', r.key), detail: this._tc('fin_rules', r.key, 'detail', r.detail) })) : [],
-      ...this._pressRail(setView),
-      ask: this._askVals(setView),
+      ...(V === 'home' ? this._pressRail(setView) : {}),
+      ask: V === 'answers' ? this._askVals(setView) : {},
       isAnswers: V === 'answers',
       T, navItems: navPrimary, navGroups, subNav, subNavOn: subNav.length > 1,
       footItems: navItems, moreItems, portfolioTotal, socialInvestmentTotal,
@@ -38400,7 +38430,7 @@ class Component extends DCLogic {
         { to: 22020, comma: true, suffix: '+', label: T.reach_children },
         { to: 2460, comma: true, suffix: '+', label: T.reach_farmers },
       ].map((r, i) => ({ ...r, id: 'r' + i, value: cv('r' + i, '', r.suffix) })),
-      ...this._longReads(setView),
+      ...(V === 'stories' ? this._longReads(setView) : {}),
       storyCards: [
         { right: 'Right to Participation', color: '#EAAE28', lite: '#EAAE28', img: './assets/story-participation.png', title: 'Benaras, because of a Child Parliament', body: 'No girl from Lohra village in Bichhiya had continued into higher studies. Reena Kumari\u2019s work in the Child Parliament changed what her parents believed a daughter could do - and she left to study at Rajkiya Balika Inter College, Benaras.', quote: 'If this Child Parliament did not exist, I would not have been able to study in Benaras.' },
         { right: 'Right to Protection', color: '#D2305C', lite: '#F58EA6', img: './assets/story-protection.png', title: 'Sixteen girls against a trafficker\u2019s truck', body: 'Cycling home from school in Nai Basti, sixteen girls - none older than fifteen - recognised a trafficking attempt, blocked the truck with their bicycles and called 1098. The driver abandoned the child and was arrested at Motipur.', quote: 'Is he your child? Where are you taking him to?' },
