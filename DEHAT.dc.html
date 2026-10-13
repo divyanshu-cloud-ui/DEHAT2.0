@@ -36212,7 +36212,7 @@ class Component extends DCLogic {
     this._loadProjects();
     try { if (this._io) this._io.disconnect(); } catch (e) {}
     try { if (this._mo) this._mo.disconnect(); } catch (e) {}
-    this._active = new Map(); this._obs = new WeakSet(); this._started = new Set();
+    this._active = new Map(); this._obs = new WeakSet(); this._started = new Set(); this._countValues = Object.create(null);
     this._io = new IntersectionObserver((es) => {
       es.forEach(e => {
         if (!e.isIntersecting) return;
@@ -36227,7 +36227,7 @@ class Component extends DCLogic {
           if (!this.state.sig[rid]) this.setState(st => ({ sig: Object.assign({}, st.sig, { [rid]: true }) }));
           return;
         }
-        if (this._started.has(id) || this.state.counts[id] != null) return;
+        if (this._started.has(id) || this._countValues[id] != null) return;
         this._started.add(id);
         this._active.set(id, {
           to: parseFloat(el.dataset.countTo) || 0,
@@ -36235,7 +36235,7 @@ class Component extends DCLogic {
           comma: el.dataset.countComma === 'true',
           prefix: el.dataset.countPrefix && el.dataset.countPrefix !== 'undefined' ? el.dataset.countPrefix : '',
           suffix: el.dataset.countSuffix && el.dataset.countSuffix !== 'undefined' ? el.dataset.countSuffix : '',
-          t0: performance.now(),
+          t0: performance.now(), el,
         });
         this._loop();
       });
@@ -36247,7 +36247,7 @@ class Component extends DCLogic {
     if (!this._io) return;
     document.querySelectorAll('[data-count-id]').forEach(el => {
       const id = el.dataset.countId;
-      if (this._started.has(id) || this.state.counts[id] != null || this._obs.has(el)) return;
+      if (this._started.has(id) || this._countValues[id] != null || this._obs.has(el)) return;
       this._obs.add(el); this._io.observe(el);
     });
     document.querySelectorAll('[data-reveal-cta]').forEach(el => {
@@ -36263,13 +36263,14 @@ class Component extends DCLogic {
   _loop() {
     if (this._raf) return;
     const step = () => {
-      const now = performance.now(); const upd = {}; let more = false;
+      const now = performance.now(); let more = false;
       this._active.forEach((c, id) => {
         const p = Math.min(1, (now - c.t0) / 1500); const e = 1 - Math.pow(1 - p, 3);
-        upd[id] = this._fmt(c.to * e, c);
+        const value = this._fmt(c.to * e, c);
+        this._countValues[id] = value;
+        if (c.el?.isConnected) (c.el.querySelector('.sc-interp') || c.el).textContent = value;
         if (p < 1) more = true; else this._active.delete(id);
       });
-      this.setState(s => ({ counts: { ...s.counts, ...upd } }));
       this._raf = more ? requestAnimationFrame(step) : null;
     };
     this._raf = requestAnimationFrame(step);
@@ -37077,7 +37078,7 @@ class Component extends DCLogic {
     const D = this._dict();
     const T = { ...D.en, ...(D[this.state.lang] || {}) };
     const dark = this.state.theme === 'dark';
-    const cnt = this.state.counts;
+    const cnt = this._countValues || this.state.counts;
     const cv = (id, p, sfx) => cnt[id] != null ? cnt[id] : ((p || '') + '0' + (sfx || ''));
     const fork = this.state.caseFork;
     const gridArt = ['sm-ink-crowd', 'sm-ink-pair-ledger', 'sm-ink-family', 'sm-ink-four-walking', 'sm-ink-pair'];
