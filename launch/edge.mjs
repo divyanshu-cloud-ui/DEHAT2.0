@@ -21,6 +21,8 @@ const location = destination => ({Location:destination});
 const exact = value => '^'+escapePattern(value)+'$';
 const cache = (src,value,other={}) => ({src,headers:{'Cache-Control':value,...other},continue:true});
 const revalidate='public, max-age=0, must-revalidate';
+const shortStatic='public, max-age=14400, must-revalidate';
+const immutable='public, max-age=31536000, immutable';
 const media='public, max-age=86400, stale-while-revalidate=604800';
 const reportPolicy=Object.entries(CSP_SOURCES).map(([directive,sources])=>`${directive} ${sources.join(' ')}`).join('; ');
 
@@ -50,15 +52,20 @@ export function buildRoutes({mode,origin,redirects,routes,publishedPaths,files,a
 
   output.push({src:'^/(?:MediaArchive\\.dc\\.html|district-map\\.html)$',headers:{'X-Robots-Tag':'noindex'},continue:true});
   output.push(cache('^/assets/.*$',media));
+  // A year-long TTL is safe only for paths that carry a content fingerprint.
+  output.push(cache('^/assets/(?:vendor|fonts/web)/[^/]*[a-f0-9]{16}[^/]*$',immutable));
   // Published statutory PDFs live in a public Vercel Blob store and are served from this same address.
   // The manifest lists what is published, so it is cached for minutes, not a day.
   output.push(cache('^/assets/docs/manifest\\.json$','public, max-age=300, stale-while-revalidate=3600',{'Content-Type':'application/json; charset=utf-8'}));
   output.push({src:'^/assets/docs/(.+)$',dest:DOCS_ORIGIN+'/docs/$1'});
   output.push(cache('^/dehat-[^/]*\\.png$',media));
   output.push(cache('^/(?!api/|assets/)(?:$|[^.]*|.*\\.html)$',revalidate));
-  output.push(cache('^/[^/]*-data\\.js$',revalidate));
-  output.push(cache('^/content-i18n/.*$',revalidate));
+  output.push(cache('^/[^/]*-data\\.js$',shortStatic));
+  output.push(cache('^/support\\.js$',shortStatic));
+  output.push(cache('^/content-i18n/.*$',shortStatic));
   output.push(cache('^/launch/.*$',revalidate));
+  output.push(cache('^/launch/css/[a-f0-9]{16}\\.css$',immutable));
+  output.push(cache('^/launch/dict/[a-z]{2,3}-[a-f0-9]{16}\\.js$',immutable));
   output.push(cache('^/sitemap(?:_index)?\\.xml$',revalidate,{'Content-Type':'application/xml; charset=utf-8'}));
   output.push(cache('^/robots\\.txt$',revalidate));
   output.push(cache('^/llms(?:-full)?\\.txt$','public, max-age=3600',{'Content-Type':'text/plain; charset=utf-8'}));

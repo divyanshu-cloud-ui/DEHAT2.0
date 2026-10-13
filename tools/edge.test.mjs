@@ -68,6 +68,20 @@ test('API and asset caches are exclusive and www receives security headers',()=>
  const headers={};for(const r of matching(rules,'/impact','www.dehatindia.org')){Object.assign(headers,r.headers);if(r.status)break;}
  assert.equal(headers['X-Content-Type-Options'],'nosniff');assert.equal(headers.Location,origin+'$1');
 });
+test('fingerprinted static files have immutable cache while HTML and unversioned scripts revalidate',()=>{
+ const rules=buildRoutes({...inputs,mode:'preview'});
+ const policy=path=>matching(rules,path).filter(r=>r.headers?.['Cache-Control']).at(-1)?.headers['Cache-Control'];
+ const immutable='public, max-age=31536000, immutable';
+ assert.equal(policy('/'),'public, max-age=0, must-revalidate');
+ assert.equal(policy('/launch/runtime-template.html'),'public, max-age=0, must-revalidate');
+ assert.equal(policy('/support.js'),'public, max-age=14400, must-revalidate');
+ assert.equal(policy('/content-i18n/hi.js'),'public, max-age=14400, must-revalidate');
+ assert.equal(policy('/launch/css/0123456789abcdef.css'),immutable);
+ assert.equal(policy('/launch/dict/hi-0123456789abcdef.js'),immutable);
+ assert.equal(policy('/assets/vendor/react-0123456789abcdef.js'),immutable);
+ assert.equal(policy('/assets/story/web/story-002.png'),'public, max-age=86400, stale-while-revalidate=604800');
+ assert.equal(policy('/assets/docs/manifest.json'),'public, max-age=300, stale-while-revalidate=3600');
+});
 test('not-found routes choose localized documents after filesystem handling',()=>{
  const rules=buildRoutes({...inputs,mode:'preview',files:['index.html','404.html',...['hi','ar'].map(lang=>`${lang}/404.html`)]});
  const tail=rules.slice(rules.findIndex(rule=>rule.handle==='filesystem')+1);
