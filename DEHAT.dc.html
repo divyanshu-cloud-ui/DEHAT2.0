@@ -442,7 +442,7 @@
   .hr-age{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:2px;min-height:34px}
   .hr-age b{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1;color:var(--hr-gold);font-variant-numeric:tabular-nums;min-height:1em}
   .hr-age span{font-size:12px;font-weight:600;color:var(--hr-dim);letter-spacing:.03em}
-  .hr-words{position:relative;display:grid;place-items:center}
+  .hr-words{position:relative;display:grid;place-items:center;min-height:160px}
   .hr-stage{position:absolute;inset:0;display:grid;place-items:center;text-align:center;z-index:1}
   .hr-beat{display:flex;flex-direction:column;align-items:center;gap:4px;max-width:min(100%,1000px)}
   .hr-w{display:block;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1;opacity:0;transform:translateY(.3em);filter:blur(6px);animation:hrLand .55s var(--hr-ease) forwards}
@@ -456,7 +456,9 @@
   .hr-out .hr-w{animation:hrLeave .3s ease-in forwards}
   @keyframes hrLeave{to{opacity:0;transform:translateY(-.25em);filter:blur(6px)}}
   .hr-end{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
-  .hr-playing .hr-end,.hr-paused .hr-end{visibility:hidden}
+  .hr-playing .hr-end,.hr-paused .hr-end{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;clip-path:inset(50%)}
+  .hr-playing .hr-end:focus-within,.hr-paused .hr-end:focus-within{position:absolute;inset:0;width:100%;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal;clip-path:none;background:#150e08;border-radius:12px;padding:12px}
+  .hr-mobile-identity{display:none}
   .hr-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hr-gold)}
   .hr-h1{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(34px,6vw,60px);line-height:1.03;letter-spacing:-.025em;text-wrap:balance}
   .hr-story{margin:0;max-width:50ch;color:rgba(251,247,239,.8);font-size:clamp(16px,2vw,19px);line-height:1.5;text-wrap:pretty}
@@ -489,11 +491,13 @@
   .hr-tick{position:absolute;top:0;transform:translateX(-50%);font-size:12px;font-weight:600;color:var(--hr-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
   .hr-tick.first{transform:none}
   .hr-tick.on{color:#fbf7ef}
-  .hr-ctl{position:absolute;right:0;bottom:14px;z-index:2;height:34px;padding:0 14px;border-radius:999px;border:1px solid rgba(251,247,239,.16);background:#150e08;color:var(--hr-dim);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer}
+  .hr-ctl,.hr-skip{position:absolute;z-index:2;min-width:44px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(251,247,239,.45);background:#150e08;color:#fbf7ef;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer}
+  .hr-ctl{right:0;bottom:14px}.hr-skip{right:0;top:0;display:none}.hr-playing .hr-skip,.hr-paused .hr-skip{display:block}
+  .hr-ctl:focus-visible,.hr-skip:focus-visible,.hr-cta:focus-visible,.hr-link:focus-visible{outline:3px solid #EAAE28;outline-offset:3px}
   .hr-prog{position:absolute;left:0;bottom:0;height:3px;background:var(--hr-gold);width:0;z-index:2}
-  .hr-playing .hr-prog{animation:hrGrow 41s linear forwards}.hr-paused .hr-prog{animation-play-state:paused}
+  .hr-playing .hr-prog{animation:hrGrow 30s linear forwards}.hr-paused .hr-prog{animation-play-state:paused}
   @keyframes hrGrow{to{width:100%}}
-  @media (max-width:779px){ .hr-clock .tl{display:none} .hr-key{padding:0;gap:0 14px} .hr-kd{font-size:12.5px} .hr-canvas{height:clamp(64px,11svh,110px)} .hr-story{display:none} .hr-top{gap:6px} .hr-end{gap:8px} }
+  @media (max-width:779px){ .hr-clock .tl{display:none} .hr-key{padding:0;gap:0 14px} .hr-kd{font-size:12.5px} .hr-canvas{height:clamp(64px,11svh,110px)} .hr-story{display:none} .hr-top{gap:6px} .hr-end{gap:8px} .hr-playing .hr-mobile-identity,.hr-paused .hr-mobile-identity{display:block;padding:0 60px 8px 0;font-size:13px;font-weight:700;line-height:1.3;color:#fbf7ef} }
   @media (min-width:780px){
     .hr-top{grid-template-columns:minmax(0,1.3fr) minmax(280px,.8fr);gap:40px;min-height:clamp(260px,46svh,440px)}
     .hr-clockbox{order:0;width:min(100%,380px,46svh)}
@@ -506,7 +510,7 @@
     .hr-actions{justify-content:flex-start}
   }
   @media (max-width:640px){ .hr-cta{padding:13px 20px;font-size:15px} .hr-link{font-size:14px} .hr-ctl{bottom:10px} }
-  @media (prefers-reduced-motion:reduce){ .hr-w,.hr-end.in > *{animation:none;opacity:1;transform:none;filter:none} .hr-playing .hr-prog{animation:none} }
+  @media (prefers-reduced-motion:reduce){ .hr-w,.hr-end.in > *{animation:none;opacity:1;transform:none;filter:none} .hr-playing .hr-prog{animation:none} html{scroll-behavior:auto!important} }
   /* Invest page band: a short kinetic-type story (about ten seconds, once) built only from words the page
      already has in every language: "When Communities Act, Systems Respond.", then each programme's tagline
      and name, resting on "Four Fronts, One Converging Response." with the four programmes as chips. Tap the
@@ -913,7 +917,9 @@
   <div key="home">
     <section data-spine="Where It Begins" class="hr" aria-labelledby="hr-h1">
       <div class="hr-in" ref="{{ hero.mountRef }}">
+        <button class="hr-skip" type="button">Skip film</button>
         <p class="hr-sr">{{ hero.sr }}</p>
+        <p class="hr-mobile-identity">DEHAT · Developmental Association for Human Advancement</p>
         <div class="hr-top">
           <div class="hr-words">
             <div class="hr-stage" aria-hidden="true"></div>
@@ -931,6 +937,7 @@
         </div>
         <div class="hr-art" aria-hidden="true"></div>
         <button class="hr-ctl" type="button"></button>
+        <span class="hr-sr hr-live" role="status" aria-live="polite" aria-atomic="true"></span>
         <div class="hr-prog" aria-hidden="true"></div>
       </div>
     </section>
@@ -35818,8 +35825,8 @@ class Component extends DCLogic {
     };
   }
   // The engine-owned part of the hero. It builds the clock, the line and the bars once, then plays
-  // eight beats (about 1.7 s apart), the four programmes (1.6 s each), and rests on the headline.
-  // Reduced motion, and automated renderers, go straight to the resting frame; a pause button is
+  // eight story beats, the four programmes, and rests on the headline after 30 seconds.
+  // Reduced motion goes straight to the resting frame; a pause button is
   // always there. Everything is time-based, so a slow phone stays in step with the words.
   _heroMountRef() {
     if (this._heroMountFn) return this._heroMountFn;
@@ -35827,8 +35834,8 @@ class Component extends DCLogic {
       if (!el || el._hero) return;
       el._hero = true;
       const self = this, q = (s) => el.querySelector(s), qa = (s) => Array.prototype.slice.call(el.querySelectorAll(s));
-      // A relaxed pace so every sentence can be read: 3.4 s per story beat, 3 s per programme, about 41 s in all. It can be paused, stepped (wheel, arrows, swipe, tap) or left to play.
-      const AT = [0, 3400, 6800, 10200, 13600, 17000, 20400, 23800], ORDER = ['re', 'sol', 'hp', 'cj'], PAT = [27000, 30000, 33000, 36000], AHEAD = 39000, END = 41000;
+      // The owner-approved film lasts 30 s; stepping leaves the same twelve-beat structure available.
+      const AT = [0, 3000, 5700, 8400, 11100, 13800, 16800, 19800], ORDER = ['re', 'sol', 'hp', 'cj'], PAT = [22600, 24400, 26200, 28000], AHEAD = 29400, END = 30000;
       const TURNS = [-1, 0, 3, 13, 15, 16, 18], YEARS = { re: [-1, 5], sol: [5, 18], hp: [11, 18], cj: [-1, 18] }, ARCR = { re: 58, sol: 52, hp: 46, cj: 40 };
       const VW = 1000, VH = 260, X0 = 18, X1 = 940, CX = 100, CY = 100;
       const X = (a) => X0 + (a + 1) / 19 * (X1 - X0);
@@ -35837,9 +35844,11 @@ class Component extends DCLogic {
       const gauss = (a, c, w) => Math.exp(-((a - c) * (a - c)) / (2 * w * w));
       const sig = (x) => 1 / (1 + Math.exp(-x));
       const S = { reveal: -1, hand: -1, loop: 0, re: 0, sol: 0, hp: 0, cj: 0, ahead: 0 }, Tg = Object.assign({}, S);
-      let timers = [], startedAt = 0, elapsed = 0, state = 'rest', raf = 0, last = 0, focus = null, lang = null, nameSig = null, beatNow = 0, sysPaused = false, wheelAt = 0, frozen = false;
+      let timers = [], startedAt = 0, elapsed = 0, state = 'rest', raf = 0, last = 0, focus = null, lang = null, nameSig = null, beatNow = 0, sysPaused = false, frozen = false;
       let reduce = false;
-      try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !!navigator.webdriver; } catch (e) {}
+      try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+      const seen = () => { try { return sessionStorage.getItem('dehat.hero.seen') === '1'; } catch (e) { return false; } };
+      const markSeen = () => { try { sessionStorage.setItem('dehat.hero.seen', '1'); } catch (e) {} };
       const D = () => self._heroData;
       const sinkY = (a) => { let y = 74 + 5.6 * (a + 1); TURNS.forEach(c => { y += 30 * gauss(a, c, .4); }); return y; };
       const liftY = (a) => 104 - 2.7 * (a + 1);
@@ -35862,7 +35871,7 @@ class Component extends DCLogic {
         + '<g class="hand-g"><line class="hand" x1="100" y1="100" x2="100" y2="34"/></g><circle class="hub" cx="100" cy="100" r="5"/></svg><div class="hr-age"><b></b><span></span></div>';
       q('.hr-art').innerHTML = '<div class="hr-canvas"><svg viewBox="0 0 1000 260" preserveAspectRatio="none"><path class="loop" vector-effect="non-scaling-stroke"/><path class="ahead" vector-effect="non-scaling-stroke"/><path class="life" vector-effect="non-scaling-stroke"/></svg>'
         + TURNS.map(a => '<span class="hr-wound" data-a="' + a + '"></span>').join('') + '<div class="hr-head"></div></div><div class="hr-axis"></div><div class="hr-key"></div>';
-      const stage = q('.hr-stage'), end = q('.hr-end'), ctl = q('.hr-ctl'), life = q('.life'), loopP = q('.loop'), aheadP = q('.ahead'), head = q('.hr-head'),
+      const stage = q('.hr-stage'), end = q('.hr-end'), ctl = q('.hr-ctl'), skip = q('.hr-skip'), live = q('.hr-live'), life = q('.life'), loopP = q('.loop'), aheadP = q('.ahead'), head = q('.hr-head'),
         handG = q('.hand-g'), ageN = q('.hr-age b'), ageL = q('.hr-age span');
       const labels = () => {
         const d = D(), ticks = [[-1, d.birth], [5, '5'], [10, '10'], [15, '15'], [18, '18']];
@@ -35919,16 +35928,19 @@ class Component extends DCLogic {
         const words = i < 7 ? [['k', d.beats[i][0]], ['l', d.beats[i][1]]] : [['m', d.answer]];
         const html = '<div class="hr-beat">' + words.map(w => '<span class="hr-w ' + w[0] + '">' + esc(w[1]) + '</span>').join('') + '</div>';
         if (prev && !reduce) { prev.classList.add('hr-out'); later(() => { stage.innerHTML = html; }, 260); } else stage.innerHTML = html;
+        live.textContent = words.map(w => w[1]).join(' ');
+        el.dataset.heroBeat = String(i);
         if (i === 7) set({ loop: 0.35 });
         else set({ reveal: AGES[i] + (AGES[i] < 18 ? 0.6 : 0), hand: AGES[i], loop: i === 6 ? 1 : 0 });
       };
       // The hand goes back over the years this programme answers and sweeps them again as its ring is drawn.
       const progWords = (k) => { const d = D(); return '<div class="hr-beat"><span class="hr-w k">' + esc(d.prog[k][1]) + '</span><span class="hr-w l" style="color:var(--hr-' + k + ')">' + esc(d.prog[k][0]) + '</span></div>'; };
-      const answer = (k) => { focus = k; const y = YEARS[k]; S.hand = y[0]; stage.innerHTML = progWords(k); const o = { loop: 0, hand: y[1] }; o[k] = 1; set(o); refresh(); };
+      const answer = (k) => { focus = k; beatNow = 8 + ORDER.indexOf(k); el.dataset.heroBeat = String(beatNow); live.textContent = D().prog[k].join(' '); const y = YEARS[k]; S.hand = y[0]; stage.innerHTML = progWords(k); const o = { loop: 0, hand: y[1] }; o[k] = 1; set(o); refresh(); };
       const rest = () => {
-        stage.innerHTML = ''; el.classList.remove('hr-playing', 'hr-paused'); el.classList.add('hr-rest'); state = 'rest'; focus = null;
+        clear(); stage.innerHTML = ''; el.classList.remove('hr-playing', 'hr-paused'); el.classList.add('hr-rest'); state = 'rest'; el.dataset.heroState = 'rest'; el.dataset.heroBeat = '12'; live.textContent = ''; focus = null;
+        q('.hr-prog').style.animation = 'none'; q('.hr-prog').style.width = '100%';
         set({ reveal: 18, hand: 18, loop: 0, re: 1, sol: 1, hp: 1, cj: 1, ahead: 1 }); end.classList.add('in'); labels(); refresh();
-        window.__dehatHeroDone = true;
+        window.__dehatHeroDone = true; markSeen();
       };
       const schedule = (from) => {
         AT.forEach((t, i) => { if (t >= from) later(() => show(i), t - from); });
@@ -35938,34 +35950,39 @@ class Component extends DCLogic {
       };
       const play = () => {
         clear(); end.classList.remove('in'); stage.innerHTML = ''; focus = null; el.classList.remove('hr-rest');
+        q('.hr-prog').style.animation = ''; q('.hr-prog').style.animationDelay = ''; q('.hr-prog').style.width = '';
         Object.keys(S).forEach(n => { S[n] = Tg[n] = 0; }); S.reveal = Tg.reveal = S.hand = Tg.hand = -1; render();
         el.classList.remove('hr-paused'); void el.offsetWidth; el.classList.add('hr-playing');
-        state = 'playing'; frozen = false; elapsed = 0; startedAt = Date.now(); schedule(0); labels();
+        state = 'playing'; el.dataset.heroState = 'playing'; beatNow = 0; frozen = false; elapsed = 0; startedAt = Date.now(); schedule(0); labels();
+        if (document.querySelector('#launch-live [role="dialog"]')) { sysPaused = true; pause(); }
       };
-      const pause = () => { clear(); elapsed += Date.now() - startedAt; el.classList.add('hr-paused'); state = 'paused'; frozen = true; if (raf) { cancelAnimationFrame(raf); raf = 0; } labels(); };
-      const resume = () => { el.classList.remove('hr-paused'); state = 'playing'; frozen = false; startedAt = Date.now(); schedule(elapsed + 1); labels(); kick(); };
+      const pause = () => { if (state !== 'playing') return; clear(); elapsed += Date.now() - startedAt; el.classList.add('hr-paused'); state = 'paused'; el.dataset.heroState = 'paused'; frozen = true; if (raf) { cancelAnimationFrame(raf); raf = 0; } labels(); };
+      const resume = () => { if (state !== 'paused') return; el.classList.remove('hr-paused'); el.classList.add('hr-playing'); state = 'playing'; el.dataset.heroState = 'playing'; frozen = false; startedAt = Date.now(); q('.hr-prog').style.animation = 'hrGrow 30s linear forwards'; q('.hr-prog').style.animationDelay = '-' + (elapsed / 1000) + 's'; schedule(elapsed + 1); labels(); kick(); };
       ctl.addEventListener('click', () => { sysPaused = false; state === 'playing' ? pause() : state === 'paused' ? resume() : play(); });
+      skip.addEventListener('click', () => { sysPaused = false; rest(); ctl.focus(); });
       // Interaction. Tap a turn on the clock to read that moment of her life; tap a programme to see the years
       // it answers; wheel over the clock or swipe the words to step through; the film pauses when off screen.
       // Steps 0 to 7 are the story; 8 to 11 are the four programmes arriving one at a time; after that, the resting frame.
       const explore = (i) => {
         i = Math.max(0, Math.min(11, i)); clear(); beatNow = i;
         el.classList.remove('hr-rest', 'hr-playing'); el.classList.add('hr-paused'); end.classList.remove('in');
-        state = 'paused'; frozen = false; focus = null; S.ahead = Tg.ahead = 0;
+        state = 'paused'; el.dataset.heroState = 'paused'; el.dataset.heroBeat = String(i); frozen = false; focus = null; S.ahead = Tg.ahead = 0;
+        q('.hr-prog').style.animation = 'none'; q('.hr-prog').style.width = ((i <= 7 ? AT[i] : PAT[i - 8]) / END * 100) + '%';
         if (i <= 7) { elapsed = AT[i] + 1; ORDER.forEach(k => { S[k] = Tg[k] = 0; }); stage.innerHTML = ''; show(i); }
         else {
           const j = i - 8, k = ORDER[j], y = YEARS[k]; elapsed = PAT[j] + 1; focus = k;
           ORDER.forEach((n, m) => { S[n] = Tg[n] = m <= j ? 1 : 0; }); S.reveal = Tg.reveal = 18; S.loop = Tg.loop = 0; S.hand = y[0];
-          stage.innerHTML = progWords(k); set({ hand: y[1] });
+          stage.innerHTML = progWords(k); live.textContent = D().prog[k].join(' '); set({ hand: y[1] });
         }
         labels(); refresh();
       };
       const focusProg = (k) => {
         const d = D(), y = YEARS[k]; clear();
         el.classList.remove('hr-rest', 'hr-playing'); el.classList.add('hr-paused'); end.classList.remove('in');
-        state = 'paused'; frozen = false; elapsed = END - 1; focus = k; beatNow = 8 + ORDER.indexOf(k);
+        state = 'paused'; el.dataset.heroState = 'paused'; frozen = false; elapsed = PAT[ORDER.indexOf(k)] + 1; focus = k; beatNow = 8 + ORDER.indexOf(k); el.dataset.heroBeat = String(beatNow);
+        q('.hr-prog').style.animation = 'none'; q('.hr-prog').style.width = (elapsed / END * 100) + '%';
         ORDER.forEach(n => { S[n] = Tg[n] = 1; }); S.hand = y[0]; S.reveal = Tg.reveal = 18; S.loop = Tg.loop = 0;
-        stage.innerHTML = progWords(k);
+        stage.innerHTML = progWords(k); live.textContent = d.prog[k].join(' ');
         set({ hand: y[1], ahead: 0 }); labels(); refresh();
       };
       el.addEventListener('click', (e) => {
@@ -35982,20 +35999,20 @@ class Component extends DCLogic {
       // The hero is a pinned stage. While the page is at its top, the wheel (or a trackpad swipe) steps the story
       // forward and back, and the page does not move until the story has played through; one more scroll down then
       // leaves for the next section, and scrolling back up rewinds the story from the end. Not used with reduced motion.
-      let acc = 0, holdUntil = 0, lastEv = 0, atEnd = false;
+      let acc = 0, holdUntil = 0, lastEv = 0;
       const onWheel = (e) => {
         if (!el.isConnected) { window.removeEventListener('wheel', onWheel, { passive: false }); return; }
         if (reduce || e.ctrlKey || window.scrollY > 8 || document.querySelector('.hr-in') !== el) return;
-        const now = Date.now(), fresh = now - lastEv > 220; lastEv = now;
-        if (now < holdUntil) { e.preventDefault(); return; }       // swallow the tail of a trackpad flick
+        const now = Date.now(); lastEv = now;
         const down = e.deltaY > 0;
-        if (down && atEnd && state === 'rest') { if (fresh) return; e.preventDefault(); return; } // a fresh scroll leaves; inertia is held
-        if (!down && beatNow <= 0 && state !== 'rest') return;       // at the very start there is nothing above
+        if (down && state === 'rest' && now >= holdUntil) return;
+        if (!down && beatNow <= 0 && state !== 'rest') return;
+        if (now < holdUntil) { e.preventDefault(); return; }       // swallow the tail of a trackpad flick
         e.preventDefault();
         acc += e.deltaY; if (Math.abs(acc) < 40) return; acc = 0;
-        holdUntil = now + 300; sysPaused = false;
-        if (down) { if (state === 'rest') { atEnd = true; return; } if (beatNow >= 11) { rest(); atEnd = true; holdUntil = now + 900; } else { explore(beatNow + 1); atEnd = false; } }
-        else { atEnd = false; if (state === 'rest') explore(11); else explore(beatNow - 1); }
+        holdUntil = now + 400; sysPaused = false;
+        if (down) { if (beatNow >= 11) rest(); else explore(beatNow + 1); }
+        else if (state === 'rest') explore(11); else explore(beatNow - 1);
       };
       window.addEventListener('wheel', onWheel, { passive: false });
       // Arrow keys (and Page Up/Down, Home, End) step the story whenever the hero is on screen. Left/right always;
@@ -36006,11 +36023,13 @@ class Component extends DCLogic {
         if (tag === 'input' || tag === 'textarea' || tag === 'select' || t.isContentEditable) return false;
         const key = e.key, r = el.getBoundingClientRect();
         if (r.bottom < 80 || r.top > window.innerHeight - 80) return false;
-        const vertical = key === 'ArrowDown' || key === 'ArrowUp' || key === 'PageDown' || key === 'PageUp';
-        const fwd = key === 'ArrowRight' || key === 'ArrowDown' || key === 'PageDown', back = key === 'ArrowLeft' || key === 'ArrowUp' || key === 'PageUp';
-        if (key === 'Home' && t === el) { sysPaused = false; explore(0); e.preventDefault(); return true; }
-        if (key === 'End' && t === el) { sysPaused = false; rest(); e.preventDefault(); return true; }
+        const vertical = key === 'ArrowDown' || key === 'ArrowUp' || key === 'PageDown' || key === 'PageUp' || key === ' ';
+        const fwd = key === 'ArrowRight' || key === 'ArrowDown' || key === 'PageDown' || key === ' ', back = key === 'ArrowLeft' || key === 'ArrowUp' || key === 'PageUp';
+        if (key === 'Escape' && state !== 'rest') { sysPaused = false; rest(); e.preventDefault(); return true; }
+        if (key === 'Home') { sysPaused = false; explore(0); e.preventDefault(); return true; }
+        if (key === 'End') { sysPaused = false; rest(); e.preventDefault(); return true; }
         if (!fwd && !back) return false;
+        if (key === ' ' && (tag === 'button' || tag === 'a')) return false;
         if (vertical && window.scrollY > 8) return false;
         if (fwd && state === 'rest') return false;
         if (back && state !== 'rest' && beatNow <= 0) return false;
@@ -36019,26 +36038,47 @@ class Component extends DCLogic {
         else if (state === 'rest') explore(11); else explore(beatNow - 1);
         return true;
       };
-      let tx = 0, ty = 0;
-      q('.hr-words').addEventListener('touchstart', (e) => { const t = e.touches[0]; tx = t.clientX; ty = t.clientY; }, { passive: true });
+      let tx = 0, ty = 0, tt = 0, lastTouchStep = 0;
+      q('.hr-words').addEventListener('touchstart', (e) => { const t = e.touches[0]; tx = t.clientX; ty = t.clientY; tt = Date.now(); }, { passive: true });
+      q('.hr-words').addEventListener('touchmove', (e) => {
+        if (reduce || e.target.closest && e.target.closest('button,a')) return;
+        const t = e.touches[0], dx = t.clientX - tx, dy = t.clientY - ty;
+        if (Math.abs(dy) < 12 || Math.abs(dx) > Math.abs(dy) * 1.2) return;
+        if (dy < 0 && state === 'rest') return;
+        if (dy > 0 && beatNow <= 0 && state !== 'rest') return;
+        if (e.cancelable) e.preventDefault();
+      }, { passive: false });
       q('.hr-words').addEventListener('touchend', (e) => {
-        const t = e.changedTouches[0], dx = t.clientX - tx, dy = t.clientY - ty;
-        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-        sysPaused = false; explore(beatNow + (dx < 0 ? 1 : -1));
+        if (e.target.closest && e.target.closest('button,a')) return;
+        const t = e.changedTouches[0], dx = t.clientX - tx, dy = t.clientY - ty, ms = Date.now() - tt;
+        if (Math.abs(dx) > Math.abs(dy) * 1.2) return;
+        if (Math.abs(dy) < 12) { sysPaused = false; state === 'playing' ? pause() : state === 'paused' ? resume() : null; return; }
+        if (Math.abs(dy) < 40 || ms > 1200 || Math.abs(dy) / Math.max(1, ms) < 0.08) return;
+        if (Date.now() - lastTouchStep < 400) return;
+        if (dy < 0 && state === 'rest') return;
+        if (dy > 0 && beatNow <= 0 && state !== 'rest') return;
+        lastTouchStep = Date.now(); sysPaused = false; if (dy < 0) { if (beatNow >= 11) rest(); else explore(beatNow + 1); } else if (state === 'rest') explore(11); else explore(beatNow - 1);
       }, { passive: true });
       try { new IntersectionObserver((ents) => {
         const vis = ents[ents.length - 1].isIntersecting;
-        if (!vis && state === 'playing') { sysPaused = true; pause(); } else if (vis && sysPaused) { sysPaused = false; resume(); }
+        if (!vis && state === 'playing') { sysPaused = true; pause(); } else if (vis && !document.hidden && sysPaused) { sysPaused = false; resume(); }
       }, { threshold: 0.25 }).observe(el); } catch (e) {}
+      const onVisibility = () => { if (!el.isConnected) { document.removeEventListener('visibilitychange', onVisibility); dialogObserver.disconnect(); return; } const blocked = document.hidden || !!document.querySelector('#launch-live [role="dialog"]'); if (blocked && state === 'playing') { sysPaused = true; pause(); } else if (!blocked && sysPaused && el.getBoundingClientRect().bottom > 0 && el.getBoundingClientRect().top < innerHeight) { sysPaused = false; resume(); } };
+      document.addEventListener('visibilitychange', onVisibility);
+      const dialogObserver = new MutationObserver(records => {
+        if (records.some(record => !record.target.closest?.('.hr-in'))) onVisibility();
+      });
+      dialogObserver.observe(document.getElementById('launch-live') || document.body, {childList:true,subtree:true});
       // A language change re-labels the art and plays the film again in the new language.
       this._heroSync = () => {
         const d = D();
-        if (lang !== d.lang) { lang = d.lang; nameSig = d.sig; labels(); if (reduce) rest(); else play(); }
+        if (lang !== d.lang) { lang = d.lang; nameSig = d.sig; labels(); if (reduce || seen()) rest(); else play(); }
         else if (nameSig !== d.sig) { nameSig = d.sig; labels(); render(); }
       };
       lang = D().lang; nameSig = D().sig; labels(); render();
       // It plays once when the page loads (and again on a language change); a re-render, such as the theme switch, keeps the resting frame.
-      if (reduce || window.__dehatHeroDone) rest(); else play();
+      if (reduce || seen() || window.__dehatHeroDone) rest(); else play();
+      onVisibility();
     };
     return this._heroMountFn;
   }
