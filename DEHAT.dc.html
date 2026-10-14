@@ -628,8 +628,8 @@
 <meta name="ext-resource-dependency" content="./assets/story/sm-ink-pair-ledger.png">
 <meta name="ext-resource-dependency" content="./assets/story/sm-ink-family.png">
 <meta name="ext-resource-dependency" content="./assets/story/sm-ink-four-walking.png">
-<meta name="ext-resource-dependency" content="./assets/story/rail-road.png">
-<meta name="ext-resource-dependency" content="./assets/story/rail-walkers.png">
+<meta name="ext-resource-dependency" content="./assets/story/rail-road.webp">
+<meta name="ext-resource-dependency" content="./assets/story/rail-walkers.webp">
 <meta name="ext-resource-dependency" content="./assets/thumb/sdg-good-health.png">
 <meta name="ext-resource-dependency" content="./assets/svc/bread-earner.png">
 <meta name="ext-resource-dependency" content="./assets/svc/child-labour.png">
@@ -799,8 +799,8 @@
 </sc-if>
 <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:clamp(16px,3vw,40px);padding:14px clamp(16px,5vw,64px);background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)">
   <button onClick="{{ goHome }}" aria-label="{{ T.aria_nav_home }}" style="display:flex;align-items:center;background:none;border:none;cursor:pointer;padding:0;flex:none">
-    <img src="./dehat-mark.png" alt="DEHAT" class="logo-mobile" style="height:clamp(44px,5.2vw,62px);width:auto;display:block;filter:var(--mark-filter)">
-    <img src="./dehat-logo-horizontal.png" alt="{{ T.alt_logo }}" class="logo-desktop" style="height:clamp(34px,3.6vw,46px);width:auto;display:none;filter:var(--mark-filter)">
+    <img src="./dehat-mark-128.webp" alt="DEHAT" width="128" height="128" class="logo-mobile" style="height:clamp(44px,5.2vw,62px);width:auto;display:block;filter:var(--mark-filter)">
+    <img src="./dehat-logo-horizontal-512.webp" alt="{{ T.alt_logo }}" width="512" height="110" class="logo-desktop" style="height:clamp(34px,3.6vw,46px);width:auto;display:none;filter:var(--mark-filter)">
   </button>
   <div class="nav-links-desktop" style="display:flex;align-items:center;gap:2px;flex-wrap:wrap;justify-content:flex-end">
     <sc-for list="{{ navGroups }}" as="item" hint-placeholder-count="4">
@@ -4828,8 +4828,8 @@
 <footer style="background:#120d07;color:rgba(251,247,239,.75);padding:clamp(50px,6vw,80px) clamp(20px,5vw,64px) 40px">
   <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px">
     <div>
-      <img src="./dehat-mark.png" alt="DEHAT" class="logo-mobile" style="height:clamp(44px,5vw,54px);width:auto;max-width:100%;display:block;filter:brightness(0) invert(1)">
-      <img src="./dehat-logo-horizontal.png" alt="{{ T.alt_logo }}" class="logo-desktop" style="height:clamp(38px,4vw,48px);width:auto;max-width:100%;display:none;filter:brightness(0) invert(1)">
+      <img src="./dehat-mark-128.webp" alt="DEHAT" width="128" height="128" class="logo-mobile" style="height:clamp(44px,5vw,54px);width:auto;max-width:100%;display:block;filter:brightness(0) invert(1)">
+      <img src="./dehat-logo-horizontal-512.webp" alt="{{ T.alt_logo }}" width="512" height="110" class="logo-desktop" style="height:clamp(38px,4vw,48px);width:auto;max-width:100%;display:none;filter:brightness(0) invert(1)">
       <p style="font-size:15px;line-height:1.6;margin:14px 0 0;max-width:340px">{{ T.foot_desc }}</p>
       <div style="display:flex;gap:8px;margin-top:20px;flex-wrap:wrap">
         <span style="font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(251,247,239,.08);color:rgba(251,247,239,.6)">12AB(1)(b)</span>
@@ -5194,13 +5194,26 @@ class Component extends DCLogic {
     this._numCache[s] = out;
     return out;
   }
+  _storyImageCss(art, thumbnail) {
+    const root = './assets/story/';
+    if (!/^story-\d{3}$/.test(art)) return 'url(' + root + art + '.png)';
+    const original = 'url(' + root + (thumbnail ? 'thumb/' : 'web/') + art + '.png)';
+    if (typeof CSS === 'undefined' || !CSS.supports?.('background-image', 'image-set(url("a.avif") type("image/avif") 1x, url("a.webp") type("image/webp") 1x)')) return original;
+    this._storyImageCache ||= {};
+    const key = art + (thumbnail ? '-thumb' : '-full');
+    if (this._storyImageCache[key]) return this._storyImageCache[key];
+    const base = root + 'optimized/' + art;
+    const sizes = thumbnail ? [[480,1],[800,2]] : [[480,1],[800,2],[1100,3]];
+    return (this._storyImageCache[key] = 'image-set(' + sizes.flatMap(([width,density]) => [
+      'url("' + base + '-' + width + '.avif") type("image/avif") ' + density + 'x',
+      'url("' + base + '-' + width + '.webp") type("image/webp") ' + density + 'x',
+    ]).join(',') + ')');
+  }
   _longReads(setView) {
     const T = this._mergedDict();
-    const A = './assets/story/';
-    // Story illustrations ship in two web sizes; shared ink art still sits at the root.
-    const NUMBERED = /^story-\d{3}$/;
-    const artFull = a => 'url(' + A + (NUMBERED.test(a) ? 'web/' : '') + a + '.png)';
-    const artThumb = a => 'url(' + A + (NUMBERED.test(a) ? 'thumb/' : '') + a + '.png)';
+    // Shared ink art stays at the root; numbered stories use responsive formats.
+    const artFull = a => this._storyImageCss(a, false);
+    const artThumb = a => this._storyImageCss(a, true);
     const all = (typeof window !== 'undefined' && window.STORIES) ? window.STORIES : [];
     const open = slug => () => { this.setState({ storySlug: slug }); try { window.scrollTo(0, 0); } catch (e) {} };
     const ink = hex => this.state.theme === 'dark' ? this._lift(hex) : this._sink(hex);
@@ -5291,7 +5304,7 @@ class Component extends DCLogic {
     if (typeof window !== 'undefined' && nxt && nxt.art) {
       this._warm = this._warm || {};
       const u = artFull(nxt.art);
-      if (!this._warm[u]) { this._warm[u] = 1; const im = new window.Image(); im.src = u.slice(4, -1); }
+      if (u.startsWith('url(') && !this._warm[u]) { this._warm[u] = 1; const im = new window.Image(); im.src = u.slice(4, -1); }
     }
     const EMPTY = {
       slug: '', title: '', dek: '', line: '', lead: '', pull: '', actTitle: '', act: '', actCta: '',
@@ -5521,7 +5534,7 @@ class Component extends DCLogic {
     const A = './assets/story/';
     const base = { spineOn: false, spineNodes: [], spineLabel: '', spineCount: '',
       spineWalkFilter: this.state.theme === 'dark' ? 'brightness(0) invert(1) opacity(.92)' : 'none',
-      spineRoadCss: 'url(' + A + 'rail-road.png)', spineWalkCss: 'url(' + A + 'rail-walkers.png)' };
+      spineRoadCss: 'url(' + A + 'rail-road.webp)', spineWalkCss: 'url(' + A + 'rail-walkers.webp)' };
     const S = this._spine;
     if (!S) return base;
     const idx = S.active;
@@ -6228,7 +6241,7 @@ class Component extends DCLogic {
       laneCount: (events.length === allEvents.length ? T.entries_count_all.replace('{n}', String(events.length)) : T.entries_count_filtered.replace('{n}', String(events.length)).replace('{total}', String(allEvents.length))),
       railYear0: (events[0] || {}).year || '1968',
       railEra0: (jEras[0] || {}).label || '',
-      railRoad: 'url(./assets/story/rail-road.png)',
+      railRoad: 'url(./assets/story/rail-road.webp)',
       railWalkArt: 'url(' + INK + 't-pair-a.png)',
 
       stems: stems.map(s => ({
@@ -37610,7 +37623,7 @@ class Component extends DCLogic {
     const activeStory = Object.assign({}, homeStory, {
       title: this._tc('stories', homeStory.slug, 'title', homeStory.title),
       dek: this._tc('stories', homeStory.slug, 'dek', homeStory.dek),
-      imgCss: 'url(./assets/story/' + (/^story-\d{3}$/.test(homeStory.art) ? 'web/' : '') + homeStory.art + '.png)',
+      imgCss: this._storyImageCss(homeStory.art, false),
       open: () => {
         // The deck reads stIdx against the unfiltered list, so clear filters before jumping.
         const all = (typeof window !== 'undefined' && window.STORIES) ? window.STORIES : [];
