@@ -3242,12 +3242,12 @@
                 </sc-for>
               </div>
               <sc-if value="{{ pv.isOther }}" hint-placeholder-val="{{ false }}">
-                <input type="text" aria-label="{{ pv.otherAmountLabel }}" defaultValue="{{ pv.otherVal }}" onChange="{{ pv.onOther }}" onBlur="{{ pv.onOtherBlur }}" placeholder="0" style="margin-top:10px;width:100%;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:12px 16px" style-focus="border-color:var(--ac-gold);outline:none">
+                <input id="df-amount-input" type="text" aria-label="{{ pv.otherAmountLabel }}" aria-invalid="{{ pv.hasAmountErr }}" aria-describedby="{{ pv.amountDescribedBy }}" defaultValue="{{ pv.otherVal }}" onChange="{{ pv.onOther }}" onBlur="{{ pv.onOtherBlur }}" placeholder="0" style="margin-top:10px;width:100%;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.amountBorder }};border-radius:14px;padding:12px 16px" style-focus="border-color:var(--ac-gold);outline:none">
               </sc-if>
             </div>
 
             <sc-if value="{{ pv.hasAmountErr }}" hint-placeholder-val="{{ false }}">
-              <span id="df-amount" tabindex="-1" role="alert" style="margin-top:-12px;font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ pv.amountErr }}</span>
+              <span id="df-amount" tabindex="-1" role="alert" style="margin-top:-12px;font-size:14px;line-height:1.45;font-weight:700;color:var(--ac-red)"><span aria-hidden="true">! </span>{{ pv.amountErr }}</span>
             </sc-if>
 
             <div>
@@ -3306,10 +3306,10 @@
                   </sc-if>
                   <sc-if value="{{ df.isField }}" hint-placeholder-val="{{ true }}"><label for="{{ df.id }}" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ df.label }}</label></sc-if>
                   <sc-if value="{{ df.isText }}" hint-placeholder-val="{{ true }}">
-                    <input id="{{ df.id }}" type="{{ df.type }}" inputmode="{{ df.inputmode }}" autocomplete="{{ df.ac }}" list="{{ df.listId }}" value="{{ df.bindVal }}" defaultValue="{{ df.defaultVal }}" onChange="{{ df.on }}" onFocus="{{ df.focus }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                    <input id="{{ df.id }}" type="{{ df.type }}" inputmode="{{ df.inputmode }}" autocomplete="{{ df.ac }}" list="{{ df.listId }}" value="{{ df.bindVal }}" defaultValue="{{ df.defaultVal }}" onChange="{{ df.on }}" onFocus="{{ df.focus }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" aria-describedby="{{ df.describedBy }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                   </sc-if>
                   <sc-if value="{{ df.isSelect }}" hint-placeholder-val="{{ false }}">
-                    <select id="{{ df.id }}" autocomplete="{{ df.ac }}" value="{{ df.val }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" aria-invalid="{{ df.invalid }}" style="width:100%;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                    <select id="{{ df.id }}" autocomplete="{{ df.ac }}" value="{{ df.val }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" aria-invalid="{{ df.invalid }}" aria-describedby="{{ df.describedBy }}" style="width:100%;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                       <sc-for list="{{ df.options }}" as="op" hint-placeholder-count="5">
                         <option value="{{ op.v }}">{{ op.l }}</option>
                       </sc-for>
@@ -3322,7 +3322,7 @@
                           <option value="{{ dop.v }}">{{ dop.l }}</option>
                         </sc-for>
                       </select>
-                      <input id="{{ df.id }}" type="tel" inputmode="tel" autocomplete="tel-national" value="{{ df.bindVal }}" defaultValue="{{ df.defaultVal }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="flex:1 1 auto;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+                      <input id="{{ df.id }}" type="tel" inputmode="tel" autocomplete="tel-national" value="{{ df.bindVal }}" defaultValue="{{ df.defaultVal }}" onChange="{{ df.on }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" aria-describedby="{{ df.describedBy }}" style="flex:1 1 auto;min-width:0;font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                     </div>
                   </sc-if>
                   <sc-if value="{{ df.hasNote }}" hint-placeholder-val="{{ false }}">
@@ -3332,7 +3332,7 @@
                     <datalist id="{{ df.listId }}"><sc-for list="{{ df.listOptions }}" as="lo" hint-placeholder-count="5"><option value="{{ lo.v }}">{{ lo.l }}</option></sc-for></datalist>
                   </sc-if>
                   <sc-if value="{{ df.hasErr }}" hint-placeholder-val="{{ false }}">
-                    <span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ df.err }}</span>
+                    <span id="{{ df.errId }}" role="alert" style="font-size:14px;line-height:1.45;font-weight:700;color:var(--ac-red)"><span aria-hidden="true">! </span>{{ df.err }}</span>
                   </sc-if>
                 </div>
               </sc-for>
@@ -3340,8 +3340,8 @@
 
             <label style="display:flex;flex-direction:column;gap:5px">
               <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.addrLabel }}</span>
-              <input id="df-address" type="text" defaultValue="{{ pv.addrVal }}" onChange="{{ pv.onAddr }}" onBlur="{{ pv.addrBlur }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.addrBorder }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
-              <sc-if value="{{ pv.hasAddrErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ pv.addrErr }}</span></sc-if>
+              <input id="df-address" type="text" defaultValue="{{ pv.addrVal }}" onChange="{{ pv.onAddr }}" onBlur="{{ pv.addrBlur }}" aria-invalid="{{ pv.hasAddrErr }}" aria-describedby="{{ pv.addrDescribedBy }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.addrBorder }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
+              <sc-if value="{{ pv.hasAddrErr }}" hint-placeholder-val="{{ false }}"><span id="df-address-error" role="alert" style="font-size:14px;line-height:1.45;font-weight:700;color:var(--ac-red)"><span aria-hidden="true">! </span>{{ pv.addrErr }}</span></sc-if>
             </label>
 
             <label style="display:flex;flex-direction:column;gap:5px">
@@ -3359,14 +3359,14 @@
             <p style="font-size:12px;line-height:1.6;color:var(--faint);margin:0;text-wrap:pretty">{{ pv.dpNote }}</p>
 
             <sc-if value="{{ pv.hasFormMsg }}" hint-placeholder-val="{{ false }}">
-              <p role="alert" aria-live="polite" style="margin:0;padding:10px 14px;border-radius:12px;border:1px solid var(--ac-red);font-size:13.5px;line-height:1.5;font-weight:700;color:var(--ac-red)">{{ pv.formMsg }}</p>
+              <p role="alert" style="margin:0;padding:10px 14px;border-radius:12px;border:1px solid var(--ac-red);font-size:13.5px;line-height:1.5;font-weight:700;color:var(--ac-red)">{{ pv.formMsg }}</p>
             </sc-if>
             <button onClick="{{ pv.doPay }}" style="cursor:pointer;font-family:inherit;font-size:15px;font-weight:800;padding:14px 26px;border-radius:999px;background:var(--ac-gold);color:#1f1710;border:none;transition:transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ pv.payLabel }} →</button>
             <sc-if value="{{ pv.showUpi }}" hint-placeholder-val="{{ true }}">
               <button onClick="{{ pv.doUpi }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:12px 22px;border-radius:999px;background:transparent;color:var(--text);border:1.5px solid var(--border)">{{ pv.upiBtn }}</button>
             </sc-if>
             <sc-if value="{{ pv.hasUpiErr }}" hint-placeholder-val="{{ false }}">
-              <p role="alert" aria-live="polite" style="margin:0;font-size:13px;line-height:1.5;font-weight:700;color:var(--ac-red)">{{ pv.upiErr }}</p>
+                <p role="alert" style="margin:0;font-size:13px;line-height:1.5;font-weight:700;color:var(--ac-red)">{{ pv.upiErr }}</p>
             </sc-if>
             <sc-if value="{{ pv.hasUpi }}" hint-placeholder-val="{{ false }}">
               <div data-anchor="upi-qr" style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:22px;border-radius:18px;border:1px solid var(--border);background:var(--surface)">
@@ -34821,8 +34821,10 @@ class Component extends DCLogic {
       addrLabel: P.fAddress + (S.d80g ? ' *' : ''), addrVal: S.dAddr,
       onAddr: this._deferredDonorField('dAddr', 'address').on, addrBlur: this._deferredDonorField('dAddr', 'address').blur,
       addrErr: this._dmsg('address'), hasAddrErr: !!this._dmsg('address'), addrBorder: this._dmsg('address') ? 'var(--ac-red)' : 'var(--border)',
+      addrDescribedBy: this._dmsg('address') ? 'df-address-error' : '',
       panErr: this._dmsg('pan'), hasPanErr: !!this._dmsg('pan'), panBorder: this._dmsg('pan') ? 'var(--ac-red)' : 'var(--border)',
       amountErr: this._dmsg('amount'), hasAmountErr: !!this._dmsg('amount'),
+      amountDescribedBy: this._dmsg('amount') ? 'df-amount' : '', amountBorder: this._dmsg('amount') ? 'var(--ac-red)' : 'var(--border)',
       formMsg: this._formSummary(), hasFormMsg: !!this._formSummary(),
       testMode: this._pmode === 'test',
       g80Label: P.f80g, g80On: S.d80g, g80Mark: S.d80g ? '\u2713' : '', toggle80: this._ptog('d80g'),
@@ -35247,7 +35249,7 @@ class Component extends DCLogic {
       const m = this._dmsg(k, errs);
       return Object.assign({ k, id: 'df-' + k, label: '', span: 'auto', isField: true, isToggle: false, isText: false, isSelect: false, isPhone: false, type: 'text', hint: '', inputmode: '', ac: 'off',
         val: '', bindVal: null, defaultVal: null, on: null, blur: this._dblur(k), focus: () => {}, listId: '', hasList: false, listOptions: [], note: '', hasNote: false, options: [], dialOptions: [], dialVal: '', onDial: null, err: m, hasErr: !!m, invalid: m ? 'true' : 'false',
-        border: m ? 'var(--ac-red)' : 'var(--border)' }, o, { label: (o.label || '') + (o.req ? ' *' : '') });
+        border: m ? 'var(--ac-red)' : 'var(--border)' }, o, { label: (o.label || '') + (o.req ? ' *' : ''), errId: (o.id || 'df-' + k) + '-error', describedBy: m ? (o.id || 'df-' + k) + '-error' : '' });
     };
     const text = (k, stateKey, o) => {
       const controlled = k === 'city' || k === 'postalCode';
@@ -35295,7 +35297,7 @@ class Component extends DCLogic {
   _focusFirstError(errs) {
     const order = (this._gv && this._gv.FIELD_ORDER) || Object.keys(errs);
     const k = order.find(x => errs[x]) || Object.keys(errs)[0];
-    const el = document.getElementById(this.state.dDistrictOther && k === 'district' ? 'df-district-other' : 'df-' + k);
+    const el = document.getElementById(k === 'amount' ? 'df-amount-input' : (this.state.dDistrictOther && k === 'district' ? 'df-district-other' : 'df-' + k));
     if (el) { try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus({ preventScroll: true }); } catch (x) {} }
   }
   _amt() {

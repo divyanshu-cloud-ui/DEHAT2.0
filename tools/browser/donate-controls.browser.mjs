@@ -24,7 +24,7 @@ test('donation choices expose their selected state and have usable phone targets
     assert.ok(await freqs.count() >= 1);
     const targets = await freqs.evaluateAll(nodes => nodes.map(node => ({label:node.textContent.trim(),height:node.getBoundingClientRect().height})));
     assert.ok(targets.every(target => target.height >= 44), JSON.stringify(targets));
-    const ordered = await page.locator('section[data-anchor="give"] [id^="df-"]').evaluateAll(nodes => nodes.map(node => node.id));
+    const ordered = await page.locator('#df-fullName').evaluate(node => Array.from(node.parentElement.parentElement.querySelectorAll('[id^="df-"]')).map(field => field.id));
     assert.deepEqual(ordered.slice(0, 4), ['df-fullName','df-phone-dial','df-phone','df-email']);
     assert.ok(ordered.indexOf('df-postalCode') < ordered.indexOf('df-state'));
     assert.ok(ordered.indexOf('df-countryCode') > ordered.indexOf('df-city'));
@@ -40,6 +40,11 @@ test('donation choices expose their selected state and have usable phone targets
     await page.locator('#df-postalCode').fill('271801');
     await page.waitForFunction(() => document.querySelector('#df-state')?.value === 'Uttar Pradesh');
     assert.equal(await page.locator('#df-city').inputValue(), 'Bahraich');
+    await page.locator('#df-fullName').focus();
+    await page.locator('#df-email').focus();
+    assert.equal(await page.locator('#df-fullName').getAttribute('aria-invalid'), 'true');
+    assert.equal(await page.locator('#df-fullName').getAttribute('aria-describedby'), 'df-fullName-error');
+    assert.ok(await page.locator('#df-fullName-error').isVisible());
     console.log(JSON.stringify({amountSelected:await amount.getAttribute('aria-pressed'),frequencyTargets:targets,fieldOrder:ordered,pinState:await page.locator('#df-state').inputValue()}));
     await context.close();
   } finally {
