@@ -461,7 +461,6 @@
   .hr-end{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
   .hr-playing .hr-end,.hr-paused .hr-end{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;clip-path:inset(50%)}
   .hr-playing .hr-end:focus-within,.hr-paused .hr-end:focus-within{position:absolute;inset:0;width:100%;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal;clip-path:none;background:#150e08;border-radius:12px;padding:12px}
-  .hr-mobile-identity{display:none}
   .hr-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hr-gold)}
   .hr-h1{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(34px,6vw,60px);line-height:1.03;letter-spacing:-.025em;text-wrap:balance}
   .hr-story{margin:0;max-width:50ch;color:rgba(251,247,239,.8);font-size:clamp(16px,2vw,19px);line-height:1.5;text-wrap:pretty}
@@ -494,13 +493,12 @@
   .hr-tick{position:absolute;top:0;transform:translateX(-50%);font-size:12px;font-weight:600;color:var(--hr-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
   .hr-tick.first{transform:none}
   .hr-tick.on{color:#fbf7ef}
-  .hr-ctl,.hr-skip{position:absolute;z-index:2;min-width:44px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(251,247,239,.45);background:#150e08;color:#fbf7ef;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer}
-  .hr-ctl{right:0;bottom:14px}.hr-skip{right:0;top:0;display:none}.hr-playing .hr-skip,.hr-paused .hr-skip{display:block}
-  .hr-ctl:focus-visible,.hr-skip:focus-visible,.hr-cta:focus-visible,.hr-link:focus-visible{outline:3px solid #EAAE28;outline-offset:3px}
+  .hr-ctl{position:absolute;right:0;bottom:14px;z-index:2;min-width:44px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(251,247,239,.45);background:#150e08;color:#fbf7ef;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer}
+  .hr-ctl:focus-visible,.hr-cta:focus-visible,.hr-link:focus-visible{outline:3px solid #EAAE28;outline-offset:3px}
   .hr-prog{position:absolute;left:0;bottom:0;height:3px;background:var(--hr-gold);width:0;z-index:2}
   .hr-playing .hr-prog{animation:hrGrow 30s linear forwards}.hr-paused .hr-prog{animation-play-state:paused}
   @keyframes hrGrow{to{width:100%}}
-  @media (max-width:779px){ .hr-clock .tl{display:none} .hr-key{padding:0;gap:0 14px} .hr-kd{font-size:12.5px} .hr-canvas{height:clamp(64px,11svh,110px)} .hr-story{display:none} .hr-top{gap:6px} .hr-end{gap:8px} .hr-playing .hr-mobile-identity,.hr-paused .hr-mobile-identity{display:block;padding:0 60px 8px 0;font-size:13px;font-weight:700;line-height:1.3;color:#fbf7ef} }
+  @media (max-width:779px){ .hr-clock .tl{display:none} .hr-key{padding:0;gap:0 14px} .hr-kd{font-size:12.5px} .hr-canvas{height:clamp(64px,11svh,110px)} .hr-story{display:none} .hr-top{gap:6px} .hr-end{gap:8px} }
   @media (min-width:780px){
     .hr-top{grid-template-columns:minmax(0,1.3fr) minmax(280px,.8fr);gap:40px;min-height:clamp(260px,46svh,440px)}
     .hr-clockbox{order:0;width:min(100%,380px,46svh)}
@@ -916,9 +914,7 @@
   <div key="home">
     <section data-spine="Where It Begins" class="hr" aria-labelledby="hr-h1">
       <div class="hr-in" ref="{{ hero.mountRef }}">
-        <button class="hr-skip" type="button">Skip film</button>
         <p class="hr-sr">{{ hero.sr }}</p>
-        <p class="hr-mobile-identity">DEHAT · Developmental Association for Human Advancement</p>
         <div class="hr-top">
           <div class="hr-words">
             <div class="hr-stage" aria-hidden="true"></div>
@@ -35901,7 +35897,7 @@ class Component extends DCLogic {
         + '<g class="hand-g"><line class="hand" x1="100" y1="100" x2="100" y2="34"/></g><circle class="hub" cx="100" cy="100" r="5"/></svg><div class="hr-age" aria-hidden="true"><b></b><span></span></div>';
       q('.hr-art').innerHTML = '<div class="hr-canvas" aria-hidden="true"><svg viewBox="0 0 1000 260" preserveAspectRatio="none"><path class="loop" vector-effect="non-scaling-stroke"/><path class="ahead" vector-effect="non-scaling-stroke"/><path class="life" vector-effect="non-scaling-stroke"/></svg>'
         + TURNS.map(a => '<span class="hr-wound" data-a="' + a + '"></span>').join('') + '<div class="hr-head"></div></div><div class="hr-axis" aria-hidden="true"></div><div class="hr-key"></div>';
-      const stage = q('.hr-stage'), end = q('.hr-end'), ctl = q('.hr-ctl'), skip = q('.hr-skip'), live = q('.hr-live'), life = q('.life'), loopP = q('.loop'), aheadP = q('.ahead'), head = q('.hr-head'),
+      const stage = q('.hr-stage'), end = q('.hr-end'), ctl = q('.hr-ctl'), live = q('.hr-live'), life = q('.life'), loopP = q('.loop'), aheadP = q('.ahead'), head = q('.hr-head'),
         handG = q('.hand-g'), ageN = q('.hr-age b'), ageL = q('.hr-age span');
       const labels = () => {
         const d = D(), ticks = [[-1, d.birth], [5, '5'], [10, '10'], [15, '15'], [18, '18']];
@@ -35989,7 +35985,6 @@ class Component extends DCLogic {
       const pause = () => { if (state !== 'playing') return; clear(); elapsed += Date.now() - startedAt; el.classList.add('hr-paused'); state = 'paused'; el.dataset.heroState = 'paused'; frozen = true; if (raf) { cancelAnimationFrame(raf); raf = 0; } labels(); };
       const resume = () => { if (state !== 'paused') return; el.classList.remove('hr-paused'); el.classList.add('hr-playing'); state = 'playing'; el.dataset.heroState = 'playing'; frozen = false; startedAt = Date.now(); q('.hr-prog').style.animation = 'hrGrow 30s linear forwards'; q('.hr-prog').style.animationDelay = '-' + (elapsed / 1000) + 's'; schedule(elapsed + 1); labels(); kick(); };
       ctl.addEventListener('click', () => { sysPaused = false; state === 'playing' ? pause() : state === 'paused' ? resume() : play(); });
-      skip.addEventListener('click', () => { sysPaused = false; rest(); ctl.focus(); });
       // Interaction. Tap a turn on the clock to read that moment of her life; tap a programme to see the years
       // it answers; wheel over the clock or swipe the words to step through; the film pauses when off screen.
       // Steps 0 to 7 are the story; 8 to 11 are the four programmes arriving one at a time; after that, the resting frame.

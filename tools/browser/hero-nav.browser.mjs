@@ -21,7 +21,7 @@ test('hero plays once, navigates in both directions, and stays accessible', asyn
   const accessible = async page => {
     assert.equal(await page.getByRole('heading', {level:1, name:/This Cycle Doesn.t Break/i}).count(), 1);
     assert.equal(await page.getByRole('button', {name:'Invest in This Work', exact:true}).count(), 1);
-    assert.equal(await page.getByRole('button', {name:'Skip film'}).count(), (await state(page)) === 'rest' ? 0 : 1);
+    assert.equal(await page.getByRole('button', {name:'Skip film'}).count(), 0);
   };
   try {
     const desktop = await browser.newContext({viewport:{width:1440,height:900}, reducedMotion:'no-preference'});
@@ -30,9 +30,9 @@ test('hero plays once, navigates in both directions, and stays accessible', asyn
     await page.goto(local.origin + '/'); await ready(page);
     assert.equal(await state(page), 'playing');
     await accessible(page);
-    await page.getByRole('button',{name:'Skip film'}).focus();
+    await page.locator('#launch-live .hr-cta').focus();
     await page.keyboard.press('Tab');
-    assert.ok(await page.locator('#launch-live .hr-cta').evaluate(node => node === document.activeElement));
+    assert.ok(await page.locator('#launch-live .hr-link').evaluate(node => node === document.activeElement));
     await page.locator('#launch-live .hr-cta').evaluate(node => node.blur());
     await page.screenshot({path:output + '/desktop-playing.png'});
     await page.keyboard.press('Home'); assert.equal(await beat(page), '0');
@@ -60,7 +60,7 @@ test('hero plays once, navigates in both directions, and stays accessible', asyn
     await mobile.goto(local.origin + '/'); await ready(mobile);
     assert.equal(await state(mobile), 'playing');
     await accessible(mobile);
-    assert.ok(await mobile.locator('#launch-live .hr-mobile-identity').isVisible());
+    assert.equal(await mobile.locator('#launch-live .hr-mobile-identity').count(), 0);
     await mobile.screenshot({path:output + '/phone-playing.png'});
     await mobile.keyboard.press('Home'); assert.equal(await beat(mobile), '0');
     const rect = await mobile.locator('#launch-live .hr-words').boundingBox();
@@ -74,7 +74,7 @@ test('hero plays once, navigates in both directions, and stays accessible', asyn
     await touch(y,y-100); assert.equal(await beat(mobile), '1');
     await mobile.waitForTimeout(450);
     await touch(y,y+100); assert.equal(await beat(mobile), '0');
-    await mobile.getByRole('button',{name:'Skip film'}).click(); assert.equal(await state(mobile), 'rest');
+    await mobile.keyboard.press('End'); assert.equal(await state(mobile), 'rest');
     await mobile.screenshot({path:output + '/phone-rest.png'});
     await phone.close();
 
