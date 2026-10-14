@@ -992,7 +992,7 @@
           <div data-reveal="" style="transition-delay:{{ p.delay }};padding:32px;border-radius:20px;background:var(--surface);border:1px solid var(--border);box-shadow:0 20px 40px -30px var(--shadow);display:flex;flex-direction:column;gap:14px">
             <div class="drift art-l" role="img" aria-hidden="true" style="height:132px;background-image:{{ p.imgCss }},var(--art-plate-soft);background-position:left center,66px center;background-size:contain,132px 132px;animation-delay:{{ p.driftDelay }}"></div>
             <div style="width:34px;height:4px;border-radius:999px;background:{{ p.color }}"></div>
-            <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;margin:0;color:var(--text)">{{ p.title }}</h3>
+            <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;margin:0;color:var(--text)">{{ p.title }}</h2>
             <p style="font-size:16px;line-height:1.6;color:var(--dim);margin:0;flex:1">{{ p.body }}</p>
             <sc-if value="{{ p.hasLink }}" hint-placeholder-val="{{ false }}">
               <button onClick="{{ p.go }}" style="align-self:flex-start;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;color:{{ p.textColor }}">{{ p.linkLabel }} →</button>
