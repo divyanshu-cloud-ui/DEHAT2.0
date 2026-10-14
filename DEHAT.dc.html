@@ -815,14 +815,14 @@
   <div class="nav-links-desktop" style="display:flex;align-items:center;gap:2px;flex-wrap:wrap;justify-content:flex-end">
     <sc-for list="{{ navGroups }}" as="item" hint-placeholder-count="4">
       <div class="nav-group" style="position:relative;display:flex;align-items:center">
-        <button class="nav-parent-link tap-hit" onClick="{{ item.go }}" style="position:relative;background:none;border:none;cursor:pointer;padding:8px clamp(9px,1vw,13px);font-size:clamp(13px,1.05vw,14.5px);font-weight:600;color:{{ item.color }};transition:color .2s cubic-bezier(.22,.61,.36,1);white-space:nowrap;font-family:inherit" style-hover="color:#D2305C">
+        <button class="nav-parent-link tap-hit" data-prefetch="{{ item.k }}" onClick="{{ item.go }}" style="position:relative;background:none;border:none;cursor:pointer;padding:8px clamp(9px,1vw,13px);font-size:clamp(13px,1.05vw,14.5px);font-weight:600;color:{{ item.color }};transition:color .2s cubic-bezier(.22,.61,.36,1);white-space:nowrap;font-family:inherit" style-hover="color:#D2305C">
           {{ item.label }}{{ item.caret }}
           <span style="position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:#D2305C;transform:scaleX({{ item.active }});transform-origin:left;transition:transform .25s cubic-bezier(.22,.61,.36,1)"></span>
         </button>
         <sc-if value="{{ item.hasKids }}" hint-placeholder-val="{{ false }}">
           <div class="nav-drop" style="position:absolute;top:100%;left:0;min-width:212px;background:var(--surface);border:1px solid var(--border);padding:4px;flex-direction:column;gap:0;z-index:60">
             <sc-for list="{{ item.children }}" as="kid" hint-placeholder-count="5">
-              <button class="nav-child-link tap-hit" onClick="{{ kid.go }}" style="text-align:left;background:none;border:none;cursor:pointer;padding:10px 13px;font-size:13.5px;font-weight:600;color:{{ kid.color }};white-space:nowrap;font-family:inherit" style-hover="background:var(--surface2)">{{ kid.label }}</button>
+              <button class="nav-child-link tap-hit" data-prefetch="{{ kid.k }}" onClick="{{ kid.go }}" style="text-align:left;background:none;border:none;cursor:pointer;padding:10px 13px;font-size:13.5px;font-weight:600;color:{{ kid.color }};white-space:nowrap;font-family:inherit" style-hover="background:var(--surface2)">{{ kid.label }}</button>
             </sc-for>
           </div>
         </sc-if>
@@ -842,11 +842,11 @@
         </optgroup>
       </select>
       <button class="theme-toggle tap-hit" onClick="{{ toggleTheme }}" title="{{ T.title_theme_toggle }}" aria-label="{{ T.title_theme_toggle }}" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s cubic-bezier(.22,.61,.36,1)" style-hover="transform:rotate(20deg)">{{ themeGlyph }}</button>
-      <button class="donate-link tap-hit" onClick="{{ goDonate }}" style="padding:10px 20px;background:#D2305C;color:#fff;border:none;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 18px -6px rgba(210,48,92,.6);transition:transform .15s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.donate }}</button>
+      <button class="donate-link tap-hit" data-prefetch="involved" onClick="{{ goDonate }}" style="padding:10px 20px;background:#D2305C;color:#fff;border:none;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 18px -6px rgba(210,48,92,.6);transition:transform .15s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.donate }}</button>
     </div>
   </div>
   <div class="nav-burger" style="align-items:center;gap:10px">
-    <button class="invest-btn donate-link tap-hit" onClick="{{ goDonate }}" style="padding:9px 16px;background:#D2305C;color:#fff;border:none;border-radius:999px;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ T.donate }}</button>
+    <button class="invest-btn donate-link tap-hit" data-prefetch="involved" onClick="{{ goDonate }}" style="padding:9px 16px;background:#D2305C;color:#fff;border:none;border-radius:999px;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ T.donate }}</button>
     <button onClick="{{ toggleNav }}" aria-label="{{ T.aria_menu }}" aria-expanded="{{ navOpen }}" aria-controls="mobile-menu" style="width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="{{ navIconPath }}"/></svg></button>
   </div>
 </nav>
@@ -4832,7 +4832,7 @@
       <div style="font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#EAAE28;font-weight:700;margin-bottom:16px">{{ T.foot_explore }}</div>
       <div style="display:flex;flex-direction:column;gap:10px">
         <sc-for list="{{ footItems }}" as="item" hint-placeholder-count="8">
-          <button class="footer-nav-link tap-hit" onClick="{{ item.go }}" style="background:none;border:none;text-align:left;padding:0;color:rgba(251,247,239,.75);font-size:15px;cursor:pointer" style-hover="color:#EAAE28">{{ item.label }}</button>
+          <button class="footer-nav-link tap-hit" data-prefetch="{{ item.k }}" onClick="{{ item.go }}" style="background:none;border:none;text-align:left;padding:0;color:rgba(251,247,239,.75);font-size:15px;cursor:pointer" style-hover="color:#EAAE28">{{ item.label }}</button>
         </sc-for>
       </div>
     </div>
@@ -5560,6 +5560,12 @@ class Component extends DCLogic {
       dCC: 'IN', dDialIso: '', dDistrict: '', dDistrictOther: false, dTouched: {}, dTry: false, dSrvErr: null, dPan: '', dCountry: '', dIdRef: '', dAddr: '', d80g: true, dAnon: false, dStage: 0,
     });
   }
+  _prepareLaunchView(view, patch, done) {
+    const change = () => this.setState(patch, done);
+    const launch = typeof window !== 'undefined' && window.DEHAT_LAUNCH;
+    if (!launch) { change(); return; }
+    launch.prepare(view).then(change).catch(() => launch.fallback(view, patch));
+  }
   _go(view, anchor, extra) {
     // navOpen/navGroup close here at the source rather than per call site - setView already
     // did this, but _go (and everything built on it: _goInvolved, goFinance, goAnswer, every
@@ -5568,7 +5574,7 @@ class Component extends DCLogic {
     // a single earlier fix (goAnswer) patched only its own call site and the same gap remained
     // everywhere else, which is exactly the failure mode of fixing this per call site instead
     // of at the shared root.
-    return () => this.setState(Object.assign({ view: view, storySlug: null, navOpen: false, navGroup: '' }, extra || {}), () => {
+    return () => this._prepareLaunchView(view, Object.assign({ view: view, storySlug: null, navOpen: false, navGroup: '' }, extra || {}), () => {
       if (typeof window === 'undefined') return;
       if (!anchor) { window.scrollTo({ top: 0 }); return; }
       window.scrollTo({ top: 0 });
@@ -37355,7 +37361,7 @@ class Component extends DCLogic {
         op: on ? '1' : '.42',
       };
     };
-    const setView = (v) => () => this.setState({ view: v, storySlug: null, navOpen: false, navGroup: '' }, () => { window.scrollTo({ top: 0 }); });
+    const setView = (v) => () => this._prepareLaunchView(v, { view: v, storySlug: null, navOpen: false, navGroup: '' }, () => { window.scrollTo({ top: 0 }); });
     const toggleNav = () => this.setState({ navOpen: !this.state.navOpen });
     const nav = [
       { key: 'home', label: T.nav_home }, { key: 'who', label: T.nav_who }, { key: 'work', label: T.nav_work },
@@ -37437,7 +37443,7 @@ class Component extends DCLogic {
       const progKids = g.progs ? (this._pd && this._pd.PROGRAMMES ? this._pd.PROGRAMMES : []).map(pr => ({
         k: pr.key,
         label: this._tagMap('progLabel', pr.name, pr.name),
-        go: () => this.setState({ view: 'prog', progKey: pr.key, expanded: null, navGroup: '', navOpen: false,
+        go: () => this._prepareLaunchView('prog', { view: 'prog', progKey: pr.key, expanded: null, navGroup: '', navOpen: false,
           jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0 }, () => { try { window.scrollTo({ top: 0 }); } catch (e) {} }),
         color: (V === 'prog' && this.state.progKey === pr.key) ? 'var(--ac-crimson)' : 'var(--text)',
       })) : [];
@@ -37494,12 +37500,12 @@ class Component extends DCLogic {
     const navPrimary = navItems.filter(n => n.k !== 'home');
     const moreItems = nav.filter(n => moreKeys.indexOf(n.key) > -1).map(n => Object.assign({
       k: n.key, label: n.label,
-      go: () => { this.setState({ view: n.key, storySlug: null, navMore: false, navOpen: false }, () => window.scrollTo({ top: 0 })); },
+        go: () => { this._prepareLaunchView(n.key, { view: n.key, storySlug: null, navMore: false, navOpen: false }, () => window.scrollTo({ top: 0 })); },
     }, navDeco(n.key)));
     const moreOn = moreKeys.indexOf(V) > -1;
 
     const programs = this._programs();
-    const openProg = (k) => () => this.setState({ view: 'prog', progKey: k, expanded: null, jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0 }, () => { window.scrollTo({ top: 0 }); });
+    const openProg = (k) => () => this._prepareLaunchView('prog', { view: 'prog', progKey: k, expanded: null, jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0 }, () => { window.scrollTo({ top: 0 }); });
     const artUrl = (a) => 'url(./assets/art/' + a + '.png)';
     const activeProgram = Object.assign({}, programs[this.state.program], {
       ink: this._ink(programs[this.state.program].color),   // readable label on the programme's own fill (white fails on gold)
@@ -37700,8 +37706,9 @@ class Component extends DCLogic {
         const all = (typeof window !== 'undefined' && window.STORIES) ? window.STORIES : [];
         let at = 0;
         for (let i = 0; i < all.length; i++) { if (all[i].slug === homeStory.slug) { at = i; break; } }
-        this.setState({ view: 'stories', stF: {}, stEntered: true, stIdx: at, stFiltersOpen: false });
-        try { window.scrollTo(0, 0); } catch (e) {}
+        this._prepareLaunchView('stories', { view: 'stories', stF: {}, stEntered: true, stIdx: at, stFiltersOpen: false }, () => {
+          try { window.scrollTo(0, 0); } catch (e) {}
+        });
       },
     });
     const storyDots = stories.map((s, i) => ({
@@ -38084,7 +38091,7 @@ class Component extends DCLogic {
         fClear: () => this.setState(s => { const f = { ...s.filters }; DIMS.forEach(x => delete f[prog + '|' + x.key]); return { filters: f, expanded: null }; }),
         fRing: (this.state.wFOpen || DIMS.some(x => fkey(x.key) !== 'all')) ? color : 'var(--border)',
         fBg: DIMS.some(x => fkey(x.key) !== 'all') ? this._inkA(color, .14) : 'transparent',
-        go: () => this.setState({ view: 'prog', progKey: prog, expanded: null, jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0 }, () => { window.scrollTo({ top: 0 }); }),
+        go: () => this._prepareLaunchView('prog', { view: 'prog', progKey: prog, expanded: null, jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0 }, () => { window.scrollTo({ top: 0 }); }),
         back: setView('work'),
       };
     });

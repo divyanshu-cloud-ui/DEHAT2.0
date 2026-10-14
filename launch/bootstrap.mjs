@@ -129,7 +129,9 @@ async function start() {
     Object.assign(loaded,routeData);
     if (partnerData) loaded._pt = partnerData;
     if (Object.values(loaded).some(value => !value)) throw new Error('Required route data is absent');
-    const hasDataFor = candidate => (candidate.view !== 'involved' || !!loaded._pt) && Object.keys(routeModules[candidate.view] || {}).every(key => !!loaded[key]);
+    const hasDataFor = candidate => (candidate.view !== 'involved' || !!loaded._pt)
+      && (candidate.view !== 'media' || !!window.DEHAT_MEDIA)
+      && Object.keys(routeModules[candidate.view] || {}).every(key => !!loaded[key]);
     if (route.lang !== 'en') {
       await Promise.all([script(`/content-i18n/${route.lang}.js`), script(`/launch/dict/${route.lang}.js`)]);
       if (!window.__LAUNCH_DICTIONARY?.[route.lang]) throw new Error('Required launch dictionary is absent');
@@ -139,6 +141,26 @@ async function start() {
     document.documentElement.dir = route.dir;
     // Keep the resource table set before support.js runs.
     let component, applying = false, liveReady = false, navigationVersion = 0;
+    const pendingData = new Map();
+    const ensureDataFor = candidate => {
+      const key = candidate.lang + ':' + candidate.view;
+      if (hasDataFor(candidate) && (!['who','involved'].includes(candidate.view) || customElements.get('image-slot'))) return Promise.resolve();
+      if (pendingData.has(key)) return pendingData.get(key);
+      const request = Promise.all([
+        loadModules(routeModules[candidate.view] || {}),
+        candidate.view === 'involved' && !loaded._pt ? loadPartner(candidate.lang) : Promise.resolve(null),
+        candidate.view === 'media' && !window.DEHAT_MEDIA ? script('/media-data.js') : Promise.resolve(),
+        ['who','involved'].includes(candidate.view) && !customElements.get('image-slot') ? script('/image-slot.js') : Promise.resolve(),
+      ]).then(([data,partner]) => {
+        Object.assign(loaded,data);
+        if (partner) loaded._pt = partner;
+        if (component) Object.assign(component,data,partner ? {_pt:partner} : {});
+        if (!hasDataFor(candidate)) throw new Error(`Required route data is absent: ${candidate.view}`);
+      }).finally(() => pendingData.delete(key));
+      pendingData.set(key,request);
+      return request;
+    };
+    const prepareView = view => ensureDataFor({view,lang:component?.state.lang || route.lang});
     const metadataSelector = 'title,meta[name="description"],meta[property^="og:"],link[rel="canonical"],link[rel="alternate"],script[type="application/ld+json"]';
     const updateHead = async destination => {
       const version = ++navigationVersion;
@@ -168,15 +190,19 @@ async function start() {
       return values;
     };
     const apply = async instance => {
-      const next = router.parseUrl(current());
-      if (next.status !== 200 || next.kind !== 'app') { location.assign(current()); return; }
-      if (next.lang !== instance.state.lang) { location.assign(current()); return; }
-      if (!hasDataFor(next)) { location.assign(current()); return; }
+      const destination = current();
+      const next = router.parseUrl(destination);
+      if (next.status !== 200 || next.kind !== 'app') { location.assign(destination); return; }
+      if (next.lang !== instance.state.lang) { location.assign(destination); return; }
+      try { await ensureDataFor(next); }
+      catch { location.assign(destination); return; }
+      if (current() !== destination) return;
       applying = true;
       if (liveReady) {
-        try { if (!await updateHead(current())) return; }
-        catch { location.assign(current()); return; }
+        try { if (!await updateHead(destination)) { applying = false; return; } }
+        catch { location.assign(destination); return; }
       }
+      if (current() !== destination) { applying = false; return; }
       route = next; window.DEHAT_LAUNCH.route = route; applying = true;
       instance.setState(routePatch(route, records), () => {
         applying = false;
@@ -197,6 +223,8 @@ async function start() {
         instance.forceUpdate();
       },
       apply,
+      prepare: prepareView,
+      fallback(view, patch = {}) { location.assign(router.pathFor({...component.state,...patch,view},component.state.lang)); },
       async sync(instance) {
         if (applying || !liveReady) return;
         const vals = instance.state.view === 'stories' ? instance._longReads(() => {}) : null;
@@ -205,9 +233,14 @@ async function start() {
         if (destination !== location.pathname) {
           // Language changes get the matching server body/head, without a mixed-language flash.
           if (instance.state.lang !== route.lang) { location.assign(destination); return; }
-          if (!hasDataFor(router.parseUrl(destination))) { location.assign(destination); return; }
           applying = true;
-          try { if (!await updateHead(destination)) return; } catch { location.assign(destination); return; }
+          try {
+            const next = router.parseUrl(destination);
+            const hadData = hasDataFor(next);
+            await ensureDataFor(next);
+            if (!hadData) instance.forceUpdate();
+            if (!await updateHead(destination)) return;
+          } catch { location.assign(destination); return; }
           finally { applying = false; }
           history.pushState(null, '', destination); route = router.parseUrl(destination);
           window.DEHAT_LAUNCH.route = route;
@@ -249,6 +282,24 @@ async function start() {
     diagnostics.phase = 'ready'; diagnostics.readyAt = performance.now();
     diagnostics.route = route.canonicalPath; diagnostics.lang = route.lang;
     settle(diagnostics);
+    // Defer speculative work until the first view is interactive. Hover or keyboard
+    // focus starts the exact route earlier; intentional low-bandwidth mode skips idle work.
+    const prefetch = target => {
+      const hint = target.closest?.('[data-prefetch]')?.getAttribute('data-prefetch');
+      const view = PROGRAMMES[hint] ? 'prog' : ['route','people','give','case'].includes(hint) ? 'involved' : hint === 'answer' ? 'finance' : hint;
+      const link = target.closest?.('a[href]');
+      const url = link ? new URL(link.href,location.href) : null;
+      const next = view ? {view,lang:route.lang} : url?.origin === location.origin ? router.parseUrl(url) : null;
+      if (next?.status === 200 || view) ensureDataFor(next).catch(() => {});
+    };
+    document.addEventListener('pointerover', event => prefetch(event.target), {passive:true});
+    document.addEventListener('focusin', event => prefetch(event.target));
+    if (!navigator.connection?.saveData) {
+      setTimeout(() => {
+        const idle = window.requestIdleCallback || (callback => setTimeout(callback,0));
+        idle(() => ['involved','work','impact'].forEach(view => ensureDataFor({view,lang:route.lang}).catch(() => {})));
+      },4000);
+    }
     // Preserve native new-tab/download behaviour; same-language app links use history.
     document.addEventListener('click', async event => {
       const link = event.target.closest?.('a[href]');
