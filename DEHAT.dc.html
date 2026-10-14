@@ -511,6 +511,8 @@
   }
   @media (max-width:640px){ .hr-cta{padding:13px 20px;font-size:15px} .hr-link{font-size:14px} .hr-ctl{bottom:10px} }
   @media (prefers-reduced-motion:reduce){ .hr-w,.hr-end.in > *{animation:none;opacity:1;transform:none;filter:none} .hr-playing .hr-prog{animation:none} html{scroll-behavior:auto!important} }
+  @media (prefers-reduced-transparency:reduce){nav[style*="backdrop-filter"],.nav-burger,.spine-rail>div:first-child,section [style*="backdrop-filter"]{backdrop-filter:none!important;background:var(--surface)!important}}
+  html.dehat-low-effects nav[style*="backdrop-filter"],html.dehat-low-effects .nav-burger,html.dehat-low-effects .spine-rail>div:first-child,html.dehat-low-effects section [style*="backdrop-filter"]{backdrop-filter:none!important;background:var(--surface)!important}
   /* Invest page band: a short kinetic-type story (about ten seconds, once) built only from words the page
      already has in every language: "When Communities Act, Systems Respond.", then each programme's tagline
      and name, resting on "Four Fronts, One Converging Response." with the four programmes as chips. Tap the

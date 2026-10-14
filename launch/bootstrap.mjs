@@ -40,8 +40,46 @@ const routePatch = (route, stories) => ({
   stF: {}, stFiltersOpen: false, expanded: route.projectId || null,
 });
 
+function installAnimationBudget(root) {
+  if (!('IntersectionObserver' in window) || !root.getAnimations) return;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const targets = new Set();
+  const pausedHere = new WeakSet();
+  const visible = element => {
+    const box = element.getBoundingClientRect();
+    return box.bottom > 0 && box.top < innerHeight && box.right > 0 && box.left < innerWidth;
+  };
+  const update = (element, inView) => {
+    if (!element.isConnected) {targets.delete(element); observer.unobserve(element); return;}
+    for (const animation of element.getAnimations()) {
+      if (animation.effect?.getTiming().iterations !== Infinity) continue;
+      if (reduced.matches) {animation.cancel(); continue;}
+      if (inView && !document.hidden) {
+        if (pausedHere.has(animation)) {animation.play(); pausedHere.delete(animation);}
+      } else if (animation.playState === 'running') {
+        animation.pause(); pausedHere.add(animation);
+      }
+    }
+  };
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => update(entry.target, entry.isIntersecting)));
+  const register = element => {
+    if (!(element instanceof Element)) return;
+    if (!targets.has(element)) {targets.add(element); observer.observe(element);}
+    update(element, visible(element));
+  };
+  const scan = () => root.getAnimations({subtree:true}).forEach(animation => {
+    if (animation.effect?.getTiming().iterations === Infinity) register(animation.effect.target);
+  });
+  root.addEventListener('animationstart', event => queueMicrotask(() => register(event.target)), true);
+  document.addEventListener('visibilitychange', () => targets.forEach(element => update(element, visible(element))));
+  scan();
+  return {scan, counts: () => ({running:document.getAnimations().filter(animation => animation.playState === 'running').length,
+    infiniteRunning:document.getAnimations().filter(animation => animation.playState === 'running' && animation.effect?.getTiming().iterations === Infinity).length})};
+}
+
 async function start() {
   observeArtwork();
+  if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) document.documentElement.classList.add('dehat-low-effects');
   window.DEHAT_NAV = PARTNER_TABS;
   // support.js resolves these exact upstream URLs to same-origin verified copies.
   window.__resources = {...window.__resources, [REACT_URL]: REACT_ASSET, [REACT_DOM_URL]: REACT_DOM_ASSET};
@@ -204,6 +242,10 @@ async function start() {
     host.classList.add('launch-active'); liveReady = true;
     component._navMeasure?.(); component._spineScan(); component._revealAll();
     await frame(); await frame();
+    diagnostics.animationsBeforeBudget = document.getAnimations().filter(animation => animation.playState === 'running').length;
+    const animationBudget = installAnimationBudget(host);
+    await frame();
+    diagnostics.animationsAfterBudget = animationBudget?.counts();
     diagnostics.phase = 'ready'; diagnostics.readyAt = performance.now();
     diagnostics.route = route.canonicalPath; diagnostics.lang = route.lang;
     settle(diagnostics);
