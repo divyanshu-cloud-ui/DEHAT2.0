@@ -325,6 +325,8 @@
      laptop width up the groups are visible rather than buried behind a menu. */
   .nav-links-desktop{display:none !important}
   .nav-burger{display:flex !important}
+  #mobile-menu{background:var(--surface)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  #mobile-menu button:not(.theme-toggle){color:var(--text)!important;min-height:44px}
   @media (min-width:1000px){
     .nav-links-desktop{display:flex !important}
     .nav-burger{display:none !important}
@@ -848,7 +850,7 @@
   </div>
   <div class="nav-burger" style="align-items:center;gap:10px">
     <button class="invest-btn donate-link tap-hit" data-prefetch="involved" onClick="{{ goDonate }}" style="padding:9px 16px;background:#D2305C;color:#fff;border:none;border-radius:999px;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ T.donate }}</button>
-    <button onClick="{{ toggleNav }}" aria-label="{{ T.aria_menu }}" aria-expanded="{{ navOpen }}" aria-controls="mobile-menu" style="width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="{{ navIconPath }}"/></svg></button>
+    <button data-mobile-menu-trigger="" onClick="{{ toggleNav }}" aria-label="{{ T.aria_menu }}" aria-expanded="{{ navOpen }}" aria-controls="mobile-menu" style="width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="{{ navIconPath }}"/></svg></button>
   </div>
 </nav>
 
@@ -863,7 +865,7 @@
 </sc-if>
 
 <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
-<div id="mobile-menu" class="nav-burger" key="navmenu" style="position:fixed;top:var(--nav-h,72px);left:0;right:0;z-index:49;max-height:calc(100dvh - var(--nav-h,72px));overflow-y:auto;-webkit-overflow-scrolling:touch;flex-direction:column;background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px clamp(16px,5vw,64px) 18px;gap:2px">
+<div id="mobile-menu" class="nav-burger" key="navmenu" role="group" aria-label="{{ T.aria_menu }}" style="position:fixed;top:var(--nav-h,72px);left:0;right:0;z-index:49;max-height:calc(100dvh - var(--nav-h,72px));overflow-y:auto;-webkit-overflow-scrolling:touch;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--border);padding:8px clamp(16px,5vw,64px) 18px;gap:2px">
   <div style="display:flex;align-items:center;gap:12px;padding:8px 0 14px;flex-wrap:wrap">
     <select class="lang-select nav-language" value="{{ currentLang }}" onChange="{{ onLang }}" aria-label="{{ T.language }}" style="appearance:none;-webkit-appearance:none;min-height:44px;min-width:170px;max-width:calc(100vw - 110px);padding:8px 28px 8px 12px;border-radius:12px;border:1px solid var(--border);background:var(--surface);font-size:14px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer">
       <optgroup label="{{ T.lang_global }}"><sc-for list="{{ langsGlobal }}" as="lg" hint-placeholder-count="6"><option value="{{ lg.code }}">{{ lg.label }}</option></sc-for></optgroup>
@@ -5009,6 +5011,7 @@ class Component extends DCLogic {
     };
     this._onEsc = (e) => {
       if (e.key !== 'Escape') return;
+      if (this.state.navOpen) { e.preventDefault(); this.setState({ navOpen: false }); return; }
       if (this.state.navMore || this.state.navGroup) this.setState({ navMore: false, navGroup: '' });
     };
     try { document.addEventListener('pointerdown', this._onDocDown, true); window.addEventListener('keydown', this._onEsc); } catch (e) {}
@@ -5103,6 +5106,7 @@ class Component extends DCLogic {
   }
   componentDidUpdate(pp, ps, snap) {
     try {
+      this._menuFocusSync();
       this._privacyFocusSync();
       if (this._govRects) { const r = this._govRects; this._govRects = null; this._govFlip(r); }
       if (this._lastView !== this.state.view) { this._lastView = this.state.view; this._revealInit(); if (this._navMeasure) this._navMeasure(); }
@@ -5412,7 +5416,7 @@ class Component extends DCLogic {
       );
     });
   }
-  componentWillUnmount() { this._privacyReset(false); try { document.removeEventListener('pointerdown', this._onDocDown, true); window.removeEventListener('keydown', this._onEsc); } catch (e) {} try { if (this._navRO) this._navRO.disconnect(); if (this._navMeasure) window.removeEventListener('resize', this._navMeasure); } catch (e) {} try { if (this._jBound) { window.removeEventListener('scroll', this._jBound); window.removeEventListener('resize', this._jBound); } } catch (e) {} clearInterval(this._timer); clearInterval(this._revealTimer); if (this._deckBound) { window.removeEventListener('scroll', this._deckBound); } if (this._revealBound) { window.removeEventListener('scroll', this._revealBound); window.removeEventListener('resize', this._revealBound); } if (this._io) this._io.disconnect(); if (this._mo) this._mo.disconnect(); if (this._storyObserver) this._storyObserver.disconnect(); if (this._scanFrame) cancelAnimationFrame(this._scanFrame); if (this._raf) cancelAnimationFrame(this._raf); if (this._updateFrame) cancelAnimationFrame(this._updateFrame); }
+  componentWillUnmount() { this._privacyReset(false); this._menuReset(false); try { document.removeEventListener('pointerdown', this._onDocDown, true); window.removeEventListener('keydown', this._onEsc); } catch (e) {} try { if (this._navRO) this._navRO.disconnect(); if (this._navMeasure) window.removeEventListener('resize', this._navMeasure); } catch (e) {} try { if (this._jBound) { window.removeEventListener('scroll', this._jBound); window.removeEventListener('resize', this._jBound); } } catch (e) {} clearInterval(this._timer); clearInterval(this._revealTimer); if (this._deckBound) { window.removeEventListener('scroll', this._deckBound); } if (this._revealBound) { window.removeEventListener('scroll', this._revealBound); window.removeEventListener('resize', this._revealBound); } if (this._io) this._io.disconnect(); if (this._mo) this._mo.disconnect(); if (this._storyObserver) this._storyObserver.disconnect(); if (this._scanFrame) cancelAnimationFrame(this._scanFrame); if (this._raf) cancelAnimationFrame(this._raf); if (this._updateFrame) cancelAnimationFrame(this._updateFrame); }
 
   // ---------- scroll reveal + section anchoring ----------
   _revealAll() {
@@ -6019,6 +6023,42 @@ class Component extends DCLogic {
         });
       }),
     }));
+  }
+  _menuReset(returnFocus) {
+    for (const [node, wasInert] of this._menuInert || []) if (node.isConnected) node.inert = wasInert;
+    this._menuInert = null;
+    this._menuNode = null;
+    if (returnFocus) requestAnimationFrame(() => {
+      const trigger = document.querySelector('[data-mobile-menu-trigger]');
+      if (trigger && !trigger.inert) trigger.focus({ preventScroll: true });
+    });
+  }
+  _menuFocusSync() {
+    const menu = this.state.navOpen && !this.state.ckPrefsOpen ? document.querySelector('#mobile-menu') : null;
+    if (!menu || getComputedStyle(menu).display === 'none') {
+      if (this._menuNode) this._menuReset(!this.state.navOpen);
+      return;
+    }
+    if (this._menuNode === menu) return;
+    if (this._menuNode) this._menuReset(false);
+    this._menuNode = menu;
+    this._menuInert = new Map();
+    const save = node => {
+      if (!this._menuInert.has(node)) { this._menuInert.set(node, node.inert); node.inert = true; }
+    };
+    const nav = document.querySelector('#launch-live .site-nav') || document.querySelector('.site-nav');
+    const trigger = nav?.querySelector('[data-mobile-menu-trigger]');
+    for (const control of nav?.querySelectorAll('button, a, select, input') || []) if (control !== trigger) save(control);
+    let branch = menu;
+    while (branch.parentElement && branch.parentElement !== document.documentElement) {
+      for (const sibling of branch.parentElement.children) {
+        if (sibling !== branch && sibling !== nav && !sibling.contains(nav)) save(sibling);
+      }
+      branch = branch.parentElement;
+    }
+    requestAnimationFrame(() => {
+      if (this._menuNode === menu) (menu.querySelector('select,button,a[href]') || menu).focus({ preventScroll: true });
+    });
   }
   _privacyReset(returnFocus) {
     if (this._privacyKeydown) document.removeEventListener('keydown', this._privacyKeydown, true);
