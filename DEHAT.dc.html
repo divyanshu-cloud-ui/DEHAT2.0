@@ -4873,7 +4873,7 @@
     <span class="foot-rights">{{ T.foot_rights }}</span>
     <div class="foot-links" role="navigation" aria-label="{{ T.foot_policies }}">
       <button onClick="{{ goPolicies }}" class="foot-link tap-hit">{{ T.foot_policies }}</button>
-      <button onClick="{{ ck.openPrefs }}" class="foot-link tap-hit">{{ T.foot_cookies }}</button>
+      <button onClick="{{ ck.openPrefs }}" data-privacy-trigger class="foot-link tap-hit">{{ T.foot_cookies }}</button>
       <button onClick="{{ goRaiseConcern }}" class="foot-link foot-link-alert tap-hit">{{ T.foot_concern }}</button>
     </div>
   </div>
@@ -4897,7 +4897,7 @@
 </sc-if>
 
 <sc-if value="{{ ck.showPrefs }}" hint-placeholder-val="{{ false }}">
-  <div role="dialog" aria-modal="true" aria-label="{{ T.aria_privacy_centre }}" style="position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px)">
+  <div role="dialog" aria-modal="true" aria-label="{{ T.aria_privacy_centre }}" data-privacy-dialog tabindex="-1" style="position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px)">
     <div style="width:min(720px,100%);max-height:88vh;display:flex;flex-direction:column;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:var(--surface);box-shadow:0 40px 90px -50px var(--shadow)">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:clamp(20px,3vw,30px) clamp(20px,3vw,30px) 0">
         <div>
@@ -5107,6 +5107,7 @@ class Component extends DCLogic {
   }
   componentDidUpdate(pp, ps, snap) {
     try {
+      this._privacyFocusSync();
       if (this._govRects) { const r = this._govRects; this._govRects = null; this._govFlip(r); }
       if (this._lastView !== this.state.view) { this._lastView = this.state.view; this._revealInit(); if (this._navMeasure) this._navMeasure(); }
       else this._revealScan();
@@ -5415,7 +5416,7 @@ class Component extends DCLogic {
       );
     });
   }
-  componentWillUnmount() { try { document.removeEventListener('pointerdown', this._onDocDown, true); window.removeEventListener('keydown', this._onEsc); } catch (e) {} try { if (this._navRO) this._navRO.disconnect(); if (this._navMeasure) window.removeEventListener('resize', this._navMeasure); } catch (e) {} try { if (this._jBound) { window.removeEventListener('scroll', this._jBound); window.removeEventListener('resize', this._jBound); } } catch (e) {} clearInterval(this._timer); clearInterval(this._revealTimer); if (this._deckBound) { window.removeEventListener('scroll', this._deckBound); } if (this._revealBound) { window.removeEventListener('scroll', this._revealBound); window.removeEventListener('resize', this._revealBound); } if (this._io) this._io.disconnect(); if (this._mo) this._mo.disconnect(); if (this._storyObserver) this._storyObserver.disconnect(); if (this._scanFrame) cancelAnimationFrame(this._scanFrame); if (this._raf) cancelAnimationFrame(this._raf); if (this._updateFrame) cancelAnimationFrame(this._updateFrame); }
+  componentWillUnmount() { this._privacyReset(false); try { document.removeEventListener('pointerdown', this._onDocDown, true); window.removeEventListener('keydown', this._onEsc); } catch (e) {} try { if (this._navRO) this._navRO.disconnect(); if (this._navMeasure) window.removeEventListener('resize', this._navMeasure); } catch (e) {} try { if (this._jBound) { window.removeEventListener('scroll', this._jBound); window.removeEventListener('resize', this._jBound); } } catch (e) {} clearInterval(this._timer); clearInterval(this._revealTimer); if (this._deckBound) { window.removeEventListener('scroll', this._deckBound); } if (this._revealBound) { window.removeEventListener('scroll', this._revealBound); window.removeEventListener('resize', this._revealBound); } if (this._io) this._io.disconnect(); if (this._mo) this._mo.disconnect(); if (this._storyObserver) this._storyObserver.disconnect(); if (this._scanFrame) cancelAnimationFrame(this._scanFrame); if (this._raf) cancelAnimationFrame(this._raf); if (this._updateFrame) cancelAnimationFrame(this._updateFrame); }
 
   // ---------- scroll reveal + section anchoring ----------
   _revealAll() {
@@ -6017,6 +6018,48 @@ class Component extends DCLogic {
       }),
     }));
   }
+  _privacyReset(returnFocus) {
+    if (this._privacyKeydown) document.removeEventListener('keydown', this._privacyKeydown, true);
+    this._privacyKeydown = null;
+    for (const [node, wasInert] of this._privacyInert || []) if (node.isConnected) node.inert = wasInert;
+    this._privacyInert = null;
+    this._privacyDialog = null;
+    if (returnFocus) requestAnimationFrame(() => {
+      const target = this._privacyReturnFocus?.isConnected ? this._privacyReturnFocus : document.querySelector('[data-privacy-trigger]');
+      if (target && !target.inert) target.focus({ preventScroll: true });
+    });
+  }
+  _privacyFocusSync() {
+    if (!this.state.ckPrefsOpen) { if (this._privacyDialog) this._privacyReset(true); return; }
+    const dialog = document.querySelector('[data-privacy-dialog]');
+    if (!dialog || this._privacyDialog === dialog) return;
+    if (this._privacyDialog) this._privacyReset(false);
+    this._privacyDialog = dialog;
+    this._privacyInert = new Map();
+    let branch = dialog;
+    while (branch && branch.parentElement && branch.parentElement !== document.documentElement) {
+      for (const sibling of branch.parentElement.children) {
+        if (sibling !== branch && !this._privacyInert.has(sibling)) {
+          this._privacyInert.set(sibling, sibling.inert);
+          sibling.inert = true;
+        }
+      }
+      branch = branch.parentElement;
+    }
+    const focusable = () => [...dialog.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')]
+      .filter(node => node.getClientRects().length && !node.inert);
+    this._privacyKeydown = event => {
+      if (event.key === 'Escape') { event.preventDefault(); event.stopImmediatePropagation(); this.setState({ ckPrefsOpen: false }); return; }
+      if (event.key !== 'Tab') return;
+      const items = focusable();
+      if (!items.length) { event.preventDefault(); dialog.focus(); return; }
+      const current = items.indexOf(document.activeElement);
+      if (event.shiftKey && current <= 0) { event.preventDefault(); items.at(-1).focus(); }
+      else if (!event.shiftKey && (current < 0 || current === items.length - 1)) { event.preventDefault(); items[0].focus(); }
+    };
+    document.addEventListener('keydown', this._privacyKeydown, true);
+    requestAnimationFrame(() => { if (this._privacyDialog === dialog) (focusable()[0] || dialog).focus({ preventScroll: true }); });
+  }
   _consent() {
     const T = this._mergedDict();
     const S = this.state;
@@ -6036,7 +6079,7 @@ class Component extends DCLogic {
     return {
       showBanner: !S.ckDecided,
       showPrefs: !!S.ckPrefsOpen,
-      openPrefs: () => this.setState({ ckPrefsOpen: true }),
+      openPrefs: () => { this._privacyReturnFocus = document.activeElement; this.setState({ ckPrefsOpen: true }); },
       closePrefs: () => this.setState({ ckPrefsOpen: false }),
       acceptAll: () => decide(true),
       rejectAll: () => decide(false),
