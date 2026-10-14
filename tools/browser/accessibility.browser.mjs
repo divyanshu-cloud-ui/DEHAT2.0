@@ -43,3 +43,31 @@ test('six routes have no axe violations in either theme', async () => {
     await new Promise(resolve => local.server.close(resolve));
   }
 });
+
+test('skip link is first in keyboard order and reduced motion disables smooth scrolling', async () => {
+  if (!process.env.PLAYWRIGHT_MODULE) throw new Error('Set PLAYWRIGHT_MODULE');
+  const modulePath = process.env.PLAYWRIGHT_MODULE;
+  const {chromium} = await import(modulePath.startsWith('file:') ? modulePath : pathToFileURL(modulePath).href);
+  const local = await proofServer(process.cwd());
+  const browser = await chromium.launch({headless:true, ...(process.env.CHROME_PATH ? {executablePath:process.env.CHROME_PATH} : {})});
+  try {
+    const page = await browser.newPage({viewport:{width:375,height:812},reducedMotion:'reduce'});
+    await page.addInitScript(() => localStorage.setItem('dehat.consent', JSON.stringify({v:1,prefs:{performance:false,functional:false,targeting:false}})));
+    await page.goto(local.origin + '/');
+    await page.waitForFunction(() => window.DEHAT_LAUNCH_DIAGNOSTICS?.phase === 'ready');
+    await page.keyboard.press('Tab');
+    assert.equal(await page.evaluate(() => document.activeElement?.classList.contains('skip-link')), true);
+    await page.keyboard.press('Enter');
+    assert.equal(await page.evaluate(() => document.activeElement?.id), 'main-content');
+    const motion = await page.evaluate(() => ({
+      scroll:getComputedStyle(document.documentElement).scrollBehavior,
+      hero:document.querySelector('.hr-in')?.dataset.heroState,
+    }));
+    assert.equal(motion.scroll, 'auto');
+    assert.equal(motion.hero, 'rest');
+    console.log(JSON.stringify(motion));
+  } finally {
+    await browser.close();
+    await new Promise(resolve => local.server.close(resolve));
+  }
+});

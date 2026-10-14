@@ -513,7 +513,7 @@
     .hr-actions{justify-content:flex-start}
   }
   @media (max-width:640px){ .hr-cta{padding:13px 20px;font-size:15px} .hr-link{font-size:14px} .hr-ctl{bottom:10px} }
-  @media (prefers-reduced-motion:reduce){ .hr-w,.hr-end.in > *{animation:none;opacity:1;transform:none;filter:none} .hr-playing .hr-prog{animation:none} html{scroll-behavior:auto!important} }
+  @media (prefers-reduced-motion:reduce){ .hr-w,.hr-end.in > *{animation:none;opacity:1;transform:none;filter:none} .hr-playing .hr-prog{animation:none} *,*::before,*::after{scroll-behavior:auto!important} }
   @media (prefers-reduced-transparency:reduce){nav[style*="backdrop-filter"],.nav-burger,.spine-rail>div:first-child,section [style*="backdrop-filter"]{backdrop-filter:none!important;background:var(--surface)!important}}
   html.dehat-low-effects nav[style*="backdrop-filter"],html.dehat-low-effects .nav-burger,html.dehat-low-effects .spine-rail>div:first-child,html.dehat-low-effects section [style*="backdrop-filter"]{backdrop-filter:none!important;background:var(--surface)!important}
   /* Invest page band: a short kinetic-type story (about ten seconds, once) built only from words the page
@@ -808,6 +808,7 @@
     </div>
   </div>
 </sc-if>
+<a class="skip-link" href="#main-content">{{ T.a11y_skip }}</a>
 <nav class="site-nav" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:clamp(16px,3vw,40px);padding:14px clamp(16px,5vw,64px);background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)">
   <button onClick="{{ goHome }}" aria-label="{{ T.aria_nav_home }}" style="display:flex;align-items:center;background:none;border:none;cursor:pointer;padding:0;flex:none">
     <img src="./dehat-mark-128.webp" alt="DEHAT" width="128" height="128" class="logo-mobile" style="height:clamp(44px,5.2vw,62px);width:auto;display:block;filter:var(--mark-filter)">
@@ -909,7 +910,6 @@
 </div>
 </sc-if>
 
-<a class="skip-link" href="#main-content">{{ T.a11y_skip }}</a>
 <main id="main-content" tabindex="-1">
   <!-- ============ HOME ============ -->
   <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
