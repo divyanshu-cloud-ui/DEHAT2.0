@@ -191,6 +191,7 @@
   .story-art-plate{animation:artIn .78s cubic-bezier(.22,.61,.36,1) .06s both}
   .face-art{animation:artFade .5s ease both;transition:transform .32s cubic-bezier(.22,.61,.36,1)}
   .face-card:hover .face-art{transform:scale(1.03)}
+  .face-card-person{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:2.4em}
   @media (prefers-reduced-motion:reduce){.story-art,.story-art-plate,.face-art{animation:none}.face-card:hover .face-art{transform:none}}
   .plate-nav{opacity:0;transition:opacity .24s cubic-bezier(.22,.61,.36,1)}
   .plate-nav:hover,.plate-nav:focus-visible{opacity:1}
@@ -199,7 +200,7 @@
   /* Touch screens have no hover, so the arrows used to sit permanently over the story. They
      now appear for a moment when a story opens or is touched, then fade and stop taking taps;
      a horizontal swipe pages the deck, as the arrow keys do on desktop. */
-  @media (hover:none){.plate-nav{opacity:0;pointer-events:none}.plate-nav.nav-show{opacity:.9;pointer-events:auto}}
+  @media (hover:none){.plate-nav{opacity:.9;pointer-events:auto}}
   .art-l{background-repeat:no-repeat,no-repeat;background-size:contain,92% 92%;background-position:left bottom,center}
   @keyframes loopFlow{0%,100%{opacity:.22;transform:scale(.9)}45%{opacity:1;transform:scale(1.15)}}
   .loop-arrow span{display:block;animation:loopFlow 3.2s ease-in-out infinite}
@@ -2752,7 +2753,7 @@
               <button onClick="{{ fa.open }}" class="face-card" style="text-align:left;cursor:pointer;font-family:inherit;padding:0;border-radius:20px;overflow:hidden;background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;transition:transform .2s cubic-bezier(.22,.61,.36,1),box-shadow .2s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-4px);box-shadow:0 20px 44px rgba(0,0,0,.14)">
                 <span class="face-art" style="display:block;height:clamp(160px,18vw,210px);background-color:{{ fa.color }}18;background-image:{{ fa.imgCss }};background-size:86% auto;background-repeat:no-repeat;background-position:center;border-bottom:1px solid var(--border)"></span>
                 <span style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:7px">
-                  <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;line-height:1.1;color:var(--text)">{{ fa.person }}</span>
+                  <span class="face-card-person" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;line-height:1.2;color:var(--text)">{{ fa.person }}</span>
                   <span style="font-size:12.5px;font-weight:700;letter-spacing:.02em;color:{{ fa.ink }}">{{ fa.role }}</span>
                   <span style="font-size:14px;line-height:1.55;color:var(--dim);text-wrap:pretty">{{ fa.dek }}</span>
                 </span>
