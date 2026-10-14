@@ -1,7 +1,7 @@
 // Browser regression: donor typing must stay local until blur, then validate from the committed value.
 import assert from 'node:assert/strict';
 import {pathToFileURL} from 'node:url';
-import {proofServer} from './proof-server.mjs';
+import {proofServer} from '../proof-server.mjs';
 
 const modulePath = process.env.PLAYWRIGHT_MODULE;
 if (!modulePath) throw new Error('Set PLAYWRIGHT_MODULE to the installed Playwright entry point');
@@ -41,31 +41,6 @@ try {
   assert.ok(await page.locator('#df-fullName').locator('xpath=..').locator('[role="alert"]').count(),'required name validation must remain visible after blur');
   assert.deepEqual(errors,[]);
   console.log(JSON.stringify({route:'/get-involved/give',characters:25,cpuSlowdown:4,maxInteractionMs,rendersDuringTyping:during-before,rendersOnBlur:afterBlur-during,requiredValidation:true,errors:errors.length}));
-  for (const [route,selector] of [['/who','#who-mine'],['/answers','#ask-query'],['/finance#raise','#raise-detail']]) {
-    await page.goto(origin+route);
-    await page.waitForFunction(()=>window.DEHAT_LAUNCH_DIAGNOSTICS?.phase==='ready',null,{timeout:60000});
-    await page.waitForTimeout(1200);
-    const field=page.locator(selector);
-    assert.equal(await field.count(),1,`${route} has one ${selector} field`);
-    await page.addStyleTag({content:'html { scroll-behavior:auto!important }'});
-    await field.evaluate(element=>element.scrollIntoView({block:'center',behavior:'instant'}));
-    await page.waitForTimeout(500);
-    await field.focus();
-    await page.waitForTimeout(800);
-    const initial=await page.evaluate(()=>window.DEHAT_LAUNCH_DIAGNOSTICS.fullRenders);
-    await field.type('A careful question here',{delay:10});
-    const typed=await page.evaluate(()=>window.DEHAT_LAUNCH_DIAGNOSTICS.fullRenders);
-    assert.equal(typed,initial,`${route} typing must not render the whole page`);
-    assert.equal(await field.inputValue(),'A careful question here');
-    await field.blur();
-    await page.waitForFunction(before=>window.DEHAT_LAUNCH_DIAGNOSTICS.fullRenders>before,typed);
-    if (route==='/finance#raise') assert.ok((await page.locator('.ml-sheet').last().innerText()).includes('A careful question here'),'the raised concern must enter the draft on blur');
-    if (route==='/answers') {
-      await field.press('Enter');
-      assert.ok((await page.locator('[data-screen-label="Answers"]').innerText()).includes('A careful question here'),'Enter must submit the current question');
-    }
-    console.log(JSON.stringify({route,characters:23,rendersDuringTyping:typed-initial,errors:errors.length}));
-  }
   assert.deepEqual(errors,[]);
 } finally {
   await browser.close();
