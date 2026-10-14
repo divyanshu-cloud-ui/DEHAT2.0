@@ -38,6 +38,7 @@ test('infinite art pauses off screen and sticky blur drops on low-core devices',
     await reducedPage.goto(local.origin);
     await reducedPage.waitForFunction(() => window.DEHAT_LAUNCH_DIAGNOSTICS?.phase === 'ready');
     assert.equal(await reducedPage.evaluate(() => document.getAnimations().filter(animation => animation.playState === 'running' && animation.effect?.getTiming().iterations === Infinity).length), 0);
+    assert.equal(await reducedPage.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior), 'auto');
     await reduced.close();
   } finally {
     await browser.close();
