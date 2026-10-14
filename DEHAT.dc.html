@@ -2798,7 +2798,7 @@
                     <div style="font-size:13.5px;color:{{ sd.onFillSoft }};margin-top:10px;text-wrap:pretty">{{ sd.openSmall }}</div>
                   </div>
                 </div>
-                <div role="img" aria-hidden="true" class="story-art-plate" style="height:clamp(250px,31vw,440px);background-image:{{ sd.imgCss }},{{ sd.thumbCss }};background-size:contain,contain;background-repeat:no-repeat,no-repeat;background-position:center,center"></div>
+                <div role="img" aria-hidden="true" class="story-art-plate" style="height:clamp(250px,31vw,440px);background-image:{{ sd.plateCss }};background-size:contain;background-repeat:no-repeat;background-position:center"></div>
               </div>
             </div>
           </sc-if>
@@ -5300,7 +5300,7 @@ class Component extends DCLogic {
     const EMPTY = {
       slug: '', title: '', dek: '', line: '', lead: '', pull: '', actTitle: '', act: '', actCta: '',
       color: '#D2305C', ink: '#F58EA6', onFill: '#ffffff', onFillSoft: '#ffffff',
-      imgCss: 'none', paras: [], tags: [], openBig: '', openSmall: '', askLine: '',
+      imgCss: 'none', plateCss: 'none', paras: [], tags: [], openBig: '', openSmall: '', askLine: '',
       bigSize: 'clamp(24px,3.4vw,40px)', bigFont: "'Newsreader'", bigStyle: 'normal', isNumber: false, notNumber: true,
       bodyFont: 'inherit', bodySize: '17px', bodyLead: '1.72', measure: '760px',
       thumbCss: 'none',
@@ -5359,7 +5359,7 @@ class Component extends DCLogic {
       out.sd = Object.assign({}, EMPTY, {
         slug: cur.slug, title: stc('title', cur.title), dek: stc('dek', cur.dek), line: stc('line', cur.line), lead: stc('lead', cur.lead),
         pull: stc('pull', cur.pull), actTitle: stc('actTitle', cur.actTitle), act: stc('act', cur.act), actCta: stc('actCta', cur.actCta),
-        color: cur.color, imgCss: artFull(cur.art), thumbCss: artThumb(cur.art),
+        color: cur.color, imgCss: artFull(cur.art), thumbCss: artThumb(cur.art), plateCss: artFull(cur.art),
         ink: ink(cur.color),
         onFill: this._ink(cur.color),
         onFillSoft: this._ink(cur.color),
