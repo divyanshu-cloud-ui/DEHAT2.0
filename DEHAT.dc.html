@@ -569,17 +569,13 @@
   .nav-drop{display:none}
   .nav-group:hover > .nav-drop,
   .nav-group:focus-within > .nav-drop{display:flex}
-  /* Language + theme: live in the header itself at every screen size, next to
-     Invest and the menu button, so the two controls behave identically on phones
-     as on tablet/laptop/desktop rather than being tucked inside the dropdown. */
-  .nav-quick{display:flex}
+  /* The compact header keeps the direct Invest action; preferences live in the menu. */
   @media (max-width:430px){
     nav{padding-left:10px !important;padding-right:10px !important}
     .nav-burger{gap:6px !important}
-    .nav-quick{gap:5px !important}
-    .nav-quick .lang-select{max-width:78px !important;padding-left:8px !important;padding-right:20px !important;font-size:11.5px !important}
     .invest-btn{padding:9px 13px !important;font-size:12.5px !important}
   }
+  @media (max-width:999px){nav.site-nav{padding-block:4px!important;gap:10px!important}.site-nav .logo-mobile{height:44px!important}.site-nav .invest-btn{min-height:44px}}
   /* Brand lockup: on phones (header and footer alike) only the plain mark
      shows, since the header is already tight with Invest, the language
      picker, the theme toggle and the menu button competing for space. From
@@ -805,7 +801,7 @@
     </div>
   </div>
 </sc-if>
-<nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:clamp(16px,3vw,40px);padding:14px clamp(16px,5vw,64px);background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)">
+<nav class="site-nav" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:clamp(16px,3vw,40px);padding:14px clamp(16px,5vw,64px);background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)">
   <button onClick="{{ goHome }}" aria-label="{{ T.aria_nav_home }}" style="display:flex;align-items:center;background:none;border:none;cursor:pointer;padding:0;flex:none">
     <img src="./dehat-mark-128.webp" alt="DEHAT" width="128" height="128" class="logo-mobile" style="height:clamp(44px,5.2vw,62px);width:auto;display:block;filter:var(--mark-filter)">
     <img src="./dehat-logo-horizontal-512.webp" alt="{{ T.alt_logo }}" width="512" height="110" class="logo-desktop" style="height:clamp(34px,3.6vw,46px);width:auto;display:none;filter:var(--mark-filter)">
@@ -844,23 +840,8 @@
     </div>
   </div>
   <div class="nav-burger" style="align-items:center;gap:10px">
-    <div class="nav-quick" style="align-items:center;gap:8px">
-      <select class="lang-select nav-language" value="{{ currentLang }}" onChange="{{ onLang }}" title="{{ T.language }}" style="appearance:none;-webkit-appearance:none;padding:8px 24px 8px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface) url('data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22&gt;&lt;path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%239a8c78%22 stroke-width=%221.5%22/&gt;&lt;/svg&gt;') no-repeat right 8px center;font-size:12.5px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer;max-width:110px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap">
-        <optgroup label="{{ T.lang_global }}">
-          <sc-for list="{{ langsGlobal }}" as="lg" hint-placeholder-count="6">
-            <option value="{{ lg.code }}">{{ lg.label }}</option>
-          </sc-for>
-        </optgroup>
-        <optgroup label="{{ T.lang_indian }}">
-          <sc-for list="{{ langsIndian }}" as="li" hint-placeholder-count="10">
-            <option value="{{ li.code }}">{{ li.label }}</option>
-          </sc-for>
-        </optgroup>
-      </select>
-      <button class="theme-toggle tap-hit" onClick="{{ toggleTheme }}" title="{{ T.title_theme_toggle }}" aria-label="{{ T.title_theme_toggle }}" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none">{{ themeGlyph }}</button>
-    </div>
     <button class="invest-btn donate-link tap-hit" onClick="{{ goDonate }}" style="padding:9px 16px;background:#D2305C;color:#fff;border:none;border-radius:999px;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ T.donate }}</button>
-    <button onClick="{{ toggleNav }}" aria-label="{{ T.aria_menu }}" aria-expanded="{{ navOpen }}" style="width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center">{{ navBurgerLabel }}</button>
+    <button onClick="{{ toggleNav }}" aria-label="{{ T.aria_menu }}" aria-expanded="{{ navOpen }}" aria-controls="mobile-menu" style="width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="{{ navIconPath }}"/></svg></button>
   </div>
 </nav>
 
@@ -875,7 +856,14 @@
 </sc-if>
 
 <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
-<div class="nav-burger" key="navmenu" style="position:fixed;top:var(--nav-h,72px);left:0;right:0;z-index:49;max-height:calc(100dvh - var(--nav-h,72px));overflow-y:auto;-webkit-overflow-scrolling:touch;flex-direction:column;background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px clamp(16px,5vw,64px) 18px;gap:2px">
+<div id="mobile-menu" class="nav-burger" key="navmenu" style="position:fixed;top:var(--nav-h,72px);left:0;right:0;z-index:49;max-height:calc(100dvh - var(--nav-h,72px));overflow-y:auto;-webkit-overflow-scrolling:touch;flex-direction:column;background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px clamp(16px,5vw,64px) 18px;gap:2px">
+  <div style="display:flex;align-items:center;gap:12px;padding:8px 0 14px;flex-wrap:wrap">
+    <select class="lang-select nav-language" value="{{ currentLang }}" onChange="{{ onLang }}" aria-label="{{ T.language }}" style="appearance:none;-webkit-appearance:none;min-height:44px;min-width:170px;max-width:calc(100vw - 110px);padding:8px 28px 8px 12px;border-radius:12px;border:1px solid var(--border);background:var(--surface);font-size:14px;font-weight:600;color:var(--text);font-family:inherit;cursor:pointer">
+      <optgroup label="{{ T.lang_global }}"><sc-for list="{{ langsGlobal }}" as="lg" hint-placeholder-count="6"><option value="{{ lg.code }}">{{ lg.label }}</option></sc-for></optgroup>
+      <optgroup label="{{ T.lang_indian }}"><sc-for list="{{ langsIndian }}" as="li" hint-placeholder-count="10"><option value="{{ li.code }}">{{ li.label }}</option></sc-for></optgroup>
+    </select>
+    <button class="theme-toggle tap-hit" onClick="{{ toggleTheme }}" title="{{ T.title_theme_toggle }}" aria-label="{{ T.title_theme_toggle }}" style="width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ themeIconPath }}"/></svg></button>
+  </div>
   <sc-for list="{{ navGroups }}" as="item" hint-placeholder-count="4">
     <div style="border-top:1px solid var(--border)">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
@@ -38504,7 +38492,9 @@ class Component extends DCLogic {
       isAnswers: V === 'answers',
       T, navItems: navPrimary, navGroups, subNav, subNavOn: subNav.length > 1,
       footItems: navItems, moreItems, portfolioTotal, socialInvestmentTotal,
-      navOpen: this.state.navOpen, toggleNav, navBurgerLabel: this.state.navOpen ? '✕' : '☰',
+      navOpen: this.state.navOpen, toggleNav,
+      navIconPath: this.state.navOpen ? 'M5 5l14 14M19 5L5 19' : 'M4 7h16M4 12h16M4 17h16',
+      themeIconPath: dark ? 'M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z' : 'M19 15.5A7.5 7.5 0 0 1 8.5 5 7.5 7.5 0 1 0 19 15.5Z',
       isMoreOpen: !!this.state.navMore,
       moreOpen: this.state.navMore ? 'true' : 'false',
       moreArrow: this.state.navMore ? '180deg' : '0deg',
