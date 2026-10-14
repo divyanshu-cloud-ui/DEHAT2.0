@@ -3281,15 +3281,6 @@
               <p style="font-size:13px;line-height:1.6;color:var(--dim);margin:0;text-wrap:pretty">{{ pv.idNote }}</p>
             </div>
 
-            <sc-if value="{{ pv.isInr }}" hint-placeholder-val="{{ true }}">
-              <label style="display:flex;flex-direction:column;gap:5px">
-                <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ pv.panLabel }}</span>
-                <input id="df-pan" type="text" defaultValue="{{ pv.panVal }}" onChange="{{ pv.onPan }}" onBlur="{{ pv.panBlur }}" placeholder="{{ pv.panHint }}" style="font-family:ui-monospace,Menlo,monospace;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);background:var(--surface);border:1.5px solid {{ pv.panBorder }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
-                <sc-if value="{{ pv.hasPanErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:12.5px;line-height:1.45;font-weight:700;color:var(--ac-red)">{{ pv.panErr }}</span></sc-if>
-              </label>
-              
-            </sc-if>
-
             <sc-if value="{{ pv.isFcra }}" hint-placeholder-val="{{ false }}">
               <div style="display:flex;flex-direction:column;gap:12px">
                 <label style="display:flex;flex-direction:column;gap:5px">
@@ -3307,7 +3298,13 @@
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 20px">
               <sc-for list="{{ pv.donorFields }}" as="df" hint-placeholder-count="8">
                 <div style="display:flex;flex-direction:column;gap:5px;grid-column:{{ df.span }}">
-                  <label for="{{ df.id }}" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ df.label }}</label>
+                  <sc-if value="{{ df.isToggle }}" hint-placeholder-val="{{ false }}">
+                    <button class="giving-choice tap-hit tap-text" onClick="{{ pv.toggle80 }}" aria-pressed="{{ pv.g80On }}" style="cursor:pointer;font-family:inherit;background:transparent;border:none;padding:0;display:flex;align-items:center;gap:10px;text-align:left">
+                      <span style="flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--ac-gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--ac-gold)">{{ pv.g80Mark }}</span>
+                      <span style="font-size:14px;color:var(--text)">{{ df.label }}</span>
+                    </button>
+                  </sc-if>
+                  <sc-if value="{{ df.isField }}" hint-placeholder-val="{{ true }}"><label for="{{ df.id }}" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ df.label }}</label></sc-if>
                   <sc-if value="{{ df.isText }}" hint-placeholder-val="{{ true }}">
                     <input id="{{ df.id }}" type="{{ df.type }}" inputmode="{{ df.inputmode }}" autocomplete="{{ df.ac }}" list="{{ df.listId }}" value="{{ df.bindVal }}" defaultValue="{{ df.defaultVal }}" onChange="{{ df.on }}" onFocus="{{ df.focus }}" onBlur="{{ df.blur }}" placeholder="{{ df.hint }}" aria-invalid="{{ df.invalid }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid {{ df.border }};border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-gold);outline:none">
                   </sc-if>
@@ -3353,12 +3350,6 @@
             </label>
 
             <div style="display:flex;flex-direction:column;gap:9px">
-              <sc-if value="{{ pv.isInr }}" hint-placeholder-val="{{ true }}">
-                <button class="giving-choice tap-hit tap-text" onClick="{{ pv.toggle80 }}" aria-pressed="{{ pv.g80On }}" style="cursor:pointer;font-family:inherit;background:transparent;border:none;padding:0;display:flex;align-items:center;gap:10px;text-align:left">
-                  <span style="flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--ac-gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--ac-gold)">{{ pv.g80Mark }}</span>
-                  <span style="font-size:14px;color:var(--text)">{{ pv.g80Label }}</span>
-                </button>
-              </sc-if>
               <button class="giving-choice tap-hit tap-text" onClick="{{ pv.toggleAnon }}" aria-pressed="{{ pv.anonOn }}" style="cursor:pointer;font-family:inherit;background:transparent;border:none;padding:0;display:flex;align-items:center;gap:10px;text-align:left">
                 <span style="flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--text)">{{ pv.anonMark }}</span>
                 <span style="font-size:14px;color:var(--text)">{{ pv.anonLabel }}</span>
@@ -34824,7 +34815,7 @@ class Component extends DCLogic {
       idRefHint: P.fIdRefHint,
       // Identity and contact detail the receipt and the statutory return both need,
       // asked alongside the KYC documents rather than after the payment.
-      donorFields: this._donorFields(T),
+      donorFields: this._donorFields(T, P),
       noteLabel: T.f_additional_note, noteHint: T.f_additional_note_hint,
       noteVal: S.dNote || '', onNote: this._deferPageField('dNote').on, noteBlur: this._deferPageField('dNote').blur,
       addrLabel: P.fAddress + (S.d80g ? ' *' : ''), addrVal: S.dAddr,
@@ -35241,7 +35232,7 @@ class Component extends DCLogic {
     }
     return this._cOpt[lang];
   }
-  _onCountry(e) { this.setState({ dCC: e.target.value, dDialIso: '', dState: '', dDistrict: '', dDistrictOther: false, dSrvErr: null, pCopied: false }); }
+  _onCountry(e) { this.setState({ dCC: e.target.value, dDialIso: '', dState: '', dDistrict: '', dDistrictOther: false, dCity: '', dPin: '', dPinNote: '', dSrvErr: null, pCopied: false }); }
   _onState(e) { this.setState({ dState: e.target.value, dDistrict: '', dDistrictOther: false, dSrvErr: null, pCopied: false }); this._loadPins(); }
   _onDistrict(e) {
     const v = e.target.value;
@@ -35249,12 +35240,12 @@ class Component extends DCLogic {
     this._loadPins(); this._pinOnly('d');
   }
   _onDial(e) { this.setState({ dDialIso: e.target.value, dSrvErr: null }); }
-  _donorFields(T) {
+  _donorFields(T, P) {
     const S = this.state, errs = this._donorErrors(), geo = this._geo, dist = this._dist || {};
     const cc = S.dCC || 'IN';
     const mk = (k, o) => {
       const m = this._dmsg(k, errs);
-      return Object.assign({ k, id: 'df-' + k, label: '', span: 'auto', isText: false, isSelect: false, isPhone: false, type: 'text', hint: '', inputmode: '', ac: 'off',
+      return Object.assign({ k, id: 'df-' + k, label: '', span: 'auto', isField: true, isToggle: false, isText: false, isSelect: false, isPhone: false, type: 'text', hint: '', inputmode: '', ac: 'off',
         val: '', bindVal: null, defaultVal: null, on: null, blur: this._dblur(k), focus: () => {}, listId: '', hasList: false, listOptions: [], note: '', hasNote: false, options: [], dialOptions: [], dialVal: '', onDial: null, err: m, hasErr: !!m, invalid: m ? 'true' : 'false',
         border: m ? 'var(--ac-red)' : 'var(--border)' }, o, { label: (o.label || '') + (o.req ? ' *' : '') });
     };
@@ -35266,13 +35257,18 @@ class Component extends DCLogic {
     };
     const rows = [];
     rows.push(text('fullName', 'dFullName', { label: T.f_full_name, req: true, span: '1 / -1', ac: 'name' }));
-    rows.push(mk('countryCode', { span: '1 / -1', isSelect: true, label: T.f_country, req: true, ac: 'country', val: cc, on: (e) => this._onCountry(e),
-      options: [{ v: '', l: this._dt('f_select_country') }].concat(this._countryOptions().map(c => ({ v: c.v, l: c.l }))) }));
     const dialIso = S.dDialIso || cc;
     rows.push(mk('phone', { span: '1 / -1', isPhone: true, label: T.f_phone, req: true, inputmode: 'tel', ac: 'tel-national', hint: this._dt('f_phone_hint'),
       val: S.dPhone || '', bindVal: null, defaultVal: S.dPhone || '', ...this._deferredDonorField('dPhone', 'phone'), dialVal: dialIso, onDial: (e) => this._onDial(e),
       dialOptions: this._countryOptions().filter(c => c.dial).map(c => ({ v: c.v, l: '+' + c.dial + ' ' + c.l })) }));
     rows.push(text('email', 'dEmail', { label: T.f_email, req: true, type: 'email', hint: T.f_email_hint, ac: 'email', inputmode: 'email' }));
+    if (cc === 'IN') {
+      rows.push(mk('receipt80G', { isToggle: true, isField: false, span: '1 / -1', label: P.f80g }));
+      if (S.d80g) rows.push(text('pan', 'dPan', { label: P.fPan, req: true, hint: P.fPanHint, span: '1 / -1' }));
+      rows.push(text('postalCode', 'dPin', Object.assign({ label: T.f_postal_code, req: true, ac: 'postal-code', inputmode: 'numeric', on: (e) => this._onPin(e, 'd') }, this._pinExtras('d', this._dt('f_pin_hint')))));
+    }
+    if (cc !== 'IN') rows.push(mk('countryCode', { span: '1 / -1', isSelect: true, label: T.f_country, req: true, ac: 'country', val: cc, on: (e) => this._onCountry(e),
+      options: [{ v: '', l: this._dt('f_select_country') }].concat(this._countryOptions().map(c => ({ v: c.v, l: c.l }))) }));
     const states = geo && geo.states ? geo.states[cc] : null;
     if (states && states.length) {
       rows.push(mk('state', { isSelect: true, label: T.f_state, req: true, ac: 'address-level1', val: S.dState || '', on: (e) => this._onState(e),
@@ -35287,8 +35283,9 @@ class Component extends DCLogic {
       rows.push(text('district', 'dDistrict', { label: this._dt('f_district_opt'), ac: 'address-level2' }));
     }
     rows.push(text('city', 'dCity', { label: T.f_city, req: true, ac: 'address-level2' }));
-    rows.push(text('postalCode', 'dPin', Object.assign({ label: T.f_postal_code, req: cc === 'IN', ac: 'postal-code', inputmode: cc === 'IN' ? 'numeric' : 'text', on: (e) => this._onPin(e, 'd') },
-      this._pinExtras('d', cc === 'IN' ? this._dt('f_pin_hint') : ''))));
+    if (cc !== 'IN') rows.push(text('postalCode', 'dPin', Object.assign({ label: T.f_postal_code, req: false, ac: 'postal-code', inputmode: 'text', on: (e) => this._onPin(e, 'd') }, this._pinExtras('d', ''))));
+    if (cc === 'IN') rows.push(mk('countryCode', { span: '1 / -1', isSelect: true, label: T.f_country, req: true, ac: 'country', val: cc, on: (e) => this._onCountry(e),
+      options: [{ v: '', l: this._dt('f_select_country') }].concat(this._countryOptions().map(c => ({ v: c.v, l: c.l }))) }));
     return rows;
   }
   _formSummary() {
