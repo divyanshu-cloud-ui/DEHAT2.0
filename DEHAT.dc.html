@@ -35753,11 +35753,19 @@ class Component extends DCLogic {
     try {
       const s = this.state || {};
       const quiet = s.view === 'involved' || s.view === 'finance';
-      const ok = !!(s.ckDecided && s.ckPrefs && s.ckPrefs.performance)
+      const consented = !!(s.ckDecided && s.ckPrefs && s.ckPrefs.performance);
+      const ok = consented
         && (s.lang === 'en' || s.lang === 'hi')
         && /^(www\.)?dehatindia\.org$/.test(window.location.hostname)
         && !navigator.webdriver;
-      if (ok) {
+      const want = ok && !quiet;
+      const clearCookie = name => {
+        const expired = `${name}=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
+        document.cookie = expired;
+        document.cookie = `${expired}; domain=dehatindia.org`;
+        document.cookie = `${expired}; domain=.dehatindia.org`;
+      };
+      if (want) {
         document.querySelectorAll('input, textarea, select, form').forEach(el => { if (!el.hasAttribute('data-clarity-mask')) el.setAttribute('data-clarity-mask', 'True'); });
         if (!window.__dehatClarity) {
           window.__dehatClarity = 1;
@@ -35765,8 +35773,17 @@ class Component extends DCLogic {
         }
       }
       if (window.clarity && window.__dehatClarity) {
-        const want = ok && !quiet;
+        const permission = want ? 'granted' : 'denied';
+        if (window.__dehatClarityPermission !== permission) {
+          window.__dehatClarityPermission = permission;
+          window.clarity('consentv2', { ad_Storage: permission, analytics_Storage: permission });
+        }
         if (window.__dehatClarityOn !== want) { window.__dehatClarityOn = want; try { window.clarity(want ? 'start' : 'stop'); } catch (e) {} }
+      }
+      if (quiet || !consented) {
+        const names = quiet && consented ? ['_clsk'] : ['_clck', '_clsk'];
+        const cookies = document.cookie;
+        names.forEach(name => { if (cookies.split(';').some(part => part.trim().startsWith(`${name}=`))) clearCookie(name); });
       }
     } catch (e) {}
     return '';
