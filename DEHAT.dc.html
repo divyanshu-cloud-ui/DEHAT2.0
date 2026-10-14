@@ -4859,13 +4859,11 @@
       </div>
 
       <div style="font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#EAAE28;font-weight:700;margin:26px 0 12px">{{ T.foot_follow }}</div>
-      <div style="display:flex;flex-wrap:wrap;gap:10px">
+      <div class="footer-social-row" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
         <sc-for list="{{ socials }}" as="so" hint-placeholder-count="5">
-          <a href="{{ so.href }}" target="_blank" rel="noopener" title="{{ so.name }}" aria-label="{{ so.mark }} · {{ so.name }}" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(251,247,239,.18);background:rgba(251,247,239,.04);color:rgba(251,247,239,.8);font-family:'Bricolage Grotesque';font-weight:800;font-size:14px;text-decoration:none;transition:background .18s cubic-bezier(.22,.61,.36,1),color .18s cubic-bezier(.22,.61,.36,1),border-color .18s cubic-bezier(.22,.61,.36,1),transform .18s cubic-bezier(.22,.61,.36,1)" style-hover="background:{{ so.tint }};border-color:{{ so.tint }};color:#120d07;transform:translateY(-2px)">{{ so.mark }}</a>
+          <a href="{{ so.href }}" target="_blank" rel="noopener" title="{{ so.name }}" aria-label="{{ so.name }}" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(251,247,239,.18);background:rgba(251,247,239,.04);color:rgba(251,247,239,.8);text-decoration:none;transition:background .18s cubic-bezier(.22,.61,.36,1),color .18s cubic-bezier(.22,.61,.36,1),border-color .18s cubic-bezier(.22,.61,.36,1),transform .18s cubic-bezier(.22,.61,.36,1)" style-hover="background:{{ so.tint }};border-color:{{ so.tint }};color:#120d07;transform:translateY(-2px)"><svg aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="{{ so.iconPath }}"/></svg><span class="sr-only">{{ so.name }}</span></a>
         </sc-for>
-      </div>
-      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px">
-        <button class="footer-share tap-hit" onClick="{{ shareThis }}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:transparent;color:rgba(251,247,239,.85);border:1px solid rgba(251,247,239,.3);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer" style-hover="border-color:#EAAE28;color:#EAAE28"><span aria-hidden="true">&#8599;</span>{{ shareLabel }}</button>
+        <button class="footer-share tap-hit" onClick="{{ shareThis }}" aria-label="{{ shareLabel }}" title="{{ shareLabel }}" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%;background:transparent;color:rgba(251,247,239,.85);border:1px solid rgba(251,247,239,.3);cursor:pointer" style-hover="border-color:#EAAE28;color:#EAAE28"><svg aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><path d="m7 11 9-5M7 13l9 5"/></svg><span class="sr-only">{{ shareLabel }}</span></button>
         <span role="status" aria-live="polite" style="font-size:13px;color:#EAAE28">{{ shareMsg }}</span>
       </div>
     </div>
@@ -38655,11 +38653,11 @@ class Component extends DCLogic {
       shareLabel: T.foot_share, shareMsg: this.state.shareCopied ? T.foot_share_copied : '',
       themeGlyph: dark ? '☀' : '☾',
       socials: [
-        { k: 'yt', name: 'DEHAT on YouTube', mark: '▶', href: 'https://www.youtube.com/@DehatIndiaOrg', tint: '#D2305C' },
-        { k: 'ig', name: 'DEHAT on Instagram', mark: 'IG', href: 'https://www.instagram.com/dehat_india/', tint: '#EAAE28' },
-        { k: 'fb', name: 'DEHAT on Facebook', mark: 'f', href: 'https://www.facebook.com/dehatorgindia/', tint: '#0E5565' },
-        { k: 'li', name: 'DEHAT on LinkedIn', mark: 'in', href: 'https://www.linkedin.com/company/dehat-india/', tint: '#79C3D3' },
-        { k: 'x', name: 'DEHAT on X', mark: '✕', href: 'https://x.com/dehatindia', tint: '#C2CE72' },
+        { k: 'yt', name: 'DEHAT on YouTube', iconPath: 'M3 7.5C3 5.8 4.3 5 6 5h12c1.7 0 3 .8 3 2.5v9c0 1.7-1.3 2.5-3 2.5H6c-1.7 0-3-.8-3-2.5zM10 9l5 3-5 3z', href: 'https://www.youtube.com/@DehatIndiaOrg', tint: '#D2305C' },
+        { k: 'ig', name: 'DEHAT on Instagram', iconPath: 'M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM17.5 6.5h.01', href: 'https://www.instagram.com/dehat_india/', tint: '#EAAE28' },
+        { k: 'fb', name: 'DEHAT on Facebook', iconPath: 'M15 4h-2a3 3 0 0 0-3 3v13M7 11h8', href: 'https://www.facebook.com/dehatorgindia/', tint: '#0E5565' },
+        { k: 'li', name: 'DEHAT on LinkedIn', iconPath: 'M4 10v10M4 5v.1M9 20v-10M9 14a4 4 0 0 1 8 0v6M19 20v-7', href: 'https://www.linkedin.com/company/dehat-india/', tint: '#79C3D3' },
+        { k: 'x', name: 'DEHAT on X', iconPath: 'M4 4l16 16M20 4 4 20', href: 'https://x.com/dehatindia', tint: '#C2CE72' },
       ],
 
       // Phase D - contextual ask after "The Cycle": gated on sigHero (has the visitor revealed
