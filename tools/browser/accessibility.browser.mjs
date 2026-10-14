@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {pathToFileURL} from 'node:url';
 import {proofServer} from '../proof-server.mjs';
 
-test('home text contrast and visible link names work in both themes', async () => {
+test('six route text contrast and visible link names work in both themes', async () => {
   if (!process.env.PLAYWRIGHT_MODULE || !process.env.AXE_SOURCE) throw new Error('Set PLAYWRIGHT_MODULE and AXE_SOURCE');
   const modulePath = process.env.PLAYWRIGHT_MODULE;
   const {chromium} = await import(modulePath.startsWith('file:') ? modulePath : pathToFileURL(modulePath).href);
@@ -17,22 +17,26 @@ test('home text contrast and visible link names work in both themes', async () =
         localStorage.setItem('dehat.theme', selected);
       }, theme);
       const page = await context.newPage();
-      await page.goto(local.origin);
-      await page.waitForFunction(() => window.DEHAT_LAUNCH_DIAGNOSTICS?.phase === 'ready');
-      await page.waitForTimeout(1000);
-      await page.addScriptTag({path:process.env.AXE_SOURCE});
-      const violations = await page.evaluate(async () => (await axe.run(document.querySelector('#launch-live'), {
-        runOnly:{type:'rule',values:['color-contrast','label-content-name-mismatch']}
-      })).violations.map(v => ({id:v.id,nodes:v.nodes.map(n => ({target:n.target,summary:n.failureSummary}))})));
-      assert.deepEqual(violations, [], `${theme}: ${JSON.stringify(violations)}`);
-      const focus = await page.evaluate(() => {
-        const link = document.querySelector('#launch-live .hr-cta');
-        link.focus();
-        return {outline:getComputedStyle(link).outlineStyle,width:getComputedStyle(link).outlineWidth};
-      });
-      assert.equal(focus.outline, 'solid');
-      assert.equal(focus.width, '3px');
-      console.log(JSON.stringify({theme,contrastViolations:violations.length,focus}));
+      for (const route of ['/','/hi','/impact','/stories','/finance','/get-involved/give']) {
+        await page.goto(local.origin + route);
+        await page.waitForFunction(() => window.DEHAT_LAUNCH_DIAGNOSTICS?.phase === 'ready');
+        await page.waitForTimeout(700);
+        await page.addScriptTag({path:process.env.AXE_SOURCE});
+        const violations = await page.evaluate(async () => (await axe.run(document.querySelector('#launch-live'), {
+          runOnly:{type:'rule',values:['color-contrast','label-content-name-mismatch']}
+        })).violations.map(v => ({id:v.id,nodes:v.nodes.map(n => ({target:n.target,summary:n.failureSummary}))})));
+        assert.deepEqual(violations, [], `${theme} ${route}: ${JSON.stringify(violations)}`);
+        if (route === '/') {
+          const focus = await page.evaluate(() => {
+            const link = document.querySelector('#launch-live .hr-cta');
+            link.focus();
+            return {outline:getComputedStyle(link).outlineStyle,width:getComputedStyle(link).outlineWidth};
+          });
+          assert.equal(focus.outline, 'solid');
+          assert.equal(focus.width, '3px');
+        }
+        console.log(JSON.stringify({theme,route,contrastViolations:violations.length}));
+      }
       await context.close();
     }
   } finally {
