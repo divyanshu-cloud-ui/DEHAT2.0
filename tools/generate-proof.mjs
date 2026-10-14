@@ -10,6 +10,7 @@ import {validateLaunchInputs,seoRecordFor} from './validate-launch-inputs.mjs';
 import {digest,publicAsset} from './package-launch.mjs';
 import {runtimeTemplate,splitRuntimeDictionaries} from './proof-server.mjs';
 import {pickerRedirectSource} from '../launch/bootstrap.mjs';
+import {injectEarlyConsent} from '../launch/early-consent.mjs';
 import {resourceHints} from '../launch/performance-assets.mjs';
 import {buildGraph} from '../launch/schema.mjs';
 import {buildHead} from '../launch/head.mjs';
@@ -89,6 +90,7 @@ try {
       if(route.path==='/')html=html.replace('<head>','<head><script>'+pickerRedirectSource+'</script>');
     }
     html=html.replace(/<title>[\s\S]*?<\/title>/gi,'').replace(/<meta name="description" content="[^"]*">/gi,'').replace('</head>',buildHead({route,seo,origin:PRODUCTION_ORIGIN,languages:LANGUAGES,pathFor:router.pathFor})+'</head>');
+    if(!route.legal)html=injectEarlyConsent(html);
     await emit(route.file,html);
   }
   const notFoundCopy=JSON.parse(await readFile('launch/notfound-copy.json','utf8'));

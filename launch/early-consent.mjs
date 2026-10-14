@@ -1,0 +1,9 @@
+// Runs in the document head before the pre-rendered page can paint. Keep the
+// script small: it must work while the application bundle is still downloading.
+export const earlyConsentSource = `try{if(localStorage.getItem('dehat.consent'))document.documentElement.dataset.consent='decided'}catch(e){}document.addEventListener('click',function(e){var s=e.target.closest('#launch-snapshot');if(!s)return;var b=e.target.closest('button');if(!b)return;var k=b.dataset.earlyConsent;if(k){e.preventDefault();e.stopImmediatePropagation();if(k==='manage'){window.__dehatOpenPrefs=1;try{sessionStorage.setItem('dehat.openPrefs','1')}catch(x){}b.setAttribute('aria-busy','true');b.textContent='One moment...';return}var v=k==='accept';try{localStorage.setItem('dehat.consent',JSON.stringify({v:1,at:new Date().toISOString(),prefs:{performance:v,functional:v,targeting:v}}))}catch(x){}document.documentElement.dataset.consent='decided';s.querySelector('[data-cookie-banner]')?.setAttribute('hidden','');return}b.dataset.earlyBusy='';document.documentElement.dataset.earlyLoading='';setTimeout(function(){b.removeAttribute('data-early-busy')},350)},true);`;
+
+export function injectEarlyConsent(html) {
+  if (html.includes('id="dehat-early-consent"')) return html;
+  const style = '<style data-early-consent-style>html[data-consent="decided"] #launch-snapshot [data-cookie-banner],#launch-snapshot [data-cookie-banner][hidden]{display:none!important}html[data-early-loading]::before{content:"";position:fixed;top:0;left:0;width:42%;height:3px;background:#EAAE28;z-index:9999;animation:early-load 1.2s ease-in-out infinite alternate}#launch-snapshot button[data-early-busy]{transform:scale(.98);opacity:.72}@keyframes early-load{to{left:58%}}</style>';
+  return html.replace('<head>', '<head><script id="dehat-early-consent">' + earlyConsentSource + '</script>' + style);
+}

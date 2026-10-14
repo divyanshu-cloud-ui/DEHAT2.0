@@ -271,7 +271,8 @@ async function start() {
     for (const node of host.querySelectorAll('[data-anchor]')) node.id ||= node.getAttribute('data-anchor');
     await frame(); await frame();
     const fallback = document.getElementById('launch-snapshot');
-    fallback?.remove(); host.removeAttribute('inert'); host.removeAttribute('aria-hidden');
+    fallback?.remove(); delete document.documentElement.dataset.earlyLoading;
+    host.removeAttribute('inert'); host.removeAttribute('aria-hidden');
     host.classList.add('launch-active'); liveReady = true;
     component._navMeasure?.(); component._spineScan(); component._revealAll();
     await frame(); await frame();

@@ -4868,7 +4868,7 @@
 </footer>
 
 <sc-if value="{{ ck.showBanner }}" hint-placeholder-val="{{ false }}">
-  <div role="dialog" aria-label="{{ T.aria_cookie_notice }}" style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--surface);border-top:1px solid var(--border);box-shadow:0 -20px 50px -30px var(--shadow);padding:clamp(18px,2.4vw,28px) clamp(20px,5vw,64px)">
+  <div role="dialog" data-cookie-banner aria-label="{{ T.aria_cookie_notice }}" style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--surface);border-top:1px solid var(--border);box-shadow:0 -20px 50px -30px var(--shadow);padding:clamp(18px,2.4vw,28px) clamp(20px,5vw,64px)">
     <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,2.6vw,36px);align-items:center">
       <div style="min-width:0">
         <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:19px;line-height:1.2;color:var(--text);margin:0 0 8px">{{ ck.bannerTitle }}</h2>
@@ -4876,9 +4876,9 @@
         <button onClick="{{ goPolicies }}" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;background:none;border:none;padding:0;color:var(--dim);border-bottom:1px solid var(--border)" style-hover="color:var(--text);border-color:var(--text)">{{ T.foot_policies }}</button>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;align-items:center">
-        <button onClick="{{ ck.acceptAll }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:13px 22px;border-radius:999px;border:none;background:var(--ac-crimson);color:var(--bg)">{{ ck.acceptAllLabel }}</button>
-        <button onClick="{{ ck.rejectAll }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;padding:13px 22px;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--text)">{{ ck.rejectAllLabel }}</button>
-        <button onClick="{{ ck.openPrefs }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;padding:13px 22px;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--text)">{{ ck.managePrefsLabel }}</button>
+        <button onClick="{{ ck.acceptAll }}" data-early-consent="accept" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:13px 22px;border-radius:999px;border:none;background:var(--ac-crimson);color:var(--bg)">{{ ck.acceptAllLabel }}</button>
+        <button onClick="{{ ck.rejectAll }}" data-early-consent="reject" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;padding:13px 22px;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--text)">{{ ck.rejectAllLabel }}</button>
+        <button onClick="{{ ck.openPrefs }}" data-early-consent="manage" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;padding:13px 22px;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--text)">{{ ck.managePrefsLabel }}</button>
       </div>
     </div>
   </div>
@@ -4979,6 +4979,13 @@ class Component extends DCLogic {
       const raw = window.localStorage.getItem('dehat.consent');
       if (raw) { const j = JSON.parse(raw); this.setState({ ckDecided: true, ckPrefs: Object.assign({ performance: false, functional: false, targeting: false }, j.prefs || {}) }); }
       else this.setState({ ckDecided: false });
+    } catch (e) {}
+    try {
+      if (window.__dehatOpenPrefs || window.sessionStorage.getItem('dehat.openPrefs') === '1') {
+        window.__dehatOpenPrefs = 0;
+        window.sessionStorage.removeItem('dehat.openPrefs');
+        this.setState({ ckPrefsOpen: true });
+      }
     } catch (e) {}
     this._onKey = e => {
       if (this._deckKeys) this._deckKeys(e);

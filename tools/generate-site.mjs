@@ -13,6 +13,7 @@ import {digest,publicAsset} from './package-launch.mjs';
 import {renderSite} from './site-browser.mjs';
 import {runtimeTemplate,splitRuntimeDictionaries} from './proof-server.mjs';
 import {pickerRedirectSource} from '../launch/bootstrap.mjs';
+import {injectEarlyConsent} from '../launch/early-consent.mjs';
 import {resourceHints} from '../launch/performance-assets.mjs';
 import {buildGraph} from '../launch/schema.mjs';
 import {buildHead} from '../launch/head.mjs';
@@ -49,7 +50,7 @@ if(new Set(routes.map(route=>route.path)).size!==routes.length)throw new Error('
 const input=await validateLaunchInputs({root,routes});
 const tracked=execFileSync('git',['ls-files','-z'],{encoding:'utf8'}).split('\0').filter(Boolean);
 const assets=[...new Set([...tracked.filter(publicAsset),'launch/bootstrap.mjs','launch/routes.mjs','launch/artwork.mjs','launch/performance-assets.mjs'])].sort();
-const sourcePaths=[...new Set([...assets,'DEHAT.dc.html','stories-data.js','faq-data.js','seo-data.js','launch/config.mjs','launch/head.mjs','launch/discovery.mjs','launch/edge.mjs','launch/schema.mjs','launch/notfound.mjs','launch/notfound-copy.json',...PUBLISHED.languages.filter(lang=>lang!=='en').map(lang=>`content-i18n/${lang}.js`),...API_ENDPOINTS.flatMap(endpoint=>[endpoint.source,endpoint.helper]),...LEGAL_ROUTES.map(route=>route.source),...Object.values(LAUNCH_INPUTS),'tools/generate-site.mjs','tools/site-links.mjs','tools/site-browser.mjs','tools/proof-server.mjs','tools/validate-launch-inputs.mjs','tools/package-launch.mjs'])].sort();
+const sourcePaths=[...new Set([...assets,'DEHAT.dc.html','stories-data.js','faq-data.js','seo-data.js','launch/config.mjs','launch/head.mjs','launch/discovery.mjs','launch/edge.mjs','launch/schema.mjs','launch/notfound.mjs','launch/notfound-copy.json','launch/early-consent.mjs',...PUBLISHED.languages.filter(lang=>lang!=='en').map(lang=>`content-i18n/${lang}.js`),...API_ENDPOINTS.flatMap(endpoint=>[endpoint.source,endpoint.helper]),...LEGAL_ROUTES.map(route=>route.source),...Object.values(LAUNCH_INPUTS),'tools/generate-site.mjs','tools/site-links.mjs','tools/site-browser.mjs','tools/proof-server.mjs','tools/validate-launch-inputs.mjs','tools/package-launch.mjs'])].sort();
 const sourceFiles=await Promise.all(sourcePaths.map(async filename=>({path:filename,sha256:digest(await readFile(filename))})));
 const sourceDigest=digest(JSON.stringify(sourceFiles));
 const output=path.join(root,'.vercel/output');
@@ -73,6 +74,7 @@ async function cssOutsideHtml(html){
   if(split<0)throw new Error('Rendered document has no head');
   let head=html.slice(0,split);
   for(const match of [...head.matchAll(/<style(?:\s[^>]*)?>([\s\S]*?)<\/style>/g)]){
+    if(match[0].includes('data-early-consent-style'))continue;
     const css=match[1];
     if(!css.trim())continue;
     const name=`launch/css/${digest(css).slice(0,16)}.css`;
@@ -112,7 +114,7 @@ function withMetadata(route,html){
   html=html.replace(/<title>[\s\S]*?<\/title>/gi,'').replace(/<meta name="description" content="[^"]*">/gi,'');
   html=html.replace('</head>',resourceHints(route.lang)+head+'<script type="application/ld+json">'+JSON.stringify(graph).replaceAll('<','\\u003c')+'</script></head>');
   if(route.path==='/')html=html.replace('<head>','<head><script>'+pickerRedirectSource+'</script>');
-  return html;
+  return injectEarlyConsent(html);
 }
 const dateCache=new Map();
 function sourceDate(filename){
