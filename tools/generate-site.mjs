@@ -11,8 +11,9 @@ import {bundleFunction} from './bundle-function.mjs';
 import {validateLaunchInputs,seoRecordFor} from './validate-launch-inputs.mjs';
 import {digest,publicAsset} from './package-launch.mjs';
 import {renderSite} from './site-browser.mjs';
-import {runtimeTemplate} from './proof-server.mjs';
+import {runtimeTemplate,splitRuntimeDictionaries} from './proof-server.mjs';
 import {pickerRedirectSource} from '../launch/bootstrap.mjs';
+import {resourceHints} from '../launch/performance-assets.mjs';
 import {buildGraph} from '../launch/schema.mjs';
 import {buildHead} from '../launch/head.mjs';
 import {buildSitemap,buildRobots} from '../launch/discovery.mjs';
@@ -47,7 +48,7 @@ const routes=[...router.routes.flatMap(record=>{
 if(new Set(routes.map(route=>route.path)).size!==routes.length)throw new Error('Duplicate published route');
 const input=await validateLaunchInputs({root,routes});
 const tracked=execFileSync('git',['ls-files','-z'],{encoding:'utf8'}).split('\0').filter(Boolean);
-const assets=[...new Set([...tracked.filter(publicAsset),'launch/bootstrap.mjs','launch/routes.mjs','launch/artwork.mjs'])].sort();
+const assets=[...new Set([...tracked.filter(publicAsset),'launch/bootstrap.mjs','launch/routes.mjs','launch/artwork.mjs','launch/performance-assets.mjs'])].sort();
 const sourcePaths=[...new Set([...assets,'DEHAT.dc.html','stories-data.js','faq-data.js','seo-data.js','launch/config.mjs','launch/head.mjs','launch/discovery.mjs','launch/edge.mjs','launch/schema.mjs','launch/notfound.mjs','launch/notfound-copy.json',...PUBLISHED.languages.filter(lang=>lang!=='en').map(lang=>`content-i18n/${lang}.js`),...API_ENDPOINTS.flatMap(endpoint=>[endpoint.source,endpoint.helper]),...LEGAL_ROUTES.map(route=>route.source),...Object.values(LAUNCH_INPUTS),'tools/generate-site.mjs','tools/site-links.mjs','tools/site-browser.mjs','tools/proof-server.mjs','tools/validate-launch-inputs.mjs','tools/package-launch.mjs'])].sort();
 const sourceFiles=await Promise.all(sourcePaths.map(async filename=>({path:filename,sha256:digest(await readFile(filename))})));
 const sourceDigest=digest(JSON.stringify(sourceFiles));
@@ -76,7 +77,7 @@ async function cssOutsideHtml(html){
     if(!css.trim())continue;
     const name=`launch/css/${digest(css).slice(0,16)}.css`;
     if(!cssFiles.has(name)){cssFiles.set(name,css);await emit(name,css);}
-    head=head.replace(match[0],`<link rel="stylesheet" href="/${name}">`);
+    head=head.replace(match[0],`<link rel="preload" as="style" href="/${name}"><link rel="stylesheet" href="/${name}">`);
   }
   return head+html.slice(split);
 }
@@ -109,7 +110,7 @@ function withMetadata(route,html){
   const graph=buildGraph({route,seo,seoFor,fields:input.schema,stories,assetExists:asset=>assets.includes(asset),origin:PRODUCTION_ORIGIN,faqItems:route.routeId==='answers'?faqItemsFor(route.lang):undefined});
   const head=buildHead({route,seo,origin:PRODUCTION_ORIGIN,languages:route.routeId.startsWith('story/')?PUBLISHED.storyLanguages:PUBLISHED.languages,indexedLanguages:indexedFor(route),pathFor:router.pathFor});
   html=html.replace(/<title>[\s\S]*?<\/title>/gi,'').replace(/<meta name="description" content="[^"]*">/gi,'');
-  html=html.replace('</head>',head+'<script type="application/ld+json">'+JSON.stringify(graph).replaceAll('<','\\u003c')+'</script></head>');
+  html=html.replace('</head>',resourceHints(route.lang)+head+'<script type="application/ld+json">'+JSON.stringify(graph).replaceAll('<','\\u003c')+'</script></head>');
   if(route.path==='/')html=html.replace('<head>','<head><script>'+pickerRedirectSource+'</script>');
   return html;
 }
@@ -148,7 +149,9 @@ try{
     const head=buildHead({route,seo:{title:pageCopy.title,description:pageCopy.body,ogImage:input.seo.en.home.ogImage},origin:PRODUCTION_ORIGIN,languages:PUBLISHED.languages,pathFor:router.pathFor});
     await emit(lang==='en'?'404.html':`${lang}/404.html`,buildNotFound({lang,copy,labels,pathFor:router.pathFor,head,dir:RTL_LANGUAGES.includes(lang)?'rtl':'ltr'}));
   }
-  const runtime=runtimeTemplate(siteSource);
+  const split=splitRuntimeDictionaries(siteSource);
+  for(const [lang,script] of Object.entries(split.dictionaries)) await emit(`launch/dict/${lang}.js`,script);
+  const runtime=runtimeTemplate(split.source);
   await emit('launch/runtime-template.html',runtime);
   const indexedRoutes=routes.filter(route=>route.legal||indexedFor(route).includes(route.lang));
   const sitemap=buildSitemap({entries:indexedRoutes.map(route=>({routeId:route.routeId,lang:route.lang,path:route.path,kind:route.kind,source:route.source})),origin:PRODUCTION_ORIGIN,lastmodFor,mode:'production',indexedLanguages:INDEXED_LANGUAGES});

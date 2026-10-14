@@ -48,7 +48,8 @@ test('production enforces published destinations and canonical www; preview cach
 });
 test('report-only CSP carries only measured or source referenced origins',()=>{
  const policy=buildRoutes({...inputs,mode:'preview'})[1].headers['Content-Security-Policy-Report-Only'];
- for(const host of ['https://unpkg.com','https://fonts.googleapis.com','https://fonts.gstatic.com','https://checkout.razorpay.com','https://cdn.razorpay.com','https://api.razorpay.com','https://lumberjack.razorpay.com'])assert.ok(policy.includes(host),host);
+ for(const host of ['https://unpkg.com','https://checkout.razorpay.com','https://cdn.razorpay.com','https://api.razorpay.com','https://lumberjack.razorpay.com'])assert.ok(policy.includes(host),host);
+ assert.ok(!/fonts\.(?:googleapis|gstatic)\.com/.test(policy));
  assert.ok(!/paypal/i.test(policy),'PayPal must not appear in the content-security policy');
  assert.ok(policy.includes("'unsafe-eval'"));assert.ok(Object.isFrozen(CSP_SOURCES));
 });

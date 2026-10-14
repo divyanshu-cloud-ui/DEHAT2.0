@@ -2,6 +2,8 @@
 // component has opt-in hooks; ordinary DEHAT.dc.html previews keep their behaviour.
 import {observeArtwork} from './artwork.mjs';
 import { createRouter, LANGUAGES, PROGRAMMES } from './routes.mjs';
+import {REACT_URL, REACT_DOM_URL, REACT_ASSET, REACT_DOM_ASSET} from './performance-assets.mjs';
+import {PARTNER_TABS} from './partner-tabs.mjs';
 
 const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
 const script = src => new Promise((resolve, reject) => {
@@ -10,11 +12,26 @@ const script = src => new Promise((resolve, reject) => {
   element.onerror = () => reject(new Error(`Required script failed: ${src}`));
   document.head.append(element);
 });
-const modules = {
-  _pd: ['/projects-data.js'], _px: ['/programme-extras.js'], _il: ['/impact-lenses.js'],
-  _jd: ['/journey-data.js', 'JOURNEY'], _pt: ['/partner-data.js', 'PARTNER'],
-  _rg: ['/register-data.js?v=4'], _wd: ['/who-data.js?v=3', 'WHO'],
-  _wp: ['/who-profiles.js'], _we: ['/who-en.js', 'TEAM_EN'],
+const coreModules = {
+  _pd: ['/projects-data.js'], _px: ['/programme-extras.js'],
+};
+const routeModules = {
+  impact: {_il: ['/impact-lenses.js']},
+  work: {_jd: ['/journey-data.js', 'JOURNEY']},
+  prog: {_jd: ['/journey-data.js', 'JOURNEY']},
+  who: {_rg: ['/register-data.js?v=4'], _wd: ['/who-data.js?v=3', 'WHO'], _wp: ['/who-profiles.js'], _we: ['/who-en.js', 'TEAM_EN']},
+  answers: {_faq: ['/faq-data.js', 'FAQ']},
+};
+const loadModules = async entries => Object.fromEntries(await Promise.all(Object.entries(entries).map(async ([key,[url,field]]) => {
+  const module=await import(url);
+  return [key,field==='FAQ'?window.FAQ:(field?module[field]:module)];
+})));
+const loadPartner = async lang => {
+  const [english, translated] = await Promise.all([
+    import('/launch/partner/en.mjs'),
+    lang === 'en' ? Promise.resolve(null) : import(`/launch/partner/${lang}.mjs`),
+  ]);
+  return translated ? {en:english.DATA, [lang]:translated.DATA} : {en:english.DATA};
 };
 const routePatch = (route, stories) => ({
   view: route.view, lang: route.lang, booting: false, navOpen: false, navGroup: '',
@@ -25,6 +42,9 @@ const routePatch = (route, stories) => ({
 
 async function start() {
   observeArtwork();
+  window.DEHAT_NAV = PARTNER_TABS;
+  // support.js resolves these exact upstream URLs to same-origin verified copies.
+  window.__resources = {...window.__resources, [REACT_URL]: REACT_ASSET, [REACT_DOM_URL]: REACT_DOM_ASSET};
   const diagnostics = { phase: 'loading', errors: [], started: performance.now(), shifts: 0 };
   window.DEHAT_LAUNCH_DIAGNOSTICS = diagnostics;
   try {
@@ -37,15 +57,23 @@ async function start() {
   ready.catch(() => {});
   window.DEHAT_LAUNCH_READY = ready;
   try {
-    await Promise.all([script('/stories-data.js'), script('/media-data.js')]);
+    // Begin independent network work together. The snapshot stays visible until
+    // the live component has rendered, so a slow data file cannot delay these
+    // downloads or make the page flash.
+    const templateRequest = fetch('/launch/runtime-template.html');
+    const storiesData = script('/stories-data.js');
+    const path = location.pathname;
+    const mediaNeeded = path === '/' || path === '/media' || /^\/[a-z]{2,3}(?:\/media)?$/.test(path);
+    const mediaData = mediaNeeded ? script('/media-data.js') : Promise.resolve();
+    const moduleData = loadModules(coreModules);
+    const financeData = import('/finance-data.js');
+    await storiesData;
     const records = window.STORIES;
     if (!Array.isArray(records) || !records.length) throw new Error('Story data is absent');
-    const loaded = Object.fromEntries(await Promise.all(Object.entries(modules).map(async ([key, [url, field]]) => {
-      const value = await import(url); return [key, field ? value[field] : value];
-    })));
-    await Promise.all([import('/finance-data.js'), import('/faq-data.js')]);
-    loaded._fin = window.FIN; loaded._faq = window.FAQ;
-    if (Object.values(loaded).some(value => !value)) throw new Error('Required route data is absent');
+    const loaded = await moduleData;
+    await financeData;
+    loaded._fin = window.FIN;
+    if (Object.values(loaded).some(value => !value)) throw new Error('Required core data is absent');
     const router = createRouter(records, { projects: loaded._pd.PROJECTS });
     const current = () => location.pathname + location.search + location.hash;
     let stored; try { stored = localStorage.getItem('dehat.lang'); } catch {}
@@ -54,15 +82,24 @@ async function start() {
     if (legacy?.replaceTo) history.replaceState(null, '', legacy.replaceTo);
     if (route.status === 301) { history.replaceState(null, '', route.redirectTo); route = router.parseUrl(current()); }
     if (route.status !== 200 || route.kind !== 'app') throw new Error('No matching app route');
+    const [routeData, partnerData] = await Promise.all([
+      loadModules(routeModules[route.view] || {}),
+      route.view === 'involved' ? loadPartner(route.lang) : Promise.resolve(null),
+      mediaData,
+      ['who', 'involved'].includes(route.view) ? script('/image-slot.js') : Promise.resolve(),
+    ]);
+    Object.assign(loaded,routeData);
+    if (partnerData) loaded._pt = partnerData;
+    if (Object.values(loaded).some(value => !value)) throw new Error('Required route data is absent');
+    const hasDataFor = candidate => (candidate.view !== 'involved' || !!loaded._pt) && Object.keys(routeModules[candidate.view] || {}).every(key => !!loaded[key]);
     if (route.lang !== 'en') {
-      await script(`/content-i18n/${route.lang}.js`);
+      await Promise.all([script(`/content-i18n/${route.lang}.js`), script(`/launch/dict/${route.lang}.js`)]);
+      if (!window.__LAUNCH_DICTIONARY?.[route.lang]) throw new Error('Required launch dictionary is absent');
       if (!window.CONTENT_I18N?.[route.lang]) throw new Error('Required translation is absent');
     }
     document.documentElement.lang = route.lang;
     document.documentElement.dir = route.dir;
-    // A truthy resource table disables the DC runtime's redundant source-page fetch.
-    // Missing keys retain the runtime's normal URL fallback for child components.
-    window.__resources = {};
+    // Keep the resource table set before support.js runs.
     let component, applying = false, liveReady = false, navigationVersion = 0;
     const metadataSelector = 'title,meta[name="description"],meta[property^="og:"],link[rel="canonical"],link[rel="alternate"],script[type="application/ld+json"]';
     const updateHead = async destination => {
@@ -96,6 +133,7 @@ async function start() {
       const next = router.parseUrl(current());
       if (next.status !== 200 || next.kind !== 'app') { location.assign(current()); return; }
       if (next.lang !== instance.state.lang) { location.assign(current()); return; }
+      if (!hasDataFor(next)) { location.assign(current()); return; }
       applying = true;
       if (liveReady) {
         try { if (!await updateHead(current())) return; }
@@ -129,6 +167,7 @@ async function start() {
         if (destination !== location.pathname) {
           // Language changes get the matching server body/head, without a mixed-language flash.
           if (instance.state.lang !== route.lang) { location.assign(destination); return; }
+          if (!hasDataFor(router.parseUrl(destination))) { location.assign(destination); return; }
           applying = true;
           try { if (!await updateHead(destination)) return; } catch { location.assign(destination); return; }
           finally { applying = false; }
@@ -138,7 +177,7 @@ async function start() {
         }
       },
     };
-    const response = await fetch('/launch/runtime-template.html');
+    const response = await templateRequest;
     if (!response.ok) throw new Error('Launch template failed to load');
     const parsed = new DOMParser().parseFromString(await response.text(), 'text/html');
     const template = parsed.querySelector('x-dc'), logic = parsed.querySelector('script[data-dc-script]');

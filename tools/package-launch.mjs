@@ -16,11 +16,14 @@ export function publicAsset(value) {
   safeRelative(value);
   return /^(?:support|image-slot|stories-data|media-data|projects-data|programme-extras|impact-lenses|journey-data|partner-data|register-data|who-data|who-profiles|who-en|finance-data|faq-data|district-data)\.js$/.test(value)||
     /^(?:MediaArchive\.dc|district-map)\.html$/.test(value)||
-    /^launch\/(?:bootstrap\.mjs|routes\.mjs|artwork\.mjs|runtime-template\.html)$/.test(value)||
+    /^launch\/(?:bootstrap\.mjs|routes\.mjs|artwork\.mjs|performance-assets\.mjs|partner-tabs\.mjs|runtime-template\.html)$/.test(value)||
+    /^launch\/partner\/[a-z]{2,3}\.mjs$/.test(value)||
+    /^assets\/vendor\/(?:react|react-dom)-18\.3\.1-[a-f0-9]{16}\.js$/.test(value)||
+    /^assets\/fonts\/web\/font-\d{2}-[a-f0-9]{16}\.woff2$/.test(value)||
     /^content-i18n\/[a-z]{2,3}\.js$/.test(value)||
     /^assets\/geo\/(?:geo\.v1\.json|in-districts\.v1\.json|in-pins\.v1\.json|validate\.mjs|NOTICE\.txt)$/.test(value)||
-    /^dehat-[\w-]+\.png$/.test(value)||
-    /^assets\/(?:ink|story|portraits|svc|art|thumb|logos|partners|cj|illus)\/[\w/.-]+\.(?:png|svg|webp|jpg)$/.test(value)||
+    /^dehat-[\w-]+\.(?:png|webp)$/.test(value)||
+    /^assets\/(?:ink|story|portraits|svc|art|thumb|logos|partners|cj|illus)\/[\w/.-]+\.(?:png|svg|webp|jpg|avif)$/.test(value)||
     /^assets\/[\w.-]+\.(?:png|svg|webp|jpg)$/.test(value);
 }
 export async function verifyManifest(root,generated,manifest) {
@@ -38,7 +41,7 @@ export async function verifyManifest(root,generated,manifest) {
     if(!/^\/(?!\/)/.test(route.path)||!names.has(route.file)||!route.file.endsWith('.html'))throw new Error('Route missing generated document');
   }
   const documents=new Set(manifest.routes.map(r=>r.file));
-  for(const name of names)if(!documents.has(name)&&![...DISCOVERY_FILES,'launch/runtime-template.html'].includes(name)&&!name.match(/^(?:[a-z]{2,3}\/)?404\.html$/))throw new Error(`Unreferenced generated file: ${name}`);
+  for(const name of names)if(!documents.has(name)&&!/^launch\/dict\/[a-z]{2,3}\.js$/.test(name)&&![...DISCOVERY_FILES,'launch/runtime-template.html'].includes(name)&&!name.match(/^(?:[a-z]{2,3}\/)?404\.html$/))throw new Error(`Unreferenced generated file: ${name}`);
 }
 export async function packageLaunch({root=process.cwd(),generated=path.join(root,'generated/proof'),output=path.join(root,'.vercel/output')}={}) {
   const manifest=JSON.parse(await readFile(path.join(generated,'manifest.json'),'utf8'));
@@ -48,7 +51,7 @@ export async function packageLaunch({root=process.cwd(),generated=path.join(root
   const copy=async(source,destination)=>{await mkdir(path.dirname(destination),{recursive:true});await copyFile(source,destination);};
   try {
     for(const file of manifest.files){
-      if(!file.path.endsWith('.html')&&!DISCOVERY_FILES.includes(file.path))throw new Error(`Unexpected generated file: ${file.path}`);
+      if(!file.path.endsWith('.html')&&!DISCOVERY_FILES.includes(file.path)&&!/^launch\/dict\/[a-z]{2,3}\.js$/.test(file.path))throw new Error(`Unexpected generated file: ${file.path}`);
       await copy(path.join(generated,file.path),path.join(staging,'static',file.path));
     }
     for(const asset of manifest.publicFiles||[]){

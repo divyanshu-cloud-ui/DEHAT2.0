@@ -8,8 +8,9 @@ import {createRouter,LANGUAGES,LEGAL_ROUTES} from '../launch/routes.mjs';
 import {PRODUCTION_ORIGIN,LAUNCH_INPUTS,API_ENDPOINTS,DISCOVERY_FILES} from '../launch/config.mjs';
 import {validateLaunchInputs,seoRecordFor} from './validate-launch-inputs.mjs';
 import {digest,publicAsset} from './package-launch.mjs';
-import {runtimeTemplate} from './proof-server.mjs';
+import {runtimeTemplate,splitRuntimeDictionaries} from './proof-server.mjs';
 import {pickerRedirectSource} from '../launch/bootstrap.mjs';
+import {resourceHints} from '../launch/performance-assets.mjs';
 import {buildGraph} from '../launch/schema.mjs';
 import {buildHead} from '../launch/head.mjs';
 import {buildSitemap,buildRobots} from '../launch/discovery.mjs';
@@ -39,7 +40,7 @@ const paths=['/','/ar/impact','/stories/a-friend-who-noticed','/media','/privacy
 const routes=paths.map(p=>({...router.parseUrl(p),path:p,legal:p==='/privacy-policy/',file:p==='/'?'index.html':p.replace(/^\//,'').replace(/\/$/,'')+'/index.html'}));
 const input=await validateLaunchInputs({root,routes});
 const tracked=execFileSync('git',['ls-files','-z'],{encoding:'utf8'}).split('\0').filter(Boolean);
-const assets=[...new Set([...tracked.filter(publicAsset),'launch/bootstrap.mjs','launch/routes.mjs','launch/artwork.mjs','dehat-og.png'])].sort();
+const assets=[...new Set([...tracked.filter(publicAsset),'launch/bootstrap.mjs','launch/routes.mjs','launch/artwork.mjs','launch/performance-assets.mjs','dehat-og.png'])].sort();
 const sources=[...new Set([...assets,'DEHAT.dc.html','launch/config.mjs','launch/head.mjs','launch/discovery.mjs','launch/edge.mjs','launch/schema.mjs','launch/notfound.mjs','launch/notfound-copy.json',...API_ENDPOINTS.flatMap(e=>[e.source,e.helper]),...routes.filter(r=>r.legal).map(r=>r.source),...Object.values(LAUNCH_INPUTS),'tools/generate-proof.mjs','tools/proof-server.mjs','tools/proof-browser.mjs','tools/validate-launch-inputs.mjs','tools/package-launch.mjs'])].sort();
 const sourceFiles=await Promise.all(sources.map(async p=>({path:p,sha256:digest(await readFile(p))})));
 const run=spawnSync(process.execPath,['tools/proof-browser.mjs',root],{stdio:'inherit',env:process.env});
@@ -104,7 +105,9 @@ try {
     const head=buildHead({route:notFoundRoute,seo:{title:text.title,description:text.body,ogImage:input.seo.en.home.ogImage},origin:PRODUCTION_ORIGIN,languages:LANGUAGES,pathFor:router.pathFor});
     await emit(lang==='en'?'404.html':`${lang}/404.html`,buildNotFound({lang,copy:notFoundCopy,labels,pathFor:router.pathFor,head,dir:RTL_LANGUAGES.includes(lang)?'rtl':'ltr'}));
   }
-  await emit('launch/runtime-template.html',runtimeTemplate(await readFile('DEHAT.dc.html','utf8')));
+  const split=splitRuntimeDictionaries(siteSource);
+  for(const [lang,script] of Object.entries(split.dictionaries)) await emit(`launch/dict/${lang}.js`,script);
+  await emit('launch/runtime-template.html',runtimeTemplate(split.source));
   const sitemap=buildSitemap({entries:sitemapEntries,origin:PRODUCTION_ORIGIN,lastmodFor,mode:'preview'});
   await emit('sitemap.xml',sitemap);
   for(const name of DISCOVERY_FILES.filter(n=>n.endsWith('.xml')&&n!=='sitemap.xml')) await emit(name,'<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>'+PRODUCTION_ORIGIN+'/sitemap.xml</loc></sitemap></sitemapindex>\n');
@@ -118,7 +121,7 @@ try {
     const snapshot=await readFile(path.join(staging,route.file),'utf8');
     for(const match of snapshot.matchAll(/(?:\.\/|\/)?(assets\/[a-zA-Z0-9_./-]+\.(?:png|webp|jpg|svg))/g))referenced.add(match[1]);
   }
-  const publicFiles=assets.filter(source=>(!source.startsWith('assets/')||referenced.has(source))&&(!source.startsWith('content-i18n/')||['content-i18n/en.js','content-i18n/ar.js'].includes(source))).map(source=>({source,destination:source,sha256:sourceFiles.find(f=>f.path===source).sha256}));
+  const publicFiles=assets.filter(source=>(!source.startsWith('assets/')||source.startsWith('assets/vendor/')||source.startsWith('assets/fonts/web/')||referenced.has(source))&&(!source.startsWith('content-i18n/')||['content-i18n/en.js','content-i18n/ar.js'].includes(source))).map(source=>({source,destination:source,sha256:sourceFiles.find(f=>f.path===source).sha256}));
   const sorted=[...sourceFiles].sort((a,b)=>a.path.localeCompare(b.path));
   await writeFile(path.join(staging,'manifest.json'),JSON.stringify({version:1,generation:{mode:'proof',nodeVersion:process.version},sourceFiles:sorted,sourceDigest:digest(JSON.stringify(sorted)),files,routes,publicFiles},null,2));
   await mkdir(path.dirname(output),{recursive:true});
