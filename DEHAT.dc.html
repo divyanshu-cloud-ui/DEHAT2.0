@@ -3482,10 +3482,6 @@
           </div>
 
           <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 24px;margin-top:20px">
-            <label style="display:flex;flex-direction:column;gap:5px;min-width:220px">
-              <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint)">{{ rt.humanLabel }}</span>
-              <input type="text" value="{{ rt.humanVal }}" onChange="{{ rt.onHuman }}" placeholder="{{ rt.humanHint }}" style="font-family:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px" style-focus="border-color:var(--ac-teal);outline:none">
-            </label>
             <button onClick="{{ rt.submit }}" style="cursor:pointer;font-family:inherit;font-size:15px;font-weight:800;padding:14px 28px;border-radius:999px;background:{{ rt.btnBg }};color:{{ rt.btnFg }};border:none;transition:transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ rt.submitLabel }} →</button>
           </div>
 
@@ -35533,8 +35529,6 @@ class Component extends DCLogic {
       .concat((P.purposes || []).filter(p => p.k !== 'unrestricted').map(p => p.label));
     const rtErrs = this._rtErrors();
     const missing = Object.keys(rtErrs);
-    const human = (v('rtHuman') || '').trim().toLowerCase();
-    const humanOk = human === 'seven' || human === '7';
     // The draft is rebuilt from the form on every render, so a correction made after pressing
     // submit reaches the email too. Two blocks: the transfer (what finance matches against the
     // bank statement) and who the receipt is made out to.
@@ -35576,9 +35570,6 @@ class Component extends DCLogic {
       causes: causes.map((c, i) => ({ k: 'rc' + i, v: c })),
       causeVal: S.rtCause || causes[0],
       onCause: set('rtCause'),
-      humanLabel: L ? L.human : 'Prove You Are Not a Robot',
-      humanHint: L ? L.humanHint : 'What is three plus four?',
-      humanVal: v('rtHuman'), onHuman: set('rtHuman'),
       submitLabel: L ? L.submit : 'Submit Transfer Details',
       btnBg: 'var(--ac-teal)', btnFg: 'var(--bg)',
       hasMsg: !!S.rtMsg, msg: S.rtMsg || '',
@@ -35599,10 +35590,6 @@ class Component extends DCLogic {
         if (missing.length) {
           this.setState({ rtOk: false, rtTry: true, rtMsg: String(this._dt('v_fix_n')).replace('{n}', missing.length) });
           setTimeout(() => this._rtFocusFirst(rtErrs), 60);
-          return;
-        }
-        if (!humanOk) {
-          this.setState({ rtOk: false, rtMsg: L ? L.robot : 'Answer the arithmetic question so we know you are not a robot.' });
           return;
         }
         const href = this._mailto(draftSubject, draftBody);
