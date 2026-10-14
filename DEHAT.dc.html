@@ -3223,7 +3223,7 @@
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-bottom:30px">
           <sc-for list="{{ pv.regimes }}" as="rg" hint-placeholder-count="2">
-            <button onClick="{{ rg.select }}" style="text-align:left;cursor:pointer;font-family:inherit;background:{{ rg.bg }};border:1.5px solid {{ rg.ring }};border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:background .2s cubic-bezier(.22,.61,.36,1),border-color .2s cubic-bezier(.22,.61,.36,1),transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">
+            <button onClick="{{ rg.select }}" aria-pressed="{{ rg.on }}" style="text-align:left;cursor:pointer;font-family:inherit;background:{{ rg.bg }};border:1.5px solid {{ rg.ring }};border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:background .2s cubic-bezier(.22,.61,.36,1),border-color .2s cubic-bezier(.22,.61,.36,1),transform .16s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">
               <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px">
                 <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;color:var(--text)">{{ rg.label }}</span>
                 <span style="font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:{{ rg.fg }}">{{ rg.note }}</span>
@@ -3238,11 +3238,11 @@
             <div>
               <div style="display:flex;flex-wrap:wrap;gap:8px">
                 <sc-for list="{{ pv.amounts }}" as="am" hint-placeholder-count="6">
-                  <button onClick="{{ am.select }}" style="cursor:pointer;font-family:'Bricolage Grotesque';font-weight:800;font-size:16px;padding:12px 20px;border-radius:14px;background:{{ am.bg }};color:{{ am.fg }};border:1.5px solid {{ am.ring }};transition:transform .16s cubic-bezier(.22,.61,.36,1),background .2s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ am.label }}</button>
+                  <button onClick="{{ am.select }}" aria-pressed="{{ am.on }}" style="cursor:pointer;font-family:'Bricolage Grotesque';font-weight:800;font-size:16px;padding:12px 20px;border-radius:14px;background:{{ am.bg }};color:{{ am.fg }};border:1.5px solid {{ am.ring }};transition:transform .16s cubic-bezier(.22,.61,.36,1),background .2s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px)">{{ am.label }}</button>
                 </sc-for>
               </div>
               <sc-if value="{{ pv.isOther }}" hint-placeholder-val="{{ false }}">
-                <input type="text" defaultValue="{{ pv.otherVal }}" onChange="{{ pv.onOther }}" onBlur="{{ pv.onOtherBlur }}" placeholder="0" style="margin-top:10px;width:100%;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:12px 16px" style-focus="border-color:var(--ac-gold);outline:none">
+                <input type="text" aria-label="{{ pv.otherAmountLabel }}" defaultValue="{{ pv.otherVal }}" onChange="{{ pv.onOther }}" onBlur="{{ pv.onOtherBlur }}" placeholder="0" style="margin-top:10px;width:100%;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:12px 16px" style-focus="border-color:var(--ac-gold);outline:none">
               </sc-if>
             </div>
 
@@ -3254,7 +3254,7 @@
               <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint);margin-bottom:9px">{{ pv.freqTitle }}</div>
               <div style="display:inline-flex;padding:4px;border-radius:12px;background:var(--surface);border:1px solid var(--border)">
                 <sc-for list="{{ pv.freqs }}" as="fq" hint-placeholder-count="3">
-                  <button class="tap-hit" onClick="{{ fq.select }}" style="cursor:pointer;border:none;font-family:inherit;font-size:13.5px;font-weight:800;padding:9px 18px;border-radius:9px;background:{{ fq.bg }};color:{{ fq.fg }};transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)">{{ fq.label }}</button>
+                  <button class="tap-hit" onClick="{{ fq.select }}" aria-pressed="{{ fq.on }}" style="cursor:pointer;border:none;min-height:44px;font-family:inherit;font-size:13.5px;font-weight:800;padding:9px 18px;border-radius:9px;background:{{ fq.bg }};color:{{ fq.fg }};transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)">{{ fq.label }}</button>
                 </sc-for>
               </div>
             </div>
@@ -3263,7 +3263,7 @@
               <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--faint);margin-bottom:9px">{{ pv.purposeTitle }}</div>
               <div style="display:flex;flex-direction:column;gap:7px">
                 <sc-for list="{{ pv.purposes }}" as="pu" hint-placeholder-count="5">
-                  <button class="tap-hit" onClick="{{ pu.select }}" style="text-align:left;cursor:pointer;font-family:inherit;background:{{ pu.bg }};border:1.5px solid {{ pu.ring }};border-radius:12px;padding:11px 15px;display:flex;align-items:baseline;gap:10px;transition:background .18s cubic-bezier(.22,.61,.36,1),border-color .18s cubic-bezier(.22,.61,.36,1)">
+                  <button class="tap-hit" onClick="{{ pu.select }}" aria-pressed="{{ pu.on }}" style="text-align:left;cursor:pointer;font-family:inherit;background:{{ pu.bg }};border:1.5px solid {{ pu.ring }};border-radius:12px;padding:11px 15px;display:flex;align-items:baseline;gap:10px;transition:background .18s cubic-bezier(.22,.61,.36,1),border-color .18s cubic-bezier(.22,.61,.36,1)">
                     <span style="font-size:14.5px;font-weight:700;color:{{ pu.fg }}">{{ pu.label }}</span>
                     <sc-if value="{{ pu.hasNote }}" hint-placeholder-val="{{ true }}">
                       <span style="font-size:11.5px;font-weight:700;color:var(--faint)">{{ pu.note }}</span>
@@ -3354,12 +3354,12 @@
 
             <div style="display:flex;flex-direction:column;gap:9px">
               <sc-if value="{{ pv.isInr }}" hint-placeholder-val="{{ true }}">
-                <button class="giving-choice tap-hit tap-text" onClick="{{ pv.toggle80 }}" style="cursor:pointer;font-family:inherit;background:transparent;border:none;padding:0;display:flex;align-items:center;gap:10px;text-align:left">
+                <button class="giving-choice tap-hit tap-text" onClick="{{ pv.toggle80 }}" aria-pressed="{{ pv.g80On }}" style="cursor:pointer;font-family:inherit;background:transparent;border:none;padding:0;display:flex;align-items:center;gap:10px;text-align:left">
                   <span style="flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--ac-gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--ac-gold)">{{ pv.g80Mark }}</span>
                   <span style="font-size:14px;color:var(--text)">{{ pv.g80Label }}</span>
                 </button>
               </sc-if>
-              <button class="giving-choice tap-hit tap-text" onClick="{{ pv.toggleAnon }}" style="cursor:pointer;font-family:inherit;background:transparent;border:none;padding:0;display:flex;align-items:center;gap:10px;text-align:left">
+              <button class="giving-choice tap-hit tap-text" onClick="{{ pv.toggleAnon }}" aria-pressed="{{ pv.anonOn }}" style="cursor:pointer;font-family:inherit;background:transparent;border:none;padding:0;display:flex;align-items:center;gap:10px;text-align:left">
                 <span style="flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--text)">{{ pv.anonMark }}</span>
                 <span style="font-size:14px;color:var(--text)">{{ pv.anonLabel }}</span>
               </button>
@@ -34801,6 +34801,7 @@ class Component extends DCLogic {
         fg: tok(r.col),
         select: () => this.setState({ dRegime: r.k, dAmount: '' }) })),
       amounts, isOther: S.dAmount === 'other', otherVal: S.dAmountOther,
+      otherAmountLabel: (fcra ? P.amountsFcra : P.amountsInr).slice(-1)[0] + ' · ' + P.giveTitle,
       onOther: this._deferredDonorField('dAmountOther', 'amount').on, onOtherBlur: this._deferredDonorField('dAmountOther', 'amount').blur,
       freqTitle: P.freqTitle,
       freqs: P.freqs.map(f => ({ k: f.k, label: f.label, on: S.dFreq === f.k,
