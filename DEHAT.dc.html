@@ -601,6 +601,8 @@
     .svc-instory{display:none !important}
     .svc-belowstory{display:block !important}
   }
+  /* The template engine retains empty conditional project buttons as placeholders. */
+  .project-link:has(> .sc-interp:empty){display:none !important}
 </style>
 <script src="./image-slot.js"></script>
 <script src="./media-data.js"></script>
@@ -930,9 +932,9 @@
               </div>
             </div>
           </div>
-          <div class="hr-clockbox" aria-hidden="true"></div>
+          <div class="hr-clockbox"></div>
         </div>
-        <div class="hr-art" aria-hidden="true"></div>
+        <div class="hr-art"></div>
         <button class="hr-ctl" type="button"></button>
         <span class="hr-sr hr-live" role="status" aria-live="polite" aria-atomic="true"></span>
         <div class="hr-prog" aria-hidden="true"></div>
@@ -3973,11 +3975,11 @@
             </div>
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-width:0">
               <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700">{{ T.fin_from_word }}</span>
-              <select value="{{ finFromVal }}" onChange="{{ onFinFrom }}" style="appearance:none;-webkit-appearance:none;padding:8px 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;font-weight:700;cursor:pointer">
+              <select value="{{ finFromVal }}" onChange="{{ onFinFrom }}" aria-label="{{ T.fin_from_word }}" style="appearance:none;-webkit-appearance:none;padding:8px 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;font-weight:700;cursor:pointer">
                 <sc-for list="{{ finYearOpts }}" as="yo" hint-placeholder-count="20"><option value="{{ yo.v }}">{{ yo.label }}</option></sc-for>
               </select>
               <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700">{{ T.fin_to_word }}</span>
-              <select value="{{ finToVal }}" onChange="{{ onFinTo }}" style="appearance:none;-webkit-appearance:none;padding:8px 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;font-weight:700;cursor:pointer">
+              <select value="{{ finToVal }}" onChange="{{ onFinTo }}" aria-label="{{ T.fin_to_word }}" style="appearance:none;-webkit-appearance:none;padding:8px 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;font-weight:700;cursor:pointer">
                 <sc-for list="{{ finYearOpts }}" as="yt" hint-placeholder-count="20"><option value="{{ yt.v }}">{{ yt.label }}</option></sc-for>
               </select>
             </div>
@@ -35909,9 +35911,9 @@ class Component extends DCLogic {
         + ORDER.map(k => '<path class="arc ' + k + '"/>').join('')
         + TURNS.map(a => { const c = polar(ANG(a), 70), x = c[0].toFixed(1), y = c[1].toFixed(1); return '<g class="tg" data-a="' + a + '" tabindex="0" role="button"><circle class="hit" cx="' + x + '" cy="' + y + '" r="11"/><circle class="turn" data-a="' + a + '" cx="' + x + '" cy="' + y + '" r="4.8"/></g>'; }).join('')
         + [0, 3, 13, 15, 16, 18].map(a => { const c = polar(ANG(a), 107); return '<text class="tl" data-a="' + a + '" x="' + c[0].toFixed(1) + '" y="' + c[1].toFixed(1) + '">' + a + '</text>'; }).join('')
-        + '<g class="hand-g"><line class="hand" x1="100" y1="100" x2="100" y2="34"/></g><circle class="hub" cx="100" cy="100" r="5"/></svg><div class="hr-age"><b></b><span></span></div>';
-      q('.hr-art').innerHTML = '<div class="hr-canvas"><svg viewBox="0 0 1000 260" preserveAspectRatio="none"><path class="loop" vector-effect="non-scaling-stroke"/><path class="ahead" vector-effect="non-scaling-stroke"/><path class="life" vector-effect="non-scaling-stroke"/></svg>'
-        + TURNS.map(a => '<span class="hr-wound" data-a="' + a + '"></span>').join('') + '<div class="hr-head"></div></div><div class="hr-axis"></div><div class="hr-key"></div>';
+        + '<g class="hand-g"><line class="hand" x1="100" y1="100" x2="100" y2="34"/></g><circle class="hub" cx="100" cy="100" r="5"/></svg><div class="hr-age" aria-hidden="true"><b></b><span></span></div>';
+      q('.hr-art').innerHTML = '<div class="hr-canvas" aria-hidden="true"><svg viewBox="0 0 1000 260" preserveAspectRatio="none"><path class="loop" vector-effect="non-scaling-stroke"/><path class="ahead" vector-effect="non-scaling-stroke"/><path class="life" vector-effect="non-scaling-stroke"/></svg>'
+        + TURNS.map(a => '<span class="hr-wound" data-a="' + a + '"></span>').join('') + '<div class="hr-head"></div></div><div class="hr-axis" aria-hidden="true"></div><div class="hr-key"></div>';
       const stage = q('.hr-stage'), end = q('.hr-end'), ctl = q('.hr-ctl'), skip = q('.hr-skip'), live = q('.hr-live'), life = q('.life'), loopP = q('.loop'), aheadP = q('.ahead'), head = q('.hr-head'),
         handG = q('.hand-g'), ageN = q('.hr-age b'), ageL = q('.hr-age span');
       const labels = () => {
