@@ -588,10 +588,15 @@
   footer a.footer-social:hover,footer a.footer-social:focus-visible,footer button.footer-share:hover,footer button.footer-share:focus-visible{background:#FBF7EF;color:#120d07;border-color:#FBF7EF;transform:translateY(-2px)}
   footer a.footer-social:focus-visible,footer button.footer-share:focus-visible{outline:2px solid #EAAE28;outline-offset:2px}
   .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-  .cycle-sources summary{list-style:none}
-  .cycle-sources summary::-webkit-details-marker{display:none}
-  .cycle-sources summary .source-chevron{transition:transform .2s ease}
-  .cycle-sources[open] summary .source-chevron{transform:rotate(180deg)}
+  .cycle-sources{text-align:center;margin:20px auto 0;max-width:720px}
+  .cycle-sources-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:6px 8px;border:0;border-radius:7px;background:transparent;color:#fff;font-family:inherit;font-size:12px;font-weight:700;line-height:1.2;cursor:pointer}
+  .cycle-sources-toggle:focus-visible{outline:2px solid #EAAE28;outline-offset:2px}
+  .cycle-sources-track{position:relative;display:inline-block;flex:none;width:30px;height:18px;border-radius:999px;border:1px solid rgba(255,255,255,.65);background:rgba(255,255,255,.17);transition:background .18s}
+  .cycle-sources-track::after{content:'';position:absolute;top:2px;left:2px;width:12px;height:12px;border-radius:50%;background:#fff;transition:transform .18s}
+  .cycle-sources-toggle[aria-checked="true"] .cycle-sources-track{background:#EAAE28;border-color:#EAAE28}
+  .cycle-sources-toggle[aria-checked="true"] .cycle-sources-track::after{background:#1F1710;transform:translateX(12px)}
+  .cycle-sources-list{display:block;width:max-content;max-width:100%;margin:4px auto 0;padding:0 0 0 18px;text-align:left;color:rgba(255,255,255,.88);font-size:12px;line-height:1.55}
+  .cycle-sources-list li{padding:2px 0}
   @media (pointer:coarse){.st-arrow{opacity:1;pointer-events:auto}.st-dot{width:32px;height:32px}.st-dots{opacity:.7}}
   @media (max-width:820px){ input:not([type=checkbox]):not([type=radio]),select,textarea{font-size:16px !important} }
   .skip-link{position:absolute;left:12px;top:-60px;z-index:10000;padding:12px 18px;border-radius:999px;background:#EAAE28;color:#1f1710;font-weight:800;text-decoration:none}
@@ -1014,10 +1019,14 @@
             <div style="font-size:11px;color:rgba(255,255,255,.7);font-weight:600;letter-spacing:.02em">{{ T.f_source }} {{ activeNode.src }}</div>
           </div>
         </div>
-        <details class="cycle-sources" style="max-width:720px;margin:28px auto 0;border-top:1px solid rgba(255,255,255,.25);border-bottom:1px solid rgba(255,255,255,.25)">
-          <summary style="min-height:44px;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;color:#fff;font-size:13px;font-weight:800"><span>{{ T.f_source }}</span><span class="source-chevron" aria-hidden="true">⌄</span></summary>
-          <p style="text-align:center;font-size:12px;line-height:1.6;color:rgba(255,255,255,.8);margin:0 auto 18px;max-width:720px">{{ T.cycle_note }}</p>
-        </details>
+        <div class="cycle-sources">
+          <button type="button" class="cycle-sources-toggle" role="switch" aria-checked="{{ sourceSwitchChecked }}" aria-controls="cycle-source-list" onClick="{{ toggleSources }}"><span class="cycle-sources-track" aria-hidden="true"></span><span>{{ sourceSwitchLabel }}</span></button>
+          <ul id="cycle-source-list" class="cycle-sources-list" style="display:{{ sourceListDisplay }}">
+            <li>National Family Health Survey 5 (district fact sheets and state module)</li>
+            <li>Unified District Information System for Education Plus (district fact sheets)</li>
+            <li>Sample Registration System</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -4975,7 +4984,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;indexName&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Child Opportunity Gap Index&quot;,&quot;Child Vulnerability Index&quot;,&quot;Child Marginalisation Index&quot;],&quot;default&quot;:&quot;Child Opportunity Gap Index&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;District index&quot;}}">
 class Component extends DCLogic {
-  state = { booting: true, view: 'home', loop: 0, jSide: '', wQ: 0, wX: 'sol', wI: 0, wF: 'uncrc', progKey: 're', program: 0, node: 0, district: 0, story: 0, counts: {}, blStop: 0, caseFork: '', sdgTab: 'g', awardTab: 'all', impLens: 'year', projects: [], filters: {}, expanded: null, theme: 'dark', lang: 'en', navOpen: false, finYear: 0, finLens: 'prog', finBasis: 'received', finCurr: 'INR', finFrom: '', finTo: '', finSeg: '', finPick: '', jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0,
+  state = { booting: true, view: 'home', loop: 0, jSide: '', wQ: 0, wX: 'sol', wI: 0, wF: 'uncrc', progKey: 're', program: 0, node: 0, cycleSourcesOn: false, district: 0, story: 0, counts: {}, blStop: 0, caseFork: '', sdgTab: 'g', awardTab: 'all', impLens: 'year', projects: [], filters: {}, expanded: null, theme: 'dark', lang: 'en', navOpen: false, finYear: 0, finLens: 'prog', finBasis: 'received', finCurr: 'INR', finFrom: '', finTo: '', finSeg: '', finPick: '', jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0,
     // Phase D - readiness signals for the contextual, institution-anchored asks. `sigHero`
     // and `sig` are one-shot and sticky (set true, never reset false) once genuine engagement
     // happens, deliberately not tied to scroll depth. Session-only by design: this project's
@@ -38754,6 +38763,10 @@ class Component extends DCLogic {
       programs: programsView, activeProgram,
       districts, activeDistrict,
       cycleNodes, activeNode, nextNode, prevNode, ringPlay, wheelLeave,
+      sourceSwitchChecked: this.state.cycleSourcesOn ? 'true' : 'false',
+      sourceListDisplay: this.state.cycleSourcesOn ? 'block' : 'none',
+      sourceSwitchLabel: this.state.lang === 'en' ? 'Sources' : String(T.f_source || 'Sources').replace(/[:：]\s*$/, ''),
+      toggleSources: () => this.setState(s => ({cycleSourcesOn: !s.cycleSourcesOn})),
       loopCells, activeStep, goWorkFromLoop: setView('work'), wk,
       methodSteps: loopSteps,
       goInvestFromWork: this._goInvolved('give'),
