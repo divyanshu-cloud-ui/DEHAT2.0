@@ -99,12 +99,12 @@ FIN.DOCUMENTS = [
   { title:'Tax Deduction Account Number (TAN) Allotment', issuer:'Income Tax Department', period:'TAN LKND07117F', group:'statutory',
     desc:'Allotment of the Society’s TAN, quoted on every tax deducted at source challan, certificate and return.', file:'assets/docs/tan-allotment-letter.pdf' },
   // Third-party validations & recognition
-  { title:'CAF India Validation Certificate', issuer:'CAF India', period:'Validated', group:'validation',
+  { title:'CAF India Validation Certificate', issuer:'CAF India', period:'Validated 2021–2022', group:'validation',
     desc:'Due-diligence validation by Charities Aid Foundation India - an independent check of governance, finance and compliance.', file:'assets/docs/caf-validation-certificate.pdf' },
-  { title:'Tata Institute of Social Sciences Empanelment Certificate', issuer:'Tata Institute of Social Sciences', period:'Empanelled - Public Sector Undertaking', group:'validation',
+  { title:'Tata Institute of Social Sciences Empanelment Certificate', issuer:'Tata Institute of Social Sciences', period:'Empanelled 2015–2018', group:'validation',
     desc:'Empanelled with the Tata Institute of Social Sciences as an implementing partner for Public Sector Undertaking corporate social responsibility programmes.', file:'assets/docs/tiss-empanelment-certificate.pdf' },
-  { title:'BSE Sammaan Listing', issuer:'BSE (Bombay Stock Exchange)', period:'Listed organisation', group:'validation',
-    desc:'Listed on the BSE Sammaan platform, the Bombay Stock Exchange’s vetted registry connecting corporates with credible non-governmental organisations for corporate social responsibility.', file:'assets/docs/bse-sammaan.pdf' },  // Added 11 Oct 2026: essential documents that had no card (owner trimmed the list the same day). Each shows "Available on request" until published.
+  { title:'BSE Sammaan Listing', issuer:'BSE (Bombay Stock Exchange)', period:'Registered 2018', group:'validation',
+    desc:'Registered on the BSE Sammaan platform, the Bombay Stock Exchange’s vetted registry connecting corporates with credible non-governmental organisations for corporate social responsibility.', file:'assets/docs/bse-sammaan.pdf' },  // Added 11 Oct 2026: essential documents that had no card (owner trimmed the list the same day). Each shows "Available on request" until published.
   { title:'NGO Darpan Registration', issuer:'NITI Aayog', period:'UP/2009/0023065', group:'statutory',
     desc:'DEHAT’s registration on NITI Aayog’s NGO Darpan portal, the Government of India directory of voluntary organisations.', file:'assets/docs/ngo-darpan-registration.pdf' },
   { title:'FCRA Designated Bank Account Confirmation', issuer:'State Bank of India, New Delhi Main Branch', period:'Designated account', group:'fcra',
