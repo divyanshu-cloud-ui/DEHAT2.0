@@ -36130,11 +36130,14 @@ class Component extends DCLogic {
         if (AHEAD >= from) later(() => { focus = null; set({ ahead: 1 }); refresh(); }, AHEAD - from);
         later(rest, Math.max(0, END - from));
       };
+      let played = false;
       const play = () => {
         clear(); end.classList.remove('in'); stage.innerHTML = ''; focus = null; el.classList.remove('hr-rest');
         q('.hr-prog').style.animation = ''; q('.hr-prog').style.animationDelay = ''; q('.hr-prog').style.width = '';
         Object.keys(S).forEach(n => { S[n] = Tg[n] = 0; }); S.reveal = Tg.reveal = S.hand = Tg.hand = -1; render();
-        el.classList.remove('hr-paused'); void el.offsetWidth; el.classList.add('hr-playing');
+        // The forced reflow restarts the progress animation on a replay. The first play has no
+        // animation to restart, and forcing layout then cost a full-page layout during boot.
+        el.classList.remove('hr-paused'); if (played) void el.offsetWidth; played = true; el.classList.add('hr-playing');
         state = 'playing'; el.dataset.heroState = 'playing'; beatNow = 0; frozen = false; elapsed = 0; startedAt = Date.now(); schedule(0); labels();
         if (document.querySelector('#launch-live [role="dialog"]')) { sysPaused = true; pause(); }
       };
