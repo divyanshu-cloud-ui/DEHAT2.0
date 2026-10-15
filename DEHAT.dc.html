@@ -35974,8 +35974,6 @@ class Component extends DCLogic {
       let timers = [], startedAt = 0, elapsed = 0, state = 'rest', raf = 0, last = 0, focus = null, lang = null, nameSig = null, beatNow = 0, sysPaused = false, frozen = false;
       let reduce = false;
       try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
-      const seen = () => { try { return sessionStorage.getItem('dehat.hero.seen') === '1'; } catch (e) { return false; } };
-      const markSeen = () => { try { sessionStorage.setItem('dehat.hero.seen', '1'); } catch (e) {} };
       const D = () => self._heroData;
       const sinkY = (a) => { let y = 74 + 5.6 * (a + 1); TURNS.forEach(c => { y += 30 * gauss(a, c, .4); }); return y; };
       const liftY = (a) => 104 - 2.7 * (a + 1);
@@ -36067,7 +36065,7 @@ class Component extends DCLogic {
         clear(); stage.innerHTML = ''; el.classList.remove('hr-playing', 'hr-paused'); el.classList.add('hr-rest'); state = 'rest'; el.dataset.heroState = 'rest'; el.dataset.heroBeat = '12'; live.textContent = ''; focus = null;
         q('.hr-prog').style.animation = 'none'; q('.hr-prog').style.width = '100%';
         set({ reveal: 18, hand: 18, loop: 0, re: 1, sol: 1, hp: 1, cj: 1, ahead: 1 }); end.classList.add('in'); labels(); refresh();
-        window.__dehatHeroDone = true; markSeen();
+        window.__dehatHeroDone = true;
       };
       const schedule = (from) => {
         AT.forEach((t, i) => { if (t >= from) later(() => show(i), t - from); });
@@ -36203,12 +36201,12 @@ class Component extends DCLogic {
       // A language change re-labels the art and plays the film again in the new language.
       this._heroSync = () => {
         const d = D();
-        if (lang !== d.lang) { lang = d.lang; nameSig = d.sig; labels(); if (reduce || seen()) rest(); else play(); }
+        if (lang !== d.lang) { lang = d.lang; nameSig = d.sig; labels(); if (reduce || window.__dehatHeroDone) rest(); else play(); }
         else if (nameSig !== d.sig) { nameSig = d.sig; labels(); render(); }
       };
       lang = D().lang; nameSig = D().sig; labels(); render();
-      // It plays once when the page loads (and again on a language change); a re-render, such as the theme switch, keeps the resting frame.
-      if (reduce || seen() || window.__dehatHeroDone) rest(); else play();
+      // A full Home load plays the film. In-app returns to Home keep the resting frame.
+      if (reduce || window.__dehatHeroDone) rest(); else play();
       onVisibility();
     };
     return this._heroMountFn;

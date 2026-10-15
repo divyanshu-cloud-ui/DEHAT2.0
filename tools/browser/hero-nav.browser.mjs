@@ -8,7 +8,7 @@ const root = process.cwd();
 const output = '/private/tmp/dehat-hero-186-frames';
 const playwright = process.env.PLAYWRIGHT_MODULE;
 
-test('hero plays once, navigates in both directions, and stays accessible', async () => {
+test('hero replays on full load, rests after in-app return, and stays accessible', async () => {
   if (!playwright) throw new Error('Set PLAYWRIGHT_MODULE');
   const {chromium} = await import(playwright.startsWith('file:') ? playwright : pathToFileURL(playwright).href);
   const local = await proofServer(root);
@@ -49,7 +49,12 @@ test('hero plays once, navigates in both directions, and stays accessible', asyn
     await page.keyboard.press('ArrowDown'); assert.equal(await state(page), 'rest');
     await accessible(page);
     await page.screenshot({path:output + '/desktop-rest.png'});
-    await page.reload(); await ready(page); assert.equal(await state(page), 'rest');
+    await page.reload(); await ready(page); assert.equal(await state(page), 'playing');
+    await page.locator('.footer-nav-link[data-prefetch="stories"]').click();
+    await page.waitForFunction(() => window.DEHAT_LAUNCH?.route?.view === 'stories');
+    await page.locator('.footer-nav-link[data-prefetch="home"]').click();
+    await page.waitForFunction(() => window.DEHAT_LAUNCH?.route?.view === 'home');
+    assert.equal(await state(page), 'rest');
     await page.locator('#launch-live .hr-ctl').click(); assert.equal(await state(page), 'playing');
     await page.keyboard.press('Escape'); assert.equal(await state(page), 'rest');
     await desktop.close();

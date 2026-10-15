@@ -120,6 +120,7 @@ async function start() {
     if (legacy?.replaceTo) history.replaceState(null, '', legacy.replaceTo);
     if (route.status === 301) { history.replaceState(null, '', route.redirectTo); route = router.parseUrl(current()); }
     if (route.status !== 200 || route.kind !== 'app') throw new Error('No matching app route');
+    window.__dehatHeroDone = route.view !== 'home';
     const [routeData, partnerData] = await Promise.all([
       loadModules(routeModules[route.view] || {}),
       route.view === 'involved' ? loadPartner(route.lang) : Promise.resolve(null),
@@ -203,6 +204,7 @@ async function start() {
         catch { location.assign(destination); return; }
       }
       if (current() !== destination) { applying = false; return; }
+      if (next.view !== 'home') window.__dehatHeroDone = true;
       route = next; window.DEHAT_LAUNCH.route = route; applying = true;
       instance.setState(routePatch(route, records), () => {
         applying = false;
@@ -243,6 +245,7 @@ async function start() {
           } catch { location.assign(destination); return; }
           finally { applying = false; }
           history.pushState(null, '', destination); route = router.parseUrl(destination);
+          if (route.view !== 'home') window.__dehatHeroDone = true;
           window.DEHAT_LAUNCH.route = route;
           component._navMeasure?.(); component._spineScan(); component._revealAll();
         }
