@@ -174,7 +174,7 @@
   <div id="panel"><button id="panelClose" aria-label="Close panel">×</button><div id="panelBody"><div class="placeholder" id="ph"></div></div></div>
 </div>
 
-<script src="./district-data.js?v=37"></script>
+<script src="./district-data.js?v=38"></script>
 <script>
 (function(){
   const A = window.ATLAS;
@@ -218,10 +218,10 @@
     return clampNorm(key, r.v);
   }
   // per-indicator normalisation range (rough, human-set so colours read well)
-  const RANGES = { imr:[20,90], u5mr:[25,115], mmr:[30,170], stunting:[25,55], wasting:[13,23], anaemia:[45,70],
-    homebirth:[4,40], noEarlyBF:[55,90], noANC:[30,60], noPostnatal:[10,56], noICDS:[30,76], femaleIlliteracy:[17,68],
-    dropout:[8,25], menstrualGap:[13,60], childMarriage:[8,38], adolMothers:[1,9], spousalViolence:[21,38],
-    childLabor:[1,13], lowWealth:[5,44], noCleanFuel:[10,83], noCleanWater:[1,9], noSanitation:[6,56], phcGap:[4,51],
+  const RANGES = { mmr:[30,170], stunting:[25,55], wasting:[13,23], anaemia:[45,70],
+    homebirth:[4,40], noEarlyBF:[55,90], noANC:[30,60], noPostnatal:[10,56], femaleIlliteracy:[17,68],
+    menstrualGap:[13,60], childMarriage:[8,38], adolMothers:[1,9], spousalViolence:[21,38],
+    noCleanFuel:[10,83], noCleanWater:[1,9], noSanitation:[6,56],
     secDropout:[1,15], transitionGap:[5,50], secPTR:[22,52], cwsnToiletGap:[10,85], outMigration:[25000,225000], interStateMig:[100,6000] };
   function clampNorm(key, v){
     const r = RANGES[key]; if(!r) return 0.5;
@@ -422,8 +422,8 @@
       `Tap any district to open its full child profile: each indicator, its value and its named source, grouped along the vulnerability cycle. `+
       `Shade the map by any of ${A.indicators.filter(i=>i.worseHigh).length} indicators, filter by state or presence, rank the districts, or compare two side by side.`+
       `<div class="disclaim" style="border-left:2px solid #EAAE28;padding-left:14px"><b style="color:var(--text)">How the index is built.</b> Each indicator is scored as a distance from the best-performing district in this set, then averaged into a single 0\u2013100 figure. A district at 0 sits where the strongest district here sits; 100 is the furthest anyone in the set falls from it. Because the benchmark is a real district and not a national ideal, every point on the scale is a distance that has already been closed somewhere. The index decides where DEHAT goes next, and it is the same figure the work is reported back against \u2014 a district that improves should move down it.<br><br><b style="color:var(--text)">What an index is, and is not.</b> It is not a verdict on a place or its people. It is a measure of how far a public system sits from what it already promises, expressed as one number so that every district here can be compared honestly and priorities can be argued with rather than asserted.</div>`+
-      `<div class="disclaim"><b style="color:var(--text)">On the data.</b> Every figure is drawn from DEHAT's Vulnerability Index — ${A.indicators.length} indicators across ${A.districts.length} districts, each traced to a named source: the NFHS-5 (2019\u201321) district fact-sheet dataset (MoHFW / IIPS) for health, nutrition, WASH and gender; UDISE+ district fact sheets for schooling and child migration; SRS for maternal mortality, which is state-level by construction; and NITI Aayog / Jal Shakti / HMIS records for the remainder. The seven schooling &amp; mobility indicators are tagged by their link to the Structural Vulnerability Cycle — <b style="color:var(--text)">direct</b> (labour, trafficking, exploitation), <b style="color:var(--text)">indirect</b> (retention &amp; school conditions) or <b style="color:var(--text)">intersectional</b> (overlapping caste, tribe, minority, disability &amp; gender disadvantage). Migration is a student-volume count, so it is shown and shadeable but held out of the composite index. Every health, nutrition, WASH and gender figure comes from a single survey round, so districts are compared like with like. Spousal violence is collected in the NFHS state module only and is shown as the state figure everywhere. `+
-      `Maternal mortality is reported at state level, badged as such. Every value carries the sheet it came from. Nine indicators \u2014 child labour, ICDS reach, PHC proximity, lowest wealth quintile, SC+ST share, girls\u2019 dropout, secondary-stage dropout, and infant and under-5 mortality \u2014 are still carried from the Vulnerability Index workbook and await re-verification against their cited originals.</div>`;
+      `<div class="disclaim"><b style="color:var(--text)">On the data.</b> Every figure is drawn from DEHAT's Vulnerability Index — ${A.indicators.length} indicators across ${A.districts.length} districts, each traced to a named source: the NFHS-5 (2019\u201321) district fact-sheet dataset (MoHFW / IIPS) for health, nutrition, WASH and gender; UDISE+ district fact sheets for schooling, secondary-stage dropout and child migration; and SRS for maternal mortality, which is state-level by construction. The seven schooling &amp; mobility indicators are tagged by their link to the Structural Vulnerability Cycle — <b style="color:var(--text)">direct</b> (labour, trafficking, exploitation), <b style="color:var(--text)">indirect</b> (retention &amp; school conditions) or <b style="color:var(--text)">intersectional</b> (overlapping caste, tribe, minority, disability &amp; gender disadvantage). Migration is a student-volume count, so it is shown and shadeable but held out of the composite index. Every health, nutrition, WASH and gender figure comes from a single survey round, so districts are compared like with like. Spousal violence is collected in the NFHS state module only and is shown as the state figure everywhere. `+
+      `Maternal mortality is reported at state level, badged as such. Every value carries the sheet it came from. Measures with no official district source, such as infant and under-5 mortality and child labour, are left out rather than estimated.</div>`;
   }
 
   // ----- deep-dive panel -----

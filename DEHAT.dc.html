@@ -38719,7 +38719,7 @@ class Component extends DCLogic {
         // wasted first request carrying the literal, unresolved "{{ theme }}" text, then a
         // second corrected request once the framework patched the attribute. Setting it here
         // means only one request ever fires, already carrying the right value.
-        if (el && !el.src) el.src = './district-map.html?v=37&theme=' + this.state.theme;
+        if (el && !el.src) el.src = './district-map.html?v=38&theme=' + this.state.theme;
       },
       goHome: setView('home'), goWork: setView('work'),
       goDonate: this._goInvolved('give'),
