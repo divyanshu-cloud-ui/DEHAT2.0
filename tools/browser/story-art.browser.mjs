@@ -27,17 +27,11 @@ test('six story illustrations load at desktop and phone widths and survive pre-r
         const response=await page.goto(local.origin+'/stories/'+slug);
         assert.equal(response.status(),200);
         await page.waitForFunction(()=>window.DEHAT_LAUNCH_DIAGNOSTICS?.phase==='ready');
-        const result=await page.locator('.story-art-plate').evaluate(async el=>{
-          const css=getComputedStyle(el).backgroundImage;
-          const url=css.match(/url\(["']?([^"')]+)/)?.[1];
-          if(!url)return {css,naturalWidth:0,status:0};
-          const src=new URL(url,document.baseURI).href;
-          const image=new Image();image.src=src;
+        const result=await page.locator('.story-art-plate img').evaluate(async image=>{
           await image.decode();
-          return {css,naturalWidth:image.naturalWidth,status:(await fetch(src)).status};
+          return {src:image.currentSrc,naturalWidth:image.naturalWidth,status:(await fetch(image.currentSrc)).status};
         });
-        assert.notEqual(result.css,'none',`${slug} ${width} has no art`);
-        assert.match(result.css,new RegExp(art),`${slug} ${width} has the wrong art`);
+        assert.match(result.src,new RegExp(art),`${slug} ${width} has the wrong art`);
         assert.equal(result.status,200,`${slug} ${width} asset status`);
         assert.ok(result.naturalWidth>0,`${slug} ${width} asset did not decode`);
         console.log(JSON.stringify({slug,width,status:result.status,naturalWidth:result.naturalWidth}));
@@ -53,7 +47,7 @@ test('six story illustrations load at desktop and phone widths and survive pre-r
       const html=await (await fetch(local.origin+route.path)).text();
       const art=stories.find(([slug])=>route.path.endsWith(slug))[1];
       assert.match(html,/story-art-plate/,`${route.path} missing art element`);
-      assert.match(html,new RegExp(`assets/story/[^"<>]*${art}`),`${route.path} raw HTML omits image URL`);
+      assert.match(html,new RegExp(`assets/story/[^"<>]*${art}-480.avif`),`${route.path} raw HTML omits responsive art`);
       console.log(JSON.stringify({prebuilt:route.path,imageUrlInHtml:true,bytes:Buffer.byteLength(html)}));
     }});
   } finally {
