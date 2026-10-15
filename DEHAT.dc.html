@@ -209,6 +209,27 @@
   .loop-arrow span{display:block;animation:loopFlow 3.2s ease-in-out infinite}
   .loop-grid{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);grid-template-rows:auto auto auto;gap:clamp(10px,1.6vw,20px);align-items:stretch;max-width:1060px;margin:0 auto}
   @media (max-width:880px){.loop-grid{display:flex;flex-direction:column}.loop-arrow{display:none}.loop-centre{order:-1}}
+  .loop-phone{display:none}
+  @media (max-width:760px){
+    .loop-grid{display:none}
+    .loop-phone{display:grid;gap:10px}
+    .loop-phone-row{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--surface)}
+    .loop-phone-row[data-on="true"]{border-color:var(--loop-color)}
+    .loop-phone-button{display:flex;align-items:center;gap:13px;width:100%;min-height:80px;padding:12px 16px;border:0;background:transparent;text-align:left;cursor:pointer;color:var(--text)}
+    .loop-phone-button:focus-visible{outline:2px solid var(--loop-color);outline-offset:-3px}
+    .loop-phone-art{flex:none;width:54px;height:54px;background-size:contain;background-repeat:no-repeat;background-position:center}
+    .loop-phone-detail{padding:0 18px 18px;padding-inline-start:83px;color:var(--dim);font-size:14.5px;line-height:1.55}
+    .loop-phone-detail p{margin:0 0 12px}
+    .loop-phone-handoff{padding-top:10px;border-top:1px solid var(--border);color:var(--faint);font-size:12px;line-height:1.5}
+    .who-teaser-copy{display:contents}
+    .who-teaser-intro{order:0}
+    .who-teaser-faces.who-teaser-faces{order:1;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important}
+    .who-teaser-faces button{min-width:0}
+    .who-teaser-selected{order:2;min-height:0!important;margin:0!important}
+    .who-teaser-actions{order:3}
+    .who-teaser-foot{order:4}
+    .home-active-program{scroll-margin-top:145px}
+  }
   @media (prefers-reduced-motion:reduce){.loop-arrow span{animation:none;opacity:.7}}
   html[data-spine-on] body{padding-bottom:74px}
   @keyframes inkIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
@@ -1078,9 +1099,24 @@
         </sc-for>
       </div>
 
+      <div class="loop-phone" role="group" aria-label="{{ T.process_head }}">
+        <sc-for list="{{ loopPhone }}" as="step" hint-placeholder-count="4">
+          <div class="loop-phone-row" data-on="{{ step.expanded }}" style="--loop-color:{{ step.color }}">
+            <button class="loop-phone-button" onClick="{{ step.select }}" aria-expanded="{{ step.expanded }}">
+              <span class="loop-phone-art" aria-hidden="true" style="background-image:{{ step.imgCss }}"></span>
+              <span style="flex:1;min-width:0"><span style="display:block;font-size:11px;font-weight:800;letter-spacing:.12em;color:{{ step.textTok }}">{{ step.step }}</span><span style="display:block;font-family:'Bricolage Grotesque';font-size:17px;font-weight:800;line-height:1.2">{{ step.name }}</span></span>
+              <span aria-hidden="true" style="font-size:20px;color:var(--faint)">{{ step.glyph }}</span>
+            </button>
+            <sc-if value="{{ step.on }}" hint-placeholder-val="{{ false }}">
+              <div class="loop-phone-detail"><p>{{ step.body }}</p><div class="loop-phone-handoff">{{ step.handoff }}</div></div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+
       <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin-top:clamp(24px,3vw,36px)">
         <span style="font-size:13px;color:var(--faint);text-wrap:pretty">{{ T.method_footnote }}</span>
-        <button onClick="{{ goWorkFromLoop }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:1.5px solid var(--ac-crimson);background:none;color:var(--ac-crimson);transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:var(--ac-crimson);color:#fff">{{ T.method_cta }}</button>
+        <button onClick="{{ goWorkFromLoop }}" style="min-height:44px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:1.5px solid var(--ac-crimson);background:none;color:var(--ac-crimson);transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:var(--ac-crimson);color:#fff">{{ T.method_cta }}</button>
       </div>
     </section>
 
@@ -1104,7 +1140,7 @@
               </button>
             </sc-for>
           </div>
-          <div key="{{ activeProgram.name }}" class="rise" style="position:relative;border-radius:22px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column">
+          <div key="{{ activeProgram.name }}" class="rise home-active-program" style="position:relative;border-radius:22px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column">
             <div style="height:8px;background:{{ activeProgram.color }};flex:none"></div>
             <div style="position:relative;flex:1;padding:clamp(20px,2.4vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:clamp(16px,2vw,26px)">
               <div style="display:flex;align-items:center;gap:16px">
@@ -1122,7 +1158,7 @@
                     <div style="font-size:12px;color:var(--faint);margin-top:4px;max-width:168px;line-height:1.35">{{ st.label }}</div>
                   </div>
                 </sc-for>
-                <button onClick="{{ activeProgram.open }}" style="margin-left:auto;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:none;background:{{ activeProgram.color }};color:{{ activeProgram.ink }};transition:transform .18s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.open_programme_home }}</button>
+                <button onClick="{{ activeProgram.open }}" style="margin-left:auto;min-height:44px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:none;background:{{ activeProgram.color }};color:{{ activeProgram.ink }};transition:transform .18s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.open_programme_home }}</button>
               </div>
             </div>
           </div>
@@ -1187,22 +1223,24 @@
 
     <section data-spine="Who Is Behind This" data-screen-label="Who teaser" style="border-top:1px solid var(--border);padding:clamp(48px,6vw,86px) clamp(20px,5vw,64px);max-width:1200px;margin:0 auto">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:center">
-        <div style="min-width:0">
+        <div class="who-teaser-copy" style="min-width:0">
+          <div class="who-teaser-intro">
           <span style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--ac-purple)">{{ T.who_teaser_eyebrow }}</span>
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.6vw,44px);line-height:1.06;letter-spacing:-.02em;color:var(--text);margin:14px 0 14px;max-width:22ch;text-wrap:pretty">{{ whoTeaser.head }}</h2>
           <p style="font-size:16.5px;line-height:1.7;color:var(--dim);margin:0 0 22px;max-width:56ch;text-wrap:pretty">{{ whoTeaser.body }}</p>
-          <div style="min-height:96px;margin:0 0 22px">
+          </div>
+          <div class="who-teaser-selected" aria-live="polite" style="min-height:96px;margin:0 0 22px">
             <span style="display:block;font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;line-height:1.2;color:var(--text)">{{ whoTeaser.name }}</span>
             <span style="display:block;font-size:14.5px;line-height:1.5;color:var(--dim);margin-top:6px">{{ whoTeaser.role }}</span>
             <span style="display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--faint);margin-top:8px">{{ whoTeaser.meta }}</span>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <div class="who-teaser-actions" style="display:flex;flex-wrap:wrap;gap:12px">
             <button onClick="{{ whoTeaser.go }}" style="cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:800;padding:14px 24px;border-radius:999px;border:none;background:var(--ac-purple);color:var(--bg);transition:transform .24s cubic-bezier(.22,.61,.36,1),filter .24s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px);filter:brightness(1.06)">{{ whoTeaser.cta }}</button>
             <button onClick="{{ whoTeaser.goStory }}" style="cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:700;padding:14px 24px;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--text);transition:transform .24s cubic-bezier(.22,.61,.36,1),border-color .24s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px);border-color:var(--ac-purple)">{{ whoTeaser.cta2 }}</button>
           </div>
-          <p style="font-size:13.5px;line-height:1.6;color:var(--faint);margin:16px 0 0;max-width:52ch">{{ whoTeaser.foot }}</p>
+          <p class="who-teaser-foot" style="font-size:13.5px;line-height:1.6;color:var(--faint);margin:16px 0 0;max-width:52ch">{{ whoTeaser.foot }}</p>
         </div>
-        <div style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:10px">
+        <div class="who-teaser-faces" style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:10px">
           <sc-for list="{{ whoTeaser.faces }}" as="f" hint-placeholder-count="8">
             <button onClick="{{ f.pick }}" aria-label="{{ f.label }}" aria-pressed="{{ f.pressed }}" style="cursor:pointer;padding:0;border-radius:14px;overflow:hidden;border:1px solid {{ f.ring }};background:var(--surface2);aspect-ratio:4 / 5;transition:border-color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1),opacity .45s cubic-bezier(.22,.61,.36,1);opacity:{{ f.op }}" style-hover="transform:translateY(-3px);opacity:1">
               <sc-if value="{{ f.hasSrc }}" hint-placeholder-val="{{ false }}">
@@ -5949,7 +5987,19 @@ class Component extends DCLogic {
     // `pronoun` column is a garbled survey export (values do not line up with their rows),
     // so it cannot be used to select on gender.
     const ids = ['t33', 't28', 't17', 't34', 't10', 't21', 't12', 't15'];
-    const PROF = ((this._wp || {}).PROFILES) || {};
+    // Home does not download the full Who roster. Keep just these eight public
+    // identity fields available so names and roles are present on first paint.
+    const HOME_PROFILES = this._homeProfiles || (this._homeProfiles = {
+      t33: { name:'Devyani Chaturvedi', role:'Executive Director · Core Team and Strategic Leadership Team', place:'Bahraich', joined:2021 },
+      t28: { name:'Shwetha', role:'Programme Director · Core Team and Strategic Leadership Team', place:'Bahraich', joined:2023 },
+      t17: { name:'Vindhyavasini', role:'Grassroots Anchor, Human Protection', place:'Bahraich', joined:2018 },
+      t34: { name:'Nirmala Shahi', role:'Grassroots Anchor, Counsellor, Human Protection', place:'Rupaidiha, Bahraich', joined:2013 },
+      t10: { name:'Sarita Kumari', role:'Grassroots Anchor, SRHR and Climate Justice', place:'Bhedhanpurwa, Mihinpurwa Block, Bahraich', joined:2024 },
+      t21: { name:'Sarita Srivastava', role:'Grassroots Anchor, SRHR, Rights and Entitlements', place:'Nawabganj and Mihinpurwa, Bahraich', joined:2020 },
+      t12: { name:'Kumari Pranjali', role:'Grassroots Anchor, Climate Justice', place:'Fakirpur, Sujauli, Bahraich', joined:2026 },
+      t15: { name:'Lakshmi Devi', role:'Grassroots Anchor, Human Protection', place:'Sirsiya, Shrawasti', joined:2023 },
+    });
+    const PROF = ((this._wp || {}).PROFILES) || HOME_PROFILES;
     const sel = this.state.homeFace || ids[0];
     const P = PROF[sel] || {};
     const dist = this._districtOf(P.role, P.place);
@@ -37734,7 +37784,14 @@ class Component extends DCLogic {
       open: openProg(programs[this.state.program].key),
     });
     const programsView = programs.map((p, i) => ({
-      ...p, select: () => this.setState({ program: i }),
+      ...p, select: () => {
+        this.setState({ program: i });
+        if (window.innerWidth <= 760) requestAnimationFrame(() => {
+          document.querySelector('.home-active-program')?.scrollIntoView({
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start',
+          });
+        });
+      },
       bg: this.state.program === i ? 'var(--surface)' : 'rgba(251,247,239,.06)',
       border: this.state.program === i ? 'transparent' : 'rgba(251,247,239,.14)',
       textColor: this.state.program === i ? 'var(--text)' : '#fbf7ef',
@@ -37795,6 +37852,10 @@ class Component extends DCLogic {
       stationAt(3, 1, 3),
       arrowAt('a3', 1, 2, '\u2191', loopSteps[3].tok, 2400),
     ];
+    const loopPhone = loopSteps.map((s, i) => ({
+      ...s, k:'phone-' + s.step, on:li === i, expanded:li === i ? 'true' : 'false',
+      glyph:li === i ? '\u2212' : '+', select:() => this.setState({ loop:i }),
+    }));
 
     // ---- Our Work: the architecture behind the four programmes ----
     const AR = this._arch();
@@ -38802,7 +38863,7 @@ class Component extends DCLogic {
       sourceListDisplay: this.state.cycleSourcesOn ? 'block' : 'none',
       sourceSwitchLabel: this.state.lang === 'en' ? 'Sources' : String(T.f_source || 'Sources').replace(/[:：]\s*$/, ''),
       toggleSources: () => this.setState(s => ({cycleSourcesOn: !s.cycleSourcesOn})),
-      loopCells, activeStep, goWorkFromLoop: setView('work'), wk,
+      loopCells, loopPhone, activeStep, goWorkFromLoop: setView('work'), wk,
       methodSteps: loopSteps,
       goInvestFromWork: this._goInvolved('give'),
       goPartnerFromWork: this._goInvolved('people'),
