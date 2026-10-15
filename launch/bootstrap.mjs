@@ -14,7 +14,10 @@ const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
 const afterFirstPaint = () => new Promise(resolve => {
   let done = false, quiet = 0, painted = false;
   const go = () => { if (!done) { done = true; clearTimeout(quiet); setTimeout(resolve, 0); } };
-  const settle = () => { clearTimeout(quiet); quiet = setTimeout(go, 250); };
+  // A web font arriving repaints the text in it, which is a new largest paint: wait for the
+  // fonts the first screen uses too.
+  const fontsReady = () => (document.fonts?.ready || Promise.resolve()).then(go, go);
+  const settle = () => { clearTimeout(quiet); quiet = setTimeout(fontsReady, 250); };
   try {
     new PerformanceObserver(list => { if (painted && list.getEntries().length) settle(); }).observe({type: 'largest-contentful-paint', buffered: true});
   } catch { /* Largest paint timing is not exposed by every browser. */ }
