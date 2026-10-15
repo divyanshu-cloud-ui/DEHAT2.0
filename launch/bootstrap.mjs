@@ -294,6 +294,12 @@ async function start() {
     fallback?.remove(); delete document.documentElement.dataset.earlyLoading;
     host.removeAttribute('inert'); host.removeAttribute('aria-hidden');
     host.classList.add('launch-active'); liveReady = true;
+    // The section tab strip renders from _spineScan's result, which only schedules a render for
+    // the next frame: the first live frame painted without the strip and the page then dropped by
+    // its height (a 0.05 layout shift). Render it now, before the browser paints the live page.
+    component._spineScan();
+    if (component._updateFrame) { cancelAnimationFrame(component._updateFrame); component._updateFrame = 0; }
+    if (window.ReactDOM?.flushSync) window.ReactDOM.flushSync(() => component.forceUpdate());
     component._navMeasure?.(); component._spineScan(); component._revealAll();
     await frame(); await frame();
     diagnostics.animationsBeforeBudget = document.getAnimations().filter(animation => animation.playState === 'running').length;

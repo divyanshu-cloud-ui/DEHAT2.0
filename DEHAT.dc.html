@@ -36267,7 +36267,9 @@ class Component extends DCLogic {
       el.addEventListener('touchcancel', () => { touchActive = false; }, { passive: true });
       try { new IntersectionObserver((ents) => {
         const vis = ents[ents.length - 1].isIntersecting;
-        if (!vis && state === 'playing') { sysPaused = true; pause(); } else if (vis && !document.hidden && sysPaused) { sysPaused = false; resume(); }
+        // Coming back into view never resumes over an open dialog (the cookie banner covers the film);
+        // the dialog observer below resumes it once the dialog closes.
+        if (!vis && state === 'playing') { sysPaused = true; pause(); } else if (vis && !document.hidden && sysPaused && !document.querySelector('#launch-live [role="dialog"]')) { sysPaused = false; resume(); }
       }, { threshold: 0.25 }).observe(el); } catch (e) {}
       const onVisibility = () => { if (!el.isConnected) { document.removeEventListener('visibilitychange', onVisibility); dialogObserver.disconnect(); return; } const blocked = document.hidden || !!document.querySelector('#launch-live [role="dialog"]'); if (blocked && state === 'playing') { sysPaused = true; pause(); } else if (!blocked && sysPaused && el.getBoundingClientRect().bottom > 0 && el.getBoundingClientRect().top < innerHeight) { sysPaused = false; resume(); } };
       document.addEventListener('visibilitychange', onVisibility);
