@@ -5078,6 +5078,7 @@ class Component extends DCLogic {
       if (s.getPropertyValue(name) !== value) s.setProperty(name, value);
     };
     this._navMeasure = () => {
+      if (this._liveHidden()) return;
       try {
         // Read every box first, then write: alternating reads and writes forced a fresh
         // layout of the whole page for each measurement.
@@ -5497,6 +5498,12 @@ class Component extends DCLogic {
   componentWillUnmount() { this._privacyReset(false); this._menuReset(false); try { document.removeEventListener('pointerdown', this._onDocDown, true); window.removeEventListener('keydown', this._onEsc); } catch (e) {} try { if (this._navRO) this._navRO.disconnect(); if (this._navMeasure) window.removeEventListener('resize', this._navMeasure); } catch (e) {} try { if (this._jBound) { window.removeEventListener('scroll', this._jBound); window.removeEventListener('resize', this._jBound); } } catch (e) {} clearInterval(this._timer); clearInterval(this._revealTimer); if (this._deckBound) { window.removeEventListener('scroll', this._deckBound); } if (this._revealBound) { window.removeEventListener('scroll', this._revealBound); window.removeEventListener('resize', this._revealBound); } if (this._io) this._io.disconnect(); if (this._mo) this._mo.disconnect(); if (this._storyObserver) this._storyObserver.disconnect(); if (this._scanFrame) cancelAnimationFrame(this._scanFrame); if (this._raf) cancelAnimationFrame(this._raf); if (this._updateFrame) cancelAnimationFrame(this._updateFrame); }
 
   // ---------- scroll reveal + section anchoring ----------
+  // While the launch adapter builds the live page behind its snapshot, layout skips the hidden
+  // copy (content-visibility). Measuring it then would force that whole layout for nothing:
+  // bootstrap.mjs re-runs _navMeasure, _spineScan and _revealAll the moment the live page shows.
+  _liveHidden() {
+    try { return !!document.querySelector('#launch-live:not(.launch-active)'); } catch (e) { return false; }
+  }
   _revealAll() {
     try { document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('shown')); } catch (e) {}
   }
@@ -5516,6 +5523,7 @@ class Component extends DCLogic {
     } catch (e) { this._revealAll(); }
   }
   _revealScan() {
+    if (this._liveHidden()) return;
     try {
       const h = window.innerHeight - 30;
       document.querySelectorAll('[data-reveal]:not(.shown)').forEach(el => {
@@ -5525,7 +5533,7 @@ class Component extends DCLogic {
     this._spineScan();
   }
   _spineScan() {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined' || this._liveHidden()) return;
     try {
       const els = Array.prototype.slice.call(document.querySelectorAll('main [data-spine]'));
       const root = document.documentElement;
