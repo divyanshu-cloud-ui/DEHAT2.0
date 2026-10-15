@@ -7,19 +7,25 @@ import {PARTNER_TABS} from './partner-tabs.mjs';
 
 const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
 // The pre-rendered snapshot is the page a reader sees first. Start the heavy runtime downloads
-// only once it has painted, so they do not compete with the first screen for the network.
-// Capped so a browser without paint timing still boots promptly.
+// only once its first screen has painted, including a late hero image (story art paints a moment
+// after the text), so they do not compete with that screen for the network: wait for the first
+// contentful paint, then for the largest paint to stay unchanged for a short quiet window.
+// Capped so a slow image, a background tab or a browser without paint timing still boots promptly.
 const afterFirstPaint = () => new Promise(resolve => {
-  let done = false;
-  const go = () => { if (!done) { done = true; setTimeout(resolve, 0); } };
+  let done = false, quiet = 0, painted = false;
+  const go = () => { if (!done) { done = true; clearTimeout(quiet); setTimeout(resolve, 0); } };
+  const settle = () => { clearTimeout(quiet); quiet = setTimeout(go, 250); };
   try {
-    if (performance.getEntriesByName('first-contentful-paint').length) return go();
-    new PerformanceObserver((list, observer) => {
+    new PerformanceObserver(list => { if (painted && list.getEntries().length) settle(); }).observe({type: 'largest-contentful-paint', buffered: true});
+  } catch { /* Largest paint timing is not exposed by every browser. */ }
+  try {
+    const first = () => { painted = true; settle(); };
+    if (performance.getEntriesByName('first-contentful-paint').length) first();
+    else new PerformanceObserver((list, observer) => {
       if (!list.getEntriesByName('first-contentful-paint').length) return;
-      observer.disconnect(); go();
+      observer.disconnect(); first();
     }).observe({type: 'paint', buffered: true});
-  } catch { /* Paint timing is not exposed by every browser. */ }
-  addEventListener('load', go, {once: true});
+  } catch { addEventListener('load', go, {once: true}); }
   setTimeout(go, 1500);
 });
 const script = src => new Promise((resolve, reject) => {
