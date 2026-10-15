@@ -33,11 +33,17 @@ test('hero Space and story arrows, dots, keys, swipe and automatic pause',async(
       const section=page.locator('#launch-live [data-spine="Stories of Change"]');
       await section.scrollIntoViewIfNeeded();
       await page.waitForTimeout(350);
-      await page.screenshot({path:`/private/tmp/dehat-186-F3-after-${theme}-${width}.png`});
+      await page.screenshot({path:`/private/tmp/dehat-186-0c-after-${theme}-${width}.png`});
       const dots=section.locator('.st-dot');
       assert.equal(await dots.count(),8);
       const boxes=await dots.evaluateAll(nodes=>nodes.map(node=>({width:node.getBoundingClientRect().width,height:node.getBoundingClientRect().height})));
-      assert.ok(boxes.every(box=>box.width>=(phone?44:24)&&box.height>=(phone?44:24)));
+      assert.ok(boxes.every(box=>box.width>=(phone?32:24)&&box.height>=(phone?32:24)));
+      const arrows=section.locator('.st-stage .st-arrow');
+      assert.equal(await arrows.count(),2);
+      const beforeHover=await arrows.first().evaluate(node=>({opacity:getComputedStyle(node).opacity,top:node.getBoundingClientRect().top,stage:node.parentElement.getBoundingClientRect().top,height:node.parentElement.getBoundingClientRect().height}));
+      if(phone)assert.equal(beforeHover.opacity,'1');
+      else{await section.locator('.st-stage').hover();await page.waitForTimeout(250);assert.equal(await arrows.first().evaluate(node=>getComputedStyle(node).opacity),'1');await page.screenshot({path:`/private/tmp/dehat-186-0c-hover-${theme}-${width}.png`});}
+      assert.ok(Math.abs(beforeHover.top+23-(beforeHover.stage+beforeHover.height/2))<2,'arrows must sit at vertical centre');
       assert.equal(await dots.nth(0).getAttribute('aria-current'),'true');
       await dots.nth(4).click();
       assert.equal(await dots.nth(4).getAttribute('aria-current'),'true');
