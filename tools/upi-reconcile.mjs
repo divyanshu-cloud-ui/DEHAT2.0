@@ -1,5 +1,5 @@
 // Finance tool: reads the IDFC FIRST Bank statement (CSV export), finds UPI credits that carry a DEHAT reference
-// code (DH-XXXXX) in the narration, and asks the website to issue the receipt for each. Writes a report CSV.
+// code (DHXXXXX) in the narration, and asks the website to issue the receipt for each. Writes a report CSV.
 //   node tools/upi-reconcile.mjs --statement <file.csv> [--dry-run] [--site https://dehatindia.org]
 //   The live run needs UPI_RECONCILE_TOKEN in this shell (the same value as in Vercel). It is never printed.
 import { readFile, writeFile } from 'node:fs/promises';
@@ -30,7 +30,8 @@ export function parseCsv(text) {
 
 const PICK = {
   narration: /narration|description|particulars|remarks|details|transaction\s*details/i,
-  credit: /^(credit|deposit|cr\b|cr\s*amount|credit\s*amount|deposit\s*amount|amount\s*\(cr\))/i,
+  credit: /^(credit|deposit|cr\b|cr\s*amount|credit\s*amount|deposit\s*amount|amount\s*\(cr\)|transaction\s*amount)/i,
+  status: /^(status|result)$/i,
   date: /^(value\s*date|transaction\s*date|txn\s*date|date|posting\s*date)/i,
   utr: /utr|ref(erence)?\s*(no|number)?|chq|cheque|rrn/i,
 };
@@ -41,7 +42,7 @@ export function findColumns(rows) {
     const head = rows[h].map(c => String(c).trim());
     const col = key => head.findIndex(c => PICK[key].test(c));
     const narration = col('narration'), credit = col('credit');
-    if (narration > -1 && credit > -1) return { header: h, narration, credit, date: col('date'), utr: col('utr') };
+    if (narration > -1 && credit > -1) return { header: h, narration, credit, date: col('date'), utr: col('utr'), status: head.reduce((a, c, i) => PICK.status.test(c) ? a.concat(i) : a, []) };
   }
   return null;
 }
@@ -59,6 +60,8 @@ export function extractCredits(rows) {
   for (const r of rows.slice(cols.header + 1)) {
     const amountPaise = toPaise(r[cols.credit]);
     if (!amountPaise) continue; // debit rows and blanks
+    // UPI merchant exports list failed and pending attempts too: only completed payments count.
+    if (cols.status.some(i => /fail|pending|declin|revers|refund|timeout/i.test(String(r[i] || '')))) continue;
     const narration = String(r[cols.narration] || '');
     const code = codeIn(narration);
     const fromCol = cols.utr > -1 ? String(r[cols.utr] || '').replace(/\s/g, '') : '';
