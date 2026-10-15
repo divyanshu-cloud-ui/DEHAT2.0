@@ -33,7 +33,7 @@ test('validation cards name their historical periods accurately', async () => {
       console.log(JSON.stringify({theme,width,cards:cards.map(({title,period})=>({title,period}))}));
       if (!process.env.CAPTURE_BEFORE) {
         assert.match(cards[0].text,/Validated 2021–2022/);
-        assert.match(cards[1].text,/Empanelled 2015–2018/);
+        assert.match(cards[1].text,/Empanelled 2017–2020/);
         assert.match(cards[2].text,/Registered 2018/);
         assert.match(cards[2].text,/Registered on the BSE Sammaan platform/);
         assert.ok(!cards[2].text.includes('Listed on the BSE Sammaan platform'));

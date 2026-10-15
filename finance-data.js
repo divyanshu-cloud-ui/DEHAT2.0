@@ -101,7 +101,7 @@ FIN.DOCUMENTS = [
   // Third-party validations & recognition
   { title:'CAF India Validation Certificate', issuer:'CAF India', period:'Validated 2021–2022', group:'validation',
     desc:'Due-diligence validation by Charities Aid Foundation India - an independent check of governance, finance and compliance.', file:'assets/docs/caf-validation-certificate.pdf' },
-  { title:'Tata Institute of Social Sciences Empanelment Certificate', issuer:'Tata Institute of Social Sciences', period:'Empanelled 2015–2018', group:'validation',
+  { title:'Tata Institute of Social Sciences Empanelment Certificate', issuer:'Tata Institute of Social Sciences', period:'Empanelled 2017–2020', group:'validation',
     desc:'Empanelled with the Tata Institute of Social Sciences as an implementing partner for Public Sector Undertaking corporate social responsibility programmes.', file:'assets/docs/tiss-empanelment-certificate.pdf' },
   { title:'BSE Sammaan Listing', issuer:'BSE (Bombay Stock Exchange)', period:'Registered 2018', group:'validation',
     desc:'Registered on the BSE Sammaan platform, the Bombay Stock Exchange’s vetted registry connecting corporates with credible non-governmental organisations for corporate social responsibility.', file:'assets/docs/bse-sammaan.pdf' },  // Added 11 Oct 2026: essential documents that had no card (owner trimmed the list the same day). Each shows "Available on request" until published.
