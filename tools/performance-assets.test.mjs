@@ -26,12 +26,12 @@ test('local React copies match the runtime SRI and content-addressed paths', asy
 test('launch hints name local resources and the requested language only', () => {
   const english = resourceHints('en');
   const hindi = resourceHints('hi');
-  assert.ok(english.includes(REACT_ASSET));
-  assert.ok(english.includes(REACT_DOM_ASSET));
+  // Heavy runtime files load from bootstrap.mjs; preloading them delayed the first paint.
+  for (const heavy of [REACT_ASSET, REACT_DOM_ASSET, '/support.js', '/launch/runtime-template.html']) assert.ok(!english.includes(heavy), heavy);
+  assert.ok(english.includes('as="font" crossorigin type="font/woff2"'));
   assert.ok(!english.includes('/content-i18n/'));
   assert.ok(hindi.includes('/content-i18n/hi.js'));
   assert.ok(!hindi.includes('/content-i18n/ar.js'));
-  assert.ok(hindi.includes('as="fetch" crossorigin'));
   assert.ok(english.includes('/launch/partner-tabs.mjs'));
 });
 test('small shared navigation labels exactly match the partner dataset',async()=>{
