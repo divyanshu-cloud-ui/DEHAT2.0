@@ -38731,7 +38731,7 @@ class Component extends DCLogic {
         // The atlas is told the language the same way as the theme: in the URL for first load, and
         // (below, and from _setLang) by postMessage, so a change made before the frame loaded is not lost.
         if (el && !el.src) {
-          el.src = './district-map.html?v=40&theme=' + this.state.theme + '&lang=' + encodeURIComponent(this.state.lang || 'en');
+          el.src = './district-map.html?v=41&theme=' + this.state.theme + '&lang=' + encodeURIComponent(this.state.lang || 'en');
           el.addEventListener('load', () => { this._syncMapTheme(); this._syncMapLang(); });
         }
       },

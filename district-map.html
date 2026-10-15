@@ -189,7 +189,7 @@
 </div>
 
 <script src="./district-data.js?v=39"></script>
-<script src="./district-i18n/en.js?v=1"></script>
+<script src="./district-i18n/en.js?v=2"></script>
 <script>
 (function(){
   const A = window.ATLAS;
@@ -203,7 +203,7 @@
   // key, e.g. ind.stunting.label, district.bahraich.why, src.basti.secPTR, and falls back to the value
   // in district-data.js, which is what English shows.
   const I18N = window.ATLAS_I18N = window.ATLAS_I18N || {};
-  const I18N_V = '1';   // cache key for district-i18n/*.js: bump with the files
+  const I18N_V = '2';   // cache key for district-i18n/*.js: bump with the files
   // Same 28 codes, and the same right-to-left set (ar, ks, sd, ur), as _langs() in DEHAT.dc.html.
   const LANGS = ['en','ar','as','bn','brx','doi','es','fr','gu','hi','kn','kok','ks','mai','ml','mni','mr','ne','or','pa','ru','sa','sat','sd','ta','te','ur','zh'];
   const RTL = ['ar','ks','sd','ur'];
@@ -574,7 +574,7 @@
     html += `<div class="disclaim" style="margin-top:20px"><b style="color:var(--text)">${th('badges.title')}</b> `+
             `<span class="badge b-exact">${th('badge.exact')}</span> ${th('badges.exact')} `+
             `<span class="badge b-state">${th('badge.benchmark')}</span> ${th('badges.state')} `+
-            `${th('badges.bars')}</div>`;
+            `${th('badges.bars',{state:d.sb==='mh' ? t('bench.mh') : t('bench.up')})}</div>`;
     html += `</div>`;
     body.innerHTML = html;
     panel.scrollTop = 0;

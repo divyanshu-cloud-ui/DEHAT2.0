@@ -71,7 +71,7 @@ window.ATLAS_I18N.en = {
   "badges.title": "Reading the badges.",
   "badges.exact": "= the district's own value from the Vulnerability Index.",
   "badges.state": "= the state average, shown where the matrix has no district figure for this indicator.",
-  "badges.bars": "Bars set this district against the UP and India averages.",
+  "badges.bars": "Bars set this district against the {state} and India averages.",
   "rank.district": "District",
   "rank.index": "Index",
   "rank.na": "n/a",
