@@ -130,7 +130,7 @@ async function start() {
     if (partnerData) loaded._pt = partnerData;
     if (Object.values(loaded).some(value => !value)) throw new Error('Required route data is absent');
     const hasDataFor = candidate => (candidate.view !== 'involved' || !!loaded._pt)
-      && (candidate.view !== 'media' || !!window.DEHAT_MEDIA)
+      && (!['home','media'].includes(candidate.view) || !!window.DEHAT_MEDIA)
       && Object.keys(routeModules[candidate.view] || {}).every(key => !!loaded[key]);
     if (route.lang !== 'en') {
       await Promise.all([script(`/content-i18n/${route.lang}.js`), script(`/launch/dict/${route.lang}.js`)]);
@@ -149,7 +149,7 @@ async function start() {
       const request = Promise.all([
         loadModules(routeModules[candidate.view] || {}),
         candidate.view === 'involved' && !loaded._pt ? loadPartner(candidate.lang) : Promise.resolve(null),
-        candidate.view === 'media' && !window.DEHAT_MEDIA ? script('/media-data.js') : Promise.resolve(),
+        ['home','media'].includes(candidate.view) && !window.DEHAT_MEDIA ? script('/media-data.js') : Promise.resolve(),
         ['who','involved'].includes(candidate.view) && !customElements.get('image-slot') ? script('/image-slot.js') : Promise.resolve(),
       ]).then(([data,partner]) => {
         Object.assign(loaded,data);
