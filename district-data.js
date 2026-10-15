@@ -74,7 +74,7 @@ window.ATLAS = (function () {
     { id:'kushinagar',    name:'Kushinagar',          state:'Uttar Pradesh', sb:'up', lat:26.740, lng:83.890, hq:'Padrauna',    aspirational:false, tier:'footprint',
       why:'A migration-corridor district where children pulled into labour are among the hardest to return to school.' },
     { id:'sonbhadra',     name:'Sonbhadra',           state:'Uttar Pradesh', sb:'up', lat:24.690, lng:83.070, hq:'Robertsganj', aspirational:false, tier:'footprint',
-      why:'Southern UP\u2019s forested, tribal-majority district, where Adivasi girls face some of the steepest barriers to staying in school.' },
+      why:'Southern UP\u2019s forested district, where Scheduled Castes and Scheduled Tribes together are 43% of the people (Census 2011) and Adivasi girls face some of the steepest barriers to staying in school.' },
     { id:'amethi',        name:'Amethi',              state:'Uttar Pradesh', sb:'up', lat:26.160, lng:81.810, hq:'Gauriganj',   aspirational:false, tier:'footprint',
       why:'Central UP, where 68.3% of mothers did not receive the recommended four antenatal visits at their last birth - a measure of how far care still has to travel.' },
     { id:'gbnagar',       name:'Gautam Buddha Nagar', state:'Uttar Pradesh', sb:'up', lat:28.470, lng:77.500, hq:'Noida',       aspirational:false, tier:'footprint',
@@ -105,7 +105,7 @@ window.ATLAS = (function () {
     { id:'gadchiroli',    name:'Gadchiroli',          state:'Maharashtra',   sb:'mh', lat:20.180, lng:80.000, hq:'Gadchiroli',  aspirational:true,  tier:'footprint',
       why:'A remote, heavily-forested district where the state\u2019s reach is thinnest and children are hardest to keep safe.' },
     { id:'nashik',        name:'Nashik',              state:'Maharashtra',   sb:'mh', lat:20.000, lng:73.790, hq:'Nashik',      aspirational:false, tier:'footprint',
-      why:'Maharashtra\u2019s reference district in the index — the strongest indicators in the matrix, and the benchmark the others are measured against.' },
+      why:'A Maharashtra district with the smallest gap in school accessibility for children with special needs: only 9.2% of its schools lack a functional toilet they can use, the lowest share of the 23 districts.' },
   ];
 
   const nodes = [
@@ -123,7 +123,7 @@ window.ATLAS = (function () {
     { key:'mmr',           node:'n1', label:'Maternal Mortality Ratio', unit:' per 100,000', worseHigh:true, stateLevel:true, source:'Sample Registration System (state-level)',
       interp:'Mothers lost per 100,000 live births. Reported at state level — the most reliable scale for this measure — so every district in a state shares its figure.' },
     { key:'anaemia',       node:'n1', label:'Anaemic Women (15\u201349)', unit:'%', worseHigh:true, source:'National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district dataset',
-      interp:'Women who begin pregnancy anaemic — a nutritional debt passed to the foetus.' },
+      interp:'Women aged 15 to 49 who are anaemic: a nutritional debt passed on to the next child.' },
     { key:'homebirth',     node:'n1', label:'Births Outside Institutions', unit:'%', worseHigh:true, source:'National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district dataset',
       interp:'Deliveries occurring without professional medical safety.' },
     { key:'noANC',         node:'n1', label:'Mothers Without 4+ Antenatal Visits (last birth)', unit:'%', worseHigh:true, source:'National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district dataset',
