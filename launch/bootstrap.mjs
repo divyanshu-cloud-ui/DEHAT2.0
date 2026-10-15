@@ -76,7 +76,8 @@ function installAnimationBudget(root) {
   };
   const update = (element, inView) => {
     if (!element.isConnected) {targets.delete(element); observer.unobserve(element); return;}
-    for (const animation of element.getAnimations()) {
+    // A group (data-anim-group) pauses and resumes every endless animation inside it together.
+    for (const animation of element.matches('[data-anim-group]') ? element.getAnimations({subtree:true}) : element.getAnimations()) {
       if (animation.effect?.getTiming().iterations !== Infinity) continue;
       if (reduced.matches) {animation.cancel(); continue;}
       if (inView && !document.hidden) {
@@ -89,6 +90,10 @@ function installAnimationBudget(root) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => update(entry.target, entry.isIntersecting)));
   const register = element => {
     if (!(element instanceof Element)) return;
+    // Animations that only stay correct together, such as the Cycle ring turning one way while each
+    // thumbnail turns back the other way to stay upright, are budgeted as one group: pausing them
+    // separately as they scrolled in and out of view left the thumbnails tilted.
+    element = element.closest('[data-anim-group]') || element;
     if (!targets.has(element)) {targets.add(element); observer.observe(element);}
     update(element, visible(element));
   };
