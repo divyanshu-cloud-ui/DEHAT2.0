@@ -63,6 +63,7 @@ export function buildRoutes({mode,origin,redirects,routes,publishedPaths,files,a
   output.push(cache('^/[^/]*-data\\.js$',shortStatic));
   output.push(cache('^/support\\.js$',shortStatic));
   output.push(cache('^/content-i18n/.*$',shortStatic));
+  output.push(cache('^/district-i18n/.*$',shortStatic));
   output.push(cache('^/launch/.*$',revalidate));
   output.push(cache('^/launch/css/[a-f0-9]{16}\\.css$',immutable));
   output.push(cache('^/launch/dict/[a-z]{2,3}-[a-f0-9]{16}\\.js$',immutable));

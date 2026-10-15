@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DEHAT — Where We Work: District Vulnerability Atlas</title>
+<title data-i18n="page.title">DEHAT — Where We Work: District Vulnerability Atlas</title>
+<script>try{var q=new URLSearchParams(location.search).get("lang");if(q&&q!=="en")document.documentElement.className="i18n-wait"}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Public+Sans:wght@400..700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
 <style>
+  html.i18n-wait body{visibility:hidden}
   *{box-sizing:border-box}
   :root{
     --bg:#151009; --bg2:#1d160d; --surface:#241b11; --surface2:#2e2417;
@@ -35,7 +37,7 @@
   #searchIn::placeholder{color:var(--faint)}
   #searchIn:focus{border-color:#EAAE28}
   .suggest{display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:11px;overflow:hidden;box-shadow:0 14px 30px -14px var(--shadow);z-index:9}
-  .suggest button{display:flex;justify-content:space-between;align-items:baseline;gap:10px;width:100%;padding:9px 12px;background:none;border:none;border-bottom:1px solid var(--border);color:var(--text);font:600 12.5px "Public Sans";cursor:pointer;text-align:left}
+  .suggest button{display:flex;justify-content:space-between;align-items:baseline;gap:10px;width:100%;padding:9px 12px;background:none;border:none;border-bottom:1px solid var(--border);color:var(--text);font:600 12.5px "Public Sans";cursor:pointer;text-align:start}
   .suggest button:last-child{border-bottom:none}
   .suggest button:hover{background:var(--surface2)}
   .suggest button span{color:var(--faint);font-weight:400;font-size:11px;white-space:nowrap}
@@ -43,11 +45,11 @@
   .navbar select{padding:9px 10px;border-radius:11px;border:1px solid var(--border);background:transparent;color:var(--text);font:600 12.5px "Public Sans";cursor:pointer;outline:none;max-width:200px}
   .navbar select option{background:var(--surface);color:var(--text)}
   .navbar .chip{background:transparent}
-  .rankbox{display:none;position:absolute;top:14px;left:14px;width:300px;max-height:calc(100vh - 200px);overflow-y:auto;background:var(--surface);border:1px solid var(--border);border-radius:14px;z-index:6;box-shadow:0 16px 34px -16px var(--shadow);scrollbar-width:thin}
+  .rankbox{display:none;position:absolute;top:14px;inset-inline-start:14px;width:300px;max-height:calc(100vh - 200px);overflow-y:auto;background:var(--surface);border:1px solid var(--border);border-radius:14px;z-index:6;box-shadow:0 16px 34px -16px var(--shadow);scrollbar-width:thin}
   .rk-head{display:grid;grid-template-columns:1fr auto;position:sticky;top:0;background:var(--surface);border-bottom:1px solid var(--border);z-index:1}
-  .rk-head button{padding:10px 14px;background:none;border:none;color:var(--faint);font:700 10.5px "Public Sans";letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-align:left}
+  .rk-head button{padding:10px 14px;background:none;border:none;color:var(--faint);font:700 10.5px "Public Sans";letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-align:start}
   .rk-head button:hover{color:var(--text)}
-  .rk-row{display:grid;grid-template-columns:22px 1fr auto;gap:8px;align-items:center;width:100%;padding:9px 14px;background:none;border:none;border-bottom:1px solid var(--border);cursor:pointer;text-align:left;color:var(--text)}
+  .rk-row{display:grid;grid-template-columns:22px 1fr auto;gap:8px;align-items:center;width:100%;padding:9px 14px;background:none;border:none;border-bottom:1px solid var(--border);cursor:pointer;text-align:start;color:var(--text)}
   .rk-row:hover,.rk-row.sel{background:var(--surface2)}
   .rk-n{font:700 11px "Public Sans";color:var(--faint)}
   .rk-name{font:600 13px "Public Sans";line-height:1.25}
@@ -55,10 +57,10 @@
   .rk-val{font-family:'Bricolage Grotesque';font-weight:800;font-size:15px}
   .prio-band{margin-top:14px;padding:10px 12px;border-radius:10px;background:rgba(234,174,40,.14);border:1px dashed rgba(234,174,40,.5);color:#EAAE28;font-size:12.5px;font-weight:700;line-height:1.45}
   html[data-theme="light"] .prio-band{color:#8a6410}
-  .cmp-row{display:grid;grid-template-columns:1fr 150px;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--border)}
+  .cmp-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,46%);gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--border)}
   .cmp-label{font-size:12.5px;font-weight:600;line-height:1.3}
-  .cmp-vals{display:grid;grid-template-columns:1fr 1fr;gap:6px;text-align:right}
-  .cmp-v{font-family:'Bricolage Grotesque';font-weight:800;font-size:14.5px;white-space:nowrap}
+  .cmp-vals{display:grid;grid-template-columns:1fr 1fr;gap:6px;text-align:end}
+  .cmp-v{font-family:'Bricolage Grotesque';font-weight:800;font-size:14.5px;overflow-wrap:anywhere}
   .cmp-v.worse{color:#D2305C}
   .cmp-v i{font-style:normal;color:var(--faint);font-size:10px;vertical-align:super}
   .cmp-headrow{border-bottom:2px solid var(--border)}
@@ -69,19 +71,20 @@
   .chip{flex:none;padding:7px 13px;border-radius:999px;border:1px solid var(--border);background:var(--bg2);color:var(--dim);font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .15s}
   .chip:hover{color:var(--text)}
   .chip.on{background:#EAAE28;color:#1f1710;border-color:#EAAE28}
-  .legend{position:absolute;bottom:16px;left:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:11px;color:var(--dim);z-index:5;max-width:230px}
+  .legend{position:absolute;bottom:16px;inset-inline-start:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:11px;color:var(--dim);z-index:5;max-width:230px}
   .leg-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
   .leg-title{font-weight:700;color:var(--text)}
   .leg-toggle{display:none;flex:none;width:24px;height:24px;border-radius:7px;border:1px solid var(--border);background:var(--bg2);color:var(--text);font-size:14px;line-height:1;cursor:pointer}
   .legend.min .leg-body{display:none}
   .legbar{height:9px;border-radius:5px;margin:8px 0 4px;background:linear-gradient(90deg,#3d8b6f,#EAAE28,#D2305C,#A92719)}
-  .homebtn{position:absolute;bottom:16px;right:16px;z-index:5;display:flex;gap:8px}
+  [dir=rtl] .legbar{background:linear-gradient(270deg,#3d8b6f,#EAAE28,#D2305C,#A92719)}
+  .homebtn{position:absolute;bottom:16px;inset-inline-end:16px;z-index:5;display:flex;gap:8px}
   .icon-btn{width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
   .icon-btn:hover{border-color:#EAAE28}
   .tooltip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:9px 12px;font-size:12.5px;color:var(--text);box-shadow:0 10px 24px -12px var(--shadow);z-index:20;opacity:0;transition:opacity .12s;max-width:220px}
   .tooltip b{font-family:'Bricolage Grotesque';font-size:14px}
   /* panel */
-  #panel{background:var(--surface);border-left:1px solid var(--border);height:100vh;overflow-y:auto;padding:0}
+  #panel{background:var(--surface);border-inline-start:1px solid var(--border);height:100vh;overflow-y:auto;padding:0}
   .p-pad{padding:24px 26px}
   .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
   .p-head h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:30px;line-height:1.02;letter-spacing:-.02em;margin:8px 0 0}
@@ -98,9 +101,18 @@
   .ind-val{font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;white-space:nowrap}
   .ind-interp{font-size:12px;color:var(--faint);line-height:1.45;margin:5px 0 8px}
   .bar{height:7px;border-radius:4px;background:var(--surface2);overflow:hidden;position:relative}
-  .bar>span{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
+  .bar>span{position:absolute;inset-inline-start:0;top:0;bottom:0;border-radius:4px}
   .bar-marks{position:relative;height:27px;margin-top:3px}
   .bar-mark{position:absolute;transform:translateX(-50%);font-size:9px;color:var(--faint);white-space:nowrap}
+  [dir=rtl] .bar-mark{transform:translateX(50%)}
+  /* marks near either end of the bar hang inward so a long label cannot run out of the panel; the tick stays on the value */
+  .bar-mark.m-start{transform:none}
+  .bar-mark.m-start::before{left:0}
+  .bar-mark.m-end{transform:translateX(-100%)}
+  .bar-mark.m-end::before{left:auto;right:0}
+  [dir=rtl] .bar-mark.m-start::before{left:auto;right:0}
+  [dir=rtl] .bar-mark.m-end{transform:translateX(100%)}
+  [dir=rtl] .bar-mark.m-end::before{left:0;right:auto}
   .bar-mark::before{content:"";position:absolute;top:-4px;left:50%;width:1px;height:4px;background:var(--faint)}
   .bar-mark.b2{top:14px;color:var(--dim,var(--faint))}
   .bar-mark.b2::before{top:-14px;height:14px}
@@ -114,25 +126,27 @@
   .placeholder{padding:40px 26px;color:var(--faint);font-size:14px;line-height:1.6}
   .placeholder b{color:var(--text);font-family:'Bricolage Grotesque'}
   .disclaim{font-size:11px;color:var(--faint);line-height:1.5;margin-top:8px;padding:12px;border-radius:10px;background:var(--surface2)}
-  #panelClose{display:none;position:absolute;top:12px;right:12px;z-index:30;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:20px;line-height:1;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 8px 20px -10px var(--shadow)}
+  #panelClose{display:none;position:absolute;top:12px;inset-inline-end:12px;z-index:30;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:20px;line-height:1;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 8px 20px -10px var(--shadow)}
   @media (max-width:860px){
     #wrap{grid-template-columns:1fr}
-    #panel{position:fixed;right:0;top:0;width:min(440px,94vw);transform:translateX(101%);transition:transform .35s;box-shadow:-20px 0 40px -20px var(--shadow);z-index:40}
-    #panel.open{transform:none}
+    #panel{position:fixed;inset-inline-end:0;top:0;width:min(440px,94vw);transform:translateX(101%);transition:transform .35s;box-shadow:-20px 0 40px -20px var(--shadow);z-index:40}
+    [dir=rtl] #panel{transform:translateX(-101%);box-shadow:20px 0 40px -20px var(--shadow)}
+    #panel.open,[dir=rtl] #panel.open{transform:none}
     #panel.open #panelClose{display:flex}
     .navbar{gap:6px;padding:7px}
     .searchwrap{flex:1 1 100%;max-width:none}
-    .navbar select{flex:1 1 auto;max-width:none}
+    .navbar select{flex:1 1 auto;max-width:none;min-width:0}
     .navbar .chip{flex:1 1 auto;text-align:center}
     .rankbox{width:min(300px,calc(100vw - 28px))}
     .legend{max-width:190px;font-size:10.5px;padding:10px 12px}
     .leg-toggle{display:flex;align-items:center;justify-content:center}
-    .legend.min{max-width:none}
+    .legend.min{max-width:calc(100vw - 260px)}
     .icon-btn{width:44px;height:44px}
   }
   @media (max-width:480px){
-    .legend{bottom:12px;left:12px;right:auto}
-    .homebtn{bottom:12px;right:12px}
+    .legend,.legend.min{bottom:68px;inset-inline-start:12px;inset-inline-end:auto}
+    .legend.min{max-width:calc(100vw - 24px)}
+    .homebtn{bottom:12px;inset-inline-end:12px}
   }
 </style>
 </head>
@@ -141,45 +155,111 @@
   <div id="mapcol">
     <div class="navbar">
       <div class="searchwrap">
-        <input id="searchIn" placeholder="Search District…" autocomplete="off">
+        <input id="searchIn" placeholder="Search District…" data-i18n-attr="placeholder:nav.search.placeholder" autocomplete="off">
         <div class="suggest" id="suggest"></div>
       </div>
-      <select id="stateSel" title="Filter by state">
-        <option value="all">All States</option>
-        <option value="Uttar Pradesh">Uttar Pradesh</option>
-        <option value="Maharashtra">Maharashtra</option>
+      <select id="stateSel" title="Filter by state" data-i18n-attr="title:nav.state.title">
+        <option value="all" data-i18n="nav.state.all">All States</option>
+        <option value="Uttar Pradesh" data-i18n="state.up">Uttar Pradesh</option>
+        <option value="Maharashtra" data-i18n="state.mh">Maharashtra</option>
       </select>
-      <select id="tierSel" title="DEHAT presence">
-        <option value="all">All 23 Districts</option>
-        <option value="priority">★ Priority Districts</option>
-        <option value="footprint">Programme Footprint</option>
+      <select id="tierSel" title="DEHAT presence" data-i18n-attr="title:nav.tier.title">
+        <option value="all" data-i18n="nav.tier.all">All 23 Districts</option>
+        <option value="priority" data-i18n="nav.tier.priority">★ Priority Districts</option>
+        <option value="footprint" data-i18n="nav.tier.footprint">Programme Footprint</option>
       </select>
-      <select id="metricSel" title="Shade districts by indicator"></select>
-      <button class="chip" id="rankBtn">Ranking</button>
-      <button class="chip" id="cmpBtn">Compare</button>
+      <select id="metricSel" title="Shade districts by indicator" data-i18n-attr="title:nav.metric.title"></select>
+      <button class="chip" id="rankBtn" data-i18n="nav.rank">Ranking</button>
+      <button class="chip" id="cmpBtn" data-i18n="nav.compare">Compare</button>
     </div>
     <div id="maparea">
     <svg id="map"></svg>
     <div class="rankbox" id="rankbox"></div>
     <div class="legend" id="legend"></div>
     <div class="homebtn">
-      <button class="icon-btn" id="themeBtn" title="Toggle theme">☀</button>
-      <button class="icon-btn" id="zoomIn" title="Zoom in">+</button>
-      <button class="icon-btn" id="zoomOut" title="Zoom out">−</button>
-      <button class="icon-btn" id="homeBtn" title="Reset view">⤾</button>
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" data-i18n-attr="title:btn.theme.title">☀</button>
+      <button class="icon-btn" id="zoomIn" title="Zoom in" data-i18n-attr="title:btn.zoomin.title">+</button>
+      <button class="icon-btn" id="zoomOut" title="Zoom out" data-i18n-attr="title:btn.zoomout.title">−</button>
+      <button class="icon-btn" id="homeBtn" title="Reset view" data-i18n-attr="title:btn.reset.title">⤾</button>
     </div>
     <div class="tooltip" id="tt"></div>
     </div>
   </div>
-  <div id="panel"><button id="panelClose" aria-label="Close panel">×</button><div id="panelBody"><div class="placeholder" id="ph"></div></div></div>
+  <div id="panel"><button id="panelClose" aria-label="Close panel" data-i18n-attr="aria-label:panel.close.aria">×</button><div id="panelBody"><div class="placeholder" id="ph"></div></div></div>
 </div>
 
 <script src="./district-data.js?v=39"></script>
+<script src="./district-i18n/en.js?v=1"></script>
 <script>
 (function(){
   const A = window.ATLAS;
+  // ----- language ---------------------------------------------------------------------------
+  // The parent site passes its language as ?lang=<code> and, when the reader switches language, as
+  // postMessage({lang}) (the same channel as {theme}). Strings live in window.ATLAS_I18N[<code>]:
+  // district-i18n/en.js is always loaded, district-i18n/<code>.js is injected on demand, and a
+  // missing or failed file leaves the page in English. t(key, params) gives plain text, th(key, params)
+  // gives HTML-safe text; "{name}" tokens are replaced from params (a param may be {html:'...'} to
+  // insert markup). District-data text (names, why, indicator labels, sources) is looked up by id
+  // key, e.g. ind.stunting.label, district.bahraich.why, src.basti.secPTR, and falls back to the value
+  // in district-data.js, which is what English shows.
+  const I18N = window.ATLAS_I18N = window.ATLAS_I18N || {};
+  const I18N_V = '1';   // cache key for district-i18n/*.js: bump with the files
+  // Same 28 codes, and the same right-to-left set (ar, ks, sd, ur), as _langs() in DEHAT.dc.html.
+  const LANGS = ['en','ar','as','bn','brx','doi','es','fr','gu','hi','kn','kok','ks','mai','ml','mni','mr','ne','or','pa','ru','sa','sat','sd','ta','te','ur','zh'];
+  const RTL = ['ar','ks','sd','ur'];
+  let LANG = 'en', langReq = 'en', langSeq = 0, started = false;
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  const lookup = key => { const tb = I18N[LANG], en = I18N.en; return (tb && tb[key]!=null) ? tb[key] : (en && en[key]!=null) ? en[key] : key; };
+  const fill = (str, params, html) => str.replace(/\{(\w+)\}/g, (m,k) => !params || !(k in params) ? m : (html ? (params[k] && params[k].html!=null ? params[k].html : esc(params[k])) : String(params[k])));
+  const t = (key, params) => fill(lookup(key), params, false);
+  const th = (key, params) => fill(esc(lookup(key)), params, true);
+  const dt = (key, fallback) => { const tb = I18N[LANG]; return (LANG!=='en' && tb && tb[key]!=null) ? tb[key] : fallback; };
+  const dName = d => dt('district.'+d.id+'.name', d.name);
+  const dState = d => dt('state.'+d.sb, d.state);
+  const dHq = d => dt('district.'+d.id+'.hq', d.hq);
+  const dWhy = d => dt('district.'+d.id+'.why', d.why);
+  const dScope = d => dt('district.'+d.id+'.scope', d.scope);
+  const shortName = d => dName(d).replace(/\s*[(\uFF08].*$/, '');
+  const nLabel = n => dt('node.'+n.id+'.label', n.label);
+  const nBlurb = n => dt('node.'+n.id+'.blurb', n.blurb);
+  const iLabel = i => dt('ind.'+i.key+'.label', i.label);
+  const iInterp = i => dt('ind.'+i.key+'.interp', i.interp);
+  const iSource = i => dt('ind.'+i.key+'.source', i.source);
+  const iUnit = i => (i.unit && i.unit!=='%') ? dt('ind.'+i.key+'.unit', i.unit) : (i.unit||'');
+  const srcOf = (did, ind, r) => r.src ? dt('src.'+did+'.'+ind.key, r.src) : iSource(ind);
+  const normLang = c => { c = String(c||'').toLowerCase(); return LANGS.indexOf(c) >= 0 ? c : 'en'; };
+  function loadLang(code, done){
+    if (code==='en' || I18N[code]) return done(true);
+    const s = document.createElement('script');
+    let fin = false, timer = null;
+    const end = ok => { if (fin) return; fin = true; clearTimeout(timer); done(!!(ok && I18N[code])); };
+    s.src = './district-i18n/'+code+'.js?v='+I18N_V; s.async = true;
+    s.onload = () => end(true); s.onerror = () => end(false);
+    timer = setTimeout(() => end(false), 4000);
+    document.head.appendChild(s);
+  }
+  // Applies a language: if its file is missing the page stays English, and lang/dir say so.
+  function useLang(code, done){
+    const my = ++langSeq; code = normLang(code); langReq = code;
+    loadLang(code, ok => {
+      if (my === langSeq){
+        LANG = ok ? code : 'en';
+        document.documentElement.setAttribute('lang', LANG);
+        document.documentElement.setAttribute('dir', RTL.indexOf(LANG) >= 0 ? 'rtl' : 'ltr');
+      }
+      if (done) done(my === langSeq);
+    });
+  }
+  // Static markup carries its English text as a fallback; data-i18n / data-i18n-attr="attr:key;attr:key" swap it.
+  function applyStatic(){
+    const p = { n: A.districts.length };
+    document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.getAttribute('data-i18n'), p); });
+    document.querySelectorAll('[data-i18n-attr]').forEach(el => el.getAttribute('data-i18n-attr').split(';').forEach(pair => {
+      const [attr, key] = pair.split(':'); el.setAttribute(attr, t(key, p));
+    }));
+  }
   const fmtNum = v => (typeof v==='number' && Math.abs(v)>=1000) ? v.toLocaleString('en-IN') : v;
-  const fmtVal = (ind, v) => v==null ? '—' : (fmtNum(v) + (ind.unit||''));
+  const fmtVal = (ind, v) => v==null ? '\u2014' : (fmtNum(v) + iUnit(ind));
   const params = new URLSearchParams(location.search);
   const rootEl = document.documentElement;
   rootEl.setAttribute('data-theme', params.get('theme') === 'light' ? 'light' : 'dark');
@@ -251,12 +331,16 @@
     [74.25,34.0],[73.85,34.35],[73.5,34.55],[73.75,34.95],[74.15,35.2],[74.35,35.6],[74.05,35.9],
     [73.8,36.15],[74.05,36.6],[74.4,36.9]
   ]] } };
-  d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json').then(topo => {
+  const geoReady = d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json').then(topo => {
     const feats = topojson.feature(topo, topo.objects.countries).features;
     indiaFeature = feats.find(f => f.properties.name === 'India');
     ctxFeatures = feats.filter(f => ['Pakistan','Nepal','Bangladesh','China','Bhutan','Myanmar','Sri Lanka','Afghanistan'].includes(f.properties.name));
-    layout(); render();
-  }).catch(()=>{ layout(); render(); });
+  }).catch(()=>{});
+  const langReady = new Promise(resolve => useLang(params.get('lang'), resolve));
+  Promise.all([geoReady, langReady]).then(()=>{
+    applyStatic(); layout(); render(); started = true;
+    document.documentElement.classList.remove('i18n-wait');
+  });
 
   function layout(){
     W = mapcol.clientWidth; H = mapcol.clientHeight;
@@ -302,7 +386,7 @@
     all.select('text.dlabel')
       .attr('x', 0)
       .attr('text-anchor','middle')
-      .text(p => p.d.name.replace(/ \(.*/,''));
+      .text(p => shortName(p.d));
     all.on('mouseenter', (e,p)=>showTip(e,p.d))
        .on('mousemove', (e,p)=>moveTip(e))
        .on('mouseleave', hideTip)
@@ -333,11 +417,11 @@
 
   function showTip(e,d){
     const idx = overallIndex(d.id);
-    tt.innerHTML = `<b>${d.name}</b><br>${d.state}${d.aspirational?' · Aspirational District':''}<br><span style="color:var(--faint)">Opportunity Gap Index</span> <b style="color:${sevColor(idx/100)}">${idx}</b>`+
+    tt.innerHTML = `<b>${esc(dName(d))}</b><br>${esc(dState(d))}${d.aspirational?' \u00b7 '+th('label.aspirational'):''}<br><span style="color:var(--faint)">${th('tip.index')}</span> <b style="color:${sevColor(idx/100)}">${idx}</b>`+
       (d.tier==='priority'
-        ? `<br><span style="color:#EAAE28;font-weight:700">★ Priority — in-depth, intersectional investment</span>`
-        : `<br><span style="color:var(--faint)">Programme Footprint — past &amp; ongoing projects</span>`)+
-      (cmpMode?`<br><span style="color:var(--faint)">Tap to ${cmpSet.includes(d.id)?'remove from':'add to'} comparison</span>`:'');
+        ? `<br><span style="color:#EAAE28;font-weight:700">${th('tip.priority')}</span>`
+        : `<br><span style="color:var(--faint)">${th('tip.footprint')}</span>`)+
+      (cmpMode?`<br><span style="color:var(--faint)">${cmpSet.includes(d.id) ? th('tip.cmp.remove') : th('tip.cmp.add')}</span>`:'');
     tt.style.opacity=1; moveTip(e);
   }
   function moveTip(e){
@@ -380,7 +464,8 @@
     renderPoints();
   };
   // live theme sync from parent site
-  window.addEventListener('message', (e)=>{ if(e.data && e.data.theme){ rootEl.setAttribute('data-theme', e.data.theme); document.getElementById('themeBtn').textContent = e.data.theme==='dark'?'☀':'☾'; renderPoints(); } });
+  window.addEventListener('message', (e)=>{ if(e.data && e.data.theme){ rootEl.setAttribute('data-theme', e.data.theme); document.getElementById('themeBtn').textContent = e.data.theme==='dark'?'☀':'☾'; renderPoints(); }
+    if(e.data && e.data.lang) changeLang(e.data.lang); });
 
   svg.on('click', ()=>{ /* background click keeps selection */ });
   window.addEventListener('resize', ()=>{ layout(); render(); if(selected){ const d=A.districts.find(x=>x.id===selected); if(d) zoomTo(d);} });
@@ -388,10 +473,10 @@
   // ----- toolbar (metric selector, in the top bar) -----
   function buildToolbar(){
     const sel = document.getElementById('metricSel');
-    const metrics = [{key:'overall',label:'Overall Opportunity Gap'}].concat(
-      A.indicators.filter(i=>i.worseHigh).map(i=>({key:i.key,label:i.label})));
+    const metrics = [{key:'overall',label:t('metric.overall')}].concat(
+      A.indicators.filter(i=>i.worseHigh).map(i=>({key:i.key,label:iLabel(i)})));
     if(!sel.dataset.built){
-      sel.innerHTML = metrics.map(m=>`<option value="${m.key}">${m.label}</option>`).join('');
+      sel.innerHTML = metrics.map(m=>`<option value="${m.key}">${esc(m.label)}</option>`).join('');
       sel.dataset.built='1';
       sel.onchange = ()=>{ selMetric=sel.value; renderPoints(); buildLegend(); if(rankOpen) buildRank(); };
     }
@@ -399,20 +484,20 @@
   }
   function buildLegend(){
     const ind = A.indicators.find(i=>i.key===selMetric);
-    const title = selMetric==='overall' ? 'Overall Child Opportunity Gap Index' : ind.label;
-    const src = selMetric==='overall' ? `Composite of ${gapKeys.length} gap indicators` : ('Source: '+ind.source);
+    const title = selMetric==='overall' ? t('legend.overall.title') : iLabel(ind);
+    const src = selMetric==='overall' ? t('legend.overall.source',{n:gapKeys.length}) : t('label.source',{source:iSource(ind)});
     const leg = document.getElementById('legend');
     leg.style.display = rankOpen ? 'none' : '';
     const wasMin = leg.classList.contains('min');
     leg.innerHTML =
-      `<div class="leg-head"><span class="leg-title">${title}</span><button class="leg-toggle" aria-label="Toggle legend">${wasMin?'+':'−'}</button></div>`+
+      `<div class="leg-head"><span class="leg-title">${esc(title)}</span><button class="leg-toggle" aria-label="${esc(t('legend.toggle.aria'))}">${wasMin?'+':'\u2212'}</button></div>`+
       `<div class="leg-body"><div class="legbar"></div>`+
-      `<div style="display:flex;justify-content:space-between"><span>At the benchmark</span><span>Furthest from it</span></div>`+
-      `<div style="margin-top:6px">${src}</div>`+
-      `<div style="margin-top:6px"><span style="color:#EAAE28">★ Dashed Ring</span> = Priority District — DEHAT\u2019s deepest current investment. Plain dots = Programme Footprint.</div></div>`;
+      `<div style="display:flex;justify-content:space-between"><span>${th('legend.low')}</span><span>${th('legend.high')}</span></div>`+
+      `<div style="margin-top:6px">${esc(src)}</div>`+
+      `<div style="margin-top:6px"><span style="color:#EAAE28">${th('legend.ring.key')}</span> ${th('legend.ring.text')}</div></div>`;
     leg.querySelector('.leg-toggle').onclick = ()=>{
       const min = leg.classList.toggle('min');
-      leg.querySelector('.leg-toggle').textContent = min?'+':'−';
+      leg.querySelector('.leg-toggle').textContent = min?'+':'\u2212';
     };
   }
 
@@ -421,13 +506,16 @@
     const body = document.getElementById('panelBody');
     let ph = document.getElementById('ph');
     if (!ph){ body.innerHTML = '<div class="placeholder" id="ph"></div>'; ph = document.getElementById('ph'); }
+    const bold = key => `<b style="color:var(--text)">${esc(t(key))}</b>`;
+    const lk = A.districts.find(d=>d.id==='lakhimpur');
     ph.innerHTML =
-      `<b style="font-size:22px;display:block;margin-bottom:10px">Why here?</b>`+
-      `Every district on this map is a place DEHAT works, accompanied by its communities — three under our deepest, intersectional investment, a fourth \u2014 Lakhimpur Kheri \u2014 entered in 2026 for child protection, and the rest across two decades of programme presence. `+
-      `Tap any district to open its full child profile: each indicator, its value and its named source, grouped along the vulnerability cycle. `+
-      `Shade the map by any of ${A.indicators.filter(i=>i.worseHigh).length} indicators, filter by state or presence, rank the districts, or compare two side by side.`+
-      `<div class="disclaim" style="border-left:2px solid #EAAE28;padding-left:14px"><b style="color:var(--text)">How the index is built.</b> Each indicator is scored from 0 to 1 against a fixed range set in the page (for example stunting from 25% to 55%, infant mortality from 20 to 110 per 1,000), then the scores are averaged into a single 0\u2013100 figure. A district with a value missing is averaged over the indicators it has. The ranges are fixed, not set by the best district in the set, so a district\u2019s score moves only when its own figures move: one that improves should move down it. State-level figures, raw student counts, the girls\u2019 dropout rate and SC + ST share are shown in each profile but not scored, and one value that is not comparable with the others (Dharashiv\u2019s distance to a primary health centre) is left out. The index decides where DEHAT goes next, and it is the same figure the work is reported back against.<br><br><b style="color:var(--text)">What an index is, and is not.</b> It is not a verdict on a place or its people. It is a measure of how far a public system sits from what it already promises, expressed as one number so that every district here can be compared honestly and priorities can be argued with rather than asserted.</div>`+
-      `<div class="disclaim"><b style="color:var(--text)">On the data.</b> Every figure is drawn from DEHAT's Vulnerability Index - ${A.indicators.length} indicators across ${A.districts.length} districts, each traced to a named source: the NFHS-5 (2019\u201321) district fact-sheet dataset (MoHFW / IIPS) for health, nutrition, WASH and gender, and for the state-level anganwadi figure; UDISE+ district fact sheets and dashboard data (2024\u201325, with 2025\u201326 for Lakhimpur Kheri and Basti) for schooling, dropout including girls\u2019 dropout, and child migration; the Annual Health Survey 2012\u201313 for infant and under-5 mortality in Uttar Pradesh; the Census of India 2011 for working children aged 5\u201314, SC + ST share and distance to a primary health centre; NITI Aayog\u2019s National Multidimensional Poverty Index 2023 (NFHS-5) for poverty; and SRS for maternal mortality, which is state-level by construction. Some cells are older than others, or come from government-recognised estimates rather than a government survey (the ICMR-PHFI-IHME 2017 mortality estimates for Amethi and Maharashtra, and a Mission Antyodaya village measure for Dharashiv\u2019s health-centre distance), so each value names its own source in the profile. The eight schooling &amp; mobility indicators are tagged by their link to the Structural Vulnerability Cycle - <b style="color:var(--text)">direct</b> (labour, trafficking, exploitation), <b style="color:var(--text)">indirect</b> (retention &amp; school conditions) or <b style="color:var(--text)">intersectional</b> (overlapping caste, tribe, minority, disability &amp; gender disadvantage). Migration is a student-volume count, so it is shown and shadeable but held out of the composite index. Every health, nutrition, WASH and gender figure comes from a single survey round, so districts are compared like with like. Spousal violence and the anganwadi figure are collected in the NFHS state module or state report only and are shown as the state figure everywhere. Maternal mortality is reported at state level, badged as such. Every value carries the sheet it came from.</div>`;
+      `<b style="font-size:22px;display:block;margin-bottom:10px">${th('ph.title')}</b>`+
+      [th('ph.intro',{district:dName(lk)}), th('ph.tap'), th('ph.shade',{n:A.indicators.filter(i=>i.worseHigh).length})].join(' ')+
+      `<div class="disclaim" style="border-inline-start:2px solid #EAAE28;padding-inline-start:14px"><b style="color:var(--text)">${th('ph.index.h1')}</b> ${th('ph.index.p1')}<br><br><b style="color:var(--text)">${th('ph.index.h2')}</b> ${th('ph.index.p2')}</div>`+
+      `<div class="disclaim"><b style="color:var(--text)">${th('ph.data.h')}</b> `+
+      [th('ph.data.p1',{indicators:A.indicators.length,districts:A.districts.length}), th('ph.data.p2'),
+       th('ph.data.p3',{direct:{html:bold('ph.data.direct')},indirect:{html:bold('ph.data.indirect')},intersectional:{html:bold('ph.data.intersectional')}}),
+       th('ph.data.p4'), th('ph.data.p5'), th('ph.data.p6'), th('ph.data.p7'), th('ph.data.p8')].join(' ')+`</div>`;
   }
 
   // ----- deep-dive panel -----
@@ -439,53 +527,54 @@
     panel.classList.add('open');
     const idx = overallIndex(did);
     let html = `<div class="p-pad">`;
-    html += `<div class="p-head"><span class="eyebrow" style="color:#EAAE28">${d.state}${d.aspirational?' · Aspirational District':''}</span>`+
-            `<h1>${d.name}</h1><div class="p-sub">District HQ: ${d.hq}</div></div>`;
+    html += `<div class="p-head"><span class="eyebrow" style="color:#EAAE28">${esc(dState(d))}${d.aspirational?' \u00b7 '+th('label.aspirational'):''}</span>`+
+            `<h1>${esc(dName(d))}</h1><div class="p-sub">${th('panel.hq',{hq:dHq(d)})}</div></div>`;
     html += `<div class="vindex"><div class="num" style="color:${sevColor(idx/100)}">${idx}</div>`+
-            `<div><div style="font-weight:700;font-size:13px">Child Opportunity Gap Index</div>`+
-            `<div style="font-size:12px;color:var(--faint)">0 (at the benchmark district) → 100 (furthest from it). Composite of ${gapKeys.length} sourced gap indicators.</div></div></div>`;
-    if (d.scope) html += `<div class="prio-band">★ ${d.scope}</div>`;
-    else if (d.tier==='priority') html += `<div class="prio-band">★ Priority District — in-depth, intersectional investment across all four programmes.</div>`;
-    else html += `<div class="prio-band" style="background:var(--surface2);border-color:var(--border);color:var(--faint)">Programme Footprint — DEHAT has worked here through past &amp; ongoing projects; tracked in the Vulnerability Index.</div>`;
-    html += `<p class="why">${d.why}</p>`;
+            `<div><div style="font-weight:700;font-size:13px">${th('panel.index.title')}</div>`+
+            `<div style="font-size:12px;color:var(--faint)">${th('panel.index.desc',{n:gapKeys.length})}</div></div></div>`;
+    if (d.scope) html += `<div class="prio-band">\u2605 ${esc(dScope(d))}</div>`;
+    else if (d.tier==='priority') html += `<div class="prio-band">${th('panel.prio.priority')}</div>`;
+    else html += `<div class="prio-band" style="background:var(--surface2);border-color:var(--border);color:var(--faint)">${th('panel.prio.footprint')}</div>`;
+    html += `<p class="why">${esc(dWhy(d))}</p>`;
 
     A.nodes.forEach(node=>{
       const inds = A.indicators.filter(i=>i.node===node.id);
-      html += `<div class="nodeblock"><h3><span style="width:9px;height:9px;border-radius:50%;background:${node.color};display:inline-block"></span>${node.label}</h3>`+
-              `<p class="nb-blurb">${node.blurb}</p>`;
+      html += `<div class="nodeblock"><h3><span style="width:9px;height:9px;border-radius:50%;background:${node.color};display:inline-block"></span>${esc(nLabel(node))}</h3>`+
+              `<p class="nb-blurb">${esc(nBlurb(node))}</p>`;
       inds.forEach(ind=>{
         const r = A.value(did, ind.key);
         const bU = A.bench.up[ind.key], bI = A.bench.india[ind.key], bM = A.bench.mh[ind.key];
         const stateBench = d.sb==='mh'? bM : bU;
-        const stateLbl = d.sb==='mh'?'MH':'UP';
-        const badge = r.kind==='exact' ? `<span class="badge b-exact">District · Exact</span>`
-                    : r.kind==='state' ? `<span class="badge b-state">${stateLbl} Benchmark</span>`
+        const stateLbl = d.sb==='mh' ? t('bench.mh') : t('bench.up');
+        const badge = r.kind==='exact' ? `<span class="badge b-exact">${th('badge.exact')}</span>`
+                    : r.kind==='state' ? `<span class="badge b-state">${th('badge.state',{state:stateLbl})}</span>`
                     : '';
         const valTxt = fmtVal(ind, r.v);
         const excl = isExcluded(did, ind.key);
         const valColor = (ind.worseHigh && r.v!=null && !excl) ? sevColor(clampNorm(ind.key,r.v)) : 'var(--text)';
-        html += `<div class="ind"><div class="ind-top"><div class="ind-label">${ind.label}</div>`+
-                `<div class="ind-val" style="color:${valColor}">${valTxt}</div></div>`+
-                `<div class="ind-interp">${ind.interp}</div>`;
+        html += `<div class="ind"><div class="ind-top"><div class="ind-label">${esc(iLabel(ind))}</div>`+
+                `<div class="ind-val" style="color:${valColor}">${esc(valTxt)}</div></div>`+
+                `<div class="ind-interp">${esc(iInterp(ind))}</div>`;
         if (ind.worseHigh && r.v!=null && !excl){
           const rng = RANGES[ind.key]||[0,100];
           const pct = Math.max(3, Math.min(100, clampNorm(ind.key,r.v)*100));
           html += `<div class="bar"><span style="width:${pct}%;background:${valColor}"></span></div>`;
           const markPct = (val)=> val==null?null:Math.max(0,Math.min(100,((val-rng[0])/(rng[1]-rng[0]))*100));
           const mST = markPct(stateBench), mIN = markPct(bI);
+          const edge = p => p<14 ? ' m-start' : p>86 ? ' m-end' : '';
           html += `<div class="bar-marks">`;
-          if(mST!=null) html += `<span class="bar-mark" style="left:${mST}%">${stateLbl} ${stateBench}</span>`;
-          if(mIN!=null) html += `<span class="bar-mark b2" style="left:${mIN}%">India ${bI}</span>`;
+          if(mST!=null) html += `<span class="bar-mark${edge(mST)}" style="inset-inline-start:${mST}%">${esc(t('bar.mark',{label:stateLbl,value:stateBench}))}</span>`;
+          if(mIN!=null) html += `<span class="bar-mark b2${edge(mIN)}" style="inset-inline-start:${mIN}%">${esc(t('bar.mark',{label:t('bench.india'),value:bI}))}</span>`;
           html += `</div>`;
         }
-        html += `<div class="srcrow"><span class="src">Source: ${r.src || ind.source}</span>${badge}</div></div>`;
+        html += `<div class="srcrow"><span class="src">${esc(t('label.source',{source:srcOf(did,ind,r)}))}</span>${badge}</div></div>`;
       });
       html += `</div>`;
     });
-    html += `<div class="disclaim" style="margin-top:20px"><b style="color:var(--text)">Reading the badges.</b> `+
-            `<span class="badge b-exact">District · Exact</span> = the district's own value from the Vulnerability Index. `+
-            `<span class="badge b-state">Benchmark</span> = the state average, shown where the matrix has no district figure for this indicator. `+
-            `Bars set this district against the UP and India averages.</div>`;
+    html += `<div class="disclaim" style="margin-top:20px"><b style="color:var(--text)">${th('badges.title')}</b> `+
+            `<span class="badge b-exact">${th('badge.exact')}</span> ${th('badges.exact')} `+
+            `<span class="badge b-state">${th('badge.benchmark')}</span> ${th('badges.state')} `+
+            `${th('badges.bars')}</div>`;
     html += `</div>`;
     body.innerHTML = html;
     panel.scrollTop = 0;
@@ -497,8 +586,9 @@
   searchIn.addEventListener('input', ()=>{
     const q=searchIn.value.trim().toLowerCase();
     if(!q){ suggest.style.display='none'; return; }
-    const hits=A.districts.filter(d=>d.name.toLowerCase().includes(q)||d.state.toLowerCase().includes(q)).slice(0,6);
-    suggest.innerHTML = hits.length? hits.map(d=>`<button data-id="${d.id}"><b>${d.name}</b><span>${d.state}${d.tier==='priority'?' · ★':''}</span></button>`).join('') : '<div class="nohit">No matching district</div>';
+    // matches the name as shown and the English name, so a reader can type either
+    const hits=A.districts.filter(d=>[dName(d),dState(d),d.name,d.state].some(v=>v.toLowerCase().includes(q))).slice(0,6);
+    suggest.innerHTML = hits.length? hits.map(d=>`<button data-id="${d.id}"><b>${esc(dName(d))}</b><span>${esc(dState(d))}${d.tier==='priority'?' \u00b7 \u2605':''}</span></button>`).join('') : `<div class="nohit">${th('search.nohit')}</div>`;
     suggest.style.display='block';
     suggest.querySelectorAll('button').forEach(b=> b.onclick=()=>{ const d=A.districts.find(x=>x.id===b.dataset.id); searchIn.value=''; suggest.style.display='none'; jumpTo(d); });
   });
@@ -518,22 +608,24 @@
   function metricVal(did){
     if(selMetric==='overall'){ const v=overallIndex(did); return {v, txt:String(v)}; }
     const r=A.value(did,selMetric); const ind=A.indicators.find(i=>i.key===selMetric);
-    if (isExcluded(did, selMetric)) return {v:-1, txt:'n/a', kind:'excluded'};
+    if (isExcluded(did, selMetric)) return {v:-1, txt:t('rank.na'), kind:'excluded'};
     return {v:r.v==null?-1:r.v, txt:fmtVal(ind,r.v), kind:r.kind};
   }
   function buildRank(){
     const rows=A.districts.filter(isVisible).map(d=>({d, m:metricVal(d.id)}));
+    const loc = LANG==='en' ? undefined : LANG;
+    const byName = (a,b)=>{ try { return dName(a).localeCompare(dName(b), loc); } catch(e){ return dName(a).localeCompare(dName(b)); } };
     rows.sort((a,b)=> rankSort.key==='name'
-      ? (rankSort.asc? a.d.name.localeCompare(b.d.name) : b.d.name.localeCompare(a.d.name))
+      ? (rankSort.asc? byName(a.d,b.d) : byName(b.d,a.d))
       : (rankSort.asc? a.m.v-b.m.v : b.m.v-a.m.v));
     const ind=A.indicators.find(i=>i.key===selMetric);
-    const title = selMetric==='overall'?'Index':ind.label;
-    const arrow = k => rankSort.key===k ? (rankSort.asc?' ↑':' ↓') : '';
+    const title = selMetric==='overall' ? t('rank.index') : iLabel(ind);
+    const arrow = k => rankSort.key===k ? (rankSort.asc?' \u2191':' \u2193') : '';
     rankbox.innerHTML =
-      `<div class="rk-head"><button data-k="name">District${arrow('name')}</button><button data-k="val">${title}${arrow('val')}</button></div>`+
+      `<div class="rk-head"><button data-k="name">${th('rank.district')}${arrow('name')}</button><button data-k="val">${esc(title)}${arrow('val')}</button></div>`+
       rows.map((r,i)=>`<button class="rk-row${selected===r.d.id?' sel':''}" data-id="${r.d.id}">`+
-        `<span class="rk-n">${i+1}</span><span class="rk-name">${r.d.name}${r.d.tier==='priority'?' <b style="color:#EAAE28">★</b>':''}<small>${r.d.state}</small></span>`+
-        `<span class="rk-val" style="color:${selMetric==='overall'?sevColor(r.m.v/100):(r.m.v<0?'var(--faint)':sevColor(clampNorm(selMetric,r.m.v)))}">${r.m.txt}</span></button>`).join('');
+        `<span class="rk-n">${i+1}</span><span class="rk-name">${esc(dName(r.d))}${r.d.tier==='priority'?' <b style="color:#EAAE28">\u2605</b>':''}<small>${esc(dState(r.d))}</small></span>`+
+        `<span class="rk-val" style="color:${selMetric==='overall'?sevColor(r.m.v/100):(r.m.v<0?'var(--faint)':sevColor(clampNorm(selMetric,r.m.v)))}">${esc(r.m.txt)}</span></button>`).join('');
     rankbox.querySelectorAll('.rk-head button').forEach(b=> b.onclick=()=>{ const k=b.dataset.k; if(rankSort.key===k) rankSort.asc=!rankSort.asc; else rankSort={key:k, asc:k==='name'}; buildRank(); });
     rankbox.querySelectorAll('.rk-row').forEach(b=> b.onclick=()=>{ const d=A.districts.find(x=>x.id===b.dataset.id); jumpTo(d); });
   }
@@ -546,32 +638,49 @@
   function renderCompare(){
     const panel=document.getElementById('panel'); const body=document.getElementById('panelBody'); panel.classList.add('open');
     if(cmpSet.length<2){
-      body.innerHTML=`<div class="placeholder"><b style="font-size:22px;display:block;margin-bottom:10px">Compare Districts</b>`+
-        `Tap two districts on the map — or pick them from the ranking table or search — to see every indicator side by side.`+
-        (cmpSet.length===1?`<div class="disclaim">Selected: <b style="color:var(--text)">${A.districts.find(x=>x.id===cmpSet[0]).name}</b> — pick one more.</div>`:'')+`</div>`;
+      body.innerHTML=`<div class="placeholder"><b style="font-size:22px;display:block;margin-bottom:10px">${th('cmp.title')}</b>`+
+        `${th('cmp.hint')}`+
+        (cmpSet.length===1?`<div class="disclaim">${th('cmp.selected',{name:{html:`<b style="color:var(--text)">${esc(dName(A.districts.find(x=>x.id===cmpSet[0])))}</b>`}})}</div>`:'')+`</div>`;
       return;
     }
     const [a,b]=cmpSet.map(id=>A.districts.find(x=>x.id===id));
-    let html=`<div class="p-pad"><span class="eyebrow" style="color:#EAAE28">Compare</span>`+
-      `<h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-.02em;margin:8px 0 2px">${a.name} · ${b.name}</h1>`+
-      `<div class="p-sub">Opportunity Gap Index: ${a.name} <b style="color:${sevColor(overallIndex(a.id)/100)}">${overallIndex(a.id)}</b> · ${b.name} <b style="color:${sevColor(overallIndex(b.id)/100)}">${overallIndex(b.id)}</b></div>`+
-      `<div class="cmp-row cmp-headrow"><div class="cmp-label"></div><div class="cmp-vals"><span>${a.name.replace(/ \(.*/,'')}</span><span>${b.name.replace(/ \(.*/,'')}</span></div></div>`;
+    const num = d => `<b style="color:${sevColor(overallIndex(d.id)/100)}">${overallIndex(d.id)}</b>`;
+    let html=`<div class="p-pad"><span class="eyebrow" style="color:#EAAE28">${th('cmp.eyebrow')}</span>`+
+      `<h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:23px;line-height:1.1;letter-spacing:-.02em;margin:8px 0 2px">${esc(dName(a))} \u00b7 ${esc(dName(b))}</h1>`+
+      `<div class="p-sub">${th('cmp.index',{a:dName(a),ia:{html:num(a)},b:dName(b),ib:{html:num(b)}})}</div>`+
+      `<div class="cmp-row cmp-headrow"><div class="cmp-label"></div><div class="cmp-vals"><span>${esc(shortName(a))}</span><span>${esc(shortName(b))}</span></div></div>`;
     A.nodes.forEach(node=>{
       const inds=A.indicators.filter(i=>i.node===node.id);
-      html+=`<div class="nodeblock"><h3><span style="width:9px;height:9px;border-radius:50%;background:${node.color};display:inline-block"></span>${node.label}</h3>`;
+      html+=`<div class="nodeblock"><h3><span style="width:9px;height:9px;border-radius:50%;background:${node.color};display:inline-block"></span>${esc(nLabel(node))}</h3>`;
       inds.forEach(ind=>{
         const ra=A.value(a.id,ind.key), rb=A.value(b.id,ind.key);
         const fa=fmtVal(ind,ra.v), fb=fmtVal(ind,rb.v);
         let worse=null;
         if(ind.worseHigh && ra.v!=null && rb.v!=null && ra.v!==rb.v && !isExcluded(a.id,ind.key) && !isExcluded(b.id,ind.key)) worse = ra.v>rb.v?'a':'b';
-        html+=`<div class="cmp-row"><div class="cmp-label">${ind.label}</div>`+
-          `<div class="cmp-vals"><span class="cmp-v${worse==='a'?' worse':''}">${fa}${ra.kind==='state'?'<i>†</i>':''}</span>`+
-          `<span class="cmp-v${worse==='b'?' worse':''}">${fb}${rb.kind==='state'?'<i>†</i>':''}</span></div></div>`;
+        html+=`<div class="cmp-row"><div class="cmp-label">${esc(iLabel(ind))}</div>`+
+          `<div class="cmp-vals"><span class="cmp-v${worse==='a'?' worse':''}">${esc(fa)}${ra.kind==='state'?'<i>\u2020</i>':''}</span>`+
+          `<span class="cmp-v${worse==='b'?' worse':''}">${esc(fb)}${rb.kind==='state'?'<i>\u2020</i>':''}</span></div></div>`;
       });
       html+=`</div>`;
     });
-    html+=`<div class="disclaim" style="margin-top:18px">† state benchmark shown — indicator not in the district matrix. The <span style="color:#D2305C;font-weight:700">highlighted</span> value is the worse of the pair on gap indicators.</div></div>`;
+    html+=`<div class="disclaim" style="margin-top:18px">${th('cmp.foot',{highlight:{html:`<span style="color:#D2305C;font-weight:700">${esc(t('cmp.highlighted'))}</span>`}})}</div></div>`;
     body.innerHTML=html; panel.scrollTop=0;
+  }
+
+  // ----- live language change from the parent site (see also the message handler above) -----
+  function refreshText(){
+    if(!started) return;
+    applyStatic();
+    const sel=document.getElementById('metricSel'); sel.dataset.built=''; buildToolbar();
+    suggest.style.display='none';
+    renderPoints(); buildLegend();
+    if(cmpMode) renderCompare(); else if(selected) selectDistrict(selected); else buildPlaceholder();
+    if(rankOpen) buildRank();
+  }
+  function changeLang(code){
+    code = normLang(code);
+    if(code===langReq) return;
+    useLang(code, current=>{ if(current) refreshText(); });
   }
 })();
 </script>
