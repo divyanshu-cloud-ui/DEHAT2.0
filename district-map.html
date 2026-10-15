@@ -174,7 +174,7 @@
   <div id="panel"><button id="panelClose" aria-label="Close panel">×</button><div id="panelBody"><div class="placeholder" id="ph"></div></div></div>
 </div>
 
-<script src="./district-data.js?v=38"></script>
+<script src="./district-data.js?v=39"></script>
 <script>
 (function(){
   const A = window.ATLAS;
@@ -208,12 +208,16 @@
 
   // normalise a district's value for a metric to 0..1 (worse = 1)
   const gapKeys = A.indicators.filter(i => i.worseHigh && !i.noIndex).map(i => i.key);
+  // Values that are shown in the profile but not comparable with the rest of the set (A.indexExclude)
+  // are left out of the composite index, the per-indicator ranking and the map shading.
+  const isExcluded = (did, key) => !!(A.indexExclude && A.indexExclude[did] && A.indexExclude[did].includes(key));
   function metricNorm(did, key){
     if (key === 'overall'){
       let sum=0, n=0;
-      gapKeys.forEach(k => { const r=A.value(did,k); if(r.v!=null){ sum += clampNorm(k, r.v); n++; } });
+      gapKeys.forEach(k => { if (isExcluded(did,k)) return; const r=A.value(did,k); if(r.v!=null){ sum += clampNorm(k, r.v); n++; } });
       return n ? sum/n : 0;
     }
+    if (isExcluded(did, key)) return null;
     const r = A.value(did, key); if (r.v==null) return null;
     return clampNorm(key, r.v);
   }
@@ -222,7 +226,8 @@
     homebirth:[4,40], noEarlyBF:[55,90], noANC:[30,60], noPostnatal:[10,56], femaleIlliteracy:[17,68],
     menstrualGap:[13,60], childMarriage:[8,38], adolMothers:[1,9], spousalViolence:[21,38],
     noCleanFuel:[10,83], noCleanWater:[1,9], noSanitation:[6,56],
-    secDropout:[1,15], transitionGap:[5,50], secPTR:[22,52], cwsnToiletGap:[10,85], outMigration:[25000,225000], interStateMig:[100,6000] };
+    secDropout:[1,15], transitionGap:[5,50], secPTR:[22,52], cwsnToiletGap:[10,85], outMigration:[25000,225000], interStateMig:[100,6000],
+    imr:[20,110], u5mr:[30,140], childWork:[2,8], mpiPoor:[5,60], phcGap:[55,80], girlsDropout:[0,20] };
   function clampNorm(key, v){
     const r = RANGES[key]; if(!r) return 0.5;
     return Math.max(0, Math.min(1, (v - r[0]) / (r[1] - r[0])));
@@ -421,9 +426,8 @@
       `Every district on this map is a place DEHAT works, accompanied by its communities — three under our deepest, intersectional investment, a fourth \u2014 Lakhimpur Kheri \u2014 entered in 2026 for child protection, and the rest across two decades of programme presence. `+
       `Tap any district to open its full child profile: each indicator, its value and its named source, grouped along the vulnerability cycle. `+
       `Shade the map by any of ${A.indicators.filter(i=>i.worseHigh).length} indicators, filter by state or presence, rank the districts, or compare two side by side.`+
-      `<div class="disclaim" style="border-left:2px solid #EAAE28;padding-left:14px"><b style="color:var(--text)">How the index is built.</b> Each indicator is scored as a distance from the best-performing district in this set, then averaged into a single 0\u2013100 figure. A district at 0 sits where the strongest district here sits; 100 is the furthest anyone in the set falls from it. Because the benchmark is a real district and not a national ideal, every point on the scale is a distance that has already been closed somewhere. The index decides where DEHAT goes next, and it is the same figure the work is reported back against \u2014 a district that improves should move down it.<br><br><b style="color:var(--text)">What an index is, and is not.</b> It is not a verdict on a place or its people. It is a measure of how far a public system sits from what it already promises, expressed as one number so that every district here can be compared honestly and priorities can be argued with rather than asserted.</div>`+
-      `<div class="disclaim"><b style="color:var(--text)">On the data.</b> Every figure is drawn from DEHAT's Vulnerability Index — ${A.indicators.length} indicators across ${A.districts.length} districts, each traced to a named source: the NFHS-5 (2019\u201321) district fact-sheet dataset (MoHFW / IIPS) for health, nutrition, WASH and gender; UDISE+ district fact sheets for schooling, secondary-stage dropout and child migration; and SRS for maternal mortality, which is state-level by construction. The seven schooling &amp; mobility indicators are tagged by their link to the Structural Vulnerability Cycle — <b style="color:var(--text)">direct</b> (labour, trafficking, exploitation), <b style="color:var(--text)">indirect</b> (retention &amp; school conditions) or <b style="color:var(--text)">intersectional</b> (overlapping caste, tribe, minority, disability &amp; gender disadvantage). Migration is a student-volume count, so it is shown and shadeable but held out of the composite index. Every health, nutrition, WASH and gender figure comes from a single survey round, so districts are compared like with like. Spousal violence is collected in the NFHS state module only and is shown as the state figure everywhere. `+
-      `Maternal mortality is reported at state level, badged as such. Every value carries the sheet it came from. Measures with no official district source, such as infant and under-5 mortality and child labour, are left out rather than estimated.</div>`;
+      `<div class="disclaim" style="border-left:2px solid #EAAE28;padding-left:14px"><b style="color:var(--text)">How the index is built.</b> Each indicator is scored from 0 to 1 against a fixed range set in the page (for example stunting from 25% to 55%, infant mortality from 20 to 110 per 1,000), then the scores are averaged into a single 0\u2013100 figure. A district with a value missing is averaged over the indicators it has. The ranges are fixed, not set by the best district in the set, so a district\u2019s score moves only when its own figures move: one that improves should move down it. State-level figures, raw student counts, the girls\u2019 dropout rate and SC + ST share are shown in each profile but not scored, and one value that is not comparable with the others (Dharashiv\u2019s distance to a primary health centre) is left out. The index decides where DEHAT goes next, and it is the same figure the work is reported back against.<br><br><b style="color:var(--text)">What an index is, and is not.</b> It is not a verdict on a place or its people. It is a measure of how far a public system sits from what it already promises, expressed as one number so that every district here can be compared honestly and priorities can be argued with rather than asserted.</div>`+
+      `<div class="disclaim"><b style="color:var(--text)">On the data.</b> Every figure is drawn from DEHAT's Vulnerability Index - ${A.indicators.length} indicators across ${A.districts.length} districts, each traced to a named source: the NFHS-5 (2019\u201321) district fact-sheet dataset (MoHFW / IIPS) for health, nutrition, WASH and gender, and for the state-level anganwadi figure; UDISE+ district fact sheets and dashboard data (2024\u201325, with 2025\u201326 for Lakhimpur Kheri and Basti) for schooling, dropout including girls\u2019 dropout, and child migration; the Annual Health Survey 2012\u201313 for infant and under-5 mortality in Uttar Pradesh; the Census of India 2011 for working children aged 5\u201314, SC + ST share and distance to a primary health centre; NITI Aayog\u2019s National Multidimensional Poverty Index 2023 (NFHS-5) for poverty; and SRS for maternal mortality, which is state-level by construction. Some cells are older than others, or come from government-recognised estimates rather than a government survey (the ICMR-PHFI-IHME 2017 mortality estimates for Amethi and Maharashtra, and a Mission Antyodaya village measure for Dharashiv\u2019s health-centre distance), so each value names its own source in the profile. The eight schooling &amp; mobility indicators are tagged by their link to the Structural Vulnerability Cycle - <b style="color:var(--text)">direct</b> (labour, trafficking, exploitation), <b style="color:var(--text)">indirect</b> (retention &amp; school conditions) or <b style="color:var(--text)">intersectional</b> (overlapping caste, tribe, minority, disability &amp; gender disadvantage). Migration is a student-volume count, so it is shown and shadeable but held out of the composite index. Every health, nutrition, WASH and gender figure comes from a single survey round, so districts are compared like with like. Spousal violence and the anganwadi figure are collected in the NFHS state module or state report only and are shown as the state figure everywhere. Maternal mortality is reported at state level, badged as such. Every value carries the sheet it came from.</div>`;
   }
 
   // ----- deep-dive panel -----
@@ -456,13 +460,14 @@
         const stateLbl = d.sb==='mh'?'MH':'UP';
         const badge = r.kind==='exact' ? `<span class="badge b-exact">District · Exact</span>`
                     : r.kind==='state' ? `<span class="badge b-state">${stateLbl} Benchmark</span>`
-                    : `<span class="badge b-na">Factsheet Pending</span>`;
+                    : '';
         const valTxt = fmtVal(ind, r.v);
-        const valColor = (ind.worseHigh && r.v!=null) ? sevColor(clampNorm(ind.key,r.v)) : 'var(--text)';
+        const excl = isExcluded(did, ind.key);
+        const valColor = (ind.worseHigh && r.v!=null && !excl) ? sevColor(clampNorm(ind.key,r.v)) : 'var(--text)';
         html += `<div class="ind"><div class="ind-top"><div class="ind-label">${ind.label}</div>`+
                 `<div class="ind-val" style="color:${valColor}">${valTxt}</div></div>`+
                 `<div class="ind-interp">${ind.interp}</div>`;
-        if (ind.worseHigh && r.v!=null){
+        if (ind.worseHigh && r.v!=null && !excl){
           const rng = RANGES[ind.key]||[0,100];
           const pct = Math.max(3, Math.min(100, clampNorm(ind.key,r.v)*100));
           html += `<div class="bar"><span style="width:${pct}%;background:${valColor}"></span></div>`;
@@ -513,6 +518,7 @@
   function metricVal(did){
     if(selMetric==='overall'){ const v=overallIndex(did); return {v, txt:String(v)}; }
     const r=A.value(did,selMetric); const ind=A.indicators.find(i=>i.key===selMetric);
+    if (isExcluded(did, selMetric)) return {v:-1, txt:'n/a', kind:'excluded'};
     return {v:r.v==null?-1:r.v, txt:fmtVal(ind,r.v), kind:r.kind};
   }
   function buildRank(){
@@ -557,7 +563,7 @@
         const ra=A.value(a.id,ind.key), rb=A.value(b.id,ind.key);
         const fa=fmtVal(ind,ra.v), fb=fmtVal(ind,rb.v);
         let worse=null;
-        if(ind.worseHigh && ra.v!=null && rb.v!=null && ra.v!==rb.v) worse = ra.v>rb.v?'a':'b';
+        if(ind.worseHigh && ra.v!=null && rb.v!=null && ra.v!==rb.v && !isExcluded(a.id,ind.key) && !isExcluded(b.id,ind.key)) worse = ra.v>rb.v?'a':'b';
         html+=`<div class="cmp-row"><div class="cmp-label">${ind.label}</div>`+
           `<div class="cmp-vals"><span class="cmp-v${worse==='a'?' worse':''}">${fa}${ra.kind==='state'?'<i>†</i>':''}</span>`+
           `<span class="cmp-v${worse==='b'?' worse':''}">${fb}${rb.kind==='state'?'<i>†</i>':''}</span></div></div>`;
