@@ -501,7 +501,7 @@
   .hr-ctl{position:absolute;right:0;bottom:14px;z-index:2;min-width:44px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(251,247,239,.45);background:#150e08;color:#fbf7ef;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer}
   .hr-ctl:focus-visible,.hr-cta:focus-visible,.hr-link:focus-visible{outline:3px solid #EAAE28;outline-offset:3px}
   .hr-prog{position:absolute;left:0;bottom:0;height:3px;background:var(--hr-gold);width:0;z-index:2}
-  .hr-playing .hr-prog{animation:hrGrow 30s linear forwards}.hr-paused .hr-prog{animation-play-state:paused}
+  .hr-playing .hr-prog{animation:hrGrow 38.8s linear forwards}.hr-paused .hr-prog{animation-play-state:paused}
   @keyframes hrGrow{to{width:100%}}
   @media (max-width:779px){ .hr-clock .tl{display:none} .hr-key{padding:0;gap:0 14px} .hr-kd{font-size:12.5px} .hr-canvas{height:clamp(64px,11svh,110px)} .hr-story{display:none} .hr-top{gap:6px} .hr-end{gap:8px} }
   @media (min-width:780px){
@@ -35998,7 +35998,7 @@ class Component extends DCLogic {
     };
   }
   // The engine-owned part of the hero. It builds the clock, the line and the bars once, then plays
-  // eight story beats, the four programmes, and rests on the headline after 30 seconds.
+  // eight story beats, the four programmes, and rests on the headline after 38.8 seconds.
   // Reduced motion goes straight to the resting frame; a pause button is
   // always there. Everything is time-based, so a slow phone stays in step with the words.
   _heroMountRef() {
@@ -36007,8 +36007,10 @@ class Component extends DCLogic {
       if (!el || el._hero) return;
       el._hero = true;
       const self = this, q = (s) => el.querySelector(s), qa = (s) => Array.prototype.slice.call(el.querySelectorAll(s));
-      // The owner-approved film lasts 30 s; stepping leaves the same twelve-beat structure available.
-      const AT = [0, 3000, 5700, 8400, 11100, 13800, 16800, 19800], ORDER = ['re', 'sol', 'hp', 'cj'], PAT = [22600, 24400, 26200, 28000], AHEAD = 29400, END = 30000;
+      // The owner-approved film lasts 38.8 s (option b, 15 Oct 2026): each beat stays on screen at least
+      // words / 3.3 + 0.8 s, so all twelve lines, including the four programmes, can be read in the film.
+      // Stepping leaves the same twelve-beat structure available.
+      const AT = [0, 3800, 6500, 9200, 12400, 15100, 18300, 21300], ORDER = ['re', 'sol', 'hp', 'cj'], PAT = [24800, 28000, 31200, 34700], AHEAD = 38200, END = 38800;
       const TURNS = [-1, 0, 3, 13, 15, 16, 18], YEARS = { re: [-1, 5], sol: [5, 18], hp: [11, 18], cj: [-1, 18] }, ARCR = { re: 58, sol: 52, hp: 46, cj: 40 };
       const VW = 1000, VH = 260, X0 = 18, X1 = 940, CX = 100, CY = 100;
       const X = (a) => X0 + (a + 1) / 19 * (X1 - X0);
@@ -36131,7 +36133,7 @@ class Component extends DCLogic {
         if (document.querySelector('#launch-live [role="dialog"]')) { sysPaused = true; pause(); }
       };
       const pause = () => { if (state !== 'playing') return; clear(); elapsed += Date.now() - startedAt; el.classList.add('hr-paused'); state = 'paused'; el.dataset.heroState = 'paused'; frozen = true; if (raf) { cancelAnimationFrame(raf); raf = 0; } labels(); };
-      const resume = () => { if (state !== 'paused') return; el.classList.remove('hr-paused'); el.classList.add('hr-playing'); state = 'playing'; el.dataset.heroState = 'playing'; frozen = false; startedAt = Date.now(); q('.hr-prog').style.animation = 'hrGrow 30s linear forwards'; q('.hr-prog').style.animationDelay = '-' + (elapsed / 1000) + 's'; schedule(elapsed + 1); labels(); kick(); };
+      const resume = () => { if (state !== 'paused') return; el.classList.remove('hr-paused'); el.classList.add('hr-playing'); state = 'playing'; el.dataset.heroState = 'playing'; frozen = false; startedAt = Date.now(); q('.hr-prog').style.animation = 'hrGrow 38.8s linear forwards'; q('.hr-prog').style.animationDelay = '-' + (elapsed / 1000) + 's'; schedule(elapsed + 1); labels(); kick(); };
       ctl.addEventListener('click', () => { sysPaused = false; state === 'playing' ? pause() : state === 'paused' ? resume() : play(); });
       // Interaction. Tap a turn on the clock to read that moment of her life; tap a programme to see the years
       // it answers; wheel or swipe anywhere on the non-control stage to step through; the film pauses when off screen.

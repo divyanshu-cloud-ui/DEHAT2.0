@@ -104,9 +104,9 @@ test('hero replays on full load, rests after in-app return, and stays accessible
     const timedPage = await timed.newPage();
     await timedPage.goto(local.origin + '/'); await ready(timedPage);
     const started = Date.now();
-    await timedPage.locator('#launch-live .hr-in[data-hero-state="rest"]').waitFor({timeout:33000});
+    await timedPage.locator('#launch-live .hr-in[data-hero-state="rest"]').waitFor({timeout:42000});
     const duration = Date.now() - started;
-    assert.ok(duration >= 29000 && duration <= 31000, `autoplay duration ${duration} ms`);
+    assert.ok(duration >= 37800 && duration <= 39800, `autoplay duration ${duration} ms`);
     console.log(JSON.stringify({heroDurationMs:duration,frames:output}));
     await timed.close();
   } finally {
