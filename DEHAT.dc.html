@@ -5268,6 +5268,14 @@ class Component extends DCLogic {
       'url("' + base + '-' + width + '.webp") type("image/webp") ' + density + 'x',
     ]).join(',') + ')');
   }
+  // Cycle figures are 1200 px PNG masters but render at most 84 px (ring) and 220 px (active figure).
+  // Serve the sized AVIF/WebP variants from tools/optimise-svc-images.mjs; anything else keeps its plain url().
+  _svcImageCss(img, width) {
+    const m = /^\.\/assets\/svc\/([a-z0-9-]+)\.png$/.exec(img || '');
+    if (!m) return img ? 'url(' + img + ')' : 'none';
+    const base = './assets/svc/optimized/' + m[1] + '-' + width;
+    return 'image-set(url("' + base + '.avif") type("image/avif"),url("' + base + '.webp") type("image/webp"))';
+  }
   _storyImageSources(art) {
     const base='./assets/story/optimized/'+art;
     const variants=ext=>[480,800,1100].map(width=>`${base}-${width}.${ext} ${width}w`).join(', ');
@@ -37857,7 +37865,7 @@ class Component extends DCLogic {
       const active = cur === i;
       const a = (-90 + i * 360 / N) * Math.PI / 180, R = 47;
       return {
-        ...n, num: i + 1,
+        ...n, num: i + 1, imgCss: this._svcImageCss(n.img, 160),
         select: () => this.setState({ node: i, paused: true }),
         posX: (50 + R * Math.cos(a)).toFixed(2) + '%',
         posY: (50 + R * Math.sin(a)).toFixed(2) + '%',
@@ -37867,7 +37875,7 @@ class Component extends DCLogic {
         opacity: active ? '1' : '.82',
       };
     });
-    const activeNode = { ...cyc[cur], num: cur + 1, total: N };
+    const activeNode = { ...cyc[cur], num: cur + 1, total: N, imgCss: this._svcImageCss(cyc[cur].img, 480) };
     const ringPlay = this.state.paused ? 'paused' : 'running';
     const wheelLeave = () => this.setState({ paused: false });
     const nextNode = () => this.setState(s => ({ node: (s.node + 1) % N }));
