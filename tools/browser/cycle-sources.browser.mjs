@@ -4,8 +4,8 @@ import {pathToFileURL} from 'node:url';
 import {proofServer} from '../proof-server.mjs';
 import {renderSite} from '../site-browser.mjs';
 
-// Four approved sources since fix 190: the Boys as Bread-Earners moment now cites NITI Aayog's
-// National Multidimensional Poverty Index (Baseline Report 2021), so the list gained a fourth name.
+// Five sources since the 16 Oct update: Boys as Bread-Earners cites NITI Aayog's 2023 Progress Review
+// of the National Multidimensional Poverty Index, and Child & Bonded Labour cites the Census of India 2011.
 test('Cycle Sources switch reveals only the four approved source names',async()=>{
   if(!process.env.PLAYWRIGHT_MODULE)throw new Error('Set PLAYWRIGHT_MODULE');
   const modulePath=process.env.PLAYWRIGHT_MODULE;
@@ -43,7 +43,8 @@ test('Cycle Sources switch reveals only the four approved source names',async()=
         'National Family Health Survey 5 (district fact sheets and state module)',
         'Unified District Information System for Education Plus (district fact sheets)',
         'Sample Registration System',
-        'NITI Aayog National Multidimensional Poverty Index (Baseline Report 2021)',
+        'NITI Aayog National Multidimensional Poverty Index (Progress Review 2023)',
+        'Census of India 2011',
       ]);
       await page.waitForTimeout(220);
       if(width===375||width===1280)await page.screenshot({path:`/private/tmp/dehat-186-E1-open-${theme}-${width}.png`});

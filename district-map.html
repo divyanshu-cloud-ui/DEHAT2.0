@@ -472,9 +472,9 @@
           const pct = Math.max(3, Math.min(100, clampNorm(ind.key,r.v)*100));
           html += `<div class="bar"><span style="width:${pct}%;background:${valColor}"></span></div>`;
           const markPct = (val)=> val==null?null:Math.max(0,Math.min(100,((val-rng[0])/(rng[1]-rng[0]))*100));
-          const mUP = markPct(bU), mIN = markPct(bI);
+          const mST = markPct(stateBench), mIN = markPct(bI);
           html += `<div class="bar-marks">`;
-          if(mUP!=null) html += `<span class="bar-mark" style="left:${mUP}%">UP ${bU}</span>`;
+          if(mST!=null) html += `<span class="bar-mark" style="left:${mST}%">${stateLbl} ${stateBench}</span>`;
           if(mIN!=null) html += `<span class="bar-mark b2" style="left:${mIN}%">India ${bI}</span>`;
           html += `</div>`;
         }
