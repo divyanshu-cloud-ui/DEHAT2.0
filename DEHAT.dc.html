@@ -996,7 +996,9 @@
                   <div role="img" aria-hidden="true" style="height:110%; width:auto; max-width:min(80vw,220px); aspect-ratio:222/239; filter: drop-shadow(0 10px 22px rgba(0,0,0,.35)); background-image:{{ activeNode.imgCss }}; background-size:contain; background-repeat:no-repeat; background-position:bottom center"></div>
                 </div>
                 <span class="cyc-chapter" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#EAAE28;font-weight:700">{{ activeNode.chapter }}</span>
-                <div class="cyc-stat" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(28px,10cqw,58px);color:#fff;line-height:.9;margin:6px 0 4px">{{ activeNode.stat }}</div>
+                <sc-if value="{{ activeNode.hasStat }}" hint-placeholder-val="{{ true }}">
+                  <div class="cyc-stat" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(28px,10cqw,58px);color:#fff;line-height:.9;margin:6px 0 4px">{{ activeNode.stat }}</div>
+                </sc-if>
                 <h3 class="cyc-title" style="font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(15px,1.9vw,21px);color:#fff;margin:0 0 8px;line-height:1.14;text-wrap:pretty">{{ activeNode.title }}</h3>
                 <p class="svc-instory" style="font-size:clamp(11.5px,1.15vw,13.5px);line-height:1.5;color:rgba(255,255,255,.8);margin:0 0 8px;text-wrap:pretty;max-height:7.6em;overflow:hidden">{{ activeNode.story }}</p>
                 <div class="svc-instory" style="font-size:10.5px;color:rgba(255,255,255,.7);font-weight:600;letter-spacing:.02em">{{ T.f_source }} {{ activeNode.src }}</div>
@@ -1015,6 +1017,7 @@
             <li>National Family Health Survey 5 (district fact sheets and state module)</li>
             <li>Unified District Information System for Education Plus (district fact sheets)</li>
             <li>Sample Registration System</li>
+            <li>NITI Aayog National Multidimensional Poverty Index (Baseline Report 2021)</li>
           </ul>
         </div>
       </div>
@@ -1716,7 +1719,9 @@
               <div class="cyc-img" role="img" aria-hidden="true" style="width:clamp(96px,12vw,140px);height:clamp(96px,12vw,140px);flex:none;background-image:{{ pp.cyc.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:center"></div>
               <div>
                 <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:{{ pp.fgc }}">{{ pp.cyc.chapter }}</div>
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,46px);line-height:1;color:var(--text);margin:6px 0 5px">{{ pp.cyc.stat }}</div>
+                <sc-if value="{{ pp.cyc.hasStat }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,46px);line-height:1;color:var(--text);margin:6px 0 5px">{{ pp.cyc.stat }}</div>
+                </sc-if>
                 <div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:15px;line-height:1.25;color:var(--text)">{{ pp.cyc.title }}</div>
               </div>
             </div>
@@ -6767,7 +6772,7 @@ class Component extends DCLogic {
       cycle_head:'Risks Don’t Occur in Isolation.',
       cycle_sub:'They reinforce each other across generations - unless systems respond in time. There is no fixed order: for any child, the trap can begin at any point, and each risk pulls the next one closer.',
       cycle_pick:'Tap any moment to follow how one life is shaped.',
-      cycle_note:'Each figure is the worst recorded value across seven districts of Uttar Pradesh’s Indo-Nepal Terai belt - Bahraich, Shravasti, Balrampur, Lakhimpur Kheri, Siddharthnagar, Maharajganj and Kushinagar. Sources: the National Family Health Survey 5 (2019–21) district fact-sheet dataset (Ministry of Health and Family Welfare / International Institute for Population Sciences) for health, nutrition and gender; Unified District Information System for Education Plus district fact sheets for schooling; the Sample Registration System for maternal mortality, which is state-level. Every health figure comes from a single survey round, so the districts are compared like with like. Spousal violence is collected in the National Family Health Survey state module only and is shown as the Uttar Pradesh figure. Four moments - child labour, the poorest wealth bracket, and infant and under-5 mortality - rest on records still awaiting re-verification, and say so. India publishes no official district series for infant or under-5 mortality. Every moment names its district and source.',
+      cycle_note:'Each figure is the worst recorded value across seven districts of Uttar Pradesh’s Indo-Nepal Terai belt - Bahraich, Shravasti, Balrampur, Lakhimpur Kheri, Siddharthnagar, Maharajganj and Kushinagar. Sources: the National Family Health Survey 5 (2019–21) district fact-sheet dataset (Ministry of Health and Family Welfare / International Institute for Population Sciences) for health, nutrition and gender; Unified District Information System for Education Plus district fact sheets for schooling; the Sample Registration System for maternal mortality, which is state-level. Every health figure comes from a single survey round, so the districts are compared like with like. Spousal violence is collected in the National Family Health Survey state module only and is shown as the Uttar Pradesh figure. Infant and under-5 mortality are shown as Uttar Pradesh figures, because India publishes no official district series for them, and Shravasti’s poverty figure comes from NITI Aayog’s 2021 baseline, which uses 2015-16 survey data. Every moment names its place and source.',
       eyebrow_process:'The process',
       process_head:'When Communities Act, Systems Respond.',
       eyebrow_stories:'Stories of change',
@@ -36899,18 +36904,18 @@ class Component extends DCLogic {
       { img: './assets/svc/undernourished.png', chapter: 'Infancy', short: 'Undernourished at Birth', stat: '87%', title: 'An Undernourished Infant at Birth',
         story: 'This newborn is never put to the breast in time. In Maharajganj, 87% of babies miss feeding in the first hour - losing the earliest, most protective nourishment of their lives.',
         src: 'National Family Health Survey 5 · Maharajganj (86.6%) - highest in the belt', leads: 'Some do not survive the first year' },
-      { img: './assets/svc/infant-death.png', chapter: 'Infancy', short: 'High Infant Mortality', stat: '48', title: 'High Infant Mortality',
-        story: 'This baby does not live to see its first birthday. In Bahraich, 48 of every 1,000 infants die in their first year - most from causes that timely care could have prevented.',
-        src: 'DEHAT Vulnerability Index workbook · Bahraich (48.2 per 1,000) - no official district series; unverified', leads: 'Because care rarely arrives' },
+      { img: './assets/svc/infant-death.png', chapter: 'Infancy', short: 'High Infant Mortality', stat: '50', title: 'High Infant Mortality',
+        story: 'This baby does not live to see its first birthday. In Uttar Pradesh, 50 of every 1,000 infants die in their first year - most from causes that timely care could have prevented.',
+        src: 'National Family Health Survey 5 (2019-21) · Uttar Pradesh (state figure; India publishes no official district series)', leads: 'Because care rarely arrives' },
       { img: './assets/svc/natal-care.png', chapter: 'Infancy', short: 'No Ante- or Post-Natal Care', stat: '66%', title: 'No Ante- or Post-Natal Care',
         story: 'No health worker ever checks on this mother or her baby. In Bahraich, 66% of mothers get no full antenatal care and 48% receive no check-up in the two days after delivery - passing through the most dangerous months unseen.',
         src: 'National Family Health Survey 5 · Bahraich (65.7% no 4+ ANC; 47.6% no post-natal care within 2 days)', leads: 'So vaccines are missed too' },
       { img: './assets/svc/immunisation.png', chapter: 'Early childhood', short: 'Irregular Immunisation', stat: '48%', title: 'Irregular Immunisation of Under-5s',
         story: 'This child never completes its vaccinations. In Bahraich, 48% of children aged 12–23 months are not fully immunised - left open to diseases the rest of the country has all but defeated.',
         src: 'National Family Health Survey 5 · Bahraich (48.2% not fully vaccinated) - highest in the belt', leads: 'Preventable illness takes its toll' },
-      { img: './assets/svc/under5-death.png', chapter: 'Early childhood', short: 'Under-5 Deaths', stat: '59', title: 'High Under-5 Mortality',
-        story: 'This child does not reach the age of five. In Bahraich, 59 of every 1,000 children die before their fifth birthday - to diarrhoea, pneumonia and measles, all treatable where care can reach.',
-        src: 'DEHAT Vulnerability Index workbook · Bahraich (58.5 per 1,000) - no official district series; unverified', leads: 'The survivors carry the damage' },
+      { img: './assets/svc/under5-death.png', chapter: 'Early childhood', short: 'Under-5 Deaths', stat: '60', title: 'High Under-5 Mortality',
+        story: 'This child does not reach the age of five. In Uttar Pradesh, 60 of every 1,000 children die before their fifth birthday - to diarrhoea, pneumonia and measles, all treatable where care can reach.',
+        src: 'National Family Health Survey 5 (2019-21) · Uttar Pradesh (state figure; India publishes no official district series)', leads: 'The survivors carry the damage' },
       { img: './assets/svc/malnutrition.png', chapter: 'Early childhood', short: 'Malnourished Child', stat: '1 in 2', title: 'A Child Who Cannot Catch Up',
         story: 'This child is small and weak for its age. In Bahraich, 1 in 2 children under five is stunted - hunger written permanently into the body, and rarely recovered later in life.',
         src: 'National Family Health Survey 5 · Bahraich (52.1%)', leads: 'School becomes a harder climb' },
@@ -36920,18 +36925,18 @@ class Component extends DCLogic {
       { img: './assets/svc/dropout.png', chapter: 'Adolescence', short: 'School Dropout', stat: '1 in 4', title: 'Pushed Out of School',
         story: 'This girl\u2019s desk sits empty. In Shravasti, close to 1 in 4 girls drops out of primary and upper-primary school - each departure closing a door on literacy, choice and a different future.',
         src: 'Unified District Information System for Education Plus · Shravasti (23.5%)', leads: 'An out-of-school child is exposed' },
-      { img: './assets/svc/child-labour.png', chapter: 'Exploitation & rights', short: 'Child & Bonded Labour', stat: '1 in 9', title: 'A Childhood Traded for Wages',
-        story: 'This child works instead of learning. In Shravasti, around 1 in 9 children labours in fields, kilns, hotels and homes - once out of school, a child the market can put a price on.',
-        src: 'Census / administrative records · Shravasti (11.2%)', leads: 'Or is married off instead' },
+      { img: './assets/svc/child-labour.png', chapter: 'Exploitation & rights', short: 'Child & Bonded Labour', stat: '', title: 'A Childhood Traded for Wages',
+        story: 'This child works instead of learning. In Shravasti, children labour in fields, kilns, hotels and homes - once out of school, a child the market can put a price on.',
+        src: 'DEHAT field experience · Shravasti (India publishes no official district series on child labour)', leads: 'Or is married off instead' },
       { img: './assets/svc/child-marriage.png', chapter: 'Exploitation & rights', short: 'Child Marriage', stat: '52%', title: 'Married as a Child',
         story: 'This girl is married while still a child. In Shravasti, 52% of women aged 20–24 were wed before eighteen - illegal, yet ordinary, and the quickest way a struggling family sheds a mouth to feed.',
         src: 'National Family Health Survey 5 · Shravasti (51.9%) - highest in the belt', leads: 'Some marriages are a disguise' },
       { img: './assets/svc/trafficking.png', chapter: 'Exploitation & rights', short: 'Human Trafficking', stat: '382', title: 'Trafficking Dressed as Marriage',
         story: 'For this girl, "marriage" is a trafficker\u2019s cover. Across the open Indo-Nepal border, DEHAT and its community networks have intercepted 382 children from trafficking risk disguised this way.',
         src: 'DEHAT field data · Indo-Nepal border districts', leads: 'Meanwhile, boys leave school to earn' },
-      { img: './assets/svc/bread-earner.png', chapter: 'Exploitation & rights', short: 'Boys as Bread-Earners', stat: '41%', title: 'Boys Pushed Into Earning',
-        story: 'This boy leaves home to earn instead of study. In Shravasti, 41% of families are in India\u2019s poorest wealth bracket, sending sons into unsafe work in hotels, eateries and construction far from home.',
-        src: 'National Family Health Survey wealth index · Shravasti (40.5%) - awaiting re-verification', leads: 'Daughters carry a different burden' },
+      { img: './assets/svc/bread-earner.png', chapter: 'Exploitation & rights', short: 'Boys as Bread-Earners', stat: '74%', title: 'Boys Pushed Into Earning',
+        story: 'This boy leaves home to earn instead of study. In 2015-16, 74% of Shravasti\u2019s people were multidimensionally poor, the highest share of any district in Uttar Pradesh, sending sons into unsafe work in hotels, eateries and construction far from home.',
+        src: 'NITI Aayog National Multidimensional Poverty Index, Baseline Report 2021 (NFHS-4, 2015-16) · Shravasti (74.38%)', leads: 'Daughters carry a different burden' },
       { img: './assets/svc/violence.png', chapter: 'Exploitation & rights', short: 'Discrimination and Violence', stat: '33%', title: 'A Girl Facing Discrimination and Violence',
         story: 'This young woman lives with abuse inside her own home. Across Uttar Pradesh, 33% of ever-married women report violence from a husband - the walls of the home a girl was married into far too young.',
         src: 'National Family Health Survey 5 · Uttar Pradesh (33.1%) - collected in the state module only, not published by district', leads: 'And then she becomes a mother' },
@@ -37888,7 +37893,7 @@ class Component extends DCLogic {
         opacity: active ? '1' : '.82',
       };
     });
-    const activeNode = { ...cyc[cur], num: cur + 1, total: N, imgCss: this._svcImageCss(cyc[cur].img, 480) };
+    const activeNode = { ...cyc[cur], num: cur + 1, total: N, hasStat: !!cyc[cur].stat, imgCss: this._svcImageCss(cyc[cur].img, 480) };
     const ringPlay = this.state.paused ? 'paused' : 'running';
     const wheelLeave = () => this.setState({ paused: false });
     const nextNode = () => this.setState(s => ({ node: (s.node + 1) % N }));
@@ -38213,7 +38218,7 @@ class Component extends DCLogic {
               select: () => this.setState({ pcSel: prog + ':' + i }),
             };
           }),
-          curKey: 'pk' + si, chapter: cn0.chapter, stat: cn0.stat, title: cn0.title,
+          curKey: 'pk' + si, chapter: cn0.chapter, stat: cn0.stat, hasStat: !!cn0.stat, title: cn0.title,
           story: cn0.story, src: cn0.src, img: cn0.img,
           roleLabel: isD0 ? T.cyc_addressed_directly : T.cyc_affected_indirectly,
           roleColor: isD0 ? fgc : 'var(--faint)',

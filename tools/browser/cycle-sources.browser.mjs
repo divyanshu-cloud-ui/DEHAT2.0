@@ -4,7 +4,9 @@ import {pathToFileURL} from 'node:url';
 import {proofServer} from '../proof-server.mjs';
 import {renderSite} from '../site-browser.mjs';
 
-test('Cycle Sources switch reveals only three approved source names',async()=>{
+// Four approved sources since fix 190: the Boys as Bread-Earners moment now cites NITI Aayog's
+// National Multidimensional Poverty Index (Baseline Report 2021), so the list gained a fourth name.
+test('Cycle Sources switch reveals only the four approved source names',async()=>{
   if(!process.env.PLAYWRIGHT_MODULE)throw new Error('Set PLAYWRIGHT_MODULE');
   const modulePath=process.env.PLAYWRIGHT_MODULE;
   const {chromium}=await import(modulePath.startsWith('file:')?modulePath:pathToFileURL(modulePath).href);
@@ -14,6 +16,7 @@ test('Cycle Sources switch reveals only three approved source names',async()=>{
   assert.ok(snapshot.includes('National Family Health Survey'));
   assert.ok(snapshot.includes('Unified District Information System for Education Plus'));
   assert.ok(snapshot.includes('Sample Registration System'));
+  assert.ok(snapshot.includes('NITI Aayog National Multidimensional Poverty Index'));
   const local=await proofServer(process.cwd());
   const browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
   try{
@@ -40,6 +43,7 @@ test('Cycle Sources switch reveals only three approved source names',async()=>{
         'National Family Health Survey 5 (district fact sheets and state module)',
         'Unified District Information System for Education Plus (district fact sheets)',
         'Sample Registration System',
+        'NITI Aayog National Multidimensional Poverty Index (Baseline Report 2021)',
       ]);
       await page.waitForTimeout(220);
       if(width===375||width===1280)await page.screenshot({path:`/private/tmp/dehat-186-E1-open-${theme}-${width}.png`});
