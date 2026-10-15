@@ -2,6 +2,7 @@
 // code (DHXXXXX) in the narration, and asks the website to issue the receipt for each. Writes a report CSV.
 //   node tools/upi-reconcile.mjs --statement <file.csv|file.xlsx> [--dry-run] [--site https://dehatindia.org]
 //   The live run needs UPI_RECONCILE_TOKEN in this shell (the same value as in Vercel). It is never printed.
+//   To reach a protected preview deployment, also set VERCEL_AUTOMATION_BYPASS_SECRET (Vercel > Deployment Protection).
 import { readFile, writeFile } from 'node:fs/promises';
 import { xlsxRows } from './xlsx-rows.mjs';
 import path from 'node:path';
@@ -113,7 +114,9 @@ if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
     const token = process.env.UPI_RECONCILE_TOKEN;
     if (!token) { console.error('UPI_RECONCILE_TOKEN is not set in this shell.'); process.exit(2); }
     const response = await fetch(site + '/api/donations/upi-reconcile', {
-      method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+      method: 'POST',
+      headers: Object.assign({ 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+        process.env.VERCEL_AUTOMATION_BYPASS_SECRET ? { 'x-vercel-protection-bypass': process.env.VERCEL_AUTOMATION_BYPASS_SECRET } : {}),
       body: JSON.stringify({ items: matched.map(({ code, utr, amountPaise, date }) => ({ code, utr, amountPaise, date })) }),
     });
     const out = await response.json().catch(() => ({}));
