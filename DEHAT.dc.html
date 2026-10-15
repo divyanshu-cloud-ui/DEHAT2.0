@@ -5071,25 +5071,34 @@ class Component extends DCLogic {
       if (this.state.navMore || this.state.navGroup) this.setState({ navMore: false, navGroup: '' });
     };
     try { document.addEventListener('pointerdown', this._onDocDown, true); window.addEventListener('keydown', this._onEsc); } catch (e) {}
+    // Writes a root custom property only when its value changes, so an unchanged measurement
+    // does not invalidate layout for the next read.
+    const rootVar = (name, value) => {
+      const s = document.documentElement.style;
+      if (s.getPropertyValue(name) !== value) s.setProperty(name, value);
+    };
     this._navMeasure = () => {
       try {
-        const n = document.querySelector('main') ? document.querySelector('nav') : null;
-        const nav = n || document.querySelector('nav');
-        if (nav) document.documentElement.style.setProperty('--nav-h', Math.round(nav.getBoundingClientRect().height) + 'px');
+        // Read every box first, then write: alternating reads and writes forced a fresh
+        // layout of the whole page for each measurement.
+        const nav = document.querySelector('nav');
         // --header-h is the bottom edge of the LAST sticky header row (the subnav tab strip,
         // when present) rather than nav height alone. Anything sticky further down the page
         // (e.g. the journey rail) has to clear the full stack, not just the top nav bar, or
         // its own top rows render underneath the subnav's opaque background and disappear.
         const subnav = document.querySelector('[data-subnav]');
-        const headerH = subnav ? subnav.getBoundingClientRect().bottom : (nav ? nav.getBoundingClientRect().height : 0);
-        if (headerH) document.documentElement.style.setProperty('--header-h', Math.round(headerH) + 'px');
+        // …and the hero stops where the fixed walker rail along the bottom of the screen begins.
+        const rail = document.querySelector('.spine-rail');
+        const navH = nav ? nav.getBoundingClientRect().height : 0;
+        const headerH = subnav ? subnav.getBoundingClientRect().bottom : navH;
+        const railH = rail ? Math.round(rail.getBoundingClientRect().height) : 0;
+        if (nav) rootVar('--nav-h', Math.round(navH) + 'px');
+        if (headerH) rootVar('--header-h', Math.round(headerH) + 'px');
+        rootVar('--rail-h', railH + 'px');
         // The home hero fills exactly the screen below the header stack: its own document top,
         // measured, so the next section starts at the fold with no sliver either way.
         // Re-read after layout settles too: on a resize the header re-wraps a frame later.
-        const heroTop = () => { const hr = document.querySelector('.hr'); if (hr) document.documentElement.style.setProperty('--hero-top', Math.round(hr.getBoundingClientRect().top + (window.scrollY || 0)) + 'px'); };
-        // …and it stops where the fixed walker rail along the bottom of the screen begins.
-        const rail = document.querySelector('.spine-rail');
-        document.documentElement.style.setProperty('--rail-h', (rail ? Math.round(rail.getBoundingClientRect().height) : 0) + 'px');
+        const heroTop = () => { const hr = document.querySelector('.hr'); if (hr) rootVar('--hero-top', Math.round(hr.getBoundingClientRect().top + (window.scrollY || 0)) + 'px'); };
         heroTop(); requestAnimationFrame(heroTop); clearTimeout(this._heroTopT); this._heroTopT = setTimeout(heroTop, 160);
       } catch (e) {}
     };
