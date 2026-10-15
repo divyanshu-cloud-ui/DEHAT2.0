@@ -6,6 +6,22 @@ import {REACT_URL, REACT_DOM_URL, REACT_ASSET, REACT_DOM_ASSET} from './performa
 import {PARTNER_TABS} from './partner-tabs.mjs';
 
 const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
+// The pre-rendered snapshot is the page a reader sees first. Start the heavy runtime downloads
+// only once it has painted, so they do not compete with the first screen for the network.
+// Capped so a browser without paint timing still boots promptly.
+const afterFirstPaint = () => new Promise(resolve => {
+  let done = false;
+  const go = () => { if (!done) { done = true; setTimeout(resolve, 0); } };
+  try {
+    if (performance.getEntriesByName('first-contentful-paint').length) return go();
+    new PerformanceObserver((list, observer) => {
+      if (!list.getEntriesByName('first-contentful-paint').length) return;
+      observer.disconnect(); go();
+    }).observe({type: 'paint', buffered: true});
+  } catch { /* Paint timing is not exposed by every browser. */ }
+  addEventListener('load', go, {once: true});
+  setTimeout(go, 1500);
+});
 const script = src => new Promise((resolve, reject) => {
   const element = document.createElement('script');
   element.src = src; element.onload = resolve;
@@ -95,6 +111,7 @@ async function start() {
   ready.catch(() => {});
   window.DEHAT_LAUNCH_READY = ready;
   try {
+    await afterFirstPaint();
     // Begin independent network work together. The snapshot stays visible until
     // the live component has rendered, so a slow data file cannot delay these
     // downloads or make the page flash.

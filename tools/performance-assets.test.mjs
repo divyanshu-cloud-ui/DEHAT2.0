@@ -75,3 +75,12 @@ test('runtime template carries English only and preserves all translated values'
   assert.equal(instance._dict(),instance._dict(),'split dictionary must retain Phase 0 memoisation');
   assert.equal(ctx.window.DEHAT_LAUNCH_DIAGNOSTICS.dictBuilds,1);
 });
+test('bootstrap waits for the snapshot to paint before the heavy downloads', async () => {
+  const source = await readFile('launch/bootstrap.mjs', 'utf8');
+  const wait = source.indexOf('await afterFirstPaint();');
+  assert.ok(wait > 0, 'start() must await afterFirstPaint');
+  for (const heavy of ["fetch('/launch/runtime-template.html')", "script('/stories-data.js')", "import('/finance-data.js')"]) {
+    assert.ok(source.indexOf(heavy) > wait, `${heavy} must start after the first paint`);
+  }
+  assert.match(source, /setTimeout\(go, 1500\)/, 'a cap keeps background tabs and old browsers booting');
+});
