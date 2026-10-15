@@ -32,7 +32,7 @@ test('validation cards name their historical periods accurately', async () => {
       await page.screenshot({path:`/private/tmp/dehat-186-0f-${process.env.CAPTURE_BEFORE?'before':'after'}-${theme}-${width}.png`});
       console.log(JSON.stringify({theme,width,cards:cards.map(({title,period})=>({title,period}))}));
       if (!process.env.CAPTURE_BEFORE) {
-        assert.match(cards[0].text,/Validated 2021–2022/);
+        assert.match(cards[0].text,/Validated 2016–2019/);
         assert.match(cards[1].text,/Empanelled 2017–2020/);
         assert.match(cards[2].text,/Registered 2018/);
         assert.match(cards[2].text,/Registered on the BSE Sammaan platform/);

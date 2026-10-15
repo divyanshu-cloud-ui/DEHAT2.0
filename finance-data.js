@@ -99,7 +99,7 @@ FIN.DOCUMENTS = [
   { title:'Tax Deduction Account Number (TAN) Allotment', issuer:'Income Tax Department', period:'TAN LKND07117F', group:'statutory',
     desc:'Allotment of the Society’s TAN, quoted on every tax deducted at source challan, certificate and return.', file:'assets/docs/tan-allotment-letter.pdf' },
   // Third-party validations & recognition
-  { title:'CAF India Validation Certificate', issuer:'CAF India', period:'Validated 2021–2022', group:'validation',
+  { title:'CAF India Validation Certificate', issuer:'CAF India', period:'Validated 2016–2019', group:'validation',
     desc:'Due-diligence validation by Charities Aid Foundation India - an independent check of governance, finance and compliance.', file:'assets/docs/caf-validation-certificate.pdf' },
   { title:'Tata Institute of Social Sciences Empanelment Certificate', issuer:'Tata Institute of Social Sciences', period:'Empanelled 2017–2020', group:'validation',
     desc:'Empanelled with the Tata Institute of Social Sciences as an implementing partner for Public Sector Undertaking corporate social responsibility programmes.', file:'assets/docs/tiss-empanelment-certificate.pdf' },
