@@ -1,0 +1,358 @@
+{
+ "shell": {
+  "title": "DEHAT \u2014 Where We Work: District Vulnerability Atlas",
+  "htmlLang": "en",
+  "navbar": "All States Uttar Pradesh Maharashtra All 23 Districts ★ Priority Districts Programme Footprint Overall Opportunity GapMaternal Mortality RatioAnaemic Women (15–49)Births Outside InstitutionsMothers Without 4+ Antenatal Visits (last birth)No Breastfeeding Within 1 HourMothers Without Post-Natal Care Within 2 DaysChild Stunting (<5y)Child Wasting (<5y)Infant Mortality RateUnder-5 Mortality RateChildren Under 6 Who Received No Anganwadi ServiceFemale Illiteracy (women 15–49)Women 15–24 Without Hygienic Menstrual ProtectionLost at Middle→Secondary TransitionSecondary-Stage DropoutGirls’ Dropout, Classes 9-10Secondary Pupil–Teacher RatioGirls Married Before 18Adolescent Pregnancy (15–19)Women Facing Spousal ViolenceChildren Aged 5-14 Who Were WorkingChild Out-Migration (students)Inter-State Child MigrationPeople in Multidimensional PovertyHouseholds Not Using Clean Cooking FuelHouseholds Without an Improved Drinking-Water SourceHouseholds Not Using an Improved Sanitation FacilitySchools Without Accessible Toilets for Children With Special NeedsRural Population Beyond 5 km of a Primary Health Centre Ranking Compare",
+  "selects": [
+   [
+    "stateSel",
+    [
+     "all=All States",
+     "Uttar Pradesh=Uttar Pradesh",
+     "Maharashtra=Maharashtra"
+    ]
+   ],
+   [
+    "tierSel",
+    [
+     "all=All 23 Districts",
+     "priority=★ Priority Districts",
+     "footprint=Programme Footprint"
+    ]
+   ],
+   [
+    "metricSel",
+    [
+     "overall=Overall Opportunity Gap",
+     "mmr=Maternal Mortality Ratio",
+     "anaemia=Anaemic Women (15–49)",
+     "homebirth=Births Outside Institutions",
+     "noANC=Mothers Without 4+ Antenatal Visits (last birth)",
+     "noEarlyBF=No Breastfeeding Within 1 Hour",
+     "noPostnatal=Mothers Without Post-Natal Care Within 2 Days",
+     "stunting=Child Stunting (<5y)",
+     "wasting=Child Wasting (<5y)",
+     "imr=Infant Mortality Rate",
+     "u5mr=Under-5 Mortality Rate",
+     "noICDS=Children Under 6 Who Received No Anganwadi Service",
+     "femaleIlliteracy=Female Illiteracy (women 15–49)",
+     "menstrualGap=Women 15–24 Without Hygienic Menstrual Protection",
+     "transitionGap=Lost at Middle→Secondary Transition",
+     "secDropout=Secondary-Stage Dropout",
+     "girlsDropout=Girls’ Dropout, Classes 9-10",
+     "secPTR=Secondary Pupil–Teacher Ratio",
+     "childMarriage=Girls Married Before 18",
+     "adolMothers=Adolescent Pregnancy (15–19)",
+     "spousalViolence=Women Facing Spousal Violence",
+     "childWork=Children Aged 5-14 Who Were Working",
+     "outMigration=Child Out-Migration (students)",
+     "interStateMig=Inter-State Child Migration",
+     "mpiPoor=People in Multidimensional Poverty",
+     "noCleanFuel=Households Not Using Clean Cooking Fuel",
+     "noCleanWater=Households Without an Improved Drinking-Water Source",
+     "noSanitation=Households Not Using an Improved Sanitation Facility",
+     "cwsnToiletGap=Schools Without Accessible Toilets for Children With Special Needs",
+     "phcGap=Rural Population Beyond 5 km of a Primary Health Centre"
+    ]
+   ]
+  ],
+  "attrs": [
+   [
+    "input#searchIn",
+    "placeholder=Search District…"
+   ],
+   [
+    "select#stateSel",
+    "title=Filter by state"
+   ],
+   [
+    "select#tierSel",
+    "title=DEHAT presence"
+   ],
+   [
+    "select#metricSel",
+    "title=Shade districts by indicator"
+   ],
+   [
+    "button",
+    "aria-label=Toggle legend"
+   ],
+   [
+    "button#themeBtn",
+    "title=Toggle theme"
+   ],
+   [
+    "button#zoomIn",
+    "title=Zoom in"
+   ],
+   [
+    "button#zoomOut",
+    "title=Zoom out"
+   ],
+   [
+    "button#homeBtn",
+    "title=Reset view"
+   ],
+   [
+    "button#panelClose",
+    "aria-label=Close panel"
+   ]
+  ],
+  "placeholder": "Why here?Every district on this map is a place DEHAT works, accompanied by its communities \u2014 three under our deepest, intersectional investment, a fourth \u2014 Lakhimpur Kheri \u2014 entered in 2026 for child protection, and the rest across two decades of programme presence. Tap any district to open its full child profile: each indicator, its value and its named source, grouped along the vulnerability cycle. Shade the map by any of 29 indicators, filter by state or presence, rank the districts, or compare two side by side.How the index is built. Each indicator is scored from 0 to 1 against a fixed range set in the page (for example stunting from 25% to 55%, infant mortality from 20 to 110 per 1,000), then the scores are averaged into a single 0–100 figure. A district with a value missing is averaged over the indicators it has. The ranges are fixed, not set by the best district in the set, so a district’s score moves only when its own figures move: one that improves should move down it. State-level figures, raw student counts, the girls’ dropout rate and SC + ST share are shown in each profile but not scored, and one value that is not comparable with the others (Dharashiv’s distance to a primary health centre) is left out. The index decides where DEHAT goes next, and it is the same figure the work is reported back against.What an index is, and is not. It is not a verdict on a place or its people. It is a measure of how far a public system sits from what it already promises, expressed as one number so that every district here can be compared honestly and priorities can be argued with rather than asserted.On the data. Every figure is drawn from DEHAT's Vulnerability Index - 31 indicators across 23 districts, each traced to a named source: the NFHS-5 (2019–21) district fact-sheet dataset (MoHFW / IIPS) for health, nutrition, WASH and gender, and for the state-level anganwadi figure; UDISE+ district fact sheets and dashboard data (2024–25, with 2025–26 for Lakhimpur Kheri and Basti) for schooling, dropout including girls’ dropout, and child migration; the Annual Health Survey 2012–13 for infant and under-5 mortality in Uttar Pradesh; the Census of India 2011 for working children aged 5–14, SC + ST share and distance to a primary health centre; NITI Aayog’s National Multidimensional Poverty Index 2023 (NFHS-5) for poverty; and SRS for maternal mortality, which is state-level by construction. Some cells are older than others, or come from government-recognised estimates rather than a government survey (the ICMR-PHFI-IHME 2017 mortality estimates for Amethi and Maharashtra, and a Mission Antyodaya village measure for Dharashiv’s health-centre distance), so each value names its own source in the profile. The eight schooling & mobility indicators are tagged by their link to the Structural Vulnerability Cycle - direct (labour, trafficking, exploitation), indirect (retention & school conditions) or intersectional (overlapping caste, tribe, minority, disability & gender disadvantage). Migration is a student-volume count, so it is shown and shadeable but held out of the composite index. Every health, nutrition, WASH and gender figure comes from a single survey round, so districts are compared like with like. Spousal violence and the anganwadi figure are collected in the NFHS state module or state report only and are shown as the state figure everywhere. Maternal mortality is reported at state level, badged as such. Every value carries the sheet it came from.",
+  "legend": "Overall Child Opportunity Gap Index−At the benchmarkFurthest from itComposite of 25 gap indicators★ Dashed Ring = Priority District \u2014 DEHAT’s deepest current investment. Plain dots = Programme Footprint.",
+  "buttons": [
+   "rankBtn=Ranking",
+   "cmpBtn=Compare",
+   "leg-toggle=−",
+   "themeBtn=☀",
+   "zoomIn=+",
+   "zoomOut=−",
+   "homeBtn=⤾",
+   "panelClose=×"
+  ],
+  "labels": [
+   "Bahraich",
+   "Shravasti",
+   "Balrampur",
+   "Lakhimpur Kheri",
+   "Siddharthnagar",
+   "Maharajganj",
+   "Kushinagar",
+   "Sonbhadra",
+   "Amethi",
+   "Gautam Buddha Nagar",
+   "Gonda",
+   "Gorakhpur",
+   "Ambedkar Nagar",
+   "Ayodhya",
+   "Barabanki",
+   "Shahjahanpur",
+   "Sultanpur",
+   "Basti",
+   "Washim",
+   "Dharashiv",
+   "Nandurbar",
+   "Gadchiroli",
+   "Nashik"
+  ],
+  "noHit": "No matching district",
+  "suggestUt": "BahraichUttar Pradesh · ★ShravastiUttar Pradesh · ★BalrampurUttar Pradesh · ★Lakhimpur KheriUttar Pradesh · ★SiddharthnagarUttar PradeshMaharajganjUttar Pradesh"
+ },
+ "tips": {
+  "bahraich": "BahraichUttar Pradesh · Aspirational DistrictOpportunity Gap Index 70★ Priority \u2014 in-depth, intersectional investment",
+  "basti": "BastiUttar PradeshOpportunity Gap Index 44Programme Footprint \u2014 past & ongoing projects",
+  "washim": "WashimMaharashtra · Aspirational DistrictOpportunity Gap Index 36Programme Footprint \u2014 past & ongoing projects"
+ },
+ "profiles": {
+  "bahraich": {
+   "text": "Uttar Pradesh · Aspirational DistrictBahraichDistrict HQ: Bahraich70Child Opportunity Gap Index0 (at the benchmark district) → 100 (furthest from it). Composite of 25 sourced gap indicators.★ Priority District \u2014 in-depth, intersectional investment across all four programmes.Our home district on the open Indo-Nepal border \u2014 an Aspirational District and our longest, deepest area of presence. Bahraich carries the highest stunting rate in the matrix (52.1%): half its children hit a cognitive ceiling by age five.I · The Biological OriginThe cycle begins with the physical depletion of the mother \u2014 before a child is even born.Maternal Mortality Ratio167 per 100,000Mothers lost per 100,000 live births. Reported at state level \u2014 the most reliable scale for this measure \u2014 so every district in a state shares its figure.UP 167India 97Source: Sample Registration System (state-level)UP BenchmarkAnaemic Women (15–49)48.8%Women aged 15 to 49 who are anaemic: a nutritional debt passed on to the next child.UP 48.2India 53.2Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactBirths Outside Institutions32.3%Deliveries occurring without professional medical safety.UP 19.5India 9.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactMothers Without 4+ Antenatal Visits (last birth)65.7%Pregnancies unmonitored through the recommended check-up schedule.UP 39.9India 40.2Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactNo Breastfeeding Within 1 Hour83%Newborns denied the protective first feed.UP 74.8India 56.5Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactMothers Without Post-Natal Care Within 2 Days47.6%Mothers who received no check-up from a doctor, nurse, LHV, ANM or midwife within two days of delivery.UP 28India 22Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactII · The Early-Childhood TrapThe first 1,000 days set a permanent floor for survival, growth and cognition.Child Stunting (<5y)52.1%Irreversible height-for-age loss \u2014 a cognitive ceiling reached by age five.UP 38.1India 33.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactChild Wasting (<5y)14.4%Acute malnutrition \u2014 dangerously low weight for height.UP 17.3India 19.3Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactInfant Mortality Rate66 per 1,000Babies who die before their first birthday, per 1,000 live births.UP 68Source: Annual Health Survey 2012-13, Office of the Registrar General of India, Uttar Pradesh fact sheet (district infant mortality rate, pp. 176-177; 2001 district boundaries)District · ExactUnder-5 Mortality Rate105 per 1,000Children who die before their fifth birthday, per 1,000 live births.UP 90Source: Annual Health Survey 2012-13, Office of the Registrar General of India, Uttar Pradesh fact sheet (district under-five mortality rate, pp. 182-183; 2001 district boundaries)District · ExactChildren Under 6 Who Received No Anganwadi Service33%Children under six who received no service from an anganwadi in the past year. Published for states only; DEHAT will compute district figures from the NFHS-5 survey data.UP 33Source: National Family Health Survey 5 (2019-21), state report Table 65 (state level; district figures to follow)UP BenchmarkIII · The Systemic Exit (Girls)Broken school infrastructure and dignity gaps push girls out at puberty.Female Illiteracy (women 15–49)58.4%Women who cannot read or write \u2014 the literacy wall.UP 31.8India 27.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactWomen 15–24 Without Hygienic Menstrual Protection51.6%A dignity barrier that becomes a literal exit point from school.UP 24.9India 19.9Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactLost at Middle→Secondary Transition48.6%Intersectional SVC · the share of children who do not carry over from middle into secondary school \u2014 the exact stage the puberty-exit trap closes on girls, and the last off-ramp before labour and early marriage.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactSecondary-Stage Dropout10.4%Intersectional SVC · dropout at the secondary stage, where caste, gender and household poverty compound; every departure is a child newly exposed to work or marriage.Source: Unified District Information System for Education Plus (2024-25) district fact sheets - Dropout Rates - SecondaryDistrict · ExactGirls’ Dropout, Classes 9-1012.8%Girls leaving school in classes 9 and 10, the stage the puberty-exit trap closes on.UP 5.1Source: Unified District Information System for Education Plus (UDISE+) 2024-25, Ministry of Education, gender-wise dropout rate, secondary classes 9-10 (girls), from the official UDISE+ dashboard dataDistrict · ExactSecondary Pupil–Teacher Ratio41Indirect SVC · students per teacher in secondary grades. Overcrowded classrooms erode retention and learning \u2014 a slow push toward the exit.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactIV · The Exploitation LoopEarly marriage, adolescent motherhood, violence and child labour close the loop.Girls Married Before 1837.5%An illegal transition \u2014 a direct consequence of broken educational infrastructure.UP 14.2India 21.5Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactAdolescent Pregnancy (15–19)8.4%The loop-closer: the child bride becomes the next depleted mother.UP 2.5India 6.1Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactWomen Facing Spousal Violence33.1%Domestic trauma that shapes the household a child grows in. The National Family Health Survey collects this in the state module only, so every district carries its state figure.UP 33.1India 27.5Source: National Family Health Survey 5 (2019-21) state module \u2014 not reported at district levelUP BenchmarkChildren Aged 5-14 Who Were Working4.4%Children counted as workers, paid or unpaid (family farm and business work included). The latest official district count; there has been no Census since 2011.UP 4.3Source: Census of India 2011, Table B-01 (Office of the Registrar General and Census Commissioner, India): main and marginal workers aged 5-14 as a share of the population aged 5-14District · ExactV · Economic FlightPoverty at the household level opens the pathways traffickers wait at.Child Out-Migration (students)77,873 studentsDirect SVC · total school-going children recorded as migrating (within-district, inter-district and inter-state). Unsafe mobility disrupts schooling and opens the labour and trafficking pathways DEHAT’s protection work sits astride. A volume count, not a rate \u2014 it tracks population size, so it is shown and shadeable but held out of the composite index.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactInter-State Child Migration801 studentsDirect SVC · children moving to another state \u2014 the sharpest end of the mobility risk, where service continuity breaks and trafficking and bonded-labour exposure rise. Kept out of the composite index as a raw count.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactPeople in Multidimensional Poverty54.4%Share of people deprived across health, education and living standards at the same time. Counts people, not households; a survey estimate, not a below-poverty-line count.Source: NITI Aayog, National Multidimensional Poverty Index: A Progress Review 2023 (NFHS-5, 2019-21), district headcount ratio (Uttar Pradesh overview of districts p. 249; Maharashtra p. 158)District · ExactVI · Cross-cutting DeterminantsThe intersecting conditions \u2014 WASH, energy, exclusion, health access \u2014 that shape every node.Households Not Using Clean Cooking Fuel61.8%Indoor smoke harms maternal and child respiratory health.UP 47.8India 47.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactHouseholds Without an Improved Drinking-Water Source0%Unsafe water drives the diarrhoeal disease that compounds stunting.UP 2India 3Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactHouseholds Not Using an Improved Sanitation Facility55.8%Open defecation sustains the infection–malnutrition cycle.UP 29.9India 24.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactSchools Without Accessible Toilets for Children With Special Needs55.9%Intersectional SVC · schools lacking a functional toilet usable by children with special needs \u2014 a disability-exclusion barrier that keeps the most vulnerable children out of the classroom entirely.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactMinority-Community School Enrolment31.3%Intersectional SVC · minority-community share of school enrolment. Not a deficit in itself \u2014 a targeting flag: where it is high, protection and entitlement work must overlay minority-specific barriers to access.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactSC + ST Population Share14.9%Scheduled Caste and Scheduled Tribe share of the population: communities who bear the sharpest end of most deficits.Source: Census of India 2011, Primary Census Abstract (Office of the Registrar General and Census Commissioner, India), district totals: Scheduled Caste plus Scheduled Tribe population as a share of total populationDistrict · ExactRural Population Beyond 5 km of a Primary Health Centre66.9%Rural people living in villages where the nearest primary health centre is 5 km or more away. Facility positions are as recorded in 2009, the latest official district-wide distance count.Source: Census of India 2011, Village Directory (District Census Handbook Appendix VD; facility positions as in 2009): share of the population of villages with a recorded PHC distance whose nearest primary health centre is 5 km or more awayDistrict · ExactReading the badges. District · Exact = the district's own value from the Vulnerability Index. Benchmark = the state average, shown where the matrix has no district figure for this indicator. Bars set this district against the UP and India averages.",
+   "attrs": [
+    [
+     "input#searchIn",
+     "placeholder=Search District…"
+    ],
+    [
+     "select#stateSel",
+     "title=Filter by state"
+    ],
+    [
+     "select#tierSel",
+     "title=DEHAT presence"
+    ],
+    [
+     "select#metricSel",
+     "title=Shade districts by indicator"
+    ],
+    [
+     "button",
+     "aria-label=Toggle legend"
+    ],
+    [
+     "button#themeBtn",
+     "title=Toggle theme"
+    ],
+    [
+     "button#zoomIn",
+     "title=Zoom in"
+    ],
+    [
+     "button#zoomOut",
+     "title=Zoom out"
+    ],
+    [
+     "button#homeBtn",
+     "title=Reset view"
+    ],
+    [
+     "button#panelClose",
+     "aria-label=Close panel"
+    ]
+   ],
+   "legend": "Overall Child Opportunity Gap Index−At the benchmarkFurthest from itComposite of 25 gap indicators★ Dashed Ring = Priority District \u2014 DEHAT’s deepest current investment. Plain dots = Programme Footprint."
+  },
+  "amethi": {
+   "text": "Uttar PradeshAmethiDistrict HQ: Gauriganj46Child Opportunity Gap Index0 (at the benchmark district) → 100 (furthest from it). Composite of 25 sourced gap indicators.Programme Footprint \u2014 DEHAT has worked here through past & ongoing projects; tracked in the Vulnerability Index.Central UP, where 68.3% of mothers did not receive the recommended four antenatal visits at their last birth - a measure of how far care still has to travel.I · The Biological OriginThe cycle begins with the physical depletion of the mother \u2014 before a child is even born.Maternal Mortality Ratio167 per 100,000Mothers lost per 100,000 live births. Reported at state level \u2014 the most reliable scale for this measure \u2014 so every district in a state shares its figure.UP 167India 97Source: Sample Registration System (state-level)UP BenchmarkAnaemic Women (15–49)46.1%Women aged 15 to 49 who are anaemic: a nutritional debt passed on to the next child.UP 48.2India 53.2Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactBirths Outside Institutions9.2%Deliveries occurring without professional medical safety.UP 19.5India 9.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactMothers Without 4+ Antenatal Visits (last birth)68.3%Pregnancies unmonitored through the recommended check-up schedule.UP 39.9India 40.2Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactNo Breastfeeding Within 1 Hour78.4%Newborns denied the protective first feed.UP 74.8India 56.5Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactMothers Without Post-Natal Care Within 2 Days23.7%Mothers who received no check-up from a doctor, nurse, LHV, ANM or midwife within two days of delivery.UP 28India 22Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactII · The Early-Childhood TrapThe first 1,000 days set a permanent floor for survival, growth and cognition.Child Stunting (<5y)35.8%Irreversible height-for-age loss \u2014 a cognitive ceiling reached by age five.UP 38.1India 33.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactChild Wasting (<5y)19.9%Acute malnutrition \u2014 dangerously low weight for height.UP 17.3India 19.3Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactInfant Mortality Rate51.8 per 1,000Babies who die before their first birthday, per 1,000 live births.UP 68Source: ICMR-PHFI-IHME India State-Level Disease Burden Initiative (co-led by the Indian Council of Medical Research), The Lancet 2020, web appendix to \"Subnational mapping of under-5 and neonatal mortality trends in India: the GBD Study 2000-17\", Table 6, p. 86: 2017 point estimate 51.8 per 1,000 live births (95% uncertainty interval 41.4-66.5). A model estimate for 2017, not a survey count. No government source reports Amethi (district created in 2010).District · ExactUnder-5 Mortality Rate60.1 per 1,000Children who die before their fifth birthday, per 1,000 live births.UP 90Source: ICMR-PHFI-IHME India State-Level Disease Burden Initiative (co-led by the Indian Council of Medical Research), The Lancet 2020, web appendix to \"Subnational mapping of under-5 and neonatal mortality trends in India: the GBD Study 2000-17\", Table 10, p. 102: 2017 point estimate 60.1 per 1,000 live births (95% uncertainty interval 48.1-76.6). A model estimate for 2017, not a survey count. No government source reports Amethi (district created in 2010).District · ExactChildren Under 6 Who Received No Anganwadi Service33%Children under six who received no service from an anganwadi in the past year. Published for states only; DEHAT will compute district figures from the NFHS-5 survey data.UP 33Source: National Family Health Survey 5 (2019-21), state report Table 65 (state level; district figures to follow)UP BenchmarkIII · The Systemic Exit (Girls)Broken school infrastructure and dignity gaps push girls out at puberty.Female Illiteracy (women 15–49)32.7%Women who cannot read or write \u2014 the literacy wall.UP 31.8India 27.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactWomen 15–24 Without Hygienic Menstrual Protection28.2%A dignity barrier that becomes a literal exit point from school.UP 24.9India 19.9Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactLost at Middle→Secondary Transition29.4%Intersectional SVC · the share of children who do not carry over from middle into secondary school \u2014 the exact stage the puberty-exit trap closes on girls, and the last off-ramp before labour and early marriage.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactSecondary-Stage Dropout6.3%Intersectional SVC · dropout at the secondary stage, where caste, gender and household poverty compound; every departure is a child newly exposed to work or marriage.Source: Unified District Information System for Education Plus (2024-25) district fact sheets - Dropout Rates - SecondaryDistrict · ExactGirls’ Dropout, Classes 9-106.7%Girls leaving school in classes 9 and 10, the stage the puberty-exit trap closes on.UP 5.1Source: Unified District Information System for Education Plus (UDISE+) 2024-25, Ministry of Education, gender-wise dropout rate, secondary classes 9-10 (girls), from the official UDISE+ dashboard dataDistrict · ExactSecondary Pupil–Teacher Ratio38Indirect SVC · students per teacher in secondary grades. Overcrowded classrooms erode retention and learning \u2014 a slow push toward the exit.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactIV · The Exploitation LoopEarly marriage, adolescent motherhood, violence and child labour close the loop.Girls Married Before 1814.9%An illegal transition \u2014 a direct consequence of broken educational infrastructure.UP 14.2India 21.5Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactAdolescent Pregnancy (15–19)1.9%The loop-closer: the child bride becomes the next depleted mother.UP 2.5India 6.1Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactWomen Facing Spousal Violence33.1%Domestic trauma that shapes the household a child grows in. The National Family Health Survey collects this in the state module only, so every district carries its state figure.UP 33.1India 27.5Source: National Family Health Survey 5 (2019-21) state module \u2014 not reported at district levelUP BenchmarkChildren Aged 5-14 Who Were Working4.1%Children counted as workers, paid or unpaid (family farm and business work included). The latest official district count; there has been no Census since 2011.UP 4.3Source: Census of India 2011, Table B-01, Sultanpur district, which then included Amethi’s three main tehsils (40,019 of 9,80,271 children). Amethi became a district in 2010 and has no figure of its own.District · ExactV · Economic FlightPoverty at the household level opens the pathways traffickers wait at.Child Out-Migration (students)49,224 studentsDirect SVC · total school-going children recorded as migrating (within-district, inter-district and inter-state). Unsafe mobility disrupts schooling and opens the labour and trafficking pathways DEHAT’s protection work sits astride. A volume count, not a rate \u2014 it tracks population size, so it is shown and shadeable but held out of the composite index.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactInter-State Child Migration823 studentsDirect SVC · children moving to another state \u2014 the sharpest end of the mobility risk, where service continuity breaks and trafficking and bonded-labour exposure rise. Kept out of the composite index as a raw count.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactPeople in Multidimensional Poverty29%Share of people deprived across health, education and living standards at the same time. Counts people, not households; a survey estimate, not a below-poverty-line count.Source: NITI Aayog, National Multidimensional Poverty Index: A Progress Review 2023 (NFHS-5, 2019-21), district headcount ratio (Uttar Pradesh overview of districts p. 249; Maharashtra p. 158)District · ExactVI · Cross-cutting DeterminantsThe intersecting conditions \u2014 WASH, energy, exclusion, health access \u2014 that shape every node.Households Not Using Clean Cooking Fuel73.6%Indoor smoke harms maternal and child respiratory health.UP 47.8India 47.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactHouseholds Without an Improved Drinking-Water Source1.3%Unsafe water drives the diarrhoeal disease that compounds stunting.UP 2India 3Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactHouseholds Not Using an Improved Sanitation Facility39.1%Open defecation sustains the infection–malnutrition cycle.UP 29.9India 24.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactSchools Without Accessible Toilets for Children With Special Needs60.7%Intersectional SVC · schools lacking a functional toilet usable by children with special needs \u2014 a disability-exclusion barrier that keeps the most vulnerable children out of the classroom entirely.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactMinority-Community School Enrolment20.6%Intersectional SVC · minority-community share of school enrolment. Not a deficit in itself \u2014 a targeting flag: where it is high, protection and entitlement work must overlay minority-specific barriers to access.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactSC + ST Population Share25%Scheduled Caste and Scheduled Tribe share of the population: communities who bear the sharpest end of most deficits.Source: Census of India 2011, Primary Census Abstract, tehsil rows of the town-village directory. Amethi did not exist in 2011, so it is rebuilt from whole tehsils (Amethi, Gauriganj and Musafirkhana from Sultanpur, Tiloi from Rae Bareli: the composition on amethi.nic.in): 5,12,215 SC + 319 ST = 5,12,534 of 20,50,133 people (25.00%). Method A, whole tehsils; a boundary-adjusted rebuild gives 25.2%.District · ExactRural Population Beyond 5 km of a Primary Health Centre68.1%Rural people living in villages where the nearest primary health centre is 5 km or more away. Facility positions are as recorded in 2009, the latest official district-wide distance count.Source: Census of India 2011, Village Directory (District Census Handbook Appendix VD; facility positions as in 2009), rebuilt on Amethi’s present 13 development blocks (10 from the 2011 Sultanpur file, 3 from the 2011 Rae Bareli file): 9,76,264 of 14,33,129 people in villages with a recorded distance live where the nearest PHC is 5 km or more away (68.1%). A further 3,54,790 people live in villages with no recorded status; counting them all as near or all as far gives a range of 54.6% to 74.4%.District · ExactReading the badges. District · Exact = the district's own value from the Vulnerability Index. Benchmark = the state average, shown where the matrix has no district figure for this indicator. Bars set this district against the UP and India averages.",
+   "attrs": [
+    [
+     "input#searchIn",
+     "placeholder=Search District…"
+    ],
+    [
+     "select#stateSel",
+     "title=Filter by state"
+    ],
+    [
+     "select#tierSel",
+     "title=DEHAT presence"
+    ],
+    [
+     "select#metricSel",
+     "title=Shade districts by indicator"
+    ],
+    [
+     "button",
+     "aria-label=Toggle legend"
+    ],
+    [
+     "button#themeBtn",
+     "title=Toggle theme"
+    ],
+    [
+     "button#zoomIn",
+     "title=Zoom in"
+    ],
+    [
+     "button#zoomOut",
+     "title=Zoom out"
+    ],
+    [
+     "button#homeBtn",
+     "title=Reset view"
+    ],
+    [
+     "button#panelClose",
+     "aria-label=Close panel"
+    ]
+   ],
+   "legend": "Overall Child Opportunity Gap Index−At the benchmarkFurthest from itComposite of 25 gap indicators★ Dashed Ring = Priority District \u2014 DEHAT’s deepest current investment. Plain dots = Programme Footprint."
+  },
+  "dharashiv": {
+   "text": "MaharashtraDharashiv (Osmanabad)District HQ: Dharashiv26Child Opportunity Gap Index0 (at the benchmark district) → 100 (furthest from it). Composite of 25 sourced gap indicators.Programme Footprint \u2014 DEHAT has worked here through past & ongoing projects; tracked in the Vulnerability Index.A drought-prone Marathwada district where climate stress and distress migration pull children out of school.I · The Biological OriginThe cycle begins with the physical depletion of the mother \u2014 before a child is even born.Maternal Mortality Ratio33 per 100,000Mothers lost per 100,000 live births. Reported at state level \u2014 the most reliable scale for this measure \u2014 so every district in a state shares its figure.MH 33India 97Source: Sample Registration System (state-level)MH BenchmarkAnaemic Women (15–49)49.1%Women aged 15 to 49 who are anaemic: a nutritional debt passed on to the next child.MH 52.2India 53.2Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactBirths Outside Institutions1.9%Deliveries occurring without professional medical safety.MH 7.5India 9.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactMothers Without 4+ Antenatal Visits (last birth)10.8%Pregnancies unmonitored through the recommended check-up schedule.MH 31.8India 40.2Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactNo Breastfeeding Within 1 Hour38.7%Newborns denied the protective first feed.MH 59.8India 56.5Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactMothers Without Post-Natal Care Within 2 Days5.6%Mothers who received no check-up from a doctor, nurse, LHV, ANM or midwife within two days of delivery.MH 18India 22Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactII · The Early-Childhood TrapThe first 1,000 days set a permanent floor for survival, growth and cognition.Child Stunting (<5y)37.2%Irreversible height-for-age loss \u2014 a cognitive ceiling reached by age five.MH 33India 33.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactChild Wasting (<5y)16.1%Acute malnutrition \u2014 dangerously low weight for height.MH 15.6India 19.3Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactInfant Mortality Rate21 per 1,000Babies who die before their first birthday, per 1,000 live births.MH 22.6Source: ICMR-PHFI-IHME India State-Level Disease Burden Initiative (co-led by the Indian Council of Medical Research), The Lancet 2020, web appendix to \"Subnational mapping of under-5 and neonatal mortality trends in India: the GBD Study 2000-17\", Table 6, pp. 94-95: 2017 point estimate 21.0 per 1,000 live births (95% uncertainty interval 15.5-27.4). A model estimate for 2017, not a survey count. Used for Maharashtra because the government district figures are reported administrative rates or older Census 2011 model estimates, not comparable with each other.District · ExactUnder-5 Mortality Rate24.3 per 1,000Children who die before their fifth birthday, per 1,000 live births.MH 26.1Source: ICMR-PHFI-IHME India State-Level Disease Burden Initiative (co-led by the Indian Council of Medical Research), The Lancet 2020, web appendix to \"Subnational mapping of under-5 and neonatal mortality trends in India: the GBD Study 2000-17\", Table 10, p. 108: 2017 point estimate 24.3 per 1,000 live births (95% uncertainty interval 18.3-31.5). A model estimate for 2017, not a survey count. Used for Maharashtra because the government district figures are reported administrative rates or older Census 2011 model estimates, not comparable with each other.District · ExactChildren Under 6 Who Received No Anganwadi Service44%Children under six who received no service from an anganwadi in the past year. Published for states only; DEHAT will compute district figures from the NFHS-5 survey data.MH 44Source: National Family Health Survey 5 (2019-21), state report Table 65 (state level; district figures to follow)MH BenchmarkIII · The Systemic Exit (Girls)Broken school infrastructure and dignity gaps push girls out at puberty.Female Illiteracy (women 15–49)16.3%Women who cannot read or write \u2014 the literacy wall.MH 23.5India 27.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactWomen 15–24 Without Hygienic Menstrual Protection13.5%A dignity barrier that becomes a literal exit point from school.MH 12.8India 19.9Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactLost at Middle→Secondary Transition1.5%Intersectional SVC · the share of children who do not carry over from middle into secondary school \u2014 the exact stage the puberty-exit trap closes on girls, and the last off-ramp before labour and early marriage.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactSecondary-Stage Dropout14.8%Intersectional SVC · dropout at the secondary stage, where caste, gender and household poverty compound; every departure is a child newly exposed to work or marriage.Source: Unified District Information System for Education Plus (2024-25) district fact sheets - Dropout Rates - SecondaryDistrict · ExactGirls’ Dropout, Classes 9-1018.3%Girls leaving school in classes 9 and 10, the stage the puberty-exit trap closes on.MH 10.3Source: Unified District Information System for Education Plus (UDISE+) 2024-25, Ministry of Education, gender-wise dropout rate, secondary classes 9-10 (girls), from the official UDISE+ dashboard dataDistrict · ExactSecondary Pupil–Teacher Ratio25Indirect SVC · students per teacher in secondary grades. Overcrowded classrooms erode retention and learning \u2014 a slow push toward the exit.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactIV · The Exploitation LoopEarly marriage, adolescent motherhood, violence and child labour close the loop.Girls Married Before 1836.6%An illegal transition \u2014 a direct consequence of broken educational infrastructure.MH 19.2India 21.5Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactAdolescent Pregnancy (15–19)16.1%The loop-closer: the child bride becomes the next depleted mother.MH 3.2India 6.1Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactWomen Facing Spousal Violence28.5%Domestic trauma that shapes the household a child grows in. The National Family Health Survey collects this in the state module only, so every district carries its state figure.MH 28.5India 27.5Source: National Family Health Survey 5 (2019-21) state module \u2014 not reported at district levelMH BenchmarkChildren Aged 5-14 Who Were Working4.5%Children counted as workers, paid or unpaid (family farm and business work included). The latest official district count; there has been no Census since 2011.MH 3.5Source: Census of India 2011, Table B-01, Osmanabad district (renamed Dharashiv in 2023; same boundary): 14,199 of 3,18,146 children.District · ExactV · Economic FlightPoverty at the household level opens the pathways traffickers wait at.Child Out-Migration (students)55,077 studentsDirect SVC · total school-going children recorded as migrating (within-district, inter-district and inter-state). Unsafe mobility disrupts schooling and opens the labour and trafficking pathways DEHAT’s protection work sits astride. A volume count, not a rate \u2014 it tracks population size, so it is shown and shadeable but held out of the composite index.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactInter-State Child Migration223 studentsDirect SVC · children moving to another state \u2014 the sharpest end of the mobility risk, where service continuity breaks and trafficking and bonded-labour exposure rise. Kept out of the composite index as a raw count.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactPeople in Multidimensional Poverty5.3%Share of people deprived across health, education and living standards at the same time. Counts people, not households; a survey estimate, not a below-poverty-line count.Source: NITI Aayog, National Multidimensional Poverty Index: A Progress Review 2023 (NFHS-5, 2019-21), district headcount ratio (Uttar Pradesh overview of districts p. 249; Maharashtra p. 158)District · ExactVI · Cross-cutting DeterminantsThe intersecting conditions \u2014 WASH, energy, exclusion, health access \u2014 that shape every node.Households Not Using Clean Cooking Fuel30.3%Indoor smoke harms maternal and child respiratory health.MH 14.5India 47.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactHouseholds Without an Improved Drinking-Water Source3.6%Unsafe water drives the diarrhoeal disease that compounds stunting.MH 1.5India 3Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactHouseholds Not Using an Improved Sanitation Facility28.8%Open defecation sustains the infection–malnutrition cycle.MH 14.5India 24.8Source: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district datasetDistrict · ExactSchools Without Accessible Toilets for Children With Special Needs44.7%Intersectional SVC · schools lacking a functional toilet usable by children with special needs \u2014 a disability-exclusion barrier that keeps the most vulnerable children out of the classroom entirely.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactMinority-Community School Enrolment14.2%Intersectional SVC · minority-community share of school enrolment. Not a deficit in itself \u2014 a targeting flag: where it is high, protection and entitlement work must overlay minority-specific barriers to access.Source: Unified District Information System for Education Plus (2024-25) district fact sheets \u2014 verified against the source sheet for all 22 districts (Lakhimpur Kheri and Basti from the 2025-26 sheet)District · ExactSC + ST Population Share18.2%Scheduled Caste and Scheduled Tribe share of the population: communities who bear the sharpest end of most deficits.Source: Census of India 2011, Primary Census Abstract, Osmanabad district (renamed Dharashiv in 2023; same boundary): 3,01,223 of 16,57,576 people.District · ExactRural Population Beyond 5 km of a Primary Health Centre49.8%Rural people living in villages where the nearest primary health centre is 5 km or more away. Facility positions are as recorded in 2009, the latest official district-wide distance count.Source: Mission Antyodaya 2019-20 (Ministry of Rural Development) village survey; a looser measure in which a sub-centre also counts, used because the Census 2011 Village Directory file for Osmanabad is defective. Not comparable with other districts. The 49.8% is the share of villages with no health facility in the village and the nearest one 5 km or more away (377 of 757 villages).District · ExactReading the badges. District · Exact = the district's own value from the Vulnerability Index. Benchmark = the state average, shown where the matrix has no district figure for this indicator. Bars set this district against the UP and India averages.",
+   "attrs": [
+    [
+     "input#searchIn",
+     "placeholder=Search District…"
+    ],
+    [
+     "select#stateSel",
+     "title=Filter by state"
+    ],
+    [
+     "select#tierSel",
+     "title=DEHAT presence"
+    ],
+    [
+     "select#metricSel",
+     "title=Shade districts by indicator"
+    ],
+    [
+     "button",
+     "aria-label=Toggle legend"
+    ],
+    [
+     "button#themeBtn",
+     "title=Toggle theme"
+    ],
+    [
+     "button#zoomIn",
+     "title=Zoom in"
+    ],
+    [
+     "button#zoomOut",
+     "title=Zoom out"
+    ],
+    [
+     "button#homeBtn",
+     "title=Reset view"
+    ],
+    [
+     "button#panelClose",
+     "aria-label=Close panel"
+    ]
+   ],
+   "legend": "Overall Child Opportunity Gap Index−At the benchmarkFurthest from itComposite of 25 gap indicators★ Dashed Ring = Priority District \u2014 DEHAT’s deepest current investment. Plain dots = Programme Footprint."
+  }
+ },
+ "rank": {
+  "overall": {
+   "rank": "DistrictIndex ↓1Bahraich ★Uttar Pradesh702Shravasti ★Uttar Pradesh693Balrampur ★Uttar Pradesh674SiddharthnagarUttar Pradesh625SonbhadraUttar Pradesh616ShahjahanpurUttar Pradesh587BarabankiUttar Pradesh558GondaUttar Pradesh549Lakhimpur Kheri ★Uttar Pradesh5310NandurbarMaharashtra5211MaharajganjUttar Pradesh5012KushinagarUttar Pradesh4813AmethiUttar Pradesh4614BastiUttar Pradesh4415AyodhyaUttar Pradesh4116Ambedkar NagarUttar Pradesh3917GorakhpurUttar Pradesh3818WashimMaharashtra3619NashikMaharashtra3620SultanpurUttar Pradesh3521GadchiroliMaharashtra3522Gautam Buddha NagarUttar Pradesh2723Dharashiv (Osmanabad)Maharashtra26",
+   "legendHidden": "none"
+  },
+  "stunting": {
+   "rank": "DistrictChild Stunting (<5y) ↓1Bahraich ★Uttar Pradesh52.1%2Shravasti ★Uttar Pradesh50.9%3Lakhimpur Kheri ★Uttar Pradesh47.6%4GondaUttar Pradesh45.9%5NandurbarMaharashtra45.8%6ShahjahanpurUttar Pradesh44.5%7NashikMaharashtra42.2%8BarabankiUttar Pradesh41.9%9Balrampur ★Uttar Pradesh41.2%10MaharajganjUttar Pradesh40.5%11SonbhadraUttar Pradesh38.3%12SiddharthnagarUttar Pradesh37.2%13Dharashiv (Osmanabad)Maharashtra37.2%14BastiUttar Pradesh35.9%15AmethiUttar Pradesh35.8%16GadchiroliMaharashtra35.7%17WashimMaharashtra35.3%18SultanpurUttar Pradesh33.4%19KushinagarUttar Pradesh32.2%20Ambedkar NagarUttar Pradesh31.1%21AyodhyaUttar Pradesh30.6%22GorakhpurUttar Pradesh29.6%23Gautam Buddha NagarUttar Pradesh25.5%",
+   "legendHidden": "none"
+  },
+  "mmr": {
+   "rank": "DistrictMaternal Mortality Ratio ↓1Bahraich ★Uttar Pradesh167 per 100,0002Shravasti ★Uttar Pradesh167 per 100,0003Balrampur ★Uttar Pradesh167 per 100,0004Lakhimpur Kheri ★Uttar Pradesh167 per 100,0005SiddharthnagarUttar Pradesh167 per 100,0006MaharajganjUttar Pradesh167 per 100,0007KushinagarUttar Pradesh167 per 100,0008SonbhadraUttar Pradesh167 per 100,0009AmethiUttar Pradesh167 per 100,00010Gautam Buddha NagarUttar Pradesh167 per 100,00011GondaUttar Pradesh167 per 100,00012GorakhpurUttar Pradesh167 per 100,00013Ambedkar NagarUttar Pradesh167 per 100,00014AyodhyaUttar Pradesh167 per 100,00015BarabankiUttar Pradesh167 per 100,00016ShahjahanpurUttar Pradesh167 per 100,00017SultanpurUttar Pradesh167 per 100,00018BastiUttar Pradesh167 per 100,00019WashimMaharashtra33 per 100,00020Dharashiv (Osmanabad)Maharashtra33 per 100,00021NandurbarMaharashtra33 per 100,00022GadchiroliMaharashtra33 per 100,00023NashikMaharashtra33 per 100,000",
+   "legendHidden": "none"
+  },
+  "outMigration": {
+   "rank": "DistrictChild Out-Migration (students) ↓1NashikMaharashtra2,21,015 students2Lakhimpur Kheri ★Uttar Pradesh1,20,788 students3GorakhpurUttar Pradesh1,09,367 students4KushinagarUttar Pradesh96,847 students5BarabankiUttar Pradesh89,037 students6GondaUttar Pradesh88,382 students7SultanpurUttar Pradesh80,210 students8ShahjahanpurUttar Pradesh79,833 students9Bahraich ★Uttar Pradesh77,873 students10Ambedkar NagarUttar Pradesh74,136 students11AyodhyaUttar Pradesh66,823 students12SiddharthnagarUttar Pradesh66,451 students13Gautam Buddha NagarUttar Pradesh64,219 students14BastiUttar Pradesh62,566 students15MaharajganjUttar Pradesh62,527 students16SonbhadraUttar Pradesh61,835 students17NandurbarMaharashtra55,914 students18Dharashiv (Osmanabad)Maharashtra55,077 students19AmethiUttar Pradesh49,224 students20Balrampur ★Uttar Pradesh48,198 students21WashimMaharashtra40,552 students22GadchiroliMaharashtra31,693 students23Shravasti ★Uttar Pradesh28,143 students",
+   "legendHidden": "none"
+  },
+  "phcGap": {
+   "rank": "DistrictRural Population Beyond 5 km of a Primary Health Centre ↓1WashimMaharashtra75.2%2SonbhadraUttar Pradesh75.1%3Shravasti ★Uttar Pradesh73.5%4ShahjahanpurUttar Pradesh73.5%5Balrampur ★Uttar Pradesh72.3%6GadchiroliMaharashtra70.4%7BastiUttar Pradesh70.2%8NashikMaharashtra69.9%9MaharajganjUttar Pradesh69.4%10Ambedkar NagarUttar Pradesh69.1%11SiddharthnagarUttar Pradesh68.7%12AmethiUttar Pradesh68.1%13GondaUttar Pradesh67.6%14NandurbarMaharashtra67.6%15Bahraich ★Uttar Pradesh66.9%16Lakhimpur Kheri ★Uttar Pradesh66.9%17AyodhyaUttar Pradesh66.5%18GorakhpurUttar Pradesh64.7%19KushinagarUttar Pradesh64.6%20BarabankiUttar Pradesh61.2%21SultanpurUttar Pradesh60.7%22Gautam Buddha NagarUttar Pradesh59.7%23Dharashiv (Osmanabad)Maharashtran/a",
+   "legendHidden": "none"
+  },
+  "byName": "District ↑Rural Population Beyond 5 km of a Primary Health Centre1Ambedkar NagarUttar Pradesh69.1%2AmethiUttar Pradesh68.1%3AyodhyaUttar Pradesh66.5%4Bahraich ★Uttar Pradesh66.9%5Balrampur ★Uttar Pradesh72.3%6BarabankiUttar Pradesh61.2%7BastiUttar Pradesh70.2%8Dharashiv (Osmanabad)Maharashtran/a9GadchiroliMaharashtra70.4%10Gautam Buddha NagarUttar Pradesh59.7%11GondaUttar Pradesh67.6%12GorakhpurUttar Pradesh64.7%13KushinagarUttar Pradesh64.6%14Lakhimpur Kheri ★Uttar Pradesh66.9%15MaharajganjUttar Pradesh69.4%16NandurbarMaharashtra67.6%17NashikMaharashtra69.9%18ShahjahanpurUttar Pradesh73.5%19Shravasti ★Uttar Pradesh73.5%20SiddharthnagarUttar Pradesh68.7%21SonbhadraUttar Pradesh75.1%22SultanpurUttar Pradesh60.7%23WashimMaharashtra75.2%"
+ },
+ "legendStunting": "Child Stunting (<5y)−At the benchmarkFurthest from itSource: National Family Health Survey 5 (2019-21) district fact sheets \u2014 Ministry of Health and Family Welfare / International Institute for Population Sciences district dataset★ Dashed Ring = Priority District \u2014 DEHAT’s deepest current investment. Plain dots = Programme Footprint.",
+ "compare": {
+  "empty": "Compare DistrictsTap two districts on the map \u2014 or pick them from the ranking table or search \u2014 to see every indicator side by side.",
+  "tipCmp": "BahraichUttar Pradesh · Aspirational DistrictOpportunity Gap Index 70★ Priority \u2014 in-depth, intersectional investmentTap to add to comparison",
+  "one": "Compare DistrictsTap two districts on the map \u2014 or pick them from the ranking table or search \u2014 to see every indicator side by side.Selected: Bahraich \u2014 pick one more.",
+  "two": "CompareBahraich · Dharashiv (Osmanabad)Opportunity Gap Index: Bahraich 70 · Dharashiv (Osmanabad) 26BahraichDharashivI · The Biological OriginMaternal Mortality Ratio167 per 100,000†33 per 100,000†Anaemic Women (15–49)48.8%49.1%Births Outside Institutions32.3%1.9%Mothers Without 4+ Antenatal Visits (last birth)65.7%10.8%No Breastfeeding Within 1 Hour83%38.7%Mothers Without Post-Natal Care Within 2 Days47.6%5.6%II · The Early-Childhood TrapChild Stunting (<5y)52.1%37.2%Child Wasting (<5y)14.4%16.1%Infant Mortality Rate66 per 1,00021 per 1,000Under-5 Mortality Rate105 per 1,00024.3 per 1,000Children Under 6 Who Received No Anganwadi Service33%†44%†III · The Systemic Exit (Girls)Female Illiteracy (women 15–49)58.4%16.3%Women 15–24 Without Hygienic Menstrual Protection51.6%13.5%Lost at Middle→Secondary Transition48.6%1.5%Secondary-Stage Dropout10.4%14.8%Girls’ Dropout, Classes 9-1012.8%18.3%Secondary Pupil–Teacher Ratio4125IV · The Exploitation LoopGirls Married Before 1837.5%36.6%Adolescent Pregnancy (15–19)8.4%16.1%Women Facing Spousal Violence33.1%†28.5%†Children Aged 5-14 Who Were Working4.4%4.5%V · Economic FlightChild Out-Migration (students)77,873 students55,077 studentsInter-State Child Migration801 students223 studentsPeople in Multidimensional Poverty54.4%5.3%VI · Cross-cutting DeterminantsHouseholds Not Using Clean Cooking Fuel61.8%30.3%Households Without an Improved Drinking-Water Source0%3.6%Households Not Using an Improved Sanitation Facility55.8%28.8%Schools Without Accessible Toilets for Children With Special Needs55.9%44.7%Minority-Community School Enrolment31.3%14.2%SC + ST Population Share14.9%18.2%Rural Population Beyond 5 km of a Primary Health Centre66.9%49.8%† state benchmark shown \u2014 indicator not in the district matrix. The highlighted value is the worse of the pair on gap indicators.",
+  "attrs": [
+   [
+    "input#searchIn",
+    "placeholder=Search District…"
+   ],
+   [
+    "select#stateSel",
+    "title=Filter by state"
+   ],
+   [
+    "select#tierSel",
+    "title=DEHAT presence"
+   ],
+   [
+    "select#metricSel",
+    "title=Shade districts by indicator"
+   ],
+   [
+    "button",
+    "aria-label=Toggle legend"
+   ],
+   [
+    "button#themeBtn",
+    "title=Toggle theme"
+   ],
+   [
+    "button#zoomIn",
+    "title=Zoom in"
+   ],
+   [
+    "button#zoomOut",
+    "title=Zoom out"
+   ],
+   [
+    "button#homeBtn",
+    "title=Reset view"
+   ],
+   [
+    "button#panelClose",
+    "aria-label=Close panel"
+   ]
+  ]
+ }
+}
