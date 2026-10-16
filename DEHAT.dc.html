@@ -1136,7 +1136,7 @@
         <div class="work-grid" style="display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(18px,2.4vw,32px);align-items:stretch">
           <div style="display:flex;flex-direction:column;gap:10px">
             <sc-for list="{{ programs }}" as="pg" hint-placeholder-count="4">
-              <button onClick="{{ pg.select }}" style="flex:1;position:relative;overflow:hidden;text-align:left;cursor:pointer;padding:16px 20px;border-radius:16px;border:1px solid {{ pg.border }};background:{{ pg.bg }};display:flex;align-items:center;gap:14px;transition:background .25s cubic-bezier(.22,.61,.36,1),border-color .25s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateX(4px)">
+              <button onClick="{{ pg.select }}" aria-pressed="{{ pg.pressed }}" aria-controls="home-active-program" style="flex:1;position:relative;overflow:hidden;text-align:left;cursor:pointer;padding:16px 20px;border-radius:16px;border:1px solid {{ pg.border }};background:{{ pg.bg }};display:flex;align-items:center;gap:14px;transition:background .25s cubic-bezier(.22,.61,.36,1),border-color .25s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateX(4px)">
                 <span aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:4px;background:{{ pg.color }};transform:scaleY({{ pg.railScale }});transform-origin:center;transition:transform .3s cubic-bezier(.2,.7,.2,1)"></span>
                 <span class="art" role="img" aria-hidden="true" style="flex:none;width:60px;height:60px;background-image:{{ pg.artCss }},var(--art-plate-soft);opacity:{{ pg.artOp }};transition:opacity .3s cubic-bezier(.22,.61,.36,1)"></span>
                 <span style="flex:1;min-width:0">
@@ -1147,7 +1147,7 @@
               </button>
             </sc-for>
           </div>
-          <div key="{{ activeProgram.name }}" class="rise home-active-program" style="position:relative;border-radius:22px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column">
+          <div key="{{ activeProgram.name }}" id="home-active-program" class="rise home-active-program" style="position:relative;border-radius:22px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column">
             <div style="height:8px;background:{{ activeProgram.color }};flex:none"></div>
             <div class="home-active-program-body" style="position:relative;flex:1;padding:clamp(20px,2.4vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:clamp(16px,2vw,26px)">
               <div class="home-active-program-head" style="display:flex;align-items:center;gap:16px">
@@ -37791,14 +37791,16 @@ class Component extends DCLogic {
       open: openProg(programs[this.state.program].key),
     });
     const programsView = programs.map((p, i) => ({
-      ...p, select: () => {
+      ...p, select: (event) => {
         this.setState({ program: i });
-        if (window.innerWidth <= 760) requestAnimationFrame(() => {
+        // A keyboard-activated button must remain visible while it owns focus.
+        if (window.innerWidth <= 760 && event?.detail !== 0) requestAnimationFrame(() => {
           document.querySelector('.home-active-program')?.scrollIntoView({
             behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start',
           });
         });
       },
+      pressed: this.state.program === i ? 'true' : 'false',
       bg: this.state.program === i ? 'var(--surface)' : 'rgba(251,247,239,.06)',
       border: this.state.program === i ? 'transparent' : 'rgba(251,247,239,.14)',
       textColor: this.state.program === i ? 'var(--text)' : '#fbf7ef',
