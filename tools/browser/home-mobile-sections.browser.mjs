@@ -34,9 +34,9 @@ test('home process, programme and people sections work on phones', async () => {
       await programmes.locator('button').filter({hasText:'Human Protection'}).first().click();
       const active = programmes.locator('.home-active-program');
       await assert.doesNotReject(() => active.locator('h3').getByText('Human Protection').waitFor());
-      await page.waitForTimeout(150);
+      await page.waitForFunction(() => document.activeElement?.id === 'home-active-program');
       const programmePosition = await active.evaluate(el => ({top:el.getBoundingClientRect().top,ctaHeight:el.querySelector('button')?.getBoundingClientRect().height}));
-      assert.ok(programmePosition.top >= 100 && programmePosition.top < 300, `selected programme stays below the compact picker at ${width}: ${programmePosition.top}`);
+      assert.ok(programmePosition.top >= 90 && programmePosition.top < 130, `selected programme sits below the menu at ${width}: ${programmePosition.top}`);
       assert.ok(programmePosition.ctaHeight >= 44);
 
       const people = page.locator('section[data-spine="Who Is Behind This"]');

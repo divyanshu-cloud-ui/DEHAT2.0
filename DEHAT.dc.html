@@ -228,10 +228,8 @@
     .who-teaser-faces button{min-width:0}
     .who-teaser-selected{min-height:0!important;margin:0!important}
     .home-active-program{scroll-margin-top:20px}
-    .home-programme-picker{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px!important;scroll-margin-top:20px}
-    .home-programme-picker button{min-height:44px;padding:6px 10px!important}
-    .home-programme-picker button .art,.home-programme-picker button .home-programme-tag,.home-programme-picker button .home-programme-arrow{display:none!important}
-    .home-programme-picker button .home-programme-name{font-size:14px!important;line-height:1.15!important}
+    .home-active-program.rise{animation:none}
+    .home-programme-picker button{min-height:88px}
     .home-active-program-body{padding:8px!important;gap:6px!important}
     .home-active-program-head{gap:10px!important}
     .home-active-program-head .art{width:44px!important;height:44px!important}
@@ -1136,13 +1134,13 @@
               </button>
             </sc-for>
           </div>
-          <div key="{{ activeProgram.name }}" id="home-active-program" class="rise home-active-program" style="position:relative;border-radius:22px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column">
+          <div key="{{ activeProgram.name }}" id="home-active-program" tabindex="-1" role="region" aria-labelledby="home-active-program-title" class="rise home-active-program" style="position:relative;border-radius:22px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column">
             <div style="height:8px;background:{{ activeProgram.color }};flex:none"></div>
             <div class="home-active-program-body" style="position:relative;flex:1;padding:clamp(20px,2.4vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:clamp(16px,2vw,26px)">
               <div class="home-active-program-head" style="display:flex;align-items:center;gap:16px">
                 <span class="art" role="img" aria-hidden="true" style="flex:none;width:clamp(76px,8vw,104px);height:clamp(76px,8vw,104px);background-image:{{ activeProgram.artCss }},var(--art-plate)"></span>
                 <div style="min-width:0">
-                  <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(21px,2.4vw,27px);line-height:1.04;margin:0;color:var(--text);text-wrap:balance">{{ activeProgram.name }}</h3>
+                  <h3 id="home-active-program-title" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(21px,2.4vw,27px);line-height:1.04;margin:0;color:var(--text);text-wrap:balance">{{ activeProgram.name }}</h3>
                   <span style="font-size:12px;color:{{ activeProgram.tok }};font-weight:700;letter-spacing:.03em">{{ activeProgram.tag }}</span>
                 </div>
               </div>
@@ -37784,8 +37782,10 @@ class Component extends DCLogic {
       ...p, select: () => {
         this.setState({ program: i });
         if (window.innerWidth <= 760) requestAnimationFrame(() => {
-          const picker = document.querySelector('.home-programme-picker');
-          if (picker) window.scrollBy({ top:picker.getBoundingClientRect().top - this._headerEdge() - 4, behavior:'instant' });
+          const panel = document.querySelector('#home-active-program');
+          if (!panel) return;
+          window.scrollTo({ top:panel.getBoundingClientRect().top + window.scrollY - this._headerEdge() - 8, behavior:'instant' });
+          panel.focus({ preventScroll:true });
         });
       },
       pressed: this.state.program === i ? 'true' : 'false',

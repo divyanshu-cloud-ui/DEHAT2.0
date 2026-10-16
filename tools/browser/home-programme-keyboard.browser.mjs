@@ -32,9 +32,11 @@ test('programme buttons expose selection and retain visible keyboard focus', asy
           const rail=document.querySelector('.spine-rail').getBoundingClientRect();
           return {top:tab?.top,bottom:tab?.bottom,headerBottom:header.bottom,railTop:rail.top};
         });
-        assert.ok(focus.top>=focus.headerBottom-1 && focus.bottom<=focus.railTop-1,`${lang} ${width}x${height} button ${i}: ${JSON.stringify(focus)}`);
+        assert.ok(focus.top>=focus.headerBottom-1 && focus.bottom<=focus.railTop-1,`${lang} ${width}x${height} panel ${i}: ${JSON.stringify(focus)}`);
+        assert.equal(await page.evaluate(()=>document.activeElement?.id),'home-active-program');
       }
       await tabs.nth(2).click();
+      await page.waitForTimeout(80);
       const pointerFocus=await page.evaluate(()=>{
         const tab=document.activeElement;
         const box=tab?.getBoundingClientRect();
@@ -42,7 +44,8 @@ test('programme buttons expose selection and retain visible keyboard focus', asy
         const rail=document.querySelector('.spine-rail').getBoundingClientRect();
         return {pressed:tab?.getAttribute('aria-pressed'),top:box?.top,bottom:box?.bottom,headerBottom:subnav?.bottom,railTop:rail.top};
       });
-      assert.equal(pointerFocus.pressed,'true');
+      assert.equal(await tabs.nth(2).getAttribute('aria-pressed'),'true');
+      assert.equal(await page.evaluate(()=>document.activeElement?.id),'home-active-program');
       assert.ok(pointerFocus.top>=pointerFocus.headerBottom-1 && pointerFocus.bottom<=pointerFocus.railTop-1,
         `${lang} ${width}x${height} pointer focus: ${JSON.stringify(pointerFocus)}`);
       await page.close();
