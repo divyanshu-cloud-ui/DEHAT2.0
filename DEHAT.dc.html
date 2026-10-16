@@ -222,6 +222,8 @@
     .loop-station{width:100%}
     .loop-arrow{display:flex;min-height:24px}
     .loop-arrow span{line-height:1;padding:0 10px!important}
+    html[data-theme="light"] .loop-station:first-child .loop-step-number,
+    html[data-theme="light"] #home-process-feature[data-loop-step="01"] .loop-step-number{color:#765405!important}
     .who-teaser-copy{display:contents}
     .who-teaser-intro,.who-teaser-selected,.who-teaser-actions,.who-teaser-foot{grid-column:auto}
     .who-teaser-faces.who-teaser-faces{grid-column:auto;grid-row:auto;align-self:auto;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important}
@@ -1088,16 +1090,16 @@
               <button onClick="{{ lc.select }}" onMouseEnter="{{ lc.select }}" aria-pressed="{{ lc.pressed }}" aria-controls="home-process-feature" style="width:100%;height:100%;text-align:start;font-family:inherit;cursor:pointer;padding:clamp(16px,1.9vw,24px);border-radius:20px;background:{{ lc.bg }};border:1.5px solid {{ lc.ring }};box-shadow:{{ lc.shadow }};display:flex;align-items:center;gap:14px;transition:background .28s cubic-bezier(.22,.61,.36,1),border-color .28s cubic-bezier(.22,.61,.36,1),box-shadow .28s cubic-bezier(.22,.61,.36,1),transform .28s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-3px)">
                 <div class="art" role="img" aria-hidden="true" style="flex:none;width:clamp(54px,6vw,76px);height:clamp(54px,6vw,76px);background-image:{{ lc.imgCss }},var(--art-plate-soft);opacity:{{ lc.artOp }};transition:opacity .28s cubic-bezier(.22,.61,.36,1)"></div>
                 <div style="min-width:0">
-                  <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:11.5px;letter-spacing:.12em;color:{{ lc.tok }};margin-bottom:4px">{{ lc.step }}</div>
+                  <div class="loop-step-number" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:11.5px;letter-spacing:.12em;color:{{ lc.tok }};margin-bottom:4px">{{ lc.step }}</div>
                   <div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(15px,1.6vw,19px);line-height:1.18;color:var(--text);text-wrap:pretty">{{ lc.name }}</div>
                 </div>
               </button>
             </sc-if>
 
             <sc-if value="{{ lc.isCentre }}" hint-placeholder-val="{{ false }}">
-              <div key="{{ activeStep.name }}" id="home-process-feature" tabindex="-1" class="rise" style="width:100%;max-width:360px;text-align:center;padding:clamp(20px,2.4vw,30px) clamp(16px,2vw,24px);border-radius:24px;background:var(--surface2);border:1px solid var(--border)">
+              <div key="{{ activeStep.name }}" id="home-process-feature" data-loop-step="{{ activeStep.step }}" tabindex="-1" class="rise" style="width:100%;max-width:360px;text-align:center;padding:clamp(20px,2.4vw,30px) clamp(16px,2vw,24px);border-radius:24px;background:var(--surface2);border:1px solid var(--border)">
                 <div class="art" role="img" aria-hidden="true" style="height:clamp(100px,11vw,134px);width:clamp(100px,11vw,134px);margin:0 auto 16px;background-image:{{ activeStep.imgCss }},var(--art-plate)"></div>
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:11.5px;letter-spacing:.12em;color:{{ activeStep.textTok }}">{{ activeStep.step }}</div>
+                <div class="loop-step-number" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:11.5px;letter-spacing:.12em;color:{{ activeStep.textTok }}">{{ activeStep.step }}</div>
                 <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(19px,2.2vw,25px);margin:6px 0 10px;color:var(--text);line-height:1.1;text-wrap:balance">{{ activeStep.name }}</h3>
                 <p style="font-size:14.5px;line-height:1.6;color:var(--dim);margin:0 0 16px;text-wrap:pretty">{{ activeStep.body }}</p>
                 <div style="font-size:12px;line-height:1.5;color:var(--faint);padding-top:14px;border-top:1px solid var(--border);text-wrap:pretty">{{ activeStep.handoff }}</div>

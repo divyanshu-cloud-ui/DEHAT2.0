@@ -12,6 +12,7 @@ test('phone process keeps the illustrated feature and four linked steps usable',
   try {
     for(const lang of ['en','ur']) for(const theme of ['light','dark']) for(const [width,height] of [[320,640],[375,812],[430,932]]) {
       const page=await browser.newPage({viewport:{width,height},isMobile:true,hasTouch:true,reducedMotion:'reduce'});
+      page.setDefaultTimeout(10000);
       await page.addInitScript(theme=>{
         localStorage.setItem('dehat.theme',theme);
         localStorage.setItem('dehat.consent',JSON.stringify({v:1,prefs:{performance:false,functional:false,targeting:false}}));
