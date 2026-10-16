@@ -20,6 +20,9 @@ test('phone process rows stay reachable when switching or collapsing steps',asyn
       await page.waitForFunction(()=>window.DEHAT_LAUNCH_DIAGNOSTICS?.phase==='ready');
       const rows=page.locator('section[data-spine="The Method"] .loop-phone-row');
       assert.equal(await rows.count(),4);
+      const alignment=await rows.first().locator('button').evaluate(el=>({textAlign:getComputedStyle(el).textAlign,direction:getComputedStyle(el).direction}));
+      assert.equal(alignment.textAlign,'start');
+      assert.equal(alignment.direction,lang==='ur'?'rtl':'ltr');
       for(const i of [1,2,3,0]) {
         const button=rows.nth(i).locator('button');
         await button.scrollIntoViewIfNeeded();
