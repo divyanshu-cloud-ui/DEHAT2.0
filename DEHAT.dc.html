@@ -228,7 +228,14 @@
     .who-teaser-selected{order:2;min-height:0!important;margin:0!important}
     .who-teaser-actions{order:3}
     .who-teaser-foot{order:4}
-    .home-active-program{scroll-margin-top:145px}
+    .home-active-program{scroll-margin-top:20px}
+    .home-active-program-body{padding:14px!important;gap:10px!important}
+    .home-active-program-head{gap:10px!important}
+    .home-active-program-head .art{width:52px!important;height:52px!important}
+    .home-active-program-detail{font-size:14px!important;line-height:1.43!important}
+    .home-active-program-stats{gap:8px 12px!important;padding-top:10px!important}
+    .home-active-program-stats>div{flex:1 1 calc(50% - 6px)}
+    .home-active-program-stats>button{margin-inline-start:auto!important}
   }
   @media (prefers-reduced-motion:reduce){.loop-arrow span{animation:none;opacity:.7}}
   html[data-spine-on] body{padding-bottom:74px}
@@ -1142,16 +1149,16 @@
           </div>
           <div key="{{ activeProgram.name }}" class="rise home-active-program" style="position:relative;border-radius:22px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column">
             <div style="height:8px;background:{{ activeProgram.color }};flex:none"></div>
-            <div style="position:relative;flex:1;padding:clamp(20px,2.4vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:clamp(16px,2vw,26px)">
-              <div style="display:flex;align-items:center;gap:16px">
+            <div class="home-active-program-body" style="position:relative;flex:1;padding:clamp(20px,2.4vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:clamp(16px,2vw,26px)">
+              <div class="home-active-program-head" style="display:flex;align-items:center;gap:16px">
                 <span class="art" role="img" aria-hidden="true" style="flex:none;width:clamp(76px,8vw,104px);height:clamp(76px,8vw,104px);background-image:{{ activeProgram.artCss }},var(--art-plate)"></span>
                 <div style="min-width:0">
                   <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(21px,2.4vw,27px);line-height:1.04;margin:0;color:var(--text);text-wrap:balance">{{ activeProgram.name }}</h3>
                   <span style="font-size:12px;color:{{ activeProgram.tok }};font-weight:700;letter-spacing:.03em">{{ activeProgram.tag }}</span>
                 </div>
               </div>
-              <p style="font-size:15.5px;line-height:1.6;color:var(--dim);margin:0;max-width:60ch;text-wrap:pretty">{{ activeProgram.detail }}</p>
-              <div style="margin-top:auto;display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px 24px;padding-top:16px;border-top:1px solid var(--border)">
+              <p class="home-active-program-detail" style="font-size:15.5px;line-height:1.6;color:var(--dim);margin:0;max-width:60ch;text-wrap:pretty">{{ activeProgram.detail }}</p>
+              <div class="home-active-program-stats" style="margin-top:auto;display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px 24px;padding-top:16px;border-top:1px solid var(--border)">
                 <sc-for list="{{ activeProgram.stats }}" as="st" hint-placeholder-count="3">
                   <div>
                     <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:23px;color:{{ activeProgram.tok }};line-height:1">{{ st.num }}</div>
