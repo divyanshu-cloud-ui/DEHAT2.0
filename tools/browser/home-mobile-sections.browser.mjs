@@ -21,13 +21,14 @@ test('home process, programme and people sections work on phones', async () => {
       await page.waitForFunction(() => window.DEHAT_LAUNCH_DIAGNOSTICS?.phase === 'ready');
 
       const process = page.locator('section[data-spine="The Method"]');
-      const steps = process.locator('.loop-phone-button');
+      const steps = process.locator('.loop-station button');
       assert.equal(await steps.count(), 4);
       assert.ok(await steps.first().isVisible());
-      assert.equal(await process.locator('.loop-grid').isVisible(), false);
+      assert.equal(await process.locator('.loop-grid').isVisible(), true);
+      assert.equal(await process.locator('.loop-arrow:visible').count(), 4);
       await steps.nth(3).click();
-      assert.equal(await steps.nth(3).getAttribute('aria-expanded'), 'true');
-      assert.match(await process.locator('.loop-phone-row').nth(3).innerText(), /Once the public system is delivering/);
+      assert.equal(await steps.nth(3).getAttribute('aria-pressed'), 'true');
+      assert.match(await process.locator('#home-process-feature').innerText(), /Once the public system is delivering/);
 
       const programmes = page.locator('section[data-spine="The Four Programmes"]');
       await programmes.locator('button').filter({hasText:'Human Protection'}).first().click();
@@ -61,7 +62,7 @@ test('home process, programme and people sections work on phones', async () => {
       assert.ok(peopleLayout.selectedTop >= peopleLayout.gridBottom);
       assert.equal(peopleLayout.overflow, false);
       await page.screenshot({path:`/private/tmp/dehat-home-mobile-ux-${width}.png`});
-      console.log(JSON.stringify({width,process:'inline steps',programmeTop:Math.round(programmePosition.top),peopleColumns:peopleLayout.columns,overflow:false}));
+      console.log(JSON.stringify({width,process:'featured loop',programmeTop:Math.round(programmePosition.top),peopleColumns:peopleLayout.columns,overflow:false}));
       await page.close();
     }
   } finally {

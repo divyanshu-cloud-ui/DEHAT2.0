@@ -20,7 +20,7 @@ test('interactive home sections have no axe violations after selection',async()=
       await page.waitForFunction(()=>window.DEHAT_LAUNCH_DIAGNOSTICS?.phase==='ready');
       await page.addScriptTag({path:process.env.AXE_SOURCE});
       const states=[
-        ['The Method','.loop-phone-button',2],
+        ['The Method','.loop-station button',2],
         ['The Four Programmes','.work-grid > div:first-child button',2],
         ['Who Is Behind This','.who-teaser-faces button',7],
       ];
