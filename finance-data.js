@@ -1,4 +1,4 @@
-// DEHAT financial transparency dataset - audited balance sheets FY2005-06 → FY2024-25.
+// DEHAT financial transparency dataset - audited balance sheets FY2005-06 → FY2025-26.
 // Source of truth: signed, audited PDFs (Madhuresh Agrahari & Associates, CA). Where a
 // machine-readable soft copy exists (FY2024-25 .xlsx) it is used for exact figures and
 // cross-checked against the signed PDF; the signed PDF wins on any conflict.
@@ -206,13 +206,17 @@ FIN.YEARS = [
     // FY2025-26 - figures taken from the accountant's consolidated workbook
     // ("Balance sheet 2025-26 - DEHAT Financials.xlsx"): Cons Bal Sheet, Cons Inc & Exp,
     // INR Grant Sheet and FCRA Grant Fun schedules, which cross-foot exactly.
-    // NOT YET SIGNED: the Balance Sheet and Income & Expenditure both carry a blank
-    // signature Date and a blank UDIN, so this year is recorded as compiled, not audited.
-    // Set signed:true and fill udin once the CA releases the signed statements.
-    fy:'2025-26', period:'1 Apr 2025 – 31 Mar 2026',
-    signed:false, softcopy:true, auditor:'Madhuresh Agrahari & Associates', udin:'',
+    // SIGNED 29 September 2026 by Madhuresh Agrahari & Associates (Firm No. 026205N, M. No. 528519),
+    // UDIN 26528519SFRVQP6113, on all three sets (Consolidated, Foreign Contribution, Indian Funds).
+    // The signed PDF wins on any conflict. Three figures in the unsigned workbook differed and were
+    // corrected to the signed statements on 16 October 2026: Caritas grant 2,286,891 (was 2,281,891),
+    // general donations 88,336.86 (was 38,336.86), DEHAT general expenditure 570,728.93 (was 520,728.93).
+    // The signed consolidated Balance Sheet heading reads "1st April 2024 to 31st March 2026" while
+    // every other heading reads 1 April 2025; the period of this year is 1 Apr 2025 - 31 Mar 2026.
+    fy:'2025-26', doc:'assets/docs/balance-sheet-2025-26.pdf', period:'1 Apr 2025 – 31 Mar 2026',
+    signed:true, softcopy:true, auditor:'Madhuresh Agrahari & Associates', udin:'26528519SFRVQP6113',
     received:[
-      { funder:'caritas_germany', regime:'FCRA', flex:'restricted', grant:2281891,  interest:6577 },
+      { funder:'caritas_germany', regime:'FCRA', flex:'restricted', grant:2286891,  interest:6577 },
       { funder:'ksc_foundation',  regime:'FCRA', flex:'restricted', grant:7862159,  interest:13962 },
       { funder:'shes_the_first',  regime:'FCRA', flex:'restricted', grant:1992819,  interest:0 },
       { funder:'dasra',           regime:'FCRA', flex:'restricted', grant:1025774,  interest:0 },
@@ -222,7 +226,7 @@ FIN.YEARS = [
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:263636,   interest:0,   note:'Childline Bahraich' },
       { funder:'childline_india', regime:'INR',  flex:'restricted', grant:233774,   interest:998, note:'Childline Shravasti' },
       { funder:'edele_give',      regime:'INR',  flex:'restricted', grant:2454.67,  interest:99 },
-      { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:38336.86, interest:651, note:'Individual contributions' },
+      { funder:'individuals',     regime:'INR',  flex:'flexible',   grant:88336.86, interest:651, note:'Individual contributions' },
     ],
     // admin is recorded only where the workbook states an administrative line separately.
     // Where a project's utilisation is reported on a single combined line, admin is left at 0
@@ -235,7 +239,7 @@ FIN.YEARS = [
       { project:'Swaraj',                                       funder:'world_neighbors', regime:'FCRA', total:909360,     admin:189372 },
       { project:'DEHAT Direct (Own Foreign Contribution Fund)', funder:'__fcra_general',  regime:'FCRA', total:42300.52,   admin:42300.52 },
       { project:'Indian Grant Programmes (Azim Premji Philanthropic Initiatives FASAL etc.)', funder:'appi', regime:'INR', total:5074305.76, admin:0 },
-      { project:'DEHAT General Expenditure',                    funder:'individuals',     regime:'INR',  total:520728.93,  admin:520728.93 },
+      { project:'DEHAT General Expenditure',                    funder:'individuals',     regime:'INR',  total:570728.93,  admin:570728.93 },
     ],
     depreciation:80446,
     reserves:{ closingBankFCRA:2760443.80, closingBankINR:583400.31 },
