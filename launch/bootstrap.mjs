@@ -107,7 +107,29 @@ function installAnimationBudget(root) {
     infiniteRunning:document.getAnimations().filter(animation => animation.playState === 'running' && animation.effect?.getTiming().iterations === Infinity).length})};
 }
 
+// The pre-rendered snapshot shows the section menu at once, but its buttons only act once the live
+// page takes over, which on a slow phone can be more than ten seconds. Until then a tap jumps to the
+// matching snapshot section: the menu's buttons and the [data-spine] sections share one order in
+// every language, so the index maps button to section without reading any label.
+export function snapshotSectionMenu(snapshot) {
+  if (!snapshot) return;
+  snapshot.addEventListener('click', event => {
+    const button = event.target.closest?.('.subnav-link');
+    if (!button || !snapshot.contains(button)) return;
+    const buttons = [...snapshot.querySelectorAll('.subnav-link')];
+    const target = [...snapshot.querySelectorAll('[data-spine]')][buttons.indexOf(button)];
+    if (!target) return;
+    event.preventDefault();
+    for (const item of buttons) item.setAttribute('aria-current', item === button ? 'true' : 'false');
+    // Land below the sticky header and menu bar, as the live page does.
+    const bar = button.closest('[data-subnav]') || button.parentElement;
+    const top = target.getBoundingClientRect().top + scrollY - Math.max(0, bar.getBoundingClientRect().bottom);
+    scrollTo({top, behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+  });
+}
+
 async function start() {
+  snapshotSectionMenu(document.getElementById('launch-snapshot'));
   observeArtwork();
   if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) document.documentElement.classList.add('dehat-low-effects');
   window.DEHAT_NAV = PARTNER_TABS;
