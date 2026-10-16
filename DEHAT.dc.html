@@ -237,6 +237,7 @@
     .home-active-program-stats{gap:8px 12px!important;padding-top:10px!important}
     .home-active-program-stats>div{flex:1 1 calc(50% - 6px)}
     .home-active-program-stats>button{margin-inline-start:auto!important}
+    .home-process-cta,.home-programme-cta{min-height:44px}
   }
   @media (prefers-reduced-motion:reduce){.loop-arrow span{animation:none;opacity:.7}}
   html[data-spine-on] body{padding-bottom:74px}
@@ -1124,7 +1125,7 @@
 
       <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin-top:clamp(24px,3vw,36px)">
         <span style="font-size:13px;color:var(--faint);text-wrap:pretty">{{ T.method_footnote }}</span>
-        <button onClick="{{ goWorkFromLoop }}" style="min-height:44px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:1.5px solid var(--ac-crimson);background:none;color:var(--ac-crimson);transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:var(--ac-crimson);color:#fff">{{ T.method_cta }}</button>
+        <button class="home-process-cta" onClick="{{ goWorkFromLoop }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:1.5px solid var(--ac-crimson);background:none;color:var(--ac-crimson);transition:background .2s cubic-bezier(.22,.61,.36,1),color .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:var(--ac-crimson);color:#fff">{{ methodCta }}</button>
       </div>
     </section>
 
@@ -1137,12 +1138,12 @@
         <div class="work-grid" style="display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(18px,2.4vw,32px);align-items:stretch">
           <div style="display:flex;flex-direction:column;gap:10px">
             <sc-for list="{{ programs }}" as="pg" hint-placeholder-count="4">
-              <button onClick="{{ pg.select }}" aria-pressed="{{ pg.pressed }}" aria-controls="home-active-program" style="flex:1;position:relative;overflow:hidden;text-align:left;cursor:pointer;padding:16px 20px;border-radius:16px;border:1px solid {{ pg.border }};background:{{ pg.bg }};display:flex;align-items:center;gap:14px;transition:background .25s cubic-bezier(.22,.61,.36,1),border-color .25s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateX(4px)">
+              <button onClick="{{ pg.select }}" aria-pressed="{{ pg.pressed }}" aria-controls="home-active-program" style="flex:1;position:relative;overflow:hidden;text-align:left;cursor:pointer;padding:16px 20px;border-radius:16px;border:1px solid {{ pg.border }};background:{{ pg.bg }};display:flex;align-items:center;gap:14px;transition:border-color .25s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateX(4px)">
                 <span aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:4px;background:{{ pg.color }};transform:scaleY({{ pg.railScale }});transform-origin:center;transition:transform .3s cubic-bezier(.2,.7,.2,1)"></span>
                 <span class="art" role="img" aria-hidden="true" style="flex:none;width:60px;height:60px;background-image:{{ pg.artCss }},var(--art-plate-soft);opacity:{{ pg.artOp }};transition:opacity .3s cubic-bezier(.22,.61,.36,1)"></span>
                 <span style="flex:1;min-width:0">
                   <span style="display:block;font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;line-height:1.15;color:{{ pg.textColor }}">{{ pg.name }}</span>
-                  <span style="display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin-top:4px;color:{{ pg.tagColor }};transition:color .25s cubic-bezier(.22,.61,.36,1)">{{ pg.tag }}</span>
+                  <span style="display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin-top:4px;color:{{ pg.tagColor }}">{{ pg.tag }}</span>
                 </span>
                 <span aria-hidden="true" style="flex:none;font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;color:{{ pg.tok }};opacity:{{ pg.arrowOp }};transition:opacity .25s cubic-bezier(.22,.61,.36,1)">→</span>
               </button>
@@ -1166,7 +1167,7 @@
                     <div style="font-size:12px;color:var(--faint);margin-top:4px;max-width:168px;line-height:1.35">{{ st.label }}</div>
                   </div>
                 </sc-for>
-                <button onClick="{{ activeProgram.open }}" style="margin-left:auto;min-height:44px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:none;background:{{ activeProgram.color }};color:{{ activeProgram.ink }};transition:transform .18s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.open_programme_home }}</button>
+                <button class="home-programme-cta" onClick="{{ activeProgram.open }}" style="margin-left:auto;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:none;background:{{ activeProgram.color }};color:{{ activeProgram.ink }};transition:transform .18s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.open_programme_home }}</button>
               </div>
             </div>
           </div>
@@ -6332,9 +6333,10 @@ class Component extends DCLogic {
     const found = DIST.filter(d => p.indexOf(d) > -1).map(d => d === 'Shravasti' ? 'Shrawasti' : d);
     const uniq = found.filter((d, i) => found.indexOf(d) === i);
     if (uniq.length > 2) return T.across_districts;
-    if (uniq.length) return uniq.join(' ' + T.and_word + ' ');
+    if (uniq.length) return uniq.map(d => this._tagMap('district_name', d === 'Shrawasti' ? 'Shravasti' : d, d)).join(' ' + T.and_word + ' ');
     const bits = p.split(',');
-    return bits[bits.length - 1].trim();
+    const last = bits[bits.length - 1].trim();
+    return this._tagMap('place_name', last, last);
   }
   _por(id) {
     const R = (typeof window !== 'undefined' && window.__resources) || null;
@@ -37806,7 +37808,7 @@ class Component extends DCLogic {
       border: this.state.program === i ? 'transparent' : 'rgba(251,247,239,.14)',
       textColor: this.state.program === i ? 'var(--text)' : '#fbf7ef',
       tok: this._tok(p.color),
-      tagColor: this.state.program === i ? this._tok(p.color) : 'rgba(251,247,239,.72)',
+      tagColor: this.state.program === i ? (p.color === '#EAAE28' ? 'var(--ac-gold-ink)' : this._tok(p.color)) : 'rgba(251,247,239,.72)',
       railScale: this.state.program === i ? 1 : 0,
       tileScale: this.state.program === i ? 1.08 : 1,
       arrowOp: this.state.program === i ? 1 : 0,
@@ -38694,6 +38696,7 @@ class Component extends DCLogic {
       finHasSeg: !!finSegDetail,
       finLinesHead: activeSegKey ? (segMeta(activeSegKey).label + ' - ' + T.fin_lines_behind_it) : T.fin_lines_in_view,
       isHome: V === 'home', isWork: V === 'work', isImpact: V === 'impact',
+      methodCta: langs.some(l => l.code === this.state.lang && l.rtl) ? T.method_cta.replace(/→\s*$/, '←') : T.method_cta,
       isWho: V === 'who', who: V === 'who' ? this._whoView(setView) : {},
       isProg: V === 'prog' && !!pp, pp, programmeIndex,
       isStories: V === 'stories', isInvolved: V === 'involved', isFinance: V === 'finance', isMedia: V === 'media',
