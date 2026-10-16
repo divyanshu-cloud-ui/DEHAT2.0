@@ -21,10 +21,16 @@ test('phone-only CTA sizing and translated RTL labels leave desktop sizing intac
       const result=await page.evaluate(()=>{
         const process=document.querySelector('.home-process-cta');
         const programme=document.querySelector('.home-programme-cta');
+        const picker=document.querySelector('.home-programme-picker button');
         return {processMin:getComputedStyle(process).minHeight,programmeMin:getComputedStyle(programme).minHeight,
           processHeight:process.getBoundingClientRect().height,programmeHeight:programme.getBoundingClientRect().height,
-          processText:process.textContent.trim()};
+          processText:process.textContent.trim(),pickerAlign:getComputedStyle(picker).textAlign,
+          programmeInlineMarginLeft:programme.style.marginLeft,
+          programmeMarginStart:getComputedStyle(programme).marginInlineStart};
       });
+      assert.equal(result.pickerAlign,'start');
+      assert.equal(result.programmeInlineMarginLeft,'');
+      assert.ok(parseFloat(result.programmeMarginStart)>=0);
       if(width<760) {
         assert.equal(result.processMin,'44px');
         assert.equal(result.programmeMin,'44px');

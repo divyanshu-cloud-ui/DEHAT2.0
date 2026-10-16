@@ -211,6 +211,7 @@
   .who-teaser-copy{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(28px,4vw,56px);align-items:start}
   .who-teaser-intro,.who-teaser-selected,.who-teaser-actions,.who-teaser-foot{grid-column:1}
   .who-teaser-faces{grid-column:2;grid-row:1 / span 4;align-self:center}
+  .home-programme-cta{margin-inline-start:auto}
   @media (max-width:880px){.loop-grid{display:flex;flex-direction:column}.loop-arrow{display:none}.loop-centre{order:-1}}
   .loop-phone{display:none}
   @media (max-width:760px){
@@ -235,7 +236,7 @@
     .home-programme-picker button{min-height:44px;padding:6px 10px!important}
     .home-programme-picker button .art,.home-programme-picker button .home-programme-tag,.home-programme-picker button .home-programme-arrow{display:none!important}
     .home-programme-picker button .home-programme-name{font-size:14px!important;line-height:1.15!important}
-    .home-active-program-body{padding:10px!important;gap:6px!important}
+    .home-active-program-body{padding:8px!important;gap:6px!important}
     .home-active-program-head{gap:10px!important}
     .home-active-program-head .art{width:44px!important;height:44px!important}
     .home-active-program-detail{font-size:14px!important;line-height:1.43!important}
@@ -1143,7 +1144,7 @@
         <div class="work-grid" style="display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(18px,2.4vw,32px);align-items:stretch">
           <div class="home-programme-picker" style="display:flex;flex-direction:column;gap:10px">
             <sc-for list="{{ programs }}" as="pg" hint-placeholder-count="4">
-              <button onClick="{{ pg.select }}" aria-pressed="{{ pg.pressed }}" aria-controls="home-active-program" style="flex:1;position:relative;overflow:hidden;text-align:left;cursor:pointer;padding:16px 20px;border-radius:16px;border:1px solid {{ pg.border }};background:{{ pg.bg }};display:flex;align-items:center;gap:14px;transition:border-color .25s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateX(4px)">
+              <button onClick="{{ pg.select }}" aria-pressed="{{ pg.pressed }}" aria-controls="home-active-program" style="flex:1;position:relative;overflow:hidden;text-align:start;cursor:pointer;padding:16px 20px;border-radius:16px;border:1px solid {{ pg.border }};background:{{ pg.bg }};display:flex;align-items:center;gap:14px;transition:border-color .25s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateX(4px)">
                 <span aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:4px;background:{{ pg.color }};transform:scaleY({{ pg.railScale }});transform-origin:center;transition:transform .3s cubic-bezier(.2,.7,.2,1)"></span>
                 <span class="art" role="img" aria-hidden="true" style="flex:none;width:60px;height:60px;background-image:{{ pg.artCss }},var(--art-plate-soft);opacity:{{ pg.artOp }};transition:opacity .3s cubic-bezier(.22,.61,.36,1)"></span>
                 <span style="flex:1;min-width:0">
@@ -1172,7 +1173,7 @@
                     <div style="font-size:12px;color:var(--faint);margin-top:4px;max-width:168px;line-height:1.35">{{ st.label }}</div>
                   </div>
                 </sc-for>
-                <button class="home-programme-cta" onClick="{{ activeProgram.open }}" style="margin-left:auto;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:none;background:{{ activeProgram.color }};color:{{ activeProgram.ink }};transition:transform .18s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.open_programme_home }}</button>
+                <button class="home-programme-cta" onClick="{{ activeProgram.open }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;padding:11px 20px;border-radius:999px;border:none;background:{{ activeProgram.color }};color:{{ activeProgram.ink }};transition:transform .18s cubic-bezier(.22,.61,.36,1);white-space:nowrap" style-hover="transform:translateY(-2px)">{{ T.open_programme_home }}</button>
               </div>
             </div>
           </div>
