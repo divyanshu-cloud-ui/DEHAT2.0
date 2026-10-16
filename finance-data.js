@@ -1889,7 +1889,7 @@ FIN.ACCOUNTABILITY = {
   parties: [
     { title:'Children, First', color:'#D2305C',
       body:'No child is identified on this website. Names, photographs, case details and traceable combinations of identity and village are withheld unless there is documented informed consent and a completed safeguarding review - and even then, only where publication serves the child.',
-      how:'Safeguarding review before publication' },
+      how:'Safeguarding Review Before Publication' },
     { title:'The Communities We Work With', color:'#556223',
       body:'Child Parliaments, youth collectives, women farmers\u2019 Aajeevika Adhikar Sangathans and their clusters and federation review the work in their own villages and set what comes next. Village and Gram Sabha processes are where the programme is judged.',
       how:'Community Institutions and Gram Sabha Review' },
