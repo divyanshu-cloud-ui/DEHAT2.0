@@ -5538,7 +5538,6 @@ class Component extends DCLogic {
   _revealInit() {
     if (typeof window === 'undefined') return;
     try {
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this._revealAll(); return; }
       if (!this._revealBound) {
         this._revealBound = () => {
           if (this._revealRaf) return;
@@ -5547,6 +5546,9 @@ class Component extends DCLogic {
         window.addEventListener('scroll', this._revealBound, { passive: true });
         window.addEventListener('resize', this._revealBound, { passive: true });
       }
+      // Reduced motion removes reveal transitions, but the same listener still has to update
+      // the active section after a menu jump or manual scroll.
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this._revealAll(); this._spineScan(); return; }
       this._revealScan();
     } catch (e) { this._revealAll(); }
   }
@@ -5608,7 +5610,7 @@ class Component extends DCLogic {
   }
   // Scroll section i of the current page to just below the header stack. The position is read
   // at click time, not from the last scan, because images and reveal animations above the
-  // target keep shifting it; a second pass after the smooth scroll corrects any drift.
+  // target keep shifting it; short-lived corrections after the scroll remove late drift.
   _spineGo(i) {
     const target = () => {
       const el = document.querySelectorAll('main [data-spine]')[i];
@@ -5617,12 +5619,27 @@ class Component extends DCLogic {
     try {
       const t = target();
       if (t == null) return;
-      window.scrollTo({ top: t, behavior: 'smooth' });
-      clearTimeout(this._spineGoT);
-      this._spineGoT = setTimeout(() => {
+      if (this._spineGoCancel) this._spineGoCancel();
+      const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: t, behavior: reduced ? 'instant' : 'smooth' });
+      // Late portrait/image layout changes can move a short section after the first scroll
+      // correction. Keep it anchored briefly, stopping immediately if the reader takes over.
+      const cancel = () => {
+        clearTimeout(this._spineGoT);
+        for (const type of ['wheel','touchstart','keydown']) window.removeEventListener(type,cancel);
+        if (this._spineGoCancel === cancel) this._spineGoCancel = null;
+      };
+      this._spineGoCancel = cancel;
+      for (const type of ['wheel','touchstart','keydown']) window.addEventListener(type,cancel,{passive:true});
+      const until = Date.now() + 4000;
+      const settle = () => {
         const t2 = target();
-        if (t2 != null && Math.abs(t2 - window.pageYOffset) > 6) window.scrollTo({ top: t2 });
-      }, 900);
+        if (t2 != null && Math.abs(t2 - window.pageYOffset) > 3) window.scrollTo({ top: t2, behavior:'instant' });
+        this._spineScan();
+        if (Date.now() < until) this._spineGoT = setTimeout(settle,200);
+        else cancel();
+      };
+      this._spineGoT = setTimeout(settle,reduced ? 80 : 900);
     } catch (e) {}
   }
   // On narrow screens the sub-nav scrolls sideways; keep the current item in view so the strip
