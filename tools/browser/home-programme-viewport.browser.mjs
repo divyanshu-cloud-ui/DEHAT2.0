@@ -28,7 +28,8 @@ test('every phone programme card and its action clear the header and bottom rail
           const action=document.querySelector('.home-active-program button').getBoundingClientRect();
           const header=document.querySelector('nav').getBoundingClientRect();
           const rail=document.querySelector('.spine-rail').getBoundingClientRect();
-          return {cardTop:card.top,cardBottom:card.bottom,actionBottom:action.bottom,headerBottom:header.bottom,railTop:rail.top};
+          const picker=document.querySelector('.home-programme-picker').getBoundingClientRect();
+          return {cardTop:card.top,cardBottom:card.bottom,actionBottom:action.bottom,headerBottom:header.bottom,railTop:rail.top,pickerTop:picker.top,pickerBottom:picker.bottom,pickerHeight:picker.height};
         });
         assert.ok(box.cardTop>=box.headerBottom+5,`${lang} ${width}x${height} programme ${i}: panel top ${JSON.stringify(box)}`);
         assert.ok(box.cardBottom<=box.railTop-4,`${lang} ${width}x${height} programme ${i}: panel bottom ${JSON.stringify(box)}`);

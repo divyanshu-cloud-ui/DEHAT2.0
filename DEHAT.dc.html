@@ -214,6 +214,7 @@
   @media (max-width:880px){.loop-grid{display:flex;flex-direction:column}.loop-arrow{display:none}.loop-centre{order:-1}}
   .loop-phone{display:none}
   @media (max-width:760px){
+    .work-grid{gap:6px!important}
     .loop-grid{display:none}
     .loop-phone{display:grid;gap:10px}
     .loop-phone-row{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--surface);overflow-anchor:none}
@@ -230,11 +231,15 @@
     .who-teaser-faces button{min-width:0}
     .who-teaser-selected{min-height:0!important;margin:0!important}
     .home-active-program{scroll-margin-top:20px}
-    .home-active-program-body{padding:14px!important;gap:10px!important}
+    .home-programme-picker{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px!important;scroll-margin-top:20px}
+    .home-programme-picker button{min-height:44px;padding:6px 10px!important}
+    .home-programme-picker button .art,.home-programme-picker button .home-programme-tag,.home-programme-picker button .home-programme-arrow{display:none!important}
+    .home-programme-picker button .home-programme-name{font-size:14px!important;line-height:1.15!important}
+    .home-active-program-body{padding:10px!important;gap:6px!important}
     .home-active-program-head{gap:10px!important}
-    .home-active-program-head .art{width:52px!important;height:52px!important}
+    .home-active-program-head .art{width:44px!important;height:44px!important}
     .home-active-program-detail{font-size:14px!important;line-height:1.43!important}
-    .home-active-program-stats{gap:8px 12px!important;padding-top:10px!important}
+    .home-active-program-stats{gap:8px 12px!important;padding-top:6px!important}
     .home-active-program-stats>div{flex:1 1 calc(50% - 6px)}
     .home-active-program-stats>button{margin-inline-start:auto!important}
     .home-process-cta,.home-programme-cta{min-height:44px}
@@ -1136,16 +1141,16 @@
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.02em;color:#fbf7ef;margin:14px 0 0">{{ T.work_head }}</h2>
         </div>
         <div class="work-grid" style="display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(18px,2.4vw,32px);align-items:stretch">
-          <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="home-programme-picker" style="display:flex;flex-direction:column;gap:10px">
             <sc-for list="{{ programs }}" as="pg" hint-placeholder-count="4">
               <button onClick="{{ pg.select }}" aria-pressed="{{ pg.pressed }}" aria-controls="home-active-program" style="flex:1;position:relative;overflow:hidden;text-align:left;cursor:pointer;padding:16px 20px;border-radius:16px;border:1px solid {{ pg.border }};background:{{ pg.bg }};display:flex;align-items:center;gap:14px;transition:border-color .25s cubic-bezier(.22,.61,.36,1),transform .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateX(4px)">
                 <span aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:4px;background:{{ pg.color }};transform:scaleY({{ pg.railScale }});transform-origin:center;transition:transform .3s cubic-bezier(.2,.7,.2,1)"></span>
                 <span class="art" role="img" aria-hidden="true" style="flex:none;width:60px;height:60px;background-image:{{ pg.artCss }},var(--art-plate-soft);opacity:{{ pg.artOp }};transition:opacity .3s cubic-bezier(.22,.61,.36,1)"></span>
                 <span style="flex:1;min-width:0">
-                  <span style="display:block;font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;line-height:1.15;color:{{ pg.textColor }}">{{ pg.name }}</span>
-                  <span style="display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin-top:4px;color:{{ pg.tagColor }}">{{ pg.tag }}</span>
+                  <span class="home-programme-name" style="display:block;font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;line-height:1.15;color:{{ pg.textColor }}">{{ pg.name }}</span>
+                  <span class="home-programme-tag" style="display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin-top:4px;color:{{ pg.tagColor }}">{{ pg.tag }}</span>
                 </span>
-                <span aria-hidden="true" style="flex:none;font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;color:{{ pg.tok }};opacity:{{ pg.arrowOp }};transition:opacity .25s cubic-bezier(.22,.61,.36,1)">→</span>
+                <span class="home-programme-arrow" aria-hidden="true" style="flex:none;font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;color:{{ pg.tok }};opacity:{{ pg.arrowOp }};transition:opacity .25s cubic-bezier(.22,.61,.36,1)">→</span>
               </button>
             </sc-for>
           </div>
@@ -37794,13 +37799,11 @@ class Component extends DCLogic {
       open: openProg(programs[this.state.program].key),
     });
     const programsView = programs.map((p, i) => ({
-      ...p, select: (event) => {
+      ...p, select: () => {
         this.setState({ program: i });
-        // A keyboard-activated button must remain visible while it owns focus.
-        if (window.innerWidth <= 760 && event?.detail !== 0) requestAnimationFrame(() => {
-          document.querySelector('.home-active-program')?.scrollIntoView({
-            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start',
-          });
+        if (window.innerWidth <= 760) requestAnimationFrame(() => {
+          const picker = document.querySelector('.home-programme-picker');
+          if (picker) window.scrollBy({ top:picker.getBoundingClientRect().top - this._headerEdge() - 4, behavior:'instant' });
         });
       },
       pressed: this.state.program === i ? 'true' : 'false',

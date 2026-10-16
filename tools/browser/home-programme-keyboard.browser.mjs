@@ -34,6 +34,17 @@ test('programme buttons expose selection and retain visible keyboard focus', asy
         });
         assert.ok(focus.top>=focus.headerBottom-1 && focus.bottom<=focus.railTop-1,`${lang} ${width}x${height} button ${i}: ${JSON.stringify(focus)}`);
       }
+      await tabs.nth(2).click();
+      const pointerFocus=await page.evaluate(()=>{
+        const tab=document.activeElement;
+        const box=tab?.getBoundingClientRect();
+        const subnav=document.querySelector('[data-subnav]')?.getBoundingClientRect();
+        const rail=document.querySelector('.spine-rail').getBoundingClientRect();
+        return {pressed:tab?.getAttribute('aria-pressed'),top:box?.top,bottom:box?.bottom,headerBottom:subnav?.bottom,railTop:rail.top};
+      });
+      assert.equal(pointerFocus.pressed,'true');
+      assert.ok(pointerFocus.top>=pointerFocus.headerBottom-1 && pointerFocus.bottom<=pointerFocus.railTop-1,
+        `${lang} ${width}x${height} pointer focus: ${JSON.stringify(pointerFocus)}`);
       await page.close();
     }
   } finally {await browser.close();await new Promise(resolve=>local.server.close(resolve));}

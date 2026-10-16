@@ -27,6 +27,7 @@ test('interactive home sections have no axe violations after selection',async()=
       for(const [spine,selector,index] of states){
         const section=page.locator(`section[data-spine="${spine}"]`);
         await section.locator(selector).nth(index).click();
+        await page.waitForTimeout(700);
         const violations=await section.evaluate(async el=>(await axe.run(el)).violations.map(v=>({id:v.id,targets:v.nodes.map(n=>({target:n.target,summary:n.failureSummary,html:n.html}))})));
         assert.deepEqual(violations,[],`${lang} ${theme} ${width}x${height} ${spine}: ${JSON.stringify(violations)}`);
       }
