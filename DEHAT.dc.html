@@ -208,6 +208,9 @@
   @keyframes loopFlow{0%,100%{opacity:.22;transform:scale(.9)}45%{opacity:1;transform:scale(1.15)}}
   .loop-arrow span{display:block;animation:loopFlow 3.2s ease-in-out infinite}
   .loop-grid{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);grid-template-rows:auto auto auto;gap:clamp(10px,1.6vw,20px);align-items:stretch;max-width:1060px;margin:0 auto}
+  .who-teaser-copy{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(28px,4vw,56px);align-items:start}
+  .who-teaser-intro,.who-teaser-selected,.who-teaser-actions,.who-teaser-foot{grid-column:1}
+  .who-teaser-faces{grid-column:2;grid-row:1 / span 4;align-self:center}
   @media (max-width:880px){.loop-grid{display:flex;flex-direction:column}.loop-arrow{display:none}.loop-centre{order:-1}}
   .loop-phone{display:none}
   @media (max-width:760px){
@@ -222,12 +225,10 @@
     .loop-phone-detail p{margin:0 0 12px}
     .loop-phone-handoff{padding-top:10px;border-top:1px solid var(--border);color:var(--faint);font-size:12px;line-height:1.5}
     .who-teaser-copy{display:contents}
-    .who-teaser-intro{order:0}
-    .who-teaser-faces.who-teaser-faces{order:1;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important}
+    .who-teaser-intro,.who-teaser-selected,.who-teaser-actions,.who-teaser-foot{grid-column:auto}
+    .who-teaser-faces.who-teaser-faces{grid-column:auto;grid-row:auto;align-self:auto;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important}
     .who-teaser-faces button{min-width:0}
-    .who-teaser-selected{order:2;min-height:0!important;margin:0!important}
-    .who-teaser-actions{order:3}
-    .who-teaser-foot{order:4}
+    .who-teaser-selected{min-height:0!important;margin:0!important}
     .home-active-program{scroll-margin-top:20px}
     .home-active-program-body{padding:14px!important;gap:10px!important}
     .home-active-program-head{gap:10px!important}
@@ -1236,6 +1237,15 @@
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.6vw,44px);line-height:1.06;letter-spacing:-.02em;color:var(--text);margin:14px 0 14px;max-width:22ch;text-wrap:pretty">{{ whoTeaser.head }}</h2>
           <p style="font-size:16.5px;line-height:1.7;color:var(--dim);margin:0 0 22px;max-width:56ch;text-wrap:pretty">{{ whoTeaser.body }}</p>
           </div>
+          <div class="who-teaser-faces" style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:10px">
+            <sc-for list="{{ whoTeaser.faces }}" as="f" hint-placeholder-count="8">
+              <button onClick="{{ f.pick }}" aria-label="{{ f.label }}" aria-pressed="{{ f.pressed }}" style="cursor:pointer;padding:0;border-radius:14px;overflow:hidden;border:1px solid {{ f.ring }};background:var(--surface2);aspect-ratio:4 / 5;transition:border-color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1),opacity .45s cubic-bezier(.22,.61,.36,1);opacity:{{ f.op }}" style-hover="transform:translateY(-3px);opacity:1">
+                <sc-if value="{{ f.hasSrc }}" hint-placeholder-val="{{ false }}">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ f.src }}" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 100%;display:block;transition:transform .45s cubic-bezier(.22,.61,.36,1),filter .45s cubic-bezier(.22,.61,.36,1);transform:scale({{ f.scale }});filter:{{ f.filt }}" />
+                </sc-if>
+              </button>
+            </sc-for>
+          </div>
           <div class="who-teaser-selected" aria-live="polite" style="min-height:96px;margin:0 0 22px">
             <span style="display:block;font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;line-height:1.2;color:var(--text)">{{ whoTeaser.name }}</span>
             <span style="display:block;font-size:14.5px;line-height:1.5;color:var(--dim);margin-top:6px">{{ whoTeaser.role }}</span>
@@ -1246,15 +1256,6 @@
             <button onClick="{{ whoTeaser.goStory }}" style="cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:700;padding:14px 24px;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--text);transition:transform .24s cubic-bezier(.22,.61,.36,1),border-color .24s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-2px);border-color:var(--ac-purple)">{{ whoTeaser.cta2 }}</button>
           </div>
           <p class="who-teaser-foot" style="font-size:13.5px;line-height:1.6;color:var(--faint);margin:16px 0 0;max-width:52ch">{{ whoTeaser.foot }}</p>
-        </div>
-        <div class="who-teaser-faces" style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:10px">
-          <sc-for list="{{ whoTeaser.faces }}" as="f" hint-placeholder-count="8">
-            <button onClick="{{ f.pick }}" aria-label="{{ f.label }}" aria-pressed="{{ f.pressed }}" style="cursor:pointer;padding:0;border-radius:14px;overflow:hidden;border:1px solid {{ f.ring }};background:var(--surface2);aspect-ratio:4 / 5;transition:border-color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1),opacity .45s cubic-bezier(.22,.61,.36,1);opacity:{{ f.op }}" style-hover="transform:translateY(-3px);opacity:1">
-              <sc-if value="{{ f.hasSrc }}" hint-placeholder-val="{{ false }}">
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ f.src }}" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 100%;display:block;transition:transform .45s cubic-bezier(.22,.61,.36,1),filter .45s cubic-bezier(.22,.61,.36,1);transform:scale({{ f.scale }});filter:{{ f.filt }}" />
-              </sc-if>
-            </button>
-          </sc-for>
         </div>
       </div>
     </section>
