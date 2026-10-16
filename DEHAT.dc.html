@@ -5720,23 +5720,34 @@ class Component extends DCLogic {
     return () => this._prepareLaunchView(view, Object.assign({ view: view, storySlug: null, navOpen: false, navGroup: '' }, extra || {}), () => {
       if (typeof window === 'undefined') return;
       if (!anchor) { window.scrollTo({ top: 0 }); return; }
-      window.scrollTo({ top: 0 });
+      window.scrollTo({ top: 0, behavior:'instant' });
       // The target may sit deep inside a long view whose images and iframes are still
-      // laying out, so its offset keeps moving. Re-measure until it actually lands.
+      // laying out. Keep it aligned briefly, but stop if the reader starts scrolling.
+      if (this._anchorSeekCancel) this._anchorSeekCancel();
+      const cancel = () => {
+        clearTimeout(this._anchorSeekT);
+        for (const type of ['wheel','touchstart','keydown']) window.removeEventListener(type,cancel);
+        if (this._anchorSeekCancel === cancel) this._anchorSeekCancel = null;
+      };
+      this._anchorSeekCancel = cancel;
+      for (const type of ['wheel','touchstart','keydown']) window.addEventListener(type,cancel,{passive:true});
       const started = Date.now();
       const seek = () => {
+        if (this._anchorSeekCancel !== cancel) return;
         const el = document.querySelector('[data-anchor="' + anchor + '"]');
-        const late = Date.now() - started > 2500;
-        if (!el) { if (!late) requestAnimationFrame(seek); return; }
+        const late = Date.now() - started > 4000;
+        if (!el) { if (!late) this._anchorSeekT = setTimeout(seek,160); else cancel(); return; }
         // Clear the whole sticky header stack as it is at this moment (the destination page's
         // sub-nav may appear partway through the seek), not a fixed nav height.
         const delta = el.getBoundingClientRect().top - (this._headerEdge() + 12);
-        if (Math.abs(delta) > 2 && !late) {
-          window.scrollTo({ top: Math.max(0, window.pageYOffset + delta) });
-          requestAnimationFrame(seek);
-          return;
+        if (Math.abs(delta) > 2) {
+          // An explicit instant correction is essential here: html has smooth scrolling,
+          // and restarting that animation each frame left the previous Invest tab highlighted.
+          window.scrollTo({ top: Math.max(0, window.pageYOffset + delta), behavior:'instant' });
         }
         this._revealScan();
+        if (!late) this._anchorSeekT = setTimeout(seek,160);
+        else cancel();
       };
       requestAnimationFrame(seek);
     });
