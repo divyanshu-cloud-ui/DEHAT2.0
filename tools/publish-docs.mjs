@@ -42,7 +42,9 @@ export function recordFor({ name, title, bytes, hash, pages, now = new Date() })
 async function readJson(file) { return JSON.parse(await readFile(file, 'utf8')); }
 
 async function fetchExistingManifest(fetchImpl = fetch) {
-  const response = await fetchImpl(DOCS_ORIGIN + '/docs/manifest.json', { cache: 'no-store' });
+  // The store's CDN caches the manifest for 60 seconds; a unique query bypasses it, so two
+  // publishes run back to back never rebuild the list from a stale copy and drop entries.
+  const response = await fetchImpl(DOCS_ORIGIN + '/docs/manifest.json?fresh=' + Date.now(), { cache: 'no-store' });
   if (response.status === 404) return { version: 1, files: {} };
   if (!response.ok) throw new Error('Could not read the current manifest (HTTP ' + response.status + ')');
   return response.json();
