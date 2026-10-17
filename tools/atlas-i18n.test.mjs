@@ -237,8 +237,19 @@ test('language hand-off: ?lang= loads a table, sets lang and dir, postMessage sw
     await page.waitForFunction(() => document.documentElement.dir === 'rtl');
     assert.ok((await page.locator('#panelBody').textContent()).includes('STUNT-AR'));
     await context.close();
-    // 4. a language with no file (or an unknown code) is silently English, and lang/dir say so
-    for (const code of ['fr', 'xx', '../x']) {
+    // 4. a language whose file fails to load (or an unknown code) is silently English, and lang/dir say so
+    const missing = await browser.newContext({viewport: {width: 1280, height: 800}});
+    const mp = await missing.newPage();
+    const mErrors = [];
+    mp.on('pageerror', e => mErrors.push(String(e)));
+    await mp.route('**/district-i18n/fr.js*', route => route.fulfill({status: 404, body: ''}));
+    await mp.goto(`${srv.origin}/district-map.html?lang=fr`);
+    await mp.waitForFunction(() => document.querySelectorAll('g.dg').length === 23);
+    const m = await shell(mp);
+    assert.deepEqual([m.lang, m.dir, m.rank], ['en', 'ltr', 'Ranking'], 'fr with its file missing');
+    assert.deepEqual(mErrors, [], 'fr with its file missing');
+    await missing.close();
+    for (const code of ['xx', '../x']) {
       const o = await openAtlas(browser, srv.origin, `?lang=${encodeURIComponent(code)}`);
       const e = await shell(o.page);
       assert.deepEqual([e.lang, e.dir, e.rank], ['en', 'ltr', 'Ranking'], code);
