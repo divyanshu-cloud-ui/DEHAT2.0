@@ -2065,8 +2065,8 @@ const HI = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "सॉफ़्टवेयर और क्लाउड दान साझेदार",
-  "techNote": "DEHAT को दान में मिले उपकरण और क्लाउड क्षमता - इसीलिए हर रुपये का अधिक हिस्सा काम तक पहुँचता है।",
+  "techTitle": "आईटी, सॉफ़्टवेयर और क्लाउड साझेदार",
+  "techNote": "हमारे आईटी साझेदार, और DEHAT को दान में मिले सॉफ़्टवेयर उपकरण व क्लाउड क्षमता, ताकि हर रुपये का अधिक हिस्सा प्रशासनिक खर्च के बजाय काम तक पहुँचे।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -2105,6 +2105,7 @@ const HI = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "आईटी साझेदार।",
       "logo": "kraftpixel.png"
     }
   ],
@@ -2166,6 +2167,7 @@ const HI = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "उन्नत प्रमाणीकरण, 9 दिसंबर 2025 को प्रदान किया गया।",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -3364,8 +3366,8 @@ const ES = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "Socios de donación de software y nube",
-  "techNote": "Herramientas y capacidad de nube donadas a DEHAT, para que más de cada rupia llegue al trabajo en lugar de los gastos generales que hay detrás.",
+  "techTitle": "Socios de TI, Software y Nube",
+  "techNote": "Nuestro socio de TI, y las herramientas de software y la capacidad en la nube donadas a DEHAT, para que una mayor parte de cada rupia llegue al trabajo y no a los gastos generales.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -3404,6 +3406,7 @@ const ES = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "Socio de TI.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -3465,6 +3468,7 @@ const ES = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "Certificación Avanzada, otorgada el 9 de diciembre de 2025.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -4662,8 +4666,8 @@ const FR = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "Partenaires de dons de logiciels et de cloud",
-  "techNote": "Outils et capacité cloud donnés à DEHAT, afin qu'une plus grande part de chaque roupie atteigne le travail plutôt que les frais généraux qui y sont liés.",
+  "techTitle": "Partenaires Informatique, Logiciels et Cloud",
+  "techNote": "Notre partenaire informatique, ainsi que les outils logiciels et les capacités cloud donnés à DEHAT, afin qu'une plus grande part de chaque roupie serve directement le travail plutôt que les frais généraux.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -4702,6 +4706,7 @@ const FR = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "Partenaire informatique.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -4763,6 +4768,7 @@ const FR = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "Certification Avancée, décernée le 9 décembre 2025.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -5960,8 +5966,8 @@ const RU = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "Партнеры по пожертвованиям программного обеспечения и облака",
-  "techNote": "Инструменты и облачные ресурсы переданы в дар DEHAT, чтобы большая часть каждой рупии пошла на работу, а не на накладные расходы, стоящие за ней.",
+  "techTitle": "ИТ, программное обеспечение и облачные партнеры",
+  "techNote": "Наш ИТ-партнер, а также программные инструменты и облачные мощности, переданные в дар DEHAT, благодаря чему большая часть каждой рупии идет на саму работу, а не на накладные расходы.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -6000,6 +6006,7 @@ const RU = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "ИТ-партнер.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -6061,6 +6068,7 @@ const RU = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "Продвинутая сертификация, присуждена 9 декабря 2025 года.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -7259,8 +7267,8 @@ const AR = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "شركاء التبرع بالبرمجيات والسحابة",
-  "techNote": "تم التبرع بالأدوات والسعة السحابية لشركة DEHAT، بحيث يصل المزيد من كل روبية إلى العمل بدلاً من النفقات العامة التي تقف وراءه.",
+  "techTitle": "شركاء تكنولوجيا المعلومات والبرمجيات والسحابة",
+  "techNote": "شريكنا في تكنولوجيا المعلومات، بالإضافة إلى أدوات البرمجيات والسعة السحابية المتبرع بها لصالح DEHAT، حتى تصل الحصة الأكبر من كل روبية إلى العمل الميداني بدلا من النفقات الإدارية العامة.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -7299,6 +7307,7 @@ const AR = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "شريك تكنولوجيا المعلومات.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -7360,6 +7369,7 @@ const AR = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "شهادة متقدمة، مُنحت في 9 ديسمبر 2025.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -8558,8 +8568,8 @@ const ZH = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "软件与云支持合作伙伴",
-  "techNote": "向 DEHAT 提供的工具和云容量支持，使每一卢比更多地用于工作而不是其背后的管理费用。",
+  "techTitle": "IT、软件与云端合作伙伴",
+  "techNote": "我们的 IT 合作伙伴，以及捐赠予 DEHAT 的软件工具和云端容量，让每一卢比的更多份额用于一线工作而非背后的管理间接费用。",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -8598,6 +8608,7 @@ const ZH = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "IT合作伙伴。",
       "logo": "kraftpixel.png"
     }
   ],
@@ -8659,6 +8670,7 @@ const ZH = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "高级认证，于 2025 年 12 月 9 日授予。",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -9857,8 +9869,8 @@ const UR = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "سافٹ ویئر اور کلاؤڈ ڈونیشن پارٹنرز",
-  "techNote": "ٹولز اور کلاؤڈ کی صلاحیت DEHAT کو عطیہ کی گئی ہے، تاکہ ہر روپیہ اس کے پیچھے ہونے کی بجائے کام تک پہنچ سکے۔",
+  "techTitle": "آئی ٹی، سافٹ ویئر اور کلاؤڈ شراکت دار",
+  "techNote": "ہمارے آئی ٹی شراکت دار، اور DEHAT کو عطیہ کیے گئے سافٹ ویئر ٹولز اور کلاؤڈ کی گنجائش، تاکہ ہر روپے کا زیادہ حصہ انتظامی اخراجات کے بجائے براہ راست کام تک پہنچے۔",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -9897,6 +9909,7 @@ const UR = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "آئی ٹی شراکت دار۔",
       "logo": "kraftpixel.png"
     }
   ],
@@ -9958,6 +9971,7 @@ const UR = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "ایڈوانسڈ سرٹیفیکیشن، 9 دسمبر 2025 کو عطا کیا گیا۔",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -11156,8 +11170,8 @@ const BN = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "সফ্টওয়্যার এবং ক্লাউড দান অংশীদার",
-  "techNote": "সরঞ্জাম এবং ক্লাউড ক্ষমতা DEHAT-কে দান করা হয়েছে, যাতে প্রতিটি রুপির বেশি কাজটি তার পিছনের ওভারহেডের পরিবর্তে পৌঁছে যায়।",
+  "techTitle": "আইটি, সফটওয়্যার এবং ক্লাউড অংশীদার",
+  "techNote": "আমাদের আইটি অংশীদার, এবং DEHAT-কে দান করা সফটওয়্যার সরঞ্জাম ও ক্লাউড সক্ষমতা, যাতে প্রতিটি টাকার সিংহভাগ এর পেছনের প্রশাসনিক ব্যয়ের বদলে সরাসরি কাজে পৌঁছায়।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -11196,6 +11210,7 @@ const BN = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "আইটি অংশীদার।",
       "logo": "kraftpixel.png"
     }
   ],
@@ -11257,6 +11272,7 @@ const BN = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "অ্যাডভান্সড সার্টিফিকেশন, 9 ডিসেম্বর 2025 তারিখে প্রদান করা হয়েছে।",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -12455,8 +12471,8 @@ const MR = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "सॉफ्टवेअर आणि क्लाउड देणगी भागीदार",
-  "techNote": "DEHAT ला दान केलेली साधने आणि क्लाउड क्षमता, जेणेकरून प्रत्येक रुपयाचा जास्त खर्च त्याच्या मागे पडण्याऐवजी कामापर्यंत पोहोचेल.",
+  "techTitle": "आयटी, सॉफ्टवेअर आणि क्लाउड भागीदार",
+  "techNote": "आमचे आयटी भागीदार, आणि DEHAT ला दान मिळालेली सॉफ्टवेअर साधने व क्लाउड क्षमता, ज्यामुळे प्रत्येक रुपयाचा जास्तीत जास्त वाटा प्रशासकीय खर्चाऐवजी थेट कामापर्यंत पोहोचतो.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -12495,6 +12511,7 @@ const MR = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "आयटी भागीदार.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -12556,6 +12573,7 @@ const MR = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "प्रगत प्रमाणीकरण, 9 डिसेंबर 2025 रोजी प्रदान करण्यात आले.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -13754,8 +13772,8 @@ const TE = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "సాఫ్ట్‌వేర్ మరియు క్లౌడ్ విరాళం భాగస్వాములు",
-  "techNote": "టూల్స్ మరియు క్లౌడ్ కెపాసిటీ DEHATకి విరాళంగా ఇవ్వబడ్డాయి, తద్వారా ప్రతి రూపాయి దాని వెనుక ఉన్న ఓవర్‌హెడ్ కంటే ఎక్కువ పనిని చేరుకుంటుంది.",
+  "techTitle": "ఐటీ, సాఫ్ట్‌వేర్ మరియు క్లೌڈ భాగస్వాములు",
+  "techNote": "మా ఐటీ భాగస్వామి, మరియు DEHAT కు విరాళంగా ఇవ్వబడిన సాఫ్ట్‌ವೇర్ సాధనాలు, క్లೌడ్ సామర్థ్యం, తద్వారా ప్రతి రూపాయిలో ఎక్కువ భాగం నిర్వహಣ ఖర్చుల కంటే నేరుగా పనికే చేరుతుంది.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -13794,6 +13812,7 @@ const TE = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "ఐటీ భాగస్వామి.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -13855,6 +13874,7 @@ const TE = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "అడ్వాన్స్‌ড సర్టిఫికేషన్, 9 డిసెంబర్ 2025న ప్రదానం చేయబడింది.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -15053,8 +15073,8 @@ const TA = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "மென்பொருள் மற்றும் கிளவுட் நன்கொடை கூட்டாளர்கள்",
-  "techNote": "கருவிகள் மற்றும் கிளவுட் திறன் ஆகியவை DEHAT க்கு நன்கொடையாக வழங்கப்படுகின்றன, இதன் மூலம் ஒவ்வொரு ரூபாயும் அதன் பின்னால் உள்ள மேல்நிலையை விட வேலைக்குச் சென்றடைகிறது.",
+  "techTitle": "தகவல் தொழில்நுட்பம், மென்பொருள் மற்றும் கிளவுட் கூட்டாளர்கள்",
+  "techNote": "எங்கள் தகவல் தொழில்நுட்பப் பங்காளர், மற்றும் DEHAT க்கு நன்கொடையாக வழங்கப்பட்ட மென்பொருள் கருவிகள் மற்றும் கிளவுட் திறன், இதனால் ஒவ்வொரு ரூபாயின் பெரும்பகுதியும் நிர்வாகச் செலவுகளை விட நேரடியாக வேலைக்கே சென்றடைகிறது.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -15093,6 +15113,7 @@ const TA = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "தகவல் தொழில்நுட்பப் பங்காளர்.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -15154,6 +15175,7 @@ const TA = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "மேம்பட்ட சான்றிதழ், 9 டிசம்பர் 2025 அன்று வழங்கப்பட்டது.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -16352,8 +16374,8 @@ const GU = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "સૉફ્ટવેર અને ક્લાઉડ ડોનેશન પાર્ટનર્સ",
-  "techNote": "સાધનો અને ક્લાઉડ ક્ષમતા DEHATને દાનમાં આપવામાં આવી છે, જેથી દરેક રૂપિયો તેની પાછળના ઓવરહેડને બદલે કામ સુધી પહોંચે.",
+  "techTitle": "આઈટી, સૉફ્ટવેર અને ક્લાઉડ ભાગીદારો",
+  "techNote": "અમારા આઈટી ભાગીદાર, અને DEHAT ને દાનમાં મળેલા સૉફ્ટવેર ટૂલ્સ તથા ક્લાઉડ ક્ષમતા, જેથી દરેક રૂપિયાનો વધુ ભાગ વહીવટી ખર્ચને બદલે સીધા કામ સુધી પહોંચે.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -16392,6 +16414,7 @@ const GU = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "આઈટી ભાગીદાર.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -16453,6 +16476,7 @@ const GU = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "એડવાન્સ્ડ પ્રમાણપત્ર, 9 ડિસેમ્બર 2025 ના રોજ એનાયત કરવામાં આવ્યું.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -17651,8 +17675,8 @@ const KN = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "ಸಾಫ್ಟ್‌ವೇರ್ ಮತ್ತು ಕ್ಲೌಡ್ ಕೊಡುಗೆ ಪಾಲುದಾರರು",
-  "techNote": "ಪರಿಕರಗಳು ಮತ್ತು ಕ್ಲೌಡ್ ಸಾಮರ್ಥ್ಯವನ್ನು DEHAT ಗೆ ದಾನ ಮಾಡಲಾಗಿದೆ, ಇದರಿಂದಾಗಿ ಪ್ರತಿ ರೂಪಾಯಿಯ ಹೆಚ್ಚಿನ ಮೊತ್ತವು ಅದರ ಹಿಂದಿನ ಓವರ್‌ಹೆಡ್‌ಗಿಂತ ಹೆಚ್ಚಿನ ಕೆಲಸವನ್ನು ತಲುಪುತ್ತದೆ.",
+  "techTitle": "ಐಟಿ, ಸಾಫ್ಟ್‌ವೇರ್ ಮತ್ತು ಕ್ಲೌಡ್ ಪಾಲುದಾರರು",
+  "techNote": "ನಮ್ಮ ಐಟಿ ಪಾಲುದಾರರು, ಮತ್ತು DEHAT ಗೆ ದಾನವಾಗಿ ನೀಡಲಾದ ಸಾಫ್ಟ್‌ವೇರ್ ಉಪಕರಣಗಳು ಮತ್ತು ಕ್ಲೌಡ್ ಸಾಮರ್ಥ್ಯ, ಇದರಿಂದ ಪ್ರತಿ ರೂಪಾಯಿಯ ಹೆಚ್ಚಿನ ಭಾಗವು ಆಡಳಿತಾತ್ಮಕ ವೆಚ್ಚಗಳಿಗಿಂತ ನೇರವಾಗಿ ಕೆಲಸಕ್ಕೆ ತಲುಪುತ್ತದೆ.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -17691,6 +17715,7 @@ const KN = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "ಐಟಿ ಪಾಲುದಾರ.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -17752,6 +17777,7 @@ const KN = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "ಸುಧಾರಿತ ಪ್ರಮಾಣೀಕರಣ, 9 ಡಿಸೆಂಬರ್ 2025 ರಂದು ನೀಡಲಾಗಿದೆ.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -18950,8 +18976,8 @@ const MAI = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "सॉफ्टवेयर आ क्लाउड डोनेशन पार्टनर",
-  "techNote": "टूल्स आ क्लाउड क्षमता DEHAT के दान में देल गेल, जाहि स हर रुपया के बेसी हिस्सा काज तक पहुंचय नै कि ओकर पाछु के ओवरहेड।",
+  "techTitle": "आईटी, सॉफ्टवेयर आ क्लाउड साझेदार",
+  "techNote": "हमर आईटी साझेदार, आ DEHAT कें दान मे भेटल सॉफ्टवेयर टूल्स व क्लाउड क्षमता, जाहि सँ हर रुपयाक बेसी हिस्सा प्रशासनिक खर्चक बदला सोझे काज धरि पहुँचय।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -18990,6 +19016,7 @@ const MAI = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "आईटी साझेदार।",
       "logo": "kraftpixel.png"
     }
   ],
@@ -19051,6 +19078,7 @@ const MAI = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "उन्नत प्रमाणन, 9 दिसंबर 2025 कें प्रदान कएल गेल।",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -20249,8 +20277,8 @@ const AS = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "চফ্টৱেৰ আৰু ক্লাউড দান অংশীদাৰ",
-  "techNote": "সঁজুলি আৰু ক্লাউড কেপাচিটি DEHAT লৈ দান কৰা হৈছে, যাতে প্ৰতিটো টকাৰ অধিকাংশই কামটোৰ পিছফালে থকা ওভাৰহেডতকৈ অধিক কামত উপনীত হয়।",
+  "techTitle": "আইটি, চফ্টৱেৰ আৰু ক্লাউড অংশীদাৰ",
+  "techNote": "আমাৰ আইটি অংশীদাৰ, আৰু DEHAT লৈ দান হিচাপে দিয়া চফ্টৱেৰ সঁজুলি আৰু ক্লাউড ক্ষমতা, যাতে প্ৰতিটো টকাৰ অধিক অংশ প্ৰশাসনিক ব্যয়ৰ পৰিৱৰ্তে কামত ব্যৱহাৰ হয়।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -20289,6 +20317,7 @@ const AS = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "আইটি অংশীদাৰ।",
       "logo": "kraftpixel.png"
     }
   ],
@@ -20350,6 +20379,7 @@ const AS = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "উন্নত প্ৰমাণপত্ৰ, 9 ডিচেম্বৰ 2025 তাৰিখে প্ৰদান কৰা হৈছে।",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -21548,8 +21578,8 @@ const NE = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "सफ्टवेयर र क्लाउड दान साझेदारहरू",
-  "techNote": "उपकरणहरू र क्लाउड क्षमता DEHAT लाई दान गरियो, ताकि प्रत्येक रुपैयाको पछाडिको ओभरहेड भन्दा बढी काममा पुगोस्।",
+  "techTitle": "आईटी, सफ्टवेयर र क्लाउड साझेदारहरू",
+  "techNote": "हाम्रा आईटी साझेदार, र DEHAT लाई दान गरिएका सफ्टवेयर उपकरणहरू तथा क्लाउड क्षमता, जसले गर्दा प्रत्येक रुपैयाँको धेरै अंश प्रशासनिक खर्चभन्दा बढी काममा पुगोस्।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -21588,6 +21618,7 @@ const NE = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "आईटी साझेदार।",
       "logo": "kraftpixel.png"
     }
   ],
@@ -21649,6 +21680,7 @@ const NE = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "उन्नत प्रमाणीकरण, 9 डिसेम्बर 2025 मा प्रदान गरिएको।",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -22847,8 +22879,8 @@ const KOK = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "सॉफ्टवॅर आनी मेघ दान भागीदार",
-  "techNote": "साधनां आनी मेघ क्षमता DEHAT कडेन दान केल्ली, जाका लागून दरेक रुपया फाटल्यान आशिल्ल्या ओव्हरहेडा परस चड कामाक पावता.",
+  "techTitle": "आयटी, सॉफ्टवॅर आनी मेघ भागीदार",
+  "techNote": "आमचे आयटी भागीदार, आनी DEHAT कडेन दान मेळिल्लीं सॉफ्टवॅर साधनां आनी मेघ क्षमता, जाका लागून दरेक रुपया फाटल्या प्रशासकीय खर्चा परस चड कामाक पावता.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -22887,6 +22919,7 @@ const KOK = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "आयटी भागीदार.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -22948,6 +22981,7 @@ const KOK = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "प्रगत प्रमाणीकरण, 9 डिसेंबर 2025 दिसा भेटयलें.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -24146,8 +24180,8 @@ const SA = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "सॉफ्टवेयर तथा मेघदान भागीदार",
-  "techNote": "साधनानि मेघक्षमता च DEHAT इत्यस्मै दानं कृतवती, येन प्रत्येकं रुप्यकस्य अधिकं कार्यं तस्य पृष्ठतः उपरितनं न तु कार्यं प्राप्नोति।",
+  "techTitle": "आईटी, सॉफ्टवेयर तथा मेघ-सहभागिनः",
+  "techNote": "अस्माकं आईटी-सहभागी, DEHAT संस्थायै समर्पितानि सॉफ्टवेयर-साधनानि मेघ-क्षमता च, येन प्रत्येकं रूप्यकस्य अधिकं भागं प्रशासनिक-व्ययं विना साक्षात् कार्यं प्राप्नोति।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -24186,6 +24220,7 @@ const SA = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "आईटी-सहभागी।",
       "logo": "kraftpixel.png"
     }
   ],
@@ -24247,6 +24282,7 @@ const SA = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "उन्नतप्रमाणीकरणम्, 9 दिसेम्बर् 2025 दिनाङ्কে प्रदत्तम्।",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -25445,8 +25481,8 @@ const SD = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "سافٽ ويئر ۽ ڪلائوڊ ڊونشن پارٽنر",
-  "techNote": "اوزار ۽ ڪلائوڊ ظرفيت DEHAT کي عطيو ڪيو ويو، ته جيئن هر روپين جو وڌيڪ ڪم ان جي پويان اوور هيڊ جي بدران پهچي.",
+  "techTitle": "آءِ ٽي، سافٽ ويئر ۽ ڪلائوڊ پارٽنر",
+  "techNote": "اسان جو آءِ ٽي پارٽنر، ۽ سافٽ ويئر ٽولز ۽ ڪلائوڊ ظرفيت جيڪا DEHAT کي عطيو ڪئي وئي، ته جيئن هر روپئي جو گهڻو حصو انتظامي خرچن جي بدران سڌو ڪم تائين پهچي.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -25485,6 +25521,7 @@ const SD = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "آءِ ٽي پارٽنر.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -25546,6 +25583,7 @@ const SD = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "ايڊوانسڊ سرٽيفڪيشن، 9 ڊسمبر 2025 تي نوازيو ويو.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -26744,8 +26782,8 @@ const OR = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "ସଫ୍ଟୱେର୍ ଏବଂ କ୍ଲାଉଡ୍ ଦାନ ସହଭାଗୀ |",
-  "techNote": "ଉପକରଣ ଏବଂ କ୍ଲାଉଡ୍ କ୍ଷମତା DEHAT କୁ ଦାନ କରାଯାଇଛି, ଯାହା ଦ୍ every ାରା ପ୍ରତ୍ୟେକ ଟଙ୍କା ଏହା ପଛରେ ଥିବା ଓଭରହେଡ୍ ଅପେକ୍ଷା କାର୍ଯ୍ୟରେ ପହଞ୍ଚେ |",
+  "techTitle": "ଆଇଟି, ସଫ୍ଟୱେର୍ ଏବଂ କ୍ଲାଉଡ୍ ସହଭାଗୀ",
+  "techNote": "ଆମର ଆଇଟି ଅଂଶୀଦାର, ଏବଂ DEHAT କୁ ଦାନ କରାଯାଇଥିବା ସଫ୍ଟୱେର୍ ଉପକରଣ ଓ କ୍ଲାଉଡ୍ କ୍ଷମତା, ଯାହାଫଳରେ ପ୍ରତ୍ୟେକ ଟଙ୍କାର ଅଧିକ ଅଂଶ ପ୍ରଶାସନିକ ଖର୍ଚ୍ଚ ବଦଳରେ ସିଧାସଳଖ କାର୍ଯ୍ୟରେ ପହଞ୍ଚିଥାଏ।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -26784,6 +26822,7 @@ const OR = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "ଆଇଟି ଅଂଶୀଦାର।",
       "logo": "kraftpixel.png"
     }
   ],
@@ -26845,6 +26884,7 @@ const OR = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "ଉନ୍ନତ ପ୍ରମାଣପତ୍ର, 9 ଡିସେମ୍ବର 2025 ରେ ପ୍ରଦାନ କରାଯାଇଛି।",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -28043,8 +28083,8 @@ const ML = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "സോഫ്റ്റ്‌വെയറും ക്ലൗഡ് സംഭാവന പങ്കാളികളും",
-  "techNote": "ടൂളുകളും ക്ലൗഡ് കപ്പാസിറ്റിയും DEHAT-ന് സംഭാവന ചെയ്തു, അതുവഴി ഓരോ രൂപയുടെയും കൂടുതൽ തുക അതിൻ്റെ പിന്നിലെ ഓവർഹെഡിന് പകരം ജോലിയിൽ എത്തുന്നു.",
+  "techTitle": "ഐടി, സോഫ്റ്റ്‌വെയർ, ക്ലൗഡ് പങ്കാളികൾ",
+  "techNote": "ഞങ്ങളുടെ ഐടി പങ്കാളിയും, DEHAT-ന് സംഭാവനയായി നൽകിയ സോഫ്റ്റ്‌വെയർ ടൂളുകളും ക്ലൗഡ് ശേഷിയും, അതുവഴി ഓരോ രൂപയുടെയും വലിയ പങ്ക് ഭരണച്ചെലവുകൾക്ക് പകരമായി പ്രവർത്തനങ്ങളിലേക്ക് നേരിട്ടെത്തുന്നു.",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -28083,6 +28123,7 @@ const ML = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "ഐടി പങ്കാളി.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -28144,6 +28185,7 @@ const ML = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "അഡ്വാൻസ്ഡ് സർട്ടിഫിക്കേഷൻ, 2025 ഡിസംബർ 9-ന് നൽകി.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -29342,8 +29384,8 @@ const PA = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "ਸਾਫਟਵੇਅਰ ਅਤੇ ਕਲਾਊਡ ਦਾਨ ਭਾਗੀਦਾਰ",
-  "techNote": "DEHAT ਨੂੰ ਦਾਨ ਕੀਤੇ ਟੂਲ ਅਤੇ ਕਲਾਊਡ ਸਮਰੱਥਾ, ਤਾਂ ਜੋ ਹਰ ਰੁਪਿਆ ਇਸ ਦੇ ਪਿੱਛੇ ਦੀ ਬਜਾਏ ਕੰਮ ਤੱਕ ਪਹੁੰਚ ਸਕੇ।",
+  "techTitle": "ਆਈਟੀ, ਸਾਫਟਵੇਅਰ ਅਤੇ ਕਲਾਊਡ ਭਾਈਵਾਲ",
+  "techNote": "ਸਾਡੇ ਆਈਟੀ ਭਾਈਵਾਲ, ਅਤੇ DEHAT ਨੂੰ ਦਾਨ ਕੀਤੇ ਸਾਫਟਵੇਅਰ ਟੂਲ ਅਤੇ ਕਲਾਊਡ ਸਮਰੱਥਾ, ਤਾਂ ਜੋ ਹਰ ਰੁਪਏ ਦਾ ਵੱਧ ਹਿੱਸਾ ਪ੍ਰਬੰਧਕੀ ਖਰਚਿਆਂ ਦੀ ਬਜਾਏ ਸਿੱਧਾ ਕੰਮ ਤੱਕ ਪਹੁੰਚ ਸਕੇ।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -29382,6 +29424,7 @@ const PA = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "ਆਈਟੀ ਭਾਈਵਾਲ।",
       "logo": "kraftpixel.png"
     }
   ],
@@ -29443,6 +29486,7 @@ const PA = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "ਐਡਵਾਂਸਡ ਸਰਟੀਫਿਕੇਸ਼ਨ, 9 ਦਸੰਬਰ 2025 ਨੂੰ ਪ੍ਰਦਾਨ ਕੀਤਾ ਗਿਆ।",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -30641,8 +30685,8 @@ const DOI = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "सॉफ्टवेयर ते क्लाउड डोनेशन पार्टनर",
-  "techNote": "औजार ते क्लाउड क्षमता DEHAT गी दान च दित्ती गेई, तां जे हर रुपये दा मता हिस्सा इसदे पिच्छें दी ओवरहेड दी बजाय कम्म तगर पुज्जी सकै।",
+  "techTitle": "आईटी, सॉफ्टवेयर ते क्लाउड साझेदार",
+  "techNote": "साढ़े आईटी साझेदार, ते DEHAT गी दान च दित्ते गेदे सॉफ्टवेयर औजार ते क्लाउड क्षमता, तां जे हर रुपये दा मता हिस्सा दफ्तरी खर्चे दी बजाए सीधे कम्म तगर पुज्जी सकै।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -30681,6 +30725,7 @@ const DOI = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "आईटी साझेदार।",
       "logo": "kraftpixel.png"
     }
   ],
@@ -30742,6 +30787,7 @@ const DOI = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "उन्नत प्रमाणीकरण, 9 दिसंबर 2025 गी प्रदान कीता गेआ।",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -31939,8 +31985,8 @@ const BRX = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "सफ्टवेयार आरो क्लाउड दान बिगोमाफोर",
-  "techNote": "DEHAT नो दान हिसाबै मोननाय टुलस आरो क्लाउड गोहो, जाहाथे मोनफ्रोमबो रांनि बांसिन बाहागोआ खरसायाव नङा खामानियाव सौहैयो।",
+  "techTitle": "आईटी, सफ्टवेयार आरो क्लाउड लोगोफोर",
+  "techNote": "जोंनि आईटी लोगो, आरो DEHAT नो दान हिसाबै मोननाय सफ्टवेयार टुलस आरो क्लाउड गोहो, जाहाथे मोनफ्रोमबो रांनि बांसिन बाहागोआ खरसायाव नङा थोंजों खामानियाव सौहैयो।",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -31979,6 +32025,7 @@ const BRX = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "आईटी लोगो।",
       "logo": "kraftpixel.png"
     }
   ],
@@ -32040,6 +32087,7 @@ const BRX = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "जौगानाय सोदोब प्रमाणीकरण, 9 दिसेम्बर 2025 आव होनाय जाबाय।",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -33238,8 +33286,8 @@ const SAT = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "ᱥᱚᱯᱷᱴᱣᱮᱭᱟᱨ ᱟᱨ ᱠᱞᱟᱣᱰ ᱫᱟᱱ ᱵᱷᱟᱜᱫᱟᱨ",
-  "techNote": "ᱰᱮᱦᱟᱴ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱯᱟᱵ ᱠᱚ ᱟᱨ ᱠᱞᱟᱣᱰ ᱠᱮᱯᱟᱥᱤᱴᱤ ᱫᱟᱱ ᱞᱮᱱᱟ, ᱡᱮᱢᱚᱱ ᱥᱟᱱᱟᱢ ᱴᱟᱠᱟ ᱠᱷᱚᱱ ᱵᱟᱹᱲᱛᱤ ᱠᱟᱹᱢᱤ ᱨᱮ ᱥᱮᱴᱮᱨᱚᱜ ᱢᱟ᱾",
+  "techTitle": "ᱟᱭᱴᱤ, ᱥᱚᱯᱷᱴᱣᱮᱭᱟᱨ ᱟᱨ ᱠᱞᱟᱣᱰ ᱜᱟᱛᱮ ᱠᱚ",
+  "techNote": "ᱟᱞᱮᱨᱮᱱ ᱟᱭᱴᱤ ᱜᱟᱛᱮ, ᱟᱨ DEHAT ᱞᱟᱹᱜᱤᱫ ᱫᱟᱱ ᱟᱠᱟᱱ ᱥᱚᱯᱷᱴᱣᱮᱭᱟᱨ ᱥᱟᱯᱟᱵ ᱟᱨ ᱠᱞᱟᱣᱰ ᱫᱟᱲᱮ, ᱡᱮᱢᱚᱱ ᱥᱟᱱᱟᱢ ᱴᱟᱠᱟ ᱨᱮᱭᱟᱜ ᱵᱟᱹᱲᱛᱤ ᱦᱟᱹᱴᱤᱧ ᱫᱚ ᱪᱟᱪᱞᱟᱣ ᱠᱷᱚᱨᱚᱪ ᱵᱚᱫᱚᱞ ᱛᱮ ᱥᱚᱡᱷᱮ ᱠᱟᱹᱢᱤ ᱨᱮ ᱥᱮᱴᱮᱨᱚᱜ ᱢᱟ ᱾",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -33278,6 +33326,7 @@ const SAT = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "ᱟᱭᱴᱤ ᱜᱟᱛᱮ ᱾",
       "logo": "kraftpixel.png"
     }
   ],
@@ -33339,6 +33388,7 @@ const SAT = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "ᱞᱟᱦᱟᱱᱛᱤ ᱥᱟᱹᱠᱷᱤ ᱥᱟᱠᱟᱢ, 9 ᱰᱤᱥᱮᱢᱵᱚᱨ 2025 ᱨᱮ ᱪᱟᱞ ᱟᱠᱟᱱᱟ ᱾",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -34537,8 +34587,8 @@ const MNI = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "ꯁꯣꯐꯋꯦꯌꯔ ꯑꯃꯁꯨꯡ ꯀ꯭ꯂꯥꯎꯗ ꯗꯣꯅꯦꯁꯟ ꯄꯥꯔꯇꯅꯔꯁꯤꯡ꯫",
-  "techNote": "ꯗꯤ.ꯏ.ꯑꯩꯆ.ꯑꯦ.ꯇꯤ.ꯗꯥ ꯄꯤꯈꯤꯕꯥ ꯈꯨꯠꯂꯥꯌꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯀ꯭ꯂꯥꯎꯗ ꯀꯦꯄꯥꯁꯤꯇꯤ, ꯃꯗꯨꯅꯥ ꯃꯔꯝ ꯑꯣꯏꯔꯒꯥ ꯂꯨꯄꯥ ꯈꯨꯗꯤꯡꯃꯛꯀꯤ ꯍꯦꯟꯅꯥ ꯊꯕꯛ ꯑꯗꯨꯗꯥ ꯌꯧꯔꯀꯄꯗꯒꯤ ꯃꯗꯨꯒꯤ ꯃꯇꯨꯡꯗꯥ ꯂꯩꯔꯤꯕꯥ ꯑꯣꯚꯔꯍꯦꯗ ꯑꯗꯨꯗꯒꯤ ꯍꯦꯟꯅꯥ ꯌꯧꯔꯀꯏ꯫",
+  "techTitle": "ꯑꯥꯏ.ꯇꯤ., ꯁꯣꯐꯋꯦꯌꯔ ꯑꯃꯁꯨꯡ ꯀ꯭ꯂꯥꯎꯗ ꯄꯥꯔꯇꯅꯔꯁꯤꯡ",
+  "techNote": "ꯑꯩꯈꯣꯌꯒꯤ ꯑꯥꯏ.ꯇꯤ. ꯄꯥꯔꯇꯅꯔ, ꯑꯃꯁꯨꯡ DEHAT ꯗꯥ ꯈꯨꯗꯣꯜ ꯑꯣꯏꯅꯥ ꯄꯤꯔꯛꯈꯤꯕ ꯁꯣꯐꯋꯦꯌꯔ ꯈꯨꯠꯂꯥꯌꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯀ꯭ꯂꯥꯎꯗ ꯀꯦꯄꯥꯁꯤꯇꯤ, ꯃꯁꯤꯅꯥ ꯃꯔꯝ ꯑꯣꯏꯔꯒꯥ ꯂꯨꯄꯥ ꯈꯨꯗꯤꯡꯃꯛꯀꯤ ꯑꯌꯥꯝꯕ ꯁꯔꯨꯛ ꯑꯁꯤ ꯑꯍꯦꯟꯕ ꯈꯔꯆꯇꯥ ꯅꯠꯇꯅꯥ ꯊꯕꯛꯇꯥ ꯌꯧꯕ ꯉꯝꯃꯤ꯫",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -34577,6 +34627,7 @@ const MNI = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "ꯑꯥꯏ.ꯇꯤ. ꯄꯥꯔꯇꯅꯔ꯫",
       "logo": "kraftpixel.png"
     }
   ],
@@ -34638,6 +34689,7 @@ const MNI = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "ꯑꯋꯥꯡꯕ ꯊꯥꯛꯀꯤ ꯁꯥꯔꯇꯤꯐꯤꯀꯦꯁꯟ, 9 ꯗꯤꯁꯦꯝꯕꯔ 2025 ꯗꯥ ꯄꯤꯈꯤꯕꯅꯤ꯫",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
@@ -35835,8 +35887,8 @@ const KS = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "سافٹ ویئر تہٕ کلاؤڈ ڈونیشن پارٹنرز",
-  "techNote": "ٹولز تہٕ کلاؤڈ ہٕنٛز صلاحیت DEHAT کو سرمایہ کاری ہٕنٛز گٔیہِ ہے، تاکہِ پریتھ روپیہ امِہ پتھ کَنہِ ہونے ہٕنٛز بجائے کام تک پہنچ سکے۔",
+  "techTitle": "آئی ٹی، سافٹ ویئر تہٕ کلاؤڈ شَراکَت دار",
+  "techNote": "سٲنؠ آئی ٹی شَراکَت دار، تہٕ سافٹ ویئر ٹولز تہٕ کلاؤڈ ہٕنٛز صلاحیت یۄس DEHAT ہَس عطیہ کَرنہٕ آمٕژ، تاکہِ پریتھ رۄپَیَس ہُند بٔڑ حِصہٕ اِنتِظامی خَرچہٕ بَہ جایہِ سۄدھے کٲمَس تام واتِتھ ہیٚکہِ۔",
   "tech": [
     {
       "k": "Google for Nonprofits",
@@ -35875,6 +35927,7 @@ const KS = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
+      "v": "آئی ٹی شَراکَت دار۔",
       "logo": "kraftpixel.png"
     }
   ],
@@ -35936,6 +35989,7 @@ const KS = {
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
+      "v": "اَیڈوانسڈ سَرٹیفیکیشن، 9 دَسَمبَر 2025 آو عطا کَرنہٕ۔",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
