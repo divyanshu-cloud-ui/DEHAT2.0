@@ -785,6 +785,7 @@
 <meta name="ext-resource-dependency" content="./assets/logos/she-s-the-first.png">
 <meta name="ext-resource-dependency" content="./assets/logos/acc-trust.svg">
 <meta name="ext-resource-dependency" content="./assets/logos/tata-trusts.svg">
+<meta name="ext-resource-dependency" content="./assets/logos/centum-foundation.svg">
 <meta name="ext-resource-dependency" content="./assets/logos/community.svg">
 <meta name="ext-resource-dependency" content="./assets/logos/edelgive-foundation.png">
 <meta name="ext-resource-dependency" content="./assets/logos/primenet-lucknow.png">
@@ -5030,7 +5031,7 @@ class Component extends DCLogic {
     // that would survive a reload or follow a visitor across sessions.
     sigHero: false, sig: {},
     pTab: 'route', pStep: 0, pcSel: '', pWho: '', pIntents: [], pOpen: '', ivFacets: {}, pSop: '', pName: '', pOrg: '', pEmail: '', pPhone: '', pPlace: '', pBudget: '', pCopied: false,
-    dRegime: 'inr', dAmount: '', dAmountOther: '', dFreq: 'once', dPurpose: 'unrestricted', dCC: 'IN', dDialIso: '', dDistrict: '', dDistrictOther: false, dTouched: {}, dTry: false, dSrvErr: null, dPan: '', dCountry: '', dIdRef: '', dAddr: '', d80g: true, dAnon: false, dStage: 0, ivStatus: 'current', ivProg: 'all',
+    dRegime: 'inr', dAmount: '', dAmountOther: '', dFreq: 'once', dPurpose: 'unrestricted', dCC: 'IN', dDialIso: '', dDistrict: '', dDistrictOther: false, dTouched: {}, dTry: false, dSrvErr: null, dPan: '', dCountry: '', dIdRef: '', dAddr: '', d80g: true, dAnon: false, dStage: 0, ivStatus: 'all', ivProg: 'all',
     whoStem: 'nyay', whoMine: '', whoReveal: false, whoPerson: '', whoBoard: 'governing', whoGroup: 'all', whoBelief: '', whoBeliefAll: false, navMore: false, navGroup: '', polOpen: '', homeFace: 't33',
     ckDecided: true, ckPrefsOpen: false, ckOpen: '', ckPrefs: { performance: false, functional: false, targeting: false }, ...(window.DEHAT_LAUNCH?.initialState || {}) };
 
@@ -34638,9 +34639,10 @@ class Component extends DCLogic {
   // so every mark carries the same optical weight on a 1200x400 canvas.
   // SVG is preferred over PNG wherever present - drop an .svg in and add the slug here.
   // ACC Trust is redrawn in ACC red on white from ACC's own letterforms, Tata Trusts is traced
-  // from the wordmark Tata Trusts supplied; Community is the
+  // from the wordmark Tata Trusts supplied, Centum Foundation from its own mark (FOUNDATION set dark
+  // for the white chip, since the supplied file prints it white); Community is the
   // site's people glyph (the community supported the founding school, so it has no logo).
-  _logoVector() { return ['acc-trust', 'community', 'tata-trusts']; }
+  _logoVector() { return ['acc-trust', 'community', 'tata-trusts', 'centum-foundation']; }
   // Logo files that exist under ./assets/partners/, keyed by the slug of the English
   // partner name. Spelling in a filename and spelling in the copy do not always agree
   // (Immunisation / Immunization), so the map is explicit rather than derived.

@@ -805,7 +805,7 @@ const EN = {
     {
       "k": "KraftPixel",
       "href": "https://kraftpixel.com/",
-      "v": "IT partner.",
+      "v": "IT Partner.",
       "logo": "kraftpixel.png"
     }
   ],
@@ -815,32 +815,32 @@ const EN = {
     {
       "k": "Razorpay",
       "href": "https://razorpay.com/",
-      "v": "Payment gateway partner."
+      "v": "Payment Gateway Partner."
     },
     {
       "k": "State Bank of India (SBI)",
       "href": "https://www.sbi.co.in/",
-      "v": "FCRA-designated bank for foreign contributions."
+      "v": "FCRA-Designated Bank for Foreign Contributions."
     },
     {
       "k": "Punjab National Bank (PNB)",
       "href": "https://pnb.bank.in/",
-      "v": "Domestic banking partner."
+      "v": "Domestic Banking Partner."
     },
     {
       "k": "IDFC FIRST Bank",
       "href": "https://www.idfcfirstbank.com/",
-      "v": "Domestic banking partner."
+      "v": "Domestic Banking Partner."
     },
     {
       "k": "Paytm",
       "href": "https://paytm.com/helpinghand/paytm-foundation",
-      "v": "Domestic payment partner."
+      "v": "Domestic Payment Partner."
     },
     {
       "k": "Bharat Connect",
       "href": "https://www.bharat-connect.com/",
-      "v": "UPI and bill-payment infrastructure, formerly BBPS."
+      "v": "UPI and Bill-Payment Infrastructure, Formerly BBPS."
     }
   ],
   "certTitle": "Transparency, Empanelments and Certifications",
@@ -861,13 +861,13 @@ const EN = {
     {
       "k": "GuideStar India",
       "href": "https://www.guidestarindia.org/",
-      "v": "NGO transparency certification.",
+      "v": "NGO Transparency Certification.",
       "logo": "guidestar-india.png"
     },
     {
       "k": "Girls First Institute, She’s the First",
       "href": "https://shesthefirst.org/",
-      "v": "Advanced Certification, awarded 9 December 2025.",
+      "v": "Advanced Certification, Awarded 9 December 2025.",
       "logo": "girls-first-institute-advanced-2025.png",
       "until": "2027-12-09"
     }
