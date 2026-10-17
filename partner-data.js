@@ -801,6 +801,12 @@ const EN = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "v": "IT partner.",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "Banking, UPI and Payment Partners",
@@ -2088,6 +2094,11 @@ const HI = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "बैंकिंग, यूपीआई और भुगतान साझेदार",
@@ -3376,6 +3387,11 @@ const ES = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "Socios bancarios, UPI y de pagos",
@@ -4663,6 +4679,11 @@ const FR = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "Partenaires bancaires, UPI et de paiement",
@@ -5950,6 +5971,11 @@ const RU = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "Банковские партнеры, UPI и платежные системы",
@@ -7238,6 +7264,11 @@ const AR = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "شركاء الخدمات المصرفية ونظام UPI والمدفوعات",
@@ -8526,6 +8557,11 @@ const ZH = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "银行、UPI及支付合作伙伴",
@@ -9814,6 +9850,11 @@ const UR = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "بینکنگ، یو پی آئی اور ادائیگی کے شراکت دار",
@@ -11102,6 +11143,11 @@ const BN = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "ব্যাংকিং, ইউপিআই এবং পেমেন্ট অংশীদার",
@@ -12390,6 +12436,11 @@ const MR = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "बँकिंग, यूपीआय आणि पेमेंट भागीदार",
@@ -13678,6 +13729,11 @@ const TE = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "బ్యాంకింగ్, యుపిఐ మరియు చెల్లింపు భాగస్వాములు",
@@ -14966,6 +15022,11 @@ const TA = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "வங்கி, யுபிஐ மற்றும் கட்டணப் பங்காளர்கள்",
@@ -16254,6 +16315,11 @@ const GU = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "બેંકિંગ, યુપીઆઈ અને ચુકવણી ભાગીદારો",
@@ -17542,6 +17608,11 @@ const KN = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "ಬ್ಯಾಂಕಿಂಗ್, ಯುಪಿಐ ಮತ್ತು ಪಾವತಿ ಪಾಲುದಾರರು",
@@ -18830,6 +18901,11 @@ const MAI = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "बैंकिंग, यूपीआई आ भुगतान साझेदार",
@@ -20118,6 +20194,11 @@ const AS = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "বেংকিং, ইউপিআই আৰু পৰিশোধ অংশীদাৰসকল",
@@ -21406,6 +21487,11 @@ const NE = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "बैंकिङ, युपीआई र भुक्तानी साझेदारहरू",
@@ -22694,6 +22780,11 @@ const KOK = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "बँकिंग, युपीआय आनी पेमेंट भागीदार",
@@ -23982,6 +24073,11 @@ const SA = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "बैंकिंग, यूपीआई, भुगतान-सहभागिनश्च",
@@ -25270,6 +25366,11 @@ const SD = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "بينڪنگ، يو پي آءِ ۽ ادائيگي جا ڀائيوار",
@@ -26558,6 +26659,11 @@ const OR = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "ବ୍ୟାଙ୍କିଙ୍ଗ୍, ୟୁପିଆଇ ଏବଂ ପେମେଣ୍ଟ ଅଂଶୀଦାର",
@@ -27846,6 +27952,11 @@ const ML = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "ബാങ്കിംഗ്, യുപിഐ, പേയ്‌മെൻ്റ് പങ്കാളികൾ",
@@ -29134,6 +29245,11 @@ const PA = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "ਬੈਂਕਿੰਗ, ਯੂਪੀਆਈ ਅਤੇ ਭੁਗਤਾਨ ਭਾਈਵਾਲ",
@@ -30422,6 +30538,11 @@ const DOI = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "बैंकिंग, यूपीआई ते भुगतान साझेदार",
@@ -31709,6 +31830,11 @@ const BRX = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "बेंक, UPI आरो रां होनायनि लोगोफोर",
@@ -32997,6 +33123,11 @@ const SAT = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "ᱵᱮᱝᱠᱤᱝ, ᱤᱭᱩᱯᱤᱟᱭᱤ ᱟᱨ ᱴᱟᱠᱟ ᱮᱢ ᱨᱮᱱ ᱜᱟᱛᱮ",
@@ -34285,6 +34416,11 @@ const MNI = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "ꯕꯦꯡꯀꯤꯡ, ꯌꯨ.ꯄꯤ.ꯑꯥꯏ. ꯑꯃꯁꯨꯡ ꯄꯦꯃꯦꯟꯇ ꯄꯥꯔꯇꯅꯔꯁꯤꯡ",
@@ -35572,6 +35708,11 @@ const KS = {
       "k": "Goodstack",
       "href": "https://www.goodstack.io/",
       "logo": "goodstack.svg"
+    },
+    {
+      "k": "KraftPixel",
+      "href": "https://kraftpixel.com/",
+      "logo": "kraftpixel.png"
     }
   ],
   "payTitle": "بینکِنٛگ، یوٗ پی آی تہٕ اَدایگی ہٕنٛدی شَراکَت دار",
