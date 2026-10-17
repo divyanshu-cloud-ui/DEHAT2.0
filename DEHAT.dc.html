@@ -783,6 +783,11 @@
 <meta name="ext-resource-dependency" content="./assets/logos/sahyog-lucknow.png">
 <meta name="ext-resource-dependency" content="./assets/logos/scottish-catholic-international-aid-fund.png">
 <meta name="ext-resource-dependency" content="./assets/logos/she-s-the-first.png">
+<meta name="ext-resource-dependency" content="./assets/logos/acc-trust.svg">
+<meta name="ext-resource-dependency" content="./assets/logos/community.svg">
+<meta name="ext-resource-dependency" content="./assets/logos/edelgive-foundation.png">
+<meta name="ext-resource-dependency" content="./assets/logos/primenet-lucknow.png">
+<meta name="ext-resource-dependency" content="./assets/logos/girls-first-institute-advanced-2025.png">
 <meta name="ext-resource-dependency" content="./assets/logos/sir-dorabji-tata-trust.png">
 <meta name="ext-resource-dependency" content="./assets/logos/united-nations-children-s-fund.png">
 <meta name="ext-resource-dependency" content="./assets/logos/united-nations-development-programme.png">
@@ -2753,6 +2758,9 @@
                   </div>
                   <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;line-height:1.2;margin:0;color:var(--text);text-wrap:balance">{{ aw.name }}</h3>
                   <p style="font-size:13.5px;line-height:1.55;color:var(--dim);margin:0;text-wrap:pretty">{{ aw.body }}</p>
+                  <sc-if value="{{ aw.hasBadge }}" hint-placeholder-val="{{ false }}">
+                    <div role="img" aria-label="{{ aw.badgeAlt }}" style="width:132px;height:132px;margin-top:6px;background-image:{{ aw.badgeCss }};background-size:contain;background-repeat:no-repeat;background-position:left center"></div>
+                  </sc-if>
                 </div>
               </div>
             </sc-for>
@@ -4902,6 +4910,12 @@
         <span style="font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(251,247,239,.08);color:rgba(251,247,239,.6)">Foreign Contribution (Regulation) Act Registration 136260010</span>
         <span style="font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(251,247,239,.08);color:rgba(251,247,239,.6)">Reg. 370/2000-01</span>
       </div>
+      <sc-if value="{{ gfiBadgeLive }}" hint-placeholder-val="{{ true }}">
+        <button class="tap-hit" onClick="{{ goAwards }}" style="display:flex;align-items:center;gap:12px;margin-top:20px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;text-align:left;color:rgba(251,247,239,.75)">
+          <span role="img" aria-label="{{ T.award_10_badge_alt }}" style="flex:none;width:72px;height:72px;background-image:url(./assets/logos/girls-first-institute-advanced-2025.png);background-size:contain;background-repeat:no-repeat;background-position:center"></span>
+          <span style="font-size:13px;line-height:1.45;max-width:230px">{{ T.foot_cert }}</span>
+        </button>
+      </sc-if>
     </div>
     <div>
       <div style="font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#EAAE28;font-weight:700;margin-bottom:16px">{{ T.foot_explore }}</div>
@@ -5747,6 +5761,9 @@ class Component extends DCLogic {
       requestAnimationFrame(seek);
     });
   }
+  // Girls First Institute rules: the badge is shown only within the two-year certification period
+  // (awarded 9 December 2025), so it stops being drawn after 9 December 2027.
+  _gfiBadgeLive() { return Date.now() < Date.UTC(2027, 11, 10); }
   _awardArt(list) {
     const T = './assets/thumb/';
     const map = [
@@ -7408,6 +7425,10 @@ class Component extends DCLogic {
       award_8_body:'Bhanumati honoured on 22 January 2016 by the President of India for leading the forest rights movement that won revenue-village status for eight forest villages after 147 years.',
       award_9_name:'Certificate of Merit, World CSR Congress',
       award_9_body:'Conferred on 18 February 2016 in the Social Cause category at a congress with participants from 123 countries.',
+      award_10_name:'Girls First Institute Advanced Certification',
+      award_10_body:'Awarded 9 December 2025. Developmental Association for Human Advancement (DEHAT) has been certified at the Advanced level by the Girls First Institute for completing the Partner Coalition program and demonstrating the application of girl-centered practices, feminist mentorship, and SRHR in their program. Certification is valid for two years and does not imply endorsement or financial support.',
+      award_10_badge_alt:'Girls First Institute Advanced certification badge, She’s the First, 2025',
+      foot_cert:'Certified at the Advanced level by the Girls First Institute, 2025',
       awards_intro:'Every entry below names the year, the conferring body and who received it. Four of these went to community leaders rather than to the organisation. DEHAT’s work was reported 300 times in print in 2016–17 and 386 times in 2019–20.',
       awards_tail:'The road continues',
       reach_note:'Footprint as recorded in the 2016–17 Impact Report: 773 villages across 23 blocks of seven districts - Bahraich, Shrawasti, Balrampur, Sonbhadra, Amethi, Kushinagar, Maharajganj - with an Indo-Nepal child protection network across the border districts. The wider figures above are cumulative since registration in 2000 and are drawn from successive annual reports.',
@@ -34615,7 +34636,9 @@ class Component extends DCLogic {
   // Rasters in assets/logos are normalised: transparent background, trimmed, and scaled
   // so every mark carries the same optical weight on a 1200x400 canvas.
   // SVG is preferred over PNG wherever present - drop an .svg in and add the slug here.
-  _logoVector() { return []; }
+  // ACC Trust is redrawn in ACC red on white from ACC's own letterforms; Community is the
+  // site's people glyph (the community supported the founding school, so it has no logo).
+  _logoVector() { return ['acc-trust', 'community']; }
   // Logo files that exist under ./assets/partners/, keyed by the slug of the English
   // partner name. Spelling in a filename and spelling in the copy do not always agree
   // (Immunisation / Immunization), so the map is explicit rather than derived.
@@ -34791,7 +34814,7 @@ class Component extends DCLogic {
     return this._rails[key];
   }
   _logoSlugs() {
-    return ['bill-and-melinda-gates-foundation','agricultural-finance-corporation-limited','acc-limited','acc-trust','actionaid-association','alliance-for-immunization-and-health','azim-premji-foundation','azim-premji-philanthropic-initiatives','baif-development-research-foundation','birlasoft-limited','caritas-india','centum-foundation','centum-workskills-india-limited','charity-science','child-rights-and-you','childline-india-foundation','dasra','deutscher-caritasverband-e-v-caritas-germany','directorate-of-education-government-of-uttar-pradesh','free-a-girl','german-federal-ministry-for-economic-cooperation-and-development','government-of-uttar-pradesh-forest-department','iimpact-gurgaon','japan-international-cooperation-agency','just-rights-for-children','kailash-satyarthi-children-s-foundation-united-states','milaan-foundation','ministry-of-women-and-child-development-government-of-india','national-bank-for-agriculture-and-rural-development','national-commission-for-protection-of-child-rights','national-stock-exchange-foundation','oxfam-india','path-international','poorest-areas-civil-society-programme','rebuild-india-fund','rotary-india-literacy-mission','sahyog-lucknow','scottish-catholic-international-aid-fund','she-s-the-first','tata-trusts','ipartner-india','lily-against-human-trafficking','indo-global-social-service-society','gram-niyojan-kendra','plan-india','united-nations-children-s-fund','united-nations-development-programme','world-neighbors'];
+    return ['bill-and-melinda-gates-foundation','agricultural-finance-corporation-limited','acc-limited','acc-trust','actionaid-association','alliance-for-immunization-and-health','azim-premji-foundation','azim-premji-philanthropic-initiatives','baif-development-research-foundation','birlasoft-limited','caritas-india','centum-foundation','centum-workskills-india-limited','charity-science','child-rights-and-you','childline-india-foundation','dasra','deutscher-caritasverband-e-v-caritas-germany','directorate-of-education-government-of-uttar-pradesh','free-a-girl','german-federal-ministry-for-economic-cooperation-and-development','government-of-uttar-pradesh-forest-department','iimpact-gurgaon','japan-international-cooperation-agency','just-rights-for-children','kailash-satyarthi-children-s-foundation-united-states','milaan-foundation','ministry-of-women-and-child-development-government-of-india','national-bank-for-agriculture-and-rural-development','national-commission-for-protection-of-child-rights','national-stock-exchange-foundation','oxfam-india','path-international','poorest-areas-civil-society-programme','rebuild-india-fund','rotary-india-literacy-mission','sahyog-lucknow','scottish-catholic-international-aid-fund','she-s-the-first','tata-trusts','ipartner-india','lily-against-human-trafficking','indo-global-social-service-society','gram-niyojan-kendra','plan-india','united-nations-children-s-fund','united-nations-development-programme','world-neighbors','edelgive-foundation','primenet-lucknow','community'];
   }
   _partnerView(allProjects, FIN, PROGS) {
     const P = (this._pt || {})[this.state.lang] || (this._pt || {}).en;
@@ -38678,7 +38701,8 @@ class Component extends DCLogic {
       { year: '2016', to: T.award_to_community, aud: 'community', color: '#D2305C', name: T.award_7_name, body: T.award_7_body },
       { year: '2016', to: T.award_to_community, aud: 'community', color: '#556223', name: T.award_8_name, body: T.award_8_body },
       { year: '2016', to: T.award_to_org, aud: 'org', color: '#4F0E73', name: T.award_9_name, body: T.award_9_body },
-    ]).map(award => ({ ...award, ink: this._themeInk(award.color) }));
+      { year: '2025', to: T.award_to_org, aud: 'org', color: '#D2305C', name: T.award_10_name, body: T.award_10_body, badge: true },
+    ]).map(award => ({ ...award, ink: this._themeInk(award.color), hasBadge: !!award.badge && this._gfiBadgeLive(), badgeCss: 'url(./assets/logos/girls-first-institute-advanced-2025.png)', badgeAlt: T.award_10_badge_alt }));
     return {
       finLensTabs, finBasisTabs, finCurrTabs, finBasisNote, finRangePresets, finYearOpts, finChart, finBreakdown, finSegDetail, finLines, finLinesMore, finLinesGo, finCsvGo, finExplorerStats,
       finFromVal: fyFrom, finToVal: fyTo,
@@ -38696,6 +38720,7 @@ class Component extends DCLogic {
       isStories: V === 'stories', isInvolved: V === 'involved', isFinance: V === 'finance', isMedia: V === 'media',
       isPolicies: V === 'policies', policyGroups: V === 'policies' ? this._policies() : [], goPolicies: setView('policies'),
       goRaiseConcern: this._go('finance', 'raise', { rzKind: 'safeguard' }),
+      gfiBadgeLive: this._gfiBadgeLive(), goAwards: this._go('impact', 'awards'),
       whoTeaser: this._whoTeaser(setView, T),
       pv: V === 'involved' ? (this._partnerView(allProjects, FIN, PROGS) || {}) : {},
       rt: V === 'involved' ? this._reportTransfer(((this._pt || {})[this.state.lang] || (this._pt || {}).en) || {}) : {},

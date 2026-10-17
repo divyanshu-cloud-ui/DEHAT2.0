@@ -76,6 +76,19 @@ export function buildGraph({ route, seo, seoFor, fields, stories, assetExists, o
     },
   };
 
+  // Girls First Institute Advanced certification, awarded 9 December 2025 for two years: listed
+  // only while it is valid, matching the on-page badge.
+  if (Date.now() < Date.UTC(2027, 11, 10)) {
+    orgNode.hasCredential = {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Girls First Institute Advanced Certification',
+      credentialCategory: 'certification',
+      dateCreated: '2025-12-09',
+      validFor: 'P2Y',
+      recognizedBy: { '@type': 'Organization', name: 'She’s the First', url: 'https://shesthefirst.org/' },
+    };
+  }
+
   const websiteNode = {
     '@type': 'WebSite',
     '@id': websiteId,

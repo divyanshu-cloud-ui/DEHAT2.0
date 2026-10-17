@@ -105,6 +105,8 @@ FIN.DOCUMENTS = [
     desc:'Empanelled with the Tata Institute of Social Sciences as an implementing partner for Public Sector Undertaking corporate social responsibility programmes.', file:'assets/docs/tiss-empanelment-certificate.pdf' },
   { title:'BSE Sammaan Listing', issuer:'BSE (Bombay Stock Exchange)', period:'Registered 2018', group:'validation',
     desc:'Registered on the BSE Sammaan platform, the Bombay Stock Exchange’s vetted registry connecting corporates with credible non-governmental organisations for corporate social responsibility.', file:'assets/docs/bse-sammaan.pdf' },  // Added 11 Oct 2026: essential documents that had no card (owner trimmed the list the same day). Each shows "Available on request" until published.
+  { title:'Girls First Institute Advanced Certification', issuer:'She’s the First, Girls First Institute', period:'Awarded 9 December 2025', group:'validation',
+    desc:'Certifies that DEHAT completed the Partner Coalition Girl-Centered Curriculum and applies girl-centred practice, feminist mentorship and sexual and reproductive health and rights programming grounded in girls’ participation. Valid for two years; it does not imply endorsement or financial support.', file:'assets/docs/girls-first-institute-advanced-certification.pdf' },
   { title:'NGO Darpan Registration', issuer:'NITI Aayog', period:'UP/2009/0023065', group:'statutory',
     desc:'DEHAT’s registration on NITI Aayog’s NGO Darpan portal, the Government of India directory of voluntary organisations.', file:'assets/docs/ngo-darpan-registration.pdf' },
   { title:'FCRA Designated Bank Account Confirmation', issuer:'State Bank of India, New Delhi Main Branch', period:'Designated account', group:'fcra',
