@@ -32,7 +32,7 @@ test('programme buttons expose selection and retain visible keyboard focus', asy
           const rail=document.querySelector('.spine-rail').getBoundingClientRect();
           return {top:tab?.top,bottom:tab?.bottom,headerBottom:header.bottom,railTop:rail.top};
         });
-        assert.ok(focus.top>=focus.headerBottom-1 && focus.bottom<=focus.railTop-1,`${lang} ${width}x${height} panel ${i}: ${JSON.stringify(focus)}`);
+        assert.ok(focus.top>=focus.headerBottom-1 && Math.min(focus.bottom,focus.railTop)-focus.top>=44,`${lang} ${width}x${height} panel ${i}: ${JSON.stringify(focus)}`);
         assert.equal(await page.evaluate(()=>document.activeElement?.id),'home-active-program');
       }
       await tabs.nth(2).click();
@@ -46,7 +46,7 @@ test('programme buttons expose selection and retain visible keyboard focus', asy
       });
       assert.equal(await tabs.nth(2).getAttribute('aria-pressed'),'true');
       assert.equal(await page.evaluate(()=>document.activeElement?.id),'home-active-program');
-      assert.ok(pointerFocus.top>=pointerFocus.headerBottom-1 && pointerFocus.bottom<=pointerFocus.railTop-1,
+      assert.ok(pointerFocus.top>=pointerFocus.headerBottom-1 && Math.min(pointerFocus.bottom,pointerFocus.railTop)-pointerFocus.top>=44,
         `${lang} ${width}x${height} pointer focus: ${JSON.stringify(pointerFocus)}`);
       await page.close();
     }

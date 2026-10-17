@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {pathToFileURL} from 'node:url';
 import {proofServer} from '../proof-server.mjs';
 
-test('every phone programme card and its action clear the header and bottom rail', async () => {
+test('original phone programme panel is readable and its action is reachable above the rail', async () => {
   const modulePath=process.env.PLAYWRIGHT_MODULE;
   if(!modulePath) throw new Error('Set PLAYWRIGHT_MODULE');
   const {chromium}=await import(modulePath.startsWith('file:')?modulePath:pathToFileURL(modulePath).href);
@@ -32,11 +32,33 @@ test('every phone programme card and its action clear the header and bottom rail
           const header=document.querySelector('nav').getBoundingClientRect();
           const rail=document.querySelector('.spine-rail').getBoundingClientRect();
           const picker=document.querySelector('.home-programme-picker').getBoundingClientRect();
-          return {cardTop:card.top,cardBottom:card.bottom,actionBottom:action.bottom,headerBottom:header.bottom,railTop:rail.top,pickerTop:picker.top,pickerBottom:picker.bottom,pickerHeight:picker.height,focus:document.activeElement?.id};
+          const body=document.querySelector('.home-active-program-body');
+          const detail=document.querySelector('.home-active-program-detail');
+          const art=document.querySelector('.home-active-program-head .art');
+          const stats=[...document.querySelectorAll('.home-active-program-stats>div')].map(node=>node.getBoundingClientRect().top);
+          return {cardTop:card.top,cardBottom:card.bottom,actionBottom:action.bottom,headerBottom:header.bottom,railTop:rail.top,pickerGap:card.top-picker.bottom,bodyPadding:getComputedStyle(body).paddingTop,detailSize:getComputedStyle(detail).fontSize,detailLine:getComputedStyle(detail).lineHeight,artWidth:art.getBoundingClientRect().width,stats,focus:document.activeElement?.id};
         });
         assert.ok(box.cardTop>=box.headerBottom+5,`${lang} ${width}x${height} programme ${i}: panel top ${JSON.stringify(box)}`);
-        assert.ok(box.cardBottom<=box.railTop-4,`${lang} ${width}x${height} programme ${i}: panel bottom ${JSON.stringify(box)}`);
-        assert.ok(box.actionBottom<=box.railTop-4,`${lang} ${width}x${height} programme ${i}: action bottom ${JSON.stringify(box)}`);
+        assert.ok(box.pickerGap>=17,`${lang} ${width}x${height} programme ${i}: original card-to-panel gap ${JSON.stringify(box)}`);
+        assert.equal(box.bodyPadding,'20px');
+        assert.equal(box.detailSize,'15.5px');
+        assert.ok(parseFloat(box.detailLine)>=24.7,`${lang} ${width}x${height} programme ${i}: original body line height ${JSON.stringify(box)}`);
+        assert.ok(box.artWidth>=76,`${lang} ${width}x${height} programme ${i}: original illustration ${JSON.stringify(box)}`);
+        assert.ok(box.stats[1]>box.stats[0]+20,`${lang} ${width}x${height} programme ${i}: figures stack ${JSON.stringify(box)}`);
+        if(height>=812){
+          assert.ok(box.cardBottom<=box.railTop-4,`${lang} ${width}x${height} programme ${i}: panel bottom ${JSON.stringify(box)}`);
+          assert.ok(box.actionBottom<=box.railTop-4,`${lang} ${width}x${height} programme ${i}: action bottom ${JSON.stringify(box)}`);
+        }else{
+          // The original 542-583px panel cannot fit between the menu and rail at 320x640.
+          // Keep its readable layout and verify that a short page scroll exposes the action.
+          await page.evaluate(()=>{
+            const action=document.querySelector('.home-programme-cta');
+            const rail=document.querySelector('.spine-rail');
+            window.scrollBy({top:action.getBoundingClientRect().bottom-rail.getBoundingClientRect().top+12,behavior:'instant'});
+          });
+          const actionAfter=await page.evaluate(()=>({bottom:document.querySelector('.home-programme-cta').getBoundingClientRect().bottom,railTop:document.querySelector('.spine-rail').getBoundingClientRect().top}));
+          assert.ok(actionAfter.bottom<=actionAfter.railTop-4,`${lang} ${width}x${height} programme ${i}: action after short scroll ${JSON.stringify(actionAfter)}`);
+        }
         assert.equal(box.focus,'home-active-program');
       }
       await page.close();
