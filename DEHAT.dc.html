@@ -784,6 +784,7 @@
 <meta name="ext-resource-dependency" content="./assets/logos/scottish-catholic-international-aid-fund.png">
 <meta name="ext-resource-dependency" content="./assets/logos/she-s-the-first.png">
 <meta name="ext-resource-dependency" content="./assets/logos/acc-trust.svg">
+<meta name="ext-resource-dependency" content="./assets/logos/tata-trusts.svg">
 <meta name="ext-resource-dependency" content="./assets/logos/community.svg">
 <meta name="ext-resource-dependency" content="./assets/logos/edelgive-foundation.png">
 <meta name="ext-resource-dependency" content="./assets/logos/primenet-lucknow.png">
@@ -34636,9 +34637,10 @@ class Component extends DCLogic {
   // Rasters in assets/logos are normalised: transparent background, trimmed, and scaled
   // so every mark carries the same optical weight on a 1200x400 canvas.
   // SVG is preferred over PNG wherever present - drop an .svg in and add the slug here.
-  // ACC Trust is redrawn in ACC red on white from ACC's own letterforms; Community is the
+  // ACC Trust is redrawn in ACC red on white from ACC's own letterforms, Tata Trusts is traced
+  // from the wordmark Tata Trusts supplied; Community is the
   // site's people glyph (the community supported the founding school, so it has no logo).
-  _logoVector() { return ['acc-trust', 'community']; }
+  _logoVector() { return ['acc-trust', 'community', 'tata-trusts']; }
   // Logo files that exist under ./assets/partners/, keyed by the slug of the English
   // partner name. Spelling in a filename and spelling in the copy do not always agree
   // (Immunisation / Immunization), so the map is explicit rather than derived.
@@ -35164,8 +35166,11 @@ class Component extends DCLogic {
       payTitle: P.payTitle, payNote: P.payNote,
       pay: (P.pay || []).map((t, i) => this._pCard('pay', i, t, (ENP.pay || [])[i])),
       certTitle: P.certTitle,
-      certifications: (P.certifications || []).map((t, i) => this._pCard('ct', i, t, (ENP.certifications || [])[i])),
-      certCount: String((P.certifications || []).length),
+      // An entry with `until` (a certification with a fixed validity) drops out once that date passes.
+      certifications: (P.certifications || []).map((t, i) => [t, (ENP.certifications || [])[i]])
+        .filter(([t, en]) => !((en || t).until) || Date.now() < Date.parse((en || t).until + 'T23:59:59Z'))
+        .map(([t, en], i) => this._pCard('ct', i, t, en)),
+      certCount: String((P.certifications || []).filter((t, i) => { const u = ((ENP.certifications || [])[i] || t).until; return !u || Date.now() < Date.parse(u + 'T23:59:59Z'); }).length),
       certRail: this._rail('cert'),
       affilCount: String((P.affils || []).length),
       affilRail: this._rail('affil'),

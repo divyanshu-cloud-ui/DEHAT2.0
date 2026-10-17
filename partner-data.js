@@ -863,6 +863,13 @@ const EN = {
       "href": "https://www.guidestarindia.org/",
       "v": "NGO transparency certification.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "v": "Advanced Certification, awarded 9 December 2025.",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "Media Mentions",
@@ -2155,6 +2162,12 @@ const HI = {
       "href": "https://www.guidestarindia.org/",
       "v": "एनजीओ पारदर्शिता प्रमाणीकरण।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "मीडिया उल्लेख",
@@ -3448,6 +3461,12 @@ const ES = {
       "href": "https://www.guidestarindia.org/",
       "v": "Certificación de transparencia para ONG.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "Menciones en medios",
@@ -4740,6 +4759,12 @@ const FR = {
       "href": "https://www.guidestarindia.org/",
       "v": "Certification de transparence des ONG.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "Mentions dans les médias",
@@ -6032,6 +6057,12 @@ const RU = {
       "href": "https://www.guidestarindia.org/",
       "v": "Сертификация прозрачности деятельности НКО.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "Упоминания в СМИ",
@@ -7325,6 +7356,12 @@ const AR = {
       "href": "https://www.guidestarindia.org/",
       "v": "شهادة الشفافية للمنظمات غير الحكومية.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "التغطية الإعلامية",
@@ -8618,6 +8655,12 @@ const ZH = {
       "href": "https://www.guidestarindia.org/",
       "v": "非政府组织透明度认证。",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "媒体报道",
@@ -9911,6 +9954,12 @@ const UR = {
       "href": "https://www.guidestarindia.org/",
       "v": "این جی او شفافیت سرٹیفیکیشن۔",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "میڈیا میں تذکرہ",
@@ -11204,6 +11253,12 @@ const BN = {
       "href": "https://www.guidestarindia.org/",
       "v": "বেসরকারি সংস্থার স্বচ্ছতা প্রত্যয়ন।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "মিডিয়া উল্লেখ",
@@ -12497,6 +12552,12 @@ const MR = {
       "href": "https://www.guidestarindia.org/",
       "v": "स्वयंसेवी संस्था पारदर्शकता प्रमाणीकरण.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "माध्यमांमधील उल्लेख",
@@ -13790,6 +13851,12 @@ const TE = {
       "href": "https://www.guidestarindia.org/",
       "v": "ఎన్జీఓ పారదర్శకత ధృవీకరణ.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "మీడియా ప్రస్తావనలు",
@@ -15083,6 +15150,12 @@ const TA = {
       "href": "https://www.guidestarindia.org/",
       "v": "தன்னார்வ தொண்டு நிறுவன வெளிப்படைத்தன்மை சான்றிதழ்.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "ஊடகக் குறிப்புகள்",
@@ -16376,6 +16449,12 @@ const GU = {
       "href": "https://www.guidestarindia.org/",
       "v": "બિનસરકારી સંસ્થા પારદર્શિતા પ્રમાણપત્ર.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "મીડિયા ઉલ્લેખ",
@@ -17669,6 +17748,12 @@ const KN = {
       "href": "https://www.guidestarindia.org/",
       "v": "ಎನ್‌ಜಿಒ ಪಾರದರ್ಶಕತೆ ಪ್ರಮಾಣೀಕರಣ.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "ಮಾಧ್ಯಮ ಉಲ್ಲೇಖಗಳು",
@@ -18962,6 +19047,12 @@ const MAI = {
       "href": "https://www.guidestarindia.org/",
       "v": "गैर-सरकारी संगठन पारदर्शिता प्रमाणन।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "मीडिया उल्लेख",
@@ -20255,6 +20346,12 @@ const AS = {
       "href": "https://www.guidestarindia.org/",
       "v": "বেচৰকাৰী সংস্থাৰ স্বচ্ছতা প্ৰমাণপত্ৰ।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "সংবাদ মাধ্যমত উল্লেখ",
@@ -21548,6 +21645,12 @@ const NE = {
       "href": "https://www.guidestarindia.org/",
       "v": "गैरसरकारी संस्था पारदर्शिता प्रमाणीकरण।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "मिडिया उल्लेख",
@@ -22841,6 +22944,12 @@ const KOK = {
       "href": "https://www.guidestarindia.org/",
       "v": "एनजीओ पारदर्शकता प्रमाणिकरण.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "माध्यम उल्लेख",
@@ -24134,6 +24243,12 @@ const SA = {
       "href": "https://www.guidestarindia.org/",
       "v": "असर्वकारीसंस्थापारदर्शिताप्रमाणीकरणम्।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "माध्यमेषु उल्लेखः",
@@ -25427,6 +25542,12 @@ const SD = {
       "href": "https://www.guidestarindia.org/",
       "v": "اين جي او شفافيت سرٽيفڪيشن.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "ميڊيا ۾ ذڪر",
@@ -26720,6 +26841,12 @@ const OR = {
       "href": "https://www.guidestarindia.org/",
       "v": "ଏନଜିଓ ସ୍ୱଚ୍ଛତା ପ୍ରମାଣପତ୍ର।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "ଗଣମାଧ୍ୟମ ଉଲ୍ଲେଖ",
@@ -28013,6 +28140,12 @@ const ML = {
       "href": "https://www.guidestarindia.org/",
       "v": "എൻ‌ജി‌ഒ സുതാര്യതാ സാക്ഷ്യപത്രം.",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "മാധ്യമ പരാമർശങ്ങൾ",
@@ -29306,6 +29439,12 @@ const PA = {
       "href": "https://www.guidestarindia.org/",
       "v": "ਗੈਰ-ਸਰਕਾਰੀ ਸੰਗਠਨ ਪਾਰਦਰਸ਼ਤਾ ਪ੍ਰਮਾਣੀਕਰਨ।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "ਮੀਡੀਆ ਜ਼ਿਕਰ",
@@ -30599,6 +30738,12 @@ const DOI = {
       "href": "https://www.guidestarindia.org/",
       "v": "गैर-सरकारी संगठन पारदर्शिता प्रमाणीकरण।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "मीडिया च उल्लेख",
@@ -31891,6 +32036,12 @@ const BRX = {
       "href": "https://www.guidestarindia.org/",
       "v": "उदां आफादनि रोखाथि मानथिगोन।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "खौरां बिजों आव मोंखोननाय",
@@ -33184,6 +33335,12 @@ const SAT = {
       "href": "https://www.guidestarindia.org/",
       "v": "ᱵᱟᱝ-ᱥᱚᱨᱠᱟᱨᱤ ᱜᱟᱶᱛᱟ ᱯᱷᱟᱨᱪᱟ ᱥᱟᱹᱵᱩᱛ।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "ᱢᱤᱰᱤᱭᱟ ᱨᱮ ᱚᱞ ᱟᱠᱟᱱ",
@@ -34477,6 +34634,12 @@ const MNI = {
       "href": "https://www.guidestarindia.org/",
       "v": "এনজিওগী শেংলবা মশক খংদোকপগী সর্তিফিকেসন।",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "ꯃꯤꯗꯤꯌꯥꯗꯥ ꯄꯟꯈꯤꯕꯥ",
@@ -35769,6 +35932,12 @@ const KS = {
       "href": "https://www.guidestarindia.org/",
       "v": "این جی او شفافِیَت تَصدِیق نامہٕ۔",
       "logo": "guidestar-india.png"
+    },
+    {
+      "k": "Girls First Institute, She’s the First",
+      "href": "https://shesthefirst.org/",
+      "logo": "girls-first-institute-advanced-2025.png",
+      "until": "2027-12-09"
     }
   ],
   "mediaMentionsTitle": "میٖڈیاہَس مَنٛز ذِکِر",
