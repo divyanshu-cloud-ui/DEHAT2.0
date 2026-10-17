@@ -73,7 +73,7 @@ export async function publish({ signoff, library, dryRun = false, put, fetchImpl
   }
   const manifest = mergeManifest(existing, prepared, now);
   await put('docs/manifest.json', Buffer.from(JSON.stringify(manifest, null, 2)), { access: 'public', contentType: 'application/json', addRandomSuffix: false, allowOverwrite: true, cacheControlMaxAge: 60 });
-  return { dryRun: false, published: prepared.length, total: Object.keys(manifest.files).length };
+  return { dryRun: false, published: prepared.length, total: Object.keys(manifest.files).length, updated: manifest.updated };
 }
 
 function arg(name) { const i = process.argv.indexOf(name); return i > -1 ? process.argv[i + 1] : undefined; }
@@ -85,5 +85,21 @@ if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
   if (!signoff) { console.error('Usage: node tools/publish-docs.mjs --signoff <approved.json> [--library <folder>] [--dry-run]'); process.exit(2); }
   if (!dryRun && !process.env.BLOB_READ_WRITE_TOKEN) { console.error('BLOB_READ_WRITE_TOKEN is not set in this shell.'); process.exit(2); }
   const { put } = dryRun ? {} : await import('@vercel/blob');
-  publish({ signoff, library, dryRun, put }).then(result => { console.log(JSON.stringify(result, null, 2)); }).catch(error => { console.error(String(error.message || error)); process.exit(1); });
+  publish({ signoff, library, dryRun, put })
+    .then(async result => {
+      // The store's CDN can keep serving the previous manifest for up to a minute. Wait until the new
+      // one is served, so a publish run straight after this one starts from the complete list.
+      if (!result.dryRun) {
+        const deadline = Date.now() + 180000;
+        let served = '';
+        while (Date.now() < deadline) {
+          served = (await fetchExistingManifest().catch(() => ({}))).updated || '';
+          if (served === result.updated) break;
+          await new Promise(resolve => setTimeout(resolve, 5000));
+        }
+        result.manifestServed = served === result.updated;
+      }
+      console.log(JSON.stringify(result, null, 2));
+    })
+    .catch(error => { console.error(String(error.message || error)); process.exit(1); });
 }
