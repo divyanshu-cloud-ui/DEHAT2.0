@@ -38062,6 +38062,7 @@ class Component extends DCLogic {
       };
       const allStoriesForCase = (typeof window !== 'undefined' && window.STORIES) ? window.STORIES : [];
       const leadStory = allStoriesForCase.find(s => s.slug === LEAD_CASE_SLUG[prog]);
+      const lsc = (field, fb) => leadStory ? this._tc('stories', leadStory.slug, field, fb) : fb;
       const base = allProjects
         .filter(p => p.prog === prog || (p.cross || []).indexOf(prog) !== -1)
         .slice().sort((a, b) => (a.yearStart || 0) - (b.yearStart || 0) || a.id - b.id);
@@ -38346,34 +38347,33 @@ class Component extends DCLogic {
         })(nar.name) + '.png)',
         era: this._tc('programmes', prog, 'era', nar.era || ''), lede: this._tc('programmes', prog, 'lede', nar.lede || ''), headline: this._tc('programmes', prog, 'headline', nar.headline || ''),
         stance: this._tc('programmes', prog, 'purpose', nar.purpose || ''),
-        // Bridge lines are hardcoded per programme, not run through _tc: the case content
-        // itself (stories-data.js) is English-only, same as journey-data.js's roadmap content
-        // was before it - no translation-parity regression is created by also leaving this one
-        // sentence untranslated, since the whole section it closes is already English-only.
+        // The lead case reads its words from the story translations (content-i18n stories.<slug>),
+        // as the Stories page does; the bridge line is programmes.<prog>.caseBridge, English until translated.
         leadCase: leadStory ? {
           has: true, line: (() => {
             // The line field carries "{date} · {place} · {Programme Name}" - the date reads as
             // stale on an older case and the programme name is redundant on that programme's
             // own page, so only the place segment is shown here.
-            const parts = (leadStory.line || '').split(' · ').map(s => s.trim());
-            return parts.length === 3 ? parts[1] : (leadStory.line || '');
+            const line = lsc('line', leadStory.line || '');
+            const parts = line.split(' · ').map(s => s.trim());
+            return parts.length === 3 ? parts[1] : line;
           })(),
-          title: leadStory.title, dek: leadStory.dek,
-          paras: leadStory.body.map((v, i) => ({ k: 'lp' + i, v })),
-          pull: leadStory.pull, actTitle: leadStory.actTitle, act: leadStory.act, actCta: leadStory.actCta,
+          title: lsc('title', leadStory.title), dek: lsc('dek', leadStory.dek),
+          paras: leadStory.body.map((v, i) => ({ k: 'lp' + i, v: lsc('body_' + i, v) })),
+          pull: lsc('pull', leadStory.pull), actTitle: lsc('actTitle', leadStory.actTitle), act: lsc('act', leadStory.act), actCta: lsc('actCta', leadStory.actCta),
           art: 'url(./assets/story/' + (/^story-\d{3}$/.test(leadStory.art || '') ? 'web/' : '') + (leadStory.art || '') + '.png)',
-          openBig: (leadStory.opener || {}).big || '', openSmall: (leadStory.opener || {}).small || '',
+          openBig: lsc('openBig', (leadStory.opener || {}).big || ''), openSmall: lsc('openSmall', (leadStory.opener || {}).small || ''),
           isNumber: (leadStory.opener || {}).kind === 'number', notNumber: (leadStory.opener || {}).kind !== 'number',
           bigFont: (leadStory.opener || {}).kind === 'number' ? "'Bricolage Grotesque'" : "'Newsreader'",
           bigStyle: (leadStory.opener || {}).kind === 'speech' ? 'italic' : 'normal',
           bigSize: (leadStory.opener || {}).kind === 'number' ? this._numSize(String((leadStory.opener || {}).big || '').trim()) : 'clamp(22px,3vw,32px)',
           plateColor: leadStory.color, onFill: this._ink(leadStory.color), onFillSoft: this._inkA(leadStory.color, .74),
-          bridge: ({
+          bridge: this._tc('programmes', prog, 'caseBridge', ({
             re: 'Manju’s eight to ten visits over three years are not the exception this programme is built around - they are what claiming a right actually costs without a system behind it. That system is what the rest of this page describes.',
             hp: 'Two girls remembering one phone number is not luck. It is a structure built into the meetings this programme runs - the shape of that structure is what follows.',
             cj: 'One farmer’s costed trial is not proof of a method. It is the unit this whole programme is built to multiply - here is how.',
             sol: 'A twelve-year-old noticing that his friend had stopped coming to school is not an accident. It is what a Child Parliament is actually for - here is the system behind it.',
-          })[prog] || '',
+          })[prog] || ''),
           go: this._goInvolved('give'),
         } : { has: false },
         problemTitle: this._tc('programmes', prog, 'whyTitle', nar.whyTitle || ''), problemBody: this._tc('programmes', prog, 'why', nar.why || ''),
