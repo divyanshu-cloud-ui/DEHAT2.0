@@ -765,8 +765,8 @@ const EN = {
       "href": "https://www.justrightsforchildren.uk/"
     }
   ],
-  "techTitle": "Software and Cloud Donation Partners",
-  "techNote": "Tools and cloud capacity donated to DEHAT, so that more of every rupee reaches the work rather than the overhead behind it.",
+  "techTitle": "IT, Software and Cloud Partners",
+  "techNote": "Our IT partner, and the software tools and cloud capacity donated to DEHAT, so that more of every rupee reaches the work rather than the overhead behind it.",
   "tech": [
     {
       "k": "Google for Nonprofits",
