@@ -213,6 +213,28 @@
   .who-teaser-faces{grid-column:2;grid-row:1 / span 4;align-self:center}
   .home-programme-cta{margin-inline-start:auto}
   @media (max-width:880px){.loop-grid{display:flex;flex-direction:column}.loop-arrow{display:none}.loop-centre{order:-1}}
+  /* Year-by-year ledger: one set of column tracks for every row, so the bars, figures and document links line up
+     whichever documents a year has. Each document kind keeps its own column; a year without one leaves the cell empty. */
+  @media (min-width:900px){
+    .ledger-table{display:grid;grid-template-columns:minmax(0,1fr) repeat(3,max-content) auto}
+    .ledger-row{grid-column:1/-1;display:grid;grid-template-columns:subgrid}
+    .ledger-row>*{grid-column:1/-1}
+    .ledger-head{display:grid!important;grid-template-columns:subgrid;column-gap:10px}
+    .ledger-head>*{grid-row:1}
+    .ledger-head>.finance-year-toggle{grid-column:1}
+    .ledger-head>.ledger-bs{grid-column:2;justify-self:start}
+    .ledger-head>.ledger-fc{grid-column:3;justify-self:start}
+    .ledger-head>.ledger-itr{grid-column:4;justify-self:start}
+    .ledger-head>.ledger-pin{grid-column:5}
+  }
+  /* Programme cycle stages: the gentle wave (margin-top per stage) only reads on one line. Once the stages wrap,
+     a raised stage would sit on the labels of the line above, so the wave is dropped and the lines get room. */
+  @media (max-width:860px){.cyc-nodes{row-gap:18px!important}.cyc-nodes>.cyc-node{margin-top:0!important}}
+  @media (max-width:899px){
+    .ledger-head{padding-inline-start:clamp(14px,2vw,22px)!important;padding-bottom:12px!important}
+    .ledger-head>.finance-year-toggle{padding-inline-start:0!important}
+    .ledger-head>.ledger-pin{margin-inline-start:auto}
+  }
   @media (max-width:760px){
     .loop-grid{display:flex;flex-direction:column;gap:8px}
     .loop-centre{order:-1}
@@ -1739,9 +1761,9 @@
             <span style="display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--faint)"><span style="width:12px;height:12px;border-radius:50%;border:1.5px dashed var(--border)"></span>{{ T.cyc_affected_indirectly }}</span>
             <span style="font-size:12.5px;color:var(--faint)">{{ pp.cyc.directCount }}</span>
           </div>
-          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(6px,1vw,14px);padding:30px 0 10px">
+          <div class="cyc-nodes" style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(6px,1vw,14px);padding:30px 0 10px">
             <sc-for list="{{ pp.cyc.nodes }}" as="cn" hint-placeholder-count="8">
-              <div data-reveal="" style="transition-delay:{{ cn.delay }};margin-top:{{ cn.dy }};width:clamp(78px,9vw,104px);display:flex;flex-direction:column;align-items:center;gap:8px">
+              <div class="cyc-node" data-reveal="" style="transition-delay:{{ cn.delay }};margin-top:{{ cn.dy }};width:clamp(78px,9vw,104px);display:flex;flex-direction:column;align-items:center;gap:8px">
                 <button onClick="{{ cn.select }}" onMouseEnter="{{ cn.select }}" aria-label="{{ cn.shortLabel }}" style="width:clamp(60px,7vw,80px);height:clamp(60px,7vw,80px);border-radius:50%;cursor:pointer;padding:0;display:grid;place-items:center;background:{{ cn.bg }};border:2px solid {{ cn.ring }};filter:{{ cn.filt }};transition:transform .25s cubic-bezier(.2,.7,.2,1),background .25s cubic-bezier(.22,.61,.36,1),border-color .25s cubic-bezier(.22,.61,.36,1),filter .25s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-6px) scale(1.07);filter:none">
                   <div role="img" aria-hidden="true" style="width:78%;height:78%;pointer-events:none;background-image:{{ cn.imgCss }};background-size:contain;background-repeat:no-repeat;background-position:center"></div>
                 </button>
@@ -4245,12 +4267,12 @@
             </div>
           </sc-if>
 
-          <div style="border:1px solid var(--border);border-radius:20px;background:var(--surface);overflow:hidden">
+          <div class="ledger-table" style="border:1px solid var(--border);border-radius:20px;background:var(--surface);overflow:hidden">
 
 
             <sc-for list="{{ ledRows }}" as="r" hint-placeholder-count="20">
-              <div key="{{ r.k }}" style="border-bottom:1px solid var(--border);background:{{ r.rowBg }}">
-                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:0 clamp(14px,2vw,22px) 0 0">
+              <div key="{{ r.k }}" class="ledger-row" style="border-bottom:1px solid var(--border);background:{{ r.rowBg }}">
+                <div class="ledger-head" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:0 clamp(14px,2vw,22px) 0 0">
                   <button class="finance-year-toggle" onClick="{{ r.toggle }}" style="flex:1 1 240px;min-width:0;display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;padding:14px clamp(14px,2vw,22px);background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;transition:background .18s cubic-bezier(.22,.61,.36,1)" style-hover="background:var(--surface2)">
                     <span style="flex:0 0 auto;width:68px;white-space:nowrap;font-family:'Bricolage Grotesque';font-weight:800;font-size:14.5px;color:{{ r.fyColor }}">{{ r.fy }}</span>
                     <span style="flex:1 1 110px;min-width:64px;display:flex;flex-direction:column;gap:4px">
@@ -4277,14 +4299,13 @@
                     </span>
                   </button>
                   <sc-if value="{{ r.hasDoc }}" hint-placeholder-val="{{ true }}">
-                    <a class="finance-doc-link tap-hit tap-chip" href="{{ r.doc }}" target="_blank" rel="noopener" title="{{ T.title_open_balance_sheet }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--ac-teal);text-decoration:none;white-space:nowrap">{{ T.fin_bs_lbl }}<span aria-hidden="true">&#8599;</span></a>
-                  </sc-if><sc-if value="{{ r.noDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.docAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">{{ T.fin_bs_lbl }} · {{ T.fin_doc_request_short }}</a></sc-if>
+                    <a class="finance-doc-link ledger-bs tap-hit tap-chip" href="{{ r.doc }}" target="_blank" rel="noopener" title="{{ T.title_open_balance_sheet }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--ac-teal);text-decoration:none;white-space:nowrap">{{ T.fin_bs_lbl }}<span aria-hidden="true">&#8599;</span></a>
+                  </sc-if><sc-if value="{{ r.noDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link ledger-bs tap-hit tap-chip" href="{{ r.docAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">{{ T.fin_bs_lbl }} · {{ T.fin_doc_request_short }}</a></sc-if>
                   <sc-if value="{{ r.hasFcReturn }}" hint-placeholder-val="{{ false }}">
-                    <a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcReturnDoc }}" target="_blank" rel="noopener" title="{{ r.fcReturnTitle }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--ac-purple);text-decoration:none;white-space:nowrap">{{ r.fcReturnLabel }}<span aria-hidden="true">&#8599;</span></a>
-                  </sc-if><sc-if value="{{ r.noFcReturnDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcDocAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">FC-4 · {{ T.fin_doc_request_short }}</a></sc-if><sc-if value="{{ r.hasItr }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.itrDoc }}" target="_blank" rel="noopener" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--ac-teal);text-decoration:none;white-space:nowrap">ITR<span aria-hidden="true">&#8599;</span></a></sc-if><sc-if value="{{ r.noItr }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link tap-hit tap-chip" href="{{ r.itrAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">ITR · {{ T.fin_doc_request_short }}</a></sc-if>
-                  <sc-if value="{{ r.fcAskable }}" hint-placeholder-val="{{ false }}">
-                    <a class="finance-doc-link tap-hit tap-chip" href="{{ r.fcAskHref }}" title="{{ r.fcAskTitle }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">{{ r.fcAskLabel }}</a>
-                  </sc-if>
+                    <a class="finance-doc-link ledger-fc tap-hit tap-chip" href="{{ r.fcReturnDoc }}" target="_blank" rel="noopener" title="{{ r.fcReturnTitle }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--ac-purple);text-decoration:none;white-space:nowrap">{{ r.fcReturnLabel }}<span aria-hidden="true">&#8599;</span></a>
+                  </sc-if><sc-if value="{{ r.noFcReturnDoc }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link ledger-fc tap-hit tap-chip" href="{{ r.fcDocAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">FC-4 · {{ T.fin_doc_request_short }}</a></sc-if><sc-if value="{{ r.fcAskable }}" hint-placeholder-val="{{ false }}">
+                    <a class="finance-doc-link ledger-fc tap-hit tap-chip" href="{{ r.fcAskHref }}" title="{{ r.fcAskTitle }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">{{ r.fcAskLabel }}</a>
+                  </sc-if><sc-if value="{{ r.hasItr }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link ledger-itr tap-hit tap-chip" href="{{ r.itrDoc }}" target="_blank" rel="noopener" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--ac-teal);text-decoration:none;white-space:nowrap">ITR<span aria-hidden="true">&#8599;</span></a></sc-if><sc-if value="{{ r.noItr }}" hint-placeholder-val="{{ false }}"><a class="finance-doc-link ledger-itr tap-hit tap-chip" href="{{ r.itrAsk }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px dashed var(--border);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--faint);text-decoration:none;white-space:nowrap">ITR · {{ T.fin_doc_request_short }}</a></sc-if>
                   <button class="ledger-pin tap-hit" onClick="{{ r.pin }}" title="{{ r.pinTitle }}" style="flex:none;width:26px;height:26px;border-radius:50%;cursor:pointer;font-family:inherit;font-size:12px;line-height:1;background:none;border:1px solid {{ r.pinRing }};color:{{ r.pinFg }}">{{ r.pinLabel }}</button>
                 </div>
 
