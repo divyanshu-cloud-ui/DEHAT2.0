@@ -182,14 +182,14 @@ try{
   if(JSON.stringify(documents.missingRedirects)!==JSON.stringify(manifest.pendingRedirectDestinations))fail('pending-manifest','Pending redirect list differs from manifest');
   const local=await serveSiteOutput(path.join(root,'.vercel/output'));
   try{
-    const cases=[['/',200],['/hi',200],['/ar/impact',200],['/stories/'+stories[0].slug,200],['/hi/stories/'+stories[0].slug,200],['/media',200],['/finance',200],['/answers',200],['/privacy-policy/',200],['/robots.txt',200],['/sitemap.xml',200],['/sitemap_index.xml',200],['/llms.txt',200],['/llms-full.txt',200],['/or/stories/'+stories[0].slug,404],['/ar/does-not-exist',404],['/does-not-exist',404],['/_internal/secret',404],[input.redirects.find(row=>row.status===410).source,410],[input.redirects.find(row=>row.status===301&&!row.destination.startsWith('/assets/press/')).source,301]];
+    const cases=[['/',200],['/hi',200],['/ar/impact',200],['/stories/'+stories[0].slug,200],['/hi/stories/'+stories[0].slug,200],['/or/stories/'+stories[0].slug,200],['/media',200],['/finance',200],['/answers',200],['/privacy-policy/',200],['/robots.txt',200],['/sitemap.xml',200],['/sitemap_index.xml',200],['/llms.txt',200],['/llms-full.txt',200],['/ar/stories/'+stories[0].slug,404],['/ar/does-not-exist',404],['/does-not-exist',404],['/_internal/secret',404],[input.redirects.find(row=>row.status===410).source,410],[input.redirects.find(row=>row.status===301&&!row.destination.startsWith('/assets/press/')).source,301]];
     for(const [pathname,expected] of cases){
       const response=await fetch(local.origin+pathname,{redirect:'manual'});
-      const body=pathname.startsWith('/or/stories/')?await response.text():'';
+      const body=pathname.startsWith('/ar/stories/')?await response.text():'';
       report.http.push({pathname,status:response.status,cacheControl:response.headers.get('cache-control'),robots:response.headers.get('x-robots-tag'),location:response.headers.get('location')});
       if(response.status!==expected)fail('http',`${pathname}: expected ${expected}, got ${response.status}`);
       if(!response.headers.has('x-content-type-options'))fail('header',`${pathname}: missing nosniff`);
-      if(expected===404&&pathname.startsWith('/or/stories/')&&(!body.includes('<html lang="or"')||!body.includes('name="robots" content="noindex"')))fail('localized-404',pathname);
+      if(expected===404&&pathname.startsWith('/ar/stories/')&&(!body.includes('<html lang="ar"')||!body.includes('name="robots" content="noindex"')))fail('localized-404',pathname);
     }
   }finally{await new Promise(resolve=>local.server.close(resolve));}
   report.documents=manifest.routes.length;report.indexed=indexedSet.size;report.files=manifest.files.length;

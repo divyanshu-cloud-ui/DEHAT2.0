@@ -1,7 +1,7 @@
 // One production identity for canonical URLs, sitemap and metadata.
 export const PRODUCTION_ORIGIN = 'https://dehatindia.org';
 import {LANGUAGES} from './routes.mjs';
-export const PUBLISHED = Object.freeze({languages:Object.freeze([...LANGUAGES]),storyLanguages:Object.freeze(['en','hi'])});
+export const PUBLISHED = Object.freeze({languages:Object.freeze([...LANGUAGES]),storyLanguages:Object.freeze(['en','hi','or'])});
 export const INDEXED_LANGUAGES = Object.freeze(['en','hi']);
 function uniqueSupported(codes,label){
   if(!Array.isArray(codes)||!codes.length||new Set(codes).size!==codes.length||codes.some(code=>!LANGUAGES.includes(code)))throw new TypeError(`Invalid ${label}`);

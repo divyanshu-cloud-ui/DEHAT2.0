@@ -13,9 +13,9 @@ const slug=context.window.STORIES[0]?.slug;
 if(!slug)throw new Error('No published story slug for 404 probe');
 const local=await serveSiteOutput(path.resolve('.vercel/output'));
 try{
-  const url=`${local.origin}/or/stories/${slug}`;
+  const url=`${local.origin}/ar/stories/${slug}`;
   const {stdout}=await run('curl',['-i','--silent','--show-error','--max-time','10',url]);
   console.log(`$ curl -i ${url}`);
   console.log(stdout);
-  if(!/^HTTP\/1\.1 404\b/m.test(stdout)||!/^x-robots-tag: noindex\s*$/im.test(stdout)||!/<html lang="or"/.test(stdout))throw new Error('Localized 404 response is incomplete');
+  if(!/^HTTP\/1\.1 404\b/m.test(stdout)||!/^x-robots-tag: noindex\s*$/im.test(stdout)||!/<html lang="ar"/.test(stdout))throw new Error('Localized 404 response is incomplete');
 }finally{await new Promise(resolve=>local.server.close(resolve));}

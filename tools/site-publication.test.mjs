@@ -16,9 +16,9 @@ const published=router.routes.flatMap(route=>(route.id.startsWith('story/')?PUBL
 })));
 const seo={title:'Example',description:'Example description',ogImage:'/dehat-og.png'};
 
-test('wave one inventory has 713 documents and 271 indexed URLs',()=>{
+test('wave one inventory has 830 documents and 271 indexed URLs',()=>{
   assert.doesNotThrow(validatePublication);
-  assert.equal(published.length+LEGAL_ROUTES.length,713);
+  assert.equal(published.length+LEGAL_ROUTES.length,830);
   assert.equal(published.filter(route=>INDEXED_LANGUAGES.includes(route.lang)).length+LEGAL_ROUTES.length,271);
   assert.equal(new Set(published.map(route=>route.path)).size,published.length);
 });
@@ -42,9 +42,9 @@ test('nonindexed page is reachable but absent from discovery and alternates',()=
 });
 
 test('unpublished localized story returns static localized 404 after filesystem',()=>{
-  const rules=buildRoutes({mode:'production',origin:PRODUCTION_ORIGIN,redirects:[{source:'/old',destination:'/',status:301}],routes:[],publishedPaths:new Set(['/']),files:['404.html','or/404.html'],apis:[]});
+  const rules=buildRoutes({mode:'production',origin:PRODUCTION_ORIGIN,redirects:[{source:'/old',destination:'/',status:301}],routes:[],publishedPaths:new Set(['/']),files:['404.html','ar/404.html'],apis:[]});
   const filesystem=rules.findIndex(rule=>rule.handle==='filesystem');
-  const fallback=rules.findIndex(rule=>rule.src==='^/or/stories/[^/]+/?$');
+  const fallback=rules.findIndex(rule=>rule.src==='^/ar/stories/[^/]+/?$');
   assert.ok(fallback>filesystem);
-  assert.deepEqual({...rules[fallback]}, {src:'^/or/stories/[^/]+/?$',dest:'/or/404.html',status:404,headers:{'X-Robots-Tag':'noindex'}});
+  assert.deepEqual({...rules[fallback]}, {src:'^/ar/stories/[^/]+/?$',dest:'/ar/404.html',status:404,headers:{'X-Robots-Tag':'noindex'}});
 });
