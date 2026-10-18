@@ -14,11 +14,11 @@ test('deployment allowlist excludes private documents and traversal',()=>{
 test('proof bundle preserves seven handlers and webhook raw body configuration',async()=>{
   const root=await mkdtemp(path.join(tmpdir(),'dehat-package-test-'));
   try{
-    for(const dir of ['launch','_internal/qa','generated/proof'])await mkdir(path.join(root,dir),{recursive:true});
+    for(const dir of ['launch','generated/proof'])await mkdir(path.join(root,dir),{recursive:true});
     await writeFile(path.join(root,'seo-data.js'),'module.exports={en:{home:{title:"Fixture",description:"Fixture description",ogImage:"/logo.png"}}};');
     await writeFile(path.join(root,'launch/schema-fields.json'),JSON.stringify({organization:{name:'Fixture',url:'https://dehatindia.org',sameAs:['https://example.org/fixture']},website:{name:'Fixture',url:'https://dehatindia.org'},storyType:'Article'}));
     for(const name of ['llms.txt','llms-full.txt'])await writeFile(path.join(root,name),'Fixture documentation');
-    await writeFile(path.join(root,'_internal/qa/REDIRECTS_156.csv'),'source,destination,status\n/old,/impact,301');
+    await writeFile(path.join(root,'launch/redirects.csv'),'source,destination,status\n/old,/impact,301');
     await cp(new URL('../api/',import.meta.url),path.join(root,'api'),{recursive:true});
     await cp(new URL('../assets/geo/',import.meta.url),path.join(root,'assets/geo'),{recursive:true});
     await writeFile(path.join(root,'source.js'),'fixture');

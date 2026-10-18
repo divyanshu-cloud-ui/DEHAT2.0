@@ -20,7 +20,7 @@ export const LAUNCH_INPUTS = Object.freeze({
   schema: 'launch/schema-fields.json',
   llms: 'llms.txt',
   llmsFull: 'llms-full.txt',
-  redirects: '_internal/qa/REDIRECTS_156.csv',
+  redirects: 'launch/redirects.csv',
 });
 // Public Vercel Blob store that holds the published statutory PDFs (store_od8fzyXAvAci3BF9, bom1).
 export const DOCS_ORIGIN = 'https://od8fzyxavaci3bf9.public.blob.vercel-storage.com';
