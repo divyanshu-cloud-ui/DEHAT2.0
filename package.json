@@ -14,7 +14,9 @@
   },
   "devDependencies": {
     "@fontsource/noto-sans": "5.2.5",
+    "@sparticuz/chromium": "153.0.0",
     "countries-states-cities": "^1.0.6",
-    "esbuild": "0.25.0"
+    "esbuild": "0.25.0",
+    "playwright-core": "1.52.0"
   }
 }
