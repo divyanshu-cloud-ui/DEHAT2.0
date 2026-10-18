@@ -1946,7 +1946,7 @@ FIN.REVIEW = {
   intro: 'Work that has been examined by someone other than DEHAT.',
   items: [
     { title: 'Statutory Audit', by:'Madhuresh Agrahari & Associates, Chartered Accountants', when:'Every financial year', color:'#556223',
-      body:'Signed audited statements from FY2005-06 to FY2024-25, with foreign contribution accounted and audited separately from domestic funds. Each report carries the auditor\u2019s Unique Document Identification Number.' },
+      body:'Signed audited statements from FY2005-06 to FY2025-26, with foreign contribution accounted and audited separately from domestic funds. Each report carries the auditor\u2019s Unique Document Identification Number.' },
     { title: 'Swaraksha External Evaluation', by:'Shanto Baksi, independent evaluator', when:'November 2018', color:'#D2305C',
       body:'An evaluation of the anti-trafficking programme covering May 2017 to October 2018. It named DEHAT as the Bahraich partner, found a credible early journey and recommended stronger documentation, collaboration and sustainability planning.' },
     { title: 'Baal Prahari Project Assessment', by:'Phoebe Rawell for iPartner India', when:'June 2017', color:'#0E5565',
