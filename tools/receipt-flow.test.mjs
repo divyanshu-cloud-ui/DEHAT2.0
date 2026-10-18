@@ -3,11 +3,11 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import crypto from 'node:crypto';
 const require = createRequire(import.meta.url);
-const fmt = require('../api/_receipt/format.js');
-const { memoryStore, upstashStore } = require('../api/_receipt/store.js');
-const { buildReceiptPdf } = require('../api/_receipt/pdf.js');
-const { issueReceipt } = require('../api/_receipt/issue.js');
-const mail = require('../api/_receipt/mail.js');
+const fmt = require('../backend/_receipt/format.js');
+const { memoryStore, upstashStore } = require('../backend/_receipt/store.js');
+const { buildReceiptPdf } = require('../backend/_receipt/pdf.js');
+const { issueReceipt } = require('../backend/_receipt/issue.js');
+const mail = require('../backend/_receipt/mail.js');
 const { PDFDocument } = require('pdf-lib');
 
 const notes = { payment_regime: 'domestic_inr', receipt_80g: 'requested', pan: 'ABCDE1234F', donor_name: 'Test Donor', donor_email: 'test.donor@example.com', receipt_address: '12 Sample Road', donor_city: 'Sample City', donor_state: 'Uttar Pradesh', donor_postal_code: '226001', donor_country: 'India', purpose: 'Wherever It Is Needed Most', donor_lang: 'hi' };
@@ -53,19 +53,19 @@ test('upstash store uses INCR once and NX set', async () => {
   assert.equal(calls.filter(c => c === 'INCR').length, 1);
 });
 test('purpose in the PDF is English even when the donor paid from a Hindi page', async () => {
-  const { englishPurpose } = require('../api/_receipt/issue.js');
+  const { englishPurpose } = require('../backend/_receipt/issue.js');
   assert.equal(englishPurpose({ purpose: '\u0905\u092d\u0940', purpose_en: 'Wherever It Is Needed Most' }), 'Wherever It Is Needed Most');
   assert.equal(englishPurpose({ purpose: '\u0905\u092d\u0940' }), 'Wherever it is needed most');
   assert.equal(englishPurpose({ purpose: 'Girls Education' }), 'Girls Education');
 });
 test('receipt wording follows the Income-tax Act, 2025', () => {
-  const src = require('fs').readFileSync(new URL('../api/_receipt/pdf.js', import.meta.url), 'utf8');
+  const src = require('fs').readFileSync(new URL('../backend/_receipt/pdf.js', import.meta.url), 'utf8');
   assert.match(src, /section 133 of the Income-tax Act, 2025/);
   assert.match(src, /earlier section 80G/);
   assert.doesNotMatch(src, /exemption u\/s 80G/);
 });
 test('PDF names the communication address as well as the registered office', async () => {
-  const src = require('fs').readFileSync(new URL('../api/_receipt/pdf.js', import.meta.url), 'utf8');
+  const src = require('fs').readFileSync(new URL('../backend/_receipt/pdf.js', import.meta.url), 'utf8');
   assert.match(src, /Communication Address \(Head Office\)/);
   assert.match(src, /Huzoorpur Marg, Bahraich, Uttar Pradesh, PIN 271801/);
 });
@@ -116,7 +116,7 @@ test('mail failure answers 503 and the retry reuses the number', async () => {
 test('webhook: bad signature issues nothing; good one sends', async () => {
   process.env.RAZORPAY_DOMESTIC_KEY_ID = 'k'; process.env.RAZORPAY_DOMESTIC_KEY_SECRET = 's';
   process.env.RAZORPAY_DOMESTIC_WEBHOOK_SECRET = 'whsec'; process.env.RECEIPTS_ENABLED = '1';
-  const handler = require('../api/donations/webhook.js');
+  const handler = require('../backend/donations/webhook.js');
   const r = rig(); handler._deps.store = r.deps.store; handler._deps.mailer = r.deps.mailer;
   const body = JSON.stringify({ event: 'payment.captured', created_at: 1791500000, payload: { payment: { entity: pay('pay_w') } } });
   const call = async sig => { const res = { setHeader() {}, end(b) { this.body = b; } }; const req = { method: 'POST', headers: { 'x-razorpay-signature': sig }, async *[Symbol.asyncIterator]() { yield Buffer.from(body); } }; await handler(req, res); return res; };
@@ -128,7 +128,7 @@ test('webhook: bad signature issues nothing; good one sends', async () => {
 test('a monthly or yearly gift: subscription.charged issues one receipt from the subscription notes; payment.captured for it is skipped', async () => {
   process.env.RAZORPAY_DOMESTIC_KEY_ID = 'k'; process.env.RAZORPAY_DOMESTIC_KEY_SECRET = 's';
   process.env.RAZORPAY_DOMESTIC_WEBHOOK_SECRET = 'whsec'; process.env.RECEIPTS_ENABLED = '1';
-  const handler = require('../api/donations/webhook.js');
+  const handler = require('../backend/donations/webhook.js');
   const r = rig(); handler._deps.store = r.deps.store; handler._deps.mailer = r.deps.mailer;
   const recurringPayment = { ...pay('pay_sub1'), notes: [], order_id: 'order_x', invoice_id: 'inv_1' };
   const send = async body => { const raw = JSON.stringify(body); const sig = crypto.createHmac('sha256', 'whsec').update(raw).digest('hex'); const res = { setHeader() {}, end(b) { this.body = b; } }; await handler({ method: 'POST', headers: { 'x-razorpay-signature': sig }, async *[Symbol.asyncIterator]() { yield Buffer.from(raw); } }, res); return res; };

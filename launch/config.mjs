@@ -28,13 +28,13 @@ export const LEGAL_PATHS = Object.freeze([
   '/privacy-policy/', '/refund-policy/', '/terms-and-conditions/',
 ]);
 export const API_ENDPOINTS = Object.freeze([
-  { path: '/api/donations/create-order', source: 'api/donations/create-order.js', helper: 'api/_razorpay.js', method: 'POST', bundle: true },
-  { path: '/api/donations/create-subscription', source: 'api/donations/create-subscription.js', helper: 'api/_razorpay.js', method: 'POST', bundle: true },
-  { path: '/api/donations/verify', source: 'api/donations/verify.js', helper: 'api/_razorpay.js', method: 'POST', bundle: true },
-  { path: '/api/donations/webhook', source: 'api/donations/webhook.js', helper: 'api/_razorpay.js', method: 'POST', rawBody: true, bundle: true },
-  { path: '/api/donations/status', source: 'api/donations/status.js', helper: 'api/_razorpay.js', method: 'GET', bundle: true },
-  { path: '/api/donations/upi-intent', source: 'api/donations/upi-intent.js', helper: 'api/_razorpay.js', method: 'POST', bundle: true },
-  { path: '/api/donations/upi-reconcile', source: 'api/donations/upi-reconcile.js', helper: 'api/_razorpay.js', method: 'POST', bundle: true },
+  { path: '/api/donations/create-order', source: 'backend/donations/create-order.js', handler: 'api/donations/create-order.js', helper: 'backend/_razorpay.js', method: 'POST', bundle: true },
+  { path: '/api/donations/create-subscription', source: 'backend/donations/create-subscription.js', handler: 'api/donations/create-subscription.js', helper: 'backend/_razorpay.js', method: 'POST', bundle: true },
+  { path: '/api/donations/verify', source: 'backend/donations/verify.js', handler: 'api/donations/verify.js', helper: 'backend/_razorpay.js', method: 'POST', bundle: true },
+  { path: '/api/donations/webhook', source: 'backend/donations/webhook.js', handler: 'api/donations/webhook.js', helper: 'backend/_razorpay.js', method: 'POST', rawBody: true, bundle: true },
+  { path: '/api/donations/status', source: 'backend/donations/status.js', handler: 'api/donations/status.js', helper: 'backend/_razorpay.js', method: 'GET', bundle: true },
+  { path: '/api/donations/upi-intent', source: 'backend/donations/upi-intent.js', handler: 'api/donations/upi-intent.js', helper: 'backend/_razorpay.js', method: 'POST', bundle: true },
+  { path: '/api/donations/upi-reconcile', source: 'backend/donations/upi-reconcile.js', handler: 'api/donations/upi-reconcile.js', helper: 'backend/_razorpay.js', method: 'POST', bundle: true },
 ].map(Object.freeze));
 
 // Explicit discovery files for the limited preview. No guessed .well-known payloads.

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { runPreflight } from './preflight-live.mjs';
 const require = createRequire(import.meta.url);
-const status = require('../api/donations/status.js');
+const status = require('../backend/donations/status.js');
 
 const run = async (env, method = 'GET') => {
   const keep = { ...process.env };

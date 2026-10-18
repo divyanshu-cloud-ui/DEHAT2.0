@@ -9,7 +9,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
-const { codeIn } = require('../api/_upi.js');
+const { codeIn } = require('../backend/_upi.js');
 
 // RFC 4180 CSV (quotes, commas and newlines inside quotes).
 export function parseCsv(text) {

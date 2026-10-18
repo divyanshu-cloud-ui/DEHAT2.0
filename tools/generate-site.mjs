@@ -172,12 +172,12 @@ try{
   }
   for(const endpoint of API_ENDPOINTS){
     const functionRoot=path.join(stage,'functions',endpoint.path.slice(1)+'.func');
-    if(endpoint.bundle)await bundleFunction({root,source:endpoint.source,outfile:path.join(functionRoot,endpoint.source)});
-    else for(const source of [endpoint.source,endpoint.helper]){
-      const destination=path.join(functionRoot,source);
-      await mkdir(path.dirname(destination),{recursive:true});await copyFile(source,destination);
+    if(endpoint.bundle)await bundleFunction({root,source:endpoint.source,outfile:path.join(functionRoot,endpoint.handler)});
+    else for(const [source,destination] of [[endpoint.source,endpoint.handler],[endpoint.helper,path.join(path.dirname(endpoint.handler),'..',path.basename(endpoint.helper))]]){
+      const target=path.join(functionRoot,destination);
+      await mkdir(path.dirname(target),{recursive:true});await copyFile(source,target);
     }
-    await writeFile(path.join(functionRoot,'.vc-config.json'),JSON.stringify({runtime:NODE_RUNTIME,handler:endpoint.source,launcherType:'Nodejs',shouldAddHelpers:!endpoint.rawBody},null,2));
+    await writeFile(path.join(functionRoot,'.vc-config.json'),JSON.stringify({runtime:NODE_RUNTIME,handler:endpoint.handler,launcherType:'Nodejs',shouldAddHelpers:!endpoint.rawBody},null,2));
   }
   const publishedPaths=new Set([...routes.map(route=>route.path),...files.map(file=>'/'+file.path),...API_ENDPOINTS.map(endpoint=>endpoint.path)]);
   const missingRedirects=input.redirects.filter(row=>row.status===301&&row.destination.startsWith('/')&&!publishedPaths.has(new URL(row.destination,PRODUCTION_ORIGIN).pathname));

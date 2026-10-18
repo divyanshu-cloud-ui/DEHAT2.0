@@ -7,9 +7,9 @@ const require = createRequire(import.meta.url);
 process.env.RAZORPAY_DOMESTIC_KEY_ID = 'rzp_test_unit';
 process.env.RAZORPAY_DOMESTIC_KEY_SECRET = 'unit-test-secret';
 const https = require('https');
-const z = require('../api/_razorpay.js');
-const createOrder = require('../api/donations/create-order.js');
-const verify = require('../api/donations/verify.js');
+const z = require('../backend/_razorpay.js');
+const createOrder = require('../backend/donations/create-order.js');
+const verify = require('../backend/donations/verify.js');
 
 const realRequest = https.request;
 function mockRazorpay(route) {
@@ -90,7 +90,7 @@ test('create-order refuses blank or wrong donor details and never calls Razorpay
 });
 
 test('create-order accepts a large one-time gift, create-subscription refuses a recurring gift over the mandate limit', async () => {
-  const createSub = require('../api/donations/create-subscription.js');
+  const createSub = require('../backend/donations/create-subscription.js');
   const calls = mockRazorpay((m, p) => ({ status: 200, body: { id: p.includes('plans') ? 'plan_A' : (p.includes('subscriptions') ? 'sub_A' : 'order_A') } }));
   try {
     assert.equal((await call(createOrder, { ...DONOR, amount: 200000 })).status, 200);

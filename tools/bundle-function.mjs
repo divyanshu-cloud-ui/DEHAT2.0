@@ -1,5 +1,5 @@
 // Bundles one API function and its dependencies into a single CommonJS file for the Build Output API.
-// Static receipt files (fonts, images, translated mail text) are inlined from api/_receipt/assets.js.
+// Static receipt files (fonts, images, translated mail text) are inlined from backend/_receipt/assets.js.
 import { build } from 'esbuild';
 import { createRequire } from 'node:module';
 import path from 'node:path';
@@ -10,11 +10,11 @@ const TOOL_MODULES = path.join(path.dirname(fileURLToPath(import.meta.url)), '..
 
 export async function bundleFunction({ root, source, outfile }) {
   const require = createRequire(path.join(root, 'package.json'));
-  const assetsPath = path.join(root, 'api/_receipt/assets.js');
+  const assetsPath = path.join(root, 'backend/_receipt/assets.js');
   const inlineAssets = {
     name: 'inline-receipt-assets',
     setup(b) {
-      b.onLoad({ filter: /api[\\/]_receipt[\\/]assets\.js$/ }, () => {
+      b.onLoad({ filter: /backend[\\/]_receipt[\\/]assets\.js$/ }, () => {
         const real = require(assetsPath);
         const lines = Object.entries(real).map(([k, v]) => Buffer.isBuffer(v) ? `${k}: Buffer.from(${JSON.stringify(v.toString('base64'))}, 'base64')` : `${k}: ${JSON.stringify(v)}`);
         return { contents: `module.exports = { ${lines.join(',\n')} };`, loader: 'js' };

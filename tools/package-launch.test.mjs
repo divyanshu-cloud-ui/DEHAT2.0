@@ -19,7 +19,7 @@ test('proof bundle preserves seven handlers and webhook raw body configuration',
     await writeFile(path.join(root,'launch/schema-fields.json'),JSON.stringify({organization:{name:'Fixture',url:'https://dehatindia.org',sameAs:['https://example.org/fixture']},website:{name:'Fixture',url:'https://dehatindia.org'},storyType:'Article'}));
     for(const name of ['llms.txt','llms-full.txt'])await writeFile(path.join(root,name),'Fixture documentation');
     await writeFile(path.join(root,'launch/redirects.csv'),'source,destination,status\n/old,/impact,301');
-    await cp(new URL('../api/',import.meta.url),path.join(root,'api'),{recursive:true});
+    await cp(new URL('../backend/',import.meta.url),path.join(root,'backend'),{recursive:true});
     await cp(new URL('../assets/geo/',import.meta.url),path.join(root,'assets/geo'),{recursive:true});
     await writeFile(path.join(root,'source.js'),'fixture');
     const html='<main>Fixture</main>';await writeFile(path.join(root,'generated/proof/index.html'),html);
@@ -30,8 +30,8 @@ test('proof bundle preserves seven handlers and webhook raw body configuration',
       const dir=path.join(root,'.vercel/output/functions',endpoint.path.slice(1)+'.func');
       const config=JSON.parse(await readFile(path.join(dir,'.vc-config.json')));
       assert.equal(config.shouldAddHelpers,!endpoint.rawBody);
-      if(!endpoint.bundle)assert.equal(await readFile(path.join(dir,endpoint.source),'utf8'),await readFile(path.join(root,endpoint.source),'utf8'));
-      const handler=createRequire(import.meta.url)(path.join(dir,endpoint.source));
+      if(!endpoint.bundle)assert.equal(await readFile(path.join(dir,endpoint.handler),'utf8'),await readFile(path.join(root,endpoint.source),'utf8'));
+      const handler=createRequire(import.meta.url)(path.join(dir,endpoint.handler));
       const res={setHeader(){},end(body){this.body=body;}};
       await handler({method:'DELETE'},res);assert.equal(res.statusCode,405,endpoint.path);
     }

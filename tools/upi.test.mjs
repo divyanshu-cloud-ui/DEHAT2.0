@@ -5,10 +5,10 @@ import { deflateRawSync } from 'node:zlib';
 import { parseCsv, findColumns, extractCredits, toPaise, istDate } from './upi-reconcile.mjs';
 import { xlsxRows } from './xlsx-rows.mjs';
 const require = createRequire(import.meta.url);
-const { codeIn, isCode, makeCode, upiUri, UPI_MAX_PAISE } = require('../api/_upi.js');
-const { memoryKv } = require('../api/_kv.js');
-const intent = require('../api/donations/upi-intent.js');
-const reconcile = require('../api/donations/upi-reconcile.js');
+const { codeIn, isCode, makeCode, upiUri, UPI_MAX_PAISE } = require('../backend/_upi.js');
+const { memoryKv } = require('../backend/_kv.js');
+const intent = require('../backend/donations/upi-intent.js');
+const reconcile = require('../backend/donations/upi-reconcile.js');
 
 function res() { const r = { statusCode: 0, headers: {}, body: '', setHeader(k, v) { this.headers[k] = v; }, end(b) { this.body = b; } }; return r; }
 const donor = { regime: 'domestic_inr', frequency: 'once', amount: 500, purpose: 'Wherever It Is Needed Most', purposeEn: 'Wherever It Is Needed Most', receipt80G: true, pan: 'AAAPV1234K',

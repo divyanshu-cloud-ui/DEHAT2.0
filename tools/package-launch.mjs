@@ -64,9 +64,9 @@ export async function packageLaunch({root=process.cwd(),generated=path.join(root
     for(const [name,text] of [['llms.txt',inputs.llms],['llms-full.txt',inputs.llmsFull]])await writeFile(path.join(staging,'static',name),text);
     for(const endpoint of API_ENDPOINTS){
       const functionRoot=path.join(staging,'functions',endpoint.path.slice(1)+'.func');
-      if(endpoint.bundle)await bundleFunction({root,source:endpoint.source,outfile:path.join(functionRoot,endpoint.source)});
-      else for(const source of [endpoint.source,endpoint.helper])await copy(path.join(root,source),path.join(functionRoot,source));
-      await writeFile(path.join(functionRoot,'.vc-config.json'),JSON.stringify({runtime:NODE_RUNTIME,handler:endpoint.source,launcherType:'Nodejs',shouldAddHelpers:!endpoint.rawBody},null,2));
+      if(endpoint.bundle)await bundleFunction({root,source:endpoint.source,outfile:path.join(functionRoot,endpoint.handler)});
+      else for(const [source,destination] of [[endpoint.source,endpoint.handler],[endpoint.helper,path.join(path.dirname(endpoint.handler),'..',path.basename(endpoint.helper))]])await copy(path.join(root,source),path.join(functionRoot,destination));
+      await writeFile(path.join(functionRoot,'.vc-config.json'),JSON.stringify({runtime:NODE_RUNTIME,handler:endpoint.handler,launcherType:'Nodejs',shouldAddHelpers:!endpoint.rawBody},null,2));
     }
     const published=new Set([...manifest.routes.map(r=>r.path),...manifest.files.map(f=>'/'+f.path),...(manifest.publicFiles||[]).map(f=>'/'+f.destination),'/llms.txt','/llms-full.txt',...API_ENDPOINTS.map(e=>e.path)]);
     const omitted=omittedRedirects({mode:'preview',redirects:inputs.redirects,publishedPaths:published});
