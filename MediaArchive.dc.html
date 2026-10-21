@@ -66,6 +66,13 @@
     </div>
 
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 0 0">
+      <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--faint,#8a7c6c);margin-inline-end:2px">Source</span>
+      <sc-for list="{{ sources }}" as="s" hint-placeholder-count="3">
+        <button class="m-source m-hit" onClick="{{ s.pick }}" style="padding:8px 16px;border-radius:999px;border:1px solid {{ s.ring }};background:{{ s.bg }};color:{{ s.fg }};font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">{{ s.label }}</button>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 0 0">
       <button class="m-refine m-hit" onClick="{{ toggleFilters }}" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid {{ filtersRing }};background:{{ filtersBg }};color:{{ filtersFg }};font-size:13px;font-weight:700;font-family:inherit;cursor:pointer">Refine{{ activeLabel }}<span style="opacity:.6">{{ caret }}</span></button>
       <sc-if value="{{ anyActive }}" hint-placeholder-val="{{ false }}">
         <button class="m-reset m-hit" onClick="{{ reset }}" style="padding:9px 14px;border-radius:999px;border:none;background:none;color:var(--faint,#8a7c6c);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:underline">Clear all</button>
@@ -113,7 +120,7 @@
           </a>
           <div style="padding:0 18px 14px;display:flex;flex-wrap:wrap;gap:6px">
             <sc-for list="{{ it.tags }}" as="tg" hint-placeholder-count="2">
-              <span style="font-size:11px;font-weight:600;padding:4px 9px;border-radius:999px;background:var(--surface2,#f4efe4);color:var(--dim,#5a4f43)">{{ tg.v }}</span>
+              <span style="font-size:11px;font-weight:600;padding:4px 9px;border-radius:999px;background:{{ tg.bg }};color:{{ tg.fg }}">{{ tg.v }}</span>
             </sc-for>
           </div>
           <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px 11px 18px;border-top:1px solid var(--border,rgba(31,23,16,.09))">
@@ -143,7 +150,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { fOpen: false, q: '', scope: 'All', mdg: 'All', year: 'All', pub: 'All', lang: 'All', dist: 'All', sdg: 'All', csr: 'All', cr: 'All', sort: 'new', stats: {} };
+  state = { fOpen: false, q: '', scope: 'All', src: 'All', mdg: 'All', year: 'All', pub: 'All', lang: 'All', dist: 'All', sdg: 'All', csr: 'All', cr: 'All', sort: 'new', stats: {} };
 
   componentDidMount() {
     try { this.setState({ stats: JSON.parse(localStorage.getItem('dehat_media_stats') || '{}') }); } catch (e) {}
@@ -184,20 +191,26 @@ class Component extends DCLogic {
     const years = uniq(ALL.map(i => i.y)).map(String).reverse();
     const pubs = uniq(ALL.map(i => i.pub));
     const langs = uniq(ALL.map(i => i.lang));
-    const csrs = uniq(ALL.flatMap(i => i.csr));
-    const crs = uniq(ALL.flatMap(i => i.cr));
+    const csrs = uniq(ALL.flatMap(i => i.csr || []));
+    const crs = uniq(ALL.flatMap(i => i.cr || []));
     const goals = uniq(ALL.flatMap(i => (i.sdg || []).concat(i.mdg || [])));
+    // Who published it. Independent is the default; Partner / network marks coverage published by an
+    // organisation DEHAT works with or belongs to (funders, partners, coalitions).
+    const srcOf = (i) => i.src || 'Independent';
+    const nIndep = ALL.filter(i => srcOf(i) === 'Independent').length;
+    const nPartner = ALL.length - nIndep;
 
     const q = S.q.trim().toLowerCase();
     let list = ALL.filter(i =>
       (S.scope === 'All' || i.scope === S.scope) &&
+      (S.src === 'All' || srcOf(i) === S.src) &&
       (S.year === 'All' || String(i.y) === S.year) &&
       (S.pub === 'All' || i.pub === S.pub) &&
       (S.lang === 'All' || i.lang === S.lang) &&
-      (S.sdg === 'All' || i.sdg.indexOf(S.sdg) > -1 || (i.mdg || []).indexOf(S.sdg) > -1) &&
-      (S.csr === 'All' || i.csr.indexOf(S.csr) > -1) &&
-      (S.cr === 'All' || i.cr.indexOf(S.cr) > -1) &&
-      (!q || (i.t + ' ' + i.pub + ' ' + i.dist).toLowerCase().indexOf(q) > -1)
+      (S.sdg === 'All' || (i.sdg || []).indexOf(S.sdg) > -1 || (i.mdg || []).indexOf(S.sdg) > -1) &&
+      (S.csr === 'All' || (i.csr || []).indexOf(S.csr) > -1) &&
+      (S.cr === 'All' || (i.cr || []).indexOf(S.cr) > -1) &&
+      (!q || (i.t + ' ' + i.pub + ' ' + i.dist + ' ' + (i.who || []).join(' ')).toLowerCase().indexOf(q) > -1)
     );
     const ord = (a, b) => (a.y - b.y) || (Date.parse(a.d) - Date.parse(b.d) || 0);
     list = list.slice().sort((a, b) => S.sort === 'new' ? -ord(a, b) : ord(a, b));
@@ -215,6 +228,13 @@ class Component extends DCLogic {
       ring: S.scope === v ? 'var(--ac-teal,#0E5565)' : 'var(--border,rgba(31,23,16,.14))'
     });
 
+    const srcBtn = (v, label) => ({
+      k: v, label, pick: () => this.setState({ src: v }),
+      bg: S.src === v ? 'var(--ac-olive,#556223)' : 'transparent',
+      fg: S.src === v ? 'var(--bg,#fff)' : 'var(--dim,#5a4f43)',
+      ring: S.src === v ? 'var(--ac-olive,#556223)' : 'var(--border,rgba(31,23,16,.14))'
+    });
+
     const items = list.map((i) => {
       const id = i.u;
       const st = S.stats[id] || { v: 0, l: 0 };
@@ -229,7 +249,11 @@ class Component extends DCLogic {
         k: id + i.d, u: i.u, t: i.t, y: i.y, pub: i.pub, lang: i.lang, type: i.type,
         meta: i.d + '  ·  ' + i.scope + '  ·  ' + i.dist,
         tint, ink,
-        tags: [{ k: 'a', v: i.sdg[0] }, { k: 'b', v: 'Corporate Social Responsibility ' + i.csr[0] }, { k: 'c', v: 'Child right: ' + i.cr[0] }],
+        tags: [{ k: 's', v: srcOf(i) === 'Independent' ? 'Independent press' : 'Partner / network', bg: srcOf(i) === 'Independent' ? 'var(--surface2,#f4efe4)' : 'color-mix(in srgb, var(--ac-olive,#556223) 18%, var(--surface,#fff))', fg: srcOf(i) === 'Independent' ? 'var(--dim,#5a4f43)' : 'var(--ac-olive,#556223)' }]
+          .concat((i.who || []).slice(0, 2).map((w, n) => ({ k: 'w' + n, v: w, bg: 'color-mix(in srgb, var(--ac-teal,#0E5565) 14%, var(--surface,#fff))', fg: 'var(--ac-teal,#0E5565)' })))
+          .concat((i.sdg && i.sdg[0]) ? [{ k: 'a', v: i.sdg[0], bg: 'var(--surface2,#f4efe4)', fg: 'var(--dim,#5a4f43)' }] : [])
+          .concat((i.csr && i.csr[0]) ? [{ k: 'b', v: 'Corporate Social Responsibility ' + i.csr[0], bg: 'var(--surface2,#f4efe4)', fg: 'var(--dim,#5a4f43)' }] : [])
+          .concat((i.cr && i.cr[0]) ? [{ k: 'c', v: 'Child right: ' + i.cr[0], bg: 'var(--surface2,#f4efe4)', fg: 'var(--dim,#5a4f43)' }] : []),
         likes: st.l || 0, views: st.v || 0,
         archive, primary: retired ? archive : i.u,
         linkLabel: retired ? 'Archived \u2192' : 'Read \u2192',
@@ -245,9 +269,10 @@ class Component extends DCLogic {
     const nActive = ['year','pub','lang','dist','sdg','csr','cr'].filter(k => S[k] && S[k] !== 'All').length;
 
     return {
-      blurb: 'Every headline, research report and blog recorded in DEHAT\u2019s press compendium, filterable by reach, publisher, year, development goal - Millennium before 2016, Sustainable after - Corporate Social Responsibility Schedule VII head and child rights.',
+      blurb: 'Press, research and video about DEHAT, its founder Dr Jitendra Chaturvedi and Executive Director Devyani Chaturvedi, from independent publishers and from the partners and networks DEHAT works with. Filter by source, reach, publisher, year, development goal, Corporate Social Responsibility Schedule VII head and child rights.',
       total: ALL.length, pubCount: pubs.length, span: ALL.length ? (Math.min.apply(null, ALL.map(i => i.y)) + '\u2013' + Math.max.apply(null, ALL.map(i => i.y))) : '',
       scopes: [scopeBtn('All', 'All Coverage'), scopeBtn('National', 'National'), scopeBtn('International', 'International')],
+      sources: [srcBtn('All', 'All sources'), srcBtn('Independent', 'Independent press \u00b7 ' + nIndep), srcBtn('Partner / network', 'Partners & networks \u00b7 ' + nPartner)],
       q: S.q, onQ: (e) => this.setState({ q: e.target.value }),
       selects: [
         mkSel('year', 'Year', years, 'All Years'),
@@ -267,12 +292,12 @@ class Component extends DCLogic {
       filtersPad: S.fOpen ? '14px 0 18px' : '0px',
       caret: S.fOpen ? '▲' : '▼',
       activeLabel: nActive ? ' · ' + nActive : '',
-      anyActive: nActive > 0 || S.q !== '' || S.scope !== 'All',
+      anyActive: nActive > 0 || S.q !== '' || S.scope !== 'All' || S.src !== 'All',
       filtersBg: S.fOpen || nActive ? 'var(--surface2,rgba(31,23,16,.05))' : 'transparent',
       filtersRing: S.fOpen || nActive ? 'var(--dim,#5a4f43)' : 'var(--border,rgba(31,23,16,.14))',
       filtersFg: 'var(--text,#1f1710)',
-      reset: () => this.setState({ fOpen: false, mdg: 'All', q: '', scope: 'All', year: 'All', pub: 'All', lang: 'All', sdg: 'All', csr: 'All', cr: 'All' }),
-      note: 'Headlines, links, publishers, languages and dates are reproduced from the DEHAT press compendium, plus items found in a 2026 search pass. Development goal, Corporate Social Responsibility Schedule VII and child-rights tags are editorial classifications. Every item carries a Wayback Machine copy alongside the publisher link, so no entry is a dead end; where a URL uses a retired shortener, epaper image or old CMS path, the archived copy is offered first. Likes and views are counted in this browser only - shared totals across visitors need a server.'
+      reset: () => this.setState({ fOpen: false, mdg: 'All', q: '', scope: 'All', src: 'All', year: 'All', pub: 'All', lang: 'All', sdg: 'All', csr: 'All', cr: 'All' }),
+      note: 'Headlines, links, publishers, languages and dates are reproduced from the DEHAT press compendium, plus items found in a 2026 search pass. Development goal, Corporate Social Responsibility Schedule VII and child-rights tags are editorial classifications. Every card also links to the Wayback Machine, which opens a saved copy where one exists; where a URL uses a retired shortener, epaper image or old CMS path, the archived copy is offered first. Items from partners and networks are published by an organisation DEHAT works with or belongs to, so they are listed separately from independent press. Items added in 2026 do not yet carry development goal, Schedule VII or child-rights tags. Likes and views are counted in this browser only - shared totals across visitors need a server.'
     };
   }
 }
