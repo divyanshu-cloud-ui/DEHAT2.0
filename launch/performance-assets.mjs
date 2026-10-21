@@ -17,6 +17,8 @@ export function resourceHints(lang) {
     ['modulepreload', '/launch/partner-tabs.mjs'],
     ['preload', '/assets/fonts/web/font-11-c1b6da516e0062e9.woff2', 'font'],
     ['preload', '/assets/fonts/web/font-02-85f55a58a31e61a2.woff2', 'font'],
+    // Latin-ext Bricolage carries the rupee sign used in the first-screen figures; without this it starts ~1 s after first paint and the headline text reflows.
+    ['preload', '/assets/fonts/web/font-01-1d04719f1325400e.woff2', 'font'],
   ];
   if (lang && lang !== 'en') {
     links.push(['preload', `/content-i18n/${lang}.js`, 'script']);
