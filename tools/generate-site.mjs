@@ -75,7 +75,9 @@ async function cssOutsideHtml(html){
   let head=html.slice(0,split);
   for(const match of [...head.matchAll(/<style(?:\s[^>]*)?>([\s\S]*?)<\/style>/g)]){
     if(match[0].includes('data-early-consent-style'))continue;
-    const css=match[1];
+    // The stylesheet moves to /launch/css/, so page-relative ./assets/ URLs must become root-relative
+    // (they resolved to /launch/css/assets/... and 404ed, leaving each font to load a second time).
+    const css=match[1].replace(/url\((['"]?)\.\/assets\//g,'url($1/assets/');
     if(!css.trim())continue;
     const name=`launch/css/${digest(css).slice(0,16)}.css`;
     if(!cssFiles.has(name)){cssFiles.set(name,css);await emit(name,css);}
