@@ -21,6 +21,9 @@ const location = destination => ({Location:destination});
 const exact = value => '^'+escapePattern(value)+'$';
 const cache = (src,value,other={}) => ({src,headers:{'Cache-Control':value,...other},continue:true});
 const revalidate='public, max-age=0, must-revalidate';
+// no-transform: Cloudflare must not rewrite HTML or the runtime template (its Email Obfuscation
+// turned joinus@ into "[email protected]" for crawlers and for the live app's own template).
+const document='public, max-age=0, must-revalidate, no-transform';
 const shortStatic='public, max-age=14400, must-revalidate';
 const immutable='public, max-age=31536000, immutable';
 const media='public, max-age=86400, stale-while-revalidate=604800';
@@ -59,13 +62,13 @@ export function buildRoutes({mode,origin,redirects,routes,publishedPaths,files,a
   output.push(cache('^/assets/docs/manifest\\.json$','public, max-age=300, stale-while-revalidate=3600',{'Content-Type':'application/json; charset=utf-8'}));
   output.push({src:'^/assets/docs/(.+)$',dest:DOCS_ORIGIN+'/docs/$1'});
   output.push(cache('^/dehat-[^/]*\\.png$',media));
-  output.push(cache('^/(?!api/|assets/)(?:$|[^.]*|.*\\.html)$',revalidate));
+  output.push(cache('^/(?!api/|assets/)(?:$|[^.]*|.*\\.html)$',document));
   output.push(cache('^/[^/]*-data\\.js$',shortStatic));
   output.push(cache('^/support\\.js$',shortStatic));
   output.push(cache('^/content-i18n/.*$',shortStatic));
   output.push(cache('^/district-i18n/.*$',shortStatic));
   output.push(cache('^/media-i18n/.*$',shortStatic));
-  output.push(cache('^/launch/.*$',revalidate));
+  output.push(cache('^/launch/.*$',document));
   output.push(cache('^/launch/css/[a-f0-9]{16}\\.css$',immutable));
   output.push(cache('^/launch/dict/[a-z]{2,3}-[a-f0-9]{16}\\.js$',immutable));
   output.push(cache('^/sitemap(?:_index)?\\.xml$',revalidate,{'Content-Type':'application/xml; charset=utf-8'}));

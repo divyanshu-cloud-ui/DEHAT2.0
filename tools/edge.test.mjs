@@ -73,8 +73,8 @@ test('fingerprinted static files have immutable cache while HTML and unversioned
  const rules=buildRoutes({...inputs,mode:'preview'});
  const policy=path=>matching(rules,path).filter(r=>r.headers?.['Cache-Control']).at(-1)?.headers['Cache-Control'];
  const immutable='public, max-age=31536000, immutable';
- assert.equal(policy('/'),'public, max-age=0, must-revalidate');
- assert.equal(policy('/launch/runtime-template.html'),'public, max-age=0, must-revalidate');
+ assert.equal(policy('/'),'public, max-age=0, must-revalidate, no-transform');
+ assert.equal(policy('/launch/runtime-template.html'),'public, max-age=0, must-revalidate, no-transform');
  assert.equal(policy('/support.js'),'public, max-age=14400, must-revalidate');
  assert.equal(policy('/content-i18n/hi.js'),'public, max-age=14400, must-revalidate');
  assert.equal(policy('/district-i18n/hi.js'),'public, max-age=14400, must-revalidate');
