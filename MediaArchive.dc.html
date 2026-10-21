@@ -66,13 +66,6 @@
     </div>
 
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 0 0">
-      <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--faint,#8a7c6c);margin-inline-end:2px">Source</span>
-      <sc-for list="{{ sources }}" as="s" hint-placeholder-count="3">
-        <button class="m-source m-hit" onClick="{{ s.pick }}" style="padding:8px 16px;border-radius:999px;border:1px solid {{ s.ring }};background:{{ s.bg }};color:{{ s.fg }};font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">{{ s.label }}</button>
-      </sc-for>
-    </div>
-
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 0 0">
       <button class="m-refine m-hit" onClick="{{ toggleFilters }}" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid {{ filtersRing }};background:{{ filtersBg }};color:{{ filtersFg }};font-size:13px;font-weight:700;font-family:inherit;cursor:pointer">Refine{{ activeLabel }}<span style="opacity:.6">{{ caret }}</span></button>
       <sc-if value="{{ anyActive }}" hint-placeholder-val="{{ false }}">
         <button class="m-reset m-hit" onClick="{{ reset }}" style="padding:9px 14px;border-radius:999px;border:none;background:none;color:var(--faint,#8a7c6c);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:underline">Clear all</button>
@@ -228,13 +221,6 @@ class Component extends DCLogic {
       ring: S.scope === v ? 'var(--ac-teal,#0E5565)' : 'var(--border,rgba(31,23,16,.14))'
     });
 
-    const srcBtn = (v, label) => ({
-      k: v, label, pick: () => this.setState({ src: v }),
-      bg: S.src === v ? 'var(--ac-olive,#556223)' : 'transparent',
-      fg: S.src === v ? 'var(--bg,#fff)' : 'var(--dim,#5a4f43)',
-      ring: S.src === v ? 'var(--ac-olive,#556223)' : 'var(--border,rgba(31,23,16,.14))'
-    });
-
     const items = list.map((i) => {
       const id = i.u;
       const st = S.stats[id] || { v: 0, l: 0 };
@@ -266,15 +252,15 @@ class Component extends DCLogic {
       };
     });
 
-    const nActive = ['year','pub','lang','dist','sdg','csr','cr'].filter(k => S[k] && S[k] !== 'All').length;
+    const nActive = ['src','year','pub','lang','dist','sdg','csr','cr'].filter(k => S[k] && S[k] !== 'All').length;
 
     return {
       blurb: 'Press, research and video about DEHAT, its founder Dr Jitendra Chaturvedi and Executive Director Devyani Chaturvedi, from independent publishers and from the partners and networks DEHAT works with. Filter by source, reach, publisher, year, development goal, Corporate Social Responsibility Schedule VII head and child rights.',
       total: ALL.length, pubCount: pubs.length, span: ALL.length ? (Math.min.apply(null, ALL.map(i => i.y)) + '\u2013' + Math.max.apply(null, ALL.map(i => i.y))) : '',
       scopes: [scopeBtn('All', 'All Coverage'), scopeBtn('National', 'National'), scopeBtn('International', 'International')],
-      sources: [srcBtn('All', 'All sources'), srcBtn('Independent', 'Independent Press \u00b7 ' + nIndep), srcBtn('Partner / network', 'Partners and Networks \u00b7 ' + nPartner)],
       q: S.q, onQ: (e) => this.setState({ q: e.target.value }),
       selects: [
+        { k: 'src', label: 'Source', value: S.src, options: [{ v: 'All', label: 'All Sources' }, { v: 'Independent', label: 'Independent Press \u00b7 ' + nIndep }, { v: 'Partner / network', label: 'Partners and Networks \u00b7 ' + nPartner }], onChange: (e) => this.setState({ src: e.target.value }) },
         mkSel('year', 'Year', years, 'All Years'),
         mkSel('pub', 'Publisher', pubs, 'All Publishers'),
         mkSel('lang', 'Language', langs, 'All Languages'),
@@ -292,7 +278,7 @@ class Component extends DCLogic {
       filtersPad: S.fOpen ? '14px 0 18px' : '0px',
       caret: S.fOpen ? '▲' : '▼',
       activeLabel: nActive ? ' · ' + nActive : '',
-      anyActive: nActive > 0 || S.q !== '' || S.scope !== 'All' || S.src !== 'All',
+      anyActive: nActive > 0 || S.q !== '' || S.scope !== 'All',
       filtersBg: S.fOpen || nActive ? 'var(--surface2,rgba(31,23,16,.05))' : 'transparent',
       filtersRing: S.fOpen || nActive ? 'var(--dim,#5a4f43)' : 'var(--border,rgba(31,23,16,.14))',
       filtersFg: 'var(--text,#1f1710)',
