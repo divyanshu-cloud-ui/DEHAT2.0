@@ -22,6 +22,7 @@ export function publicAsset(value) {
     /^assets\/fonts\/web\/font-\d{2}-[a-f0-9]{16}\.woff2$/.test(value)||
     /^content-i18n\/[a-z]{2,3}\.js$/.test(value)||
     /^district-i18n\/[a-z]{2,3}\.js$/.test(value)||
+    /^media-i18n\/[a-z]{2,3}\.js$/.test(value)||
     /^assets\/geo\/(?:geo\.v1\.json|in-districts\.v1\.json|in-pins\.v1\.json|validate\.mjs|NOTICE\.txt)$/.test(value)||
     /^dehat-[\w-]+\.(?:png|webp)$/.test(value)||
     value==='favicon.ico'||

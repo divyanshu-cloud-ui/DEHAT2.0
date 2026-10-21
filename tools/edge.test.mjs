@@ -78,6 +78,7 @@ test('fingerprinted static files have immutable cache while HTML and unversioned
  assert.equal(policy('/support.js'),'public, max-age=14400, must-revalidate');
  assert.equal(policy('/content-i18n/hi.js'),'public, max-age=14400, must-revalidate');
  assert.equal(policy('/district-i18n/hi.js'),'public, max-age=14400, must-revalidate');
+ assert.equal(policy('/media-i18n/hi.js'),'public, max-age=14400, must-revalidate');
  assert.equal(policy('/launch/css/0123456789abcdef.css'),immutable);
  assert.equal(policy('/launch/dict/hi-0123456789abcdef.js'),immutable);
  assert.equal(policy('/assets/vendor/react-0123456789abcdef.js'),immutable);
