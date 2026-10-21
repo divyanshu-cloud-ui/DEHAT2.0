@@ -302,6 +302,7 @@
   .subnav-jump{display:none;width:100%;align-items:center;justify-content:space-between;gap:12px;min-height:46px;padding:0 16px;background:none;border:none;cursor:pointer;font:inherit;color:var(--text);text-align:start}
   .sj-l{display:flex;align-items:center;gap:10px;min-width:0}.sj-bar{width:3px;align-self:stretch;margin:12px 0;border-radius:2px;background:var(--ac-crimson)}.sj-t{font-size:14px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sj-r{flex:none;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--faint)}
   .subnav-list{border-top:1px solid var(--border);max-height:min(62vh,520px);overflow-y:auto;padding:6px 0 10px}.subnav-list button{display:flex;align-items:center;gap:12px;width:100%;min-height:46px;padding:0 16px;background:none;border:none;border-inline-start:3px solid transparent;cursor:pointer;font:inherit;font-size:15px;text-align:start}.sj-n{flex:none;width:22px;font-size:12px;font-weight:700;color:var(--faint)}
+  .fs-chips{flex:1 1 100%;display:flex;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none}.fs-chips::-webkit-scrollbar{display:none}.fs-n{flex:none;font-size:13px;font-weight:800;color:var(--text)}.fs-chip{flex:none;display:flex;align-items:center;gap:6px;max-width:240px;padding:5px 10px 5px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap}.fs-chip span:first-child{overflow:hidden;text-overflow:ellipsis}.fs-panel{flex:1 1 100%}
   .filter-stick{position:sticky;top:var(--header-h,98px);z-index:20;background:var(--bg);padding:10px 0;box-shadow:0 1px 0 var(--border)}
   @media (min-width:721px){[data-subnav]{mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent)}}
   @media (max-width:720px){[data-subnav]{overflow:visible!important}[data-subnav] .subnav-row,.spine-rail{display:none!important}[data-subnav] .subnav-jump{display:flex}html[data-spine-on] body{padding-bottom:0}}
@@ -2073,11 +2074,12 @@
         <div class="filter-stick" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:18px 0 0">
           <button class="tap-hit" onClick="{{ pp.fToggle }}" style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:800;letter-spacing:.02em;padding:9px 16px;border-radius:999px;border:1px solid {{ pp.fRing }};background:{{ pp.fBg }};color:var(--text)"><span>{{ pp.fBtnLabel }}</span><span style="opacity:.55">{{ pp.fCaret }}</span></button>
           <sc-if value="{{ pp.fAny }}" hint-placeholder-val="{{ false }}">
-            <button class="tap-hit" onClick="{{ pp.fClear }}" style="margin-left:auto;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:700;padding:9px 14px;border-radius:999px;border:none;background:none;color:var(--faint);text-decoration:underline">{{ T.ask_clear }}</button>
+            <button class="tap-hit" onClick="{{ pp.fClear }}" style="margin-left:auto;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:800;padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:none;color:var(--ac-crimson)">{{ T.ask_clear }}</button>
           </sc-if>
-        </div>
-
-        <div style="display:flex;flex-wrap:wrap;gap:10px 14px;overflow:hidden;transition:max-height .38s cubic-bezier(.22,.61,.36,1),opacity .28s ease,padding .38s ease;max-height:{{ pp.fH }};opacity:{{ pp.fOp }};padding:{{ pp.fPad }}">
+          <sc-if value="{{ pp.fAny }}" hint-placeholder-val="{{ false }}">
+            <div class="fs-chips"><span class="fs-n">{{ pp.fShown }}</span><sc-for list="{{ pp.fChips }}" as="fc" hint-placeholder-count="2"><button class="fs-chip tap-hit" onClick="{{ fc.drop }}" aria-label="{{ fc.aria }}"><span>{{ fc.label }}</span><span aria-hidden="true">&#215;</span></button></sc-for></div>
+          </sc-if>
+        <div class="fs-panel" style="display:flex;flex-wrap:wrap;gap:10px 14px;overflow:hidden;overflow-y:{{ pp.fScroll }};overscroll-behavior:contain;transition:max-height .38s cubic-bezier(.22,.61,.36,1),opacity .28s ease,padding .38s ease;max-height:{{ pp.fH }};opacity:{{ pp.fOp }};padding:{{ pp.fPad }}">
           <sc-for list="{{ pp.filters }}" as="f" hint-placeholder-count="7">
             <label style="display:flex;flex-direction:column;gap:4px">
               <span style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700">{{ f.label }}</span>
@@ -2089,8 +2091,9 @@
             </label>
           </sc-for>
         </div>
+        </div>
 
-        <div style="display:flex;flex-direction:column">
+        <div class="proj-results" style="display:flex;flex-direction:column;scroll-margin-top:calc(var(--header-h,98px) + 70px)">
           <sc-for list="{{ pp.projects }}" as="pj" hint-placeholder-count="6">
             <div style="display:grid;grid-template-columns:clamp(70px,9vw,124px) 1fr;gap:clamp(14px,2vw,26px)">
               <div style="display:flex;flex-direction:column;align-items:flex-end;padding-top:24px">
@@ -36817,7 +36820,17 @@ class Component extends DCLogic {
       { key: 'investor', label: T.filter_investor, get: p => (p.investors || []).filter(x => x.length < 60) },
     ];
   }
-  _setFilter(prog, dim, val) { this.setState(s => ({ filters: { ...s.filters, [prog + '|' + dim]: val }, expanded: null })); }
+  _setFilter(prog, dim, val) { this.setState(s => ({ filters: { ...s.filters, [prog + '|' + dim]: val }, expanded: null }), () => this._toResults()); }
+  // After a filter change, bring the first matching project up under the pinned filter bar.
+  _toResults() {
+    try { requestAnimationFrame(() => {
+      const bar = document.querySelector('.filter-stick'), list = bar && bar.parentElement.querySelector('.proj-results');
+      if (!list) return;
+      // The bar may have scrolled away with a shrunken list, so measure from where it sits when pinned.
+      const top = list.getBoundingClientRect().top, edge = this._headerEdge() + bar.offsetHeight;
+      if (top < edge - 2 || top > window.innerHeight) window.scrollTo({ top: window.scrollY + top - edge - 8, behavior: 'smooth' });
+    }); } catch (e) {}
+  }
   _toggleProject(id) { this.setState(s => ({ expanded: s.expanded === id ? null : id })); }
   // Curated, hand-verified funder→project links for the Transparency page (never guessed - 
   // each row was checked against the project's own narrative before being added here).
@@ -38571,7 +38584,7 @@ class Component extends DCLogic {
         count: filtered.length, total: base.length,
         filters: filtersUI, projects,
         fOpen: !!this.state.wFOpen,
-        fH: this.state.wFOpen ? '900px' : '0px',
+        fH: this.state.wFOpen ? 'min(58vh,640px)' : '0px',
         fOp: this.state.wFOpen ? 1 : 0,
         fPad: this.state.wFOpen ? '20px 0 26px' : '0px',
         fCaret: this.state.wFOpen ? '\u25B2' : '\u25BC',
@@ -38581,7 +38594,13 @@ class Component extends DCLogic {
           return T.narrow_tpl.replace('{n}', base.length) + (n ? ' \u00b7 ' + n : ''); })(),
         fAny: DIMS.some(x => fkey(x.key) !== 'all'),
         fToggle: () => this.setState(s => ({ wFOpen: !s.wFOpen })),
-        fClear: () => this.setState(s => { const f = { ...s.filters }; DIMS.forEach(x => delete f[prog + '|' + x.key]); return { filters: f, expanded: null }; }),
+        fClear: () => this.setState(s => { const f = { ...s.filters }; DIMS.forEach(x => delete f[prog + '|' + x.key]); return { filters: f, expanded: null }; }, () => this._toResults()),
+        fShown: filtered.length + ' / ' + base.length,
+        fChips: filtersUI.filter(f => f.value !== 'all').map(f => {
+          const o = f.options.find(x => x.value === f.value) || {};
+          return { k: f.key, label: o.label || f.value, aria: f.label + ': ' + (o.label || f.value) + ' \u00d7', drop: () => this._setFilter(prog, f.key, 'all') };
+        }),
+        fScroll: this.state.wFOpen ? 'auto' : 'hidden',
         fRing: (this.state.wFOpen || DIMS.some(x => fkey(x.key) !== 'all')) ? color : 'var(--border)',
         fBg: DIMS.some(x => fkey(x.key) !== 'all') ? this._inkA(color, .14) : 'transparent',
         go: () => this._prepareLaunchView('prog', { view: 'prog', progKey: prog, expanded: null, jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0 }, () => { window.scrollTo({ top: 0 }); }),
