@@ -12,7 +12,9 @@ test('head order, escaping, 28 alternates and large image tags',()=>{
   assert.equal(lines[2],'<link rel="canonical" href="https://dehatindia.org/ar/impact">');
   assert.equal(lines.filter(x=>x.includes('hreflang=')).length,29);
   assert.equal(lines[3],'<link rel="alternate" hreflang="en" href="https://dehatindia.org/impact">');
-  assert.equal(lines.at(-1),'<meta name="twitter:image" content="https://dehatindia.org/dehat-og.png">');
+  assert.ok(lines.includes('<meta name="twitter:image" content="https://dehatindia.org/dehat-og.png">'));
+  assert.ok(lines.includes('<link rel="icon" href="/favicon.ico" sizes="48x48">'));
+  assert.ok(lines.includes('<link rel="icon" type="image/png" href="/dehat-favicon-192.png" sizes="192x192">'));
   assert.ok(lines.includes('<meta property="og:image:width" content="1200">'));
   assert.equal(buildHead(args(router.parseUrl('/ar/impact'))),result);
   assert.ok(Object.isFrozen(HREFLANG));assert.equal(HREFLANG.brx,'brx');

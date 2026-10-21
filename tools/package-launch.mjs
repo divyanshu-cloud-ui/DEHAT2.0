@@ -24,6 +24,7 @@ export function publicAsset(value) {
     /^district-i18n\/[a-z]{2,3}\.js$/.test(value)||
     /^assets\/geo\/(?:geo\.v1\.json|in-districts\.v1\.json|in-pins\.v1\.json|validate\.mjs|NOTICE\.txt)$/.test(value)||
     /^dehat-[\w-]+\.(?:png|webp)$/.test(value)||
+    value==='favicon.ico'||
     /^assets\/(?:ink|story|portraits|svc|art|thumb|logos|partners|cj|illus)\/[\w/.-]+\.(?:png|svg|webp|jpg|avif)$/.test(value)||
     /^assets\/[\w.-]+\.(?:png|svg|webp|jpg)$/.test(value);
 }

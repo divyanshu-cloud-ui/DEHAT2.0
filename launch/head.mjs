@@ -52,6 +52,10 @@ export function buildHead({route,seo,origin,languages,pathFor,indexedLanguages=l
     `<meta name="twitter:title" content="${attribute(seo.title)}">`,
     `<meta name="twitter:description" content="${attribute(seo.description)}">`,
     `<meta name="twitter:image" content="${attribute(image)}">`,
+    '<link rel="icon" href="/favicon.ico" sizes="48x48">',
+    '<link rel="icon" type="image/png" href="/dehat-favicon-96.png" sizes="96x96">',
+    '<link rel="icon" type="image/png" href="/dehat-favicon-192.png" sizes="192x192">',
+    '<link rel="apple-touch-icon" href="/dehat-apple-touch-icon.png" sizes="180x180">',
   );
   return tags.join('\n');
 }

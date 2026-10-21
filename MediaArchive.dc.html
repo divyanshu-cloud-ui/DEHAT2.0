@@ -249,7 +249,7 @@ class Component extends DCLogic {
         k: id + i.d, u: i.u, t: i.t, y: i.y, pub: i.pub, lang: i.lang, type: i.type,
         meta: i.d + '  ·  ' + i.scope + '  ·  ' + i.dist,
         tint, ink,
-        tags: [{ k: 's', v: srcOf(i) === 'Independent' ? 'Independent press' : 'Partner / network', bg: srcOf(i) === 'Independent' ? 'var(--surface2,#f4efe4)' : 'color-mix(in srgb, var(--ac-olive,#556223) 18%, var(--surface,#fff))', fg: srcOf(i) === 'Independent' ? 'var(--dim,#5a4f43)' : 'var(--ac-olive,#556223)' }]
+        tags: [{ k: 's', v: srcOf(i) === 'Independent' ? 'Independent Press' : 'Partners and Networks', bg: srcOf(i) === 'Independent' ? 'var(--surface2,#f4efe4)' : 'color-mix(in srgb, var(--ac-olive,#556223) 18%, var(--surface,#fff))', fg: srcOf(i) === 'Independent' ? 'var(--dim,#5a4f43)' : 'var(--ac-olive,#556223)' }]
           .concat((i.who || []).slice(0, 2).map((w, n) => ({ k: 'w' + n, v: w, bg: 'color-mix(in srgb, var(--ac-teal,#0E5565) 14%, var(--surface,#fff))', fg: 'var(--ac-teal,#0E5565)' })))
           .concat((i.sdg && i.sdg[0]) ? [{ k: 'a', v: i.sdg[0], bg: 'var(--surface2,#f4efe4)', fg: 'var(--dim,#5a4f43)' }] : [])
           .concat((i.csr && i.csr[0]) ? [{ k: 'b', v: 'Corporate Social Responsibility ' + i.csr[0], bg: 'var(--surface2,#f4efe4)', fg: 'var(--dim,#5a4f43)' }] : [])
@@ -272,7 +272,7 @@ class Component extends DCLogic {
       blurb: 'Press, research and video about DEHAT, its founder Dr Jitendra Chaturvedi and Executive Director Devyani Chaturvedi, from independent publishers and from the partners and networks DEHAT works with. Filter by source, reach, publisher, year, development goal, Corporate Social Responsibility Schedule VII head and child rights.',
       total: ALL.length, pubCount: pubs.length, span: ALL.length ? (Math.min.apply(null, ALL.map(i => i.y)) + '\u2013' + Math.max.apply(null, ALL.map(i => i.y))) : '',
       scopes: [scopeBtn('All', 'All Coverage'), scopeBtn('National', 'National'), scopeBtn('International', 'International')],
-      sources: [srcBtn('All', 'All sources'), srcBtn('Independent', 'Independent press \u00b7 ' + nIndep), srcBtn('Partner / network', 'Partners & networks \u00b7 ' + nPartner)],
+      sources: [srcBtn('All', 'All sources'), srcBtn('Independent', 'Independent Press \u00b7 ' + nIndep), srcBtn('Partner / network', 'Partners and Networks \u00b7 ' + nPartner)],
       q: S.q, onQ: (e) => this.setState({ q: e.target.value }),
       selects: [
         mkSel('year', 'Year', years, 'All Years'),
@@ -297,7 +297,7 @@ class Component extends DCLogic {
       filtersRing: S.fOpen || nActive ? 'var(--dim,#5a4f43)' : 'var(--border,rgba(31,23,16,.14))',
       filtersFg: 'var(--text,#1f1710)',
       reset: () => this.setState({ fOpen: false, mdg: 'All', q: '', scope: 'All', src: 'All', year: 'All', pub: 'All', lang: 'All', sdg: 'All', csr: 'All', cr: 'All' }),
-      note: 'Headlines, links, publishers, languages and dates are reproduced from the DEHAT press compendium, plus items found in a 2026 search pass. Development goal, Corporate Social Responsibility Schedule VII and child-rights tags are editorial classifications. Every card also links to the Wayback Machine, which opens a saved copy where one exists; where a URL uses a retired shortener, epaper image or old CMS path, the archived copy is offered first. Items from partners and networks are published by an organisation DEHAT works with or belongs to, so they are listed separately from independent press. Items added in 2026 do not yet carry development goal, Schedule VII or child-rights tags. Likes and views are counted in this browser only - shared totals across visitors need a server.'
+      note: 'Headlines, links, publishers, languages and dates are reproduced from the DEHAT press compendium, plus items found in a 2026 search pass. Development goal, Corporate Social Responsibility Schedule VII and child-rights tags are editorial classifications. Every card also links to the Wayback Machine, which opens a saved copy where one exists; where a URL uses a retired shortener, epaper image or old CMS path, the archived copy is offered first. Items from partners and networks are published by an organisation DEHAT works with or belongs to, so they are listed separately from Independent Press. Likes and views are counted in this browser only - shared totals across visitors need a server.'
     };
   }
 }

@@ -111,7 +111,7 @@ function withMetadata(route,html){
   const seo=seoRecordFor(input.seo,route);
   const graph=buildGraph({route,seo,seoFor,fields:input.schema,stories,assetExists:asset=>assets.includes(asset),origin:PRODUCTION_ORIGIN,faqItems:route.routeId==='answers'?faqItemsFor(route.lang):undefined});
   const head=buildHead({route,seo,origin:PRODUCTION_ORIGIN,languages:route.routeId.startsWith('story/')?PUBLISHED.storyLanguages:PUBLISHED.languages,indexedLanguages:indexedFor(route),pathFor:router.pathFor});
-  html=html.replace(/<title>[\s\S]*?<\/title>/gi,'').replace(/<meta name="description" content="[^"]*">/gi,'');
+  html=html.replace('<link rel="icon" href="data:,">','').replace(/<title>[\s\S]*?<\/title>/gi,'').replace(/<meta name="description" content="[^"]*">/gi,'');
   html=html.replace('</head>',resourceHints(route.lang)+head+'<script type="application/ld+json">'+JSON.stringify(graph).replaceAll('<','\\u003c')+'</script></head>');
   if(route.path==='/')html=html.replace('<head>','<head><script>'+pickerRedirectSource+'</script>');
   return injectEarlyConsent(html);
