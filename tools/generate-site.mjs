@@ -14,7 +14,7 @@ import {renderSite} from './site-browser.mjs';
 import {runtimeTemplate,splitRuntimeDictionaries} from './proof-server.mjs';
 import {pickerRedirectSource} from '../launch/bootstrap.mjs';
 import {injectEarlyConsent} from '../launch/early-consent.mjs';
-import {resourceHints} from '../launch/performance-assets.mjs';
+import {resourceHints,dedupePreloads} from '../launch/performance-assets.mjs';
 import {buildGraph} from '../launch/schema.mjs';
 import {buildHead} from '../launch/head.mjs';
 import {buildSitemap,buildRobots} from '../launch/discovery.mjs';
@@ -113,6 +113,7 @@ function withMetadata(route,html){
   const head=buildHead({route,seo,origin:PRODUCTION_ORIGIN,languages:route.routeId.startsWith('story/')?PUBLISHED.storyLanguages:PUBLISHED.languages,indexedLanguages:indexedFor(route),pathFor:router.pathFor});
   html=html.replace('<link rel="icon" href="data:,">','').replace(/<title>[\s\S]*?<\/title>/gi,'').replace(/<meta name="description" content="[^"]*">/gi,'');
   html=html.replace('</head>',resourceHints(route.lang)+head+'<script type="application/ld+json">'+JSON.stringify(graph).replaceAll('<','\\u003c')+'</script></head>');
+  html=html.replace(/<head>[\s\S]*?<\/head>/,dedupePreloads);
   if(route.path==='/')html=html.replace('<head>','<head><script>'+pickerRedirectSource+'</script>');
   return injectEarlyConsent(html);
 }

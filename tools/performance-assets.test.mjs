@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import {REACT_URL,REACT_DOM_URL,REACT_ASSET,REACT_DOM_ASSET,resourceHints} from '../launch/performance-assets.mjs';
+import {REACT_URL,REACT_DOM_URL,REACT_ASSET,REACT_DOM_ASSET,resourceHints,dedupePreloads} from '../launch/performance-assets.mjs';
 import {publicAsset} from './package-launch.mjs';
 import {PARTNER_TABS} from '../launch/partner-tabs.mjs';
 import {PARTNER} from '../partner-data.js';
@@ -96,4 +96,13 @@ test('identifier keys never change between languages',()=>{
       assert.deepEqual((data[arr]||[]).map(x=>x.k),expected,`${lang}.${arr} keys must equal the English keys`);
     }
   }
+});
+
+test('a repeated preload or modulepreload hint is kept once',()=>{
+  const hints=resourceHints('en');
+  const head='<head><meta charset="utf-8">'+hints+'<title>x</title>'+hints+'</head>';
+  const out=dedupePreloads(head);
+  assert.equal(out.split('rel="modulepreload"').length-1,5);
+  assert.equal(out.split('rel="preload"').length-1,3);
+  assert.ok(out.includes('<title>x</title>'));
 });

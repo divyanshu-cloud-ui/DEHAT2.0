@@ -26,3 +26,16 @@ export function resourceHints(lang) {
   }
   return links.map(([rel, href, as]) => `<link rel="${rel}" href="${href}"${as ? ` as="${as}"` : ''}${as === 'fetch' || as === 'font' ? ' crossorigin' : ''}${as === 'font' ? ' type="font/woff2"' : ''}>`).join('');
 }
+
+// Each preload and modulepreload hint once, first occurrence kept. Pages are assembled from the
+// runtime snapshot, the head builder and resourceHints(), which can repeat the same hint.
+export function dedupePreloads(head) {
+  const seen = new Set();
+  return head.replace(/<link rel="(?:modulepreload|preload)"[^>]*>/g, tag => {
+    const href = tag.match(/href="([^"]+)"/)?.[1];
+    if (!href) return tag;
+    if (seen.has(href)) return '';
+    seen.add(href);
+    return tag;
+  });
+}
