@@ -38216,10 +38216,11 @@ class Component extends DCLogic {
     const allProjects = this.state.projects || [];
     const uniq = (arr) => Array.from(new Set(arr));
     const portfolioTotal = String(allProjects.length) + ' ' + T.portfolio_count;
-    // Sum of FIN.flows('received') across every audited year (FY2005-06 -> FY2024-25),
+    // Sum of FIN.flows('received') across every audited year (FY2005-06 -> FY2025-26),
     // the same reconciliation the Transparency page itself uses. Recompute and update this
-    // literal when a new audited year is added to finance-data.js.
-    const socialInvestmentTotalRaw = '₹19,75,21,104';
+    // literal (and the two ₹ Cr stat tiles) when a new audited year is added to finance-data.js;
+    // tools/finance-total.test.mjs fails until they match.
+    const socialInvestmentTotalRaw = '₹21,73,60,630';
     const socialInvestmentTotal = socialInvestmentTotalRaw + ' · ' + this._usdHint(socialInvestmentTotalRaw).replace('≈ ', '');
     const projectCount = allProjects.length;
 
@@ -39043,7 +39044,7 @@ class Component extends DCLogic {
       progCloseGo: this._goInvolved('give'),
       heroStats: [
         { to: 22020, dec: 0, comma: true, suffix: '+', prefix: '', label: T.stat_children, art: 'sm-ink-crowd' },
-        { to: 19.75, dec: 2, comma: false, suffix: ' Cr', prefix: '\u20b9', label: T.stat_invested, art: 'sm-ink-pair-ledger' },
+        { to: 21.74, dec: 2, comma: false, suffix: ' Cr', prefix: '\u20b9', label: T.stat_invested, art: 'sm-ink-pair-ledger' },
         { to: 8.88, dec: 2, comma: false, suffix: ' Cr', prefix: '\u20b9', label: T.stat_resources, art: 'sm-ink-family' },
         { to: 23, dec: 0, comma: false, suffix: '', prefix: '', label: T.stat_districts, art: 'sm-ink-four-walking' },
       ].map((s, i) => {
@@ -39119,7 +39120,7 @@ class Component extends DCLogic {
         { to: 2460, dec: 0, comma: true, suffix: '+', prefix: '', color: '#556223', label: T.stat_lbl_farmers },
         { to: 1886, dec: 0, comma: true, suffix: '', prefix: '', color: '#EAAE28', label: T.stat_lbl_youth },
         { to: 877, dec: 0, comma: false, suffix: '', prefix: '', color: '#0E5565', label: T.stat_lbl_cbos },
-        { to: 19.75, dec: 2, comma: false, suffix: ' Cr', prefix: '\u20b9', color: '#4F0E73', label: T.stat_lbl_investment, groupStart: true },
+        { to: 21.74, dec: 2, comma: false, suffix: ' Cr', prefix: '\u20b9', color: '#4F0E73', label: T.stat_lbl_investment, groupStart: true },
         { to: 48, dec: 0, comma: false, suffix: '', prefix: '', color: '#4F0E73', label: T.stat_lbl_investors },
         { to: 48, dec: 0, comma: false, suffix: '', prefix: '', color: '#0E5565', label: T.stat_lbl_projects },
         { to: 20, dec: 0, comma: false, suffix: '', prefix: '', color: '#4F0E73', label: T.stat_lbl_years },
