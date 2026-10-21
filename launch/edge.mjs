@@ -50,7 +50,7 @@ export function buildRoutes({mode,origin,redirects,routes,publishedPaths,files,a
   },continue:true});
   if(mode==='production')output.push({src:'^(.*)$',has:[{type:'host',value:'^www\\.dehatindia\\.org$'}],status:301,headers:location(origin+'$1')});
 
-  output.push({src:'^/(?:MediaArchive\\.dc\\.html|district-map\\.html)$',headers:{'X-Robots-Tag':'noindex'},continue:true});
+  output.push({src:'^/(?:MediaArchive\\.dc\\.html|district-map\\.html|launch/runtime-template\\.html)$',headers:{'X-Robots-Tag':'noindex'},continue:true});
   output.push(cache('^/assets/.*$',media));
   // A year-long TTL is safe only for paths that carry a content fingerprint.
   output.push(cache('^/assets/(?:vendor|fonts/web)/[^/]*[a-f0-9]{16}[^/]*$',immutable));

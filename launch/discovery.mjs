@@ -44,6 +44,7 @@ export function buildRobots({mode,origin}) {
   if(mode==='preview')return 'User-agent: *\nDisallow: /\n';
   if(mode!=='production')throw new TypeError('Unknown robots mode');
   const crawlers=['GPTBot','OAI-SearchBot','ChatGPT-User','ClaudeBot','Claude-User','PerplexityBot','Google-Extended','Applebot-Extended','CCBot'];
-  const blocked=['/api/','/_internal/','/generated/','/.vercel/','/launch/'];
+  // /launch/ holds the CSS and scripts every page renders with; crawlers must be able to fetch them.
+  const blocked=['/api/','/_internal/','/generated/','/.vercel/'];
   return [['User-agent: *',...blocked.map(path=>`Disallow: ${path}`)].join('\n'),...crawlers.map(name=>`User-agent: ${name}\nAllow: /\n${blocked.map(path=>`Disallow: ${path}`).join('\n')}`),`Sitemap: ${origin}/sitemap_index.xml`].join('\n\n')+'\n';
 }

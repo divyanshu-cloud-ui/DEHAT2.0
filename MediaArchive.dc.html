@@ -8,9 +8,6 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Public+Sans:ital,wght@0,400..700;1,400..600&amp;display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box}
   .m-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
@@ -28,6 +25,15 @@
   }
   @media (max-width:520px){
     .m-stats{width:100%;grid-template-columns:1fr;gap:10px}
+  }
+  .m-chips::-webkit-scrollbar{display:none}
+  @media (max-width:640px){
+    .m-bar{padding:10px 0!important}
+    .m-bar-row{gap:8px!important}
+    .m-search{flex:1 1 100%!important}
+    .m-scopes{flex:1 1 0!important;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .m-scopes::-webkit-scrollbar{display:none}
+    .m-scope{padding:7px 12px!important;font-size:13px!important}
   }
 </style>
 <script src="./media-data.js"></script>
@@ -58,41 +64,49 @@
       </div>
     </header>
 
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:22px 0 0">
-      <sc-for list="{{ scopes }}" as="s" hint-placeholder-count="3">
-        <button class="m-scope m-hit" onClick="{{ s.pick }}" style="padding:9px 18px;border-radius:999px;border:1px solid {{ s.ring }};background:{{ s.bg }};color:{{ s.fg }};font-size:14px;font-weight:700;cursor:pointer">{{ s.label }}</button>
-      </sc-for>
-      <input class="m-search" value="{{ q }}" onChange="{{ onQ }}" placeholder="{{ tx.search }}" style="flex:1;min-width:220px;padding:10px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit">
-    </div>
-
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 0 0">
-      <button class="m-refine m-hit" onClick="{{ toggleFilters }}" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid {{ filtersRing }};background:{{ filtersBg }};color:{{ filtersFg }};font-size:13px;font-weight:700;font-family:inherit;cursor:pointer">{{ tx.refine }}{{ activeLabel }}<span style="opacity:.6">{{ caret }}</span></button>
+    <!-- Filter bar: stays under the site header while the list scrolls, so every filter, the active choices and
+         Clear all are always one tap away. -->
+    <div class="m-bar" style="position:sticky;top:var(--header-h,var(--nav-h,69px));z-index:20;background:var(--bg,#fbf7ef);padding:14px 0 12px;margin-top:8px;border-bottom:1px solid var(--border,rgba(31,23,16,.09))">
+      <div class="m-bar-row" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
+        <input class="m-search" value="{{ q }}" onChange="{{ onQ }}" placeholder="{{ tx.search }}" aria-label="{{ tx.search }}" style="flex:1 1 260px;min-width:0;padding:10px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit">
+        <div class="m-scopes" style="display:flex;gap:8px;flex:none">
+          <sc-for list="{{ scopes }}" as="s" hint-placeholder-count="3">
+            <button class="m-scope m-hit" onClick="{{ s.pick }}" aria-pressed="{{ s.pressed }}" style="flex:none;padding:9px 16px;border-radius:999px;border:1px solid {{ s.ring }};background:{{ s.bg }};color:{{ s.fg }};font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap">{{ s.label }}</button>
+          </sc-for>
+        </div>
+        <button class="m-refine m-hit" onClick="{{ toggleFilters }}" aria-expanded="{{ fExpanded }}" aria-controls="m-panel" style="flex:none;display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid {{ filtersRing }};background:{{ filtersBg }};color:{{ filtersFg }};font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;white-space:nowrap">{{ tx.refine }}{{ activeLabel }}<span aria-hidden="true" style="opacity:.6">{{ caret }}</span></button>
+      </div>
       <sc-if value="{{ anyActive }}" hint-placeholder-val="{{ false }}">
-        <button class="m-reset m-hit" onClick="{{ reset }}" style="padding:9px 14px;border-radius:999px;border:none;background:none;color:var(--faint,#8a7c6c);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:underline">{{ tx.clear }}</button>
+        <div class="m-chips" style="display:flex;align-items:center;gap:8px;padding-top:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none">
+          <span style="flex:none;font-size:13px;font-weight:700;color:var(--text,#1f1710);white-space:nowrap">{{ resultLine }}</span>
+          <sc-for list="{{ chips }}" as="ch" hint-placeholder-count="2">
+            <button class="m-chip m-hit" onClick="{{ ch.drop }}" aria-label="{{ ch.aria }}" style="flex:none;display:flex;align-items:center;gap:6px;max-width:260px;padding:6px 10px 6px 12px;border-radius:999px;border:1px solid var(--ac-teal,#0E5565);background:color-mix(in srgb, var(--ac-teal,#0E5565) 12%, var(--surface,#fff));color:var(--text,#1f1710);font-size:12.5px;font-weight:600;font-family:inherit;cursor:pointer;white-space:nowrap"><span style="overflow:hidden;text-overflow:ellipsis">{{ ch.label }}</span><span aria-hidden="true" style="font-size:14px;line-height:1;opacity:.7">&#215;</span></button>
+          </sc-for>
+          <button class="m-reset m-hit" onClick="{{ reset }}" style="flex:none;padding:6px 12px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:none;color:var(--ac-crimson,#D2305C);font-size:12.5px;font-weight:800;font-family:inherit;cursor:pointer;white-space:nowrap">{{ tx.clear }}</button>
+        </div>
       </sc-if>
+      <div id="m-panel" class="m-panel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;overflow:hidden;overflow-y:{{ filtersScroll }};overscroll-behavior:contain;transition:max-height .38s cubic-bezier(.22,.61,.36,1),opacity .28s ease,padding .38s ease;max-height:{{ filtersH }};opacity:{{ filtersOp }};padding:{{ filtersPad }}">
+        <sc-for list="{{ selects }}" as="f" hint-placeholder-count="5">
+          <label style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--faint,#8a7c6c)">{{ f.label }}</span>
+            <select class="m-filter-select" value="{{ f.value }}" onChange="{{ f.onChange }}" style="margin-top:auto;appearance:none;-webkit-appearance:none;padding:10px 14px;border-radius:12px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit;cursor:pointer">
+              <sc-for list="{{ f.options }}" as="o" hint-placeholder-count="4">
+                <option value="{{ o.v }}">{{ o.label }}</option>
+              </sc-for>
+            </select>
+          </label>
+        </sc-for>
+      </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;overflow:hidden;transition:max-height .38s cubic-bezier(.22,.61,.36,1),opacity .28s ease,padding .38s ease;max-height:{{ filtersH }};opacity:{{ filtersOp }};padding:{{ filtersPad }}">
-      <sc-for list="{{ selects }}" as="f" hint-placeholder-count="5">
-        <label style="display:flex;flex-direction:column;gap:6px">
-          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--faint,#8a7c6c)">{{ f.label }}</span>
-          <select class="m-filter-select" value="{{ f.value }}" onChange="{{ f.onChange }}" style="margin-top:auto;appearance:none;-webkit-appearance:none;padding:10px 14px;border-radius:12px;border:1px solid var(--border,rgba(31,23,16,.14));background:var(--surface,#fff);color:var(--text,#1f1710);font-size:14px;font-family:inherit;cursor:pointer">
-            <sc-for list="{{ f.options }}" as="o" hint-placeholder-count="4">
-              <option value="{{ o.v }}">{{ o.label }}</option>
-            </sc-for>
-          </select>
-        </label>
-      </sc-for>
-    </div>
-
-    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 22px;border-bottom:1px solid var(--border,rgba(31,23,16,.09))">
-      <span style="font-size:14px;color:var(--dim,#5a4f43)">{{ resultLine }}</span>
+    <div class="m-results-head" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 0">
+      <span style="font-size:14px;color:var(--dim,#5a4f43)">{{ resultLineBelow }}</span>
       <div style="display:flex;gap:10px;align-items:center">
         <button class="m-sort m-hit" onClick="{{ toggleSort }}" style="padding:8px 16px;border-radius:999px;border:1px solid var(--border,rgba(31,23,16,.14));background:none;color:var(--text,#1f1710);font-size:13px;font-weight:600;cursor:pointer">{{ sortLabel }}</button>
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:18px;padding-top:26px">
+    <div class="m-results" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:18px;padding-top:18px;scroll-margin-top:calc(var(--header-h,69px) + 120px)">
       <sc-for list="{{ items }}" as="it" hint-placeholder-count="9">
         <article class="m-card" style="display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:var(--surface,#fff);border:1px solid var(--border,rgba(31,23,16,.09))">
           <a href="{{ it.primary }}" target="_blank" rel="noopener" onClick="{{ it.open }}" style="display:block;text-decoration:none;color:inherit">
@@ -167,6 +181,21 @@ class Component extends DCLogic {
     if (!window.DEHAT_MEDIA) { this._t = setInterval(() => { if (window.DEHAT_MEDIA) { clearInterval(this._t); this.forceUpdate(); } }, 120); }
     // The page language is the <html lang> the site sets on every route and language switch.
     try { this._lo = new MutationObserver(() => this.forceUpdate()); this._lo.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] }); } catch (e) {}
+  }
+  // A filter changed while the reader was down the list: bring the first results back up under the sticky bar.
+  componentDidUpdate() {
+    try {
+      const S = this.state;
+      const sig = [S.scope, S.src, S.year, S.pub, S.lang, S.sdg, S.csr, S.cr, S.sort].join('|');
+      if (this._sig !== undefined && sig !== this._sig) {
+        const r = document.querySelector('.m-results-head'), bar = document.querySelector('.m-bar');
+        if (r && bar) {
+          const top = r.getBoundingClientRect().top, edge = bar.getBoundingClientRect().bottom;
+          if (top < edge) window.scrollTo({ top: window.scrollY + top - edge - 8, behavior: 'smooth' });
+        }
+      }
+      this._sig = sig;
+    } catch (e) {}
   }
   componentWillUnmount() { clearInterval(this._t); try { this._lo && this._lo.disconnect(); } catch (e) {} }
 
@@ -263,7 +292,7 @@ class Component extends DCLogic {
     });
 
     const scopeBtn = (v, label) => ({
-      k: v, label, pick: () => this.setState({ scope: v }),
+      k: v, label, pick: () => this.setState({ scope: v }), pressed: S.scope === v ? 'true' : 'false',
       bg: S.scope === v ? 'var(--ac-teal,#0E5565)' : 'transparent',
       fg: S.scope === v ? 'var(--bg,#fff)' : 'var(--dim,#5a4f43)',
       ring: S.scope === v ? 'var(--ac-teal,#0E5565)' : 'var(--border,rgba(31,23,16,.14))'
@@ -302,7 +331,22 @@ class Component extends DCLogic {
 
     const nActive = ['src','year','pub','lang','dist','sdg','csr','cr'].filter(k => S[k] && S[k] !== 'All').length;
 
+    // Active choices as removable chips, in the order the bar shows them.
+    const chip = (key, label) => ({ k: key, label, aria: label + ' \u00d7', drop: () => this.setState({ [key]: key === 'q' ? '' : 'All' }) });
+    const chips = [];
+    if (S.scope !== 'All') chips.push(chip('scope', tv(S.scope)));
+    if (S.src !== 'All') chips.push(chip('src', S.src === 'Independent' ? t('srcIndep') : t('srcPartner')));
+    if (S.year !== 'All') chips.push(chip('year', S.year));
+    if (S.pub !== 'All') chips.push(chip('pub', S.pub));
+    if (S.lang !== 'All') chips.push(chip('lang', tv(S.lang)));
+    if (S.sdg !== 'All') chips.push(chip('sdg', tv(S.sdg)));
+    if (S.csr !== 'All') chips.push(chip('csr', tv(S.csr)));
+    if (S.cr !== 'All') chips.push(chip('cr', tv(S.cr)));
+    if (q) chips.push(chip('q', '\u201c' + S.q.trim() + '\u201d'));
+
     return {
+      resultLineBelow: (nActive > 0 || S.q !== '' || S.scope !== 'All') ? '' : (items.length === 1 ? t('resOne', { n: 1 }) : t('resMany', { n: items.length })),
+      chips, fExpanded: S.fOpen ? 'true' : 'false', filtersScroll: S.fOpen ? 'auto' : 'hidden',
       tx: { eyebrow: t('eyebrow'), title: t('title'), items: t('items'), publishers: t('publishers'), years: t('years'), search: t('search'), refine: t('refine'), clear: t('clear'), empty: t('empty') },
       blurb: t('blurb'),
       total: ALL.length, pubCount: pubs.length, span: ALL.length ? (Math.min.apply(null, ALL.map(i => i.y)) + '\u2013' + Math.max.apply(null, ALL.map(i => i.y))) : '',
@@ -322,7 +366,7 @@ class Component extends DCLogic {
       sortLabel: S.sort === 'new' ? t('sortNew') : t('sortOld'),
       toggleSort: () => this.setState(s => ({ sort: s.sort === 'new' ? 'old' : 'new' })),
       toggleFilters: () => this.setState(s => ({ fOpen: !s.fOpen })),
-      filtersH: S.fOpen ? '1200px' : '0px',
+      filtersH: S.fOpen ? 'min(60vh,640px)' : '0px',
       filtersOp: S.fOpen ? 1 : 0,
       filtersPad: S.fOpen ? '14px 0 18px' : '0px',
       caret: S.fOpen ? '▲' : '▼',

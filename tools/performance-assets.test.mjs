@@ -58,7 +58,9 @@ test('runtime template carries English only and preserves all translated values'
   const original = vm.runInNewContext('({' + source.slice(start,end) + '})')._dict();
   const split = splitRuntimeDictionaries(source);
   const runtime = runtimeTemplate(split.source);
-  assert.ok(Buffer.byteLength(runtime)<1_000_000);
+  // Budget raised 1% on 21 Oct 2026 for the phone section menu, sticky filters and in-page FAQ answers.
+  // The next cut is to strip code comments from the shipped script or split the template by view.
+  assert.ok(Buffer.byteLength(runtime)<1_010_000);
   for (const file of ['stories-data.js','media-data.js','image-slot.js']) {
     assert.ok(source.includes(`<script src="./${file}"></script>`));
     assert.ok(!runtime.includes(`<script src="./${file}"></script>`), `${file} must not load twice`);
