@@ -75,7 +75,7 @@ try{
   if(routeSet.size!==manifest.routes.length)fail('routes','Duplicate route path');
   if(indexedSet.size!==manifest.indexedPaths.length)fail('index','Duplicate indexed path');
   if(indexedSet.size!==expectedIndexed.size||[...expectedIndexed].some(route=>!indexedSet.has(route)))fail('index','Indexed inventory differs from config');
-  if(manifest.indexedPaths.length!==271&&PUBLISHED.languages.length===28&&PUBLISHED.storyLanguages.length===2&&INDEXED_LANGUAGES.join(',')==='en,hi')fail('index',`Expected 271 indexed paths, got ${manifest.indexedPaths.length}`);
+  if(manifest.indexedPaths.length!==830&&PUBLISHED.languages.length===28&&PUBLISHED.storyLanguages.length===3&&INDEXED_LANGUAGES.length===28)fail('index',`Expected 830 indexed paths, got ${manifest.indexedPaths.length}`);
   if(digest(JSON.stringify(manifest.sourceFiles))!==manifest.sourceDigest)fail('digest','Source manifest digest mismatch');
   if(sourceSet.size!==manifest.sourceFiles.length||fileSet.size!==manifest.files.length)fail('digest','Duplicate source or output file');
   for(const entry of manifest.sourceFiles){

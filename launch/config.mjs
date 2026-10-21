@@ -2,7 +2,9 @@
 export const PRODUCTION_ORIGIN = 'https://dehatindia.org';
 import {LANGUAGES} from './routes.mjs';
 export const PUBLISHED = Object.freeze({languages:Object.freeze([...LANGUAGES]),storyLanguages:Object.freeze(['en','hi','or'])});
-export const INDEXED_LANGUAGES = Object.freeze(['en','hi']);
+// Every published language is indexable (was en and hi only until 22 Oct 2026). Story pages stay in
+// PUBLISHED.storyLanguages; a language without a document for a route never gets a sitemap entry.
+export const INDEXED_LANGUAGES = Object.freeze([...PUBLISHED.languages]);
 function uniqueSupported(codes,label){
   if(!Array.isArray(codes)||!codes.length||new Set(codes).size!==codes.length||codes.some(code=>!LANGUAGES.includes(code)))throw new TypeError(`Invalid ${label}`);
 }
