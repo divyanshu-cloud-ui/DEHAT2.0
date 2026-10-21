@@ -39166,7 +39166,7 @@ class Component extends DCLogic {
         { to: 21.74, dec: 2, comma: false, suffix: ' Cr', prefix: '\u20b9', color: '#4F0E73', label: T.stat_lbl_investment, groupStart: true },
         { to: 48, dec: 0, comma: false, suffix: '', prefix: '', color: '#4F0E73', label: T.stat_lbl_investors },
         { to: 48, dec: 0, comma: false, suffix: '', prefix: '', color: '#0E5565', label: T.stat_lbl_projects },
-        { to: 20, dec: 0, comma: false, suffix: '', prefix: '', color: '#4F0E73', label: T.stat_lbl_years },
+        { to: 21, dec: 0, comma: false, suffix: '', prefix: '', color: '#4F0E73', label: T.stat_lbl_years },
       ].map((s, i) => {
         const n = s.comma ? Number(s.to).toLocaleString('en-US') : s.to.toFixed(s.dec);
         return Object.assign({}, s, {

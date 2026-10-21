@@ -17,3 +17,13 @@ test('hard-coded social investment total matches the audited ledger', async () =
   assert.equal(tiles.length, 2);
   for (const t of tiles) assert.equal(t[1], crore, t[2]);
 });
+
+test('the "years of audited accounts" tile matches the ledger', async () => {
+  const ctx = {}; ctx.window = ctx; vm.createContext(ctx);
+  vm.runInContext(await readFile('finance-data.js', 'utf8'), ctx);
+  const years = ctx.FIN.YEARS.length;
+  const source = await readFile('DEHAT.dc.html', 'utf8');
+  const tile = source.match(/\{ to: (\d+), dec: 0, comma: false, suffix: '', prefix: '', color: '#4F0E73', label: T\.stat_lbl_years \}/);
+  assert.ok(tile, 'years tile not found');
+  assert.equal(Number(tile[1]), years);
+});
