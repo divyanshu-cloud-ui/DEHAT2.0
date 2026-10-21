@@ -1444,14 +1444,14 @@
 
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:clamp(24px,3vw,34px)">
             <div style="background:var(--surface);padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:16px">
-              <div role="img" aria-hidden="true" style="height:clamp(140px,15vw,178px);background-image:url(./assets/story/fork-relief-basket.png);background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+              <div role="img" aria-hidden="true" style="height:clamp(140px,15vw,178px);background-image:{{ artForkAid }};background-size:contain;background-repeat:no-repeat;background-position:center"></div>
               <div>
                 <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--ac-teal);margin-bottom:9px">{{ T.wk_pp_proj_label }}</div>
                 <p style="font-size:15.5px;line-height:1.72;color:var(--dim);margin:0;text-wrap:pretty">{{ T.wk_pp_proj_body }}</p>
               </div>
             </div>
             <div style="background:var(--surface);padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:16px">
-              <div role="img" aria-hidden="true" style="height:clamp(140px,15vw,178px);background-image:url(./assets/story/fork-planting-together.png);background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+              <div role="img" aria-hidden="true" style="height:clamp(140px,15vw,178px);background-image:{{ artForkOwn }};background-size:contain;background-repeat:no-repeat;background-position:center"></div>
               <div>
                 <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--ac-olive);margin-bottom:9px">{{ T.wk_pp_prog_label }}</div>
                 <p style="font-size:15.5px;line-height:1.72;color:var(--dim);margin:0;text-wrap:pretty">{{ T.wk_pp_prog_body }}</p>
@@ -1629,7 +1629,7 @@
               <button onClick="{{ goPartnerFromWork }}" style="cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;padding:12px 18px;border-radius:999px;white-space:nowrap;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.08);color:#fff;transition:background .2s cubic-bezier(.22,.61,.36,1)" style-hover="background:rgba(255,255,255,.18)">{{ T.wk_build_cta2 }}</button>
             </div>
           </div>
-          <div class="art" role="img" aria-hidden="true" style="align-self:stretch;min-height:clamp(260px,26vw,380px);background-size:contain;background-repeat:no-repeat;background-position:center;background-image:url(./assets/story/fork-planting-together.png)"></div>
+          <div class="art" role="img" aria-hidden="true" style="align-self:stretch;min-height:clamp(260px,26vw,380px);background-size:contain;background-repeat:no-repeat;background-position:center;background-image:{{ artForkOwn }}"></div>
         </div>
       </section>
     </div>
@@ -2271,7 +2271,7 @@
           <p class="rise" style="font-size:18px;line-height:1.65;color:var(--dim);margin:0;max-width:60ch;text-wrap:pretty">{{ T.who_p2 }}</p>
         </div>
         <div style="position:relative;min-width:0;display:flex;justify-content:center">
-          <img src="./assets/ink/story-1973-cowshed.png" alt="{{ T.alt_founder_cowshed }}" width="1672" height="941" decoding="async" style="width:100%;max-width:620px;height:auto;aspect-ratio:1672 / 941;display:block;transition:transform .6s cubic-bezier(.22,.61,.36,1),filter .6s cubic-bezier(.22,.61,.36,1)" style-hover="transform:scale(1.015)" />
+          <picture><source type="image/avif" srcset="./assets/ink/optimized/story-1973-cowshed-620.avif 620w, ./assets/ink/optimized/story-1973-cowshed-1240.avif 1240w" sizes="(max-width:700px) 100vw, 620px"><source type="image/webp" srcset="./assets/ink/optimized/story-1973-cowshed-620.webp 620w, ./assets/ink/optimized/story-1973-cowshed-1240.webp 1240w" sizes="(max-width:700px) 100vw, 620px"><img src="./assets/ink/story-1973-cowshed.png" alt="{{ T.alt_founder_cowshed }}" width="1672" height="941" decoding="async" style="width:100%;max-width:620px;height:auto;aspect-ratio:1672 / 941;display:block;transition:transform .6s cubic-bezier(.22,.61,.36,1),filter .6s cubic-bezier(.22,.61,.36,1)" style-hover="transform:scale(1.015)" /></picture>
         </div>
       </div>
       <div data-reveal="" aria-hidden="true" style="margin:clamp(10px,2vw,26px) calc(-1 * clamp(20px,5vw,64px)) calc(-1 * clamp(24px,4vw,44px));overflow:hidden">
@@ -5054,6 +5054,13 @@
 </sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;indexName&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Child Opportunity Gap Index&quot;,&quot;Child Vulnerability Index&quot;,&quot;Child Marginalisation Index&quot;],&quot;default&quot;:&quot;Child Opportunity Gap Index&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;District index&quot;}}">
+const ART_SIZES = {
+  'art/prog-sol': [520, 1040], 'art/prog-re': [520, 1040], 'art/prog-hp': [520, 1040], 'art/prog-cj': [520, 1040],
+  'art/behaviour-change': [520, 1040], 'art/demand-generation': [520, 1040], 'art/system-strengthening': [520, 1040], 'art/service-delivery': [520, 1040],
+  'story/fork-planting-together': [520, 1040], 'story/fork-relief-basket': [520, 1040],
+  'story-participation': [520, 1040], 'story-development': [520, 1040], 'story-protection': [520, 1040], 'story-survival': [520, 1040],
+  'story/ribbon-crowd': [1000, 2000], 'story/sm-school-steps': [450, 900], 'ink/story-1973-cowshed': [620, 1240],
+};
 class Component extends DCLogic {
   state = { booting: true, view: 'home', loop: 0, jSide: '', wQ: 0, wX: 'sol', wI: 0, wF: 'uncrc', progKey: 're', program: 0, node: 0, cycleSourcesOn: false, district: 0, story: 0, counts: {}, blStop: 0, caseFork: '', sdgTab: 'g', awardTab: 'all', impLens: 'year', projects: [], filters: {}, expanded: null, theme: 'dark', lang: 'en', navOpen: false, finYear: 0, finLens: 'prog', finBasis: 'received', finCurr: 'INR', finFrom: '', finTo: '', finSeg: '', finPick: '', jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0,
     // Phase D - readiness signals for the contextual, institution-anchored asks. `sigHero`
@@ -5361,6 +5368,21 @@ class Component extends DCLogic {
     return (this._storyImageCache[key] = 'image-set(' + sizes.flatMap(([width,density]) => [
       'url("' + base + '-' + width + '.avif") type("image/avif") ' + density + 'x',
       'url("' + base + '-' + width + '.webp") type("image/webp") ' + density + 'x',
+    ]).join(',') + ')');
+  }
+  // Heavy illustrations: sized AVIF/WebP from tools/optimise-art-images.mjs, PNG kept as the fallback.
+  _artCss(img) {
+    if (!img || !String(img).trim()) return 'none';
+    const m = /^\.?\/?assets\/((?:art|story|ink)\/[\w-]+|story-[a-z]+)\.png$/.exec(String(img).trim());
+    const sizes = m && ART_SIZES[m[1]];
+    const plain = 'url(' + img + ')';
+    if (!sizes || typeof CSS === 'undefined' || !CSS.supports?.('background-image', 'image-set(url("a.avif") type("image/avif") 1x, url("a.webp") type("image/webp") 1x)')) return plain;
+    this._artCache ||= {};
+    if (this._artCache[m[1]]) return this._artCache[m[1]];
+    const base = './assets/' + (m[1].includes('/') ? m[1].replace(/\/([^/]+)$/, '/optimized/$1') : 'story/optimized/' + m[1]);
+    return (this._artCache[m[1]] = 'image-set(' + sizes.flatMap((width, i) => [
+      'url("' + base + '-' + width + '.avif") type("image/avif") ' + (i + 1) + 'x',
+      'url("' + base + '-' + width + '.webp") type("image/webp") ' + (i + 1) + 'x',
     ]).join(',') + ')');
   }
   // Cycle figures are 1200 px PNG masters but render at most 84 px (ring) and 220 px (active figure).
@@ -37811,7 +37833,7 @@ class Component extends DCLogic {
       if (!v || typeof v !== 'object' || seen.has(v)) return v;
       seen.add(v);
       if (Array.isArray(v)) { v.forEach(walk); return v; }
-      if (typeof v.img === 'string' && !v.imgCss) v.imgCss = v.img.trim() ? 'url(' + v.img + ')' : 'none';
+      if (typeof v.img === 'string' && !v.imgCss) v.imgCss = this._artCss(v.img);
       if (typeof v.img === 'string' && v.invFilt === undefined) v.invFilt = INK_ONLY.test(v.img) ? inkFlip : 'none';
       Object.keys(v).forEach(k => { const c = v[k]; if (c && typeof c === 'object') walk(c); });
       return v;
@@ -37820,6 +37842,8 @@ class Component extends DCLogic {
       ck: this._consent(),
       booting: !!this.state.booting,
       bootMark: 'url(./dehat-mark.png)',
+      artForkAid: this._artCss('./assets/story/fork-relief-basket.png'),
+      artForkOwn: this._artCss('./assets/story/fork-planting-together.png'),
     }));
     if (diagnostics) {
       diagnostics.fullRenders = (diagnostics.fullRenders || 0) + 1;
@@ -37992,7 +38016,7 @@ class Component extends DCLogic {
 
     const programs = this._programs();
     const openProg = (k) => () => this._prepareLaunchView('prog', { view: 'prog', progKey: k, expanded: null, jStage: 0, jTier: 0, jPath: 0, jPair: null, jHor: 0 }, () => { window.scrollTo({ top: 0 }); });
-    const artUrl = (a) => 'url(./assets/art/' + a + '.png)';
+    const artUrl = (a) => this._artCss('./assets/art/' + a + '.png');
     const activeProgram = Object.assign({}, programs[this.state.program], {
       ink: this._ink(programs[this.state.program].color),   // readable label on the programme's own fill (white fails on gold)
       artCss: artUrl(programs[this.state.program].art),
@@ -38038,7 +38062,7 @@ class Component extends DCLogic {
       name: this._tc('method', p.step, 'name', p.name),
       body: this._tc('method', p.step, 'body', p.body),
       handoff: this._tc('method', p.step, 'handoff', p.handoff),
-      imgCss: 'url(./assets/art/' + p.art + '.png)', tok: this._tok(p.color), textTok: p.color === '#EAAE28' ? 'var(--ac-gold-ink)' : this._tok(p.color), lift: this._lift(p.color),
+      imgCss: this._artCss('./assets/art/' + p.art + '.png'), tok: this._tok(p.color), textTok: p.color === '#EAAE28' ? 'var(--ac-gold-ink)' : this._tok(p.color), lift: this._lift(p.color),
     }));
     const li = this.state.loop % 4;
     const activeStep = loopSteps[li];
@@ -38090,7 +38114,7 @@ class Component extends DCLogic {
     const sdgSrc = (this._px || {}).PROG_SDG || {};
     const wk = {
       questions: AR.questions.map((q, i) => ({
-        k: q.key, name: AR.P[q.key].name, color: this._tok(AR.P[q.key].color), artCss: 'url(' + AR.P[q.key].art + ')',
+        k: q.key, name: AR.P[q.key].name, color: this._tok(AR.P[q.key].color), artCss: this._artCss(AR.P[q.key].art),
         on: i === wQi, artOp: i === wQi ? 1 : 0.5,
         bg: i === wQi ? 'var(--surface)' : 'transparent',
         ring: i === wQi ? AR.P[q.key].color : 'var(--border)',
@@ -38099,7 +38123,7 @@ class Component extends DCLogic {
       qKey: 'q' + wQi,
       qName: AR.P[AR.questions[wQi].key].name,
       qColor: this._tok(AR.P[AR.questions[wQi].key].color),
-      qArt: 'url(' + AR.P[AR.questions[wQi].key].art + ')',
+      qArt: this._artCss(AR.P[AR.questions[wQi].key].art),
       qText: AR.questions[wQi].q,
       qUnder: AR.questions[wQi].u,
       qLine: AR.questions[wQi].line,
@@ -38114,7 +38138,7 @@ class Component extends DCLogic {
       wxKey: 'wx' + wXk,
       wxName: AR.P[wXk].name,
       wxColor: this._tok(AR.P[wXk].color),
-      wxArt: 'url(' + AR.P[wXk].art + ')',
+      wxArt: this._artCss(AR.P[wXk].art),
       wxGives: AR.weave[wXk].gives.map((g, i) => Object.assign({ k: 'g' + i, t: g.t }, chip(g.k))),
       wxNeeds: AR.weave[wXk].needs.map((g, i) => Object.assign({ k: 'n' + i, t: g.t }, chip(g.k))),
 
@@ -38129,7 +38153,7 @@ class Component extends DCLogic {
       dimKey: 'd' + wIi,
       dimLabel: AR.dims[wIi].full || AR.dims[wIi].label,
       dimColor: this._tok(AR.P[AR.dims[wIi].prog].color),
-      dimArt: 'url(' + AR.dims[wIi].art + ')',
+      dimArt: this._artCss(AR.dims[wIi].art),
       dimCols: [
         { k: 'c1', head: T.wk_dim_become, v: AR.dims[wIi].become },
         { k: 'c2', head: T.wk_dim_claim, v: AR.dims[wIi].claim },
@@ -38149,7 +38173,7 @@ class Component extends DCLogic {
       })),
       isUncrc: F === 'uncrc', isSdg: F === 'sdg', isCsr: F === 'csr',
       uncrc: AR.uncrc.map((u) => ({
-        k: u.k, label: u.label, arts: u.arts, body: u.body, artCss: 'url(' + u.art + ')',
+        k: u.k, label: u.label, arts: u.arts, body: u.body, artCss: this._artCss(u.art),
         leadName: AR.P[u.lead].name, leadColor: AR.P[u.lead].color, leadInk: this._ink(AR.P[u.lead].color),
         also: u.also.map((a, i) => Object.assign({ k: 'a' + i }, chip(a))),
       })),
@@ -38367,7 +38391,7 @@ class Component extends DCLogic {
             num: J.tiers.num, title: J.tiers.title, body: J.tiers.body, note: J.tiers.note,
             rows: J.tiers.rows.map((r, i) => ({
               k: 't' + i, label: r.label, w: r.w, note: r.note, on: i === ti,
-              hasArt: !!r.art, artCss: r.art ? 'url(./' + r.art + ')' : 'none',
+              hasArt: !!r.art, artCss: r.art ? this._artCss('./' + r.art) : 'none',
               artOp: i === ti ? 1 : 0.45,
               isLast: i === J.tiers.rows.length - 1 ? 0 : 1,
               bg: i === ti ? soft : 'var(--surface)',
@@ -38455,7 +38479,7 @@ class Component extends DCLogic {
           },
           close: {
             num: J.close.num, title: J.close.title, body: J.close.body,
-            hasArt: !!J.close.art, artCss: J.close.art ? 'url(./' + J.close.art + ')' : 'none',
+            hasArt: !!J.close.art, artCss: J.close.art ? this._artCss('./' + J.close.art) : 'none',
             chainLabel: J.close.chainLabel || '', hasChain: !!J.close.chainLabel,
             arrows: J.close.arrows.map((a, i) => {
               const stop = J.close.chainStop;
@@ -38527,7 +38551,7 @@ class Component extends DCLogic {
           { title: T.pcta_invest_title, body: T.pcta_invest_body, action: T.pcta_invest_action, bg: '#D2305C', fg: '#fff', art: 'invest', go: this._goInvolved('give') },
           { title: T.pcta_time_title, body: T.pcta_time_body, action: T.pcta_time_action, bg: '#EAAE28', fg: '#1f1710', art: 'volunteer', go: this._goInvolved('route') },
           { title: T.pcta_partner_title, body: T.pcta_partner_body, action: T.pcta_partner_action, bg: '#0E5565', fg: '#fff', art: 'partner', go: this._goInvolved('people') },
-        ].map((c, i) => Object.assign({}, c, { k: 'pc' + i, imgCss: 'url(./assets/art/' + c.art + '.png)', delay: (i * 110) + 'ms' })),
+        ].map((c, i) => Object.assign({}, c, { k: 'pc' + i, imgCss: this._artCss('./assets/art/' + c.art + '.png'), delay: (i * 110) + 'ms' })),
         supportNote: base.length
           ? T.support_note_tpl.replace('{n}', String(base.length))
           : '',
@@ -38535,14 +38559,14 @@ class Component extends DCLogic {
         tag: this._tc('programmes', prog, 'tag', nar.tag),
         ink9: this._inkA(color, .9), ink75: this._inkA(color, .75), ink6: this._inkA(color, .6), ink55: this._inkA(color, .55),
         inkFill: this._inkA(color, .14), inkRing: this._inkA(color, .3), inkFillHi: this._inkA(color, .24),
-        artCss: 'url(./assets/art/' + (function (nm) {
+        artCss: this._artCss('./assets/art/' + (function (nm) {
           const s = String(nm || '').toLowerCase();
           if (/leadership|movement/.test(s)) return 'prog-sol';
           if (/climate|farm|agri|soil/.test(s)) return 'prog-cj';
           if (/protection|traffick|safety/.test(s)) return 'prog-hp';
           if (/right|entitle/.test(s)) return 'prog-re';
           return 'prog-sol';
-        })(nar.name) + '.png)',
+        })(nar.name) + '.png'),
         era: this._tc('programmes', prog, 'era', nar.era || ''), lede: this._tc('programmes', prog, 'lede', nar.lede || ''), headline: this._tc('programmes', prog, 'headline', nar.headline || ''),
         stance: this._tc('programmes', prog, 'purpose', nar.purpose || ''),
         // The lead case reads its words from the story translations (content-i18n stories.<slug>),
