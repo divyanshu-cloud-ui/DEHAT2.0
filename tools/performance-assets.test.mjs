@@ -84,3 +84,14 @@ test('bootstrap waits for the snapshot to paint before the heavy downloads', asy
   }
   assert.match(source, /setTimeout\(go, 1500\)/, 'a cap keeps background tabs and old browsers booting');
 });
+test('identifier keys never change between languages',()=>{
+  // The code compares these keys to English literals ('route', 'once', 'unrestricted', 'inr' ...) and
+  // to the donation form's default state. A translated key silently breaks the lookup: the Get
+  // Involved nav falls back to the raw English word and no frequency/purpose/regime shows as selected.
+  for(const arr of ['tabs','freqs','purposes','regimes','who']){
+    const expected=PARTNER.en[arr].map(x=>x.k);
+    for(const [lang,data] of Object.entries(PARTNER)){
+      assert.deepEqual((data[arr]||[]).map(x=>x.k),expected,`${lang}.${arr} keys must equal the English keys`);
+    }
+  }
+});
