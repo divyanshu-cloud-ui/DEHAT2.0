@@ -59,3 +59,7 @@ Desktop.ini
 /generated/*.staging-*/
 .DS_Store
 node_modules/
+/generated/
+/.claude-flow/
+node_modules
+/_internal

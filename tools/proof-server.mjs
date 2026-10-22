@@ -37,6 +37,8 @@ export function runtimeTemplate(source) {
   // The launch adapter fetches these itself (and only where the route uses them).
   // Leave the tags in DEHAT.dc.html for the standalone editor preview.
   source=source.replace(/<script src="\.\/(?:image-slot|media-data|stories-data)\.js"><\/script>/g,'');
+  // Source-only section comments are useful to editors but not needed in the shipped template.
+  source=source.replace(/<!--[\s\S]*?-->/g,'');
   return source.replace(/<button\b([^>]*?)>([\s\S]*?)<\/button>/g, (whole, attrs, body) => {
     const action = attrs.match(/onClick="\{\{\s*([^}]+?)\s*\}\}"/);
     const href = action && links[action[1].trim()];

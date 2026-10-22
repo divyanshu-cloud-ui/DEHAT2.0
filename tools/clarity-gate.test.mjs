@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 const source=await readFile(new URL('../DEHAT.dc.html',import.meta.url),'utf8');
 const start=source.indexOf('  _clarityGate() {');
-const end=source.indexOf('\n  _investBand(',start);
+const end=source.indexOf('\n  // Only load Ads measurement',start);
 assert.ok(start>=0 && end>start,'Clarity gate is present');
 const plain=value=>JSON.parse(JSON.stringify(value));
 

@@ -5105,9 +5105,14 @@ class Component extends DCLogic {
     this._bootCap = setTimeout(this._bootDone, 3500);
     try {
       const raw = window.localStorage.getItem('dehat.consent');
-      if (raw) { const j = JSON.parse(raw); this.setState({ ckDecided: true, ckPrefs: Object.assign({ performance: false, functional: false, targeting: false }, j.prefs || {}) }); }
+      if (raw) {
+        const j = JSON.parse(raw);
+        const freshChoiceNeeded = ['en', 'hi'].includes(detected || this.state.lang) && j.v !== 2;
+        this.setState({ ckDecided: !freshChoiceNeeded,
+          ckPrefs: Object.assign({ performance: false, functional: false, targeting: false }, j.prefs || {}, freshChoiceNeeded ? { targeting: false } : {}) });
+      }
       else this.setState({ ckDecided: false });
-    } catch (e) {}
+    } catch (e) { this.setState({ ckDecided: false, ckPrefs: { performance: false, functional: false, targeting: false } }); }
     try {
       if (window.__dehatOpenPrefs || window.sessionStorage.getItem('dehat.openPrefs') === '1') {
         window.__dehatOpenPrefs = 0;
@@ -5933,7 +5938,9 @@ class Component extends DCLogic {
   }
   _setLang(code, remember) {
     if (remember !== false) { try { window.localStorage.setItem('dehat.lang', code); } catch (e) {} }
-    this.setState({ lang: code }, () => { this._applyLangAttrs(); this._applyTheme(); this._syncMapLang(); });
+    let needsFreshConsent = false;
+    try { const saved = JSON.parse(window.localStorage.getItem('dehat.consent') || 'null'); needsFreshConsent = ['en', 'hi'].includes(code) && !!saved && saved.v !== 2; } catch (e) {}
+    this.setState({ lang: code, ...(needsFreshConsent ? { ckDecided: false, ckPrefs: Object.assign({}, this.state.ckPrefs, { targeting: false }) } : {}) }, () => { this._applyLangAttrs(); this._applyTheme(); this._syncMapLang(); });
     if (window._loadContentLang) window._loadContentLang(code, () => this._scheduleUpdate());
   }
 
@@ -6345,9 +6352,10 @@ class Component extends DCLogic {
     const S = this.state;
     const P = S.ckPrefs || { performance: false, functional: false, targeting: false };
     const set = (obj) => { try { window.localStorage.setItem('dehat.consent', JSON.stringify(obj)); } catch (e) {} };
+    const record = prefs => ({ v: ['en', 'hi'].includes(this.state.lang) ? 2 : 1, at: new Date().toISOString(), prefs });
     const decide = (v) => {
       const next = { performance: v, functional: v, targeting: v };
-      set({ v: 1, at: new Date().toISOString(), prefs: next });
+      set(record(next));
       this.setState({ ckPrefs: next, ckDecided: true, ckPrefsOpen: false });
     };
     const CATS = [
@@ -6363,7 +6371,7 @@ class Component extends DCLogic {
       closePrefs: () => this.setState({ ckPrefsOpen: false }),
       acceptAll: () => decide(true),
       rejectAll: () => decide(false),
-      confirm: () => { set({ v: 1, at: new Date().toISOString(), prefs: P }); this.setState({ ckDecided: true, ckPrefsOpen: false }); },
+      confirm: () => { set(record(P)); this.setState({ ckDecided: true, ckPrefsOpen: false }); },
       bannerTitle: T.ck_banner_title, bannerBody: T.ck_banner_body,
       acceptAllLabel: T.ck_accept_all, rejectAllLabel: T.ck_reject_all, managePrefsLabel: T.ck_manage,
       prefsTitle: T.ck_prefs_title, prefsLead: T.ck_prefs_lead,
@@ -7169,7 +7177,7 @@ class Component extends DCLogic {
       refund_p6:'Every refund is entered in the same audited ledger as the receipt it reverses, carries the same reference, and appears in the year’s statutory accounts. A refund is never quietly netted off against income.',
       refund_cta:'Request a Refund',
       cookie_h2:'Cookie Policy, in Our Context',
-      cookie_p1:'This site is a record of public work, not a marketing funnel. We set no advertising cookies and we do not sell what the site records. Essential cookies remember your language, your light or dark setting, and the cookie choice you made, so we do not ask again on every visit. Performance cookies, if you allow them, count visits and pages and, through Microsoft Clarity, record anonymised sessions and heatmaps, so we can tell whether a story or a register entry is being read and where readers get stuck. Typed text and form fields are masked, and the donation, receipt and concern pages are never recorded. Functional cookies let embedded maps, documents and video load from the services that host them. Nothing on this site builds a profile of a reader for advertising.',
+      cookie_p1:'This site is a record of public work. Essential cookies remember your language, theme and cookie choice. With your separate permission, performance cookies let Microsoft Clarity count visits and show masked sessions and heatmaps; donation, receipt and concern pages are not recorded by Clarity. Functional cookies enable embedded maps, documents and video. If you choose Donation Measurement, Google Ads may use ad-click and device identifiers to attribute a donation to an ad. Only after DEHAT verifies a domestic payment do we send Google the INR amount and a one-way token derived from its payment reference; no donor name, email, phone, PAN or address is sent in the conversion event. A foreign transfer report is not a conversion: it would be counted only after the SBI FCRA credit and donor details are reconciled. We do not enable personalised ads or enhanced conversions. This optional Google tag is off until you make a fresh choice, and is currently offered only in English and Hindi.',
       cookie_p2:'Your choice is stored on your own device and can be changed or withdrawn at any time from Cookie Settings in the footer. Clearing your browser storage removes it entirely. Where a child or an adolescent may be the reader, we treat the same default as for everyone: nothing beyond the essential is set unless it has been chosen.',
       cookie_ask_cta:'Ask What We Hold About You',
       work_sub:'Four programmes, in the order they began. Each one opens into its own page - why the work exists, how it is built, and every project it has carried, in chronological order with the What, Where, How, When, Why and Investment behind each.',
@@ -7429,7 +7437,7 @@ class Component extends DCLogic {
       faq_sub:'Grouped by what they are about. Every answer points at the page that proves it.',
       faq_count_suffix:'published answers',
       ck_banner_title:'Our Privacy Statement and Cookie Policy',
-      ck_banner_body:'This site uses cookies and similar technologies to keep pages working, to understand which pages are read, and to improve what we publish. Some are essential. You can accept all, keep only the essential ones, or choose category by category, and change your mind at any time from Cookie Settings in the footer.',
+      ck_banner_body:'Essential cookies keep the site working. With your permission, performance tools help improve the site and Google Ads can measure confirmed donations that follow an ad. Google measurement may use ad-click and device identifiers and receive the verified amount and an opaque transaction token, never donor contact or tax details in the conversion event. Choose all, essentials only, or each category separately. Change your choice in Cookie Settings at any time.',
       ck_accept_all:'Accept All',
       ck_reject_all:'Reject All',
       ck_manage:'Manage Cookies',
@@ -7447,8 +7455,8 @@ class Component extends DCLogic {
       ck_perf_body:'Let us count visits and see which pages are read and how people move through the site, so we can tell what is useful and what is not. We use Microsoft Clarity, which records anonymised sessions and heatmaps; typed text and form fields are masked, and the donation, receipt and concern pages are never recorded. Without them we cannot tell whether a page is reaching anyone.',
       ck_func_label:'Functional Cookies',
       ck_func_body:'Enable extra features such as embedded maps, documents and video from the register. They may be set by the services we embed. Without them, some of those pieces will not load.',
-      ck_target_label:'Targeting Cookies',
-      ck_target_body:'We do not sell advertising and we do not profile readers. This category stays here so the choice is visible: we set nothing under it, and if that ever changes it will be off until you turn it on.',
+      ck_target_label:'Donation Measurement (Google Ads)',
+      ck_target_body:'Optional and off until you make a fresh choice. Google Ads may use ad-click and device identifiers. We send a confirmed domestic donation amount in INR and an opaque transaction token only after Razorpay verifies payment. A foreign transfer form is never counted as a payment; a future foreign conversion requires bank reconciliation. We send no donor contact, PAN or address in the conversion event and do not enable personalised ads.',
       foot_explore:'Explore',
       foot_reach:'Reach Us',
       foot_follow:'Follow the Work',
@@ -8115,7 +8123,7 @@ class Component extends DCLogic {
       refund_p6:'हर धन-वापसी उसी अंकेक्षित बहीखाते में दर्ज होती है जिसमें वह रसीद दर्ज थी जिसे वह उलटती है, वही संदर्भ रखती है, और उस वर्ष के वैधानिक खातों में दिखाई देती है। किसी धन-वापसी को कभी चुपचाप आय से घटाया नहीं जाता।',
       refund_cta:'धन-वापसी का अनुरोध करें',
       cookie_h2:'हमारे संदर्भ में कुकी नीति',
-      cookie_p1:'यह साइट सार्वजनिक कार्य का एक अभिलेख है, कोई मार्केटिंग फ़नल नहीं। हम कोई विज्ञापन कुकी सेट नहीं करते और साइट जो दर्ज करती है उसे हम बेचते नहीं हैं। आवश्यक कुकीज़ आपकी भाषा, आपकी लाइट या डार्क सेटिंग, और आपके द्वारा की गई कुकी पसंद को याद रखती हैं, ताकि हम हर विज़िट पर दोबारा न पूछें। यदि आप अनुमति दें, तो परफ़ॉर्मेंस कुकीज़ विज़िट और पेज गिनती हैं और Microsoft Clarity के माध्यम से अज्ञात सत्र और हीटमैप रिकॉर्ड करती हैं, ताकि हम जान सकें कि कोई कहानी या रजिस्टर प्रविष्टि पढ़ी जा रही है या नहीं और पाठक कहाँ अटकते हैं। टाइप किया गया टेक्स्ट और फ़ॉर्म फ़ील्ड मास्क रहते हैं, तथा दान, रसीद और चिंता वाले पेज कभी रिकॉर्ड नहीं किए जाते। फ़ंक्शनल कुकीज़ एम्बेडेड मानचित्रों, दस्तावेज़ों और वीडियो को उनकी होस्ट सेवाओं से लोड होने देती हैं। इस साइट पर कोई भी चीज़ विज्ञापन के लिए पाठक की प्रोफ़ाइल नहीं बनाती।',
+      cookie_p1:'यह साइट सार्वजनिक कार्य का अभिलेख है। आवश्यक कुकीज़ भाषा, थीम और आपकी कुकी-पसंद याद रखती हैं। अलग अनुमति मिलने पर Microsoft Clarity विज़िट तथा मास्क किए हुए सत्र और हीटमैप दिखाता है; दान, रसीद और चिंता वाले पेज Clarity से रिकॉर्ड नहीं किए जाते। कार्यात्मक कुकीज़ एम्बेड किए हुए मानचित्र, दस्तावेज़ और वीडियो चलाती हैं। यदि आप दान-मापन चुनते हैं, तो Google Ads विज्ञापन-क्लिक और डिवाइस पहचानकर्ताओं से यह समझ सकता है कि दान किसी विज्ञापन के बाद हुआ या नहीं। घरेलू भुगतान Razorpay से सत्यापित होने के बाद ही हम Google को रुपये में राशि और भुगतान संदर्भ से निकला एकतरफ़ा टोकन भेजते हैं; रूपांतरण घटना में दाता का नाम, ईमेल, फ़ोन, PAN या पता नहीं भेजते। विदेशी हस्तांतरण की सूचना स्वयं रूपांतरण नहीं है; SBI FCRA खाते में राशि और दाता का मिलान होने के बाद ही उसे गिना जा सकता है। हम व्यक्तिगत विज्ञापन या एन्हांस्ड कन्वर्ज़न चालू नहीं करते। यह वैकल्पिक Google टैग नई सहमति तक बंद रहता है और अभी केवल अंग्रेज़ी तथा हिंदी में उपलब्ध है।',
       cookie_p2:'आपकी पसंद आपके अपने डिवाइस पर संग्रहीत होती है और इसे फ़ुटर में कुकी सेटिंग्स से किसी भी समय बदला या वापस लिया जा सकता है। अपने ब्राउज़र का संग्रहण साफ़ करने से यह पूरी तरह हट जाती है। जहाँ पाठक कोई बच्चा या किशोर हो सकता है, वहाँ हम सबके लिए वही डिफ़ॉल्ट अपनाते हैं: चुने जाने तक आवश्यक से आगे कुछ भी सेट नहीं होता।',
       cookie_ask_cta:'पूछें आपके बारे में हमारे पास क्या है',
       portfolio_count:'परियोजनाएँ',
@@ -8435,7 +8443,7 @@ class Component extends DCLogic {
       faq_sub:'विषय के अनुसार समूहित। हर जवाब उस पेज की ओर इशारा करता है जो उसे प्रमाणित करता है।',
       faq_count_suffix:'प्रकाशित उत्तर',
       ck_banner_title:'हमारा गोपनीयता वक्तव्य और कुकी नीति',
-      ck_banner_body:'यह वेबसाइट पेजों को काम करते रहने, यह समझने कि कौन-से पेज पढ़े जा रहे हैं, और हम जो प्रकाशित करते हैं उसे बेहतर बनाने के लिए कुकीज़ और इसी तरह की तकनीकों का उपयोग करती है। इनमें से कुछ आवश्यक हैं। आप सभी को स्वीकार कर सकते हैं, केवल आवश्यक कुकीज़ रख सकते हैं, या श्रेणी के अनुसार चुन सकते हैं, और फ़ुटर में दिए गए "कुकी सेटिंग्स" से कभी भी अपना मन बदल सकते हैं।',
+      ck_banner_body:'आवश्यक कुकीज़ वेबसाइट चलाती हैं। आपकी अनुमति से प्रदर्शन उपकरण वेबसाइट सुधारने में मदद करते हैं और Google Ads विज्ञापन के बाद हुए सत्यापित दान को माप सकता है। Google को विज्ञापन-क्लिक और डिवाइस पहचानकर्ता तथा सत्यापित राशि और एक अपारदर्शी लेन-देन टोकन मिल सकते हैं; रूपांतरण घटना में दाता का संपर्क या कर-विवरण नहीं भेजते। सभी, केवल आवश्यक, या अलग-अलग श्रेणियाँ चुनें। फ़ुटर की कुकी सेटिंग्स से कभी भी पसंद बदलें।',
       ck_accept_all:'सभी स्वीकार करें',
       ck_reject_all:'सभी अस्वीकार करें',
       ck_manage:'कुकीज़ प्रबंधित करें',
@@ -8453,8 +8461,8 @@ class Component extends DCLogic {
       ck_perf_body:'हमें विज़िट गिनने दें और यह देखने दें कि कौन से पेज पढ़े जाते हैं और लोग साइट पर कैसे आगे बढ़ते हैं, ताकि हम बता सकें कि क्या उपयोगी है और क्या नहीं। हम Microsoft Clarity का उपयोग करते हैं, जो अज्ञात सत्र और हीटमैप रिकॉर्ड करता है; टाइप किया गया टेक्स्ट और फ़ॉर्म फ़ील्ड मास्क रहते हैं, और दान, रसीद और चिंता वाले पेज कभी रिकॉर्ड नहीं किए जाते। इनके बिना हम यह नहीं जान सकते कि कोई पेज किसी तक पहुँच भी रहा है या नहीं।',
       ck_func_label:'कार्यात्मक कुकीज़',
       ck_func_body:'ये रजिस्टर से जुड़े नक़्शे, दस्तावेज़ और वीडियो जैसी अतिरिक्त सुविधाओं को सक्षम करती हैं। इन्हें उन सेवाओं द्वारा सेट किया जा सकता है जिन्हें हम एम्बेड करते हैं। इनके बिना, उनमें से कुछ हिस्से लोड नहीं होंगे।',
-      ck_target_label:'टार्गेटिंग कुकीज़',
-      ck_target_body:'हम विज्ञापन नहीं बेचते और पाठकों की प्रोफ़ाइलिंग नहीं करते। यह श्रेणी यहाँ इसलिए बनी हुई है ताकि यह विकल्प दिखाई दे: हम इसके तहत कुछ भी सेट नहीं करते, और अगर यह कभी बदलता है, तो यह तब तक बंद रहेगा जब तक आप इसे स्वयं चालू नहीं करते।',
+      ck_target_label:'दान-मापन (Google Ads)',
+      ck_target_body:'यह वैकल्पिक है और नई सहमति तक बंद है। Google Ads विज्ञापन-क्लिक और डिवाइस पहचानकर्ताओं का उपयोग कर सकता है। Razorpay से घरेलू भुगतान सत्यापित होने पर ही रुपये में राशि और अपारदर्शी लेन-देन टोकन भेजते हैं। विदेशी हस्तांतरण का फ़ॉर्म भुगतान नहीं माना जाता; बैंक से मिलान के बाद ही उसे गिना जा सकता है। रूपांतरण घटना में संपर्क, PAN या पता नहीं भेजते और व्यक्तिगत विज्ञापन चालू नहीं करते।',
       foot_explore:'खोजें',
       foot_reach:'संपर्क करें',
       foot_follow:'कार्य से जुड़ें',
@@ -35849,6 +35857,7 @@ class Component extends DCLogic {
             const proof = await verified.json();
             if (!verified.ok || !proof.verified) throw new Error('Payment confirmation could not be verified. Keep your Razorpay payment ID.');
             this.setState({ dStage: 1 });
+            void this._recordAdsDonation(proof);
           } catch (error) {
             window.alert(error.message || 'Payment confirmation is pending. Keep your Razorpay payment ID.');
           }
@@ -35858,7 +35867,6 @@ class Component extends DCLogic {
       new Razorpay(checkout).open();
     } catch (error) {
       window.alert(error.message || 'Unable to open secure payment checkout.');
-      this.setState({ dStage: 1 });
     }
   }
   // UPI QR straight into DEHAT's bank account: the same form and rules as the card route, then a one-time QR
@@ -36187,6 +36195,57 @@ class Component extends DCLogic {
       }
     } catch (e) {}
     return '';
+  }
+
+  // Only load Ads measurement after a fresh, explicit choice in a reviewed language.
+  _adsGate() {
+    try {
+      const s = this.state || {};
+      const record = JSON.parse(window.localStorage.getItem('dehat.consent') || 'null');
+      const allowed = !!(s.ckDecided && s.ckPrefs?.targeting && record?.v === 2 && record.prefs?.targeting
+        && ['en', 'hi'].includes(s.lang) && window.location.hostname === 'dehatindia.org'
+        && this._pmode === 'live');
+      if (allowed && !window.__dehatAdsTag) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('consent', 'default', { ad_storage: 'granted', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+        window.gtag('js', new Date());
+        window.gtag('config', 'AW-940501892', { send_page_view: false, allow_ad_personalization_signals: false });
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-940501892';
+        script.dataset.dehatAds = 'true';
+        document.head.appendChild(script);
+        window.__dehatAdsTag = true;
+      } else if (window.__dehatAdsTag && window.__dehatAdsAllowed !== allowed) {
+        window.gtag('consent', 'update', { ad_storage: allowed ? 'granted' : 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+        if (!allowed) document.cookie.split(';').forEach(part => {
+          const name = part.trim().split('=')[0];
+          if (!/^_gcl_|^_gac_/.test(name)) return;
+          const expired = name + '=; Max-Age=0; path=/; SameSite=Lax';
+          document.cookie = expired;
+          document.cookie = expired + '; domain=dehatindia.org';
+          document.cookie = expired + '; domain=.dehatindia.org';
+        });
+      }
+      window.__dehatAdsAllowed = allowed;
+      return allowed;
+    } catch (e) { return false; }
+  }
+
+  async _recordAdsDonation(proof) {
+    try {
+      if (!this._adsGate() || !proof || proof.currency !== 'INR' || !/^pay_[A-Za-z0-9]+$/.test(proof.paymentId || '')) return;
+      const amount = Number(proof.amount);
+      if (!Number.isSafeInteger(amount) || amount <= 0 || !window.crypto?.subtle) return;
+      // Google receives a stable deduplication token, not Razorpay's payment ID or donor details.
+      const hash = await window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(proof.paymentId));
+      const transactionId = 'dehat-' + Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 32);
+      this._adsSent = this._adsSent || new Set();
+      if (this._adsSent.has(transactionId) || !this._adsGate()) return;
+      this._adsSent.add(transactionId);
+      window.gtag('event', 'conversion', { send_to: 'AW-940501892/5FYmCJiNhKUdEITXu8AD', value: amount / 100, currency: 'INR', transaction_id: transactionId });
+    } catch (e) { /* Payment success never depends on measurement. */ }
   }
 
   _investBand(T) {
@@ -39107,6 +39166,7 @@ class Component extends DCLogic {
       hero: this._hero(T),
       invBand: this._investBand(T),
       clarityGate: this._clarityGate(),
+      adsGate: this._adsGate(),
       pillars: [
         { glyph: 'V', color: '#0E5565', title: T.vision, body: T.vision_body, art: 'vision' },
         { glyph: 'M', color: '#D2305C', title: T.mission, body: T.mission_body, art: 'mission', link: 'work', linkLabel: T.pillar_link_work },

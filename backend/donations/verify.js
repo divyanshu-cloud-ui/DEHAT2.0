@@ -21,7 +21,8 @@ module.exports = async function handler(req, res) {
     if (context.kind === 'subscription' && payment.subscription_id !== context.id) throw new Error('Payment is not linked to this subscription');
     if (payment.status === 'authorized') await captureAuthorizedPayment(paymentId, context.amount, context.currency);
     else if (payment.status !== 'captured') throw new Error('Payment is not authorized');
-    json(res, 200, { verified: true, paymentId });
+    // Use the processor-confirmed value, never a browser-supplied amount.
+    json(res, 200, { verified: true, paymentId, amount: Number(payment.amount), currency: payment.currency });
   } catch (error) {
     json(res, 400, { verified: false, error: error.message });
   }

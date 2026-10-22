@@ -8,12 +8,12 @@ export const CSP_SOURCES = Object.freeze(Object.fromEntries(Object.entries({
   'object-src': ["'none'"],
   'base-uri': ["'self'"],
   'frame-ancestors': ["'self'"],
-  'script-src': ["'self'","'unsafe-inline'","'unsafe-eval'",'https://unpkg.com','https://checkout.razorpay.com','https://cdn.razorpay.com'],
+  'script-src': ["'self'","'unsafe-inline'","'unsafe-eval'",'https://unpkg.com','https://checkout.razorpay.com','https://cdn.razorpay.com','https://www.googletagmanager.com','https://www.googleadservices.com','https://www.google.com'],
   'style-src': ["'self'","'unsafe-inline'"],
   'font-src': ["'self'"],
-  'img-src': ["'self'",'data:','blob:'],
-  'connect-src': ["'self'",'https://api.razorpay.com','https://lumberjack.razorpay.com'],
-  'frame-src': ["'self'",'https://checkout.razorpay.com','https://api.razorpay.com'],
+  'img-src': ["'self'",'data:','blob:','https://www.googletagmanager.com','https://www.googleadservices.com','https://googleads.g.doubleclick.net','https://pagead2.googlesyndication.com','https://www.google.com','https://www.google.co.in'],
+  'connect-src': ["'self'",'https://api.razorpay.com','https://lumberjack.razorpay.com','https://www.googletagmanager.com','https://www.googleadservices.com','https://googleads.g.doubleclick.net','https://pagead2.googlesyndication.com','https://www.google.com','https://www.google.co.in','https://ad.doubleclick.net'],
+  'frame-src': ["'self'",'https://checkout.razorpay.com','https://api.razorpay.com','https://www.googletagmanager.com'],
 }).map(([directive,sources])=>[directive,Object.freeze(sources)])));
 
 const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
