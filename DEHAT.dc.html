@@ -1201,7 +1201,7 @@
         <p style="font-size:16px;line-height:1.6;color:var(--dim);margin:0">{{ T.where_sub }}</p>
       </div>
       <div style="border-radius:22px;overflow:hidden;border:1px solid var(--border);background:var(--surface2);box-shadow:0 30px 60px -40px var(--shadow)">
-        <iframe ref="{{ mapFrame }}" title="{{ T.title_map_atlas }}" loading="lazy" style="display:block;width:100%;height:min(86vh,880px);border:0"></iframe>
+        <iframe ref="{{ mapFrame }}" title="{{ T.title_map_atlas }}" loading="eager" style="display:block;width:100%;height:min(86vh,880px);border:0"></iframe>
       </div>
       <p style="font-size:13px;line-height:1.6;color:var(--faint);margin:16px 0 0;max-width:860px">{{ T.where_note }}</p>
     </section>
@@ -36255,13 +36255,10 @@ class Component extends DCLogic {
   }
 
   _adsEnquiryLabel() {
-    // Conversion label of the Google Ads "Contact" action (Goals > Conversions). Empty = measurement off.
     return '';
   }
 
   _recordAdsEnquiry(kind) {
-    // A tap on the email, phone or WhatsApp link is counted once per kind per visit. Nothing about the
-    // visitor or the message is sent: no value, no link text, no address or number.
     try {
       const label = this._adsEnquiryLabel();
       if (!label || !['email', 'phone', 'whatsapp'].includes(kind) || !this._adsGate()) return;
@@ -36269,7 +36266,7 @@ class Component extends DCLogic {
       if (this._adsEnquirySent.has(kind)) return;
       this._adsEnquirySent.add(kind);
       window.gtag('event', 'conversion', { send_to: 'AW-940501892/' + label });
-    } catch (e) { /* Contact links never depend on measurement. */ }
+    } catch (e) {}
   }
 
   _enquiryKind(href) {
@@ -39143,9 +39140,15 @@ class Component extends DCLogic {
         // means only one request ever fires, already carrying the right value.
         // The atlas is told the language the same way as the theme: in the URL for first load, and
         // (below, and from _setLang) by postMessage, so a change made before the frame loaded is not lost.
-        if (el && !el.src) {
-          el.src = './district-map.html?v=41&theme=' + this.state.theme + '&lang=' + encodeURIComponent(this.state.lang || 'en');
-          el.addEventListener('load', () => { this._syncMapTheme(); this._syncMapLang(); });
+        if (el && !el.src && !el.dataset.mapQueued) {
+          el.dataset.mapQueued = '1';
+          const go = () => {
+            if (el.src) return;
+            el.src = './district-map.html?v=42&theme=' + this.state.theme + '&lang=' + encodeURIComponent(this.state.lang || 'en');
+            el.addEventListener('load', () => { this._syncMapTheme(); this._syncMapLang(); });
+          };
+          const idle = () => (window.requestIdleCallback ? window.requestIdleCallback(go, { timeout: 2500 }) : setTimeout(go, 300));
+          if (document.readyState === 'complete') idle(); else window.addEventListener('load', idle, { once: true });
         }
       },
       goHome: setView('home'), goWork: setView('work'),
