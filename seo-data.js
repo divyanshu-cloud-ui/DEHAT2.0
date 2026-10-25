@@ -9089,7 +9089,7 @@ export default {
     },
     "six-lakh-in-bills-that-were-wrong": {
       "title": "सत्तर परिवार असगरे एकहि बिल स लड़ि रहल छल",
-      "description": "अनियमित आपूर्ति वाला घरों के विरुद्ध ₹25,000 से ₹38,000 तक के बकाया | अलग-अलग, एक-एकटा एकटा एहन तर्क अछि जे कियो नहि जीतैत अछि।",
+      "description": "अनियमित आपूर्ति वला घर सभ पर ₹25,000 सँ ₹38,000 धरि केर बकाया। अलग-अलग, हर एकटा एहन बहस अछि जे कियो नहि जीतैत अछि।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
     "one-school-without-a-building": {
@@ -14952,7 +14952,7 @@ export default {
     },
     "six-hundred-and-thirty-eight-claims": {
       "title": "ᱢᱤᱫ ᱱᱟᱶᱟ ᱟᱹᱱ ᱥᱮᱴᱮᱨ ᱮᱱᱟ ᱾ ᱛᱩᱨᱩᱭ ᱥᱟᱭ ᱯᱮ ᱜᱮᱞ ᱤᱨᱟᱹᱞ ᱜᱷᱟᱨᱚᱧᱡᱽ ᱠᱚ ᱱᱚᱣᱟ ᱠᱟᱹᱢᱤ ᱦᱩᱭ ᱟᱠᱚᱣᱟ",
-      "description": "ᱵᱤᱨ ᱦᱚᱠ ᱟᱹᱱ ᱫᱚ ᱢᱤᱫ ᱦᱚᱨ ᱛᱮᱭᱟᱨ ᱠᱮᱫᱟᱭ ᱾ Using it meant reading a statute, forming a committee and assembling documents nobody had.",
+      "description": "ᱵᱤᱨ ᱦᱚᱠ ᱟᱹᱱ ᱫᱚ ᱢᱤᱫ ᱦᱚᱨ ᱛᱮᱭᱟᱨ ᱠᱮᱫᱟᱭ ᱾ ᱱᱚᱣᱟ ᱵᱮᱵᱷᱟᱨ ᱨᱮᱭᱟᱜ ᱢᱮᱱᱮᱛ ᱫᱚ ᱛᱟᱦᱮᱸ ᱠᱟᱱᱟ ᱢᱤᱫ ᱟᱹᱱ ᱯᱟᱲᱦᱟᱣ, ᱢᱤᱫ ᱠᱚᱢᱤᱴᱤ ᱵᱮᱱᱟᱣ ᱟᱨ ᱚᱠᱚᱭ ᱴᱷᱮᱱ ᱦᱚᱸ ᱵᱟᱝ ᱛᱟᱦᱮᱸ ᱠᱟᱱ ᱠᱟᱜᱚᱡᱽ ᱠᱚ ᱡᱟᱣᱨᱟ ᱾",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
     "three-hundred-applications": {
