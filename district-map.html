@@ -126,6 +126,14 @@
   .placeholder{padding:40px 26px;color:var(--faint);font-size:14px;line-height:1.6}
   .placeholder b{color:var(--text);font-family:'Bricolage Grotesque'}
   .disclaim{font-size:11px;color:var(--faint);line-height:1.5;margin-top:8px;padding:12px;border-radius:10px;background:var(--surface2)}
+  .ph-more{margin-top:8px;border-radius:10px;background:var(--surface2);font-size:12px;line-height:1.55}
+  .ph-more.ph-index{border-inline-start:2px solid #EAAE28}
+  .ph-more summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px;padding:0 14px;color:var(--text);font-family:'Bricolage Grotesque';font-weight:700;font-size:13px}
+  .ph-more summary::-webkit-details-marker{display:none}
+  .ph-more summary::after{content:'+';font-size:18px;font-weight:400;color:#EAAE28;flex:none}
+  .ph-more[open] summary::after{content:'\2212'}
+  .ph-more summary:focus-visible{outline:2px solid #EAAE28;outline-offset:2px;border-radius:10px}
+  .ph-more p{margin:0;padding:0 14px 14px;color:var(--faint)}
   #panelClose{display:none;position:absolute;top:12px;inset-inline-end:12px;z-index:30;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:20px;line-height:1;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 8px 20px -10px var(--shadow)}
   @media (max-width:860px){
     #wrap{grid-template-columns:1fr}
@@ -511,11 +519,12 @@
     ph.innerHTML =
       `<b style="font-size:22px;display:block;margin-bottom:10px">${th('ph.title')}</b>`+
       [th('ph.intro',{district:dName(lk)}), th('ph.tap'), th('ph.shade',{n:A.indicators.filter(i=>i.worseHigh).length})].join(' ')+
-      `<div class="disclaim" style="border-inline-start:2px solid #EAAE28;padding-inline-start:14px"><b style="color:var(--text)">${th('ph.index.h1')}</b> ${th('ph.index.p1')}<br><br><b style="color:var(--text)">${th('ph.index.h2')}</b> ${th('ph.index.p2')}</div>`+
-      `<div class="disclaim"><b style="color:var(--text)">${th('ph.data.h')}</b> `+
+      `<details class="ph-more ph-index"><summary>${th('ph.index.h1')}</summary><p>${th('ph.index.p1')}</p></details>`+
+      `<details class="ph-more"><summary>${th('ph.index.h2')}</summary><p>${th('ph.index.p2')}</p></details>`+
+      `<details class="ph-more"><summary>${th('ph.data.h')}</summary><p>`+
       [th('ph.data.p1',{indicators:A.indicators.length,districts:A.districts.length}), th('ph.data.p2'),
        th('ph.data.p3',{direct:{html:bold('ph.data.direct')},indirect:{html:bold('ph.data.indirect')},intersectional:{html:bold('ph.data.intersectional')}}),
-       th('ph.data.p4'), th('ph.data.p5'), th('ph.data.p6'), th('ph.data.p7'), th('ph.data.p8')].join(' ')+`</div>`;
+       th('ph.data.p4'), th('ph.data.p5'), th('ph.data.p6'), th('ph.data.p7'), th('ph.data.p8')].join(' ')+`</p></details>`;
   }
 
   // ----- deep-dive panel -----
