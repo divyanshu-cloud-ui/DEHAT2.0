@@ -5908,7 +5908,7 @@ class Component extends DCLogic {
     });
   }
   _syncMapTheme() { try { if (this._mapFrame && this._mapFrame.contentWindow) this._mapFrame.contentWindow.postMessage({ theme: this.state.theme }, '*'); } catch (e) {} }
-  // The district atlas (district-map.html) holds its own strings; it reads ?lang= on load and follows this message after.
+  // The atlas holds its own strings: ?lang= on load, then this message.
   _syncMapLang() { try { if (this._mapFrame && this._mapFrame.contentWindow) this._mapFrame.contentWindow.postMessage({ lang: this.state.lang }, '*'); } catch (e) {} }
   // Language follows the device the site is opened on. An explicit choice from the picker
   // outranks that and is remembered, so a reader who switches is never switched back.
@@ -7183,7 +7183,7 @@ class Component extends DCLogic {
       refund_p6:'Every refund is entered in the same audited ledger as the receipt it reverses, carries the same reference, and appears in the year’s statutory accounts. A refund is never quietly netted off against income.',
       refund_cta:'Request a Refund',
       cookie_h2:'Cookie Policy, in Our Context',
-      cookie_p1:'This site is a record of public work. Essential cookies remember your language, theme and cookie choice. With your separate permission, performance cookies let Microsoft Clarity count visits and show masked sessions and heatmaps; donation, receipt and concern pages are not recorded by Clarity. Functional cookies enable embedded maps, documents and video. If you choose Donation Measurement, Google Ads may use ad-click and device identifiers to attribute a donation to an ad. Only after DEHAT verifies a domestic payment do we send Google the INR amount and a one-way token derived from its payment reference; no donor name, email, phone, PAN or address is sent in the conversion event. A foreign transfer report is not a conversion: it would be counted only after the SBI FCRA credit and donor details are reconciled. We do not enable personalised ads or enhanced conversions. This optional Google tag is off until you make a fresh choice, and is currently offered only in English and Hindi.',
+      cookie_p1:'This site is a record of public work. Essential cookies remember your language, theme and cookie choice. With your separate permission, performance cookies let Microsoft Clarity count visits and show masked sessions and heatmaps; donation, receipt and concern pages are not recorded by Clarity. Functional cookies enable embedded maps, documents and video. If you choose Donation and Enquiry Measurement, Google Ads may use ad-click and device identifiers to attribute a donation to an ad. Only after DEHAT verifies a domestic payment do we send Google the INR amount and a one-way token derived from its payment reference; no donor name, email, phone, PAN or address is sent in the conversion event. If you tap our email, phone or WhatsApp link, we also tell Google that a contact tap happened, once per visit for each kind of link, with no value and no message, name, email address or phone number. A foreign transfer report is not a conversion: it would be counted only after the SBI FCRA credit and donor details are reconciled. We do not enable personalised ads or enhanced conversions. This optional Google tag is off until you make a fresh choice, and is currently offered only in English and Hindi.',
       cookie_p2:'Your choice is stored on your own device and can be changed or withdrawn at any time from Cookie Settings in the footer. Clearing your browser storage removes it entirely. Where a child or an adolescent may be the reader, we treat the same default as for everyone: nothing beyond the essential is set unless it has been chosen.',
       cookie_ask_cta:'Ask What We Hold About You',
       work_sub:'Four programmes, in the order they began. Each one opens into its own page - why the work exists, how it is built, and every project it has carried, in chronological order with the What, Where, How, When, Why and Investment behind each.',
@@ -7443,7 +7443,7 @@ class Component extends DCLogic {
       faq_sub:'Grouped by what they are about. Every answer points at the page that proves it.',
       faq_count_suffix:'published answers',
       ck_banner_title:'Our Privacy Statement and Cookie Policy',
-      ck_banner_body:'Essential cookies keep the site working. With your permission, performance tools help improve the site and Google Ads can measure confirmed donations that follow an ad. Google measurement may use ad-click and device identifiers and receive the verified amount and an opaque transaction token, never donor contact or tax details in the conversion event. Choose all, essentials only, or each category separately. Change your choice in Cookie Settings at any time.',
+      ck_banner_body:'Essential cookies keep the site working. With your permission, performance tools help improve the site and Google Ads can measure confirmed donations and contact taps (email, phone or WhatsApp) that follow an ad. Google measurement may use ad-click and device identifiers and receive the verified amount and an opaque transaction token, never donor contact or tax details in the conversion event. Choose all, essentials only, or each category separately. Change your choice in Cookie Settings at any time.',
       ck_accept_all:'Accept All',
       ck_reject_all:'Reject All',
       ck_manage:'Manage Cookies',
@@ -7461,8 +7461,8 @@ class Component extends DCLogic {
       ck_perf_body:'Let us count visits and see which pages are read and how people move through the site, so we can tell what is useful and what is not. We use Microsoft Clarity, which records anonymised sessions and heatmaps; typed text and form fields are masked, and the donation, receipt and concern pages are never recorded. Without them we cannot tell whether a page is reaching anyone.',
       ck_func_label:'Functional Cookies',
       ck_func_body:'Enable extra features such as embedded maps, documents and video from the register. They may be set by the services we embed. Without them, some of those pieces will not load.',
-      ck_target_label:'Donation Measurement (Google Ads)',
-      ck_target_body:'Optional and off until you make a fresh choice. Google Ads may use ad-click and device identifiers. We send a confirmed domestic donation amount in INR and an opaque transaction token only after Razorpay verifies payment. A foreign transfer form is never counted as a payment; a future foreign conversion requires bank reconciliation. We send no donor contact, PAN or address in the conversion event and do not enable personalised ads.',
+      ck_target_label:'Donation and Enquiry Measurement (Google Ads)',
+      ck_target_body:'Optional and off until you make a fresh choice. Google Ads may use ad-click and device identifiers. We send a confirmed domestic donation amount in INR and an opaque transaction token only after Razorpay verifies payment. A foreign transfer form is never counted as a payment; a future foreign conversion requires bank reconciliation. When you tap our email, phone or WhatsApp link we also send Google a count of that tap, with no message, name, number or address. We send no donor contact, PAN or address in the conversion event and do not enable personalised ads.',
       foot_explore:'Explore',
       foot_reach:'Reach Us',
       foot_follow:'Follow the Work',
@@ -8129,7 +8129,7 @@ class Component extends DCLogic {
       refund_p6:'हर धन-वापसी उसी अंकेक्षित बहीखाते में दर्ज होती है जिसमें वह रसीद दर्ज थी जिसे वह उलटती है, वही संदर्भ रखती है, और उस वर्ष के वैधानिक खातों में दिखाई देती है। किसी धन-वापसी को कभी चुपचाप आय से घटाया नहीं जाता।',
       refund_cta:'धन-वापसी का अनुरोध करें',
       cookie_h2:'हमारे संदर्भ में कुकी नीति',
-      cookie_p1:'यह साइट सार्वजनिक कार्य का अभिलेख है। आवश्यक कुकीज़ भाषा, थीम और आपकी कुकी-पसंद याद रखती हैं। अलग अनुमति मिलने पर Microsoft Clarity विज़िट तथा मास्क किए हुए सत्र और हीटमैप दिखाता है; दान, रसीद और चिंता वाले पेज Clarity से रिकॉर्ड नहीं किए जाते। कार्यात्मक कुकीज़ एम्बेड किए हुए मानचित्र, दस्तावेज़ और वीडियो चलाती हैं। यदि आप दान-मापन चुनते हैं, तो Google Ads विज्ञापन-क्लिक और डिवाइस पहचानकर्ताओं से यह समझ सकता है कि दान किसी विज्ञापन के बाद हुआ या नहीं। घरेलू भुगतान Razorpay से सत्यापित होने के बाद ही हम Google को रुपये में राशि और भुगतान संदर्भ से निकला एकतरफ़ा टोकन भेजते हैं; रूपांतरण घटना में दाता का नाम, ईमेल, फ़ोन, PAN या पता नहीं भेजते। विदेशी हस्तांतरण की सूचना स्वयं रूपांतरण नहीं है; SBI FCRA खाते में राशि और दाता का मिलान होने के बाद ही उसे गिना जा सकता है। हम व्यक्तिगत विज्ञापन या एन्हांस्ड कन्वर्ज़न चालू नहीं करते। यह वैकल्पिक Google टैग नई सहमति तक बंद रहता है और अभी केवल अंग्रेज़ी तथा हिंदी में उपलब्ध है।',
+      cookie_p1:'यह साइट सार्वजनिक कार्य का अभिलेख है। आवश्यक कुकीज़ भाषा, थीम और आपकी कुकी-पसंद याद रखती हैं। अलग अनुमति मिलने पर Microsoft Clarity विज़िट तथा मास्क किए हुए सत्र और हीटमैप दिखाता है; दान, रसीद और चिंता वाले पेज Clarity से रिकॉर्ड नहीं किए जाते। कार्यात्मक कुकीज़ एम्बेड किए हुए मानचित्र, दस्तावेज़ और वीडियो चलाती हैं। यदि आप दान और संपर्क-मापन चुनते हैं, तो Google Ads विज्ञापन-क्लिक और डिवाइस पहचानकर्ताओं से यह समझ सकता है कि दान किसी विज्ञापन के बाद हुआ या नहीं। घरेलू भुगतान Razorpay से सत्यापित होने के बाद ही हम Google को रुपये में राशि और भुगतान संदर्भ से निकला एकतरफ़ा टोकन भेजते हैं; रूपांतरण घटना में दाता का नाम, ईमेल, फ़ोन, PAN या पता नहीं भेजते। अगर आप हमारे ईमेल, फ़ोन या WhatsApp लिंक पर टैप करते हैं, तो हम Google को बताते हैं कि संपर्क-टैप हुआ: हर विज़िट में हर तरह के लिंक के लिए एक बार, बिना किसी मूल्य, संदेश, नाम, ईमेल पते या फ़ोन नंबर के। विदेशी हस्तांतरण की सूचना स्वयं रूपांतरण नहीं है; SBI FCRA खाते में राशि और दाता का मिलान होने के बाद ही उसे गिना जा सकता है। हम व्यक्तिगत विज्ञापन या एन्हांस्ड कन्वर्ज़न चालू नहीं करते। यह वैकल्पिक Google टैग नई सहमति तक बंद रहता है और अभी केवल अंग्रेज़ी तथा हिंदी में उपलब्ध है।',
       cookie_p2:'आपकी पसंद आपके अपने डिवाइस पर संग्रहीत होती है और इसे फ़ुटर में कुकी सेटिंग्स से किसी भी समय बदला या वापस लिया जा सकता है। अपने ब्राउज़र का संग्रहण साफ़ करने से यह पूरी तरह हट जाती है। जहाँ पाठक कोई बच्चा या किशोर हो सकता है, वहाँ हम सबके लिए वही डिफ़ॉल्ट अपनाते हैं: चुने जाने तक आवश्यक से आगे कुछ भी सेट नहीं होता।',
       cookie_ask_cta:'पूछें आपके बारे में हमारे पास क्या है',
       portfolio_count:'परियोजनाएँ',
@@ -8449,7 +8449,7 @@ class Component extends DCLogic {
       faq_sub:'विषय के अनुसार समूहित। हर जवाब उस पेज की ओर इशारा करता है जो उसे प्रमाणित करता है।',
       faq_count_suffix:'प्रकाशित उत्तर',
       ck_banner_title:'हमारा गोपनीयता वक्तव्य और कुकी नीति',
-      ck_banner_body:'आवश्यक कुकीज़ वेबसाइट चलाती हैं। आपकी अनुमति से प्रदर्शन उपकरण वेबसाइट सुधारने में मदद करते हैं और Google Ads विज्ञापन के बाद हुए सत्यापित दान को माप सकता है। Google को विज्ञापन-क्लिक और डिवाइस पहचानकर्ता तथा सत्यापित राशि और एक अपारदर्शी लेन-देन टोकन मिल सकते हैं; रूपांतरण घटना में दाता का संपर्क या कर-विवरण नहीं भेजते। सभी, केवल आवश्यक, या अलग-अलग श्रेणियाँ चुनें। फ़ुटर की कुकी सेटिंग्स से कभी भी पसंद बदलें।',
+      ck_banner_body:'आवश्यक कुकीज़ वेबसाइट चलाती हैं। आपकी अनुमति से प्रदर्शन उपकरण वेबसाइट सुधारने में मदद करते हैं और Google Ads विज्ञापन के बाद हुए सत्यापित दान और संपर्क-टैप (ईमेल, फ़ोन या WhatsApp) को माप सकता है। Google को विज्ञापन-क्लिक और डिवाइस पहचानकर्ता तथा सत्यापित राशि और एक अपारदर्शी लेन-देन टोकन मिल सकते हैं; रूपांतरण घटना में दाता का संपर्क या कर-विवरण नहीं भेजते। सभी, केवल आवश्यक, या अलग-अलग श्रेणियाँ चुनें। फ़ुटर की कुकी सेटिंग्स से कभी भी पसंद बदलें।',
       ck_accept_all:'सभी स्वीकार करें',
       ck_reject_all:'सभी अस्वीकार करें',
       ck_manage:'कुकीज़ प्रबंधित करें',
@@ -8467,8 +8467,8 @@ class Component extends DCLogic {
       ck_perf_body:'हमें विज़िट गिनने दें और यह देखने दें कि कौन से पेज पढ़े जाते हैं और लोग साइट पर कैसे आगे बढ़ते हैं, ताकि हम बता सकें कि क्या उपयोगी है और क्या नहीं। हम Microsoft Clarity का उपयोग करते हैं, जो अज्ञात सत्र और हीटमैप रिकॉर्ड करता है; टाइप किया गया टेक्स्ट और फ़ॉर्म फ़ील्ड मास्क रहते हैं, और दान, रसीद और चिंता वाले पेज कभी रिकॉर्ड नहीं किए जाते। इनके बिना हम यह नहीं जान सकते कि कोई पेज किसी तक पहुँच भी रहा है या नहीं।',
       ck_func_label:'कार्यात्मक कुकीज़',
       ck_func_body:'ये रजिस्टर से जुड़े नक़्शे, दस्तावेज़ और वीडियो जैसी अतिरिक्त सुविधाओं को सक्षम करती हैं। इन्हें उन सेवाओं द्वारा सेट किया जा सकता है जिन्हें हम एम्बेड करते हैं। इनके बिना, उनमें से कुछ हिस्से लोड नहीं होंगे।',
-      ck_target_label:'दान-मापन (Google Ads)',
-      ck_target_body:'यह वैकल्पिक है और नई सहमति तक बंद है। Google Ads विज्ञापन-क्लिक और डिवाइस पहचानकर्ताओं का उपयोग कर सकता है। Razorpay से घरेलू भुगतान सत्यापित होने पर ही रुपये में राशि और अपारदर्शी लेन-देन टोकन भेजते हैं। विदेशी हस्तांतरण का फ़ॉर्म भुगतान नहीं माना जाता; बैंक से मिलान के बाद ही उसे गिना जा सकता है। रूपांतरण घटना में संपर्क, PAN या पता नहीं भेजते और व्यक्तिगत विज्ञापन चालू नहीं करते।',
+      ck_target_label:'दान और संपर्क-मापन (Google Ads)',
+      ck_target_body:'यह वैकल्पिक है और नई सहमति तक बंद है। Google Ads विज्ञापन-क्लिक और डिवाइस पहचानकर्ताओं का उपयोग कर सकता है। Razorpay से घरेलू भुगतान सत्यापित होने पर ही रुपये में राशि और अपारदर्शी लेन-देन टोकन भेजते हैं। विदेशी हस्तांतरण का फ़ॉर्म भुगतान नहीं माना जाता; बैंक से मिलान के बाद ही उसे गिना जा सकता है। जब आप हमारे ईमेल, फ़ोन या WhatsApp लिंक पर टैप करते हैं, तो हम Google को बस उस टैप की गिनती भेजते हैं; कोई संदेश, नाम, नंबर या पता नहीं। रूपांतरण घटना में संपर्क, PAN या पता नहीं भेजते और व्यक्तिगत विज्ञापन चालू नहीं करते।',
       foot_explore:'खोजें',
       foot_reach:'संपर्क करें',
       foot_follow:'कार्य से जुड़ें',
@@ -35455,7 +35455,7 @@ class Component extends DCLogic {
     if (!this._ptogs[k]) this._ptogs[k] = () => this.setState(s => ({ [k]: !s[k] }));
     return this._ptogs[k];
   }
-  // Launch fail-safe: if the payment system is still on Razorpay's test keys, say so on the page instead of letting visitors believe a gift is real.
+  // Fail-safe: on Razorpay test keys, say so on the page.
   // Published statutory PDFs are listed in /assets/docs/manifest.json (kept in the public Blob store).
   // A card or link shows a PDF only when it is listed; everything else shows "Available on request".
   _loadDocs() {
@@ -35628,7 +35628,7 @@ class Component extends DCLogic {
     rows.push(text('rtCompany', { ac: 'organization' }));
     return rows;
   }
-  // Currencies named in the reader's language (Intl.DisplayNames); rupees and the usual donor currencies come first.
+  // Currencies in the reader's language; rupees and common donor currencies first.
   _currencyOptions() {
     const lang = this.state.lang;
     this._curOpt = this._curOpt || {};
@@ -35814,8 +35814,8 @@ class Component extends DCLogic {
   async _pay(P) {
     const p = this._payload(P);
     if (p.account === 'FCRA / foreign') {
-      // PayPal does not accept an Indian non-profit, so a foreign contribution is a bank (SWIFT) transfer to the FCRA account
-      // shown below, reported afterwards under "Already Transferred". The card button takes the reader straight to those details.
+      // PayPal refuses Indian non-profits, so foreign gifts are a SWIFT transfer to the FCRA account
+      // shown below, reported under "Already Transferred". The card button jumps to those details.
       try { const t = document.querySelector('[data-anchor="transfer"]'); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
       return;
     }
@@ -36255,7 +36255,7 @@ class Component extends DCLogic {
   }
 
   _adsEnquiryLabel() {
-    return '';
+    return 'fLo8CKntuKkdEITXu8AD';
   }
 
   _recordAdsEnquiry(kind) {
@@ -36360,7 +36360,7 @@ class Component extends DCLogic {
       answer: T.hero_th_answer, birth: T.hero_th_birth, age: T.hero_th_age,
       pause: T.hero_th_pause, play: T.hero_th_play, replay: T.hero_th_replay,
     };
-    // The programme names arrive with the language's content file, a moment after the first render, so the art re-labels when they change.
+    // Programme names arrive after first render; re-label when they change.
     this._heroData.sig = Object.keys(prog).map(k => prog[k][0] + '|' + prog[k][1]).join('||');
     if (this._heroSync) this._heroSync();
     return {
@@ -36421,7 +36421,7 @@ class Component extends DCLogic {
       const labels = () => {
         const d = D(), ticks = [[-1, d.birth], [5, '5'], [10, '10'], [15, '15'], [18, '18']];
         q('.hr-axis').innerHTML = ticks.map((t, i) => '<span class="hr-tick' + (i ? '' : ' first') + '" data-a="' + t[0] + '" style="left:' + (i ? (X(t[0]) / VW * 100) + '%' : '0') + '">' + esc(t[1]) + '</span>').join('');
-        // The dial carries each programme's colour and years, so below the line there is only a key: one dot and name per programme.
+        // The dial carries colour and years; below it, one dot and name per programme.
         q('.hr-key').innerHTML = ORDER.map(k => '<button type="button" class="hr-kd ' + k + '" data-k="' + k + '"><i></i>' + esc(d.prog[k][0]) + '</button>').join('');
         qa('.tg').forEach(g => { const i = TURNS.indexOf(+g.dataset.a); if (d.beats[i]) g.setAttribute('aria-label', d.beats[i][0] + ' ' + d.beats[i][1]); });
         ctl.textContent = state === 'playing' ? d.pause : state === 'paused' ? d.play : d.replay;
@@ -36509,7 +36509,7 @@ class Component extends DCLogic {
       ctl.addEventListener('click', () => { sysPaused = false; state === 'playing' ? pause() : state === 'paused' ? resume() : play(); });
       // Interaction. Tap a turn on the clock to read that moment of her life; tap a programme to see the years
       // it answers; wheel or swipe anywhere on the non-control stage to step through; the film pauses when off screen.
-      // Steps 0 to 7 are the story; 8 to 11 are the four programmes arriving one at a time; after that, the resting frame.
+      // Steps 0-7 story, 8-11 programmes one by one, then the resting frame.
       const explore = (i) => {
         i = Math.max(0, Math.min(11, i)); clear(); beatNow = i;
         el.classList.remove('hr-rest', 'hr-playing'); el.classList.add('hr-paused'); end.classList.remove('in');

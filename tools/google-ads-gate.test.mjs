@@ -82,6 +82,8 @@ test('consent grants ad storage and user data but never personalisation, and wit
 test('enquiry measurement is off until a label is set, then counts each contact kind once and sends nothing personal', () => {
   const h = harness();
   const events = () => (h.window.dataLayer || []).filter(args => args[0] === 'event');
+  assert.equal(h.app._adsEnquiryLabel(), 'fLo8CKntuKkdEITXu8AD', 'label of the "DEHAT partner enquiry" action');
+  h.app._adsEnquiryLabel = () => '';
   h.app._recordAdsEnquiry('email');
   assert.equal(events().length, 0, 'no label, no event');
   h.app._adsEnquiryLabel = () => 'TESTLABEL123';
