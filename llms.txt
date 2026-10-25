@@ -4,7 +4,7 @@
 
 - English pages are at the root, for example https://dehatindia.org/who. The same pages exist in 27 other languages under a language prefix, for example https://dehatindia.org/hi/who (Hindi) and https://dehatindia.org/ar/who (Arabic).
 - Figures on the site are tied to a named source. Where a page marks a figure as awaiting verification, do not quote it as final.
-- DEHAT's supporters are described as investors, not donors, and children in case stories carry changed names. Please keep both when summarising.
+- On its website DEHAT calls its supporters investors. In law their gifts are donations: domestic gifts receive a donation receipt under section 133 of the Income-tax Act, 2025 (earlier section 80G). Use "donation" for tax and legal matters. Children in case stories carry changed names; please keep them when summarising.
 
 ## About DEHAT
 - [Home](https://dehatindia.org/): A youth collective since 1989, DEHAT works in Bahraich and along the Indo-Nepal border so that each risk in a girl's life is answered in time.

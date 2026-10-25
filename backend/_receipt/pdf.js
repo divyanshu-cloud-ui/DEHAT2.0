@@ -27,7 +27,7 @@ const ORG = {
   contact: 'dehatindia.org · joinus@dehatindia.org',
 };
 const EXEMPTION_TEXT = 'Donation eligible for deduction under section 133 of the Income-tax Act, 2025 (earlier section 80G of the Income-tax Act, 1961). Approval URN ' + ORG.urn80g + ', valid for AY 2027-28 to 2031-32. The deduction is available only to a donor who has not opted for the new tax regime.';
-const NOTE_TEXT = 'Thank you for investing with DEHAT. Please keep this receipt for your tax records.';
+const NOTE_TEXT = 'Thank you for your donation to DEHAT. Please keep this receipt for your tax records.';
 const NO_GOODS = 'No goods or services were provided in exchange for this donation.';
 
 const METHOD_TEXT = { card: 'Paid online by card', upi: 'Paid online by UPI', netbanking: 'Paid online by netbanking', wallet: 'Paid online by wallet', emi: 'Paid online by card EMI', upi_qr: 'Paid by UPI QR into the bank account' };

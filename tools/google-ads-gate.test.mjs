@@ -66,6 +66,19 @@ test('verified INR payment is measured once, without donor details or a raw paym
   assert.equal(h.window.dataLayer.filter(args => args[0] === 'event').length, 1);
 });
 
+test('consent grants ad storage and user data but never personalisation, and withdrawal revokes both', () => {
+  const h = harness();
+  assert.equal(h.app._adsGate(), true);
+  const consent = () => h.window.dataLayer.filter(args => args[0] === 'consent');
+  assert.deepEqual({ ...consent()[0][2] }, { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'denied', analytics_storage: 'denied' });
+  h.app.state.ckPrefs.targeting = false;
+  h.setConsent({ v: 2, prefs: { targeting: false } });
+  h.app._adsGate();
+  const update = consent().at(-1);
+  assert.equal(update[1], 'update');
+  assert.deepEqual({ ...update[2] }, { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+});
+
 test('a transfer report or invalid proof is never a donation conversion', async () => {
   const h = harness();
   for (const proof of [null, {}, { paymentId: 'pay_A', amount: 0, currency: 'INR' },

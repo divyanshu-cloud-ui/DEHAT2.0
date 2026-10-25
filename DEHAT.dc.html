@@ -1071,7 +1071,7 @@
           <div key="{{ activeNode.short }}" class="rise" style="text-align:center;font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#EAAE28;margin-top:44px;letter-spacing:.02em">{{ activeNode.shortLabel }}</div>
           <div key="b{{ activeNode.title }}" class="rise svc-belowstory" style="text-align:center;max-width:440px;margin:18px auto 0">
             <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,.8);margin:0 0 8px;text-wrap:pretty">{{ activeNode.story }}</p>
-            <div style="font-size:11px;color:rgba(255,255,255,.7);font-weight:600;letter-spacing:.02em">{{ T.f_source }} {{ activeNode.src }}</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.7);font-weight:600;letter-spacing:.02em">{{ T.f_source }} {{ activeNode.src }}</div>
           </div>
         </div>
         <div class="cycle-sources">
@@ -1082,6 +1082,7 @@
             <li>Sample Registration System</li>
             <li>NITI Aayog National Multidimensional Poverty Index (Progress Review 2023)</li>
             <li>Census of India 2011</li>
+            <li>DEHAT field data (Indo-Nepal border districts)</li>
           </ul>
         </div>
       </div>
@@ -36208,7 +36209,7 @@ class Component extends DCLogic {
       if (allowed && !window.__dehatAdsTag) {
         window.dataLayer = window.dataLayer || [];
         window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-        window.gtag('consent', 'default', { ad_storage: 'granted', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+        window.gtag('consent', 'default', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'denied', analytics_storage: 'denied' });
         window.gtag('js', new Date());
         window.gtag('config', 'AW-940501892', { send_page_view: false, allow_ad_personalization_signals: false });
         const script = document.createElement('script');
@@ -36218,7 +36219,7 @@ class Component extends DCLogic {
         document.head.appendChild(script);
         window.__dehatAdsTag = true;
       } else if (window.__dehatAdsTag && window.__dehatAdsAllowed !== allowed) {
-        window.gtag('consent', 'update', { ad_storage: allowed ? 'granted' : 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+        window.gtag('consent', 'update', { ad_storage: allowed ? 'granted' : 'denied', ad_user_data: allowed ? 'granted' : 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
         if (!allowed) document.cookie.split(';').forEach(part => {
           const name = part.trim().split('=')[0];
           if (!/^_gcl_|^_gac_/.test(name)) return;
