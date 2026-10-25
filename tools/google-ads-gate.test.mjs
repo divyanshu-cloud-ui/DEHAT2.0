@@ -27,7 +27,7 @@ function harness({ version = 2, targeting = true, lang = 'en', mode = 'live', ho
       else cookies.set(key, val);
     },
   };
-  const methods = vm.runInNewContext('({' + source.slice(start, end).replace('\n  async _recordAdsDonation', ',\n  async _recordAdsDonation') + '})', { window, document, TextEncoder, Uint8Array, Number, Set });
+  const methods = vm.runInNewContext('({' + source.slice(start, end).replace(/\n  (async _recordAdsDonation|_adsEnquiryLabel|_recordAdsEnquiry|_enquiryKind)/g, ',\n  $1') + '})', { window, document, TextEncoder, Uint8Array, Number, Set });
   const app = { state: { ckDecided: true, ckPrefs: { targeting }, lang }, _pmode: mode, ...methods };
   return { app, window, scripts, cookies, setConsent: value => { consent = value; } };
 }
@@ -77,6 +77,38 @@ test('consent grants ad storage and user data but never personalisation, and wit
   const update = consent().at(-1);
   assert.equal(update[1], 'update');
   assert.deepEqual({ ...update[2] }, { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+});
+
+test('enquiry measurement is off until a label is set, then counts each contact kind once and sends nothing personal', () => {
+  const h = harness();
+  const events = () => (h.window.dataLayer || []).filter(args => args[0] === 'event');
+  h.app._recordAdsEnquiry('email');
+  assert.equal(events().length, 0, 'no label, no event');
+  h.app._adsEnquiryLabel = () => 'TESTLABEL123';
+  h.app._recordAdsEnquiry('email');
+  h.app._recordAdsEnquiry('email');
+  h.app._recordAdsEnquiry('phone');
+  h.app._recordAdsEnquiry('whatsapp');
+  h.app._recordAdsEnquiry('fax');
+  assert.equal(events().length, 3);
+  assert.deepEqual({ ...events()[0][2] }, { send_to: 'AW-940501892/TESTLABEL123' });
+});
+
+test('enquiry measurement needs fresh consent and the live English or Hindi site', () => {
+  for (const options of [{ version: 1 }, { targeting: false }, { lang: 'fr' }, { mode: 'test' }, { host: 'www.dehatindia.org' }]) {
+    const h = harness(options);
+    h.app._adsEnquiryLabel = () => 'TESTLABEL123';
+    h.app._recordAdsEnquiry('email');
+    assert.equal((h.window.dataLayer || []).filter(args => args[0] === 'event').length, 0, JSON.stringify(options));
+  }
+});
+
+test('only email, phone and WhatsApp links count as an enquiry', () => {
+  const { app } = harness();
+  assert.equal(app._enquiryKind('mailto:joinus@dehatindia.org?subject=Hi'), 'email');
+  assert.equal(app._enquiryKind('tel:+919415054079'), 'phone');
+  assert.equal(app._enquiryKind('https://wa.me/919415054079?text=Hello'), 'whatsapp');
+  for (const href of ['/get-involved/give', 'https://example.org/', 'https://wa.me.evil.com/x', 'javascript:alert(1)', '', null]) assert.equal(app._enquiryKind(href), '', String(href));
 });
 
 test('a transfer report or invalid proof is never a donation conversion', async () => {

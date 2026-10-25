@@ -5094,6 +5094,11 @@ class Component extends DCLogic {
     this._applyHash();
     this._onPopState = () => this._applyHash();
     window.addEventListener('popstate', this._onPopState);
+    this._onEnquiryClick = (e) => {
+      const a = e.target && e.target.closest && e.target.closest('a[href]');
+      if (a) this._recordAdsEnquiry(this._enquiryKind(a.getAttribute('href')));
+    };
+    document.addEventListener('click', this._onEnquiryClick, true);
     // The mark fills while the page settles, then clears. Capped so a slow asset can
     // never hold the reader behind a splash: the site is readable either way.
     this._bootDone = () => {
@@ -36247,6 +36252,32 @@ class Component extends DCLogic {
       this._adsSent.add(transactionId);
       window.gtag('event', 'conversion', { send_to: 'AW-940501892/5FYmCJiNhKUdEITXu8AD', value: amount / 100, currency: 'INR', transaction_id: transactionId });
     } catch (e) { /* Payment success never depends on measurement. */ }
+  }
+
+  _adsEnquiryLabel() {
+    // Conversion label of the Google Ads "Contact" action (Goals > Conversions). Empty = measurement off.
+    return '';
+  }
+
+  _recordAdsEnquiry(kind) {
+    // A tap on the email, phone or WhatsApp link is counted once per kind per visit. Nothing about the
+    // visitor or the message is sent: no value, no link text, no address or number.
+    try {
+      const label = this._adsEnquiryLabel();
+      if (!label || !['email', 'phone', 'whatsapp'].includes(kind) || !this._adsGate()) return;
+      this._adsEnquirySent = this._adsEnquirySent || new Set();
+      if (this._adsEnquirySent.has(kind)) return;
+      this._adsEnquirySent.add(kind);
+      window.gtag('event', 'conversion', { send_to: 'AW-940501892/' + label });
+    } catch (e) { /* Contact links never depend on measurement. */ }
+  }
+
+  _enquiryKind(href) {
+    const h = String(href || '').trim().toLowerCase();
+    if (h.startsWith('mailto:')) return 'email';
+    if (h.startsWith('tel:')) return 'phone';
+    if (/^https:\/\/wa\.me\//.test(h)) return 'whatsapp';
+    return '';
   }
 
   _investBand(T) {
