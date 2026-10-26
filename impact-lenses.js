@@ -16,7 +16,7 @@ export const CATEGORY_LABELS = {
   convergence_inr: 'in government convergence the community drew in',
 };
 
-// Audited fiscal-year cumulative receipts, FY2005-06 through FY2024-25 (source: finance-data.js).
+// Audited fiscal-year cumulative receipts, FY2005-06 through FY2025-26 (source: finance-data.js).
 export const YEARLY = [
   { fy:'2005-06', received:1156970, cumulative:1156970 },
   { fy:'2006-07', received:1357574, cumulative:2514544 },
@@ -38,6 +38,7 @@ export const YEARLY = [
   { fy:'2022-23', received:7652809, cumulative:159416013 },
   { fy:'2023-24', received:22036289, cumulative:181452302 },
   { fy:'2024-25', received:16068803, cumulative:197521105 },
+  { fy:'2025-26', received:19839527, cumulative:217360632 },
 ];
 
 // UNCRC pillar -> { count of projects carrying that tag, category totals across those projects }
@@ -144,6 +145,7 @@ export const YEAR_WORK = {
   2022: { running: 8, started: [24,28,35] },
   2023: { running: 10, started: [12,33,34] },
   2024: { running: 8, started: [] },
+  2025: { running: 8, started: [29] },
 };
 
 // What a single entitlement is worth to the household that holds it, at the statutory rate.

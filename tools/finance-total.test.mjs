@@ -27,3 +27,19 @@ test('the "years of audited accounts" tile matches the ledger', async () => {
   assert.ok(tile, 'years tile not found');
   assert.equal(Number(tile[1]), years);
 });
+
+test('the year-by-year lens covers every audited year and matches the ledger', async () => {
+  const ctx = {}; ctx.window = ctx; vm.createContext(ctx);
+  vm.runInContext(await readFile('finance-data.js', 'utf8'), ctx);
+  const {YEARLY, YEAR_WORK} = await import('../impact-lenses.js');
+  const byFy = {};
+  for (const f of ctx.FIN.flows('received')) byFy[f.fy] = (byFy[f.fy] || 0) + (+f.amt || 0);
+  assert.equal(YEARLY.length, ctx.FIN.YEARS.length, 'one lens row per audited year');
+  let cumulative = 0;
+  for (const row of YEARLY) {
+    assert.equal(row.received, Math.round(byFy[row.fy]), row.fy);
+    cumulative += row.received;
+    assert.equal(row.cumulative, cumulative, row.fy + ' cumulative');
+    assert.ok(YEAR_WORK[parseInt(row.fy, 10)], row.fy + ' has running/begun counts');
+  }
+});
