@@ -3362,7 +3362,7 @@ export default {
   },
   "doi": {
     "home": {
-      "title": "DEHAT | भारत-नेपाल सीमा पर बाल अधिकार",
+      "title": "DEHAT | भारत-नेपाल सीमा उप्पर बच्चें दे अधिकार",
       "description": "1989 थमां इक युवा समूह दे रूप च, DEHAT बहराइच ते सीमावर्ती इलाके च कम्म करदा ऐ तां जे हर कुड़ी गी समें सिर सुरक्षा मिलै।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
@@ -8738,7 +8738,7 @@ export default {
   },
   "mai": {
     "home": {
-      "title": "DEHAT | भारत-नेपाल सीमा पर बाल अधिकार",
+      "title": "DEHAT | भारत-नेपाल सीमा पर बच्चाक अधिकार",
       "description": "1989 सँ एक युवा समूहक रूपमे शुरू भेल DEHAT बहराइच आ सीमावर्ती क्षेत्रमे काज करैत अछि जाहिसँ हर बेटीक जीवनक संकट समय पर दूर भऽ सकय।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
@@ -8753,7 +8753,7 @@ export default {
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
     "prog/sol": {
-      "title": "नेतृत्व विद्यालय | DEHAT कार्यक्रम",
+      "title": "नेतृत्व के स्कूल | DEHAT केर कार्यक्रम",
       "description": "किशोर स्वास्थ्य शिक्षा, सेतु शिक्षण केंद्र आ पुन: नामांकन, जाहिसँ किशोरी सभ स्कूलमे बनल रहथि आ युवा नेतृत्वक लेल तैयार होथि।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
@@ -8763,12 +8763,12 @@ export default {
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
     "prog/cj": {
-      "title": "जलवायु न्याय | DEHAT कार्यक्रम",
+      "title": "जलवायु न्याय | DEHAT केर कार्यक्रम",
       "description": "छोट किसान परिवार सभक संग पोषण वाटिका, दलहन खेती आ खाद्य उत्पादन विविधता, जाहिसँ खराब मौसममे सेहो आमदनी सुरक्षित रहय।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
     "prog/hp": {
-      "title": "मानव संरक्षण | DEHAT कार्यक्रम",
+      "title": "मानव संरक्षण | DEHAT केर कार्यक्रम",
       "description": "गाम आ ब्लॉक बाल संरक्षण समिति, आ सीमा पर बाल विवाह आ मानव तस्करी रोकय लेल SSB आ पुलिस संग साझा प्रयास।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
@@ -11441,22 +11441,22 @@ export default {
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
     "prog/sol": {
-      "title": "नेतृत्व विद्यालय | DEHAT कार्यक्रम",
+      "title": "नेतृत्व स्कूल | DEHAT को कार्यक्रम",
       "description": "किशोरी स्वास्थ्य शिक्षा, सेतु सिकाइ केन्द्र र पुन: भर्ना, ताकि बालिकाहरू विद्यालयमा रहून् र युवा नेतृत्व गर्न तयार होऊन्।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
     "prog/re": {
-      "title": "अधिकार र अधिकार | DEHAT कार्यक्रम",
+      "title": "अधिकार र हक | DEHAT को कार्यक्रम",
       "description": "नवजात शिशु स्याहार, खोप अनुगमन र परिवारलाई पाउनुपर्ने पेन्सन, जब कार्ड र रासन कार्ड प्राप्त गर्न सहयोग।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
     "prog/cj": {
-      "title": "जलवायु न्याय | DEHAT कार्यक्रम",
+      "title": "जलवायु न्याय | DEHAT को कार्यक्रम",
       "description": "साना किसान परिवारहरूसँग करेसाबारी, दलहन खेती र खाद्य उत्पादन विविधीकरण, ताकि प्रतिकूल मौसममा पनि आम्दानी सुरक्षित रहोस्।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
     "prog/hp": {
-      "title": "मानव संरक्षण | DEHAT कार्यक्रम",
+      "title": "मानव संरक्षण | DEHAT को कार्यक्रम",
       "description": "गाउँ र ब्लक बाल संरक्षण समितिहरू, र सीमामा बालविवाह तथा मानव बेचबिखन रोक्न एसएसबी र प्रहरीसँग सहकार्य।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
