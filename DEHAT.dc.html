@@ -6829,15 +6829,9 @@ class Component extends DCLogic {
       pv_head_route_eyebrow:'Get Involved',
       pv_head_route_title:'Find Your Route In.',
       pv_head_route_sub:'Nine ways to work with this organisation, each with what it actually needs from you.',
-      // The former single "give" tab split in two: this eyebrow/title/sub now heads the
-      // case-for-investing page ('case'), reached by browsing into the "Why Invest" pill. Titles
-      // rewritten to match the sharp, reframing voice the case copy itself uses (case_h1: "This
-      // Isn't Charity. It's an Investment...") rather than the flatter, checkout-style phrasing
-      // ("Fund Work Already Under Way." / "Complete Your Gift.") that was here before and read
-      // like a different, blander voice next to it. The payment-only page that follows it (still
-      // internally pTab 'give' - every sitewide "Invest" button already targets 'give', so
-      // narrowing what it renders needed no call-site changes) gets its own pv_head_pay_* banner,
-      // since a checkout screen still needs its own framing rather than repeating case_h1 verbatim.
+      // The former single "give" tab split in two: this eyebrow/title/sub heads the case-for-investing page ('case'), reached via the
+      // "Why Invest" pill, in the sharp voice of case_h1. The payment-only page after it (internally pTab 'give', which every "Invest"
+      // button targets) has its own pv_head_pay_* banner.
       pv_head_give_eyebrow:'Invest',
       pv_head_give_title:'Why This Isn’t Charity.',
       pv_head_give_sub:'Every audited year since 2005–06 backs every rupee asked for here.',
@@ -7183,7 +7177,7 @@ class Component extends DCLogic {
       refund_p6:'Every refund is entered in the same audited ledger as the receipt it reverses, carries the same reference, and appears in the year’s statutory accounts. A refund is never quietly netted off against income.',
       refund_cta:'Request a Refund',
       cookie_h2:'Cookie Policy, in Our Context',
-      cookie_p1:'This site is a record of public work. Essential cookies remember your language, theme and cookie choice. With your separate permission, performance cookies let Microsoft Clarity count visits and show masked sessions and heatmaps; donation, receipt and concern pages are not recorded by Clarity. Functional cookies enable embedded maps, documents and video. If you choose Donation and Enquiry Measurement, Google Ads may use ad-click and device identifiers to attribute a donation to an ad. Only after DEHAT verifies a domestic payment do we send Google the INR amount and a one-way token derived from its payment reference; no donor name, email, phone, PAN or address is sent in the conversion event. If you tap our email, phone or WhatsApp link, we also tell Google that a contact tap happened, once per visit for each kind of link, with no value and no message, name, email address or phone number. A foreign transfer report is not a conversion: it would be counted only after the SBI FCRA credit and donor details are reconciled. We do not enable personalised ads or enhanced conversions. This optional Google tag is off until you make a fresh choice, and is currently offered only in English and Hindi.',
+      cookie_p1:'This site is a record of public work. Essential cookies remember your language, theme and cookie choice. With your separate permission, performance cookies let Microsoft Clarity count visits and show masked sessions and heatmaps; donation, receipt and concern pages are not recorded by Clarity. On the same permission Vercel Web Analytics also counts page views; it sets no cookie, stores no personal data and does not run on those pages. Functional cookies enable embedded maps, documents and video. If you choose Donation and Enquiry Measurement, Google Ads may use ad-click and device identifiers to attribute a donation to an ad. Only after DEHAT verifies a domestic payment do we send Google the INR amount and a one-way token derived from its payment reference; no donor name, email, phone, PAN or address is sent in the conversion event. If you tap our email, phone or WhatsApp link, we also tell Google that a contact tap happened, once per visit for each kind of link, with no value and no message, name, email address or phone number. A foreign transfer report is not a conversion: it would be counted only after the SBI FCRA credit and donor details are reconciled. We do not enable personalised ads or enhanced conversions. This optional Google tag is off until you make a fresh choice, and is currently offered only in English and Hindi.',
       cookie_p2:'Your choice is stored on your own device and can be changed or withdrawn at any time from Cookie Settings in the footer. Clearing your browser storage removes it entirely. Where a child or an adolescent may be the reader, we treat the same default as for everyone: nothing beyond the essential is set unless it has been chosen.',
       cookie_ask_cta:'Ask What We Hold About You',
       work_sub:'Four programmes, in the order they began. Each one opens into its own page - why the work exists, how it is built, and every project it has carried, in chronological order with the What, Where, How, When, Why and Investment behind each.',
@@ -7458,7 +7452,7 @@ class Component extends DCLogic {
       ck_nec_label:'Strictly Necessary Cookies',
       ck_nec_body:'Needed for the site to work: remembering your language and theme, keeping a form you have started, and recording this cookie choice. They are set in response to what you do here and store no personal record. Blocking them in your browser will break parts of the site.',
       ck_perf_label:'Performance Cookies',
-      ck_perf_body:'Let us count visits and see which pages are read and how people move through the site, so we can tell what is useful and what is not. We use Microsoft Clarity, which records anonymised sessions and heatmaps; typed text and form fields are masked, and the donation, receipt and concern pages are never recorded. Without them we cannot tell whether a page is reaching anyone.',
+      ck_perf_body:'Let us count visits and see which pages are read and how people move through the site, so we can tell what is useful and what is not. We use Microsoft Clarity, which records anonymised sessions and heatmaps; typed text and form fields are masked, and the donation, receipt and concern pages are never recorded. Vercel Web Analytics also counts page views; it sets no cookie, stores no personal data and does not run on those pages. Without them we cannot tell whether a page is reaching anyone.',
       ck_func_label:'Functional Cookies',
       ck_func_body:'Enable extra features such as embedded maps, documents and video from the register. They may be set by the services we embed. Without them, some of those pieces will not load.',
       ck_target_label:'Donation and Enquiry Measurement (Google Ads)',
@@ -8129,7 +8123,7 @@ class Component extends DCLogic {
       refund_p6:'हर धन-वापसी उसी अंकेक्षित बहीखाते में दर्ज होती है जिसमें वह रसीद दर्ज थी जिसे वह उलटती है, वही संदर्भ रखती है, और उस वर्ष के वैधानिक खातों में दिखाई देती है। किसी धन-वापसी को कभी चुपचाप आय से घटाया नहीं जाता।',
       refund_cta:'धन-वापसी का अनुरोध करें',
       cookie_h2:'हमारे संदर्भ में कुकी नीति',
-      cookie_p1:'यह साइट सार्वजनिक कार्य का अभिलेख है। आवश्यक कुकीज़ भाषा, थीम और आपकी कुकी-पसंद याद रखती हैं। अलग अनुमति मिलने पर Microsoft Clarity विज़िट तथा मास्क किए हुए सत्र और हीटमैप दिखाता है; दान, रसीद और चिंता वाले पेज Clarity से रिकॉर्ड नहीं किए जाते। कार्यात्मक कुकीज़ एम्बेड किए हुए मानचित्र, दस्तावेज़ और वीडियो चलाती हैं। यदि आप दान और संपर्क-मापन चुनते हैं, तो Google Ads विज्ञापन-क्लिक और डिवाइस पहचानकर्ताओं से यह समझ सकता है कि दान किसी विज्ञापन के बाद हुआ या नहीं। घरेलू भुगतान Razorpay से सत्यापित होने के बाद ही हम Google को रुपये में राशि और भुगतान संदर्भ से निकला एकतरफ़ा टोकन भेजते हैं; रूपांतरण घटना में दाता का नाम, ईमेल, फ़ोन, PAN या पता नहीं भेजते। अगर आप हमारे ईमेल, फ़ोन या WhatsApp लिंक पर टैप करते हैं, तो हम Google को बताते हैं कि संपर्क-टैप हुआ: हर विज़िट में हर तरह के लिंक के लिए एक बार, बिना किसी मूल्य, संदेश, नाम, ईमेल पते या फ़ोन नंबर के। विदेशी हस्तांतरण की सूचना स्वयं रूपांतरण नहीं है; SBI FCRA खाते में राशि और दाता का मिलान होने के बाद ही उसे गिना जा सकता है। हम व्यक्तिगत विज्ञापन या एन्हांस्ड कन्वर्ज़न चालू नहीं करते। यह वैकल्पिक Google टैग नई सहमति तक बंद रहता है और अभी केवल अंग्रेज़ी तथा हिंदी में उपलब्ध है।',
+      cookie_p1:'यह साइट सार्वजनिक कार्य का अभिलेख है। आवश्यक कुकीज़ भाषा, थीम और आपकी कुकी-पसंद याद रखती हैं। अलग अनुमति मिलने पर Microsoft Clarity विज़िट तथा मास्क किए हुए सत्र और हीटमैप दिखाता है; दान, रसीद और चिंता वाले पेज Clarity से रिकॉर्ड नहीं किए जाते। उसी अनुमति पर Vercel Web Analytics भी पेज व्यू गिनता है; यह कोई कुकी नहीं रखता, कोई व्यक्तिगत डेटा नहीं रखता और उन पेजों पर नहीं चलता। कार्यात्मक कुकीज़ एम्बेड किए हुए मानचित्र, दस्तावेज़ और वीडियो चलाती हैं। यदि आप दान और संपर्क-मापन चुनते हैं, तो Google Ads विज्ञापन-क्लिक और डिवाइस पहचानकर्ताओं से यह समझ सकता है कि दान किसी विज्ञापन के बाद हुआ या नहीं। घरेलू भुगतान Razorpay से सत्यापित होने के बाद ही हम Google को रुपये में राशि और भुगतान संदर्भ से निकला एकतरफ़ा टोकन भेजते हैं; रूपांतरण घटना में दाता का नाम, ईमेल, फ़ोन, PAN या पता नहीं भेजते। अगर आप हमारे ईमेल, फ़ोन या WhatsApp लिंक पर टैप करते हैं, तो हम Google को बताते हैं कि संपर्क-टैप हुआ: हर विज़िट में हर तरह के लिंक के लिए एक बार, बिना किसी मूल्य, संदेश, नाम, ईमेल पते या फ़ोन नंबर के। विदेशी हस्तांतरण की सूचना स्वयं रूपांतरण नहीं है; SBI FCRA खाते में राशि और दाता का मिलान होने के बाद ही उसे गिना जा सकता है। हम व्यक्तिगत विज्ञापन या एन्हांस्ड कन्वर्ज़न चालू नहीं करते। यह वैकल्पिक Google टैग नई सहमति तक बंद रहता है और अभी केवल अंग्रेज़ी तथा हिंदी में उपलब्ध है।',
       cookie_p2:'आपकी पसंद आपके अपने डिवाइस पर संग्रहीत होती है और इसे फ़ुटर में कुकी सेटिंग्स से किसी भी समय बदला या वापस लिया जा सकता है। अपने ब्राउज़र का संग्रहण साफ़ करने से यह पूरी तरह हट जाती है। जहाँ पाठक कोई बच्चा या किशोर हो सकता है, वहाँ हम सबके लिए वही डिफ़ॉल्ट अपनाते हैं: चुने जाने तक आवश्यक से आगे कुछ भी सेट नहीं होता।',
       cookie_ask_cta:'पूछें आपके बारे में हमारे पास क्या है',
       portfolio_count:'परियोजनाएँ',
@@ -8464,7 +8458,7 @@ class Component extends DCLogic {
       ck_nec_label:'अत्यंत आवश्यक कुकीज़',
       ck_nec_body:'वेबसाइट के काम करने के लिए ज़रूरी: आपकी भाषा और थीम याद रखना, आपके द्वारा शुरू किए गए फ़ॉर्म को सुरक्षित रखना, और यह कुकी-विकल्प दर्ज करना। ये आपकी यहाँ की गतिविधि के जवाब में सेट होती हैं और कोई व्यक्तिगत रिकॉर्ड संग्रहीत नहीं करतीं। इन्हें अपने ब्राउज़र में रोकने से वेबसाइट के कुछ हिस्से काम करना बंद कर देंगे।',
       ck_perf_label:'प्रदर्शन कुकीज़',
-      ck_perf_body:'हमें विज़िट गिनने दें और यह देखने दें कि कौन से पेज पढ़े जाते हैं और लोग साइट पर कैसे आगे बढ़ते हैं, ताकि हम बता सकें कि क्या उपयोगी है और क्या नहीं। हम Microsoft Clarity का उपयोग करते हैं, जो अज्ञात सत्र और हीटमैप रिकॉर्ड करता है; टाइप किया गया टेक्स्ट और फ़ॉर्म फ़ील्ड मास्क रहते हैं, और दान, रसीद और चिंता वाले पेज कभी रिकॉर्ड नहीं किए जाते। इनके बिना हम यह नहीं जान सकते कि कोई पेज किसी तक पहुँच भी रहा है या नहीं।',
+      ck_perf_body:'हमें विज़िट गिनने दें और यह देखने दें कि कौन से पेज पढ़े जाते हैं और लोग साइट पर कैसे आगे बढ़ते हैं, ताकि हम बता सकें कि क्या उपयोगी है और क्या नहीं। हम Microsoft Clarity का उपयोग करते हैं, जो अज्ञात सत्र और हीटमैप रिकॉर्ड करता है; टाइप किया गया टेक्स्ट और फ़ॉर्म फ़ील्ड मास्क रहते हैं, और दान, रसीद और चिंता वाले पेज कभी रिकॉर्ड नहीं किए जाते। Vercel Web Analytics भी पेज व्यू गिनता है; यह कोई कुकी नहीं रखता, कोई व्यक्तिगत डेटा नहीं रखता और उन पेजों पर नहीं चलता। इनके बिना हम यह नहीं जान सकते कि कोई पेज किसी तक पहुँच भी रहा है या नहीं।',
       ck_func_label:'कार्यात्मक कुकीज़',
       ck_func_body:'ये रजिस्टर से जुड़े नक़्शे, दस्तावेज़ और वीडियो जैसी अतिरिक्त सुविधाओं को सक्षम करती हैं। इन्हें उन सेवाओं द्वारा सेट किया जा सकता है जिन्हें हम एम्बेड करते हैं। इनके बिना, उनमें से कुछ हिस्से लोड नहीं होंगे।',
       ck_target_label:'दान और संपर्क-मापन (Google Ads)',
@@ -36160,6 +36154,25 @@ class Component extends DCLogic {
   // Every drafted email on the site goes to one inbox.
   // Invest page band (see the CSS note above). Reuses T.process_head, T.work_head, the programme names and
   // taglines, and the hero's pause/play/replay words, so it adds no copy of its own.
+  // Vercel Web Analytics: Clarity's rules (performance consent, en and hi, live domain, no automation), and silent on the donation and finance views. No cookie.
+  _vercelAnalyticsGate() {
+    try {
+      const s = this.state || {};
+      const ok = !!(s.ckDecided && s.ckPrefs && s.ckPrefs.performance) && (s.lang === 'en' || s.lang === 'hi')
+        && /^(www\.)?dehatindia\.org$/.test(window.location.hostname) && !navigator.webdriver;
+      window.__dehatVaQuiet = !ok || s.view === 'involved' || s.view === 'finance';
+      if (ok && !window.__dehatVa) {
+        window.__dehatVa = 1;
+        window.va = window.va || function (...a) { (window.vaq = window.vaq || []).push(a); };
+        window.va('beforeSend', e => (window.__dehatVaQuiet ? null : e));
+        const el = document.createElement('script');
+        el.defer = true; el.src = '/_vercel/insights/script.js';
+        document.head.appendChild(el);
+      }
+    } catch (e) {}
+    return '';
+  }
+
   // Microsoft Clarity: only with the visitor's performance consent, only in the languages whose cookie wording
   // says so (en, hi until the rest are reviewed), only on the live domain, never for automation, and never on the
   // views that hold donation, receipt and transfer forms. Form fields are masked whenever it runs.
@@ -38531,20 +38544,10 @@ class Component extends DCLogic {
               };
             }),
           },
-          // "horizons" restored per client review, revised: the tiered ₹-range "meta" figures
-          // stay OUT of the public render (curMeta/metaLabel deliberately not exposed below) - 
-          // only the qualitative "why this matters" and "strategic priorities" are shown, which
-          // already signal real, worked-out planning without a price tag attached. The CTA no
-          // longer routes to the generic checkout (which was capped at "₹25,000 or Other" against
-          // a lakh/crore-scale ask) - it opens a direct email requesting the full plan (budget,
-          // results framework, implementation timeline), so a real institutional conversation
-          // starts before any figure is exchanged, matching how the Freedom Fund (one of this
-          // roadmap's own named comparables) handles institutional giving publicly: no forward
-          // dollar tiers on the page itself, everything specific happens in the conversation.
-          // The per-row peer comparisons ("Comparable: Freedom Fund...", "...MV Foundation...")
-          // were removed from journey-data.js's own obj text, not just hidden here - publicly
-          // benchmarking against named peer organisations without their involvement is a
-          // reputational risk regardless of how the content is gated.
+          // "horizons": the tiered ₹-range "meta" figures stay OUT of the public render (curMeta/metaLabel are deliberately not exposed
+          // below); only "why this matters" and "strategic priorities" show. The CTA opens a direct email asking for the full plan, so no
+          // figure is exchanged before a conversation. Named peer comparisons were removed from journey-data.js itself: benchmarking
+          // named peers without their involvement is a reputational risk.
           horizons: {
             num: J.horizons.num, title: J.horizons.title, body: J.horizons.body,
             objLabel: J.horizons.objLabel, itemsLabel: J.horizons.itemsLabel,
@@ -39201,6 +39204,7 @@ class Component extends DCLogic {
       hero: this._hero(T),
       invBand: this._investBand(T),
       clarityGate: this._clarityGate(),
+      vaGate: this._vercelAnalyticsGate(),
       adsGate: this._adsGate(),
       pillars: [
         { glyph: 'V', color: '#0E5565', title: T.vision, body: T.vision_body, art: 'vision' },
