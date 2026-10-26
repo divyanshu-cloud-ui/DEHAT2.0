@@ -4,7 +4,7 @@
 window.ATLAS_I18N = window.ATLAS_I18N || {};
 window.ATLAS_I18N.en = {
   // ---- interface text
-  "page.title": "DEHAT \u2014 Where We Work: District Vulnerability Atlas",
+  "page.title": "DEHAT \u2014 Where We Work: District Opportunity Gap Atlas",
   "nav.search.placeholder": "Search District…",
   "nav.state.title": "Filter by state",
   "nav.state.all": "All States",
