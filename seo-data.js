@@ -8753,7 +8753,7 @@ export default {
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
     "prog/sol": {
-      "title": "नेतृत्व के स्कूल | DEHAT केर कार्यक्रम",
+      "title": "नेतृत्वक स्कूल | DEHAT केर कार्यक्रम",
       "description": "किशोर स्वास्थ्य शिक्षा, सेतु शिक्षण केंद्र आ पुन: नामांकन, जाहिसँ किशोरी सभ स्कूलमे बनल रहथि आ युवा नेतृत्वक लेल तैयार होथि।",
       "ogImage": "https://dehatindia.org/dehat-og.png"
     },
