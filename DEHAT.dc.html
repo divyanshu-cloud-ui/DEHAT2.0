@@ -36152,6 +36152,8 @@ class Component extends DCLogic {
     };
   }
   // Every drafted email on the site goes to one inbox.
+  // Invest page band (see the CSS note above). Reuses T.process_head, T.work_head, the programme names and
+  // taglines, and the hero's pause/play/replay words, so it adds no copy of its own.
   // GA4: Clarity's rules, silent on donation and finance views, signals off, hand-sent page views (pages change without reload).
   _ga4Gate() {
     try {
@@ -36346,8 +36348,6 @@ class Component extends DCLogic {
     return '';
   }
 
-  // Invest page band (see the CSS note above). Reuses T.process_head, T.work_head, the programme names and
-  // taglines, and the hero's pause/play/replay words, so it adds no copy of its own.
   _investBand(T) {
     const DF = { re: ['Rights & Entitlements', 'Know · Organise · Converge'], sol: ['School of Leadership', 'Co-Create · Co-Facilitate · Lead'], hp: ['Human Protection', 'Prevention · Protection · Prosecution · Partnership'], cj: ['Climate Justice', 'Soil · Seed · Water · Voice'] };
     const prog = {};
