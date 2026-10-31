@@ -111,3 +111,12 @@ test('invalid language, English copy, labels and paths throw',()=>{
   }
   assert.throws(()=>render('en',{pathFor:()=> 'wrong'}),TypeError);
 });
+
+test('not-found pages use the self-hosted fonts, never a font service',()=>{
+  for(const lang of ['en','ar','hi']){
+    const page=render(lang);
+    assert.doesNotMatch(page,/fonts\.googleapis\.com|fonts\.gstatic\.com/,lang);
+    assert.match(page,/@font-face\{font-family:'Bricolage Grotesque'/,lang);
+    assert.match(page,/url\(\/assets\/fonts\/web\/font-11-[a-f0-9]{16}\.woff2\)/,lang);
+  }
+});

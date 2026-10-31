@@ -39209,7 +39209,16 @@ class Component extends DCLogic {
             el.addEventListener('load', () => { this._syncMapTheme(); this._syncMapLang(); });
           };
           const idle = () => (window.requestIdleCallback ? window.requestIdleCallback(go, { timeout: 2500 }) : setTimeout(go, 300));
-          if (document.readyState === 'complete') idle(); else window.addEventListener('load', idle, { once: true });
+          // Load the atlas only once it is within about a screen of view: it brings d3, its fonts and the
+          // map data with it, and most visitors never scroll that far.
+          const near = () => {
+            if (!('IntersectionObserver' in window)) return idle();
+            const io = new IntersectionObserver((entries) => {
+              if (entries.some(e => e.isIntersecting)) { io.disconnect(); idle(); }
+            }, { rootMargin: '1000px 0px' });
+            io.observe(el);
+          };
+          if (document.readyState === 'complete') near(); else window.addEventListener('load', near, { once: true });
         }
       },
       goHome: setView('home'), goWork: setView('work'),

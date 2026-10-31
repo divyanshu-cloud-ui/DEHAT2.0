@@ -8,8 +8,8 @@ import {API_ENDPOINTS} from '../launch/config.mjs';
 import {createRequire} from 'node:module';
 test('deployment allowlist excludes private documents and traversal',()=>{
   for(const name of ['../secret','/private','a/../b','a\\b','a//b'])assert.throws(()=>safeRelative(name));
-  for(const name of ['.image-slots.state.json','_internal/proof.html','assets/docs/report.pdf','EVIDENCE_VAULT/file.png','PUBLIC_DOCUMENTS/file.pdf','api/_paypal.js'])assert.equal(publicAsset(name),false,name);
-  for(const name of ['support.js','content-i18n/ar.js','district-i18n/ar.js','assets/story/web/story-002.png','assets/logos/actionaid-association.png','assets/partners/directorate-of-education-government-of-uttar-pradesh.png','assets/cj/community-planning-board.png','assets/story-development.png','launch/bootstrap.mjs'])assert.equal(publicAsset(name),true,name);
+  for(const name of ['.image-slots.state.json','_internal/proof.html','assets/docs/report.pdf','EVIDENCE_VAULT/file.png','PUBLIC_DOCUMENTS/file.pdf','api/_paypal.js','assets/vendor/d3-7.9.0.js','assets/vendor/d3-7.9.1-f2094bbf6141b359.js','assets/vendor/world-atlas-2.0.2-countries-50m-2516c915867c7baf.json','assets/vendor/notes.json'])assert.equal(publicAsset(name),false,name);
+  for(const name of ['support.js','content-i18n/ar.js','district-i18n/ar.js','assets/story/web/story-002.png','assets/logos/actionaid-association.png','assets/partners/directorate-of-education-government-of-uttar-pradesh.png','assets/cj/community-planning-board.png','assets/story-development.png','launch/bootstrap.mjs','assets/vendor/d3-7.9.0-f2094bbf6141b359.js','assets/vendor/topojson-client-3.1.0-25cd02ae486cc506.js','assets/vendor/world-atlas-2.0.2-countries-110m-2516c915867c7baf.json','assets/vendor/NOTICE.txt'])assert.equal(publicAsset(name),true,name);
 });
 test('proof bundle preserves seven handlers and webhook raw body configuration',async()=>{
   const root=await mkdtemp(path.join(tmpdir(),'dehat-package-test-'));

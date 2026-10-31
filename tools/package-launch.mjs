@@ -19,6 +19,9 @@ export function publicAsset(value) {
     /^launch\/(?:bootstrap\.mjs|routes\.mjs|artwork\.mjs|performance-assets\.mjs|partner-tabs\.mjs|runtime-template\.html)$/.test(value)||
     /^launch\/partner\/[a-z]{2,3}\.mjs$/.test(value)||
     /^assets\/vendor\/(?:react|react-dom)-18\.3\.1-[a-f0-9]{16}\.js$/.test(value)||
+    /^assets\/vendor\/(?:d3-7\.9\.0|topojson-client-3\.1\.0)-[a-f0-9]{16}\.js$/.test(value)||
+    /^assets\/vendor\/world-atlas-2\.0\.2-countries-110m-[a-f0-9]{16}\.json$/.test(value)||
+    value==='assets/vendor/NOTICE.txt'||
     /^assets\/fonts\/web\/font-\d{2}-[a-f0-9]{16}\.woff2$/.test(value)||
     /^content-i18n\/[a-z]{2,3}\.js$/.test(value)||
     /^district-i18n\/[a-z]{2,3}\.js$/.test(value)||
