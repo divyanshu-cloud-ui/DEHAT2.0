@@ -36550,7 +36550,8 @@ class Component extends DCLogic {
         else set({ reveal: AGES[i] + (AGES[i] < 18 ? 0.6 : 0), hand: AGES[i], loop: i === 6 ? 1 : 0 });
       };
       // The hand goes back over the years this programme answers and sweeps them again as its ring is drawn.
-      const progWords = (k) => { const d = D(); return '<div class="hr-beat"><span class="hr-w k">' + esc(d.prog[k][1]) + '</span><span class="hr-w l" style="color:var(--hr-' + k + ')">' + esc(d.prog[k][0]) + '</span></div>'; };
+      // The tagline takes its programme's colour too, so the gold of the age and clock stays the girl's own.
+      const progWords = (k) => { const d = D(); return '<div class="hr-beat"><span class="hr-w k" style="color:var(--hr-' + k + ')">' + esc(d.prog[k][1]) + '</span><span class="hr-w l" style="color:var(--hr-' + k + ')">' + esc(d.prog[k][0]) + '</span></div>'; };
       const answer = (k) => { focus = k; beatNow = 8 + ORDER.indexOf(k); el.dataset.heroBeat = String(beatNow); live.textContent = D().prog[k].join(' '); const y = YEARS[k]; S.hand = y[0]; stage.innerHTML = progWords(k); const o = { loop: 0, hand: y[1] }; o[k] = 1; set(o); refresh(); };
       const rest = () => {
         clear(); stage.innerHTML = ''; el.classList.remove('hr-playing', 'hr-paused'); el.classList.add('hr-rest'); state = 'rest'; el.dataset.heroState = 'rest'; el.dataset.heroBeat = '12'; live.textContent = ''; focus = null;
