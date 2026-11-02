@@ -39276,8 +39276,9 @@ class Component extends DCLogic {
       gaGate: this._ga4Gate(),
       adsGate: this._adsGate(),
       pillars: [
-        { glyph: 'V', color: '#0E5565', title: T.vision, body: T.vision_body, art: 'vision' },
-        { glyph: 'M', color: '#D2305C', title: T.mission, body: T.mission_body, art: 'mission', link: 'work', linkLabel: T.pillar_link_work },
+        // Vision and Mission carry the first 16 hex of their sha256 in the file name, so a changed picture gets a new URL past the one-day cache.
+        { glyph: 'V', color: '#0E5565', title: T.vision, body: T.vision_body, art: 'vision-44cc18105edabc90' },
+        { glyph: 'M', color: '#D2305C', title: T.mission, body: T.mission_body, art: 'mission-9449b2fffd648dee', link: 'work', linkLabel: T.pillar_link_work },
         { glyph: 'T', color: '#556223', title: T.theory, body: T.theory_body, art: 'theory-of-change', link: 'work', linkLabel: T.pillar_link_how },
       ].map((p, i) => Object.assign({}, p, {
         textColor: this._tok(p.color),
